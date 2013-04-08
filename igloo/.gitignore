@@ -1,0 +1,28 @@
+#Ignore patch files
+*.patch
+
+#Ignore Visual Studio project files
+igloo.ncb
+igloo.sln
+igloo.suo
+igloo.vcproj*
+_ReSharper.igloo/
+*resharper*
+
+#Ignore Visual Studio output dirs
+Debug
+Release      
+
+#Ignore TextMate project files
+*.tmproj
+
+#Ignore VIM temporary files
+*.swp
+
+#Ignore GCC build artefacts
+*.o
+igloo-tests.exe
+*.dSYM
+
+#Ignore tags
+tags
