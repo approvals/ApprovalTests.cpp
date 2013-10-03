@@ -1,0 +1,3 @@
+Welcome to TomatoTime
+
+Press any key to start new Tomato
