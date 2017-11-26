@@ -3,11 +3,11 @@
 ###################################
 CC = g++
 INCLUDE = -I ../igloo
-CFLAGS = -lpthread -Wall 
+CFLAGS = -lpthread -Wall
 CHECK = cppcheck -v --inline-suppr --enable=all
-FORMAT = astyle -YfDHUbps4yj -k3 
+FORMAT = astyle -YfDHUbps4yj -k3
 
-all: runtest 
+all: runtest
 
 runtest: NamerTests StringWriterTests ReporterTests FileApproverTests ApprovalExceptionTests ApprovalsTests
 	./test/bin/NamerTests
@@ -20,32 +20,32 @@ runtest: NamerTests StringWriterTests ReporterTests FileApproverTests ApprovalEx
 ApprovalExceptionTests: test/ApprovalExceptionTests.cpp ApprovalException.h
 	$(FORMAT) test/ApprovalExceptionTests.cpp
 	$(CHECK) test/ApprovalExceptionTests.cpp
-	g++ $(INCLUDE) test/ApprovalExceptionTests.cpp -o test/bin/ApprovalExceptionTests -g $(CFLAGS)
+	$(CC) $(INCLUDE) test/ApprovalExceptionTests.cpp -o test/bin/ApprovalExceptionTests -g $(CFLAGS)
 
 ApprovalsTests: test/ApprovalsTests.cpp Approvals.gch
 	$(FORMAT) test/ApprovalsTests.cpp
 	$(CHECK) test/ApprovalsTests.cpp
-	g++ $(INCLUDE) test/ApprovalsTests.cpp -o test/bin/ApprovalsTests -g $(CFLAGS)
+	$(CC) $(INCLUDE) test/ApprovalsTests.cpp -o test/bin/ApprovalsTests -g $(CFLAGS)
 
 NamerTests: test/NamerTests.cpp Namer.h IglooNamerFactory.h
 	$(FORMAT) test/NamerTests.cpp
 	$(CHECK) --suppress=unmatchedSuppression test/NamerTests.cpp
-	g++ $(INCLUDE) test/NamerTests.cpp -o test/bin/NamerTests -g $(CFLAGS)
+	$(CC) $(INCLUDE) test/NamerTests.cpp -o test/bin/NamerTests -g $(CFLAGS)
 
 StringWriterTests: test/StringWriterTests.cpp StringWriter.h
 	$(FORMAT) test/StringWriterTests.cpp
 	$(CHECK) test/StringWriterTests.cpp
-	g++ $(INCLUDE) test/StringWriterTests.cpp -o test/bin/StringWriterTests -g $(CFLAGS)
+	$(CC) $(INCLUDE) test/StringWriterTests.cpp -o test/bin/StringWriterTests -g $(CFLAGS)
 
 ReporterTests: test/reporters/ReporterTests.cpp reporters/Reporter.h
 	$(FORMAT) test/reporters/ReporterTests.cpp
 	$(CHECK) test/reporters/ReporterTests.cpp
-	g++ $(INCLUDE) test/reporters/ReporterTests.cpp -o test/bin/ReporterTests -g $(CFLAGS)
+	$(CC) $(INCLUDE) test/reporters/ReporterTests.cpp -o test/bin/ReporterTests -g $(CFLAGS)
 
 FileApproverTests: test/FileApproverTests.cpp reporters/Reporter.h FileApprover.h
 	$(FORMAT) test/FileApproverTests.cpp
 	$(CHECK) test/FileApproverTests.cpp
-	g++ $(INCLUDE) test/FileApproverTests.cpp -o test/bin/FileApproverTests -g $(CFLAGS)
+	$(CC) $(INCLUDE) test/FileApproverTests.cpp -o test/bin/FileApproverTests -g $(CFLAGS)
 
 Approvals.gch: Approvals.h
 	$(FORMAT) Approvals.h
@@ -66,7 +66,7 @@ CommandLauncher.h: reporters/CommandLauncher.h
 
 FileApprover.h: FileApprover.gch ApprovalException.h
 
-FileApprover.gch: 
+FileApprover.gch:
 	$(FORMAT) FileApprover.h
 	$(CHECK) FileApprover.h
 	g++ $(INCLUDE) -c FileApprover.h -O3 -Wall
@@ -91,7 +91,7 @@ StringWriter.h:
 	$(CHECK) StringWriter.h
 	g++ -c StringWriter.h -O3 -Wall
 
-format: 
+format:
 	astyle -YfDHUbps4yj -k3 $(SRCS)
 
 check: format
