@@ -1,1 +1,4 @@
 *.orig
+*.gch
+**/bin/*
+!*.approved.*

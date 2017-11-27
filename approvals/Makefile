@@ -4,8 +4,8 @@
 CC = g++
 INCLUDE = -I ../igloo
 CFLAGS = -lpthread -Wall
-CHECK = cppcheck -v --inline-suppr --enable=all
-FORMAT = astyle -YfDHUbps4yj -k3
+CHECK = echo cppcheck -v --inline-suppr --enable=all
+FORMAT = echo astyle -YfDHUbps4yj -k3
 
 all: runtest
 

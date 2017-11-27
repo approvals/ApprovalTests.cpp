@@ -6,6 +6,7 @@
 #include <igloo/igloo.h>
 #include <unistd.h>
 #include "Namer.h"
+#include <mach-o/dyld.h>
 
 class IglooNamerFactory
 {
@@ -15,6 +16,26 @@ private:
     static std::string currentSpec;
 
     static std::string ExePath()
+    {
+
+        return ExePathMac();
+    }
+    static std::string ExePathMac()
+    {
+        char buf[512];
+        bzero( buf, 512 );
+        uint32_t size = 512;
+        auto readlink_ok = _NSGetExecutablePath(buf, &size);
+        if ( readlink_ok == -1 )
+        {
+            return "";
+        }
+
+        std::string path( buf );
+        return path;
+    }
+
+    static std::string ExePathLinux()
     {
         char buf[512];
         bzero( buf, 512 );
@@ -63,8 +84,7 @@ public:
     static std::string TestDirectory()
     {
         std::string dir( ExePath() );
-        unsigned slash = dir.find_last_of( "/" );
-
+        auto slash = dir.find_last_of( "/" );
         if ( slash == std::string::npos )
         {
             return dir;
@@ -77,8 +97,7 @@ public:
     static std::string TestName()
     {
         std::string exe( ExePath() );
-        unsigned slash = exe.find_last_of( "/" );
-
+        auto slash = exe.find_last_of( "/" );
         if ( slash == std::string::npos )
         {
             return exe;

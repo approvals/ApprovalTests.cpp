@@ -19,29 +19,15 @@ Context( DescribeAnIglooNamerFactory )
         Assert::That( IglooNamerFactory::ContextName(), Equals( Name() ) );
     }
 
-    Spec( ItCanGiveYouTheTestName )
+    Spec( ItCanGiveYouTheTestFileName )
     {
-        char buf[512];
-        bzero( buf, 512 );
-        ssize_t readlink_ok = readlink( "/proc/self/exe", buf, 512 );
-        Assert::That( readlink_ok, IsGreaterThan( -1 ) );
-        string exe( buf );
-        unsigned slash = exe.find_last_of( "/" );
-        exe = exe.substr( slash + 1, exe.size() + 1 );
-        Assert::That( IglooNamerFactory::TestName(), Equals( exe ) );
+        Assert::That( IglooNamerFactory::TestName(), Equals( "NamerTests" ) );
 
     }
 
     Spec( ItCanGiveYouTheTestDirectory )
     {
-        char buf[512];
-        bzero( buf, 512 );
-        ssize_t readlink_ok = readlink( "/proc/self/exe", buf, 512 );
-        Assert::That( readlink_ok, IsGreaterThan( -1 ) );
-        string dir( buf );
-        unsigned slash = dir.find_last_of( "/" );
-        dir = dir.substr( 0, slash );
-        Assert::That( IglooNamerFactory::TestDirectory(), Equals( dir ) );
+        Assert::That( IglooNamerFactory::TestDirectory(), EndsWith("approvals/./test/bin") );
     }
 
     Spec( ItIncludesFileContextAndSpecNames )
