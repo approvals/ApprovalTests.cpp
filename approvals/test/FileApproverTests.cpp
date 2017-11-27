@@ -8,6 +8,8 @@
 #include "../FileApprover.h"
 #include "../StringWriter.h"
 #include "../reporters/Reporter.h"
+#include "../namers/IglooNamerFactory.h"
+
 
 using namespace igloo;
 using namespace std;
@@ -16,12 +18,7 @@ Context( DescribeAFileApprover )
 {
     string bin()
     {
-        char buf[512];
-        bzero( buf, 512 );
-        ssize_t readlink_ok = readlink( "/proc/self/cwd", buf, 512 );
-        Assert::That( readlink_ok, IsGreaterThan( -1 ) );
-        string dir( buf );
-        return dir;
+        return IglooNamerFactory::TestDirectory();
     }
 
     void writeMessageTo( string message, string path )
@@ -33,7 +30,7 @@ Context( DescribeAFileApprover )
 
     Spec( ItVerifiesApprovedFileExists )
     {
-        Namer namer( bin(),
+        Namer namer( IglooNamerFactory::TestDirectory(),
                      "DescribeAFileApprover.ItVerifiesApprovedFileExists" );
         StringWriter writer( "Hello" );
         TestReporter reporter;
