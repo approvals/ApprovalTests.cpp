@@ -6,7 +6,9 @@
 #include <igloo/igloo.h>
 #include <unistd.h>
 #include "Namer.h"
-#include <mach-o/dyld.h>
+#ifdef __APPLE__
+    #include <mach-o/dyld.h>
+#endif
 
 class IglooNamerFactory
 {
@@ -15,12 +17,8 @@ private:
     static std::string currentContext;
     static std::string currentSpec;
 
+#ifdef __APPLE__
     static std::string ExePath()
-    {
-
-        return ExePathMac();
-    }
-    static std::string ExePathMac()
     {
         char buf[512];
         bzero( buf, 512 );
@@ -34,8 +32,10 @@ private:
         std::string path( buf );
         return path;
     }
+#endif
 
-    static std::string ExePathLinux()
+#ifdef __linux__
+    static std::string ExePath()
     {
         char buf[512];
         bzero( buf, 512 );
@@ -49,6 +49,7 @@ private:
         std::string path( buf );
         return path;
     }
+#endif
 
     static std::string FullTestName()
     {
