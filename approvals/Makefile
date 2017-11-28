@@ -2,7 +2,7 @@
 # Makefile
 ###################################
 CC = g++
-INCLUDE = -I ../igloo
+INCLUDE = -isystem  ../igloo
 CFLAGS = -lpthread -Wall -std=c++14
 CHECK = echo cppcheck -v --inline-suppr --enable=all
 FORMAT = echo astyle -YfDHUbps4yj -k3

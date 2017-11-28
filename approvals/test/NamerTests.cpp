@@ -27,7 +27,12 @@ Context( DescribeAnIglooNamerFactory )
 
     Spec( ItCanGiveYouTheTestDirectory )
     {
+#ifdef __APPLE__
         Assert::That( IglooNamerFactory::TestDirectory(), EndsWith("approvals/./test/bin") );
+#endif
+#ifdef __linux__
+        Assert::That( IglooNamerFactory::TestDirectory(), EndsWith("approvals/test/bin") );
+#endif
     }
 
     Spec( ItIncludesFileContextAndSpecNames )
