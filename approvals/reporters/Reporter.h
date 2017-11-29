@@ -32,7 +32,7 @@ private:
     SystemLauncher launcher;
 
 public:
-    MeldReporter() : Reporter( "meld", &launcher ) {};
+    MeldReporter() : Reporter( "/Applications/DiffMerge.app/Contents/MacOS/DiffMerge", &launcher ) {};
 };
 
 class TestReporter : public Reporter

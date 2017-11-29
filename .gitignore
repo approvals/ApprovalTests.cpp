@@ -2,3 +2,5 @@
 *.gch
 **/bin/*
 !*.approved.*
+cmake-build-debug/
+.idea

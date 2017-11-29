@@ -41,8 +41,3 @@ Context( DescribeAStringWriter )
         Assert::That( s.GetFileExtension(), Equals( "html" ) );
     }
 };
-
-int main( int argc, char const *argv[] )
-{
-    return TestRunner::RunAllTests();
-}

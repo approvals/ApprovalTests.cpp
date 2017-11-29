@@ -20,8 +20,3 @@ Context( DescribeApprovalExceptions )
                       Equals( "Failed Approval: Received file r.txt does not match approved file a.txt." ) );
     }
 };
-
-int main( int argc, char const *argv[] )
-{
-    return TestRunner::RunAllTests();
-}
