@@ -5,7 +5,6 @@
 5. arrays
 6. reports
 8.  combination
-10. diff reporter
 11. mac reporters
 12. windows reporters
 13. linux reporters

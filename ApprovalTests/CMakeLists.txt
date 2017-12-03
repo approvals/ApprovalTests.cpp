@@ -6,5 +6,5 @@ set(SOURCE_FILES
         FileUtils.h
         Macros.h
         reporters/CommandLauncher.h
-        reporters/Reporter.h reporters/FirstWorkingReporter.h)
+        reporters/Reporter.h reporters/FirstWorkingReporter.h reporters/DiffReporter.h)
 add_library(ApprovalTests ${SOURCE_FILES} )
