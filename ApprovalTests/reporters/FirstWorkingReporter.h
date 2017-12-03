@@ -12,7 +12,7 @@ public:
     {
     }
 
-    bool Report(std::string received, std::string approved) override
+    bool Report(std::string received, std::string approved) const override
     {
         for(auto r : reporters)
         {

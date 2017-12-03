@@ -44,8 +44,9 @@ class SystemLauncher : public CommandLauncher
 public:
     bool exists(const std::string& command)
     {
-        int i = execl( "which", command.c_str(), NULL );
-        return i == 0;
+        std::string which = "which " + command + " > /dev/null 2>&1";
+        int result = system(which.c_str());
+        return (result == 0);
     }
 
     bool Launch( std::vector<std::string> argv )
@@ -76,7 +77,7 @@ public:
 
             if ( i < 0 )
             {
-                std::cerr << ARGV[0] << ": command not found" << std::endl;
+                std::cout << ARGV[0] << ": command not found" << std::endl;
                 exit( 1 );
             }
         }

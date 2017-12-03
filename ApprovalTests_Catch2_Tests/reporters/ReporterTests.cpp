@@ -20,8 +20,14 @@ TEST_CASE("FirstWorkingReporter") {
     REQUIRE(true == result);
 }
 
-TEST_CASE("Reporters Report Success Status") {
+TEST_CASE("Reporters Report Failure Status") {
     GenericDiffReporter m("this_does_not_exist");
     bool result = m.Report("r.txt", "a.txt");
     REQUIRE(false == result);
+}
+
+TEST_CASE("Reporters Report Success Status") {
+    GenericDiffReporter m("echo");
+    bool result = m.Report("r.txt", "a.txt");
+    REQUIRE(true == result);
 }

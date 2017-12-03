@@ -3,6 +3,7 @@
 
 #include <string>
 #include "FileApprover.h"
+#include "reporters/DiffReporter.h"
 #include "reporters/Reporter.h"
 #include "namers/ApprovalNamer.h"
 
@@ -12,11 +13,10 @@ private:
     Approvals() {}
     ~Approvals() {}
 public:
-    static void verify( std::string contents )
+    static void verify( std::string contents,const Reporter& reporter = DiffReporter() )
     {
         StringWriter writer( contents );
         ApprovalNamer namer;
-        MeldReporter reporter;
         FileApprover::verify(namer, writer, reporter);
     }
 };

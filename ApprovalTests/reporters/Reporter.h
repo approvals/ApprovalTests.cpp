@@ -7,7 +7,7 @@
 
 class Reporter {
 public:
-    virtual bool Report(std::string received, std::string approved) = 0;
+    virtual bool Report(std::string received, std::string approved) const = 0;
 };
 
 class CommandReporter : public Reporter {
@@ -21,7 +21,7 @@ protected:
     }
 
 public:
-    bool Report(std::string received, std::string approved) override {
+    bool Report(std::string received, std::string approved) const override {
         FileUtils::ensureFileExists(approved);
         std::vector<std::string> fullCommand;
         fullCommand.push_back(cmd);
