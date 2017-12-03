@@ -16,22 +16,31 @@ protected:
     }
 
 public:
-    void Report(std::string received, std::string approved) {
+    bool Report(std::string received, std::string approved) {
         FileUtils::ensureFileExists(approved);
         std::vector<std::string> fullCommand;
         fullCommand.push_back(cmd);
         fullCommand.push_back(received);
         fullCommand.push_back(approved);
-        l->Launch(fullCommand);
+        return l->Launch(fullCommand);
     }
 };
 
-class MeldReporter : public Reporter {
+class GenericDiffReporter : public Reporter {
 private:
     SystemLauncher launcher;
 
 public:
-    MeldReporter() : Reporter("/Applications/DiffMerge.app/Contents/MacOS/DiffMerge", &launcher) {};
+    GenericDiffReporter(const std::string& program) : Reporter(program, &launcher) {};
+};
+class MeldReporter : public GenericDiffReporter {
+public:
+    MeldReporter() : GenericDiffReporter("meld") {};
+};
+
+class DiffMerge : public GenericDiffReporter {
+public:
+    DiffMerge() : GenericDiffReporter("/Applications/DiffMerge.app/Contents/MacOS/DiffMerge") {};
 };
 
 class TestReporter : public Reporter {
