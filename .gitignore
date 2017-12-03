@@ -1,6 +1,3 @@
-*.orig
-*.gch
-**/bin/*
-!*.approved.*
 cmake-build-debug/
+*.received.*
 .idea
