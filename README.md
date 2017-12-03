@@ -1,6 +1,7 @@
 CppApprovals
 ============
 
-Native ApprovalTests for C++ on Linux
+Native ApprovalTests for C++
 
-Currently only supporting the [Igloo Testing Framework]( http://igloo-testing.org/ )
+Preparing to move to Catch2.
+Igloo shelved on the Igloo branch
