@@ -6,17 +6,22 @@
 #include "../Macros.h"
 
 class Reporter {
+public:
+    virtual bool Report(std::string received, std::string approved) = 0;
+};
+
+class CommandReporter : public Reporter {
 private:
     std::string cmd;
     CommandLauncher *l;
 
 protected:
-    Reporter(std::string command, CommandLauncher *launcher)
+    CommandReporter(std::string command, CommandLauncher *launcher)
             : cmd(command), l(launcher) {
     }
 
 public:
-    bool Report(std::string received, std::string approved) {
+    bool Report(std::string received, std::string approved) override {
         FileUtils::ensureFileExists(approved);
         std::vector<std::string> fullCommand;
         fullCommand.push_back(cmd);
@@ -26,12 +31,12 @@ public:
     }
 };
 
-class GenericDiffReporter : public Reporter {
+class GenericDiffReporter : public CommandReporter {
 private:
     SystemLauncher launcher;
 
 public:
-    GenericDiffReporter(const std::string& program) : Reporter(program, &launcher) {};
+    GenericDiffReporter(const std::string& program) : CommandReporter(program, &launcher) {};
 };
 class MeldReporter : public GenericDiffReporter {
 public:
@@ -43,11 +48,13 @@ public:
     DiffMerge() : GenericDiffReporter("/Applications/DiffMerge.app/Contents/MacOS/DiffMerge") {};
 };
 
-class TestReporter : public Reporter {
+class TestReporter : public CommandReporter {
 public:
     DoNothingLauncher launcher;
 
-    TestReporter() : Reporter("fake", &launcher) {};
+    TestReporter(bool working = true) : CommandReporter("fake", &launcher) {
+        launcher.working = working;
+    };
 };
 
 class ReporterFactory {

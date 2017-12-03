@@ -4,5 +4,7 @@ set(SOURCE_FILES
         ApprovalTests.h
         Catch2Approvals.h
         FileUtils.h
-        Macros.h)
+        Macros.h
+        reporters/CommandLauncher.h
+        reporters/Reporter.h reporters/FirstWorkingReporter.h)
 add_library(ApprovalTests ${SOURCE_FILES} )

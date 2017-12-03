@@ -4,9 +4,7 @@
 4. object tostring
 5. arrays
 6. reports
-7.  first working
 8.  combination
-9.  enviorment aware
 10. diff reporter
 11. mac reporters
 12. windows reporters

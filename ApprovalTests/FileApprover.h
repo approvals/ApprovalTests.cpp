@@ -51,7 +51,7 @@ public:
     }
 
 
-    static void verify(ApprovalNamer n, StringWriter s, Reporter r) {
+    static void verify(ApprovalNamer n, StringWriter s, Reporter& r) {
         std::string approvedPath = n.getApprovedFile(s.GetFileExtension());
         std::string receivedPath = n.getReceivedFile(s.GetFileExtension());
         s.Write(receivedPath);

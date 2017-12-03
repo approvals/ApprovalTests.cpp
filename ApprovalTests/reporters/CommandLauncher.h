@@ -20,6 +20,7 @@ class DoNothingLauncher : public CommandLauncher
 private:
     std::string cmd;
 public:
+    bool working = true;
     bool Launch( std::vector<std::string> argv )
     {
         for ( std::vector<std::string>::iterator it = argv.begin();
@@ -29,7 +30,7 @@ public:
             cmd += *it;
             cmd += " ";
         }
-        return true;
+        return working;
     }
 
     std::string ReceivedCommand()

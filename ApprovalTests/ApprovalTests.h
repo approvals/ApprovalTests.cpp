@@ -9,6 +9,7 @@
 #include "StringWriter.h"
 #include "FileUtils.h"
 #include "reporters/Reporter.h"
+#include "reporters/FirstWorkingReporter.h"
 #include "namers/ApprovalNamer.h"
 #include "FileApprover.h"
 #include "Approvals.h"
