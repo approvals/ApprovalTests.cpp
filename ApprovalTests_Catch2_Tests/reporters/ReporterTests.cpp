@@ -10,13 +10,13 @@ TEST_CASE("Reporters Launch Command") {
 }
 
 TEST_CASE("FirstWorkingReporter") {
-    TestReporter m1(false);
-    TestReporter m2(true);
-    TestReporter m3(true);
-    FirstWorkingReporter reporter({&m1, &m2, &m3});
+    TestReporter* m1 = new TestReporter(false);
+    TestReporter* m2 = new TestReporter(true);
+    TestReporter* m3 = new TestReporter(true);
+    FirstWorkingReporter reporter({m1, m2, m3});
     bool result = reporter.Report("r.txt", "a.txt");
-    REQUIRE(m2.launcher.ReceivedCommand() == "fake r.txt a.txt ");
-    REQUIRE(m3.launcher.ReceivedCommand() == "");
+    REQUIRE(m2->launcher.ReceivedCommand() == "fake r.txt a.txt ");
+    REQUIRE(m3->launcher.ReceivedCommand() == "");
     REQUIRE(true == result);
 }
 

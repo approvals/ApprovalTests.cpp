@@ -19,4 +19,3 @@
 19. google test
 20. windows path separators
 21. verify takes reporters with defaults
-22. fix memory leaks FirstWorkingReporter - use std::unique_ptr
