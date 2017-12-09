@@ -18,4 +18,4 @@
 18. sample project
 19. google test
 20. windows path separators
-21. verify takes reporters with defaults
+
