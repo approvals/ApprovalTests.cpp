@@ -1,4 +1,5 @@
 cmake-build-debug/
+build/releases
 *.received.*
 .idea
 doc/html/

@@ -1,12 +1,15 @@
+
 #ifndef CATCHPLAYGROUND_CATCH2APPROVALS_H_H
 #define CATCHPLAYGROUND_CATCH2APPROVALS_H_H
 #include "ApprovalTests.h"
 
+// <SingleHpp unalterable>
 #ifdef APPROVALS_CATCH
 #define CATCH_CONFIG_MAIN
 #endif
 
 #include <Catch.hpp>
+// </SingleHpp>
 
 using std::string;
 
