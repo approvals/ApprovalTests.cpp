@@ -4,9 +4,6 @@
 #include <fstream>
 #include <iostream>
 #include <sys/stat.h>
-#include <io.h>
-//#include <unistd.h>
-
 
 using namespace std;
 
