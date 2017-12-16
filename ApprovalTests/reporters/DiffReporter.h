@@ -16,7 +16,13 @@ public:
 class DiffReporter : public FirstWorkingReporter
 {
 public:
-    DiffReporter() : FirstWorkingReporter({new Mac::MacDiffReporter(), new LinuxDiffReporter(), new WindowsDiffReporter()})
+    DiffReporter() : FirstWorkingReporter(
+            {
+                    new Mac::MacDiffReporter(),
+                    new LinuxDiffReporter(),
+                    new Windows::WindowsDiffReporter()
+            }
+    )
     {
     }
 };
