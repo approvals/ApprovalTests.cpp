@@ -4,6 +4,7 @@
 #include "CommandLauncher.h"
 #include "../FileUtils.h"
 #include "../Macros.h"
+#include "DiffPrograms.h"
 
 class Reporter {
 public:
@@ -37,6 +38,7 @@ private:
 
 public:
     GenericDiffReporter(const std::string& program) : CommandReporter(program, &launcher) {};
+    GenericDiffReporter(const DiffInfo& info) : CommandReporter(info.getProgramForOs().c_str(), &launcher) {};
 };
 class MeldReporter : public GenericDiffReporter {
 public:
@@ -47,6 +49,11 @@ class DiffMergeReporter : public GenericDiffReporter {
 public:
     DiffMergeReporter() : GenericDiffReporter("/Applications/DiffMerge.app/Contents/MacOS/DiffMerge") {};
 };
+class WinMergeReporter : public GenericDiffReporter {
+public:
+    WinMergeReporter() : GenericDiffReporter(DiffPrograms::Windows::WIN_MERGE_REPORTER()) {};
+};
+
 
 class TestReporter : public CommandReporter {
 public:
