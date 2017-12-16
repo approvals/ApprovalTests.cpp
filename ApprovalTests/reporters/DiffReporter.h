@@ -3,14 +3,7 @@
 
 #include "FirstWorkingReporter.h"
 #include "WindowsReporters.h"
-
-class MacDiffReporter : public FirstWorkingReporter
-{
-public:
-    MacDiffReporter() : FirstWorkingReporter({new DiffMergeReporter()})
-    {
-    }
-};
+#include "MacReporters.h"
 
 class LinuxDiffReporter : public FirstWorkingReporter
 {
@@ -23,7 +16,7 @@ public:
 class DiffReporter : public FirstWorkingReporter
 {
 public:
-    DiffReporter() : FirstWorkingReporter({new MacDiffReporter(), new LinuxDiffReporter(), new WindowsDiffReporter()})
+    DiffReporter() : FirstWorkingReporter({new Mac::MacDiffReporter(), new LinuxDiffReporter(), new WindowsDiffReporter()})
     {
     }
 };

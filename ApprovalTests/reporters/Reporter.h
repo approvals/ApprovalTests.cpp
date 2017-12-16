@@ -45,11 +45,6 @@ public:
     MeldReporter() : GenericDiffReporter("meld") {};
 };
 
-class DiffMergeReporter : public GenericDiffReporter {
-public:
-    DiffMergeReporter() : GenericDiffReporter("/Applications/DiffMerge.app/Contents/MacOS/DiffMerge") {};
-};
-
 class TestReporter : public CommandReporter {
 public:
     DoNothingLauncher launcher;
