@@ -2,6 +2,7 @@
 #define CATCHPLAYGROUND_DIFFREPORTER_H
 
 #include "FirstWorkingReporter.h"
+#include "WindowsReporters.h"
 
 class MacDiffReporter : public FirstWorkingReporter
 {
@@ -15,14 +16,6 @@ class LinuxDiffReporter : public FirstWorkingReporter
 {
 public:
     LinuxDiffReporter() : FirstWorkingReporter({new MeldReporter()})
-    {
-    }
-};
-
-class WindowsDiffReporter : public FirstWorkingReporter
-{
-public:
-    WindowsDiffReporter() : FirstWorkingReporter({new WinMergeReporter()})
     {
     }
 };

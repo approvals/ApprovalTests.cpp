@@ -49,11 +49,6 @@ class DiffMergeReporter : public GenericDiffReporter {
 public:
     DiffMergeReporter() : GenericDiffReporter("/Applications/DiffMerge.app/Contents/MacOS/DiffMerge") {};
 };
-class WinMergeReporter : public GenericDiffReporter {
-public:
-    WinMergeReporter() : GenericDiffReporter(DiffPrograms::Windows::WIN_MERGE_REPORTER()) {};
-};
-
 
 class TestReporter : public CommandReporter {
 public:
