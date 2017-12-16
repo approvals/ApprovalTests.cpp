@@ -36,14 +36,15 @@ public:
 
     string getFileName() {
         auto file = currentTest().fileName;
-        auto start = file.rfind("/") + 1;
+
+        auto start = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto end = file.rfind(".");
         return file.substr(start, end - start);
     }
 
     string getDirectory() {
         auto file = currentTest().fileName;
-        auto end = file.rfind("/") + 1;
+        auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         return file.substr(0, end);
     }
 

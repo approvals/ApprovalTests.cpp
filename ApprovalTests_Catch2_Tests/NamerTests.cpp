@@ -26,16 +26,19 @@ TEST_CASE("ItCanGiveYouTheTestFileName") {
 
 TEST_CASE("ItCanGiveYouTheTestDirectory") {
     ApprovalNamer namer;
-    REQUIRE_THAT(namer.getDirectory(), EndsWith("/ApprovalTests_Catch2_Tests/"));
+    auto __ = SystemUtils::getDirectorySeparator();
+    REQUIRE_THAT(namer.getDirectory(), EndsWith(__ + "ApprovalTests_Catch2_Tests" + __));
 }
 
 
 TEST_CASE("ItIncludesFileContextAndSpecNames") {
     ApprovalNamer namer;
+    auto __ = SystemUtils::getDirectorySeparator();
+
     REQUIRE_THAT(namer.getApprovedFile(".txt"),
-                 EndsWith("/ApprovalTests_Catch2_Tests/NamerTests.ItIncludesFileContextAndSpecNames.approved.txt"));
+        EndsWith(__ + "ApprovalTests_Catch2_Tests" + __ + "NamerTests.ItIncludesFileContextAndSpecNames.approved.txt"));
     REQUIRE_THAT(namer.getReceivedFile(".txt"),
-                 EndsWith("/ApprovalTests_Catch2_Tests/NamerTests.ItIncludesFileContextAndSpecNames.received.txt"));
+        EndsWith(__ + "ApprovalTests_Catch2_Tests" + __ + "NamerTests.ItIncludesFileContextAndSpecNames.received.txt"));
 }
 
 

@@ -11,7 +11,7 @@ class ApprovalException : public std::exception
 private:
     char *message;
 protected:
-    char *init( const char *msg )
+    char* init( const char *msg )
     {
         size_t message_sz = std::strlen( msg );
         char *t = new char[message_sz + 1];
@@ -42,7 +42,7 @@ class ApprovalMismatchException : public ApprovalException
 private:
     char *format( const std::string &received, const std::string &approved )
     {
-        size_t n = 2048;
+		static const int n = 2048;
         char s[n];
         int size = snprintf( s,
                              n,
@@ -71,7 +71,7 @@ class ApprovalMissingException : public ApprovalException
 private:
     char *format( const std::string &file )
     {
-        size_t n = 1024;
+		static const int n = 1024;
         char s[n];
         int size = snprintf( s,
                              n,

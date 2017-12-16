@@ -21,13 +21,20 @@ TEST_CASE("FirstWorkingReporter") {
 }
 
 TEST_CASE("Reporters Report Failure Status") {
+    std::cout << "Starting Test" << std::endl;
     GenericDiffReporter m("this_does_not_exist");
     bool result = m.Report("r.txt", "a.txt");
     REQUIRE(false == result);
 }
 
 TEST_CASE("Reporters Report Success Status") {
-    GenericDiffReporter m("echo");
+    std::string knownCommand = SystemUtils::isWindowsOs() ? "C:\\Windows\\System32\\user.exe" : "echo";
+    GenericDiffReporter m(knownCommand);
     bool result = m.Report("r.txt", "a.txt");
     REQUIRE(true == result);
 }
+
+TEST_CASE("CommandLauncher can detect missing file") {
+    REQUIRE(false == SystemLauncher().exists("this_file_does_not_exist.txxxxxt"));
+}
+

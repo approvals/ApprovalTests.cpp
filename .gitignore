@@ -3,3 +3,4 @@ build/releases
 *.received.*
 .idea
 doc/html/
+.vs/

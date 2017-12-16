@@ -6,6 +6,7 @@
 #define CATCHPLAYGROUND_APPROVALTESTS_H_H
 
 #include "ApprovalException.h"
+#include "SystemUtils.h"
 #include "StringWriter.h"
 #include "FileUtils.h"
 #include "reporters/Reporter.h"
