@@ -59,27 +59,5 @@ public:
     };
 };
 
-class ReporterFactory {
-private:
-    ReporterFactory() {}
-
-    ~ReporterFactory() {}
-
-public:
-    STATIC(Reporter, currentReporter, new MeldReporter())
-
-    static Reporter &getCurrentReporter() {
-        return currentReporter();
-    }
-
-
-
-    template<typename ReporterType>
-    static ReporterType &UseReporter() {
-        delete &getCurrentReporter();
-        ReporterType *t = new ReporterType();
-        return currentReporter(t);
-    }
-};
 
 #endif
