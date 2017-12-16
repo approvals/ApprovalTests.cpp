@@ -21,7 +21,6 @@ TEST_CASE("FirstWorkingReporter") {
 }
 
 TEST_CASE("Reporters Report Failure Status") {
-    std::cout << "Starting Test" << std::endl;
     GenericDiffReporter m("this_does_not_exist");
     bool result = m.Report("r.txt", "a.txt");
     REQUIRE(false == result);

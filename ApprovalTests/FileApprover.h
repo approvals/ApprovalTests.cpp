@@ -63,7 +63,6 @@ public:
             delete ae;
             throw e;
         } else {
-            std::cout << "Removing " << receivedPath;
             remove(receivedPath.c_str());
         }
     }

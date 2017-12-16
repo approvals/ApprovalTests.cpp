@@ -64,7 +64,6 @@ public:
 
         std::string command = std::accumulate(argv.begin(), argv.end(), std::string(""), [](std::string a, std::string b) {return a + " " + "\"" + b + "\""; });
         std::string launch = SystemUtils::isWindowsOs() ? ("start \"\" " +  command) :  (command + " &");
-        std::cout << "launch:" << launch << std::endl;
         system(launch.c_str());
         return true;
 }
