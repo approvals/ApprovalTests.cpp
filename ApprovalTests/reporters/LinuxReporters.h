@@ -7,7 +7,7 @@ namespace Linux
 {
     class MeldReporter : public GenericDiffReporter {
     public:
-        MeldReporter() : GenericDiffReporter("meld") {};
+        MeldReporter() : GenericDiffReporter(DiffPrograms::Linux::MELD()) {};
     };
 
     class LinuxDiffReporter : public FirstWorkingReporter
