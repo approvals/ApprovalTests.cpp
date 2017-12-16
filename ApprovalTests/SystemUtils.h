@@ -1,11 +1,12 @@
 #ifndef SYSTEMUTILS_H
 #define SYSTEMUTILS_H
-
+// <SingleHpp unalterable>
 #ifdef _WIN32
 #include <io.h>
 #else
 #include <unistd.h>
 #endif
+// </SingleHpp>
 
 
 class SystemUtils
