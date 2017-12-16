@@ -26,6 +26,9 @@ namespace DiffPrograms {
         ENTRY(TK_DIFF, DiffInfo("/Applications/TkDiff.app/Contents/MacOS/tkdiff", Type::TEXT))
     }
     namespace Linux {
+        // More ideas available from: https://www.tecmint.com/best-linux-file-diff-tools-comparison/
+        ENTRY(KDIFF3, DiffInfo("kdiff3", Type::TEXT))
+
         ENTRY(MELD, DiffInfo("meld", Type::TEXT))
     }
     namespace Windows {
