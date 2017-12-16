@@ -40,10 +40,6 @@ public:
     GenericDiffReporter(const std::string& program) : CommandReporter(program, &launcher) {};
     GenericDiffReporter(const DiffInfo& info) : CommandReporter(info.getProgramForOs().c_str(), &launcher) {};
 };
-class MeldReporter : public GenericDiffReporter {
-public:
-    MeldReporter() : GenericDiffReporter("meld") {};
-};
 
 class TestReporter : public CommandReporter {
 public:

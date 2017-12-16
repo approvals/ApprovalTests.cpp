@@ -17,6 +17,7 @@ set(SOURCE_FILES
         reporters/DiffPrograms.h
         reporters/DiffInfo.h
         reporters/WindowsReporters.h
-        reporters/MacReporters.h)
+        reporters/MacReporters.h
+        reporters/LinuxReporters.h)
 add_library(ApprovalTests ${SOURCE_FILES} )
 set_target_properties(ApprovalTests PROPERTIES LINKER_LANGUAGE CXX)
