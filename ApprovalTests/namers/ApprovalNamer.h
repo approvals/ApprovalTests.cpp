@@ -3,7 +3,9 @@
 
 #include <stack>
 #include <sstream>
+#include <vector>
 #include "../Macros.h"
+#include "../SystemUtils.h"
 
 using std::string;
 
