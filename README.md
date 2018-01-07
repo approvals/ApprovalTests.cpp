@@ -1,6 +1,8 @@
 CppApprovals
 ============
 
+[![Build Status](https://api.travis-ci.org/approvals/ApprovalTests.cpp.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp)
+
 Native ApprovalTests for C++
 
 Currently working in Mac/Linux with Catch2
