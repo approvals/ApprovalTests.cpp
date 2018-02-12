@@ -36,7 +36,10 @@ public:
                           const Reporter& reporter = DiffReporter())
     {
         std::stringstream s;
-        s << header << "\n\n\n";
+        if( !header.empty())
+        {
+            s << header << "\n\n\n";
+        }
         for( const auto& element : list)
         {
             converter(element, s);
@@ -51,7 +54,14 @@ public:
                           const Reporter& reporter = DiffReporter())
     {
         int i = 0;
-        verifyAll<T>(header, list, [&](T element, std::ostream& s){s << "[" << i++ << "] = " << element;});
+        verifyAll<T>(header, list, [&](T element, std::ostream& s){s << "[" << i++ << "] = " << element;}, reporter);
+    }
+
+    template <typename T>
+    static void verifyAll(const std::vector<T>& list,
+                          const Reporter& reporter = DiffReporter())
+    {
+        verifyAll<T>("", list, reporter);
     }
 };
 

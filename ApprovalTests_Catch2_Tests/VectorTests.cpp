@@ -11,3 +11,8 @@ TEST_CASE("YouCanVerifyVectorsWithStandardText") {
     std::vector<std::string> v{"hello", "world"};
     Approvals::verifyAll<std::string>("WORDS", v);
 }
+
+TEST_CASE("YouCanVerifyVectorsWithStandardTextNoHeader") {
+    std::vector<std::string> v{"hello", "world"};
+    Approvals::verifyAll<std::string>(v);
+}
