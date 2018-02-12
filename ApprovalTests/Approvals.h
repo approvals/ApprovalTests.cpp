@@ -19,6 +19,15 @@ public:
         ApprovalNamer namer;
         FileApprover::verify(namer, writer, reporter);
     }
+
+    template <typename T>
+    static void verify(T contents, const Reporter& reporter = DiffReporter())
+    {
+        std::stringstream s;
+        s << contents;
+        verify(s.str(), reporter);
+    }
+
 };
 
 #endif

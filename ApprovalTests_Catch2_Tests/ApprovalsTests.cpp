@@ -8,6 +8,10 @@ TEST_CASE("YouCanVerifyText") {
     Approvals::verify("My objects!");
 }
 
+TEST_CASE("TestStreamableObject") {
+    Approvals::verify(42);
+}
+
 /**
 Context( DescribeTheVerifyMethod )
 {
