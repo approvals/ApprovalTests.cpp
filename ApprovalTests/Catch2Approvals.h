@@ -8,7 +8,7 @@
 #define CATCH_CONFIG_MAIN
 #endif
 
-#include <Catch.hpp>
+#include "Catch.hpp"
 // </SingleHpp>
 
 using std::string;
