@@ -9,31 +9,22 @@
 class ApprovalException : public std::exception
 {
 private:
-    char *message;
-protected:
-    char* init( const char *msg )
-    {
-        size_t message_sz = std::strlen( msg );
-        char *t = new char[message_sz + 1];
-        std::strncpy( t, msg, message_sz + 1 );
-        return t;
-    };
+    std::string message;
 public:
-    ApprovalException( const char *msg ) : message( init( msg ) ) {}
+    ApprovalException( const std::string& msg ) : message( msg ) {}
 
     ApprovalException( const ApprovalException &a )
-        : message( init( a.message ) )
+        : message( a.message )
     {
     }
 
     virtual ~ApprovalException() throw()
     {
-        delete[] message;
     }
 
     virtual const char *what() const throw()
     {
-        return message;
+        return message.c_str();
     }
 };
 
