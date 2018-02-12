@@ -29,9 +29,9 @@ public:
         verify(s.str(), reporter);
     }
 
-    template <typename T>
+    template <typename Iterator, typename T>
     static void verifyAll(std::string header,
-                          const std::vector<T>& list,
+                          const Iterator& start, const Iterator& finish,
                           std::function<void (T, std::ostream&)> converter,
                           const Reporter& reporter = DiffReporter())
     {
@@ -40,12 +40,21 @@ public:
         {
             s << header << "\n\n\n";
         }
-        for( const auto& element : list)
+        for (auto it = start; it != finish; ++it)
         {
-            converter(element, s);
+            converter(*it, s);
             s << '\n';
         }
         verify(s.str(), reporter);
+    }
+
+    template <typename T>
+    static void verifyAll(std::string header,
+                          const std::vector<T>& list,
+                          std::function<void (T, std::ostream&)> converter,
+                          const Reporter& reporter = DiffReporter())
+    {
+        verifyAll<typename std::vector<T>::const_iterator, T>(header, list.begin(), list.end(), converter, reporter);
     }
 
     template <typename T>
