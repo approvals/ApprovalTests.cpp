@@ -48,13 +48,13 @@ public:
         verify(s.str(), reporter);
     }
 
-    template <typename T>
+    template <typename Container>
     static void verifyAll(std::string header,
-                          const std::vector<T>& list,
-                          std::function<void (T, std::ostream&)> converter,
+                          const Container& list,
+                          std::function<void (typename Container::value_type, std::ostream&)> converter,
                           const Reporter& reporter = DiffReporter())
     {
-        verifyAll<typename std::vector<T>::const_iterator, T>(header, list.begin(), list.end(), converter, reporter);
+        verifyAll<typename Container::const_iterator, typename Container::value_type>(header, list.begin(), list.end(), converter, reporter);
     }
 
     template <typename T>
@@ -63,7 +63,7 @@ public:
                           const Reporter& reporter = DiffReporter())
     {
         int i = 0;
-        verifyAll<T>(header, list, [&](T element, std::ostream& s){s << "[" << i++ << "] = " << element;}, reporter);
+        verifyAll<std::vector<T>>(header, list, [&](T element, std::ostream& s){s << "[" << i++ << "] = " << element;}, reporter);
     }
 
     template <typename T>

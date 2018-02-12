@@ -9,7 +9,7 @@ TEST_CASE("YouCanVerifyIteratorRange") {
 
 TEST_CASE("YouCanVerifyVectors") {
     std::vector<std::string> v{"hello", "world"};
-    Approvals::verifyAll<std::string>("FIRST LETTER", v, [](auto s, auto& os){os << s << " => " << s[0];});
+    Approvals::verifyAll("FIRST LETTER", v, [](auto s, auto& os){os << s << " => " << s[0];});
 }
 
 TEST_CASE("YouCanVerifyVectorsWithStandardText") {
