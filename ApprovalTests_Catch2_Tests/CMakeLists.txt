@@ -9,6 +9,7 @@ set(SOURCE_FILES
         NamerTests.cpp
         FileApproverTests.cpp
         ApprovalsTests.cpp
+        VectorTests.cpp
         )
 add_executable(ApprovalTests_Catch2_Tests ${SOURCE_FILES} )
 add_test(NAME ApprovalTests_Catch2_Tests COMMAND ApprovalTests_Catch2_Tests)

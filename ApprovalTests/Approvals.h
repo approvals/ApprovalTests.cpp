@@ -2,6 +2,7 @@
 #define APPROVALS_H
 
 #include <string>
+#include <functional>
 #include "FileApprover.h"
 #include "reporters/DiffReporter.h"
 #include "reporters/Reporter.h"
@@ -25,6 +26,22 @@ public:
     {
         std::stringstream s;
         s << contents;
+        verify(s.str(), reporter);
+    }
+
+    template <typename T>
+    static void verifyAll(std::string header,
+                          const std::vector<T>& list,
+                          std::function<void (T, std::ostream&)> converter,
+                          const Reporter& reporter = DiffReporter())
+    {
+        std::stringstream s;
+        s << header << "\n\n\n";
+        for( const auto& element : list)
+        {
+            converter(element, s);
+            s << '\n';
+        }
         verify(s.str(), reporter);
     }
 
