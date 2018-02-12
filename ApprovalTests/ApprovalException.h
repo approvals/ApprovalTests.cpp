@@ -23,21 +23,14 @@ public:
 class ApprovalMismatchException : public ApprovalException
 {
 private:
-    char *format( const std::string &received, const std::string &approved )
+    std::string format( const std::string &received, const std::string &approved )
     {
-		static const int n = 2048;
-        char s[n];
-        int size = snprintf( s,
-                             n,
-                             "Failed Approval: \n"
-                                     "Received does not match approved \n"
-                                     "Received : \"%s\" \n"
-                                     "Approved : \"%s\"",
-                             received.c_str(),
-                             approved.c_str() );
-        char *t = new char[size + 1];
-        std::strncpy( t, s, size + 1 );
-        return t;
+        std::stringstream s;
+        s << "Failed Approval: \n"
+          << "Received does not match approved \n"
+          << "Received : \"" << received << "\" \n"
+          << "Approved : \"" << approved << "%s\"";
+        return s.str();
     }
 public:
     ApprovalMismatchException( std::string received, std::string approved )
