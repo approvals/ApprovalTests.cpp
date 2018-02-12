@@ -45,6 +45,21 @@ public:
         verify(s.str(), reporter);
     }
 
+    template <typename T>
+    static void verifyAll(std::string header,
+                          const std::vector<T>& list,
+                          const Reporter& reporter = DiffReporter())
+    {
+        std::stringstream s;
+        s << header << "\n\n\n";
+        int i = 0;
+        for( const auto& element : list)
+        {
+            s << "[" << i << "] = " << element << '\n';
+            ++i;
+        }
+        verify(s.str(), reporter);
+    }
 };
 
 #endif

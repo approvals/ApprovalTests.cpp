@@ -1,6 +1,6 @@
-UPPER CASE
+FIRST LETTER
 
 
-hello => hello
-world => world
+hello => h
+world => w
 
