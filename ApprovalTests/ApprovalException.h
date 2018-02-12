@@ -5,6 +5,7 @@
 #include <exception>
 #include <string>
 #include <stdio.h>
+#include <sstream>
 
 class ApprovalException : public std::exception
 {
@@ -51,19 +52,13 @@ public:
 class ApprovalMissingException : public ApprovalException
 {
 private:
-    char *format( const std::string &file )
+    std::string format( const std::string &file )
     {
-		static const int n = 1024;
-        char s[n];
-        int size = snprintf( s,
-                             n,
-                             "Failed Approval: \n"
-                                     "Approval File Not Found \n"
-                                     "File: \"%s\"",
-                             file.c_str() );
-        char *t = new char[size + 1];
-        std::strncpy( t, s, size + 1 );
-        return t;
+        std::stringstream s;
+        s << "Failed Approval: \n"
+          << "Approval File Not Found \n"
+          << "File: \"" << file << '"';
+        return s.str();
     }
 public:
     ApprovalMissingException( std::string received, std::string approved )
