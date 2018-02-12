@@ -20,9 +20,9 @@ namespace Mac {
         KaleidoscopeReporter() : GenericDiffReporter(DiffPrograms::Mac::KALEIDOSCOPE()) {}
     };
 
-    class MacKDiff3Reporter : public GenericDiffReporter {
+    class KDiff3Reporter : public GenericDiffReporter {
     public:
-        MacKDiff3Reporter() : GenericDiffReporter(DiffPrograms::Mac::KDIFF3()) {}
+        KDiff3Reporter() : GenericDiffReporter(DiffPrograms::Mac::KDIFF3()) {}
     };
 
     class P4MergeReporter : public GenericDiffReporter {
@@ -43,7 +43,7 @@ namespace Mac {
                         new DiffMergeReporter(),
                         new KaleidoscopeReporter(),
                         new P4MergeReporter(),
-                        new MacKDiff3Reporter(),
+                        new KDiff3Reporter(),
                         new TkDiffReporter()
                 }
         ) {
