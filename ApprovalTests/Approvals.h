@@ -50,15 +50,8 @@ public:
                           const std::vector<T>& list,
                           const Reporter& reporter = DiffReporter())
     {
-        std::stringstream s;
-        s << header << "\n\n\n";
         int i = 0;
-        for( const auto& element : list)
-        {
-            s << "[" << i << "] = " << element << '\n';
-            ++i;
-        }
-        verify(s.str(), reporter);
+        verifyAll<T>(header, list, [&](T element, std::ostream& s){s << "[" << i++ << "] = " << element;});
     }
 };
 
