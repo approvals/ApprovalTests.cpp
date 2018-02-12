@@ -29,7 +29,7 @@ private:
         s << "Failed Approval: \n"
           << "Received does not match approved \n"
           << "Received : \"" << received << "\" \n"
-          << "Approved : \"" << approved << "%s\"";
+          << "Approved : \"" << approved << "\"";
         return s.str();
     }
 public:
