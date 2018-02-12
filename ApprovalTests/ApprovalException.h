@@ -1,7 +1,6 @@
 #ifndef APPROVALEXCEPTION_H
 #define APPROVALEXCEPTION_H
 
-#include <cstring>
 #include <exception>
 #include <string>
 #include <stdio.h>
@@ -37,9 +36,6 @@ public:
         : ApprovalException( format( received, approved ) )
     {
     }
-
-    ApprovalMismatchException( const ApprovalMismatchException &a )
-        : ApprovalException( a ) {}
 };
 
 class ApprovalMissingException : public ApprovalException
@@ -56,11 +52,6 @@ private:
 public:
     ApprovalMissingException( std::string received, std::string approved )
         : ApprovalException( format( approved ) )
-    {
-    }
-
-    ApprovalMissingException( const ApprovalMissingException &a )
-        : ApprovalException( a )
     {
     }
 };
