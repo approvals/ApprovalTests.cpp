@@ -1,0 +1,12 @@
+sudo: required
+dist: trusty
+
+language: cpp
+
+script:
+  - mkdir .build
+  - cd .build
+  - cmake -DCMAKE_CXX_COMPILER=$COMPILER ..
+  - cmake --build .
+  - ctest --verbose
+
