@@ -63,7 +63,7 @@ public:
                           const Reporter& reporter = DiffReporter())
     {
         int i = 0;
-        verifyAll(header, list, [&](T element, std::ostream& s){s << "[" << i++ << "] = " << element;}, reporter);
+        verifyAll(header, list, [&](auto e, auto& s){s << "[" << i++ << "] = " << e;}, reporter);
     }
 
     template <typename T>

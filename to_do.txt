@@ -1,5 +1,4 @@
 1. docs
-5. arrays
 6. reports
 8.  combination
 14. clipboard reporter
@@ -14,3 +13,4 @@
 21. windows reporters on non-English language
 22. windows reports when building in Cygwin
 23. handle line endings (allow differences in line endings)
+24. maps
