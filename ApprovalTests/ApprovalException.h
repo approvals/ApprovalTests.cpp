@@ -13,15 +13,6 @@ private:
 public:
     ApprovalException( const std::string& msg ) : message( msg ) {}
 
-    ApprovalException( const ApprovalException &a )
-        : message( a.message )
-    {
-    }
-
-    virtual ~ApprovalException() throw()
-    {
-    }
-
     virtual const char *what() const throw()
     {
         return message.c_str();
