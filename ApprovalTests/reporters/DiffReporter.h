@@ -1,5 +1,5 @@
-#ifndef CATCHPLAYGROUND_DIFFREPORTER_H
-#define CATCHPLAYGROUND_DIFFREPORTER_H
+#ifndef DIFFREPORTER_H
+#define DIFFREPORTER_H
 
 #include "FirstWorkingReporter.h"
 #include "WindowsReporters.h"
@@ -20,4 +20,4 @@ public:
     }
 };
 
-#endif //CATCHPLAYGROUND_DIFFREPORTER_H
+#endif //DIFFREPORTER_H

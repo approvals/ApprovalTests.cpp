@@ -1,8 +1,8 @@
 #ifndef APPROVALTESTS_CPP_WINDOWSREPORTERS_H
 #define APPROVALTESTS_CPP_WINDOWSREPORTERS_H
 
-#include "Reporter.h"
 #include "FirstWorkingReporter.h"
+#include "GenericDiffReporter.h"
 
 namespace Windows {
     class BeyondCompare3Reporter : public GenericDiffReporter {

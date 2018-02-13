@@ -3,7 +3,7 @@
 
 
 #include "FirstWorkingReporter.h"
-
+    
 namespace Mac {
     class DiffMergeReporter : public GenericDiffReporter {
     public:

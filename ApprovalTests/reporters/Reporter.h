@@ -3,9 +3,6 @@
 
 #include "CommandLauncher.h"
 #include "../FileUtils.h"
-#include "../Macros.h"
-#include "DiffPrograms.h"
-
 class Reporter {
 public:
     virtual bool Report(std::string received, std::string approved) const = 0;
@@ -31,24 +28,4 @@ public:
         return l->Launch(fullCommand);
     }
 };
-
-class GenericDiffReporter : public CommandReporter {
-private:
-    SystemLauncher launcher;
-
-public:
-    GenericDiffReporter(const std::string& program) : CommandReporter(program, &launcher) {};
-    GenericDiffReporter(const DiffInfo& info) : CommandReporter(info.getProgramForOs().c_str(), &launcher) {};
-};
-
-class TestReporter : public CommandReporter {
-public:
-    DoNothingLauncher launcher;
-
-    TestReporter(bool working = true) : CommandReporter("fake", &launcher) {
-        launcher.working = working;
-    };
-};
-
-
 #endif
