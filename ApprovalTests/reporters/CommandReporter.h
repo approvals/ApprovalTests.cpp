@@ -7,6 +7,7 @@
 
 #include "CommandLauncher.h"
 #include "../FileUtils.h"
+#include "Reporter.h"
 class CommandReporter : public Reporter {
 private:
     std::string cmd;

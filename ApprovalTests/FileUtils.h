@@ -7,6 +7,7 @@
 
 #include <string>
 #include <sys/stat.h>
+#include "StringWriter.h"
 
 class FileUtils {
 public:
