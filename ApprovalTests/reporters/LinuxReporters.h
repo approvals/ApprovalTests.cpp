@@ -1,6 +1,8 @@
 #ifndef APPROVALTESTS_CPP_LINUXREPORTERS_H
 #define APPROVALTESTS_CPP_LINUXREPORTERS_H
 
+#include "DiffPrograms.h"
+#include "GenericDiffReporter.h"
 #include "FirstWorkingReporter.h"
 
 namespace Linux

@@ -1,6 +1,7 @@
 #ifndef APPROVALTESTS_CPP_WINDOWSREPORTERS_H
 #define APPROVALTESTS_CPP_WINDOWSREPORTERS_H
 
+#include "DiffPrograms.h"
 #include "FirstWorkingReporter.h"
 #include "GenericDiffReporter.h"
 

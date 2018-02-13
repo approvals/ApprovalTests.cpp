@@ -3,6 +3,7 @@
 
 #include "Reporter.h"
 #include <memory>
+#include <vector>
 
 class FirstWorkingReporter : public Reporter
 {

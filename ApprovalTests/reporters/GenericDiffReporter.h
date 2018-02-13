@@ -10,7 +10,7 @@
 #include "../Macros.h"
 
 #include "DiffPrograms.h"
-
+#include "CommandReporter.h"
 
 class GenericDiffReporter : public CommandReporter {
 private:

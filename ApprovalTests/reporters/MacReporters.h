@@ -1,9 +1,10 @@
 #ifndef APPROVALTESTS_CPP_MACREPORTERS_H
 #define APPROVALTESTS_CPP_MACREPORTERS_H
 
-
+#include "DiffPrograms.h"
+#include "GenericDiffReporter.h"
 #include "FirstWorkingReporter.h"
-    
+
 namespace Mac {
     class DiffMergeReporter : public GenericDiffReporter {
     public:
