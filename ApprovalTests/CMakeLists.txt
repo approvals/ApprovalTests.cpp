@@ -11,6 +11,7 @@ set(SOURCE_FILES
         Macros.h
         StringWriter.h
         SystemUtils.h
+        CombinationApprovals.h
         namers/ApprovalNamer.h
         reporters/CommandLauncher.h
         reporters/Reporter.h 
