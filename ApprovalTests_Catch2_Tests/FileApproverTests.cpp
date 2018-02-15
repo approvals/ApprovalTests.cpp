@@ -19,7 +19,6 @@ TEST_CASE("ItVerifiesApprovedFileExists") {
     string expected = "Failed Approval: \n"
                               "Approval File Not Found \n"
                               "File: \"" + approved+"\"";
-    //FileApprover::verify(namer, writer, reporter);
     REQUIRE_THROWS_WITH(FileApprover::verify(namer, writer, reporter), expected);
 
     remove(approved.c_str());
@@ -28,84 +27,6 @@ TEST_CASE("ItVerifiesApprovedFileExists") {
 
 
 /*
-
-    Spec( ItVerifiesApprovedFileExists )
-    {
-        Namer namer( IglooNamerFactory::TestDirectory(),
-                     "DescribeAFileApprover.ItVerifiesApprovedFileExists" );
-        StringWriter writer( "Hello" );
-        TestReporter reporter;
-
-        string approved = namer.GetApprovedFile( ".txt" );
-        string received = namer.GetReceivedFile( ".txt" );
-
-        string expected =  "Failed Approval: Approval File \"" +
-                           approved +
-                           "\" Not Found.";
-
-        AssertThrows( ApprovalException,
-                      FileApprover::Verify( namer, writer, reporter ) );
-        AssertThat( LastException<ApprovalException>().what(),
-                    Equals( expected ) );
-
-        remove( approved.c_str() );
-        remove( received.c_str() );
-    }
-
-    Spec( ItVerifiesFilesHaveEqualSize )
-    {
-        Namer namer( bin(),
-                     "DescribeAFileApprover.ItVerifiesFilesHaveEqualSize" );
-        StringWriter writer( "Hello" );
-        TestReporter reporter;
-
-        string approved = namer.GetApprovedFile( ".txt" );
-        string received = namer.GetReceivedFile( ".txt" );
-
-        writeMessageTo( "Hello World", approved );
-
-        string expected =  "Failed Approval: Received file " +
-                           received +
-                           " does not match approved file " +
-                           approved +
-                           ".";
-
-        AssertThrows( ApprovalException,
-                      FileApprover::Verify( namer, writer, reporter ) );
-        AssertThat( LastException<ApprovalException>().what(),
-                    Equals( expected ) );
-
-        remove( approved.c_str() );
-        remove( received.c_str() );
-    }
-
-    Spec( ItVerifiesEveryByteIsEqual )
-    {
-        Namer namer( bin(),
-                     "DescribeAFileApprover.ItVerifiesEveryByteIsEqual" );
-        StringWriter writer( "Hello" );
-        TestReporter reporter;
-
-        string approved = namer.GetApprovedFile( ".txt" );
-        string received = namer.GetReceivedFile( ".txt" );
-
-        writeMessageTo( "olleH", approved );
-
-        string expected =  "Failed Approval: Received file " +
-                           received +
-                           " does not match approved file " +
-                           approved +
-                           ".";
-
-        AssertThrows( ApprovalException,
-                      FileApprover::Verify( namer, writer, reporter ) );
-        AssertThat( LastException<ApprovalException>().what(),
-                    Equals( expected ) );
-
-        remove( approved.c_str() );
-        remove( received.c_str() );
-    }
-
     Spec( ItLaunchesReporterOnFailure )
     {
         Namer namer( bin(),
@@ -126,88 +47,6 @@ TEST_CASE("ItVerifiesApprovedFileExists") {
         remove( received.c_str() );
     }
 
-    Spec( ItApprovesMatchingFiles )
-    {
-        Namer namer( bin(),
-                     "DescribeAFileApprover.ItApprovesMatchingFiles" );
-        string approved = namer.GetApprovedFile( ".txt" );
-        string received = namer.GetReceivedFile( ".txt" );
-        writeMessageTo( "Hello", approved );
-        StringWriter writer( "Hello" );
-        TestReporter reporter;
-
-        string expected = "";
-        FileApprover::Verify( namer, writer, reporter );
-        AssertThat( reporter.launcher.ReceivedCommand(),
-                    Equals( expected ) );
-
-        remove( approved.c_str() );
-        remove( received.c_str() );
-    }
-
-    Spec( ItCanTellYouThatAFileExists )
-    {
-        Namer namer( bin(),
-                     "DescribeAFileApprover.ItCanTellYouThatAFileExists" );
-        string approved = namer.GetApprovedFile( ".txt" );
-        writeMessageTo( "Hello", approved );
-        bool exists = FileApprover::FileExists( approved );
-
-        struct stat statbuf;
-        bool stat_ok = ( stat( approved.c_str(), &statbuf ) != -1 );
-
-        Assert::That( exists, Equals( stat_ok ) );
-        remove( approved.c_str() );
-    }
-
-    Spec( ItCanTellYouTheFileSize )
-    {
-        Namer namer( bin(),
-                     "DescribeAFileApprover.ItCanTellYouTheFileSize" );
-        string approved = namer.GetApprovedFile( ".txt" );
-        writeMessageTo( "Hello", approved );
-        int size = FileApprover::FileSize( approved );
-
-        struct stat statbuf;
-        bool stat_ok = ( stat( approved.c_str(), &statbuf ) != -1 );
-        AssertThat( stat_ok, Equals( true ) );
-        AssertThat( size, Equals( ( int )statbuf.st_size ) );
-        remove( approved.c_str() );
-    }
-
-    Spec( ItRemovesReceivedFileOnApproval )
-    {
-        Namer namer( bin(),
-                     "DescribeAFileApprover.ItRemovesReceivedFileOnApproval" );
-        string approved = namer.GetApprovedFile( ".txt" );
-        string received = namer.GetReceivedFile( ".txt" );
-        writeMessageTo( "Hello", approved );
-        StringWriter writer( "Hello" );
-        TestReporter reporter;
-
-        FileApprover::Verify( namer, writer, reporter );
-        Assert::That( FileApprover::FileExists( received ),
-                      Equals( false ) );
-
-        remove( approved.c_str() );
-    }
-
-    Spec( ItPreservesApproveFileOnApproval )
-    {
-        Namer namer( bin(),
-                     "DescribeAFileApprover.ItPreservesApproveFileOnApproval" );
-        string approved = namer.GetApprovedFile( ".txt" );
-        string received = namer.GetReceivedFile( ".txt" );
-        writeMessageTo( "Hello", approved );
-        StringWriter writer( "Hello" );
-        TestReporter reporter;
-
-        FileApprover::verify( namer, writer, reporter );
-        Assert::That( FileApprover::FileExists( approved ),
-                      Equals( true ) );
-
-        remove( approved.c_str() );
-    }
 };
  */
 
