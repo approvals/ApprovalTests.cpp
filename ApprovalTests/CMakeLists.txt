@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.8)
 project(ApprovalTests CXX)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES
         ApprovalException.h
         Approvals.h
         ApprovalTests.h
         Catch2Approvals.h
         FileApprover.h
+        FileUtils.h
         Macros.h
         StringWriter.h
         SystemUtils.h
