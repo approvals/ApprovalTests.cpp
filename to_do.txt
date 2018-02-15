@@ -1,6 +1,5 @@
 1. docs
 6. reports
-8.  combination
 14. clipboard reporter
 15. catch reporter
 16. names with spaces in them
