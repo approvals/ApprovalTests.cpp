@@ -13,3 +13,4 @@
 22. windows reports when building in Cygwin
 23. handle line endings (allow differences in line endings)
 24. maps
+25. windows CI builds
