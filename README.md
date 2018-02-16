@@ -5,7 +5,7 @@ CppApprovals
 
 Native ApprovalTests for C++
 
-Currently working in Mac/Linux with Catch2
+Currently working in Mac/Linux/Windows with Catch2 & C++ 11
 
 
 ## Getting Started
@@ -25,3 +25,11 @@ For all other files, you only need
 ``` cpp
 #include "ApprovalTests.hpp"
 ```
+
+## Examples
+ApprovalTests uses ApprovalTests to test ApprovalTests (it's turtles all the way down)
+[Checkout our own tests](https://github.com/approvals/ApprovalTests.cpp/tree/master/ApprovalTests_Catch2_Tests) to see how we do it:
+Suggested:
+[ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp)
+[VectorTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/VectorTests.cpp)
+[CombinationTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/CombinationTests.cpp)
