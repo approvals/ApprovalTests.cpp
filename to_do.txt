@@ -14,3 +14,4 @@
 23. handle line endings (allow differences in line endings)
 24. maps
 25. windows CI builds
+26. treat compiler warnings as errors
