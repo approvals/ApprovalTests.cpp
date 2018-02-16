@@ -25,7 +25,7 @@ public:
     string getTestName() {
         std::stringstream ext;
         auto test = currentTest();
-        for (int i = 0; i < test.sections.size(); i++) {
+        for (size_t i = 0; i < test.sections.size(); i++) {
             if (0 < i) {
                 ext << ".";
             }
