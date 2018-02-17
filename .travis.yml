@@ -6,7 +6,7 @@ language: cpp
 script:
   - mkdir .build
   - cd .build
-  - cmake -DCMAKE_CXX_COMPILER=$COMPILER ..
+  - cmake -DCMAKE_CXX_COMPILER=g++-6 ..
   - cmake --build .
   - ctest --verbose
 
