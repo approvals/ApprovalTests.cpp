@@ -15,5 +15,6 @@
 #include "namers/ApprovalNamer.h"
 #include "FileApprover.h"
 #include "Approvals.h"
+#include "CombinationApprovals.h"
 
 #endif //CATCHPLAYGROUND_APPROVALTESTS_H_H
