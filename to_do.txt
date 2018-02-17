@@ -13,5 +13,5 @@
 22. windows reports when building in Cygwin
 23. handle line endings (allow differences in line endings)
 24. maps
-25. windows CI builds
+25. windows CI builds (https://www.appveyor.com/docs/ - but find a Visual Studio/CTest example config)
 26. treat compiler warnings as errors
