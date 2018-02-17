@@ -3,7 +3,8 @@
 
 class Reporter {
 public:
-    virtual bool Report(std::string received, std::string approved) const = 0;
+	virtual ~Reporter() = default;
+	virtual bool Report(std::string received, std::string approved) const = 0;
 };
 
 #endif
