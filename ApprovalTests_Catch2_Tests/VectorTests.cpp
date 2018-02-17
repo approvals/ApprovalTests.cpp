@@ -1,5 +1,6 @@
-#include "../ApprovalTests/Catch2Approvals.h"
-
+#include "Catch.hpp"
+#include "../ApprovalTests/Approvals.h"
+#include <vector>
 using namespace std;
 
 TEST_CASE("YouCanVerifyIteratorRange") {

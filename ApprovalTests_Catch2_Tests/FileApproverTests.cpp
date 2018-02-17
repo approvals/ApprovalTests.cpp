@@ -1,4 +1,8 @@
-#include "../ApprovalTests/Catch2Approvals.h"
+#include "Catch.hpp"
+#include "../ApprovalTests/StringWriter.h"
+#include "../ApprovalTests/reporters/GenericDiffReporter.h"
+#include "../ApprovalTests/namers/ApprovalNamer.h"
+#include "../ApprovalTests/FileApprover.h"
 
 using namespace std;
 

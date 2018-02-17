@@ -1,5 +1,5 @@
-#include "../ApprovalTests/Catch2Approvals.h"
-
+#include "Catch.hpp"
+#include "../ApprovalTests/namers/ApprovalNamer.h"
 
 using namespace std;
 using Catch::Matchers::EndsWith;

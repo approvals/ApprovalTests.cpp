@@ -1,4 +1,5 @@
-#include "../ApprovalTests/Catch2Approvals.h"
+#include "Catch.hpp"
+#include "../ApprovalTests/ApprovalTests.h"
 
 using namespace std;
 

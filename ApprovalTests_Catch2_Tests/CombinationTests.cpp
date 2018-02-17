@@ -1,5 +1,5 @@
-#include "../ApprovalTests/Catch2Approvals.h"
-
+#include "Catch.hpp"
+#include "../ApprovalTests/CombinationApprovals.h"
 #include <map>
 #include <vector>
 #include <string>

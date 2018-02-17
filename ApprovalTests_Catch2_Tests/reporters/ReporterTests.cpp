@@ -1,4 +1,7 @@
-#include "../ApprovalTests/Catch2Approvals.h"
+
+#include "Catch.hpp"
+#include "../../ApprovalTests/reporters/GenericDiffReporter.h"
+#include "../../ApprovalTests/reporters/FirstWorkingReporter.h"
 
 using namespace std;
 
