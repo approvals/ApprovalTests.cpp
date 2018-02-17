@@ -1,7 +1,6 @@
 #ifndef COMBINATIONAPPROVALS_H
 #define COMBINATIONAPPROVALS_H
 
-#include <string>
 #include <functional>
 #include <vector>
 #include <ostream>

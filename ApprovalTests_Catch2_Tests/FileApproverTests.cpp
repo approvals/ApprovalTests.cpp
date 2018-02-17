@@ -1,10 +1,5 @@
 #include "../ApprovalTests/Catch2Approvals.h"
 
-#include <cstring>
-#include <fstream>
-#include <iostream>
-#include <sys/stat.h>
-
 using namespace std;
 
 TEST_CASE("ItVerifiesApprovedFileExists") {

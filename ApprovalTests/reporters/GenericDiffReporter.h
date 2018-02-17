@@ -5,10 +5,6 @@
 #ifndef APPROVALTESTS_CPP_GENERICDIFFREPORTER_H
 #define APPROVALTESTS_CPP_GENERICDIFFREPORTER_H
 
-#include "Reporter.h"
-
-#include "../Macros.h"
-
 #include "DiffPrograms.h"
 #include "CommandReporter.h"
 

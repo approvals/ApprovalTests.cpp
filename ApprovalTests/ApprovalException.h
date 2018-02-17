@@ -3,7 +3,6 @@
 
 #include <exception>
 #include <string>
-#include <stdio.h>
 #include <sstream>
 
 class ApprovalException : public std::exception

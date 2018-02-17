@@ -1,7 +1,6 @@
 #ifndef COMMANDLAUNCHER_H
 #define COMMANDLAUNCHER_H
 
-#include <cstring>
 #include <iostream>
 #include <stdlib.h>
 #include <string>
