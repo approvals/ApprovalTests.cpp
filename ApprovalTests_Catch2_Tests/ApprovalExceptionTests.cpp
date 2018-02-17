@@ -1,5 +1,5 @@
 #include "Catch.hpp"
-#include "../ApprovalTests/ApprovalTests.h"
+#include "../ApprovalTests/ApprovalException.h"
 
 using namespace std;
 
