@@ -10,15 +10,9 @@ script:
   - cmake --build .
   - ctest --verbose
 
-matrix:
- include:
-
-  - os: linux
-    compiler: g++
-    env: COMPILER=g++-6 BUILD=Debug ARCH=64
-    addons:
-     apt:
-      sources:
-       - ubuntu-toolchain-r-test
-      packages:
-       - g++-6
+addons:
+ apt:
+  sources:
+   - ubuntu-toolchain-r-test
+  packages:
+   - g++-6
