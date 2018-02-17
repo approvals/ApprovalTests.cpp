@@ -2,8 +2,10 @@
 #define SYSTEMUTILS_H
 // <SingleHpp unalterable>
 #ifdef _WIN32
+// ReSharper disable once CppUnusedIncludeDirective
 #include <io.h>
 #else
+// ReSharper disable once CppUnusedIncludeDirective
 #include <unistd.h>
 #endif
 // </SingleHpp>
