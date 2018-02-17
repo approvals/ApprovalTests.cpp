@@ -1,28 +1,19 @@
 
 #ifndef CATCHPLAYGROUND_CATCH2APPROVALS_H_H
 #define CATCHPLAYGROUND_CATCH2APPROVALS_H_H
-#include "ApprovalTests.h"
+#include "namers/ApprovalNamer.h"
 
 // <SingleHpp unalterable>
 #ifdef APPROVALS_CATCH
 #define CATCH_CONFIG_MAIN
-#endif
-
 #include "Catch.hpp"
-// </SingleHpp>
-
-using std::string;
-
-#ifdef APPROVALS_CATCH
-
 struct Catch2ApprovalListener : Catch::TestEventListenerBase {
-    using TestEventListenerBase::TestEventListenerBase; // inherit constructor
+    using TestEventListenerBase::TestEventListenerBase;
     TestName currentTest;
 
     virtual void testCaseStarting(Catch::TestCaseInfo const &testInfo) override {
-        // Perform some setup before a test case is run
+
         currentTest.fileName = testInfo.lineInfo.file;
-        currentTest.testCase = testInfo.name;
         ApprovalNamer::currentTest(&currentTest);
     }
 
@@ -44,4 +35,5 @@ struct Catch2ApprovalListener : Catch::TestEventListenerBase {
 CATCH_REGISTER_LISTENER(Catch2ApprovalListener)
 
 #endif
+// </SingleHpp>
 #endif //CATCHPLAYGROUND_CATCH2APPROVALS_H_H

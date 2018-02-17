@@ -12,7 +12,6 @@ using std::string;
 class TestName {
 public:
     string fileName;
-    string testCase;
     std::vector<string> sections;
 };
 
@@ -30,7 +29,6 @@ public:
                 ext << ".";
             }
             ext << test.sections[i];
-
         }
 
         return ext.str();

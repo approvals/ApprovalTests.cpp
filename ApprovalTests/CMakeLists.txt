@@ -21,6 +21,6 @@ set(SOURCE_FILES
         reporters/DiffInfo.h
         reporters/WindowsReporters.h
         reporters/MacReporters.h
-        reporters/LinuxReporters.h StringUtils.h reporters/GenericDiffReporter.h reporters/CommandReporter.h)
+        reporters/LinuxReporters.h StringUtils.h reporters/GenericDiffReporter.h reporters/CommandReporter.h OkraApprovals.h)
 add_library(ApprovalTests ${SOURCE_FILES} )
 set_target_properties(ApprovalTests PROPERTIES LINKER_LANGUAGE CXX)
