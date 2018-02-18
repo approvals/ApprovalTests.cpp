@@ -4,3 +4,4 @@ build/releases
 .idea
 doc/html/
 .vs/
+/.vscode/
