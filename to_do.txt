@@ -17,3 +17,5 @@
 26. treat compiler warnings as errors - ideally on all platforms
 27. public hosting of doxygen docs - to browse class hierarchy and file dependencies
 28. get building on windows with gcc (https://nuwen.net/mingw.html)
+29. more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
+30. add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
