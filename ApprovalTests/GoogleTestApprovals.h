@@ -16,13 +16,14 @@ public:
     virtual void OnTestStart(const ::testing::TestInfo& testInfo) override
     {
         currentTest.fileName = testInfo.file();
-        if (StringUtils::contains(currentTest.fileName, std::string(testInfo.test_case_name()) + ".") )
+        currentTest.sections = {};
+        if (! StringUtils::contains(currentTest.fileName, std::string(testInfo.test_case_name()) + ".") )
         {
-            currentTest.sections = { testInfo.name() };
+            currentTest.sections.push_back(testInfo.test_case_name());
         }
-        else
+        if (! std::string(testInfo.name()).empty())
         {
-            currentTest.sections = { testInfo.test_case_name(), testInfo.name() };
+            currentTest.sections.push_back(testInfo.name());
         }
         
         ApprovalNamer::currentTest(&currentTest);

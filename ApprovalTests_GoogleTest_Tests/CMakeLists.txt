@@ -4,6 +4,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES
         main.cpp
         GoogleTestApprovalsTests.cpp
+		GoogleNamerTest.cpp
         )
 
 if(MSVC)
