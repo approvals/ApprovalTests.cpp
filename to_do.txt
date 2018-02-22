@@ -8,18 +8,22 @@
 . loggers
 . combination reporters
 . video intro
-. windows path separators
+. windows path separators [DONE?]
 . windows reporters on non-English language
 . windows reports when building in Cygwin
 . maps
 . windows CI builds (https://www.appveyor.com/docs/ - but find a Visual Studio/CTest example config)
+    . See PR https://github.com/approvals/ApprovalTests.cpp/pull/3
 . treat compiler warnings as errors - ideally on all platforms
 . public hosting of doxygen docs - to browse class hierarchy and file dependencies
 . get building on windows with gcc (https://nuwen.net/mingw.html)
 . more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
 . get travis to run google tests
+    . For an example, using Conan, see https://github.com/rockdreamer/throwing_ptr
 . create a Visual Studio.catch starter project
 . create a Visual Studio.googletest starter project
 . fix windows' catch tests's creation of lower-case output filenames
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
+. update the readme for recent progress
+. add OkraNamerTest.cpp
