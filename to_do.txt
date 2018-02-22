@@ -1,21 +1,25 @@
-1. docs
-6. reports
-14. clipboard reporter
-15. catch reporter
-16. names with spaces in them
-14. asJson
-15. loggers
-16. combination reporters
-17. video intro
-19. google test
-20. windows path separators
-21. windows reporters on non-English language
-22. windows reports when building in Cygwin
-23. handle line endings (allow differences in line endings)
-24. maps
-25. windows CI builds (https://www.appveyor.com/docs/ - but find a Visual Studio/CTest example config)
-26. treat compiler warnings as errors - ideally on all platforms
-27. public hosting of doxygen docs - to browse class hierarchy and file dependencies
-28. get building on windows with gcc (https://nuwen.net/mingw.html)
-29. more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
-30. add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
+. handle line endings (allow differences in line endings)
+. docs
+. reports
+. clipboard reporter
+. catch reporter
+. names with spaces in them
+. asJson
+. loggers
+. combination reporters
+. video intro
+. windows path separators
+. windows reporters on non-English language
+. windows reports when building in Cygwin
+. maps
+. windows CI builds (https://www.appveyor.com/docs/ - but find a Visual Studio/CTest example config)
+. treat compiler warnings as errors - ideally on all platforms
+. public hosting of doxygen docs - to browse class hierarchy and file dependencies
+. get building on windows with gcc (https://nuwen.net/mingw.html)
+. more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
+. add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
+. get travis to run google tests
+. create a Visual Studio.catch starter project
+. create a Visual Studio.googletest starter project
+. fix windows' catch tests's creation of lower-case output filenames
+. fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
