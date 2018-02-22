@@ -16,5 +16,10 @@ public:
         }
         return inText;
     }
+
+    static bool contains(std::string inText, const std::string& find)
+    {
+        return inText.find(find, 0) != std::string::npos;
+    }
 };
 #endif //APPROVALTESTS_CPP_STRINGUTILS_H
