@@ -21,9 +21,10 @@
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
 . get travis to run google tests
     . For an example, using Conan, see https://github.com/rockdreamer/throwing_ptr
-. create a Visual Studio.catch starter project
 . create a Visual Studio.googletest starter project
-. fix windows' catch tests's creation of lower-case output filenames
+. fix windows' catch tests's creation of lower-case output filenames - in ApprovalTests.cpp.StarterProject
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
 . update the readme for recent progress
 . add OkraNamerTest.cpp
+. machine-generate a list of support diff tools
+. support visual studio's in-built diff
