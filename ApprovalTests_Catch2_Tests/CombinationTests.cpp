@@ -1,17 +1,18 @@
 #include "Catch.hpp"
-#include "../ApprovalTests/CombinationApprovals.h"
 #include <map>
 #include <vector>
 #include <string>
 #include <ostream>
 
-using namespace std;
-
-ostream &operator<<(ostream &os, const std::pair<std::string, int>& pair)
+std::ostream &operator<<(std::ostream &os, const std::pair<std::string, int>& pair)
 {
     os << "(" << pair.first << ", " << pair.second << ")";
-        return os;
+    return os;
 }
+
+#include "../ApprovalTests/CombinationApprovals.h"
+
+
 
 TEST_CASE("YouCanVerifyCombinationsOf1") {
     std::vector<std::string> words{"hello", "world"};
