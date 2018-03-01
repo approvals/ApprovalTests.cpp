@@ -7,6 +7,7 @@
 
 #include "DiffPrograms.h"
 #include "CommandReporter.h"
+#include "SystemLauncher.h"
 
 class GenericDiffReporter : public CommandReporter {
 private:
