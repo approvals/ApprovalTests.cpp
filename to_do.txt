@@ -28,3 +28,4 @@
 . add OkraNamerTest.cpp
 . machine-generate a list of support diff tools
 . support visual studio's in-built diff
+. work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682
