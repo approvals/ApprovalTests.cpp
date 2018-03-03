@@ -41,7 +41,11 @@ In the following, we're putting the output in `cmake-build-vs` - that location i
 
 ---
 
-## Obtaining Google Test for Windows
+## Obtaining Google Test for Windows (optional)
+
+In order to run the tests of this project's optional integration with the Google Test framework, you'll need a built copy of that framework itself.
+
+Here are some options: 
 
 * build it from source - add to your project, or sub-project - see [google test's own instructions](https://github.com/google/googletest/tree/master/googletest)
 * download it via Conan - there's a starting point at [claremacrae/googletest-starter-project](https://github.com/claremacrae/googletest-starter-project)
