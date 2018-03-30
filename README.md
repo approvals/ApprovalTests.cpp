@@ -5,7 +5,12 @@ CppApprovals
 
 Native ApprovalTests for C++
 
-Currently working in Mac/Linux/Windows with [Catch2](https://github.com/catchorg/Catch2) or [Okra](https://github.com/JayBazuzi/Okra) & C++ 11
+Currently working in Mac/Linux/Windows with 
+* [Catch1](https://github.com/catchorg/Catch2/tree/Catch1.x)  
+* [Catch2](https://github.com/catchorg/Catch2)   
+* [Okra](https://github.com/JayBazuzi/Okra) & C++ 11  
+* [GoogleTest](https://github.com/google/googletest)
+
 
 
 ## Getting Started
