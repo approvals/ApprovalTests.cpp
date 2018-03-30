@@ -1,5 +1,6 @@
 #include "Catch.hpp"
 #include "../ApprovalTests/namers/ApprovalNamer.h"
+#include "../ApprovalTests/StringUtils.h"
 
 using namespace std;
 using Catch::Matchers::EndsWith;
@@ -21,6 +22,18 @@ TEST_CASE("ItCanGiveYouTheSpecName") {
 TEST_CASE("ItCanGiveYouTheTestFileName") {
     ApprovalNamer namer;
     REQUIRE(namer.getFileName() == "NamerTests");
+}
+
+
+TEST_CASE("TestProperNameCaseOnWindows") {
+    if (SystemUtils::isWindowsOs())
+    {
+        ApprovalNamer namer;
+        auto test = namer.currentTest();
+        test.fileName = StringUtils::toLower(test.fileName);
+        namer.currentTest(&test);
+        REQUIRE(namer.getFileName() == "NamerTests");
+    }
 }
 
 

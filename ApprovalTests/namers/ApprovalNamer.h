@@ -35,7 +35,7 @@ public:
     }
 
     string getFileName() {
-        auto file = currentTest().fileName;
+        auto file = SystemUtils::checkFilenameCase(currentTest().fileName);
 
         auto start = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto end = file.rfind(".");

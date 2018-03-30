@@ -4,6 +4,7 @@
 #define APPROVALTESTS_CPP_STRINGUTILS_H
 
 #include <string>
+#include <algorithm>
 
 class StringUtils
 {
@@ -20,6 +21,13 @@ public:
     static bool contains(std::string inText, const std::string& find)
     {
         return inText.find(find, 0) != std::string::npos;
+    }
+
+    static std::string toLower(std::string inText)
+    {
+        std::string copy(inText);
+        std::transform(inText.begin(), inText.end(), copy.begin(), ::tolower);
+        return copy;
     }
 };
 #endif //APPROVALTESTS_CPP_STRINGUTILS_H
