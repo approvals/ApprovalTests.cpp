@@ -11,6 +11,11 @@ namespace Windows {
         BeyondCompare3Reporter() : GenericDiffReporter(DiffPrograms::Windows::BEYOND_COMPARE_3()) {};
     };
 
+  class VisualStudioCodeReporter : public GenericDiffReporter {
+    public:
+      VisualStudioCodeReporter() : GenericDiffReporter(DiffPrograms::Windows::VS_CODE()) {};
+    };
+
     class BeyondCompare4Reporter : public GenericDiffReporter {
     public:
         BeyondCompare4Reporter() : GenericDiffReporter(DiffPrograms::Windows::BEYOND_COMPARE_4()) {};
@@ -65,6 +70,7 @@ namespace Windows {
                 {
                         new TortoiseDiffReporter(),
                         new BeyondCompareReporter(),
+                        new VisualStudioCodeReporter(),
                         new WinMergeReporter(),
                         new AraxisMergeReporter(),
                         new CodeCompareReporter(),

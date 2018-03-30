@@ -11,6 +11,11 @@ namespace Mac {
         DiffMergeReporter() : GenericDiffReporter(DiffPrograms::Mac::DIFF_MERGE()) {}
     };
 
+    class VisualStudioCodeReporter : public GenericDiffReporter {
+    public:
+        VisualStudioCodeReporter() : GenericDiffReporter(DiffPrograms::Mac::VS_CODE()) {}
+    };
+
     class BeyondCompareReporter : public GenericDiffReporter {
     public:
         BeyondCompareReporter() : GenericDiffReporter(DiffPrograms::Mac::BEYOND_COMPARE()) {}
@@ -41,6 +46,7 @@ namespace Mac {
         MacDiffReporter() : FirstWorkingReporter(
                 {
                         new BeyondCompareReporter(),
+                        new VisualStudioCodeReporter(),
                         new DiffMergeReporter(),
                         new KaleidoscopeReporter(),
                         new P4MergeReporter(),
