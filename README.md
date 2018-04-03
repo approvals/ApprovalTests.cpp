@@ -5,7 +5,9 @@ CppApprovals
 
 Native ApprovalTests for C++
 
-Currently working in Mac/Linux/Windows with 
+![Intro Graphic](doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)
+
+Currently working in Mac/Linux/Windows with
 * [Catch1](https://github.com/catchorg/Catch2/tree/Catch1.x)  
 * [Catch2](https://github.com/catchorg/Catch2)   
 * [Okra](https://github.com/JayBazuzi/Okra) & C++ 11  
