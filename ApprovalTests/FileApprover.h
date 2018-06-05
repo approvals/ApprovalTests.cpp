@@ -5,7 +5,7 @@
 #include "ApprovalException.h"
 #include "StringWriter.h"
 #include "reporters/Reporter.h"
-#include "namers/ApprovalTestNamer.h"
+#include "namers/ApprovalNamer.h"
 #include "FileUtils.h"
 
 class FileApprover {
@@ -51,7 +51,7 @@ public:
     }
 
 
-    static void verify(ApprovalTestNamer n, ApprovalWriter& s, const Reporter& r) {
+    static void verify(ApprovalNamer& n, ApprovalWriter& s, const Reporter& r) {
         std::string approvedPath = n.getApprovedFile(s.GetFileExtension());
         std::string receivedPath = n.getReceivedFile(s.GetFileExtension());
         s.Write(receivedPath);
