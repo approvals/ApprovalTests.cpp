@@ -39,6 +39,56 @@ In the following, we're putting the output in `cmake-build-vs` - that location i
 * Tested with Visual Studio 2017
 * **Major limitation**: Debugging is not yet supported by CLion, when compiling with Visual Studio, as of CLion 2017.3.3
 
+### Update 05/06/2018
+
+* Running CLion with cygwin as toolset
+	* Code builds fine
+	* Running the catch2 tests gives lots of
+		* `sh: c:\Program Files\Microsoft VS Code\Code.exe: command not found`
+	* Looks like this is a known problem [cannot launch code from command line using Git Bash on Windows ](https://github.com/Microsoft/vscode/issues/1704)
+* Running code in Visual Studio 2017
+	* Code builds fine
+	* Running catch2 tests gives two failures - likely the known problem with detecting case of source-file name in Visual Studio: 
+
+```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ApprovalTests_Catch2_Tests.exe is a Catch v2.0.1 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+ItCanGiveYouTheTestDirectory
+-------------------------------------------------------------------------------
+d:\users\clare\documents\programming\github\approvaltests.cpp\approvaltests_catch2_tests\namertests.cpp(40)
+...............................................................................
+
+d:\users\clare\documents\programming\github\approvaltests.cpp\approvaltests_catch2_tests\namertests.cpp(43): FAILED:
+  REQUIRE_THAT( namer.getDirectory(), EndsWith(__ + "ApprovalTests_Catch2_Tests" + __) )
+with expansion:
+  "d:\users\clare\documents\programming\github\approvaltests.cpp\
+  approvaltests_catch2_tests\" ends with: "\ApprovalTests_Catch2_Tests\"
+
+-------------------------------------------------------------------------------
+ItIncludesFileContextAndSpecNames
+-------------------------------------------------------------------------------
+d:\users\clare\documents\programming\github\approvaltests.cpp\approvaltests_catch2_tests\namertests.cpp(47)
+...............................................................................
+
+d:\users\clare\documents\programming\github\approvaltests.cpp\approvaltests_catch2_tests\namertests.cpp(52): FAILED:
+  REQUIRE_THAT( namer.getApprovedFile(".txt"), EndsWith(__ + "ApprovalTests_Catch2_Tests" + __ + "NamerTests.ItIncludesFileContextAndSpecNames.approved.txt") )
+with expansion:
+  "d:\users\clare\documents\programming\github\approvaltests.cpp\
+  approvaltests_catch2_tests\NamerTests.ItIncludesFileContextAndSpecNames.
+  approved.txt" ends with: "\ApprovalTests_Catch2_Tests\NamerTests.
+  ItIncludesFileContextAndSpecNames.approved.txt"
+
+===============================================================================
+test cases: 28 | 26 passed | 2 failed
+assertions: 26 | 24 passed | 2 failed
+
+...waiting for enter/ return before exiting, with code: 2
+
+```
+
 ---
 
 ## Obtaining Google Test for Windows (optional)
