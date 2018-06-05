@@ -45,8 +45,6 @@ public:
                 return new ApprovalMismatchException(receivedPath, approvedPath);
             }
         }
-
-        remove(receivedPath.c_str());
         return NULL;
     }
 
