@@ -24,6 +24,6 @@ set(SOURCE_FILES
         reporters/MacReporters.h
         reporters/LinuxReporters.h StringUtils.h reporters/GenericDiffReporter.h reporters/CommandReporter.h OkraApprovals.h
         GoogleTestApprovals.h
-        reporters/SystemLauncher.h)
+        reporters/SystemLauncher.h writers/ExistingFile.h writers/ExistingFile.h namers/ExistingFileNamer.h)
 add_library(ApprovalTests ${SOURCE_FILES} )
 set_target_properties(ApprovalTests PROPERTIES LINKER_LANGUAGE CXX)

@@ -3,6 +3,7 @@
 #include "../ApprovalTests/reporters/GenericDiffReporter.h"
 #include "../ApprovalTests/namers/ApprovalTestNamer.h"
 #include "../ApprovalTests/FileApprover.h"
+#include "../ApprovalTests/Approvals.h"
 
 using namespace std;
 
@@ -25,27 +26,12 @@ TEST_CASE("ItVerifiesApprovedFileExists") {
 }
 
 
-/*
-    Spec( ItLaunchesReporterOnFailure )
-    {
-        Namer namer( bin(),
-                     "DescribeAFileApprover.ItLaunchesReporterOnFailure" );
-        string approved = namer.GetApprovedFile( ".txt" );
-        string received = namer.GetReceivedFile( ".txt" );
-        writeMessageTo( "olleH", approved );
-        StringWriter writer( "Hello" );
-        TestReporter reporter;
+TEST_CASE("ItVerifiesExistingFiles") {
 
-        string expected = "fake " + received + " " + approved + " ";
-        AssertThrows( ApprovalException,
-                      FileApprover::Verify( namer, writer, reporter ) );
-        AssertThat( reporter.launcher.ReceivedCommand(),
-                    Equals( expected ) );
+    ApprovalTestNamer namer;
 
-        remove( approved.c_str() );
-        remove( received.c_str() );
-    }
 
-};
- */
+    Approvals::verifyExistingFile(namer.getDirectory() + "sample.txt");
+}
+
 

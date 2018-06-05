@@ -32,6 +32,12 @@ public:
             s.Write(fullFilePath);
         }
     }
+
+    static std::string getExtensionWithDot(std::string filePath) {
+        std::size_t found = filePath.find_last_of(".");
+        return filePath.substr(found);
+    }
+
 };
 
 #endif //CATCHPLAYGROUND_FILEUTILS_H

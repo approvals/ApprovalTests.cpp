@@ -46,12 +46,12 @@ namespace Mac {
         MacDiffReporter() : FirstWorkingReporter(
                 {
                         new BeyondCompareReporter(),
-                        new VisualStudioCodeReporter(),
                         new DiffMergeReporter(),
                         new KaleidoscopeReporter(),
                         new P4MergeReporter(),
                         new KDiff3Reporter(),
-                        new TkDiffReporter()
+                        new TkDiffReporter(),
+                        new VisualStudioCodeReporter()
                 }
         ) {
         }

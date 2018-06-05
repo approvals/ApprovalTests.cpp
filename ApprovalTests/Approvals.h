@@ -7,70 +7,72 @@
 #include "reporters/DiffReporter.h"
 #include "reporters/Reporter.h"
 #include "namers/ApprovalTestNamer.h"
+#include "writers/ExistingFile.h"
+#include "namers/ExistingFileNamer.h"
 
-class Approvals
-{
+class Approvals {
 private:
     Approvals() {}
+
     ~Approvals() {}
+
 public:
-    static void verify( std::string contents,const Reporter& reporter = DiffReporter() )
-    {
-        StringWriter writer( contents );
+    static void verify(std::string contents, const Reporter &reporter = DiffReporter()) {
+        StringWriter writer(contents);
         ApprovalTestNamer namer;
         FileApprover::verify(namer, writer, reporter);
     }
 
-    template <typename T>
-    static void verify(T contents, const Reporter& reporter = DiffReporter())
-    {
+    template<typename T>
+    static void verify(T contents, const Reporter &reporter = DiffReporter()) {
         std::stringstream s;
         s << contents;
         verify(s.str(), reporter);
     }
 
-    template <typename Iterator>
+    template<typename Iterator>
     static void verifyAll(std::string header,
-                          const Iterator& start, const Iterator& finish,
-                          std::function<void (typename Iterator::value_type, std::ostream&)> converter,
-                          const Reporter& reporter = DiffReporter())
-    {
+                          const Iterator &start, const Iterator &finish,
+                          std::function<void(typename Iterator::value_type, std::ostream &)> converter,
+                          const Reporter &reporter = DiffReporter()) {
         std::stringstream s;
-        if( !header.empty())
-        {
+        if (!header.empty()) {
             s << header << "\n\n\n";
         }
-        for (auto it = start; it != finish; ++it)
-        {
+        for (auto it = start; it != finish; ++it) {
             converter(*it, s);
             s << '\n';
         }
         verify(s.str(), reporter);
     }
 
-    template <typename Container>
+    template<typename Container>
     static void verifyAll(std::string header,
-                          const Container& list,
-                          std::function<void (typename Container::value_type, std::ostream&)> converter,
-                          const Reporter& reporter = DiffReporter())
-    {
+                          const Container &list,
+                          std::function<void(typename Container::value_type, std::ostream &)> converter,
+                          const Reporter &reporter = DiffReporter()) {
         verifyAll<typename Container::const_iterator>(header, list.begin(), list.end(), converter, reporter);
     }
 
-    template <typename T>
+    template<typename T>
     static void verifyAll(std::string header,
-                          const std::vector<T>& list,
-                          const Reporter& reporter = DiffReporter())
-    {
+                          const std::vector<T> &list,
+                          const Reporter &reporter = DiffReporter()) {
         int i = 0;
-        verifyAll<std::vector<T>>(header, list, [&](T e, std::ostream& s){s << "[" << i++ << "] = " << e;}, reporter);
+        verifyAll<std::vector<T>>(header, list, [&](T e, std::ostream &s) { s << "[" << i++ << "] = " << e; },
+                                  reporter);
     }
 
-    template <typename T>
-    static void verifyAll(const std::vector<T>& list,
-                          const Reporter& reporter = DiffReporter())
-    {
+    template<typename T>
+    static void verifyAll(const std::vector<T> &list,
+                          const Reporter &reporter = DiffReporter()) {
         verifyAll<T>("", list, reporter);
+    }
+
+    static void verifyExistingFile(const std::string filePath, const Reporter &reporter = DiffReporter()) {
+        ExistingFile writer(filePath);
+        ExistingFileNamer namer(filePath);
+        FileApprover::verify(namer, writer, reporter);
     }
 };
 

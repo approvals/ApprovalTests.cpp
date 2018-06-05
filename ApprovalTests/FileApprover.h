@@ -63,7 +63,7 @@ public:
             delete ae;
             throw e;
         } else {
-            remove(receivedPath.c_str());
+            s.CleanUpReceived(receivedPath);
         }
     }
 

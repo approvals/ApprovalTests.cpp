@@ -32,6 +32,10 @@ public:
         out << s << "\n";
     }
 
+    virtual void CleanUpReceived(std::string receivedPath){
+        remove(receivedPath.c_str());
+    }
+
 
 };
 #endif
