@@ -3,8 +3,9 @@
 
 #include <string>
 #include <fstream>
+#include "ApprovalWriter.h"
 
-class StringWriter
+class StringWriter : public ApprovalWriter
 {
 private:
     std::string s;

@@ -4,6 +4,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES
         ApprovalException.h
         Approvals.h
+        ApprovalWriter.h
         Catch2Approvals.h
         FileApprover.h
         FileUtils.h
