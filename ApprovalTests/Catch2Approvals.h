@@ -1,15 +1,20 @@
 
 #ifndef CATCHPLAYGROUND_CATCH2APPROVALS_H_H
 #define CATCHPLAYGROUND_CATCH2APPROVALS_H_H
+
 #include "namers/ApprovalTestNamer.h"
 
 // <SingleHpp unalterable>
 #ifdef APPROVALS_CATCH
 #define CATCH_CONFIG_MAIN
+
 #include "Catch.hpp"
+
 struct Catch2ApprovalListener : Catch::TestEventListenerBase {
     using TestEventListenerBase::TestEventListenerBase;
     TestName currentTest;
+
+    Catch2ApprovalListener(Catch::ReporterConfig const &_config) : Catch::TestEventListenerBase(_config) {}
 
     virtual void testCaseStarting(Catch::TestCaseInfo const &testInfo) override {
 
