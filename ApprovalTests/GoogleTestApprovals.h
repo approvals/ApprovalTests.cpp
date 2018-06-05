@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H
 #define APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H
 
-#include "namers/ApprovalNamer.h"
+#include "namers/ApprovalTestNamer.h"
 #include "StringUtils.h"
 #ifdef APPROVALS_GOOGLETEST
 
@@ -26,7 +26,7 @@ public:
             currentTest.sections.push_back(testInfo.name());
         }
         
-        ApprovalNamer::currentTest(&currentTest);
+        ApprovalTestNamer::currentTest(&currentTest);
     }
 };
 

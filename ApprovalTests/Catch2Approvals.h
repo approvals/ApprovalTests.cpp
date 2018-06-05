@@ -1,7 +1,7 @@
 
 #ifndef CATCHPLAYGROUND_CATCH2APPROVALS_H_H
 #define CATCHPLAYGROUND_CATCH2APPROVALS_H_H
-#include "namers/ApprovalNamer.h"
+#include "namers/ApprovalTestNamer.h"
 
 // <SingleHpp unalterable>
 #ifdef APPROVALS_CATCH
@@ -14,7 +14,7 @@ struct Catch2ApprovalListener : Catch::TestEventListenerBase {
     virtual void testCaseStarting(Catch::TestCaseInfo const &testInfo) override {
 
         currentTest.fileName = testInfo.lineInfo.file;
-        ApprovalNamer::currentTest(&currentTest);
+        ApprovalTestNamer::currentTest(&currentTest);
     }
 
     virtual void testCaseEnded(Catch::TestCaseStats const &testCaseStats) override {

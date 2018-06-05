@@ -1,5 +1,5 @@
 #include "Catch.hpp"
-#include "../ApprovalTests/namers/ApprovalNamer.h"
+#include "../ApprovalTests/namers/ApprovalTestNamer.h"
 #include "../ApprovalTests/StringUtils.h"
 
 using namespace std;
@@ -7,7 +7,7 @@ using Catch::Matchers::EndsWith;
 
 TEST_CASE("ItCanGiveYouTheSpecName") {
 
-    ApprovalNamer namer;
+    ApprovalTestNamer namer;
     REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName");
 
     SECTION("andSectionNames") {
@@ -20,7 +20,7 @@ TEST_CASE("ItCanGiveYouTheSpecName") {
 
 
 TEST_CASE("ItCanGiveYouTheTestFileName") {
-    ApprovalNamer namer;
+    ApprovalTestNamer namer;
     REQUIRE(namer.getFileName() == "NamerTests");
 }
 
@@ -28,7 +28,7 @@ TEST_CASE("ItCanGiveYouTheTestFileName") {
 TEST_CASE("TestProperNameCaseOnWindows") {
     if (SystemUtils::isWindowsOs())
     {
-        ApprovalNamer namer;
+        ApprovalTestNamer namer;
         auto test = namer.currentTest();
         test.fileName = StringUtils::toLower(test.fileName);
         namer.currentTest(&test);
@@ -38,14 +38,14 @@ TEST_CASE("TestProperNameCaseOnWindows") {
 
 
 TEST_CASE("ItCanGiveYouTheTestDirectory") {
-    ApprovalNamer namer;
+    ApprovalTestNamer namer;
     auto __ = SystemUtils::getDirectorySeparator();
     REQUIRE_THAT(namer.getDirectory(), EndsWith(__ + "ApprovalTests_Catch2_Tests" + __));
 }
 
 
 TEST_CASE("ItIncludesFileContextAndSpecNames") {
-    ApprovalNamer namer;
+    ApprovalTestNamer namer;
     auto __ = SystemUtils::getDirectorySeparator();
 
     REQUIRE_THAT(namer.getApprovedFile(".txt"),

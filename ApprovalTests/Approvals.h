@@ -6,7 +6,7 @@
 #include "FileApprover.h"
 #include "reporters/DiffReporter.h"
 #include "reporters/Reporter.h"
-#include "namers/ApprovalNamer.h"
+#include "namers/ApprovalTestNamer.h"
 
 class Approvals
 {
@@ -17,7 +17,7 @@ public:
     static void verify( std::string contents,const Reporter& reporter = DiffReporter() )
     {
         StringWriter writer( contents );
-        ApprovalNamer namer;
+        ApprovalTestNamer namer;
         FileApprover::verify(namer, writer, reporter);
     }
 

@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_OKRAAPPPROVALS_H
 #define APPROVALTESTS_CPP_OKRAAPPPROVALS_H
 
-#include "namers/ApprovalNamer.h"
+#include "namers/ApprovalTestNamer.h"
 #ifdef APPROVALS_OKRA
 
 // <SingleHpp unalterable>
@@ -17,7 +17,7 @@ public:
  {
   currentTest.fileName = testInfo.file_path;
   currentTest.sections = {testInfo.name};
-  ApprovalNamer::currentTest(&currentTest);
+  ApprovalTestNamer::currentTest(&currentTest);
  }
 
  void OnEnd(const okra::TestInfo &testInfo, std::chrono::high_resolution_clock::duration duration) override {

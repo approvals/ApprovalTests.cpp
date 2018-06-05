@@ -1,14 +1,14 @@
 #include "Catch.hpp"
 #include "../ApprovalTests/StringWriter.h"
 #include "../ApprovalTests/reporters/GenericDiffReporter.h"
-#include "../ApprovalTests/namers/ApprovalNamer.h"
+#include "../ApprovalTests/namers/ApprovalTestNamer.h"
 #include "../ApprovalTests/FileApprover.h"
 
 using namespace std;
 
 TEST_CASE("ItVerifiesApprovedFileExists") {
 
-    ApprovalNamer namer;
+    ApprovalTestNamer namer;
     StringWriter writer("Hello");
     TestReporter reporter;
 

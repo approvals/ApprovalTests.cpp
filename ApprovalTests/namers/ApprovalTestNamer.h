@@ -1,5 +1,5 @@
-#ifndef APPROVALNAMER_H
-#define APPROVALNAMER_H
+#ifndef APPROVALTESTNAMER_H
+#define APPROVALTESTNAMER_H
 
 #include <stack>
 #include <sstream>
@@ -15,10 +15,10 @@ public:
     std::vector<string> sections;
 };
 
-class ApprovalNamer {
+class ApprovalTestNamer {
 private:
 public:
-    ApprovalNamer() {
+    ApprovalTestNamer() {
     }
 
     string getTestName() {

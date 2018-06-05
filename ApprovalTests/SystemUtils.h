@@ -25,7 +25,7 @@ public:
         return true;
 #else
         return false;
-#endif 
+#endif
 
     }
 
