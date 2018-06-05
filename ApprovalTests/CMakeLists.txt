@@ -12,6 +12,7 @@ set(SOURCE_FILES
         StringWriter.h
         SystemUtils.h
         CombinationApprovals.h
+        namers/ApprovalNamer.h
         namers/ApprovalTestNamer.h
         reporters/CommandLauncher.h
         reporters/Reporter.h 

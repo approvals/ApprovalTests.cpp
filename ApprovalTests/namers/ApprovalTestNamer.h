@@ -1,6 +1,7 @@
 #ifndef APPROVALTESTNAMER_H
 #define APPROVALTESTNAMER_H
 
+#include "ApprovalNamer.h"
 #include <stack>
 #include <sstream>
 #include <vector>
@@ -15,7 +16,7 @@ public:
     std::vector<string> sections;
 };
 
-class ApprovalTestNamer {
+class ApprovalTestNamer : public ApprovalNamer {
 private:
 public:
     ApprovalTestNamer() {
@@ -50,12 +51,12 @@ public:
 
     STATIC(TestName, currentTest, NULL)
 
-    string getApprovedFile(string extentionWithDot) {
+    virtual string getApprovedFile(string extentionWithDot) {
 
         return getFullFileName(".approved", extentionWithDot);
     }
 
-    string getReceivedFile(string extentionWithDot) {
+    virtual string getReceivedFile(string extentionWithDot) {
 
         return getFullFileName(".received", extentionWithDot);
     }
