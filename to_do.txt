@@ -3,6 +3,7 @@
 . reports
 . clipboard reporter
 . catch reporter
+. tortoise git diff reporter
 . names with spaces in them
 . asJson
 . loggers
@@ -22,7 +23,6 @@
 . get travis to run google tests
     . For an example, using Conan, see https://github.com/rockdreamer/throwing_ptr
 . create a Visual Studio.googletest starter project
-. fix windows' catch tests's creation of lower-case output filenames - in ApprovalTests.cpp.StarterProject
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
 . update the readme for recent progress
 . add OkraNamerTest.cpp
