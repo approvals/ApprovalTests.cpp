@@ -1,18 +1,19 @@
 . handle line endings (allow differences in line endings)
-. docs
-. reports
+. names with spaces in them
 . clipboard reporter
 . catch reporter
 . tortoise git diff reporter
-. names with spaces in them
+. combination reporters
+. windows path separators [DONE?]
+. maps
+
+. docs
+. reports
 . asJson
 . loggers
-. combination reporters
 . video intro
-. windows path separators [DONE?]
 . windows reporters on non-English language
 . windows reports when building in Cygwin
-. maps
 . windows CI builds (https://www.appveyor.com/docs/ - but find a Visual Studio/CTest example config)
     . See PR https://github.com/approvals/ApprovalTests.cpp/pull/3
 . treat compiler warnings as errors - ideally on all platforms
