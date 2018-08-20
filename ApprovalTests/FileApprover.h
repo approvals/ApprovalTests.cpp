@@ -14,6 +14,23 @@ public:
 
     ~FileApprover() {};
 
+	static std::ifstream::int_type getNextRelevantCharacter(std::ifstream& astream)
+	{
+		auto ch = astream.get();
+		if (ch == '\r')
+		{
+			if (astream.good())
+			{
+				ch = astream.get();
+			}
+			else
+			{
+				return -1;
+			}
+		}
+		return ch;
+	}
+
     static ApprovalException *verify(std::string receivedPath,
                                      std::string approvedPath) {
         int asize = FileUtils::fileSize(approvedPath);
@@ -38,8 +55,8 @@ public:
                               std::ios::binary | std::ifstream::in);
 
         while (astream.good() && rstream.good()) {
-            int a = astream.get();
-            int r = rstream.get();
+            int a = getNextRelevantCharacter(astream);
+            int r = getNextRelevantCharacter(rstream);
 
             if (a != r) {
                 return new ApprovalMismatchException(receivedPath, approvedPath);

@@ -35,3 +35,8 @@ TEST_CASE("ItVerifiesExistingFiles") {
 }
 
 
+TEST_CASE("ItIgnoresLineEndingDifferences") {
+	FileUtils::writeToFile("a.txt", "1\r\n2\n3\r\n4");
+	FileUtils::writeToFile("b.txt", "1\n2\r\n3\r\n4");
+	REQUIRE( FileApprover::verify("a.txt", "b.txt") == NULL);
+}

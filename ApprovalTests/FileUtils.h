@@ -38,6 +38,11 @@ public:
         return filePath.substr(found);
     }
 
+	static void writeToFile(std::string filePath, std::string content)
+    {
+		std::ofstream out(filePath.c_str(), std::ios::binary | std::ofstream::out);
+		out << content;
+    }
 };
 
 #endif //CATCHPLAYGROUND_FILEUTILS_H
