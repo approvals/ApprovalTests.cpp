@@ -19,16 +19,12 @@ public:
 		auto ch = astream.get();
 		if (ch == '\r')
 		{
-			if (astream.good())
-			{
-				ch = astream.get();
-			}
-			else
-			{
-				return -1;
-			}
+			return astream.get();
 		}
-		return ch;
+		else
+		{
+			return ch;
+		}
 	}
 
     static ApprovalException *verify(std::string receivedPath,
