@@ -1,6 +1,7 @@
 #include "Catch.hpp"
 #include "../ApprovalTests/namers/ApprovalTestNamer.h"
 #include "../ApprovalTests/StringUtils.h"
+#include "../ApprovalTests/Approvals.h"
 
 using namespace std;
 using Catch::Matchers::EndsWith;
@@ -59,3 +60,8 @@ TEST_CASE("ItIncludesFileContextAndSpecNames") {
 }
 
 
+TEST_CASE("CleanUpFilenameTransforms")
+{
+    std::vector<std::string> names = { "CleanUpFilenameTransforms", "Spaces In File \\" };
+    Approvals::verifyAll("File Names", names, [&](std::string name, std::ostream &s) {s << name << " => " << ApprovalTestNamer::convertToFileName(name); });
+}

@@ -49,6 +49,29 @@ public:
         return file.substr(0, end);
     }
 
+    static bool isForbidden(char c)
+    {
+        static std::string forbiddenChars("\\/:?\"<>|' ");
+        return std::string::npos != forbiddenChars.find(c);
+    }
+
+    static string convertToFileName(const string& fileName)
+    {
+        std::stringstream result;
+        for(auto ch : fileName)
+        {
+            if(!isForbidden(ch))
+            {
+                result << ch;
+            }
+            else
+            {
+                result << "_";
+            }
+        }
+        return result.str();
+    }
+
     STATIC(TestName, currentTest, NULL)
 
     virtual string getApprovedFile(string extentionWithDot) {

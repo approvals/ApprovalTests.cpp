@@ -1,0 +1,6 @@
+File Names
+
+
+CleanUpFilenameTransforms => CleanUpFilenameTransforms
+Spaces In File \ => Spaces_In_File__
+
