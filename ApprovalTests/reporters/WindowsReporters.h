@@ -70,11 +70,11 @@ namespace Windows {
                 {
                         new TortoiseDiffReporter(),
                         new BeyondCompareReporter(),
-                        new VisualStudioCodeReporter(),
                         new WinMergeReporter(),
                         new AraxisMergeReporter(),
                         new CodeCompareReporter(),
-                        new KDiff3Reporter()
+                        new KDiff3Reporter(),
+                        new VisualStudioCodeReporter(),
                 }
         ) {
         }
