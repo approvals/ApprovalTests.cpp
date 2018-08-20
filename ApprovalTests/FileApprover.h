@@ -45,10 +45,6 @@ public:
             return new ApprovalMissingException(approvedPath, receivedPath);
         }
 
-        if (asize != rsize) {
-            return new ApprovalMismatchException(receivedPath, approvedPath);
-        }
-
         std::ifstream astream(approvedPath.c_str(),
                               std::ios::binary | std::ifstream::in);
         std::ifstream rstream(receivedPath.c_str(),
