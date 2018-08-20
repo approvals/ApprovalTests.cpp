@@ -60,7 +60,7 @@ TEST_CASE("ItIncludesFileContextAndSpecNames") {
 }
 
 
-TEST_CASE("CleanUpFilenameTransforms")
+TEST_CASE("Clean Up Filename Transforms")
 {
     std::vector<std::string> names = { "CleanUpFilenameTransforms", "Spaces In File \\" };
     Approvals::verifyAll("File Names", names, [&](std::string name, std::ostream &s) {s << name << " => " << ApprovalTestNamer::convertToFileName(name); });

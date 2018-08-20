@@ -32,21 +32,7 @@ public:
             ext << test.sections[i];
         }
 
-        return ext.str();
-    }
-
-    string getFileName() {
-        auto file = SystemUtils::checkFilenameCase(currentTest().fileName);
-
-        auto start = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
-        auto end = file.rfind(".");
-        return file.substr(start, end - start);
-    }
-
-    string getDirectory() {
-        auto file = currentTest().fileName;
-        auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
-        return file.substr(0, end);
+        return convertToFileName(ext.str());
     }
 
     static bool isForbidden(char c)
@@ -58,9 +44,9 @@ public:
     static string convertToFileName(const string& fileName)
     {
         std::stringstream result;
-        for(auto ch : fileName)
+        for (auto ch : fileName)
         {
-            if(!isForbidden(ch))
+            if (!isForbidden(ch))
             {
                 result << ch;
             }
@@ -70,6 +56,20 @@ public:
             }
         }
         return result.str();
+    }
+
+    string getFileName() {
+        auto file = SystemUtils::checkFilenameCase(currentTest().fileName);
+        auto start = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
+        auto end = file.rfind(".");
+        auto fileName = file.substr(start, end - start);
+        return convertToFileName(fileName);
+    }
+
+    string getDirectory() {
+        auto file = currentTest().fileName;
+        auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
+        return file.substr(0, end);
     }
 
     STATIC(TestName, currentTest, NULL)
