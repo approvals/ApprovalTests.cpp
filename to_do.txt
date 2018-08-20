@@ -1,4 +1,3 @@
-. names with spaces in them
 . clipboard reporter
 . catch reporter
 . tortoise git diff reporter
