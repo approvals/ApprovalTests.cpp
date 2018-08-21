@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 
+// An interface to trigger execution of a command. See also SystemLauncher
 class CommandLauncher
 {
 public:

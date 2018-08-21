@@ -1,13 +1,11 @@
-//
-// Created by LLEWELLYN FALCO on 2/13/18.
-//
-
 #ifndef APPROVALTESTS_CPP_COMMANDREPORTER_H
 #define APPROVALTESTS_CPP_COMMANDREPORTER_H
 
 #include "CommandLauncher.h"
 #include "../FileUtils.h"
 #include "Reporter.h"
+
+// Generic reporter to launch arbitrary command
 class CommandReporter : public Reporter {
 private:
     std::string cmd;
