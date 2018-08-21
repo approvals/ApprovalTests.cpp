@@ -1,6 +1,6 @@
 #include "Catch.hpp"
 #include "../ApprovalTests/StringWriter.h"
-#include "../ApprovalTests/reporters/GenericDiffReporter.h"
+#include "reporters/TestReporter.h"
 #include "../ApprovalTests/namers/ApprovalTestNamer.h"
 #include "../ApprovalTests/FileApprover.h"
 #include "../ApprovalTests/Approvals.h"

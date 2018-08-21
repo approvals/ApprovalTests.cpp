@@ -1,6 +1,6 @@
 
 #include "Catch.hpp"
-#include "../../ApprovalTests/reporters/GenericDiffReporter.h"
+#include "TestReporter.h"
 #include "../../ApprovalTests/reporters/FirstWorkingReporter.h"
 
 using namespace std;
