@@ -1,0 +1,5 @@
+# Lines starting with '#' are comments.
+
+*.cpp @isidore
+*.hpp @isidore
+
