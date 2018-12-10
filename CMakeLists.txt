@@ -1,6 +1,26 @@
 cmake_minimum_required(VERSION 3.8)
 project(ApprovalTests.cpp)
 set(CMAKE_CXX_STANDARD 17)
+
+# Download and unpack googletest at configure time
+configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
+execute_process(COMMAND "${CMAKE_COMMAND}" -G "${CMAKE_GENERATOR}" .
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download" )
+message("One")
+execute_process(COMMAND "${CMAKE_COMMAND}" --build .
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download" )
+message("Two")
+
+# Prevent GoogleTest from overriding our compiler/linker options
+# when building with Visual Studio
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+# Add googletest directly to our build. This adds
+# the following targets: gtest, gtest_main, gmock
+# and gmock_main
+add_subdirectory("${CMAKE_BINARY_DIR}/googletest-src" "${CMAKE_BINARY_DIR}/googletest-build")
+
+
 include_directories(lib)
 enable_testing()
 
@@ -8,15 +28,10 @@ add_subdirectory(ApprovalTests)
 add_subdirectory(ApprovalTests_Catch1_Tests)
 add_subdirectory(ApprovalTests_Catch2_Tests)
 
-add_subdirectory(lib/googletest-release-1.8.1)
-
-# We need at least Google Test 1.8, as that is the first version where
-# TestInfo provides the path to the source file of tests being run
-set(GTEST_ROOT "D:/Users/Clare/Documents/Programming/github/ApprovalTests.cpp/lib/googletest-release-1.8.1")
-set(GTEST_INCLUDE_DIR "D:/Users/Clare/Documents/Programming/github/ApprovalTests.cpp/lib/googletest-release-1.8.1/googletest/include")
-set(GTEST_LIBRARY "D:/Users/Clare/Documents/Programming/github/ApprovalTests.cpp/cmake-build-debug/lib/googletest-release-1.8.1/googlemock/gtest/libgtestd.a")
-set(GTEST_MAIN_LIBRARY "D:/Users/Clare/Documents/Programming/github/ApprovalTests.cpp/cmake-build-debug/lib/googletest-release-1.8.1/googlemock/gtest/libgtest_maind.a")
-set(GTEST_ROOT "cmake-build-debug/lib/googletest-release-1.8.1")
+set(GTEST_ROOT "${CMAKE_BINARY_DIR}/googletest-src")
+set(GTEST_INCLUDE_DIR "${CMAKE_BINARY_DIR}/googletest-src/googletest/include")
+set(GTEST_LIBRARY "${CMAKE_BINARY_DIR}/googletest-build/googlemock/gtest/libgtestd.a")
+set(GTEST_MAIN_LIBRARY "${CMAKE_BINARY_DIR}/googletest-build/googlemock/gtest/libgtest_maind.a")
 find_package(GTest 1.8)
 if(GTEST_FOUND)
     message("Google Test found in ${GTEST_INCLUDE_DIRS}")
@@ -24,3 +39,4 @@ if(GTEST_FOUND)
 else()
     message("Google Test not found")
 endif()
+
