@@ -3,26 +3,26 @@
 
 TEST(GoogleNamerTest, ItDropsFirstNameWhenItEqualsTheFilename)
 {
-    ApprovalNamer namer;
+    ApprovalTestNamer namer;
     EXPECT_EQ(namer.getTestName(), "ItDropsFirstNameWhenItEqualsTheFilename");
 }
 
 TEST(TestCaseNameDifferentNameThanFile, TestName)
 {
-    ApprovalNamer namer;
+    ApprovalTestNamer namer;
     EXPECT_EQ(namer.getTestName(), "TestCaseNameDifferentNameThanFile.TestName");
 }
 
-// Adding support for invalid but possible code (missing 2nd macro parameter)
-TEST(TestCaseNameDifferentNameThanFile)
-{
-    ApprovalNamer namer;
-    EXPECT_EQ(namer.getTestName(), "TestCaseNameDifferentNameThanFile");
-}
-
-// Adding support for invalid but possible code (missing 2nd macro parameter)
-TEST(GoogleNamerTest)
-{
-    ApprovalNamer namer;
-    EXPECT_EQ(namer.getTestName(), "");
-}
+//// Adding support for invalid but possible code (missing 2nd macro parameter)
+//TEST(TestCaseNameDifferentNameThanFile)
+//{
+//    ApprovalNamer namer;
+//    EXPECT_EQ(namer.getTestName(), "TestCaseNameDifferentNameThanFile");
+//}
+//
+//// Adding support for invalid but possible code (missing 2nd macro parameter)
+//TEST(GoogleNamerTest)
+//{
+//    ApprovalNamer namer;
+//    EXPECT_EQ(namer.getTestName(), "");
+//}
