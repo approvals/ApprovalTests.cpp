@@ -17,4 +17,4 @@ endif()
 add_executable(${PROJECT_NAME} ${SOURCE_FILES} )
 
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
-target_link_libraries(${PROJECT_NAME} GTest::GTest GTest::Main)
+target_link_libraries(${PROJECT_NAME} gtest gtest_main)
