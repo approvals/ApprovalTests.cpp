@@ -13,6 +13,7 @@ set(SOURCE_FILES
         CombinationTests.cpp
         StringUtilsTests.cpp
         SystemUtilsTests.cpp
+        ToStringExample.cpp
         )
 add_executable(ApprovalTests_Catch2_Tests ${SOURCE_FILES} )
 add_test(NAME ApprovalTests_Catch2_Tests COMMAND ApprovalTests_Catch2_Tests)
