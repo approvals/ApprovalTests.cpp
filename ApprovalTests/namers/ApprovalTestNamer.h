@@ -12,8 +12,17 @@ using std::string;
 
 class TestName {
 public:
-    string fileName;
+    const string& getFileName() const {
+        return fileName;
+    }
+
+    void setFileName(const string &fileName) {
+        TestName::fileName = fileName;
+    }
+
     std::vector<string> sections;
+private:
+    string fileName;
 };
 
 class ApprovalTestNamer : public ApprovalNamer {
@@ -59,7 +68,7 @@ public:
     }
 
     string getFileName() {
-        auto file = SystemUtils::checkFilenameCase(currentTest().fileName);
+        auto file = SystemUtils::checkFilenameCase(currentTest().getFileName());
         auto start = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto end = file.rfind(".");
         auto fileName = file.substr(start, end - start);
@@ -67,7 +76,7 @@ public:
     }
 
     string getDirectory() {
-        auto file = currentTest().fileName;
+        auto file = currentTest().getFileName();
         auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         return file.substr(0, end);
     }

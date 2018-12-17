@@ -18,7 +18,7 @@ struct Catch2ApprovalListener : Catch::TestEventListenerBase {
 
     virtual void testCaseStarting(Catch::TestCaseInfo const &testInfo) override {
 
-        currentTest.fileName = testInfo.lineInfo.file;
+        currentTest.setFileName(testInfo.lineInfo.file);
         ApprovalTestNamer::currentTest(&currentTest);
     }
 

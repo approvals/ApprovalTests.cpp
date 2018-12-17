@@ -31,7 +31,7 @@ TEST_CASE("TestProperNameCaseOnWindows") {
     {
         ApprovalTestNamer namer;
         auto test = namer.currentTest();
-        test.fileName = StringUtils::toLower(test.fileName);
+        test.setFileName(StringUtils::toLower(test.getFileName()));
         namer.currentTest(&test);
         REQUIRE(namer.getFileName() == "NamerTests");
     }
