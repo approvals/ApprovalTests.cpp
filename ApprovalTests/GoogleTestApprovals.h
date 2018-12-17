@@ -15,7 +15,7 @@ class GoogleTestListener : public ::testing::EmptyTestEventListener
 public:
     virtual void OnTestStart(const ::testing::TestInfo& testInfo) override
     {
-        currentTest.fileName = testInfo.file();
+        currentTest.fileName = SystemUtils::checkFilenameCase(testInfo.file());
         currentTest.sections = {};
         if (! StringUtils::contains(currentTest.fileName, std::string(testInfo.test_case_name()) + ".") )
         {
