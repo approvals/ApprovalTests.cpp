@@ -1,12 +1,9 @@
-. fix name of approved file for googletest on windows
+. combination reporters
 . get googletest on Windows to process more than one failure at a time in Araxis Merge
 . better name for CMakeLists.txt.in - to indicate it downloads googletest
 . run through Qt Creator analysis tools
-. clipboard reporter
 . catch reporter
 . tortoise git diff reporter
-. combination reporters
-. windows path separators [DONE?]
 . maps
 
 . docs

@@ -15,6 +15,7 @@ set(SOURCE_FILES
         namers/ApprovalNamer.h
         namers/ApprovalTestNamer.h
         reporters/CommandLauncher.h
+        reporters/ClipboardReporter.h
         reporters/Reporter.h 
         reporters/FirstWorkingReporter.h
         reporters/DiffReporter.h

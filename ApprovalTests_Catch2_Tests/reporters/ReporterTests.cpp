@@ -2,6 +2,7 @@
 #include "Catch.hpp"
 #include "TestReporter.h"
 #include "../../ApprovalTests/reporters/FirstWorkingReporter.h"
+#include "../../ApprovalTests/reporters/ClipboardReporter.h"
 
 using namespace std;
 
@@ -40,3 +41,7 @@ TEST_CASE("CommandLauncher can detect missing file") {
     REQUIRE(false == SystemLauncher().exists("this_file_does_not_exist.txxxxxt"));
 }
 
+TEST_CASE("ClipboardReporter") {
+    REQUIRE("move /Y \"a.txt\" \"b.txt\"" == ClipboardReporter::getCommandLineFor("a.txt", "b.txt", true));
+    REQUIRE("mv \"a.txt\" \"b.txt\"" == ClipboardReporter::getCommandLineFor("a.txt", "b.txt", false));
+}
