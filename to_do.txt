@@ -19,8 +19,6 @@
     . ProgramFiles(x86)=C:\Program Files (x86)
     . https://docs.microsoft.com/en-gb/windows/desktop/WinProg64/wow64-implementation-details
 . windows reporters when building in Cygwin
-. windows CI builds (https://www.appveyor.com/docs/ - but find a Visual Studio/CTest example config)
-    . See PR https://github.com/approvals/ApprovalTests.cpp/pull/3
 . treat compiler warnings as errors - ideally on all platforms
 . public hosting of doxygen docs - to browse class hierarchy and file dependencies
 . get building on windows with gcc (https://nuwen.net/mingw.html)
