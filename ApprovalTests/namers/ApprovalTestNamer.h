@@ -17,7 +17,7 @@ public:
     }
 
     void setFileName(const string &fileName) {
-        TestName::fileName = fileName;
+        TestName::fileName = SystemUtils::checkFilenameCase(fileName);
     }
 
     std::vector<string> sections;
@@ -68,7 +68,7 @@ public:
     }
 
     string getFileName() {
-        auto file = SystemUtils::checkFilenameCase(currentTest().getFileName());
+        auto file = currentTest().getFileName();
         auto start = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto end = file.rfind(".");
         auto fileName = file.substr(start, end - start);
