@@ -3,13 +3,13 @@
 
 using namespace std;
 
-struct Rectangle{
+struct Rectangle1{
 
     int x,y, width, height;
 
     // Using Template instead of ostream for embedded instances where ostream aren't available 
     template <class STREAM>
-    friend STREAM &operator<<(STREAM &os, const Rectangle &rectangle) {
+    friend STREAM &operator<<(STREAM &os, const Rectangle1 &rectangle) {
         os << "[x: " << rectangle.x << " y: " << rectangle.y << " width: " << rectangle.width << " height: "
            << rectangle.height << "]";
         return os;
@@ -17,7 +17,7 @@ struct Rectangle{
 
 };
 TEST_CASE("ToStringsAreHelpful") {
-    Rectangle r = {40,50,100,60};
+    Rectangle1 r = {40,50,100,60};
     Approvals::verify(r);
 
 }
