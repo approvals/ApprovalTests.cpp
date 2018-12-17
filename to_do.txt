@@ -1,3 +1,7 @@
+. fix name of approved file for googletest on windows
+. get googletest on Windows to process more than one failure at a time in Araxis Merge
+. better name for CMakeLists.txt.in - to indicate it downloads googletest
+. run through Qt Creator analysis tools
 . clipboard reporter
 . catch reporter
 . tortoise git diff reporter
@@ -11,7 +15,10 @@
 . loggers
 . video intro
 . windows reporters on non-English language
-. windows reports when building in Cygwin
+    . ProgramFiles=C:\Program Files
+    . ProgramFiles(x86)=C:\Program Files (x86)
+    . https://docs.microsoft.com/en-gb/windows/desktop/WinProg64/wow64-implementation-details
+. windows reporters when building in Cygwin
 . windows CI builds (https://www.appveyor.com/docs/ - but find a Visual Studio/CTest example config)
     . See PR https://github.com/approvals/ApprovalTests.cpp/pull/3
 . treat compiler warnings as errors - ideally on all platforms
@@ -19,12 +26,10 @@
 . get building on windows with gcc (https://nuwen.net/mingw.html)
 . more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
-. get travis to run google tests
-    . For an example, using Conan, see https://github.com/rockdreamer/throwing_ptr
 . create a Visual Studio.googletest starter project
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
 . update the readme for recent progress
 . add OkraNamerTest.cpp
-. machine-generate a list of support diff tools
+. machine-generate a list of supported diff tools
 . support visual studio's in-built diff
 . work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682
