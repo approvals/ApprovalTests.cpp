@@ -1,4 +1,5 @@
 . combination reporters
+. add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
 
 . tabs to spaces
 . fix an inconsistent declaration in SystemUtils::checkFilenameCase() - WIN32_FIND_DATA -> WIN32_FIND_DATAA
@@ -27,7 +28,6 @@
 . public hosting of doxygen docs - to browse class hierarchy and file dependencies
 . get building on windows with gcc (https://nuwen.net/mingw.html)
 . more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
-. add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
 . create a Visual Studio.googletest starter project
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
 . update the readme for recent progress
