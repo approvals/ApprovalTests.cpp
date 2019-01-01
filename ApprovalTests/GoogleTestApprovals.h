@@ -3,6 +3,11 @@
 
 #include "namers/ApprovalTestNamer.h"
 #include "StringUtils.h"
+
+#ifdef APPROVALS_GOOGLETEST_EXISTING_MAIN
+#define APPROVALS_GOOGLETEST
+#endif
+
 #ifdef APPROVALS_GOOGLETEST
 
 // <SingleHpp unalterable>
@@ -30,13 +35,19 @@ public:
     }
 };
 
+void initializeApprovalTestsForGoogleTests() {
+    auto& listeners = testing::UnitTest::GetInstance()->listeners();
+    listeners.Append(new GoogleTestListener);
+}
+
+#ifndef APPROVALS_GOOGLETEST_EXISTING_MAIN
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
-    auto& listeners = ::testing::UnitTest::GetInstance()->listeners();
-    listeners.Append(new GoogleTestListener);
+    initializeApprovalTestsForGoogleTests();
     return RUN_ALL_TESTS();
 }
+#endif // APPROVALS_GOOGLETEST_EXISTING_MAIN
 
 // </SingleHpp>
 #endif

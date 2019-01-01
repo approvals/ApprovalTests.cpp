@@ -19,6 +19,8 @@ Currently working in Mac/Linux/Windows with
 
 ## Getting Started
 
+[More details here](doc/GettingStarter.md)
+
 I Highly suggest you clone [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
 
 ## Main File
