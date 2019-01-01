@@ -1,4 +1,3 @@
-. combination reporters
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
 . add a non-gui reporter, e.g. for use in CI systems
 

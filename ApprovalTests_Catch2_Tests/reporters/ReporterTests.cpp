@@ -1,8 +1,10 @@
 
 #include "Catch.hpp"
 #include "TestReporter.h"
+#include "FakeReporter.h"
 #include "../../ApprovalTests/reporters/FirstWorkingReporter.h"
 #include "../../ApprovalTests/reporters/ClipboardReporter.h"
+#include "../../ApprovalTests/reporters/CombinationReporter.h"
 
 using namespace std;
 
@@ -44,4 +46,24 @@ TEST_CASE("CommandLauncher can detect missing file") {
 TEST_CASE("ClipboardReporter") {
     REQUIRE("move /Y \"a.txt\" \"b.txt\"" == ClipboardReporter::getCommandLineFor("a.txt", "b.txt", true));
     REQUIRE("mv \"a.txt\" \"b.txt\"" == ClipboardReporter::getCommandLineFor("a.txt", "b.txt", false));
+}
+
+TEST_CASE("CombinationReporter succeeds if any succeed") {
+    FakeReporter* m1 = new FakeReporter(true);
+    FakeReporter* m2 = new FakeReporter(true);
+    CombinationReporter reporter({m1, m2});
+    bool result = reporter.Report("r.txt", "a.txt");
+    REQUIRE(m1->called == true);
+    REQUIRE(m2->called == true);
+    REQUIRE(result == true);
+}
+
+TEST_CASE("CombinationReporter fails if all fail") {
+    FakeReporter* m1 = new FakeReporter(false);
+    FakeReporter* m2 = new FakeReporter(false);
+    CombinationReporter reporter({m1, m2});
+    bool result = reporter.Report("r.txt", "a.txt");
+    REQUIRE(m1->called == true);
+    REQUIRE(m2->called == true);
+    REQUIRE(result == false);
 }
