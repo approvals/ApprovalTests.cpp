@@ -2,12 +2,12 @@
 #define SYSTEMUTILS_H
 // <SingleHpp unalterable>
 #ifdef _WIN32
-	// ReSharper disable once CppUnusedIncludeDirective
-	#include <io.h>
-	#include <windows.h>
+    // ReSharper disable once CppUnusedIncludeDirective
+    #include <io.h>
+    #include <windows.h>
 #else
-	// ReSharper disable once CppUnusedIncludeDirective
-	#include <unistd.h>
+    // ReSharper disable once CppUnusedIncludeDirective
+    #include <unistd.h>
 #endif
 // </SingleHpp>
 
@@ -32,7 +32,7 @@ public:
         return isWindowsOs() ? "\\" : "/";
     }
 
-	// Properly cases the filename, but not the directories, on Windows.
+    // Properly cases the filename, but not the directories, on Windows.
     static std::string checkFilenameCase(const std::string& fullPath)
     {
         if (!isWindowsOs() || !FileUtils::fileExists(fullPath))

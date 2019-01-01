@@ -36,14 +36,14 @@ TEST_CASE("ItVerifiesExistingFiles") {
 
 
 TEST_CASE("ItIgnoresLineEndingDifferences") {
-	FileUtils::writeToFile("a.txt", "1\r\n2\n3\r\n4\r\n5");
-	FileUtils::writeToFile("b.txt", "1\n2\r\n3\r\n4\n5");
-	REQUIRE(FileApprover::verify("a.txt", "b.txt") == NULL);
+    FileUtils::writeToFile("a.txt", "1\r\n2\n3\r\n4\r\n5");
+    FileUtils::writeToFile("b.txt", "1\n2\r\n3\r\n4\n5");
+    REQUIRE(FileApprover::verify("a.txt", "b.txt") == NULL);
 }
 
 
 TEST_CASE("ItComparesTheEntireFile") {
-	FileUtils::writeToFile("a.txt", "12345");
-	FileUtils::writeToFile("b.txt", "123");
-	REQUIRE(FileApprover::verify("a.txt", "b.txt") != NULL);
+    FileUtils::writeToFile("a.txt", "12345");
+    FileUtils::writeToFile("b.txt", "123");
+    REQUIRE(FileApprover::verify("a.txt", "b.txt") != NULL);
 }

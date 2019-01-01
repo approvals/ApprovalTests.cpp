@@ -14,18 +14,18 @@ public:
 
     ~FileApprover() {};
 
-	static std::ifstream::int_type getNextRelevantCharacter(std::ifstream& astream)
-	{
-		auto ch = astream.get();
-		if (ch == '\r')
-		{
-			return astream.get();
-		}
-		else
-		{
-			return ch;
-		}
-	}
+    static std::ifstream::int_type getNextRelevantCharacter(std::ifstream& astream)
+    {
+        auto ch = astream.get();
+        if (ch == '\r')
+        {
+            return astream.get();
+        }
+        else
+        {
+            return ch;
+        }
+    }
 
     static ApprovalException *verify(std::string receivedPath,
                                      std::string approvedPath) {

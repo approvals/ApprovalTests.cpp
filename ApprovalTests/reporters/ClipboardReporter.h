@@ -22,7 +22,7 @@ public:
     virtual bool Report(std::string received, std::string approved) const override
     {
         copyToClipboard(getCommandLineFor(received, approved, SystemUtils::isWindowsOs()));
-		return true;
+        return true;
     }
 
     void copyToClipboard(const std::string& newClipboard) const {
@@ -44,7 +44,7 @@ public:
 
         const std::string clipboardCommand = SystemUtils::isWindowsOs() ? "clip" : "pbclip";
         auto cmd = std::string("echo ") + newClipboard + " | " + clipboardCommand;
-		system(cmd.c_str());
+        system(cmd.c_str());
     }
 };
 
