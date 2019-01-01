@@ -1,5 +1,6 @@
 . combination reporters
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
+. add a non-gui reporter, e.g. for use in CI systems
 
 . tabs to spaces
 . fix an inconsistent declaration in SystemUtils::checkFilenameCase() - WIN32_FIND_DATA -> WIN32_FIND_DATAA
