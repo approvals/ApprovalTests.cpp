@@ -12,17 +12,3 @@ TEST(TestCaseNameDifferentNameThanFile, TestName)
     ApprovalTestNamer namer;
     EXPECT_EQ(namer.getTestName(), "TestCaseNameDifferentNameThanFile.TestName");
 }
-
-//// Adding support for invalid but possible code (missing 2nd macro parameter)
-//TEST(TestCaseNameDifferentNameThanFile)
-//{
-//    ApprovalNamer namer;
-//    EXPECT_EQ(namer.getTestName(), "TestCaseNameDifferentNameThanFile");
-//}
-//
-//// Adding support for invalid but possible code (missing 2nd macro parameter)
-//TEST(GoogleNamerTest)
-//{
-//    ApprovalNamer namer;
-//    EXPECT_EQ(namer.getTestName(), "");
-//}
