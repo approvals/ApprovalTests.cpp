@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "MarkdownSnippets/8.0.0-beta.5": {
+        "dependencies": {
+          "CaptureSnippetsSimple": "8.0.0-beta.5"
+        },
+        "runtime": {
+          "MarkdownSnippets.dll": {}
+        }
+      },
+      "CaptureSnippetsSimple/8.0.0-beta.5": {
+        "runtime": {
+          "CaptureSnippetsSimple.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MarkdownSnippets/8.0.0-beta.5": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CaptureSnippetsSimple/8.0.0-beta.5": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

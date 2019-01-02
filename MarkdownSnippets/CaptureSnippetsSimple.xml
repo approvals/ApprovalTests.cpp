@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CaptureSnippetsSimple</name>
+    </assembly>
+    <members>
+        <member name="T:CaptureSnippets.SimpleSnippetMarkdownHandling">
+            <summary>
+            Simple markdown handling to be passed to <see cref="T:CaptureSnippets.MarkdownProcessor"/>.
+            </summary>
+        </member>
+        <member name="T:CaptureSnippets.FileSnippetExtractor">
+            <summary>
+            Extracts <see cref="T:CaptureSnippets.Snippet"/>s from a given input.
+            </summary>
+        </member>
+        <member name="M:CaptureSnippets.FileSnippetExtractor.Read(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Read from a paths.
+            </summary>
+            <param name="paths">The paths to extract <see cref="T:CaptureSnippets.Snippet"/>s from.</param>
+        </member>
+        <member name="M:CaptureSnippets.FileSnippetExtractor.Read(System.String)">
+            <summary>
+            Read from a path.
+            </summary>
+            <param name="path">The current path to extract <see cref="T:CaptureSnippets.Snippet"/>s from.</param>
+        </member>
+        <member name="M:CaptureSnippets.FileSnippetExtractor.Read(System.IO.TextReader,System.String)">
+            <summary>
+            Read from a <see cref="T:System.IO.TextReader"/>.
+            </summary>
+            <param name="textReader">The <see cref="T:System.IO.TextReader"/> to read from.</param>
+            <param name="path">The current path being used to extract <see cref="T:CaptureSnippets.Snippet"/>s from. Only used for logging purposes in this overload.</param>
+        </member>
+        <member name="M:CaptureSnippets.Snippet.BuildError(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Initialise a new instance of <see cref="T:CaptureSnippets.Snippet"/>.
+            </summary>
+        </member>
+        <member name="M:CaptureSnippets.Snippet.Build(System.Int32,System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initialise a new instance of <see cref="T:CaptureSnippets.Snippet"/>.
+            </summary>
+        </member>
+        <member name="P:CaptureSnippets.Snippet.Key">
+            <summary>
+            The key used to identify the snippet
+            </summary>
+        </member>
+        <member name="P:CaptureSnippets.Snippet.Language">
+            <summary>
+            The language of the snippet, extracted from the file extension of the input file.
+            </summary>
+        </member>
+        <member name="P:CaptureSnippets.Snippet.Path">
+            <summary>
+            The path the snippet was read from.
+            </summary>
+        </member>
+        <member name="P:CaptureSnippets.Snippet.StartLine">
+            <summary>
+            The line the snippets started on
+            </summary>
+        </member>
+        <member name="P:CaptureSnippets.Snippet.EndLine">
+            <summary>
+            The line the snippet ended on.
+            </summary>
+        </member>
+        <member name="P:CaptureSnippets.Snippet.FileLocation">
+            <summary>
+            The <see cref="P:CaptureSnippets.Snippet.Path"/>, <see cref="P:CaptureSnippets.Snippet.StartLine"/> and <see cref="P:CaptureSnippets.Snippet.EndLine"/> concatenated.
+            </summary>
+        </member>
+        <member name="T:CaptureSnippets.InterpretErrors">
+            <summary>
+            Extension method to convert various error cases.
+            </summary>
+        </member>
+        <member name="M:CaptureSnippets.InterpretErrors.ErrorsAsMarkdown(System.Collections.Generic.IReadOnlyList{CaptureSnippets.Snippet})">
+            <summary>
+            Converts <see cref="T:System.Collections.Generic.IEnumerable`1"/> to a markdown string.
+            </summary>
+        </member>
+        <member name="M:CaptureSnippets.InterpretErrors.ErrorsAsMarkdown(CaptureSnippets.ProcessResult)">
+            <summary>
+            Converts <see cref="P:CaptureSnippets.ProcessResult.MissingSnippets"/> to a markdown string.
+            </summary>
+        </member>
+        <member name="T:CaptureSnippets.MarkdownProcessor">
+            <summary>
+            Merges <see cref="T:CaptureSnippets.Snippet"/>s with an input file/text.
+            </summary>
+        </member>
+        <member name="M:CaptureSnippets.MarkdownProcessor.Apply(System.IO.TextReader,System.IO.TextWriter)">
+            <summary>
+            Apply to <paramref name="writer"/>.
+            </summary>
+        </member>
+        <member name="T:CaptureSnippets.MissingSnippet">
+            <summary>
+            Part of <see cref="T:CaptureSnippets.ProcessResult"/>.
+            </summary>
+        </member>
+        <member name="M:CaptureSnippets.MissingSnippet.#ctor(System.String,System.Int32)">
+            <summary>
+            Initialise a new instance of <see cref="T:CaptureSnippets.MissingSnippet"/>.
+            </summary>
+        </member>
+        <member name="P:CaptureSnippets.MissingSnippet.Key">
+            <summary>
+            The key of the missing snippet.
+            </summary>
+        </member>
+        <member name="P:CaptureSnippets.MissingSnippet.Line">
+            <summary>
+            The line number in the input text where the snippet was expected to be injected.
+            </summary>
+        </member>
+        <member name="T:CaptureSnippets.ProcessResult">
+            <summary>
+            The result of <see cref="T:CaptureSnippets.MarkdownProcessor"/> Apply methods.
+            </summary>
+        </member>
+        <member name="P:CaptureSnippets.ProcessResult.UsedSnippets">
+            <summary>
+              List of all snippets that the markdown file used.
+            </summary>
+        </member>
+        <member name="M:CaptureSnippets.ProcessResult.GetEnumerator">
+            <summary>
+            Enumerates through the <see cref="P:CaptureSnippets.ProcessResult.UsedSnippets" /> but will first throw an exception if there are any <see cref="P:CaptureSnippets.ProcessResult.MissingSnippets" />.
+            </summary>
+        </member>
+        <member name="P:CaptureSnippets.ProcessResult.MissingSnippets">
+            <summary>
+              List of all snippets that the markdown file expected but did not exist in the input snippets.
+            </summary>
+        </member>
+        <member name="M:CaptureSnippets.ReadSnippets.GetEnumerator">
+            <summary>
+            Enumerates through the <see cref="P:CaptureSnippets.ReadSnippets.Snippets" /> but will first throw an exception if there are any <see cref="P:CaptureSnippets.ReadSnippets.SnippetsInError" />.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -2,12 +2,7 @@
 
 ## New Project
 
-<!-- snippet: catch_2_main -->
-```cpp
-#define APPROVALS_CATCH
-#include "../ApprovalTests/Catch2Approvals.h"
-```
-<!-- endsnippet -->
+snippet: catch_2_main
 
 ## Existing Project
 
@@ -21,12 +16,7 @@ TODO
 
 ## New Project
 
-<!-- snippet: googletest_main -->
-```cpp
-#define APPROVALS_GOOGLETEST
-#include "../ApprovalTests/GoogleTestApprovals.h"
-```
-<!-- endsnippet -->
+snippet: googletest_main
 
 ## Existing Project
 
