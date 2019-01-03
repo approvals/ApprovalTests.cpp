@@ -11,10 +11,10 @@ public:
     ExistingFileNamer(std::string filePath): filePath(filePath){
 
     }
-    virtual string getApprovedFile(string extentionWithDot) {
-        return namer.getApprovedFile(extentionWithDot);
+    virtual string getApprovedFile(string extensionWithDot) {
+        return namer.getApprovedFile(extensionWithDot);
     }
-    virtual string getReceivedFile(string extentionWithDot) {
+    virtual string getReceivedFile(string extensionWithDot) {
         return filePath;
     }
 

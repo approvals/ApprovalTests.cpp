@@ -8,8 +8,8 @@ using std::string;
 class ApprovalNamer
 {
 public:
-    virtual string getApprovedFile(string extentionWithDot) = 0;
-    virtual string getReceivedFile(string extentionWithDot) = 0;
+    virtual string getApprovedFile(string extensionWithDot) = 0;
+    virtual string getReceivedFile(string extensionWithDot) = 0;
 
 };
 

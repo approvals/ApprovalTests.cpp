@@ -83,19 +83,19 @@ public:
 
     STATIC(TestName, currentTest, NULL)
 
-    virtual string getApprovedFile(string extentionWithDot) {
+    virtual string getApprovedFile(string extensionWithDot) {
 
-        return getFullFileName(".approved", extentionWithDot);
+        return getFullFileName(".approved", extensionWithDot);
     }
 
-    virtual string getReceivedFile(string extentionWithDot) {
+    virtual string getReceivedFile(string extensionWithDot) {
 
-        return getFullFileName(".received", extentionWithDot);
+        return getFullFileName(".received", extensionWithDot);
     }
 
-    string getFullFileName(string approved, string extentionWithDot) {
+    string getFullFileName(string approved, string extensionWithDot) {
         std::stringstream ext;
-        ext << getDirectory() << getFileName() << "." << getTestName() << approved << extentionWithDot;
+        ext << getDirectory() << getFileName() << "." << getTestName() << approved << extensionWithDot;
         return ext.str();
     }
 };
