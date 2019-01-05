@@ -19,6 +19,7 @@
 . maps
 
 . docs
+. memory leaks in our tests
 . reports
 . asJson
 . loggers
