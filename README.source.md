@@ -5,6 +5,8 @@ CppApprovals
 
 [![Build status](https://ci.appveyor.com/api/projects/status/lf3i76ije89oihi5?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp)
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 Native ApprovalTests for C++
 
 ![Intro Graphic](doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)
@@ -25,14 +27,17 @@ I Highly suggest you clone [The Approval.cpp Starter Project](https://github.com
 
 ## Main File
 
-you need to include 2 lines for your main file to work.
+You need to include 2 lines for your main file to work.
 
-``` cpp
-#define APPROVALS_CATCH
-#include "ApprovalTests.hpp"
-```
+For catch (1 and 2), it's these two lines:
 
-For all other files, you only need
+snippet: catch_2_main
+
+For Google Test, it's these:
+
+snippet: googletest_main
+
+For all other test files, you need:
 ``` cpp
 #include "ApprovalTests.hpp"
 ```

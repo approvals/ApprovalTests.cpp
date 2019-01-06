@@ -5,7 +5,7 @@
 <!-- snippet: catch_2_main -->
 ```cpp
 #define APPROVALS_CATCH
-#include "../ApprovalTests/Catch2Approvals.h"
+#include "ApprovalTests.hpp"
 ```
 <!-- endsnippet -->
 
@@ -24,7 +24,7 @@ TODO
 <!-- snippet: googletest_main -->
 ```cpp
 #define APPROVALS_GOOGLETEST
-#include "../ApprovalTests/GoogleTestApprovals.h"
+#include "ApprovalTests.hpp"
 ```
 <!-- endsnippet -->
 

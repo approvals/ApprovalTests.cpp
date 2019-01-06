@@ -27,14 +27,27 @@ I Highly suggest you clone [The Approval.cpp Starter Project](https://github.com
 
 ## Main File
 
-you need to include 2 lines for your main file to work.
+You need to include 2 lines for your main file to work.
 
-``` cpp
+For catch (1 and 2), it's these two lines:
+
+<!-- snippet: catch_2_main -->
+```cpp
 #define APPROVALS_CATCH
 #include "ApprovalTests.hpp"
 ```
+<!-- endsnippet -->
 
-For all other files, you only need
+For Google Test, it's these:
+
+<!-- snippet: googletest_main -->
+```cpp
+#define APPROVALS_GOOGLETEST
+#include "ApprovalTests.hpp"
+```
+<!-- endsnippet -->
+
+For all other test files, you need:
 ``` cpp
 #include "ApprovalTests.hpp"
 ```
