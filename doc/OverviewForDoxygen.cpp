@@ -51,11 +51,11 @@
  - Approvals is the main class that contains methods for verification
  - CombinationApprovals contains a powerful way of approving a large amount of data very easily
  - FileApprover is the core of this mechanism.
-    - One overload of FileApprover::verify(ApprovalNamer&, ApprovalWriter&, const Reporter&) pulls together
-      ApprovalNamer,  ApprovalWriter and Reporter, to run a verification
-    - The other overload of FileApprover::verify(std::string, std::string) takes the
-      names of two files, and decides if their contents
-      are equivalent, ignoring differences in line endings
+    - There are two overloads of FileApprover::verify()
+    - FileApprover::verify(ApprovalNamer&, ApprovalWriter&, const Reporter&) pulls together
+      ApprovalNamer,  ApprovalWriter and Reporter, to run a verification.
+    - FileApprover::verify(std::string, std::string) takes the names of two files, and decides if their contents
+      are equivalent, ignoring differences in line endings.
  - Use of exceptions
     - The way that a difference in file-content is conveyed by FileApprover to the test framework (Catch2, Google Test etc) is by
       the throwing of an exception. The test framework then picks up that exception, and reports it as a
@@ -65,10 +65,6 @@
     - A test that wanted to run multiple verifications could catch ApprovalException, note the failure, keep on
       testing, and then at the end of the test method, call the test frameworks's specific mechanism to report
       the failure(s).
- - Exception types
-    - It looks like FileApprover::verify() intends to throw ApprovalMissingException or ApprovalMismatchException
-      to indicate failure
-    - In fact, it throws ApprovalException
 
  \section reporters Reporters
 
