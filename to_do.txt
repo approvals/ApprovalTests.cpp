@@ -1,9 +1,8 @@
-. add samples project and documentation. use single header with links to all other headers.
+. add sample for adding to existing google test
 
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
 . add a non-gui reporter, e.g. for use in CI systems
 
-. bug: FileApprover::verify() only ever throws ApprovalException, and never the derived types - due to object slicing
 . tabs to spaces
 . fix an inconsistent declaration in SystemUtils::checkFilenameCase() - WIN32_FIND_DATA -> WIN32_FIND_DATAA
 . make it easy to add approvals to existing catch2 tests
