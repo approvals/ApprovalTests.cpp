@@ -27,10 +27,7 @@ TEST_CASE("ItVerifiesApprovedFileExists") {
 
 
 TEST_CASE("ItVerifiesExistingFiles") {
-
     ApprovalTestNamer namer;
-
-
     Approvals::verifyExistingFile(namer.getDirectory() + "sample.txt");
 }
 
@@ -38,12 +35,12 @@ TEST_CASE("ItVerifiesExistingFiles") {
 TEST_CASE("ItIgnoresLineEndingDifferences") {
     FileUtils::writeToFile("a.txt", "1\r\n2\n3\r\n4\r\n5");
     FileUtils::writeToFile("b.txt", "1\n2\r\n3\r\n4\n5");
-    REQUIRE(FileApprover::verify("a.txt", "b.txt") == NULL);
+    FileApprover::verify("a.txt", "b.txt");
 }
 
 
 TEST_CASE("ItComparesTheEntireFile") {
     FileUtils::writeToFile("a.txt", "12345");
     FileUtils::writeToFile("b.txt", "123");
-    REQUIRE(FileApprover::verify("a.txt", "b.txt") != NULL);
+    CHECK_THROWS_AS(FileApprover::verify("a.txt", "b.txt"), ApprovalMismatchException);
 }

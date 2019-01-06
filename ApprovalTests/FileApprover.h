@@ -27,18 +27,18 @@ public:
         }
     }
 
-    static ApprovalException *verify(std::string receivedPath,
-                                     std::string approvedPath) {
+    static void verify(std::string receivedPath,
+                       std::string approvedPath) {
         int asize = FileUtils::fileSize(approvedPath);
 
         if (-1 == asize) {
-            return new ApprovalMissingException(receivedPath, approvedPath);
+            throw ApprovalMissingException(receivedPath, approvedPath);
         }
 
         int rsize = FileUtils::fileSize(receivedPath);
 
         if (-1 == rsize) {
-            return new ApprovalMissingException(approvedPath, receivedPath);
+            throw ApprovalMissingException(approvedPath, receivedPath);
         }
 
         std::ifstream astream(approvedPath.c_str(),
@@ -51,10 +51,9 @@ public:
             int r = getNextRelevantCharacter(rstream);
 
             if (a != r) {
-                return new ApprovalMismatchException(receivedPath, approvedPath);
+                throw ApprovalMismatchException(receivedPath, approvedPath);
             }
         }
-        return NULL;
     }
 
 
@@ -62,15 +61,14 @@ public:
         std::string approvedPath = n.getApprovedFile(s.GetFileExtension());
         std::string receivedPath = n.getReceivedFile(s.GetFileExtension());
         s.Write(receivedPath);
-        ApprovalException *ae = verify(receivedPath, approvedPath);
-
-        if (ae != NULL) {
-            r.Report(receivedPath, approvedPath);
-            ApprovalException e(*ae);
-            delete ae;
-            throw e;
-        } else {
+        try
+        {
+            verify(receivedPath, approvedPath);
             s.CleanUpReceived(receivedPath);
+        }
+        catch (const ApprovalException& exception) {
+            r.Report(receivedPath, approvedPath);
+            throw;
         }
     }
 

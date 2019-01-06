@@ -1,5 +1,7 @@
 #include "Catch.hpp"
 #include "../ApprovalTests/ApprovalException.h"
+#include "../ApprovalTests/Approvals.h"
+#include "../ApprovalTests/reporters/QuietReporter.h"
 
 using namespace std;
 
@@ -16,4 +18,23 @@ TEST_CASE("ApprovalMismatchExceptionHasAMessage") {
             "Received : \"r.txt\" \n"
             "Approved : \"a.txt\"";
     REQUIRE(a.what() == expected);
+}
+
+TEST_CASE("ApprovalMissingException is thrown")
+{
+    // Important to note that QuietReporter doesn't create the missing
+    // approved file
+    bool exception_caught = false;
+    try {
+        Approvals::verify("foo", QuietReporter());
+    }
+    catch (const ApprovalMissingException& exception)
+    {
+        exception_caught = true;
+    }
+    catch (const ApprovalException& exception)
+    {
+        exception_caught = false;
+    }
+    REQUIRE(exception_caught == true);
 }
