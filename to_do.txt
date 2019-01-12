@@ -21,6 +21,7 @@
 
 . docs
 . memory leaks in our tests
+. add keywords to github project - for examples, see https://github.com/catchorg/Catch2
 . reports
 . asJson
 . loggers
