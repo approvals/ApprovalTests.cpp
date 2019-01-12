@@ -9,8 +9,10 @@
 . understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
 . add an easy way to produce multiple output files from one test
 
+. remove version number from filename in releases, so it's easier for users to update
+. include some boilerplate text, including licence and version number, in released header
+
 . get googletest on Windows to process more than one failure at a time in Araxis Merge
-. better name for CMakeLists.txt.in - to indicate it downloads googletest
 . run through Qt Creator analysis tools
 . catch reporter
 . tortoise git diff reporter
