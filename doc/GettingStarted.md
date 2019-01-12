@@ -32,7 +32,7 @@ TODO
 
 ``` cpp
 #define APPROVALS_GOOGLETEST_EXISTING_MAIN
-#include "../ApprovalTests/GoogleTestApprovals.h"
+#include "ApprovalTests.hpp"
 
 int main(int argc, char** argv)
 {
