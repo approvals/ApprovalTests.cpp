@@ -5,5 +5,5 @@ set(SOURCE_FILES
         main.cpp
         ApprovalsTests.cpp
         )
-add_executable(ApprovalTests_Catch1_Tests ${SOURCE_FILES} )
-add_test(NAME ApprovalTests_Catch1_Tests COMMAND ApprovalTests_Catch1_Tests)
+add_executable(${PROJECT_NAME} ${SOURCE_FILES} )
+add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
