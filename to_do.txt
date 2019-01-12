@@ -1,3 +1,4 @@
+. bug: CombinationApprovals::verifyAllCombinations() discards the supplied reporter at each level
 . add sample for adding to existing google test
 
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
