@@ -23,7 +23,7 @@
  verifying that string or image representations of one or more objects match a
  previously-supplied representation.
 
- To allow any differences in those representations to be investigated and handle, it
+ To allow any differences in those representations to be investigated and handled, it
  provides an abstraction with many flexible options. See \ref reporters below.
 
  And it uses one of a number of supported C++ test frameworks to supply the naming
@@ -38,9 +38,9 @@
 
  The following test frameworks are currently supported, via these files:
 
- - Catch2Approvals.h
- - GoogleTestApprovals.h
- - OkraApprovals.h
+ - <a href="https://github.com/catchorg/Catch2">Catch 1 and 2</a>: Catch2Approvals.h
+ - <a href="https://github.com/google/googletest">Google Test</a>: GoogleTestApprovals.h
+ - <a href="https://github.com/JayBazuzi/Okra">Okra</a>: OkraApprovals.h
 
  Might be worth creating a sub-directory for these, perhaps integrations, or test_frameworks?
 
@@ -57,7 +57,7 @@
     - FileApprover::verify(std::string, std::string) takes the names of two files, and decides if their contents
       are equivalent, ignoring differences in line endings.
  - Use of exceptions
-    - The way that a difference in file-content is conveyed by FileApprover to the test framework (Catch2, Google Test etc) is by
+    - The way that a difference in file-content is conveyed by FileApprover to the test framework (Catch, Google Test etc) is by
       the throwing of an exception. The test framework then picks up that exception, and reports it as a
       failure.
     - This means that, currently, it's only possible for a single verification failure to easily be reported
@@ -73,10 +73,10 @@
  \subsection reporters_overview Overview of Reporters
 
  - Reporter is the interface class
- - The default reporter is DiffReporter, which finds looks for one of a wide range of pre-configured
+ - The default reporter is DiffReporter, which looks for one of a wide range of pre-configured
    file-comparison tools.
     - This is very convenient. It saves developers from having to find out what diffing tools are
-      available on the current machine. One is chosen automatically
+      available on the current machine, as one is chosen automatically
 
  \subsection custom_reporters Custom Reporters
 
