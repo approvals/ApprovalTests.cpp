@@ -20,6 +20,7 @@
 . maps
 
 . docs
+. docs - add troubleshooting page, e.g. what happens if you add a Google test that uses Approvals, but don't add a Google main that registers Approvals listener (crash!)
 . memory leaks in our tests
 . add keywords to github project - for examples, see https://github.com/catchorg/Catch2
 . reports
