@@ -1,4 +1,5 @@
 . bug: CombinationApprovals::verifyAllCombinations() discards the supplied reporter at each level
+. bug: arguments member in DiffInfo is unused after construction
 . add sample for adding to existing google test
 
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
@@ -9,11 +10,13 @@
 . make it easy to add approvals to existing catch2 tests
 . understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
 . add an easy way to produce multiple output files from one test
+. inconsistent case of method names in ApprovalWriter and Reporter to rest of code
 
 . remove version number from filename in releases, so it's easier for users to update
 . include some boilerplate text, including licence and version number, in released header
 
 . get googletest on Windows to process more than one failure at a time in Araxis Merge
+. if Approvals is run in googletest, without the customised main, give meaningful message, instead of 'SEH exception with code 0xc0000005 thrown in the test body'
 . run through Qt Creator analysis tools
 . catch reporter
 . tortoise git diff reporter
@@ -21,6 +24,7 @@
 
 . docs
 . docs - add troubleshooting page, e.g. what happens if you add a Google test that uses Approvals, but don't add a Google main that registers Approvals listener (crash!)
+. docs - document how to test file types that are not character-for-character equivalent
 . memory leaks in our tests
 . add keywords to github project - for examples, see https://github.com/catchorg/Catch2
 . reports
@@ -32,6 +36,7 @@
     . ProgramFiles(x86)=C:\Program Files (x86)
     . https://docs.microsoft.com/en-gb/windows/desktop/WinProg64/wow64-implementation-details
 . windows reporters when building in Cygwin
+. make SystemLauncher on Windows use the 'where' command
 . treat compiler warnings as errors - ideally on all platforms
 . public hosting of doxygen docs - to browse class hierarchy and file dependencies
 . get building on windows with gcc (https://nuwen.net/mingw.html)
