@@ -13,13 +13,15 @@
 #include "Macros.h"
 
 class FileApprover {
+private:
+    using ComparerContainer = std::map< std::string, ApprovalComparator >;
+    STATIC(ComparerContainer, comparators, new ComparerContainer())
+
 public:
     FileApprover() {};
 
     ~FileApprover() {};
 
-    using ComparerContainer = std::map< std::string, ApprovalComparator >;
-    STATIC(ComparerContainer, comparators, new ComparerContainer())
     static void registerComparator(std::string extentionWithDot, ApprovalComparator comparator)
     {
         comparators()[extentionWithDot] = comparator;
