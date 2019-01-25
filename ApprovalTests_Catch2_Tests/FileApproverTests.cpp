@@ -44,3 +44,17 @@ TEST_CASE("ItComparesTheEntireFile") {
     FileUtils::writeToFile("b.txt", "123");
     CHECK_THROWS_AS(FileApprover::verify("a.txt", "b.txt"), ApprovalMismatchException);
 }
+
+static bool LengthComparer(std::string receivedPath,
+                           std::string approvedPath)
+{
+    return FileUtils::fileSize(receivedPath) == FileUtils::fileSize(approvedPath);
+}
+
+TEST_CASE("ItUsesCustomComparer") {
+    FileUtils::writeToFile("a.length", "12345");
+    FileUtils::writeToFile("b.length", "56789");
+    FileApprover::registerComparer(".length", &LengthComparer);
+    FileApprover::verify("a.length", "b.length");
+}
+

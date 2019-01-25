@@ -2,6 +2,7 @@
 #define FILEAPPROVER_H
 
 #include <fstream>
+#include <map>
 #include "ApprovalException.h"
 #include "StringWriter.h"
 #include "reporters/Reporter.h"
@@ -9,6 +10,7 @@
 #include "comparers/ApprovalComparer.h"
 #include "comparers/TextFileComparer.h"
 #include "FileUtils.h"
+#include "Macros.h"
 
 class FileApprover {
 public:
@@ -16,8 +18,19 @@ public:
 
     ~FileApprover() {};
 
-    static std::unique_ptr<ApprovalComparer> getComparerForFile(string receivedPath) {
-        return std::unique_ptr<ApprovalComparer>(new TextFileComparer());
+    using ComparerContainer = std::map< std::string, ApprovalComparer >;
+    STATIC(ComparerContainer, comparers, new ComparerContainer())
+    static void registerComparer(std::string extentionWithDot, ApprovalComparer comparer)
+    {
+        comparers()[extentionWithDot] = comparer;
+    }
+
+    static ApprovalComparer getComparerForFile(string receivedPath) {
+        const std::string fileExtension = FileUtils::getExtensionWithDot(receivedPath);
+        if (comparers().find(fileExtension) != comparers().end()) {
+            return comparers()[fileExtension];
+        }
+        return TextFileComparer::getComparator();
     }
 
     static void verify(std::string receivedPath,
@@ -35,7 +48,7 @@ public:
             throw ApprovalMissingException(approvedPath, receivedPath);
         }
 
-        if (!comparer.contentsAreEquivalent(receivedPath, approvedPath)) {
+        if (!comparer(receivedPath, approvedPath)) {
             throw ApprovalMismatchException(receivedPath, approvedPath);
         }
     }
@@ -43,7 +56,7 @@ public:
     //! Verify that the contents of two text files are equivalent, ignoring any differences in line endings
     static void verify(std::string receivedPath,
                        std::string approvedPath) {
-        verify(receivedPath, approvedPath, *getComparerForFile(receivedPath));
+        verify(receivedPath, approvedPath, getComparerForFile(receivedPath));
     }
 
     static void verify(ApprovalNamer& n, ApprovalWriter& s, const Reporter& r) {

@@ -3,11 +3,7 @@
 
 #include <string>
 
-class ApprovalComparer
-{
-public:
-    virtual bool contentsAreEquivalent(std::string receivedPath,
-                                       std::string approvedPath) const = 0;
-};
+using ApprovalComparer = bool (*)(std::string receivedPath,
+                                  std::string approvedPath);
 
 #endif //APPROVALTESTS_CPP_APPROVALCOMPARER_H
