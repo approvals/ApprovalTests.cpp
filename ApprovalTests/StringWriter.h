@@ -15,12 +15,12 @@ public:
     StringWriter( std::string contents, std::string fileExtensionWithDot = ".txt" )
         : s( contents ), ext( fileExtensionWithDot ) {}
 
-    std::string GetFileExtension()
+    std::string getFileExtension() override
     {
         return ext;
     }
 
-    void Write( std::string path )
+    void write( std::string path ) override
     {
         std::ofstream out( path.c_str(), std::ofstream::out );
         this->Write( out );
@@ -32,7 +32,7 @@ public:
         out << s << "\n";
     }
 
-    virtual void CleanUpReceived(std::string receivedPath){
+    virtual void cleanUpReceived(std::string receivedPath)override {
         remove(receivedPath.c_str());
     }
 

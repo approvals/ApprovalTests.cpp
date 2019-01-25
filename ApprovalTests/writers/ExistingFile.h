@@ -10,13 +10,13 @@ class ExistingFile : public ApprovalWriter{
     std::string filePath;
 public:
     ExistingFile(std::string filePath) : filePath(filePath){}
-    virtual std::string GetFileExtension(){
+    virtual std::string getFileExtension() override {
         return FileUtils::getExtensionWithDot(filePath);
     }
-    virtual void Write(std::string path) {
+    virtual void write(std::string path) override {
         // do nothing
     }
-    virtual void CleanUpReceived(std::string receivedPath){
+    virtual void cleanUpReceived(std::string receivedPath) override {
         // do nothing
     }
 };

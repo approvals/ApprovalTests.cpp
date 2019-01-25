@@ -60,13 +60,13 @@ public:
     }
 
     static void verify(ApprovalNamer& n, ApprovalWriter& s, const Reporter& r) {
-        std::string approvedPath = n.getApprovedFile(s.GetFileExtension());
-        std::string receivedPath = n.getReceivedFile(s.GetFileExtension());
-        s.Write(receivedPath);
+        std::string approvedPath = n.getApprovedFile(s.getFileExtension());
+        std::string receivedPath = n.getReceivedFile(s.getFileExtension());
+        s.write(receivedPath);
         try
         {
             verify(receivedPath, approvedPath);
-            s.CleanUpReceived(receivedPath);
+            s.cleanUpReceived(receivedPath);
         }
         catch (const ApprovalException&) {
             r.Report(receivedPath, approvedPath);

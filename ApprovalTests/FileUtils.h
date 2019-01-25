@@ -29,7 +29,7 @@ public:
     static void ensureFileExists(std::string fullFilePath) {
         if (!fileExists(fullFilePath)) {
             StringWriter s("", "");
-            s.Write(fullFilePath);
+            s.write(fullFilePath);
         }
     }
 

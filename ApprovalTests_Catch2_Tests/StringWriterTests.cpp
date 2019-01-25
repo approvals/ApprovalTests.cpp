@@ -17,7 +17,7 @@ string readFileAndDelete(const char *fileName) {
 TEST_CASE("ItWritesTheContentsToAFile") {
     StringWriter s("Hello");
     auto fileName = "out.txt";
-    s.Write(fileName);
+    s.write(fileName);
 
     string text = readFileAndDelete(fileName);
     REQUIRE(text == "Hello\n");
@@ -32,10 +32,10 @@ TEST_CASE("ItWritesTheContentsToAStream") {
 
 TEST_CASE("TheDefaultExtensionIsText") {
     StringWriter s("Hello");
-    REQUIRE(s.GetFileExtension() == ".txt");
+    REQUIRE(s.getFileExtension() == ".txt");
 }
 
 TEST_CASE("TheExtensionIsConfigurable") {
     StringWriter s("Hello", ".html");
-    REQUIRE(s.GetFileExtension() == ".html");
+    REQUIRE(s.getFileExtension() == ".html");
 }
