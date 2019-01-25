@@ -41,7 +41,7 @@ public:
         }
 #ifdef _WIN32
 
-        WIN32_FIND_DATA findFileData;
+        WIN32_FIND_DATAA findFileData;
         HANDLE hFind = FindFirstFileA(fullPath.c_str(), &findFileData);
 
         if (hFind != INVALID_HANDLE_VALUE)
