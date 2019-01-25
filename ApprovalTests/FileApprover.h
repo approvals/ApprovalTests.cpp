@@ -22,9 +22,9 @@ public:
 
     ~FileApprover() {};
 
-    static void registerComparator(std::string extentionWithDot, ApprovalComparator comparator)
+    static void registerComparator(std::string extensionWithDot, ApprovalComparator comparator)
     {
-        comparators()[extentionWithDot] = comparator;
+        comparators()[extensionWithDot] = comparator;
     }
 
     static ApprovalComparator getComparerForFile(string receivedPath) {
