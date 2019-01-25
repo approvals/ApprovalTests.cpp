@@ -38,15 +38,11 @@ public:
     static void verify(std::string receivedPath,
                        std::string approvedPath,
                        const ApprovalComparator& comparator) {
-        int asize = FileUtils::fileSize(approvedPath);
-
-        if (-1 == asize) {
+        if (!FileUtils::fileExists(approvedPath)) {
             throw ApprovalMissingException(receivedPath, approvedPath);
         }
 
-        int rsize = FileUtils::fileSize(receivedPath);
-
-        if (-1 == rsize) {
+        if (!FileUtils::fileExists(receivedPath)) {
             throw ApprovalMissingException(approvedPath, receivedPath);
         }
 
