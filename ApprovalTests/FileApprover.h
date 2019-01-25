@@ -6,6 +6,8 @@
 #include "StringWriter.h"
 #include "reporters/Reporter.h"
 #include "namers/ApprovalNamer.h"
+#include "comparers/ApprovalComparer.h"
+#include "comparers/TextFileComparer.h"
 #include "FileUtils.h"
 
 class FileApprover {
@@ -14,21 +16,13 @@ public:
 
     ~FileApprover() {};
 
-    static std::ifstream::int_type getNextRelevantCharacter(std::ifstream& astream)
-    {
-        auto ch = astream.get();
-        if (ch == '\r')
-        {
-            return astream.get();
-        }
-        else
-        {
-            return ch;
-        }
+    static std::unique_ptr<ApprovalComparer> getComparerForFile(string receivedPath) {
+        return std::unique_ptr<ApprovalComparer>(new TextFileComparer());
     }
 
     static void verify(std::string receivedPath,
-                       std::string approvedPath) {
+                       std::string approvedPath,
+                       const ApprovalComparer& comparer) {
         int asize = FileUtils::fileSize(approvedPath);
 
         if (-1 == asize) {
@@ -41,21 +35,16 @@ public:
             throw ApprovalMissingException(approvedPath, receivedPath);
         }
 
-        std::ifstream astream(approvedPath.c_str(),
-                              std::ios::binary | std::ifstream::in);
-        std::ifstream rstream(receivedPath.c_str(),
-                              std::ios::binary | std::ifstream::in);
-
-        while (astream.good() && rstream.good()) {
-            int a = getNextRelevantCharacter(astream);
-            int r = getNextRelevantCharacter(rstream);
-
-            if (a != r) {
-                throw ApprovalMismatchException(receivedPath, approvedPath);
-            }
+        if (!comparer.contentsAreEquivalent(receivedPath, approvedPath)) {
+            throw ApprovalMismatchException(receivedPath, approvedPath);
         }
     }
 
+    //! Verify that the contents of two text files are equivalent, ignoring any differences in line endings
+    static void verify(std::string receivedPath,
+                       std::string approvedPath) {
+        verify(receivedPath, approvedPath, *getComparerForFile(receivedPath));
+    }
 
     static void verify(ApprovalNamer& n, ApprovalWriter& s, const Reporter& r) {
         std::string approvedPath = n.getApprovedFile(s.GetFileExtension());
