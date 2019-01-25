@@ -14,6 +14,7 @@ set(SOURCE_FILES
         StringUtilsTests.cpp
         SystemUtilsTests.cpp
         ToStringExample.cpp
+        StyleGuide.h
         )
 add_executable(${PROJECT_NAME} ${SOURCE_FILES} )
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
