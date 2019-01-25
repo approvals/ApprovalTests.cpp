@@ -1,9 +1,9 @@
-#ifndef APPROVALTESTS_CPP_APPROVALCOMPARER_H
-#define APPROVALTESTS_CPP_APPROVALCOMPARER_H
+#ifndef APPROVALTESTS_CPP_APPROVALCOMPARATOR_H
+#define APPROVALTESTS_CPP_APPROVALCOMPARATOR_H
 
 #include <string>
 
 using ApprovalComparator = bool (*)(std::string receivedPath,
                                     std::string approvedPath);
 
-#endif //APPROVALTESTS_CPP_APPROVALCOMPARER_H
+#endif //APPROVALTESTS_CPP_APPROVALCOMPARATOR_H

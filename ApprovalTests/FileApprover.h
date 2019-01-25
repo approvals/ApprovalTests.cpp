@@ -7,15 +7,15 @@
 #include "StringWriter.h"
 #include "reporters/Reporter.h"
 #include "namers/ApprovalNamer.h"
-#include "comparers/ApprovalComparator.h"
-#include "comparers/TextFileComparator.h"
+#include "comparators/ApprovalComparator.h"
+#include "comparators/TextFileComparator.h"
 #include "FileUtils.h"
 #include "Macros.h"
 
 class FileApprover {
 private:
-    using ComparerContainer = std::map< std::string, ApprovalComparator >;
-    STATIC(ComparerContainer, comparators, new ComparerContainer())
+    using ComparatorContainer = std::map< std::string, ApprovalComparator >;
+    STATIC(ComparatorContainer, comparators, new ComparatorContainer())
 
 public:
     FileApprover() {};
@@ -27,7 +27,7 @@ public:
         comparators()[extensionWithDot] = comparator;
     }
 
-    static ApprovalComparator getComparerForFile(string receivedPath) {
+    static ApprovalComparator getComparatorForFile(string receivedPath) {
         const std::string fileExtension = FileUtils::getExtensionWithDot(receivedPath);
         if (comparators().find(fileExtension) != comparators().end()) {
             return comparators()[fileExtension];
@@ -53,7 +53,7 @@ public:
 
     static void verify(std::string receivedPath,
                        std::string approvedPath) {
-        verify(receivedPath, approvedPath, getComparerForFile(receivedPath));
+        verify(receivedPath, approvedPath, getComparatorForFile(receivedPath));
     }
 
     static void verify(ApprovalNamer& n, ApprovalWriter& s, const Reporter& r) {

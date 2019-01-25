@@ -12,8 +12,8 @@ set(SOURCE_FILES
         StringWriter.h
         SystemUtils.h
         CombinationApprovals.h
-        comparers/ApprovalComparator.h
-        comparers/TextFileComparator.h
+        comparators/ApprovalComparator.h
+        comparators/TextFileComparator.h
         namers/ApprovalNamer.h
         namers/ApprovalTestNamer.h
         reporters/CommandLauncher.h
