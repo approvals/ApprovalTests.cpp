@@ -19,11 +19,11 @@ public:
         }
     }
 
-    bool Report(std::string received, std::string approved) const override
+    bool report(std::string received, std::string approved) const override
     {
         for(auto& r : reporters)
         {
-            if (r->Report(received, approved))
+            if (r->report(received, approved))
             {
                 return true;
             }

@@ -69,7 +69,7 @@ public:
             s.cleanUpReceived(receivedPath);
         }
         catch (const ApprovalException&) {
-            r.Report(receivedPath, approvedPath);
+            r.report(receivedPath, approvedPath);
             throw;
         }
     }
