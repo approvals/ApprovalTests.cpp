@@ -6,3 +6,4 @@ build/releases
 doc/html/
 .vs/
 /.vscode/
+*.runsettings
