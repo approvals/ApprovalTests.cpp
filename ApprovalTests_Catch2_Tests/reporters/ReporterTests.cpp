@@ -11,7 +11,7 @@ using namespace std;
 TEST_CASE("Reporters Launch Command") {
     TestReporter m(true);
     bool result = m.report("r.txt", "a.txt");
-    REQUIRE(m.launcher.ReceivedCommand() == "fake r.txt a.txt ");
+    REQUIRE(m.launcher.receivedCommand() == "fake r.txt a.txt ");
     REQUIRE(true == result);
 }
 
@@ -21,8 +21,8 @@ TEST_CASE("FirstWorkingReporter") {
     TestReporter* m3 = new TestReporter(true);
     FirstWorkingReporter reporter({m1, m2, m3});
     bool result = reporter.report("r.txt", "a.txt");
-    REQUIRE(m2->launcher.ReceivedCommand() == "fake r.txt a.txt ");
-    REQUIRE(m3->launcher.ReceivedCommand() == "");
+    REQUIRE(m2->launcher.receivedCommand() == "fake r.txt a.txt ");
+    REQUIRE(m3->launcher.receivedCommand() == "");
     REQUIRE(true == result);
 }
 

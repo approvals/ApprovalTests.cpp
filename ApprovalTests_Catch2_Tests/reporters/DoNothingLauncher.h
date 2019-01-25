@@ -25,7 +25,7 @@ public:
         return working;
     }
 
-    std::string ReceivedCommand()
+    std::string receivedCommand()
     {
         return cmd;
     }
