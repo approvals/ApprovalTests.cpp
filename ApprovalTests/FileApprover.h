@@ -29,8 +29,9 @@ public:
 
     static ApprovalComparator getComparatorForFile(string receivedPath) {
         const std::string fileExtension = FileUtils::getExtensionWithDot(receivedPath);
-        if (comparators().find(fileExtension) != comparators().end()) {
-            return comparators()[fileExtension];
+        auto iterator = comparators().find(fileExtension);
+        if (iterator != comparators().end()) {
+            return iterator->second;
         }
         return TextFileComparator::getComparator();
     }
