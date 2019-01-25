@@ -7,8 +7,8 @@
 #include "StringWriter.h"
 #include "reporters/Reporter.h"
 #include "namers/ApprovalNamer.h"
-#include "comparers/ApprovalComparer.h"
-#include "comparers/TextFileComparer.h"
+#include "comparers/ApprovalComparator.h"
+#include "comparers/TextFileComparator.h"
 #include "FileUtils.h"
 #include "Macros.h"
 
@@ -18,24 +18,24 @@ public:
 
     ~FileApprover() {};
 
-    using ComparerContainer = std::map< std::string, ApprovalComparer >;
-    STATIC(ComparerContainer, comparers, new ComparerContainer())
-    static void registerComparer(std::string extentionWithDot, ApprovalComparer comparer)
+    using ComparerContainer = std::map< std::string, ApprovalComparator >;
+    STATIC(ComparerContainer, comparators, new ComparerContainer())
+    static void registerComparator(std::string extentionWithDot, ApprovalComparator comparator)
     {
-        comparers()[extentionWithDot] = comparer;
+        comparators()[extentionWithDot] = comparator;
     }
 
-    static ApprovalComparer getComparerForFile(string receivedPath) {
+    static ApprovalComparator getComparerForFile(string receivedPath) {
         const std::string fileExtension = FileUtils::getExtensionWithDot(receivedPath);
-        if (comparers().find(fileExtension) != comparers().end()) {
-            return comparers()[fileExtension];
+        if (comparators().find(fileExtension) != comparators().end()) {
+            return comparators()[fileExtension];
         }
-        return TextFileComparer::getComparator();
+        return TextFileComparator::getComparator();
     }
 
     static void verify(std::string receivedPath,
                        std::string approvedPath,
-                       const ApprovalComparer& comparer) {
+                       const ApprovalComparator& comparator) {
         int asize = FileUtils::fileSize(approvedPath);
 
         if (-1 == asize) {
@@ -48,7 +48,7 @@ public:
             throw ApprovalMissingException(approvedPath, receivedPath);
         }
 
-        if (!comparer(receivedPath, approvedPath)) {
+        if (!comparator(receivedPath, approvedPath)) {
             throw ApprovalMismatchException(receivedPath, approvedPath);
         }
     }

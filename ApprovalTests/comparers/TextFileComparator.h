@@ -1,14 +1,14 @@
 #ifndef APPROVALTESTS_CPP_TEXTFILECOMPARER_H
 #define APPROVALTESTS_CPP_TEXTFILECOMPARER_H
 
-#include "ApprovalComparer.h"
+#include "ApprovalComparator.h"
 
-class TextFileComparer
+class TextFileComparator
 {
 public:
-    static ApprovalComparer getComparator()
+    static ApprovalComparator getComparator()
     {
-        return &TextFileComparer::contentsAreEquivalent;
+        return &TextFileComparator::contentsAreEquivalent;
     }
 
     static std::ifstream::int_type getNextRelevantCharacter(std::ifstream& astream)

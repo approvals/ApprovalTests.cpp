@@ -3,7 +3,7 @@
 
 #include <string>
 
-using ApprovalComparer = bool (*)(std::string receivedPath,
-                                  std::string approvedPath);
+using ApprovalComparator = bool (*)(std::string receivedPath,
+                                    std::string approvedPath);
 
 #endif //APPROVALTESTS_CPP_APPROVALCOMPARER_H
