@@ -13,7 +13,7 @@ private:
     std::string cmd;
 public:
     bool working = true;
-    bool Launch(std::vector<std::string> argv)
+    bool launch(std::vector<std::string> argv) override
     {
         for (std::vector<std::string>::iterator it = argv.begin();
             it != argv.end();

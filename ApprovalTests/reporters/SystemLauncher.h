@@ -26,7 +26,7 @@ public:
 
     }
 
-    bool Launch(std::vector<std::string> argv)
+    bool launch(std::vector<std::string> argv) override
     {
         if (!exists(argv.front()))
         {

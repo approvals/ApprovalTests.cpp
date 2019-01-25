@@ -23,7 +23,7 @@ public:
         fullCommand.push_back(cmd);
         fullCommand.push_back(received);
         fullCommand.push_back(approved);
-        return l->Launch(fullCommand);
+        return l->launch(fullCommand);
     }
 };
 #endif //APPROVALTESTS_CPP_COMMANDREPORTER_H

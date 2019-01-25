@@ -9,7 +9,7 @@ class CommandLauncher
 {
 public:
     virtual ~CommandLauncher() {}
-    virtual bool Launch(std::vector<std::string> argv) = 0;
+    virtual bool launch(std::vector<std::string> argv) = 0;
 };
 
 #endif  
