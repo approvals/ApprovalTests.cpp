@@ -5,7 +5,6 @@
 . add a non-gui reporter, e.g. for use in CI systems
 
 . tabs to spaces
-. fix an inconsistent declaration in SystemUtils::checkFilenameCase() - WIN32_FIND_DATA -> WIN32_FIND_DATAA
 . make it easy to add approvals to existing catch2 tests
 . understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
 . add an easy way to produce multiple output files from one test
