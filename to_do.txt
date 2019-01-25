@@ -1,4 +1,3 @@
-. bug: CombinationApprovals::verifyAllCombinations() discards the supplied reporter at each level
 . bug: arguments member in DiffInfo is unused after construction
 . add sample for adding to existing google test
 

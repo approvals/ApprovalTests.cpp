@@ -169,7 +169,8 @@ public:
                                               inputs6,
                                               inputs7,
                                               inputs8,
-                                              EMPTY);
+                                              EMPTY,
+                                              reporter);
     }
 
 
@@ -224,7 +225,8 @@ public:
                                               inputs5,
                                               inputs6,
                                               inputs7,
-                                              EMPTY);
+                                              EMPTY,
+                                              reporter);
     }
 
     template <
@@ -272,7 +274,8 @@ public:
                                               inputs4,
                                               inputs5,
                                               inputs6,
-                                              EMPTY);
+                                              EMPTY,
+                                              reporter);
     }
 
     template <
@@ -314,7 +317,8 @@ public:
                                               inputs3,
                                               inputs4,
                                               inputs5,
-                                              EMPTY);
+                                              EMPTY,
+                                              reporter);
     }
 
     template <
@@ -350,7 +354,8 @@ public:
                                               inputs2,
                                               inputs3,
                                               inputs4,
-                                              EMPTY);
+                                              EMPTY,
+                                              reporter);
     }
 
     template <
@@ -380,7 +385,8 @@ public:
                                               inputs1,
                                               inputs2,
                                               inputs3,
-                                              EMPTY);
+                                              EMPTY,
+                                              reporter);
     }
 
     template <
@@ -404,7 +410,8 @@ public:
                                                       Empty _){return converter(i1, i2);},
                                               inputs1,
                                               inputs2,
-                                              EMPTY);
+                                              EMPTY,
+                                              reporter);
     }
 
     template <
@@ -422,7 +429,8 @@ public:
                                                       typename Container1::value_type i1,
                                                       Empty _){return converter(i1);},
                                               inputs1,
-                                              EMPTY);
+                                              EMPTY,
+                                              reporter);
     }
 };
 

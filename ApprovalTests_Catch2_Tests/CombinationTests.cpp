@@ -3,6 +3,8 @@
 #include <vector>
 #include <string>
 #include <ostream>
+#include "../ApprovalTests/CombinationApprovals.h"
+#include "reporters/FakeReporter.h"
 
 std::ostream &operator<<(std::ostream &os, const std::pair<std::string, int>& pair)
 {
@@ -10,13 +12,23 @@ std::ostream &operator<<(std::ostream &os, const std::pair<std::string, int>& pa
     return os;
 }
 
-#include "../ApprovalTests/CombinationApprovals.h"
-
-
-
 TEST_CASE("YouCanVerifyCombinationsOf1") {
     std::vector<std::string> words{"hello", "world"};
     CombinationApprovals::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words);
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
+    std::vector<std::string> words{"hello", "world"};
+    FakeReporter reporter;
+    try
+    {
+        CombinationApprovals::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words, reporter);
+    }
+    catch(const ApprovalException&)
+    {
+        // ignore
+    }
+    REQUIRE(reporter.called == true);
 }
 
 TEST_CASE("YouCanVerifyCombinationsOf2") {
