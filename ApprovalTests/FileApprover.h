@@ -68,7 +68,7 @@ public:
             verify(receivedPath, approvedPath);
             s.CleanUpReceived(receivedPath);
         }
-        catch (const ApprovalException& exception) {
+        catch (const ApprovalException&) {
             r.Report(receivedPath, approvedPath);
             throw;
         }

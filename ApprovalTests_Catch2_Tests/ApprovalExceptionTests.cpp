@@ -28,11 +28,11 @@ TEST_CASE("ApprovalMissingException is thrown")
     try {
         Approvals::verify("foo", QuietReporter());
     }
-    catch (const ApprovalMissingException& exception)
+    catch (const ApprovalMissingException&)
     {
         exception_caught = true;
     }
-    catch (const ApprovalException& exception)
+    catch (const ApprovalException&)
     {
         exception_caught = false;
     }
