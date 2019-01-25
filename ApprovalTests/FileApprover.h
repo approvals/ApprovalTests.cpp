@@ -53,7 +53,6 @@ public:
         }
     }
 
-    //! Verify that the contents of two text files are equivalent, ignoring any differences in line endings
     static void verify(std::string receivedPath,
                        std::string approvedPath) {
         verify(receivedPath, approvedPath, getComparerForFile(receivedPath));
