@@ -32,7 +32,7 @@ public:
         out << s << "\n";
     }
 
-    virtual void cleanUpReceived(std::string receivedPath)override {
+    virtual void cleanUpReceived(std::string receivedPath) override {
         remove(receivedPath.c_str());
     }
 
