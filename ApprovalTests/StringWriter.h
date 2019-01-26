@@ -15,7 +15,7 @@ public:
     StringWriter( std::string contents, std::string fileExtensionWithDot = ".txt" )
         : s( contents ), ext( fileExtensionWithDot ) {}
 
-    std::string getFileExtension() override
+    std::string getFileExtensionWithDot() override
     {
         return ext;
     }

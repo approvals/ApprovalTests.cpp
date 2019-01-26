@@ -32,10 +32,10 @@ TEST_CASE("ItWritesTheContentsToAStream") {
 
 TEST_CASE("TheDefaultExtensionIsText") {
     StringWriter s("Hello");
-    REQUIRE(s.getFileExtension() == ".txt");
+    REQUIRE(s.getFileExtensionWithDot() == ".txt");
 }
 
 TEST_CASE("TheExtensionIsConfigurable") {
     StringWriter s("Hello", ".html");
-    REQUIRE(s.getFileExtension() == ".html");
+    REQUIRE(s.getFileExtensionWithDot() == ".html");
 }

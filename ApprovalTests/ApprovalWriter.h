@@ -4,7 +4,7 @@
 class ApprovalWriter
 {
 public:
-    virtual std::string getFileExtension() = 0;
+    virtual std::string getFileExtensionWithDot() = 0;
     virtual void write(std::string path) = 0;
     virtual void cleanUpReceived(std::string receivedPath) = 0;
 };

@@ -60,8 +60,8 @@ public:
     }
 
     static void verify(ApprovalNamer& n, ApprovalWriter& s, const Reporter& r) {
-        std::string approvedPath = n.getApprovedFile(s.getFileExtension());
-        std::string receivedPath = n.getReceivedFile(s.getFileExtension());
+        std::string approvedPath = n.getApprovedFile(s.getFileExtensionWithDot());
+        std::string receivedPath = n.getReceivedFile(s.getFileExtensionWithDot());
         s.write(receivedPath);
         try
         {
