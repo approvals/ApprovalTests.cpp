@@ -3,14 +3,9 @@
 
 #include "ApprovalComparator.h"
 
-class TextFileComparator
+class TextFileComparator : public ApprovalComparator
 {
 public:
-    static ApprovalComparator getComparator()
-    {
-        return &TextFileComparator::contentsAreEquivalent;
-    }
-
     static std::ifstream::int_type getNextRelevantCharacter(std::ifstream& astream)
     {
         auto ch = astream.get();
@@ -24,8 +19,8 @@ public:
         }
     }
 
-    static bool contentsAreEquivalent(std::string receivedPath,
-                                      std::string approvedPath)
+    virtual bool contentsAreEquivalent(std::string receivedPath,
+                                       std::string approvedPath) const
     {
         std::ifstream astream(approvedPath.c_str(),
                               std::ios::binary | std::ifstream::in);

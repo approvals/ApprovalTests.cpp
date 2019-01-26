@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <map>
+#include <memory>
 #include "ApprovalException.h"
 #include "StringWriter.h"
 #include "reporters/Reporter.h"
@@ -14,7 +15,7 @@
 
 class FileApprover {
 private:
-    using ComparatorContainer = std::map< std::string, ApprovalComparator >;
+    using ComparatorContainer = std::map< std::string, std::shared_ptr<ApprovalComparator> >;
     STATIC(ComparatorContainer, comparators, new ComparatorContainer())
 
 public:
@@ -22,18 +23,18 @@ public:
 
     ~FileApprover() {};
 
-    static void registerComparator(std::string extensionWithDot, ApprovalComparator comparator)
+    static void registerComparator(std::string extensionWithDot, ApprovalComparator* comparator)
     {
-        comparators()[extensionWithDot] = comparator;
+        comparators()[extensionWithDot] = std::shared_ptr<ApprovalComparator>(comparator);
     }
 
-    static ApprovalComparator getComparatorForFile(string receivedPath) {
+    static std::shared_ptr<ApprovalComparator> getComparatorForFile(string receivedPath) {
         const std::string fileExtension = FileUtils::getExtensionWithDot(receivedPath);
         auto iterator = comparators().find(fileExtension);
         if (iterator != comparators().end()) {
             return iterator->second;
         }
-        return TextFileComparator::getComparator();
+        return std::make_shared<TextFileComparator>();
     }
 
     static void verify(std::string receivedPath,
@@ -47,14 +48,14 @@ public:
             throw ApprovalMissingException(approvedPath, receivedPath);
         }
 
-        if (!comparator(receivedPath, approvedPath)) {
+        if (!comparator.contentsAreEquivalent(receivedPath, approvedPath)) {
             throw ApprovalMismatchException(receivedPath, approvedPath);
         }
     }
 
     static void verify(std::string receivedPath,
                        std::string approvedPath) {
-        verify(receivedPath, approvedPath, getComparatorForFile(receivedPath));
+        verify(receivedPath, approvedPath, *getComparatorForFile(receivedPath));
     }
 
     static void verify(ApprovalNamer& n, ApprovalWriter& s, const Reporter& r) {
