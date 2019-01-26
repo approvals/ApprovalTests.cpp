@@ -23,9 +23,9 @@ public:
 
     ~FileApprover() {};
 
-    static void registerComparator(std::string extensionWithDot, ApprovalComparator* comparator)
+    static void registerComparator(std::string extensionWithDot, std::shared_ptr<ApprovalComparator> comparator)
     {
-        comparators()[extensionWithDot] = std::shared_ptr<ApprovalComparator>(comparator);
+        comparators()[extensionWithDot] = comparator;
     }
 
     static std::shared_ptr<ApprovalComparator> getComparatorForFile(string receivedPath) {

@@ -57,7 +57,7 @@ public:
 TEST_CASE("ItUsesCustomComparator") {
     FileUtils::writeToFile("a.length", "12345");
     FileUtils::writeToFile("b.length", "56789");
-    FileApprover::registerComparator(".length", new LengthComparator());
+    FileApprover::registerComparator(".length", std::make_shared<LengthComparator>());
     FileApprover::verify("a.length", "b.length");
 }
 
