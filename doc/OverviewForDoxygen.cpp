@@ -8,6 +8,7 @@
  - \ref overview
  - \ref supported_test_frameworks
  - \ref verification
+     - \ref custom_comparators
  - \ref reporters
      - \ref reporters_overview
      - \ref custom_reporters
@@ -46,12 +47,10 @@
 
  \section verification Verification Classes
 
- \todo Add overview of verification
-
  - Approvals is the main class that contains methods for verification
  - CombinationApprovals contains a powerful way of approving a large amount of data very easily
  - FileApprover is the core of this mechanism.
-    - There are two overloads of FileApprover::verify()
+    - There are two typically-used overloads of FileApprover::verify()
     - FileApprover::verify(ApprovalNamer&, ApprovalWriter&, const Reporter&) pulls together
       ApprovalNamer,  ApprovalWriter and Reporter, to run a verification.
     - FileApprover::verify(std::string, std::string) takes the names of two files, and decides if their contents
@@ -65,6 +64,13 @@
     - A test that wanted to run multiple verifications could catch ApprovalException, note the failure, keep on
       testing, and then at the end of the test method, call the test frameworks's specific mechanism to report
       the failure(s).
+
+ \subsection custom_comparators Custom Comparators
+
+ - The conventional way to use Approvals is by converting the objects being tested to strings, and approving
+   the string representations. See StringWriter.
+ - See ApprovalComparator and FileApprover::registerComparator() if you wish to customise the way that
+   file contents are compared.
 
  \section reporters Reporters
 

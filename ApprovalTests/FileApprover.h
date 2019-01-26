@@ -37,6 +37,7 @@ public:
         return std::make_shared<TextFileComparator>();
     }
 
+    //! This overload is an implementation detail. To add a new comparator, use registerComparator().
     static void verify(std::string receivedPath,
                        std::string approvedPath,
                        const ApprovalComparator& comparator) {
