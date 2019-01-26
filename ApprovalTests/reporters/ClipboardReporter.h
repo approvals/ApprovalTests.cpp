@@ -25,7 +25,7 @@ public:
         return true;
     }
 
-    void copyToClipboard(const std::string& newClipboard) const {
+    static void copyToClipboard(const std::string& newClipboard) {
         /*
          This will probably not work on Linux.
 
