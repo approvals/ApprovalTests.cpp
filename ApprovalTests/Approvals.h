@@ -24,7 +24,7 @@ public:
     }
 
     template<typename T>
-    static void verify(T contents, const Reporter &reporter = DiffReporter()) {
+    static void verify(const T& contents, const Reporter &reporter = DiffReporter()) {
         std::stringstream s;
         s << contents;
         verify(s.str(), reporter);
