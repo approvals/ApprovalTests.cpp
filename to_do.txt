@@ -46,7 +46,6 @@
 . create a Visual Studio.googletest starter project
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
 . update the readme for recent progress
-. add OkraNamerTest.cpp
 . machine-generate a list of supported diff tools
 . support visual studio's in-built diff
 . work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682
