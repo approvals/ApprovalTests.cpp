@@ -1,2 +1,1 @@
-dotnet ./MarkdownSnippets/MarkdownSnippets.dll
-
+ ~/.dotnet/tools/mdsnippets
