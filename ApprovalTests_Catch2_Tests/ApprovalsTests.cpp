@@ -1,6 +1,6 @@
 #include <ostream>
 #include "Catch.hpp"
-#include "../ApprovalTests/Approvals.h"
+#include <ApprovalTests/Approvals.h>
 
 using namespace std;
 

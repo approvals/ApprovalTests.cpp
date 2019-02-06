@@ -3,6 +3,6 @@
 #ifndef APPROVALTESTS_CPP_APPROVALTESTS_H
 #define APPROVALTESTS_CPP_APPROVALTESTS_H
 
-#include "../ApprovalTests/GoogleTestApprovals.h"
+#include <ApprovalTests/GoogleTestApprovals.h>
 
 #endif //APPROVALTESTS_CPP_APPROVALTESTS_H
