@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 #include <ostream>
-#include "../ApprovalTests/CombinationApprovals.h"
+#include <ApprovalTests/CombinationApprovals.h>
 #include "reporters/FakeReporter.h"
 
 std::ostream &operator<<(std::ostream &os, const std::pair<std::string, int>& pair)

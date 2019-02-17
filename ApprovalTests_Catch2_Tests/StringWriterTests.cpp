@@ -1,5 +1,5 @@
 #include "Catch.hpp"
-#include "../ApprovalTests/StringWriter.h"
+#include <ApprovalTests/StringWriter.h>
 
 using namespace std;
 

@@ -1,6 +1,6 @@
 #include "Catch.hpp"
-#include "../ApprovalTests/SystemUtils.h"
-#include "../ApprovalTests/StringUtils.h"
+#include <ApprovalTests/SystemUtils.h>
+#include <ApprovalTests/StringUtils.h>
 
 TEST_CASE("ItCanFixCaseOfFileNameOnWindows")
 {

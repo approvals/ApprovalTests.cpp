@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_TESTREPORTER_H
 #define APPROVALTESTS_CPP_TESTREPORTER_H
 
-#include "../../ApprovalTests/reporters/GenericDiffReporter.h"
+#include <ApprovalTests/reporters/GenericDiffReporter.h>
 #include "DoNothingLauncher.h"
 
 class TestReporter : public CommandReporter {

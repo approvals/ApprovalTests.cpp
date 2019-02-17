@@ -1,7 +1,7 @@
 #ifndef DONOTHINGLAUNCHER_H
 #define DONOTHINGLAUNCHER_H
 
-#include "../../ApprovalTests/reporters/CommandLauncher.h"
+#include <ApprovalTests/reporters/CommandLauncher.h>
 
 #include <string>
 #include <vector>

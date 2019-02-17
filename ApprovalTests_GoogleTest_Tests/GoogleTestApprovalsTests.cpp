@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "../ApprovalTests/Approvals.h"
+#include <ApprovalTests/Approvals.h>
 
 TEST(GoogleTestApprovalsTests, YouCanVerifyText)
 {
