@@ -3,14 +3,15 @@
 
 #include <ostream>
 
-using namespace std;
-
 struct Rectangle2{
 
     int x,y, width, height;
 
-    // startcode to_string_standard_example
-    friend std::ostream &operator<<(std::ostream &os, const Rectangle2 &rectangle) {
+    // Using Template instead of ostream for embedded instances where ostream aren't available
+    // template implementation of output operator
+    // startcode to_string_template_example
+    template <class STREAM>
+    friend STREAM &operator<<(STREAM &os, const Rectangle2 &rectangle) {
         os << "[x: " << rectangle.x << " y: " << rectangle.y << " width: " << rectangle.width << " height: "
            << rectangle.height << "]";
         return os;
@@ -18,7 +19,7 @@ struct Rectangle2{
     // endcode
 
 };
-TEST_CASE("ToStringsAreHelpful") {
+TEST_CASE("ToStringTemplatesAreHelpful") {
     Rectangle2 r = {40,50,100,60};
     Approvals::verify(r);
 
