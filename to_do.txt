@@ -32,6 +32,7 @@
 . reports
 . asJson
 . loggers
+. scrubbers
 . video intro
 . windows reporters on non-English language
     . ProgramFiles=C:\Program Files
