@@ -42,3 +42,30 @@ simpler | `(simpler)` | &nbsp; | Does not include meta data
 formatted | `(type)=(formatted)` | Works well for many lines of the same type of data, for example an array of rectangles | &nbsp;
 tab-separated | &nbsp; | Works with Excel and Markdown; works well for many lines of the same data | &nbsp;
 comma-separated | `type, csv` | Works with Excel | Works with Excel
+
+### Composability
+
+TODO Explain things like:
+
+* When are things very non-composable, e.g. hand-coded YAML
+
+### Lists
+
+Notice how this:
+
+snippet: ApprovalTests_Catch2_Tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt
+
+compares to this:
+
+snippet: ApprovalTests_Catch2_Tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt
+
+Some formats will be more readable when you are writing lists of objects.
+
+### Tools
+
+TODO Explain things like:
+
+* Using Excel to create graphs
+* Loading runt-time data from captured approval results
+* Querying logs from JSON output
+* IExecutable queries

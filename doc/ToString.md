@@ -88,3 +88,54 @@ simpler | `(simpler)` | &nbsp; | Does not include meta data
 formatted | `(type)=(formatted)` | Works well for many lines of the same type of data, for example an array of rectangles | &nbsp;
 tab-separated | &nbsp; | Works with Excel and Markdown; works well for many lines of the same data | &nbsp;
 comma-separated | `type, csv` | Works with Excel | Works with Excel
+
+### Composability
+
+TODO Explain things like:
+
+* When are things very non-composable, e.g. hand-coded YAML
+
+### Lists
+
+Notice how this:
+
+<!-- snippet: ApprovalTests_Catch2_Tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt -->
+```txt
+rectangles
+
+
+[x: 4 y: 50 width: 100 height: 61]
+[x: 50 y: 5200 width: 400 height: 62]
+[x: 60 y: 3 width: 7 height: 63]
+
+
+```
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L8)</sup>
+<!-- endsnippet -->
+
+compares to this:
+
+<!-- snippet: ApprovalTests_Catch2_Tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt -->
+```txt
+rectangles
+
+
+(x,y,width,height) = (4,50,100,61)
+(x,y,width,height) = (50,5200,400,62)
+(x,y,width,height) = (60,3,7,63)
+
+
+```
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L8)</sup>
+<!-- endsnippet -->
+
+Some formats will be more readable when you are writing lists of objects.
+
+### Tools
+
+TODO Explain things like:
+
+* Using Excel to create graphs
+* Loading runt-time data from captured approval results
+* Querying logs from JSON output
+* IExecutable queries
