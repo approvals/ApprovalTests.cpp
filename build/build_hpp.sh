@@ -11,6 +11,7 @@ java -jar ../build/SingleHpp.v.0.0.2.jar ../build/releases/ApprovalTests.$VERSIO
 
 cp ../build/releases/ApprovalTests.$VERSION.hpp ../../ApprovalTests.Cpp.StarterProject/lib
 
+# The prefixes used in our commit messages come from: https://github.com/RefactoringCombos/ArlosCommitNotation
 git log ${LAST_VERSION}..HEAD --pretty=format:%s | \
     grep -v '^[der] ' | \
     grep -v 'Update to_do.txt' | \
