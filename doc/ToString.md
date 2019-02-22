@@ -12,7 +12,7 @@ When you use Approval tests, the results of the things you are testing are going
 
 This is often done by providing an output operator (`<<`) for types you wish to test.
 
-For example
+For example:
 
 <!-- snippet: to_string_standard_example -->
 ```cpp
@@ -25,7 +25,9 @@ friend std::ostream &operator<<(std::ostream &os, const Rectangle2 &rectangle) {
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringExample.cpp#L12-L18)</sup>
 <!-- endsnippet -->
 
-If including the standard string is problematic, and you are tempted to surround it with `#ifdef`s so that it only shows up in testing, we recommend that you use the template approach instead.
+You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
+
+If including `<iostream>` or similar is problematic, for example because your code needs be compiled for embedded platforms, and you are tempted to surround it with `#ifdef`s so that it only shows up in testing, we recommend that you use the template approach instead:
 
 <!-- snippet: to_string_template_example -->
 ```cpp
@@ -39,7 +41,7 @@ friend STREAM &operator<<(STREAM &os, const Rectangle2 &rectangle) {
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringTemplateExample.cpp#L12-L19)</sup>
 <!-- endsnippet -->
 
-You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
+Wrapper classes or functions can be used to provide additional output formats for types of data:
 
 <!-- snippet: to_string_wrapper_example -->
 ```cpp
@@ -60,8 +62,16 @@ struct FormatRectangleForMultipleLines{
         return os;
     }
 };
+
+TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
+    Approvals::verifyAll(
+        "rectangles",
+        getRectangles(),
+        [](auto r, auto& os){os << FormatRectangleForMultipleLines(r);}
+    );
+}
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L37-L55)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L37-L63)</sup>
 <!-- endsnippet -->
 
 ## Design

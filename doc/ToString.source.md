@@ -6,15 +6,17 @@ When you use Approval tests, the results of the things you are testing are going
 
 This is often done by providing an output operator (`<<`) for types you wish to test.
 
-For example
+For example:
 
 snippet: to_string_standard_example
 
-If including the standard string is problematic, and you are tempted to surround it with `#ifdef`s so that it only shows up in testing, we recommend that you use the template approach instead.
+You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
+
+If including `<iostream>` or similar is problematic, for example because your code needs be compiled for embedded platforms, and you are tempted to surround it with `#ifdef`s so that it only shows up in testing, we recommend that you use the template approach instead:
 
 snippet: to_string_template_example
 
-You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
+Wrapper classes or functions can be used to provide additional output formats for types of data:
 
 snippet: to_string_wrapper_example
 

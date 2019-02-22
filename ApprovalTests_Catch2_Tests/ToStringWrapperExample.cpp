@@ -52,7 +52,6 @@ struct FormatRectangleForMultipleLines{
         return os;
     }
 };
-// endcode
 
 TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
     Approvals::verifyAll(
@@ -61,6 +60,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
         [](auto r, auto& os){os << FormatRectangleForMultipleLines(r);}
     );
 }
+// endcode
 
 std::ostream& toStringForMultipleLines(std::ostream &os, const Rectangle3 &rectangle) {
     os << "(x,y,width,height) = (" <<
