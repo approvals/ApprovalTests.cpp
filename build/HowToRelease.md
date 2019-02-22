@@ -12,6 +12,7 @@
 
 * Update version number in `ApprovalTests.hpp`
 * Delete the previous release .hpp
+* Update version number on line 156 in filename visual-studio-2017/StarterProject.vcxproj
 * Commit and push
 
 ## Other stuff
