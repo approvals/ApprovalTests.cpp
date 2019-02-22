@@ -33,7 +33,7 @@ The general design rules when writing:
 Note: for the same data, different tests might need different string conversions, to satisfy these rules.
 
 Method | Example | Advantages | Disadvantages
------------- | ------------- | -------------
+------------ | ------------- | ------------- | -------------
 XML | `<type> xml </type>` | Works with standard tools | Very verbose; hard to scan by eye
 JSON | `{"type":"json"}`  | Works with standard tools; less verbose | &nbsp;
 YAML | `type:yaml` | Works with standard tools; less verbose | Indentation matters
