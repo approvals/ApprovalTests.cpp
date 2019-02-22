@@ -1,3 +1,9 @@
+<!--
+This file was generate by the MarkdownSnippets.
+Source File: \README.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+-->
+
 CppApprovals
 ============
 
@@ -36,6 +42,7 @@ For catch (1 and 2), it's these two lines:
 #define APPROVALS_CATCH
 #include "ApprovalTests.hpp"
 ```
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L4-L7)</sup>
 <!-- endsnippet -->
 
 For Google Test, it's these:
@@ -45,6 +52,7 @@ For Google Test, it's these:
 #define APPROVALS_GOOGLETEST
 #include "ApprovalTests.hpp"
 ```
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/main.cpp#L2-L5)</sup>
 <!-- endsnippet -->
 
 For all other test files, you need:
