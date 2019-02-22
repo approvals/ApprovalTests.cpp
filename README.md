@@ -27,9 +27,9 @@ Currently working in Mac/Linux/Windows with
 
 ## Getting Started
 
-[More details here](doc/GettingStarted.md)
+See [Getting Started](doc/GettingStarted.md)
 
-I Highly suggest you clone [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
+I highly suggest you clone [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
 
 ## Main File
 
@@ -66,8 +66,7 @@ ApprovalTests uses ApprovalTests to test ApprovalTests (it's turtles all the way
 
 ### ToString (ostream insertion)
 Often, you will need to create functions to allow objects to print their state. This is commonly done with on ostream << operator.
-You can find an example here:
-[Printable Objects](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ToStringExample.cpp)
+You can find examples here: [To String](doc/ToString.md)
 
 ### Suggested Examples:
 [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp)

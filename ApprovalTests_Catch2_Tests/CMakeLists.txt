@@ -15,6 +15,7 @@ add_executable(${PROJECT_NAME}
         SystemUtilsTests.cpp
         ToStringExample.cpp
         ToStringTemplateExample.cpp
+        ToStringWrapperExample.cpp
         StyleGuide.h
         )
 target_link_libraries(${PROJECT_NAME} ApprovalTests)

@@ -4,7 +4,7 @@ When you use Approval tests, the results of the things you are testing are going
 
 ## How
 
-This is often done by overloading the output operator (`<<`).
+This is often done by providing an output operator (`<<`) for types you wish to test.
 
 For example
 
@@ -14,5 +14,31 @@ If including the standard string is problematic, and you are tempted to surround
 
 snippet: to_string_template_example
 
+You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
+
+snippet: to_string_wrapper_example
 
 ## Design
+
+If your code already has output operators, then go ahead and use them in Approvals.
+
+If your code doesn't have output operators already, then here are some general guidelines to consider, to generate strings that work well with Approvals.
+
+The general design rules when writing:
+
+1. Objects print their relevant data
+2. The data is consistent between runs (no times, pointers, random)
+3. The data is easy to read
+
+Note: for the same data, different tests might need different string conversions, to satisfy these rules.
+
+Method | Example | Advantages | Disadvantages
+------------ | ------------- | -------------
+XML | `<type> xml </type>` | Works with standard tools | Very verbose; hard to scan by eye
+JSON | `{"type":"json"}`  | Works with standard tools; less verbose | &nbsp;
+YAML | `type:yaml` | Works with standard tools; less verbose | Indentation matters
+simple | `(type: simple)` |   &nbsp;  | It's a custom format
+simpler | `(simpler)` | &nbsp; | Does not include meta data
+formatted | `(type)=(formatted)` | Works well for many lines of the same type of data, for example an array of rectangles | &nbsp;
+tab-separated | &nbsp; | Works with Excel and Markdown; works well for many lines of the same data | &nbsp;
+comma-separated | `type, csv` | Works with Excel | Works with Excel
