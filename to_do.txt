@@ -8,6 +8,8 @@ NEW FEATURES
 
 
 TESTS
+. HIGH put out own approved files in a sub-directory
+. add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
 
 
 DOCUMENTATION
@@ -41,7 +43,6 @@ WON’T DO
 . add sample for adding to existing google test
 
 . add lambda-based Approvals::verify() overload, to remove need for operator<< or std::string conversion ???
-. add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
 . add a non-gui reporter, e.g. for use in CI systems
 . try using a custom namer in C++ e.g. to write out actual and expected in parallel directories, to allow diffing the whole folder - Python project has verify_with_namer()
 
@@ -60,7 +61,6 @@ WON’T DO
 . run through Qt Creator analysis tools
 . allow configuring of default reporter
 . HIGH allow user to configure location of received and approved files - as per Python implementation 
-. HIGH put out own approved files in a sub-directory
 . front loader reporter
 . catch reporter
 . UpdateApprovedReporter - that moves received to approved, to allow for reviewing in version control and then either committing or reverting
