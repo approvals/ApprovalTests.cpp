@@ -29,6 +29,11 @@ FUTURE DEVELOPMENT
 
 
 WON’T DO
+. windows reporters when building in Cygwin
+. DELETE - no need now we have easy code in Markdown - public hosting of doxygen docs - to browse class hierarchy and file dependencies
+. DELETE - assume that anyone who wants to use Googletest will have their own build - otherwise, recommend using Catch2 - create a Visual Studio.googletest starter project
+. DELETE work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682
+. get building on windows with gcc (https://nuwen.net/mingw.html)
 
 
 . bug: arguments member in DiffInfo is unused after construction
@@ -80,18 +85,13 @@ WON’T DO
     . ProgramFiles=C:\Program Files
     . ProgramFiles(x86)=C:\Program Files (x86)
     . https://docs.microsoft.com/en-gb/windows/desktop/WinProg64/wow64-implementation-details
-. windows reporters when building in Cygwin
 . make SystemLauncher on Windows use the 'where' command
 . treat compiler warnings as errors - ideally on all platforms
-. DELETE - no need now we have easy code in Markdown - public hosting of doxygen docs - to browse class hierarchy and file dependencies
-. get building on windows with gcc (https://nuwen.net/mingw.html)
 . more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
-. DELETE - assume that anyone who wants to use Googletest will have their own build - otherwise, recommend using Catch2 - create a Visual Studio.googletest starter project
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
 . set up a git tab policy
 . update the readme for recent progress
 . Document the list of supported diff tools
 . machine-generate a list of supported diff tools
 . support visual studio's in-built diff
-. DELETE work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682
 . Add CI builds for clang
