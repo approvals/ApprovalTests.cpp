@@ -42,6 +42,16 @@ TESTS
 
 
 DOCUMENTATION
+. video intro
+. add keywords to github project - for examples, see https://github.com/catchorg/Catch2
+. Define a structure for User Guide/Manual
+. add sample for adding to existing google test
+. docs - hook Simon Cropp's code mechanism into github pre-commit mechanism
+. docs - add troubleshooting page, e.g. what happens if you add a Google test that uses Approvals, but don't add a Google main that registers Approvals listener (crash!)
+. docs - document how to test file types that are not character-for-character equivalent
+. update the readme for recent progress
+. Document the list of supported diff tools
+. machine-generate a list of supported diff tools
 
 
 RELEASES
@@ -79,19 +89,10 @@ WON’T DO
 . get building on windows with gcc (https://nuwen.net/mingw.html)
 
 
-. add sample for adding to existing google test
+
 
 
 
 
 
 . docs
-. Define a structure for User Guide/Manual
-. docs - hook Simon Cropp's code mechanism into github pre-commit mechanism
-. docs - add troubleshooting page, e.g. what happens if you add a Google test that uses Approvals, but don't add a Google main that registers Approvals listener (crash!)
-. docs - document how to test file types that are not character-for-character equivalent
-. add keywords to github project - for examples, see https://github.com/catchorg/Catch2
-. video intro
-. update the readme for recent progress
-. Document the list of supported diff tools
-. machine-generate a list of supported diff tools
