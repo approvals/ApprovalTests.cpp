@@ -5,15 +5,15 @@ BUGS
     . ProgramFiles=C:\Program Files
     . ProgramFiles(x86)=C:\Program Files (x86)
     . https://docs.microsoft.com/en-gb/windows/desktop/WinProg64/wow64-implementation-details
-. bug: don't include Catch2 tags (like [!shouldfail]) in output filenames
-. bug: arguments member in DiffInfo is unused after construction
+. don't include Catch2 tags (like [!shouldfail]) in output filenames
+. arguments member in DiffInfo is unused after construction
 . understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
 . get googletest on Windows to process more than one failure at a time in Araxis Merge
 
 IMPROVE USABILITY OF CURRENT FEATURES
 
 . add lambda-based Approvals::verify() overload, to remove need for operator<< or std::string conversion ???
-. HIGH allow user to configure location of received and approved files - as per Python implementation 
+. allow user to configure location of received and approved files - as per Python implementation 
 . allow configuring of default reporter
 . try using a custom namer in C++ e.g. to write out actual and expected in parallel directories, to allow diffing the whole folder - Python project has verify_with_namer()
 . if Approvals is run in googletest, without the customised main, give meaningful message, instead of 'SEH exception with code 0xc0000005 thrown in the test body'
@@ -38,7 +38,7 @@ NEW FEATURES
 
 TESTS
 
-. HIGH put out own approved files in a sub-directory
+. put our own approved files in a sub-directory
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
 
 DOCUMENTATION
@@ -47,9 +47,9 @@ DOCUMENTATION
 . add keywords to github project - for examples, see https://github.com/catchorg/Catch2
 . Define a structure for User Guide/Manual
 . add sample for adding to existing google test
-. docs - hook Simon Cropp's code mechanism into github pre-commit mechanism
-. docs - add troubleshooting page, e.g. what happens if you add a Google test that uses Approvals, but don't add a Google main that registers Approvals listener (crash!)
-. docs - document how to test file types that are not character-for-character equivalent
+. hook Simon Cropp's code mechanism into github pre-commit mechanism
+. add troubleshooting page, e.g. what happens if you add a Google test that uses Approvals, but don't add a Google main that registers Approvals listener (crash!)
+. document how to test file types that are not character-for-character equivalent
 . update the readme for recent progress
 . Document the list of supported diff tools
 . machine-generate a list of supported diff tools
@@ -84,7 +84,7 @@ FUTURE DEVELOPMENT
 WON’T DO
 
 . windows reporters when building in Cygwin
-. DELETE - no need now we have easy code in Markdown - public hosting of doxygen docs - to browse class hierarchy and file dependencies
-. DELETE - assume that anyone who wants to use Googletest will have their own build - otherwise, recommend using Catch2 - create a Visual Studio.googletest starter project
-. DELETE work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682
+. no need now we have easy code in Markdown - public hosting of doxygen docs - to browse class hierarchy and file dependencies
+. create a Visual Studio.googletest starter project (assume that anyone who wants to use Googletest will have their own build - otherwise, recommend using Catch2)
+. work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682
 . get building on windows with gcc (https://nuwen.net/mingw.html)
