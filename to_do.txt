@@ -11,6 +11,13 @@ BUGS
 
 
 IMPROVE USABILITY OF CURRENT FEATURES
+. add lambda-based Approvals::verify() overload, to remove need for operator<< or std::string conversion ???
+. HIGH allow user to configure location of received and approved files - as per Python implementation 
+. allow configuring of default reporter
+. try using a custom namer in C++ e.g. to write out actual and expected in parallel directories, to allow diffing the whole folder - Python project has verify_with_namer()
+. if Approvals is run in googletest, without the customised main, give meaningful message, instead of 'SEH exception with code 0xc0000005 thrown in the test body'
+. add an easy way to produce multiple output files from one test - perhaps APPROVALS_SECTION{...}, like Catch2's SECTION{...}
+. make it easy to add approvals to existing catch2 tests
 
 
 NEW FEATURES
@@ -49,23 +56,16 @@ WON’T DO
 
 . add sample for adding to existing google test
 
-. add lambda-based Approvals::verify() overload, to remove need for operator<< or std::string conversion ???
 . add a non-gui reporter, e.g. for use in CI systems
-. try using a custom namer in C++ e.g. to write out actual and expected in parallel directories, to allow diffing the whole folder - Python project has verify_with_namer()
 
 . tabs to spaces
 . add pre-commit check to detect tabs
 . Implement auto-formatting of code to match style guide
-. make it easy to add approvals to existing catch2 tests
-. add an easy way to produce multiple output files from one test - perhaps APPROVALS_SECTION{...}, like Catch2's SECTION{...}
 
 . remove version number from filename in releases, so it's easier for users to update
 . include some boilerplate text, including licence and version number, in released header
 
-. if Approvals is run in googletest, without the customised main, give meaningful message, instead of 'SEH exception with code 0xc0000005 thrown in the test body'
 . run through Qt Creator analysis tools
-. allow configuring of default reporter
-. HIGH allow user to configure location of received and approved files - as per Python implementation 
 . front loader reporter
 . catch reporter
 . UpdateApprovedReporter - that moves received to approved, to allow for reviewing in version control and then either committing or reverting
