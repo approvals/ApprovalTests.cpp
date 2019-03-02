@@ -37,6 +37,9 @@ RELEASES
 
 
 FORMATTING OF CODE
+. tabs to spaces
+. add pre-commit check to detect tabs
+. Implement auto-formatting of code to match style guide
 
 
 CODE QUALITY
@@ -67,9 +70,6 @@ WON’T DO
 
 . add a non-gui reporter, e.g. for use in CI systems
 
-. tabs to spaces
-. add pre-commit check to detect tabs
-. Implement auto-formatting of code to match style guide
 
 
 . front loader reporter
