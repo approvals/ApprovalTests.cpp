@@ -1,4 +1,13 @@
 BUGS
+. windows reporters on non-English language
+    . See DiffInfo.java for the environment variables to use
+    . ProgramFiles=C:\Program Files
+    . ProgramFiles(x86)=C:\Program Files (x86)
+    . https://docs.microsoft.com/en-gb/windows/desktop/WinProg64/wow64-implementation-details
+. bug: don't include Catch2 tags (like [!shouldfail]) in output filenames
+. bug: arguments member in DiffInfo is unused after construction
+. understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
+. get googletest on Windows to process more than one failure at a time in Araxis Merge
 
 
 IMPROVE USABILITY OF CURRENT FEATURES
@@ -38,8 +47,6 @@ WON’T DO
 . get building on windows with gcc (https://nuwen.net/mingw.html)
 
 
-. bug: arguments member in DiffInfo is unused after construction
-. bug: don't include Catch2 tags (like [!shouldfail]) in output filenames
 . add sample for adding to existing google test
 
 . add lambda-based Approvals::verify() overload, to remove need for operator<< or std::string conversion ???
@@ -50,13 +57,11 @@ WON’T DO
 . add pre-commit check to detect tabs
 . Implement auto-formatting of code to match style guide
 . make it easy to add approvals to existing catch2 tests
-. understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
 . add an easy way to produce multiple output files from one test - perhaps APPROVALS_SECTION{...}, like Catch2's SECTION{...}
 
 . remove version number from filename in releases, so it's easier for users to update
 . include some boilerplate text, including licence and version number, in released header
 
-. get googletest on Windows to process more than one failure at a time in Araxis Merge
 . if Approvals is run in googletest, without the customised main, give meaningful message, instead of 'SEH exception with code 0xc0000005 thrown in the test body'
 . run through Qt Creator analysis tools
 . allow configuring of default reporter
@@ -80,11 +85,6 @@ WON’T DO
 . loggers
 . scrubbers
 . video intro
-. windows reporters on non-English language
-    . See DiffInfo.java for the environment variables to use
-    . ProgramFiles=C:\Program Files
-    . ProgramFiles(x86)=C:\Program Files (x86)
-    . https://docs.microsoft.com/en-gb/windows/desktop/WinProg64/wow64-implementation-details
 . make SystemLauncher on Windows use the 'where' command
 . treat compiler warnings as errors - ideally on all platforms
 . more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
