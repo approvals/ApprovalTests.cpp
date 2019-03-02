@@ -32,6 +32,8 @@ DOCUMENTATION
 
 
 RELEASES
+. remove version number from filename in releases, so it's easier for users to update
+. include some boilerplate text, including licence and version number, in released header
 
 
 FORMATTING OF CODE
@@ -62,8 +64,6 @@ WON’T DO
 . add pre-commit check to detect tabs
 . Implement auto-formatting of code to match style guide
 
-. remove version number from filename in releases, so it's easier for users to update
-. include some boilerplate text, including licence and version number, in released header
 
 . run through Qt Creator analysis tools
 . front loader reporter
