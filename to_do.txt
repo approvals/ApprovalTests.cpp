@@ -40,6 +40,9 @@ FORMATTING OF CODE
 
 
 CODE QUALITY
+. run through Qt Creator analysis tools
+. memory leaks in our tests
+. treat compiler warnings as errors - ideally on all platforms
 
 
 ENVIRONMENT AND BUILDS
@@ -65,7 +68,6 @@ WON’T DO
 . Implement auto-formatting of code to match style guide
 
 
-. run through Qt Creator analysis tools
 . front loader reporter
 . catch reporter
 . UpdateApprovedReporter - that moves received to approved, to allow for reviewing in version control and then either committing or reverting
@@ -78,7 +80,6 @@ WON’T DO
 . docs - hook Simon Cropp's code mechanism into github pre-commit mechanism
 . docs - add troubleshooting page, e.g. what happens if you add a Google test that uses Approvals, but don't add a Google main that registers Approvals listener (crash!)
 . docs - document how to test file types that are not character-for-character equivalent
-. memory leaks in our tests
 . add keywords to github project - for examples, see https://github.com/catchorg/Catch2
 . reports
 . asJson
@@ -86,7 +87,6 @@ WON’T DO
 . scrubbers
 . video intro
 . make SystemLauncher on Windows use the 'where' command
-. treat compiler warnings as errors - ideally on all platforms
 . more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
 . set up a git tab policy
