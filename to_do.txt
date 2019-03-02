@@ -21,6 +21,19 @@ IMPROVE USABILITY OF CURRENT FEATURES
 
 
 NEW FEATURES
+. add a non-gui reporter, e.g. for use in CI systems
+. front loader reporter
+. catch reporter
+. UpdateApprovedReporter - that moves received to approved, to allow for reviewing in version control and then either committing or reverting
+. tortoise git diff reporter
+. maps
+. reports
+. asJson
+. loggers
+. scrubbers
+. make SystemLauncher on Windows use the 'where' command
+. more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
+. support visual studio's in-built diff
 
 
 TESTS
@@ -68,15 +81,9 @@ WON’T DO
 
 . add sample for adding to existing google test
 
-. add a non-gui reporter, e.g. for use in CI systems
 
 
 
-. front loader reporter
-. catch reporter
-. UpdateApprovedReporter - that moves received to approved, to allow for reviewing in version control and then either committing or reverting
-. tortoise git diff reporter
-. maps
 
 . docs
 . Define a structure for User Guide/Manual
@@ -84,14 +91,7 @@ WON’T DO
 . docs - add troubleshooting page, e.g. what happens if you add a Google test that uses Approvals, but don't add a Google main that registers Approvals listener (crash!)
 . docs - document how to test file types that are not character-for-character equivalent
 . add keywords to github project - for examples, see https://github.com/catchorg/Catch2
-. reports
-. asJson
-. loggers
-. scrubbers
 . video intro
-. make SystemLauncher on Windows use the 'where' command
-. more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
 . update the readme for recent progress
 . Document the list of supported diff tools
 . machine-generate a list of supported diff tools
-. support visual studio's in-built diff
