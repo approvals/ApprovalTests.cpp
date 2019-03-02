@@ -1,3 +1,36 @@
+BUGS
+
+
+IMPROVE USABILITY OF CURRENT FEATURES
+
+
+NEW FEATURES
+
+
+TESTS
+
+
+DOCUMENTATION
+
+
+RELEASES
+
+
+FORMATTING OF CODE
+
+
+CODE QUALITY
+
+
+ENVIRONMENT AND BUILDS
+
+
+FUTURE DEVELOPMENT
+
+
+WON’T DO
+
+
 . bug: arguments member in DiffInfo is unused after construction
 . bug: don't include Catch2 tags (like [!shouldfail]) in output filenames
 . add sample for adding to existing google test
