@@ -46,9 +46,13 @@ CODE QUALITY
 
 
 ENVIRONMENT AND BUILDS
+. Add CI builds for clang
+. set up a git tab policy
+. fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
 
 
 FUTURE DEVELOPMENT
+. review directory and file structure of other popular C++ testing libraries, to look for ways to improve the structure of this project, e.g. add a single header file in source that mimics the released single header, e.g. put Catch and Google and Okra headers into an integration folder???
 
 
 WON’T DO
@@ -73,7 +77,6 @@ WON’T DO
 . UpdateApprovedReporter - that moves received to approved, to allow for reviewing in version control and then either committing or reverting
 . tortoise git diff reporter
 . maps
-. review directory and file structure of other popular C++ testing libraries, to look for ways to improve the structure of this project, e.g. add a single header file in source that mimics the released single header, e.g. put Catch and Google and Okra headers into an integration folder???
 
 . docs
 . Define a structure for User Guide/Manual
@@ -88,10 +91,7 @@ WON’T DO
 . video intro
 . make SystemLauncher on Windows use the 'where' command
 . more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
-. fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
-. set up a git tab policy
 . update the readme for recent progress
 . Document the list of supported diff tools
 . machine-generate a list of supported diff tools
 . support visual studio's in-built diff
-. Add CI builds for clang
