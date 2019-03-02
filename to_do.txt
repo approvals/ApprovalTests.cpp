@@ -1,4 +1,5 @@
 BUGS
+
 . windows reporters on non-English language
     . See DiffInfo.java for the environment variables to use
     . ProgramFiles=C:\Program Files
@@ -9,8 +10,8 @@ BUGS
 . understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
 . get googletest on Windows to process more than one failure at a time in Araxis Merge
 
-
 IMPROVE USABILITY OF CURRENT FEATURES
+
 . add lambda-based Approvals::verify() overload, to remove need for operator<< or std::string conversion ???
 . HIGH allow user to configure location of received and approved files - as per Python implementation 
 . allow configuring of default reporter
@@ -19,8 +20,8 @@ IMPROVE USABILITY OF CURRENT FEATURES
 . add an easy way to produce multiple output files from one test - perhaps APPROVALS_SECTION{...}, like Catch2's SECTION{...}
 . make it easy to add approvals to existing catch2 tests
 
-
 NEW FEATURES
+
 . add a non-gui reporter, e.g. for use in CI systems
 . front loader reporter
 . catch reporter
@@ -35,13 +36,13 @@ NEW FEATURES
 . more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
 . support visual studio's in-built diff
 
-
 TESTS
+
 . HIGH put out own approved files in a sub-directory
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
 
-
 DOCUMENTATION
+
 . video intro
 . add keywords to github project - for examples, see https://github.com/catchorg/Catch2
 . Define a structure for User Guide/Manual
@@ -53,46 +54,37 @@ DOCUMENTATION
 . Document the list of supported diff tools
 . machine-generate a list of supported diff tools
 
-
 RELEASES
+
 . remove version number from filename in releases, so it's easier for users to update
 . include some boilerplate text, including licence and version number, in released header
 
-
 FORMATTING OF CODE
+
 . tabs to spaces
 . add pre-commit check to detect tabs
 . Implement auto-formatting of code to match style guide
 
-
 CODE QUALITY
+
 . run through Qt Creator analysis tools
 . memory leaks in our tests
 . treat compiler warnings as errors - ideally on all platforms
 
-
 ENVIRONMENT AND BUILDS
+
 . Add CI builds for clang
 . set up a git tab policy
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
 
-
 FUTURE DEVELOPMENT
+
 . review directory and file structure of other popular C++ testing libraries, to look for ways to improve the structure of this project, e.g. add a single header file in source that mimics the released single header, e.g. put Catch and Google and Okra headers into an integration folder???
 
-
 WON’T DO
+
 . windows reporters when building in Cygwin
 . DELETE - no need now we have easy code in Markdown - public hosting of doxygen docs - to browse class hierarchy and file dependencies
 . DELETE - assume that anyone who wants to use Googletest will have their own build - otherwise, recommend using Catch2 - create a Visual Studio.googletest starter project
 . DELETE work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682
 . get building on windows with gcc (https://nuwen.net/mingw.html)
-
-
-
-
-
-
-
-
-. docs
