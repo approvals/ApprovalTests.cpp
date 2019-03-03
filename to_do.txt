@@ -7,7 +7,6 @@ BUGS
     . https://docs.microsoft.com/en-gb/windows/desktop/WinProg64/wow64-implementation-details
 . don't include Catch2 tags (like [!shouldfail]) in output filenames
 . arguments member in DiffInfo is unused after construction
-. understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
 
 IMPROVE USABILITY OF CURRENT FEATURES
 
@@ -92,4 +91,10 @@ WON’T DO
         Microsoft Visual Studio Enterprise 2017
         Version 15.9.4
         Visual C++ 2017   00369-60000-00001-AA880
+        Microsoft Visual C++ 2017
+. understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
+    Cannot reproduce with Approvals 3.0.0 - in environment where it previously happened:
+        Microsoft Visual Studio Professional 2017
+        Version 15.7.6
+        Visual C++ 2017   00370-20005-90115-AA999
         Microsoft Visual C++ 2017
