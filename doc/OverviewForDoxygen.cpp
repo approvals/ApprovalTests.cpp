@@ -59,7 +59,7 @@
     - The way that a difference in file-content is conveyed by FileApprover to the test framework (Catch, Google Test etc) is by
       the throwing of an exception. The test framework then picks up that exception, and reports it as a
       failure.
-    - This means that, currently, it's only possible for a single verification failure to easily be reported
+    - This means that, currently, it's only possible for a single verification failure per test case to easily be reported
       by the test framework.
     - A test that wanted to run multiple verifications could catch ApprovalException, note the failure, keep on
       testing, and then at the end of the test method, call the test frameworks's specific mechanism to report
