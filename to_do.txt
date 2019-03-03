@@ -8,7 +8,6 @@ BUGS
 . don't include Catch2 tags (like [!shouldfail]) in output filenames
 . arguments member in DiffInfo is unused after construction
 . understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
-. get googletest on Windows to process more than one failure at a time in Araxis Merge
 
 IMPROVE USABILITY OF CURRENT FEATURES
 
@@ -88,3 +87,9 @@ WON’T DO
 . create a Visual Studio.googletest starter project (assume that anyone who wants to use Googletest will have their own build - otherwise, recommend using Catch2)
 . work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682
 . get building on windows with gcc (https://nuwen.net/mingw.html)
+. get googletest on Windows to process more than one failure at a time in Araxis Merge
+    Cannot reproduce with current Approvals code
+        Microsoft Visual Studio Enterprise 2017
+        Version 15.9.4
+        Visual C++ 2017   00369-60000-00001-AA880
+        Microsoft Visual C++ 2017
