@@ -1,5 +1,6 @@
 BUGS
 
+. #define EMPTY causes break in subsequent includes - #7
 . windows reporters on non-English language
     . See DiffInfo.java for the environment variables to use
     . ProgramFiles=C:\Program Files
