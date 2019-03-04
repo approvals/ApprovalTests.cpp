@@ -53,6 +53,6 @@ int main(int argc, char** argv)
 <sup>[snippet source](/examples/googletest_existing_main/main.cpp#L1-L11)</sup>
 <!-- endsnippet -->
 
-## Cookbook
+---
 
-* [To String](ToString.md)
+[Back to User Guide](README.md)

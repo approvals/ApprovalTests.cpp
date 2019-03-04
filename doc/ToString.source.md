@@ -71,3 +71,7 @@ TODO Explain things like:
 * Loading run-time data from captured approval results
 * Querying logs from JSON output
 * IExecutable queries
+
+---
+
+[Back to User Guide](README.md)

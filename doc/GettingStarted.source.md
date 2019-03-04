@@ -22,6 +22,6 @@ snippet: googletest_main
 
 snippet: googletest_existing_main
 
-## Cookbook
+---
 
-* [To String](ToString.md)
+[Back to User Guide](README.md)
