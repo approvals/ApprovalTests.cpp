@@ -53,6 +53,8 @@ TODO Explain things like:
 
 ### Lists
 
+Some formats will be more readable when you are writing lists of objects.
+
 Notice how this:
 
 snippet: ApprovalTests_Catch2_Tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt
@@ -61,13 +63,11 @@ compares to this:
 
 snippet: ApprovalTests_Catch2_Tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt
 
-Some formats will be more readable when you are writing lists of objects.
-
 ### Tools
 
 TODO Explain things like:
 
 * Using Excel to create graphs
-* Loading runt-time data from captured approval results
+* Loading run-time data from captured approval results
 * Querying logs from JSON output
 * IExecutable queries
