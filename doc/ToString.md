@@ -47,11 +47,11 @@ Wrapper classes or functions can be used to provide additional output formats fo
 ```cpp
 struct FormatRectangleForMultipleLines{
 
-    explicit FormatRectangleForMultipleLines(Rectangle3 rectangle) : rectangle(rectangle)
+    explicit FormatRectangleForMultipleLines(const Rectangle3& rectangle) : rectangle(rectangle)
     {
     }
 
-    Rectangle3 rectangle;
+    const Rectangle3& rectangle;
 
     friend std::ostream &operator<<(std::ostream &os, const FormatRectangleForMultipleLines &wrapper) {
         os << "(x,y,width,height) = (" <<
