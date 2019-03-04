@@ -1,7 +1,7 @@
 # ApprovalTests.cpp User Guide
 
 **Feedback requested!** This page is currently a proposal for how to structure the user documentation
-for this library, to see feedback on it.
+for this library, to seek feedback on it.
 
 **Please add any feedback or suggestions** to [Issue 8: Set up outline structure for User Guide](https://github.com/approvals/ApprovalTests.cpp/issues/8).
 Thank you!
