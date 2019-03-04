@@ -67,6 +67,8 @@ Process finished with exit code 0
 * Does your Google Test have its own custom `main.cpp`?
     * If so, perhaps you haven't yet added the code to set up Approval Tests?
     * To fix, copy in the Approvals-specific lines from [examples/googletest_existing_main/main.cpp](/examples/googletest_existing_main/main.cpp)
+* Is your code calling `Approvals::verify()` or similar from outside a Google Test?
+    * This is much less likely to be the cause, but the file-naming code in Approval Tests (`ApprovalTestNamer`) does require that approvals are used from inside a test method in a supported test framework. 
 
 ---
 
