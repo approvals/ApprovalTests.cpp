@@ -11,7 +11,7 @@ BUGS
 
 IMPROVE USABILITY OF CURRENT FEATURES
 
-. add lambda-based Approvals::verify() overload, to remove need for operator<< or std::string conversion ???
+. add lambda-based Approvals::verify() overload, to remove need for operator<< - see comment in #6
 . allow user to configure location of received and approved files - as per Python implementation 
 . allow configuring of default reporter
 . try using a custom namer in C++ e.g. to write out actual and expected in parallel directories, to allow diffing the whole folder - Python project has verify_with_namer()
@@ -43,6 +43,7 @@ TESTS
 DOCUMENTATION
 
 . video intro
+. document use of converter objects - see comment in #6
 . add keywords to github project - for examples, see https://github.com/catchorg/Catch2
 . Define a structure for User Guide/Manual
 . add sample for adding to existing google test
