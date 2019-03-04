@@ -11,6 +11,7 @@ Once you're up and running, consider the following reference material. -->
 
 ## Introduction
 
+* What is Approval Testing?
 * Why Approval Tests?
 
 ## Setup
