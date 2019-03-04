@@ -3,17 +3,18 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 #define STATIC(type, name, defaultValue) \
-      static type &name(type *value = NULL) { \
-static type *staticValue; \
-if (value != NULL) { \
-staticValue = value; \
-} \
-if (staticValue == NULL) \
-{ \
- staticValue = defaultValue; \
-} \
-return *staticValue; \
-} \
+static type &name(type *value = NULL) { \
+    static type *staticValue; \
+    if (value != NULL) \
+    { \
+        staticValue = value; \
+    } \
+    if (staticValue == NULL) \
+    { \
+        staticValue = defaultValue; \
+    } \
+    return *staticValue; \
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 
