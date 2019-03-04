@@ -42,7 +42,6 @@ TESTS
 
 DOCUMENTATION
 
-. video intro
 . document use of converter objects - see comment in #6
 . add keywords to github project - for examples, see https://github.com/catchorg/Catch2
 . Define a structure for User Guide/Manual
