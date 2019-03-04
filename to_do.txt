@@ -44,7 +44,7 @@ DOCUMENTATION
 
 . document use of converter objects - see comment in #6
 . add keywords to github project - for examples, see https://github.com/catchorg/Catch2
-. Define a structure for User Guide/Manual
+. Define a structure for User Guide - see #8 and https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md
 . hook Simon Cropp's code mechanism into github pre-commit mechanism
 . document how to test file types that are not character-for-character equivalent
 . update the readme for recent progress
