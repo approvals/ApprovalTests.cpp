@@ -80,11 +80,11 @@ FUTURE DEVELOPMENT
 
 WON’T DO
 
-. windows reporters when building in Cygwin
+. windows reporters when building in Cygwin - only consider if a user asks for it
 . no need now we have easy code in Markdown - public hosting of doxygen docs - to browse class hierarchy and file dependencies
 . create a Visual Studio.googletest starter project (assume that anyone who wants to use Googletest will have their own build - otherwise, recommend using Catch2)
-. work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682
-. get building on windows with gcc (https://nuwen.net/mingw.html)
+. work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682 - this is not failing any more
+. get building on windows with gcc (https://nuwen.net/mingw.html) - only consider if a user asks for it
 . get googletest on Windows to process more than one failure at a time in Araxis Merge
     Cannot reproduce with current Approvals code
         Microsoft Visual Studio Enterprise 2017
