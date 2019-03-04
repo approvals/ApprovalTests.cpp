@@ -38,7 +38,8 @@ TODO
 
 ## Existing Project
 
-``` cpp
+<!-- snippet: googletest_existing_main -->
+```cpp
 #define APPROVALS_GOOGLETEST_EXISTING_MAIN
 #include "ApprovalTests.hpp"
 
@@ -49,6 +50,8 @@ int main(int argc, char** argv)
     return RUN_ALL_TESTS();
 }
 ```
+<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L1-L11)</sup>
+<!-- endsnippet -->
 
 ## Cookbook
 
