@@ -1,11 +1,6 @@
 BUGS
 
 . #define EMPTY causes break in subsequent includes - #7
-. windows reporters on non-English language
-    . See DiffInfo.java for the environment variables to use
-    . ProgramFiles=C:\Program Files
-    . ProgramFiles(x86)=C:\Program Files (x86)
-    . https://docs.microsoft.com/en-gb/windows/desktop/WinProg64/wow64-implementation-details
 . don't include Catch2 tags (like [!shouldfail]) in output filenames
 . arguments member in DiffInfo is unused after construction
 
