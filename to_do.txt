@@ -6,7 +6,6 @@ BUGS
 
 IMPROVE USABILITY OF CURRENT FEATURES
 
-. add lambda-based Approvals::verify() overload, to remove need for operator<< - see comment in #6
 . allow user to configure location of received and approved files - as per Python implementation 
 . allow configuring of default reporter
 . try using a custom namer in C++ e.g. to write out actual and expected in parallel directories, to allow diffing the whole folder - Python project has verify_with_namer()

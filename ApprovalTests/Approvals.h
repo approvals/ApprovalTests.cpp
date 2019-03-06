@@ -30,6 +30,16 @@ public:
         verify(s.str(), reporter);
     }
 
+    template<typename T>
+    static void verify(const T& contents,
+                       std::function<void(const T&, std::ostream &)> converter,
+                       const Reporter &reporter = DiffReporter())
+    {
+        std::stringstream s;
+        converter(contents, s);
+        verify(s.str(), reporter);
+    }
+
     template<typename Iterator>
     static void verifyAll(std::string header,
                           const Iterator &start, const Iterator &finish,
