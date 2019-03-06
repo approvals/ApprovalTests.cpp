@@ -4,6 +4,9 @@
 
 * Change the version number in `build_hpp.sh`
 * Run `build_hpp.sh`
+* Add these two lines to the single hpp file:
+// Approval Tests version 3.1.0
+// More information at: https://github.com/approvals/ApprovalTests.cpp/
 * Write summary of changes since last release 
 * Upload the .hpp to releases - call the release `Single Hpp File`
 * Change the version numbers in `build_hpp.sh` to reflect the next version
