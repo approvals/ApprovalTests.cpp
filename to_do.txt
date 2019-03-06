@@ -79,23 +79,3 @@ ENVIRONMENT AND BUILDS
 FUTURE DEVELOPMENT
 
 . review directory and file structure of other popular C++ testing libraries, to look for ways to improve the structure of this project, e.g. add a single header file in source that mimics the released single header, e.g. put Catch and Google and Okra headers into an integration folder???
-
-WON’T DO
-
-. windows reporters when building in Cygwin - only consider if a user asks for it
-. no need now we have easy code in Markdown - public hosting of doxygen docs - to browse class hierarchy and file dependencies
-. create a Visual Studio.googletest starter project (assume that anyone who wants to use Googletest will have their own build - otherwise, recommend using Catch2)
-. work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682 - this is not failing any more
-. get building on windows with gcc (https://nuwen.net/mingw.html) - only consider if a user asks for it
-. get googletest on Windows to process more than one failure at a time in Araxis Merge
-    Cannot reproduce with current Approvals code
-        Microsoft Visual Studio Enterprise 2017
-        Version 15.9.4
-        Visual C++ 2017   00369-60000-00001-AA880
-        Microsoft Visual C++ 2017
-. understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
-    Cannot reproduce with Approvals 3.0.0 - in environment where it previously happened:
-        Microsoft Visual Studio Professional 2017
-        Version 15.7.6
-        Visual C++ 2017   00370-20005-90115-AA999
-        Microsoft Visual C++ 2017
