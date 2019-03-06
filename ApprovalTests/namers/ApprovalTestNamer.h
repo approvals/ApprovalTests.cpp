@@ -33,7 +33,7 @@ public:
 
     string getTestName() {
         std::stringstream ext;
-        auto test = currentTest();
+        auto test = getCurrentTest();
         for (size_t i = 0; i < test.sections.size(); i++) {
             if (0 < i) {
                 ext << ".";
@@ -67,8 +67,42 @@ public:
         return result.str();
     }
 
+    TestName &getCurrentTest() const
+    {
+        try
+        {
+            return currentTest();
+        }
+        catch( const std::runtime_error& )
+        {
+            std::string lineBreak = "************************************************************************************\n";
+            std::string lineBuffer = "*                                                                                  *\n";
+            std::string helpMessage =
+                "\n\n" + lineBreak + lineBuffer + 
+R"(* Welcome to Approval Tests.
+* 
+* You have forgotten to configure your test framework for Approval Tests.
+* 
+* To do this in Catch, add the following to your main.cpp:
+* 
+*     #define APPROVALS_CATCH
+*     #include "ApprovalTests.hpp"
+* 
+* To do this in Google Test, add the following to your main.cpp:
+* 
+*     #define APPROVALS_GOOGLETEST
+*     #include "ApprovalTests.hpp"
+* 
+* For more information, please visit:
+* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/GettingStarted.md
+)" +
+                    lineBuffer + lineBreak + '\n';
+            throw std::runtime_error( helpMessage );
+        }
+    }
+
     string getFileName() {
-        auto file = currentTest().getFileName();
+        auto file = getCurrentTest().getFileName();
         auto start = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto end = file.rfind(".");
         auto fileName = file.substr(start, end - start);
@@ -76,7 +110,7 @@ public:
     }
 
     string getDirectory() {
-        auto file = currentTest().getFileName();
+        auto file = getCurrentTest().getFileName();
         auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         return file.substr(0, end);
     }

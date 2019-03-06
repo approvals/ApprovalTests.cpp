@@ -1,7 +1,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * **[NOT YET PUSHED]** A helpful message is issued if main() is not set up correctly.
+    * A helpful message is issued if main() is not set up correctly.
     * The library is now usable with CMake add_subdirectory() of source tree.
     * WinMerge can handle images
 * **Bug fixes**

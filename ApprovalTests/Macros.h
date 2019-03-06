@@ -13,6 +13,11 @@ static type &name(type *value = NULL) { \
     { \
         staticValue = defaultValue; \
     } \
+    if ( staticValue == nullptr ) \
+    { \
+        const char* helpMessage = "The variable in " #name "() is not initialised"; \
+        throw std::runtime_error( helpMessage ); \
+    } \
     return *staticValue; \
 }
 
