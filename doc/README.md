@@ -13,13 +13,31 @@ Once you're up and running, consider the following reference material. -->
 
 * What is Approval Testing?
 * Why Approval Tests?
+    * The Path to Approval Testing
+        * Verify numbers
+            * Have lots of numbers, like an array
+        * Strings - turn the array of numbers in to a string
+            * Those strings become long
+        * Files - Golden Master
+            * Managing them - coming up with names
+        * Some sort of naming convention
+        * Can be hard to understand what's in the files
+            * Start using diff tools
+        * Start creating custom methods for the things you are testing
+            * verifyThing
 
 ## Setup
 
 * Obtaining ApprovalTests.cpp
+    * Get a test framework
+    * Downloading the latest release
+        * Adding a wrapper header
+        * Renaming the header file to remove version number
+    * Starter project
+    * Cloning repo and using CMake
 * [Getting Started](GettingStarted.md)
-* Using Catch 1 and 2
-* Using Google Test
+* Getting Started with Catch 1 and 2
+* Getting Started with Google Test
 
 ## Writing Tests
 
@@ -28,6 +46,7 @@ Once you're up and running, consider the following reference material. -->
 * Testing containers
 * Testing combinations - containers of containers (of containers...)
 * [To String](ToString.md)
+* Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
 
 ## Customising behaviour
 
@@ -52,6 +71,11 @@ Once you're up and running, consider the following reference material. -->
 ## Extras
 
 * [Troubleshooting](Troubleshooting.md)
+* 4 benefits of testing
+    * Spec
+    * Feedback
+    * Regression
+    * Granularity
 
 ## Advanced Topics
 
