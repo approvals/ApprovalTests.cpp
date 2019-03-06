@@ -1,6 +1,5 @@
 BUGS
 
-. #define EMPTY causes break in subsequent includes - #7
 . don't include Catch2 tags (like [!shouldfail]) in output filenames
 . arguments member in DiffInfo is unused after construction
 
@@ -11,7 +10,6 @@ IMPROVE USABILITY OF CURRENT FEATURES
 . try using a custom namer in C++ e.g. to write out actual and expected in parallel directories, to allow diffing the whole folder - Python project has verify_with_namer()
 . add an easy way to produce multiple output files from one test - perhaps APPROVALS_SECTION{...}, like Catch2's SECTION{...}
 . make it easy to add approvals to existing catch2 tests
-. add hook for "no namer registered"
 
 NEW FEATURES
 
