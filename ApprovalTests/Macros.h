@@ -1,8 +1,8 @@
-#ifndef CATCHPLAYGROUND_MARCOS_H
-#define CATCHPLAYGROUND_MARCOS_H
+#ifndef APPROVALTESTS_CPP_MACROS_H
+#define APPROVALTESTS_CPP_MACROS_H
 
 ///////////////////////////////////////////////////////////////////////////////
-#define STATIC(type, name, defaultValue) \
+#define APPROVAL_TESTS_MACROS_STATIC(type, name, defaultValue) \
 static type &name(type *value = NULL) { \
     static type *staticValue; \
     if (value != NULL) \
@@ -23,4 +23,4 @@ static type &name(type *value = NULL) { \
 
 ///////////////////////////////////////////////////////////////////////////////
 
-#endif //CATCHPLAYGROUND_MARCOS_H
+#endif //APPROVALTESTS_CPP_MACROS_H

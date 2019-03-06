@@ -115,7 +115,7 @@ R"(* Welcome to Approval Tests.
         return file.substr(0, end);
     }
 
-    STATIC(TestName, currentTest, NULL)
+    APPROVAL_TESTS_MACROS_STATIC(TestName, currentTest, NULL)
 
     virtual string getApprovedFile(string extensionWithDot) {
 
