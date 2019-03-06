@@ -27,8 +27,6 @@ public:
 
 };
 
-#define EMPTY std::vector<Empty>{Empty()}
-
 class CombinationApprovals
 {
 public:
@@ -169,7 +167,7 @@ public:
                                               inputs6,
                                               inputs7,
                                               inputs8,
-                                              EMPTY,
+                                              empty(),
                                               reporter);
     }
 
@@ -225,7 +223,7 @@ public:
                                               inputs5,
                                               inputs6,
                                               inputs7,
-                                              EMPTY,
+                                              empty(),
                                               reporter);
     }
 
@@ -274,7 +272,7 @@ public:
                                               inputs4,
                                               inputs5,
                                               inputs6,
-                                              EMPTY,
+                                              empty(),
                                               reporter);
     }
 
@@ -317,7 +315,7 @@ public:
                                               inputs3,
                                               inputs4,
                                               inputs5,
-                                              EMPTY,
+                                              empty(),
                                               reporter);
     }
 
@@ -354,7 +352,7 @@ public:
                                               inputs2,
                                               inputs3,
                                               inputs4,
-                                              EMPTY,
+                                              empty(),
                                               reporter);
     }
 
@@ -385,7 +383,7 @@ public:
                                               inputs1,
                                               inputs2,
                                               inputs3,
-                                              EMPTY,
+                                              empty(),
                                               reporter);
     }
 
@@ -410,7 +408,7 @@ public:
                                                       Empty _){return converter(i1, i2);},
                                               inputs1,
                                               inputs2,
-                                              EMPTY,
+                                              empty(),
                                               reporter);
     }
 
@@ -429,8 +427,17 @@ public:
                                                       typename Container1::value_type i1,
                                                       Empty _){return converter(i1);},
                                               inputs1,
-                                              EMPTY,
+                                              empty(),
                                               reporter);
+    }
+
+    // Implementation details: these are left public to allow users
+    // to write additional verifyAllCombinations overloads that take more
+    // than 9 arguments - unlikely though that may be.
+    using EmptyContainer = std::vector<Empty>;
+    static EmptyContainer empty()
+    {
+        return EmptyContainer{Empty()};
     }
 };
 
