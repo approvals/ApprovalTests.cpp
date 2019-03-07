@@ -21,9 +21,11 @@ Currently working in Mac/Linux/Windows with
 
 ## Getting Started
 
-[More details here](doc/GettingStarted.md)
+The video [Quickly Testing Legacy Code](https://youtu.be/dtm8V3TIB6k) gives an introduction both to Approval Tests and to this library. The slides from the talk are available in [PowerPoint](https://www.slideshare.net/ClareMacrae/quickly-testing-legacy-code) and  [PDF](https://github.com/philsquared/cpponsea-slides/raw/master/2019/Clare%20Macrae%20-%20Quickly%20Testing%20Legacy%20Code.pdf) formats. Sample code from the talk is available on [Github](https://github.com/claremacrae/cpponsea2019).
 
-I Highly suggest you clone [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
+See [Getting Started](doc/GettingStarted.md)
+
+I highly suggest you clone [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
 
 ## Main File
 
@@ -43,15 +45,14 @@ For all other test files, you need:
 ```
 
 ## Examples
-ApprovalTests uses ApprovalTests to test ApprovalTests (it's turtles all the way down)  
-[Checkout our own tests](https://github.com/approvals/ApprovalTests.cpp/tree/master/ApprovalTests_Catch2_Tests) to see how we do it:
+ApprovalTests uses ApprovalTests to test ApprovalTests (it's turtles all the way down).  
+[Checkout our own tests](https://github.com/approvals/ApprovalTests.cpp/tree/master/ApprovalTests_Catch2_Tests) to see how we do it.
 
 ### ToString (ostream insertion)
-Often, you will need to create functions to allow objects to print their state. This is commonly done with on ostream << operator.
-You can find an example here:
-[Printable Objects](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ToStringExample.cpp)
+Often, you will need to create functions to allow objects to print their state. This is commonly done with on ostream `<< operator`.
+You can find examples here: [To String](doc/ToString.md)
 
 ### Suggested Examples:
-[ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp)
-[VectorTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/VectorTests.cpp)
-[CombinationTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/CombinationTests.cpp)  
+* [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp)
+* [VectorTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/VectorTests.cpp)
+* [CombinationTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/CombinationTests.cpp)  

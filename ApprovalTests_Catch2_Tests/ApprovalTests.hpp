@@ -3,6 +3,6 @@
 #ifndef APPROVALTESTS_CPP_APPROVALTESTS_H
 #define APPROVALTESTS_CPP_APPROVALTESTS_H
 
-#include "../ApprovalTests/Catch2Approvals.h"
+#include <ApprovalTests/Catch2Approvals.h>
 
 #endif //APPROVALTESTS_CPP_APPROVALTESTS_H

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.8)
 project(ApprovalTests_Catch2_Tests)
 set(CMAKE_CXX_STANDARD 17)
-set(SOURCE_FILES
+add_executable(${PROJECT_NAME}
         main.cpp
         reporters/ReporterTests.cpp
         ApprovalExceptionTests.cpp
@@ -14,7 +14,9 @@ set(SOURCE_FILES
         StringUtilsTests.cpp
         SystemUtilsTests.cpp
         ToStringExample.cpp
+        ToStringTemplateExample.cpp
+        ToStringWrapperExample.cpp
         StyleGuide.h
         )
-add_executable(${PROJECT_NAME} ${SOURCE_FILES} )
+target_link_libraries(${PROJECT_NAME} ApprovalTests)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})

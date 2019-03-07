@@ -4,6 +4,7 @@
 #include <string>
 #include "../FileUtils.h"
 #include "../StringUtils.h"
+#include "../SystemUtils.h"
 
 enum class Type { TEXT, IMAGE, TEXT_AND_IMAGE };
 
@@ -29,17 +30,30 @@ struct DiffInfo
 
     std::string getProgramForOs() const
     {
-       
         std::string result = program;
-        if (result.rfind("{ProgramFiles}", 0) == 0) {
-            auto result1 = StringUtils::replaceAll(result, "{ProgramFiles}", "c:\\Program Files\\");
-       
-            if (FileUtils::fileExists(result1)) {
-                result = result1;
-            }
-            auto result2 = StringUtils::replaceAll(result, "{ProgramFiles}", "c:\\Program Files (x86)\\");
-            if (FileUtils::fileExists(result2)) {
-                result =  result2;
+        if (result.rfind("{ProgramFiles}", 0) == 0)
+        {
+            const std::vector<const char*> envVars =
+            {
+                "ProgramFiles",
+                "ProgramW6432",
+                "ProgramFiles(x86)"
+            };
+
+            for(const auto& envVar : envVars)
+            {
+                std::string envVarValue = SystemUtils::safeGetEnv(envVar);
+                if (envVarValue.empty())
+                {
+                    continue;
+                }
+                envVarValue += '\\';
+
+                auto result1 = StringUtils::replaceAll(result, "{ProgramFiles}", envVarValue);
+                if (FileUtils::fileExists(result1))
+                {
+                    return result1;
+                }
             }
         }
         return result;

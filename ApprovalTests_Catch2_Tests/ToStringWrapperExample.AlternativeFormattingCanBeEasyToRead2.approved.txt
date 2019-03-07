@@ -1,0 +1,7 @@
+rectangles
+
+
+(x,y,width,height) = (4,50,100,61)
+(x,y,width,height) = (50,5200,400,62)
+(x,y,width,height) = (60,3,7,63)
+

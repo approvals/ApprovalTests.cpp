@@ -20,14 +20,8 @@ snippet: googletest_main
 
 ## Existing Project
 
-``` cpp
-#define APPROVALS_GOOGLETEST_EXISTING_MAIN
-#include "ApprovalTests.hpp"
+snippet: googletest_existing_main
 
-int main(int argc, char** argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    initializeApprovalTestsForGoogleTests();
-    return RUN_ALL_TESTS();
-}
-```
+---
+
+[Back to User Guide](README.md)

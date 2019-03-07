@@ -1,51 +1,71 @@
-. bug: arguments member in DiffInfo is unused after construction
-. bug: don't include Catch2 tags (like [!shouldfail]) in output filenames
-. add sample for adding to existing google test
+BUGS
 
-. add lambda-based Approvals::verify() overload, to remove need for operator<< or std::string conversion ???
-. add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
-. add a non-gui reporter, e.g. for use in CI systems
+. don't include Catch2 tags (like [!shouldfail]) in output filenames
+. arguments member in DiffInfo is unused after construction
 
-. tabs to spaces
-. make it easy to add approvals to existing catch2 tests
-. understand why approved filename differs in Visual Studio 2017 between release and debug builds - with v2.0 ApprovalTests release
-. add an easy way to produce multiple output files from one test - perhaps APPROVALS_SECTION{...}, like Catch2's SECTION{...}
+IMPROVE USABILITY OF CURRENT FEATURES
 
-. remove version number from filename in releases, so it's easier for users to update
-. include some boilerplate text, including licence and version number, in released header
-
-. get googletest on Windows to process more than one failure at a time in Araxis Merge
-. if Approvals is run in googletest, without the customised main, give meaningful message, instead of 'SEH exception with code 0xc0000005 thrown in the test body'
-. run through Qt Creator analysis tools
+. allow user to configure location of received and approved files - as per Python implementation 
 . allow configuring of default reporter
+. try using a custom namer in C++ e.g. to write out actual and expected in parallel directories, to allow diffing the whole folder - Python project has verify_with_namer()
+. add an easy way to produce multiple output files from one test - perhaps APPROVALS_SECTION{...}, like Catch2's SECTION{...}
+. make it easy to add approvals to existing catch2 tests
+
+NEW FEATURES
+
+. add a non-gui reporter, e.g. for use in CI systems
 . front loader reporter
 . catch reporter
+. UpdateApprovedReporter - that moves received to approved, to allow for reviewing in version control and then either committing or reverting
 . tortoise git diff reporter
 . maps
-
-. docs
-. docs - hook Simon Cropp's code mechanism into github pre-commit mechanism
-. docs - add troubleshooting page, e.g. what happens if you add a Google test that uses Approvals, but don't add a Google main that registers Approvals listener (crash!)
-. docs - document how to test file types that are not character-for-character equivalent
-. memory leaks in our tests
-. add keywords to github project - for examples, see https://github.com/catchorg/Catch2
 . reports
 . asJson
 . loggers
-. video intro
-. windows reporters on non-English language
-    . ProgramFiles=C:\Program Files
-    . ProgramFiles(x86)=C:\Program Files (x86)
-    . https://docs.microsoft.com/en-gb/windows/desktop/WinProg64/wow64-implementation-details
-. windows reporters when building in Cygwin
+. scrubbers
 . make SystemLauncher on Windows use the 'where' command
-. treat compiler warnings as errors - ideally on all platforms
-. public hosting of doxygen docs - to browse class hierarchy and file dependencies
-. get building on windows with gcc (https://nuwen.net/mingw.html)
 . more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
-. create a Visual Studio.googletest starter project
-. fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
-. update the readme for recent progress
-. machine-generate a list of supported diff tools
 . support visual studio's in-built diff
-. work around travis time-out issues: https://github.com/travis-ci/travis-ci/issues/9112#issuecomment-364629682
+
+TESTS
+
+. put our own approved files in a sub-directory
+. add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
+
+DOCUMENTATION
+
+. short video intro - from downloading to running the first test - like https://www.youtube.com/watch?v=jeDecsGVbc4
+. document use of converter objects - see comment in #6
+. add keywords to github project - for examples, see https://github.com/catchorg/Catch2
+. Define a structure for User Guide - see #8 and https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md
+. hook Simon Cropp's code mechanism into github pre-commit mechanism
+. document how to test file types that are not character-for-character equivalent
+. update the readme for recent progress
+. Document the list of supported diff tools
+. machine-generate a list of supported diff tools
+
+RELEASES
+
+. include some boilerplate text, including licence and version number, in released header
+
+FORMATTING OF CODE
+
+. tabs to spaces
+. add pre-commit check to detect tabs
+. Implement auto-formatting of code to match style guide
+
+CODE QUALITY
+
+. run through Qt Creator analysis tools
+. memory leaks in our tests
+. treat compiler warnings as errors - ideally on all platforms
+
+ENVIRONMENT AND BUILDS
+
+. Add CI builds for clang
+. set up a git tab policy
+. fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
+
+FUTURE DEVELOPMENT
+
+. review directory and file structure of other popular C++ testing libraries, to look for ways to improve the structure of this project, e.g. add a single header file in source that mimics the released single header, e.g. put Catch and Google and Okra headers into an integration folder???

@@ -1,6 +1,6 @@
 #include "Catch.hpp"
-#include "../ApprovalTests/SystemUtils.h"
-#include "../ApprovalTests/StringUtils.h"
+#include <ApprovalTests/SystemUtils.h>
+#include <ApprovalTests/StringUtils.h>
 
 TEST_CASE("ItCanFixCaseOfFileNameOnWindows")
 {
@@ -18,4 +18,16 @@ TEST_CASE("ItCanFixCaseOfFileNameOnWindows")
         // to be lower case
         CHECK(StringUtils::contains(fixed_filename, "approvaltests_catch2_tests"));
     }
+}
+
+TEST_CASE("ItCanGetEnvironmentVariable")
+{
+    const auto result = SystemUtils::safeGetEnv("PATH");
+    REQUIRE(result.length() > 0);
+}
+
+TEST_CASE("ItCanGetNonExistentEnvironmentVariable")
+{
+    const auto result = SystemUtils::safeGetEnv("THIS_ENVIRONMENT_VARIABLE_SHOULD_NOT_EXIST");
+    REQUIRE(result.length() == 0);
 }

@@ -16,7 +16,7 @@
 class FileApprover {
 private:
     using ComparatorContainer = std::map< std::string, std::shared_ptr<ApprovalComparator> >;
-    STATIC(ComparatorContainer, comparators, new ComparatorContainer())
+    APPROVAL_TESTS_MACROS_STATIC(ComparatorContainer, comparators, new ComparatorContainer())
 
 public:
     FileApprover() {};

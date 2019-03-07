@@ -2,15 +2,9 @@
 #include <map>
 #include <vector>
 #include <string>
-#include <ostream>
-#include "../ApprovalTests/CombinationApprovals.h"
+#include "PairUtilities.h"
+#include <ApprovalTests/CombinationApprovals.h>
 #include "reporters/FakeReporter.h"
-
-std::ostream &operator<<(std::ostream &os, const std::pair<std::string, int>& pair)
-{
-    os << "(" << pair.first << ", " << pair.second << ")";
-    return os;
-}
 
 TEST_CASE("YouCanVerifyCombinationsOf1") {
     std::vector<std::string> words{"hello", "world"};

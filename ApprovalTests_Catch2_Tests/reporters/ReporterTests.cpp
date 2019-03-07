@@ -2,9 +2,9 @@
 #include "Catch.hpp"
 #include "TestReporter.h"
 #include "FakeReporter.h"
-#include "../../ApprovalTests/reporters/FirstWorkingReporter.h"
-#include "../../ApprovalTests/reporters/ClipboardReporter.h"
-#include "../../ApprovalTests/reporters/CombinationReporter.h"
+#include <ApprovalTests/reporters/FirstWorkingReporter.h>
+#include <ApprovalTests/reporters/ClipboardReporter.h>
+#include <ApprovalTests/reporters/CombinationReporter.h>
 
 using namespace std;
 
