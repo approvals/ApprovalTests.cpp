@@ -2,7 +2,8 @@
 
 ## Update ApprovalTests.cpp
 
-* Change the version number in `build_hpp.sh`
+* Determine the semantic version number
+* Update the version number in `build_hpp.sh`
 * Run `build_hpp.sh`
 * Add these two lines to the single hpp file:
 // Approval Tests version 3.1.0
@@ -21,3 +22,7 @@
 ## Other stuff
 
 * Tweet the release
+#ApprovalTests.cpp v3.1.0 released, now with converter-based Approvals::verify(object, lambda_converter) overload!
+https://github.com/approvals/ApprovalTests.cpp/releases/tag/v.3.1.0 
+or try the starter project: https://github.com/approvals/ApprovalTests.cpp.StarterProject
+Thanks @LlewellynFalco!

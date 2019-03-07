@@ -1,6 +1,7 @@
 * **Breaking changes**
     * None
 * **New features**
+    * Added converter-based Approvals::verify(object, lambda_converter) overload - see #6
     * A helpful message is issued if main() is not set up correctly.
     * The library is now usable with CMake add_subdirectory() of source tree.
     * WinMerge can handle images
