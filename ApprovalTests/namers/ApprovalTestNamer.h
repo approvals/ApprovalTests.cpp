@@ -67,6 +67,7 @@ public:
         return result.str();
     }
 
+// <SingleHpp unalterable>
     TestName &getCurrentTest() const
     {
         try
@@ -100,6 +101,7 @@ R"(* Welcome to Approval Tests.
             throw std::runtime_error( helpMessage );
         }
     }
+// </SingleHpp>
 
     string getFileName() {
         auto file = getCurrentTest().getFileName();
