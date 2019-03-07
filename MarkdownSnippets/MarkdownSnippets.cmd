@@ -1,1 +1,0 @@
-dotnet MarkdownSnippets.dll
