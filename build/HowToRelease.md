@@ -11,6 +11,7 @@
 * Write summary of changes since last release 
 * Upload the .hpp to releases - call the release `Single Hpp File`
 * Change the version numbers in `build_hpp.sh` to reflect the next version
+* Commit and push
 
 ## Update ApprovalTests.cpp.StarterProject
 
