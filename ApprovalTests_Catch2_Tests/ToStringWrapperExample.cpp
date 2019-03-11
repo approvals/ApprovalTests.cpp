@@ -27,11 +27,14 @@ std::vector<Rectangle3> getRectangles()
 }
 
 TEST_CASE("MultipleLinesCanBeHardToRead") {
+    // startcode verify_list
     Approvals::verifyAll(
         "rectangles",
         getRectangles(),
         [](auto r, auto& os){os << r;}
     );
+    // endcode
+
 }
 
 // startcode to_string_wrapper_example

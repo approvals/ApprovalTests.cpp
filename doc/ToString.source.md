@@ -54,6 +54,9 @@ TODO Explain things like:
 ### Lists
 
 Some formats will be more readable when you are writing lists of objects.
+Here's an example of verifing a list of rectangles
+
+snippet: verify_list
 
 Notice how this:
 

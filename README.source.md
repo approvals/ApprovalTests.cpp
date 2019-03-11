@@ -9,6 +9,11 @@ CppApprovals
 
 Native ApprovalTests for C++
 
+The Approvaltests library helps you write **ApprovalTests**, which are unit tests for complex objects that most people think can't be tested
+ApprovalTests are also known as **Golden Master Tests**.
+Here a intro to learn more about the [concept of ApprovalTesting ]ApprovalTestingConcept.source.md
+ApprovalTests are great for testing object with lots of fields, or lists of objects.
+
 ![Intro Graphic](doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)
 
 Currently working in Mac/Linux/Windows with
@@ -56,3 +61,6 @@ You can find examples here: [To String](doc/ToString.md)
 * [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp)
 * [VectorTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/VectorTests.cpp)
 * [CombinationTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/CombinationTests.cpp)  
+
+
+Feedback: If you have any comment or suggestion on this documentation, please email me at: isidore@setgame.com

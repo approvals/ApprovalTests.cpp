@@ -1,9 +1,8 @@
 <!--
 This file was generate by MarkdownSnippets.
-Source File: \README.source.md
+Source File: /README.source.md
 To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
-
 CppApprovals
 ============
 
@@ -14,6 +13,11 @@ CppApprovals
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Native ApprovalTests for C++
+
+The Approvaltests library helps you write **ApprovalTests**, which are unit tests for complex objects that most people think can't be tested
+ApprovalTests are also known as **Golden Master Tests**.
+Here a intro to learn more about the [concept of ApprovalTesting ]ApprovalTestingConcept.source.md
+ApprovalTests are great for testing object with lots of fields, or lists of objects.
 
 ![Intro Graphic](doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)
 
@@ -74,3 +78,6 @@ You can find examples here: [To String](doc/ToString.md)
 * [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp)
 * [VectorTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/VectorTests.cpp)
 * [CombinationTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/CombinationTests.cpp)  
+
+
+Feedback: If you have any comment or suggestion on this documentation, please email me at: isidore@setgame.com
