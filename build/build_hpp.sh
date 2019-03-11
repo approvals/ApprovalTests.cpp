@@ -8,7 +8,7 @@ set -e
 set -o pipefail
 
 LAST_VERSION="v.3.1.0"
-VERSION="v.3.2.0"
+VERSION="v.3.1.1"
 
 OLD_SINGLE_HEADER=ApprovalTests.$LAST_VERSION.hpp
 NEW_SINGLE_HEADER=ApprovalTests.$VERSION.hpp
@@ -30,6 +30,11 @@ sed -i "1s|^|// Approval Tests version $VERSION\n|" ../build/releases/$NEW_SINGL
 # ------------------------------------------------------------------------------------------------
 # Update Starter Project 
 
+# Make sure starter project folder is clean
+pushd $STARTER_PROJECT_DIR
+git reset --hard
+popd
+
 cp ../build/releases/ApprovalTests.$VERSION.hpp $STARTER_PROJECT_DIR/lib
 
 # Delete the last release:
@@ -42,6 +47,18 @@ sed -i -e "s/$LAST_VERSION/$VERSION/" $STARTER_PROJECT_DIR/lib/ApprovalTests.hpp
 
 # Update the version number in the Visual Studio project:
 sed -i -e "s/$OLD_SINGLE_HEADER/$NEW_SINGLE_HEADER/" $STARTER_PROJECT_DIR/visual-studio-2017/StarterProject.vcxproj
+
+# Check the starter project builds
+pushd $STARTER_PROJECT_DIR/cmake-build-debug
+cmake --build .
+popd
+
+# Commit starter project
+pushd $STARTER_PROJECT_DIR
+git add .
+git commit -m "Update to Approvals $VERSION"
+popd
+
 # ------------------------------------------------------------------------------------------------
 
 # The prefixes used in our commit messages come from: https://github.com/RefactoringCombos/ArlosCommitNotation
