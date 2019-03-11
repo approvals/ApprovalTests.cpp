@@ -18,11 +18,4 @@ Publishing
 * Upload the .hpp to releases - call the release `Single Hpp File`
 * Change the version numbers in `build_hpp.sh` to reflect the next version
 * Commit and push
-
-## Other stuff
-
-* Tweet the release
-#ApprovalTests.cpp v3.1.0 released, now with converter-based Approvals::verify(object, lambda_converter) overload!
-https://github.com/approvals/ApprovalTests.cpp/releases/tag/v.3.1.0 
-or try the starter project: https://github.com/approvals/ApprovalTests.cpp.StarterProject
-Thanks @LlewellynFalco!
+* Finish off the release Tweet
