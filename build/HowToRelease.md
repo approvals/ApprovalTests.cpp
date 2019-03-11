@@ -2,6 +2,7 @@
 
 ## Update ApprovalTests.cpp
 
+* Check that the builds are passing: https://github.com/approvals/ApprovalTests.cpp/commits/master
 * Determine the semantic version number
 * Update the version number in `build_hpp.sh`
 * Run `build_hpp.sh`
