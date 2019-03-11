@@ -1,6 +1,6 @@
 # ApprovalTesting (the concept)
 
-* this is also referred to as snapshot testing, or golden master testing*
+this is also referred to as snapshot testing, or golden master testing
 
 ## The Idea
 Most tests have you explicitly state what is expected before you write the code,

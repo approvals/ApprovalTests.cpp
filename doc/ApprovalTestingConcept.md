@@ -5,7 +5,7 @@ To change this file edit the source file and then re-run the generation using ei
 -->
 # ApprovalTesting (the concept)
 
-* this is also referred to as snapshot testing, or golden master testing*
+this is also referred to as snapshot testing, or golden master testing
 
 ## The Idea
 Most tests have you explicitly state what is expected before you write the code,
