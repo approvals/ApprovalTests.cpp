@@ -1,7 +1,7 @@
 rectangles
 
 
-[x: 4 y: 50 width: 100 height: 61]
-[x: 50 y: 5200 width: 400 height: 62]
-[x: 60 y: 3 width: 7 height: 63]
+[0] = [x: 4 y: 50 width: 100 height: 61]
+[1] = [x: 50 y: 5200 width: 400 height: 62]
+[2] = [x: 60 y: 3 width: 7 height: 63]
 

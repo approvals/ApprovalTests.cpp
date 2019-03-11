@@ -30,9 +30,7 @@ TEST_CASE("MultipleLinesCanBeHardToRead") {
     // startcode verify_list
     Approvals::verifyAll(
         "rectangles",
-        getRectangles(),
-        [](auto r, auto& os){os << r;}
-    );
+        getRectangles());
     // endcode
 
 }

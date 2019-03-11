@@ -1,6 +1,6 @@
 <!--
 This file was generate by MarkdownSnippets.
-Source File: /doc/ToString.source.md
+Source File: \doc\ToString.source.md
 To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 # String conversions
@@ -70,7 +70,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
     );
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L40-L66)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L38-L64)</sup>
 <!-- endsnippet -->
 
 ## Design
@@ -113,11 +113,9 @@ Here's an example of verifing a list of rectangles
 ```cpp
 Approvals::verifyAll(
     "rectangles",
-    getRectangles(),
-    [](auto r, auto& os){os << r;}
-);
+    getRectangles());
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L30-L36)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L30-L34)</sup>
 <!-- endsnippet -->
 
 Notice how this:
@@ -127,9 +125,9 @@ Notice how this:
 rectangles
 
 
-[x: 4 y: 50 width: 100 height: 61]
-[x: 50 y: 5200 width: 400 height: 62]
-[x: 60 y: 3 width: 7 height: 63]
+[0] = [x: 4 y: 50 width: 100 height: 61]
+[1] = [x: 50 y: 5200 width: 400 height: 62]
+[2] = [x: 60 y: 3 width: 7 height: 63]
 
 
 ```
