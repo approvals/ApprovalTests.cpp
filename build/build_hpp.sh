@@ -53,10 +53,11 @@ pushd $STARTER_PROJECT_DIR/cmake-build-debug
 cmake --build .
 popd
 
-# Commit starter project
+# Commit and push starter project
 pushd $STARTER_PROJECT_DIR
 git add .
 git commit -m "Update to Approvals $VERSION"
+git push origin master
 popd
 
 # ------------------------------------------------------------------------------------------------

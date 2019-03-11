@@ -2,18 +2,21 @@
 
 ## Update ApprovalTests.cpp
 
+Preparation:
+
 * Check that the builds are passing: https://github.com/approvals/ApprovalTests.cpp/commits/master
 * Determine the semantic version number
 * Update the version number in `build_hpp.sh`
-* Run `build_hpp.sh`
-* Write summary of changes since last release 
+
+Creating the build
+
+* Run `build_hpp.sh` - this updates the starter project and tests that it builds
+* Write summary of changes since last release
+
+Publishing
+ 
 * Upload the .hpp to releases - call the release `Single Hpp File`
 * Change the version numbers in `build_hpp.sh` to reflect the next version
-* Commit and push
-
-## Update ApprovalTests.cpp.StarterProject
-
-* Check that the starter project builds
 * Commit and push
 
 ## Other stuff
