@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 3.8)
 project(ApprovalTests_GoogleTest_Tests)
 set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}
