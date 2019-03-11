@@ -62,6 +62,9 @@ popd
 
 # ------------------------------------------------------------------------------------------------
 
+# Draft the tweet
+cygstart "https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+$VERSION+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F$VERSION+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacrae+%21"
+
 # The prefixes used in our commit messages come from: https://github.com/RefactoringCombos/ArlosCommitNotation
 git log ${LAST_VERSION}..HEAD --pretty=format:%s | \
     grep -v '^[dert] ' | \
