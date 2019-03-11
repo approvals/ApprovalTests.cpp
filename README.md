@@ -15,8 +15,11 @@ CppApprovals
 Native ApprovalTests for C++
 
 The Approvaltests library helps you write **ApprovalTests**, which are unit tests for complex objects that most people think can't be tested
+
 ApprovalTests are also known as **Golden Master Tests**.
+
 Here a intro to learn more about the [concept of ApprovalTesting](doc/ApprovalTestingConcept.md)
+
 ApprovalTests are great for testing object with lots of fields, or lists of objects.
 
 ![Intro Graphic](doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)
