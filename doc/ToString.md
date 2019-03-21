@@ -1,6 +1,6 @@
 <!--
 This file was generate by MarkdownSnippets.
-Source File: \doc\ToString.source.md
+Source File: /doc/ToString.source.md
 To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 # String conversions
@@ -120,7 +120,7 @@ Approvals::verifyAll(
 
 Notice how this:
 
-<!-- snippet: ApprovalTests_Catch2_Tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt -->
+<!-- snippet: ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt -->
 ```txt
 rectangles
 
@@ -131,12 +131,12 @@ rectangles
 
 
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L8)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L8)</sup>
 <!-- endsnippet -->
 
 compares to this:
 
-<!-- snippet: ApprovalTests_Catch2_Tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt -->
+<!-- snippet: ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt -->
 ```txt
 rectangles
 
@@ -147,7 +147,7 @@ rectangles
 
 
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L8)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L8)</sup>
 <!-- endsnippet -->
 
 ### Tools
