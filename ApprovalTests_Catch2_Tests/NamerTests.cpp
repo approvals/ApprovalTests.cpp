@@ -43,6 +43,7 @@ TEST_CASE("ItCanGiveYouTheTestDirectory") {
     // However, it would fail when run in Visual Studio 2017 as lower-case source-file names are returned.
     // We've fixed this for filenames, but not directory names, so this test ignores case.
     // See https://stackoverflow.com/questions/49068785/how-to-find-the-filename-from-a-c11-stat-objects-file-serial-number-on-window
+    auto suppress_subdirectory = Approvals::useApprovalsSubdirectory("");
     ApprovalTestNamer namer;
     auto __ = SystemUtils::getDirectorySeparator();
     REQUIRE_THAT(namer.getDirectory(), EndsWith(__ + "ApprovalTests_Catch2_Tests" + __, Catch::CaseSensitive::No));

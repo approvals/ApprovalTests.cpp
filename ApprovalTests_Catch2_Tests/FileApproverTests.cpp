@@ -28,7 +28,7 @@ TEST_CASE("ItVerifiesApprovedFileExists") {
 
 TEST_CASE("ItVerifiesExistingFiles") {
     ApprovalTestNamer namer;
-    Approvals::verifyExistingFile(namer.getDirectory() + "sample.txt");
+    Approvals::verifyExistingFile(namer.getDirectory() + "../sample.txt");
 }
 
 
