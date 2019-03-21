@@ -13,7 +13,6 @@ IMPROVE USABILITY OF CURRENT FEATURES
 NEW FEATURES
 
 . machine-specific tests
-. put output files in sub-directories
 . add a non-gui reporter, e.g. for use in CI systems
 . front loader reporter
 . catch reporter
@@ -30,7 +29,6 @@ NEW FEATURES
 
 TESTS
 
-. put our own approved files in a sub-directory
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
 
 DOCUMENTATION
