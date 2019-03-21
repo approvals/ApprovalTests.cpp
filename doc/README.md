@@ -47,6 +47,7 @@ Once you're up and running, consider the following reference material. -->
 * Testing combinations - containers of containers (of containers...)
 * [To String](ToString.md)
 * Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
+* [Features](Features.md)
 
 ## Customising behaviour
 
