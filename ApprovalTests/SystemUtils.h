@@ -5,6 +5,7 @@
     // ReSharper disable once CppUnusedIncludeDirective
     #include <io.h>
     #include <windows.h>
+    #include <direct.h>
 #else
     // ReSharper disable once CppUnusedIncludeDirective
     #include <unistd.h>
@@ -98,7 +99,7 @@ public:
 
     static void makeDirectoryForWindows(std::string directory)
     {
-#if defined(_WIN32)
+#ifdef _WIN32
         int nError = _mkdir(directory.c_str());
         if (nError != 0)
         {
@@ -110,7 +111,7 @@ public:
 
     static void makeDirectoryForNonWindows(std::string directory)
     {
-#if not defined(_WIN32)
+#ifndef _WIN32
         mode_t nMode = 0733; // UNIX style permissions
         int nError = mkdir(directory.c_str(),nMode);
         if (nError != 0)
