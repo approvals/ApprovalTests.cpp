@@ -2,20 +2,26 @@ project(ApprovalTests_Catch2_Tests)
 set(CMAKE_CXX_STANDARD 17)
 add_executable(${PROJECT_NAME}
         main.cpp
-        reporters/ReporterTests.cpp
         ApprovalExceptionTests.cpp
-        StringWriterTests.cpp
-        NamerTests.cpp
-        FileApproverTests.cpp
         ApprovalsTests.cpp
-        VectorTests.cpp
+        ApprovalTests.hpp
         CombinationTests.cpp
+        FileApproverTests.cpp
+        NamerTests.cpp
+        PairUtilities.h
         StringUtilsTests.cpp
+        StringWriterTests.cpp
+        StyleGuide.h
         SystemUtilsTests.cpp
         ToStringExample.cpp
         ToStringTemplateExample.cpp
         ToStringWrapperExample.cpp
-        StyleGuide.h
+        VectorTests.cpp
+        reporters/ReporterTests.cpp
+        reporters/DoNothingLauncher.h
+        reporters/FakeReporter.h
+        reporters/TestReporter.h
+        reporters/ReporterTests.cpp
         )
 target_link_libraries(${PROJECT_NAME} ApprovalTests)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
