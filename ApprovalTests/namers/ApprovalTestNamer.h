@@ -21,6 +21,7 @@ public:
     }
 
     std::vector<string> sections;
+    std::string subdirectory;
 private:
     string fileName;
 };
@@ -68,7 +69,7 @@ public:
     }
 
 // <SingleHpp unalterable>
-    TestName &getCurrentTest() const
+    static TestName &getCurrentTest()
     {
         try
         {
@@ -114,7 +115,12 @@ R"(* Welcome to Approval Tests.
     string getDirectory() {
         auto file = getCurrentTest().getFileName();
         auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
-        return file.substr(0, end);
+        auto directory = file.substr(0, end);
+        if ( ! getCurrentTest().subdirectory.empty() )
+        {
+            directory += getCurrentTest().subdirectory + SystemUtils::getDirectorySeparator(); 
+        }
+        return directory;
     }
 
     APPROVAL_TESTS_MACROS_STATIC(TestName, currentTest, NULL)

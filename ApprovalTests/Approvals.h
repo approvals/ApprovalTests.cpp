@@ -9,6 +9,7 @@
 #include "namers/ApprovalTestNamer.h"
 #include "writers/ExistingFile.h"
 #include "namers/ExistingFileNamer.h"
+#include "namers/SubdirectoryDisposer.h"
 
 class Approvals {
 private:
@@ -17,6 +18,11 @@ private:
     ~Approvals() {}
 
 public:
+    static std::shared_ptr<ApprovalNamer> getDefaultNamer()
+    {
+        return std::make_shared<ApprovalTestNamer>();
+    }
+
     static void verify(std::string contents, const Reporter &reporter = DiffReporter()) {
         StringWriter writer(contents);
         ApprovalTestNamer namer;
@@ -84,6 +90,12 @@ public:
         ExistingFileNamer namer(filePath);
         FileApprover::verify(namer, writer, reporter);
     }
+    
+    static SubdirectoryDisposer useApprovalsSubdirectory(std::string subdirectory = "approval_tests")
+    {
+        return SubdirectoryDisposer(subdirectory);
+    }
+
 };
 
 #endif

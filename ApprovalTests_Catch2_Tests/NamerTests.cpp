@@ -65,3 +65,10 @@ TEST_CASE("Clean Up Filename Transforms")
     std::vector<std::string> names = { "CleanUpFilenameTransforms", "Spaces In File \\" };
     Approvals::verifyAll("File Names", names, [&](std::string name, std::ostream &s) {s << name << " => " << ApprovalTestNamer::convertToFileName(name); });
 }
+
+TEST_CASE("Use sub-directory")
+{
+    auto subdirectory = Approvals::useApprovalsSubdirectory("approved_files");
+    auto namer = Approvals::getDefaultNamer();
+    REQUIRE_THAT( namer->getApprovedFile(".txt"), Catch::Matchers::Contains( "approved_files" ) );
+}
