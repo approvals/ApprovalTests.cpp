@@ -21,9 +21,13 @@ public:
     }
 
     std::vector<string> sections;
-    std::string subdirectory;
 private:
     string fileName;
+};
+
+class TestConfiguration {
+public:
+    std::string subdirectory;
 };
 
 class ApprovalTestNamer : public ApprovalNamer {
@@ -116,14 +120,15 @@ R"(* Welcome to Approval Tests.
         auto file = getCurrentTest().getFileName();
         auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto directory = file.substr(0, end);
-        if ( ! getCurrentTest().subdirectory.empty() )
+        if ( ! testConfiguration().subdirectory.empty() )
         {
-            directory += getCurrentTest().subdirectory + SystemUtils::getDirectorySeparator(); 
+            directory += testConfiguration().subdirectory + SystemUtils::getDirectorySeparator(); 
         }
         return directory;
     }
 
     APPROVAL_TESTS_MACROS_STATIC(TestName, currentTest, NULL)
+    APPROVAL_TESTS_MACROS_STATIC(TestConfiguration, testConfiguration, new TestConfiguration)
 
     virtual string getApprovedFile(string extensionWithDot) {
 

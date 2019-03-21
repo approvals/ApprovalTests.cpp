@@ -72,3 +72,16 @@ TEST_CASE("Use sub-directory")
     auto namer = Approvals::getDefaultNamer();
     REQUIRE_THAT( namer->getApprovedFile(".txt"), Catch::Matchers::Contains( "approved_files" ) );
 }
+
+TEST_CASE("Use sub-directories clean to previous results")
+{
+    auto subdirectory = Approvals::useApprovalsSubdirectory("outer");
+    auto namer = Approvals::getDefaultNamer();
+    
+    {
+        auto subdirectory2 = Approvals::useApprovalsSubdirectory("inner");
+        REQUIRE_THAT( namer->getApprovedFile(".txt"), Catch::Matchers::Contains( "inner" ) );
+    }
+    
+    REQUIRE_THAT( namer->getApprovedFile(".txt"), Catch::Matchers::Contains( "outer" ) );
+}

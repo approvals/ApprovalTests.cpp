@@ -7,16 +7,18 @@
 
 class SubdirectoryDisposer
 {
+private:
+    std::string previous_result;
 public:
     explicit SubdirectoryDisposer(std::string subdirectory)
     {
-        ApprovalTestNamer::getCurrentTest().subdirectory = subdirectory;
-
+        previous_result = ApprovalTestNamer::testConfiguration().subdirectory;
+        ApprovalTestNamer::testConfiguration().subdirectory = subdirectory;
     }
 
     ~SubdirectoryDisposer()
     {
-        ApprovalTestNamer::getCurrentTest().subdirectory = "";
+        ApprovalTestNamer::testConfiguration().subdirectory = previous_result;
     }
 };
 
