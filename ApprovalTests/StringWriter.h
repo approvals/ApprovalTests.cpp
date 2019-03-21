@@ -23,6 +23,10 @@ public:
     void write( std::string path ) override
     {
         std::ofstream out( path.c_str(), std::ofstream::out );
+        if ( ! out)
+        {
+            throw std::runtime_error("barf");
+        }
         this->Write( out );
         out.close();
     }

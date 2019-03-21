@@ -123,6 +123,7 @@ R"(* Welcome to Approval Tests.
         if ( ! testConfiguration().subdirectory.empty() )
         {
             directory += testConfiguration().subdirectory + SystemUtils::getDirectorySeparator(); 
+            SystemUtils::ensureDirectoryExists(directory);
         }
         return directory;
     }

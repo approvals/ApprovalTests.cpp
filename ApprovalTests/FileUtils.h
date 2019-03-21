@@ -8,11 +8,14 @@
 #include <string>
 #include <sys/stat.h>
 #include "StringWriter.h"
+#include <sys/types.h>
 
 class FileUtils {
 public:
-    static bool fileExists(std::string path) {
-        return fileSize(path) != -1;
+    static bool fileExists(std::string path)
+    {
+        struct stat info;
+        return stat( path.c_str(), &info ) == 0;
     }
 
     static int fileSize(std::string path) {

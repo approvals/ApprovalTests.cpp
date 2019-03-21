@@ -1,4 +1,5 @@
 #include "Catch.hpp"
+#include <ApprovalTests/Approvals.h>
 #include <ApprovalTests/SystemUtils.h>
 #include <ApprovalTests/StringUtils.h>
 
@@ -30,4 +31,13 @@ TEST_CASE("ItCanGetNonExistentEnvironmentVariable")
 {
     const auto result = SystemUtils::safeGetEnv("THIS_ENVIRONMENT_VARIABLE_SHOULD_NOT_EXIST");
     REQUIRE(result.length() == 0);
+}
+
+TEST_CASE("ItCanCreateSubDirectory")
+{
+    auto subdirectory = Approvals::useApprovalsSubdirectory("custom_approval");
+    ApprovalTestNamer namer;
+    auto directory = namer.getDirectory();
+    REQUIRE(FileUtils::fileExists(directory) == true);
+//    SystemUtils::removeDirectory(directory);
 }

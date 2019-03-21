@@ -96,5 +96,43 @@ public:
         return isWindowsOs() ? safeGetEnvForWindows(name) : safeGetEnvForNonWindows(name);
     }
 
+    static void makeDirectoryForWindows(std::string directory)
+    {
+#if defined(_WIN32)
+        int nError = _mkdir(directory.c_str());
+        if (nError != 0)
+        {
+            std::string helpMessage = std::string("Unable to create directory: ") + directory;
+            throw std::runtime_error( helpMessage );
+        }
+#endif
+    }
+
+    static void makeDirectoryForNonWindows(std::string directory)
+    {
+#if not defined(_WIN32)
+        mode_t nMode = 0733; // UNIX style permissions
+        int nError = mkdir(directory.c_str(),nMode);
+        if (nError != 0)
+        {
+            std::string helpMessage = std::string("Unable to create directory: ") + directory;
+            throw std::runtime_error( helpMessage );
+        }
+#endif
+    }
+
+    static void makeDirectory(std::string directory)
+    {
+        makeDirectoryForWindows(directory);
+        makeDirectoryForNonWindows(directory);
+    }
+
+    static void ensureDirectoryExists(std::string fullFilePath)
+    {
+        if (!FileUtils::fileExists(fullFilePath))
+        {
+            makeDirectory(fullFilePath);
+        }
+    }
 };
 #endif
