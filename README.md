@@ -10,7 +10,7 @@ To change this file edit the source file and then re-run the generation using ei
 * [Main File](#MainFile)
 * [Examples](#Examples)
 	* [ToString (ostream insertion)](#ToStringostreaminsertion)
-	* [Suggested Examples:](#SuggestedExamples:)
+	* [Suggested Examples](#SuggestedExamples)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -92,7 +92,7 @@ ApprovalTests uses ApprovalTests to test ApprovalTests (it's turtles all the way
 Often, you will need to create functions to allow objects to print their state. This is commonly done with on ostream `<< operator`.
 You can find examples here: [To String](doc/ToString.md#top)
 
-### <a name='SuggestedExamples:'></a>Suggested Examples:
+### <a name='SuggestedExamples'></a>Suggested Examples
 * [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp)
 * [VectorTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/VectorTests.cpp)
 * [CombinationTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/CombinationTests.cpp)  
