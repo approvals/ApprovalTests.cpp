@@ -1,60 +1,37 @@
 <a id="top"></a>
 # Troubleshooting
 
-## Google Test crashes in Approval Test function 
+## Test gives "You have forgotten to configure your test framework..."
 
 **Root Cause**:
 
 A problem in your test program's `main()` means that ApprovalTests.cpp is not correctly set up for the Google Test framework. 
 
-**Example symptoms:**
+**Symptom**
 
-On Windows, a test gives `SEH exception with code 0xc0000005 thrown in the test body`, e.g.
-
-```
-[==========] Running 1 test from 1 test case.
-[----------] Global test environment set-up.
-[----------] 1 test from GoogleTestApprovalsTests
-[ RUN      ] GoogleTestApprovalsTests.TestStreamableObject
-unknown file: error: SEH exception with code 0xc0000005 thrown in the test body.
-[  FAILED  ] GoogleTestApprovalsTests.TestStreamableObject (4 ms)
-[----------] 1 test from GoogleTestApprovalsTests (4 ms total)
-
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test case ran. (7 ms total)
-[  PASSED  ] 0 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] GoogleTestApprovalsTests.TestStreamableObject
-
- 1 FAILED TEST
- ```
-
-On Linux, a test doesn't finish, and you get something like this:
+Running tests gives the following output:
 
 ```
-[==========] Running 1 test from 1 test case.
-[----------] Global test environment set-up.
-[----------] 1 test from GoogleTestApprovalsTests
-[ RUN      ] GoogleTestApprovalsTests.TestStreamableObject
-
-Process finished with exit code 0
-```
-
-Instead of the usual:
-
-```
-[==========] Running 1 test from 1 test case.
-[----------] Global test environment set-up.
-[----------] 1 test from GoogleTestApprovalsTests
-[ RUN      ] GoogleTestApprovalsTests.TestStreamableObject
-[       OK ] GoogleTestApprovalsTests.TestStreamableObject (13 ms)
-[----------] 1 test from GoogleTestApprovalsTests (13 ms total)
-
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test case ran. (21 ms total)
-[  PASSED  ] 1 test.
-
-Process finished with exit code 0
+************************************************************************************
+*                                                                                  *
+* Welcome to Approval Tests.
+* 
+* You have forgotten to configure your test framework for Approval Tests.
+* 
+* To do this in Catch, add the following to your main.cpp:
+* 
+*     #define APPROVALS_CATCH
+*     #include "ApprovalTests.hpp"
+* 
+* To do this in Google Test, add the following to your main.cpp:
+* 
+*     #define APPROVALS_GOOGLETEST
+*     #include "ApprovalTests.hpp"
+* 
+* For more information, please visit:
+* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/GettingStarted.md
+*                                                                                  *
+************************************************************************************
 ```
 
 **Things to check:**
