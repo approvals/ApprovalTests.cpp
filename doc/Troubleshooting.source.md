@@ -1,3 +1,4 @@
+<a id="top"></a>
 # Troubleshooting
 
 ## Google Test crashes in Approval Test function 
@@ -72,4 +73,4 @@ Process finished with exit code 0
 
 ---
 
-[Back to User Guide](README.md)
+[Back to User Guide](README.md#top)

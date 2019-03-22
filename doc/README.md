@@ -1,3 +1,4 @@
+<a id="top"></a>
 # ApprovalTests.cpp User Guide
 
 **Feedback requested!** This page is currently a proposal for how to structure the user documentation
@@ -35,7 +36,7 @@ Once you're up and running, consider the following reference material. -->
         * Renaming the header file to remove version number
     * Starter project
     * Cloning repo and using CMake
-* [Getting Started](GettingStarted.md)
+* [Getting Started](GettingStarted.md#top)
 * Getting Started with Catch 1 and 2
 * Getting Started with Google Test
 
@@ -45,9 +46,9 @@ Once you're up and running, consider the following reference material. -->
 * Testing single objects
 * Testing containers
 * Testing combinations - containers of containers (of containers...)
-* [To String](ToString.md)
+* [To String](ToString.md#top)
 * Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
-* [Features](Features.md)
+* [Features](Features.md#top)
 
 ## Customising behaviour
 
@@ -71,7 +72,7 @@ Once you're up and running, consider the following reference material. -->
 
 ## Extras
 
-* [Troubleshooting](Troubleshooting.md)
+* [Troubleshooting](Troubleshooting.md#top)
 * 4 benefits of testing
     * Spec
     * Feedback

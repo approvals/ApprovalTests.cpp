@@ -1,3 +1,4 @@
+<a id="top"></a>
 # Building instructions - for Windows
 
 ## Prerequisites

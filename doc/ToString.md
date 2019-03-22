@@ -3,6 +3,7 @@ This file was generate by MarkdownSnippets.
 Source File: /doc/ToString.source.md
 To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
+<a id="top"></a>
 # String conversions
 
 When you use Approval tests, the results of the things you are testing are going to be stored on disk. It is good if you can diff the files, to gain an understanding of what is created and how they change. Mainly this is done by creating strings.
@@ -161,4 +162,4 @@ TODO Explain things like:
 
 ---
 
-[Back to User Guide](README.md)
+[Back to User Guide](README.md#top)

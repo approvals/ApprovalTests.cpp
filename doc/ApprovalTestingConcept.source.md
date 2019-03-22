@@ -1,3 +1,4 @@
+<a id="top"></a>
 # ApprovalTesting (the concept)
 
 this is also referred to as snapshot testing, or golden master testing

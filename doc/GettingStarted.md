@@ -3,6 +3,7 @@ This file was generate by MarkdownSnippets.
 Source File: /doc/GettingStarted.source.md
 To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
+<a id="top"></a>
 # Catch 1 and 2
 
 ## New Project
@@ -54,4 +55,4 @@ int main(int argc, char** argv)
 
 ---
 
-[Back to User Guide](README.md)
+[Back to User Guide](README.md#top)

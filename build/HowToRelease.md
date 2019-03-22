@@ -1,3 +1,4 @@
+<a id="top"></a>
 # How To Release
 
 ## Update ApprovalTests.cpp

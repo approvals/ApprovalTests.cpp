@@ -1,3 +1,4 @@
+<a id="top"></a>
 # Catch 1 and 2
 
 ## New Project
@@ -24,4 +25,4 @@ snippet: googletest_existing_main
 
 ---
 
-[Back to User Guide](README.md)
+[Back to User Guide](README.md#top)
