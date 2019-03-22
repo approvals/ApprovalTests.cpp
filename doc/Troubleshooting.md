@@ -4,9 +4,19 @@ Source File: /doc/Troubleshooting.source.md
 To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 <a id="top"></a>
+
+<!-- vscode-markdown-toc -->
+* [Test gives "You have forgotten to configure your test framework..."](#TestgivesYouhaveforgottentoconfigureyourtestframework...)
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 # Troubleshooting
 
-## Test gives "You have forgotten to configure your test framework..."
+## <a name='TestgivesYouhaveforgottentoconfigureyourtestframework...'></a>Test gives "You have forgotten to configure your test framework..."
 
 **Root Cause**:
 

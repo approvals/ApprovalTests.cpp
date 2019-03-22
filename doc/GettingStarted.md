@@ -4,9 +4,23 @@ Source File: /doc/GettingStarted.source.md
 To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 <a id="top"></a>
+
+<!-- vscode-markdown-toc -->
+* [New Project](#NewProject)
+* [Existing Project](#ExistingProject)
+* [Starter Project](#StarterProject)
+* [New Project](#NewProject-1)
+* [Existing Project](#ExistingProject-1)
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 # Catch 1 and 2
 
-## New Project
+## <a name='NewProject'></a>New Project
 
 <!-- snippet: catch_2_main -->
 ```cpp
@@ -16,17 +30,17 @@ To change this file edit the source file and then re-run the generation using ei
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L4-L7)</sup>
 <!-- endsnippet -->
 
-## Existing Project
+## <a name='ExistingProject'></a>Existing Project
 
 TODO
 
 # Google Test
 
-## Starter Project
+## <a name='StarterProject'></a>Starter Project
 
 TODO
 
-## New Project
+## <a name='NewProject-1'></a>New Project
 
 <!-- snippet: googletest_main -->
 ```cpp
@@ -36,7 +50,7 @@ TODO
 <sup>[snippet source](/ApprovalTests_GoogleTest_Tests/main.cpp#L2-L5)</sup>
 <!-- endsnippet -->
 
-## Existing Project
+## <a name='ExistingProject-1'></a>Existing Project
 
 <!-- snippet: googletest_existing_main -->
 ```cpp

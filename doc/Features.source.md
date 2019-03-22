@@ -1,7 +1,17 @@
 <a id="top"></a>
+
+<!-- vscode-markdown-toc -->
+* [Using sub-directories for approved files](#Usingsub-directoriesforapprovedfiles)
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 # Features
 
-## Using sub-directories for approved files
+## <a name='Usingsub-directoriesforapprovedfiles'></a>Using sub-directories for approved files
 
 If you have a lot of approval files, you might want to put them in a subdirectory, to prevent them cluttering up your source files. You can do this at a global or per-test level, by adding the line:
 

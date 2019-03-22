@@ -4,11 +4,25 @@ Source File: /doc/ToString.source.md
 To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 <a id="top"></a>
+
+<!-- vscode-markdown-toc -->
+* [How](#How)
+* [Design](#Design)
+	* [Composability](#Composability)
+	* [Lists](#Lists)
+	* [Tools](#Tools)
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 # String conversions
 
 When you use Approval tests, the results of the things you are testing are going to be stored on disk. It is good if you can diff the files, to gain an understanding of what is created and how they change. Mainly this is done by creating strings.
 
-## How
+## <a name='How'></a>How
 
 This is often done by providing an output operator (`<<`) for types you wish to test.
 
@@ -74,7 +88,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L38-L64)</sup>
 <!-- endsnippet -->
 
-## Design
+## <a name='Design'></a>Design
 
 If your code already has output operators, then go ahead and use them in Approvals.
 
@@ -99,13 +113,13 @@ formatted | `(type)=(formatted)` | Works well for many lines of the same type of
 tab-separated | &nbsp; | Works with Excel and Markdown; works well for many lines of the same data | &nbsp;
 comma-separated | `type, csv` | Works with Excel | Works with Excel
 
-### Composability
+### <a name='Composability'></a>Composability
 
 TODO Explain things like:
 
 * When are things very non-composable, e.g. hand-coded YAML
 
-### Lists
+### <a name='Lists'></a>Lists
 
 Some formats will be more readable when you are writing lists of objects.
 Here's an example of verifing a list of rectangles
@@ -151,7 +165,7 @@ rectangles
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L8)</sup>
 <!-- endsnippet -->
 
-### Tools
+### <a name='Tools'></a>Tools
 
 TODO Explain things like:
 

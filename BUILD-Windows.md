@@ -1,7 +1,23 @@
 <a id="top"></a>
+
+<!-- vscode-markdown-toc -->
+* 1. [Prerequisites](#Prerequisites)
+* 2. [Visual Studio 2017 Community Edition](#VisualStudio2017CommunityEdition)
+	* 2.1. [Use Visual Studio 2017's "Open Folder" feature](#UseVisualStudio2017sOpenFolderfeature)
+	* 2.2. [Use CMake to generate Visual Studio 2017 configuration](#UseCMaketogenerateVisualStudio2017configuration)
+	* 2.3. [Use CLion with Visual Studio installed](#UseCLionwithVisualStudioinstalled)
+	* 2.4. [Update 05/06/2018](#Update05062018)
+* 3. [Obtaining Google Test for Windows (optional)](#ObtainingGoogleTestforWindowsoptional)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 # Building instructions - for Windows
 
-## Prerequisites
+##  1. <a name='Prerequisites'></a>Prerequisites
 
 * CMake 3.8 or higher
 * A C++11 or above compiler
@@ -10,16 +26,16 @@ Optional:
 
 * Google test framework, 1.8 or above
 
-## Visual Studio 2017 Community Edition
+##  2. <a name='VisualStudio2017CommunityEdition'></a>Visual Studio 2017 Community Edition
 
 Various ways to build with Visual Studio 2017 Community Edition ...
 
-### Use Visual Studio 2017's "Open Folder" feature
+###  2.1. <a name='UseVisualStudio2017sOpenFolderfeature'></a>Use Visual Studio 2017's "Open Folder" feature
 
 * Build Output goes in `.vs`
 * I found it fiddly to run the tests via this route
 
-### Use CMake to generate Visual Studio 2017 configuration
+###  2.2. <a name='UseCMaketogenerateVisualStudio2017configuration'></a>Use CMake to generate Visual Studio 2017 configuration
 
 Decide where to put the build files that CMake will generate.
 In the following, we're putting the output in `cmake-build-vs` - that location is already ignored by git.
@@ -33,14 +49,14 @@ In the following, we're putting the output in `cmake-build-vs` - that location i
 		cd    cmake-build-vs
 		cmake -G "Visual Studio 15 2017" ..
 
-### Use CLion with Visual Studio installed
+###  2.3. <a name='UseCLionwithVisualStudioinstalled'></a>Use CLion with Visual Studio installed
 
 * Follow the instructions for experimental support of [Microsoft Visual C++ compiler](https://www.jetbrains.com/help/clion/quick-tutorial-on-configuring-clion-on-windows.html)
 * Output is put in `cmake-build-debug`
 * Tested with Visual Studio 2017
 * **Major limitation**: Debugging is not yet supported by CLion, when compiling with Visual Studio, as of CLion 2017.3.3
 
-### Update 05/06/2018
+###  2.4. <a name='Update05062018'></a>Update 05/06/2018
 
 * Running CLion with cygwin as toolset
 	* Code builds fine
@@ -53,7 +69,7 @@ In the following, we're putting the output in `cmake-build-vs` - that location i
 
 ---
 
-## Obtaining Google Test for Windows (optional)
+##  3. <a name='ObtainingGoogleTestforWindowsoptional'></a>Obtaining Google Test for Windows (optional)
 
 In order to run the tests of this project's optional integration with the Google Test framework, you'll need a built copy of that framework itself.
 

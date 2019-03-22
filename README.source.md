@@ -1,4 +1,18 @@
 <a id="top"></a>
+
+<!-- vscode-markdown-toc -->
+* [Getting Started](#GettingStarted)
+* [Main File](#MainFile)
+* [Examples](#Examples)
+	* [ToString (ostream insertion)](#ToStringostreaminsertion)
+	* [Suggested Examples:](#SuggestedExamples:)
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 CppApprovals
 ============
 
@@ -28,7 +42,7 @@ Currently working in Mac/Linux/Windows with
 
 
 
-## Getting Started
+## <a name='GettingStarted'></a>Getting Started
 
 The video [Quickly Testing Legacy Code](https://youtu.be/dtm8V3TIB6k) gives an introduction both to Approval Tests and to this library. The slides from the talk are available in [PowerPoint](https://www.slideshare.net/ClareMacrae/quickly-testing-legacy-code) and  [PDF](https://github.com/philsquared/cpponsea-slides/raw/master/2019/Clare%20Macrae%20-%20Quickly%20Testing%20Legacy%20Code.pdf) formats. Sample code from the talk is available on [Github](https://github.com/claremacrae/cpponsea2019).
 
@@ -36,7 +50,7 @@ See [Getting Started](doc/GettingStarted.md#top)
 
 I highly suggest you clone [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
 
-## Main File
+## <a name='MainFile'></a>Main File
 
 You need to include 2 lines for your main file to work.
 
@@ -53,15 +67,15 @@ For all other test files, you need:
 #include "ApprovalTests.hpp"
 ```
 
-## Examples
+## <a name='Examples'></a>Examples
 ApprovalTests uses ApprovalTests to test ApprovalTests (it's turtles all the way down).  
 [Checkout our own tests](https://github.com/approvals/ApprovalTests.cpp/tree/master/ApprovalTests_Catch2_Tests) to see how we do it.
 
-### ToString (ostream insertion)
+### <a name='ToStringostreaminsertion'></a>ToString (ostream insertion)
 Often, you will need to create functions to allow objects to print their state. This is commonly done with on ostream `<< operator`.
 You can find examples here: [To String](doc/ToString.md#top)
 
-### Suggested Examples:
+### <a name='SuggestedExamples:'></a>Suggested Examples:
 * [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp)
 * [VectorTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/VectorTests.cpp)
 * [CombinationTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/CombinationTests.cpp)  

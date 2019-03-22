@@ -4,11 +4,28 @@ Source File: /doc/ApprovalTestingConcept.source.md
 To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 <a id="top"></a>
+
+<!-- vscode-markdown-toc -->
+* [The Idea](#TheIdea)
+* [The Path](#ThePath)
+	* [1. Simple verification](#Simpleverification)
+		* [The technique](#Thetechnique)
+		* [The problem](#Theproblem)
+	* [2. ToString verification](#ToStringverification)
+		* [The technique](#Thetechnique-1)
+		* [The problem](#Theproblem-1)
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 # ApprovalTesting (the concept)
 
 this is also referred to as snapshot testing, or golden master testing
 
-## The Idea
+## <a name='TheIdea'></a>The Idea
 Most tests have you explicitly state what is expected before you write the code,
 ApprovalTesting, instead has you state the data you are interested in checking,
 has you manually check it until you decide you are satisfied and then continues
@@ -19,11 +36,11 @@ the results, and the differences in results, easier to understand and act on.
 
 
 
-## The Path
+## <a name='ThePath'></a>The Path
 
-### 1. Simple verification
+### <a name='Simpleverification'></a>1. Simple verification
 
-#### The technique
+#### <a name='Thetechnique'></a>The technique
 
 Most of us are familiar with simple checks for numbers or strings.
 ```
@@ -31,7 +48,7 @@ REQUIRE( 1 == count);
 REQUIRE( "Claire" == name);
 ```
 
-#### The problem
+#### <a name='Theproblem'></a>The problem
 But this can get complicated if you have a large list or object with many fields.
 ```
 REQUIRE( "Claire" == names[0]);
@@ -43,16 +60,16 @@ REQUIRE( "Emily" == names[4]);
 
 One solution for this is to start writing objects to string that are easier to verify.
 
-### 2. ToString verification
+### <a name='ToStringverification'></a>2. ToString verification
 
-#### The technique
+#### <a name='Thetechnique-1'></a>The technique
 
 If we print the array in the above sample, we can instead verify the whole thing with
 ```
 REQUIRE( "[Claire,Llewellyn,Simon,James,Emily]" == toString(names));
 ```
 
-#### The problem
+#### <a name='Theproblem-1'></a>The problem
 This works well, until you start to get large multi-line strings.
 
 
