@@ -12,6 +12,7 @@ Once you're up and running, consider the following reference material. -->
 
 ## Introduction
 
+* [Approval Testing (the concept)](doc/ApprovalTestingConcept.md#top)
 * What is Approval Testing?
 * Why Approval Tests?
     * The Path to Approval Testing
