@@ -15,7 +15,7 @@
 
 **Root Cause**:
 
-A problem in your test program's `main()` means that ApprovalTests.cpp is not correctly set up for the Google Test framework. 
+A problem in your test program's `main()` means that ApprovalTests.cpp is not correctly set up for your test framework. 
 
 **Symptom**
 
