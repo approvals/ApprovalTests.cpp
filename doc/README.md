@@ -29,7 +29,7 @@ Once you're up and running, consider the following reference material. -->
 
 ## <a name='Introduction'></a>Introduction
 
-* [Approval Testing (the concept)](doc/ApprovalTestingConcept.md#top)
+* [Approval Testing (the concept)](ApprovalTestingConcept.md#top)
 * What is Approval Testing?
 * Why Approval Tests?
     * The Path to Approval Testing
