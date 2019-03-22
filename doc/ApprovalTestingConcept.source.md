@@ -40,13 +40,13 @@ the results, and the differences in results, easier to understand and act on.
 Most of us are familiar with simple checks for numbers or strings.
 ```
 REQUIRE( 1 == count);
-REQUIRE( "Claire" == name);
+REQUIRE( "Clare" == name);
 ```
 
 #### <a name='Theproblem'></a>The problem
 But this can get complicated if you have a large list or object with many fields.
 ```
-REQUIRE( "Claire" == names[0]);
+REQUIRE( "Clare" == names[0]);
 REQUIRE( "Llewellyn" == names[1]);
 REQUIRE( "Simon" == names[2]);
 REQUIRE( "James" == names[3]);
@@ -61,7 +61,7 @@ One solution for this is to start writing objects to string that are easier to v
 
 If we print the array in the above sample, we can instead verify the whole thing with
 ```
-REQUIRE( "[Claire,Llewellyn,Simon,James,Emily]" == toString(names));
+REQUIRE( "[Clare,Llewellyn,Simon,James,Emily]" == toString(names));
 ```
 
 #### <a name='Theproblem-1'></a>The problem
