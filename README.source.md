@@ -1,6 +1,7 @@
 <a id="top"></a>
 
 <!-- vscode-markdown-toc -->
+* [Introduction](#Introduction)
 * [Getting Started](#GettingStarted)
 * [Main File](#MainFile)
 * [Examples](#Examples)
@@ -16,6 +17,8 @@
 CppApprovals
 ============
 
+## <a name='Introduction'></a>Introduction
+
 [![Build Status](https://api.travis-ci.org/approvals/ApprovalTests.cpp.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/lf3i76ije89oihi5?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp)
@@ -24,11 +27,11 @@ CppApprovals
 
 Native ApprovalTests for C++
 
-The Approvaltests library helps you write **ApprovalTests**, which are unit tests for complex objects that most people think can't be tested
+The Approvaltests library helps you write **ApprovalTests**, which are unit tests for complex objects that most people think can't be tested.
 
 ApprovalTests are also known as **Golden Master Tests**.
 
-Here is an intro to learn more about the [concept of ApprovalTesting](doc/ApprovalTestingConcept.md#top)
+Here is an intro to learn more about the [concept of ApprovalTesting](doc/ApprovalTestingConcept.md#top).
 
 ApprovalTests are great for testing objects with lots of fields, or lists of objects.
 
