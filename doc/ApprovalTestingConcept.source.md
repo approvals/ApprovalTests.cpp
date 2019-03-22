@@ -49,3 +49,8 @@ REQUIRE( "[Claire,Llewellyn,Simon,James,Emily]" == toString(names));
 
 #### The problem
 This works well, until you start to get large multi-line strings.
+
+
+---
+
+[Back to User Guide](README.md#top)
