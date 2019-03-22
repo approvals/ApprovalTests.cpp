@@ -33,9 +33,9 @@ The Approvaltests library helps you write **ApprovalTests**, which are unit test
 
 ApprovalTests are also known as **Golden Master Tests**.
 
-Here a intro to learn more about the [concept of ApprovalTesting](doc/ApprovalTestingConcept.md#top)
+Here is an intro to learn more about the [concept of ApprovalTesting](doc/ApprovalTestingConcept.md#top)
 
-ApprovalTests are great for testing object with lots of fields, or lists of objects.
+ApprovalTests are great for testing objects with lots of fields, or lists of objects.
 
 ![Intro Graphic](doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)
 
@@ -51,7 +51,7 @@ Currently working in Mac/Linux/Windows with
 
 The video [Quickly Testing Legacy Code](https://youtu.be/dtm8V3TIB6k) gives an introduction both to Approval Tests and to this library. The slides from the talk are available in [PowerPoint](https://www.slideshare.net/ClareMacrae/quickly-testing-legacy-code) and  [PDF](https://github.com/philsquared/cpponsea-slides/raw/master/2019/Clare%20Macrae%20-%20Quickly%20Testing%20Legacy%20Code.pdf) formats. Sample code from the talk is available on [Github](https://github.com/claremacrae/cpponsea2019).
 
-See [Getting Started](doc/GettingStarted.md#top)
+See [Getting Started](doc/GettingStarted.md#top) and the evolving [User Guide](doc/README.md#top).
 
 I highly suggest you clone [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
 
