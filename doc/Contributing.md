@@ -8,6 +8,7 @@
 	* [Creating new pages](#Creatingnewpages)
 	* [Adding code and file samples](#Addingcodeandfilesamples)
 	* [Updating the tables of contents](#Updatingthetablesofcontents)
+* [Checking the documentation](#Checkingthedocumentation)
 * [Releases](#Releases)
 
 <!-- vscode-markdown-toc-config
@@ -59,6 +60,16 @@ We currently use [Joffrey Kern's "Markdown TOC"](https://marketplace.visualstudi
     * Open the command palette (`Ctrl+Shift+P`)
     * Type "Generate"
     * Choose "Generate TOC for markdown"
+
+## <a name='Checkingthedocumentation'></a>Checking the documentation
+
+The script [fix_markdown.sh](../fix_markdown.sh) can be used to do some checks of the Markdown documentation files.
+
+It can be run in cygwin with:
+
+```bash
+cat ./fix_markdown.sh | dos2unix | bash
+```
 
 ## <a name='Releases'></a>Releases
 
