@@ -7,5 +7,9 @@ echo "The following files, if any, have headings (Level 2 or below) not in the C
 find . -name \*.md | grep -v googletest-src | xargs grep -n '^##' | grep -v '<a name='
 
 echo
+echo "The following files, if any, are missing their 'top' anchor:"
+find ./doc -name \*.md | grep -v googletest-src | grep -v README.md | xargs grep -L '<a id="top"></a>'
+
+echo
 echo "The following files in doc, if any, are missing the 'Back to User Guide' line at the end:"
 find ./doc -name \*.md | grep -v googletest-src | grep -v README.md | xargs grep -L 'Back to User Guide'
