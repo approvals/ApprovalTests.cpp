@@ -1,5 +1,8 @@
 <a id="top"></a>
 
+# Features
+
+**Contents**
 <!-- vscode-markdown-toc -->
 * [Using sub-directories for approved files](#Usingsub-directoriesforapprovedfiles)
 
@@ -8,8 +11,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-# Features
 
 ## <a name='Usingsub-directoriesforapprovedfiles'></a>Using sub-directories for approved files
 

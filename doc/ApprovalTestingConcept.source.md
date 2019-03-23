@@ -1,5 +1,8 @@
 <a id="top"></a>
 
+# ApprovalTesting (the concept)
+
+**Contents**
 <!-- vscode-markdown-toc -->
 * [The Idea](#TheIdea)
 * [The Path](#ThePath)
@@ -15,8 +18,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-# ApprovalTesting (the concept)
 
 this is also referred to as snapshot testing, or golden master testing
 

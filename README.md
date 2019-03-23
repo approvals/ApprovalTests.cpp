@@ -5,6 +5,9 @@ To change this file edit the source file and then re-run the generation using ei
 -->
 <a id="top"></a>
 
+# CppApprovals
+
+**Contents**
 <!-- vscode-markdown-toc -->
 * [Introduction](#Introduction)
 * [Getting Started](#GettingStarted)
@@ -18,9 +21,6 @@ To change this file edit the source file and then re-run the generation using ei
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-CppApprovals
-============
 
 ## <a name='Introduction'></a>Introduction
 

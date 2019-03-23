@@ -1,5 +1,8 @@
 <a id="top"></a>
 
+# Troubleshooting
+
+**Contents**
 <!-- vscode-markdown-toc -->
 * [Test gives "You have forgotten to configure your test framework..."](#TestgivesYouhaveforgottentoconfigureyourtestframework...)
 
@@ -8,8 +11,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-# Troubleshooting
 
 ## <a name='TestgivesYouhaveforgottentoconfigureyourtestframework...'></a>Test gives "You have forgotten to configure your test framework..."
 

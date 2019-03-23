@@ -5,6 +5,9 @@ To change this file edit the source file and then re-run the generation using ei
 -->
 <a id="top"></a>
 
+# Troubleshooting
+
+**Contents**
 <!-- vscode-markdown-toc -->
 * [Test gives "You have forgotten to configure your test framework..."](#TestgivesYouhaveforgottentoconfigureyourtestframework...)
 
@@ -13,8 +16,6 @@ To change this file edit the source file and then re-run the generation using ei
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-# Troubleshooting
 
 ## <a name='TestgivesYouhaveforgottentoconfigureyourtestframework...'></a>Test gives "You have forgotten to configure your test framework..."
 

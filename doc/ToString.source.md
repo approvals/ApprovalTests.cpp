@@ -1,5 +1,8 @@
 <a id="top"></a>
 
+# String conversions
+
+**Contents**
 <!-- vscode-markdown-toc -->
 * [How](#How)
 * [Design](#Design)
@@ -12,8 +15,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-# String conversions
 
 When you use Approval tests, the results of the things you are testing are going to be stored on disk. It is good if you can diff the files, to gain an understanding of what is created and how they change. Mainly this is done by creating strings.
 

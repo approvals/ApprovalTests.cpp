@@ -1,5 +1,8 @@
 <a id="top"></a>
 
+# CppApprovals
+
+**Contents**
 <!-- vscode-markdown-toc -->
 * [Introduction](#Introduction)
 * [Getting Started](#GettingStarted)
@@ -13,9 +16,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-CppApprovals
-============
 
 ## <a name='Introduction'></a>Introduction
 

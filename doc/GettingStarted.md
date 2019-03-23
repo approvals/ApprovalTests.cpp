@@ -5,6 +5,9 @@ To change this file edit the source file and then re-run the generation using ei
 -->
 <a id="top"></a>
 
+# Getting Started
+
+**Contents**
 <!-- vscode-markdown-toc -->
 * [Catch 1 and 2](#Catch1and2)
 	* [New Project](#NewProject)
@@ -19,8 +22,6 @@ To change this file edit the source file and then re-run the generation using ei
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-# Getting Started
 
 ## <a name='Catch1and2'></a>Catch 1 and 2
 

@@ -5,6 +5,9 @@ To change this file edit the source file and then re-run the generation using ei
 -->
 <a id="top"></a>
 
+# Features
+
+**Contents**
 <!-- vscode-markdown-toc -->
 * [Using sub-directories for approved files](#Usingsub-directoriesforapprovedfiles)
 
@@ -13,8 +16,6 @@ To change this file edit the source file and then re-run the generation using ei
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-# Features
 
 ## <a name='Usingsub-directoriesforapprovedfiles'></a>Using sub-directories for approved files
 

@@ -5,6 +5,9 @@ To change this file edit the source file and then re-run the generation using ei
 -->
 <a id="top"></a>
 
+# ApprovalTesting (the concept)
+
+**Contents**
 <!-- vscode-markdown-toc -->
 * [The Idea](#TheIdea)
 * [The Path](#ThePath)
@@ -20,8 +23,6 @@ To change this file edit the source file and then re-run the generation using ei
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-# ApprovalTesting (the concept)
 
 this is also referred to as snapshot testing, or golden master testing
 

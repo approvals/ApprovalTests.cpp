@@ -1,5 +1,8 @@
 <a id="top"></a>
 
+# Building instructions - for Windows
+
+**Contents**
 <!-- vscode-markdown-toc -->
 * 1. [Prerequisites](#Prerequisites)
 * 2. [Visual Studio 2017 Community Edition](#VisualStudio2017CommunityEdition)
@@ -14,8 +17,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-# Building instructions - for Windows
 
 ##  1. <a name='Prerequisites'></a>Prerequisites
 
