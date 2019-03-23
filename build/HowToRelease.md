@@ -17,6 +17,6 @@ Creating the build
 Publishing
  
 * Commit and push `ApprovalTests.cpp`
-* Upload the .hpp to releases - call the release `Single Hpp File`
+* Finish off the upload to github, by uploading the new .hpp, pasting in the release notes, and hitting "Publish release"
 * Finish off the release Tweet
 * Optionally, change the version numbers in `build_hpp.sh` to reflect the next version
