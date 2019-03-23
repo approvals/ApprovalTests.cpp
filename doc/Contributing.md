@@ -22,10 +22,10 @@ We welcome improvements to the documentation! Here's how we manage the documenta
 
 ### <a name='Creatingnewpages'></a>Creating new pages
 
-If creating a new Markdown page, please make a copy of `doc/TemplatePage.md`.
+If creating a new Markdown page, please make a copy of [doc/TemplatePage.md](../doc/TemplatePage.md).
 This contains some boilerplate text which is tedious to create by hand. 
 
-If the new page will be outside of the `doc` folder, delete the following lines at the end:
+If the new page will be outside of the [doc](../doc/) folder, delete the following lines at the end:
 
 ```
 ---
@@ -44,7 +44,7 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
     * annotate snippets of source code, 
     * reference the snippets in documentation.
 * Run  `mdsnippets` **before commit**, every time a `.source.md` file is updated
-    * See [run_markdown_templates.sh](https://github.com/approvals/ApprovalTests.cpp/blob/master/run_markdown_templates.sh).
+    * See [run_markdown_templates.sh](../run_markdown_templates.sh).
     * This will update the machine-generated `[something].md` files.
 
 ### <a name='Updatingthetablesofcontents'></a>Updating the tables of contents
