@@ -1,4 +1,3 @@
-<a id="top"></a>
 * **Breaking changes**
     * Some virtual methods in the following classes have been renamed to begin with a lower-case letter:
         * ApprovalWriter
