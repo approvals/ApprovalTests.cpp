@@ -1,11 +1,13 @@
 <a id="top"></a>
 
 <!-- vscode-markdown-toc -->
-* [New Project](#NewProject)
-* [Existing Project](#ExistingProject)
-* [Starter Project](#StarterProject)
-* [New Project](#NewProject-1)
-* [Existing Project](#ExistingProject-1)
+* [Catch 1 and 2](#Catch1and2)
+	* [New Project](#NewProject)
+	* [Existing Project](#ExistingProject)
+* [Google Test](#GoogleTest)
+	* [Starter Project](#StarterProject)
+	* [New Project](#NewProject-1)
+	* [Existing Project](#ExistingProject-1)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -13,27 +15,29 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
-# Catch 1 and 2
+# Getting Started
 
-## <a name='NewProject'></a>New Project
+## <a name='Catch1and2'></a>Catch 1 and 2
+
+### <a name='NewProject'></a>New Project
 
 snippet: catch_2_main
 
-## <a name='ExistingProject'></a>Existing Project
+### <a name='ExistingProject'></a>Existing Project
 
 TODO
 
-# Google Test
+## <a name='GoogleTest'></a>Google Test
 
-## <a name='StarterProject'></a>Starter Project
+### <a name='StarterProject'></a>Starter Project
 
 TODO
 
-## <a name='NewProject-1'></a>New Project
+### <a name='NewProject-1'></a>New Project
 
 snippet: googletest_main
 
-## <a name='ExistingProject-1'></a>Existing Project
+### <a name='ExistingProject-1'></a>Existing Project
 
 snippet: googletest_existing_main
 
