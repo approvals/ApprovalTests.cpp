@@ -16,7 +16,7 @@ Creating the build
 
 Publishing
  
-* Upload the .hpp to releases - call the release `Single Hpp File`
-* Change the version numbers in `build_hpp.sh` to reflect the next version
 * Commit and push `ApprovalTests.cpp`
+* Upload the .hpp to releases - call the release `Single Hpp File`
 * Finish off the release Tweet
+* Optionally, change the version numbers in `build_hpp.sh` to reflect the next version
