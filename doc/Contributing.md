@@ -25,6 +25,14 @@ We welcome improvements to the documentation! Here's how we manage the documenta
 If creating a new Markdown page, please make a copy of `doc/TemplatePage.md`.
 This contains some boilerplate text which is tedious to create by hand. 
 
+If the new page will be outside of the `doc` folder, delete the following lines at the end:
+
+```
+---
+   
+[Back to User Guide](README.md#top)
+```
+
 ### <a name='Addingcodeandfilesamples'></a>Adding code and file samples
 
 We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSnippets) tool to embed source code and other files in Markdown pages.
@@ -55,7 +63,7 @@ We currently use [Joffrey Kern's "Markdown TOC"](https://marketplace.visualstudi
 ## <a name='Releases'></a>Releases
 
 * Everything for releases is in [the build directory](../build/)
-* There's more information in [How To Release](../build/HowToRelease.md)
+* There's more information in [How To Release](../build/HowToRelease.md#top)
 
 ---
 
