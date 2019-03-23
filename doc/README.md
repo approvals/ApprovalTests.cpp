@@ -1,5 +1,7 @@
 <a id="top"></a>
 
+# ApprovalTests.cpp User Guide
+
 **Contents**
 <!-- vscode-markdown-toc -->
 * [Introduction](#Introduction)
@@ -16,8 +18,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-# ApprovalTests.cpp User Guide
 
 **Feedback requested!** This page is currently a proposal for how to structure the user documentation
 for this library, to seek feedback on it.
