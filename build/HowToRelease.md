@@ -5,14 +5,14 @@
 
 Preparation:
 
-* Check that the builds are passing: https://github.com/approvals/ApprovalTests.cpp/commits/master
-* Write summary of changes since last release, based on changes since last release: https://github.com/approvals/ApprovalTests.cpp/releases
+* Check that the [builds are passing](https://github.com/approvals/ApprovalTests.cpp/commits/master)
+* Write summary of changes since last release, based on changes since [the last release](https://github.com/approvals/ApprovalTests.cpp/releases)
 * Determine the semantic version number
 * Update the version number in `build_hpp.sh`
 
 Creating the build
 
-* Run `build_hpp.sh` - this updates the starter project and tests that it builds
+* Run `build_hpp.sh` - this updates [the starter project](https://github.com/approvals/ApprovalTests.cpp.StarterProject), tests that it builds, and if so, **commits and pushes it**
 
 Publishing
  
