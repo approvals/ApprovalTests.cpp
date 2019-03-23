@@ -101,4 +101,4 @@ Once you're up and running, consider the following reference material. -->
 ## <a name='AdvancedTopics'></a>Advanced Topics
 
 * Supporting a new test framework
-* Contributing to ApprovalTests.cpp
+* [Contributing to ApprovalTests.cpp](Contributing.md#top)
