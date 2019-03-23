@@ -8,6 +8,7 @@
 	* [Creating new pages](#Creatingnewpages)
 	* [Adding code and file samples](#Addingcodeandfilesamples)
 	* [Updating the tables of contents](#Updatingthetablesofcontents)
+* [Releases](#Releases)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -50,6 +51,11 @@ We currently use [Joffrey Kern's "Markdown TOC"](https://marketplace.visualstudi
     * Open the command palette (`Ctrl+Shift+P`)
     * Type "Generate"
     * Choose "Generate TOC for markdown"
+
+## <a name='Releases'></a>Releases
+
+* Everything for releases is in [the build directory](../build/)
+* There's more information in [How To Release](../build/HowToRelease.md)
 
 ---
 
