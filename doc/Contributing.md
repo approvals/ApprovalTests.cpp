@@ -22,7 +22,7 @@ We welcome improvements to the documentation! Here's how we manage the documenta
 
 ### <a name='Creatingnewpages'></a>Creating new pages
 
-If creating a new Markdown page, please make a copy of [doc/TemplatePage.md](../doc/TemplatePage.md).
+If creating a new Markdown page, please make a copy of [doc/TemplatePage.md](../doc/TemplatePage.md#top).
 This contains some boilerplate text which is tedious to create by hand. 
 
 If the new page will be outside of the [doc](../doc/) folder, delete the following lines at the end:
