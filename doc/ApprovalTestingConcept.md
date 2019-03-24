@@ -12,10 +12,10 @@ To change this file edit the source file and then re-run the generation using ei
 <!-- vscode-markdown-toc -->
 * [The Idea](#TheIdea)
 * [The Path](#ThePath)
-	* [1. Simple verification](#Simpleverification)
+	* [1 Simple verification](#Simpleverification)
 		* [The technique](#Thetechnique)
 		* [The problem](#Theproblem)
-	* [2. ToString verification](#ToStringverification)
+	* [2 ToString verification](#ToStringverification)
 		* [The technique](#Thetechnique-1)
 		* [The problem](#Theproblem-1)
 
@@ -40,7 +40,7 @@ the results, and the differences in results, easier to understand and act on.
 
 ## <a name='ThePath'></a>The Path
 
-### <a name='Simpleverification'></a>1. Simple verification
+### <a name='Simpleverification'></a>1 Simple verification
 
 #### <a name='Thetechnique'></a>The technique
 
@@ -62,7 +62,7 @@ REQUIRE( "Emily" == names[4]);
 
 One solution for this is to start writing objects to string that are easier to verify.
 
-### <a name='ToStringverification'></a>2. ToString verification
+### <a name='ToStringverification'></a>2 ToString verification
 
 #### <a name='Thetechnique-1'></a>The technique
 
