@@ -3,6 +3,7 @@
 # ApprovalTesting (the concept)
 
 **Contents**
+
 <!-- vscode-markdown-toc -->
 * [The Idea](#TheIdea)
 * [The Path](#ThePath)

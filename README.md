@@ -8,6 +8,7 @@ To change this file edit the source file and then re-run the generation using ei
 # CppApprovals
 
 **Contents**
+
 <!-- vscode-markdown-toc -->
 * [Introduction](#Introduction)
 * [Getting Started](#GettingStarted)

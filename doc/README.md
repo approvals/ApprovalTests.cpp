@@ -3,6 +3,7 @@
 # ApprovalTests.cpp User Guide
 
 **Contents**
+
 <!-- vscode-markdown-toc -->
 * [Introduction](#Introduction)
 * [Setup](#Setup)

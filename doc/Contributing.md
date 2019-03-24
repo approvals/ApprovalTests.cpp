@@ -3,6 +3,7 @@
 # Contributing to ApprovalTests.cpp
 
 **Contents**
+
 <!-- vscode-markdown-toc -->
 * [Documentation](#Documentation)
 	* [Creating new pages](#Creatingnewpages)

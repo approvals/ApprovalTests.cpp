@@ -3,6 +3,7 @@
 # Building instructions - for Windows
 
 **Contents**
+
 <!-- vscode-markdown-toc -->
 * 1. [Prerequisites](#Prerequisites)
 * 2. [Visual Studio 2017 Community Edition](#VisualStudio2017CommunityEdition)

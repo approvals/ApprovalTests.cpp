@@ -3,6 +3,7 @@
 # String conversions
 
 **Contents**
+
 <!-- vscode-markdown-toc -->
 * [How](#How)
 * [Design](#Design)

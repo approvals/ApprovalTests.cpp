@@ -3,6 +3,7 @@
 # Features
 
 **Contents**
+
 <!-- vscode-markdown-toc -->
 * [Using sub-directories for approved files](#Usingsub-directoriesforapprovedfiles)
 

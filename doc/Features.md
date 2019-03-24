@@ -8,6 +8,7 @@ To change this file edit the source file and then re-run the generation using ei
 # Features
 
 **Contents**
+
 <!-- vscode-markdown-toc -->
 * [Using sub-directories for approved files](#Usingsub-directoriesforapprovedfiles)
 

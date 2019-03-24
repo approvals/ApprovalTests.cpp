@@ -8,6 +8,7 @@ To change this file edit the source file and then re-run the generation using ei
 # String conversions
 
 **Contents**
+
 <!-- vscode-markdown-toc -->
 * [How](#How)
 * [Design](#Design)

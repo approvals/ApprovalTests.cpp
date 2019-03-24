@@ -3,6 +3,7 @@
 # CppApprovals
 
 **Contents**
+
 <!-- vscode-markdown-toc -->
 * [Introduction](#Introduction)
 * [Getting Started](#GettingStarted)
