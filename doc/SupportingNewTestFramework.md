@@ -5,7 +5,8 @@
 **Contents**
 
 <!-- vscode-markdown-toc -->
-* [Requirements](#Requirements)
+* [Introduction](#Introduction)
+* [Test Framework Requirements](#TestFrameworkRequirements)
 * [Steps to add support](#Stepstoaddsupport)
 * [Examples](#Examples)
 
@@ -15,13 +16,13 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
-## Introduction
+## <a name='Introduction'></a>Introduction
 
 ApprovalTests.cpp is designed to work with multiple C++ test frameworks.
 
 If your test framework is not already supported, this section offers help to add that support. 
 
-## <a name='Requirements'></a>Test Framework Requirements
+## <a name='TestFrameworkRequirements'></a>Test Framework Requirements
 
 ApprovalTests.cpp can be made to work with any test framework that supplies the following:
 
