@@ -1,17 +1,17 @@
 <a id="top"></a>
 
-# Building instructions - for Windows
+# Developing ApprovalTests.cpp on Windows
 
 **Contents**
 
 <!-- vscode-markdown-toc -->
 * [Prerequisites](#Prerequisites)
+* [Dependencies](#Dependencies)
 * [Visual Studio 2017 Community Edition](#VisualStudio2017CommunityEdition)
-	* [Use Visual Studio 2017's "Open Folder" feature](#UseVisualStudio2017sOpenFolderfeature)
 	* [Use CMake to generate Visual Studio 2017 configuration](#UseCMaketogenerateVisualStudio2017configuration)
+* [CLion](#CLion)
 	* [Use CLion with Visual Studio installed](#UseCLionwithVisualStudioinstalled)
-	* [Update 05/06/2018](#Update05062018)
-* [Obtaining Google Test for Windows (optional)](#ObtainingGoogleTestforWindowsoptional)
+	* [Run CLion with cygwin as toolset](#RunCLionwithcygwinastoolset)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -22,34 +22,30 @@
 ## <a name='Prerequisites'></a>Prerequisites
 
 * CMake 3.8 or higher
-* A C++11 or above compiler
+* A C++11 or above compiler to use the library
+* A C++17 or above compiler to run the project's own tests
 
-Optional:
+## <a name='Dependencies'></a>Dependencies
 
-* Google test framework, 1.8 or above
+* A version of Catch2 is included in the source - see [lib/Catch.hpp](lib/Catch.hpp)
+* Source code for the Google Test framework - version 1.8.1 - is downloaded automatically when CMake is run - see [CMakeLists.txt.in](CMakeLists.txt.in), and is then built when the project is built.
 
 ## <a name='VisualStudio2017CommunityEdition'></a>Visual Studio 2017 Community Edition
-
-Various ways to build with Visual Studio 2017 Community Edition ...
-
-### <a name='UseVisualStudio2017sOpenFolderfeature'></a>Use Visual Studio 2017's "Open Folder" feature
-
-* Build Output goes in `.vs`
-* I found it fiddly to run the tests via this route
 
 ### <a name='UseCMaketogenerateVisualStudio2017configuration'></a>Use CMake to generate Visual Studio 2017 configuration
 
 Decide where to put the build files that CMake will generate.
 In the following, we're putting the output in `cmake-build-vs` - that location is already ignored by git.
 
-1. Go to start menu and open Developer Command Prompt for VS 2017
-	* *This may not actually be necessary - opening any Command window may work*
+1. Open a Command window
 2. Then run:
 
 		cd ApprovalTests.cpp
 		mkdir cmake-build-vs
 		cd    cmake-build-vs
 		cmake -G "Visual Studio 15 2017" ..
+
+## <a name='CLion'></a>CLion
 
 ### <a name='UseCLionwithVisualStudioinstalled'></a>Use CLion with Visual Studio installed
 
@@ -58,28 +54,11 @@ In the following, we're putting the output in `cmake-build-vs` - that location i
 * Tested with Visual Studio 2017
 * **Major limitation**: Debugging is not yet supported by CLion, when compiling with Visual Studio, as of CLion 2017.3.3
 
-### <a name='Update05062018'></a>Update 05/06/2018
+### <a name='RunCLionwithcygwinastoolset'></a>Run CLion with cygwin as toolset
 
-* Running CLion with cygwin as toolset
-	* Code builds fine
-	* Running the catch2 tests gives lots of
-		* `sh: c:\Program Files\Microsoft VS Code\Code.exe: command not found`
-	* Looks like this is a known problem [cannot launch code from command line using Git Bash on Windows ](https://github.com/Microsoft/vscode/issues/1704)
-* Running code in Visual Studio 2017
-	* Code builds fine
-	* Tests run fine
-
----
-
-## <a name='ObtainingGoogleTestforWindowsoptional'></a>Obtaining Google Test for Windows (optional)
-
-In order to run the tests of this project's optional integration with the Google Test framework, you'll need a built copy of that framework itself.
-
-Here are some options: 
-
-* build it from source - add to your project, or sub-project - see [google test's own instructions](https://github.com/google/googletest/tree/master/googletest)
-* download it via Conan - there's a starting point at [claremacrae/googletest-starter-project](https://github.com/claremacrae/googletest-starter-project)
-	* This will require making changes to your own `CMakeLists.txt` files 
-* [Nuget package](https://www.nuget.org/packages/googletest/) - but it's not obvious how to use this inside CMake - see [Can't see how to configure CMake to find the Google Docs included in VS2017](https://github.com/MicrosoftDocs/visualstudio-docs/issues/580)
-	* This is probably the best approach if you are maintaining your own Solution file, rather than generating it with CMake.
+* Code builds fine
+* Tests run fine
+* Running the catch2 tests gives lots of messages such as this, for any tests that use a Reporter to show differences.
+    * `sh: c:\Program Files\Microsoft VS Code\Code.exe: command not found`
+* Looks like this is a known problem [cannot launch code from command line using Git Bash on Windows ](https://github.com/Microsoft/vscode/issues/1704)
 
