@@ -20,7 +20,7 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
-this is also referred to as snapshot testing, or golden master testing
+This is also referred to as snapshot testing, or golden master testing.
 
 ## <a name='TheIdea'></a>The Idea
 Most tests have you explicitly state what is expected before you write the code,
