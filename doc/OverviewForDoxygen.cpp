@@ -133,7 +133,7 @@
     - Could be moved to writers folder
  - ExistingFile is a special-case writer
     - This is really an implementation detail of Approvals::verifyExistingFile()
-    - It would be good to have a way to optionally tell ExistingFile::CleanUpReceived() to
+    - It would be good to have a way to optionally tell ExistingFile::cleanUpReceived() to
       remove the received file.
 
  \section utilities Implementation Detail: Utilities
