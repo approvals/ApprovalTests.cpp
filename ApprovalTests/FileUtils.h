@@ -2,8 +2,8 @@
 // Created by LLEWELLYN FALCO on 12/2/17.
 //
 
-#ifndef CATCHPLAYGROUND_FILEUTILS_H
-#define CATCHPLAYGROUND_FILEUTILS_H
+#ifndef APPROVALTESTS_CPP_FILEUTILS_H
+#define APPROVALTESTS_CPP_FILEUTILS_H
 
 #include <string>
 #include <sys/stat.h>
@@ -48,4 +48,4 @@ public:
     }
 };
 
-#endif //CATCHPLAYGROUND_FILEUTILS_H
+#endif // APPROVALTESTS_CPP_FILEUTILS_H

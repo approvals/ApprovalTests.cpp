@@ -1,5 +1,5 @@
-#ifndef SYSTEMUTILS_H
-#define SYSTEMUTILS_H
+#ifndef APPROVALTESTS_CPP_SYSTEMUTILS_H
+#define APPROVALTESTS_CPP_SYSTEMUTILS_H
 // <SingleHpp unalterable>
 #ifdef _WIN32
     // ReSharper disable once CppUnusedIncludeDirective

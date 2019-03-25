@@ -1,5 +1,5 @@
-#ifndef APPROVALS_H
-#define APPROVALS_H
+#ifndef APPROVALTESTS_CPP_APPROVALS_H
+#define APPROVALTESTS_CPP_APPROVALS_H
 
 #include <string>
 #include <functional>

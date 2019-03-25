@@ -1,5 +1,5 @@
-#ifndef STRINGWRITER_H
-#define STRINGWRITER_H
+#ifndef APPROVALTESTS_CPP_STRINGWRITER_H
+#define APPROVALTESTS_CPP_STRINGWRITER_H
 
 #include <string>
 #include <fstream>

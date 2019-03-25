@@ -1,5 +1,5 @@
-#ifndef FILEAPPROVER_H
-#define FILEAPPROVER_H
+#ifndef APPROVALTESTS_CPP_FILEAPPROVER_H
+#define APPROVALTESTS_CPP_FILEAPPROVER_H
 
 #include <fstream>
 #include <map>
