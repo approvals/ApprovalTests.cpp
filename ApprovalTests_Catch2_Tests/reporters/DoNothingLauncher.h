@@ -1,5 +1,5 @@
-#ifndef DONOTHINGLAUNCHER_H
-#define DONOTHINGLAUNCHER_H
+#ifndef APPROVALTESTS_CPP_DONOTHINGLAUNCHER_H
+#define APPROVALTESTS_CPP_DONOTHINGLAUNCHER_H
 
 #include <ApprovalTests/reporters/CommandLauncher.h>
 

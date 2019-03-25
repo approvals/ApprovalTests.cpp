@@ -1,5 +1,5 @@
-#ifndef DIFFREPORTER_H
-#define DIFFREPORTER_H
+#ifndef APPROVALTESTS_CPP_DIFFREPORTER_H
+#define APPROVALTESTS_CPP_DIFFREPORTER_H
 
 #include "FirstWorkingReporter.h"
 #include "WindowsReporters.h"
@@ -20,4 +20,4 @@ public:
     }
 };
 
-#endif //DIFFREPORTER_H
+#endif //APPROVALTESTS_CPP_DIFFREPORTER_H

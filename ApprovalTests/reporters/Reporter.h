@@ -1,5 +1,5 @@
-#ifndef REPORTER_H
-#define REPORTER_H
+#ifndef APPROVALTESTS_CPP_REPORTER_H
+#define APPROVALTESTS_CPP_REPORTER_H
 
 // Reporters are called on test failure
 class Reporter {

@@ -1,5 +1,5 @@
-#ifndef COMMANDLAUNCHER_H
-#define COMMANDLAUNCHER_H
+#ifndef APPROVALTESTS_CPP_COMMANDLAUNCHER_H
+#define APPROVALTESTS_CPP_COMMANDLAUNCHER_H
 
 #include <string>
 #include <vector>
