@@ -1,5 +1,6 @@
 #include "Catch.hpp"
 #include <ApprovalTests/StringWriter.h>
+#include <ApprovalTests/Approvals.h>
 
 using namespace std;
 
@@ -38,4 +39,19 @@ TEST_CASE("TheDefaultExtensionIsText") {
 TEST_CASE("TheExtensionIsConfigurable") {
     StringWriter s("Hello", ".html");
     REQUIRE(s.getFileExtensionWithDot() == ".html");
+}
+
+TEST_CASE("ItGivesMeaningfulErrorIfWritingFails") {
+    StringWriter s("Hello");
+    auto fileName = "I/do/not/exist/out.txt";
+    std::string message;
+    try
+    {
+        s.write(fileName);
+    }
+    catch(const std::runtime_error& e)
+    {
+        message = e.what();
+    }
+    Approvals::verify(message);
 }

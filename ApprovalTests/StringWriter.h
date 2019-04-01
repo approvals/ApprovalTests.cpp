@@ -25,7 +25,7 @@ public:
         std::ofstream out( path.c_str(), std::ofstream::out );
         if ( ! out)
         {
-            throw std::runtime_error("barf");
+            throw std::runtime_error("Unable to write file: " + path);
         }
         this->Write( out );
         out.close();
