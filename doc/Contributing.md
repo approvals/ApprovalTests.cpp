@@ -5,7 +5,7 @@
 **Contents**
 
 <!-- vscode-markdown-toc -->
-* [Contributing: pairing and pull requests](#Contributing:pairingandpullrequests)
+* [Contributing - pairing and pull requests](#Contributing-pairingandpullrequests)
 * [Documentation](#Documentation)
 	* [Creating new pages](#Creatingnewpages)
 	* [Adding code and file samples](#Addingcodeandfilesamples)
@@ -20,7 +20,7 @@
 <!-- /vscode-markdown-toc -->
 
 
-## <a name='Contributing:pairingandpullrequests'></a>Contributing: pairing and pull requests
+## <a name='Contributing-pairingandpullrequests'></a>Contributing - pairing and pull requests
 
 The default way to add to most repositories is to fork and then create a pull-request.
 
@@ -66,6 +66,8 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
 ### <a name='Updatingthetablesofcontents'></a>Updating the tables of contents
 
 We currently use [Joffrey Kern's "Markdown TOC"](https://marketplace.visualstudio.com/items?itemName=joffreykern.markdown-toc) Visual Studio Code extension to generate the **Contents** lists at the top of each Markdown page.
+
+Do not use a colon (`:`) in any headings: the entry in the table of contents will look correct when viewed in CLion, but will not be hyperlinked when viewed on the GitHub website. Use a hyphen (`-`) instead.
 
 **How it works:**
 
