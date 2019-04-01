@@ -1,4 +1,5 @@
 #include <ostream>
+#include <stdexcept>
 #include "Catch.hpp"
 #include <ApprovalTests/Approvals.h>
 
@@ -95,4 +96,16 @@ TEST_CASE("YouCanVerifyWithConverterWrapperFunction")
         getPoint(),
         [](auto r, auto& os){ customToStreamFunction(os, r);}
     );
+}
+
+// ==============================================================
+
+TEST_CASE("VerifyingException")
+{
+    Approvals::verifyExceptionMessage([](){throw std::runtime_error("Here is my exception message");});
+}
+
+TEST_CASE("VerifyingNoException")
+{
+    Approvals::verifyExceptionMessage([](){});
 }

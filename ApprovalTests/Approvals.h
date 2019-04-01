@@ -3,6 +3,7 @@
 
 #include <string>
 #include <functional>
+#include <exception>
 #include "FileApprover.h"
 #include "reporters/DiffReporter.h"
 #include "reporters/Reporter.h"
