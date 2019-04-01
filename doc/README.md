@@ -60,6 +60,7 @@ Once you're up and running, consider the following reference material. -->
 * Tutorial
 * Testing single objects
 * Testing containers
+* [Testing exceptions](TestingExceptions.md#top)
 * Testing combinations - containers of containers (of containers...)
 * [To String](ToString.md#top)
 * Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
