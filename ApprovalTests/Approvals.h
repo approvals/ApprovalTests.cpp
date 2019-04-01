@@ -46,6 +46,22 @@ public:
         verify(s.str(), reporter);
     }
 
+    static void verifyExceptionMessage(
+        std::function<void(void)> functionThatThrows,
+        const Reporter &reporter = DiffReporter())
+    {
+        std::string message = "*** no exception thrown ***";
+        try
+        {
+            functionThatThrows();
+        }
+        catch(const std::exception& e)
+        {
+            message = e.what();
+        }
+        Approvals::verify(message, reporter);
+    }
+    
     template<typename Iterator>
     static void verifyAll(std::string header,
                           const Iterator &start, const Iterator &finish,

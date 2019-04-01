@@ -44,14 +44,5 @@ TEST_CASE("TheExtensionIsConfigurable") {
 TEST_CASE("ItGivesMeaningfulErrorIfWritingFails") {
     StringWriter s("Hello");
     auto fileName = "I/do/not/exist/out.txt";
-    std::string message;
-    try
-    {
-        s.write(fileName);
-    }
-    catch(const std::runtime_error& e)
-    {
-        message = e.what();
-    }
-    Approvals::verify(message);
+    Approvals::verifyExceptionMessage([&](){s.write(fileName);});
 }
