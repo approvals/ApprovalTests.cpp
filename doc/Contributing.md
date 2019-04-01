@@ -5,6 +5,7 @@
 **Contents**
 
 <!-- vscode-markdown-toc -->
+* [Contributing: pairing and pull requests](#Contributing:pairingandpullrequests)
 * [Documentation](#Documentation)
 	* [Creating new pages](#Creatingnewpages)
 	* [Adding code and file samples](#Addingcodeandfilesamples)
@@ -17,6 +18,19 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
+
+
+## <a name='Contributing:pairingandpullrequests'></a>Contributing: pairing and pull requests
+
+The default way to add to most repositories is to fork and then create a pull-request.
+
+This is **NOT** the default way to contribute to Approval Tests!
+
+If you have something that you would like Approval Tests to have, including a bug you would like removed, we suggest you set up a pairing session (usually Skype or Facetime) with either [Llewellyn](mailto:isidore@setgame.com) or [Clare](mailto:github@cfmacrae.fastmail.co.uk) or both.
+
+A typical session last between 60 to 90 minutes. We do the work directly on master, on our own machines, with screen-sharing, and commit and push the result at the end of the session. This results in quicker, higher-quality work. It gives us a better understanding of how people are using Approval Tests, and the problems they encounter with it, and these sessions are also quite fun.
+
+We use github's "co-author" feature, so everyone in the pairing session gets credit for the work. Virtually this entire project has been developed in this way, and is stronger for it.
 
 ## <a name='Documentation'></a>Documentation
 
