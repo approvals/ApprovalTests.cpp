@@ -60,17 +60,21 @@ TODO
 
 <!-- snippet: googletest_existing_main -->
 ```cpp
+// 1. Add these two lines to your main:
 #define APPROVALS_GOOGLETEST_EXISTING_MAIN
 #include "ApprovalTests.hpp"
 
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
+    
+    // 2. Add this line to your main:
     initializeApprovalTestsForGoogleTests();
+
     return RUN_ALL_TESTS();
 }
 ```
-<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L1-L11)</sup>
+<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L1-L15)</sup>
 <!-- endsnippet -->
 
 ---
