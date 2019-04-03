@@ -51,7 +51,7 @@ Once you're up and running, consider the following reference material. -->
         * Renaming the header file to remove version number
     * Starter project
     * Cloning repo and using CMake
-* [Getting Started](GettingStarted.md#top)
+* [Getting Started](GettingStarted.md#top) - setting up `main()`
 * Getting Started with Catch 1 and 2
 * Getting Started with Google Test
 
