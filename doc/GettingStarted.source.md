@@ -13,7 +13,8 @@
 * [Google Test](#GoogleTest)
 	* [Starter Project](#StarterProject-1)
 	* [New Project](#NewProject-1)
-	* [Existing Project](#ExistingProject-1)
+	* [Existing Project - no main()](#ExistingProject-nomain)
+	* [Existing Project - with your main()](#ExistingProject-withyourmain)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -72,7 +73,7 @@ Create a file `main.cpp` and add just the following two lines:
 
 snippet: googletest_main
 
-### <a name='ExistingProject-1'></a>Existing Project - no main()
+### <a name='ExistingProject-nomain'></a>Existing Project - no main()
 
 Google Test has a `gtest_main` library that provides a `main()` function, and then runs all your tests.
 
@@ -81,7 +82,7 @@ If your existing Google Test application uses the `gtest_main` library, Approval
 To fix this, please add a new `main.cpp`, as shown in the previous section.
 
 
-### <a name='ExistingProject-1'></a>Existing Project - with your main()
+### <a name='ExistingProject-withyourmain'></a>Existing Project - with your main()
 
 If you have an existing Google Test-based test program that provides its own `main()`, you won't be able to use the approach above.
 
