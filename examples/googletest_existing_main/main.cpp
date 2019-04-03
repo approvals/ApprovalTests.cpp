@@ -1,4 +1,6 @@
 // startcode googletest_existing_main
+// main.cpp:
+
 // 1. Add these two lines to your main:
 #define APPROVALS_GOOGLETEST_EXISTING_MAIN
 #include "ApprovalTests.hpp"

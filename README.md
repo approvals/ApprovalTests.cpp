@@ -67,20 +67,22 @@ For catch (1 and 2), it's these two lines:
 
 <!-- snippet: catch_2_main -->
 ```cpp
-#define APPROVALS_CATCH
+// main.cpp:
+#define APPROVALS_CATCH // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L4-L7)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L4-L8)</sup>
 <!-- endsnippet -->
 
 For Google Test, it's these:
 
 <!-- snippet: googletest_main -->
 ```cpp
-#define APPROVALS_GOOGLETEST
+// main.cpp:
+#define APPROVALS_GOOGLETEST // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 ```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/main.cpp#L2-L5)</sup>
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/main.cpp#L2-L6)</sup>
 <!-- endsnippet -->
 
 For all other test files, you need:

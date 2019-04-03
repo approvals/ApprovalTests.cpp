@@ -1,15 +1,17 @@
 <a id="top"></a>
 
-# Getting Started
+# Getting Started - Creating your main()
 
 **Contents**
 
 <!-- vscode-markdown-toc -->
+* [Introduction](#Introduction)
 * [Catch 1 and 2](#Catch1and2)
+	* [Starter Project](#StarterProject)
 	* [New Project](#NewProject)
 	* [Existing Project](#ExistingProject)
 * [Google Test](#GoogleTest)
-	* [Starter Project](#StarterProject)
+	* [Starter Project](#StarterProject-1)
 	* [New Project](#NewProject-1)
 	* [Existing Project](#ExistingProject-1)
 
@@ -19,9 +21,34 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
+## <a name='Introduction'></a>Introduction
+
+This section shows how to set up the `main()` for test programs that use Approval Tests.
+
+These steps are needed in order to teach Approval Tests how to name its output files.
+
+If, after following these steps, you still have a problem with running your program, please see [Troubleshooting](Troubleshooting.md#top).
+
 ## <a name='Catch1and2'></a>Catch 1 and 2
 
+The [Catch2](https://github.com/catchorg/Catch2) test framework works well with Approval Tests.
+
+This section describes the various ways of using Approval Tests with Catch 2.
+
+These steps also work with the earlier version, Catch 1, which is on the [Catch 1.x branch](https://github.com/catchorg/Catch2/tree/Catch1.x), and is still provided for those on pre-C++11 compilers. (Please note that the Approval Tests library requires C++11 or newer, however). 
+
+### <a name='StarterProject'></a>Starter Project
+
+The quickest way to start experimenting with Approval Tests is to:
+
+1. Download the project [ApprovalTests.cpp.StarterProject](https://github.com/approvals/ApprovalTests.cpp.StarterProject) - via the green "Clone or Download" button at the top-right of the project site.
+2. Opening the project in the C++ IDE of your choice.
+
+Each time we release a new version of Approval Tests, we update this project, so it always has the latest features. 
+
 ### <a name='NewProject'></a>New Project
+
+Create a file `main.cpp` and add just the following two lines:
 
 snippet: catch_2_main
 
@@ -31,15 +58,34 @@ TODO
 
 ## <a name='GoogleTest'></a>Google Test
 
-### <a name='StarterProject'></a>Starter Project
+The [Google Test](https://github.com/google/googletest) test framework works well with Approval Tests.
+
+This section describes the various ways of using Approval Tests with Google Test.
+
+### <a name='StarterProject-1'></a>Starter Project
 
 TODO
 
 ### <a name='NewProject-1'></a>New Project
 
+Create a file `main.cpp` and add just the following two lines:
+
 snippet: googletest_main
 
-### <a name='ExistingProject-1'></a>Existing Project
+### <a name='ExistingProject-1'></a>Existing Project - no main()
+
+Google Test has a `gtest_main` library that provides a `main()` function, and then runs all your tests.
+
+If your existing Google Test application uses the `gtest_main` library, Approval Tests will not be able to obtain the names to use output files. You will then see the help message shown in [Troubleshooting](Troubleshooting.md#top).
+
+To fix this, please add a new `main.cpp`, as shown in the previous section.
+
+
+### <a name='ExistingProject-1'></a>Existing Project - with your main()
+
+If you have an existing Google Test-based test program that provides its own `main()`, you won't be able to use the approach above.
+
+Instead, you should make the following additions to your own source file that contains `main()`.  
 
 snippet: googletest_existing_main
 

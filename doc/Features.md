@@ -26,7 +26,7 @@ If you have a lot of approval files, you might want to put them in a subdirector
 ```cpp
 auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L9-L11)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L10-L12)</sup>
 <!-- endsnippet -->
 
 The return value will restore the original directory when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
