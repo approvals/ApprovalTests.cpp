@@ -14,12 +14,13 @@ To change this file edit the source file and then re-run the generation using ei
 * [Catch 1 and 2](#Catch1and2)
 	* [Starter Project](#StarterProject)
 	* [New Project](#NewProject)
-	* [Existing Project](#ExistingProject)
+	* [Existing Project - with CATCH_CONFIG_MAIN](#ExistingProject-withCATCH_CONFIG_MAIN)
+	* [Existing Project - with your main()](#ExistingProject-withyourmain)
 * [Google Test](#GoogleTest)
 	* [Starter Project](#StarterProject-1)
 	* [New Project](#NewProject-1)
 	* [Existing Project - no main()](#ExistingProject-nomain)
-	* [Existing Project - with your main()](#ExistingProject-withyourmain)
+	* [Existing Project - with your main()](#ExistingProject-withyourmain-1)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -65,9 +66,24 @@ Create a file `main.cpp` and add just the following two lines:
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L4-L8)</sup>
 <!-- endsnippet -->
 
-### <a name='ExistingProject'></a>Existing Project
+### <a name='ExistingProject-withCATCH_CONFIG_MAIN'></a>Existing Project - with CATCH_CONFIG_MAIN
 
-TODO
+If you have a Catch (1 or 2) project with your own `main.cpp` that contains the following lines, you will need to replace them with the code in the previous section.
+
+```cpp
+#define CATCH_CONFIG_MAIN // remove these lines, and replace with Approval Tests lines
+#include "catch.hpp"
+```
+
+### <a name='ExistingProject-withyourmain'></a>Existing Project - with your main()
+
+If you have [supplied your own `main()` for Catch](https://github.com/catchorg/Catch2/blob/master/docs/own-main.md#top), you will need to teach it how to supply test names to Approval Tests.
+
+There is not yet a streamlined way of doing this.
+
+For now, please see the code in [ApprovalTests/Catch2Approvals.h](../ApprovalTests/Catch2Approvals.h) for the code you will need to add to your `main.cpp`.
+
+If it would be helpful for us to provide an easier way to do this, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](Contributing.md#top). 
 
 ## <a name='GoogleTest'></a>Google Test
 
@@ -101,7 +117,7 @@ If your existing Google Test application uses the `gtest_main` library, Approval
 To fix this, please add a new `main.cpp`, as shown in the previous section.
 
 
-### <a name='ExistingProject-withyourmain'></a>Existing Project - with your main()
+### <a name='ExistingProject-withyourmain-1'></a>Existing Project - with your main()
 
 If you have an existing Google Test-based test program that provides its own `main()`, you won't be able to use the approach above.
 
