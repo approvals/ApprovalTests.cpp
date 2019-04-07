@@ -18,6 +18,8 @@ STARTER_PROJECT_DIR=../../ApprovalTests.Cpp.StarterProject
 STARTER_PATH_OLD_SINGLE_HEADER=$STARTER_PROJECT_DIR/lib/$OLD_SINGLE_HEADER
 STARTER_PATH_NEW_SINGLE_HEADER=$STARTER_PROJECT_DIR/lib/$NEW_SINGLE_HEADER
 
+# TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
+
 # ------------------------------------------------------------------------------------------------
 # Create new single-header file
 
