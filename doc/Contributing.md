@@ -10,7 +10,7 @@
 	* [Creating new pages](#Creatingnewpages)
 	* [Adding code and file samples](#Addingcodeandfilesamples)
 	* [Updating the tables of contents](#Updatingthetablesofcontents)
-* [Checking the documentation](#Checkingthedocumentation)
+	* [Checking the documentation](#Checkingthedocumentation)
 * [Releases](#Releases)
 
 <!-- vscode-markdown-toc-config
@@ -28,7 +28,7 @@ This is **NOT** the default way to contribute to Approval Tests!
 
 If you have something that you would like Approval Tests to have, including a bug you would like removed, we suggest you set up a pairing session (usually Skype or Facetime) with either [Llewellyn](mailto:isidore@setgame.com) or [Clare](mailto:github@cfmacrae.fastmail.co.uk) or both.
 
-A typical session last between 60 to 90 minutes. We do the work directly on master, on our own machines, with screen-sharing, and commit and push the result at the end of the session. This results in quicker, higher-quality work. It gives us a better understanding of how people are using Approval Tests, and the problems they encounter with it, and these sessions are also quite fun.
+A typical session lasts between 60 to 90 minutes. We do the work directly on master, on our own machines, with screen-sharing, and commit and push the results throughout the session. This results in quicker, higher-quality work. It gives us a better understanding of how people are using Approval Tests and the problems they encounter with it, and these sessions are also quite fun.
 
 We use github's "co-author" feature, so everyone in the pairing session gets credit for the work. Virtually this entire project has been developed in this way, and is stronger for it.
 
@@ -78,7 +78,7 @@ Do not use a colon (`:`) in any headings: the entry in the table of contents wil
     * Type "Generate"
     * Choose "Generate TOC for markdown"
 
-## <a name='Checkingthedocumentation'></a>Checking the documentation
+### <a name='Checkingthedocumentation'></a>Checking the documentation
 
 The script [fix_markdown.sh](../fix_markdown.sh) can be used to do some checks of the Markdown documentation files.
 
