@@ -5,6 +5,7 @@
 
 #include <string>
 #include <algorithm>
+#include <sstream>
 
 class StringUtils
 {
@@ -29,5 +30,14 @@ public:
         std::transform(inText.begin(), inText.end(), copy.begin(), ::tolower);
         return copy;
     }
+
+    template<typename T>
+    static std::string toString(const T& contents)
+    {
+        std::stringstream s;
+        s << contents;
+        return s.str();
+    }
+
 };
 #endif //APPROVALTESTS_CPP_STRINGUTILS_H

@@ -19,11 +19,16 @@ protected:
 public:
     bool report(std::string received, std::string approved) const override {
         FileUtils::ensureFileExists(approved);
+        return l->launch(getFullCommand(received, approved));
+    }
+
+    std::vector<std::string> getFullCommand(const std::string &received, const std::string &approved) const
+    {
         std::vector<std::string> fullCommand;
         fullCommand.push_back(cmd);
         fullCommand.push_back(received);
         fullCommand.push_back(approved);
-        return l->launch(fullCommand);
+        return fullCommand;
     }
 };
 #endif //APPROVALTESTS_CPP_COMMANDREPORTER_H

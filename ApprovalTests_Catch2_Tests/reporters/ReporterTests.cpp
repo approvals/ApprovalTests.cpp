@@ -5,6 +5,9 @@
 #include <ApprovalTests/reporters/FirstWorkingReporter.h>
 #include <ApprovalTests/reporters/ClipboardReporter.h>
 #include <ApprovalTests/reporters/CombinationReporter.h>
+#include <ApprovalTests/reporters/WindowsReporters.h>
+#include <ApprovalTests/Approvals.h>
+#include <ApprovalTests/StringUtils.h>
 
 using namespace std;
 
@@ -66,4 +69,15 @@ TEST_CASE("CombinationReporter fails if all fail") {
     REQUIRE(m1->called == true);
     REQUIRE(m2->called == true);
     REQUIRE(result == false);
+}
+
+TEST_CASE("Launching")
+{
+    auto reporter = new Windows::AraxisMergeReporter;
+    auto namer = Approvals::getDefaultNamer();
+    auto fullCommand = reporter->getFullCommand(
+        namer->getReceivedFile(".txt"),
+        namer->getApprovedFile(".txt"));
+    //REQUIRE("" == StringUtils::toString(fullCommand));
+    Approvals::verifyAll(fullCommand);
 }

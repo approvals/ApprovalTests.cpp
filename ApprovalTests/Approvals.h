@@ -32,9 +32,7 @@ public:
 
     template<typename T>
     static void verify(const T& contents, const Reporter &reporter = DiffReporter()) {
-        std::stringstream s;
-        s << contents;
-        verify(s.str(), reporter);
+        verify(StringUtils::toString(contents), reporter);
     }
 
     template<typename T>
