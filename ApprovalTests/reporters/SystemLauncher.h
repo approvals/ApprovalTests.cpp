@@ -11,9 +11,21 @@
 #include <numeric>
 #include "CommandLauncher.h"
 
+using ConvertArgumentsFunctionPointer = std::vector<std::string>(*)(std::vector<std::string>);
+
 class SystemLauncher : public CommandLauncher
 {
+private:
+    ConvertArgumentsFunctionPointer convertArgumentsForSystemLaunching;
 public:
+    SystemLauncher() : SystemLauncher(foo)
+    {
+    }
+
+    explicit SystemLauncher(ConvertArgumentsFunctionPointer pointer) : convertArgumentsForSystemLaunching(pointer) 
+    {
+    }
+
     bool exists(const std::string& command)
     {
         bool foundByWhich = false;
@@ -26,7 +38,12 @@ public:
 
     }
 
-    std::vector<std::string> convertArgumentsForSystemLaunching(std::vector<std::string> argv)
+    static std::vector<std::string> doNothing(std::vector<std::string> argv)
+    {
+        return argv;
+    }
+
+    static std::vector<std::string> foo(std::vector<std::string> argv)
     {
 #if defined(__CYGWIN__)
         std::vector<std::string> copy = argv;
