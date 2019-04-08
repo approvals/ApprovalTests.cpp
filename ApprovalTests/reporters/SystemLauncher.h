@@ -43,7 +43,7 @@ public:
             }
             else
             {
-                copy[i] = "$(cygpath -w '"  + argv[i] + "')";
+                copy[i] = "$(cygpath -aw '"  + argv[i] + "')";
             }
         }
         argv = copy;
