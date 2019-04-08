@@ -26,13 +26,8 @@ public:
 
     }
 
-    bool launch(std::vector<std::string> argv) override
+    std::vector<std::string> convertArgumentsForSystemLaunching(std::vector<std::string> argv)
     {
-        if (!exists(argv.front()))
-        {
-            return false;
-        }
-
 #if defined(__CYGWIN__)
         std::vector<std::string> copy = argv;
         for( size_t i = 0; i != argv.size(); ++i )
@@ -48,6 +43,17 @@ public:
         }
         argv = copy;
 #endif
+        return argv;
+    }
+
+    bool launch(std::vector<std::string> argv) override
+    {
+        if (!exists(argv.front()))
+        {
+            return false;
+        }
+
+        argv = convertArgumentsForSystemLaunching(argv);
 
         std::string command = std::accumulate(argv.begin(), argv.end(), std::string(""), [](std::string a, std::string b) {return a + " " + "\"" + b + "\""; });
         std::string launch = SystemUtils::isWindowsOs() ? ("start \"\" " +  command) :  (command + " &");
