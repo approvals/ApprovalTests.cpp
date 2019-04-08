@@ -25,11 +25,11 @@
 
 ## <a name='Introduction'></a>Introduction
 
-This section shows how to set up the `main()` for test programs that use Approval Tests.
+This page shows how to set up the `main()` for test programs that use Approval Tests.
 
-These steps are needed in order to teach Approval Tests how to name its output files.
+These steps are needed in order to teach Approval Tests how to name its output files automatically.
 
-If, after following these steps, you still have a problem with running your program, please see [Troubleshooting](Troubleshooting.md#top).
+If, after following these steps, you need help with running your program, please see [Troubleshooting](Troubleshooting.md#top).
 
 ## <a name='Catch1and2'></a>Catch 1 and 2
 
