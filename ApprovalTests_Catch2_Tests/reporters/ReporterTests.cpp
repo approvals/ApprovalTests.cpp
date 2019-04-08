@@ -73,11 +73,11 @@ TEST_CASE("CombinationReporter fails if all fail") {
 
 TEST_CASE("Launching")
 {
+    REQUIRE_FALSE(SystemUtils::isWindowsOs());
     auto reporter = new Windows::AraxisMergeReporter;
     auto namer = Approvals::getDefaultNamer();
     auto fullCommand = reporter->getFullCommand(
         namer->getReceivedFile(".txt"),
         namer->getApprovedFile(".txt"));
-    //REQUIRE("" == StringUtils::toString(fullCommand));
-    Approvals::verifyAll(fullCommand);
+    Approvals::verifyAll(fullCommand, *reporter);
 }

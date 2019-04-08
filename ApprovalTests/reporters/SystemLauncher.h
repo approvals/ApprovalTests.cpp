@@ -33,6 +33,22 @@ public:
             return false;
         }
 
+#if defined(__CYGWIN__)
+        std::vector<std::string> copy = argv;
+        for( size_t i = 0; i != argv.size(); ++i )
+        {
+            if ( i == 0)
+            {
+                copy[i] = "$(cygpath '"  + argv[i] + "')";
+            }
+            else
+            {
+                copy[i] = "$(cygpath -w '"  + argv[i] + "')";
+            }
+        }
+        argv = copy;
+#endif
+
         std::string command = std::accumulate(argv.begin(), argv.end(), std::string(""), [](std::string a, std::string b) {return a + " " + "\"" + b + "\""; });
         std::string launch = SystemUtils::isWindowsOs() ? ("start \"\" " +  command) :  (command + " &");
         system(launch.c_str());
