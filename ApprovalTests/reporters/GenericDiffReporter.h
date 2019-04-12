@@ -9,22 +9,23 @@
 
 class GenericDiffReporter : public CommandReporter {
 private:
+    SystemLauncher launcher;
 public:
-    GenericDiffReporter(const std::string& program) : CommandReporter(program, getLauncher()) {};
-    GenericDiffReporter(const DiffInfo& info) : CommandReporter(info.getProgramForOs().c_str(), getLauncher()) {};
-
-    SystemLauncher* getLauncher()
+    GenericDiffReporter(const std::string& program) : CommandReporter(program, &launcher)
     {
-        // Leaks!
-        /*
-         * if SystemUtils::isCygwin()
-         *  systemLauncher = new SystemLauncher(convertForCygwin);
-         * else
-         *  systemLauncher = new SystemLauncher;
-         * return systemLauncher;
-         * without leaking - e.g. std::unique_ptr
-         */
-        return new SystemLauncher(convertForCygwin);
+        checkForCygwin();
+    }
+    GenericDiffReporter(const DiffInfo& info) : CommandReporter(info.getProgramForOs().c_str(), &launcher)
+    {
+        checkForCygwin();
+    }
+
+    void checkForCygwin()
+    {
+        if ( SystemUtils::isCygwin())
+        {
+            launcher.setConvertArgumentsForSystemLaunchingFunction(convertForCygwin);
+        }
     }
 
     static std::vector<std::string> convertForCygwin(std::vector<std::string> argv)

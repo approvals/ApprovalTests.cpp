@@ -25,6 +25,11 @@ public:
     explicit SystemLauncher(std::vector<std::string> (*pointer)(std::vector<std::string>)) : convertArgumentsForSystemLaunching(pointer) 
     {
     }
+    
+    void setConvertArgumentsForSystemLaunchingFunction(ConvertArgumentsFunctionPointer function)
+    {
+        convertArgumentsForSystemLaunching = function;
+    }
 
     bool exists(const std::string& command)
     {
