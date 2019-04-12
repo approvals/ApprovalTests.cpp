@@ -2,18 +2,17 @@
 
 # Troubleshooting
 
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-<!-- vscode-markdown-toc -->
-* [Test gives "You have forgotten to configure your test framework..."](#TestgivesYouhaveforgottentoconfigureyourtestframework...)
+- [Test gives "You have forgotten to configure your test framework..."](#test-gives-you-have-forgotten-to-configure-your-test-framework)
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## <a name='TestgivesYouhaveforgottentoconfigureyourtestframework...'></a>Test gives "You have forgotten to configure your test framework..."
+## Test gives "You have forgotten to configure your test framework..."
 
 **Root Cause**:
 

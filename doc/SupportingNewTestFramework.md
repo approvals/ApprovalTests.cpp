@@ -7,27 +7,26 @@ To change this file edit the source file and then re-run the generation using ei
 
 # Supporting a new test framework
 
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-<!-- vscode-markdown-toc -->
-* [Introduction](#Introduction)
-* [Test Framework Requirements](#TestFrameworkRequirements)
-* [Steps to add support](#Stepstoaddsupport)
-* [Examples](#Examples)
+- [Introduction](#introduction)
+- [Test Framework Requirements](#test-framework-requirements)
+- [Steps to add support](#steps-to-add-support)
+- [Examples](#examples)
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## <a name='Introduction'></a>Introduction
+## Introduction
 
 ApprovalTests.cpp is designed to work with multiple C++ test frameworks.
 
 If your test framework is not already supported, this section offers help to add that support. 
 
-## <a name='TestFrameworkRequirements'></a>Test Framework Requirements
+## Test Framework Requirements
 
 ApprovalTests.cpp can be made to work with any test framework that supplies the following:
 
@@ -35,14 +34,14 @@ ApprovalTests.cpp can be made to work with any test framework that supplies the 
 * The current test's source file (with correct case of filename) 
 * Ability to report unexpected exceptions as test failures 
 
-## <a name='Stepstoaddsupport'></a>Steps to add support
+## Steps to add support
 
 * Provide some code to add to the test's `main()` function, to list out for the running of test cases
 * Give that code a `TestName` instance, that will store information about the test being executed
 * As each test case starts, update the `TestName` instance with details of the source file name, and test case name
 * Ideally, provide a mechanism (such as a macro) that makes it easy for users to use this code in their own tests
 
-## <a name='Examples'></a>Examples
+## Examples
 
 This is perhaps best understood by reviewing the implementations for frameworks that are already supported:
  

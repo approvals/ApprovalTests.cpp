@@ -2,25 +2,24 @@
 
 # Contributing to ApprovalTests.cpp
 
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-<!-- vscode-markdown-toc -->
-* [Contributing - pairing and pull requests](#Contributing-pairingandpullrequests)
-* [Documentation](#Documentation)
-	* [Creating new pages](#Creatingnewpages)
-	* [Adding code and file samples](#Addingcodeandfilesamples)
-	* [Updating the tables of contents](#Updatingthetablesofcontents)
-	* [Checking the documentation](#Checkingthedocumentation)
-* [Releases](#Releases)
+- [Contributing - pairing and pull requests](#contributing---pairing-and-pull-requests)
+- [Documentation](#documentation)
+  - [Creating new pages](#creating-new-pages)
+  - [Adding code and file samples](#adding-code-and-file-samples)
+  - [Updating the tables of contents](#updating-the-tables-of-contents)
+  - [Checking the documentation](#checking-the-documentation)
+- [Releases](#releases)
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-## <a name='Contributing-pairingandpullrequests'></a>Contributing - pairing and pull requests
+## Contributing - pairing and pull requests
 
 The default way to add to most repositories is to fork and then create a pull-request.
 
@@ -32,11 +31,11 @@ A typical session lasts between 60 to 90 minutes. We do the work directly on mas
 
 We use github's "co-author" feature, so everyone in the pairing session gets credit for the work. Virtually this entire project has been developed in this way, and is stronger for it.
 
-## <a name='Documentation'></a>Documentation
+## Documentation
 
 We welcome improvements to the documentation! Here's how we manage the documentation files. 
 
-### <a name='Creatingnewpages'></a>Creating new pages
+### Creating new pages
 
 If creating a new Markdown page, please make a copy of [doc/TemplatePage.md](../doc/TemplatePage.md#top).
 This contains some boilerplate text which is tedious to create by hand. 
@@ -49,7 +48,7 @@ If the new page will be outside of the [doc](../doc/) folder, delete the followi
 [Back to User Guide](README.md#top)
 ```
 
-### <a name='Addingcodeandfilesamples'></a>Adding code and file samples
+### Adding code and file samples
 
 We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSnippets) tool to embed source code and other files in Markdown pages.
 
@@ -63,9 +62,9 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
     * See [run_markdown_templates.sh](../run_markdown_templates.sh).
     * This will update the machine-generated `[something].md` files.
 
-### <a name='Updatingthetablesofcontents'></a>Updating the tables of contents
+### Updating the tables of contents
 
-We currently use [Joffrey Kern's "Markdown TOC"](https://marketplace.visualstudio.com/items?itemName=joffreykern.markdown-toc) Visual Studio Code extension to generate the **Contents** lists at the top of each Markdown page.
+We currently use [Joffrey Kern's "Markdown TOC"](https://marketplace.visualstudio.com/items?itemName=joffreykern.markdown-toc) Visual Studio Code extension to generate the  lists at the top of each Markdown page.
 
 Do not use a colon (`:`) in any headings: the entry in the table of contents will look correct when viewed in CLion, but will not be hyperlinked when viewed on the GitHub website. Use a hyphen (`-`) instead.
 
@@ -78,7 +77,7 @@ Do not use a colon (`:`) in any headings: the entry in the table of contents wil
     * Type "Generate"
     * Choose "Generate TOC for markdown"
 
-### <a name='Checkingthedocumentation'></a>Checking the documentation
+### Checking the documentation
 
 The script [fix_markdown.sh](../fix_markdown.sh) can be used to do some checks of the Markdown documentation files.
 
@@ -88,7 +87,7 @@ It can be run in cygwin with:
 cat ./fix_markdown.sh | dos2unix | bash
 ```
 
-## <a name='Releases'></a>Releases
+## Releases
 
 * Everything for releases is in [the build directory](../build/)
 * There's more information in [How To Release](../build/HowToRelease.md#top)

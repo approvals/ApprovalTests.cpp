@@ -7,18 +7,17 @@ To change this file edit the source file and then re-run the generation using ei
 
 # Put Title Here
 
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-<!-- vscode-markdown-toc -->
-* [Registering a default reporter](#Registeringadefaultreporter)
+- [Registering a default reporter](#registering-a-default-reporter)
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## <a name='Registeringadefaultreporter'></a>Registering a default reporter
+## Registering a default reporter
 
 At present, the default Reporter is the DiffReporter. Whenever you call Approvals, you have the chance to pass in your own Reporter. However, if you would like to change what the default reporter is when you don't pass in a specific Reporter, you can do this at a global or per-test level, by adding the line:
 

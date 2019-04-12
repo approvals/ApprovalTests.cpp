@@ -2,27 +2,26 @@
 
 # ApprovalTesting (the concept)
 
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-<!-- vscode-markdown-toc -->
-* [The Idea](#TheIdea)
-* [The Path](#ThePath)
-	* [1 Simple verification](#Simpleverification)
-		* [The technique](#Thetechnique)
-		* [The problem](#Theproblem)
-	* [2 ToString verification](#ToStringverification)
-		* [The technique](#Thetechnique-1)
-		* [The problem](#Theproblem-1)
+- [The Idea](#the-idea)
+- [The Path](#the-path)
+  - [1 Simple verification](#1-simple-verification)
+    - [The technique](#the-technique)
+    - [The problem](#the-problem)
+  - [2 ToString verification](#2-tostring-verification)
+    - [The technique](#the-technique-1)
+    - [The problem](#the-problem-1)
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 This is also referred to as snapshot testing, or golden master testing.
 
-## <a name='TheIdea'></a>The Idea
+## The Idea
 Most tests have you explicitly state what is expected before you write the code,
 ApprovalTesting, instead has you state the data you are interested in checking,
 has you manually check it until you decide you are satisfied and then continues
@@ -33,11 +32,11 @@ the results, and the differences in results, easier to understand and act on.
 
 
 
-## <a name='ThePath'></a>The Path
+## The Path
 
-### <a name='Simpleverification'></a>1 Simple verification
+### 1 Simple verification
 
-#### <a name='Thetechnique'></a>The technique
+#### The technique
 
 Most of us are familiar with simple checks for numbers or strings.
 ```
@@ -45,7 +44,7 @@ REQUIRE( 1 == count);
 REQUIRE( "Clare" == name);
 ```
 
-#### <a name='Theproblem'></a>The problem
+#### The problem
 But this can get complicated if you have a large list or object with many fields.
 ```
 REQUIRE( "Clare" == names[0]);
@@ -57,16 +56,16 @@ REQUIRE( "Emily" == names[4]);
 
 One solution for this is to start writing objects to string that are easier to verify.
 
-### <a name='ToStringverification'></a>2 ToString verification
+### 2 ToString verification
 
-#### <a name='Thetechnique-1'></a>The technique
+#### The technique
 
 If we print the array in the above sample, we can instead verify the whole thing with
 ```
 REQUIRE( "[Clare,Llewellyn,Simon,James,Emily]" == toString(names));
 ```
 
-#### <a name='Theproblem-1'></a>The problem
+#### The problem
 This works well, until you start to get large multi-line strings.
 
 

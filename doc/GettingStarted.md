@@ -7,28 +7,27 @@ To change this file edit the source file and then re-run the generation using ei
 
 # Getting Started - Creating your main()
 
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-<!-- vscode-markdown-toc -->
-* [Introduction](#Introduction)
-* [Catch 1 and 2](#Catch1and2)
-	* [Starter Project](#StarterProject)
-	* [New Project](#NewProject)
-	* [Existing Project - with CATCH_CONFIG_MAIN](#ExistingProject-withCATCH_CONFIG_MAIN)
-	* [Existing Project - with your main()](#ExistingProject-withyourmain)
-* [Google Test](#GoogleTest)
-	* [Starter Project](#StarterProject-1)
-	* [New Project](#NewProject-1)
-	* [Existing Project - no main()](#ExistingProject-nomain)
-	* [Existing Project - with your main()](#ExistingProject-withyourmain-1)
+- [Introduction](#introduction)
+- [Catch 1 and 2](#catch-1-and-2)
+  - [Starter Project](#starter-project)
+  - [New Project](#new-project)
+  - [Existing Project - with CATCH_CONFIG_MAIN](#existing-project---with-catch_config_main)
+  - [Existing Project - with your main()](#existing-project---with-your-main)
+- [Google Test](#google-test)
+  - [Starter Project](#starter-project-1)
+  - [New Project](#new-project-1)
+  - [Existing Project - no main()](#existing-project---no-main)
+  - [Existing Project - with your main()](#existing-project---with-your-main-1)
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## <a name='Introduction'></a>Introduction
+## Introduction
 
 This page shows how to set up the `main()` for test programs that use Approval Tests.
 
@@ -36,7 +35,7 @@ These steps are needed in order to teach Approval Tests how to name its output f
 
 If, after following these steps, you need help with running your program, please see [Troubleshooting](Troubleshooting.md#top).
 
-## <a name='Catch1and2'></a>Catch 1 and 2
+## Catch 1 and 2
 
 The [Catch2](https://github.com/catchorg/Catch2) test framework works well with Approval Tests.
 
@@ -44,7 +43,7 @@ This section describes the various ways of using Approval Tests with Catch 2.
 
 These steps also work with the earlier version, Catch 1, which is on the [Catch 1.x branch](https://github.com/catchorg/Catch2/tree/Catch1.x), and is still provided for those on pre-C++11 compilers. (Please note that the Approval Tests library requires C++11 or newer, however). 
 
-### <a name='StarterProject'></a>Starter Project
+### Starter Project
 
 The quickest way to start experimenting with Approval Tests is to:
 
@@ -53,7 +52,7 @@ The quickest way to start experimenting with Approval Tests is to:
 
 Each time we release a new version of Approval Tests, we update this project, so it always has the latest features. 
 
-### <a name='NewProject'></a>New Project
+### New Project
 
 Create a file `main.cpp` and add just the following two lines:
 
@@ -66,7 +65,7 @@ Create a file `main.cpp` and add just the following two lines:
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L4-L8)</sup>
 <!-- endsnippet -->
 
-### <a name='ExistingProject-withCATCH_CONFIG_MAIN'></a>Existing Project - with CATCH_CONFIG_MAIN
+### Existing Project - with CATCH_CONFIG_MAIN
 
 If you have a Catch (1 or 2) project with your own `main.cpp` that contains the following lines, you will need to replace them with the code in the previous section.
 
@@ -75,7 +74,7 @@ If you have a Catch (1 or 2) project with your own `main.cpp` that contains the 
 #include "catch.hpp"
 ```
 
-### <a name='ExistingProject-withyourmain'></a>Existing Project - with your main()
+### Existing Project - with your main()
 
 If you have [supplied your own `main()` for Catch](https://github.com/catchorg/Catch2/blob/master/docs/own-main.md#top), you will need to teach it how to supply test names to Approval Tests.
 
@@ -85,13 +84,13 @@ For now, please see the code in [ApprovalTests/Catch2Approvals.h](../ApprovalTes
 
 If it would be helpful for us to provide an easier way to do this, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](Contributing.md#top). 
 
-## <a name='GoogleTest'></a>Google Test
+## Google Test
 
 The [Google Test](https://github.com/google/googletest) test framework works well with Approval Tests.
 
 This section describes the various ways of using Approval Tests with Google Test.
 
-### <a name='StarterProject-1'></a>Starter Project
+### Starter Project
 
 We haven't yet provided a Starter Project for using Approval Tests with Google Tests.
 
@@ -100,7 +99,7 @@ This is partly based on the assumption that anyone already using Google Tests wi
 If it would be helpful for us to such a Starter Project, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](Contributing.md#top). 
 
 
-### <a name='NewProject-1'></a>New Project
+### New Project
 
 Create a file `main.cpp` and add just the following two lines:
 
@@ -113,7 +112,7 @@ Create a file `main.cpp` and add just the following two lines:
 <sup>[snippet source](/ApprovalTests_GoogleTest_Tests/main.cpp#L2-L6)</sup>
 <!-- endsnippet -->
 
-### <a name='ExistingProject-nomain'></a>Existing Project - no main()
+### Existing Project - no main()
 
 Google Test has a `gtest_main` library that provides a `main()` function, and then runs all your tests.
 
@@ -122,7 +121,7 @@ If your existing Google Test application uses the `gtest_main` library, Approval
 To fix this, please add a new `main.cpp`, as shown in the previous section.
 
 
-### <a name='ExistingProject-withyourmain-1'></a>Existing Project - with your main()
+### Existing Project - with your main()
 
 If you have an existing Google Test-based test program that provides its own `main()`, you won't be able to use the approach above.
 

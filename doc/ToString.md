@@ -7,24 +7,23 @@ To change this file edit the source file and then re-run the generation using ei
 
 # String conversions
 
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-<!-- vscode-markdown-toc -->
-* [How](#How)
-* [Design](#Design)
-	* [Composability](#Composability)
-	* [Lists](#Lists)
-	* [Tools](#Tools)
+- [How](#how)
+- [Design](#design)
+  - [Composability](#composability)
+  - [Lists](#lists)
+  - [Tools](#tools)
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 When you use Approval tests, the results of the things you are testing are going to be stored on disk. It is good if you can diff the files, to gain an understanding of what is created and how they change. Mainly this is done by creating strings.
 
-## <a name='How'></a>How
+## How
 
 This is often done by providing an output operator (`<<`) for types you wish to test.
 
@@ -90,7 +89,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L38-L64)</sup>
 <!-- endsnippet -->
 
-## <a name='Design'></a>Design
+## Design
 
 If your code already has output operators, then go ahead and use them in Approvals.
 
@@ -115,13 +114,13 @@ formatted | `(type)=(formatted)` | Works well for many lines of the same type of
 tab-separated | &nbsp; | Works with Excel and Markdown; works well for many lines of the same data | &nbsp;
 comma-separated | `type, csv` | Works with Excel | Works with Excel
 
-### <a name='Composability'></a>Composability
+### Composability
 
 TODO Explain things like:
 
 * When are things very non-composable, e.g. hand-coded YAML
 
-### <a name='Lists'></a>Lists
+### Lists
 
 Some formats will be more readable when you are writing lists of objects.
 Here's an example of verifing a list of rectangles
@@ -167,7 +166,7 @@ rectangles
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L8)</sup>
 <!-- endsnippet -->
 
-### <a name='Tools'></a>Tools
+### Tools
 
 TODO Explain things like:
 

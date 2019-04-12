@@ -7,18 +7,17 @@ To change this file edit the source file and then re-run the generation using ei
 
 # Put Title Here
 
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-<!-- vscode-markdown-toc -->
-* [First Section Here](#FirstSectionHere)
+- [First Section Here](#first-section-here)
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## <a name='FirstSectionHere'></a>First Section Here
+## First Section Here
 
 *Nothing to see here: this is a template file, for creating new pages of documentation...* 
 

@@ -7,18 +7,17 @@ To change this file edit the source file and then re-run the generation using ei
 
 # Features
 
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-<!-- vscode-markdown-toc -->
-* [Using sub-directories for approved files](#Usingsub-directoriesforapprovedfiles)
+- [Using sub-directories for approved files](#using-sub-directories-for-approved-files)
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## <a name='Usingsub-directoriesforapprovedfiles'></a>Using sub-directories for approved files
+## Using sub-directories for approved files
 
 If you have a lot of approval files, you might want to put them in a subdirectory, to prevent them cluttering up your source files. You can do this at a global or per-test level, by adding the line:
 

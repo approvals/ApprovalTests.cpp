@@ -7,37 +7,36 @@ To change this file edit the source file and then re-run the generation using ei
 
 # Developing ApprovalTests.cpp on Windows
 
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-<!-- vscode-markdown-toc -->
-* [Prerequisites](#Prerequisites)
-* [Dependencies](#Dependencies)
-* [Visual Studio 2017 Community Edition](#VisualStudio2017CommunityEdition)
-	* [Use CMake to generate Visual Studio 2017 configuration](#UseCMaketogenerateVisualStudio2017configuration)
-* [CLion](#CLion)
-	* [Use CLion with Visual Studio installed](#UseCLionwithVisualStudioinstalled)
-	* [Run CLion with cygwin as toolset](#RunCLionwithcygwinastoolset)
+- [Prerequisites](#prerequisites)
+- [Dependencies](#dependencies)
+- [Visual Studio 2017 Community Edition](#visual-studio-2017-community-edition)
+  - [Use CMake to generate Visual Studio 2017 configuration](#use-cmake-to-generate-visual-studio-2017-configuration)
+- [CLion](#clion)
+  - [Use CLion with Visual Studio installed](#use-clion-with-visual-studio-installed)
+  - [Run CLion with cygwin as toolset](#run-clion-with-cygwin-as-toolset)
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## <a name='Prerequisites'></a>Prerequisites
+## Prerequisites
 
 * CMake 3.8 or higher
 * A C++11 or above compiler to use the library
 * A C++17 or above compiler to run the project's own tests
 
-## <a name='Dependencies'></a>Dependencies
+## Dependencies
 
 * A version of Catch2 is included in the source - see [lib/Catch.hpp](lib/Catch.hpp)
 * Source code for the Google Test framework - version 1.8.1 - is downloaded automatically when CMake is run - see [CMakeLists.txt.in](CMakeLists.txt.in), and is then built when the project is built.
 
-## <a name='VisualStudio2017CommunityEdition'></a>Visual Studio 2017 Community Edition
+## Visual Studio 2017 Community Edition
 
-### <a name='UseCMaketogenerateVisualStudio2017configuration'></a>Use CMake to generate Visual Studio 2017 configuration
+### Use CMake to generate Visual Studio 2017 configuration
 
 Decide where to put the build files that CMake will generate.
 In the following, we're putting the output in `cmake-build-vs` - that location is already ignored by git.
@@ -50,16 +49,16 @@ In the following, we're putting the output in `cmake-build-vs` - that location i
 		cd    cmake-build-vs
 		cmake -G "Visual Studio 15 2017" ..
 
-## <a name='CLion'></a>CLion
+## CLion
 
-### <a name='UseCLionwithVisualStudioinstalled'></a>Use CLion with Visual Studio installed
+### Use CLion with Visual Studio installed
 
 * Follow the instructions for experimental support of [Microsoft Visual C++ compiler](https://www.jetbrains.com/help/clion/quick-tutorial-on-configuring-clion-on-windows.html)
 * Output is put in `cmake-build-debug`
 * Tested with Visual Studio 2017
 * **Major limitation**: Debugging is not yet supported by CLion, when compiling with Visual Studio, as of CLion 2017.3.3
 
-### <a name='RunCLionwithcygwinastoolset'></a>Run CLion with cygwin as toolset
+### Run CLion with cygwin as toolset
 
 * Code builds fine
 * Tests run fine

@@ -9,7 +9,7 @@ To change this file edit the source file and then re-run the generation using ei
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Contents**
 
 - [Introduction](#introduction)
 - [Setup](#setup)
