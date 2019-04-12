@@ -4,7 +4,7 @@
 #include <functional>
 #include <vector>
 #include <ostream>
-#include "reporters/DiffReporter.h"
+#include "reporters/DefaultReporter.h"
 #include "reporters/Reporter.h"
 #include "Approvals.h"
 
@@ -64,7 +64,7 @@ public:
                           const Container7& inputs7,
                           const Container8& inputs8,
                           const Container9& inputs9,
-                          const Reporter& reporter = DiffReporter())
+                          const Reporter& reporter = DefaultReporter())
     {
         Empty empty;
         std::stringstream s;
@@ -138,7 +138,7 @@ public:
             const Container6& inputs6,
             const Container7& inputs7,
             const Container8& inputs8,
-            const Reporter& reporter = DiffReporter())
+            const Reporter& reporter = DefaultReporter())
     {
         verifyAllCombinations<
                 Container1,
@@ -197,7 +197,7 @@ public:
             const Container5& inputs5,
             const Container6& inputs6,
             const Container7& inputs7,
-            const Reporter& reporter = DiffReporter())
+            const Reporter& reporter = DefaultReporter())
     {
         verifyAllCombinations<
                 Container1,
@@ -249,7 +249,7 @@ public:
             const Container4& inputs4,
             const Container5& inputs5,
             const Container6& inputs6,
-            const Reporter& reporter = DiffReporter())
+            const Reporter& reporter = DefaultReporter())
     {
         verifyAllCombinations<
                 Container1,
@@ -295,7 +295,7 @@ public:
             const Container3& inputs3,
             const Container4& inputs4,
             const Container5& inputs5,
-            const Reporter& reporter = DiffReporter())
+            const Reporter& reporter = DefaultReporter())
     {
         verifyAllCombinations<
                 Container1,
@@ -335,7 +335,7 @@ public:
             const Container2& inputs2,
             const Container3& inputs3,
             const Container4& inputs4,
-            const Reporter& reporter = DiffReporter())
+            const Reporter& reporter = DefaultReporter())
     {
         verifyAllCombinations<
                 Container1,
@@ -369,7 +369,7 @@ public:
             const Container1& inputs1,
             const Container2& inputs2,
             const Container3& inputs3,
-            const Reporter& reporter = DiffReporter())
+            const Reporter& reporter = DefaultReporter())
     {
         verifyAllCombinations<
                 Container1,
@@ -397,7 +397,7 @@ public:
                     typename Container2::value_type)> converter,
             const Container1& inputs1,
             const Container2& inputs2,
-            const Reporter& reporter = DiffReporter())
+            const Reporter& reporter = DefaultReporter())
     {
         verifyAllCombinations<
                 Container1,
@@ -419,7 +419,7 @@ public:
             std::function<ReturnType (
                     typename Container1::value_type)> converter,
             const Container1& inputs1,
-            const Reporter& reporter = DiffReporter())
+            const Reporter& reporter = DefaultReporter())
     {
         verifyAllCombinations<
                 Container1,

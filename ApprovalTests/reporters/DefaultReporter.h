@@ -3,6 +3,7 @@
 
 #include "Reporter.h"
 #include "DiffReporter.h"
+#include "../Macros.h"
 
 #include <memory>
 #include <vector>
