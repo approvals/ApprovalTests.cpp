@@ -2,29 +2,25 @@
 
 # ApprovalTests.cpp User Guide
 
-**Contents**
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-<!-- vscode-markdown-toc -->
-* [Introduction](#Introduction)
-* [Setup](#Setup)
-* [Writing Tests](#WritingTests)
-* [Customising behaviour](#Customisingbehaviour)
-* [Common Challenges](#CommonChallenges)
-* [Common Scenarios](#CommonScenarios)
-* [Extras](#Extras)
-* [Advanced Topics](#AdvancedTopics)
+- [Introduction](#introduction)
+- [Setup](#setup)
+- [Writing Tests](#writing-tests)
+- [Customising behaviour](#customising-behaviour)
+- [Common Challenges](#common-challenges)
+- [Common Scenarios](#common-scenarios)
+- [Extras](#extras)
+- [Advanced Topics](#advanced-topics)
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
-
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 <!-- To get the most out of ApprovalTests, start with the Tutorial.
 Once you're up and running, consider the following reference material. -->
 
-## <a name='Introduction'></a>Introduction
+## Introduction
 
 * [Approval Testing (the concept)](ApprovalTestingConcept.md#top)
 * What is Approval Testing?
@@ -42,7 +38,7 @@ Once you're up and running, consider the following reference material. -->
         * Start creating custom methods for the things you are testing
             * verifyThing
 
-## <a name='Setup'></a>Setup
+## Setup
 
 * Obtaining ApprovalTests.cpp
     * Get a test framework
@@ -55,7 +51,7 @@ Once you're up and running, consider the following reference material. -->
 * Getting Started with Catch 1 and 2
 * Getting Started with Google Test
 
-## <a name='WritingTests'></a>Writing Tests
+## Writing Tests
 
 * Tutorial
 * Testing single objects
@@ -66,14 +62,14 @@ Once you're up and running, consider the following reference material. -->
 * Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
 * [Features](Features.md#top)
 
-## <a name='Customisingbehaviour'></a>Customising behaviour
+## Customising behaviour
 
 * [Reporters](Reporters.md#top)
 * Custom Comparators
 * Writers
 * Namers
 
-## <a name='CommonChallenges'></a>Common Challenges
+## Common Challenges
 
 * Unstable output, e.g. with Dates and Times
 * Non-deterministic code
@@ -81,12 +77,12 @@ Once you're up and running, consider the following reference material. -->
 * Testing images
 * Embedded development
 
-## <a name='CommonScenarios'></a>Common Scenarios
+## Common Scenarios
 
 * Non-graphical environments
 * Build Machines and Continuous Integration servers
 
-## <a name='Extras'></a>Extras
+## Extras
 
 * [Troubleshooting](Troubleshooting.md#top)
 * 4 benefits of testing
@@ -95,7 +91,7 @@ Once you're up and running, consider the following reference material. -->
     * Regression
     * Granularity
 
-## <a name='AdvancedTopics'></a>Advanced Topics
+## Advanced Topics
 
 * [Supporting a new test framework](SupportingNewTestFramework.md#top)
 * [Contributing to ApprovalTests.cpp](Contributing.md#top)
