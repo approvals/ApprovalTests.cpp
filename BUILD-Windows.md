@@ -58,12 +58,4 @@ In the following, we're putting the output in `cmake-build-vs` - that location i
 
 * Code builds fine
 * Tests run fine
-
-**Problems with Reporters in Cygwin**
-
-* Running the catch2 tests gives messages such as this for any tests that use a Reporter to show differences.
-    * `sh: c:\Program Files\Microsoft VS Code\Code.exe: command not found`
-* Looks like this is a known problem [cannot launch code from command line using Git Bash on Windows ](https://github.com/Microsoft/vscode/issues/1704)
-* The "pathnames" section of [Using Cygwin effectively with Windows](https://www.cygwin.com/cygwin-ug-net/using-effectively.html) may be useful in solving this.
-* See also the manual for [cygpath](https://www.cygwin.com/cygwin-ug-net/cygpath.html).
-* To use this, we would also need to be able to detect at compile-time if we are building on cygwin. There is useful information in [How do I check OS with a preprocessor directive?](https://stackoverflow.com/questions/142508/how-do-i-check-os-with-a-preprocessor-directive) 
+* Reporters run fine
