@@ -68,7 +68,7 @@ Once you're up and running, consider the following reference material. -->
 
 ## <a name='Customisingbehaviour'></a>Customising behaviour
 
-* Reporters
+* [Reporters](Reporters.md#top)
 * Custom Comparators
 * Writers
 * Namers
