@@ -27,6 +27,15 @@ public:
 #endif
 
     }
+    
+    static bool isCygwin()
+    {
+#ifdef __CYGWIN__
+        return true;
+#else
+        return false;
+#endif
+    }
 
     static std::string getDirectorySeparator()
     {

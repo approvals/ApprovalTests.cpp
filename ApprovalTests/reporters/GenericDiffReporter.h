@@ -16,12 +16,23 @@ public:
     SystemLauncher* getLauncher()
     {
         // Leaks!
+        /*
+         * if SystemUtils::isCygwin()
+         *  systemLauncher = new SystemLauncher(convertForCygwin);
+         * else
+         *  systemLauncher = new SystemLauncher;
+         * return systemLauncher;
+         * without leaking - e.g. std::unique_ptr
+         */
         return new SystemLauncher(convertForCygwin);
     }
 
     static std::vector<std::string> convertForCygwin(std::vector<std::string> argv)
     {
-#if defined(__CYGWIN__)
+        if (! SystemUtils::isCygwin())
+        {
+            return argv;
+        }
         std::vector<std::string> copy = argv;
         for( size_t i = 0; i != argv.size(); ++i )
         {
@@ -34,9 +45,7 @@ public:
                 copy[i] = "$(cygpath -aw '"  + argv[i] + "')";
             }
         }
-        argv = copy;
-#endif
-        return argv;
+        return copy;
     }
 };
 
