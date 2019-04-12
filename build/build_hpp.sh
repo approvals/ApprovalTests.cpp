@@ -7,8 +7,8 @@
 set -e
 set -o pipefail
 
-LAST_VERSION="v.3.1.0"
-VERSION="v.3.1.1"
+LAST_VERSION="v.3.2.0"
+VERSION="v.X.X.X"
 
 OLD_SINGLE_HEADER=ApprovalTests.$LAST_VERSION.hpp
 NEW_SINGLE_HEADER=ApprovalTests.$VERSION.hpp
@@ -34,6 +34,7 @@ sed -i "1s|^|// Approval Tests version $VERSION\n|" ../build/releases/$NEW_SINGL
 
 # Make sure starter project folder is clean
 pushd $STARTER_PROJECT_DIR
+git clean -fx
 git reset --hard
 popd
 
