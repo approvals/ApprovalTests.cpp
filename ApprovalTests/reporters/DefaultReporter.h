@@ -10,17 +10,8 @@
 class DefaultReporter : public Reporter
 {
 private:
-//    using ReporterHandle = std::shared_ptr<Reporter>;
     using ReporterContainer = std::vector< std::shared_ptr<Reporter> >;
     APPROVAL_TESTS_MACROS_STATIC(ReporterContainer, defaultReporterContainer, DefaultReporter::createReporterContainer())
-    
-//    void ensureDefaultReporterCreated()
-//    {
-//        if (defaultReporterContainer()->empty())
-//        {
-//            defaultReporterContainer()->push_back( std::maker_shared<DiffReporter>());
-//        }
-//    }
     
     static ReporterContainer* createReporterContainer()
     {
@@ -37,13 +28,11 @@ public:
 
     static std::shared_ptr<Reporter> getDefaultReporter()
     {
-//        ensureDefaultReporterCreated();
         return defaultReporterContainer().at(0);
     }
     
     static void setDefaultReporter( const std::shared_ptr<Reporter>& reporter)
     {
-//        ensureDefaultReporterCreated();
         defaultReporterContainer().at(0) = reporter;
     }
 
