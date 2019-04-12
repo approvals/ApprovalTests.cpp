@@ -58,24 +58,10 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
 * See the [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSnippets) documentation for how to:
     * annotate snippets of source code, 
     * reference the snippets in documentation.
-* Run  `mdsnippets` **before commit**, every time a `.source.md` file is updated
+* Run  [`run_markdown_templates.sh`](../run_markdown_templates.sh) **before commit**, every time a `.source.md` file is updated
     * See [run_markdown_templates.sh](../run_markdown_templates.sh).
-    * This will update the machine-generated `[something].md` files.
-
-### Updating the tables of contents
-
-We currently use [Joffrey Kern's "Markdown TOC"](https://marketplace.visualstudio.com/items?itemName=joffreykern.markdown-toc) Visual Studio Code extension to generate the  lists at the top of each Markdown page.
-
-Do not use a colon (`:`) in any headings: the entry in the table of contents will look correct when viewed in CLion, but will not be hyperlinked when viewed on the GitHub website. Use a hyphen (`-`) instead.
-
-**How it works:**
-
-* First install [the extension](https://marketplace.visualstudio.com/items?itemName=joffreykern.markdown-toc)
-* Run  `Markdown TOC` **before commit**, every time headings of level 2 and above are updated
-    * Open the markdown file in Visual Studio Code
-    * Open the command palette (`Ctrl+Shift+P`)
-    * Type "Generate"
-    * Choose "Generate TOC for markdown"
+    * This will update the tables of contents and the machine-generated `[something].md` files.
+    * If this does not work, see that script for how to install the tools it uses
 
 ### Checking the documentation
 
