@@ -5,8 +5,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-- [How To Release](#how-to-release)
-  - [Update ApprovalTests.cpp](#update-approvaltestscpp)
+- [Update ApprovalTests.cpp](#update-approvaltestscpp)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

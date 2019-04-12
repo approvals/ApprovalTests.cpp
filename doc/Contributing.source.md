@@ -12,7 +12,6 @@
 - [Documentation](#documentation)
   - [Creating new pages](#creating-new-pages)
   - [Adding code and file samples](#adding-code-and-file-samples)
-  - [Updating the tables of contents](#updating-the-tables-of-contents)
   - [Checking the documentation](#checking-the-documentation)
 - [Releases](#releases)
 
@@ -37,7 +36,7 @@ We welcome improvements to the documentation! Here's how we manage the documenta
 
 ### Creating new pages
 
-If creating a new Markdown page, please make a copy of [doc/TemplatePage.md](../doc/TemplatePage.md#top).
+If creating a new Markdown page, please make a copy of [doc/TemplatePage.source.md](../doc/TemplatePage.source.md#top).
 This contains some boilerplate text which is tedious to create by hand. 
 
 If the new page will be outside of the [doc](../doc/) folder, delete the following lines at the end:
@@ -58,7 +57,7 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
 * See the [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSnippets) documentation for how to:
     * annotate snippets of source code, 
     * reference the snippets in documentation.
-* Run  [`run_markdown_templates.sh`](../run_markdown_templates.sh) **before commit**, every time a `.source.md` file is updated
+* Run  `run_markdown_templates.sh` **before commit**, every time a `.source.md` file is updated
     * See [run_markdown_templates.sh](../run_markdown_templates.sh).
     * This will update the tables of contents and the machine-generated `[something].md` files.
     * If this does not work, see that script for how to install the tools it uses
