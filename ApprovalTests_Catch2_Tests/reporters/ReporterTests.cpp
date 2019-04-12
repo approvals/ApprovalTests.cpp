@@ -84,3 +84,27 @@ TEST_CASE("Launching on PC with cygwin and Araxis Merge")
         namer->getApprovedFile(".txt"));
     Approvals::verifyAll(fullCommand, *reporter);
 }
+
+
+
+TEST_CASE("Registering default Reporter")
+{
+    auto m1 = std::make_shared<FakeReporter>(true);
+//    FakeReporter* m1 = new FakeReporter(false);
+    auto default_reporter = Approvals::useAsDefaultReporter(m1);
+    // register default reporter
+    // set default reporter
+    // register default reporter
+    
+    // auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+    // FileApprover::registerComparator()
+    
+    try
+    {
+        Approvals::verify("test me");
+    }
+    catch(const std::exception&)
+    {
+    }
+    REQUIRE(m1->called == true);
+}
