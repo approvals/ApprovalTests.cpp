@@ -89,22 +89,19 @@ TEST_CASE("Launching on PC with cygwin and Araxis Merge")
 
 TEST_CASE("Registering default Reporter")
 {
-    auto m1 = std::make_shared<FakeReporter>(true);
-//    FakeReporter* m1 = new FakeReporter(false);
-    auto default_reporter = Approvals::useAsDefaultReporter(m1);
-    // register default reporter
-    // set default reporter
-    // register default reporter
-    
-    // auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
-    // FileApprover::registerComparator()
-    
-    try
+    auto fake_reporter = std::make_shared<FakeReporter>(true);
+    auto default_reporter_disposer = Approvals::useAsDefaultReporter(fake_reporter);
     {
-        Approvals::verify("test me");
+        auto fake_reporter2 = std::make_shared<FakeReporter>(true);
+        auto default_reporter_disposer2 = Approvals::useAsDefaultReporter(fake_reporter2);
+
+        DefaultReporter r;
+        r.report("r.txt", "a.txt");
+
+        REQUIRE(fake_reporter->called == false);
+        REQUIRE(fake_reporter2->called == true);
     }
-    catch(const std::exception&)
-    {
-    }
-    REQUIRE(m1->called == true);
+    DefaultReporter r;
+    r.report("r.txt", "a.txt");
+    REQUIRE(fake_reporter->called == true);
 }
