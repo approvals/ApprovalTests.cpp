@@ -25,7 +25,8 @@ public:
     explicit SystemLauncher(std::vector<std::string> (*pointer)(std::vector<std::string>)) : convertArgumentsForSystemLaunching(pointer) 
     {
     }
-    
+
+    // This function is an implementation detail for the support of Reporters on cygwin
     void setConvertArgumentsForSystemLaunchingFunction(ConvertArgumentsFunctionPointer function)
     {
         convertArgumentsForSystemLaunching = function;
