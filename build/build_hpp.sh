@@ -7,7 +7,7 @@
 set -e
 set -o pipefail
 
-LAST_VERSION="v.3.2.0"
+LAST_VERSION="v.3.3.0"
 VERSION="v.X.X.X"
 
 PUSH_TO_PRODUCTION="true"
