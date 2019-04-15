@@ -10,6 +10,8 @@ set -o pipefail
 LAST_VERSION="v.3.2.0"
 VERSION="v.X.X.X"
 
+PUSH_TO_PRODUCTION="true"
+
 OLD_SINGLE_HEADER=ApprovalTests.$LAST_VERSION.hpp
 NEW_SINGLE_HEADER=ApprovalTests.$VERSION.hpp
 
@@ -55,6 +57,11 @@ sed -i -e "s/$OLD_SINGLE_HEADER/$NEW_SINGLE_HEADER/" $STARTER_PROJECT_DIR/visual
 pushd $STARTER_PROJECT_DIR/cmake-build-debug
 cmake --build .
 popd
+
+if [ "$PUSH_TO_PRODUCTION" == "false" ] ; then
+    echo "Everything worked - didn't commit or push"
+    exit
+fi
 
 # Commit and push starter project
 pushd $STARTER_PROJECT_DIR
