@@ -15,3 +15,9 @@ int main(int argc, char** argv)
     return RUN_ALL_TESTS();
 }
 // endcode
+
+// startcode do_not_report_on_ci
+// main.cpp
+auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
+    BlockingReporter::onMachinesNotNamed("MyCIMachineName") );
+// endcode

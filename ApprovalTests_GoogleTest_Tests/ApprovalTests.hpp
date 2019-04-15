@@ -4,5 +4,7 @@
 #define APPROVALTESTS_CPP_APPROVALTESTS_H
 
 #include <ApprovalTests/GoogleTestApprovals.h>
+#include <ApprovalTests/Approvals.h>
+#include <ApprovalTests/reporters/BlockingReporter.h>
 
 #endif //APPROVALTESTS_CPP_APPROVALTESTS_H
