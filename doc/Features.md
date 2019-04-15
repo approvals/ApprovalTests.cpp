@@ -13,9 +13,69 @@ To change this file edit the source file and then re-run the generation using ei
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
+- [Blocking Reporter](#blocking-reporter)
+- [Machine Blockers](#machine-blockers)
+- [Front Loaded Reporters](#front-loaded-reporters)
 - [Using sub-directories for approved files](#using-sub-directories-for-approved-files)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Blocking Reporter
+
+Blocking reporters are a simple class, designed for use with FrontLoadedReporters, to prevent launching of reporters in certain environments.
+
+<!-- snippet: do_not_report_on_ci -->
+```cpp
+// main.cpp
+auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
+    BlockingReporter::onMachinesNotNamed("MyCIMachineName") );
+```
+<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23)</sup>
+<!-- endsnippet -->
+
+## Machine Blockers
+
+Sometimes you will want tests to only run on certain machines. Machine blockers are a great way to do this.
+
+<!-- snippet: machine_specific_test_runner -->
+```cpp
+TEST_CASE("Only run this test on John's machine")
+{
+    auto blocker = MachineBlocker::onMachinesNotNamed("JOHNS_MACHINE");
+    if ( blocker.isBlockingOnThisMachine() )
+    {
+        return;
+    }
+    // Write tests here that depend on John's environment.
+    REQUIRE(SystemUtils::getMachineName() == "JOHNS_MACHINE");
+}
+```
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/utilities/MachineBlockerTests.cpp#L21-L32)</sup>
+<!-- endsnippet -->
+
+## Front Loaded Reporters
+
+Other times, you will want to run the tests on all machines, but only report if certain conditions are true. Front loaded reporters allow a mechanism to jump in front of the standard Reporter path, and divert early.
+
+Here is an example of not launching any reporters of you are on the CI machine.
+
+<!-- snippet: do_not_report_on_ci -->
+```cpp
+// main.cpp
+auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
+    BlockingReporter::onMachinesNotNamed("MyCIMachineName") );
+```
+<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23)</sup>
+<!-- endsnippet -->
+
+Once you have added that, even calling approvals with a specific Reporter will not launch it on the CI system (but will for all other systems). For example:
+
+<!-- snippet: basic_approval_with_reporter -->
+```cpp
+Approvals::verify("text to be verified", Windows::AraxisMergeReporter());
+```
+<sup>[snippet source](/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L11-L13)</sup>
+<!-- endsnippet -->
 
 ## Using sub-directories for approved files
 
