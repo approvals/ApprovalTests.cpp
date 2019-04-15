@@ -11,9 +11,7 @@ IMPROVE USABILITY OF CURRENT FEATURES
 
 NEW FEATURES
 
-. machine-specific tests
 . add a non-gui reporter, e.g. for use in CI systems
-. front loader reporter
 . catch reporter
 . UpdateApprovedReporter - that moves received to approved, to allow for reviewing in version control and then either committing or reverting
 . tortoise git diff reporter
