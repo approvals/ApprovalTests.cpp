@@ -105,6 +105,23 @@ public:
     {
         return isWindowsOs() ? safeGetEnvForWindows(name) : safeGetEnvForNonWindows(name);
     }
+    
+    static std::string getMachineName()
+    {
+        auto name = safeGetEnv("COMPUTERNAME");
+        if ( ! name.empty())
+        {
+            return name;
+        }
+
+        name = safeGetEnv("HOSTNAME");
+        if ( ! name.empty())
+        {
+            return name;
+        }
+        
+        return "Unknown Computer";
+    }
 
     static void makeDirectoryForWindows(std::string directory)
     {
