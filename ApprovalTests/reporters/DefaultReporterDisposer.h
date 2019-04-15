@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_DEFAULTREPORTERDISPOSER_H
 #define APPROVALTESTS_CPP_DEFAULTREPORTERDISPOSER_H
 
-#include "DefaultReporter.h"
+#include "DefaultReporterFactory.h"
 
 class DefaultReporterDisposer
 {
@@ -10,13 +10,13 @@ private:
 public:
     explicit DefaultReporterDisposer(const std::shared_ptr<Reporter>& reporter)
     {
-        previous_result = DefaultReporter::getDefaultReporter();
-        DefaultReporter::setDefaultReporter(reporter);
+        previous_result = DefaultReporterFactory::getDefaultReporter();
+        DefaultReporterFactory::setDefaultReporter(reporter);
     }
 
     ~DefaultReporterDisposer()
     {
-        DefaultReporter::setDefaultReporter(previous_result);
+        DefaultReporterFactory::setDefaultReporter(previous_result);
     }
 };
 
