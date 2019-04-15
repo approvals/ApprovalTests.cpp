@@ -1,11 +1,12 @@
 #ifndef APPROVALTESTS_CPP_MACHINEBLOCKER_H
 #define APPROVALTESTS_CPP_MACHINEBLOCKER_H
 
+#include "Blocker.h"
 #include "../SystemUtils.h"
 
 #include <memory>
 
-class MachineBlocker
+class MachineBlocker : public Blocker
 {
 private:
     std::string machineName;
@@ -28,7 +29,7 @@ public:
         return MachineBlocker(machineName, false);
     }
 
-    bool isBlockingOnThisMachine() const
+    virtual bool isBlockingOnThisMachine() const override
     {
         const auto isMachine = (SystemUtils::getMachineName() == machineName);
         return isMachine == block;

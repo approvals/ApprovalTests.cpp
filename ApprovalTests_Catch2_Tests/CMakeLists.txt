@@ -23,6 +23,7 @@ add_executable(${PROJECT_NAME}
         reporters/TestReporter.h
         reporters/ReporterTests.cpp
         utilities/MachineBlockerTests.cpp
+        reporters/BlockingReporterTests.cpp
         )
 target_link_libraries(${PROJECT_NAME} ApprovalTests)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})

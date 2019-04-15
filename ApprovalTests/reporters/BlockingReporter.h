@@ -10,28 +10,30 @@
 class BlockingReporter : public Reporter
 {
 private:
-    MachineBlocker blocker;
+    std::shared_ptr<Blocker> blocker;
 
     BlockingReporter() = delete;
 
 public:
-    BlockingReporter( const MachineBlocker& blocker ) : blocker(blocker)
+    BlockingReporter( std::shared_ptr<Blocker> blocker ) : blocker(blocker)
     {
     }
 
     static std::shared_ptr<BlockingReporter> onMachineNamed( const std::string& machineName )
     {
-        return std::make_shared<BlockingReporter>( MachineBlocker(machineName, true) );
+        auto machineBlocker = std::make_shared<MachineBlocker>( MachineBlocker::onMachineNamed(machineName) );
+        return std::make_shared<BlockingReporter>(machineBlocker);
     }
 
     static std::shared_ptr<BlockingReporter> onMachinesNotNamed( const std::string& machineName )
     {
-        return std::make_shared<BlockingReporter>( MachineBlocker(machineName, false) );
+        auto machineBlocker = std::make_shared<MachineBlocker>( MachineBlocker::onMachinesNotNamed(machineName) );
+        return std::make_shared<BlockingReporter>(machineBlocker);
     }
 
     virtual bool report(std::string received, std::string approved) const override
     {
-        return blocker.isBlockingOnThisMachine();
+        return blocker->isBlockingOnThisMachine();
     }
 };
 
