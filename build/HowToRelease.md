@@ -14,6 +14,7 @@
 Preparation:
 
 * Check that the [builds are passing](https://github.com/approvals/ApprovalTests.cpp/commits/master)
+* Compile and run all tests locally
 * Write summary of changes since last release, based on changes since [the last release](https://github.com/approvals/ApprovalTests.cpp/releases)
 * Determine the semantic version number
 * Update the version number in [build_hpp.sh](build_hpp.sh)

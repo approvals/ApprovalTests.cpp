@@ -19,5 +19,5 @@ int main(int argc, char** argv)
 // startcode do_not_report_on_ci
 // main.cpp
 auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
-    BlockingReporter::onMachinesNotNamed("MyCIMachineName") );
+    BlockingReporter::onMachineNamed("MyCIMachineName") );
 // endcode

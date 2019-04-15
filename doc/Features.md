@@ -28,7 +28,7 @@ Blocking reporters are a simple class, designed for use with FrontLoadedReporter
 ```cpp
 // main.cpp
 auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
-    BlockingReporter::onMachinesNotNamed("MyCIMachineName") );
+    BlockingReporter::onMachineNamed("MyCIMachineName") );
 ```
 <sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23)</sup>
 <!-- endsnippet -->
@@ -63,7 +63,7 @@ Here is an example of not launching any reporters of you are on the CI machine.
 ```cpp
 // main.cpp
 auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
-    BlockingReporter::onMachinesNotNamed("MyCIMachineName") );
+    BlockingReporter::onMachineNamed("MyCIMachineName") );
 ```
 <sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23)</sup>
 <!-- endsnippet -->
