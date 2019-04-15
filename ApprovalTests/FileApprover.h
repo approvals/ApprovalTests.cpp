@@ -70,12 +70,18 @@ public:
             s.cleanUpReceived(receivedPath);
         }
         catch (const ApprovalException&) {
-            auto tryFirst = FrontLoadedReporterFactory::getFrontLoadedReporter();
-            if ( ! tryFirst->report(receivedPath, approvedPath))
-            {
-                r.report(receivedPath, approvedPath);
-            }
+            reportAfterTryingFrontLoadedReporter(receivedPath, approvedPath, r);
             throw;
+        }
+    }
+
+    static void
+    reportAfterTryingFrontLoadedReporter(const string &receivedPath, const string &approvedPath, const Reporter &r)
+    {
+        auto tryFirst = FrontLoadedReporterFactory::getFrontLoadedReporter();
+        if (!tryFirst->report(receivedPath, approvedPath))
+        {
+            r.report(receivedPath, approvedPath);
         }
     }
 
