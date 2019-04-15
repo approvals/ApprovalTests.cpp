@@ -8,6 +8,7 @@
 #include <ApprovalTests/reporters/WindowsReporters.h>
 #include <ApprovalTests/Approvals.h>
 #include <ApprovalTests/StringUtils.h>
+#include <ApprovalTests/FileApprover.h>
 
 using namespace std;
 
@@ -144,3 +145,27 @@ TEST_CASE("Front Loaded Reporter flows through if not needed")
     REQUIRE(front_loader->called == true);
     REQUIRE(our_reporter->called == true);
 }
+
+TEST_CASE("Unregistering Front Loaded Reporter restores previous")
+{
+    auto front_loader1 = std::make_shared<FakeReporter>(true);
+    auto front_loaded_reporter_disposer1 = Approvals::useAsFrontLoadedReporter(front_loader1);
+
+    FakeReporter our_reporter1(true);
+
+    {
+        auto front_loader2 = std::make_shared<FakeReporter>(true);
+        auto front_loaded_reporter_disposer2 = Approvals::useAsFrontLoadedReporter(front_loader2);
+
+        FileApprover::reportAfterTryingFrontLoadedReporter("r.txt", "a.txt", our_reporter1);
+
+        REQUIRE(front_loader2->called == true);
+        REQUIRE(front_loader1->called == false);
+        REQUIRE(our_reporter1.called == false);
+    }
+    FileApprover::reportAfterTryingFrontLoadedReporter("r.txt", "a.txt", our_reporter1);
+
+    REQUIRE(front_loader1->called == true);
+    REQUIRE(our_reporter1.called == false);
+}
+
