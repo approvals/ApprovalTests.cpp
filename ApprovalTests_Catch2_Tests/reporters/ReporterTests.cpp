@@ -105,3 +105,42 @@ TEST_CASE("Registering default Reporter")
     r.report("r.txt", "a.txt");
     REQUIRE(fake_reporter->called == true);
 }
+
+
+TEST_CASE("Front Loaded Reporter Always Takes Precedence")
+{
+    auto front_loader = std::make_shared<FakeReporter>(true);
+    auto our_reporter = std::make_shared<FakeReporter>(true);
+
+    auto default_reporter_disposer = Approvals::useAsFrontLoadedReporter(front_loader);
+
+    try
+    {
+        Approvals::verify("cucumber", *our_reporter);
+    }
+    catch(const std::exception&)
+    {
+    }
+
+    REQUIRE(front_loader->called == true);
+    REQUIRE(our_reporter->called == false);
+}
+
+TEST_CASE("Front Loaded Reporter flows through if not needed")
+{
+    auto front_loader = std::make_shared<FakeReporter>(false);
+    auto our_reporter = std::make_shared<FakeReporter>(true);
+
+    auto default_reporter_disposer = Approvals::useAsFrontLoadedReporter(front_loader);
+
+    try
+    {
+        Approvals::verify("cucumber", *our_reporter);
+    }
+    catch(const std::exception&)
+    {
+    }
+
+    REQUIRE(front_loader->called == true);
+    REQUIRE(our_reporter->called == true);
+}

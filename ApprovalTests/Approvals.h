@@ -117,6 +117,11 @@ public:
         return DefaultReporterDisposer(reporter);
     }
 
+    static FrontLoadedReporterDisposer useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
+    {
+        return FrontLoadedReporterDisposer(reporter);
+    }
+
 };
 
 #endif

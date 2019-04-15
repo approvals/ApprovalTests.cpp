@@ -7,6 +7,7 @@
 #include "ApprovalException.h"
 #include "StringWriter.h"
 #include "reporters/Reporter.h"
+#include "reporters/FrontLoadedReporterDisposer.h"
 #include "namers/ApprovalNamer.h"
 #include "comparators/ApprovalComparator.h"
 #include "comparators/TextFileComparator.h"
@@ -69,7 +70,11 @@ public:
             s.cleanUpReceived(receivedPath);
         }
         catch (const ApprovalException&) {
-            r.report(receivedPath, approvedPath);
+            auto tryFirst = FrontLoadedReporterFactory::getFrontLoadedReporter();
+            if ( ! tryFirst->report(receivedPath, approvedPath))
+            {
+                r.report(receivedPath, approvedPath);
+            }
             throw;
         }
     }
