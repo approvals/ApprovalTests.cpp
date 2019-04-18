@@ -4,6 +4,7 @@
 class Blocker
 {
 public:
+    virtual ~Blocker() = default;
     virtual bool isBlockingOnThisMachine() const = 0;
 };
 
