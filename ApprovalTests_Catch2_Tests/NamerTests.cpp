@@ -1,7 +1,7 @@
 #include "Catch.hpp"
-#include <ApprovalTests/namers/ApprovalTestNamer.h>
-#include <ApprovalTests/StringUtils.h>
-#include <ApprovalTests/Approvals.h>
+#include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "ApprovalTests/StringUtils.h"
+#include "ApprovalTests/Approvals.h"
 
 using namespace std;
 using Catch::Matchers::EndsWith;

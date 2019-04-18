@@ -1,5 +1,5 @@
 #include "Catch.hpp"
-#include <ApprovalTests/StringUtils.h>
+#include "ApprovalTests/StringUtils.h"
 
 
 TEST_CASE("TestLowerCase") {

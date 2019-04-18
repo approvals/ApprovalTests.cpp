@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include <ApprovalTests/namers/ApprovalTestNamer.h>
+#include "ApprovalTests/namers/ApprovalTestNamer.h"
 
 TEST(GoogleNamerTest, ItDropsFirstNameWhenItEqualsTheFilename)
 {

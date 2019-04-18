@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 #include "PairUtilities.h"
-#include <ApprovalTests/CombinationApprovals.h>
+#include "ApprovalTests/CombinationApprovals.h"
 #include "reporters/FakeReporter.h"
 
 TEST_CASE("YouCanVerifyCombinationsOf1") {

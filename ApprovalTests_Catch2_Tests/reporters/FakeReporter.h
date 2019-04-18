@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_FAKEREPORTER_H
 #define APPROVALTESTS_CPP_FAKEREPORTER_H
 
-#include <ApprovalTests/reporters/Reporter.h>
+#include "ApprovalTests/reporters/Reporter.h"
 
 class FakeReporter : public Reporter {
 public:

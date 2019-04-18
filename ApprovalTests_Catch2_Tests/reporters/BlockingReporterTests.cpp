@@ -1,6 +1,6 @@
 #include "Catch.hpp"
 
-#include <ApprovalTests/reporters/BlockingReporter.h>
+#include "ApprovalTests/reporters/BlockingReporter.h"
 
 TEST_CASE("Ensure this compiles")
 {

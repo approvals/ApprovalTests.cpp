@@ -1,7 +1,7 @@
 #include "Catch.hpp"
-#include <ApprovalTests/ApprovalException.h>
-#include <ApprovalTests/Approvals.h>
-#include <ApprovalTests/reporters/QuietReporter.h>
+#include "ApprovalTests/ApprovalException.h"
+#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/reporters/QuietReporter.h"
 
 using namespace std;
 

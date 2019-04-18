@@ -1,6 +1,6 @@
 #include "Catch.hpp"
-#include <ApprovalTests/StringWriter.h>
-#include <ApprovalTests/Approvals.h>
+#include "ApprovalTests/StringWriter.h"
+#include "ApprovalTests/Approvals.h"
 
 using namespace std;
 

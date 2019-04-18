@@ -2,13 +2,13 @@
 #include "Catch.hpp"
 #include "TestReporter.h"
 #include "FakeReporter.h"
-#include <ApprovalTests/reporters/FirstWorkingReporter.h>
-#include <ApprovalTests/reporters/ClipboardReporter.h>
-#include <ApprovalTests/reporters/CombinationReporter.h>
-#include <ApprovalTests/reporters/WindowsReporters.h>
-#include <ApprovalTests/Approvals.h>
-#include <ApprovalTests/StringUtils.h>
-#include <ApprovalTests/FileApprover.h>
+#include "ApprovalTests/reporters/FirstWorkingReporter.h"
+#include "ApprovalTests/reporters/ClipboardReporter.h"
+#include "ApprovalTests/reporters/CombinationReporter.h"
+#include "ApprovalTests/reporters/WindowsReporters.h"
+#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/StringUtils.h"
+#include "ApprovalTests/FileApprover.h"
 
 using namespace std;
 
