@@ -84,4 +84,4 @@ You can find examples here: [To String](doc/ToString.md#top)
 * [CombinationTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/CombinationTests.cpp)  
 
 
-Feedback: If you have any comment or suggestion on this documentation, please email me at: isidore@setgame.com
+Feedback: If you have any comment or suggestion on this documentation, please email me at: llewellyn.falco@gmail.com

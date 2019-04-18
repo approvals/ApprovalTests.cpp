@@ -29,7 +29,7 @@ The default way to add to most repositories is to fork and then create a pull-re
 
 This is **NOT** the default way to contribute to Approval Tests!
 
-If you have something that you would like Approval Tests to have, including a bug you would like removed, we suggest you set up a pairing session (usually Skype or Facetime) with either [Llewellyn](mailto:isidore@setgame.com) or [Clare](mailto:github@cfmacrae.fastmail.co.uk) or both.
+If you have something that you would like Approval Tests to have, including a bug you would like removed, we suggest you set up a pairing session (usually Skype or Facetime) with either [Llewellyn](mailto:llewellyn.falco@gmail.com) or [Clare](mailto:github@cfmacrae.fastmail.co.uk) or both.
 
 A typical session lasts between 60 to 90 minutes. We do the work directly on master, on our own machines, with screen-sharing, and commit and push the results throughout the session. This results in quicker, higher-quality work. It gives us a better understanding of how people are using Approval Tests and the problems they encounter with it, and these sessions are also quite fun.
 
