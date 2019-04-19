@@ -16,8 +16,8 @@ public:
         return fileName;
     }
 
-    void setFileName(const string &fileName) {
-        TestName::fileName = SystemUtils::checkFilenameCase(fileName);
+    void setFileName(const string &file) {
+        fileName = SystemUtils::checkFilenameCase(file);
     }
 
     std::vector<string> sections;
