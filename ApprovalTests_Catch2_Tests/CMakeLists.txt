@@ -36,11 +36,14 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
         -Werror
         )
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-#    target_compile_options(${PROJECT_NAME} PRIVATE
-#        /W4
-#        /WX
-#        /wd4100 # unreferenced formal parameter
-#        /wd4244 # conversion from 'int' to 'char', possible loss of data
-#        /wd2220 # warning treated as error - no 'object' file generated
-#        )
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        /W4
+        /WX
+        /wd4244 # conversion from 'int' to 'char', possible loss of data
+        /wd4996 # Suppress warning from Catch v2.0.1 
+        # 'std::uncaught_exception': warning STL4006: std::uncaught_exception() is deprecated in C++17. 
+        # It is superseded by std::uncaught_exceptions(), plural. 
+        # You can define _SILENCE_CXX17_UNCAUGHT_EXCEPTION_DEPRECATION_WARNING or 
+        # _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+        )
 endif()
