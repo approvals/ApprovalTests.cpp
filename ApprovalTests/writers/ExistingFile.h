@@ -13,10 +13,10 @@ public:
     virtual std::string getFileExtensionWithDot() override {
         return FileUtils::getExtensionWithDot(filePath);
     }
-    virtual void write(std::string path) override {
+    virtual void write(std::string /*path*/) override {
         // do nothing
     }
-    virtual void cleanUpReceived(std::string receivedPath) override {
+    virtual void cleanUpReceived(std::string /*receivedPath*/) override {
         // do nothing
     }
 };

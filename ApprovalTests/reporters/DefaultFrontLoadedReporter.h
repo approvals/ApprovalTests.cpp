@@ -6,7 +6,7 @@
 class DefaultFrontLoadedReporter : public Reporter
 {
 public:
-    virtual bool report(std::string received, std::string approved) const override
+    virtual bool report(std::string /*received*/, std::string /*approved*/) const override
     {
         return false;
     }

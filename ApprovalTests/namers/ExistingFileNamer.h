@@ -14,7 +14,7 @@ public:
     virtual string getApprovedFile(string extensionWithDot) {
         return namer.getApprovedFile(extensionWithDot);
     }
-    virtual string getReceivedFile(string extensionWithDot) {
+    virtual string getReceivedFile(string /*extensionWithDot*/) {
         return filePath;
     }
 

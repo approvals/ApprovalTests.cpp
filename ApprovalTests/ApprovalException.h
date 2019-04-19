@@ -49,7 +49,7 @@ private:
         return s.str();
     }
 public:
-    ApprovalMissingException( std::string received, std::string approved )
+    ApprovalMissingException( std::string /*received*/, std::string approved )
         : ApprovalException( format( approved ) )
     {
     }
