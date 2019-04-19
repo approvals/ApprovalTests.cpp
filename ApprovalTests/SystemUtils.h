@@ -95,6 +95,7 @@ public:
 
     static std::string safeGetEnvForNonWindows(char const *name)
     {
+        APPROVAL_TESTS_UNUSED(name);
         char* p = nullptr;
 #ifndef _WIN32
         p = getenv(name);
