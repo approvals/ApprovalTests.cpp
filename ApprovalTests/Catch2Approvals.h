@@ -8,7 +8,7 @@
 #ifdef APPROVALS_CATCH
 #define CATCH_CONFIG_MAIN
 
-#include "Catch.hpp"
+#include <Catch.hpp>
 
 struct Catch2ApprovalListener : Catch::TestEventListenerBase {
     using TestEventListenerBase::TestEventListenerBase;
