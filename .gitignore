@@ -1,6 +1,8 @@
 cmake-build-debug/
 cmake-build-release/
 cmake-build-vs/
+cmake-clang-release/
+cmake-gcc-release/
 build/releases
 *.received.*
 .idea
