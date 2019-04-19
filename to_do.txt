@@ -52,7 +52,6 @@ CODE QUALITY
 
 . run through Qt Creator analysis tools
 . memory leaks in our tests
-. treat compiler warnings as errors - ideally on all platforms
 
 ENVIRONMENT AND BUILDS
 
