@@ -27,7 +27,8 @@ public:
     static std::string toLower(std::string inText)
     {
         std::string copy(inText);
-        std::transform(inText.begin(), inText.end(), copy.begin(), ::tolower);
+        std::transform(inText.begin(), inText.end(), copy.begin(),
+          [](char c){ return static_cast<char>(::tolower(c)); });
         return copy;
     }
 

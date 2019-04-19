@@ -39,6 +39,5 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     target_compile_options(${PROJECT_NAME} PRIVATE
         /W4
         /WX
-        /wd4244 # conversion from 'int' to 'char', possible loss of data
         )
 endif()
