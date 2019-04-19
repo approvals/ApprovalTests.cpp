@@ -21,7 +21,7 @@ public:
     NonCopyable() = default;
     NonCopyable(const NonCopyable& x) = delete; // prevent copy construction
 
-    friend ostream &operator<<(ostream &os, const NonCopyable &copyable) {
+    friend ostream &operator<<(ostream &os, const NonCopyable &/*copyable*/) {
         return os << 999;
     }
 };

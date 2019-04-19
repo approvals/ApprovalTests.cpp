@@ -14,6 +14,7 @@
 
 #include "FileUtils.h"
 #include "StringUtils.h"
+#include "Macros.h"
 
 class SystemUtils
 {
@@ -71,6 +72,7 @@ public:
 
     static std::string safeGetEnvForWindows(char const *name)
     {
+        APPROVAL_TESTS_UNUSED(name);
 #ifdef _WIN32
         // We use getenv_s on Windows, as use of getenv there gives:
         //      warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead.
@@ -125,6 +127,7 @@ public:
 
     static void makeDirectoryForWindows(std::string directory)
     {
+        APPROVAL_TESTS_UNUSED(directory);
 #ifdef _WIN32
         int nError = _mkdir(directory.c_str());
         if (nError != 0)

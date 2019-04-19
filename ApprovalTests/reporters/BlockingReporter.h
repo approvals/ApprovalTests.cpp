@@ -31,7 +31,7 @@ public:
         return std::make_shared<BlockingReporter>(machineBlocker);
     }
 
-    virtual bool report(std::string received, std::string approved) const override
+    virtual bool report(std::string /*received*/, std::string /*approved*/) const override
     {
         return blocker->isBlockingOnThisMachine();
     }

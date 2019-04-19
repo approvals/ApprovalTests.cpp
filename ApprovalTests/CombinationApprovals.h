@@ -12,15 +12,15 @@ class Empty
 {
 public:
     template< typename Other>
-    bool operator!=(const Other &rhs) const {
+    bool operator!=(const Other &/*rhs*/) const {
         return true;
     }
 
-    bool operator!=(const Empty &rhs) const {
+    bool operator!=(const Empty &/*rhs*/) const {
         return false;
     }
 
-    friend std::ostream &operator<<(std::ostream &os, const Empty &empty) {
+    friend std::ostream &operator<<(std::ostream &os, const Empty&) {
         os << "This should never be written - see Empty\n";
         return os;
     }
@@ -158,7 +158,7 @@ public:
                 typename Container6::value_type i6,
                 typename Container7::value_type i7,
                 typename Container8::value_type i8,
-                Empty _){return converter(i1, i2, i3, i4, i5, i6, i7, i8);},
+                Empty){return converter(i1, i2, i3, i4, i5, i6, i7, i8);},
                                               inputs1,
                                               inputs2,
                                               inputs3,
@@ -215,7 +215,7 @@ public:
                 typename Container5::value_type i5,
                 typename Container6::value_type i6,
                 typename Container7::value_type i7,
-                Empty _){return converter(i1, i2, i3, i4, i5, i6, i7);},
+                Empty){return converter(i1, i2, i3, i4, i5, i6, i7);},
                                               inputs1,
                                               inputs2,
                                               inputs3,
@@ -265,7 +265,7 @@ public:
                 typename Container4::value_type i4,
                 typename Container5::value_type i5,
                 typename Container6::value_type i6,
-                Empty _){return converter(i1, i2, i3, i4, i5, i6);},
+                Empty){return converter(i1, i2, i3, i4, i5, i6);},
                                               inputs1,
                                               inputs2,
                                               inputs3,
@@ -309,7 +309,7 @@ public:
                                                       typename Container3::value_type i3,
                                                       typename Container4::value_type i4,
                                                       typename Container5::value_type i5,
-                                                      Empty _){return converter(i1, i2, i3, i4, i5);},
+                                                      Empty){return converter(i1, i2, i3, i4, i5);},
                                               inputs1,
                                               inputs2,
                                               inputs3,
@@ -347,7 +347,7 @@ public:
                                                       typename Container2::value_type i2,
                                                       typename Container3::value_type i3,
                                                       typename Container4::value_type i4,
-                                                      Empty _){return converter(i1, i2, i3, i4);},
+                                                      Empty){return converter(i1, i2, i3, i4);},
                                               inputs1,
                                               inputs2,
                                               inputs3,
@@ -379,7 +379,7 @@ public:
                                                       typename Container1::value_type i1,
                                                       typename Container2::value_type i2,
                                                       typename Container3::value_type i3,
-                                                      Empty _){return converter(i1, i2, i3);},
+                                                      Empty){return converter(i1, i2, i3);},
                                               inputs1,
                                               inputs2,
                                               inputs3,
@@ -405,7 +405,7 @@ public:
                 std::vector<Empty>, ReturnType>([&](
                                                       typename Container1::value_type i1,
                                                       typename Container2::value_type i2,
-                                                      Empty _){return converter(i1, i2);},
+                                                      Empty){return converter(i1, i2);},
                                               inputs1,
                                               inputs2,
                                               empty(),
@@ -425,7 +425,7 @@ public:
                 Container1,
                 std::vector<Empty>, ReturnType>([&](
                                                       typename Container1::value_type i1,
-                                                      Empty _){return converter(i1);},
+                                                      Empty){return converter(i1);},
                                               inputs1,
                                               empty(),
                                               reporter);

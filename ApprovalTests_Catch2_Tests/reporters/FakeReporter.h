@@ -11,7 +11,7 @@ public:
     FakeReporter(bool working = true) : working(working) {
     }
 
-    virtual bool report(std::string received, std::string approved) const override
+    virtual bool report(std::string /*received*/, std::string /*approved*/) const override
     {
         called = true;
         return working;
