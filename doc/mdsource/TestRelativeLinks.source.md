@@ -31,15 +31,15 @@ Pages to test:
 
 | Link          | CLion             | Github UI             | Working Copy          |
 | ------------- | ----------------- | --------------------- | --------------------- |
-| [README.md#top](README.md#top)            | Link unresponsive         | | |
-| [/doc/README.md#top](/doc/README.md#top)  | Opens link on github.com  | | |
+| [README.md#top](README.md#top)            | Link unresponsive         | 404 in `.source.md` when clicked  | |
+| [/doc/README.md#top](/doc/README.md#top)  | Opens link on github.com  | Works in .md and .source.md | |
 
 ## Relative links to images files
 
 | Link          | CLion             | Github UI             | Working Copy          |
 | ------------- | ----------------- | --------------------- | --------------------- |
-| ![images/ApprovalTests.cpp.IntroGraphic.gif?raw=true](images/ApprovalTests.cpp.IntroGraphic.gif?raw=true) | Shows as broken image | |
-| ![/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true](/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true) | Shows as broken image | | 
+| ![images/ApprovalTests.cpp.IntroGraphic.gif?raw=true](images/ApprovalTests.cpp.IntroGraphic.gif?raw=true) | Shows as broken image | 404 in `.source.md` when clicked |
+| ![/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true](/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true) | Shows as broken image | Works in `.md` and `.source.md`  | |
 
 ---
 
