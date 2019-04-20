@@ -22,7 +22,7 @@ Scenarios to test:
 * Browsing on Github
 * Viewing in [Working Copy iOS github client](https://workingcopyapp.com/)
 
-Pages to test:
+Pages to test (NB On `mdsnippets_source_dir` branch):
 
 * [doc/TestRelativeLinks.md](https://github.com/approvals/ApprovalTests.cpp/blob/mdsnippets_source_dir/doc/TestRelativeLinks.md)
 * [doc/mdsource/TestRelativeLinks.source.md](https://github.com/approvals/ApprovalTests.cpp/blob/mdsnippets_source_dir/doc/mdsource/TestRelativeLinks.source.md)
@@ -31,7 +31,7 @@ Pages to test:
 
 | Link          | CLion             | Github UI             | Working Copy          |
 | ------------- | ----------------- | --------------------- | --------------------- |
-| [README.md#top](README.md#top)            | Link unresponsive         | 404 in `.source.md` when clicked  | In `.md`, link opens in Working Copy editor - in `.md.source`, gives error message |
+| [README.md#top](README.md#top)            | Link unresponsive in `.source.md`  | 404 in `.source.md` when clicked  | In `.md`, link opens in Working Copy editor - in `.md.source`, gives error message |
 | [/doc/README.md#top](/doc/README.md#top)  | Opens link on github.com  | Works in .md and .source.md | In `.md`, link opens in Working Copy editor - in `.md.source`, opens Safari at `localhost` - so fails|
 
 ## Relative links to images files
