@@ -31,15 +31,15 @@ Pages to test:
 
 | Link          | CLion             | Github UI             | Working Copy          |
 | ------------- | ----------------- | --------------------- | --------------------- |
-| [README.md#top](README.md#top)            | Link unresponsive         | 404 in `.source.md` when clicked  | |
-| [/doc/README.md#top](/doc/README.md#top)  | Opens link on github.com  | Works in .md and .source.md | |
+| [README.md#top](README.md#top)            | Link unresponsive         | 404 in `.source.md` when clicked  | In `.md`, link opens in Working Copy editor - in `.md.source`, gives error message |
+| [/doc/README.md#top](/doc/README.md#top)  | Opens link on github.com  | Works in .md and .source.md | In `.md`, link opens in Working Copy editor - in `.md.source`, opens Safari at `localhost` - so fails|
 
 ## Relative links to images files
 
 | Link          | CLion             | Github UI             | Working Copy          |
 | ------------- | ----------------- | --------------------- | --------------------- |
-| ![images/ApprovalTests.cpp.IntroGraphic.gif?raw=true](images/ApprovalTests.cpp.IntroGraphic.gif?raw=true) | Shows as broken image | 404 in `.source.md` when clicked |
-| ![/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true](/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true) | Shows as broken image | Works in `.md` and `.source.md`  | |
+| ![images/ApprovalTests.cpp.IntroGraphic.gif?raw=true](images/ApprovalTests.cpp.IntroGraphic.gif?raw=true) | Shows as broken image | 404 in `.source.md` when clicked | Works in `.md`, just the descriptive test is shown in `.source.md` |
+| ![/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true](/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true) | Shows as broken image | Works in `.md` and `.source.md`  | Works in `.md` and `.source.md` |
 
 ---
 
