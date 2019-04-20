@@ -19,7 +19,8 @@ To change this file edit the source file and then re-run the generation using ei
 
 ## This page is temporary!
 
-This page is for testing relative links in `mdsource/.source.md` and corresponding `.md` files, to see how they behave.
+This page is for testing relative links in `mdsource/.source.md` and corresponding `.md` files, to see how they behave, after adopting this `mdsnippets` feature:
+https://github.com/SimonCropp/MarkdownSnippets/issues/24
 
 Scenarios to test:
 
