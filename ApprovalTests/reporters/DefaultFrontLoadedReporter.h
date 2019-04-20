@@ -3,6 +3,7 @@
 
 #include "Reporter.h"
 
+//! Implementation detail of Approvals::useAsFrontLoadedReporter()
 class DefaultFrontLoadedReporter : public Reporter
 {
 public:

@@ -3,6 +3,7 @@
 
 #include "DefaultReporterFactory.h"
 
+//! Implementation detail of Approvals::useAsDefaultReporter()
 class DefaultReporterDisposer
 {
 private:

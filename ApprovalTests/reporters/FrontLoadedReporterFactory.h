@@ -8,6 +8,7 @@
 #include <vector>
 #include <memory>
 
+//! Implementation detail of Approvals::useAsFrontLoadedReporter()
 class FrontLoadedReporterFactory
 {
     using ReporterContainer = std::vector< std::shared_ptr<Reporter> >;

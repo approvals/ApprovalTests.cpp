@@ -5,6 +5,7 @@
 
 #include <string>
 
+//! Implementation detail of Approvals::useApprovalsSubdirectory()
 class SubdirectoryDisposer
 {
 private:

@@ -4,6 +4,7 @@
 #include "DefaultFrontLoadedReporter.h"
 #include "FrontLoadedReporterFactory.h"
 
+//! Implementation detail of Approvals::useAsFrontLoadedReporter()
 class FrontLoadedReporterDisposer
 {
 private:

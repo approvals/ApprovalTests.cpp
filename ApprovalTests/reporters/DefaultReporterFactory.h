@@ -8,6 +8,7 @@
 #include <memory>
 #include <vector>
 
+//! Implementation detail of Approvals::useAsDefaultReporter()
 class DefaultReporterFactory
 {
 private:
