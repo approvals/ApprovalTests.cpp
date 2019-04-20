@@ -16,7 +16,7 @@
 #include "StringUtils.h"
 #include "Macros.h"
 
-#include <exception>
+#include <stdexcept>
 
 class SystemUtils
 {

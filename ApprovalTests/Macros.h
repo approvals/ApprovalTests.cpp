@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_MACROS_H
 #define APPROVALTESTS_CPP_MACROS_H
 
-#include <exception>
+#include <stdexcept>
 
 ///////////////////////////////////////////////////////////////////////////////
 #define APPROVAL_TESTS_MACROS_STATIC(type, name, defaultValue) \
