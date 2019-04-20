@@ -99,7 +99,7 @@
  - QuietReporter is a reporter that does nothing. Failing tests will still fail,
    but nothing will be launched.
  - If there is a differencing tool that you have installed, and that is not pre-defined
-   by this library, you can look CommandLauncher and CommandReporter, to construct your own
+   by this library, you can look at CommandLauncher and CommandReporter, to construct your own
    reporter object.
 
  \subsection reporters_implementation Implementation of Reporters
