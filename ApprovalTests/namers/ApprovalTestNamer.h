@@ -5,6 +5,7 @@
 #include <stack>
 #include <sstream>
 #include <vector>
+#include <exception>
 #include "../Macros.h"
 #include "../SystemUtils.h"
 

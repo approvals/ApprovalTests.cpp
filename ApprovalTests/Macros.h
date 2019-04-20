@@ -1,6 +1,8 @@
 #ifndef APPROVALTESTS_CPP_MACROS_H
 #define APPROVALTESTS_CPP_MACROS_H
 
+#include <exception>
+
 ///////////////////////////////////////////////////////////////////////////////
 #define APPROVAL_TESTS_MACROS_STATIC(type, name, defaultValue) \
 static type &name(type *value = NULL) { \

@@ -16,6 +16,8 @@
 #include "StringUtils.h"
 #include "Macros.h"
 
+#include <exception>
+
 class SystemUtils
 {
 public:

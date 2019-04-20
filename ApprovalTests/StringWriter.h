@@ -3,6 +3,7 @@
 
 #include <string>
 #include <fstream>
+#include <exception>
 #include "ApprovalWriter.h"
 
 class StringWriter : public ApprovalWriter
