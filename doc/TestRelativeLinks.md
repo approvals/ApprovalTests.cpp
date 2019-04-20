@@ -19,11 +19,18 @@ To change this file edit the source file and then re-run the generation using ei
 
 ## This page is temporary!
 
-This page is for testing relative links in `mdsource/.source.md` and corresponding `.md` files, to see how they behave in:
+This page is for testing relative links in `mdsource/.source.md` and corresponding `.md` files, to see how they behave.
+
+Scenarios to test:
 
 * CLion editor
 * Browsing on Github
 * Viewing in [Working Copy iOS github client](https://workingcopyapp.com/)
+
+Pages to test:
+
+* [doc/TestRelativeLinks.md](https://github.com/approvals/ApprovalTests.cpp/blob/mdsnippets_source_dir/doc/TestRelativeLinks.md)
+* [doc/mdsource/TestRelativeLinks.source.md](https://github.com/approvals/ApprovalTests.cpp/blob/mdsnippets_source_dir/doc/mdsource/TestRelativeLinks.source.md)
 
 ## Relative links to .md files
 
@@ -31,9 +38,6 @@ This page is for testing relative links in `mdsource/.source.md` and correspondi
 | ------------- | ----------------- | --------------------- | --------------------- |
 | [README.md#top](README.md#top)            | Link unresponsive         | | |
 | [/doc/README.md#top](/doc/README.md#top)  | Opens link on github.com  | | |
-
-* [README.md#top](README.md#top)
-* [/doc/README.md#top](/doc/README.md#top)
 
 ## Relative links to images files
 
