@@ -48,4 +48,4 @@ public:
     }
 };
 
-#endif // APPROVALTESTS_CPP_FILEUTILS_H
+#endif //APPROVALTESTS_CPP_FILEUTILS_H

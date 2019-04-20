@@ -47,7 +47,7 @@ int main(int argc, char** argv)
     initializeApprovalTestsForGoogleTests();
     return RUN_ALL_TESTS();
 }
-#endif // APPROVALS_GOOGLETEST_EXISTING_MAIN
+#endif //APPROVALS_GOOGLETEST_EXISTING_MAIN
 
 // </SingleHpp>
 #endif
