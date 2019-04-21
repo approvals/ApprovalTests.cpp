@@ -36,10 +36,10 @@ We welcome improvements to the documentation! Here's how we manage the documenta
 
 ### Creating new pages
 
-If creating a new Markdown page, please make a copy of [doc/TemplatePage.source.md](../doc/TemplatePage.source.md#top).
+If creating a new Markdown page, please make a copy of [doc/TemplatePage.source.md](/doc/TemplatePage.source.md#top).
 This contains some boilerplate text which is tedious to create by hand. 
 
-If the new page will be outside of the [doc](../doc/) folder, delete the following lines at the end:
+If the new page will be outside of the [doc](/doc/) folder, delete the following lines at the end:
 
 ```
 ---
@@ -58,13 +58,13 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
     * annotate snippets of source code, 
     * reference the snippets in documentation.
 * Run  `run_markdown_templates.sh` **before commit**, every time a `.source.md` file is updated
-    * See [run_markdown_templates.sh](../run_markdown_templates.sh).
+    * See [run_markdown_templates.sh](/run_markdown_templates.sh).
     * This will update the tables of contents and the machine-generated `[something].md` files.
     * If this does not work, see that script for how to install the tools it uses
 
 ### Checking the documentation
 
-The script [fix_markdown.sh](../fix_markdown.sh) can be used to do some checks of the Markdown documentation files.
+The script [fix_markdown.sh](/fix_markdown.sh) can be used to do some checks of the Markdown documentation files.
 
 It can be run in cygwin with:
 
@@ -74,8 +74,8 @@ cat ./fix_markdown.sh | dos2unix | bash
 
 ## Releases
 
-* Everything for releases is in [the build directory](../build/)
-* There's more information in [How To Release](../build/HowToRelease.md#top)
+* Everything for releases is in [the build directory](/build/)
+* There's more information in [How To Release](/build/HowToRelease.md#top)
 
 ---
 
