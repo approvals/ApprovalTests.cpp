@@ -13,3 +13,7 @@ find -name \*.md | grep -v googletest-src | grep -v README.md | xargs grep -L '<
 echo
 echo "The following files in doc, if any, are missing the 'Back to User Guide' line at the end:"
 find ./doc -name \*.md | grep -v googletest-src | grep -v README.md | xargs grep -L 'Back to User Guide'
+
+echo
+echo "The following files, if any, need to have relative references converted to absolute ones"
+find -name \*.md | grep -v googletest-src | xargs grep -P '\]\((?!#|http|/)'
