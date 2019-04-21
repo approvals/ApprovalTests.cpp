@@ -16,6 +16,7 @@ To change this file edit the source file and then re-run the generation using ei
 - [Contributing - pairing and pull requests](#contributing---pairing-and-pull-requests)
 - [Documentation](#documentation)
   - [Creating new pages](#creating-new-pages)
+  - [Internal links need to be absolute](#internal-links-need-to-be-absolute)
   - [Adding code and file samples](#adding-code-and-file-samples)
   - [Checking the documentation](#checking-the-documentation)
 - [Releases](#releases)
@@ -41,8 +42,12 @@ We welcome improvements to the documentation! Here's how we manage the documenta
 
 ### Creating new pages
 
-If creating a new Markdown page, please make a copy of [doc/TemplatePage.source.md](/doc/TemplatePage.source.md#top).
-This contains some boilerplate text which is tedious to create by hand. 
+*Note: All the master Markdown pages in this project are called `mdsource/[something].source.md`*
+
+If creating a new Markdown page, please make a copy of [doc/mdsource/TemplatePage.source.md](/doc/mdsource/TemplatePage.source.md#top).
+This contains some boilerplate text which is tedious to create by hand.
+
+The new file needs to be in a `mdsource` sub-directory.
 
 If the new page will be outside of the [doc](/doc/) folder, delete the following lines at the end:
 
@@ -52,6 +57,28 @@ If the new page will be outside of the [doc](/doc/) folder, delete the following
 [Back to User Guide](/doc/README.md#top)
 ```
 
+### Internal links need to be absolute 
+
+All references to other files in this project, such as hyperlinks and images, must specify the full path from the root of the repository. This will allow those links to work correctly in both the source and generated markdown files. Relative paths cannot work for both the source and the target file. 
+
+For example, use this:
+
+```markdown
+* [this link will work everywhere](/doc/Reporters.md#top)
+```
+
+Not this:
+
+```markdown
+* [this link is wrong](doc/Reporters.md#top)
+```
+
+And not this:
+
+```markdown
+* [this link is wrong](Reporters.md#top)
+```
+
 ### Adding code and file samples
 
 We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSnippets) tool to embed source code and other files in Markdown pages.
@@ -59,6 +86,7 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
 **How it works:**
 
 * Call the source file `[something].source.md`.
+* Make sure it is in a `mdsource` directory
 * See the [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSnippets) documentation for how to:
     * annotate snippets of source code, 
     * reference the snippets in documentation.
