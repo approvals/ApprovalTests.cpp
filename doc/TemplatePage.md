@@ -21,7 +21,7 @@ To change this file edit the source file and then re-run the generation using ei
 
 *Nothing to see here: this is a template file, for creating new pages of documentation...* 
 
-*For help with creating and maintaining documentation in this project, see [Contributing to ApprovalTests.cpp](Contributing.md#top).* 
+*For help with creating and maintaining documentation in this project, see [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top).* 
 
 ---
 

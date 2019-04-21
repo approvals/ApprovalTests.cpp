@@ -28,7 +28,7 @@ This page shows how to set up the `main()` for test programs that use Approval T
 
 These steps are needed in order to teach Approval Tests how to name its output files automatically.
 
-If, after following these steps, you need help with running your program, please see [Troubleshooting](Troubleshooting.md#top).
+If, after following these steps, you need help with running your program, please see [Troubleshooting](/doc/Troubleshooting.md#top).
 
 ## Catch 1 and 2
 
@@ -70,7 +70,7 @@ There is not yet a streamlined way of doing this.
 
 For now, please see the code in [ApprovalTests/Catch2Approvals.h](/ApprovalTests/Catch2Approvals.h) for the code you will need to add to your `main.cpp`.
 
-If it would be helpful for us to provide an easier way to do this, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](Contributing.md#top). 
+If it would be helpful for us to provide an easier way to do this, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top). 
 
 ## Google Test
 
@@ -84,7 +84,7 @@ We haven't yet provided a Starter Project for using Approval Tests with Google T
 
 This is partly based on the assumption that anyone already using Google Tests will have their own project set up, and anyone else would probably use Catch 2 instead.
  
-If it would be helpful for us to such a Starter Project, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](Contributing.md#top). 
+If it would be helpful for us to such a Starter Project, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top). 
 
 
 ### New Project
@@ -97,7 +97,7 @@ snippet: googletest_main
 
 Google Test has a `gtest_main` library that provides a `main()` function, and then runs all your tests.
 
-If your existing Google Test application uses the `gtest_main` library, Approval Tests will not be able to obtain the names to use output files. You will then see the help message shown in [Troubleshooting](Troubleshooting.md#top).
+If your existing Google Test application uses the `gtest_main` library, Approval Tests will not be able to obtain the names to use output files. You will then see the help message shown in [Troubleshooting](/doc/Troubleshooting.md#top).
 
 To fix this, please add a new `main.cpp`, as shown in the previous section.
 

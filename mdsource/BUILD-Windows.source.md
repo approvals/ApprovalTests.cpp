@@ -26,8 +26,8 @@
 
 ## Dependencies
 
-* A version of Catch2 is included in the source - see [lib/Catch.hpp](lib/Catch.hpp)
-* Source code for the Google Test framework - version 1.8.1 - is downloaded automatically when CMake is run - see [CMakeLists.txt.in](CMakeLists.txt.in), and is then built when the project is built.
+* A version of Catch2 is included in the source - see [lib/Catch.hpp](/lib/Catch.hpp)
+* Source code for the Google Test framework - version 1.8.1 - is downloaded automatically when CMake is run - see [CMakeLists.txt.in](/CMakeLists.txt.in), and is then built when the project is built.
 
 ## Visual Studio 2017 Community Edition
 
