@@ -12,4 +12,4 @@ find ./doc -name \*.md | grep -v googletest-src | grep -v README.md | xargs grep
 
 echo
 echo "The following files, if any, need to have relative references converted to absolute ones"
-find -name \*.md | grep -v googletest-src | grep -v TestRelativeLinks | xargs grep -P '\]\((?!#|http|/|mailto)'
+find -name \*.source.md | grep -v googletest-src | grep -v TestRelativeLinks | xargs grep -P '\]\((?!#|http|/|mailto)'
