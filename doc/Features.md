@@ -1,7 +1,7 @@
 <!--
 This file was generate by MarkdownSnippets.
-Source File: /doc/Features.source.md
-To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+Source File: /doc/mdsource/Features.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 <a id="top"></a>
 
@@ -95,4 +95,4 @@ This mechanism allows you to select a different sub-directory in individual test
 
 ---
 
-[Back to User Guide](README.md#top)
+[Back to User Guide](/doc/README.md#top)

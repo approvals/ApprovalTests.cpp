@@ -1,7 +1,7 @@
 <!--
 This file was generate by MarkdownSnippets.
-Source File: /README.source.md
-To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+Source File: /mdsource/README.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 <a id="top"></a>
 
@@ -36,11 +36,11 @@ The Approvaltests library helps you write **ApprovalTests**, which are unit test
 
 ApprovalTests are also known as **Golden Master Tests**.
 
-Here is an intro to learn more about the [concept of ApprovalTesting](doc/ApprovalTestingConcept.md#top).
+Here is an intro to learn more about the [concept of ApprovalTesting](/doc/ApprovalTestingConcept.md#top).
 
 ApprovalTests are great for testing objects with lots of fields, or lists of objects.
 
-![Intro Graphic](doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)
+![Intro Graphic](/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)
 
 Currently working in Mac/Linux/Windows with
 * [Catch1](https://github.com/catchorg/Catch2/tree/Catch1.x)  
@@ -54,7 +54,7 @@ Currently working in Mac/Linux/Windows with
 
 The video [Quickly Testing Legacy Code](https://youtu.be/dtm8V3TIB6k) gives an introduction both to Approval Tests and to this library. The slides from the talk are available in [PowerPoint](https://www.slideshare.net/ClareMacrae/quickly-testing-legacy-code) and  [PDF](https://github.com/philsquared/cpponsea-slides/raw/master/2019/Clare%20Macrae%20-%20Quickly%20Testing%20Legacy%20Code.pdf) formats. Sample code from the talk is available on [Github](https://github.com/claremacrae/cpponsea2019).
 
-See [Getting Started](doc/GettingStarted.md#top) and the evolving [User Guide](doc/README.md#top).
+See [Getting Started](/doc/GettingStarted.md#top) and the evolving [User Guide](/doc/README.md#top).
 
 I highly suggest you clone [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
 
@@ -95,7 +95,7 @@ ApprovalTests uses ApprovalTests to test ApprovalTests (it's turtles all the way
 
 ### ToString (ostream insertion)
 Often, you will need to create functions to allow objects to print their state. This is commonly done with on ostream `<< operator`.
-You can find examples here: [To String](doc/ToString.md#top)
+You can find examples here: [To String](/doc/ToString.md#top)
 
 ### Suggested Examples
 * [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp)

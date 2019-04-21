@@ -1,7 +1,7 @@
 <!--
 This file was generate by MarkdownSnippets.
-Source File: /doc/SupportingNewTestFramework.source.md
-To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+Source File: /doc/mdsource/SupportingNewTestFramework.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 <a id="top"></a>
 
@@ -45,9 +45,9 @@ ApprovalTests.cpp can be made to work with any test framework that supplies the 
 
 This is perhaps best understood by reviewing the implementations for frameworks that are already supported:
  
-* [Catch2Approvals.h](../ApprovalTests/Catch2Approvals.h)
-* [GoogleTestApprovals.h](../ApprovalTests/GoogleTestApprovals.h)
-* [OkraApprovals.h](../ApprovalTests/OkraApprovals.h)
+* [Catch2Approvals.h](/ApprovalTests/Catch2Approvals.h)
+* [GoogleTestApprovals.h](/ApprovalTests/GoogleTestApprovals.h)
+* [OkraApprovals.h](/ApprovalTests/OkraApprovals.h)
 
 The following lines can be ignored in the above files - they are for this project's release process:
 
@@ -58,4 +58,4 @@ The following lines can be ignored in the above files - they are for this projec
 
 ---
 
-[Back to User Guide](README.md#top)
+[Back to User Guide](/doc/README.md#top)

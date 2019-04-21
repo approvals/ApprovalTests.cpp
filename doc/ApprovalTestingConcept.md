@@ -1,7 +1,7 @@
 <!--
 This file was generate by MarkdownSnippets.
-Source File: /doc/ApprovalTestingConcept.source.md
-To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+Source File: /doc/mdsource/ApprovalTestingConcept.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 <a id="top"></a>
 
@@ -76,4 +76,4 @@ This works well, until you start to get large multi-line strings.
 
 ---
 
-[Back to User Guide](README.md#top)
+[Back to User Guide](/doc/README.md#top)

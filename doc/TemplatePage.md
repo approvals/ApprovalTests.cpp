@@ -1,7 +1,7 @@
 <!--
 This file was generate by MarkdownSnippets.
-Source File: /doc/TemplatePage.source.md
-To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+Source File: /doc/mdsource/TemplatePage.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 <a id="top"></a>
 
@@ -21,8 +21,8 @@ To change this file edit the source file and then re-run the generation using ei
 
 *Nothing to see here: this is a template file, for creating new pages of documentation...* 
 
-*For help with creating and maintaining documentation in this project, see [Contributing to ApprovalTests.cpp](Contributing.md#top).* 
+*For help with creating and maintaining documentation in this project, see [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top).* 
 
 ---
 
-[Back to User Guide](README.md#top)
+[Back to User Guide](/doc/README.md#top)

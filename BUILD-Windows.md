@@ -1,7 +1,7 @@
 <!--
 This file was generate by MarkdownSnippets.
-Source File: /BUILD-Windows.source.md
-To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+Source File: /mdsource/BUILD-Windows.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 <a id="top"></a>
 
@@ -31,8 +31,8 @@ To change this file edit the source file and then re-run the generation using ei
 
 ## Dependencies
 
-* A version of Catch2 is included in the source - see [lib/Catch.hpp](lib/Catch.hpp)
-* Source code for the Google Test framework - version 1.8.1 - is downloaded automatically when CMake is run - see [CMakeLists.txt.in](CMakeLists.txt.in), and is then built when the project is built.
+* A version of Catch2 is included in the source - see [lib/Catch.hpp](/lib/Catch.hpp)
+* Source code for the Google Test framework - version 1.8.1 - is downloaded automatically when CMake is run - see [CMakeLists.txt.in](/CMakeLists.txt.in), and is then built when the project is built.
 
 ## Visual Studio 2017 Community Edition
 

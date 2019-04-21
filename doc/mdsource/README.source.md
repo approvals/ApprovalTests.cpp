@@ -22,7 +22,7 @@ Once you're up and running, consider the following reference material. -->
 
 ## Introduction
 
-* [Approval Testing (the concept)](ApprovalTestingConcept.md#top)
+* [Approval Testing (the concept)](/doc/ApprovalTestingConcept.md#top)
 * What is Approval Testing?
 * Why Approval Tests?
     * The Path to Approval Testing
@@ -47,7 +47,7 @@ Once you're up and running, consider the following reference material. -->
         * Renaming the header file to remove version number
     * Starter project
     * Cloning repo and using CMake
-* [Getting Started](GettingStarted.md#top) - setting up `main()`
+* [Getting Started](/doc/GettingStarted.md#top) - setting up `main()`
 * Getting Started with Catch 1 and 2
 * Getting Started with Google Test
 
@@ -56,15 +56,15 @@ Once you're up and running, consider the following reference material. -->
 * Tutorial
 * Testing single objects
 * Testing containers
-* [Testing exceptions](TestingExceptions.md#top)
+* [Testing exceptions](/doc/TestingExceptions.md#top)
 * Testing combinations - containers of containers (of containers...)
-* [To String](ToString.md#top)
+* [To String](/doc/ToString.md#top)
 * Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
-* [Features](Features.md#top)
+* [Features](/doc/Features.md#top)
 
 ## Customising behaviour
 
-* [Reporters](Reporters.md#top)
+* [Reporters](/doc/Reporters.md#top)
 * Custom Comparators
 * Writers
 * Namers
@@ -84,7 +84,7 @@ Once you're up and running, consider the following reference material. -->
 
 ## Extras
 
-* [Troubleshooting](Troubleshooting.md#top)
+* [Troubleshooting](/doc/Troubleshooting.md#top)
 * 4 benefits of testing
     * Spec
     * Feedback
@@ -93,5 +93,5 @@ Once you're up and running, consider the following reference material. -->
 
 ## Advanced Topics
 
-* [Supporting a new test framework](SupportingNewTestFramework.md#top)
-* [Contributing to ApprovalTests.cpp](Contributing.md#top)
+* [Supporting a new test framework](/doc/SupportingNewTestFramework.md#top)
+* [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top)
