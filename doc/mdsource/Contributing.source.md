@@ -44,7 +44,7 @@ If the new page will be outside of the [doc](../doc/) folder, delete the followi
 ```
 ---
    
-[Back to User Guide](README.md#top)
+[Back to User Guide](/doc/README.md#top)
 ```
 
 ### Adding code and file samples
@@ -79,4 +79,4 @@ cat ./fix_markdown.sh | dos2unix | bash
 
 ---
 
-[Back to User Guide](README.md#top)
+[Back to User Guide](/doc/README.md#top)

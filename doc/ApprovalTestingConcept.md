@@ -76,4 +76,4 @@ This works well, until you start to get large multi-line strings.
 
 ---
 
-[Back to User Guide](README.md#top)
+[Back to User Guide](/doc/README.md#top)

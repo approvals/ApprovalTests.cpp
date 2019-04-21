@@ -25,4 +25,4 @@ To change this file edit the source file and then re-run the generation using ei
 
 ---
 
-[Back to User Guide](README.md#top)
+[Back to User Guide](/doc/README.md#top)

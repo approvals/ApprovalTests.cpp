@@ -34,4 +34,4 @@ The return value will restore the original reporter when the object destructs. B
 
 ---
 
-[Back to User Guide](README.md#top)
+[Back to User Guide](/doc/README.md#top)
