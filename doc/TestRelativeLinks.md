@@ -30,8 +30,8 @@ Scenarios to test:
 
 Pages to test (NB On `mdsnippets_source_dir` branch):
 
-* [doc/TestRelativeLinks.md](https://github.com/approvals/ApprovalTests.cpp/blob/mdsnippets_source_dir/doc/TestRelativeLinks.md)
-* [doc/mdsource/TestRelativeLinks.source.md](https://github.com/approvals/ApprovalTests.cpp/blob/mdsnippets_source_dir/doc/mdsource/TestRelativeLinks.source.md)
+* [doc/TestRelativeLinks.md](https://github.com/approvals/ApprovalTests.cpp/blob/mdsnippets_source_dir/doc/TestRelativeLinks.md#top)
+* [doc/mdsource/TestRelativeLinks.source.md](https://github.com/approvals/ApprovalTests.cpp/blob/mdsnippets_source_dir/doc/mdsource/TestRelativeLinks.source.md#top)
 
 ## Relative links to .md files
 
