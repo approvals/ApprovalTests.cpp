@@ -22,8 +22,10 @@ namespace Linux
     public:
         LinuxDiffReporter() : FirstWorkingReporter(
                 {
+                        // startcode linux_diff_reporters
                         new MeldReporter(),
                         new KDiff3Reporter()
+                        // endcode
                 }
         )
         {

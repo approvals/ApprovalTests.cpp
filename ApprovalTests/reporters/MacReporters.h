@@ -45,6 +45,7 @@ namespace Mac {
     public:
         MacDiffReporter() : FirstWorkingReporter(
                 {
+                        // startcode mac_diff_reporters
                         new BeyondCompareReporter(),
                         new DiffMergeReporter(),
                         new KaleidoscopeReporter(),
@@ -52,6 +53,7 @@ namespace Mac {
                         new KDiff3Reporter(),
                         new TkDiffReporter(),
                         new VisualStudioCodeReporter()
+                        // endcode
                 }
         ) {
         }

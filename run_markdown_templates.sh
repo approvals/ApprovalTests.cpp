@@ -26,3 +26,7 @@ doctoc --title **Contents** .
 
 dotnet tool update  -g MarkdownSnippets.Tool
 mdsnippets
+
+# Custom Markdown linting
+# todo: fix
+# ./fix_markdown.sh

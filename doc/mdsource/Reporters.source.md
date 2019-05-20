@@ -8,9 +8,30 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
+- [DiffReporter](#diffreporter)
+  - [Mac](#mac)
+  - [Linux](#linux)
+  - [Windows](#windows)
 - [Registering a default reporter](#registering-a-default-reporter)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## DiffReporter
+
+DiffReporter go through a chain of possible reporters to find the first option installed on your system.
+Currently the search goes in this order:
+
+### Mac
+
+snippet: mac_diff_reporters
+
+### Linux
+
+snippet: linux_diff_reporters
+
+### Windows
+
+snippet: windows_diff_reporters
 
 ## Registering a default reporter
 
@@ -19,6 +40,7 @@ At present, the default Reporter is the DiffReporter. Whenever you call Approval
 snippet: use_as_default_reporter_in_main
 
 The return value will restore the original reporter when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
+
 
 ---
 
