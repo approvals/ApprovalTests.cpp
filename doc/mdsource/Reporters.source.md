@@ -8,7 +8,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-- [DiffReporter](#diffreporter)
+- [Supported Diff Tools](#supported-diff-tools)
   - [Mac](#mac)
   - [Linux](#linux)
   - [Windows](#windows)
@@ -16,9 +16,9 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## DiffReporter
+## Supported Diff Tools
 
-DiffReporter go through a chain of possible reporters to find the first option installed on your system.
+The DiffReporter class goes through a chain of possible reporters to find the first option installed on your system.
 Currently the search goes in this order:
 
 ### Mac

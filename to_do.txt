@@ -34,9 +34,6 @@ DOCUMENTATION
 . document use of converter objects - see comment in #6
 . hook Simon Cropp's code mechanism into github pre-commit mechanism
 . document how to test file types that are not character-for-character equivalent
-. Document the list of supported diff tools
-. machine-generate a list of supported diff tools
-
 RELEASES
 
 . include licence in released header
