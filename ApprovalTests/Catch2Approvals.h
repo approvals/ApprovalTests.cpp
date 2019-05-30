@@ -36,9 +36,27 @@ struct Catch2ApprovalListener : Catch::TestEventListenerBase {
         currentTest.sections.pop_back();
     }
 };
-
 CATCH_REGISTER_LISTENER(Catch2ApprovalListener)
 
+#endif
+#ifdef TEST_COMMIT_REVERT_CATCH
+
+struct Catch2TestCommitRevert : Catch::TestEventListenerBase {
+    using TestEventListenerBase::TestEventListenerBase;
+    virtual void  testRunEnded( Catch::TestRunStats const& testRunStats )override{
+        bool commit = testRunStats.totals.testCases.allOk();
+        std::string message = "r ";
+        if (commit) {
+            std::cout << "git add -A \n";
+            std::cout << "git commit -m " << message;
+        } else
+        {
+            std::cout << "git clean -fd \n";
+            std::cout << "git reset --hard HEAD \n";
+        }
+    }
+};
+CATCH_REGISTER_LISTENER(Catch2TestCommitRevert)
 #endif
 // </SingleHpp>
 #endif //APPROVALTESTS_CPP_CATCH2APPROVALS_H
