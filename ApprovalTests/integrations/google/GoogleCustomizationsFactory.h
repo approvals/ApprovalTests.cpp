@@ -32,10 +32,26 @@ public:
         return comparatorContainer();
     }
 
+    // Return if added (always true)
     static bool addEquivalencyCheck(Comparator comparator)
     {
         comparatorContainer().push_back(comparator);
         return true;
+    }
+    
+    static bool addTestCaseNameSuffix(std::string suffix)
+    {
+        // startcode googletest_customize_lambda
+        // main.cpp
+        auto customization =  GoogleCustomizationsFactory::addEquivalencyCheck(
+            [suffix](std::string testFileNameWithExtension, std::string testCaseName)
+            {
+                // The dot is used to make sure that we only match when Fixture appears at the end of the file name
+                auto modifiedTestCaseName = StringUtils::replaceAll(testCaseName, suffix, ".");
+                return StringUtils::contains(testFileNameWithExtension, modifiedTestCaseName);
+            });
+        // endcode
+        return customization;
     }
 };
 
