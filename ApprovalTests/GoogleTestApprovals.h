@@ -18,11 +18,16 @@ class GoogleTestListener : public ::testing::EmptyTestEventListener
 {
     TestName currentTest;
 public:
+    bool isDuplicate(std::string testFileNameWithExtension, std::string testCaseName)
+    {
+        return StringUtils::contains(testFileNameWithExtension, testCaseName + ".");
+    }
+
     virtual void OnTestStart(const ::testing::TestInfo& testInfo) override
     {
         currentTest.setFileName(testInfo.file());
         currentTest.sections = {};
-        if (! StringUtils::contains(currentTest.getFileName(), std::string(testInfo.test_case_name()) + ".") )
+        if (! isDuplicate(currentTest.getFileName(), testInfo.test_case_name()))
         {
             currentTest.sections.push_back(testInfo.test_case_name());
         }
@@ -35,7 +40,7 @@ public:
     }
 };
 
-void initializeApprovalTestsForGoogleTests() {
+inline void initializeApprovalTestsForGoogleTests() {
     auto& listeners = testing::UnitTest::GetInstance()->listeners();
     listeners.Append(new GoogleTestListener);
 }

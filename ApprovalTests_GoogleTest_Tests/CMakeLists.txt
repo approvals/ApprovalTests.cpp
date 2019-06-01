@@ -5,6 +5,7 @@ add_executable(${PROJECT_NAME}
         CompileAllIncludes.cpp
         GoogleTestApprovalsTests.cpp
         GoogleNamerTest.cpp
+        testGoogleNamerCustomizations.cpp
         )
 target_link_libraries(${PROJECT_NAME} ApprovalTests gtest gtest_main)
 

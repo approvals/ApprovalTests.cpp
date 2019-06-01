@@ -37,7 +37,7 @@ public:
     ApprovalTestNamer() {
     }
 
-    string getTestName() {
+    std::string getTestName() const {
         std::stringstream ext;
         auto test = getCurrentTest();
         for (size_t i = 0; i < test.sections.size(); i++) {
@@ -109,7 +109,14 @@ R"(* Welcome to Approval Tests.
     }
 // </SingleHpp>
 
+
+    // Deprecated - please use getSourceFileName
     string getFileName() {
+        return getSourceFileName();
+    }
+
+
+    std::string getSourceFileName() const {
         auto file = getCurrentTest().getFileName();
         auto start = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto end = file.rfind(".");
@@ -142,9 +149,13 @@ R"(* Welcome to Approval Tests.
         return getFullFileName(".received", extensionWithDot);
     }
 
-    string getFullFileName(string approved, string extensionWithDot) {
+    std::string getOutputFileBaseName() const {
+        return getSourceFileName() + "." + getTestName();
+    }
+
+    std::string getFullFileName(string approved, string extensionWithDot) {
         std::stringstream ext;
-        ext << getDirectory() << getFileName() << "." << getTestName() << approved << extensionWithDot;
+        ext << getDirectory() << getOutputFileBaseName() << approved << extensionWithDot;
         return ext.str();
     }
 };
