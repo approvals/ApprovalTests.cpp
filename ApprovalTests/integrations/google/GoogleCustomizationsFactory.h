@@ -32,9 +32,10 @@ public:
         return comparatorContainer();
     }
 
-    static void addEquivalencyCheck(Comparator comparator)
+    static bool addEquivalencyCheck(Comparator comparator)
     {
         comparatorContainer().push_back(comparator);
+        return true;
     }
 };
 
