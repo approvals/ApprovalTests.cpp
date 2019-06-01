@@ -54,8 +54,8 @@ Once you're up and running, consider the following reference material. -->
     * Starter project
     * Cloning repo and using CMake
 * [Getting Started](/doc/GettingStarted.md#top) - setting up `main()`
-* Getting Started with Catch 1 and 2
-* Getting Started with Google Test
+* [Using Approval Tests With Catch](/doc/UsingCatch.md#top)
+* [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
 
 ## Writing Tests
 
