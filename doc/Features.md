@@ -15,6 +15,9 @@ To change this file edit the source file and then run MarkdownSnippets.
 **Contents**
 
 - [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
+  - [Customizing](#customizing)
+    - [Custom Suffixes](#custom-suffixes)
+    - [Custom Anything](#custom-anything)
 - [Blocking Reporter](#blocking-reporter)
 - [Machine Blockers](#machine-blockers)
 - [Front Loaded Reporters](#front-loaded-reporters)
@@ -36,8 +39,47 @@ TEST(test_case_name, test_name)
 This will result in Approvals creating output files beginning with: 
 `SourceFileName.test_case_name.test_name`
 
-Very often, the source file name and the `test_case_name` are redundant.
+Very often, the `SourceFileName` and the `test_case_name` are redundant, meaning that what you would like is `SourceFileName.test_case_name.test_name`
 
+By default, Approval Tests will do this if `test_case_name` is completly contained within `SourceFileName`, meaning it is a sub-string.
+
+### Customizing
+
+If this is not enough, Approvals allows for customisation, in two ways.
+
+**Note:** to be able to add these pieces of code outside of a function, you need to hold on to the result as a variable. This variable is not used, it is only there to allow the method to execute.
+
+**Note:** using these customisations inside a Google `TEST` or `TEST_F`, is too late for that test: they won't take effect until the next executed test.
+
+#### Custom Suffixes
+
+For example, if you are Google test fixtures, you might have a lot of class names of the format `TestClassNameFixture`. You can tell Approval Tests that these are the same by adding the following to your main:
+
+<!-- snippet: googletest_customize_suffix -->
+```cpp
+// main.cpp
+auto customization = GoogleCustomizationsFactory::addTestCaseNameSuffix("Fixture");
+```
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L6-L9)</sup>
+<!-- endsnippet -->
+
+#### Custom Anything
+
+If you have something more unique, you can write a function that will match if the test case name and the source file names should be considered equal.
+
+<!-- snippet: googletest_customize_lambda -->
+```h
+// main.cpp
+auto customization =  GoogleCustomizationsFactory::addEquivalencyCheck(
+    [suffix](std::string testFileNameWithExtension, std::string testCaseName)
+    {
+        // The dot is used to make sure that we only match when Fixture appears at the end of the file name
+        auto modifiedTestCaseName = StringUtils::replaceAll(testCaseName, suffix, ".");
+        return StringUtils::contains(testFileNameWithExtension, modifiedTestCaseName);
+    });
+```
+<sup>[snippet source](/ApprovalTests/integrations/google/GoogleCustomizationsFactory.h#L44-L53)</sup>
+<!-- endsnippet -->
 
 ## Blocking Reporter
 
