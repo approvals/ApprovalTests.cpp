@@ -21,16 +21,18 @@
 
 ## Customizing Google Tests Approval File Names
 
-Google Tests have three pieces of information, as opposed to the normal two.
+Most testing frameworks have two pieces of naming information: `SourceFileName` and `test_name`.
 
+Google Tests has an additional piece of information: `test_case_name`.
+ 
 snippet: googletest_name_parts
 
-This will result in Approvals creating output files beginning with: 
+With Google Tests, this will result in Approvals creating output files beginning with: 
 `SourceFileName.test_case_name.test_name`
 
 Very often, the `SourceFileName` and the `test_case_name` are redundant, meaning that what you would like is `SourceFileName.test_case_name.test_name`
 
-By default, Approval Tests will do this if `test_case_name` is completly contained within `SourceFileName`, meaning it is a sub-string.
+By default, Approval Tests will do this if `test_case_name` is completely contained within `SourceFileName`, meaning it is a sub-string.
 
 ### Customizing
 
@@ -49,6 +51,20 @@ snippet: googletest_customize_suffix
 #### Custom Anything
 
 If you have something more unique, you can write a function that will match if the test case name and the source file names should be considered equal.
+
+For example, let's say you want a special tag `IgnoreThis` to indicate a that a TestCaseName should be ignored, when determining the names of output files.
+
+So:
+
+snippet: googletest_customize_test
+
+Would produce an output file beginning with:
+
+snippet: googletest_customize_test_name
+
+You could achieve this by registering a function pointer like this:
+
+Or by using a lambda like this:
 
 snippet: googletest_customize_lambda 
 
