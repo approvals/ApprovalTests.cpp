@@ -25,7 +25,7 @@ doctoc --title **Contents** .
 #   dotnet tool update  -g MarkdownSnippets.Tool
 
 dotnet tool update  -g MarkdownSnippets.Tool
-mdsnippets
+mdsnippets --exclude cmake-build
 
 # Custom Markdown linting
 # todo: fix

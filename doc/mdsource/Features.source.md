@@ -8,12 +8,25 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
+- [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
 - [Blocking Reporter](#blocking-reporter)
 - [Machine Blockers](#machine-blockers)
 - [Front Loaded Reporters](#front-loaded-reporters)
 - [Using sub-directories for approved files](#using-sub-directories-for-approved-files)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Customizing Google Tests Approval File Names
+
+Google Tests have three pieces of information, as opposed to the normal two.
+
+snippet: googletest_name_parts
+
+This will result in Approvals creating output files beginning with: 
+`SourceFileName.test_case_name.test_name`
+
+Very often, the source file name and the `test_case_name` are redundant.
+
 
 ## Blocking Reporter
 
