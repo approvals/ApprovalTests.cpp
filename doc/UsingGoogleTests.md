@@ -12,12 +12,82 @@ To change this file edit the source file and then run MarkdownSnippets.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
+- [Getting Started With Google Test](#getting-started-with-google-test)
+  - [Starter Project](#starter-project)
+  - [New Project](#new-project)
+  - [Existing Project - no main()](#existing-project---no-main)
+  - [Existing Project - with your main()](#existing-project---with-your-main)
 - [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
   - [Customizing](#customizing)
     - [Custom Suffixes](#custom-suffixes)
     - [Custom Anything](#custom-anything)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
+## Getting Started With Google Test
+
+The [Google Test](https://github.com/google/googletest) test framework works well with Approval Tests.
+
+This section describes the various ways of using Approval Tests with Google Test.
+
+### Starter Project
+
+We haven't yet provided a Starter Project for using Approval Tests with Google Tests.
+
+This is partly based on the assumption that anyone already using Google Tests will have their own project set up, and anyone else would probably use Catch 2 instead.
+ 
+If it would be helpful for us to such a Starter Project, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top). 
+
+
+### New Project
+
+Create a file `main.cpp` and add just the following two lines:
+
+<!-- snippet: googletest_main -->
+```cpp
+// main.cpp:
+#define APPROVALS_GOOGLETEST // This tells Approval Tests to provide a main() - only do this in one cpp file
+#include "ApprovalTests.hpp"
+```
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/main.cpp#L2-L6)</sup>
+<!-- endsnippet -->
+
+### Existing Project - no main()
+
+Google Test has a `gtest_main` library that provides a `main()` function, and then runs all your tests.
+
+If your existing Google Test application uses the `gtest_main` library, Approval Tests will not be able to obtain the names to use output files. You will then see the help message shown in [Troubleshooting](/doc/Troubleshooting.md#top).
+
+To fix this, please add a new `main.cpp`, as shown in the previous section.
+
+
+### Existing Project - with your main()
+
+If you have an existing Google Test-based test program that provides its own `main()`, you won't be able to use the approach above.
+
+Instead, you should make the following additions to your own source file that contains `main()`.  
+
+<!-- snippet: googletest_existing_main -->
+```cpp
+// main.cpp:
+
+// 1. Add these two lines to your main:
+#define APPROVALS_GOOGLETEST_EXISTING_MAIN
+#include "ApprovalTests.hpp"
+
+int main(int argc, char** argv)
+{
+    ::testing::InitGoogleTest(&argc, argv);
+    
+    // 2. Add this line to your main:
+    initializeApprovalTestsForGoogleTests();
+
+    return RUN_ALL_TESTS();
+}
+```
+<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L1-L17)</sup>
+<!-- endsnippet -->
 
 ## Customizing Google Tests Approval File Names
 

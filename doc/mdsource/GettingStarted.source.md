@@ -15,10 +15,6 @@
   - [Existing Project - with CATCH_CONFIG_MAIN](#existing-project---with-catch_config_main)
   - [Existing Project - with your main()](#existing-project---with-your-main)
 - [Google Test](#google-test)
-  - [Starter Project](#starter-project-1)
-  - [New Project](#new-project-1)
-  - [Existing Project - no main()](#existing-project---no-main)
-  - [Existing Project - with your main()](#existing-project---with-your-main-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -74,41 +70,7 @@ If it would be helpful for us to provide an easier way to do this, please let us
 
 ## Google Test
 
-The [Google Test](https://github.com/google/googletest) test framework works well with Approval Tests.
-
-This section describes the various ways of using Approval Tests with Google Test.
-
-### Starter Project
-
-We haven't yet provided a Starter Project for using Approval Tests with Google Tests.
-
-This is partly based on the assumption that anyone already using Google Tests will have their own project set up, and anyone else would probably use Catch 2 instead.
- 
-If it would be helpful for us to such a Starter Project, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top). 
-
-
-### New Project
-
-Create a file `main.cpp` and add just the following two lines:
-
-snippet: googletest_main
-
-### Existing Project - no main()
-
-Google Test has a `gtest_main` library that provides a `main()` function, and then runs all your tests.
-
-If your existing Google Test application uses the `gtest_main` library, Approval Tests will not be able to obtain the names to use output files. You will then see the help message shown in [Troubleshooting](/doc/Troubleshooting.md#top).
-
-To fix this, please add a new `main.cpp`, as shown in the previous section.
-
-
-### Existing Project - with your main()
-
-If you have an existing Google Test-based test program that provides its own `main()`, you won't be able to use the approach above.
-
-Instead, you should make the following additions to your own source file that contains `main()`.  
-
-snippet: googletest_existing_main
+See [Getting Started With Google Test](/doc/UsingGoogleTests.md#getting-started-with-google-test)
 
 ---
 
