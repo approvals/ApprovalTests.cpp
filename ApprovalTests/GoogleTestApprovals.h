@@ -2,6 +2,7 @@
 #define APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H
 
 #include "namers/ApprovalTestNamer.h"
+#include "integrations/google/GoogleCustomizationsFactory.h"
 #include "StringUtils.h"
 
 #ifdef APPROVALS_GOOGLETEST_EXISTING_MAIN
@@ -20,7 +21,14 @@ class GoogleTestListener : public ::testing::EmptyTestEventListener
 public:
     bool isDuplicate(std::string testFileNameWithExtension, std::string testCaseName)
     {
-        return StringUtils::contains(testFileNameWithExtension, testCaseName + ".");
+        for( auto check : GoogleCustomizationsFactory::getEquivalencyChecks())
+        {
+            if (check(testFileNameWithExtension, testCaseName))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     virtual void OnTestStart(const ::testing::TestInfo& testInfo) override
