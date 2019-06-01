@@ -45,7 +45,7 @@ Once you're up and running, consider the following reference material. -->
     * Downloading the latest release
         * Adding a wrapper header
         * Renaming the header file to remove version number
-    * Starter project
+    * [ApprovalTests.cpp.StarterProject](https://github.com/approvals/ApprovalTests.cpp.StarterProject)
     * Cloning repo and using CMake
 * [Getting Started](/doc/GettingStarted.md#top) - setting up `main()`
 * [Using Approval Tests With Catch](/doc/UsingCatch.md#top)
