@@ -15,7 +15,7 @@ public:
             return false;
         }
 
-        return AutoApproveReporter().report(reporter, approved);
+        return AutoApproveReporter().report(received, approved);
     }
 };
 
