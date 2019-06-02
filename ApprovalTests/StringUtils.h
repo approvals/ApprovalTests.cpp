@@ -31,6 +31,15 @@ public:
           [](char c){ return static_cast<char>(::tolower(c)); });
         return copy;
     }
+    
+    static bool endsWith(std::string value, std::string ending)
+    {
+        if (ending.size() > value.size())
+        {
+            return false;
+        }
+        return std::equal(ending.rbegin(), ending.rend(), value.rbegin());
+    }
 
     template<typename T>
     static std::string toString(const T& contents)
