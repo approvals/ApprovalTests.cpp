@@ -46,7 +46,6 @@ auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
     [](std::string /*testFileNameWithExtension*/, std::string testCaseName)
     {
         return StringUtils::contains(testCaseName, "IgnoreThis");
-    
     });
 // endcode
 

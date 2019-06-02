@@ -141,7 +141,7 @@ So:
 ```cpp
 TEST(TestCaseName_IgnoreThis, TestName )
 ```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L53-L55)</sup>
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L52-L54)</sup>
 <!-- endsnippet -->
 
 Would produce an output file beginning with:
@@ -150,10 +150,23 @@ Would produce an output file beginning with:
 ```cpp
 auto outputFileBaseName = "testGoogleNamerCustomizations.TestName";
 ```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L58-L60)</sup>
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L57-L59)</sup>
 <!-- endsnippet -->
 
 You could achieve this by registering a function pointer like this:
+
+<!-- snippet: googletest_customize_function -->
+```cpp
+// main.cpp
+bool dropTestCaseNamesWithIgnoreThis(std::string /*testFileNameWithExtension*/, std::string testCaseName)
+{
+    return StringUtils::contains(testCaseName, "IgnoreThis");
+}
+
+auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
+```
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L33-L41)</sup>
+<!-- endsnippet -->
 
 Or by using a lambda like this:
 
@@ -164,10 +177,9 @@ auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
     [](std::string /*testFileNameWithExtension*/, std::string testCaseName)
     {
         return StringUtils::contains(testCaseName, "IgnoreThis");
-    
     });
 ```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L43-L51)</sup>
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L43-L50)</sup>
 <!-- endsnippet -->
 
 

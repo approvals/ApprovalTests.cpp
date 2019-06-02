@@ -102,6 +102,8 @@ snippet: googletest_customize_test_name
 
 You could achieve this by registering a function pointer like this:
 
+snippet: googletest_customize_function 
+
 Or by using a lambda like this:
 
 snippet: googletest_customize_lambda 
