@@ -59,18 +59,18 @@ snippet: googletest_existing_main
 
 ## Customizing Google Tests Approval File Names
 
-Most testing frameworks have two pieces of naming information: `SourceFileName` and `test_name`.
+Most testing frameworks have two pieces of naming information: `SourceFileName` and `TestName`.
 
-Google Tests has an additional piece of information: `test_case_name`.
+Google Tests has an additional piece of information: `TestCaseName`.
  
 snippet: googletest_name_parts
 
 With Google Tests, this will result in Approvals creating output files beginning with: 
-`SourceFileName.test_case_name.test_name`
+`SourceFileName.TestCaseName.TestName`
 
-Very often, the `SourceFileName` and the `test_case_name` are redundant, meaning that what you would like is `SourceFileName.test_case_name.test_name`
+Very often, the `SourceFileName` and the `TestCaseName` are redundant, meaning that what you would like is `SourceFileName.TestCaseName.TestName`
 
-By default, Approval Tests will do this if `test_case_name` is completely contained within `SourceFileName`, meaning it is a sub-string.
+By default, Approval Tests will do this if `TestCaseName` is completely contained within `SourceFileName`, meaning it is a sub-string.
 
 ### Customizing
 

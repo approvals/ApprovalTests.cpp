@@ -9,11 +9,11 @@ auto customization = GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixtur
 // endcode
 
 // startcode googletest_name_parts
-TEST(test_case_name, test_name)
+TEST(TestCaseName, TestName)
 // endcode
 {
     ApprovalTestNamer namer;
-    EXPECT_EQ(namer.getOutputFileBaseName(), "testGoogleNamerCustomizations.test_case_name.test_name");
+    EXPECT_EQ(namer.getOutputFileBaseName(), "testGoogleNamerCustomizations.TestCaseName.TestName");
 }
 
 TEST(GoogleNamerCustomizations, EliminatesDuplicatedClassName)
