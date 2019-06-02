@@ -11,7 +11,7 @@
 # To install:
 #   npm install -g doctoc
 
-doctoc --title **Contents** .
+doctoc --title **Contents** *.md build/ doc/
 
 # ---------------------------------------------------
 # Update code examples
