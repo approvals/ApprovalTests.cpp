@@ -99,7 +99,7 @@ Google Tests has an additional piece of information: `TestCaseName`.
 ```cpp
 TEST(TestCaseName, TestName)
 ```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L11-L13)</sup>
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/GoogleFixtureNamerCustomizationTests.cpp#L11-L13)</sup>
 <!-- endsnippet -->
 
 With Google Tests, this will result in Approvals creating output files beginning with:
@@ -133,7 +133,7 @@ For example, if you are Google test fixtures, you might have a lot of class name
 // main.cpp
 auto customization = GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
 ```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L6-L9)</sup>
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/GoogleFixtureNamerCustomizationTests.cpp#L6-L9)</sup>
 <!-- endsnippet -->
 
 #### Custom Anything
@@ -148,16 +148,16 @@ So:
 ```cpp
 TEST(TestCaseName_IgnoreThis, TestName )
 ```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L52-L54)</sup>
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/GoogleFixtureNamerCustomizationTests.cpp#L52-L54)</sup>
 <!-- endsnippet -->
 
 Would produce an output file beginning with:
 
 <!-- snippet: googletest_customize_test_name -->
 ```cpp
-auto outputFileBaseName = "testGoogleNamerCustomizations.TestName";
+auto outputFileBaseName = "GoogleFixtureNamerCustomizationTests.TestName";
 ```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L57-L59)</sup>
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/GoogleFixtureNamerCustomizationTests.cpp#L57-L59)</sup>
 <!-- endsnippet -->
 
 You could achieve this by registering a function pointer like this:
@@ -165,14 +165,14 @@ You could achieve this by registering a function pointer like this:
 <!-- snippet: googletest_customize_function -->
 ```cpp
 // main.cpp
-bool dropTestCaseNamesWithIgnoreThis(std::string /*testFileNameWithExtension*/, std::string testCaseName)
+bool dropTestCaseNamesWithIgnoreThis(const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
 {
     return StringUtils::contains(testCaseName, "IgnoreThis");
 }
 
 auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
 ```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L33-L41)</sup>
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/GoogleFixtureNamerCustomizationTests.cpp#L33-L41)</sup>
 <!-- endsnippet -->
 
 Or by using a lambda like this:
@@ -181,12 +181,12 @@ Or by using a lambda like this:
 ```cpp
 // main.cpp
 auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
-    [](std::string /*testFileNameWithExtension*/, std::string testCaseName)
+    [](const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
     {
         return StringUtils::contains(testCaseName, "IgnoreThis");
     });
 ```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L43-L50)</sup>
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/GoogleFixtureNamerCustomizationTests.cpp#L43-L50)</sup>
 <!-- endsnippet -->
 
 
