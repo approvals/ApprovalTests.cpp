@@ -13,21 +13,21 @@ TEST(TestCaseName, TestName)
 // endcode
 {
     ApprovalTestNamer namer;
-    EXPECT_EQ(namer.getOutputFileBaseName(), "testGoogleNamerCustomizations.TestCaseName.TestName");
+    EXPECT_EQ(namer.getOutputFileBaseName(), "GoogleFixtureNamerCustomizationTests.TestCaseName.TestName");
 }
 
-TEST(GoogleNamerCustomizations, EliminatesDuplicatedClassName)
+TEST(GoogleFixtureNamerCustomizationTests, EliminatesDuplicatedClassName)
 {
     ApprovalTestNamer namer;
-    EXPECT_EQ(namer.getOutputFileBaseName(), "testGoogleNamerCustomizations.EliminatesDuplicatedClassName");
+    EXPECT_EQ(namer.getOutputFileBaseName(), "GoogleFixtureNamerCustomizationTests.EliminatesDuplicatedClassName");
 }
 
-class GoogleNamerCustomizationsFixture : public ::testing::Test{};
+class GoogleFixtureNamerCustomizationTestsFixture : public ::testing::Test{};
 
-TEST_F(GoogleNamerCustomizationsFixture, EliminatesDuplicatedClassName)
+TEST_F(GoogleFixtureNamerCustomizationTestsFixture, OnlyMatchesFixtureAtEnd)
 {
     ApprovalTestNamer namer;
-    EXPECT_EQ(namer.getOutputFileBaseName(), "testGoogleNamerCustomizations.EliminatesDuplicatedClassName");
+    EXPECT_EQ(namer.getOutputFileBaseName(), "GoogleFixtureNamerCustomizationTests.OnlyMatchesFixtureAtEnd");
 }
 
 // startcode googletest_customize_function
@@ -55,7 +55,7 @@ TEST(TestCaseName_IgnoreThis, TestName )
 {
     ApprovalTestNamer namer;
 // startcode googletest_customize_test_name
-    auto outputFileBaseName = "testGoogleNamerCustomizations.TestName";
+    auto outputFileBaseName = "GoogleFixtureNamerCustomizationTests.TestName";
 // endcode
     EXPECT_EQ(namer.getOutputFileBaseName(), outputFileBaseName);
 }
