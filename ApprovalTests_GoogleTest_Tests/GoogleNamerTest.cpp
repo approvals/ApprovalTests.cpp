@@ -36,3 +36,13 @@ TEST(GoogleNamerTest, TestSuffixMatcher)
         testCaseNames,
         [&](const std::string& test, std::ostream& os){os << test << ": " << createSuffix(suffix, fileName, test);});
 }
+
+TEST(GoogleNamerTest, TestSuffixMatcherBug)
+{
+    std::string testCaseName = "ApprovalTestsTest";
+    std::string suffix = "Test";
+    std::string fileName = "/a/b/c/testApprovalTests.cpp";
+    auto converter = GoogleConfiguration::createIgnorableTestCaseNameSuffixCheck(suffix);
+    EXPECT_EQ(converter(fileName, testCaseName), true);
+}
+
