@@ -32,7 +32,7 @@ TEST_F(GoogleNamerCustomizationsFixture, EliminatesDuplicatedClassName)
 
 // startcode googletest_customize_function
 // main.cpp
-bool dropTestCaseNamesWithIgnoreThis(std::string /*testFileNameWithExtension*/, std::string testCaseName)
+bool dropTestCaseNamesWithIgnoreThis(const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
 {
     return StringUtils::contains(testCaseName, "IgnoreThis");
 }
@@ -43,7 +43,7 @@ auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestC
 // startcode googletest_customize_lambda
 // main.cpp
 auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
-    [](std::string /*testFileNameWithExtension*/, std::string testCaseName)
+    [](const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
     {
         return StringUtils::contains(testCaseName, "IgnoreThis");
     });
