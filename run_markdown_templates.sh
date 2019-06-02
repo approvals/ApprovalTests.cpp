@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # to run this in cygwin (after installing dos2unix):
-#   cat run_markdown_templates.sh | dos2unix | bash
+#   ./cygwin_run.sh run_markdown_templates.sh
 
 # ---------------------------------------------------
 # Update tables of contents
