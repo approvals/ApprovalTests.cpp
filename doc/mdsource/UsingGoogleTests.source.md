@@ -81,11 +81,15 @@ By default, Approval Tests will do this if `TestCaseName` is completely containe
 
 ### Customizing
 
-If this is not enough, Approvals allows for customisation, in two ways.
+If this is not enough, Approvals allows for customization, in two ways.
 
 **Note:** to be able to add these pieces of code outside of a function, you need to hold on to the result as a variable. This variable is not used, it is only there to allow the method to execute.
 
-**Note:** using these customisations inside a Google `TEST` or `TEST_F`, is too late for that test: they won't take effect until the next executed test.
+**Note:** using these customizations inside a Google `TEST` or `TEST_F`, is too late for that test: they won't take effect until the next executed test.
+
+**Note:** this customization is permanent: it affects all tests run later in the current program run.
+
+**Note:** this customization is cannot be reversed.
 
 #### Custom Suffixes
 
