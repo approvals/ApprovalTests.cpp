@@ -102,10 +102,17 @@ TEST(TestCaseName, TestName)
 <sup>[snippet source](/ApprovalTests_GoogleTest_Tests/testGoogleNamerCustomizations.cpp#L11-L13)</sup>
 <!-- endsnippet -->
 
-With Google Tests, this will result in Approvals creating output files beginning with: 
-`SourceFileName.TestCaseName.TestName`
+With Google Tests, this will result in Approvals creating output files beginning with:
 
-Very often, the `SourceFileName` and the `TestCaseName` are redundant, meaning that what you would like is `SourceFileName.TestName`
+```
+SourceFileName.TestCaseName.TestName
+```
+
+Very often, the `SourceFileName` and the `TestCaseName` are redundant, meaning that what you would like is:
+
+```
+SourceFileName.TestName
+```
 
 By default, Approval Tests will do this if `TestCaseName` is completely contained within `SourceFileName`, meaning it is a sub-string.
 
