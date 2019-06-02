@@ -13,7 +13,7 @@
   - [Linux](#linux)
   - [Windows](#windows)
 - [Registering a default reporter](#registering-a-default-reporter)
-- [Miscelaneous Helper Reporters](#miscelaneous-helper-reporters)
+- [Miscellaneous Helper Reporters](#miscellaneous-helper-reporters)
   - [Auto-approving](#auto-approving)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -43,13 +43,13 @@ snippet: use_as_default_reporter_in_main
 
 The return value will restore the original reporter when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
 
-## Miscelaneous Helper Reporters
+## Miscellaneous Helper Reporters
 
 While most reporters open some sort of external program, for the purpose of understanding how the tests went wrong, and verifying the correct answer, there are some reporters that are helpful for specific situations.
 
 ### Auto-approving
 
-There are three reporters that can help wtih the approving of single or multiple tests.
+There are three reporters that can help with the approving of single or multiple tests.
 
 * `AutoApproveIfMissingReporter`: if there is no approved file already, the received file will automatically be copied over the approved one. Otherwise, it does nothing. One possible cause for confusion here is if you ran the test previously with a standard reporter, that will have created an almost-empty approved file, which will then block this from working.
 * `ClipboardReporter`: this puts the command-line to moved the approve file on to your computer's clipboard. You then review this, and paste it in to a terminal window. This only works with one test at a time.
