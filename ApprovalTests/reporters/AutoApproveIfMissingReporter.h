@@ -2,8 +2,8 @@
 #define APPROVALTESTS_CPP_AUTOAPPROVEIFMISSINGREPORTER_H
 
 #include "Reporter.h"
+#include "AutoApproveReporter.h"
 #include "../FileUtils.h"
-#include "../FileUtilsSystemSpecific.h"
 
 class AutoApproveIfMissingReporter : public Reporter
 {
@@ -15,9 +15,7 @@ public:
             return false;
         }
 
-        std::cout << "file " << approved << " automatically approved - next run should succeed\n";
-        FileUtilsSystemSpecific::copyFile( received, approved );
-        return true;
+        return AutoApproveReporter().report(reporter, approved);
     }
 };
 
