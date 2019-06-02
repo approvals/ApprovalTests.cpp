@@ -2,7 +2,6 @@
 #define APPROVALTESTS_CPP_GOOGLECONFIGURATION_H
 
 #include "GoogleCustomizationsFactory.h"
-#include <regex>
 
 class GoogleConfiguration
 {
@@ -14,15 +13,22 @@ public:
 
     static bool addIgnorableTestCaseNameSuffix(std::string suffix)
     {
-        auto customization = addTestCaseNameRedundancyCheck(
-            [suffix](std::string testFileNameWithExtension, std::string testCaseName)
+        return addTestCaseNameRedundancyCheck( createIgnorableTestCaseNameSuffixCheck(suffix) );
+    }
+
+    static GoogleCustomizationsFactory::Comparator createIgnorableTestCaseNameSuffixCheck( const std::string& suffix )
+    {
+        return [suffix](std::string testFileNameWithExtension, std::string testCaseName)
+        {
+            if (testCaseName.length() <= suffix.length() || !StringUtils::endsWith(testCaseName, suffix))
             {
-                std::regex endOfStringRegex(suffix + "$");
-                // The dot is used to make sure that we only match when Fixture appears at the end of the file name
-                auto modifiedTestCaseName = std::regex_replace(testCaseName, endOfStringRegex, ".");
-                return StringUtils::contains(testFileNameWithExtension, modifiedTestCaseName);
-            });
-        return customization;
+                return false;
+            }
+
+            auto withoutSuffix = testCaseName.substr(0, testCaseName.length() - suffix.length());
+            auto withFileExtension = withoutSuffix + ".";
+            return StringUtils::contains(testFileNameWithExtension, withFileExtension);
+        };
     }
 };
 

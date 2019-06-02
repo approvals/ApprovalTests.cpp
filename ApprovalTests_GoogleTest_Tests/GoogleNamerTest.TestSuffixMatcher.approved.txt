@@ -1,0 +1,14 @@
+suffix: Test
+filename: /a/b/c/testGoogleNamer.cpp
+test case names:
+
+
+GoogleNamerTest: redundant
+GoogleNamer: 
+GoogleTest: 
+NamerTest: redundant
+NamerTestTest: 
+NamerTestTests: 
+TestTest: 
+Test: 
+
