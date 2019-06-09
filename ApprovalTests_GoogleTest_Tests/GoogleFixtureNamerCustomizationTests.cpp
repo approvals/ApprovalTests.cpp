@@ -54,9 +54,11 @@ TEST(TestCaseName_IgnoreThis, TestName )
 // endcode
 {
     ApprovalTestNamer namer;
-// startcode googletest_customize_test_name
+
+    // startcode googletest_customize_test_name
     auto outputFileBaseName = "GoogleFixtureNamerCustomizationTests.TestName";
-// endcode
+    // endcode
+
     EXPECT_EQ(namer.getOutputFileBaseName(), outputFileBaseName);
 }
 

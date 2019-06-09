@@ -161,7 +161,7 @@ Would produce an output file beginning with:
 ```cpp
 auto outputFileBaseName = "GoogleFixtureNamerCustomizationTests.TestName";
 ```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/GoogleFixtureNamerCustomizationTests.cpp#L57-L59)</sup>
+<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/GoogleFixtureNamerCustomizationTests.cpp#L58-L60)</sup>
 <!-- endsnippet -->
 
 You could achieve this by registering a function pointer like this:
