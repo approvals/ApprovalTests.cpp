@@ -18,6 +18,8 @@
 
 #include <stdexcept>
 
+#include "MinGW.h"
+
 class SystemUtils
 {
 public:
@@ -124,7 +126,7 @@ public:
         {
             return name;
         }
-        
+
         return "Unknown Computer";
     }
 
