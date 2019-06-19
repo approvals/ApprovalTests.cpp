@@ -18,7 +18,11 @@
 
 #include <stdexcept>
 
-#include "MinGW.h"
+#if (defined(__MINGW32__) || defined(__MINGW64__))
+
+#define APPROVAL_TESTS_MINGW
+
+#endif
 
 class SystemUtils
 {
