@@ -143,6 +143,7 @@ public:
 
     static void makeDirectoryForNonWindows(std::string directory)
     {
+        APPROVAL_TESTS_UNUSED(directory);
 #ifndef _WIN32
         mode_t nMode = 0733; // UNIX style permissions
         int nError = mkdir(directory.c_str(),nMode);
