@@ -10,3 +10,4 @@ doc/html/
 .vs/
 /.vscode/
 *.runsettings
+CMakeLists.txt.user
