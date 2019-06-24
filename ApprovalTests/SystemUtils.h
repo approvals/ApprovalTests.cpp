@@ -1,5 +1,7 @@
 #ifndef APPROVALTESTS_CPP_SYSTEMUTILS_H
 #define APPROVALTESTS_CPP_SYSTEMUTILS_H
+
+#include "WinMinGWUtils.h"
 // <SingleHpp unalterable>
 #ifdef _WIN32
     // ReSharper disable once CppUnusedIncludeDirective
@@ -17,12 +19,6 @@
 #include "Macros.h"
 
 #include <stdexcept>
-
-#if (defined(__MINGW32__) || defined(__MINGW64__))
-
-#define APPROVAL_TESTS_MINGW
-
-#endif
 
 class SystemUtils
 {
