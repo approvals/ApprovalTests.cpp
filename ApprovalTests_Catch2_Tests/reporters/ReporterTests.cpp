@@ -37,7 +37,7 @@ TEST_CASE("Reporters Report Failure Status") {
 }
 
 TEST_CASE("Reporters Report Success Status") {
-    std::string knownCommand = SystemUtils::isWindowsOs() ? "C:\\Windows\\System32\\user.exe" : "echo";
+    std::string knownCommand = SystemUtils::isWindowsOs() ? "C:\\Windows\\System32\\help.exe" : "echo";
     GenericDiffReporter m(knownCommand);
     bool result = m.report("r.txt", "a.txt");
     REQUIRE(true == result);
