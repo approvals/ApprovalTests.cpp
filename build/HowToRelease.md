@@ -13,9 +13,9 @@
 
 Preparation:
 
-* Push all changes
-* Check that the [builds are passing](https://github.com/approvals/ApprovalTests.cpp/commits/master)
-* Write summary of changes since last release, based on changes since [the last release](https://github.com/approvals/ApprovalTests.cpp/releases)
+* [ ] Push all changes
+* [ ] Check that the [builds are passing](https://github.com/approvals/ApprovalTests.cpp/commits/master)
+* [ ] Write summary of changes since last release, based on changes since [the last release](https://github.com/approvals/ApprovalTests.cpp/releases)
 * Determine the semantic version number
 * Update the version number in [build_hpp.sh](/build/build_hpp.sh)
 
