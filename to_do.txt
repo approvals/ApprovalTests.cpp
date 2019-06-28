@@ -39,6 +39,7 @@ RELEASES
 
 . try Markdown Navigator to allow checkboxes in build steps
 . get cmake to generate build from command line (to remove requirement that CLion needs to have built starter project)
+. see if we can streamline setup of relnotes files for next release
 . include licence in released header
 
 FORMATTING OF CODE
