@@ -92,12 +92,10 @@ matrix:
 #      os: linux
 #      addons: *gcc9
 
-    # Fails to build: https://travis-ci.com/claremacrae/ApprovalTests.cpp/jobs/215192844
     - env: CLANG_VERSION=5.0
       os: linux
       addons: *clang5
 
-    # Fails to build: https://travis-ci.com/claremacrae/ApprovalTests.cpp/jobs/215192846
     - env: CLANG_VERSION=6.0
       os: linux
       addons: *clang6
