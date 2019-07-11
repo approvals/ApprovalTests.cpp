@@ -107,8 +107,8 @@ before_script:
 script:
   - mkdir .build
   - cd .build
-  - cmake ..
-  - cmake --build .
+  - cmake --verbose ..
+  - cmake --verbose --build .
   - ctest --verbose
 
 # DO NOT MERGE this to parent project
