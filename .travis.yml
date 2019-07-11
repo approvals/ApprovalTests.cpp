@@ -2,8 +2,6 @@
 # - https://github.com/gabime/spdlog
 
 sudo: required
-dist: trusty
-
 language: cpp
 
 addons: &gcc48
@@ -75,25 +73,32 @@ matrix:
     #   addons: *gcc48
 
     - env: GCC_VERSION=5
+      os: linux
       addons: *gcc5
 
     - env: GCC_VERSION=6
+      os: linux
       addons: *gcc6
 
     - env: GCC_VERSION=7
+      os: linux
       addons: *gcc7
 
     - env: GCC_VERSION=8
+      os: linux
       addons: *gcc8
 
     - env: GCC_VERSION=9
+      os: linux
       addons: *gcc9
 
     - env: CLANG_VERSION=5.0
+      os: linux
       addons: *clang5
 
     # Fails to build: https://travis-ci.com/claremacrae/ApprovalTests.cpp/builds/118773112
     - env: CLANG_VERSION=6.0
+      os: linux
       addons: *clang6
 
 before_script:
