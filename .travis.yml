@@ -49,6 +49,7 @@ addons: &gcc9
       - g++-9
 
 addons: &clang5
+  compiler: clang
   apt:
     packages:
       - clang-5.0
@@ -58,6 +59,7 @@ addons: &clang5
       - llvm-toolchain-trusty-6.0
 
 addons: &clang6
+  compiler: clang
   apt:
     packages:
       - clang-6.0
