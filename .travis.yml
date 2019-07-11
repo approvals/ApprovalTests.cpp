@@ -52,6 +52,7 @@ addons: &clang6
   apt:
     packages:
       - clang-6.0
+      - libstdc++-6-dev
     sources:
       - ubuntu-toolchain-r-test
       - llvm-toolchain-trusty-6.0
