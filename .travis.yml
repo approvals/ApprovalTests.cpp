@@ -108,3 +108,7 @@ script:
   - cmake ..
   - cmake --build .
   - ctest --verbose
+
+# DO NOT MERGE this to parent project
+notifications:
+  email: false
