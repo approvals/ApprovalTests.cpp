@@ -3,16 +3,16 @@ dist: trusty
 
 language: cpp
 
-script:
-  - mkdir .build
-  - cd .build
-  - cmake -DCMAKE_CXX_COMPILER=g++-6 ..
-  - cmake --build .
-  - ctest --verbose
-
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
       - g++-6
+
+script:
+  - mkdir .build
+  - cd .build
+  - cmake -DCMAKE_CXX_COMPILER=g++-6 ..
+  - cmake --build .
+  - ctest --verbose
