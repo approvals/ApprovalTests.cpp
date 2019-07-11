@@ -56,7 +56,7 @@ addons: &clang5
       - libstdc++-6-dev
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-6.0
+      - llvm-toolchain-trusty-5.0
 
 addons: &clang6
   compiler: clang
