@@ -55,7 +55,6 @@ CODE QUALITY
 
 ENVIRONMENT AND BUILDS
 
-. Add CI builds for clang
 . set up a git tab policy
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
 
