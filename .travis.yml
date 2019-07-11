@@ -48,23 +48,23 @@ addons: &gcc9
     packages:
       - g++-9
 
-#addons: &clang5
-#  apt:
-#    packages:
-#      - clang-5.0
-#      - libstdc++-6-dev
-#    sources:
-#      - ubuntu-toolchain-r-test
-#      - llvm-toolchain-trusty-6.0
-#
-#addons: &clang6
-#  apt:
-#    packages:
-#      - clang-6.0
-#      - libstdc++-6-dev
-#    sources:
-#      - ubuntu-toolchain-r-test
-#      - llvm-toolchain-trusty-6.0
+addons: &clang5
+  apt:
+    packages:
+      - clang-5.0
+      - libstdc++-6-dev
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-6.0
+
+addons: &clang6
+  apt:
+    packages:
+      - clang-6.0
+      - libstdc++-6-dev
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-6.0
 
 matrix:
   include:
@@ -72,25 +72,23 @@ matrix:
     # - env: GCC_VERSION=4.8
     #   addons: *gcc48
 
-    - env: GCC_VERSION=5
-      addons: *gcc5
+#    - env: GCC_VERSION=5
+#      addons: *gcc5
+#
+#    - env: GCC_VERSION=6
+#      addons: *gcc6
+#
+#    - env: GCC_VERSION=7
+#      addons: *gcc7
+#
+#    - env: GCC_VERSION=8
+#      addons: *gcc8
+#
+#    - env: GCC_VERSION=9
+#      addons: *gcc9
 
-    - env: GCC_VERSION=6
-      addons: *gcc6
-
-    - env: GCC_VERSION=7
-      addons: *gcc7
-
-    - env: GCC_VERSION=8
-      addons: *gcc8
-
-    - env: GCC_VERSION=9
-      addons: *gcc9
-
-    # Fails to install: https://travis-ci.com/claremacrae/ApprovalTests.cpp/builds/118783047
-    # E: Couldn't find any package by glob 'clang-5.0' 
-    # - env: CLANG_VERSION=5.0
-    #   addons: *clang5
+    - env: CLANG_VERSION=5.0
+      addons: *clang5
 
     # Fails to build: https://travis-ci.com/claremacrae/ApprovalTests.cpp/builds/118773112
     # - env: CLANG_VERSION=6.0
