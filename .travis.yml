@@ -3,16 +3,21 @@ dist: trusty
 
 language: cpp
 
-addons:
+addons: &gcc6
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
       - g++-6
 
+matrix:
+  include:
+    - env: GCC_VERSION=6
+      addons: *gcc6
+
 script:
   - mkdir .build
   - cd .build
-  - cmake -DCMAKE_CXX_COMPILER=g++-6 ..
+  - cmake -DCMAKE_CXX_COMPILER=g++-${GCC_VERSION} ..
   - cmake --build .
   - ctest --verbose
