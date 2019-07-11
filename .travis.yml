@@ -3,6 +3,13 @@ dist: trusty
 
 language: cpp
 
+addons: &gcc4
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4
+
 addons: &gcc5
   apt:
     sources:
@@ -40,20 +47,23 @@ addons: &gcc9
 
 matrix:
   include:
-    - env: GCC_VERSION=5
-      addons: *gcc5
+    - env: GCC_VERSION=4
+      addons: *gcc4
 
-    - env: GCC_VERSION=6
-      addons: *gcc6
-
-    - env: GCC_VERSION=7
-      addons: *gcc7
-
-    - env: GCC_VERSION=8
-      addons: *gcc8
-
-    - env: GCC_VERSION=9
-      addons: *gcc9
+#    - env: GCC_VERSION=5
+#      addons: *gcc5
+#
+#    - env: GCC_VERSION=6
+#      addons: *gcc6
+#
+#    - env: GCC_VERSION=7
+#      addons: *gcc7
+#
+#    - env: GCC_VERSION=8
+#      addons: *gcc8
+#
+#    - env: GCC_VERSION=9
+#      addons: *gcc9
 
 script:
   - mkdir .build
