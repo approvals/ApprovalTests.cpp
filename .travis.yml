@@ -8,35 +8,35 @@ language: cpp
 # Linux gcc
 # -------------------------------------------------------------------------
 
-addons: &gcc5
+.addons-gcc5: &gcc5
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
       - g++-5
 
-addons: &gcc6
+.addons-gcc6: &gcc6
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
       - g++-6
 
-addons: &gcc7
+.addons-gcc7: &gcc7
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
       - g++-7
 
-addons: &gcc8
+.addons-gcc8: &gcc8
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
       - g++-8
 
-addons: &gcc9
+.addons-gcc9: &gcc9
   apt:
     sources:
       - ubuntu-toolchain-r-test
@@ -47,7 +47,7 @@ addons: &gcc9
 # Linux clang
 # -------------------------------------------------------------------------
 
-addons: &clang5
+.addons-clang5: &clang5
   compiler: clang
   apt:
     packages:
@@ -57,7 +57,7 @@ addons: &clang5
       - ubuntu-toolchain-r-test
       - llvm-toolchain-trusty-5.0
 
-addons: &clang6
+.addons-clang6: &clang6
   compiler: clang
   apt:
     packages:
