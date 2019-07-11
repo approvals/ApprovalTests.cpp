@@ -11,8 +11,8 @@ script:
   - ctest --verbose
 
 addons:
- apt:
-  sources:
-   - ubuntu-toolchain-r-test
-  packages:
-   - g++-6
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-6
