@@ -3,7 +3,7 @@ dist: trusty
 
 language: cpp
 
-addons: &gcc6
+addons: &g++6
   apt:
     sources:
       - ubuntu-toolchain-r-test
@@ -13,7 +13,7 @@ addons: &gcc6
 matrix:
   include:
     - env: GCC_VERSION=6
-      addons: *gcc6
+      addons: *g++6
 
 script:
   - mkdir .build
