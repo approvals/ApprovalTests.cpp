@@ -102,6 +102,19 @@ matrix:
 #      addons: *clang6
 
     - os: osx
+      osx_image: xcode6.4
+
+    - os: osx
+      osx_image: xcode7.3
+
+    - os: osx
+      osx_image: xcode8.3
+
+    - os: osx
+      osx_image: xcode9.4
+
+    - os: osx
+      osx_image: xcode10.2
 
 before_script:
   - if [ -n "$GCC_VERSION" ]; then export CXX="g++-${GCC_VERSION}" CC="gcc-${GCC_VERSION}"; fi
