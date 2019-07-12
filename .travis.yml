@@ -67,6 +67,26 @@ language: cpp
       - ubuntu-toolchain-r-test
       - llvm-toolchain-trusty-6.0
 
+.addons-clang7: &clang7
+  compiler: clang
+  apt:
+    packages:
+      - clang-7.0
+      - libstdc++-8-dev
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-7.0
+
+.addons-clang8: &clang8
+  compiler: clang
+  apt:
+    packages:
+      - clang-8.0
+      - libstdc++-8-dev
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-8.0
+
 matrix:
   include:
     
@@ -107,6 +127,16 @@ matrix:
       os: linux
       dist: trusty
       addons: *clang6
+
+    - env: CLANG_VERSION=7.0
+      os: linux
+      dist: trusty
+      addons: *clang7
+
+    - env: CLANG_VERSION=8.0
+      os: linux
+      dist: trusty
+      addons: *clang8
 
     # -------------------------------------------------------------------------
     # Mac clang
