@@ -1,5 +1,9 @@
 image: Visual Studio 2017
 
+branches:
+  except:
+    - more_travis_builds
+
 before_build:
 - cmd: cmake .
 
