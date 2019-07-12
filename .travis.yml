@@ -71,7 +71,7 @@ language: cpp
   compiler: clang
   apt:
     packages:
-      - clang-7.0
+      - clang-7
       - libstdc++-8-dev
     sources:
       - ubuntu-toolchain-r-test
@@ -81,7 +81,7 @@ language: cpp
   compiler: clang
   apt:
     packages:
-      - clang-8.0
+      - clang-8
       - libstdc++-8-dev
     sources:
       - ubuntu-toolchain-r-test
@@ -128,12 +128,12 @@ matrix:
 #      dist: trusty
 #      addons: *clang6
 
-    - env: CLANG_VERSION=7.0
+    - env: CLANG_VERSION=7
       os: linux
       dist: trusty
       addons: *clang7
 
-    - env: CLANG_VERSION=8.0
+    - env: CLANG_VERSION=8
       os: linux
       dist: trusty
       addons: *clang8
