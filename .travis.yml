@@ -75,7 +75,7 @@ language: cpp
       - libstdc++-8-dev
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-7.0
+      - llvm-toolchain-trusty-7
 
 .addons-clang8: &clang8
   compiler: clang
@@ -85,7 +85,7 @@ language: cpp
       - libstdc++-8-dev
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-8.0
+      - llvm-toolchain-trusty-8
 
 matrix:
   include:
