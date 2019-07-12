@@ -100,10 +100,12 @@ matrix:
 
     - env: CLANG_VERSION=5.0
       os: linux
+      dist: trusty
       addons: *clang5
 
     - env: CLANG_VERSION=6.0
       os: linux
+      dist: trusty
       addons: *clang6
 
     # -------------------------------------------------------------------------
