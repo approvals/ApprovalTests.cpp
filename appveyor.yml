@@ -1,9 +1,5 @@
 environment:
   matrix:
-    - TARGET: vs2015
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      GENERATOR: '"Visual Studio 14 2015"'
-
     - TARGET: vs2017
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       GENERATOR: '"Visual Studio 15 2017"'
