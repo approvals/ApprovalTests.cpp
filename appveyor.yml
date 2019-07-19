@@ -1,14 +1,22 @@
-image: Visual Studio 2017
+environment:
+  matrix:
+    - TARGET: vs2017
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      GENERATOR: '"Visual Studio 15 2017"'
 
-branches:
-  except:
-    - more_travis_builds
+    - TARGET: vs2019
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      GENERATOR: '"Visual Studio 16 2019"'
+
+#branches:
+#  except:
+#    - more_travis_builds
 
 before_build:
-- cmd: cmake .
+- cmd: cmake -G %GENERATOR% .
 
-build:
-  project: ApprovalTests.cpp.sln
+build_script:
+- cmd: cmake --build .
 
 test_script:
 - cmd: ctest --verbose --parallel 4 -C Debug
