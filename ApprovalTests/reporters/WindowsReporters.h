@@ -40,7 +40,7 @@ namespace Windows {
     class TortoiseDiffReporter : public FirstWorkingReporter {
     public:
         TortoiseDiffReporter() : FirstWorkingReporter(
-                {new TortoiseImageDiffReporter(), new TortoiseTextDiffReporter()}) {
+                {new TortoiseTextDiffReporter(), new TortoiseImageDiffReporter()}) {
         }
     };
 
