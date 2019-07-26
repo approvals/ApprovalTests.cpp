@@ -64,5 +64,5 @@ int main(int argc, char** argv)
 }
 
 #endif // APPROVALS_DOCTEST
-
+// </SingleHpp>
 #endif //APPROVALTESTS_CPP_DOCTESTAPPROVALS_H
