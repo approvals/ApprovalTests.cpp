@@ -7,7 +7,7 @@ TEST_CASE("first passing doctest test")
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 //#include "ApprovalTests/StringUtils.h"
-//#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/Approvals.h"
 //
 //using namespace std;
 //using Catch::Matchers::EndsWith;
@@ -24,49 +24,20 @@ TEST_CASE("ItCanGiveYouTheSpecName") {
         }
     }
 }
-//
-//
+
 TEST_CASE("ItCanGiveYouTheTestFileName") {
     ApprovalTestNamer namer;
     REQUIRE(namer.getFileName() == "DocTestNamerTests");
 }
-//
-//
-//TEST_CASE("TestProperNameCaseOnWindows") {
-//    if (SystemUtils::isWindowsOs())
-//    {
-//        ApprovalTestNamer namer;
-//        auto test = namer.currentTest();
-//        test.setFileName(StringUtils::toLower(test.getFileName()));
-//        namer.currentTest(&test);
-//        REQUIRE(namer.getFileName() == "NamerTests");
-//    }
-//}
-//
-//
-//TEST_CASE("ItCanGiveYouTheTestDirectory") {
-//    // This should work with CaseSensitive::Yes.
-//    // However, it would fail when run in Visual Studio 2017 as lower-case source-file names are returned.
-//    // We've fixed this for filenames, but not directory names, so this test ignores case.
-//    // See https://stackoverflow.com/questions/49068785/how-to-find-the-filename-from-a-c11-stat-objects-file-serial-number-on-window
-//    auto suppress_subdirectory = Approvals::useApprovalsSubdirectory("");
-//    ApprovalTestNamer namer;
-//    auto __ = SystemUtils::getDirectorySeparator();
-//    REQUIRE_THAT(namer.getDirectory(), EndsWith(__ + "ApprovalTests_Catch2_Tests" + __, Catch::CaseSensitive::No));
-//}
-//
-//
-//TEST_CASE("ItIncludesFileContextAndSpecNames") {
-//    ApprovalTestNamer namer;
-//    auto __ = SystemUtils::getDirectorySeparator();
-//
-//    REQUIRE_THAT(namer.getApprovedFile(".txt"),
-//                 EndsWith(__ + "NamerTests.ItIncludesFileContextAndSpecNames.approved.txt"));
-//    REQUIRE_THAT(namer.getReceivedFile(".txt"),
-//                 EndsWith(__ + "NamerTests.ItIncludesFileContextAndSpecNames.received.txt"));
-//}
-//
-//
+
+TEST_CASE("It can verify tests with spaces")
+{
+    // DON'T SAVE REPORTER!!!!!
+    Approvals::verify("hello world");
+//    Approvals::verify("hello world", Windows::AraxisMergeReporter());
+}
+
+
 //TEST_CASE("Clean Up Filename Transforms")
 //{
 //    std::vector<std::string> names = { "CleanUpFilenameTransforms", "Spaces In File \\" };
