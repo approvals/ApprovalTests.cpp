@@ -59,7 +59,6 @@ struct DocTestReporterStub : IReporter
 
 struct DocTestApprovalListener : DocTestReporterStub
 {
-//    using TestEventListenerBase::TestEventListenerBase;
     TestName currentTest;
 
     // constructor has to accept the ContextOptions by ref as a single argument
