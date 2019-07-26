@@ -57,23 +57,28 @@ struct DocTestReporterStub : IReporter
     }
 };
 
-struct DocTestApprovalListener : DocTestReporterStub
+struct DocTestApprovalListener : ConsoleReporter
 {
     TestName currentTest;
 
     // constructor has to accept the ContextOptions by ref as a single argument
-    DocTestApprovalListener(const ContextOptions& /*in*/)
+    DocTestApprovalListener(const ContextOptions& in) : ConsoleReporter(in)
     {
     }
     
     void test_case_start(const TestCaseData& testInfo) override
     {
+        ConsoleReporter::test_case_start(testInfo);
+
+        currentTest.sections.push_back(testInfo.m_name);
         currentTest.setFileName(testInfo.m_file);
         ApprovalTestNamer::currentTest(&currentTest);
     }
 
-    void test_case_end(const CurrentTestCaseStats& /*in*/) override
+    void test_case_end(const CurrentTestCaseStats& in) override
     {
+        ConsoleReporter::test_case_end(in);
+        
         while (!currentTest.sections.empty()) {
             currentTest.sections.pop_back();
         }
@@ -81,11 +86,15 @@ struct DocTestApprovalListener : DocTestReporterStub
 
     void subcase_start(const SubcaseSignature &signature) override
     {
+        ConsoleReporter::subcase_start(signature);
+
         currentTest.sections.push_back(signature.m_name);
     }
 
     void subcase_end() override
     {
+        ConsoleReporter::subcase_end();
+
         currentTest.sections.pop_back();
     }
 };

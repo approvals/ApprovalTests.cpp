@@ -12,18 +12,18 @@ TEST_CASE("first passing doctest test")
 //using namespace std;
 //using Catch::Matchers::EndsWith;
 //
-//TEST_CASE("ItCanGiveYouTheSpecName") {
-//
-//    ApprovalTestNamer namer;
-//    REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName");
-//
-//    SECTION("andSectionNames") {
-//        REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName.andSectionNames");
-//        SECTION("andEvenMoreSectionNames") {
-//            REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName.andSectionNames.andEvenMoreSectionNames");
-//        }
-//    }
-//}
+TEST_CASE("ItCanGiveYouTheSpecName") {
+
+    ApprovalTestNamer namer;
+    REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName");
+
+    DOCTEST_SUBCASE("andSectionNames") {
+        REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName.andSectionNames");
+        DOCTEST_SUBCASE("andEvenMoreSectionNames") {
+            REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName.andSectionNames.andEvenMoreSectionNames");
+        }
+    }
+}
 //
 //
 TEST_CASE("ItCanGiveYouTheTestFileName") {
