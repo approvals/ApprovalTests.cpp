@@ -141,7 +141,7 @@ REGISTER_REPORTER("approvals", 0, DocTestApprovalListener);
 //}
 int main(int argc, char** argv)
 {
-    char *myargv[] = {"program name", "--reporters=approvals", NULL};
+    const char *myargv[] = {"program name", "--reporters=approvals", NULL};
     int myargc = sizeof(myargv) / sizeof(char*) - 1;
 
     return doctest::Context(myargc, myargv).run();
