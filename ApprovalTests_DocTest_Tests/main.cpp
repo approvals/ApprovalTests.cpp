@@ -5,13 +5,13 @@
 
 using namespace doctest;
 
-struct AbstractDocTestReporter : IReporter
+struct DocTestReporterStub : IReporter
 {
-    AbstractDocTestReporter()
+    DocTestReporterStub()
     {
     }
 
-    void test_case_start(const TestCaseData& testInfo) override
+    void test_case_start(const TestCaseData& /*testInfo*/) override
     {
     }
 
@@ -19,7 +19,7 @@ struct AbstractDocTestReporter : IReporter
     {
     }
 
-    void report_query(const QueryData &data) override
+    void report_query(const QueryData &/*data*/) override
     {
     }
 
@@ -27,15 +27,15 @@ struct AbstractDocTestReporter : IReporter
     {
     }
 
-    void test_run_end(const TestRunStats &stats) override
+    void test_run_end(const TestRunStats &/*stats*/) override
     {
     }
 
-    void test_case_exception(const TestCaseException &exception) override
+    void test_case_exception(const TestCaseException &/*exception*/) override
     {
     }
 
-    void subcase_start(const SubcaseSignature &signature) override
+    void subcase_start(const SubcaseSignature &/*signature*/) override
     {
 
     }
@@ -44,20 +44,20 @@ struct AbstractDocTestReporter : IReporter
     {
     }
 
-    void log_assert(const AssertData &data) override
+    void log_assert(const AssertData &/*data*/) override
     {
     }
 
-    void log_message(const MessageData &data) override
+    void log_message(const MessageData &/*data*/) override
     {
     }
 
-    void test_case_skipped(const TestCaseData &data) override
+    void test_case_skipped(const TestCaseData &/*data*/) override
     {
     }
 };
 
-struct DocTestApprovalListener : AbstractDocTestReporter
+struct DocTestApprovalListener : DocTestReporterStub
 {
 //    using TestEventListenerBase::TestEventListenerBase;
     TestName currentTest;
