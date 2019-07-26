@@ -5,7 +5,59 @@
 
 using namespace doctest;
 
-struct DocTestApprovalListener : IReporter
+struct AbstractDocTestReporter : IReporter
+{
+    AbstractDocTestReporter()
+    {
+    }
+
+    void test_case_start(const TestCaseData& testInfo) override
+    {
+    }
+
+    void test_case_end(const CurrentTestCaseStats& /*in*/) override
+    {
+    }
+
+    void report_query(const QueryData &data) override
+    {
+    }
+
+    void test_run_start() override
+    {
+    }
+
+    void test_run_end(const TestRunStats &stats) override
+    {
+    }
+
+    void test_case_exception(const TestCaseException &exception) override
+    {
+    }
+
+    void subcase_start(const SubcaseSignature &signature) override
+    {
+
+    }
+
+    void subcase_end() override
+    {
+    }
+
+    void log_assert(const AssertData &data) override
+    {
+    }
+
+    void log_message(const MessageData &data) override
+    {
+    }
+
+    void test_case_skipped(const TestCaseData &data) override
+    {
+    }
+};
+
+struct DocTestApprovalListener : AbstractDocTestReporter
 {
 //    using TestEventListenerBase::TestEventListenerBase;
     TestName currentTest;
@@ -13,7 +65,6 @@ struct DocTestApprovalListener : IReporter
     std::ostream&         stdout_stream;
     const ContextOptions& opt;
     const TestCaseData*   tc;
-    std::mutex            mutex;
 
     // constructor has to accept the ContextOptions by ref as a single argument
     DocTestApprovalListener(const ContextOptions& in)
@@ -38,52 +89,15 @@ struct DocTestApprovalListener : IReporter
         }
     }
 
-    void report_query(const QueryData &data) override
-    {
-
-    }
-
-    void test_run_start() override
-    {
-
-    }
-
-    void test_run_end(const TestRunStats &stats) override
-    {
-
-    }
-
-    void test_case_exception(const TestCaseException &exception) override
-    {
-
-    }
-
     void subcase_start(const SubcaseSignature &signature) override
     {
         currentTest.sections.push_back(signature.m_name);
-
     }
 
     void subcase_end() override
     {
         currentTest.sections.pop_back();
     }
-
-    void log_assert(const AssertData &data) override
-    {
-
-    }
-
-    void log_message(const MessageData &data) override
-    {
-
-    }
-
-    void test_case_skipped(const TestCaseData &data) override
-    {
-
-    }
-
 };
 
 REGISTER_REPORTER("approvals", 0, DocTestApprovalListener);
