@@ -84,61 +84,10 @@ struct DocTestApprovalListener : IReporter
 
     }
 
-//    void subcase_start(const SubcaseSignature& /*in*/) override {
-//        std::lock_guard<std::mutex> lock(mutex);
-//    }
-//
-//    void subcase_end() override {
-//        std::lock_guard<std::mutex> lock(mutex);
-//    }
-    
-//    Catch2ApprovalListener(DocTest::ReporterConfig const &_config) : DocTest::TestEventListenerBase(_config) {}
-//
-//    virtual void testCaseStarting(DocTest::TestCaseInfo const &testInfo) override {
-//
-//        currentTest.setFileName(testInfo.lineInfo.file);
-//        ApprovalTestNamer::currentTest(&currentTest);
-//    }
-//
-//    virtual void testCaseEnded(DocTest::TestCaseStats const &/*testCaseStats*/) override {
-//        while (!currentTest.sections.empty()) {
-//            currentTest.sections.pop_back();
-//        }
-//    }
-//
-//    virtual void sectionStarting(DocTest::SectionInfo const &sectionInfo) override {
-//        currentTest.sections.push_back(sectionInfo.name);
-//    }
-//
-//    virtual void sectionEnded(DocTest::SectionStats const &/*sectionStats*/) override {
-//        currentTest.sections.pop_back();
-//    }
 };
-//CATCH_REGISTER_LISTENER(Catch2ApprovalListener)
 
 REGISTER_REPORTER("approvals", 0, DocTestApprovalListener);
 
-//int main(int argc, char** argv) {
-//    doctest::Context context;
-//
-//    // !!! THIS IS JUST AN EXAMPLE SHOWING HOW DEFAULTS/OVERRIDES ARE SET !!!
-//
-//    // defaults
-//    context.applyCommandLine(argc, argv);
-//
-//    // overrides
-//
-//    int res = context.run(); // run queries, or run tests unless --no-run is specified
-//
-//    if(context.shouldExit()) // important - query flags (and --exit) rely on the user doing this
-//        return res;          // propagate the result of the tests
-//
-//    context.clearFilters(); // removes all filters added up to this point
-//
-//    // your program - if the testing framework is integrated in your production code
-//
-//    return res; // the result from doctest is propagated here as well
-//}
 int main(int argc, char** argv)
 {
     const char *myargv[] = {"program name", "--reporters=approvals", NULL};
