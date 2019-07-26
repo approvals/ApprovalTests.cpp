@@ -62,24 +62,15 @@ struct DocTestApprovalListener : DocTestReporterStub
 //    using TestEventListenerBase::TestEventListenerBase;
     TestName currentTest;
 
-    std::ostream&         stdout_stream;
-    const ContextOptions& opt;
-    const TestCaseData*   tc;
-
     // constructor has to accept the ContextOptions by ref as a single argument
-    DocTestApprovalListener(const ContextOptions& in)
-        : stdout_stream(*in.cout)
-        , opt(in)
-        , tc(nullptr)
+    DocTestApprovalListener(const ContextOptions& /*in*/)
     {
-        stdout_stream << "DocTestApprovalListener created ***************************************** \n";
     }
     
     void test_case_start(const TestCaseData& testInfo) override
     {
         currentTest.setFileName(testInfo.m_file);
         ApprovalTestNamer::currentTest(&currentTest);
-        stdout_stream << "file name " << currentTest.getFileName() << '\n';
     }
 
     void test_case_end(const CurrentTestCaseStats& /*in*/) override
