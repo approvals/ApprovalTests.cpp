@@ -39,8 +39,8 @@ Create a file `main.cpp` and add just the following two lines:
 <sup>[snippet source](/ApprovalTests_DocTest_Tests/main.cpp#L1-L5)</sup>
 <!-- endsnippet -->
 
-**Note**: currently, ApprovalTests overrides any `--reporter` command-line argument supplied.
-This is needed for ApprovalTests to function with doctest. The ApprovalTests reporter works like doctest's `console` reporter. This means that it is not possible to run ApprovalTests with the doctest test framework, and use reporters such as `xml`.
+**Note**: currently, Approval Tests overrides any `--reporter` command-line argument supplied.
+This is needed for Approval Tests to function with doctest. The Approval Tests reporter works like doctest's `console` reporter. This means that it is not possible to run Approval Tests with the doctest test framework, and use reporters such as `xml`.
 
 We currently do not have a better workaround.
 
