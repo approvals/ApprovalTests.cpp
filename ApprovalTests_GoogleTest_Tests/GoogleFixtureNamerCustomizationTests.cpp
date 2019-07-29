@@ -3,14 +3,14 @@
 
 #include "ApprovalTests/integrations/google/GoogleConfiguration.h"
 
-// startcode googletest_customize_suffix
+// begin-snippet: googletest_customize_suffix
 // main.cpp
 auto customization = GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
-// endcode
+// end-snippet
 
-// startcode googletest_name_parts
+// begin-snippet: googletest_name_parts
 TEST(TestCaseName, TestName)
-// endcode
+// end-snippet
 {
     ApprovalTestNamer namer;
     EXPECT_EQ(namer.getOutputFileBaseName(), "GoogleFixtureNamerCustomizationTests.TestCaseName.TestName");
@@ -30,7 +30,7 @@ TEST_F(GoogleFixtureNamerCustomizationTestsFixture, OnlyMatchesFixtureAtEnd)
     EXPECT_EQ(namer.getOutputFileBaseName(), "GoogleFixtureNamerCustomizationTests.OnlyMatchesFixtureAtEnd");
 }
 
-// startcode googletest_customize_function
+// begin-snippet: googletest_customize_function
 // main.cpp
 bool dropTestCaseNamesWithIgnoreThis(const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
 {
@@ -38,26 +38,26 @@ bool dropTestCaseNamesWithIgnoreThis(const std::string& /*testFileNameWithExtens
 }
 
 auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
-// endcode
+// end-snippet
 
-// startcode googletest_customize_lambda
+// begin-snippet: googletest_customize_lambda
 // main.cpp
 auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
     [](const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
     {
         return StringUtils::contains(testCaseName, "IgnoreThis");
     });
-// endcode
+// end-snippet
 
-// startcode googletest_customize_test
+// begin-snippet: googletest_customize_test
 TEST(TestCaseName_IgnoreThis, TestName )
-// endcode
+// end-snippet
 {
     ApprovalTestNamer namer;
 
-    // startcode googletest_customize_test_name
+    // begin-snippet: googletest_customize_test_name
     auto outputFileBaseName = "GoogleFixtureNamerCustomizationTests.TestName";
-    // endcode
+    // end-snippet
 
     EXPECT_EQ(namer.getOutputFileBaseName(), outputFileBaseName);
 }

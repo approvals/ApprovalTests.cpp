@@ -27,15 +27,15 @@ std::vector<Rectangle3> getRectangles()
 }
 
 TEST_CASE("MultipleLinesCanBeHardToRead") {
-    // startcode verify_list
+    // begin-snippet: verify_list
     Approvals::verifyAll(
         "rectangles",
         getRectangles());
-    // endcode
+    // end-snippet
 
 }
 
-// startcode to_string_wrapper_example
+// begin-snippet: to_string_wrapper_example
 struct FormatRectangleForMultipleLines{
 
     explicit FormatRectangleForMultipleLines(const Rectangle3& rectangle) : rectangle(rectangle)
@@ -61,7 +61,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
         [](auto r, auto& os){os << FormatRectangleForMultipleLines(r);}
     );
 }
-// endcode
+// end-snippet
 
 std::ostream& toStringForMultipleLines(std::ostream &os, const Rectangle3 &rectangle) {
     os << "(x,y,width,height) = (" <<

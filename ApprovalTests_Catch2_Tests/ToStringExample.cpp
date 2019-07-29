@@ -9,13 +9,13 @@ struct Rectangle2{
 
     int x,y, width, height;
 
-    // startcode to_string_standard_example
+    // begin-snippet: to_string_standard_example
     friend std::ostream &operator<<(std::ostream &os, const Rectangle2 &rectangle) {
         os << "[x: " << rectangle.x << " y: " << rectangle.y << " width: " << rectangle.width << " height: "
            << rectangle.height << "]";
         return os;
     }
-    // endcode
+    // end-snippet
 
 };
 TEST_CASE("ToStringsAreHelpful") {

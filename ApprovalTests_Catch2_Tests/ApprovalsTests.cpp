@@ -107,7 +107,7 @@ TEST_CASE("VerifyingException")
 
 TEST_CASE("VerifyingNoException")
 {
-    // startcode verify_exception_message_example
+    // begin-snippet: verify_exception_message_example
     Approvals::verifyExceptionMessage([](){/* your code goes here */});
-    // endcode
+    // end-snippet
 }

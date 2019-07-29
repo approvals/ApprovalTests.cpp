@@ -1,4 +1,4 @@
-// startcode googletest_existing_main
+// begin-snippet: googletest_existing_main
 // main.cpp:
 
 // 1. Add these two lines to your main:
@@ -14,10 +14,10 @@ int main(int argc, char** argv)
 
     return RUN_ALL_TESTS();
 }
-// endcode
+// end-snippet
 
-// startcode do_not_report_on_ci
+// begin-snippet: do_not_report_on_ci
 // main.cpp
 auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
     BlockingReporter::onMachineNamed("MyCIMachineName") );
-// endcode
+// end-snippet

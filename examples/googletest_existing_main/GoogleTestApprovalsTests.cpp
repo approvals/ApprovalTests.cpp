@@ -8,7 +8,7 @@ TEST(GoogleTestApprovalsTests, TestStreamableObject)
 
 TEST(GoogleTestApprovalsTests, SpecificReporter)
 {
-    // startcode basic_approval_with_reporter
+    // begin-snippet: basic_approval_with_reporter
     Approvals::verify("text to be verified", Windows::AraxisMergeReporter());
-    // endcode
+    // end-snippet
 }

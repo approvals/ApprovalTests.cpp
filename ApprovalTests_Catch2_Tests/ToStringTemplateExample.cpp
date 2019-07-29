@@ -9,14 +9,14 @@ struct Rectangle2{
 
     // Using Template instead of ostream for embedded instances where ostream aren't available
     // template implementation of output operator
-    // startcode to_string_template_example
+    // begin-snippet: to_string_template_example
     template <class STREAM>
     friend STREAM &operator<<(STREAM &os, const Rectangle2 &rectangle) {
         os << "[x: " << rectangle.x << " y: " << rectangle.y << " width: " << rectangle.width << " height: "
            << rectangle.height << "]";
         return os;
     }
-    // endcode
+    // end-snippet
 
 };
 TEST_CASE("ToStringTemplatesAreHelpful") {

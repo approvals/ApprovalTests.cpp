@@ -3,18 +3,18 @@
 
 #define TEST_COMMIT_REVERT_CATCH
 
-// startcode catch_2_main
+// begin-snippet: catch_2_main
 // main.cpp:
 #define APPROVALS_CATCH // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
-// endcode
+// end-snippet
 
-// startcode use_subdirectory_in_main
+// begin-snippet: use_subdirectory_in_main
 auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
-// endcode
+// end-snippet
 
-// startcode use_as_default_reporter_in_main
+// begin-snippet: use_as_default_reporter_in_main
 // main.cpp:
 #include <memory>
 auto defaultReporterDisposer = Approvals::useAsDefaultReporter( std::make_shared<DiffReporter>() );
-// endcode
+// end-snippet

@@ -68,7 +68,7 @@ namespace Windows {
     public:
         WindowsDiffReporter() : FirstWorkingReporter(
                 {
-                        // startcode windows_diff_reporters
+                        // begin-snippet: windows_diff_reporters
                         new TortoiseDiffReporter(),
                         new BeyondCompareReporter(),
                         new WinMergeReporter(),
@@ -76,7 +76,7 @@ namespace Windows {
                         new CodeCompareReporter(),
                         new KDiff3Reporter(),
                         new VisualStudioCodeReporter(),
-                        // endcode
+                        // end-snippet
                 }
         ) {
         }
