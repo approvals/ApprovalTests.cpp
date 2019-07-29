@@ -60,7 +60,7 @@ Running tests gives the following output:
 
 * Have you created a `main.cpp` that sets up ApprovalTests?
     * If not, the default Google Test `main()` will be used, which will not set up Approval Tests
-    * To fix, copy in the non-comment code from [ApprovalTests_Catch2_Tests/main.cpp](/ApprovalTests_Catch2_Tests/main.cpp)
+    * To fix, copy in the non-comment code from [ApprovalTests_GoogleTest_Tests/main.cpp](/ApprovalTests_GoogleTest_Tests/main.cpp)
 * Is your `main.cpp` included in your project's build?
     * If not, the default Google Test `main()` will be used, which will not set up Approval Tests
     * To fix, e.g. check your `CMakeLists.txt` file
