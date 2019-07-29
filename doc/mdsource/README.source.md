@@ -38,6 +38,7 @@ Once you're up and running, consider the following reference material. -->
 * [Getting Started](/doc/GettingStarted.md#top) - setting up `main()`
 * [Using Approval Tests With Catch](/doc/UsingCatch.md#top)
 * [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
+* [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
 
 ## Writing Tests
 
