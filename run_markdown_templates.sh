@@ -25,7 +25,7 @@
 #   dotnet tool update  -g MarkdownSnippets.Tool
 
 dotnet tool update  -g MarkdownSnippets.Tool
-mdsnippets --exclude cmake-build
+mdsnippets --exclude cmake-build --toc-level 5 --readonly true
 
 # Custom Markdown linting
 # todo: fix

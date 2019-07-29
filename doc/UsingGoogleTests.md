@@ -9,21 +9,20 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # Using Approval Tests With Google Tests
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+<!-- toc -->
+## Contents
 
-- [Getting Started With Google Test](#getting-started-with-google-test)
-  - [Starter Project](#starter-project)
-  - [New Project](#new-project)
-  - [Existing Project - no main()](#existing-project---no-main)
-  - [Existing Project - with your main()](#existing-project---with-your-main)
-- [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
-  - [Customizing](#customizing)
-    - [Custom Suffixes](#custom-suffixes)
-    - [Custom Anything](#custom-anything)
+  * [Getting Started With Google Test](#getting-started-with-google-test)
+    * [Starter Project](#starter-project)
+    * [New Project](#new-project)
+    * [Existing Project - no main()](#existing-project---no-main())
+    * [Existing Project - with your main()](#existing-project---with-your-main())
+  * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
+    * [Customizing](#customizing)
+      * [# Custom Suffixes](##-custom-suffixes)
+      * [# Custom Anything](##-custom-anything)
+<!-- endtoc -->
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## Getting Started With Google Test
