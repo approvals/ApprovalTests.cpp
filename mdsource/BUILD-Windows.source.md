@@ -1,22 +1,10 @@
 <a id="top"></a>
 
-# Developing ApprovalTests.cpp on Windows
+# Developing ApprovalTests.cpp on Windows`
 
 
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
-
-- [Prerequisites](#prerequisites)
-- [Dependencies](#dependencies)
-- [Visual Studio 2017 Community Edition](#visual-studio-2017-community-edition)
-  - [Use CMake to generate Visual Studio 2017 configuration](#use-cmake-to-generate-visual-studio-2017-configuration)
-- [CLion](#clion)
-  - [Use CLion with Visual Studio installed](#use-clion-with-visual-studio-installed)
-  - [Run CLion with cygwin as toolset](#run-clion-with-cygwin-as-toolset)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+toc
+````
 
 ## Prerequisites
 

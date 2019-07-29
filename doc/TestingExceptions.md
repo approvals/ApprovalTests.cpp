@@ -9,15 +9,13 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # Testing Exceptions
 
+<!-- toc -->
+## Contents
+
+  * [Testing exception messages](#testing-exception-messages)
+<!-- endtoc -->
 
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
-
-- [Testing exception messages](#testing-exception-messages)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## Testing exception messages

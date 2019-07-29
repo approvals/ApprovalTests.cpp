@@ -10,16 +10,15 @@ To change this file edit the source file and then run MarkdownSnippets.
 # Getting Started - Creating your main()
 
 
+<!-- toc -->
+## Contents
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+  * [Introduction](#introduction)
+  * [Catch 1 and 2](#catch-1-and-2)
+  * [Google Test](#google-test)
+<!-- endtoc -->
 
-- [Introduction](#introduction)
-- [Catch 1 and 2](#catch-1-and-2)
-- [Google Test](#google-test)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 

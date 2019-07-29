@@ -3,16 +3,8 @@
 # Getting Started - Creating your main()
 
 
+toc
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
-
-- [Introduction](#introduction)
-- [Catch 1 and 2](#catch-1-and-2)
-- [Google Test](#google-test)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 

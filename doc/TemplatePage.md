@@ -10,14 +10,13 @@ To change this file edit the source file and then run MarkdownSnippets.
 # Put Title Here
 
 
+<!-- toc -->
+## Contents
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+  * [First Section Here](#first-section-here)
+<!-- endtoc -->
 
-- [First Section Here](#first-section-here)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## First Section Here
 

@@ -9,18 +9,16 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # Supporting a new test framework
 
+<!-- toc -->
+## Contents
+
+  * [Introduction](#introduction)
+  * [Test Framework Requirements](#test-framework-requirements)
+  * [Steps to add support](#steps-to-add-support)
+  * [Examples](#examples)
+<!-- endtoc -->
 
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
-
-- [Introduction](#introduction)
-- [Test Framework Requirements](#test-framework-requirements)
-- [Steps to add support](#steps-to-add-support)
-- [Examples](#examples)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 

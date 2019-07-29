@@ -4,17 +4,7 @@
 
 
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
-
-- [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
-- [Blocking Reporter](#blocking-reporter)
-- [Machine Blockers](#machine-blockers)
-- [Front Loaded Reporters](#front-loaded-reporters)
-- [Using sub-directories for approved files](#using-sub-directories-for-approved-files)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+toc
 
 ## Customizing Google Tests Approval File Names
 

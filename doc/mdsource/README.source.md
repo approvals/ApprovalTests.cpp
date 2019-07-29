@@ -2,20 +2,8 @@
 
 # ApprovalTests.cpp User Guide
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+toc
 
-- [Introduction](#introduction)
-- [Setup](#setup)
-- [Writing Tests](#writing-tests)
-- [Customising behaviour](#customising-behaviour)
-- [Common Challenges](#common-challenges)
-- [Common Scenarios](#common-scenarios)
-- [Extras](#extras)
-- [Advanced Topics](#advanced-topics)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 <!-- To get the most out of ApprovalTests, start with the Tutorial.
 Once you're up and running, consider the following reference material. -->

@@ -3,19 +3,7 @@
 # CppApprovals
 
 
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
-
-- [Introduction](#introduction)
-- [Getting Started](#getting-started)
-- [Main File](#main-file)
-- [Examples](#examples)
-  - [ToString (ostream insertion)](#tostring-ostream-insertion)
-  - [Suggested Examples](#suggested-examples)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+toc
 
 ## Introduction
 

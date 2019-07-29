@@ -10,20 +10,19 @@ To change this file edit the source file and then run MarkdownSnippets.
 # Contributing to ApprovalTests.cpp
 
 
+<!-- toc -->
+## Contents
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+  * [Contributing - pairing and pull requests](#contributing---pairing-and-pull-requests)
+  * [Documentation](#documentation)
+    * [Creating new pages](#creating-new-pages)
+    * [Internal links need to be absolute](#internal-links-need-to-be-absolute)
+    * [Adding code and file samples](#adding-code-and-file-samples)
+    * [Checking the documentation](#checking-the-documentation)
+  * [Releases](#releases)
+<!-- endtoc -->
 
-- [Contributing - pairing and pull requests](#contributing---pairing-and-pull-requests)
-- [Documentation](#documentation)
-  - [Creating new pages](#creating-new-pages)
-  - [Internal links need to be absolute](#internal-links-need-to-be-absolute)
-  - [Adding code and file samples](#adding-code-and-file-samples)
-  - [Checking the documentation](#checking-the-documentation)
-- [Releases](#releases)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## Contributing - pairing and pull requests

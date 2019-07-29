@@ -2,22 +2,8 @@
 
 # ApprovalTesting (the concept)
 
+toc
 
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
-
-- [The Idea](#the-idea)
-- [The Path](#the-path)
-  - [1 Simple verification](#1-simple-verification)
-    - [The technique](#the-technique)
-    - [The problem](#the-problem)
-  - [2 ToString verification](#2-tostring-verification)
-    - [The technique](#the-technique-1)
-    - [The problem](#the-problem-1)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 This is also referred to as snapshot testing, or golden master testing.
 

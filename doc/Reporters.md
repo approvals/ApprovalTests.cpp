@@ -10,20 +10,19 @@ To change this file edit the source file and then run MarkdownSnippets.
 # Reporter
 
 
+<!-- toc -->
+## Contents
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+  * [Supported Diff Tools](#supported-diff-tools)
+    * [Mac](#mac)
+    * [Linux](#linux)
+    * [Windows](#windows)
+  * [Registering a default reporter](#registering-a-default-reporter)
+  * [Miscellaneous Helper Reporters](#miscellaneous-helper-reporters)
+    * [Auto-approving](#auto-approving)
+<!-- endtoc -->
 
-- [Supported Diff Tools](#supported-diff-tools)
-  - [Mac](#mac)
-  - [Linux](#linux)
-  - [Windows](#windows)
-- [Registering a default reporter](#registering-a-default-reporter)
-- [Miscellaneous Helper Reporters](#miscellaneous-helper-reporters)
-  - [Auto-approving](#auto-approving)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Supported Diff Tools
 

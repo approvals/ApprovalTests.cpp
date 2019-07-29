@@ -3,18 +3,8 @@
 # Using Approval Tests With Catch
 
 
+toc
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
-
-- [Getting Started With Catch 1 and 2](#getting-started-with-catch-1-and-2)
-  - [Starter Project](#starter-project)
-  - [New Project](#new-project)
-  - [Existing Project - with CATCH_CONFIG_MAIN](#existing-project---with-catch_config_main)
-  - [Existing Project - with your main()](#existing-project---with-your-main)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## Getting Started With Catch 1 and 2

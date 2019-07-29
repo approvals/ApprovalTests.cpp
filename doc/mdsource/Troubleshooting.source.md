@@ -3,14 +3,8 @@
 # Troubleshooting
 
 
+toc
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
-
-- [Test gives "You have forgotten to configure your test framework..."](#test-gives-you-have-forgotten-to-configure-your-test-framework)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Test gives "You have forgotten to configure your test framework..."
 
