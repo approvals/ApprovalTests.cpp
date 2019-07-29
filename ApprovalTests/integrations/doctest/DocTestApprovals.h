@@ -55,6 +55,9 @@ REGISTER_REPORTER("approvals", 0, DocTestApprovalListener);
 
 int main(int argc, char** argv)
 {
+    // See https://github.com/onqtam/doctest/blob/master/examples/all_features/main.cpp
+    // Can we use:
+    //      context.setOption("--reporters", "approvals");
     const char *myargv[] = {"program name", "--reporters=approvals", NULL};
     int myargc = sizeof(myargv) / sizeof(char*) - 1;
 
