@@ -1,14 +1,6 @@
 <a id="top"></a>
 # How To Release
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
-
-- [Update ApprovalTests.cpp](#update-approvaltestscpp)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ## Update ApprovalTests.cpp
 
 Preparation:
