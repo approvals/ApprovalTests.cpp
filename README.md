@@ -47,6 +47,7 @@ Currently working in Mac/Linux/Windows with
 * [Catch2](https://github.com/catchorg/Catch2)   
 * [Okra](https://github.com/JayBazuzi/Okra) & C++ 11  
 * [GoogleTest](https://github.com/google/googletest)
+* [doctest](https://github.com/onqtam/doctest)
 
 
 
@@ -73,21 +74,12 @@ For catch (1 and 2), it's these two lines:
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L6-L10)</sup>
 <!-- endsnippet -->
 
-For Google Test, it's these:
-
-<!-- snippet: googletest_main -->
-```cpp
-// main.cpp:
-#define APPROVALS_GOOGLETEST // This tells Approval Tests to provide a main() - only do this in one cpp file
-#include "ApprovalTests.hpp"
-```
-<sup>[snippet source](/ApprovalTests_GoogleTest_Tests/main.cpp#L2-L6)</sup>
-<!-- endsnippet -->
-
 For all other test files, you need:
 ``` cpp
 #include "ApprovalTests.hpp"
 ```
+
+For other frameworks, check out our [Getting Started](/doc/GettingStarted.md#top) page. 
 
 ## Examples
 ApprovalTests uses ApprovalTests to test ApprovalTests (it's turtles all the way down).  

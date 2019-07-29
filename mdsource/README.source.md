@@ -30,6 +30,7 @@ Currently working in Mac/Linux/Windows with
 * [Catch2](https://github.com/catchorg/Catch2)   
 * [Okra](https://github.com/JayBazuzi/Okra) & C++ 11  
 * [GoogleTest](https://github.com/google/googletest)
+* [doctest](https://github.com/onqtam/doctest)
 
 
 
@@ -49,14 +50,12 @@ For catch (1 and 2), it's these two lines:
 
 snippet: catch_2_main
 
-For Google Test, it's these:
-
-snippet: googletest_main
-
 For all other test files, you need:
 ``` cpp
 #include "ApprovalTests.hpp"
 ```
+
+For other frameworks, check out our [Getting Started](/doc/GettingStarted.md#top) page. 
 
 ## Examples
 ApprovalTests uses ApprovalTests to test ApprovalTests (it's turtles all the way down).  
