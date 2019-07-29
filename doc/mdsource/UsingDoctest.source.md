@@ -19,7 +19,7 @@ Create a file `main.cpp` and add just the following two lines:
 
 snippet: doctest_main
 
-**Note**: currently, Approval Tests overrides any `--reporter` command-line argument supplied.
+**Note**: currently, Approval Tests overrides any [`--reporter` command-line argument](https://github.com/onqtam/doctest/blob/master/doc/markdown/reporters.md) supplied.
 This is needed for Approval Tests to function with doctest. The Approval Tests reporter works like doctest's `console` reporter. This means that it is not possible to run Approval Tests with the doctest test framework, and use reporters such as `xml`.
 
 We currently do not have a better workaround.
