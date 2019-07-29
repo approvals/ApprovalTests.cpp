@@ -57,7 +57,7 @@ int main(int argc, char** argv)
 {
     // See https://github.com/onqtam/doctest/blob/master/examples/all_features/main.cpp
 
-    auto context = doctest::Context(argc, argv);
+    doctest::Context context(argc, argv);
     context.setOption("--reporters", "approvals");
     return context.run();
 }
