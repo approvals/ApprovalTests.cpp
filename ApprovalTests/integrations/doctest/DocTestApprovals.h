@@ -9,18 +9,16 @@
 #define DOCTEST_CONFIG_IMPLEMENT
 #include <doctest.hpp>
 
-using namespace doctest;
-
-struct DocTestApprovalListener : ConsoleReporter
+struct DocTestApprovalListener : doctest::ConsoleReporter
 {
     TestName currentTest;
 
     // constructor has to accept the ContextOptions by ref as a single argument
-    DocTestApprovalListener(const ContextOptions& in) : ConsoleReporter(in)
+    DocTestApprovalListener(const doctest::ContextOptions& in) : ConsoleReporter(in)
     {
     }
 
-    void test_case_start(const TestCaseData& testInfo) override
+    void test_case_start(const doctest::TestCaseData& testInfo) override
     {
         ConsoleReporter::test_case_start(testInfo);
 
@@ -29,7 +27,7 @@ struct DocTestApprovalListener : ConsoleReporter
         ApprovalTestNamer::currentTest(&currentTest);
     }
 
-    void test_case_end(const CurrentTestCaseStats& in) override
+    void test_case_end(const doctest::CurrentTestCaseStats& in) override
     {
         ConsoleReporter::test_case_end(in);
 
@@ -38,7 +36,7 @@ struct DocTestApprovalListener : ConsoleReporter
         }
     }
 
-    void subcase_start(const SubcaseSignature &signature) override
+    void subcase_start(const doctest::SubcaseSignature &signature) override
     {
         ConsoleReporter::subcase_start(signature);
 
