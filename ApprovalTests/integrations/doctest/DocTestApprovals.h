@@ -60,10 +60,14 @@ REGISTER_REPORTER("approvals", 0, DocTestApprovalListener);
 
 int main(int argc, char** argv)
 {
-    // See https://github.com/onqtam/doctest/blob/master/examples/all_features/main.cpp
-
     doctest::Context context(argc, argv);
+
+    // Enforce use of our own reporter.
+    // If the following are implemented, we could 
+    // - https://github.com/onqtam/doctest/issues/257
+    // - https://github.com/onqtam/doctest/issues/260
     context.setOption("--reporters", "approvals");
+
     return context.run();
 }
 
