@@ -4,16 +4,6 @@
 #   ./cygwin_run.sh run_markdown_templates.sh
 
 # ---------------------------------------------------
-# Update tables of contents
-# ---------------------------------------------------
-# For info on doctoc, see https://github.com/thlorenz/doctoc
-
-# To install:
-#   npm install -g doctoc
-
-#doctoc --title **Contents** *.md build/ doc/
-
-# ---------------------------------------------------
 # Update code examples
 # ---------------------------------------------------
 # For info on mdsnippets, see https://github.com/SimonCropp/MarkdownSnippets
