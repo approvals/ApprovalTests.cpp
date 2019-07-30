@@ -92,6 +92,7 @@ Once you're up and running, consider the following reference material. -->
 
 ## Extras
 
+* [Videos](/doc/Videos.md#top)
 * [Troubleshooting](/doc/Troubleshooting.md#top)
 * 4 benefits of testing
     * Spec
