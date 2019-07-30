@@ -9,13 +9,11 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # Put Title Here
 
-
 <!-- toc -->
 ## Contents
 
   * [First Section Here](#first-section-here)
 <!-- endtoc -->
-
 
 
 ## First Section Here

@@ -2,9 +2,7 @@
 
 # Put Title Here
 
-
 toc
-
 
 ## First Section Here
 
