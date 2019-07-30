@@ -14,17 +14,26 @@ These steps are needed in order to teach Approval Tests how to name its output f
 
 If, after following these steps, you need help with running your program, please see [Troubleshooting](/doc/Troubleshooting.md#top).
 
-## Catch 1 and 2
+## Main File
 
-See [Getting Started With Catch 1 and 2](/doc/UsingCatch.md#getting-started-with-catch-1-and-2)
+### The Basics
 
-## Google Test
+You need to include 2 lines for your main file to work.
 
-See [Getting Started With Google Test](/doc/UsingGoogleTests.md#getting-started-with-google-test)
+For catch (1 and 2), it's these two lines:
 
-## doctest
+snippet: catch_2_main
 
-See [Getting Started With doctest](/doc/UsingDoctest.md#getting-started-with-doctest)
+For all other test files, you need:
+``` cpp
+#include "ApprovalTests.hpp"
+```
+
+### Details 
+
+* [Catch 1 and 2](/doc/UsingCatch.md#getting-started-with-catch-1-and-2)
+* [Google Test](/doc/UsingGoogleTests.md#getting-started-with-google-test)
+* [doctest](/doc/UsingDoctest.md#getting-started-with-doctest)
 
 ## Choosing a testing framework
 
