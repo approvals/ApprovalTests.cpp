@@ -15,7 +15,6 @@
 #   dotnet tool update  -g MarkdownSnippets.Tool
 
 dotnet tool update  -g MarkdownSnippets.Tool
-# TODO If you change these args, please change build/build_hpp.sh
 mdsnippets --exclude cmake-build --toc-level 5 --readonly true
 
 # Custom Markdown linting

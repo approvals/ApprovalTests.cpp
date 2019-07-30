@@ -7,7 +7,7 @@
 set -e
 set -o pipefail
 
-LAST_VERSION="v.3.4.1"
+LAST_VERSION="v.3.5.0"
 VERSION="v.X.X.X"
 
 PUSH_TO_PRODUCTION="true"
@@ -73,8 +73,10 @@ popd
 # ------------------------------------------------------------------------------------------------
 
 # Update the top-level readme file and other documentation
-sed -i -e "s/$LAST_VERSION/$VERSION/" mdsource/README.source.md
-mdsnippets --exclude cmake-build --toc-level 5 --readonly true
+pushd ..
+sed -i -e "s/$LAST_VERSION/$VERSION/g" mdsource/README.source.md
+./cygwin_run.sh ./run_markdown_templates.sh
+popd
 
 # Draft the upload to github
 cygstart "https://github.com/approvals/ApprovalTests.cpp/releases/new?tag=$VERSION&title=Single%20Hpp%20File"
