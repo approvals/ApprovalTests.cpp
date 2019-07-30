@@ -94,3 +94,8 @@ git log ${LAST_VERSION}..HEAD --pretty=format:%s | \
     grep -v 'Update README.md' | \
     grep -v 'Update StyleGuide.h' | \
     sort
+
+# TODO In future - prompt for version number
+#read -p "Enter the next version number (last was:  $LAST_VERSION )" VERSION
+#sed -i -e "s/$LAST_VERSION/$VERSION/g" ../build/build_hpp.sh
+
