@@ -14,6 +14,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 ## Contents
 
   * [Introduction](#introduction)
+  * [Requirements](#requirements)
   * [Getting Started](#getting-started)
   * [Main File](#main-file)
   * [Examples](#examples)
@@ -24,11 +25,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 ## Introduction
 
-[![Build Status](https://api.travis-ci.org/approvals/ApprovalTests.cpp.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp)
-
-[![Build status](https://ci.appveyor.com/api/projects/status/lf3i76ije89oihi5?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp)
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Build Status](https://api.travis-ci.org/approvals/ApprovalTests.cpp.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp) [![Build status](https://ci.appveyor.com/api/projects/status/lf3i76ije89oihi5?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Native ApprovalTests for C++
 
@@ -40,16 +37,12 @@ Here is an intro to learn more about the [concept of ApprovalTesting](/doc/Appro
 
 ApprovalTests are great for testing objects with lots of fields, or lists of objects.
 
-![Intro Graphic](/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)
+## Requirements
 
-Currently working in Mac/Linux/Windows with
-* [Catch1](https://github.com/catchorg/Catch2/tree/Catch1.x)  
-* [Catch2](https://github.com/catchorg/Catch2)   
-* [Okra](https://github.com/JayBazuzi/Okra) & C++ 11  
-* [GoogleTest](https://github.com/google/googletest)
-* [doctest](https://github.com/onqtam/doctest)
-
-
+* C++11 (or above) compiler
+* Mac/Linux/Windows
+* One of:  [GoogleTest](https://github.com/google/googletest), [Catch1](https://github.com/catchorg/Catch2/tree/Catch1.x), [Catch2](https://github.com/catchorg/Catch2), [doctest](https://github.com/onqtam/doctest), [Okra](https://github.com/JayBazuzi/Okra)  
+  
 
 ## Getting Started
 
