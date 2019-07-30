@@ -34,6 +34,13 @@ See [Getting Started](/doc/GettingStarted.md#top) and the evolving [User Guide](
 
 I highly suggest you clone [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
 
+## Getting Started
+
+* Download [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
+* Read the [Getting Started](/doc/GettingStarted.md#top) page
+* Read the [User Guide](/doc/README.md#top).
+* Watch the [Videos](/doc/Videos.md#top)
+
 ## Main File
 
 You need to include 2 lines for your main file to work.

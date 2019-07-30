@@ -16,6 +16,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Introduction](#introduction)
   * [Requirements](#requirements)
   * [Getting Started](#getting-started)
+  * [Getting Started](#getting-started-1)
   * [Main File](#main-file)
   * [Examples](#examples)
     * [ToString (ostream insertion)](#tostring-(ostream-insertion))
@@ -51,6 +52,13 @@ The video [Quickly Testing Legacy Code](https://youtu.be/dtm8V3TIB6k) gives an i
 See [Getting Started](/doc/GettingStarted.md#top) and the evolving [User Guide](/doc/README.md#top).
 
 I highly suggest you clone [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
+
+## Getting Started
+
+* Download [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
+* Read the [Getting Started](/doc/GettingStarted.md#top) page
+* Read the [User Guide](/doc/README.md#top).
+* Watch the [Videos](/doc/Videos.md#top)
 
 ## Main File
 
