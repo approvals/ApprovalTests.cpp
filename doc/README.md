@@ -33,6 +33,7 @@ Once you're up and running, consider the following reference material. -->
 * [Overview](/doc/Overview.md#top)
 * [Approval Testing (the concept)](/doc/ApprovalTestingConcept.md#top)
 * What is Approval Testing?
+* Glossary
 * Why Approval Tests?
     * The Path to Approval Testing
         * Verify numbers

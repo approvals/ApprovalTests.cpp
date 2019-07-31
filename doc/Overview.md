@@ -56,7 +56,7 @@ Sandwich s = createSandwichForTest();
 Approvals::verify(s);
 ```
 
-This generates the approval file - which generated **for** you, but approved **by** you.
+This generates the approval file - which generated **for** you, but [approved **by** you](/doc/ApprovingResults.md#top).
 
 ```
 sandwich {
