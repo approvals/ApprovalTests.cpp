@@ -20,7 +20,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Common Scenarios](#common-scenarios)
   * [Extras](#extras)
   * [Advanced Topics](#advanced-topics)
-    * [Suggested Examples](#suggested-examples)
+  * [Suggested Examples](#suggested-examples)
 <!-- endtoc -->
 
 
@@ -97,7 +97,7 @@ Once you're up and running, consider the following reference material. -->
 * [Supporting a new test framework](/doc/SupportingNewTestFramework.md#top)
 * [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top)
 
-### Suggested Examples
+## Suggested Examples
 * [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp)
 * [VectorTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/VectorTests.cpp)
 * [CombinationTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/CombinationTests.cpp)  
