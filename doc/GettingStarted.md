@@ -68,7 +68,7 @@ If not, Approval Tests works well with all the above. Here are factors to consid
 | --- | --- | --- | --- |
 | Catch | Very easy (single-header). [StarterProject](https://github.com/approvals/ApprovalTests.Cpp.StarterProject) | Widely supported | Not bad - has options to speed up |
 | doctest | Very easy (single-header) | Unknown | Fast |
-| Google Test | Difficult (requires | Very widely supported | Fast |
+| Google Test | Difficult | Very widely supported | Fast |
 
 ---
 
