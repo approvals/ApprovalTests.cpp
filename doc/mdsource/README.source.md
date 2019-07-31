@@ -10,6 +10,7 @@ Once you're up and running, consider the following reference material. -->
 
 ## Introduction
 
+* [Overview](/doc/Overview.md#top)
 * [Approval Testing (the concept)](/doc/ApprovalTestingConcept.md#top)
 * What is Approval Testing?
 * Why Approval Tests?

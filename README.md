@@ -26,7 +26,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 ## What are Approval Tests?
 
-Also known as **Golden Master Tests** or **Snapshot Testing**, Approval Tests are an alternative to asserts. If you are unfamiliar with them, we will soon have an overview and a tutorial.
+Also known as **Golden Master Tests** or **Snapshot Testing**, Approval Tests are an alternative to asserts. If you are unfamiliar with them, we have an [overview](/doc/Overview.md#top) and soon a tutorial.
 
 They are great for testing objects with lots of fields, or lists of objects.
 
