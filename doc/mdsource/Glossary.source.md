@@ -18,6 +18,10 @@ Sometimes referred to as Combinatorial testing.
 
 ## Convention over Configuration  
 
+[Wikipedia Entry](https://en.wikipedia.org/wiki/Convention_over_configuration)
+
+Instead of asking the user to specify everything, we make assumptions based on common patterns, so code usually just works "out of the box". This tends to dramatically reduce the amount of clutter, makes things easier, and reduces the amount of surprises.
+
 ## Custom Asserts
 
 ## Diff Tool

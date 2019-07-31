@@ -80,11 +80,19 @@ Please note that the first time you run an Approval Test, it will always fail an
 
 ### Approval Files
 
-Approvals creates a lot of `.approved.txt` and `received.txt` files. The `received.txt` files are automatically deleted on a passing test, and should never be checked in to source control. We should adding `*.received.*` line to your `.gitignore` file.
+Approvals creates a lot of `.approved.txt` and `received.txt` files. The `received.txt` files are automatically deleted on a passing test, and should never be checked in to source control. We suggest adding `*.received.*` line to your `.gitignore` file.
 
-The  `.approved.txt` files, on the other hand, need to be checked in to your soure control.
+The  `.approved.txt` files, on the other hand, need to be checked in to your source control.
 
-Approval Tests follows the Convention Over Configuration rule, and 
+Approval Tests follows the [Convention over Configuration](/doc/Glossary.md#convention-over-configuration) rule. The convention used for our files is as follows:
+
+`FileName.TestName.approved.txt`
+
+So in this case, it will be
+
+`Tutorial.HelloApprovals.approved.txt`
+
+It will be located in the same directory as your tests. (This is [configurable](doc/Configuration.md#using-sub-directories-for-approved-files)).
 
 ## Video
 
