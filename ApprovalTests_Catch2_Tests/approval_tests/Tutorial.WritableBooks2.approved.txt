@@ -1,0 +1,7 @@
+title: Harry Potter and the Goblet of Fire
+author: J.K. Rowling
+available_copies: 30
+language: English
+pages: 752
+isbn: 978-0439139595
+

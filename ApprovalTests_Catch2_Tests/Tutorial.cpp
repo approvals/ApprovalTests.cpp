@@ -1,6 +1,8 @@
-
 #include "ApprovalTests.hpp"
 #include "Catch.hpp"
+
+#include <string>
+#include <ostream>
 
 // See the tutorial at:
 //   https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Tutorial.md#top
@@ -13,3 +15,60 @@ TEST_CASE("HelloApprovals")
     Approvals::verify("Hello Approvals");
 }
 // end-snippet
+
+// begin-snippet: library_book
+class LibraryBook
+{
+public:
+    LibraryBook(std::string title, std::string author, int available_copies, std::string language, int pages,
+                std::string isbn) : title(title), author(author), available_copies(available_copies),
+                language(language), pages(pages), isbn(isbn)
+    {
+
+    }
+    std::string title;
+    std::string author;
+    int available_copies;
+    std::string language;
+    int pages;
+    std::string isbn;
+};
+// end-snippet
+
+#if 0
+// Non-compiling example for documentation 
+TEST_CASE("WritableBooks Does Not Compile")
+{
+    // begin-snippet: non_printable_object
+    LibraryBook harry_potter("Harry Potter and the Goblet of Fire", "J.K. Rowling", 30, "English", 752, "978-0439139595");
+    
+    Approvals::verify(harry_potter); // This does not compile 
+    // end-snippet
+}
+#endif
+
+TEST_CASE("WritableBooks1")
+{
+    LibraryBook harry_potter("Harry Potter and the Goblet of Fire", "J.K. Rowling", 30, "English", 752, "978-0439139595");
+
+    // begin-snippet: printable_object_simple
+    Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
+    // end-snippet
+}
+
+TEST_CASE("WritableBooks2")
+{
+    LibraryBook harry_potter("Harry Potter and the Goblet of Fire", "J.K. Rowling", 30, "English", 752, "978-0439139595");
+
+    // begin-snippet: printable_object
+    Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){ 
+        os << 
+        "title: " << b.title << "\n" <<
+        "author: " << b.author << "\n" <<
+        "available_copies: " << b.available_copies << "\n" <<
+        "language: " << b.language << "\n" <<
+        "pages: " << b.pages << "\n" <<
+        "isbn: " << b.isbn << "\n";
+    });
+    // end-snippet
+}

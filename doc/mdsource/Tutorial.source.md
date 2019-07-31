@@ -4,7 +4,7 @@
 
 toc
 
-The tutorial is written for someone with a decent understanding of C++, a passing understanding of traditional unit testing, and no experience with Approval Tests at all.
+The tutorial is written for someone with a decent understanding of C++, a passing understanding of traditional unit testing and of diff tools, and no experience with Approval Tests at all.
 
 In this tutorial, we are going to use Windows, Catch2 and WinMerge. If you are using something else, it will make almost no difference to your experience.
 
@@ -68,6 +68,55 @@ So in this case, it will be
 `Tutorial.HelloApprovals.approved.txt`
 
 It will be located in the same directory as your tests. (This is [configurable](doc/Configuration.md#using-sub-directories-for-approved-files)).
+
+## Approving Objects
+
+The above example is a bit simplistic. Normally, you will want to test actual objects from your code base. To explore this, let's create an object called `LibraryBook`:
+
+snippet: library_book
+
+What we would like to be able to write is:
+
+snippet: non_printable_object
+
+The problem is that this will not compile, because at present there is no way to turn the LibraryBook in to a string representation.
+
+So we are going to add a lambda to handle the printing.
+
+Let's start by just printing the title:
+
+snippet: printable_object_simple
+
+There's a lot going on here, so let's break it down:
+
+1. Template: notice we needed the `<LibraryBook>`. You will get long compiler errors if you do not do this.
+1. Lambda: `[](const LibraryBook& b, std::ostream& os){}`. This is the call-back function to convert your object to a string. Note that you can also write this as `[](auto b, auto& os){}`
+1. toString: `os << "title: " << b.title;` - this is the bit of code that actually turns our object in to a string.
+
+This works, but of course, there is a lot more that we want to look at than the title. So let's expand the `toString`:
+
+snippet: printable_object
+
+When you run and approve this, you will end up with the approval file:
+
+snippet: Tutorial.WritableBooks2.approved.txt
+
+If you would like to know how to do this more robustly, check out [To String](/doc/ToString.md#top).
+
+## Dealing with test failures
+
+Every change in behaviour is not necessarily a failure, but every change in behaviour will fail the test.
+
+There are three parts to dealing with failure.
+
+1. Identify what changed
+2. Either:
+  * Fix the code, if the change was not intentional
+  * Re-approve the test, if you want the new behaviour
+
+If you are in a refactoring mode, changes in Approval Tests output files are usually unintended, and a sign that you might have made a mistake.
+
+If you are adding a new feature, changes in Approval Tests output files are often intended, and a sign that you should review and maybe accept the modified output.
 
 ## Video
 
