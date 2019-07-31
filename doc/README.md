@@ -74,7 +74,7 @@ Once you're up and running, consider the following reference material. -->
 ## Customising behaviour
 
 * [Reporters](/doc/Reporters.md#top)
-* Custom Comparators
+* [Custom Comparators](/doc/CustomComparators.md#top)
 * Writers
 * Namers
 

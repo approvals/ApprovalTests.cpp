@@ -8,7 +8,6 @@
  - \ref overview
  - \ref supported_test_frameworks
  - \ref verification
-     - \ref custom_comparators
  - \ref reporters
      - \ref reporters_overview
      - \ref custom_reporters
@@ -65,12 +64,7 @@
       testing, and then at the end of the test method, call the test frameworks's specific mechanism to report
       the failure(s).
 
- \subsection custom_comparators Custom Comparators
 
- - The conventional way to use Approvals is by converting the objects being tested to strings, and approving
-   the string representations. See StringWriter.
- - See ApprovalComparator and FileApprover::registerComparator() if you wish to customise the way that
-   file contents are compared.
 
  \section reporters Reporters
 
