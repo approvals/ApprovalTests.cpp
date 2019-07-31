@@ -27,12 +27,6 @@ Here's how to set up from:
 * [I have code but no tests](/doc/Setup.md#i-have-code-but-no-tests)
 * [I have tests and code and want to add Approval Tests](/doc/Setup.md#i-have-tests-and-code-and-want-to-add-approval-tests)
 
-## Supported Frameworks
-
-* [Using Approval Tests With Catch](/doc/UsingCatch.md#top)
-* [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
-* [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
-
 ## Writing Tests
 
 * [Tutorial](/doc/Tutorial.md#top)
@@ -43,6 +37,13 @@ Here's how to set up from:
 * [To String](/doc/ToString.md#top)
 * Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
 * [Features](/doc/Features.md#top) - recent additions
+
+## Test Frameworks
+
+* [Using Approval Tests With Catch](/doc/UsingCatch.md#top)
+* [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
+* [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
+* [Supporting a new test framework](/doc/SupportingNewTestFramework.md#top)
 
 ## Customising behaviour
 
@@ -77,7 +78,6 @@ Here's how to set up from:
 
 ## Advanced Topics
 
-* [Supporting a new test framework](/doc/SupportingNewTestFramework.md#top)
 * [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top)
 
 ## Suggested Examples
