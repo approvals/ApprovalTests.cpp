@@ -7,10 +7,10 @@ TEST_CASE("ItCanGiveYouTheSpecName")
     ApprovalTestNamer namer;
     REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName");
 
-    DOCTEST_SUBCASE("andSectionNames")
+    SUBCASE("andSectionNames")
     {
         REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName.andSectionNames");
-        DOCTEST_SUBCASE("andEvenMoreSectionNames")
+        SUBCASE("andEvenMoreSectionNames")
         {
             REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName.andSectionNames.andEvenMoreSectionNames");
         }
