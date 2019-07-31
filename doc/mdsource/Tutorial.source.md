@@ -63,7 +63,7 @@ Approval Tests follows the [Convention over Configuration](/doc/Glossary.md#conv
 
 `FileName.TestName.approved.txt`
 
-So in this case, it will be
+So in this case, it will be:
 
 `Tutorial.HelloApprovals.approved.txt`
 
@@ -118,7 +118,9 @@ If you are in a refactoring mode, changes in Approval Tests output files are usu
 
 If you are adding a new feature, changes in Approval Tests output files are often intended, and a sign that you should review and maybe accept the modified output.
 
-## Video
+## Demo
+
+Here's a little video of the whole process.
 
 ![Intro Graphic](/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)
 
