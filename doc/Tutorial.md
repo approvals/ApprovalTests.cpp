@@ -41,10 +41,10 @@ Let's add our first test:
 ```cpp
 TEST_CASE("HelloApprovals")
 {
-    Approvals::verify("Hello Approvals", Windows::WinMergeReporter());
+    Approvals::verify("Hello Approvals");
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L8-L13)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L10-L15)</sup>
 <!-- endsnippet -->
 
 ### Approving the Test
@@ -79,6 +79,12 @@ However, if it does not match, another step is invoked, and a "[Reporter](/doc/R
 Please note that the first time you run an Approval Test, it will always fail and launch a reporter, as you have never said anything is OK.
 
 ### Approval Files
+
+Approvals creates a lot of `.approved.txt` and `received.txt` files. The `received.txt` files are automatically deleted on a passing test, and should never be checked in to source control. We should adding `*.received.*` line to your `.gitignore` file.
+
+The  `.approved.txt` files, on the other hand, need to be checked in to your soure control.
+
+Approval Tests follows the Convention Over Configuration rule, and 
 
 ## Video
 

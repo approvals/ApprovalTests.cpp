@@ -55,6 +55,12 @@ Please note that the first time you run an Approval Test, it will always fail an
 
 ### Approval Files
 
+Approvals creates a lot of `.approved.txt` and `received.txt` files. The `received.txt` files are automatically deleted on a passing test, and should never be checked in to source control. We should adding `*.received.*` line to your `.gitignore` file.
+
+The  `.approved.txt` files, on the other hand, need to be checked in to your soure control.
+
+Approval Tests follows the Convention Over Configuration rule, and 
+
 ## Video
 
 ![Intro Graphic](/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)

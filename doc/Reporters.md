@@ -77,7 +77,7 @@ At present, the default Reporter is the DiffReporter. Whenever you call Approval
 ```cpp
 // main.cpp:
 #include <memory>
-auto defaultReporterDisposer = Approvals::useAsDefaultReporter( std::make_shared<DiffReporter>() );
+auto defaultReporterDisposer = Approvals::useAsDefaultReporter( std::make_shared<Windows::WinMergeReporter>() );
 ```
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L16-L20)</sup>
 <!-- endsnippet -->
