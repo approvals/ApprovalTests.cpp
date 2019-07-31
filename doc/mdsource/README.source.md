@@ -42,7 +42,7 @@ Here's how to set up from:
 * Testing combinations - containers of containers (of containers...)
 * [To String](/doc/ToString.md#top)
 * Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
-* [Features](/doc/Features.md#top)
+* [Features](/doc/Features.md#top) - recent additions
 
 ## Customising behaviour
 
