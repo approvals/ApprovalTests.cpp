@@ -94,7 +94,7 @@ So in this case, it will be:
 
 `Tutorial.HelloApprovals.approved.txt`
 
-It will be located in the same directory as your tests. (This is [configurable](doc/Configuration.md#using-sub-directories-for-approved-files)).
+It will be located in the same directory as your tests. (This is [configurable](/doc/Configuration.md#using-sub-directories-for-approved-files)).
 
 ## Approving Objects
 

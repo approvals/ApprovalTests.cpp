@@ -85,7 +85,7 @@ Approvals::verify("text to be verified", Windows::AraxisMergeReporter());
 
 ## Using sub-directories for approved files
 
-See [Using sub-directories for approved files](doc/Configuration.md#using-sub-directories-for-approved-files)
+See [Using sub-directories for approved files](/doc/Configuration.md#using-sub-directories-for-approved-files)
 
 
 ---

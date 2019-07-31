@@ -36,7 +36,7 @@ snippet: basic_approval_with_reporter
 
 ## Using sub-directories for approved files
 
-See [Using sub-directories for approved files](doc/Configuration.md#using-sub-directories-for-approved-files)
+See [Using sub-directories for approved files](/doc/Configuration.md#using-sub-directories-for-approved-files)
 
 
 ---
