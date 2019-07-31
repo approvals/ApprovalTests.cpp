@@ -22,6 +22,8 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Diff Tool](#diff-tool)
   * [Edge Case](#edge-case)
   * [Happy Path](#happy-path)
+  * [Kata](#kata)
+  * [Koans](#koans)
   * [Mutation Testing](#mutation-testing)
   * [Namer](#namer)
   * [Principle of Least Surprise](#principle-of-least-surprise)
@@ -56,6 +58,10 @@ Sometimes referred to as Combinatorial testing.
 ## Edge Case
 
 ## Happy Path
+
+## Kata
+
+## Koans
 
 ## Mutation Testing
 

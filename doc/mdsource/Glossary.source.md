@@ -26,6 +26,10 @@ Sometimes referred to as Combinatorial testing.
 
 ## Happy Path
 
+## Kata
+
+## Koans
+
 ## Mutation Testing
 
 ## Namer

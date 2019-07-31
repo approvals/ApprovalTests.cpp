@@ -19,6 +19,17 @@ Once you're up and running, consider the following reference material. -->
 
 ## Setup
 
+There are three different places you might be starting your setup from.
+
+Here's how to set up from:
+
+* Nothing
+* I have code, but no tests
+* I have tests and code, and want to add Approval Tests
+
+## Setup
+
+* [Setup](/doc/Setup.md#top)
 * Obtaining ApprovalTests.cpp
     * Get a test framework
     * Downloading the latest release
