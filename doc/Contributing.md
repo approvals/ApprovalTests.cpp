@@ -20,6 +20,7 @@ To change this file edit the source file and then run MarkdownSnippets.
     * [Adding code and file samples](#adding-code-and-file-samples)
     * [Checking the documentation](#checking-the-documentation)
   * [Releases](#releases)
+  * [Running shell scripts in cygwin](#running-shell-scripts-in-cygwin)
 <!-- endtoc -->
 
 
@@ -100,16 +101,19 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
 
 The script [fix_markdown.sh](/fix_markdown.sh) can be used to do some checks of the Markdown documentation files.
 
-It can be run in cygwin with:
-
-```bash
-cat ./fix_markdown.sh | dos2unix | bash
-```
-
 ## Releases
 
 * Everything for releases is in [the build directory](/build/)
 * There's more information in [How To Release](/build/HowToRelease.md#top)
+
+## Running shell scripts in cygwin
+
+To run `.sh` in cygwin on Windows, add these lines to `~/.bash_profile`, and then re-start cygwin:
+
+    export SHELLOPTS
+    set -o igncr
+
+[Credit](https://ptolemy.berkeley.edu/projects/chess/softdevel/faq/5.html)
 
 ---
 
