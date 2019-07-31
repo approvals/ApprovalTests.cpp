@@ -48,6 +48,8 @@ Sometimes referred to as Combinatorial testing.
 
 ## Writer
 
+## Yak Shaving
+
 ---
 
 ## Sayings
