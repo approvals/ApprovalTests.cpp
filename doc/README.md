@@ -68,6 +68,7 @@ Here's how to set up from:
 ## Customising behaviour
 
 * [Reporters](/doc/Reporters.md#top)
+* [Configuration](/doc/Configuration.md#top)
 * [Custom Comparators](/doc/CustomComparators.md#top)
 * Writers
 * Namers
