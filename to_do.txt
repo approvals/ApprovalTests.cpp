@@ -34,7 +34,6 @@ DOCUMENTATION
 . short video intro - from downloading to running the first test - like https://www.youtube.com/watch?v=jeDecsGVbc4
 . document use of converter objects - see comment in #6
 . hook Simon Cropp's code mechanism into github pre-commit mechanism
-. document how to test file types that are not character-for-character equivalent
 
 RELEASES
 
