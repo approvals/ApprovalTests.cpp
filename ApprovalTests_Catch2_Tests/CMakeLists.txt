@@ -16,6 +16,7 @@ add_executable(${PROJECT_NAME}
         ToStringExample.cpp
         ToStringTemplateExample.cpp
         ToStringWrapperExample.cpp
+        Tutorial.cpp
         VectorTests.cpp
         reporters/ReporterTests.cpp
         reporters/DoNothingLauncher.h

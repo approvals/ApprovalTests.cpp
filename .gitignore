@@ -9,3 +9,4 @@ doc/html/
 /.vscode/
 *.runsettings
 CMakeLists.txt.user
+*.bak
