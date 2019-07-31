@@ -15,10 +15,13 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Approving Results](#approving-results)
   * [Approved File](#approved-file)
   * [Code Coverage](#code-coverage)
+  * [Combination Testing](#combination-testing)
   * [Comparator](#comparator)
   * [Convention over Configuration](#convention-over-configuration)
   * [Custom Asserts](#custom-asserts)
   * [Diff Tool](#diff-tool)
+  * [Edge Case](#edge-case)
+  * [Happy Path](#happy-path)
   * [Mutation Testing](#mutation-testing)
   * [Namer](#namer)
   * [Principle of Least Surprise](#principle-of-least-surprise)
@@ -28,6 +31,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Stringification](#stringification)
   * [Test Framework](#test-framework)
   * [Writer](#writer)
+  * [Sayings](#sayings)
 <!-- endtoc -->
 
 
@@ -37,6 +41,10 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 ## Code Coverage
 
+## Combination Testing
+
+Sometimes referred to as Combinatorial testing.
+
 ## Comparator
 
 ## Convention over Configuration  
@@ -44,6 +52,10 @@ To change this file edit the source file and then run MarkdownSnippets.
 ## Custom Asserts
 
 ## Diff Tool
+
+## Edge Case
+
+## Happy Path
 
 ## Mutation Testing
 
@@ -62,6 +74,14 @@ To change this file edit the source file and then run MarkdownSnippets.
 ## Test Framework
 
 ## Writer
+
+---
+
+## Sayings
+
+* The tests test the code, and the code tests the tests
+* Test until bored
+
 
 ---
 

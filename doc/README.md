@@ -33,20 +33,10 @@ Once you're up and running, consider the following reference material. -->
 * [Overview](/doc/Overview.md#top)
 * [Approval Testing (the concept)](/doc/ApprovalTestingConcept.md#top)
 * What is Approval Testing?
-* Glossary
 * Why Approval Tests?
-    * The Path to Approval Testing
-        * Verify numbers
-            * Have lots of numbers, like an array
-        * Strings - turn the array of numbers in to a string
-            * Those strings become long
-        * Files - Golden Master
-            * Managing them - coming up with names
-        * Some sort of naming convention
-        * Can be hard to understand what's in the files
-            * Start using diff tools
-        * Start creating custom methods for the things you are testing
-            * verifyThing
+* [The Path to Approval Testing](/doc/PathToApprovalTesting.md#top)
+
+* Glossary
 
 ## Setup
 
