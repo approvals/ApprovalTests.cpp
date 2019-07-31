@@ -14,7 +14,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 
   * [Introduction](#introduction)
   * [Setup](#setup)
-  * [Setup](#setup-1)
+  * [Supported Frameworks](#supported-frameworks)
   * [Writing Tests](#writing-tests)
   * [Customising behaviour](#customising-behaviour)
   * [Common Challenges](#common-challenges)
@@ -44,21 +44,12 @@ There are three different places you might be starting your setup from.
 
 Here's how to set up from:
 
-* Nothing
-* I have code, but no tests
-* I have tests and code, and want to add Approval Tests
+* [I have nothing](/doc/Setup.md#i-have-nothing)
+* [I have code, but no tests](/doc/Setup.md#i-have-code,-but-no-tests)
+* [I have tests and code, and want to add Approval Tests](/doc/Setup.md#i-have-tests-and-code,-and-want-to-add-approval-tests)
 
-## Setup
+## Supported Frameworks
 
-* [Setup](/doc/Setup.md#top)
-* Obtaining ApprovalTests.cpp
-    * Get a test framework
-    * Downloading the latest release
-        * Adding a wrapper header
-        * Renaming the header file to remove version number
-    * [ApprovalTests.cpp.StarterProject](https://github.com/approvals/ApprovalTests.cpp.StarterProject)
-    * Cloning repo and using CMake
-* [Getting Started](/doc/GettingStarted.md#top) - setting up `main()`
 * [Using Approval Tests With Catch](/doc/UsingCatch.md#top)
 * [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
 * [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)

@@ -33,6 +33,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Stringification](#stringification)
   * [Test Framework](#test-framework)
   * [Writer](#writer)
+  * [Yak Shaving](#yak-shaving)
   * [Sayings](#sayings)
 <!-- endtoc -->
 
@@ -80,6 +81,8 @@ Sometimes referred to as Combinatorial testing.
 ## Test Framework
 
 ## Writer
+
+## Yak Shaving
 
 ---
 
