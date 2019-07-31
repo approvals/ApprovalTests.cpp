@@ -13,8 +13,8 @@ To change this file edit the source file and then run MarkdownSnippets.
 ## Contents
 
   * [I have nothing](#i-have-nothing)
-  * [I have code, but no tests](#i-have-code-but-no-tests)
-  * [I have tests and code, and want to add Approval Tests](#i-have-tests-and-code-and-want-to-add-approval-tests)
+  * [I have code but no tests](#i-have-code-but-no-tests)
+  * [I have tests and code and want to add Approval Tests](#i-have-tests-and-code-and-want-to-add-approval-tests)
 <!-- endtoc -->
 
 

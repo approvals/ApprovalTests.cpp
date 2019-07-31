@@ -24,8 +24,8 @@ There are three different places you might be starting your setup from.
 Here's how to set up from:
 
 * [I have nothing](/doc/Setup.md#i-have-nothing)
-* [I have code, but no tests](/doc/Setup.md#i-have-code,-but-no-tests)
-* [I have tests and code, and want to add Approval Tests](/doc/Setup.md#i-have-tests-and-code,-and-want-to-add-approval-tests)
+* [I have code but no tests](/doc/Setup.md#i-have-code-but-no-tests)
+* [I have tests and code and want to add Approval Tests](/doc/Setup.md#i-have-tests-and-code-and-want-to-add-approval-tests)
 
 ## Supported Frameworks
 

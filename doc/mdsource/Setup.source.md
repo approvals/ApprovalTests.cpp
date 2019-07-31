@@ -17,13 +17,13 @@ If you just want to start doing some TDD with Approval Tests:
 1. Run the existing tests from the project (they should pass).
 1. Then open the file [`tests/NewTest.cpp`](https://github.com/approvals/ApprovalTests.cpp.StarterProject/blob/master/tests/NewTest.cpp), choose which of the three starting points you want, and Go!
 
-## I have code, but no tests
+## I have code but no tests
 
 [Choose a testing framework](/doc/GettingStarted.md#choosing-a-testing-framework).
 
 Then continue to the next section... 
 
-## I have tests and code, and want to add Approval Tests
+## I have tests and code and want to add Approval Tests
 
 1. [Download the single header file](https://github.com/approvals/ApprovalTests.cpp/releases)
 1. Do one of:
