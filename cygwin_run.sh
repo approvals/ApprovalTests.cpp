@@ -1,1 +1,0 @@
-cat $1 | dos2unix | bash

@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# to run this in cygwin (after installing dos2unix):
-#   ./cygwin_run.sh run_markdown_templates.sh
-
 # ---------------------------------------------------
 # Update code examples
 # ---------------------------------------------------

@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# to run this in cygwin (after installing dos2unix):
-#   cat build_hpp.sh | dos2unix | bash
-
 # Force execution to halt if there are any errors in this script:
 set -e
 set -o pipefail
@@ -80,7 +77,7 @@ popd
 # Update the top-level readme file and other documentation
 pushd ..
 sed -i -e "s/$LAST_VERSION/$VERSION/g" mdsource/README.source.md
-./cygwin_run.sh ./run_markdown_templates.sh
+./run_markdown_templates.sh
 popd
 
 # Draft the upload to github
