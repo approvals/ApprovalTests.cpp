@@ -20,12 +20,14 @@ TEST_CASE("HelloApprovals")
 class LibraryBook
 {
 public:
-    LibraryBook(std::string title, std::string author, int available_copies, std::string language, int pages,
-                std::string isbn) : title(title), author(author), available_copies(available_copies),
+    LibraryBook(std::string title, std::string author, int available_copies,
+                std::string language, int pages, std::string isbn) : 
+                title(title), author(author), available_copies(available_copies),
                 language(language), pages(pages), isbn(isbn)
     {
-
     }
+    // Data public for simplicity of test demo case.
+    // In production code, we would have accessors instead.
     std::string title;
     std::string author;
     int available_copies;
@@ -40,7 +42,9 @@ public:
 TEST_CASE("WritableBooks Does Not Compile")
 {
     // begin-snippet: non_printable_object
-    LibraryBook harry_potter("Harry Potter and the Goblet of Fire", "J.K. Rowling", 30, "English", 752, "978-0439139595");
+    LibraryBook harry_potter(
+        "Harry Potter and the Goblet of Fire", "J.K. Rowling",
+        30, "English", 752, "978-0439139595");
     
     Approvals::verify(harry_potter); // This does not compile 
     // end-snippet
@@ -49,16 +53,22 @@ TEST_CASE("WritableBooks Does Not Compile")
 
 TEST_CASE("WritableBooks1")
 {
-    LibraryBook harry_potter("Harry Potter and the Goblet of Fire", "J.K. Rowling", 30, "English", 752, "978-0439139595");
+    LibraryBook harry_potter(
+        "Harry Potter and the Goblet of Fire", "J.K. Rowling",
+        30, "English", 752, "978-0439139595");
 
     // begin-snippet: printable_object_simple
-    Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
+    Approvals::verify<LibraryBook>(
+        harry_potter,
+        [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
     // end-snippet
 }
 
 TEST_CASE("WritableBooks2")
 {
-    LibraryBook harry_potter("Harry Potter and the Goblet of Fire", "J.K. Rowling", 30, "English", 752, "978-0439139595");
+    LibraryBook harry_potter(
+        "Harry Potter and the Goblet of Fire", "J.K. Rowling",
+        30, "English", 752, "978-0439139595");
 
     // begin-snippet: printable_object
     Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){ 

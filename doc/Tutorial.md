@@ -105,12 +105,14 @@ The above example is a bit simplistic. Normally, you will want to test actual ob
 class LibraryBook
 {
 public:
-    LibraryBook(std::string title, std::string author, int available_copies, std::string language, int pages,
-                std::string isbn) : title(title), author(author), available_copies(available_copies),
+    LibraryBook(std::string title, std::string author, int available_copies,
+                std::string language, int pages, std::string isbn) : 
+                title(title), author(author), available_copies(available_copies),
                 language(language), pages(pages), isbn(isbn)
     {
-
     }
+    // Data public for simplicity of test demo case.
+    // In production code, we would have accessors instead.
     std::string title;
     std::string author;
     int available_copies;
@@ -119,18 +121,20 @@ public:
     std::string isbn;
 };
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L19-L36)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L19-L38)</sup>
 <!-- endsnippet -->
 
 What we would like to be able to write is:
 
 <!-- snippet: non_printable_object -->
 ```cpp
-LibraryBook harry_potter("Harry Potter and the Goblet of Fire", "J.K. Rowling", 30, "English", 752, "978-0439139595");
+LibraryBook harry_potter(
+    "Harry Potter and the Goblet of Fire", "J.K. Rowling",
+    30, "English", 752, "978-0439139595");
 
 Approvals::verify(harry_potter); // This does not compile
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L42-L46)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L44-L50)</sup>
 <!-- endsnippet -->
 
 The problem is that this will not compile, because at present there is no way to turn the LibraryBook in to a string representation.
@@ -141,9 +145,11 @@ Let's start by just printing the title:
 
 <!-- snippet: printable_object_simple -->
 ```cpp
-Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
+Approvals::verify<LibraryBook>(
+    harry_potter,
+    [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L54-L56)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L60-L64)</sup>
 <!-- endsnippet -->
 
 There's a lot going on here, so let's break it down:
@@ -166,7 +172,7 @@ Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostre
     "isbn: " << b.isbn << "\n";
 });
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L63-L73)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L73-L83)</sup>
 <!-- endsnippet -->
 
 When you run and approve this, you will end up with the approval file:
