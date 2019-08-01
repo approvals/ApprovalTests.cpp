@@ -48,10 +48,26 @@ We welcome improvements to the documentation! Here's how we manage the documenta
 
 *Note: All the master Markdown pages in this project are called `mdsource/[something].source.md`*
 
+**Using the template page**
+
 If creating a new Markdown page, please make a copy of [doc/mdsource/TemplatePage.source.md](/doc/mdsource/TemplatePage.source.md#top).
 This contains some boilerplate text which is tedious to create by hand.
 
 The new file needs to be in a `mdsource` sub-directory.
+
+**Creating mutliple pages**
+
+If creating multiple files, on Unix, you can use the script `doc/mdsource/create_page.sh`
+
+```bash
+cd doc/mdsource/
+./create_page.sh TestingSingleObjects TestingContainers TestingCombinations
+```
+
+This won't overwrite existing files.
+It will write out the text to paste in to other .md files, to correctly link to the new file. 
+
+**For documentation files outside of doc**
 
 If the new page will be outside of the [doc](/doc/) folder, delete the following lines at the end:
 
