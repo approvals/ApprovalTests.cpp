@@ -25,9 +25,8 @@ To change this file edit the source file and then run MarkdownSnippets.
 <!-- endtoc -->
 
 
-
-<!-- To get the most out of ApprovalTests, start with the Tutorial.
-Once you're up and running, consider the following reference material. -->
+To get the most out of ApprovalTests, start with the  [Tutorial](/doc/Tutorial.md#top).
+Once you're up and running, consider the following reference material. 
 
 ## Introduction
 
