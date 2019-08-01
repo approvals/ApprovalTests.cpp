@@ -15,9 +15,10 @@ do
 
     # Create the file
     cp TemplatePage.source.md "$new_source_file"
+    sed -i -e "s/Put Title Here/${page}/" "$new_source_file"
 
     # Make it easy to add links to the file
     echo "Created $new_source_file - use this for links to it:"
-    new_doc_file="${page}.md"
-    echo "* [$new_doc_file](/doc/$new_doc_file.md#top)"
+    new_doc_base="${page}"
+    echo "* [$new_doc_base](/doc/$new_doc_base.md#top)"
 done
