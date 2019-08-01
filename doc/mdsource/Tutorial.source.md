@@ -118,6 +118,8 @@ If you are in a refactoring mode, changes in Approval Tests output files are usu
 
 If you are adding a new feature, changes in Approval Tests output files are often intended, and a sign that you should review and maybe accept the modified output.
 
+<!-- todo: custom asserts, pull out a verifyLibraryBook(book) method -->
+
 ## Demo
 
 Here's a little video of the whole process.
