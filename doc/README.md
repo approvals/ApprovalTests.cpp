@@ -51,10 +51,10 @@ Here's how to set up from:
 ## Writing Tests
 
 * [Tutorial](/doc/Tutorial.md#top)
-* Testing single objects
-* Testing containers
+* [Testing single objects](/doc/TestingSingleObjects.md.md#top)
+* [Testing containers](/doc/TestingContainers.md.md#top)
 * [Testing exceptions](/doc/TestingExceptions.md#top)
-* Testing combinations - containers of containers (of containers...)
+* [Testing combinations](/doc/TestingCombinations.md.md#top) - containers of containers (of containers...)
 * [To String](/doc/ToString.md#top)
 * Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
 * [Features](/doc/Features.md#top) - recent additions
@@ -103,5 +103,4 @@ Here's how to set up from:
 
 ## Suggested Examples
 * [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp)
-* [VectorTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/VectorTests.cpp)
-* [CombinationTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/CombinationTests.cpp)  
+

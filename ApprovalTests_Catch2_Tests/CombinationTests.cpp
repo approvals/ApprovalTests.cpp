@@ -25,11 +25,17 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
     REQUIRE(reporter.called == true);
 }
 
+// begin-snippet: YouCanVerifyCombinationsOf2
 TEST_CASE("YouCanVerifyCombinationsOf2") {
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
-    CombinationApprovals::verifyAllCombinations<std::vector<std::string>, std::vector<int>, std::pair<std::string, int>>( [](std::string s, int i){return std::make_pair(s, i);}, v, numbers);
+    CombinationApprovals::verifyAllCombinations<
+        std::vector<std::string>, std::vector<int>, std::pair<std::string, int>>(
+            [](std::string s, int i){return std::make_pair(s, i);},
+            v,
+            numbers);
 }
+// end-snippet
 
 TEST_CASE("YouCanVerifyCombinationsOf9") {
     std::vector<std::string> letters{"a", "b"};
