@@ -7,8 +7,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 <a id="top"></a>
 
-# Developing ApprovalTests.cpp on Windows`
-
+# Developing ApprovalTests.cpp on Windows
 
 <!-- toc -->
 ## Contents
@@ -22,7 +21,6 @@ To change this file edit the source file and then run MarkdownSnippets.
     * [Run CLion with cygwin as toolset](#run-clion-with-cygwin-as-toolset)
 <!-- endtoc -->
 
-````
 
 ## Prerequisites
 

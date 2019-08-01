@@ -1,10 +1,8 @@
 <a id="top"></a>
 
-# Developing ApprovalTests.cpp on Windows`
-
+# Developing ApprovalTests.cpp on Windows
 
 toc
-````
 
 ## Prerequisites
 
