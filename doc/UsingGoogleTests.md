@@ -15,12 +15,12 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Getting Started With Google Test](#getting-started-with-google-test)
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
-    * [Existing Project - no main()](#existing-project---no-main())
-    * [Existing Project - with your main()](#existing-project---with-your-main())
+    * [Existing Project - no main()](#existing-project---no-main)
+    * [Existing Project - with your main()](#existing-project---with-your-main)
   * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
     * [Customizing](#customizing)
-      * [# Custom Suffixes](##-custom-suffixes)
-      * [# Custom Anything](##-custom-anything)
+      * [# Custom Suffixes](#-custom-suffixes)
+      * [# Custom Anything](#-custom-anything)
 <!-- endtoc -->
 
 

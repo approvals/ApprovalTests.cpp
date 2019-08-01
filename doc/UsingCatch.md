@@ -17,7 +17,7 @@ To change this file edit the source file and then run MarkdownSnippets.
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
     * [Existing Project - with CATCH_CONFIG_MAIN](#existing-project---with-catch_config_main)
-    * [Existing Project - with your main()](#existing-project---with-your-main())
+    * [Existing Project - with your main()](#existing-project---with-your-main)
 <!-- endtoc -->
 
 

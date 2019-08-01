@@ -16,10 +16,10 @@ To change this file edit the source file and then run MarkdownSnippets.
 <!-- toc -->
 ## Contents
 
-  * [What are Approval Tests?](#what-are-approval-tests?)
+  * [What are Approval Tests?](#what-are-approval-tests)
   * [Requirements](#requirements)
   * [Getting Started](#getting-started)
-  * [ToString (ostream insertion)](#tostring-(ostream-insertion))
+  * [ToString (ostream insertion)](#tostring-ostream-insertion)
   * [Feedback](#feedback)
 <!-- endtoc -->
 

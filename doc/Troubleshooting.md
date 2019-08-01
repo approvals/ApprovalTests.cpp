@@ -13,7 +13,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 <!-- toc -->
 ## Contents
 
-  * [Test gives "You have forgotten to configure your test framework..."](#test-gives-"you-have-forgotten-to-configure-your-test-framework...")
+  * [Test gives "You have forgotten to configure your test framework..."](#test-gives-you-have-forgotten-to-configure-your-test-framework)
 <!-- endtoc -->
 
 

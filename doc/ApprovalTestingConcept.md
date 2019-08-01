@@ -15,11 +15,11 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [The Idea](#the-idea)
   * [The Path](#the-path)
     * [1 Simple verification](#1-simple-verification)
-      * [# The technique](##-the-technique)
-      * [# The problem](##-the-problem)
+      * [# The technique](#-the-technique)
+      * [# The problem](#-the-problem)
     * [2 ToString verification](#2-tostring-verification)
-      * [# The technique](##-the-technique-1)
-      * [# The problem](##-the-problem-1)
+      * [# The technique](#-the-technique-1)
+      * [# The problem](#-the-problem-1)
 <!-- endtoc -->
 
 

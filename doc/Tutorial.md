@@ -15,7 +15,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Hello Approval Tests](#hello-approval-tests)
     * [Writing the Test](#writing-the-test)
     * [Approving the Test](#approving-the-test)
-    * [What just happened?](#what-just-happened?)
+    * [What just happened?](#what-just-happened)
     * [Approval Files](#approval-files)
   * [Approving Objects](#approving-objects)
   * [Dealing with test failures](#dealing-with-test-failures)
@@ -206,6 +206,8 @@ There are three parts to dealing with failure.
 If you are in a refactoring mode, changes in Approval Tests output files are usually unintended, and a sign that you might have made a mistake.
 
 If you are adding a new feature, changes in Approval Tests output files are often intended, and a sign that you should review and maybe accept the modified output.
+
+<!-- todo: custom asserts, pull out a verifyLibraryBook(book) method -->
 
 ## Demo
 
