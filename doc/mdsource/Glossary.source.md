@@ -8,6 +8,8 @@ toc
 
 ## Approved File
 
+## Chain of responibility (pattern)
+
 ## Code Coverage
 
 ## Combination Testing
