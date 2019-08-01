@@ -9,6 +9,9 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # ApprovalTests.cpp User Guide
 
+To get the most out of ApprovalTests, start with the  [Tutorial](/doc/Tutorial.md#top).
+Once you're up and running, consider the following reference material. 
+
 <!-- toc -->
 ## Contents
 
@@ -24,9 +27,6 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Suggested Examples](#suggested-examples)
 <!-- endtoc -->
 
-
-To get the most out of ApprovalTests, start with the  [Tutorial](/doc/Tutorial.md#top).
-Once you're up and running, consider the following reference material. 
 
 ## Introduction
 
