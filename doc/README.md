@@ -35,7 +35,7 @@ Once you're up and running, consider the following reference material.
 * What is Approval Testing?
 * Why Approval Tests?
 * [The Path to Approval Testing](/doc/PathToApprovalTesting.md#top)
-* Glossary
+* [Glossary](/doc/Glossary.md#top)
 
 ## Setup
 
