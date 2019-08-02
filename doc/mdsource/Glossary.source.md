@@ -8,7 +8,7 @@ toc
 
 ## Approved File
 
-## Chain of responibility (pattern)
+## Chain of responsibility (pattern)
 
 ## Code Coverage
 

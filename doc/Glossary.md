@@ -14,6 +14,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 
   * [Approving Results](#approving-results)
   * [Approved File](#approved-file)
+  * [Chain of responsibility (pattern)](#chain-of-responsibility-pattern)
   * [Code Coverage](#code-coverage)
   * [Combination Testing](#combination-testing)
   * [Comparator](#comparator)
@@ -41,6 +42,8 @@ To change this file edit the source file and then run MarkdownSnippets.
 ## Approving Results
 
 ## Approved File
+
+## Chain of responsibility (pattern)
 
 ## Code Coverage
 
