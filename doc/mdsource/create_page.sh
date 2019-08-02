@@ -2,6 +2,7 @@
 
 # Copy the template to create new pages.
 # Supply one or more new file names as arguments: 
+#   ./create_page.sh TestingSingleObjects TestingContainers TestingCombinations
 
 for page in "$@"
 do
@@ -19,6 +20,5 @@ do
 
     # Make it easy to add links to the file
     echo "Created $new_source_file - use this for links to it:"
-    new_doc_base="${page}"
-    echo "* [$new_doc_base](/doc/$new_doc_base.md#top)"
+    ./link_page $new_source_file
 done
