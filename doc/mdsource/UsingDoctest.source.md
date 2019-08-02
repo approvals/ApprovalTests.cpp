@@ -45,8 +45,6 @@ error C2062:  type 'unknown-type' unexpected
 
 For the current status of this, see [doctest/pull/258](https://github.com/onqtam/doctest/pull/258).
 
-<!-- todo: document manual edit required to fix std::max to std::max<double>() for Visual Studio - see https://octobox.io/notifications/14639733-->
-
 ---
 
 [Back to User Guide](/doc/README.md#top)
