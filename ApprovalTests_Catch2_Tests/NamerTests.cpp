@@ -21,6 +21,7 @@ TEST_CASE("ItCanGiveYouTheSpecName") {
 
 
 TEST_CASE("ItCanGiveYouTheTestFileName") {
+    std::cout << "ItCanGiveYouTheTestFileName: Test if stdout is visible on Mac with eol\n";
     ApprovalTestNamer namer;
     REQUIRE(namer.getFileName() == "NamerTests");
 }
@@ -39,6 +40,7 @@ TEST_CASE("TestProperNameCaseOnWindows") {
 
 
 TEST_CASE("ItCanGiveYouTheTestDirectory") {
+    std::cout << "ItCanGiveYouTheTestDirectory: Test if stdout is visible on Mac without eol";
     // This should work with CaseSensitive::Yes.
     // However, it would fail when run in Visual Studio 2017 as lower-case source-file names are returned.
     // We've fixed this for filenames, but not directory names, so this test ignores case.
