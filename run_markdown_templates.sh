@@ -11,6 +11,8 @@
 # To update:
 #   dotnet tool update  -g MarkdownSnippets.Tool
 
+# todo: edit command to use custom header
+
 dotnet tool update  -g MarkdownSnippets.Tool
 mdsnippets --exclude cmake-build --toc-level 5 --readonly true
 
