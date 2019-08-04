@@ -52,7 +52,7 @@ Instead of asking the user to specify everything, we make assumptions based on c
 
 ## Test Framework
 
-## test && commit || revert
+## test && commit || revert (TCR)
 
 ## Writer
 
