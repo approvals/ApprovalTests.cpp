@@ -19,6 +19,8 @@ Create a file `main.cpp` and add just the following two lines:
 
 snippet: doctest_main
 
+<!-- todo: document use of sections -->
+
 ## Limitations
 
 ### doctest --reporter argument ignored

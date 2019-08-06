@@ -52,6 +52,8 @@ Instead of asking the user to specify everything, we make assumptions based on c
 
 ## Test Framework
 
+## test && commit || revert (TCR)
+
 ## Writer
 
 ## Yak Shaving
