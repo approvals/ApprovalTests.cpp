@@ -42,6 +42,8 @@ Create a file `main.cpp` and add just the following two lines:
 <sup>[snippet source](/ApprovalTests_DocTest_Tests/main.cpp#L1-L5)</sup>
 <!-- endsnippet -->
 
+<!-- todo: document use of sections -->
+
 ## Limitations
 
 ### doctest --reporter argument ignored

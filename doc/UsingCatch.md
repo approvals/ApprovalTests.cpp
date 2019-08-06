@@ -62,6 +62,8 @@ If you have a Catch (1 or 2) project with your own `main.cpp` that contains the 
 #include "catch.hpp"
 ```
 
+<!-- todo: document use of sections -->
+
 ### Existing Project - with your main()
 
 If you have [supplied your own `main()` for Catch](https://github.com/catchorg/Catch2/blob/master/docs/own-main.md#top), you will need to teach it how to supply test names to Approval Tests.

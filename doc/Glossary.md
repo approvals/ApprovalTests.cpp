@@ -33,6 +33,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Scrubber](#scrubber)
   * [Stringification](#stringification)
   * [Test Framework](#test-framework)
+  * [test && commit || revert (TCR)](#test--commit--revert-tcr)
   * [Writer](#writer)
   * [Yak Shaving](#yak-shaving)
   * [Sayings](#sayings)
@@ -86,6 +87,8 @@ Instead of asking the user to specify everything, we make assumptions based on c
 ## Stringification
 
 ## Test Framework
+
+## test && commit || revert (TCR)
 
 ## Writer
 
