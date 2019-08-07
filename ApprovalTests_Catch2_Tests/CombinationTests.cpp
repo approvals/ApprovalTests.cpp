@@ -8,6 +8,11 @@
 
 TEST_CASE("YouCanVerifyCombinationsOf1") {
     std::vector<std::string> words{"hello", "world"};
+    CombinationApprovals::verifyAllCombinations( [](std::string s){return s + "!";}, words);
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf1WithTemplateParameters") {
+    std::vector<std::string> words{"hello", "world"};
     CombinationApprovals::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words);
 }
 
@@ -16,7 +21,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
     FakeReporter reporter;
     try
     {
-        CombinationApprovals::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words, reporter);
+        CombinationApprovals::verifyAllCombinations( [](std::string s){return s + "!";}, words, reporter);
     }
     catch(const ApprovalException&)
     {
