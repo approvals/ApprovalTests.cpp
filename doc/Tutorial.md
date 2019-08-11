@@ -40,13 +40,14 @@ Let's open the Starter Project in your development environment, and open [Tutori
 Let's add our first test:
 
 <!-- snippet: hello_approvals -->
+<a id='snippet-hello_approvals'/></a>
 ```cpp
 TEST_CASE("HelloApprovals")
 {
     Approvals::verify("Hello Approvals");
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L12-L17)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L12-L17) / [anchor](#snippet-hello_approvals)</sup>
 <!-- endsnippet -->
 
 ### Approving the Test
@@ -101,6 +102,7 @@ It will be located in the same directory as your tests. (This is [configurable](
 The above example is a bit simplistic. Normally, you will want to test actual objects from your code base. To explore this, let's create an object called `LibraryBook`:
 
 <!-- snippet: library_book -->
+<a id='snippet-library_book'/></a>
 ```cpp
 class LibraryBook
 {
@@ -121,12 +123,13 @@ public:
     std::string isbn;
 };
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L19-L38)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L19-L38) / [anchor](#snippet-library_book)</sup>
 <!-- endsnippet -->
 
 What we would like to be able to write is:
 
 <!-- snippet: non_printable_object -->
+<a id='snippet-non_printable_object'/></a>
 ```cpp
 LibraryBook harry_potter(
     "Harry Potter and the Goblet of Fire", "J.K. Rowling",
@@ -134,7 +137,7 @@ LibraryBook harry_potter(
 
 Approvals::verify(harry_potter); // This does not compile
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L44-L50)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L44-L50) / [anchor](#snippet-non_printable_object)</sup>
 <!-- endsnippet -->
 
 The problem is that this will not compile, because at present there is no way to turn the LibraryBook in to a string representation.
@@ -144,12 +147,13 @@ So we are going to add a lambda to handle the printing.
 Let's start by just printing the title:
 
 <!-- snippet: printable_object_simple -->
+<a id='snippet-printable_object_simple'/></a>
 ```cpp
 Approvals::verify<LibraryBook>(
     harry_potter,
     [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L60-L64)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L60-L64) / [anchor](#snippet-printable_object_simple)</sup>
 <!-- endsnippet -->
 
 There's a lot going on here, so let's break it down:
@@ -161,6 +165,7 @@ There's a lot going on here, so let's break it down:
 This works, but of course, there is a lot more that we want to look at than the title. So let's expand the `toString`:
 
 <!-- snippet: printable_object -->
+<a id='snippet-printable_object'/></a>
 ```cpp
 Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){ 
     os << 
@@ -172,12 +177,13 @@ Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostre
     "isbn: " << b.isbn << "\n";
 });
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L73-L83)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Tutorial.cpp#L73-L83) / [anchor](#snippet-printable_object)</sup>
 <!-- endsnippet -->
 
 When you run and approve this, you will end up with the approval file:
 
 <!-- snippet: Tutorial.WritableBooks2.approved.txt -->
+<a id='snippet-Tutorial.WritableBooks2.approved.txt'/></a>
 ```txt
 title: Harry Potter and the Goblet of Fire
 author: J.K. Rowling
@@ -187,7 +193,7 @@ pages: 752
 isbn: 978-0439139595
 
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/Tutorial.WritableBooks2.approved.txt#L1-L7)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/Tutorial.WritableBooks2.approved.txt#L1-L7) / [anchor](#snippet-Tutorial.WritableBooks2.approved.txt)</sup>
 <!-- endsnippet -->
 
 If you would like to know how to do this more robustly, check out [To String](/doc/ToString.md#top).

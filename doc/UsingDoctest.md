@@ -34,12 +34,13 @@ Doctest is similar to Catch, but claims to give faster compilation times.
 Create a file `main.cpp` and add just the following two lines:
 
 <!-- snippet: doctest_main -->
+<a id='snippet-doctest_main'/></a>
 ```cpp
 // main.cpp:
 #define APPROVALS_DOCTEST // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 ```
-<sup>[snippet source](/ApprovalTests_DocTest_Tests/main.cpp#L1-L5)</sup>
+<sup>[snippet source](/ApprovalTests_DocTest_Tests/main.cpp#L1-L5) / [anchor](#snippet-doctest_main)</sup>
 <!-- endsnippet -->
 
 <!-- todo: document use of sections -->

@@ -32,6 +32,7 @@ Currently the search goes in this order:
 ### Mac
 
 <!-- snippet: mac_diff_reporters -->
+<a id='snippet-mac_diff_reporters'/></a>
 ```h
 new BeyondCompareReporter(),
 new DiffMergeReporter(),
@@ -41,22 +42,24 @@ new KDiff3Reporter(),
 new TkDiffReporter(),
 new VisualStudioCodeReporter()
 ```
-<sup>[snippet source](/ApprovalTests/reporters/MacReporters.h#L48-L56)</sup>
+<sup>[snippet source](/ApprovalTests/reporters/MacReporters.h#L48-L56) / [anchor](#snippet-mac_diff_reporters)</sup>
 <!-- endsnippet -->
 
 ### Linux
 
 <!-- snippet: linux_diff_reporters -->
+<a id='snippet-linux_diff_reporters'/></a>
 ```h
 new MeldReporter(),
 new KDiff3Reporter()
 ```
-<sup>[snippet source](/ApprovalTests/reporters/LinuxReporters.h#L25-L28)</sup>
+<sup>[snippet source](/ApprovalTests/reporters/LinuxReporters.h#L25-L28) / [anchor](#snippet-linux_diff_reporters)</sup>
 <!-- endsnippet -->
 
 ### Windows
 
 <!-- snippet: windows_diff_reporters -->
+<a id='snippet-windows_diff_reporters'/></a>
 ```h
 new TortoiseDiffReporter(),
 new BeyondCompareReporter(),
@@ -66,7 +69,7 @@ new CodeCompareReporter(),
 new KDiff3Reporter(),
 new VisualStudioCodeReporter(),
 ```
-<sup>[snippet source](/ApprovalTests/reporters/WindowsReporters.h#L71-L79)</sup>
+<sup>[snippet source](/ApprovalTests/reporters/WindowsReporters.h#L71-L79) / [anchor](#snippet-windows_diff_reporters)</sup>
 <!-- endsnippet -->
 
 ## Registering a default reporter
@@ -74,12 +77,13 @@ new VisualStudioCodeReporter(),
 At present, the default Reporter is the DiffReporter. Whenever you call Approvals, you have the chance to pass in your own Reporter. However, if you would like to change what the default reporter is when you don't pass in a specific Reporter, you can do this at a global or per-test level, by adding the line:
 
 <!-- snippet: use_as_default_reporter_in_main -->
+<a id='snippet-use_as_default_reporter_in_main'/></a>
 ```cpp
 // main.cpp:
 #include <memory>
 auto defaultReporterDisposer = Approvals::useAsDefaultReporter( std::make_shared<DiffReporter>() );
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L16-L20)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L16-L20) / [anchor](#snippet-use_as_default_reporter_in_main)</sup>
 <!-- endsnippet -->
 
 The return value will restore the original reporter when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.

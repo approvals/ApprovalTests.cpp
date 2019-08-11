@@ -16,6 +16,7 @@ This makes a kind of approval test matrix, automatically testing all combination
 In this small example, all combinations of `{"hello", "world"}` and `{1, 2, 3}` are being used:
 
 <!-- snippet: YouCanVerifyCombinationsOf2 -->
+<a id='snippet-youcanverifycombinationsof2'/></a>
 ```cpp
 TEST_CASE("YouCanVerifyCombinationsOf2") {
     std::vector<std::string> v{"hello", "world"};
@@ -27,12 +28,13 @@ TEST_CASE("YouCanVerifyCombinationsOf2") {
             numbers);
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/CombinationTests.cpp#L28-L38)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/CombinationTests.cpp#L33-L43) / [anchor](#snippet-youcanverifycombinationsof2)</sup>
 <!-- endsnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
 
 <!-- snippet: CombinationTests.YouCanVerifyCombinationsOf2.approved.txt -->
+<a id='snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt'/></a>
 ```txt
 (hello, 1) => (hello, 1)
 (hello, 2) => (hello, 2)
@@ -42,7 +44,7 @@ The format is carefully chosen to show both inputs and outputs, to make the test
 (world, 3) => (world, 3)
 
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/CombinationTests.YouCanVerifyCombinationsOf2.approved.txt#L1-L7)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/CombinationTests.YouCanVerifyCombinationsOf2.approved.txt#L1-L7) / [anchor](#snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt)</sup>
 <!-- endsnippet -->
 
 For advice on effective formatting, see [To String](/doc/ToString.md#top). As you write out larger volumes of data in your approval files, experience has shown that the choice of layout of text in approval files can make a big difference to maintainability of tests, when failures occur.

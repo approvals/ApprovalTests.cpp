@@ -25,10 +25,11 @@ Testing exceptions with Approval Tests is very easy. Simply pass in a call to th
 The exception thrown must inherit `std::exception`.
 
 <!-- snippet: verify_exception_message_example -->
+<a id='snippet-verify_exception_message_example'/></a>
 ```cpp
 Approvals::verifyExceptionMessage([](){/* your code goes here */});
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp#L110-L112)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp#L110-L112) / [anchor](#snippet-verify_exception_message_example)</sup>
 <!-- endsnippet -->
 
 ---

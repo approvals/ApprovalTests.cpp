@@ -31,12 +31,13 @@ See [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#customizin
 Blocking reporters are a simple class, designed for use with FrontLoadedReporters, to prevent launching of reporters in certain environments.
 
 <!-- snippet: do_not_report_on_ci -->
+<a id='snippet-do_not_report_on_ci'/></a>
 ```cpp
 // main.cpp
 auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
     BlockingReporter::onMachineNamed("MyCIMachineName") );
 ```
-<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23)</sup>
+<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_ci)</sup>
 <!-- endsnippet -->
 
 ## Machine Blockers
@@ -44,6 +45,7 @@ auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
 Sometimes you will want tests to only run on certain machines. Machine blockers are a great way to do this.
 
 <!-- snippet: machine_specific_test_runner -->
+<a id='snippet-machine_specific_test_runner'/></a>
 ```cpp
 TEST_CASE("Only run this test on John's machine")
 {
@@ -56,7 +58,7 @@ TEST_CASE("Only run this test on John's machine")
     REQUIRE(SystemUtils::getMachineName() == "JOHNS_MACHINE");
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/utilities/MachineBlockerTests.cpp#L21-L32)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/utilities/MachineBlockerTests.cpp#L21-L32) / [anchor](#snippet-machine_specific_test_runner)</sup>
 <!-- endsnippet -->
 
 ## Front Loaded Reporters
@@ -66,21 +68,23 @@ Other times, you will want to run the tests on all machines, but only report if 
 Here is an example of not launching any reporters of you are on the CI machine.
 
 <!-- snippet: do_not_report_on_ci -->
+<a id='snippet-do_not_report_on_ci'/></a>
 ```cpp
 // main.cpp
 auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
     BlockingReporter::onMachineNamed("MyCIMachineName") );
 ```
-<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23)</sup>
+<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_ci)</sup>
 <!-- endsnippet -->
 
 Once you have added that, even calling approvals with a specific Reporter will not launch it on the CI system (but will for all other systems). For example:
 
 <!-- snippet: basic_approval_with_reporter -->
+<a id='snippet-basic_approval_with_reporter'/></a>
 ```cpp
 Approvals::verify("text to be verified", Windows::AraxisMergeReporter());
 ```
-<sup>[snippet source](/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L11-L13)</sup>
+<sup>[snippet source](/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L11-L13) / [anchor](#snippet-basic_approval_with_reporter)</sup>
 <!-- endsnippet -->
 
 ## Using sub-directories for approved files

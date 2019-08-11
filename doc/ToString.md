@@ -31,6 +31,7 @@ This is often done by providing an output operator (`<<`) for types you wish to 
 For example:
 
 <!-- snippet: to_string_standard_example -->
+<a id='snippet-to_string_standard_example'/></a>
 ```cpp
 friend std::ostream &operator<<(std::ostream &os, const Rectangle2 &rectangle) {
     os << "[x: " << rectangle.x << " y: " << rectangle.y << " width: " << rectangle.width << " height: "
@@ -38,7 +39,7 @@ friend std::ostream &operator<<(std::ostream &os, const Rectangle2 &rectangle) {
     return os;
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringExample.cpp#L12-L18)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringExample.cpp#L12-L18) / [anchor](#snippet-to_string_standard_example)</sup>
 <!-- endsnippet -->
 
 You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
@@ -46,6 +47,7 @@ You should put this function in the same namespace as your type, or the global n
 If including `<iostream>` or similar is problematic, for example because your code needs be compiled for embedded platforms, and you are tempted to surround it with `#ifdef`s so that it only shows up in testing, we recommend that you use the template approach instead:
 
 <!-- snippet: to_string_template_example -->
+<a id='snippet-to_string_template_example'/></a>
 ```cpp
 template <class STREAM>
 friend STREAM &operator<<(STREAM &os, const Rectangle2 &rectangle) {
@@ -54,12 +56,13 @@ friend STREAM &operator<<(STREAM &os, const Rectangle2 &rectangle) {
     return os;
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringTemplateExample.cpp#L12-L19)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringTemplateExample.cpp#L12-L19) / [anchor](#snippet-to_string_template_example)</sup>
 <!-- endsnippet -->
 
 Wrapper classes or functions can be used to provide additional output formats for types of data:
 
 <!-- snippet: to_string_wrapper_example -->
+<a id='snippet-to_string_wrapper_example'/></a>
 ```cpp
 struct FormatRectangleForMultipleLines{
 
@@ -87,7 +90,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
     );
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L38-L64)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L38-L64) / [anchor](#snippet-to_string_wrapper_example)</sup>
 <!-- endsnippet -->
 
 ## Design
@@ -127,17 +130,19 @@ Some formats will be more readable when you are writing lists of objects.
 Here's an example of verifing a list of rectangles
 
 <!-- snippet: verify_list -->
+<a id='snippet-verify_list'/></a>
 ```cpp
 Approvals::verifyAll(
     "rectangles",
     getRectangles());
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L30-L34)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L30-L34) / [anchor](#snippet-verify_list)</sup>
 <!-- endsnippet -->
 
 Notice how this:
 
 <!-- snippet: ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt -->
+<a id='snippet-ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt'/></a>
 ```txt
 rectangles
 
@@ -147,12 +152,13 @@ rectangles
 [2] = [x: 60 y: 3 width: 7 height: 63]
 
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L7)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L7) / [anchor](#snippet-ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt)</sup>
 <!-- endsnippet -->
 
 compares to this:
 
 <!-- snippet: ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt -->
+<a id='snippet-ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt'/></a>
 ```txt
 rectangles
 
@@ -162,7 +168,7 @@ rectangles
 (x,y,width,height) = (60,3,7,63)
 
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L7)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L7) / [anchor](#snippet-ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt)</sup>
 <!-- endsnippet -->
 
 ### Tools
