@@ -6,12 +6,13 @@
 toc
 
 
-
 ## Getting Started With doctest
 
 The [doctest](https://github.com/onqtam/doctest) test framework works fairly well with Approval Tests.
 
 Doctest is similar to Catch, but claims to give faster compilation times.
+
+Approval Tests requires that a file called `doctest.h` is found.
 
 ### New Project
 
@@ -23,14 +24,22 @@ snippet: doctest_main
 
 ## Limitations
 
-### doctest --reporter argument ignored
+### Doctest Version 2.4 and above
+
+There are no limitations when using doctest version 2.4 and above. There is a [beta available](https://github.com/onqtam/doctest/blob/dev/doctest/doctest.h).
+
+### Doctest Versions 2.3.3 and below
+
+If you are using doctest 2.3.3 or below, you will need to use Approval Tests 3.5.0. Please note the following limitations. 
+
+#### doctest --reporter argument ignored
 
 Currently, Approval Tests overrides any [`--reporter` command-line argument](https://github.com/onqtam/doctest/blob/master/doc/markdown/reporters.md) supplied.
 This is needed for Approval Tests to function with doctest. The Approval Tests reporter works like doctest's `console` reporter. This means that it is not possible to run Approval Tests with the doctest test framework, and use reporters such as `xml`.
 
 We currently do not have a better workaround.
 
-### Visual Studio compilation failure workaround
+#### Visual Studio compilation failure workaround
 
 If you provide your own copy of the doctest header, and find this compiler error in Visual Studio, for a call to `std::max()`:
 

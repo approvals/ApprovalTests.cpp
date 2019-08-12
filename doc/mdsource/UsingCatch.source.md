@@ -15,6 +15,8 @@ This section describes the various ways of using Approval Tests with Catch 2.
 
 These steps also work with the earlier version, Catch 1, which is on the [Catch 1.x branch](https://github.com/catchorg/Catch2/tree/Catch1.x), and is still provided for those on pre-C++11 compilers. (Please note that the Approval Tests library requires C++11 or newer, however). 
 
+Approval Tests requires that a file called `catch.hpp` is found.
+
 ### Starter Project
 
 The quickest way to start experimenting with Approval Tests is to:
