@@ -58,6 +58,12 @@ Running tests gives the following output:
 * Is your code calling `Approvals::verify()` or any other methods in this library from outside a Google Test?
     * This is much less likely to be the cause, but the file-naming code in Approval Tests (`ApprovalTestNamer`) does require that approvals are used from inside a test method in a supported test framework. 
 
+## My custom reporter works in development, but not CI
+
+Check your test code - especially your main - for any uses of `Approvals::useAsFrontLoadedReporter()` that are specific to running on a Continuous Integration system.
+
+If that's the case, and you do still want to use a custom reporter in an individual test, you can use `Approvals::useAsFrontLoadedReporter()` in the test, passing in your custom reporter, to take precedence over the CI-specific reporter in your main.
+
 ---
 
 [Back to User Guide](/doc/README.md#top)
