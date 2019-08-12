@@ -13,7 +13,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1") {
 
 TEST_CASE("YouCanVerifyCombinationsOf1WithTemplateParameters") {
     std::vector<std::string> words{"hello", "world"};
-    CombinationApprovals::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words);
+    CombinationApprovals::verifyAllCombinations( [](std::string s){return s + "!";}, words);
 }
 
 TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
@@ -34,8 +34,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
 TEST_CASE("YouCanVerifyCombinationsOf2") {
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
-    CombinationApprovals::verifyAllCombinations<
-        std::vector<std::string>, std::vector<int>, std::pair<std::string, int>>(
+    CombinationApprovals::verifyAllCombinations(
             [](std::string s, int i){return std::make_pair(s, i);},
             v,
             numbers);
@@ -44,17 +43,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2") {
 
 TEST_CASE("YouCanVerifyCombinationsOf9") {
     std::vector<std::string> letters{"a", "b"};
-    CombinationApprovals::verifyAllCombinations<
-            std::vector<std::string>,
-            std::vector<std::string>,
-            std::vector<std::string>,
-            std::vector<std::string>,
-            std::vector<std::string>,
-            std::vector<std::string>,
-            std::vector<std::string>,
-            std::vector<std::string>,
-            std::vector<std::string>,
-            std::string>( [](
+    CombinationApprovals::verifyAllCombinations( [](
             std::string s1,
             std::string s2,
             std::string s3,
