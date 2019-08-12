@@ -6,70 +6,84 @@
 // <SingleHpp unalterable>
 #ifdef APPROVALS_DOCTEST
 
-#define DOCTEST_CONFIG_IMPLEMENT
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+
 #include <doctest.hpp>
 
 // anonymous namespace to prevent compiler -Wsubobject-linkage warnings
 // This is OK as this code is only compiled on main()
-namespace
-{
-    struct DocTestApprovalListener : doctest::ConsoleReporter
-    {
+namespace {
+    struct AbstractReporter : doctest::IReporter {
+        virtual void report_query(const doctest::QueryData&) {}
+        // called when the whole test run starts
+        virtual void test_run_start() {}
+
+        // called when the whole test run ends (caching a pointer to the input doesn't make sense here)
+        virtual void test_run_end(const doctest::TestRunStats &) {}
+
+        // called when a test case is started (safe to cache a pointer to the input)
+        virtual void test_case_start(const doctest::TestCaseData &) {}
+
+        // called when a test case has ended
+        virtual void test_case_end(const doctest::CurrentTestCaseStats &) {}
+
+        // called when an exception is thrown from the test case (or it crashes)
+        virtual void test_case_exception(const doctest::TestCaseException &) {}
+
+        // called whenever a subcase is entered (don't cache pointers to the input)
+        virtual void subcase_start(const doctest::SubcaseSignature &) {}
+
+        // called whenever a subcase is exited (don't cache pointers to the input)
+        virtual void subcase_end() {}
+
+        // called for each assert (don't cache pointers to the input)
+        virtual void log_assert(const doctest::AssertData &) {}
+
+        // called for each message (don't cache pointers to the input)
+        virtual void log_message(const doctest::MessageData &) {}
+
+        // called when a test case is skipped either because it doesn't pass the filters, has a skip decorator
+        // or isn't in the execution range (between first and last) (safe to cache a pointer to the input)
+        virtual void test_case_skipped(const doctest::TestCaseData &) {}
+
+
+    };
+
+    struct DocTestApprovalListener : AbstractReporter {
         TestName currentTest;
-    
+
         // constructor has to accept the ContextOptions by ref as a single argument
-        DocTestApprovalListener(const doctest::ContextOptions& in) : ConsoleReporter(in)
-        {
+        DocTestApprovalListener(const doctest::ContextOptions & /*in*/) {
         }
-    
-        void test_case_start(const doctest::TestCaseData& testInfo) override
-        {
-            ConsoleReporter::test_case_start(testInfo);
-    
+
+        void test_case_start(const doctest::TestCaseData &testInfo) override {
+
             currentTest.sections.push_back(testInfo.m_name);
             currentTest.setFileName(testInfo.m_file);
             ApprovalTestNamer::currentTest(&currentTest);
         }
-    
-        void test_case_end(const doctest::CurrentTestCaseStats& in) override
-        {
-            ConsoleReporter::test_case_end(in);
-    
+
+        void test_case_end(const doctest::CurrentTestCaseStats & /*in*/) override {
+
             while (!currentTest.sections.empty()) {
                 currentTest.sections.pop_back();
             }
         }
-    
-        void subcase_start(const doctest::SubcaseSignature &signature) override
-        {
-            ConsoleReporter::subcase_start(signature);
-    
+
+        void subcase_start(const doctest::SubcaseSignature &signature) override {
+
             currentTest.sections.push_back(signature.m_name);
         }
-    
-        void subcase_end() override
-        {
-            ConsoleReporter::subcase_end();
-    
+
+        void subcase_end() override {
+
             currentTest.sections.pop_back();
         }
     };
 }
 
-REGISTER_REPORTER("approvals", 0, DocTestApprovalListener);
+REGISTER_LISTENER("approvals", 0, DocTestApprovalListener);
 
-int main(int argc, char** argv)
-{
-    doctest::Context context(argc, argv);
-
-    // Enforce use of our own reporter.
-    // If the following are implemented, we could 
-    // - https://github.com/onqtam/doctest/issues/257
-    // - https://github.com/onqtam/doctest/issues/260
-    context.setOption("--reporters", "approvals");
-
-    return context.run();
-}
 
 #endif // APPROVALS_DOCTEST
 // </SingleHpp>

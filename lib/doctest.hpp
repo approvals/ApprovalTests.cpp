@@ -1,1 +1,1 @@
-#include "doctest.2.3.3.hpp"
+#include "doctest.2.4.beta.hpp"
