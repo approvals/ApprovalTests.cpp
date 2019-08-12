@@ -9,7 +9,7 @@ To change the code, simply delete the `<....>` from your call. For example:
 ```
 
 * **New features**
-    * None
+    * Better support for doctest - this requires doctest 2.4 - currently in beta.
 * **Bug fixes**
     * None
 * **Other changes**
