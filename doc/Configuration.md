@@ -28,6 +28,8 @@ auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L12-L14) / [anchor](#snippet-use_subdirectory_in_main)</sup>
 <!-- endsnippet -->
 
+Note that the sub-directory is created automatically, and that it will be inside the directory containing the source code of the test, not the current working directory of the test process.
+
 The return value will restore the original directory when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
 
 This mechanism allows you to select a different sub-directory in individual tests.
