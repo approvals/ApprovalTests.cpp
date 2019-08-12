@@ -14,12 +14,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Getting Started With doctest](#getting-started-with-doctest)
+    * [Requirements](#requirements)
     * [New Project](#new-project)
-  * [Limitations](#limitations)
-    * [Doctest Version 2.3.4 and above](#doctest-version-234-and-above)
-    * [Doctest Versions 2.3.3 and below](#doctest-versions-233-and-below)
-      * [# doctest --reporter argument ignored](#-doctest---reporter-argument-ignored)
-      * [# Visual Studio compilation failure workaround](#-visual-studio-compilation-failure-workaround)
 <!-- endtoc -->
 
 
@@ -30,7 +26,11 @@ The [doctest](https://github.com/onqtam/doctest) test framework works fairly wel
 
 Doctest is similar to Catch, but claims to give faster compilation times.
 
-Approval Tests requires that a file called `doctest.h` is found.
+### Requirements
+
+Approval Tests for doctest requires that a file called `doctest.h` is found.
+
+Approval Tests needs doctest version 2.3.4 or above.
 
 ### New Project
 
@@ -48,40 +48,4 @@ Create a file `main.cpp` and add just the following two lines:
 
 <!-- todo: document use of sections -->
 
-## Limitations
 
-### Doctest Version 2.3.4 and above
-
-There are no limitations when using doctest version 2.3.4 and above.
-
-### Doctest Versions 2.3.3 and below
-
-If you are using doctest 2.3.3 or below, you will need to use Approval Tests 3.5.0. Please note the following limitations. 
-
-#### doctest --reporter argument ignored
-
-Currently, Approval Tests overrides any [`--reporter` command-line argument](https://github.com/onqtam/doctest/blob/master/doc/markdown/reporters.md) supplied.
-This is needed for Approval Tests to function with doctest. The Approval Tests reporter works like doctest's `console` reporter. This means that it is not possible to run Approval Tests with the doctest test framework, and use reporters such as `xml`.
-
-We currently do not have a better workaround.
-
-#### Visual Studio compilation failure workaround
-
-If you provide your own copy of the doctest header, and find this compiler error in Visual Studio, for a call to `std::max()`:
-
-```
-C:\projects\approvaltests-cpp\lib\doctest.2.3.3.hpp(3435,48): 
-error C2589:  '(': illegal token on right side of '::' 
-[...approvaltests-cpp\ApprovalTests_DocTest_Tests\ApprovalTests_DocTest_Tests.vcxproj]
-C:\projects\approvaltests-cpp\lib\doctest.2.3.3.hpp(3435,48): 
-error C2062:  type 'unknown-type' unexpected 
-[...\approvaltests-cpp\ApprovalTests_DocTest_Tests\ApprovalTests_DocTest_Tests.vcxproj]
-```
-
-... you may need to apply [this fix to your doctest header](https://github.com/approvals/ApprovalTests.cpp/commit/d914f3233a5c354b54b660790ee7f6e8f0f1fd7c).
-
-For the current status of this, see [doctest/pull/258](https://github.com/onqtam/doctest/pull/258).
-
----
-
-[Back to User Guide](/doc/README.md#top)
