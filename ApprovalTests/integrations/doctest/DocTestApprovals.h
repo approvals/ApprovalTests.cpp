@@ -8,7 +8,7 @@
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
-#include <doctest.hpp>
+#include <doctest.h>
 
 // anonymous namespace to prevent compiler -Wsubobject-linkage warnings
 // This is OK as this code is only compiled on main()

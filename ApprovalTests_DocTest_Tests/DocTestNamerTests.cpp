@@ -1,4 +1,4 @@
-#include "doctest.hpp"
+#include "doctest.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/Approvals.h"
 
