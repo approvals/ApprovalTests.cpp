@@ -11,6 +11,6 @@ To change the code, simply delete the `<....>` from your call. For example:
 * **New features**
     * None
 * **Bug fixes**
-    * Better support for doctest - this requires doctest 2.4 - currently in beta.
+    * Better support for doctest - this requires doctest 2.3.4 - just released.
 * **Other changes**
     * None
