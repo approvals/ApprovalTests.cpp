@@ -4,7 +4,7 @@
 set -e
 set -o pipefail
 
-LAST_VERSION="v.3.5.0"
+LAST_VERSION="v.4.0.0"
 VERSION="v.X.X.X"
 
 PUSH_TO_PRODUCTION="true"
