@@ -22,7 +22,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ## Getting Started With doctest
 
-The [doctest](https://github.com/onqtam/doctest) test framework works fairly well with Approval Tests.
+The [doctest](https://github.com/onqtam/doctest) test framework works well with Approval Tests.
 
 Doctest is similar to Catch, but claims to give faster compilation times.
 
