@@ -16,7 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Getting Started With doctest](#getting-started-with-doctest)
     * [New Project](#new-project)
   * [Limitations](#limitations)
-    * [Doctest Version 2.4 and above](#doctest-version-24-and-above)
+    * [Doctest Version 2.3.4 and above](#doctest-version-234-and-above)
     * [Doctest Versions 2.3.3 and below](#doctest-versions-233-and-below)
       * [# doctest --reporter argument ignored](#-doctest---reporter-argument-ignored)
       * [# Visual Studio compilation failure workaround](#-visual-studio-compilation-failure-workaround)
@@ -50,9 +50,9 @@ Create a file `main.cpp` and add just the following two lines:
 
 ## Limitations
 
-### Doctest Version 2.4 and above
+### Doctest Version 2.3.4 and above
 
-There are no limitations when using doctest version 2.4 and above. There is a [beta available](https://github.com/onqtam/doctest/blob/dev/doctest/doctest.h).
+There are no limitations when using doctest version 2.3.4 and above.
 
 ### Doctest Versions 2.3.3 and below
 

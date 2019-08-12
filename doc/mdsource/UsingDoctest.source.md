@@ -24,9 +24,9 @@ snippet: doctest_main
 
 ## Limitations
 
-### Doctest Version 2.4 and above
+### Doctest Version 2.3.4 and above
 
-There are no limitations when using doctest version 2.4 and above. There is a [beta available](https://github.com/onqtam/doctest/blob/dev/doctest/doctest.h).
+There are no limitations when using doctest version 2.3.4 and above.
 
 ### Doctest Versions 2.3.3 and below
 
