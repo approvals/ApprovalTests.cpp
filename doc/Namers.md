@@ -15,6 +15,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [The Purpose of Namers](#the-purpose-of-namers)
   * [The Parts of Namers](#the-parts-of-namers)
   * [Registering a Custom Namer](#registering-a-custom-namer)
+  * [Alternative Namers](#alternative-namers)
+    * [SeparateApprovedAndReceivedDirectoriesNamer](#separateapprovedandreceiveddirectoriesnamer)
 <!-- endtoc -->
 
 
@@ -46,8 +48,6 @@ The Approval Namer is responsible for creating these two names.
 The interface for this is [`ApprovalNamer`](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/namers/ApprovalNamer.h).
 
 
-
-
 ## Registering a Custom Namer
 
 If you ever want to create a custom namer, Approval Tests has a mechanism to change which namer it uses by default. Please note that you need to create a function that creates new namers.
@@ -58,7 +58,29 @@ If you ever want to create a custom namer, Approval Tests has a mechanism to cha
 ```cpp
 auto default_namer_disposer = Approvals::useAsDefaultNamer([](){return std::make_shared<FakeNamer>();});
 ```
-<sup>[snippet source](/ApprovalTests_DocTest_Tests/namers/NamerTests.cpp#L22-L24) / [anchor](#snippet-register_default_namer)</sup>
+<sup>[snippet source](/ApprovalTests_DocTest_Tests/namers/NamerTests.cpp#L23-L25) / [anchor](#snippet-register_default_namer)</sup>
+<!-- endsnippet -->
+
+## Alternative Namers
+
+### SeparateApprovedAndReceivedDirectoriesNamer
+
+The pattern used by this class for file names is:
+- `./approved/[test file name].[test name].[extension]`
+- `./received/[test file name].[test name].[extension]`
+
+This layout enables Beyond Compare 4 (or any other directory comparison tool) to compare the `approved/` and `received/` directories, and approve one or more files by copying them (without renaming) from `received/` to `approved/`.
+
+The "approved/" and "received/" directories are created automatically.
+
+To register this as your default namer, use:
+
+<!-- snippet: register_separate_directories_namer -->
+<a id='snippet-register_separate_directories_namer'/></a>
+```cpp
+auto default_namer_disposer = SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
+```
+<sup>[snippet source](/ApprovalTests_DocTest_Tests/namers/NamerTests.cpp#L35-L37) / [anchor](#snippet-register_separate_directories_namer)</sup>
 <!-- endsnippet -->
 
 ---

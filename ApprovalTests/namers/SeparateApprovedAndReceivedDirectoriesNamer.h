@@ -2,6 +2,7 @@
 #define APPROVALTESTS_CPP_SEPARATEAPPROVEDANDRECEIVEDDIRECTORIESNAMER_H
 
 #include "ApprovalTestNamer.h"
+#include "../Approvals.h"
 
 class SeparateApprovedAndReceivedDirectoriesNamer : public ApprovalTestNamer
 {
@@ -26,6 +27,11 @@ public:
     virtual std::string getReceivedFile(string extensionWithDot) override
     {
         return getFullFileNameWithExtraDirectory("received", extensionWithDot);
+    }
+    
+    static DefaultNamerDisposer useAsDefaultNamer()
+    {
+        return Approvals::useAsDefaultNamer([](){return std::make_shared<SeparateApprovedAndReceivedDirectoriesNamer>();});
     }
 
 };

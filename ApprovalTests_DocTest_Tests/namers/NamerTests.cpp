@@ -32,7 +32,11 @@ TEST_CASE("Registering default Namer")
 
 TEST_CASE("SeparateApprovedAndReceivedDirectoriesNamer")
 {
-    SeparateApprovedAndReceivedDirectoriesNamer namer;
-    REQUIRE(StringUtils::endsWith(namer.getApprovedFile(".txt"), "approved/NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt"));
-    REQUIRE(StringUtils::endsWith(namer.getReceivedFile(".txt"), "received/NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt"));
+    // begin-snippet: register_separate_directories_namer
+    auto default_namer_disposer = SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
+    // end-snippet
+
+    auto namer = Approvals::getDefaultNamer();
+    REQUIRE(StringUtils::endsWith(namer->getApprovedFile(".txt"), "approved/NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt"));
+    REQUIRE(StringUtils::endsWith(namer->getReceivedFile(".txt"), "received/NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt"));
 }

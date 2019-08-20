@@ -14,6 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [SeparateApprovedAndReceivedDirectoriesNamer](#separateapprovedandreceiveddirectoriesnamer)
   * [Registering a Custom Namer](#registering-a-custom-namer)
   * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
   * [Blocking Reporter](#blocking-reporter)
@@ -22,6 +23,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)
 <!-- endtoc -->
 
+
+## SeparateApprovedAndReceivedDirectoriesNamer
+
+See [SeparateApprovedAndReceivedDirectoriesNamer](/doc/Namers.md#separateapprovedandreceiveddirectoriesnamer)
 
 ## Registering a Custom Namer
 

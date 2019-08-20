@@ -6,6 +6,10 @@
 
 toc
 
+## SeparateApprovedAndReceivedDirectoriesNamer
+
+See [SeparateApprovedAndReceivedDirectoriesNamer](/doc/Namers.md#separateapprovedandreceiveddirectoriesnamer)
+
 ## Registering a Custom Namer
 
 See [Registering a Custom Namer](/doc/Namers.md#registering-a-custom-namer)
