@@ -6,6 +6,10 @@
 
 toc
 
+## Registering a Custom Namer
+
+See [Registering a Custom Namer](/doc/Namers.md#registering-a-custom-namer)
+
 ## Customizing Google Tests Approval File Names
 
 See [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#customizing-google-tests-approval-file-names)

@@ -70,7 +70,7 @@ Here's how to set up from:
 * [Reporters](/doc/Reporters.md#top)
 * [Custom Comparators](/doc/CustomComparators.md#top)
 * Writers
-* Namers
+* [Namers](/doc/Namers.md#top)
 * [Configuration](/doc/Configuration.md#top)
 
 ## Common Challenges

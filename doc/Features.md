@@ -14,6 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [Registering a Custom Namer](#registering-a-custom-namer)
   * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
   * [Blocking Reporter](#blocking-reporter)
   * [Machine Blockers](#machine-blockers)
@@ -21,6 +22,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)
 <!-- endtoc -->
 
+
+## Registering a Custom Namer
+
+See [Registering a Custom Namer](/doc/Namers.md#registering-a-custom-namer)
 
 ## Customizing Google Tests Approval File Names
 

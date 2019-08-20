@@ -12,6 +12,7 @@
 #include "writers/ExistingFile.h"
 #include "namers/ExistingFileNamer.h"
 #include "namers/SubdirectoryDisposer.h"
+#include "namers/DefaultNamerDisposer.h"
 
 class Approvals {
 private:
@@ -22,7 +23,7 @@ private:
 public:
     static std::shared_ptr<ApprovalNamer> getDefaultNamer()
     {
-        return std::make_shared<ApprovalTestNamer>();
+        return DefaultNamerFactory::getDefaultNamer()();
     }
 
     static void verify(std::string contents, const Reporter &reporter = DefaultReporter()) {
@@ -120,6 +121,11 @@ public:
     static FrontLoadedReporterDisposer useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
     {
         return FrontLoadedReporterDisposer(reporter);
+    }
+
+    static DefaultNamerDisposer useAsDefaultNamer(NamerCreator namerCreator)
+    {
+        return DefaultNamerDisposer(namerCreator);
     }
 
 };
