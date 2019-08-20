@@ -44,6 +44,10 @@ public:
     static void writeToFile(std::string filePath, std::string content)
     {
         std::ofstream out(filePath.c_str(), std::ios::binary | std::ofstream::out);
+        if ( ! out)
+        {
+            throw std::runtime_error("Unable to write file: " + filePath);
+        }
         out << content;
     }
 };
