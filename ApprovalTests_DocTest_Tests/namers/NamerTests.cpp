@@ -30,6 +30,12 @@ TEST_CASE("Registering default Namer")
     REQUIRE(StringUtils::endsWith(result, "NamerTests.Registering_default_Namer.approved.txt"));
 }
 
+void require_ends_with(const std::string& text, const std::string& endsWith)
+{
+    INFO(text << "\ndidn't end with\n" << endsWith);
+    REQUIRE(StringUtils::endsWith(text, endsWith));
+}
+
 TEST_CASE("SeparateApprovedAndReceivedDirectoriesNamer")
 {
     // begin-snippet: register_separate_directories_namer
@@ -37,6 +43,8 @@ TEST_CASE("SeparateApprovedAndReceivedDirectoriesNamer")
     // end-snippet
 
     auto namer = Approvals::getDefaultNamer();
-    REQUIRE(StringUtils::endsWith(namer->getApprovedFile(".txt"), "approved/NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt"));
-    REQUIRE(StringUtils::endsWith(namer->getReceivedFile(".txt"), "received/NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt"));
+    require_ends_with(namer->getApprovedFile(".txt"), "approved" + SystemUtils::getDirectorySeparator() +
+                                                      "NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt");
+    require_ends_with(namer->getReceivedFile(".txt"), "received" + SystemUtils::getDirectorySeparator() +
+                                                      "NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt");
 }
