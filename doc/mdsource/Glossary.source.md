@@ -16,7 +16,13 @@ toc
 
 Sometimes referred to as Combinatorial testing.
 
+See [Testing Combinations](/doc/TestingCombinations.md#top).
+
 ## Comparator
+
+See [Custom Comparators](/doc/CustomComparators.md#top).
+
+## Continuous Integration
 
 ## Convention over Configuration  
 
@@ -46,9 +52,19 @@ Instead of asking the user to specify everything, we make assumptions based on c
 
 ## Reporter
 
+See [Reporters](/doc/Reporters.md#top).
+
+See [Using sub-directories for approved files](/doc/Configuration.md#using-sub-directories-for-approved-files)
+
+See [Features](/doc/Features.md#top) - whose sections need to be moved around
+
 ## Scrubber
 
+[ApprovalTests.Net](https://github.com/approvals/ApprovalTests.Net/tree/master/ApprovalTests/Scrubber)
+
 ## Stringification
+
+See [ToString](/doc/ToString.md#top).
 
 ## Test Framework
 
