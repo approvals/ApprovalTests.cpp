@@ -28,6 +28,7 @@ add_executable(${PROJECT_NAME}
         FileUtilsSystemSpecificTests.cpp
         )
 target_link_libraries(${PROJECT_NAME} ApprovalTests)
+target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
