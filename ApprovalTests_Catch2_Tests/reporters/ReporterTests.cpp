@@ -74,16 +74,15 @@ TEST_CASE("CombinationReporter fails if all fail") {
 
 TEST_CASE("Launching on PC with cygwin and Araxis Merge")
 {
-    return; // Ignoring system test
-
-
-    REQUIRE_FALSE(SystemUtils::isWindowsOs());
-    auto reporter = new Windows::AraxisMergeReporter;
-    auto namer = Approvals::getDefaultNamer();
-    auto fullCommand = reporter->getFullCommand(
-        namer->getReceivedFile(".txt"),
-        namer->getApprovedFile(".txt"));
-    Approvals::verifyAll(fullCommand, *reporter);
+    // Keeping for manual testing when needed
+    
+//    REQUIRE_FALSE(SystemUtils::isWindowsOs());
+//    auto reporter = new Windows::AraxisMergeReporter;
+//    auto namer = Approvals::getDefaultNamer();
+//    auto fullCommand = reporter->getFullCommand(
+//        namer->getReceivedFile(".txt"),
+//        namer->getApprovedFile(".txt"));
+//    Approvals::verifyAll(fullCommand, *reporter);
 }
 
 
