@@ -19,3 +19,5 @@ mdsnippets --exclude cmake-build --toc-level 5 --readonly true --header "GENERAT
 # Custom Markdown linting
 # todo: fix
 # ./fix_markdown.sh
+
+# todo: linkcheck https://github.com/approvals/ApprovalTests.cpp
