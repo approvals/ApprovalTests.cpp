@@ -80,7 +80,7 @@ To register this as your default namer, use:
 ```cpp
 auto default_namer_disposer = SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
 ```
-<sup>[snippet source](/ApprovalTests_DocTest_Tests/namers/NamerTests.cpp#L35-L37) / [anchor](#snippet-register_separate_directories_namer)</sup>
+<sup>[snippet source](/ApprovalTests_DocTest_Tests/namers/NamerTests.cpp#L41-L43) / [anchor](#snippet-register_separate_directories_namer)</sup>
 <!-- endsnippet -->
 
 ---
