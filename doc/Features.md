@@ -38,17 +38,7 @@ See [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#customizin
 
 ## Blocking Reporter
 
-Blocking reporters are a simple class, designed for use with FrontLoadedReporters, to prevent launching of reporters in certain environments.
-
-<!-- snippet: do_not_report_on_ci -->
-<a id='snippet-do_not_report_on_ci'/></a>
-```cpp
-// main.cpp
-auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
-    BlockingReporter::onMachineNamed("MyCIMachineName") );
-```
-<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_ci)</sup>
-<!-- endsnippet -->
+See [Blocking Reporters](/doc/Reporters.md#blocking-reporters)
 
 ## Machine Blockers
 
@@ -73,29 +63,7 @@ TEST_CASE("Only run this test on John's machine")
 
 ## Front Loaded Reporters
 
-Other times, you will want to run the tests on all machines, but only report if certain conditions are true. Front loaded reporters allow a mechanism to jump in front of the standard Reporter path, and divert early.
-
-Here is an example of not launching any reporters of you are on the CI machine.
-
-<!-- snippet: do_not_report_on_ci -->
-<a id='snippet-do_not_report_on_ci'/></a>
-```cpp
-// main.cpp
-auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
-    BlockingReporter::onMachineNamed("MyCIMachineName") );
-```
-<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_ci)</sup>
-<!-- endsnippet -->
-
-Once you have added that, even calling approvals with a specific Reporter will not launch it on the CI system (but will for all other systems). For example:
-
-<!-- snippet: basic_approval_with_reporter -->
-<a id='snippet-basic_approval_with_reporter'/></a>
-```cpp
-Approvals::verify("text to be verified", Windows::AraxisMergeReporter());
-```
-<sup>[snippet source](/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L11-L13) / [anchor](#snippet-basic_approval_with_reporter)</sup>
-<!-- endsnippet -->
+See [Front Loaded Reporters](/doc/Reporters.md#front-loaded-reporters)
 
 ## Using sub-directories for approved files
 
