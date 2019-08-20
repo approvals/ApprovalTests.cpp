@@ -56,6 +56,7 @@ CODE QUALITY
 
 ENVIRONMENT AND BUILDS
 
+. fix Appveyor builds for Starter Project
 . set up a git tab policy
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
 
