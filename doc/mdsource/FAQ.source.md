@@ -14,6 +14,14 @@ toc
 
 ## Does it integrate with other unit testing libraries?
 
+## I wrote a test, but the output file has loads of stuff I'm not interested in
+
+Things to say:
+
+* Yes, it's a common problem
+* Readability of the output is important
+* Someone reviewing a test failure needs to understand the purpose and intent of the test
+* **Recommendation**: write your own formatting that's specific to particular tests - see [To String](/doc/ToString.md#top) for examples.
 
 --
 

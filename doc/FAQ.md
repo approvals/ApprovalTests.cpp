@@ -16,6 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [How do they differ from unit tests?](#how-do-they-differ-from-unit-tests)
   * [Why are approval tests particularly good for testing legacy code?](#why-are-approval-tests-particularly-good-for-testing-legacy-code)
   * [Does it integrate with other unit testing libraries?](#does-it-integrate-with-other-unit-testing-libraries)
+  * [I wrote a test, but the output file has loads of stuff I'm not interested in](#i-wrote-a-test-but-the-output-file-has-loads-of-stuff-im-not-interested-in)
 <!-- endtoc -->
 
 
@@ -29,6 +30,14 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ## Does it integrate with other unit testing libraries?
 
+## I wrote a test, but the output file has loads of stuff I'm not interested in
+
+Things to say:
+
+* Yes, it's a common problem
+* Readability of the output is important
+* Someone reviewing a test failure needs to understand the purpose and intent of the test
+* **Recommendation**: write your own formatting that's specific to particular tests - see [To String](/doc/ToString.md#top) for examples.
 
 --
 
