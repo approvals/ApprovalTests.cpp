@@ -27,6 +27,7 @@ NEW FEATURES
 TESTS
 
 . add tests of images (and verify that this works in Araxis Merge too - use Type::TEXT_AND_IMAGE)
+. try using C++17's filesystem to simplify tests - may need to support <experimental/filesystem> too - and may need -lstdc++fs
 
 DOCUMENTATION
 
