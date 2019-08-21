@@ -11,7 +11,6 @@
 #include <Catch.hpp>
 
 struct Catch2ApprovalListener : Catch::TestEventListenerBase {
-    using TestEventListenerBase::TestEventListenerBase;
     TestName currentTest;
 
     Catch2ApprovalListener(Catch::ReporterConfig const &_config) : Catch::TestEventListenerBase(_config) {}
