@@ -3,7 +3,9 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(${PROJECT_NAME}
         main.cpp
         DocTestNamerTests.cpp
-        namers/NamerTests.cpp)
+        DocTestDocumentationSamples.cpp
+        namers/NamerTests.cpp
+    )
 target_link_libraries(${PROJECT_NAME} ApprovalTests)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 

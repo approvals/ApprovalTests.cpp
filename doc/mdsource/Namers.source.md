@@ -119,7 +119,11 @@ snippet: catch2_multiple_output_files_hard_coded
 
 ### doctest
 
-You can have a file-per-subcase.
+Note: unlike Catch, doctest sub-cases must have static strings for names, so if you want to name things dynamically, you will have to use the native Approval Tests mechanism - see below.
+
+You can have hard-coded, with multiple sections:
+
+snippet: doctest_multiple_output_files_hard_coded
 
 ### Approval Tests
 

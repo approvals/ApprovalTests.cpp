@@ -163,7 +163,7 @@ TEST_CASE("MultipleOutputFiles-DataDriven")
     }
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Catch2DocumentationSamples.cpp#L55-L71) / [anchor](#snippet-catch2_multiple_output_files_dynamic)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Catch2DocumentationSamples.cpp#L59-L75) / [anchor](#snippet-catch2_multiple_output_files_dynamic)</sup>
 <!-- endsnippet -->
 
 Or hard-coded, with multiple sections:
@@ -188,12 +188,37 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/Catch2DocumentationSamples.cpp#L73-L90) / [anchor](#snippet-catch2_multiple_output_files_hard_coded)</sup>
+<sup>[snippet source](/ApprovalTests_Catch2_Tests/Catch2DocumentationSamples.cpp#L77-L94) / [anchor](#snippet-catch2_multiple_output_files_hard_coded)</sup>
 <!-- endsnippet -->
 
 ### doctest
 
-You can have a file-per-subcase.
+Note: unlike Catch, doctest sub-cases must have static strings for names, so if you want to name things dynamically, you will have to use the native Approval Tests mechanism - see below.
+
+You can have hard-coded, with multiple sections:
+
+<!-- snippet: doctest_multiple_output_files_hard_coded -->
+<a id='snippet-doctest_multiple_output_files_hard_coded'/></a>
+```cpp
+TEST_CASE("MultipleOutputFiles-ForOneObject")
+{
+    Greeting object_under_test;
+    SUBCASE("British")
+    {
+        Approvals::verify(object_under_test.getGreetingFor(British));
+    }
+    SUBCASE("American")
+    {
+        Approvals::verify(object_under_test.getGreetingFor(American));
+    }
+    SUBCASE("French")
+    {
+        Approvals::verify(object_under_test.getGreetingFor(French));
+    }
+}
+```
+<sup>[snippet source](/ApprovalTests_DocTest_Tests/DocTestDocumentationSamples.cpp#L59-L76) / [anchor](#snippet-doctest_multiple_output_files_hard_coded)</sup>
+<!-- endsnippet -->
 
 ### Approval Tests
 
