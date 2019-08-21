@@ -6,6 +6,10 @@
 
 toc
 
+## Multiple output files per test
+
+See [Multiple output files per test](/doc/MultipleOutputFilesPerTest.md#top).
+
 ## SeparateApprovedAndReceivedDirectoriesNamer
 
 See [SeparateApprovedAndReceivedDirectoriesNamer](/doc/Namers.md#separateapprovedandreceiveddirectoriesnamer)

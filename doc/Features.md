@@ -14,6 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [Multiple output files per test](#multiple-output-files-per-test)
   * [SeparateApprovedAndReceivedDirectoriesNamer](#separateapprovedandreceiveddirectoriesnamer)
   * [Registering a Custom Namer](#registering-a-custom-namer)
   * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
@@ -23,6 +24,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)
 <!-- endtoc -->
 
+
+## Multiple output files per test
+
+See [Multiple output files per test](/doc/MultipleOutputFilesPerTest.md#top).
 
 ## SeparateApprovedAndReceivedDirectoriesNamer
 
