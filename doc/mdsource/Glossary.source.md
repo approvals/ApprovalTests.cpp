@@ -66,6 +66,10 @@ See [Features](/doc/Features.md#top) - whose sections need to be moved around
 
 See [ToString](/doc/ToString.md#top).
 
+## System Under Test
+
+The area of the production code that you are testing. See [System Under Test](https://en.wikipedia.org/wiki/System_under_test).
+
 ## Test Framework
 
 ## test && commit || revert (TCR)

@@ -109,13 +109,17 @@ Here are a few ways to do that.
 
 You can have a file-per-subsection.
 
-snippet: catch2_section
+You can either do these dynamically, e.g. in a for-loop:
+
+snippet: catch2_multiple_output_files_dynamic
+
+Or hard-coded, with multiple sections:
+
+snippet: catch2_multiple_output_files_hard_coded
 
 ### doctest
 
 You can have a file-per-subcase.
-
-snippet: doctest_section
 
 ### Approval Tests
 
@@ -124,8 +128,6 @@ This can be done with Catch2's `SECTION` and doctest's `SUBCASE`. However, there
 The function `addAdditionalApprovalTestInformation()` adds an extra piece of text to be added to the filename used for output files.
 
 Example of use:
-
-snippet: verify_multiple_files
 
 ---
 

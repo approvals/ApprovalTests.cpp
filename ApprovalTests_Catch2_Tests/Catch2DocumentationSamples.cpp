@@ -35,6 +35,8 @@ struct Greeting
                 return "Howdy";
             case French:
                 return "Bonjour";
+            default:
+                return "Unknown";
         }
     }
 
@@ -48,10 +50,13 @@ struct Greeting
                 return "American";
             case French:
                 return "French";
+            default:
+                return "Unknown";
         }
     }
 };
 
+// begin-snippet: catch2_multiple_output_files_dynamic
 TEST_CASE("MultipleOutputFiles-DataDriven")
 {
     // This is an example of how to write multiple different files in a single test.
@@ -67,84 +72,23 @@ TEST_CASE("MultipleOutputFiles-DataDriven")
         }
     }
 }
+// end-snippet
 
-TEST_CASE("MultipleOutputFiles-ForSystemUnderTest")
+// begin-snippet: catch2_multiple_output_files_hard_coded
+TEST_CASE("MultipleOutputFiles-ForOneObject")
 {
-    Greeting greeting;
+    Greeting object_under_test;
     SECTION("British")
     {
-        Approvals::verify(greeting.getGreetingFor(British));
+        Approvals::verify(object_under_test.getGreetingFor(British));
     }
     SECTION("American")
     {
-        Approvals::verify(greeting.getGreetingFor(American));
+        Approvals::verify(object_under_test.getGreetingFor(American));
     }
     SECTION("French")
     {
-        Approvals::verify(greeting.getGreetingFor(French));
+        Approvals::verify(object_under_test.getGreetingFor(French));
     }
 }
-
-struct Dinner
-{
-    Dinner(const std::string&, int)
-    {};
-
-    std::string printBusinessReceipt()
-    {
-        return "Dinner: $59.00";
-    }
-
-    std::string printPersonalReceipt()
-    {
-        return "Wine: $59.00";
-    }
-
-    void writeAllReceipts()
-    {
-
-    }
-};
-TEST_CASE("MultipleOutputFiles2")
-{
-    Dinner dinner("Wine", 59);
-    SECTION("BusinessReceipt")
-    {
-        Approvals::verify("Dinner: $59.00");
-    }
-    SECTION("PersonalReceipt")
-    {
-        Approvals::verify("Wine: $59.00");
-    }
-}
-
-TEST_CASE("MultipleOutputFiles1")
-{
-    Dinner dinner("Wine", 59);
-    SECTION("BusinessReceipt")
-    {
-        Approvals::verify(dinner.printBusinessReceipt());
-    }
-    SECTION("PersonalReceipt")
-    {
-        Approvals::verify(dinner.printPersonalReceipt());
-    }
-}
-
-
-
-TEST_CASE("MultipleOutputFiles3")
-{
-    Dinner dinner("Wine", 59);
-    dinner.writeAllReceipts();
-    SECTION("BusinessReceipt")
-    {
-       // Approvals::verifyExistingFile("file1.txt");
-        Approvals::verify(readFile("file1.txt"));
-    }
-    SECTION("PersonalReceipt")
-    {
-        //Approvals::verifyExistingFile("file2.txt");
-          Approvals::verify(readFile("file2.txt"));
-    }
-}
+// end-snippet

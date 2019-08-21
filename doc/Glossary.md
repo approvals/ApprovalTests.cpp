@@ -33,6 +33,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Reporter](#reporter)
   * [Scrubber](#scrubber)
   * [Stringification](#stringification)
+  * [System Under Test](#system-under-test)
   * [Test Framework](#test-framework)
   * [test && commit || revert (TCR)](#test--commit--revert-tcr)
   * [Writer](#writer)
@@ -102,6 +103,10 @@ See [Features](/doc/Features.md#top) - whose sections need to be moved around
 ## Stringification
 
 See [ToString](/doc/ToString.md#top).
+
+## System Under Test
+
+The area of the production code that you are testing. See [System Under Test](https://en.wikipedia.org/wiki/System_under_test).
 
 ## Test Framework
 
