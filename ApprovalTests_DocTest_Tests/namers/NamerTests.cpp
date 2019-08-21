@@ -1,6 +1,7 @@
 #include "doctest.h"
 #include "ApprovalTests/namers/ApprovalNamer.h"
 #include "ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.h"
+#include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/Approvals.h"
 
 #include <memory>
@@ -47,4 +48,19 @@ TEST_CASE("SeparateApprovedAndReceivedDirectoriesNamer")
                                                       "NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt");
     require_ends_with(namer->getReceivedFile(".txt"), "received" + SystemUtils::getDirectorySeparator() +
                                                       "NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt");
+}
+
+TEST_CASE( "AdditionalSections" )
+{
+    auto namer = Approvals::getDefaultNamer();
+
+    {
+        auto section_namer = NamerFactory::appendToOutputFilename("case1");
+        require_ends_with(namer->getApprovedFile(".txt"), "NamerTests.AdditionalSections.case1.approved.txt");
+    }
+    {
+        auto section_namer = NamerFactory::appendToOutputFilename("case2");
+        require_ends_with(namer->getApprovedFile(".txt"), "NamerTests.AdditionalSections.case2.approved.txt");
+    }
+    require_ends_with(namer->getApprovedFile(".txt"), "NamerTests.AdditionalSections.approved.txt");
 }
