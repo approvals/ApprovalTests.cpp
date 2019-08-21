@@ -93,7 +93,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
 // end-snippet
 
 // begin-snippet: approvals_multiple_output_files_hard_coded
-TEST_CASE("MultipleOutputFiles-ForOneObject")
+TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
 {
     Greeting object_under_test;
     {

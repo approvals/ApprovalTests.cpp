@@ -187,7 +187,7 @@ Or hard-coded, with multiple sections:
 <!-- snippet: approvals_multiple_output_files_hard_coded -->
 <a id='snippet-approvals_multiple_output_files_hard_coded'/></a>
 ```cpp
-TEST_CASE("MultipleOutputFiles-ForOneObject")
+TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
 {
     Greeting object_under_test;
     {
