@@ -1,5 +1,6 @@
 #include "doctest.h"
 #include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/namers/NamerFactory.h"
 #include <vector>
 
 enum Nationality
@@ -70,6 +71,41 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
     SUBCASE("French")
     {
+        Approvals::verify(object_under_test.getGreetingFor(French));
+    }
+}
+// end-snippet
+
+// begin-snippet: approvals_multiple_output_files_dynamic
+TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
+{
+    // This is an example of how to write multiple different files in a single test.
+    // Note: For data as small as this, in practice we would recommend passing the
+    // greetings container in to Approvals::verifyAll(), with a lambda to format the output,
+    // in order to write all data to a single file.
+    std::vector<Greeting> greetings{ Greeting(British), Greeting(American), Greeting(French) };
+    for(auto greeting: greetings)
+    {
+        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
+        Approvals::verify(greeting.getGreeting());
+    }
+}
+// end-snippet
+
+// begin-snippet: approvals_multiple_output_files_hard_coded
+TEST_CASE("MultipleOutputFiles-ForOneObject")
+{
+    Greeting object_under_test;
+    {
+        auto section = NamerFactory::appendToOutputFilename("British");
+        Approvals::verify(object_under_test.getGreetingFor(British));
+    }
+    {
+        auto section = NamerFactory::appendToOutputFilename("American");
+        Approvals::verify(object_under_test.getGreetingFor(American));
+    }
+    {
+        auto section = NamerFactory::appendToOutputFilename("French");
         Approvals::verify(object_under_test.getGreetingFor(French));
     }
 }

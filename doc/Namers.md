@@ -191,7 +191,11 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
 <sup>[snippet source](/ApprovalTests_Catch2_Tests/Catch2DocumentationSamples.cpp#L77-L94) / [anchor](#snippet-catch2_multiple_output_files_hard_coded)</sup>
 <!-- endsnippet -->
 
+Note: Catch2 sub-sections continue to run even if the previous one failed. This is useful, as it allows you to approve all the files in one test run.
+
 ### doctest
+
+You can have a file-per-subcase.
 
 Note: unlike Catch, doctest sub-cases must have static strings for names, so if you want to name things dynamically, you will have to use the native Approval Tests mechanism - see below.
 
@@ -217,16 +221,59 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup>[snippet source](/ApprovalTests_DocTest_Tests/DocTestDocumentationSamples.cpp#L59-L76) / [anchor](#snippet-doctest_multiple_output_files_hard_coded)</sup>
+<sup>[snippet source](/ApprovalTests_DocTest_Tests/DocTestDocumentationSamples.cpp#L60-L77) / [anchor](#snippet-doctest_multiple_output_files_hard_coded)</sup>
 <!-- endsnippet -->
 
 ### Approval Tests
 
-This can be done with Catch2's `SECTION` and doctest's `SUBCASE`. However, there is no supported way to do this with Google Tests, and it may be desirable to use an approach that Approval Tests can use with all test frameworks it supports.
+Approval Tests also allows for multiple files per test, via the `NamerFactory`. This works for all supported test frameworks.
 
-The function `addAdditionalApprovalTestInformation()` adds an extra piece of text to be added to the filename used for output files.
+You can either do these dynamically, e.g. in a for-loop:
 
-Example of use:
+<!-- snippet: approvals_multiple_output_files_dynamic -->
+<a id='snippet-approvals_multiple_output_files_dynamic'/></a>
+```cpp
+TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
+{
+    // This is an example of how to write multiple different files in a single test.
+    // Note: For data as small as this, in practice we would recommend passing the
+    // greetings container in to Approvals::verifyAll(), with a lambda to format the output,
+    // in order to write all data to a single file.
+    std::vector<Greeting> greetings{ Greeting(British), Greeting(American), Greeting(French) };
+    for(auto greeting: greetings)
+    {
+        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
+        Approvals::verify(greeting.getGreeting());
+    }
+}
+```
+<sup>[snippet source](/ApprovalTests_DocTest_Tests/DocTestDocumentationSamples.cpp#L79-L93) / [anchor](#snippet-approvals_multiple_output_files_dynamic)</sup>
+<!-- endsnippet -->
+
+Or hard-coded, with multiple sections:
+
+<!-- snippet: approvals_multiple_output_files_hard_coded -->
+<a id='snippet-approvals_multiple_output_files_hard_coded'/></a>
+```cpp
+TEST_CASE("MultipleOutputFiles-ForOneObject")
+{
+    Greeting object_under_test;
+    {
+        auto section = NamerFactory::appendToOutputFilename("British");
+        Approvals::verify(object_under_test.getGreetingFor(British));
+    }
+    {
+        auto section = NamerFactory::appendToOutputFilename("American");
+        Approvals::verify(object_under_test.getGreetingFor(American));
+    }
+    {
+        auto section = NamerFactory::appendToOutputFilename("French");
+        Approvals::verify(object_under_test.getGreetingFor(French));
+    }
+}
+```
+<sup>[snippet source](/ApprovalTests_DocTest_Tests/DocTestDocumentationSamples.cpp#L95-L112) / [anchor](#snippet-approvals_multiple_output_files_hard_coded)</sup>
+<!-- endsnippet -->
 
 ---
 

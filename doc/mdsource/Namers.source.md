@@ -117,7 +117,11 @@ Or hard-coded, with multiple sections:
 
 snippet: catch2_multiple_output_files_hard_coded
 
+Note: Catch2 sub-sections continue to run even if the previous one failed. This is useful, as it allows you to approve all the files in one test run.
+
 ### doctest
+
+You can have a file-per-subcase.
 
 Note: unlike Catch, doctest sub-cases must have static strings for names, so if you want to name things dynamically, you will have to use the native Approval Tests mechanism - see below.
 
@@ -127,11 +131,15 @@ snippet: doctest_multiple_output_files_hard_coded
 
 ### Approval Tests
 
-This can be done with Catch2's `SECTION` and doctest's `SUBCASE`. However, there is no supported way to do this with Google Tests, and it may be desirable to use an approach that Approval Tests can use with all test frameworks it supports.
+Approval Tests also allows for multiple files per test, via the `NamerFactory`. This works for all supported test frameworks.
 
-The function `addAdditionalApprovalTestInformation()` adds an extra piece of text to be added to the filename used for output files.
+You can either do these dynamically, e.g. in a for-loop:
 
-Example of use:
+snippet: approvals_multiple_output_files_dynamic
+
+Or hard-coded, with multiple sections:
+
+snippet: approvals_multiple_output_files_hard_coded
 
 ---
 
