@@ -1,12 +1,12 @@
 project(ApprovalTests_GoogleTest_Tests)
 set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}
-        main.cpp
-        CompileAllIncludes.cpp
-        GoogleTestApprovalsTests.cpp
-        GoogleNamerTest.cpp
-        GoogleFixtureNamerCustomizationTests.cpp
-        )
+    main.cpp
+    CompileAllIncludes.cpp
+    GoogleTestApprovalsTests.cpp
+    GoogleNamerTest.cpp
+    GoogleFixtureNamerCustomizationTests.cpp
+    )
 target_link_libraries(${PROJECT_NAME} ApprovalTests gtest gtest_main)
 
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
