@@ -26,4 +26,6 @@ snippet: doctest_main
 
 <!-- todo: document use of sections -->
 
+---
 
+[Back to User Guide](/doc/README.md#top)

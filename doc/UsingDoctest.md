@@ -48,4 +48,6 @@ Create a file `main.cpp` and add just the following two lines:
 
 <!-- todo: document use of sections -->
 
+---
 
+[Back to User Guide](/doc/README.md#top)
