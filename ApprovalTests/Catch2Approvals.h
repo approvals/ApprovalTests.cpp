@@ -12,9 +12,7 @@
 
 struct Catch2ApprovalListener : Catch::TestEventListenerBase {
     TestName currentTest;
-
-    Catch2ApprovalListener(Catch::ReporterConfig const &_config) : Catch::TestEventListenerBase(_config) {}
-
+    using TestEventListenerBase::TestEventListenerBase; // This using allows us to use all base-class constructors
     virtual void testCaseStarting(Catch::TestCaseInfo const &testInfo) override {
 
         currentTest.setFileName(testInfo.lineInfo.file);
@@ -41,7 +39,7 @@ CATCH_REGISTER_LISTENER(Catch2ApprovalListener)
 #ifdef TEST_COMMIT_REVERT_CATCH
 
 struct Catch2TestCommitRevert : Catch::TestEventListenerBase {
-    using TestEventListenerBase::TestEventListenerBase;
+    using TestEventListenerBase::TestEventListenerBase; // This using allows us to use all base-class constructors
     virtual void  testRunEnded( Catch::TestRunStats const& testRunStats )override{
         bool commit = testRunStats.totals.testCases.allOk();
         std::string message = "r ";
