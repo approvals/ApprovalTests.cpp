@@ -56,7 +56,7 @@ Here's how to set up from:
 
 * Unstable output, e.g. with Dates and Times
 * Non-deterministic code
-* Multiple output files per test
+* [Multiple output files per test](/doc/MultipleOutputFilesPerTest.md#top)
 * Testing images
 * Embedded development
 
