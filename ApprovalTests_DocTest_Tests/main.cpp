@@ -3,3 +3,5 @@
 #define APPROVALS_DOCTEST // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 // end-snippet
+
+auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
