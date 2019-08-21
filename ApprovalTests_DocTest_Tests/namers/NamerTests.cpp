@@ -7,11 +7,11 @@
 
 class FakeNamer : public ApprovalNamer
 {
-    virtual string getApprovedFile(string /*extensionWithDot*/) override
+    virtual std::string getApprovedFile(std::string /*extensionWithDot*/) override
     {
         return "my.approved";
     }
-    virtual string getReceivedFile(string /*extensionWithDot*/) override 
+    virtual std::string getReceivedFile(std::string /*extensionWithDot*/) override 
     {
         return "my.received";
     }

@@ -10,10 +10,10 @@ public:
     ExistingFileNamer(std::string filePath): filePath(filePath){
 
     }
-    virtual string getApprovedFile(string extensionWithDot) {
+    virtual std::string getApprovedFile(std::string extensionWithDot) {
         return DefaultNamerFactory::getDefaultNamer()()->getApprovedFile(extensionWithDot);
     }
-    virtual string getReceivedFile(string /*extensionWithDot*/) {
+    virtual std::string getReceivedFile(std::string /*extensionWithDot*/) {
         return filePath;
     }
 

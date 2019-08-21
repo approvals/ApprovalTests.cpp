@@ -1,6 +1,5 @@
 BUGS
 
-. remove all 'using namespace' from library
 . don't include Catch2 tags (like [!shouldfail]) in output filenames
 . arguments member in DiffInfo is unused after construction - beware - will need to handle arguments differently on cygwin (which currently assumes all arguments are file paths)
 

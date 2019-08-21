@@ -29,7 +29,7 @@ public:
         comparators()[extensionWithDot] = comparator;
     }
 
-    static std::shared_ptr<ApprovalComparator> getComparatorForFile(string receivedPath) {
+    static std::shared_ptr<ApprovalComparator> getComparatorForFile(std::string receivedPath) {
         const std::string fileExtension = FileUtils::getExtensionWithDot(receivedPath);
         auto iterator = comparators().find(fileExtension);
         if (iterator != comparators().end()) {
@@ -76,7 +76,7 @@ public:
     }
 
     static void
-    reportAfterTryingFrontLoadedReporter(const string &receivedPath, const string &approvedPath, const Reporter &r)
+    reportAfterTryingFrontLoadedReporter(const std::string &receivedPath, const std::string &approvedPath, const Reporter &r)
     {
         auto tryFirst = FrontLoadedReporterFactory::getFrontLoadedReporter();
         if (!tryFirst->report(receivedPath, approvedPath))

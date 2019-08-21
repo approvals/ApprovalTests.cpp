@@ -9,21 +9,19 @@
 #include "../Macros.h"
 #include "../SystemUtils.h"
 
-using std::string;
-
 class TestName {
 public:
-    const string& getFileName() const {
+    const std::string& getFileName() const {
         return fileName;
     }
 
-    void setFileName(const string &file) {
+    void setFileName(const std::string &file) {
         fileName = SystemUtils::checkFilenameCase(file);
     }
 
-    std::vector<string> sections;
+    std::vector<std::string> sections;
 private:
-    string fileName;
+    std::string fileName;
 };
 
 class TestConfiguration {
@@ -56,7 +54,7 @@ public:
         return std::string::npos != forbiddenChars.find(c);
     }
 
-    static string convertToFileName(const string& fileName)
+    static std::string convertToFileName(const std::string& fileName)
     {
         std::stringstream result;
         for (auto ch : fileName)
@@ -116,7 +114,7 @@ R"(* Welcome to Approval Tests.
 
 
     // Deprecated - please use getSourceFileName
-    string getFileName() {
+    std::string getFileName() {
         return getSourceFileName();
     }
 
@@ -129,7 +127,7 @@ R"(* Welcome to Approval Tests.
         return convertToFileName(fileName);
     }
 
-    string getDirectory() {
+    std::string getDirectory() {
         auto file = getCurrentTest().getFileName();
         auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto directory = file.substr(0, end);
@@ -144,12 +142,12 @@ R"(* Welcome to Approval Tests.
     APPROVAL_TESTS_MACROS_STATIC(TestName, currentTest, NULL)
     APPROVAL_TESTS_MACROS_STATIC(TestConfiguration, testConfiguration, new TestConfiguration)
 
-    virtual string getApprovedFile(string extensionWithDot) {
+    virtual std::string getApprovedFile(std::string extensionWithDot) {
 
         return getFullFileName(".approved", extensionWithDot);
     }
 
-    virtual string getReceivedFile(string extensionWithDot) {
+    virtual std::string getReceivedFile(std::string extensionWithDot) {
 
         return getFullFileName(".received", extensionWithDot);
     }
@@ -158,7 +156,7 @@ R"(* Welcome to Approval Tests.
         return getSourceFileName() + "." + getTestName();
     }
 
-    std::string getFullFileName(string approved, string extensionWithDot) {
+    std::string getFullFileName(std::string approved, std::string extensionWithDot) {
         std::stringstream ext;
         ext << getDirectory() << getOutputFileBaseName() << approved << extensionWithDot;
         return ext.str();
