@@ -61,6 +61,8 @@ ApprovalTests uses the name of the current test to determine the names of output
 
 However, sometimes it is useful to be able to verify multiple files in one test case, or have a file per OS or other environment configuration.
 
+### Scenarios
+
 Here are some examples of files you might want.
 
 &nbsp;
