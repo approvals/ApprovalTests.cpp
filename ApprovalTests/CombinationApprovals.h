@@ -27,6 +27,10 @@ public:
 
 };
 
+// Helper to prevent compilation failure from user-supplied reporter being treated as a container:
+template<typename T>
+using IsNotDerivedFromReporter = typename std::enable_if<!std::is_base_of<Reporter, T>::value, int>::type;
+
 class CombinationApprovals
 {
 public:
@@ -44,8 +48,7 @@ public:
         typename Container7,
         typename Container8,
         typename Container9,
-        // prevent compilation failure from user-supplied reporter being treated as a container:
-        typename std::enable_if<! std::is_base_of<Reporter, Container9>::value, int>::type = 0>
+        typename = IsNotDerivedFromReporter<Container9>>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,
@@ -112,8 +115,7 @@ public:
         typename Container6,
         typename Container7,
         typename Container8,
-        // prevent compilation failure from user-supplied reporter being treated as a container:
-        typename std::enable_if<! std::is_base_of<Reporter, Container8>::value, int>::type = 0>
+        typename = IsNotDerivedFromReporter<Container8>>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,
@@ -157,8 +159,7 @@ public:
         typename Container5,
         typename Container6,
         typename Container7,
-        // prevent compilation failure from user-supplied reporter being treated as a container:
-        typename std::enable_if<! std::is_base_of<Reporter, Container7>::value, int>::type = 0>
+        typename = IsNotDerivedFromReporter<Container7>>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,
@@ -198,8 +199,7 @@ public:
         typename Container4,
         typename Container5,
         typename Container6,
-        // prevent compilation failure from user-supplied reporter being treated as a container:
-        typename std::enable_if<! std::is_base_of<Reporter, Container6>::value, int>::type = 0>
+        typename = IsNotDerivedFromReporter<Container6>>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,
@@ -235,8 +235,7 @@ public:
         typename Container3,
         typename Container4,
         typename Container5,
-        // prevent compilation failure from user-supplied reporter being treated as a container:
-        typename std::enable_if<! std::is_base_of<Reporter, Container5>::value, int>::type = 0>
+        typename = IsNotDerivedFromReporter<Container5>>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,
@@ -268,8 +267,7 @@ public:
         typename Container2,
         typename Container3,
         typename Container4,
-        // prevent compilation failure from user-supplied reporter being treated as a container:
-        typename std::enable_if<! std::is_base_of<Reporter, Container4>::value, int>::type = 0>
+        typename = IsNotDerivedFromReporter<Container4>>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,
@@ -297,8 +295,7 @@ public:
         typename Container1,
         typename Container2,
         typename Container3,
-        // prevent compilation failure from user-supplied reporter being treated as a container:
-        typename std::enable_if<! std::is_base_of<Reporter, Container3>::value, int>::type = 0>
+        typename = IsNotDerivedFromReporter<Container3>>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,
@@ -322,8 +319,7 @@ public:
         typename Function,
         typename Container1,
         typename Container2,
-        // prevent compilation failure from user-supplied reporter being treated as a container:
-        typename std::enable_if<! std::is_base_of<Reporter, Container2>::value, int>::type = 0>
+        typename = IsNotDerivedFromReporter<Container2>>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,
@@ -343,8 +339,7 @@ public:
     template <
         typename Function,
         typename Container1,
-        // prevent compilation failure from user-supplied reporter being treated as a container:
-        typename std::enable_if<! std::is_base_of<Reporter, Container1>::value, int>::type = 0>
+        typename = IsNotDerivedFromReporter<Container1>>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,
