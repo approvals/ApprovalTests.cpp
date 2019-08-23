@@ -3,7 +3,7 @@
 
 #include "ApprovalTestNamer.h"
 
-class SectionNameDisposer
+class APPROVAL_TESTS_NO_DISCARD SectionNameDisposer
 {
 public:
     SectionNameDisposer(TestName& currentTest, const std::string& scope_name) :

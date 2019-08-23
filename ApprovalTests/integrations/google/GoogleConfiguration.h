@@ -6,12 +6,14 @@
 class GoogleConfiguration
 {
 public:
-    static bool addTestCaseNameRedundancyCheck(GoogleCustomizationsFactory::Comparator comparator)
+    // This result is not used, it is only there to allow the method to execute, when this is used outside a function.
+    APPROVAL_TESTS_NO_DISCARD static bool addTestCaseNameRedundancyCheck(GoogleCustomizationsFactory::Comparator comparator)
     {
         return GoogleCustomizationsFactory::addTestCaseNameRedundancyCheck(comparator);
     }
 
-    static bool addIgnorableTestCaseNameSuffix(std::string suffix)
+    // This result is not used, it is only there to allow the method to execute, when this is used outside a function.
+    APPROVAL_TESTS_NO_DISCARD static bool addIgnorableTestCaseNameSuffix(std::string suffix)
     {
         return addTestCaseNameRedundancyCheck( createIgnorableTestCaseNameSuffixCheck(suffix) );
     }

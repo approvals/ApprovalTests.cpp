@@ -2,9 +2,10 @@
 #define APPROVALTESTS_CPP_DEFAULTNAMERDISPOSER_H
 
 #include "DefaultNamerFactory.h"
+#include "../Macros.h"
 
 //! Implementation detail of Approvals::useAsDefaultNamer()
-class DefaultNamerDisposer
+class APPROVAL_TESTS_NO_DISCARD DefaultNamerDisposer
 {
 private:
     NamerCreator previous_result;

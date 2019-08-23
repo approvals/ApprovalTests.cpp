@@ -6,7 +6,7 @@
 #include <string>
 
 //! Implementation detail of Approvals::useApprovalsSubdirectory()
-class SubdirectoryDisposer
+class APPROVAL_TESTS_NO_DISCARD SubdirectoryDisposer
 {
 private:
     std::string previous_result;

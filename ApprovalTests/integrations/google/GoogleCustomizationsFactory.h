@@ -34,7 +34,7 @@ public:
         return comparatorContainer();
     }
 
-    static bool addTestCaseNameRedundancyCheck(Comparator comparator)
+    APPROVAL_TESTS_NO_DISCARD static bool addTestCaseNameRedundancyCheck(Comparator comparator)
     {
         comparatorContainer().push_back(comparator);
         return true;

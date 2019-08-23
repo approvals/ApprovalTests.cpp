@@ -5,7 +5,7 @@
 #include "FrontLoadedReporterFactory.h"
 
 //! Implementation detail of Approvals::useAsFrontLoadedReporter()
-class FrontLoadedReporterDisposer
+class APPROVAL_TESTS_NO_DISCARD FrontLoadedReporterDisposer
 {
 private:
     std::shared_ptr<Reporter> previous_result;
