@@ -14,6 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Contributing - pairing and pull requests](#contributing---pairing-and-pull-requests)
+  * [Code of Conduct](#code-of-conduct)
   * [Documentation](#documentation)
     * [Creating new pages](#creating-new-pages)
     * [Internal links need to be absolute](#internal-links-need-to-be-absolute)
@@ -39,6 +40,10 @@ A typical session lasts between 60 to 90 minutes. We do the work directly on mas
 We use github's "co-author" feature, so everyone in the pairing session gets credit for the work. Virtually this entire project has been developed in this way, and is stronger for it.
 
 We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommitNotation) to prefix most commits, to indicate their level or risk.
+
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 ## Documentation
 

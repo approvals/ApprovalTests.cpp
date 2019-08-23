@@ -21,6 +21,10 @@ We use github's "co-author" feature, so everyone in the pairing session gets cre
 
 We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommitNotation) to prefix most commits, to indicate their level or risk.
 
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
 ## Documentation
 
 We welcome improvements to the documentation! Here's how we manage the documentation files. 
