@@ -8,6 +8,7 @@ endif()
 project(ApprovalTests.cpp)
 add_subdirectory(ApprovalTests)
 
+set(CMAKE_VERBOSE_MAKEFILE off)
 
 if (NOT_SUBPROJECT)
     # Download and unpack googletest at configure time
@@ -29,6 +30,7 @@ if (NOT_SUBPROJECT)
     include_directories(third_party) # for Catch
 
     enable_testing()
+    add_subdirectory(third_party)
     add_subdirectory(tests)
     add_subdirectory(examples)
 endif()
