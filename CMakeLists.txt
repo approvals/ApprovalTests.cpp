@@ -29,7 +29,7 @@ if (NOT_SUBPROJECT)
     include_directories(lib) # for Catch
 
     enable_testing()
-    add_subdirectory(ApprovalTests_Catch1_Tests)
+    add_subdirectory(tests/ApprovalTests_Catch1_Tests)
     add_subdirectory(ApprovalTests_Catch2_Tests)
     add_subdirectory(ApprovalTests_GoogleTest_Tests)
     add_subdirectory(ApprovalTests_DocTest_Tests)
