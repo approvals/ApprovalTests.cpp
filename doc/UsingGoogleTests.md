@@ -107,13 +107,13 @@ TEST(TestCaseName, TestName)
 
 With Google Tests, this will result in Approvals creating output files beginning with:
 
-```
+```text
 SourceFileName.TestCaseName.TestName
 ```
 
 Very often, the `SourceFileName` and the `TestCaseName` are redundant, meaning that what you would like is:
 
-```
+```text
 SourceFileName.TestName
 ```
 

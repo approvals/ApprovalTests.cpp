@@ -29,7 +29,7 @@ A problem in your test program's `main()` means that ApprovalTests.cpp is not co
 
 Running tests gives the following output:
 
-```
+```text
 ************************************************************************************
 *                                                                                  *
 * Welcome to Approval Tests.
