@@ -4,7 +4,7 @@
     * Enable testing of [multiple output files per test](/doc/MultipleOutputFilesPerTest.md#top).
     * Add ability to [register a custom namer](/doc/Namers.md#registering-a-custom-namer), to change the naming conventions for approved and received files.
     * Add custom namer to put saved and approved files in `approved/` and `received/` sub-directories. See [SeparateApprovedAndReceivedDirectoriesNamer](/doc/Namers.md#separateapprovedandreceiveddirectoriesnamer).
-    * Add `[[nodiscard]]` for when compiling with C++17 or newer, so the copmiler will point out any uses of disposer objects that are not stored.
+    * Add `[[nodiscard]]` for when compiling with C++17 or newer, so the compiler will point out any uses of disposer objects that are not stored.
 * **Bug fixes**
     * Check file streams are valid before using them.
 * **Other changes**
