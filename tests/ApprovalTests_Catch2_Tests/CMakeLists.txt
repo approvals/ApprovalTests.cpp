@@ -7,26 +7,26 @@ add_executable(${PROJECT_NAME}
     ApprovalTests.hpp
     CombinationTests.cpp
     FileApproverTests.cpp
-    namers/NamerTests.cpp
     PairUtilities.h
-    utilities/StringUtilsTests.cpp
-    writers/StringWriterTests.cpp
     StyleGuide.h
-    utilities/SystemUtilsTests.cpp
+    VectorTests.cpp
+    documentation/Catch2DocumentationSamples.cpp
     documentation/ToStringExample.cpp
     documentation/ToStringTemplateExample.cpp
     documentation/ToStringWrapperExample.cpp
     documentation/Tutorial.cpp
-    VectorTests.cpp
-    reporters/ReporterTests.cpp
+    namers/NamerTests.cpp
+    reporters/BlockingReporterTests.cpp
     reporters/DoNothingLauncher.h
     reporters/FakeReporter.h
-    reporters/TestReporter.h
     reporters/ReporterTests.cpp
-    utilities/MachineBlockerTests.cpp
-    reporters/BlockingReporterTests.cpp
+    reporters/ReporterTests.cpp
+    reporters/TestReporter.h
     utilities/FileUtilsSystemSpecificTests.cpp
-    documentation/Catch2DocumentationSamples.cpp
+    utilities/MachineBlockerTests.cpp
+    utilities/StringUtilsTests.cpp
+    utilities/SystemUtilsTests.cpp
+    writers/StringWriterTests.cpp
     )
 target_link_libraries(${PROJECT_NAME} ApprovalTests catch2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
