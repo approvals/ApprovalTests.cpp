@@ -1,0 +1,4 @@
+add_subdirectory(ApprovalTests_Catch1_Tests)
+add_subdirectory(ApprovalTests_Catch2_Tests)
+add_subdirectory(ApprovalTests_GoogleTest_Tests)
+add_subdirectory(ApprovalTests_DocTest_Tests)
