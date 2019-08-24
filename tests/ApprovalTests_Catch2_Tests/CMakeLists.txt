@@ -10,7 +10,7 @@ add_executable(${PROJECT_NAME}
     NamerTests.cpp
     PairUtilities.h
     StringUtilsTests.cpp
-    StringWriterTests.cpp
+    writers/StringWriterTests.cpp
     StyleGuide.h
     SystemUtilsTests.cpp
     documentation/ToStringExample.cpp
