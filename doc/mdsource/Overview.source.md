@@ -44,7 +44,7 @@ Approvals::verify(s);
 
 This generates the approval file - which generated **for** you, but [approved **by** you](/doc/ApprovingResults.md#top).
 
-```
+```text
 sandwich {
     bread: "Sourdough",
     condiments: ["Mayo", "Pepper", "Olive Oil"],

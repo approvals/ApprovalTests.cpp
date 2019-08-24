@@ -20,7 +20,7 @@ Here are some examples of files you might want.
 
 In this scenario, your test creates 3 files, all of which are being checked when you run the test.
 
-```
+```text
 TestProteinGeneration.createImage.protein1.approved.png
 TestProteinGeneration.createImage.protein2.approved.png
 TestProteinGeneration.createImage.protein3.approved.png
@@ -32,7 +32,7 @@ TestProteinGeneration.createImage.protein3.approved.png
 
 In this scenario, the code under test creates three different types of files, all of which are being checked.
 
-```
+```text
 TestProtein.processInput.logOutput.approved.txt
 TestProtein.processInput.calculationResults.approved.txt
 TestProtein.processInput.renderedResult.approved.png
@@ -44,7 +44,7 @@ TestProtein.processInput.renderedResult.approved.png
 
 In this scenario, your test only creates one file, and which one it is checked against is dependent on which OS the test is running on.
 
-```
+```text
 TestQtDialog.loginScreen.onMacOSX.approved.png
 TestQtDialog.loginScreen.onWindows.approved.png
 TestQtDialog.loginScreen.onLinux.approved.png

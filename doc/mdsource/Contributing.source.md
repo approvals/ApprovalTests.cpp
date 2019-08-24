@@ -56,7 +56,7 @@ It will write out the text to paste in to other .md files, to correctly link to 
 
 If the new page will be outside of the [doc](/doc/) folder, delete the following lines at the end:
 
-```
+```markdown
 ---
    
 [Back to User Guide](/doc/README.md#top)

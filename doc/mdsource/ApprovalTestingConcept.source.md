@@ -25,14 +25,14 @@ the results, and the differences in results, easier to understand and act on.
 #### The technique
 
 Most of us are familiar with simple checks for numbers or strings.
-```
+```cpp
 REQUIRE( 1 == count);
 REQUIRE( "Clare" == name);
 ```
 
 #### The problem
 But this can get complicated if you have a large list or object with many fields.
-```
+```cpp
 REQUIRE( "Clare" == names[0]);
 REQUIRE( "Llewellyn" == names[1]);
 REQUIRE( "Simon" == names[2]);
@@ -47,7 +47,7 @@ One solution for this is to start writing objects to string that are easier to v
 #### The technique
 
 If we print the array in the above sample, we can instead verify the whole thing with
-```
+```cpp
 REQUIRE( "[Clare,Llewellyn,Simon,James,Emily]" == toString(names));
 ```
 
