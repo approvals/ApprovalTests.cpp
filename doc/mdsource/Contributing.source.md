@@ -113,8 +113,10 @@ The script [fix_markdown.sh](/fix_markdown.sh) can be used to do some checks of 
 
 To run `.sh` in cygwin on Windows, add these lines to `~/.bash_profile`, and then re-start cygwin:
 
-    export SHELLOPTS
-    set -o igncr
+```bash
+export SHELLOPTS
+set -o igncr
+```
 
 [Credit](https://ptolemy.berkeley.edu/projects/chess/softdevel/faq/5.html)
 
