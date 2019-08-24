@@ -1,4 +1,4 @@
-#include "../third_party/catch.1.9.0.hpp"
+#include "catch.1.9.0.hpp"
 #include "ApprovalTests/Approvals.h"
 
 using namespace std;
