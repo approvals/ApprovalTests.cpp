@@ -5,7 +5,6 @@ BUGS
 
 IMPROVE USABILITY OF CURRENT FEATURES
 
-. add an easy way to produce multiple output files from one test - perhaps APPROVALS_SECTION{...}, like Catch2's SECTION{...} or DYNAMIC_SECTION{...}
 . make it easy to add approvals to existing catch2 tests
 . use a disposer for GoogleConfiguration::addIgnorableTestCaseNameSuffix() - to make it reversible
 
