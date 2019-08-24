@@ -46,7 +46,7 @@ TEST_CASE("ItCanGiveYouTheTestDirectory") {
     auto suppress_subdirectory = Approvals::useApprovalsSubdirectory("");
     ApprovalTestNamer namer;
     auto __ = SystemUtils::getDirectorySeparator();
-    REQUIRE_THAT(namer.getDirectory(), EndsWith(__ + "ApprovalTests_Catch2_Tests" + __, Catch::CaseSensitive::No));
+    REQUIRE_THAT(namer.getDirectory(), EndsWith(__ + "ApprovalTests_Catch2_Tests" + __ + "namers" + __, Catch::CaseSensitive::No));
 }
 
 

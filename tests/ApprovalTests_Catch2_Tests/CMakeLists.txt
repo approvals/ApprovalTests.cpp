@@ -7,7 +7,7 @@ add_executable(${PROJECT_NAME}
     ApprovalTests.hpp
     CombinationTests.cpp
     FileApproverTests.cpp
-    NamerTests.cpp
+    namers/NamerTests.cpp
     PairUtilities.h
     StringUtilsTests.cpp
     writers/StringWriterTests.cpp
