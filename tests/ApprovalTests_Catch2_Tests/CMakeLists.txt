@@ -9,10 +9,10 @@ add_executable(${PROJECT_NAME}
     FileApproverTests.cpp
     namers/NamerTests.cpp
     PairUtilities.h
-    StringUtilsTests.cpp
+    utilities/StringUtilsTests.cpp
     writers/StringWriterTests.cpp
     StyleGuide.h
-    SystemUtilsTests.cpp
+    utilities/SystemUtilsTests.cpp
     documentation/ToStringExample.cpp
     documentation/ToStringTemplateExample.cpp
     documentation/ToStringWrapperExample.cpp
@@ -25,7 +25,7 @@ add_executable(${PROJECT_NAME}
     reporters/ReporterTests.cpp
     utilities/MachineBlockerTests.cpp
     reporters/BlockingReporterTests.cpp
-    FileUtilsSystemSpecificTests.cpp
+    utilities/FileUtilsSystemSpecificTests.cpp
     documentation/Catch2DocumentationSamples.cpp
     )
 target_link_libraries(${PROJECT_NAME} ApprovalTests catch2)
