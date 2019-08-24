@@ -95,7 +95,7 @@ TEST_CASE("MultipleOutputFiles-DataDriven")
     }
 }
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/Catch2DocumentationSamples.cpp#L59-L75) / [anchor](#snippet-catch2_multiple_output_files_dynamic)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L59-L75) / [anchor](#snippet-catch2_multiple_output_files_dynamic)</sup>
 <!-- endsnippet -->
 
 Or hard-coded, with multiple sections:
@@ -120,7 +120,7 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/Catch2DocumentationSamples.cpp#L77-L94) / [anchor](#snippet-catch2_multiple_output_files_hard_coded)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L77-L94) / [anchor](#snippet-catch2_multiple_output_files_hard_coded)</sup>
 <!-- endsnippet -->
 
 Note: Catch2 sub-sections continue to run even if the previous one failed. This is useful, as it allows you to approve all the files in one test run.

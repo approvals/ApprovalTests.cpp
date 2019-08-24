@@ -47,7 +47,7 @@ TEST_CASE("HelloApprovals")
     Approvals::verify("Hello Approvals");
 }
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/Tutorial.cpp#L12-L17) / [anchor](#snippet-hello_approvals)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/Tutorial.cpp#L12-L17) / [anchor](#snippet-hello_approvals)</sup>
 <!-- endsnippet -->
 
 ### Approving the Test
@@ -123,7 +123,7 @@ public:
     std::string isbn;
 };
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/Tutorial.cpp#L19-L38) / [anchor](#snippet-library_book)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/Tutorial.cpp#L19-L38) / [anchor](#snippet-library_book)</sup>
 <!-- endsnippet -->
 
 What we would like to be able to write is:
@@ -137,7 +137,7 @@ LibraryBook harry_potter(
 
 Approvals::verify(harry_potter); // This does not compile
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/Tutorial.cpp#L44-L50) / [anchor](#snippet-non_printable_object)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/Tutorial.cpp#L44-L50) / [anchor](#snippet-non_printable_object)</sup>
 <!-- endsnippet -->
 
 The problem is that this will not compile, because at present there is no way to turn the LibraryBook in to a string representation.
@@ -153,7 +153,7 @@ Approvals::verify<LibraryBook>(
     harry_potter,
     [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/Tutorial.cpp#L60-L64) / [anchor](#snippet-printable_object_simple)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/Tutorial.cpp#L60-L64) / [anchor](#snippet-printable_object_simple)</sup>
 <!-- endsnippet -->
 
 There's a lot going on here, so let's break it down:
@@ -177,7 +177,7 @@ Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostre
     "isbn: " << b.isbn << "\n";
 });
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/Tutorial.cpp#L73-L83) / [anchor](#snippet-printable_object)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/Tutorial.cpp#L73-L83) / [anchor](#snippet-printable_object)</sup>
 <!-- endsnippet -->
 
 When you run and approve this, you will end up with the approval file:
@@ -193,7 +193,7 @@ pages: 752
 isbn: 978-0439139595
 
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/approval_tests/Tutorial.WritableBooks2.approved.txt#L1-L7) / [anchor](#snippet-Tutorial.WritableBooks2.approved.txt)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/approval_tests/Tutorial.WritableBooks2.approved.txt#L1-L7) / [anchor](#snippet-Tutorial.WritableBooks2.approved.txt)</sup>
 <!-- endsnippet -->
 
 If you would like to know how to do this more robustly, check out [To String](/doc/ToString.md#top).

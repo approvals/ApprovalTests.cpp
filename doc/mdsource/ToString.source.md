@@ -66,11 +66,11 @@ snippet: verify_list
 
 Notice how this:
 
-snippet: ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt
+snippet: ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt
 
 compares to this:
 
-snippet: ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt
+snippet: ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt
 
 ### Tools
 

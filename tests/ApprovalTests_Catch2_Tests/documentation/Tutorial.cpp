@@ -1,5 +1,5 @@
-#include "ApprovalTests.hpp"
 #include "Catch.hpp"
+#include "tests/ApprovalTests_Catch2_Tests/ApprovalTests.hpp"
 
 #include <string>
 #include <ostream>

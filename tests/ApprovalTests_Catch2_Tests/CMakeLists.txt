@@ -13,10 +13,10 @@ add_executable(${PROJECT_NAME}
     StringWriterTests.cpp
     StyleGuide.h
     SystemUtilsTests.cpp
-    ToStringExample.cpp
-    ToStringTemplateExample.cpp
-    ToStringWrapperExample.cpp
-    Tutorial.cpp
+    documentation/ToStringExample.cpp
+    documentation/ToStringTemplateExample.cpp
+    documentation/ToStringWrapperExample.cpp
+    documentation/Tutorial.cpp
     VectorTests.cpp
     reporters/ReporterTests.cpp
     reporters/DoNothingLauncher.h
@@ -26,7 +26,7 @@ add_executable(${PROJECT_NAME}
     utilities/MachineBlockerTests.cpp
     reporters/BlockingReporterTests.cpp
     FileUtilsSystemSpecificTests.cpp
-    Catch2DocumentationSamples.cpp
+    documentation/Catch2DocumentationSamples.cpp
     )
 target_link_libraries(${PROJECT_NAME} ApprovalTests catch2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
