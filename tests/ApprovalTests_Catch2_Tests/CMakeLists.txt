@@ -28,7 +28,7 @@ add_executable(${PROJECT_NAME}
     FileUtilsSystemSpecificTests.cpp
     Catch2DocumentationSamples.cpp
     )
-target_link_libraries(${PROJECT_NAME} ApprovalTests)
+target_link_libraries(${PROJECT_NAME} ApprovalTests catch2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
