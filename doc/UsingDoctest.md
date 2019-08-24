@@ -43,7 +43,7 @@ Create a file `main.cpp` and add just the following two lines:
 #define APPROVALS_DOCTEST // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 ```
-<sup>[snippet source](/ApprovalTests_DocTest_Tests/main.cpp#L1-L5) / [anchor](#snippet-doctest_main)</sup>
+<sup>[snippet source](/tests/ApprovalTests_DocTest_Tests/main.cpp#L1-L5) / [anchor](#snippet-doctest_main)</sup>
 <!-- endsnippet -->
 
 <!-- todo: document use of sections -->

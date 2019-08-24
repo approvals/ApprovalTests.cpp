@@ -39,7 +39,7 @@ friend std::ostream &operator<<(std::ostream &os, const Rectangle2 &rectangle) {
     return os;
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringExample.cpp#L12-L18) / [anchor](#snippet-to_string_standard_example)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/ToStringExample.cpp#L12-L18) / [anchor](#snippet-to_string_standard_example)</sup>
 <!-- endsnippet -->
 
 You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
@@ -56,7 +56,7 @@ friend STREAM &operator<<(STREAM &os, const Rectangle2 &rectangle) {
     return os;
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringTemplateExample.cpp#L12-L19) / [anchor](#snippet-to_string_template_example)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/ToStringTemplateExample.cpp#L12-L19) / [anchor](#snippet-to_string_template_example)</sup>
 <!-- endsnippet -->
 
 Wrapper classes or functions can be used to provide additional output formats for types of data:
@@ -90,7 +90,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
     );
 }
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L38-L64) / [anchor](#snippet-to_string_wrapper_example)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L38-L64) / [anchor](#snippet-to_string_wrapper_example)</sup>
 <!-- endsnippet -->
 
 ## Design
@@ -136,7 +136,7 @@ Approvals::verifyAll(
     "rectangles",
     getRectangles());
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L30-L34) / [anchor](#snippet-verify_list)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/ToStringWrapperExample.cpp#L30-L34) / [anchor](#snippet-verify_list)</sup>
 <!-- endsnippet -->
 
 Notice how this:
@@ -152,7 +152,7 @@ rectangles
 [2] = [x: 60 y: 3 width: 7 height: 63]
 
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L7) / [anchor](#snippet-ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L7) / [anchor](#snippet-ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt)</sup>
 <!-- endsnippet -->
 
 compares to this:
@@ -168,7 +168,7 @@ rectangles
 (x,y,width,height) = (60,3,7,63)
 
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L7) / [anchor](#snippet-ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L7) / [anchor](#snippet-ApprovalTests_Catch2_Tests/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt)</sup>
 <!-- endsnippet -->
 
 ### Tools

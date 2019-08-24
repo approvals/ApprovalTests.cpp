@@ -59,7 +59,7 @@ If you ever want to create a custom namer, Approval Tests has a mechanism to cha
 ```cpp
 auto default_namer_disposer = Approvals::useAsDefaultNamer([](){return std::make_shared<FakeNamer>();});
 ```
-<sup>[snippet source](/ApprovalTests_DocTest_Tests/namers/NamerTests.cpp#L24-L26) / [anchor](#snippet-register_default_namer)</sup>
+<sup>[snippet source](/tests/ApprovalTests_DocTest_Tests/namers/NamerTests.cpp#L24-L26) / [anchor](#snippet-register_default_namer)</sup>
 <!-- endsnippet -->
 
 ## Alternative Namers
@@ -81,7 +81,7 @@ To register this as your default namer, use:
 ```cpp
 auto default_namer_disposer = SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
 ```
-<sup>[snippet source](/ApprovalTests_DocTest_Tests/namers/NamerTests.cpp#L42-L44) / [anchor](#snippet-register_separate_directories_namer)</sup>
+<sup>[snippet source](/tests/ApprovalTests_DocTest_Tests/namers/NamerTests.cpp#L42-L44) / [anchor](#snippet-register_separate_directories_namer)</sup>
 <!-- endsnippet -->
 
 ## Approving multiple files from one test 

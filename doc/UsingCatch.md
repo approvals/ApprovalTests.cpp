@@ -53,7 +53,7 @@ Create a file `main.cpp` and add just the following two lines:
 #define APPROVALS_CATCH // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 ```
-<sup>[snippet source](/ApprovalTests_Catch2_Tests/main.cpp#L6-L10) / [anchor](#snippet-catch_2_main)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/main.cpp#L6-L10) / [anchor](#snippet-catch_2_main)</sup>
 <!-- endsnippet -->
 
 ### Existing Project - with CATCH_CONFIG_MAIN
