@@ -26,7 +26,7 @@ if (NOT_SUBPROJECT)
     # and gmock_main
     add_subdirectory("${CMAKE_BINARY_DIR}/googletest-src"
                      "${CMAKE_BINARY_DIR}/googletest-build")
-    include_directories(lib) # for Catch
+    include_directories(third_party) # for Catch
 
     enable_testing()
     add_subdirectory(tests)
