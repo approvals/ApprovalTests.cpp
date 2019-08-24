@@ -1,4 +1,4 @@
-#include "catch.1.9.0.hpp"
+#include "Catch.hpp"
 #include "ApprovalTests/Approvals.h"
 
 using namespace std;

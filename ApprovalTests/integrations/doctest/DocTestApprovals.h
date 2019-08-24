@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_DOCTESTAPPROVALS_H
 #define APPROVALTESTS_CPP_DOCTESTAPPROVALS_H
 
-#include "../ApprovalTests/namers/ApprovalTestNamer.h"
+#include "ApprovalTests/namers/ApprovalTestNamer.h"
 
 // <SingleHpp unalterable>
 #ifdef APPROVALS_DOCTEST
