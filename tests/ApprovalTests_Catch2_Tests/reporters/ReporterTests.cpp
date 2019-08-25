@@ -10,8 +10,6 @@
 #include "ApprovalTests/StringUtils.h"
 #include "ApprovalTests/FileApprover.h"
 
-using namespace std;
-
 TEST_CASE("Reporters Launch Command") {
     TestReporter m(true);
     bool result = m.report("r.txt", "a.txt");

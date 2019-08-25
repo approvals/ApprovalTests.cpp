@@ -2,16 +2,14 @@
 #include "ApprovalTests/StringWriter.h"
 #include "ApprovalTests/Approvals.h"
 
-using namespace std;
-
-string readFileAndDelete(const char *fileName) {
-    ifstream in(fileName, ios_base::in);
-    stringstream written;
+std::string readFileAndDelete(const char *fileName) {
+    std::ifstream in(fileName, std::ios_base::in);
+    std::stringstream written;
     written << in.rdbuf();
     in.close();
     remove(fileName);
 
-    string text = written.str();
+    std::string text = written.str();
     return text;
 }
 
@@ -20,12 +18,12 @@ TEST_CASE("ItWritesTheContentsToAFile") {
     auto fileName = "out.txt";
     s.write(fileName);
 
-    string text = readFileAndDelete(fileName);
+    std::string text = readFileAndDelete(fileName);
     REQUIRE(text == "Hello\n");
 }
 
 TEST_CASE("ItWritesTheContentsToAStream") {
-    stringstream out;
+    std::stringstream out;
     StringWriter s("Hello");
     s.Write(out);
     REQUIRE(out.str() == "Hello\n");

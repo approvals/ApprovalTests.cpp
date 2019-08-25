@@ -3,10 +3,6 @@
 #include "Catch.hpp"
 #include "ApprovalTests/Approvals.h"
 
-using namespace std;
-
-
-
 TEST_CASE("YouCanVerifyText") {
     Approvals::verify("My objects!");
 }
@@ -21,7 +17,7 @@ public:
     NonCopyable() = default;
     NonCopyable(const NonCopyable& x) = delete; // prevent copy construction
 
-    friend ostream &operator<<(ostream &os, const NonCopyable &/*copyable*/) {
+    friend std::ostream &operator<<(std::ostream &os, const NonCopyable &/*copyable*/) {
         return os << 999;
     }
 };

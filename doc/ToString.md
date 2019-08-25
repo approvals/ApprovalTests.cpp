@@ -39,7 +39,7 @@ friend std::ostream &operator<<(std::ostream &os, const Rectangle2 &rectangle) {
     return os;
 }
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/ToStringExample.cpp#L12-L18) / [anchor](#snippet-to_string_standard_example)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/ToStringExample.cpp#L10-L16) / [anchor](#snippet-to_string_standard_example)</sup>
 <!-- endsnippet -->
 
 You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
@@ -90,7 +90,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
     );
 }
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/ToStringWrapperExample.cpp#L38-L64) / [anchor](#snippet-to_string_wrapper_example)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/ToStringWrapperExample.cpp#L36-L62) / [anchor](#snippet-to_string_wrapper_example)</sup>
 <!-- endsnippet -->
 
 ## Design
@@ -136,7 +136,7 @@ Approvals::verifyAll(
     "rectangles",
     getRectangles());
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/ToStringWrapperExample.cpp#L30-L34) / [anchor](#snippet-verify_list)</sup>
+<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/ToStringWrapperExample.cpp#L28-L32) / [anchor](#snippet-verify_list)</sup>
 <!-- endsnippet -->
 
 Notice how this:

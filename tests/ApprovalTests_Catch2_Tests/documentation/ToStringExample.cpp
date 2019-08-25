@@ -3,8 +3,6 @@
 
 #include <ostream>
 
-using namespace std;
-
 struct Rectangle2{
 
     int x,y, width, height;

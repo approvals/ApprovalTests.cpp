@@ -3,7 +3,6 @@
 #include "ApprovalTests/StringUtils.h"
 #include "ApprovalTests/Approvals.h"
 
-using namespace std;
 using Catch::Matchers::EndsWith;
 
 TEST_CASE("ItCanGiveYouTheSpecName") {

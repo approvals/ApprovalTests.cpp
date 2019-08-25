@@ -1,7 +1,6 @@
 #include "Catch.hpp"
 #include "ApprovalTests/Approvals.h"
 #include <vector>
-using namespace std;
 
 TEST_CASE("YouCanVerifyIteratorRange") {
     std::vector<std::string> v{"hello", "world"};
