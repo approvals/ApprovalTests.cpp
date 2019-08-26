@@ -10,6 +10,7 @@
 
 #include <Catch.hpp>
 
+//namespace ApprovalTests {
 struct Catch2ApprovalListener : Catch::TestEventListenerBase {
     ApprovalTests::TestName currentTest;
     using TestEventListenerBase::TestEventListenerBase; // This using allows us to use all base-class constructors
@@ -33,11 +34,13 @@ struct Catch2ApprovalListener : Catch::TestEventListenerBase {
         currentTest.sections.pop_back();
     }
 };
+//}
 CATCH_REGISTER_LISTENER(Catch2ApprovalListener)
 
 #endif
 #ifdef TEST_COMMIT_REVERT_CATCH
 
+//namespace ApprovalTests {
 struct Catch2TestCommitRevert : Catch::TestEventListenerBase {
     using TestEventListenerBase::TestEventListenerBase; // This using allows us to use all base-class constructors
     virtual void  testRunEnded( Catch::TestRunStats const& testRunStats )override{
@@ -53,6 +56,7 @@ struct Catch2TestCommitRevert : Catch::TestEventListenerBase {
         }
     }
 };
+//}
 CATCH_REGISTER_LISTENER(Catch2TestCommitRevert)
 #endif
 // </SingleHpp>
