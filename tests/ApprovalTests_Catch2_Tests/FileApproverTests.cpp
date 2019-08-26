@@ -8,11 +8,12 @@
 #include "Approvals.h"
 #include "FileApprover.h"
 #include "FileUtils.h"
+#include "StringWriter.h"
 
 TEST_CASE("ItVerifiesApprovedFileExists") {
 
     ApprovalTestNamer namer;
-    StringWriter writer("Hello");
+    ApprovalTests::StringWriter writer("Hello");
     TestReporter reporter;
 
     std::string approved = namer.getApprovedFile(".txt");

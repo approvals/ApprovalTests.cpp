@@ -6,6 +6,7 @@
 #include <stdexcept>
 #include "ApprovalWriter.h"
 
+namespace ApprovalTests {
 class StringWriter : public ApprovalTests::ApprovalWriter
 {
 private:
@@ -43,4 +44,5 @@ public:
 
 
 };
+}
 #endif
