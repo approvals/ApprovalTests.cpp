@@ -7,21 +7,21 @@
 TEST_CASE("Blocks in this environment")
 {
     auto machineName = ApprovalTests::SystemUtils::getMachineName();
-    auto blocker = MachineBlocker::onMachineNamed(machineName);
+    auto blocker = ApprovalTests::MachineBlocker::onMachineNamed(machineName);
     REQUIRE(blocker.isBlockingOnThisMachine() == true);
 }
 
 TEST_CASE("Does not block in this environment")
 {
     auto machineName = ApprovalTests::SystemUtils::getMachineName();
-    auto blocker = MachineBlocker::onMachinesNotNamed(machineName);
+    auto blocker = ApprovalTests::MachineBlocker::onMachinesNotNamed(machineName);
     REQUIRE(blocker.isBlockingOnThisMachine() == false);
 }
 
 // begin-snippet: machine_specific_test_runner
 TEST_CASE("Only run this test on John's machine")
 {
-    auto blocker = MachineBlocker::onMachinesNotNamed("JOHNS_MACHINE");
+    auto blocker = ApprovalTests::MachineBlocker::onMachinesNotNamed("JOHNS_MACHINE");
     if ( blocker.isBlockingOnThisMachine() )
     {
         return;

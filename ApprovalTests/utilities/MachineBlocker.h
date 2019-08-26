@@ -6,6 +6,7 @@
 
 #include <memory>
 
+namespace ApprovalTests {
 class MachineBlocker : public Blocker
 {
 private:
@@ -35,6 +36,6 @@ public:
         return isMachine == block;
     }
 };
-
+}
 
 #endif //APPROVALTESTS_CPP_MACHINEBLOCKER_H
