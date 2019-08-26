@@ -5,8 +5,9 @@
 #include <string>
 #include "../ApprovalWriter.h"
 #include "../FileUtils.h"
+#include "ApprovalWriter.h"
 
-class ExistingFile : public ApprovalWriter{
+class ExistingFile : public ApprovalTests::ApprovalWriter{
     std::string filePath;
 public:
     ExistingFile(std::string filePath) : filePath(filePath){}

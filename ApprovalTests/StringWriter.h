@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include "ApprovalWriter.h"
 
-class StringWriter : public ApprovalWriter
+class StringWriter : public ApprovalTests::ApprovalWriter
 {
 private:
     std::string s;
