@@ -63,7 +63,7 @@ public:
         {
             const std::string fixedFilename = findFileData.cFileName;
             const std::string fixedPath = 
-                StringUtils::replaceAll( fullPath, StringUtils::toLower(fixedFilename), fixedFilename );
+                ApprovalTests::StringUtils::replaceAll( fullPath, ApprovalTests::StringUtils::toLower(fixedFilename), fixedFilename );
             FindClose(hFind);
             return fixedPath;
         }
