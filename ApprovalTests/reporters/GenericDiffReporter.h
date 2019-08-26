@@ -4,6 +4,7 @@
 #include "DiffPrograms.h"
 #include "CommandReporter.h"
 #include "SystemLauncher.h"
+#include "SystemUtils.h"
 #include <string>
 #include <vector>
 
@@ -22,7 +23,7 @@ public:
 
     void checkForCygwin()
     {
-        if ( SystemUtils::isCygwin())
+        if ( ApprovalTests::SystemUtils::isCygwin())
         {
             launcher.setConvertArgumentsForSystemLaunchingFunction(convertForCygwin);
         }
@@ -30,7 +31,7 @@ public:
 
     static std::vector<std::string> convertForCygwin(std::vector<std::string> argv)
     {
-        if (! SystemUtils::isCygwin())
+        if (! ApprovalTests::SystemUtils::isCygwin())
         {
             return argv;
         }

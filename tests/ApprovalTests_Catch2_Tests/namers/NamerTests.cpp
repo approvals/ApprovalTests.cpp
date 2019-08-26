@@ -4,6 +4,7 @@
 #include "ApprovalTests/Approvals.h"
 #include "Approvals.h"
 #include "StringUtils.h"
+#include "SystemUtils.h"
 
 using Catch::Matchers::EndsWith;
 
@@ -28,7 +29,7 @@ TEST_CASE("ItCanGiveYouTheTestFileName") {
 
 
 TEST_CASE("TestProperNameCaseOnWindows") {
-    if (SystemUtils::isWindowsOs())
+    if (ApprovalTests::SystemUtils::isWindowsOs())
     {
         ApprovalTestNamer namer;
         auto test = namer.currentTest();
@@ -46,14 +47,14 @@ TEST_CASE("ItCanGiveYouTheTestDirectory") {
     // See https://stackoverflow.com/questions/49068785/how-to-find-the-filename-from-a-c11-stat-objects-file-serial-number-on-window
     auto suppress_subdirectory = ApprovalTests::Approvals::useApprovalsSubdirectory("");
     ApprovalTestNamer namer;
-    auto __ = SystemUtils::getDirectorySeparator();
+    auto __ = ApprovalTests::SystemUtils::getDirectorySeparator();
     REQUIRE_THAT(namer.getDirectory(), EndsWith(__ + "ApprovalTests_Catch2_Tests" + __ + "namers" + __, Catch::CaseSensitive::No));
 }
 
 
 TEST_CASE("ItIncludesFileContextAndSpecNames") {
     ApprovalTestNamer namer;
-    auto __ = SystemUtils::getDirectorySeparator();
+    auto __ = ApprovalTests::SystemUtils::getDirectorySeparator();
 
     REQUIRE_THAT(namer.getApprovedFile(".txt"),
         EndsWith(__ + "NamerTests.ItIncludesFileContextAndSpecNames.approved.txt"));

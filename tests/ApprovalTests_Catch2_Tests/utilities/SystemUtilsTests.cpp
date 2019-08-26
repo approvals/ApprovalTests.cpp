@@ -5,14 +5,15 @@
 #include "Approvals.h"
 #include "FileUtils.h"
 #include "StringUtils.h"
+#include "SystemUtils.h"
 
 TEST_CASE("ItCanFixCaseOfFileNameOnWindows")
 {
-    if( SystemUtils::isWindowsOs())
+    if( ApprovalTests::SystemUtils::isWindowsOs())
     {
         const std::string original_filename = __FILE__;
         const std::string lowercased_filename = ApprovalTests::StringUtils::toLower(original_filename);
-        const std::string fixed_filename = SystemUtils::checkFilenameCase(lowercased_filename);
+        const std::string fixed_filename = ApprovalTests::SystemUtils::checkFilenameCase(lowercased_filename);
         INFO("The 'fixed' filename is " << fixed_filename);
 
         REQUIRE(original_filename.length() == fixed_filename.length());
@@ -26,13 +27,13 @@ TEST_CASE("ItCanFixCaseOfFileNameOnWindows")
 
 TEST_CASE("ItCanGetEnvironmentVariable")
 {
-    const auto result = SystemUtils::safeGetEnv("PATH");
+    const auto result = ApprovalTests::SystemUtils::safeGetEnv("PATH");
     REQUIRE(result.length() > 0);
 }
 
 TEST_CASE("ItCanGetNonExistentEnvironmentVariable")
 {
-    const auto result = SystemUtils::safeGetEnv("THIS_ENVIRONMENT_VARIABLE_SHOULD_NOT_EXIST");
+    const auto result = ApprovalTests::SystemUtils::safeGetEnv("THIS_ENVIRONMENT_VARIABLE_SHOULD_NOT_EXIST");
     REQUIRE(result.length() == 0);
 }
 

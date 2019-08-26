@@ -5,6 +5,7 @@
 #include "ApprovalTests/Approvals.h"
 #include "Approvals.h"
 #include "StringUtils.h"
+#include "SystemUtils.h"
 
 #include <memory>
 
@@ -46,9 +47,9 @@ TEST_CASE("SeparateApprovedAndReceivedDirectoriesNamer")
     // end-snippet
 
     auto namer = ApprovalTests::Approvals::getDefaultNamer();
-    require_ends_with(namer->getApprovedFile(".txt"), "approved" + SystemUtils::getDirectorySeparator() +
+    require_ends_with(namer->getApprovedFile(".txt"), "approved" + ApprovalTests::SystemUtils::getDirectorySeparator() +
                                                       "NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt");
-    require_ends_with(namer->getReceivedFile(".txt"), "received" + SystemUtils::getDirectorySeparator() +
+    require_ends_with(namer->getReceivedFile(".txt"), "received" + ApprovalTests::SystemUtils::getDirectorySeparator() +
                                                       "NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt");
 }
 

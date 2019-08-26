@@ -11,6 +11,7 @@
 #include "ApprovalTests/FileApprover.h"
 #include "Approvals.h"
 #include "FileApprover.h"
+#include "SystemUtils.h"
 
 TEST_CASE("Reporters Launch Command") {
     TestReporter m(true);
@@ -37,7 +38,7 @@ TEST_CASE("Reporters Report Failure Status") {
 }
 
 TEST_CASE("Reporters Report Success Status") {
-    std::string knownCommand = SystemUtils::isWindowsOs() ? "C:\\Windows\\System32\\help.exe" : "echo";
+    std::string knownCommand = ApprovalTests::SystemUtils::isWindowsOs() ? "C:\\Windows\\System32\\help.exe" : "echo";
     GenericDiffReporter m(knownCommand);
     bool result = m.report("r.txt", "a.txt");
     REQUIRE(true == result);

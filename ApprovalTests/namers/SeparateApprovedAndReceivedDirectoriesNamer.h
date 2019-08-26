@@ -4,6 +4,7 @@
 #include "ApprovalTestNamer.h"
 #include "../Approvals.h"
 #include "Approvals.h"
+#include "SystemUtils.h"
 
 class SeparateApprovedAndReceivedDirectoriesNamer : public ApprovalTestNamer
 {
@@ -13,11 +14,11 @@ public:
     std::string getFullFileNameWithExtraDirectory(std::string approved, std::string extensionWithDot)
     {
         std::string outputDirectory = getDirectory() +  approved;
-        SystemUtils::ensureDirectoryExists(outputDirectory);
+        ApprovalTests::SystemUtils::ensureDirectoryExists(outputDirectory);
     
         std::string outputFile = getFileName() + "." + getTestName() + extensionWithDot;
     
-        return outputDirectory + SystemUtils::getDirectorySeparator() + outputFile;
+        return outputDirectory + ApprovalTests::SystemUtils::getDirectorySeparator() + outputFile;
     }
     
     virtual std::string getApprovedFile(std::string extensionWithDot) override

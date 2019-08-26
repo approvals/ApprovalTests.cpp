@@ -3,17 +3,18 @@
 #include "ApprovalTests/SystemUtils.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/utilities/MachineBlocker.h"
+#include "SystemUtils.h"
 
 TEST_CASE("Blocks in this environment")
 {
-    auto machineName = SystemUtils::getMachineName();
+    auto machineName = ApprovalTests::SystemUtils::getMachineName();
     auto blocker = MachineBlocker::onMachineNamed(machineName);
     REQUIRE(blocker.isBlockingOnThisMachine() == true);
 }
 
 TEST_CASE("Does not block in this environment")
 {
-    auto machineName = SystemUtils::getMachineName();
+    auto machineName = ApprovalTests::SystemUtils::getMachineName();
     auto blocker = MachineBlocker::onMachinesNotNamed(machineName);
     REQUIRE(blocker.isBlockingOnThisMachine() == false);
 }
@@ -27,6 +28,6 @@ TEST_CASE("Only run this test on John's machine")
         return;
     }
     // Write tests here that depend on John's environment.
-    REQUIRE(SystemUtils::getMachineName() == "JOHNS_MACHINE");
+    REQUIRE(ApprovalTests::SystemUtils::getMachineName() == "JOHNS_MACHINE");
 }
 // end-snippet

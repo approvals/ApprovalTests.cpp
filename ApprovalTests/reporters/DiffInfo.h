@@ -7,6 +7,7 @@
 #include "../SystemUtils.h"
 #include "FileUtils.h"
 #include "StringUtils.h"
+#include "SystemUtils.h"
 
 enum class Type { TEXT, IMAGE, TEXT_AND_IMAGE };
 
@@ -44,7 +45,7 @@ struct DiffInfo
 
             for(const auto& envVar : envVars)
             {
-                std::string envVarValue = SystemUtils::safeGetEnv(envVar);
+                std::string envVarValue = ApprovalTests::SystemUtils::safeGetEnv(envVar);
                 if (envVarValue.empty())
                 {
                     continue;

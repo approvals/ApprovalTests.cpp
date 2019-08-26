@@ -3,6 +3,7 @@
 
 #include "Blocker.h"
 #include "../SystemUtils.h"
+#include "SystemUtils.h"
 
 #include <memory>
 
@@ -31,7 +32,7 @@ public:
 
     virtual bool isBlockingOnThisMachine() const override
     {
-        const auto isMachine = (SystemUtils::getMachineName() == machineName);
+        const auto isMachine = (ApprovalTests::SystemUtils::getMachineName() == machineName);
         return isMachine == block;
     }
 };

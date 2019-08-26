@@ -6,12 +6,13 @@
 #include "Approvals.h"
 #include "FileUtils.h"
 #include "FileUtilsSystemSpecific.h"
+#include "SystemUtils.h"
 #include <stdio.h>
 
 TEST_CASE("ItCanCopyAFile")
 {
     ApprovalTestNamer namer;
-  const auto& sep = SystemUtils::getDirectorySeparator();
+  const auto& sep = ApprovalTests::SystemUtils::getDirectorySeparator();
   auto source = namer.getDirectory() + ".." + sep + ".." + sep + "sample.txt";
     auto destination = namer.getDirectory() + ".." + sep + "copy.temp.received.txt";
 
