@@ -14,6 +14,7 @@
 #include "namers/SubdirectoryDisposer.h"
 #include "namers/DefaultNamerDisposer.h"
 
+namespace ApprovalTests {
 class Approvals {
 private:
     Approvals() {}
@@ -62,7 +63,7 @@ public:
         }
         Approvals::verify(message, reporter);
     }
-    
+
     template<typename Iterator>
     static void verifyAll(std::string header,
                           const Iterator &start, const Iterator &finish,
@@ -107,7 +108,7 @@ public:
         ExistingFileNamer namer(filePath);
         FileApprover::verify(namer, writer, reporter);
     }
-    
+
     static SubdirectoryDisposer useApprovalsSubdirectory(std::string subdirectory = "approval_tests")
     {
         return SubdirectoryDisposer(subdirectory);
@@ -129,5 +130,6 @@ public:
     }
 
 };
+}
 
 #endif

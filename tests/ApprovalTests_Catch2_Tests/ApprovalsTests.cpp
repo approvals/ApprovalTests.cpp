@@ -2,13 +2,14 @@
 #include <stdexcept>
 #include "Catch.hpp"
 #include "ApprovalTests/Approvals.h"
+#include "Approvals.h"
 
 TEST_CASE("YouCanVerifyText") {
-    Approvals::verify("My objects!");
+    ApprovalTests::Approvals::verify("My objects!");
 }
 
 TEST_CASE("TestStreamableObject") {
-    Approvals::verify(42);
+    ApprovalTests::Approvals::verify(42);
 }
 
 class NonCopyable
@@ -24,7 +25,7 @@ public:
 
 TEST_CASE("TestNonCopyableStreamableObject") {
     NonCopyable object;
-    Approvals::verify(object);
+    ApprovalTests::Approvals::verify(object);
 }
 
 // ==============================================================
@@ -43,7 +44,7 @@ NonStreamablePoint getPoint()
 
 TEST_CASE("YouCanVerifyWithConverterLambda")
 {
-    Approvals::verify<NonStreamablePoint>(
+    ApprovalTests::Approvals::verify<NonStreamablePoint>(
         getPoint(),
         [](const auto& p, auto& os)
         {
@@ -72,7 +73,7 @@ struct FormatNonStreamablePoint
 
 TEST_CASE("YouCanVerifyWithConverterWrapperClass")
 {
-    Approvals::verify<NonStreamablePoint>(
+    ApprovalTests::Approvals::verify<NonStreamablePoint>(
         getPoint(),
         [](auto r, auto& os){os << FormatNonStreamablePoint(r);}
     );
@@ -88,7 +89,7 @@ std::ostream& customToStreamFunction(std::ostream &os, const NonStreamablePoint&
 
 TEST_CASE("YouCanVerifyWithConverterWrapperFunction")
 {
-    Approvals::verify<NonStreamablePoint>(
+    ApprovalTests::Approvals::verify<NonStreamablePoint>(
         getPoint(),
         [](auto r, auto& os){ customToStreamFunction(os, r);}
     );
@@ -98,12 +99,12 @@ TEST_CASE("YouCanVerifyWithConverterWrapperFunction")
 
 TEST_CASE("VerifyingException")
 {
-    Approvals::verifyExceptionMessage([](){throw std::runtime_error("Here is my exception message");});
+    ApprovalTests::Approvals::verifyExceptionMessage([](){throw std::runtime_error("Here is my exception message");});
 }
 
 TEST_CASE("VerifyingNoException")
 {
     // begin-snippet: verify_exception_message_example
-    Approvals::verifyExceptionMessage([](){/* your code goes here */});
+    ApprovalTests::Approvals::verifyExceptionMessage([](){/* your code goes here */});
     // end-snippet
 }

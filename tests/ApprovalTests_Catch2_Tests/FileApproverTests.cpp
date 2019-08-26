@@ -5,6 +5,7 @@
 #include "ApprovalTests/FileApprover.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalException.h"
+#include "Approvals.h"
 
 TEST_CASE("ItVerifiesApprovedFileExists") {
 
@@ -27,7 +28,7 @@ TEST_CASE("ItVerifiesApprovedFileExists") {
 
 TEST_CASE("ItVerifiesExistingFiles") {
     ApprovalTestNamer namer;
-    Approvals::verifyExistingFile(namer.getDirectory() + "../sample.txt");
+    ApprovalTests::Approvals::verifyExistingFile(namer.getDirectory() + "../sample.txt");
 }
 
 

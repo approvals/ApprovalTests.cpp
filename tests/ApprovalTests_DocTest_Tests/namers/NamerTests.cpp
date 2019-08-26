@@ -3,6 +3,7 @@
 #include "ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.h"
 #include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/Approvals.h"
+#include "Approvals.h"
 
 #include <memory>
 
@@ -22,12 +23,12 @@ TEST_CASE("Registering default Namer")
 {
     {
         // begin-snippet: register_default_namer
-        auto default_namer_disposer = Approvals::useAsDefaultNamer([](){return std::make_shared<FakeNamer>();});
+        auto default_namer_disposer = ApprovalTests::Approvals::useAsDefaultNamer([](){return std::make_shared<FakeNamer>();});
         // end-snippet
-        auto result = Approvals::getDefaultNamer()->getApprovedFile(".txt");
+        auto result = ApprovalTests::Approvals::getDefaultNamer()->getApprovedFile(".txt");
         REQUIRE(result == "my.approved");
     }
-    auto result = Approvals::getDefaultNamer()->getApprovedFile(".txt");
+    auto result = ApprovalTests::Approvals::getDefaultNamer()->getApprovedFile(".txt");
     REQUIRE(StringUtils::endsWith(result, "NamerTests.Registering_default_Namer.approved.txt"));
 }
 
@@ -43,7 +44,7 @@ TEST_CASE("SeparateApprovedAndReceivedDirectoriesNamer")
     auto default_namer_disposer = SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
     // end-snippet
 
-    auto namer = Approvals::getDefaultNamer();
+    auto namer = ApprovalTests::Approvals::getDefaultNamer();
     require_ends_with(namer->getApprovedFile(".txt"), "approved" + SystemUtils::getDirectorySeparator() +
                                                       "NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt");
     require_ends_with(namer->getReceivedFile(".txt"), "received" + SystemUtils::getDirectorySeparator() +
@@ -52,7 +53,7 @@ TEST_CASE("SeparateApprovedAndReceivedDirectoriesNamer")
 
 TEST_CASE( "AdditionalSections" )
 {
-    auto namer = Approvals::getDefaultNamer();
+    auto namer = ApprovalTests::Approvals::getDefaultNamer();
 
     {
         auto section_namer = NamerFactory::appendToOutputFilename("case1");

@@ -2,6 +2,7 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/SystemUtils.h"
 #include "ApprovalTests/StringUtils.h"
+#include "Approvals.h"
 
 TEST_CASE("ItCanFixCaseOfFileNameOnWindows")
 {
@@ -35,7 +36,7 @@ TEST_CASE("ItCanGetNonExistentEnvironmentVariable")
 
 TEST_CASE("ItCanCreateSubDirectory")
 {
-    auto subdirectory = Approvals::useApprovalsSubdirectory("custom_approval");
+    auto subdirectory = ApprovalTests::Approvals::useApprovalsSubdirectory("custom_approval");
     ApprovalTestNamer namer;
     auto directory = namer.getDirectory();
     REQUIRE(FileUtils::fileExists(directory) == true);

@@ -3,6 +3,7 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/reporters/QuietReporter.h"
 #include "ApprovalException.h"
+#include "Approvals.h"
 
 TEST_CASE("ApprovalMissingExceptionHasAMessage") {
     ApprovalTests::ApprovalMissingException a("r.txt", "a.txt" );
@@ -25,7 +26,7 @@ TEST_CASE("ApprovalMissingException is thrown")
     // approved file
     bool exception_caught = false;
     try {
-        Approvals::verify("foo", QuietReporter());
+        ApprovalTests::Approvals::verify("foo", QuietReporter());
     }
     catch (const ApprovalTests::ApprovalMissingException&)
     {

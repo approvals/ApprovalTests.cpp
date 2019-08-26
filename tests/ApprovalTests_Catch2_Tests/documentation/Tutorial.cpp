@@ -1,5 +1,6 @@
 #include "Catch.hpp"
 #include "tests/ApprovalTests_Catch2_Tests/ApprovalTests.hpp"
+#include "Approvals.h"
 
 #include <string>
 #include <ostream>
@@ -12,7 +13,7 @@
 // begin-snippet: hello_approvals
 TEST_CASE("HelloApprovals")
 {
-    Approvals::verify("Hello Approvals");
+    ApprovalTests::Approvals::verify("Hello Approvals");
 }
 // end-snippet
 
@@ -58,7 +59,7 @@ TEST_CASE("WritableBooks1")
         30, "English", 752, "978-0439139595");
 
     // begin-snippet: printable_object_simple
-    Approvals::verify<LibraryBook>(
+    ApprovalTests::Approvals::verify<LibraryBook>(
         harry_potter,
         [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
     // end-snippet
@@ -71,7 +72,7 @@ TEST_CASE("WritableBooks2")
         30, "English", 752, "978-0439139595");
 
     // begin-snippet: printable_object
-    Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){ 
+    ApprovalTests::Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){
         os << 
         "title: " << b.title << "\n" <<
         "author: " << b.author << "\n" <<

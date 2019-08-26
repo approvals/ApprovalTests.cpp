@@ -102,7 +102,7 @@ public:
                 }
             }
         }
-        Approvals::verify(s.str(), reporter);
+        ApprovalTests::Approvals::verify(s.str(), reporter);
     }
 
     template <

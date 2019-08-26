@@ -1,6 +1,7 @@
 #include "doctest.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/namers/NamerFactory.h"
+#include "Approvals.h"
 #include <vector>
 
 enum Nationality
@@ -63,15 +64,15 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     Greeting object_under_test;
     SUBCASE("British")
     {
-        Approvals::verify(object_under_test.getGreetingFor(British));
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(British));
     }
     SUBCASE("American")
     {
-        Approvals::verify(object_under_test.getGreetingFor(American));
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(American));
     }
     SUBCASE("French")
     {
-        Approvals::verify(object_under_test.getGreetingFor(French));
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(French));
     }
 }
 // end-snippet
@@ -87,7 +88,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
     for(auto greeting: greetings)
     {
         auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
-        Approvals::verify(greeting.getGreeting());
+        ApprovalTests::Approvals::verify(greeting.getGreeting());
     }
 }
 // end-snippet
@@ -98,15 +99,15 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
     Greeting object_under_test;
     {
         auto section = NamerFactory::appendToOutputFilename("British");
-        Approvals::verify(object_under_test.getGreetingFor(British));
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(British));
     }
     {
         auto section = NamerFactory::appendToOutputFilename("American");
-        Approvals::verify(object_under_test.getGreetingFor(American));
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(American));
     }
     {
         auto section = NamerFactory::appendToOutputFilename("French");
-        Approvals::verify(object_under_test.getGreetingFor(French));
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(French));
     }
 }
 // end-snippet

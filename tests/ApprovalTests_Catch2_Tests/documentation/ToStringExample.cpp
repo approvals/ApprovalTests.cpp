@@ -1,5 +1,6 @@
 #include "Catch.hpp"
 #include "ApprovalTests/Approvals.h"
+#include "Approvals.h"
 
 #include <ostream>
 
@@ -18,7 +19,7 @@ struct Rectangle2{
 };
 TEST_CASE("ToStringsAreHelpful") {
     Rectangle2 r = {40,50,100,60};
-    Approvals::verify(r);
+    ApprovalTests::Approvals::verify(r);
 
 }
 

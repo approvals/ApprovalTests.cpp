@@ -1,7 +1,8 @@
 #include "Catch.hpp"
 #include "ApprovalTests/Approvals.h"
+#include "Approvals.h"
 
 TEST_CASE("YouCanVerifyText") {
-    Approvals::verify("My objects!");
+    ApprovalTests::Approvals::verify("My objects!");
 }
 

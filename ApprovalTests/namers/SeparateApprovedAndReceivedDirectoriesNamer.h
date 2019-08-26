@@ -3,6 +3,7 @@
 
 #include "ApprovalTestNamer.h"
 #include "../Approvals.h"
+#include "Approvals.h"
 
 class SeparateApprovedAndReceivedDirectoriesNamer : public ApprovalTestNamer
 {
@@ -31,7 +32,7 @@ public:
     
     static DefaultNamerDisposer useAsDefaultNamer()
     {
-        return Approvals::useAsDefaultNamer([](){return std::make_shared<SeparateApprovedAndReceivedDirectoriesNamer>();});
+        return ApprovalTests::Approvals::useAsDefaultNamer([](){return std::make_shared<SeparateApprovedAndReceivedDirectoriesNamer>();});
     }
 
 };

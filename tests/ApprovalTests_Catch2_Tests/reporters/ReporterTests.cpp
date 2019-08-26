@@ -9,6 +9,7 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/StringUtils.h"
 #include "ApprovalTests/FileApprover.h"
+#include "Approvals.h"
 
 TEST_CASE("Reporters Launch Command") {
     TestReporter m(true);
@@ -88,10 +89,10 @@ TEST_CASE("Launching on PC with cygwin and Araxis Merge")
 TEST_CASE("Registering default Reporter")
 {
     auto fake_reporter = std::make_shared<FakeReporter>(true);
-    auto default_reporter_disposer = Approvals::useAsDefaultReporter(fake_reporter);
+    auto default_reporter_disposer = ApprovalTests::Approvals::useAsDefaultReporter(fake_reporter);
     {
         auto fake_reporter2 = std::make_shared<FakeReporter>(true);
-        auto default_reporter_disposer2 = Approvals::useAsDefaultReporter(fake_reporter2);
+        auto default_reporter_disposer2 = ApprovalTests::Approvals::useAsDefaultReporter(fake_reporter2);
 
         DefaultReporter r;
         r.report("r.txt", "a.txt");
@@ -110,11 +111,11 @@ TEST_CASE("Front Loaded Reporter Always Takes Precedence")
     auto front_loader = std::make_shared<FakeReporter>(true);
     auto our_reporter = std::make_shared<FakeReporter>(true);
 
-    auto default_reporter_disposer = Approvals::useAsFrontLoadedReporter(front_loader);
+    auto default_reporter_disposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(front_loader);
 
     try
     {
-        Approvals::verify("cucumber", *our_reporter);
+        ApprovalTests::Approvals::verify("cucumber", *our_reporter);
     }
     catch(const std::exception&)
     {
@@ -129,11 +130,11 @@ TEST_CASE("Front Loaded Reporter flows through if not needed")
     auto front_loader = std::make_shared<FakeReporter>(false);
     auto our_reporter = std::make_shared<FakeReporter>(true);
 
-    auto default_reporter_disposer = Approvals::useAsFrontLoadedReporter(front_loader);
+    auto default_reporter_disposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(front_loader);
 
     try
     {
-        Approvals::verify("cucumber", *our_reporter);
+        ApprovalTests::Approvals::verify("cucumber", *our_reporter);
     }
     catch(const std::exception&)
     {
@@ -146,13 +147,13 @@ TEST_CASE("Front Loaded Reporter flows through if not needed")
 TEST_CASE("Unregistering Front Loaded Reporter restores previous")
 {
     auto front_loader1 = std::make_shared<FakeReporter>(true);
-    auto front_loaded_reporter_disposer1 = Approvals::useAsFrontLoadedReporter(front_loader1);
+    auto front_loaded_reporter_disposer1 = ApprovalTests::Approvals::useAsFrontLoadedReporter(front_loader1);
 
     FakeReporter our_reporter1(true);
 
     {
         auto front_loader2 = std::make_shared<FakeReporter>(true);
-        auto front_loaded_reporter_disposer2 = Approvals::useAsFrontLoadedReporter(front_loader2);
+        auto front_loaded_reporter_disposer2 = ApprovalTests::Approvals::useAsFrontLoadedReporter(front_loader2);
 
         FileApprover::reportAfterTryingFrontLoadedReporter("r.txt", "a.txt", our_reporter1);
 

@@ -1,6 +1,7 @@
 #include "doctest.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/Approvals.h"
+#include "Approvals.h"
 
 TEST_CASE("ItCanGiveYouTheSpecName")
 {
@@ -25,5 +26,5 @@ TEST_CASE("ItCanGiveYouTheTestFileName")
 
 TEST_CASE("It can verify tests with spaces")
 {
-    Approvals::verify("hello world");
+    ApprovalTests::Approvals::verify("hello world");
 }

@@ -2,6 +2,7 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "ApprovalTests/integrations/google/GoogleConfiguration.h"
+#include "Approvals.h"
 
 #include <ostream>
 #include <string>
@@ -29,7 +30,7 @@ TEST(GoogleNamerTest, TestSuffixMatcher)
     std::string suffix = "Test";
     std::string fileName = "/a/b/c/testGoogleNamer.cpp";
     std::vector<std::string> testCaseNames = {"GoogleNamerTest", "GoogleNamer", "GoogleTest", "NamerTest", "NamerTestTest", "NamerTestTests", "TestTest", "Test"};
-    Approvals::verifyAll<std::vector<std::string>>(
+    ApprovalTests::Approvals::verifyAll<std::vector<std::string>>(
         "suffix: " + suffix + 
         "\nfilename: " + fileName + 
         "\ntest case names:",

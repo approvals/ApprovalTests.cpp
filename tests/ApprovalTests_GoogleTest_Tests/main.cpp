@@ -3,6 +3,7 @@
 // main.cpp:
 #define APPROVALS_GOOGLETEST // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
+#include "Approvals.h"
 // end-snippet
 
-auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+auto directory = ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");

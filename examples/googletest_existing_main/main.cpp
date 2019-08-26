@@ -4,6 +4,7 @@
 // 1. Add these two lines to your main:
 #define APPROVALS_GOOGLETEST_EXISTING_MAIN
 #include "ApprovalTests.hpp"
+#include "Approvals.h"
 
 int main(int argc, char** argv)
 {
@@ -18,6 +19,6 @@ int main(int argc, char** argv)
 
 // begin-snippet: do_not_report_on_ci
 // main.cpp
-auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
+auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
     BlockingReporter::onMachineNamed("MyCIMachineName") );
 // end-snippet

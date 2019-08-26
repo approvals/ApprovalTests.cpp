@@ -1,6 +1,7 @@
 #include "Catch.hpp"
 #include "ApprovalTests/StringWriter.h"
 #include "ApprovalTests/Approvals.h"
+#include "Approvals.h"
 
 std::string readFileAndDelete(const char *fileName) {
     std::ifstream in(fileName, std::ios_base::in);
@@ -42,5 +43,5 @@ TEST_CASE("TheExtensionIsConfigurable") {
 TEST_CASE("ItGivesMeaningfulErrorIfWritingFails") {
     StringWriter s("Hello");
     auto fileName = "I/do/not/exist/out.txt";
-    Approvals::verifyExceptionMessage([&](){s.write(fileName);});
+    ApprovalTests::Approvals::verifyExceptionMessage([&](){s.write(fileName);});
 }
