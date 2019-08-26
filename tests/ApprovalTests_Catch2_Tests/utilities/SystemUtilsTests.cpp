@@ -36,7 +36,7 @@ TEST_CASE("ItCanGetNonExistentEnvironmentVariable")
 TEST_CASE("ItCanCreateSubDirectory")
 {
     auto subdirectory = ApprovalTests::Approvals::useApprovalsSubdirectory("custom_approval");
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     auto directory = namer.getDirectory();
     REQUIRE(ApprovalTests::FileUtils::fileExists(directory) == true);
 //    SystemUtils::removeDirectory(directory);

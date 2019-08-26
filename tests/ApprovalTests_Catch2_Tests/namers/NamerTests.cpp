@@ -7,7 +7,7 @@ using Catch::Matchers::EndsWith;
 
 TEST_CASE("ItCanGiveYouTheSpecName") {
 
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName");
 
     SECTION("andSectionNames") {
@@ -20,7 +20,7 @@ TEST_CASE("ItCanGiveYouTheSpecName") {
 
 
 TEST_CASE("ItCanGiveYouTheTestFileName") {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     REQUIRE(namer.getFileName() == "NamerTests");
 }
 
@@ -28,7 +28,7 @@ TEST_CASE("ItCanGiveYouTheTestFileName") {
 TEST_CASE("TestProperNameCaseOnWindows") {
     if (ApprovalTests::SystemUtils::isWindowsOs())
     {
-        ApprovalTestNamer namer;
+        ApprovalTests::ApprovalTestNamer namer;
         auto test = namer.currentTest();
         test.setFileName(ApprovalTests::StringUtils::toLower(test.getFileName()));
         namer.currentTest(&test);
@@ -43,14 +43,14 @@ TEST_CASE("ItCanGiveYouTheTestDirectory") {
     // We've fixed this for filenames, but not directory names, so this test ignores case.
     // See https://stackoverflow.com/questions/49068785/how-to-find-the-filename-from-a-c11-stat-objects-file-serial-number-on-window
     auto suppress_subdirectory = ApprovalTests::Approvals::useApprovalsSubdirectory("");
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     auto __ = ApprovalTests::SystemUtils::getDirectorySeparator();
     REQUIRE_THAT(namer.getDirectory(), EndsWith(__ + "ApprovalTests_Catch2_Tests" + __ + "namers" + __, Catch::CaseSensitive::No));
 }
 
 
 TEST_CASE("ItIncludesFileContextAndSpecNames") {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     auto __ = ApprovalTests::SystemUtils::getDirectorySeparator();
 
     REQUIRE_THAT(namer.getApprovedFile(".txt"),
@@ -63,7 +63,7 @@ TEST_CASE("ItIncludesFileContextAndSpecNames") {
 TEST_CASE("Clean Up Filename Transforms")
 {
     std::vector<std::string> names = { "CleanUpFilenameTransforms", "Spaces In File \\" };
-    ApprovalTests::Approvals::verifyAll("File Names", names, [&](std::string name, std::ostream &s) {s << name << " => " << ApprovalTestNamer::convertToFileName(name); });
+    ApprovalTests::Approvals::verifyAll("File Names", names, [&](std::string name, std::ostream &s) {s << name << " => " << ApprovalTests::ApprovalTestNamer::convertToFileName(name); });
 }
 
 TEST_CASE("Use sub-directory")

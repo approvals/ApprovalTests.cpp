@@ -86,7 +86,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
     std::vector<Greeting> greetings{ Greeting(British), Greeting(American), Greeting(French) };
     for(auto greeting: greetings)
     {
-        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
+        auto section = ApprovalTests::NamerFactory::appendToOutputFilename(greeting.getNationality());
         ApprovalTests::Approvals::verify(greeting.getGreeting());
     }
 }
@@ -97,15 +97,15 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
 {
     Greeting object_under_test;
     {
-        auto section = NamerFactory::appendToOutputFilename("British");
+        auto section = ApprovalTests::NamerFactory::appendToOutputFilename("British");
         ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(British));
     }
     {
-        auto section = NamerFactory::appendToOutputFilename("American");
+        auto section = ApprovalTests::NamerFactory::appendToOutputFilename("American");
         ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(American));
     }
     {
-        auto section = NamerFactory::appendToOutputFilename("French");
+        auto section = ApprovalTests::NamerFactory::appendToOutputFilename("French");
         ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(French));
     }
 }

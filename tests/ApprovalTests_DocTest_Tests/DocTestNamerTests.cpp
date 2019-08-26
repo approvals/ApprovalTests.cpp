@@ -4,7 +4,7 @@
 
 TEST_CASE("ItCanGiveYouTheSpecName")
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName");
 
     SUBCASE("andSectionNames")
@@ -19,7 +19,7 @@ TEST_CASE("ItCanGiveYouTheSpecName")
 
 TEST_CASE("ItCanGiveYouTheTestFileName")
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     REQUIRE(namer.getFileName() == "DocTestNamerTests");
 }
 

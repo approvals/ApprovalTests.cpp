@@ -7,7 +7,7 @@
 
 TEST_CASE("ItVerifiesApprovedFileExists") {
 
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     ApprovalTests::StringWriter writer("Hello");
     TestReporter reporter;
 
@@ -25,7 +25,7 @@ TEST_CASE("ItVerifiesApprovedFileExists") {
 
 
 TEST_CASE("ItVerifiesExistingFiles") {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     ApprovalTests::Approvals::verifyExistingFile(namer.getDirectory() + "../sample.txt");
 }
 

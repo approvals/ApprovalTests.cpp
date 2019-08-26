@@ -8,13 +8,13 @@
 
 TEST(GoogleNamerTest, ItDropsFirstNameWhenItEqualsTheFilename)
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     EXPECT_EQ(namer.getTestName(), "ItDropsFirstNameWhenItEqualsTheFilename");
 }
 
 TEST(TestCaseNameDifferentNameThanFile, TestName)
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     EXPECT_EQ(namer.getTestName(), "TestCaseNameDifferentNameThanFile.TestName");
 }
 

@@ -12,13 +12,13 @@ auto customization = GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixtur
 TEST(TestCaseName, TestName)
 // end-snippet
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     EXPECT_EQ(namer.getOutputFileBaseName(), "GoogleFixtureNamerCustomizationTests.TestCaseName.TestName");
 }
 
 TEST(GoogleFixtureNamerCustomizationTests, EliminatesDuplicatedClassName)
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     EXPECT_EQ(namer.getOutputFileBaseName(), "GoogleFixtureNamerCustomizationTests.EliminatesDuplicatedClassName");
 }
 
@@ -26,7 +26,7 @@ class GoogleFixtureNamerCustomizationTestsFixture : public ::testing::Test{};
 
 TEST_F(GoogleFixtureNamerCustomizationTestsFixture, OnlyMatchesFixtureAtEnd)
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     EXPECT_EQ(namer.getOutputFileBaseName(), "GoogleFixtureNamerCustomizationTests.OnlyMatchesFixtureAtEnd");
 }
 
@@ -53,7 +53,7 @@ auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
 TEST(TestCaseName_IgnoreThis, TestName )
 // end-snippet
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
 
     // begin-snippet: googletest_customize_test_name
     auto outputFileBaseName = "GoogleFixtureNamerCustomizationTests.TestName";

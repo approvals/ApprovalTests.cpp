@@ -9,6 +9,7 @@
 #include "../Macros.h"
 #include "../SystemUtils.h"
 
+namespace ApprovalTests {
 class TestName {
 public:
     const std::string& getFileName() const {
@@ -162,5 +163,6 @@ R"(* Welcome to Approval Tests.
         return ext.str();
     }
 };
+}
 
 #endif

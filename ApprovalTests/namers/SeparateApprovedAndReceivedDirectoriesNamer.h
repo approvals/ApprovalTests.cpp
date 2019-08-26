@@ -4,6 +4,7 @@
 #include "ApprovalTestNamer.h"
 #include "../Approvals.h"
 
+namespace ApprovalTests {
 class SeparateApprovedAndReceivedDirectoriesNamer : public ApprovalTestNamer
 {
 public:
@@ -35,5 +36,6 @@ public:
     }
 
 };
+}
 
 #endif // APPROVALTESTS_CPP_SEPARATEAPPROVEDANDRECEIVEDDIRECTORIESNAMER_H

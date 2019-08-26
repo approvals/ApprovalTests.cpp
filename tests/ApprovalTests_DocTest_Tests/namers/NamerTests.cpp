@@ -6,7 +6,7 @@
 
 #include <memory>
 
-class FakeNamer : public ApprovalNamer
+class FakeNamer : public ApprovalTests::ApprovalNamer
 {
     virtual std::string getApprovedFile(std::string /*extensionWithDot*/) override
     {
@@ -40,7 +40,7 @@ void require_ends_with(const std::string& text, const std::string& endsWith)
 TEST_CASE("SeparateApprovedAndReceivedDirectoriesNamer")
 {
     // begin-snippet: register_separate_directories_namer
-    auto default_namer_disposer = SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
+    auto default_namer_disposer = ApprovalTests::SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
     // end-snippet
 
     auto namer = ApprovalTests::Approvals::getDefaultNamer();
@@ -55,11 +55,11 @@ TEST_CASE( "AdditionalSections" )
     auto namer = ApprovalTests::Approvals::getDefaultNamer();
 
     {
-        auto section_namer = NamerFactory::appendToOutputFilename("case1");
+        auto section_namer = ApprovalTests::NamerFactory::appendToOutputFilename("case1");
         require_ends_with(namer->getApprovedFile(".txt"), "NamerTests.AdditionalSections.case1.approved.txt");
     }
     {
-        auto section_namer = NamerFactory::appendToOutputFilename("case2");
+        auto section_namer = ApprovalTests::NamerFactory::appendToOutputFilename("case2");
         require_ends_with(namer->getApprovedFile(".txt"), "NamerTests.AdditionalSections.case2.approved.txt");
     }
     require_ends_with(namer->getApprovedFile(".txt"), "NamerTests.AdditionalSections.approved.txt");

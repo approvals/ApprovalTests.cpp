@@ -11,12 +11,12 @@
 #include <Catch.hpp>
 
 struct Catch2ApprovalListener : Catch::TestEventListenerBase {
-    TestName currentTest;
+    ApprovalTests::TestName currentTest;
     using TestEventListenerBase::TestEventListenerBase; // This using allows us to use all base-class constructors
     virtual void testCaseStarting(Catch::TestCaseInfo const &testInfo) override {
 
         currentTest.setFileName(testInfo.lineInfo.file);
-        ApprovalTestNamer::currentTest(&currentTest);
+        ApprovalTests::ApprovalTestNamer::currentTest(&currentTest);
     }
 
     virtual void testCaseEnded(Catch::TestCaseStats const &/*testCaseStats*/) override {

@@ -17,7 +17,7 @@
 
 class GoogleTestListener : public ::testing::EmptyTestEventListener
 {
-    TestName currentTest;
+    ApprovalTests::TestName currentTest;
 public:
     bool isDuplicate(std::string testFileNameWithExtension, std::string testCaseName)
     {
@@ -44,7 +44,7 @@ public:
             currentTest.sections.push_back(testInfo.name());
         }
         
-        ApprovalTestNamer::currentTest(&currentTest);
+        ApprovalTests::ApprovalTestNamer::currentTest(&currentTest);
     }
 };
 
