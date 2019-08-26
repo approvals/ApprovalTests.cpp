@@ -10,6 +10,7 @@
 #include <vector>
 #include <numeric>
 #include "CommandLauncher.h"
+#include "FileUtils.h"
 
 typedef std::vector<std::string> (*ConvertArgumentsFunctionPointer)(std::vector<std::string>);
 
@@ -40,7 +41,7 @@ public:
             int result = system(which.c_str());
             foundByWhich = (result == 0);
         }
-        return  foundByWhich || FileUtils::fileExists(command);
+        return  foundByWhich || ApprovalTests::FileUtils::fileExists(command);
 
     }
 

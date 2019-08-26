@@ -6,13 +6,14 @@
 #include "../ApprovalWriter.h"
 #include "../FileUtils.h"
 #include "ApprovalWriter.h"
+#include "FileUtils.h"
 
 class ExistingFile : public ApprovalTests::ApprovalWriter{
     std::string filePath;
 public:
     ExistingFile(std::string filePath) : filePath(filePath){}
     virtual std::string getFileExtensionWithDot() override {
-        return FileUtils::getExtensionWithDot(filePath);
+        return ApprovalTests::FileUtils::getExtensionWithDot(filePath);
     }
     virtual void write(std::string /*path*/) override {
         // do nothing

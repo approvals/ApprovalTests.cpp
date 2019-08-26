@@ -3,6 +3,7 @@
 #include "ApprovalTests/SystemUtils.h"
 #include "ApprovalTests/StringUtils.h"
 #include "Approvals.h"
+#include "FileUtils.h"
 
 TEST_CASE("ItCanFixCaseOfFileNameOnWindows")
 {
@@ -39,6 +40,6 @@ TEST_CASE("ItCanCreateSubDirectory")
     auto subdirectory = ApprovalTests::Approvals::useApprovalsSubdirectory("custom_approval");
     ApprovalTestNamer namer;
     auto directory = namer.getDirectory();
-    REQUIRE(FileUtils::fileExists(directory) == true);
+    REQUIRE(ApprovalTests::FileUtils::fileExists(directory) == true);
 //    SystemUtils::removeDirectory(directory);
 }

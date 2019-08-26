@@ -4,6 +4,7 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/SystemUtils.h"
 #include "Approvals.h"
+#include "FileUtils.h"
 #include <stdio.h>
 
 TEST_CASE("ItCanCopyAFile")
@@ -13,11 +14,11 @@ TEST_CASE("ItCanCopyAFile")
   auto source = namer.getDirectory() + ".." + sep + ".." + sep + "sample.txt";
     auto destination = namer.getDirectory() + ".." + sep + "copy.temp.received.txt";
 
-    if ( FileUtils::fileExists(destination))
+    if ( ApprovalTests::FileUtils::fileExists(destination))
     {
         ::remove(destination.c_str());
     }
-    CHECK( ! FileUtils::fileExists(destination) );
+    CHECK( ! ApprovalTests::FileUtils::fileExists(destination) );
     FileUtilsSystemSpecific::copyFile(source, destination);
     ApprovalTests::Approvals::verifyExistingFile(destination);
 }

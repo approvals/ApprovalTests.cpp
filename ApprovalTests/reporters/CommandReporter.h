@@ -4,6 +4,7 @@
 #include "CommandLauncher.h"
 #include "../FileUtils.h"
 #include "Reporter.h"
+#include "FileUtils.h"
 
 // Generic reporter to launch arbitrary command
 class CommandReporter : public Reporter {
@@ -18,7 +19,7 @@ protected:
 
 public:
     bool report(std::string received, std::string approved) const override {
-        FileUtils::ensureFileExists(approved);
+        ApprovalTests::FileUtils::ensureFileExists(approved);
         return l->launch(getFullCommand(received, approved));
     }
 

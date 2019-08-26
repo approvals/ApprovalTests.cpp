@@ -50,7 +50,7 @@ public:
     // Properly cases the filename, but not the directories, on Windows.
     static std::string checkFilenameCase(const std::string& fullPath)
     {
-        if (!isWindowsOs() || !FileUtils::fileExists(fullPath))
+        if (!isWindowsOs() || !ApprovalTests::FileUtils::fileExists(fullPath))
         {
             return fullPath;
         }
@@ -165,7 +165,7 @@ public:
 
     static void ensureDirectoryExists(std::string fullFilePath)
     {
-        if (!FileUtils::fileExists(fullFilePath))
+        if (!ApprovalTests::FileUtils::fileExists(fullFilePath))
         {
             makeDirectory(fullFilePath);
         }

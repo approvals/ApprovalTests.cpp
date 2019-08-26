@@ -7,6 +7,7 @@
 #include "ApprovalException.h"
 #include "Approvals.h"
 #include "FileApprover.h"
+#include "FileUtils.h"
 
 TEST_CASE("ItVerifiesApprovedFileExists") {
 
@@ -34,15 +35,15 @@ TEST_CASE("ItVerifiesExistingFiles") {
 
 
 TEST_CASE("ItIgnoresLineEndingDifferences") {
-    FileUtils::writeToFile("a.txt", "1\r\n2\n3\r\n4\r\n5");
-    FileUtils::writeToFile("b.txt", "1\n2\r\n3\r\n4\n5");
+    ApprovalTests::FileUtils::writeToFile("a.txt", "1\r\n2\n3\r\n4\r\n5");
+    ApprovalTests::FileUtils::writeToFile("b.txt", "1\n2\r\n3\r\n4\n5");
     ApprovalTests::FileApprover::verify("a.txt", "b.txt");
 }
 
 
 TEST_CASE("ItComparesTheEntireFile") {
-    FileUtils::writeToFile("a.txt", "12345");
-    FileUtils::writeToFile("b.txt", "123");
+    ApprovalTests::FileUtils::writeToFile("a.txt", "12345");
+    ApprovalTests::FileUtils::writeToFile("b.txt", "123");
     CHECK_THROWS_AS(ApprovalTests::FileApprover::verify("a.txt", "b.txt"), ApprovalTests::ApprovalMismatchException);
 }
 
@@ -52,14 +53,14 @@ class LengthComparator : public ApprovalComparator
 public:
     bool contentsAreEquivalent(std::string receivedPath, std::string approvedPath) const override
     {
-        return FileUtils::fileSize(receivedPath) == FileUtils::fileSize(approvedPath);
+        return ApprovalTests::FileUtils::fileSize(receivedPath) == ApprovalTests::FileUtils::fileSize(approvedPath);
     }
 };
 // end-snippet
 
 TEST_CASE("ItUsesCustomComparator") {
-    FileUtils::writeToFile("a.length", "12345");
-    FileUtils::writeToFile("b.length", "56789");
+    ApprovalTests::FileUtils::writeToFile("a.length", "12345");
+    ApprovalTests::FileUtils::writeToFile("b.length", "56789");
 
     // begin-snippet: use_custom_comparator
     ApprovalTests::FileApprover::registerComparator(".length", std::make_shared<LengthComparator>());
