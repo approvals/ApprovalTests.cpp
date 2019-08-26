@@ -3,6 +3,7 @@
 
 #include "SystemUtils.h"
 
+namespace ApprovalTests {
 class FileUtilsSystemSpecific
 {
 public:
@@ -20,4 +21,5 @@ public:
         system( getCommandLineForCopy(source, destination, SystemUtils::isWindowsOs()).c_str() );
     }
 };
+}
 #endif

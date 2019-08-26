@@ -5,6 +5,7 @@
 #include "ApprovalTests/SystemUtils.h"
 #include "Approvals.h"
 #include "FileUtils.h"
+#include "FileUtilsSystemSpecific.h"
 #include <stdio.h>
 
 TEST_CASE("ItCanCopyAFile")
@@ -19,6 +20,6 @@ TEST_CASE("ItCanCopyAFile")
         ::remove(destination.c_str());
     }
     CHECK( ! ApprovalTests::FileUtils::fileExists(destination) );
-    FileUtilsSystemSpecific::copyFile(source, destination);
+    ApprovalTests::FileUtilsSystemSpecific::copyFile(source, destination);
     ApprovalTests::Approvals::verifyExistingFile(destination);
 }
