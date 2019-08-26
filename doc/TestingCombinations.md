@@ -21,7 +21,7 @@ In this small example, all combinations of `{"hello", "world"}` and `{1, 2, 3}` 
 TEST_CASE("YouCanVerifyCombinationsOf2") {
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
-    CombinationApprovals::verifyAllCombinations(
+    ApprovalTests::CombinationApprovals::verifyAllCombinations(
             [](std::string s, int i){return std::make_pair(s, i);},
             v,
             numbers);

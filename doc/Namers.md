@@ -57,7 +57,7 @@ If you ever want to create a custom namer, Approval Tests has a mechanism to cha
 <!-- snippet: register_default_namer -->
 <a id='snippet-register_default_namer'/></a>
 ```cpp
-auto default_namer_disposer = Approvals::useAsDefaultNamer([](){return std::make_shared<FakeNamer>();});
+auto default_namer_disposer = ApprovalTests::Approvals::useAsDefaultNamer([](){return std::make_shared<FakeNamer>();});
 ```
 <sup>[snippet source](/tests/ApprovalTests_DocTest_Tests/namers/NamerTests.cpp#L24-L26) / [anchor](#snippet-register_default_namer)</sup>
 <!-- endsnippet -->
@@ -79,7 +79,7 @@ To register this as your default namer, use:
 <!-- snippet: register_separate_directories_namer -->
 <a id='snippet-register_separate_directories_namer'/></a>
 ```cpp
-auto default_namer_disposer = SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
+auto default_namer_disposer = ApprovalTests::SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
 ```
 <sup>[snippet source](/tests/ApprovalTests_DocTest_Tests/namers/NamerTests.cpp#L42-L44) / [anchor](#snippet-register_separate_directories_namer)</sup>
 <!-- endsnippet -->

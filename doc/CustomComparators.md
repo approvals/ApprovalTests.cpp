@@ -54,12 +54,12 @@ First, we write our custom `ApprovalComparator` implementation:
 <!-- snippet: create_custom_comparator -->
 <a id='snippet-create_custom_comparator'/></a>
 ```cpp
-class LengthComparator : public ApprovalComparator
+class LengthComparator : public ApprovalTests::ApprovalComparator
 {
 public:
     bool contentsAreEquivalent(std::string receivedPath, std::string approvedPath) const override
     {
-        return FileUtils::fileSize(receivedPath) == FileUtils::fileSize(approvedPath);
+        return ApprovalTests::FileUtils::fileSize(receivedPath) == ApprovalTests::FileUtils::fileSize(approvedPath);
     }
 };
 ```
@@ -71,7 +71,7 @@ Then we call `FileApprover::registerComparator()` to tell Approval Tests to use 
 <!-- snippet: use_custom_comparator -->
 <a id='snippet-use_custom_comparator'/></a>
 ```cpp
-FileApprover::registerComparator(".length", std::make_shared<LengthComparator>());
+ApprovalTests::FileApprover::registerComparator(".length", std::make_shared<LengthComparator>());
 ```
 <sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/FileApproverTests.cpp#L61-L63) / [anchor](#snippet-use_custom_comparator)</sup>
 <!-- endsnippet -->

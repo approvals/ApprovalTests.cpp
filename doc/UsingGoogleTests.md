@@ -83,7 +83,7 @@ int main(int argc, char** argv)
     ::testing::InitGoogleTest(&argc, argv);
     
     // 2. Add this line to your main:
-    initializeApprovalTestsForGoogleTests();
+    ApprovalTests::initializeApprovalTestsForGoogleTests();
 
     return RUN_ALL_TESTS();
 }
@@ -139,7 +139,7 @@ For example, if you are Google test fixtures, you might have a lot of class name
 <a id='snippet-googletest_customize_suffix'/></a>
 ```cpp
 // main.cpp
-auto customization = GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
+auto customization = ApprovalTests::GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
 ```
 <sup>[snippet source](/tests/ApprovalTests_GoogleTest_Tests/GoogleFixtureNamerCustomizationTests.cpp#L6-L9) / [anchor](#snippet-googletest_customize_suffix)</sup>
 <!-- endsnippet -->
@@ -178,10 +178,10 @@ You could achieve this by registering a function pointer like this:
 // main.cpp
 bool dropTestCaseNamesWithIgnoreThis(const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
 {
-    return StringUtils::contains(testCaseName, "IgnoreThis");
+    return ApprovalTests::StringUtils::contains(testCaseName, "IgnoreThis");
 }
 
-auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
+auto ignoreNames = ApprovalTests::GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
 ```
 <sup>[snippet source](/tests/ApprovalTests_GoogleTest_Tests/GoogleFixtureNamerCustomizationTests.cpp#L33-L41) / [anchor](#snippet-googletest_customize_function)</sup>
 <!-- endsnippet -->
@@ -192,10 +192,10 @@ Or by using a lambda like this:
 <a id='snippet-googletest_customize_lambda'/></a>
 ```cpp
 // main.cpp
-auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
+auto ignoreNamesLambda = ApprovalTests::GoogleConfiguration::addTestCaseNameRedundancyCheck(
     [](const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
     {
-        return StringUtils::contains(testCaseName, "IgnoreThis");
+        return ApprovalTests::StringUtils::contains(testCaseName, "IgnoreThis");
     });
 ```
 <sup>[snippet source](/tests/ApprovalTests_GoogleTest_Tests/GoogleFixtureNamerCustomizationTests.cpp#L43-L50) / [anchor](#snippet-googletest_customize_lambda)</sup>
