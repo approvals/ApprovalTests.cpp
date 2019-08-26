@@ -3,7 +3,7 @@
 
 #include "ApprovalComparator.h"
 
-class TextFileComparator : public ApprovalComparator
+class TextFileComparator : public ApprovalTests::ApprovalComparator
 {
 public:
     static std::ifstream::int_type getNextRelevantCharacter(std::ifstream& astream)

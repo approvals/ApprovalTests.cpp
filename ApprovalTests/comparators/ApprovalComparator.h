@@ -3,6 +3,7 @@
 
 #include <string>
 
+namespace ApprovalTests {
 class ApprovalComparator
 {
 public:
@@ -11,5 +12,6 @@ public:
     virtual bool contentsAreEquivalent(std::string receivedPath,
                                        std::string approvedPath) const = 0;
 };
+}
 
 #endif //APPROVALTESTS_CPP_APPROVALCOMPARATOR_H

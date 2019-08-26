@@ -44,7 +44,7 @@ TEST_CASE("ItComparesTheEntireFile") {
 }
 
 // begin-snippet: create_custom_comparator
-class LengthComparator : public ApprovalComparator
+class LengthComparator : public ApprovalTests::ApprovalComparator
 {
 public:
     bool contentsAreEquivalent(std::string receivedPath, std::string approvedPath) const override
