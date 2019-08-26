@@ -1,6 +1,5 @@
 #include "Catch.hpp"
 #include "ApprovalTests/Approvals.h"
-#include "Approvals.h"
 #include <vector>
 
 enum Nationality

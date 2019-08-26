@@ -1,7 +1,6 @@
 #include "doctest.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/namers/NamerFactory.h"
-#include "Approvals.h"
 #include <vector>
 
 enum Nationality

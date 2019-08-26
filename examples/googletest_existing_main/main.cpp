@@ -4,7 +4,6 @@
 // 1. Add these two lines to your main:
 #define APPROVALS_GOOGLETEST_EXISTING_MAIN
 #include "ApprovalTests.hpp"
-#include "Approvals.h"
 
 int main(int argc, char** argv)
 {

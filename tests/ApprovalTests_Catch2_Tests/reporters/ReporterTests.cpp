@@ -9,9 +9,6 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/StringUtils.h"
 #include "ApprovalTests/FileApprover.h"
-#include "Approvals.h"
-#include "FileApprover.h"
-#include "SystemUtils.h"
 
 TEST_CASE("Reporters Launch Command") {
     TestReporter m(true);

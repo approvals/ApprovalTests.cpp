@@ -13,7 +13,6 @@
 #include "comparators/TextFileComparator.h"
 #include "FileUtils.h"
 #include "Macros.h"
-#include "ApprovalWriter.h"
 
 namespace ApprovalTests {
 class FileApprover {

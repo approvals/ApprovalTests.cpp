@@ -1,7 +1,6 @@
 #include "doctest.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/Approvals.h"
-#include "Approvals.h"
 
 TEST_CASE("ItCanGiveYouTheSpecName")
 {

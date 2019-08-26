@@ -3,7 +3,6 @@
 
 #include "../../Macros.h"
 #include "../../StringUtils.h"
-#include "StringUtils.h"
 
 #include <vector>
 #include <functional>

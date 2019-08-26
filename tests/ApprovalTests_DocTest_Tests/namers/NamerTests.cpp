@@ -3,9 +3,6 @@
 #include "ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.h"
 #include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/Approvals.h"
-#include "Approvals.h"
-#include "StringUtils.h"
-#include "SystemUtils.h"
 
 #include <memory>
 

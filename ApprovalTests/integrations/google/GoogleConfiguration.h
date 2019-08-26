@@ -2,7 +2,6 @@
 #define APPROVALTESTS_CPP_GOOGLECONFIGURATION_H
 
 #include "GoogleCustomizationsFactory.h"
-#include "StringUtils.h"
 
 class GoogleConfiguration
 {

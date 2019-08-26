@@ -3,7 +3,6 @@
 #include "ApprovalTests/SystemUtils.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/utilities/MachineBlocker.h"
-#include "SystemUtils.h"
 
 TEST_CASE("Blocks in this environment")
 {

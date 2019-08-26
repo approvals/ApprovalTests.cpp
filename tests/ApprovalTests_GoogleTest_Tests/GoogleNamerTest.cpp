@@ -2,7 +2,6 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "ApprovalTests/integrations/google/GoogleConfiguration.h"
-#include "Approvals.h"
 
 #include <ostream>
 #include <string>

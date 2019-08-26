@@ -5,8 +5,6 @@
 #include "PairUtilities.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "reporters/FakeReporter.h"
-#include "ApprovalException.h"
-#include "CombinationApprovals.h"
 
 TEST_CASE("YouCanVerifyCombinationsOf1") {
     std::vector<std::string> words{"hello", "world"};

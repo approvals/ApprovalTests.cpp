@@ -5,5 +5,5 @@ target_include_directories(${PROJECT_NAME}
         INTERFACE
         ${CMAKE_CURRENT_SOURCE_DIR}/..
         # Temporary extra paths,
-        ${CMAKE_CURRENT_SOURCE_DIR}/
+#        ${CMAKE_CURRENT_SOURCE_DIR}/
         )

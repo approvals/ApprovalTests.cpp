@@ -2,9 +2,6 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/StringUtils.h"
 #include "ApprovalTests/Approvals.h"
-#include "Approvals.h"
-#include "StringUtils.h"
-#include "SystemUtils.h"
 
 using Catch::Matchers::EndsWith;
 

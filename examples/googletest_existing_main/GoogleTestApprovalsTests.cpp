@@ -1,6 +1,5 @@
 #include "gtest/gtest.h"
 #include "ApprovalTests/Approvals.h"
-#include "Approvals.h"
 
 TEST(GoogleTestApprovalsTests, TestStreamableObject)
 {

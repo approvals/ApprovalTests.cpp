@@ -8,7 +8,6 @@
 #include <stdexcept>
 #include "../Macros.h"
 #include "../SystemUtils.h"
-#include "SystemUtils.h"
 
 class TestName {
 public:

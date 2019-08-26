@@ -4,7 +4,6 @@
 #include "DiffPrograms.h"
 #include "CommandReporter.h"
 #include "SystemLauncher.h"
-#include "SystemUtils.h"
 #include <string>
 #include <vector>
 

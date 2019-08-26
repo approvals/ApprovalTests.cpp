@@ -5,9 +5,6 @@
 #include "../FileUtils.h"
 #include "../StringUtils.h"
 #include "../SystemUtils.h"
-#include "FileUtils.h"
-#include "StringUtils.h"
-#include "SystemUtils.h"
 
 enum class Type { TEXT, IMAGE, TEXT_AND_IMAGE };
 

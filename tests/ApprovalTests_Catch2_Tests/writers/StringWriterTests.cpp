@@ -1,8 +1,6 @@
 #include "Catch.hpp"
 #include "ApprovalTests/StringWriter.h"
 #include "ApprovalTests/Approvals.h"
-#include "Approvals.h"
-#include "StringWriter.h"
 
 std::string readFileAndDelete(const char *fileName) {
     std::ifstream in(fileName, std::ios_base::in);

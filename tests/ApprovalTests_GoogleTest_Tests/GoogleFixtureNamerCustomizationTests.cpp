@@ -2,7 +2,6 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 
 #include "ApprovalTests/integrations/google/GoogleConfiguration.h"
-#include "StringUtils.h"
 
 // begin-snippet: googletest_customize_suffix
 // main.cpp

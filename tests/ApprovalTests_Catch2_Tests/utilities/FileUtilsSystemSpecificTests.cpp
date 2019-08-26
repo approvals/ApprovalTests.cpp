@@ -3,10 +3,6 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/SystemUtils.h"
-#include "Approvals.h"
-#include "FileUtils.h"
-#include "FileUtilsSystemSpecific.h"
-#include "SystemUtils.h"
 #include <stdio.h>
 
 TEST_CASE("ItCanCopyAFile")

@@ -3,8 +3,6 @@
 
 #include "ApprovalTestNamer.h"
 #include "../Approvals.h"
-#include "Approvals.h"
-#include "SystemUtils.h"
 
 class SeparateApprovedAndReceivedDirectoriesNamer : public ApprovalTestNamer
 {

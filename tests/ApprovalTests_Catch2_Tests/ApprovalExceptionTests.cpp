@@ -2,8 +2,6 @@
 #include "ApprovalTests/ApprovalException.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/reporters/QuietReporter.h"
-#include "ApprovalException.h"
-#include "Approvals.h"
 
 TEST_CASE("ApprovalMissingExceptionHasAMessage") {
     ApprovalTests::ApprovalMissingException a("r.txt", "a.txt" );

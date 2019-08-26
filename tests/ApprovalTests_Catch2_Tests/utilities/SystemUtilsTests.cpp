@@ -2,10 +2,6 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/SystemUtils.h"
 #include "ApprovalTests/StringUtils.h"
-#include "Approvals.h"
-#include "FileUtils.h"
-#include "StringUtils.h"
-#include "SystemUtils.h"
 
 TEST_CASE("ItCanFixCaseOfFileNameOnWindows")
 {

@@ -4,11 +4,6 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/FileApprover.h"
 #include "ApprovalTests/Approvals.h"
-#include "ApprovalException.h"
-#include "Approvals.h"
-#include "FileApprover.h"
-#include "FileUtils.h"
-#include "StringWriter.h"
 
 TEST_CASE("ItVerifiesApprovedFileExists") {
 

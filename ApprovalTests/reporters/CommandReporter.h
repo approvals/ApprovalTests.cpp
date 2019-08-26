@@ -4,7 +4,6 @@
 #include "CommandLauncher.h"
 #include "../FileUtils.h"
 #include "Reporter.h"
-#include "FileUtils.h"
 
 // Generic reporter to launch arbitrary command
 class CommandReporter : public Reporter {
