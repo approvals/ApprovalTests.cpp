@@ -4,6 +4,7 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/FileApprover.h"
 #include "ApprovalTests/Approvals.h"
+#include "ApprovalException.h"
 
 TEST_CASE("ItVerifiesApprovedFileExists") {
 
@@ -40,7 +41,7 @@ TEST_CASE("ItIgnoresLineEndingDifferences") {
 TEST_CASE("ItComparesTheEntireFile") {
     FileUtils::writeToFile("a.txt", "12345");
     FileUtils::writeToFile("b.txt", "123");
-    CHECK_THROWS_AS(FileApprover::verify("a.txt", "b.txt"), ApprovalMismatchException);
+    CHECK_THROWS_AS(FileApprover::verify("a.txt", "b.txt"), ApprovalTests::ApprovalMismatchException);
 }
 
 // begin-snippet: create_custom_comparator

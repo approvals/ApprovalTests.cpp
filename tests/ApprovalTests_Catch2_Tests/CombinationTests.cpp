@@ -5,6 +5,7 @@
 #include "PairUtilities.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "reporters/FakeReporter.h"
+#include "ApprovalException.h"
 
 TEST_CASE("YouCanVerifyCombinationsOf1") {
     std::vector<std::string> words{"hello", "world"};
@@ -23,7 +24,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
     {
         CombinationApprovals::verifyAllCombinations( [](std::string s){return s + "!";}, words, reporter);
     }
-    catch(const ApprovalException&)
+    catch(const ApprovalTests::ApprovalException&)
     {
         // ignore
     }

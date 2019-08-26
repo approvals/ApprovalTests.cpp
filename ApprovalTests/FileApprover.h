@@ -43,15 +43,15 @@ public:
                        std::string approvedPath,
                        const ApprovalComparator& comparator) {
         if (!FileUtils::fileExists(approvedPath)) {
-            throw ApprovalMissingException(receivedPath, approvedPath);
+            throw ApprovalTests::ApprovalMissingException(receivedPath, approvedPath);
         }
 
         if (!FileUtils::fileExists(receivedPath)) {
-            throw ApprovalMissingException(approvedPath, receivedPath);
+            throw ApprovalTests::ApprovalMissingException(approvedPath, receivedPath);
         }
 
         if (!comparator.contentsAreEquivalent(receivedPath, approvedPath)) {
-            throw ApprovalMismatchException(receivedPath, approvedPath);
+            throw ApprovalTests::ApprovalMismatchException(receivedPath, approvedPath);
         }
     }
 
@@ -69,7 +69,7 @@ public:
             verify(receivedPath, approvedPath);
             s.cleanUpReceived(receivedPath);
         }
-        catch (const ApprovalException&) {
+        catch (const ApprovalTests::ApprovalException&) {
             reportAfterTryingFrontLoadedReporter(receivedPath, approvedPath, r);
             throw;
         }
