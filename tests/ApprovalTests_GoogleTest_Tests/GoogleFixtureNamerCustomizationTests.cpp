@@ -5,7 +5,7 @@
 
 // begin-snippet: googletest_customize_suffix
 // main.cpp
-auto customization = GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
+auto customization = ApprovalTests::GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
 // end-snippet
 
 // begin-snippet: googletest_name_parts
@@ -37,12 +37,12 @@ bool dropTestCaseNamesWithIgnoreThis(const std::string& /*testFileNameWithExtens
     return ApprovalTests::StringUtils::contains(testCaseName, "IgnoreThis");
 }
 
-auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
+auto ignoreNames = ApprovalTests::GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
 // end-snippet
 
 // begin-snippet: googletest_customize_lambda
 // main.cpp
-auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
+auto ignoreNamesLambda = ApprovalTests::GoogleConfiguration::addTestCaseNameRedundancyCheck(
     [](const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
     {
         return ApprovalTests::StringUtils::contains(testCaseName, "IgnoreThis");

@@ -21,7 +21,7 @@ class GoogleTestListener : public ::testing::EmptyTestEventListener
 public:
     bool isDuplicate(std::string testFileNameWithExtension, std::string testCaseName)
     {
-        for( auto check : GoogleCustomizationsFactory::getEquivalencyChecks())
+        for( auto check : ApprovalTests::GoogleCustomizationsFactory::getEquivalencyChecks())
         {
             if (check(testFileNameWithExtension, testCaseName))
             {
