@@ -6,6 +6,7 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalException.h"
 #include "Approvals.h"
+#include "FileApprover.h"
 
 TEST_CASE("ItVerifiesApprovedFileExists") {
 
@@ -19,7 +20,7 @@ TEST_CASE("ItVerifiesApprovedFileExists") {
     std::string expected = "Failed Approval: \n"
                               "Approval File Not Found \n"
                               "File: \"" + approved+"\"";
-    REQUIRE_THROWS_WITH(FileApprover::verify(namer, writer, reporter), expected);
+    REQUIRE_THROWS_WITH(ApprovalTests::FileApprover::verify(namer, writer, reporter), expected);
 
     remove(approved.c_str());
     remove(received.c_str());
@@ -35,14 +36,14 @@ TEST_CASE("ItVerifiesExistingFiles") {
 TEST_CASE("ItIgnoresLineEndingDifferences") {
     FileUtils::writeToFile("a.txt", "1\r\n2\n3\r\n4\r\n5");
     FileUtils::writeToFile("b.txt", "1\n2\r\n3\r\n4\n5");
-    FileApprover::verify("a.txt", "b.txt");
+    ApprovalTests::FileApprover::verify("a.txt", "b.txt");
 }
 
 
 TEST_CASE("ItComparesTheEntireFile") {
     FileUtils::writeToFile("a.txt", "12345");
     FileUtils::writeToFile("b.txt", "123");
-    CHECK_THROWS_AS(FileApprover::verify("a.txt", "b.txt"), ApprovalTests::ApprovalMismatchException);
+    CHECK_THROWS_AS(ApprovalTests::FileApprover::verify("a.txt", "b.txt"), ApprovalTests::ApprovalMismatchException);
 }
 
 // begin-snippet: create_custom_comparator
@@ -61,9 +62,9 @@ TEST_CASE("ItUsesCustomComparator") {
     FileUtils::writeToFile("b.length", "56789");
 
     // begin-snippet: use_custom_comparator
-    FileApprover::registerComparator(".length", std::make_shared<LengthComparator>());
+    ApprovalTests::FileApprover::registerComparator(".length", std::make_shared<LengthComparator>());
     // end-snippet
 
-    FileApprover::verify("a.length", "b.length");
+    ApprovalTests::FileApprover::verify("a.length", "b.length");
 }
 

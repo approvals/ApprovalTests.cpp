@@ -15,6 +15,7 @@
 #include "Macros.h"
 #include "ApprovalWriter.h"
 
+namespace ApprovalTests {
 class FileApprover {
 private:
     using ComparatorContainer = std::map< std::string, std::shared_ptr<ApprovalComparator> >;
@@ -44,15 +45,15 @@ public:
                        std::string approvedPath,
                        const ApprovalComparator& comparator) {
         if (!FileUtils::fileExists(approvedPath)) {
-            throw ApprovalTests::ApprovalMissingException(receivedPath, approvedPath);
+            throw ApprovalMissingException(receivedPath, approvedPath);
         }
 
         if (!FileUtils::fileExists(receivedPath)) {
-            throw ApprovalTests::ApprovalMissingException(approvedPath, receivedPath);
+            throw ApprovalMissingException(approvedPath, receivedPath);
         }
 
         if (!comparator.contentsAreEquivalent(receivedPath, approvedPath)) {
-            throw ApprovalTests::ApprovalMismatchException(receivedPath, approvedPath);
+            throw ApprovalMismatchException(receivedPath, approvedPath);
         }
     }
 
@@ -61,7 +62,7 @@ public:
         verify(receivedPath, approvedPath, *getComparatorForFile(receivedPath));
     }
 
-    static void verify(ApprovalNamer& n, ApprovalTests::ApprovalWriter& s, const Reporter& r) {
+    static void verify(ApprovalNamer& n, ApprovalWriter& s, const Reporter& r) {
         std::string approvedPath = n.getApprovedFile(s.getFileExtensionWithDot());
         std::string receivedPath = n.getReceivedFile(s.getFileExtensionWithDot());
         s.write(receivedPath);
@@ -70,7 +71,7 @@ public:
             verify(receivedPath, approvedPath);
             s.cleanUpReceived(receivedPath);
         }
-        catch (const ApprovalTests::ApprovalException&) {
+        catch (const ApprovalException&) {
             reportAfterTryingFrontLoadedReporter(receivedPath, approvedPath, r);
             throw;
         }
@@ -88,5 +89,6 @@ public:
 
 
 };
+}
 
 #endif
