@@ -3,6 +3,7 @@
 #include "ApprovalTests/StringUtils.h"
 #include "ApprovalTests/Approvals.h"
 #include "Approvals.h"
+#include "StringUtils.h"
 
 using Catch::Matchers::EndsWith;
 
@@ -31,7 +32,7 @@ TEST_CASE("TestProperNameCaseOnWindows") {
     {
         ApprovalTestNamer namer;
         auto test = namer.currentTest();
-        test.setFileName(StringUtils::toLower(test.getFileName()));
+        test.setFileName(ApprovalTests::StringUtils::toLower(test.getFileName()));
         namer.currentTest(&test);
         REQUIRE(namer.getFileName() == "NamerTests");
     }

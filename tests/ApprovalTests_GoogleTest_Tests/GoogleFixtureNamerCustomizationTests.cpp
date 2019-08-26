@@ -2,6 +2,7 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 
 #include "ApprovalTests/integrations/google/GoogleConfiguration.h"
+#include "StringUtils.h"
 
 // begin-snippet: googletest_customize_suffix
 // main.cpp
@@ -34,7 +35,7 @@ TEST_F(GoogleFixtureNamerCustomizationTestsFixture, OnlyMatchesFixtureAtEnd)
 // main.cpp
 bool dropTestCaseNamesWithIgnoreThis(const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
 {
-    return StringUtils::contains(testCaseName, "IgnoreThis");
+    return ApprovalTests::StringUtils::contains(testCaseName, "IgnoreThis");
 }
 
 auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
@@ -45,7 +46,7 @@ auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestC
 auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
     [](const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
     {
-        return StringUtils::contains(testCaseName, "IgnoreThis");
+        return ApprovalTests::StringUtils::contains(testCaseName, "IgnoreThis");
     });
 // end-snippet
 

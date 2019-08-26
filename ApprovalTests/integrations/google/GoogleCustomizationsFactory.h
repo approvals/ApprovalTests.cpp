@@ -3,6 +3,7 @@
 
 #include "../../Macros.h"
 #include "../../StringUtils.h"
+#include "StringUtils.h"
 
 #include <vector>
 #include <functional>
@@ -22,7 +23,7 @@ private:
 
         auto exactNameMatching = [](std::string testFileNameWithExtension, std::string testCaseName)
         {
-            return StringUtils::contains(testFileNameWithExtension, testCaseName + ".");
+            return ApprovalTests::StringUtils::contains(testFileNameWithExtension, testCaseName + ".");
         };
         container->push_back( exactNameMatching );
         return container;

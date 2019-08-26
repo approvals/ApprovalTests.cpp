@@ -4,6 +4,7 @@
 #include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/Approvals.h"
 #include "Approvals.h"
+#include "StringUtils.h"
 
 #include <memory>
 
@@ -29,13 +30,13 @@ TEST_CASE("Registering default Namer")
         REQUIRE(result == "my.approved");
     }
     auto result = ApprovalTests::Approvals::getDefaultNamer()->getApprovedFile(".txt");
-    REQUIRE(StringUtils::endsWith(result, "NamerTests.Registering_default_Namer.approved.txt"));
+    REQUIRE(ApprovalTests::StringUtils::endsWith(result, "NamerTests.Registering_default_Namer.approved.txt"));
 }
 
 void require_ends_with(const std::string& text, const std::string& endsWith)
 {
     INFO(text << "\ndidn't end with\n" << endsWith);
-    REQUIRE(StringUtils::endsWith(text, endsWith));
+    REQUIRE(ApprovalTests::StringUtils::endsWith(text, endsWith));
 }
 
 TEST_CASE("SeparateApprovedAndReceivedDirectoriesNamer")

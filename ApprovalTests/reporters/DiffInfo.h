@@ -6,6 +6,7 @@
 #include "../StringUtils.h"
 #include "../SystemUtils.h"
 #include "FileUtils.h"
+#include "StringUtils.h"
 
 enum class Type { TEXT, IMAGE, TEXT_AND_IMAGE };
 
@@ -50,7 +51,7 @@ struct DiffInfo
                 }
                 envVarValue += '\\';
 
-                auto result1 = StringUtils::replaceAll(result, "{ProgramFiles}", envVarValue);
+                auto result1 = ApprovalTests::StringUtils::replaceAll(result, "{ProgramFiles}", envVarValue);
                 if (ApprovalTests::FileUtils::fileExists(result1))
                 {
                     return result1;

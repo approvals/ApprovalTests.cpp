@@ -2,6 +2,7 @@
 #define APPROVALTESTS_CPP_GOOGLECONFIGURATION_H
 
 #include "GoogleCustomizationsFactory.h"
+#include "StringUtils.h"
 
 class GoogleConfiguration
 {
@@ -22,14 +23,14 @@ public:
     {
         return [suffix](std::string testFileNameWithExtension, std::string testCaseName)
         {
-            if (testCaseName.length() <= suffix.length() || !StringUtils::endsWith(testCaseName, suffix))
+            if (testCaseName.length() <= suffix.length() || !ApprovalTests::StringUtils::endsWith(testCaseName, suffix))
             {
                 return false;
             }
 
             auto withoutSuffix = testCaseName.substr(0, testCaseName.length() - suffix.length());
             auto withFileExtension = withoutSuffix + ".";
-            return StringUtils::contains(testFileNameWithExtension, withFileExtension);
+            return ApprovalTests::StringUtils::contains(testFileNameWithExtension, withFileExtension);
         };
     }
 };
