@@ -21,7 +21,7 @@ TEST_CASE("FirstWorkingReporter") {
     TestReporter* m1 = new TestReporter(false);
     TestReporter* m2 = new TestReporter(true);
     TestReporter* m3 = new TestReporter(true);
-    FirstWorkingReporter reporter({m1, m2, m3});
+    ApprovalTests::FirstWorkingReporter reporter({m1, m2, m3});
     bool result = reporter.report("r.txt", "a.txt");
     REQUIRE(m2->launcher.receivedCommand() == "fake r.txt a.txt ");
     REQUIRE(m3->launcher.receivedCommand() == "");
@@ -29,31 +29,31 @@ TEST_CASE("FirstWorkingReporter") {
 }
 
 TEST_CASE("Reporters Report Failure Status") {
-    GenericDiffReporter m("this_does_not_exist");
+    ApprovalTests::GenericDiffReporter m("this_does_not_exist");
     bool result = m.report("r.txt", "a.txt");
     REQUIRE(false == result);
 }
 
 TEST_CASE("Reporters Report Success Status") {
     std::string knownCommand = ApprovalTests::SystemUtils::isWindowsOs() ? "C:\\Windows\\System32\\help.exe" : "echo";
-    GenericDiffReporter m(knownCommand);
+    ApprovalTests::GenericDiffReporter m(knownCommand);
     bool result = m.report("r.txt", "a.txt");
     REQUIRE(true == result);
 }
 
 TEST_CASE("CommandLauncher can detect missing file") {
-    REQUIRE(false == SystemLauncher().exists("this_file_does_not_exist.txxxxxt"));
+    REQUIRE(false == ApprovalTests::SystemLauncher().exists("this_file_does_not_exist.txxxxxt"));
 }
 
 TEST_CASE("ClipboardReporter") {
-    REQUIRE("move /Y \"a.txt\" \"b.txt\"" == ClipboardReporter::getCommandLineFor("a.txt", "b.txt", true));
-    REQUIRE("mv \"a.txt\" \"b.txt\"" == ClipboardReporter::getCommandLineFor("a.txt", "b.txt", false));
+    REQUIRE("move /Y \"a.txt\" \"b.txt\"" == ApprovalTests::ClipboardReporter::getCommandLineFor("a.txt", "b.txt", true));
+    REQUIRE("mv \"a.txt\" \"b.txt\"" == ApprovalTests::ClipboardReporter::getCommandLineFor("a.txt", "b.txt", false));
 }
 
 TEST_CASE("CombinationReporter succeeds if any succeed") {
     FakeReporter* m1 = new FakeReporter(true);
     FakeReporter* m2 = new FakeReporter(true);
-    CombinationReporter reporter({m1, m2});
+    ApprovalTests::CombinationReporter reporter({m1, m2});
     bool result = reporter.report("r.txt", "a.txt");
     REQUIRE(m1->called == true);
     REQUIRE(m2->called == true);
@@ -63,7 +63,7 @@ TEST_CASE("CombinationReporter succeeds if any succeed") {
 TEST_CASE("CombinationReporter fails if all fail") {
     FakeReporter* m1 = new FakeReporter(false);
     FakeReporter* m2 = new FakeReporter(false);
-    CombinationReporter reporter({m1, m2});
+    ApprovalTests::CombinationReporter reporter({m1, m2});
     bool result = reporter.report("r.txt", "a.txt");
     REQUIRE(m1->called == true);
     REQUIRE(m2->called == true);
@@ -93,13 +93,13 @@ TEST_CASE("Registering default Reporter")
         auto fake_reporter2 = std::make_shared<FakeReporter>(true);
         auto default_reporter_disposer2 = ApprovalTests::Approvals::useAsDefaultReporter(fake_reporter2);
 
-        DefaultReporter r;
+        ApprovalTests::DefaultReporter r;
         r.report("r.txt", "a.txt");
 
         REQUIRE(fake_reporter->called == false);
         REQUIRE(fake_reporter2->called == true);
     }
-    DefaultReporter r;
+    ApprovalTests::DefaultReporter r;
     r.report("r.txt", "a.txt");
     REQUIRE(fake_reporter->called == true);
 }

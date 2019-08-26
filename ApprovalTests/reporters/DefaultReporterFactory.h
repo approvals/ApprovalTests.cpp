@@ -8,6 +8,7 @@
 #include <memory>
 #include <vector>
 
+namespace ApprovalTests {
 //! Implementation detail of Approvals::useAsDefaultReporter()
 class DefaultReporterFactory
 {
@@ -34,5 +35,6 @@ public:
     }
 
 };
+}
 
 #endif //APPROVALTESTS_CPP_DEFAULTREPORTERFACTORY_H

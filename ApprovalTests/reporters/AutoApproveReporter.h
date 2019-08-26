@@ -4,6 +4,7 @@
 #include "Reporter.h"
 #include "../FileUtilsSystemSpecific.h"
 
+namespace ApprovalTests {
 class AutoApproveReporter : public Reporter
 {
 public:
@@ -14,5 +15,6 @@ public:
         return true;
     }
 };
+}
 
 #endif

@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 
+namespace ApprovalTests {
 class FirstWorkingReporter : public Reporter
 {
 private:
@@ -31,5 +32,6 @@ public:
         return false;
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_FIRSTWORKINGREPORTER_H

@@ -5,6 +5,7 @@
 #include "AutoApproveReporter.h"
 #include "../FileUtils.h"
 
+namespace ApprovalTests {
 class AutoApproveIfMissingReporter : public Reporter
 {
 public:
@@ -18,5 +19,6 @@ public:
         return AutoApproveReporter().report(received, approved);
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_AUTOAPPROVEIFMISSINGREPORTER_H

@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 
+namespace ApprovalTests {
 class CombinationReporter : public Reporter
 {
 private:
@@ -29,5 +30,6 @@ public:
         return result;
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_COMBINATIONREPORTER_H

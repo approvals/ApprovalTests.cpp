@@ -13,6 +13,7 @@
 
 typedef std::vector<std::string> (*ConvertArgumentsFunctionPointer)(std::vector<std::string>);
 
+namespace ApprovalTests {
 class SystemLauncher : public CommandLauncher
 {
 private:
@@ -64,5 +65,6 @@ public:
         return true;
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_SYSTEMLAUNCHER_H

@@ -6,6 +6,7 @@
 #include "MacReporters.h"
 #include "LinuxReporters.h"
 
+namespace ApprovalTests {
 class DiffReporter : public FirstWorkingReporter
 {
 public:
@@ -19,5 +20,6 @@ public:
     {
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_DIFFREPORTER_H

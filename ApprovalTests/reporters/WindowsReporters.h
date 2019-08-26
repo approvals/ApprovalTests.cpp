@@ -5,6 +5,7 @@
 #include "FirstWorkingReporter.h"
 #include "GenericDiffReporter.h"
 
+namespace ApprovalTests {
 namespace Windows {
     class BeyondCompare3Reporter : public GenericDiffReporter {
     public:
@@ -81,6 +82,7 @@ namespace Windows {
         ) {
         }
     };
+}
 }
 
 #endif //APPROVALTESTS_CPP_WINDOWSREPORTERS_H

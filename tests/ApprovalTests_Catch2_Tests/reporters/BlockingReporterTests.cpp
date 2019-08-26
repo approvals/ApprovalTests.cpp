@@ -4,6 +4,6 @@
 
 TEST_CASE("Ensure this compiles")
 {
-    BlockingReporter::onMachineNamed("THIS MACHINE");
-    BlockingReporter::onMachinesNotNamed("THIS MACHINE");
+    ApprovalTests::BlockingReporter::onMachineNamed("THIS MACHINE");
+    ApprovalTests::BlockingReporter::onMachinesNotNamed("THIS MACHINE");
 }

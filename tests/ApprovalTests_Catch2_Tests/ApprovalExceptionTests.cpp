@@ -24,7 +24,7 @@ TEST_CASE("ApprovalMissingException is thrown")
     // approved file
     bool exception_caught = false;
     try {
-        ApprovalTests::Approvals::verify("foo", QuietReporter());
+        ApprovalTests::Approvals::verify("foo", ApprovalTests::QuietReporter());
     }
     catch (const ApprovalTests::ApprovalMissingException&)
     {

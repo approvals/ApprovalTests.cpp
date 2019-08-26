@@ -5,6 +5,7 @@
 #include "GenericDiffReporter.h"
 #include "FirstWorkingReporter.h"
 
+namespace ApprovalTests {
 namespace Linux
 {
     class KDiff3Reporter : public GenericDiffReporter {
@@ -32,6 +33,7 @@ namespace Linux
         }
     };
 
+}
 }
 
 #endif //APPROVALTESTS_CPP_LINUXREPORTERS_H

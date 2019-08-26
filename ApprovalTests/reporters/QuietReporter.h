@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 
+namespace ApprovalTests {
 // A reporter that does nothing. Failing tests will still fail, but nothing will be launched.
 class QuietReporter : public Reporter
 {
@@ -14,5 +15,6 @@ public:
         return true;
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_QUIETREPORTER_H

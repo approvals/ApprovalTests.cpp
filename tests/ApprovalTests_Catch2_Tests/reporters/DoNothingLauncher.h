@@ -7,7 +7,7 @@
 #include <vector>
 #include <numeric>
 
-class DoNothingLauncher : public CommandLauncher
+class DoNothingLauncher : public ApprovalTests::CommandLauncher
 {
 private:
     std::string cmd;
