@@ -8,6 +8,7 @@
 #include "reporters/Reporter.h"
 #include "Approvals.h"
 
+namespace ApprovalTests {
 class Empty
 {
 public:
@@ -102,7 +103,7 @@ public:
                 }
             }
         }
-        ApprovalTests::Approvals::verify(s.str(), reporter);
+        Approvals::verify(s.str(), reporter);
     }
 
     template <
@@ -362,5 +363,6 @@ public:
         return EmptyContainer{Empty()};
     }
 };
+}
 
 #endif
