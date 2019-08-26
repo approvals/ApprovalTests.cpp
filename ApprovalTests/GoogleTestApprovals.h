@@ -14,7 +14,7 @@
 // <SingleHpp unalterable>
 #include "gtest/gtest.h"
 
-
+namespace ApprovalTests {
 class GoogleTestListener : public ::testing::EmptyTestEventListener
 {
     ApprovalTests::TestName currentTest;
@@ -52,12 +52,13 @@ inline void initializeApprovalTestsForGoogleTests() {
     auto& listeners = testing::UnitTest::GetInstance()->listeners();
     listeners.Append(new GoogleTestListener);
 }
+}
 
 #ifndef APPROVALS_GOOGLETEST_EXISTING_MAIN
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
-    initializeApprovalTestsForGoogleTests();
+    ApprovalTests::initializeApprovalTestsForGoogleTests();
     return RUN_ALL_TESTS();
 }
 #endif //APPROVALS_GOOGLETEST_EXISTING_MAIN

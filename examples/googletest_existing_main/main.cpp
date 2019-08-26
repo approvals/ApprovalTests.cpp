@@ -10,7 +10,7 @@ int main(int argc, char** argv)
     ::testing::InitGoogleTest(&argc, argv);
     
     // 2. Add this line to your main:
-    initializeApprovalTestsForGoogleTests();
+    ApprovalTests::initializeApprovalTestsForGoogleTests();
 
     return RUN_ALL_TESTS();
 }
