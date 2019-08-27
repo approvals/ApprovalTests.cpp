@@ -141,8 +141,7 @@ public:
                 typename Container6::value_type i6,
                 typename Container7::value_type i7,
                 typename Container8::value_type i8,
-                Detail::Empty
-){return converter(i1, i2, i3, i4, i5, i6, i7, i8);},
+                Detail::Empty){return converter(i1, i2, i3, i4, i5, i6, i7, i8);},
             inputs1,
             inputs2,
             inputs3,
@@ -184,8 +183,7 @@ public:
                 typename Container5::value_type i5,
                 typename Container6::value_type i6,
                 typename Container7::value_type i7,
-                Detail::Empty
-){return converter(i1, i2, i3, i4, i5, i6, i7);},
+                Detail::Empty){return converter(i1, i2, i3, i4, i5, i6, i7);},
             inputs1,
             inputs2,
             inputs3,
@@ -223,8 +221,7 @@ public:
                 typename Container4::value_type i4,
                 typename Container5::value_type i5,
                 typename Container6::value_type i6,
-                Detail::Empty
-){return converter(i1, i2, i3, i4, i5, i6);},
+                Detail::Empty){return converter(i1, i2, i3, i4, i5, i6);},
             inputs1,
             inputs2,
             inputs3,
@@ -258,8 +255,7 @@ public:
                 typename Container3::value_type i3,
                 typename Container4::value_type i4,
                 typename Container5::value_type i5,
-                Detail::Empty
-){return converter(i1, i2, i3, i4, i5);},
+                Detail::Empty){return converter(i1, i2, i3, i4, i5);},
             inputs1,
             inputs2,
             inputs3,
@@ -289,8 +285,7 @@ public:
                 typename Container2::value_type i2,
                 typename Container3::value_type i3,
                 typename Container4::value_type i4,
-                Detail::Empty
-){return converter(i1, i2, i3, i4);},
+                Detail::Empty){return converter(i1, i2, i3, i4);},
             inputs1,
             inputs2,
             inputs3,
@@ -316,8 +311,7 @@ public:
             [&](typename Container1::value_type i1,
                 typename Container2::value_type i2,
                 typename Container3::value_type i3,
-                Detail::Empty
-){return converter(i1, i2, i3);},
+                Detail::Empty){return converter(i1, i2, i3);},
             inputs1,
             inputs2,
             inputs3,
@@ -339,8 +333,7 @@ public:
         verifyAllCombinations(
             [&](typename Container1::value_type i1,
                 typename Container2::value_type i2,
-                Detail::Empty
-){return converter(i1, i2);},
+                Detail::Empty){return converter(i1, i2);},
             inputs1,
             inputs2,
             empty(),
@@ -358,8 +351,7 @@ public:
     {
         verifyAllCombinations(
             [&](typename Container1::value_type i1,
-                Detail::Empty
-){return converter(i1);},
+                Detail::Empty){return converter(i1);},
             inputs1,
             empty(),
             reporter);
