@@ -65,8 +65,7 @@ public:
         const Container9& inputs9,
         const Reporter& reporter = DefaultReporter())
     {
-        Detail::Empty
- empty;
+        Detail::Empty empty;
         std::stringstream s;
         for (auto input1 : inputs1)
         {
