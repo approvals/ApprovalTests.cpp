@@ -12,6 +12,7 @@ namespace ApprovalTests {
 
 typedef std::function<std::shared_ptr<ApprovalNamer>()> NamerCreator;
 
+namespace Detail {
 //! Implementation detail of Approvals::useAsDefaultNamer()
 class DefaultNamerFactory
 {
@@ -38,6 +39,7 @@ public:
     }
 
 };
+}
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTNAMERFACTORY_H

@@ -24,7 +24,7 @@ private:
 public:
     static std::shared_ptr<ApprovalNamer> getDefaultNamer()
     {
-        return DefaultNamerFactory::getDefaultNamer()();
+        return Detail::DefaultNamerFactory::getDefaultNamer()();
     }
 
     static void verify(std::string contents, const Reporter &reporter = DefaultReporter()) {
@@ -104,8 +104,8 @@ public:
     }
 
     static void verifyExistingFile(const std::string filePath, const Reporter &reporter = DefaultReporter()) {
-        ExistingFile writer(filePath);
-        ExistingFileNamer namer(filePath);
+        Detail::ExistingFile writer(filePath);
+        Detail::ExistingFileNamer namer(filePath);
         FileApprover::verify(namer, writer, reporter);
     }
 

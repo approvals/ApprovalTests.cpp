@@ -5,6 +5,7 @@
 #include "DefaultNamerFactory.h"
 
 namespace ApprovalTests {
+namespace Detail {
 class ExistingFileNamer: public ApprovalNamer{
     std::string filePath;
 public:
@@ -19,6 +20,7 @@ public:
     }
 
 };
+}
 }
 
 #endif //APPROVALTESTS_CPP_EXISTINGFILENAMER_H
