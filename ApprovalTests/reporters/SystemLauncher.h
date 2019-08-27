@@ -11,9 +11,9 @@
 #include <numeric>
 #include "CommandLauncher.h"
 
+namespace ApprovalTests {
 typedef std::vector<std::string> (*ConvertArgumentsFunctionPointer)(std::vector<std::string>);
 
-namespace ApprovalTests {
 class SystemLauncher : public CommandLauncher
 {
 private:
