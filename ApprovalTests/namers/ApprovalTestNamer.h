@@ -17,7 +17,7 @@ public:
     }
 
     void setFileName(const std::string &file) {
-        fileName = ApprovalTests::SystemUtils::checkFilenameCase(file);
+        fileName = SystemUtils::checkFilenameCase(file);
     }
 
     std::vector<std::string> sections;
@@ -122,7 +122,7 @@ R"(* Welcome to Approval Tests.
 
     std::string getSourceFileName() const {
         auto file = getCurrentTest().getFileName();
-        auto start = file.rfind(ApprovalTests::SystemUtils::getDirectorySeparator()) + 1;
+        auto start = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto end = file.rfind(".");
         auto fileName = file.substr(start, end - start);
         return convertToFileName(fileName);
@@ -130,12 +130,12 @@ R"(* Welcome to Approval Tests.
 
     std::string getDirectory() {
         auto file = getCurrentTest().getFileName();
-        auto end = file.rfind(ApprovalTests::SystemUtils::getDirectorySeparator()) + 1;
+        auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto directory = file.substr(0, end);
         if ( ! testConfiguration().subdirectory.empty() )
         {
-            directory += testConfiguration().subdirectory + ApprovalTests::SystemUtils::getDirectorySeparator();
-            ApprovalTests::SystemUtils::ensureDirectoryExists(directory);
+            directory += testConfiguration().subdirectory + SystemUtils::getDirectorySeparator();
+            SystemUtils::ensureDirectoryExists(directory);
         }
         return directory;
     }

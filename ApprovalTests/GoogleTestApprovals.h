@@ -17,11 +17,11 @@
 namespace ApprovalTests {
 class GoogleTestListener : public ::testing::EmptyTestEventListener
 {
-    ApprovalTests::TestName currentTest;
+    TestName currentTest;
 public:
     bool isDuplicate(std::string testFileNameWithExtension, std::string testCaseName)
     {
-        for( auto check : ApprovalTests::GoogleCustomizationsFactory::getEquivalencyChecks())
+        for( auto check : GoogleCustomizationsFactory::getEquivalencyChecks())
         {
             if (check(testFileNameWithExtension, testCaseName))
             {
@@ -44,7 +44,7 @@ public:
             currentTest.sections.push_back(testInfo.name());
         }
         
-        ApprovalTests::ApprovalTestNamer::currentTest(&currentTest);
+        ApprovalTestNamer::currentTest(&currentTest);
     }
 };
 

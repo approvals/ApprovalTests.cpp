@@ -36,12 +36,12 @@ public:
     bool exists(const std::string& command)
     {
         bool foundByWhich = false;
-        if (!ApprovalTests::SystemUtils::isWindowsOs()) {
+        if (!SystemUtils::isWindowsOs()) {
             std::string which = "which " + command + " > /dev/null 2>&1";
             int result = system(which.c_str());
             foundByWhich = (result == 0);
         }
-        return  foundByWhich || ApprovalTests::FileUtils::fileExists(command);
+        return  foundByWhich || FileUtils::fileExists(command);
 
     }
 
@@ -60,7 +60,7 @@ public:
         argv = convertArgumentsForSystemLaunching(argv);
 
         std::string command = std::accumulate(argv.begin(), argv.end(), std::string(""), [](std::string a, std::string b) {return a + " " + "\"" + b + "\""; });
-        std::string launch = ApprovalTests::SystemUtils::isWindowsOs() ? ("start \"\" " + command) : (command + " &");
+        std::string launch = SystemUtils::isWindowsOs() ? ("start \"\" " + command) : (command + " &");
         system(launch.c_str());
         return true;
     }

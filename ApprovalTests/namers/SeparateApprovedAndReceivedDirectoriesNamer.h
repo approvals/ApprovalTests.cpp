@@ -13,11 +13,11 @@ public:
     std::string getFullFileNameWithExtraDirectory(std::string approved, std::string extensionWithDot)
     {
         std::string outputDirectory = getDirectory() +  approved;
-        ApprovalTests::SystemUtils::ensureDirectoryExists(outputDirectory);
+        SystemUtils::ensureDirectoryExists(outputDirectory);
     
         std::string outputFile = getFileName() + "." + getTestName() + extensionWithDot;
     
-        return outputDirectory + ApprovalTests::SystemUtils::getDirectorySeparator() + outputFile;
+        return outputDirectory + SystemUtils::getDirectorySeparator() + outputFile;
     }
     
     virtual std::string getApprovedFile(std::string extensionWithDot) override
@@ -32,7 +32,7 @@ public:
     
     static DefaultNamerDisposer useAsDefaultNamer()
     {
-        return ApprovalTests::Approvals::useAsDefaultNamer([](){return std::make_shared<SeparateApprovedAndReceivedDirectoriesNamer>();});
+        return Approvals::useAsDefaultNamer([](){return std::make_shared<SeparateApprovedAndReceivedDirectoriesNamer>();});
     }
 
 };

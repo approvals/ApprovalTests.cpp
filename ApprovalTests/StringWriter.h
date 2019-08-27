@@ -7,7 +7,7 @@
 #include "ApprovalWriter.h"
 
 namespace ApprovalTests {
-class StringWriter : public ApprovalTests::ApprovalWriter
+class StringWriter : public ApprovalWriter
 {
 private:
     std::string s;

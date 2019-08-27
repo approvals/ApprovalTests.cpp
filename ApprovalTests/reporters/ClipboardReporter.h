@@ -22,7 +22,7 @@ public:
 
     virtual bool report(std::string received, std::string approved) const override
     {
-        copyToClipboard(getCommandLineFor(received, approved, ApprovalTests::SystemUtils::isWindowsOs()));
+        copyToClipboard(getCommandLineFor(received, approved, SystemUtils::isWindowsOs()));
         return true;
     }
 
@@ -43,7 +43,7 @@ public:
          Under Windows/cygwin, use /dev/clipboard or clip for newer versions of Windows (at least Windows 10).
          */
 
-        const std::string clipboardCommand = ApprovalTests::SystemUtils::isWindowsOs() ? "clip" : "pbclip";
+        const std::string clipboardCommand = SystemUtils::isWindowsOs() ? "clip" : "pbclip";
         auto cmd = std::string("echo ") + newClipboard + " | " + clipboardCommand;
         system(cmd.c_str());
     }

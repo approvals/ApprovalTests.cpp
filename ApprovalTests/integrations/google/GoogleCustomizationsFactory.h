@@ -23,7 +23,7 @@ private:
 
         auto exactNameMatching = [](std::string testFileNameWithExtension, std::string testCaseName)
         {
-            return ApprovalTests::StringUtils::contains(testFileNameWithExtension, testCaseName + ".");
+            return StringUtils::contains(testFileNameWithExtension, testCaseName + ".");
         };
         container->push_back( exactNameMatching );
         return container;

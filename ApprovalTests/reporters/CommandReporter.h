@@ -19,7 +19,7 @@ protected:
 
 public:
     bool report(std::string received, std::string approved) const override {
-        ApprovalTests::FileUtils::ensureFileExists(approved);
+        FileUtils::ensureFileExists(approved);
         return l->launch(getFullCommand(received, approved));
     }
 

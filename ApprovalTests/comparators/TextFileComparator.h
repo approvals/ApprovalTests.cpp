@@ -4,7 +4,7 @@
 #include "ApprovalComparator.h"
 
 namespace ApprovalTests {
-class TextFileComparator : public ApprovalTests::ApprovalComparator
+class TextFileComparator : public ApprovalComparator
 {
 public:
     static std::ifstream::int_type getNextRelevantCharacter(std::ifstream& astream)

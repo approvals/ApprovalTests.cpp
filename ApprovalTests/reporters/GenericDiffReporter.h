@@ -23,7 +23,7 @@ public:
 
     void checkForCygwin()
     {
-        if ( ApprovalTests::SystemUtils::isCygwin())
+        if ( SystemUtils::isCygwin())
         {
             launcher.setConvertArgumentsForSystemLaunchingFunction(convertForCygwin);
         }
@@ -31,7 +31,7 @@ public:
 
     static std::vector<std::string> convertForCygwin(std::vector<std::string> argv)
     {
-        if (! ApprovalTests::SystemUtils::isCygwin())
+        if (! SystemUtils::isCygwin())
         {
             return argv;
         }

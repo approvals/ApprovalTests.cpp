@@ -7,12 +7,12 @@
 #include "../FileUtils.h"
 
 namespace ApprovalTests {
-class ExistingFile : public ApprovalTests::ApprovalWriter{
+class ExistingFile : public ApprovalWriter{
     std::string filePath;
 public:
     ExistingFile(std::string filePath) : filePath(filePath){}
     virtual std::string getFileExtensionWithDot() override {
-        return ApprovalTests::FileUtils::getExtensionWithDot(filePath);
+        return FileUtils::getExtensionWithDot(filePath);
     }
     virtual void write(std::string /*path*/) override {
         // do nothing

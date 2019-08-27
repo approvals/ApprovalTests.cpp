@@ -51,7 +51,7 @@ namespace {
     };
 
     struct DocTestApprovalListener : AbstractReporter {
-        ApprovalTests::TestName currentTest;
+        TestName currentTest;
 
         // constructor has to accept the ContextOptions by ref as a single argument
         DocTestApprovalListener(const doctest::ContextOptions & /*in*/) {
@@ -61,7 +61,7 @@ namespace {
 
             currentTest.sections.push_back(testInfo.m_name);
             currentTest.setFileName(testInfo.m_file);
-            ApprovalTests::ApprovalTestNamer::currentTest(&currentTest);
+            ApprovalTestNamer::currentTest(&currentTest);
         }
 
         void test_case_end(const doctest::CurrentTestCaseStats & /*in*/) override {

@@ -43,15 +43,15 @@ struct DiffInfo
 
             for(const auto& envVar : envVars)
             {
-                std::string envVarValue = ApprovalTests::SystemUtils::safeGetEnv(envVar);
+                std::string envVarValue = SystemUtils::safeGetEnv(envVar);
                 if (envVarValue.empty())
                 {
                     continue;
                 }
                 envVarValue += '\\';
 
-                auto result1 = ApprovalTests::StringUtils::replaceAll(result, "{ProgramFiles}", envVarValue);
-                if (ApprovalTests::FileUtils::fileExists(result1))
+                auto result1 = StringUtils::replaceAll(result, "{ProgramFiles}", envVarValue);
+                if (FileUtils::fileExists(result1))
                 {
                     return result1;
                 }
