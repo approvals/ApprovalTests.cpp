@@ -359,12 +359,10 @@ public:
     // Implementation details: these are left public to allow users
     // to write additional verifyAllCombinations overloads that take more
     // than 9 arguments - unlikely though that may be.
-    using EmptyContainer = std::vector<Detail::Empty
->;
+    using EmptyContainer = std::vector<Detail::Empty>;
     static EmptyContainer empty()
     {
-        return EmptyContainer{Detail::Empty
-()};
+        return EmptyContainer{Detail::Empty()};
     }
 };
 }
