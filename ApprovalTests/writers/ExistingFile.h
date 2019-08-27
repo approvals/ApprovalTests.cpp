@@ -7,7 +7,6 @@
 #include "../FileUtils.h"
 
 namespace ApprovalTests {
-namespace Detail {
 class ExistingFile : public ApprovalWriter{
     std::string filePath;
 public:
@@ -22,7 +21,6 @@ public:
         // do nothing
     }
 };
-}
 }
 
 #endif

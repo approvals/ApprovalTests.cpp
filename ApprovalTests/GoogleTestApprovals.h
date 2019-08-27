@@ -17,7 +17,7 @@
 namespace ApprovalTests {
 class GoogleTestListener : public ::testing::EmptyTestEventListener
 {
-    Detail::TestName currentTest;
+    TestName currentTest;
 public:
     bool isDuplicate(std::string testFileNameWithExtension, std::string testCaseName)
     {

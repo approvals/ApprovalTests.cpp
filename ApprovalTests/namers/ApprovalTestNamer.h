@@ -10,7 +10,6 @@
 #include "../SystemUtils.h"
 
 namespace ApprovalTests {
-namespace Detail {
 class TestName {
 public:
     const std::string& getFileName() const {
@@ -30,7 +29,6 @@ class TestConfiguration {
 public:
     std::string subdirectory;
 };
-}
 
 class ApprovalTestNamer : public ApprovalNamer {
 private:
@@ -75,7 +73,7 @@ public:
     }
 
 // <SingleHpp unalterable>
-    static Detail::TestName &getCurrentTest()
+    static TestName &getCurrentTest()
     {
         try
         {
@@ -142,8 +140,8 @@ R"(* Welcome to Approval Tests.
         return directory;
     }
 
-    APPROVAL_TESTS_MACROS_STATIC(Detail::TestName, currentTest, NULL)
-    APPROVAL_TESTS_MACROS_STATIC(Detail::TestConfiguration, testConfiguration, new Detail::TestConfiguration)
+    APPROVAL_TESTS_MACROS_STATIC(TestName, currentTest, NULL)
+    APPROVAL_TESTS_MACROS_STATIC(TestConfiguration, testConfiguration, new TestConfiguration)
 
     virtual std::string getApprovedFile(std::string extensionWithDot) {
 

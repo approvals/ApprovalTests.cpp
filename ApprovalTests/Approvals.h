@@ -24,7 +24,7 @@ private:
 public:
     static std::shared_ptr<ApprovalNamer> getDefaultNamer()
     {
-        return Detail::DefaultNamerFactory::getDefaultNamer()();
+        return DefaultNamerFactory::getDefaultNamer()();
     }
 
     static void verify(std::string contents, const Reporter &reporter = DefaultReporter()) {
@@ -104,29 +104,29 @@ public:
     }
 
     static void verifyExistingFile(const std::string filePath, const Reporter &reporter = DefaultReporter()) {
-        Detail::ExistingFile writer(filePath);
-        Detail::ExistingFileNamer namer(filePath);
+        ExistingFile writer(filePath);
+        ExistingFileNamer namer(filePath);
         FileApprover::verify(namer, writer, reporter);
     }
 
-    static Detail::SubdirectoryDisposer useApprovalsSubdirectory(std::string subdirectory = "approval_tests")
+    static SubdirectoryDisposer useApprovalsSubdirectory(std::string subdirectory = "approval_tests")
     {
-        return Detail::SubdirectoryDisposer(subdirectory);
+        return SubdirectoryDisposer(subdirectory);
     }
 
-    static Detail::DefaultReporterDisposer useAsDefaultReporter(const std::shared_ptr<Reporter>& reporter)
+    static DefaultReporterDisposer useAsDefaultReporter(const std::shared_ptr<Reporter>& reporter)
     {
-        return Detail::DefaultReporterDisposer(reporter);
+        return DefaultReporterDisposer(reporter);
     }
 
-    static Detail::FrontLoadedReporterDisposer useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
+    static FrontLoadedReporterDisposer useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
     {
-        return Detail::FrontLoadedReporterDisposer(reporter);
+        return FrontLoadedReporterDisposer(reporter);
     }
 
-    static Detail::DefaultNamerDisposer useAsDefaultNamer(NamerCreator namerCreator)
+    static DefaultNamerDisposer useAsDefaultNamer(NamerCreator namerCreator)
     {
-        return Detail::DefaultNamerDisposer(namerCreator);
+        return DefaultNamerDisposer(namerCreator);
     }
 
 };

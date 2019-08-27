@@ -12,7 +12,7 @@ class DefaultReporter : public Reporter
 public:
     virtual bool report(std::string received, std::string approved) const override
     {
-        return Detail::DefaultReporterFactory::getDefaultReporter()->report(received, approved);
+        return DefaultReporterFactory::getDefaultReporter()->report(received, approved);
     }
 };
 }

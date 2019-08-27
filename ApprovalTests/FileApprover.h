@@ -79,7 +79,7 @@ public:
     static void
     reportAfterTryingFrontLoadedReporter(const std::string &receivedPath, const std::string &approvedPath, const Reporter &r)
     {
-        auto tryFirst = Detail::FrontLoadedReporterFactory::getFrontLoadedReporter();
+        auto tryFirst = FrontLoadedReporterFactory::getFrontLoadedReporter();
         if (!tryFirst->report(receivedPath, approvedPath))
         {
             r.report(receivedPath, approvedPath);

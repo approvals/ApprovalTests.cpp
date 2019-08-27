@@ -4,7 +4,6 @@
 #include "DefaultReporterFactory.h"
 
 namespace ApprovalTests {
-namespace Detail {
 //! Implementation detail of Approvals::useAsDefaultReporter()
 class APPROVAL_TESTS_NO_DISCARD DefaultReporterDisposer
 {
@@ -22,7 +21,6 @@ public:
         DefaultReporterFactory::setDefaultReporter(previous_result);
     }
 };
-}
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTREPORTERDISPOSER_H

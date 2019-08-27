@@ -9,7 +9,6 @@
 #include <memory>
 
 namespace ApprovalTests {
-namespace Detail {
 //! Implementation detail of Approvals::useAsFrontLoadedReporter()
 class FrontLoadedReporterFactory
 {
@@ -34,7 +33,6 @@ public:
         frontLoadedReporterContainer().at(0) = reporter;
     }
 };
-}
 }
 
 #endif //APPROVALTESTS_CPP_FRONTLOADEDREPORTERFACTORY_H

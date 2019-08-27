@@ -4,7 +4,6 @@
 #include "Reporter.h"
 
 namespace ApprovalTests {
-namespace Detail {
 //! Implementation detail of Approvals::useAsFrontLoadedReporter()
 class DefaultFrontLoadedReporter : public Reporter
 {
@@ -14,7 +13,6 @@ public:
         return false;
     }
 };
-}
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTFRONTLOADEDREPORTER_H

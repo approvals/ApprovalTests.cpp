@@ -5,7 +5,6 @@
 #include "../Macros.h"
 
 namespace ApprovalTests {
-namespace Detail {
 //! Implementation detail of Approvals::useAsDefaultNamer()
 class APPROVAL_TESTS_NO_DISCARD DefaultNamerDisposer
 {
@@ -23,7 +22,6 @@ public:
         DefaultNamerFactory::setDefaultNamer(previous_result);
     }
 };
-}
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTNAMERDISPOSER_H
