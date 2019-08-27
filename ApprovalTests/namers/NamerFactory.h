@@ -9,9 +9,9 @@
 namespace ApprovalTests {
 struct NamerFactory
 {
-    static inline SectionNameDisposer appendToOutputFilename(std::string sectionName)
+    static inline Detail::SectionNameDisposer appendToOutputFilename(std::string sectionName)
     {
-        return SectionNameDisposer(ApprovalTestNamer::currentTest(), sectionName);
+        return Detail::SectionNameDisposer(ApprovalTestNamer::currentTest(), sectionName);
     }
 };
 }

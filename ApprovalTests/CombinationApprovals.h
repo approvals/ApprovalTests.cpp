@@ -9,6 +9,7 @@
 #include "Approvals.h"
 
 namespace ApprovalTests {
+namespace Detail {
 class Empty
 {
 public:
@@ -27,6 +28,7 @@ public:
     }
 
 };
+}
 
 // Helper to prevent compilation failure from user-supplied reporter being treated as a container:
 template<typename T>
@@ -63,7 +65,8 @@ public:
         const Container9& inputs9,
         const Reporter& reporter = DefaultReporter())
     {
-        Empty empty;
+        Detail::Empty
+ empty;
         std::stringstream s;
         for (auto input1 : inputs1)
         {
@@ -138,7 +141,8 @@ public:
                 typename Container6::value_type i6,
                 typename Container7::value_type i7,
                 typename Container8::value_type i8,
-                Empty){return converter(i1, i2, i3, i4, i5, i6, i7, i8);},
+                Detail::Empty
+){return converter(i1, i2, i3, i4, i5, i6, i7, i8);},
             inputs1,
             inputs2,
             inputs3,
@@ -180,7 +184,8 @@ public:
                 typename Container5::value_type i5,
                 typename Container6::value_type i6,
                 typename Container7::value_type i7,
-                Empty){return converter(i1, i2, i3, i4, i5, i6, i7);},
+                Detail::Empty
+){return converter(i1, i2, i3, i4, i5, i6, i7);},
             inputs1,
             inputs2,
             inputs3,
@@ -218,7 +223,8 @@ public:
                 typename Container4::value_type i4,
                 typename Container5::value_type i5,
                 typename Container6::value_type i6,
-                Empty){return converter(i1, i2, i3, i4, i5, i6);},
+                Detail::Empty
+){return converter(i1, i2, i3, i4, i5, i6);},
             inputs1,
             inputs2,
             inputs3,
@@ -252,7 +258,8 @@ public:
                 typename Container3::value_type i3,
                 typename Container4::value_type i4,
                 typename Container5::value_type i5,
-                Empty){return converter(i1, i2, i3, i4, i5);},
+                Detail::Empty
+){return converter(i1, i2, i3, i4, i5);},
             inputs1,
             inputs2,
             inputs3,
@@ -282,7 +289,8 @@ public:
                 typename Container2::value_type i2,
                 typename Container3::value_type i3,
                 typename Container4::value_type i4,
-                Empty){return converter(i1, i2, i3, i4);},
+                Detail::Empty
+){return converter(i1, i2, i3, i4);},
             inputs1,
             inputs2,
             inputs3,
@@ -308,7 +316,8 @@ public:
             [&](typename Container1::value_type i1,
                 typename Container2::value_type i2,
                 typename Container3::value_type i3,
-                Empty){return converter(i1, i2, i3);},
+                Detail::Empty
+){return converter(i1, i2, i3);},
             inputs1,
             inputs2,
             inputs3,
@@ -330,7 +339,8 @@ public:
         verifyAllCombinations(
             [&](typename Container1::value_type i1,
                 typename Container2::value_type i2,
-                Empty){return converter(i1, i2);},
+                Detail::Empty
+){return converter(i1, i2);},
             inputs1,
             inputs2,
             empty(),
@@ -348,7 +358,8 @@ public:
     {
         verifyAllCombinations(
             [&](typename Container1::value_type i1,
-                Empty){return converter(i1);},
+                Detail::Empty
+){return converter(i1);},
             inputs1,
             empty(),
             reporter);
@@ -357,10 +368,12 @@ public:
     // Implementation details: these are left public to allow users
     // to write additional verifyAllCombinations overloads that take more
     // than 9 arguments - unlikely though that may be.
-    using EmptyContainer = std::vector<Empty>;
+    using EmptyContainer = std::vector<Detail::Empty
+>;
     static EmptyContainer empty()
     {
-        return EmptyContainer{Empty()};
+        return EmptyContainer{Detail::Empty
+()};
     }
 };
 }

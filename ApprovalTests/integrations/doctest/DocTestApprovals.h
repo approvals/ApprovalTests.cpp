@@ -51,7 +51,7 @@ namespace {
     };
 
     struct DocTestApprovalListener : AbstractReporter {
-        TestName currentTest;
+        Detail::TestName currentTest;
 
         // constructor has to accept the ContextOptions by ref as a single argument
         DocTestApprovalListener(const doctest::ContextOptions & /*in*/) {

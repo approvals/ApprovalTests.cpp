@@ -12,7 +12,7 @@
 
 //namespace ApprovalTests {
 struct Catch2ApprovalListener : Catch::TestEventListenerBase {
-    ApprovalTests::TestName currentTest;
+    ApprovalTests::Detail::TestName currentTest;
     using TestEventListenerBase::TestEventListenerBase; // This using allows us to use all base-class constructors
     virtual void testCaseStarting(Catch::TestCaseInfo const &testInfo) override {
 

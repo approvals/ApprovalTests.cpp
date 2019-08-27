@@ -4,6 +4,7 @@
 #include "ApprovalTestNamer.h"
 
 namespace ApprovalTests {
+namespace Detail {
 class APPROVAL_TESTS_NO_DISCARD SectionNameDisposer
 {
 public:
@@ -23,6 +24,7 @@ public:
 private:
     TestName& currentTest;
 };
+}
 }
 
 #endif //APPROVALTESTS_CPP_SECTIONNAMEDISPOSER_H

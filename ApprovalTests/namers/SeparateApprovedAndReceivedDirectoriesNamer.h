@@ -30,7 +30,7 @@ public:
         return getFullFileNameWithExtraDirectory("received", extensionWithDot);
     }
     
-    static DefaultNamerDisposer useAsDefaultNamer()
+    static Detail::DefaultNamerDisposer useAsDefaultNamer()
     {
         return Approvals::useAsDefaultNamer([](){return std::make_shared<SeparateApprovedAndReceivedDirectoriesNamer>();});
     }

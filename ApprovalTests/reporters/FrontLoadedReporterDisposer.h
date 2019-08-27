@@ -5,6 +5,7 @@
 #include "FrontLoadedReporterFactory.h"
 
 namespace ApprovalTests {
+namespace Detail {
 //! Implementation detail of Approvals::useAsFrontLoadedReporter()
 class APPROVAL_TESTS_NO_DISCARD FrontLoadedReporterDisposer
 {
@@ -23,6 +24,7 @@ public:
     }
 
 };
+}
 }
 
 #endif //APPROVALTESTS_CPP_FRONTLOADEDREPORTERDISPOSER_H

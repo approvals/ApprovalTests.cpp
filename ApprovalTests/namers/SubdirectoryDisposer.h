@@ -6,6 +6,7 @@
 #include <string>
 
 namespace ApprovalTests {
+namespace Detail {
 //! Implementation detail of Approvals::useApprovalsSubdirectory()
 class APPROVAL_TESTS_NO_DISCARD SubdirectoryDisposer
 {
@@ -23,6 +24,7 @@ public:
         ApprovalTestNamer::testConfiguration().subdirectory = previous_result;
     }
 };
+}
 }
 
 #endif //APPROVALTESTS_CPP_SUBDIRECTORYDISPOSER_H

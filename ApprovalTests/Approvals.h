@@ -109,24 +109,24 @@ public:
         FileApprover::verify(namer, writer, reporter);
     }
 
-    static SubdirectoryDisposer useApprovalsSubdirectory(std::string subdirectory = "approval_tests")
+    static Detail::SubdirectoryDisposer useApprovalsSubdirectory(std::string subdirectory = "approval_tests")
     {
-        return SubdirectoryDisposer(subdirectory);
+        return Detail::SubdirectoryDisposer(subdirectory);
     }
 
-    static DefaultReporterDisposer useAsDefaultReporter(const std::shared_ptr<Reporter>& reporter)
+    static Detail::DefaultReporterDisposer useAsDefaultReporter(const std::shared_ptr<Reporter>& reporter)
     {
-        return DefaultReporterDisposer(reporter);
+        return Detail::DefaultReporterDisposer(reporter);
     }
 
-    static FrontLoadedReporterDisposer useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
+    static Detail::FrontLoadedReporterDisposer useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
     {
-        return FrontLoadedReporterDisposer(reporter);
+        return Detail::FrontLoadedReporterDisposer(reporter);
     }
 
-    static DefaultNamerDisposer useAsDefaultNamer(NamerCreator namerCreator)
+    static Detail::DefaultNamerDisposer useAsDefaultNamer(NamerCreator namerCreator)
     {
-        return DefaultNamerDisposer(namerCreator);
+        return Detail::DefaultNamerDisposer(namerCreator);
     }
 
 };
