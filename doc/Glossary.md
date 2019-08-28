@@ -22,6 +22,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Convention over Configuration](#convention-over-configuration)
   * [Custom Asserts](#custom-asserts)
   * [Diff Tool](#diff-tool)
+  * [Disposable Objects](#disposable-objects)
   * [Edge Case](#edge-case)
   * [Happy Path](#happy-path)
   * [Kata](#kata)
@@ -29,6 +30,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Mutation Testing](#mutation-testing)
   * [Namer](#namer)
   * [Principle of Least Surprise](#principle-of-least-surprise)
+  * [RAII (Resource acquisition is initialization)](#raii-resource-acquisition-is-initialization)
   * [Received File](#received-file)
   * [Reporter](#reporter)
   * [Scrubber](#scrubber)
@@ -72,6 +74,12 @@ Instead of asking the user to specify everything, we make assumptions based on c
 
 ## Diff Tool
 
+## Disposable Objects
+
+Objects that implement the [RAII](#raii-resource-acquisition-is-initialization) pattern.
+
+See [Disposable Objects](/doc/DisposableObjects.md#top).
+
 ## Edge Case
 
 ## Happy Path
@@ -85,6 +93,14 @@ Instead of asking the user to specify everything, we make assumptions based on c
 ## Namer
 
 ## Principle of Least Surprise
+
+## RAII (Resource acquisition is initialization)
+
+This is a pattern where your object constructor opens a resource, such as memory, and your object destructor closes the resource.
+
+This is also known as "Scope-based lifetime management".
+
+See [more here](https://en.cppreference.com/w/cpp/language/raii).
 
 ## Received File
 

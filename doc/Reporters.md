@@ -88,7 +88,7 @@ auto defaultReporterDisposer = ApprovalTests::Approvals::useAsDefaultReporter(st
 <sup>[snippet source](/tests/Catch2_Tests/main.cpp#L16-L20) / [anchor](#snippet-use_as_default_reporter_in_main)</sup>
 <!-- endsnippet -->
 
-The return value will restore the original reporter when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
+The return value is ["Disposable"](/doc/DisposableObjects.md#top), meaning it will restore the original reporter when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
 
 ## Front Loaded Reporters
 

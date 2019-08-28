@@ -29,7 +29,7 @@ At present, the default Reporter is the DiffReporter. Whenever you call Approval
 
 snippet: use_as_default_reporter_in_main
 
-The return value will restore the original reporter when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
+The return value is ["Disposable"](/doc/DisposableObjects.md#top), meaning it will restore the original reporter when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
 
 ## Front Loaded Reporters
 

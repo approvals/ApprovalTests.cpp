@@ -5,6 +5,7 @@ add_executable(${PROJECT_NAME}
     namers/DocTestNamerTests.cpp
     documentation/DocTestDocumentationSamples.cpp
     namers/NamerTests.cpp
+    documentation/DisposableSamples.cpp
     )
 target_link_libraries(${PROJECT_NAME} ApprovalTests doctest)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
