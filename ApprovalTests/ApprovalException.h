@@ -13,7 +13,7 @@ private:
 public:
     ApprovalException( const std::string& msg ) : message( msg ) {}
 
-    virtual const char *what() const throw() override
+    virtual const char *what() const noexcept override
     {
         return message.c_str();
     }
