@@ -74,7 +74,6 @@ static Sandwich createSandwichForTest()
 
 std::ostream &operator<<(std::ostream&os, const Sandwich& sandwich)
 {
-    APPROVAL_TESTS_UNUSED(sandwich);
     os << "sandwich {\n";
     os << "    bread: \"" << sandwich.bread << "\",\n";
     os << "    condiments: " << sandwich.condiments.toString() << ",\n";
