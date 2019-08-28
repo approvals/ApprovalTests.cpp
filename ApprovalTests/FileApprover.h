@@ -11,8 +11,8 @@
 #include "namers/ApprovalNamer.h"
 #include "comparators/ApprovalComparator.h"
 #include "comparators/TextFileComparator.h"
-#include "FileUtils.h"
-#include "Macros.h"
+#include "ApprovalTests/utilities/FileUtils.h"
+#include "ApprovalTests/utilities/Macros.h"
 
 namespace ApprovalTests {
 class FileApprover {

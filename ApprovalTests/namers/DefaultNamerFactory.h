@@ -3,7 +3,7 @@
 
 #include "ApprovalNamer.h"
 #include "ApprovalTestNamer.h"
-#include "../Macros.h"
+#include "ApprovalTests/utilities/Macros.h"
 
 #include <memory>
 #include <vector>

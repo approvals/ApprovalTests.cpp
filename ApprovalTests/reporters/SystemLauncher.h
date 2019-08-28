@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string>
 #include "../SystemUtils.h"
-#include "../FileUtils.h"
+#include "ApprovalTests/utilities/FileUtils.h"
 #include <vector>
 #include <numeric>
 #include "CommandLauncher.h"

@@ -3,7 +3,7 @@
 
 #include "Reporter.h"
 #include "AutoApproveReporter.h"
-#include "../FileUtils.h"
+#include "ApprovalTests/utilities/FileUtils.h"
 
 namespace ApprovalTests {
 class AutoApproveIfMissingReporter : public Reporter

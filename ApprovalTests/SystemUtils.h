@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_SYSTEMUTILS_H
 #define APPROVALTESTS_CPP_SYSTEMUTILS_H
 
-#include "WinMinGWUtils.h"
+#include "ApprovalTests/utilities/WinMinGWUtils.h"
 // <SingleHpp unalterable>
 #ifdef _WIN32
     // ReSharper disable once CppUnusedIncludeDirective
@@ -14,9 +14,9 @@
 #endif
 // </SingleHpp>
 
-#include "FileUtils.h"
-#include "StringUtils.h"
-#include "Macros.h"
+#include "ApprovalTests/utilities/FileUtils.h"
+#include "ApprovalTests/utilities/StringUtils.h"
+#include "ApprovalTests/utilities/Macros.h"
 
 #include <stdexcept>
 

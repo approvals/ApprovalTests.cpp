@@ -7,7 +7,7 @@
 #include "ApprovalTests/reporters/CombinationReporter.h"
 #include "ApprovalTests/reporters/WindowsReporters.h"
 #include "ApprovalTests/Approvals.h"
-#include "ApprovalTests/StringUtils.h"
+#include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/FileApprover.h"
 
 TEST_CASE("Reporters Launch Command") {

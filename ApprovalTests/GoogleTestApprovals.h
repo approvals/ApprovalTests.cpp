@@ -3,7 +3,7 @@
 
 #include "namers/ApprovalTestNamer.h"
 #include "integrations/google/GoogleCustomizationsFactory.h"
-#include "StringUtils.h"
+#include "ApprovalTests/utilities/StringUtils.h"
 
 #ifdef APPROVALS_GOOGLETEST_EXISTING_MAIN
 #define APPROVALS_GOOGLETEST

@@ -4,7 +4,7 @@
 
 #include <string>
 #include "../ApprovalWriter.h"
-#include "../FileUtils.h"
+#include "ApprovalTests/utilities/FileUtils.h"
 
 namespace ApprovalTests {
 class ExistingFile : public ApprovalWriter{

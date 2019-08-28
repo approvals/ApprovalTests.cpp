@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_FILEUTILSSYSTEMSPECIFIC_H
 #define APPROVALTESTS_CPP_FILEUTILSSYSTEMSPECIFIC_H
 
-#include "SystemUtils.h"
+#include "ApprovalTests/SystemUtils.h"
 
 namespace ApprovalTests {
 class FileUtilsSystemSpecific

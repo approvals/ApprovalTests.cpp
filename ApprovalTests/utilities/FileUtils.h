@@ -7,7 +7,7 @@
 
 #include <string>
 #include <sys/stat.h>
-#include "StringWriter.h"
+#include "ApprovalTests/StringWriter.h"
 #include <sys/types.h>
 
 namespace ApprovalTests {

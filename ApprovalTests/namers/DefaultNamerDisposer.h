@@ -2,7 +2,7 @@
 #define APPROVALTESTS_CPP_DEFAULTNAMERDISPOSER_H
 
 #include "DefaultNamerFactory.h"
-#include "../Macros.h"
+#include "ApprovalTests/utilities/Macros.h"
 
 namespace ApprovalTests {
 //! Implementation detail of Approvals::useAsDefaultNamer()

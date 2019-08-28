@@ -6,7 +6,7 @@
 #include <sstream>
 #include <vector>
 #include <stdexcept>
-#include "../Macros.h"
+#include "ApprovalTests/utilities/Macros.h"
 #include "../SystemUtils.h"
 
 namespace ApprovalTests {

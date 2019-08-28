@@ -3,7 +3,7 @@
 
 #include "Reporter.h"
 #include "DefaultFrontLoadedReporter.h"
-#include "../Macros.h"
+#include "ApprovalTests/utilities/Macros.h"
 
 #include <vector>
 #include <memory>

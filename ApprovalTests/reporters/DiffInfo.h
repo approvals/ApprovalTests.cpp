@@ -2,8 +2,8 @@
 #define APPROVALTESTS_CPP_DIFFINFO_H
 
 #include <string>
-#include "../FileUtils.h"
-#include "../StringUtils.h"
+#include "ApprovalTests/utilities/FileUtils.h"
+#include "ApprovalTests/utilities/StringUtils.h"
 #include "../SystemUtils.h"
 
 namespace ApprovalTests {

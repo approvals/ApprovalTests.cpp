@@ -2,7 +2,7 @@
 #define APPROVALTESTS_CPP_COMMANDREPORTER_H
 
 #include "CommandLauncher.h"
-#include "../FileUtils.h"
+#include "ApprovalTests/utilities/FileUtils.h"
 #include "Reporter.h"
 
 namespace ApprovalTests {

@@ -1,6 +1,6 @@
 #include "Catch.hpp"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
-#include "ApprovalTests/StringUtils.h"
+#include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/Approvals.h"
 
 using Catch::Matchers::EndsWith;

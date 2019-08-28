@@ -1,8 +1,8 @@
 #ifndef APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H
 #define APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H
 
-#include "../../Macros.h"
-#include "../../StringUtils.h"
+#include "ApprovalTests/utilities/Macros.h"
+#include "ApprovalTests/utilities/StringUtils.h"
 
 #include <vector>
 #include <functional>

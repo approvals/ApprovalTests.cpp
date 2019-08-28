@@ -2,7 +2,7 @@
 #define APPROVALTESTS_CPP_AUTOAPPROVEREPORTER_H
 
 #include "Reporter.h"
-#include "../FileUtilsSystemSpecific.h"
+#include "ApprovalTests/utilities/FileUtilsSystemSpecific.h"
 
 namespace ApprovalTests {
 class AutoApproveReporter : public Reporter
