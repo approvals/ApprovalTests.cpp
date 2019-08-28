@@ -15,37 +15,37 @@ namespace ApprovalTests {
 // This is OK as this code is only compiled on main()
 namespace {
     struct AbstractReporter : doctest::IReporter {
-        virtual void report_query(const doctest::QueryData&) {}
+        virtual void report_query(const doctest::QueryData&) override {}
         // called when the whole test run starts
-        virtual void test_run_start() {}
+        virtual void test_run_start() override {}
 
         // called when the whole test run ends (caching a pointer to the input doesn't make sense here)
-        virtual void test_run_end(const doctest::TestRunStats &) {}
+        virtual void test_run_end(const doctest::TestRunStats &) override {}
 
         // called when a test case is started (safe to cache a pointer to the input)
-        virtual void test_case_start(const doctest::TestCaseData &) {}
+        virtual void test_case_start(const doctest::TestCaseData &) override {}
 
         // called when a test case has ended
-        virtual void test_case_end(const doctest::CurrentTestCaseStats &) {}
+        virtual void test_case_end(const doctest::CurrentTestCaseStats &) override {}
 
         // called when an exception is thrown from the test case (or it crashes)
-        virtual void test_case_exception(const doctest::TestCaseException &) {}
+        virtual void test_case_exception(const doctest::TestCaseException &) override {}
 
         // called whenever a subcase is entered (don't cache pointers to the input)
-        virtual void subcase_start(const doctest::SubcaseSignature &) {}
+        virtual void subcase_start(const doctest::SubcaseSignature &) override {}
 
         // called whenever a subcase is exited (don't cache pointers to the input)
-        virtual void subcase_end() {}
+        virtual void subcase_end() override {}
 
         // called for each assert (don't cache pointers to the input)
-        virtual void log_assert(const doctest::AssertData &) {}
+        virtual void log_assert(const doctest::AssertData &) override {}
 
         // called for each message (don't cache pointers to the input)
-        virtual void log_message(const doctest::MessageData &) {}
+        virtual void log_message(const doctest::MessageData &) override {}
 
         // called when a test case is skipped either because it doesn't pass the filters, has a skip decorator
         // or isn't in the execution range (between first and last) (safe to cache a pointer to the input)
-        virtual void test_case_skipped(const doctest::TestCaseData &) {}
+        virtual void test_case_skipped(const doctest::TestCaseData &) override {}
 
 
     };
