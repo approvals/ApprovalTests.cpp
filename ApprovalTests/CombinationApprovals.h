@@ -28,10 +28,6 @@ public:
 
 };
 
-// Helper to prevent compilation failure from user-supplied reporter being treated as a container:
-template<typename T>
-using IsNotDerivedFromReporter = typename std::enable_if<!std::is_base_of<Reporter, T>::value, int>::type;
-
 class CombinationApprovals
 {
 public:

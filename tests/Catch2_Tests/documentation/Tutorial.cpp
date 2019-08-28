@@ -58,7 +58,7 @@ TEST_CASE("WritableBooks1")
         30, "English", 752, "978-0439139595");
 
     // begin-snippet: printable_object_simple
-    ApprovalTests::Approvals::verify<LibraryBook>(
+    ApprovalTests::Approvals::verify(
         harry_potter,
         [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
     // end-snippet
@@ -71,7 +71,7 @@ TEST_CASE("WritableBooks2")
         30, "English", 752, "978-0439139595");
 
     // begin-snippet: printable_object
-    ApprovalTests::Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){
+    ApprovalTests::Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os){
         os << 
         "title: " << b.title << "\n" <<
         "author: " << b.author << "\n" <<

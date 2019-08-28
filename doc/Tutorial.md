@@ -149,7 +149,7 @@ Let's start by just printing the title:
 <!-- snippet: printable_object_simple -->
 <a id='snippet-printable_object_simple'/></a>
 ```cpp
-ApprovalTests::Approvals::verify<LibraryBook>(
+ApprovalTests::Approvals::verify(
     harry_potter,
     [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
 ```
@@ -158,7 +158,6 @@ ApprovalTests::Approvals::verify<LibraryBook>(
 
 There's a lot going on here, so let's break it down:
 
-1. Template: notice we needed the `<LibraryBook>`. You will get long compiler errors if you do not do this.
 1. Lambda: `[](const LibraryBook& b, std::ostream& os){}`. This is the call-back function to convert your object to a string. Note that you can also write this as `[](auto b, auto& os){}`
 1. toString: `os << "title: " << b.title;` - this is the bit of code that actually turns our object in to a string.
 
@@ -167,7 +166,7 @@ This works, but of course, there is a lot more that we want to look at than the 
 <!-- snippet: printable_object -->
 <a id='snippet-printable_object'/></a>
 ```cpp
-ApprovalTests::Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){
+ApprovalTests::Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os){
     os << 
     "title: " << b.title << "\n" <<
     "author: " << b.author << "\n" <<

@@ -38,9 +38,12 @@ public:
         verify(StringUtils::toString(contents), reporter);
     }
 
-    template<typename T>
+    template<
+        typename T,
+        typename Function,
+        typename = IsNotDerivedFromReporter<Function>>
     static void verify(const T& contents,
-                       std::function<void(const T&, std::ostream &)> converter,
+                       Function converter,
                        const Reporter &reporter = DefaultReporter())
     {
         std::stringstream s;

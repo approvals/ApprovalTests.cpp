@@ -43,7 +43,7 @@ NonStreamablePoint getPoint()
 
 TEST_CASE("YouCanVerifyWithConverterLambda")
 {
-    ApprovalTests::Approvals::verify<NonStreamablePoint>(
+    ApprovalTests::Approvals::verify(
         getPoint(),
         [](const auto& p, auto& os)
         {
@@ -72,7 +72,7 @@ struct FormatNonStreamablePoint
 
 TEST_CASE("YouCanVerifyWithConverterWrapperClass")
 {
-    ApprovalTests::Approvals::verify<NonStreamablePoint>(
+    ApprovalTests::Approvals::verify(
         getPoint(),
         [](auto r, auto& os){os << FormatNonStreamablePoint(r);}
     );
@@ -88,7 +88,7 @@ std::ostream& customToStreamFunction(std::ostream &os, const NonStreamablePoint&
 
 TEST_CASE("YouCanVerifyWithConverterWrapperFunction")
 {
-    ApprovalTests::Approvals::verify<NonStreamablePoint>(
+    ApprovalTests::Approvals::verify(
         getPoint(),
         [](auto r, auto& os){ customToStreamFunction(os, r);}
     );

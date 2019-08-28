@@ -89,7 +89,6 @@ snippet: printable_object_simple
 
 There's a lot going on here, so let's break it down:
 
-1. Template: notice we needed the `<LibraryBook>`. You will get long compiler errors if you do not do this.
 1. Lambda: `[](const LibraryBook& b, std::ostream& os){}`. This is the call-back function to convert your object to a string. Note that you can also write this as `[](auto b, auto& os){}`
 1. toString: `os << "title: " << b.title;` - this is the bit of code that actually turns our object in to a string.
 
