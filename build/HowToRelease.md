@@ -25,4 +25,5 @@ Publishing
 
 Prepare for next repease
 
-- [ ] Clone relnotes_template.md to relnotes_X.X.X.md
+- [ ] Make sure the release notes named with the new version exist
+- [ ] `cp relnotes_template.md relnotes_X.X.X.md`
