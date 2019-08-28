@@ -44,7 +44,7 @@ Let's add our first test:
 ```cpp
 TEST_CASE("HelloApprovals")
 {
-    Approvals::verify("Hello Approvals");
+    ApprovalTests::Approvals::verify("Hello Approvals");
 }
 ```
 <sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/documentation/Tutorial.cpp#L12-L17) / [anchor](#snippet-hello_approvals)</sup>
@@ -149,7 +149,7 @@ Let's start by just printing the title:
 <!-- snippet: printable_object_simple -->
 <a id='snippet-printable_object_simple'/></a>
 ```cpp
-Approvals::verify<LibraryBook>(
+ApprovalTests::Approvals::verify<LibraryBook>(
     harry_potter,
     [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
 ```
@@ -167,7 +167,7 @@ This works, but of course, there is a lot more that we want to look at than the 
 <!-- snippet: printable_object -->
 <a id='snippet-printable_object'/></a>
 ```cpp
-Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){ 
+ApprovalTests::Approvals::verify<LibraryBook>(harry_potter, [](const LibraryBook& b, std::ostream& os){
     os << 
     "title: " << b.title << "\n" <<
     "author: " << b.author << "\n" <<

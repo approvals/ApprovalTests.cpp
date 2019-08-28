@@ -1,4 +1,19 @@
 * **Breaking changes**
+    * Virtually all code is now in a new `ApprovalTests` namespace, and user code will need to be updated (#5). There are two approaches to updating your code:
+        * Option 1: Explicitly add `ApprovalTests::` to your code, for example:
+            ```diff
+            -Approvals::verify("My objects!");
+            +ApprovalTests::Approvals::verify("My objects!");
+            ```
+
+            ```diff
+            -auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+            +auto directory = ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");
+            ```
+        * Option 2: Add a `using` directive near the top of your test files:
+            ```diff
+            +using namespace ApprovalTests;
+            ```
     * We have removed `using std::string;` from all our code. If you happen to have code that worked accidentally because our usings brought in `string`, you might need to update your code.
 * **New features**
     * Enable testing of [multiple output files per test](/doc/MultipleOutputFilesPerTest.md#top).

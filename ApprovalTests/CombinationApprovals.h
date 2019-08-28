@@ -8,6 +8,7 @@
 #include "reporters/Reporter.h"
 #include "Approvals.h"
 
+namespace ApprovalTests {
 class Empty
 {
 public:
@@ -362,5 +363,6 @@ public:
         return EmptyContainer{Empty()};
     }
 };
+}
 
 #endif

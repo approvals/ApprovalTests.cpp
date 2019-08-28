@@ -2,6 +2,6 @@
 #include "ApprovalTests/Approvals.h"
 
 TEST_CASE("YouCanVerifyText") {
-    Approvals::verify("My objects!");
+    ApprovalTests::Approvals::verify("My objects!");
 }
 

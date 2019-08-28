@@ -83,7 +83,7 @@ struct FormatRectangleForMultipleLines{
 };
 
 TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
-    Approvals::verifyAll(
+    ApprovalTests::Approvals::verifyAll(
         "rectangles",
         getRectangles(),
         [](auto r, auto& os){os << FormatRectangleForMultipleLines(r);}
@@ -132,7 +132,7 @@ Here's an example of verifing a list of rectangles
 <!-- snippet: verify_list -->
 <a id='snippet-verify_list'/></a>
 ```cpp
-Approvals::verifyAll(
+ApprovalTests::Approvals::verifyAll(
     "rectangles",
     getRectangles());
 ```

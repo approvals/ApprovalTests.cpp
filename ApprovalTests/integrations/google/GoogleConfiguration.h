@@ -3,6 +3,7 @@
 
 #include "GoogleCustomizationsFactory.h"
 
+namespace ApprovalTests {
 class GoogleConfiguration
 {
 public:
@@ -33,5 +34,6 @@ public:
         };
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_GOOGLECONFIGURATION_H

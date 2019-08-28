@@ -7,6 +7,7 @@
 
 #include <memory>
 
+namespace ApprovalTests {
 class BlockingReporter : public Reporter
 {
 private:
@@ -36,5 +37,6 @@ public:
         return blocker->isBlockingOnThisMachine();
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_BLOCKINGREPORTER_H

@@ -5,6 +5,7 @@
 #include "GenericDiffReporter.h"
 #include "FirstWorkingReporter.h"
 
+namespace ApprovalTests {
 namespace Mac {
     class DiffMergeReporter : public GenericDiffReporter {
     public:
@@ -58,6 +59,7 @@ namespace Mac {
         ) {
         }
     };
+}
 }
 
 #endif //APPROVALTESTS_CPP_MACREPORTERS_H

@@ -8,12 +8,12 @@
 
 TEST_CASE("YouCanVerifyCombinationsOf1") {
     std::vector<std::string> words{"hello", "world"};
-    CombinationApprovals::verifyAllCombinations( [](std::string s){return s + "!";}, words);
+    ApprovalTests::CombinationApprovals::verifyAllCombinations([](std::string s){return s + "!";}, words);
 }
 
 TEST_CASE("YouCanVerifyCombinationsOf1WithTemplateParameters") {
     std::vector<std::string> words{"hello", "world"};
-    CombinationApprovals::verifyAllCombinations( [](std::string s){return s + "!";}, words);
+    ApprovalTests::CombinationApprovals::verifyAllCombinations([](std::string s){return s + "!";}, words);
 }
 
 TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
@@ -21,9 +21,9 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
     FakeReporter reporter;
     try
     {
-        CombinationApprovals::verifyAllCombinations( [](std::string s){return s + "!";}, words, reporter);
+        ApprovalTests::CombinationApprovals::verifyAllCombinations([](std::string s){return s + "!";}, words, reporter);
     }
-    catch(const ApprovalException&)
+    catch(const ApprovalTests::ApprovalException&)
     {
         // ignore
     }
@@ -34,7 +34,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
 TEST_CASE("YouCanVerifyCombinationsOf2") {
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
-    CombinationApprovals::verifyAllCombinations(
+    ApprovalTests::CombinationApprovals::verifyAllCombinations(
             [](std::string s, int i){return std::make_pair(s, i);},
             v,
             numbers);
@@ -43,7 +43,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2") {
 
 TEST_CASE("YouCanVerifyCombinationsOf9") {
     std::vector<std::string> letters{"a", "b"};
-    CombinationApprovals::verifyAllCombinations( [](
+    ApprovalTests::CombinationApprovals::verifyAllCombinations([](
             std::string s1,
             std::string s2,
             std::string s3,

@@ -3,7 +3,7 @@
 
 #include "ApprovalTests/reporters/Reporter.h"
 
-class FakeReporter : public Reporter {
+class FakeReporter : public ApprovalTests::Reporter {
 public:
     bool working;
     mutable bool called = false;

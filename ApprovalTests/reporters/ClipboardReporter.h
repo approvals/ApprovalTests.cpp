@@ -8,6 +8,7 @@
 #include <string>
 #include <iostream>
 
+namespace ApprovalTests {
 class ClipboardReporter : public Reporter {
 public:
     static std::string getCommandLineFor(std::string received, std::string approved, bool isWindows)
@@ -47,5 +48,6 @@ public:
         system(cmd.c_str());
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_COMMANDLINEREPORTER_H

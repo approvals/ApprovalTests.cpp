@@ -26,7 +26,7 @@ std::vector<Rectangle3> getRectangles()
 
 TEST_CASE("MultipleLinesCanBeHardToRead") {
     // begin-snippet: verify_list
-    Approvals::verifyAll(
+    ApprovalTests::Approvals::verifyAll(
         "rectangles",
         getRectangles());
     // end-snippet
@@ -53,7 +53,7 @@ struct FormatRectangleForMultipleLines{
 };
 
 TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
-    Approvals::verifyAll(
+    ApprovalTests::Approvals::verifyAll(
         "rectangles",
         getRectangles(),
         [](auto r, auto& os){os << FormatRectangleForMultipleLines(r);}
@@ -71,7 +71,7 @@ std::ostream& toStringForMultipleLines(std::ostream &os, const Rectangle3 &recta
 }
 
 TEST_CASE("AlternativeFormattingCanBeEasyToRead2") {
-    Approvals::verifyAll(
+    ApprovalTests::Approvals::verifyAll(
         "rectangles",
         getRectangles(),
         [](auto r, auto& os){ toStringForMultipleLines(os, r);}

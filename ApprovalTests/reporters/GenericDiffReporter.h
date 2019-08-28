@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 
+namespace ApprovalTests {
 class GenericDiffReporter : public CommandReporter {
 private:
     SystemLauncher launcher;
@@ -49,5 +50,6 @@ public:
         return copy;
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_GENERICDIFFREPORTER_H

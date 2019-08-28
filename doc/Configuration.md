@@ -23,7 +23,7 @@ If you have a lot of approval files, you might want to put them in a subdirector
 <!-- snippet: use_subdirectory_in_main -->
 <a id='snippet-use_subdirectory_in_main'/></a>
 ```cpp
-auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+auto directory = ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");
 ```
 <sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/main.cpp#L12-L14) / [anchor](#snippet-use_subdirectory_in_main)</sup>
 <!-- endsnippet -->

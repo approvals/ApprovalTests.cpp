@@ -8,6 +8,7 @@
 #include <functional>
 #include <string>
 
+namespace ApprovalTests {
 class GoogleCustomizationsFactory
 {
 public:
@@ -42,5 +43,6 @@ public:
     
 
 };
+}
 
 #endif //APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H

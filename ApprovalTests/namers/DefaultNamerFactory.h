@@ -8,6 +8,8 @@
 #include <memory>
 #include <vector>
 
+namespace ApprovalTests {
+
 typedef std::function<std::shared_ptr<ApprovalNamer>()> NamerCreator;
 
 //! Implementation detail of Approvals::useAsDefaultNamer()
@@ -36,5 +38,6 @@ public:
     }
 
 };
+}
 
 #endif //APPROVALTESTS_CPP_DEFAULTNAMERFACTORY_H

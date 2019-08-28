@@ -5,6 +5,7 @@
 #include <string>
 #include <sstream>
 
+namespace ApprovalTests {
 class ApprovalException : public std::exception
 {
 private:
@@ -54,5 +55,6 @@ public:
     {
     }
 };
+}
 
 #endif

@@ -4,13 +4,13 @@
 #include "ApprovalTests/reporters/QuietReporter.h"
 
 TEST_CASE("ApprovalMissingExceptionHasAMessage") {
-    ApprovalMissingException a( "r.txt", "a.txt" );
+    ApprovalTests::ApprovalMissingException a("r.txt", "a.txt" );
     std::string expected = "Failed Approval: \nApproval File Not Found \nFile: \"a.txt\"";
     REQUIRE(a.what() == expected );
 }
 
 TEST_CASE("ApprovalMismatchExceptionHasAMessage") {
-    ApprovalMismatchException a( "r.txt", "a.txt" );
+    ApprovalTests::ApprovalMismatchException a("r.txt", "a.txt" );
     std::string expected = "Failed Approval: \n"
             "Received does not match approved \n"
             "Received : \"r.txt\" \n"
@@ -24,13 +24,13 @@ TEST_CASE("ApprovalMissingException is thrown")
     // approved file
     bool exception_caught = false;
     try {
-        Approvals::verify("foo", QuietReporter());
+        ApprovalTests::Approvals::verify("foo", ApprovalTests::QuietReporter());
     }
-    catch (const ApprovalMissingException&)
+    catch (const ApprovalTests::ApprovalMissingException&)
     {
         exception_caught = true;
     }
-    catch (const ApprovalException&)
+    catch (const ApprovalTests::ApprovalException&)
     {
         exception_caught = false;
     }

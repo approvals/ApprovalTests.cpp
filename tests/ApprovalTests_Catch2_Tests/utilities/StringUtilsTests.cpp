@@ -3,5 +3,5 @@
 
 
 TEST_CASE("TestLowerCase") {
-    REQUIRE(StringUtils::toLower("MiXeD CaSe") == "mixed case");
+    REQUIRE(ApprovalTests::StringUtils::toLower("MiXeD CaSe") == "mixed case");
 }

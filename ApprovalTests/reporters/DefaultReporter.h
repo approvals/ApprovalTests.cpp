@@ -6,6 +6,7 @@
 
 #include <string>
 
+namespace ApprovalTests {
 class DefaultReporter : public Reporter
 {
 public:
@@ -14,5 +15,6 @@ public:
         return DefaultReporterFactory::getDefaultReporter()->report(received, approved);
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_DEFAULTREPORTER_H

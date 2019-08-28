@@ -8,6 +8,7 @@
         static DiffInfo name() { return defaultValue; }
 ///////////////////////////////////////////////////////////////////////////////
 
+namespace ApprovalTests {
 namespace DiffPrograms {
 
 
@@ -53,6 +54,7 @@ namespace DiffPrograms {
         APPROVAL_TESTS_MACROS_ENTRY(VS_CODE, DiffInfo("{ProgramFiles}Microsoft VS Code\\Code.exe", "-d %s %s", Type::TEXT))
 
     }
+}
 }
 
 #endif //APPROVALTESTS_CPP_DIFFPROGRAMS_H

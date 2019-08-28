@@ -9,6 +9,7 @@
 #include "../Macros.h"
 #include "../SystemUtils.h"
 
+namespace ApprovalTests {
 class TestName {
 public:
     const std::string& getFileName() const {
@@ -133,7 +134,7 @@ R"(* Welcome to Approval Tests.
         auto directory = file.substr(0, end);
         if ( ! testConfiguration().subdirectory.empty() )
         {
-            directory += testConfiguration().subdirectory + SystemUtils::getDirectorySeparator(); 
+            directory += testConfiguration().subdirectory + SystemUtils::getDirectorySeparator();
             SystemUtils::ensureDirectoryExists(directory);
         }
         return directory;
@@ -162,5 +163,6 @@ R"(* Welcome to Approval Tests.
         return ext.str();
     }
 };
+}
 
 #endif

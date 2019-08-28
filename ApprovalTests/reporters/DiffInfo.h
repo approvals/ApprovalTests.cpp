@@ -6,6 +6,7 @@
 #include "../StringUtils.h"
 #include "../SystemUtils.h"
 
+namespace ApprovalTests {
 enum class Type { TEXT, IMAGE, TEXT_AND_IMAGE };
 
 
@@ -59,6 +60,6 @@ struct DiffInfo
         return result;
     }
 };
-
+}
 
 #endif //APPROVALTESTS_CPP_DIFFINFO_H

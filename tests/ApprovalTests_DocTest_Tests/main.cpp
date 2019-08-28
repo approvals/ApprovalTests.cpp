@@ -4,4 +4,4 @@
 #include "ApprovalTests.hpp"
 // end-snippet
 
-auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+auto directory = ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");

@@ -6,6 +6,7 @@
 
 #include <string>
 
+namespace ApprovalTests {
 struct NamerFactory
 {
     static inline SectionNameDisposer appendToOutputFilename(std::string sectionName)
@@ -13,5 +14,6 @@ struct NamerFactory
         return SectionNameDisposer(ApprovalTestNamer::currentTest(), sectionName);
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_NAMERFACTORY_H

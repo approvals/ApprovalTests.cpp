@@ -7,16 +7,16 @@
 
 TEST_CASE("ItCanCopyAFile")
 {
-    ApprovalTestNamer namer;
-  const auto& sep = SystemUtils::getDirectorySeparator();
+  ApprovalTests::ApprovalTestNamer namer;
+  const auto& sep = ApprovalTests::SystemUtils::getDirectorySeparator();
   auto source = namer.getDirectory() + ".." + sep + ".." + sep + "sample.txt";
     auto destination = namer.getDirectory() + ".." + sep + "copy.temp.received.txt";
 
-    if ( FileUtils::fileExists(destination))
+    if ( ApprovalTests::FileUtils::fileExists(destination))
     {
         ::remove(destination.c_str());
     }
-    CHECK( ! FileUtils::fileExists(destination) );
-    FileUtilsSystemSpecific::copyFile(source, destination);
-    Approvals::verifyExistingFile(destination);
+    CHECK( ! ApprovalTests::FileUtils::fileExists(destination) );
+    ApprovalTests::FileUtilsSystemSpecific::copyFile(source, destination);
+    ApprovalTests::Approvals::verifyExistingFile(destination);
 }

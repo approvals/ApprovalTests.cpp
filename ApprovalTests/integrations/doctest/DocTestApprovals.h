@@ -10,6 +10,7 @@
 
 #include <doctest.h>
 
+namespace ApprovalTests {
 // anonymous namespace to prevent compiler -Wsubobject-linkage warnings
 // This is OK as this code is only compiled on main()
 namespace {
@@ -81,8 +82,9 @@ namespace {
         }
     };
 }
+}
 
-REGISTER_LISTENER("approvals", 0, DocTestApprovalListener);
+REGISTER_LISTENER("approvals", 0, ApprovalTests::DocTestApprovalListener);
 
 
 #endif // APPROVALS_DOCTEST

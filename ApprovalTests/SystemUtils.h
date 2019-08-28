@@ -20,6 +20,7 @@
 
 #include <stdexcept>
 
+namespace ApprovalTests {
 class SystemUtils
 {
 public:
@@ -32,7 +33,7 @@ public:
 #endif
 
     }
-    
+
     static bool isCygwin()
     {
 #ifdef __CYGWIN__
@@ -62,7 +63,7 @@ public:
         if (hFind != INVALID_HANDLE_VALUE)
         {
             const std::string fixedFilename = findFileData.cFileName;
-            const std::string fixedPath = 
+            const std::string fixedPath =
                 StringUtils::replaceAll( fullPath, StringUtils::toLower(fixedFilename), fixedFilename );
             FindClose(hFind);
             return fixedPath;
@@ -112,7 +113,7 @@ public:
     {
         return isWindowsOs() ? safeGetEnvForWindows(name) : safeGetEnvForNonWindows(name);
     }
-    
+
     static std::string getMachineName()
     {
         auto name = safeGetEnv("COMPUTERNAME");
@@ -171,4 +172,5 @@ public:
         }
     }
 };
+}
 #endif

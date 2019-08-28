@@ -3,6 +3,7 @@
 
 #include "ApprovalComparator.h"
 
+namespace ApprovalTests {
 class TextFileComparator : public ApprovalComparator
 {
 public:
@@ -38,4 +39,5 @@ public:
         return true;
     }
 };
+}
 #endif //APPROVALTESTS_CPP_TEXTFILECOMPARATOR_H

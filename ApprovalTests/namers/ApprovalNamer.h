@@ -3,6 +3,7 @@
 
 #include <string>
 
+namespace ApprovalTests {
 class ApprovalNamer
 {
 public:
@@ -11,5 +12,6 @@ public:
     virtual std::string getReceivedFile(std::string extensionWithDot) = 0;
 
 };
+}
 
 #endif

@@ -5,6 +5,7 @@
 #include "../FileUtils.h"
 #include "Reporter.h"
 
+namespace ApprovalTests {
 // Generic reporter to launch arbitrary command
 class CommandReporter : public Reporter {
 private:
@@ -31,4 +32,5 @@ public:
         return fullCommand;
     }
 };
+}
 #endif //APPROVALTESTS_CPP_COMMANDREPORTER_H

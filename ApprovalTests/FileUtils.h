@@ -10,6 +10,7 @@
 #include "StringWriter.h"
 #include <sys/types.h>
 
+namespace ApprovalTests {
 class FileUtils {
 public:
     static bool fileExists(std::string path)
@@ -51,5 +52,6 @@ public:
         out << content;
     }
 };
+}
 
 #endif //APPROVALTESTS_CPP_FILEUTILS_H

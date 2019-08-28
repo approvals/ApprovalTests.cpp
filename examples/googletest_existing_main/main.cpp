@@ -10,7 +10,7 @@ int main(int argc, char** argv)
     ::testing::InitGoogleTest(&argc, argv);
     
     // 2. Add this line to your main:
-    initializeApprovalTestsForGoogleTests();
+    ApprovalTests::initializeApprovalTestsForGoogleTests();
 
     return RUN_ALL_TESTS();
 }
@@ -18,6 +18,6 @@ int main(int argc, char** argv)
 
 // begin-snippet: do_not_report_on_ci
 // main.cpp
-auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
-    BlockingReporter::onMachineNamed("MyCIMachineName") );
+auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
+    ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName") );
 // end-snippet

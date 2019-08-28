@@ -14,6 +14,7 @@
 #include "FileUtils.h"
 #include "Macros.h"
 
+namespace ApprovalTests {
 class FileApprover {
 private:
     using ComparatorContainer = std::map< std::string, std::shared_ptr<ApprovalComparator> >;
@@ -87,5 +88,6 @@ public:
 
 
 };
+}
 
 #endif

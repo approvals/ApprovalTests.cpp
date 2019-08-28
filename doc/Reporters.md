@@ -44,7 +44,7 @@ new KDiff3Reporter(),
 new TkDiffReporter(),
 new VisualStudioCodeReporter()
 ```
-<sup>[snippet source](/ApprovalTests/reporters/MacReporters.h#L48-L56) / [anchor](#snippet-mac_diff_reporters)</sup>
+<sup>[snippet source](/ApprovalTests/reporters/MacReporters.h#L49-L57) / [anchor](#snippet-mac_diff_reporters)</sup>
 <!-- endsnippet -->
 
 ### Linux
@@ -55,7 +55,7 @@ new VisualStudioCodeReporter()
 new MeldReporter(),
 new KDiff3Reporter()
 ```
-<sup>[snippet source](/ApprovalTests/reporters/LinuxReporters.h#L25-L28) / [anchor](#snippet-linux_diff_reporters)</sup>
+<sup>[snippet source](/ApprovalTests/reporters/LinuxReporters.h#L26-L29) / [anchor](#snippet-linux_diff_reporters)</sup>
 <!-- endsnippet -->
 
 ### Windows
@@ -71,7 +71,7 @@ new CodeCompareReporter(),
 new KDiff3Reporter(),
 new VisualStudioCodeReporter(),
 ```
-<sup>[snippet source](/ApprovalTests/reporters/WindowsReporters.h#L71-L79) / [anchor](#snippet-windows_diff_reporters)</sup>
+<sup>[snippet source](/ApprovalTests/reporters/WindowsReporters.h#L72-L80) / [anchor](#snippet-windows_diff_reporters)</sup>
 <!-- endsnippet -->
 
 ## Registering a default reporter
@@ -83,7 +83,7 @@ At present, the default Reporter is the DiffReporter. Whenever you call Approval
 ```cpp
 // main.cpp:
 #include <memory>
-auto defaultReporterDisposer = Approvals::useAsDefaultReporter( std::make_shared<DiffReporter>() );
+auto defaultReporterDisposer = ApprovalTests::Approvals::useAsDefaultReporter(std::make_shared<ApprovalTests::DiffReporter>() );
 ```
 <sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/main.cpp#L16-L20) / [anchor](#snippet-use_as_default_reporter_in_main)</sup>
 <!-- endsnippet -->
@@ -100,8 +100,8 @@ Here is an example of not launching any reporters of you are on the CI machine.
 <a id='snippet-do_not_report_on_ci'/></a>
 ```cpp
 // main.cpp
-auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
-    BlockingReporter::onMachineNamed("MyCIMachineName") );
+auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
+    ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName") );
 ```
 <sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_ci)</sup>
 <!-- endsnippet -->
@@ -111,7 +111,7 @@ Once you have added that, even calling approvals with a specific Reporter will n
 <!-- snippet: basic_approval_with_reporter -->
 <a id='snippet-basic_approval_with_reporter'/></a>
 ```cpp
-Approvals::verify("text to be verified", Windows::AraxisMergeReporter());
+ApprovalTests::Approvals::verify("text to be verified", ApprovalTests::Windows::AraxisMergeReporter());
 ```
 <sup>[snippet source](/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L11-L13) / [anchor](#snippet-basic_approval_with_reporter)</sup>
 <!-- endsnippet -->
@@ -124,8 +124,8 @@ Blocking reporters are a simple class, designed for use with FrontLoadedReporter
 <a id='snippet-do_not_report_on_ci'/></a>
 ```cpp
 // main.cpp
-auto frontLoadedReportDisposer = Approvals::useAsFrontLoadedReporter(
-    BlockingReporter::onMachineNamed("MyCIMachineName") );
+auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
+    ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName") );
 ```
 <sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_ci)</sup>
 <!-- endsnippet -->

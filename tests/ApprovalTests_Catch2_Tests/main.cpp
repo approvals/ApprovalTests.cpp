@@ -10,11 +10,11 @@
 // end-snippet
 
 // begin-snippet: use_subdirectory_in_main
-auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+auto directory = ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");
 // end-snippet
 
 // begin-snippet: use_as_default_reporter_in_main
 // main.cpp:
 #include <memory>
-auto defaultReporterDisposer = Approvals::useAsDefaultReporter( std::make_shared<DiffReporter>() );
+auto defaultReporterDisposer = ApprovalTests::Approvals::useAsDefaultReporter(std::make_shared<ApprovalTests::DiffReporter>() );
 // end-snippet

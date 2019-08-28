@@ -5,20 +5,20 @@
 
 // begin-snippet: googletest_customize_suffix
 // main.cpp
-auto customization = GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
+auto customization = ApprovalTests::GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
 // end-snippet
 
 // begin-snippet: googletest_name_parts
 TEST(TestCaseName, TestName)
 // end-snippet
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     EXPECT_EQ(namer.getOutputFileBaseName(), "GoogleFixtureNamerCustomizationTests.TestCaseName.TestName");
 }
 
 TEST(GoogleFixtureNamerCustomizationTests, EliminatesDuplicatedClassName)
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     EXPECT_EQ(namer.getOutputFileBaseName(), "GoogleFixtureNamerCustomizationTests.EliminatesDuplicatedClassName");
 }
 
@@ -26,7 +26,7 @@ class GoogleFixtureNamerCustomizationTestsFixture : public ::testing::Test{};
 
 TEST_F(GoogleFixtureNamerCustomizationTestsFixture, OnlyMatchesFixtureAtEnd)
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
     EXPECT_EQ(namer.getOutputFileBaseName(), "GoogleFixtureNamerCustomizationTests.OnlyMatchesFixtureAtEnd");
 }
 
@@ -34,18 +34,18 @@ TEST_F(GoogleFixtureNamerCustomizationTestsFixture, OnlyMatchesFixtureAtEnd)
 // main.cpp
 bool dropTestCaseNamesWithIgnoreThis(const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
 {
-    return StringUtils::contains(testCaseName, "IgnoreThis");
+    return ApprovalTests::StringUtils::contains(testCaseName, "IgnoreThis");
 }
 
-auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
+auto ignoreNames = ApprovalTests::GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
 // end-snippet
 
 // begin-snippet: googletest_customize_lambda
 // main.cpp
-auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
+auto ignoreNamesLambda = ApprovalTests::GoogleConfiguration::addTestCaseNameRedundancyCheck(
     [](const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
     {
-        return StringUtils::contains(testCaseName, "IgnoreThis");
+        return ApprovalTests::StringUtils::contains(testCaseName, "IgnoreThis");
     });
 // end-snippet
 
@@ -53,7 +53,7 @@ auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
 TEST(TestCaseName_IgnoreThis, TestName )
 // end-snippet
 {
-    ApprovalTestNamer namer;
+    ApprovalTests::ApprovalTestNamer namer;
 
     // begin-snippet: googletest_customize_test_name
     auto outputFileBaseName = "GoogleFixtureNamerCustomizationTests.TestName";

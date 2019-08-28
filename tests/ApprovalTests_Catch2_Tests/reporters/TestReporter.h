@@ -4,7 +4,7 @@
 #include "ApprovalTests/reporters/GenericDiffReporter.h"
 #include "DoNothingLauncher.h"
 
-class TestReporter : public CommandReporter {
+class TestReporter : public ApprovalTests::CommandReporter {
 public:
     DoNothingLauncher launcher;
 

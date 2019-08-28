@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <sstream>
 
+namespace ApprovalTests {
 class StringUtils
 {
 public:
@@ -28,10 +29,10 @@ public:
     {
         std::string copy(inText);
         std::transform(inText.begin(), inText.end(), copy.begin(),
-          [](char c){ return static_cast<char>(::tolower(c)); });
+          [](char c){ return static_cast<char>(tolower(c)); });
         return copy;
     }
-    
+
     static bool endsWith(std::string value, std::string ending)
     {
         if (ending.size() > value.size())
@@ -50,4 +51,5 @@ public:
     }
 
 };
+}
 #endif //APPROVALTESTS_CPP_STRINGUTILS_H
