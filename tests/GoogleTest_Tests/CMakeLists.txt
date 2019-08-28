@@ -1,12 +1,14 @@
-project(ApprovalTests_DocTest_Tests)
-set(CMAKE_CXX_STANDARD 17)
+project(GoogleTest_Tests)
+set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}
     main.cpp
-    DocTestNamerTests.cpp
-    DocTestDocumentationSamples.cpp
-    namers/NamerTests.cpp
+    CompileAllIncludes.cpp
+    GoogleTestApprovalsTests.cpp
+    GoogleNamerTest.cpp
+    GoogleFixtureNamerCustomizationTests.cpp
     )
-target_link_libraries(${PROJECT_NAME} ApprovalTests doctest)
+target_link_libraries(${PROJECT_NAME} ApprovalTests gtest gtest_main)
+
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
