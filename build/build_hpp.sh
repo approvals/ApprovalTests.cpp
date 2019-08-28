@@ -8,7 +8,7 @@ set -o pipefail
 UNSET_VERSION="v.X.X.X"
 
 LAST_VERSION="v.4.0.0"
-VERSION=$UNSET_VERSION
+VERSION="v.5.0.0"
 
 PUSH_TO_PRODUCTION="true"
 if [ "$VERSION" = $UNSET_VERSION ]; then
