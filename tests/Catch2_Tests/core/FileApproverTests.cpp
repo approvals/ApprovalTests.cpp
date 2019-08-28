@@ -1,6 +1,6 @@
 #include "Catch.hpp"
 #include "ApprovalTests/writers/StringWriter.h"
-#include "reporters/TestReporter.h"
+#include "../reporters/TestReporter.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/core/FileApprover.h"
 #include "ApprovalTests/Approvals.h"
@@ -26,7 +26,7 @@ TEST_CASE("ItVerifiesApprovedFileExists") {
 
 TEST_CASE("ItVerifiesExistingFiles") {
     ApprovalTests::ApprovalTestNamer namer;
-    ApprovalTests::Approvals::verifyExistingFile(namer.getDirectory() + "../sample.txt");
+    ApprovalTests::Approvals::verifyExistingFile(namer.getDirectory() + "../../sample.txt");
 }
 
 
