@@ -18,7 +18,7 @@ They are great for testing objects with lots of fields, or lists of objects.
 
 * C++11 (or above) compiler
 * Mac/Linux/Windows
-* One of:  [GoogleTest](https://github.com/google/googletest), [Catch1](https://github.com/catchorg/Catch2/tree/Catch1.x), [Catch2](https://github.com/catchorg/Catch2), [doctest](https://github.com/onqtam/doctest), [Okra](https://github.com/JayBazuzi/Okra)  
+* One of:  [GoogleTest](https://github.com/google/googletest), [Catch1](https://github.com/catchorg/Catch2/tree/Catch1.x), [Catch2](https://github.com/catchorg/Catch2), [doctest](https://github.com/onqtam/doctest)  
 
 ## Getting Started
 

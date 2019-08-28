@@ -15,6 +15,7 @@
             +using namespace ApprovalTests;
             ```
     * We have removed `using std::string;` from all our code. If you happen to have code that worked accidentally because our usings brought in `string`, you might need to update your code.
+    * We have removed support for the [Okra](https://github.com/JayBazuzi/Okra) test framework, as we believe noone is using the integration, and it was a non-trivial amount of work to get it working again with changes we have made recently.
 * **New features**
     * Enable testing of [multiple output files per test](/doc/MultipleOutputFilesPerTest.md#top).
     * Add ability to [register a custom namer](/doc/Namers.md#registering-a-custom-namer), to change the naming conventions for approved and received files.

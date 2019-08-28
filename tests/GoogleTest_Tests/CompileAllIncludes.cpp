@@ -26,7 +26,6 @@
 #include "ApprovalTests/namers/SectionNameDisposer.h"
 #include "ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.h"
 #include "ApprovalTests/namers/SubdirectoryDisposer.h"
-#include "ApprovalTests/OkraApprovals.h"
 #include "ApprovalTests/reporters/AutoApproveIfMissingReporter.h"
 #include "ApprovalTests/reporters/AutoApproveReporter.h"
 #include "ApprovalTests/reporters/BlockingReporter.h"

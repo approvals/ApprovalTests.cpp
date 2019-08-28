@@ -61,4 +61,4 @@ ENVIRONMENT AND BUILDS
 
 FUTURE DEVELOPMENT
 
-. review directory and file structure of other popular C++ testing libraries, to look for ways to improve the structure of this project, e.g. add a single header file in source that mimics the released single header, e.g. put Catch and Google and Okra headers into an integration folder???
+. review directory and file structure of other popular C++ testing libraries, to look for ways to improve the structure of this project, e.g. add a single header file in source that mimics the released single header, e.g. put Catch and Google headers into an integration folder???

@@ -47,7 +47,6 @@ This is perhaps best understood by reviewing the implementations for frameworks 
  
 * [Catch2Approvals.h](/ApprovalTests/Catch2Approvals.h)
 * [GoogleTestApprovals.h](/ApprovalTests/GoogleTestApprovals.h)
-* [OkraApprovals.h](/ApprovalTests/OkraApprovals.h)
 
 The following lines can be ignored in the above files - they are for this project's release process:
 
