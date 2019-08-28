@@ -122,7 +122,7 @@ R"(* Welcome to Approval Tests.
     std::string getSourceFileName() const {
         auto file = getCurrentTest().getFileName();
         auto start = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
-        auto end = file.rfind(".");
+        auto end = file.rfind('.');
         auto fileName = file.substr(start, end - start);
         return convertToFileName(fileName);
     }

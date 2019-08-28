@@ -38,7 +38,7 @@ public:
     }
 
     static std::string getExtensionWithDot(std::string filePath) {
-        std::size_t found = filePath.find_last_of(".");
+        std::size_t found = filePath.find_last_of('.');
         return filePath.substr(found);
     }
 
