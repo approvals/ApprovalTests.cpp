@@ -61,23 +61,23 @@ public:
     {
         Empty empty;
         std::stringstream s;
-        for (auto input1 : inputs1)
+        for (const auto& input1 : inputs1)
         {
-            for (auto input2 : inputs2)
+            for (const auto& input2 : inputs2)
             {
-                for (auto input3 : inputs3)
+                for (const auto& input3 : inputs3)
                 {
-                    for (auto input4 : inputs4)
+                    for (const auto& input4 : inputs4)
                     {
-                        for (auto input5 : inputs5)
+                        for (const auto& input5 : inputs5)
                         {
-                            for (auto input6 : inputs6)
+                            for (const auto& input6 : inputs6)
                             {
-                                for (auto input7 : inputs7)
+                                for (const auto& input7 : inputs7)
                                 {
-                                    for (auto input8 : inputs8)
+                                    for (const auto& input8 : inputs8)
                                     {
-                                        for (auto input9 : inputs9)
+                                        for (const auto& input9 : inputs9)
                                         {
                                             s << "(" << input1;
                                             if (empty != input2) { s << ", " << input2; }
