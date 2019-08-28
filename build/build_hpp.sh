@@ -32,8 +32,11 @@ STARTER_PATH_NEW_SINGLE_HEADER=$STARTER_PROJECT_DIR/lib/$NEW_SINGLE_HEADER
 cd ../ApprovalTests
 java -jar ../build/SingleHpp.v.0.0.2.jar ../build/releases/$NEW_SINGLE_HEADER
 
-sed -i '1s|^|// More information at: https://github.com/approvals/ApprovalTests.cpp\n|' ../build/releases/$NEW_SINGLE_HEADER
-sed -i "1s|^|// Approval Tests version $VERSION\n|" ../build/releases/$NEW_SINGLE_HEADER
+# TODO make sed command work on all platforms:
+# https://stackoverflow.com/a/22084103/104370
+
+sed -i '' '1s|^|// More information at: https://github.com/approvals/ApprovalTests.cpp\n|' ../build/releases/$NEW_SINGLE_HEADER
+sed -i '' "1s|^|// Approval Tests version $VERSION\n|" ../build/releases/$NEW_SINGLE_HEADER
 
 # ------------------------------------------------------------------------------------------------
 # Update Starter Project 
@@ -52,10 +55,10 @@ if [ -f $STARTER_PATH_OLD_SINGLE_HEADER ] ; then
 fi
 
 # Update the version in the "redirect" header:
-sed -i -e "s/$LAST_VERSION/$VERSION/" $STARTER_PROJECT_DIR/lib/ApprovalTests.hpp
+sed -i '' -e "s/$LAST_VERSION/$VERSION/" $STARTER_PROJECT_DIR/lib/ApprovalTests.hpp
 
 # Update the version number in the Visual Studio project:
-sed -i -e "s/$OLD_SINGLE_HEADER/$NEW_SINGLE_HEADER/" $STARTER_PROJECT_DIR/visual-studio-2017/StarterProject.vcxproj
+sed -i '' -e "s/$OLD_SINGLE_HEADER/$NEW_SINGLE_HEADER/" $STARTER_PROJECT_DIR/visual-studio-2017/StarterProject.vcxproj
 
 # Check the starter project builds
 pushd $STARTER_PROJECT_DIR/cmake-build-debug
