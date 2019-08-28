@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_EXISTINGFILENAMER_H
 #define APPROVALTESTS_CPP_EXISTINGFILENAMER_H
 
-#include "ApprovalNamer.h"
+#include "ApprovalTests/core/ApprovalNamer.h"
 #include "DefaultNamerFactory.h"
 
 namespace ApprovalTests {

@@ -6,11 +6,11 @@
 #include <memory>
 #include "ApprovalException.h"
 #include "ApprovalTests/writers/StringWriter.h"
-#include "reporters/Reporter.h"
-#include "reporters/FrontLoadedReporterDisposer.h"
-#include "namers/ApprovalNamer.h"
-#include "comparators/ApprovalComparator.h"
-#include "comparators/TextFileComparator.h"
+#include "ApprovalTests/reporters/Reporter.h"
+#include "ApprovalTests/reporters/FrontLoadedReporterDisposer.h"
+#include "ApprovalTests/core/ApprovalNamer.h"
+#include "ApprovalComparator.h"
+#include "ApprovalTests/comparators/TextFileComparator.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/utilities/Macros.h"
 

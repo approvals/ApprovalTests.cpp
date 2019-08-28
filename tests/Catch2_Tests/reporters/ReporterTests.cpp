@@ -8,7 +8,7 @@
 #include "ApprovalTests/reporters/WindowsReporters.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/utilities/StringUtils.h"
-#include "ApprovalTests/FileApprover.h"
+#include "ApprovalTests/core/FileApprover.h"
 
 TEST_CASE("Reporters Launch Command") {
     TestReporter m(true);

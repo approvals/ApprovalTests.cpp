@@ -3,7 +3,7 @@
 
 
 #include <string>
-#include "../ApprovalWriter.h"
+#include "ApprovalTests/core/ApprovalWriter.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 
 namespace ApprovalTests {

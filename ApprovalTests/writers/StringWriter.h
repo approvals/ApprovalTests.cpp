@@ -4,7 +4,7 @@
 #include <string>
 #include <fstream>
 #include <stdexcept>
-#include "ApprovalTests/ApprovalWriter.h"
+#include "ApprovalTests/core/ApprovalWriter.h"
 
 namespace ApprovalTests {
 class StringWriter : public ApprovalWriter

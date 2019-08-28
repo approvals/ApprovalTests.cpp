@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_DEFAULTNAMERFACTORY_H
 #define APPROVALTESTS_CPP_DEFAULTNAMERFACTORY_H
 
-#include "ApprovalNamer.h"
+#include "ApprovalTests/core/ApprovalNamer.h"
 #include "ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/Macros.h"
 

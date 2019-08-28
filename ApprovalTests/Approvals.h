@@ -4,7 +4,7 @@
 #include <string>
 #include <functional>
 #include <exception>
-#include "FileApprover.h"
+#include "ApprovalTests/core/FileApprover.h"
 #include "reporters/DefaultReporter.h"
 #include "reporters/DefaultReporterDisposer.h"
 #include "reporters/Reporter.h"

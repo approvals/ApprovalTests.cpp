@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_TEXTFILECOMPARATOR_H
 #define APPROVALTESTS_CPP_TEXTFILECOMPARATOR_H
 
-#include "ApprovalComparator.h"
+#include "ApprovalTests/core/ApprovalComparator.h"
 
 namespace ApprovalTests {
 class TextFileComparator : public ApprovalComparator

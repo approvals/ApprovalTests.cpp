@@ -1,5 +1,5 @@
 #include "Catch.hpp"
-#include "ApprovalTests/ApprovalException.h"
+#include "ApprovalTests/core/ApprovalException.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/reporters/QuietReporter.h"
 
