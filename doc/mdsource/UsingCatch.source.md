@@ -49,7 +49,7 @@ If you have [supplied your own `main()` for Catch](https://github.com/catchorg/C
 
 There is not yet a streamlined way of doing this.
 
-For now, please see the code in [ApprovalTests/Catch2Approvals.h](/ApprovalTests/Catch2Approvals.h) for the code you will need to add to your `main.cpp`.
+For now, please see the code in [ApprovalTests/Catch2Approvals.h](/ApprovalTests/integrations/catch/Catch2Approvals.h) for the code you will need to add to your `main.cpp`.
 
 If it would be helpful for us to provide an easier way to do this, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top). 
 

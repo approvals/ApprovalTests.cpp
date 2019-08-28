@@ -2,7 +2,7 @@
 #ifndef APPROVALTESTS_CPP_CATCH2APPROVALS_H
 #define APPROVALTESTS_CPP_CATCH2APPROVALS_H
 
-#include "namers/ApprovalTestNamer.h"
+#include "ApprovalTests/namers/ApprovalTestNamer.h"
 
 // <SingleHpp unalterable>
 #ifdef APPROVALS_CATCH

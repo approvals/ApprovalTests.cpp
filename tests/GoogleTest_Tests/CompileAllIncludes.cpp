@@ -5,7 +5,7 @@
 #include "ApprovalTests/ApprovalException.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/ApprovalWriter.h"
-#include "ApprovalTests/Catch2Approvals.h"
+#include "ApprovalTests/integrations/catch/Catch2Approvals.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "ApprovalTests/comparators/ApprovalComparator.h"
 #include "ApprovalTests/comparators/TextFileComparator.h"
