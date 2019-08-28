@@ -33,8 +33,7 @@ public:
 class ApprovalTestNamer : public ApprovalNamer {
 private:
 public:
-    ApprovalTestNamer() {
-    }
+    ApprovalTestNamer() = default;
 
     std::string getTestName() const {
         std::stringstream ext;

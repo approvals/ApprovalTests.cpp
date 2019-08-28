@@ -17,9 +17,9 @@
 namespace ApprovalTests {
 class Approvals {
 private:
-    Approvals() {}
+    Approvals() = default;
 
-    ~Approvals() {}
+    ~Approvals() = default;
 
 public:
     static std::shared_ptr<ApprovalNamer> getDefaultNamer()

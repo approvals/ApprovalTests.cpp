@@ -21,9 +21,9 @@ private:
     APPROVAL_TESTS_MACROS_STATIC(ComparatorContainer, comparators, new ComparatorContainer())
 
 public:
-    FileApprover() {};
+    FileApprover() = default;
 
-    ~FileApprover() {};
+    ~FileApprover() = default;
 
     static void registerComparator(std::string extensionWithDot, std::shared_ptr<ApprovalComparator> comparator)
     {
