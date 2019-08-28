@@ -1,5 +1,5 @@
 #include "Catch.hpp"
-#include "ApprovalTests/StringWriter.h"
+#include "ApprovalTests/writers/StringWriter.h"
 #include "ApprovalTests/Approvals.h"
 
 std::string readFileAndDelete(const char *fileName) {

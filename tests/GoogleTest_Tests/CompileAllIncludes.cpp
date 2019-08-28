@@ -47,7 +47,7 @@
 #include "ApprovalTests/reporters/Reporter.h"
 #include "ApprovalTests/reporters/SystemLauncher.h"
 #include "ApprovalTests/reporters/WindowsReporters.h"
-#include "ApprovalTests/StringWriter.h"
+#include "ApprovalTests/writers/StringWriter.h"
 #include "ApprovalTests/SystemUtils.h"
 #include "ApprovalTests/utilities/Blocker.h"
 #include "ApprovalTests/utilities/FileUtils.h"

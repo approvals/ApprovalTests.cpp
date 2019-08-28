@@ -5,7 +5,7 @@
 #include <map>
 #include <memory>
 #include "ApprovalException.h"
-#include "StringWriter.h"
+#include "ApprovalTests/writers/StringWriter.h"
 #include "reporters/Reporter.h"
 #include "reporters/FrontLoadedReporterDisposer.h"
 #include "namers/ApprovalNamer.h"

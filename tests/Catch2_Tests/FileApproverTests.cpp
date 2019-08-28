@@ -1,5 +1,5 @@
 #include "Catch.hpp"
-#include "ApprovalTests/StringWriter.h"
+#include "ApprovalTests/writers/StringWriter.h"
 #include "reporters/TestReporter.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/FileApprover.h"
