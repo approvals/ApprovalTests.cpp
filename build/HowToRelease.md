@@ -11,7 +11,7 @@ Preparation:
 - [ ] Determine the semantic version number
 - [ ] Update the version number in [build_hpp.sh](/build/build_hpp.sh)
 
-Creating the build
+Creating the Build
 
 - [ ] Run `build_hpp.sh` - this updates [the starter project](https://github.com/approvals/ApprovalTests.cpp.StarterProject), tests that it builds, and if so, **commits and pushes it**
 
