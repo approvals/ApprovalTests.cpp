@@ -153,7 +153,7 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup>[snippet source](/tests/DocTest_Tests/DocTestDocumentationSamples.cpp#L60-L77) / [anchor](#snippet-doctest_multiple_output_files_hard_coded)</sup>
+<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L60-L77) / [anchor](#snippet-doctest_multiple_output_files_hard_coded)</sup>
 <!-- endsnippet -->
 
 ## Approval Tests
@@ -179,7 +179,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
     }
 }
 ```
-<sup>[snippet source](/tests/DocTest_Tests/DocTestDocumentationSamples.cpp#L79-L93) / [anchor](#snippet-approvals_multiple_output_files_dynamic)</sup>
+<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L79-L93) / [anchor](#snippet-approvals_multiple_output_files_dynamic)</sup>
 <!-- endsnippet -->
 
 Or hard-coded, with multiple sections:
@@ -204,7 +204,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup>[snippet source](/tests/DocTest_Tests/DocTestDocumentationSamples.cpp#L95-L112) / [anchor](#snippet-approvals_multiple_output_files_hard_coded)</sup>
+<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L95-L112) / [anchor](#snippet-approvals_multiple_output_files_hard_coded)</sup>
 <!-- endsnippet -->
  
 
