@@ -3,7 +3,7 @@
 
 #include "ApprovalTests/launchers/CommandLauncher.h"
 #include "ApprovalTests/utilities/FileUtils.h"
-#include "Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 
 namespace ApprovalTests {
 // Generic reporter to launch arbitrary command

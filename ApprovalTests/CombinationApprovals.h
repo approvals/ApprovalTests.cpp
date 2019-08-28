@@ -5,7 +5,7 @@
 #include <vector>
 #include <ostream>
 #include "reporters/DefaultReporter.h"
-#include "reporters/Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 #include "Approvals.h"
 
 namespace ApprovalTests {

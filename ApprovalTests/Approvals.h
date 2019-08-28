@@ -7,7 +7,7 @@
 #include "ApprovalTests/core/FileApprover.h"
 #include "reporters/DefaultReporter.h"
 #include "reporters/DefaultReporterDisposer.h"
-#include "reporters/Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 #include "namers/ApprovalTestNamer.h"
 #include "writers/ExistingFile.h"
 #include "namers/ExistingFileNamer.h"

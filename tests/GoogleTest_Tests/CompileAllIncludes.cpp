@@ -44,7 +44,7 @@
 #include "ApprovalTests/reporters/LinuxReporters.h"
 #include "ApprovalTests/reporters/MacReporters.h"
 #include "ApprovalTests/reporters/QuietReporter.h"
-#include "ApprovalTests/reporters/Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/launchers/SystemLauncher.h"
 #include "ApprovalTests/reporters/WindowsReporters.h"
 #include "ApprovalTests/writers/StringWriter.h"

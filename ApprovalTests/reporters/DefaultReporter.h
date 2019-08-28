@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_DEFAULTREPORTER_H
 #define APPROVALTESTS_CPP_DEFAULTREPORTER_H
 
-#include "Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 #include "DefaultReporterFactory.h"
 
 #include <string>

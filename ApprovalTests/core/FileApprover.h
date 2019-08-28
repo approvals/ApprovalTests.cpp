@@ -6,7 +6,7 @@
 #include <memory>
 #include "ApprovalException.h"
 #include "ApprovalTests/writers/StringWriter.h"
-#include "ApprovalTests/reporters/Reporter.h"
+#include "Reporter.h"
 #include "ApprovalTests/reporters/FrontLoadedReporterDisposer.h"
 #include "ApprovalTests/core/ApprovalNamer.h"
 #include "ApprovalComparator.h"

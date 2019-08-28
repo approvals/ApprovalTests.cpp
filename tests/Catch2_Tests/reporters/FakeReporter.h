@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_FAKEREPORTER_H
 #define APPROVALTESTS_CPP_FAKEREPORTER_H
 
-#include "ApprovalTests/reporters/Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 
 class FakeReporter : public ApprovalTests::Reporter {
 public:

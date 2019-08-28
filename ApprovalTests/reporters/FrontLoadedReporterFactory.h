@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_FRONTLOADEDREPORTERFACTORY_H
 #define APPROVALTESTS_CPP_FRONTLOADEDREPORTERFACTORY_H
 
-#include "Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 #include "DefaultFrontLoadedReporter.h"
 #include "ApprovalTests/utilities/Macros.h"
 

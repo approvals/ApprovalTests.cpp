@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_BLOCKINGREPORTER_H
 #define APPROVALTESTS_CPP_BLOCKINGREPORTER_H
 
-#include "Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 #include "../utilities/MachineBlocker.h"
 

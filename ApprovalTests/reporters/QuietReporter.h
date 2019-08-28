@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_QUIETREPORTER_H
 #define APPROVALTESTS_CPP_QUIETREPORTER_H
 
-#include "Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 #include <memory>
 #include <vector>
 

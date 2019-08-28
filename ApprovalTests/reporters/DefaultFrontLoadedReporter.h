@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_DEFAULTFRONTLOADEDREPORTER_H
 #define APPROVALTESTS_CPP_DEFAULTFRONTLOADEDREPORTER_H
 
-#include "Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 
 namespace ApprovalTests {
 //! Implementation detail of Approvals::useAsFrontLoadedReporter()

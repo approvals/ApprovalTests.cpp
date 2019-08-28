@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_COMMANDLINEREPORTER_H
 #define APPROVALTESTS_CPP_COMMANDLINEREPORTER_H
 
-#include "Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 
 
