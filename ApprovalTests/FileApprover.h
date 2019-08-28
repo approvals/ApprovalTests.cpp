@@ -61,7 +61,7 @@ public:
         verify(receivedPath, approvedPath, *getComparatorForFile(receivedPath));
     }
 
-    static void verify(ApprovalNamer& n, ApprovalWriter& s, const Reporter& r) {
+    static void verify(const ApprovalNamer& n, ApprovalWriter& s, const Reporter& r) {
         std::string approvedPath = n.getApprovedFile(s.getFileExtensionWithDot());
         std::string receivedPath = n.getReceivedFile(s.getFileExtensionWithDot());
         s.write(receivedPath);

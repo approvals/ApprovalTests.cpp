@@ -115,7 +115,7 @@ R"(* Welcome to Approval Tests.
 
 
     // Deprecated - please use getSourceFileName
-    std::string getFileName() {
+    std::string getFileName() const {
         return getSourceFileName();
     }
 
@@ -128,7 +128,7 @@ R"(* Welcome to Approval Tests.
         return convertToFileName(fileName);
     }
 
-    std::string getDirectory() {
+    std::string getDirectory() const {
         auto file = getCurrentTest().getFileName();
         auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto directory = file.substr(0, end);
@@ -143,12 +143,12 @@ R"(* Welcome to Approval Tests.
     APPROVAL_TESTS_MACROS_STATIC(TestName, currentTest, NULL)
     APPROVAL_TESTS_MACROS_STATIC(TestConfiguration, testConfiguration, new TestConfiguration)
 
-    virtual std::string getApprovedFile(std::string extensionWithDot) {
+    virtual std::string getApprovedFile(std::string extensionWithDot) const override {
 
         return getFullFileName(".approved", extensionWithDot);
     }
 
-    virtual std::string getReceivedFile(std::string extensionWithDot) {
+    virtual std::string getReceivedFile(std::string extensionWithDot) const override {
 
         return getFullFileName(".received", extensionWithDot);
     }
@@ -157,7 +157,7 @@ R"(* Welcome to Approval Tests.
         return getSourceFileName() + "." + getTestName();
     }
 
-    std::string getFullFileName(std::string approved, std::string extensionWithDot) {
+    std::string getFullFileName(std::string approved, std::string extensionWithDot) const {
         std::stringstream ext;
         ext << getDirectory() << getOutputFileBaseName() << approved << extensionWithDot;
         return ext.str();

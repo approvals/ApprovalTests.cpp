@@ -10,7 +10,7 @@ class SeparateApprovedAndReceivedDirectoriesNamer : public ApprovalTestNamer
 public:
     virtual ~SeparateApprovedAndReceivedDirectoriesNamer() = default;
 
-    std::string getFullFileNameWithExtraDirectory(std::string approved, std::string extensionWithDot)
+    std::string getFullFileNameWithExtraDirectory(std::string approved, std::string extensionWithDot) const
     {
         std::string outputDirectory = getDirectory() +  approved;
         SystemUtils::ensureDirectoryExists(outputDirectory);
@@ -20,12 +20,12 @@ public:
         return outputDirectory + SystemUtils::getDirectorySeparator() + outputFile;
     }
     
-    virtual std::string getApprovedFile(std::string extensionWithDot) override
+    virtual std::string getApprovedFile(std::string extensionWithDot) const override
     {
         return getFullFileNameWithExtraDirectory("approved", extensionWithDot);
     }
     
-    virtual std::string getReceivedFile(std::string extensionWithDot) override
+    virtual std::string getReceivedFile(std::string extensionWithDot) const override
     {
         return getFullFileNameWithExtraDirectory("received", extensionWithDot);
     }

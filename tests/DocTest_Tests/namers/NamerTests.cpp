@@ -8,11 +8,11 @@
 
 class FakeNamer : public ApprovalTests::ApprovalNamer
 {
-    virtual std::string getApprovedFile(std::string /*extensionWithDot*/) override
+    virtual std::string getApprovedFile(std::string /*extensionWithDot*/) const override
     {
         return "my.approved";
     }
-    virtual std::string getReceivedFile(std::string /*extensionWithDot*/) override 
+    virtual std::string getReceivedFile(std::string /*extensionWithDot*/) const override 
     {
         return "my.received";
     }
