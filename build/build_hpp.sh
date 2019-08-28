@@ -7,8 +7,8 @@ set -o pipefail
 # Constants
 UNSET_VERSION="v.X.X.X"
 
-LAST_VERSION="v.4.0.0"
-VERSION="v.5.0.0"
+LAST_VERSION="v.5.0.0"
+VERSION=$UNSET_VERSION
 
 PUSH_TO_PRODUCTION="true"
 if [ "$VERSION" = $UNSET_VERSION ]; then
@@ -92,12 +92,12 @@ sed -i -e "s/$LAST_VERSION/$VERSION/g" mdsource/README.source.md
 popd
 
 # Draft the upload to github
-cygstart "https://github.com/approvals/ApprovalTests.cpp/releases/new?tag=$VERSION&title=Single%20Hpp%20File"
+open "https://github.com/approvals/ApprovalTests.cpp/releases/new?tag=$VERSION&title=Single%20Hpp%20File"
 
 # Draft the tweet
-cygstart "https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+$VERSION+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F$VERSION+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21"
+open "https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+$VERSION+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F$VERSION+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21"
 
-cygstart ../build/releases/
+open ../build/releases/
 
 # The prefixes used in our commit messages come from: https://github.com/RefactoringCombos/ArlosCommitNotation
 git log ${LAST_VERSION}..HEAD --pretty=format:%s | \

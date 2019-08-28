@@ -10,3 +10,4 @@ doc/html/
 *.runsettings
 CMakeLists.txt.user
 *.bak
+.DS_Store
