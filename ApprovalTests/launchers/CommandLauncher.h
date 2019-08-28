@@ -9,7 +9,7 @@ namespace ApprovalTests {
 class CommandLauncher
 {
 public:
-    virtual ~CommandLauncher() {}
+    virtual ~CommandLauncher() = default;
     virtual bool launch(std::vector<std::string> argv) = 0;
 };
 }
