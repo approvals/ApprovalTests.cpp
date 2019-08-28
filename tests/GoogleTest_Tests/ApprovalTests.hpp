@@ -3,7 +3,7 @@
 #ifndef APPROVALTESTS_CPP_APPROVALTESTS_H
 #define APPROVALTESTS_CPP_APPROVALTESTS_H
 
-#include "ApprovalTests/GoogleTestApprovals.h"
+#include "ApprovalTests/integrations/google/GoogleTestApprovals.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/reporters/BlockingReporter.h"
 

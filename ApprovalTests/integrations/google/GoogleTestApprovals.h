@@ -1,8 +1,8 @@
 #ifndef APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H
 #define APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H
 
-#include "namers/ApprovalTestNamer.h"
-#include "integrations/google/GoogleCustomizationsFactory.h"
+#include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "GoogleCustomizationsFactory.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 
 #ifdef APPROVALS_GOOGLETEST_EXISTING_MAIN

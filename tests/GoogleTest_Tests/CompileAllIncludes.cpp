@@ -10,7 +10,7 @@
 #include "ApprovalTests/comparators/ApprovalComparator.h"
 #include "ApprovalTests/comparators/TextFileComparator.h"
 #include "ApprovalTests/FileApprover.h"
-#include "ApprovalTests/GoogleTestApprovals.h"
+#include "ApprovalTests/integrations/google/GoogleTestApprovals.h"
 #include "ApprovalTests/integrations/doctest/DocTestApprovals.h"
 #include "ApprovalTests/integrations/google/GoogleConfiguration.h"
 #include "ApprovalTests/integrations/google/GoogleCustomizationsFactory.h"
