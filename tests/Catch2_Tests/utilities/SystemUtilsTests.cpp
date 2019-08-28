@@ -17,7 +17,7 @@ TEST_CASE("ItCanFixCaseOfFileNameOnWindows")
         // The current implementation doesn't fix the case of folder names, only the file
         // So for now, check that the folder name is still present, but expect it
         // to be lower case
-        CHECK(ApprovalTests::StringUtils::contains(fixed_filename, "approvaltests_catch2_tests"));
+        CHECK(ApprovalTests::StringUtils::contains(fixed_filename, "catch2_tests"));
     }
 }
 
