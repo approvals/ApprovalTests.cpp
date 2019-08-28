@@ -30,6 +30,8 @@ Traditional tests spend equal time focusing on creating the inputs and verifying
 
 When the objects being tested are non-trivial, either the tests become quite verbose (as shown in this example), or it's tempting to only test a small part of the behaviour.
 
+<!-- snippet: sandwich_example_with_requires -->
+<a id='snippet-sandwich_example_with_requires'/></a>
 ```cpp
 // Arrange, Act
 Sandwich s = createSandwichForTest();
@@ -42,6 +44,8 @@ REQUIRE(s.getFillings().contains("Tomato"));
 REQUIRE(s.getFillings().contains("Lettuce"));
 REQUIRE(s.getFillings().contains("Cheddar"));
 ```
+<sup>[snippet source](/tests/Catch2_Tests/documentation/OverviewExamples.cpp#L88-L99) / [anchor](#snippet-sandwich_example_with_requires)</sup>
+<!-- endsnippet -->
 
 ## Approval Tests
 
@@ -49,22 +53,30 @@ Approval Tests simplify verification of the outputs. They do this by writing the
 
 You still supply the inputs, but Approval Tests gives you powerful ways of viewing complex outputs, meaning you can move on to the next feature or next test more quickly.
 
+<!-- snippet: sandwich_example_with_approvals -->
+<a id='snippet-sandwich_example_with_approvals'/></a>
 ```cpp
 // Arrange, Act
 Sandwich s = createSandwichForTest();
 // Assert
-Approvals::verify(s);
+ApprovalTests::Approvals::verify(s);
 ```
+<sup>[snippet source](/tests/Catch2_Tests/documentation/OverviewExamples.cpp#L104-L109) / [anchor](#snippet-sandwich_example_with_approvals)</sup>
+<!-- endsnippet -->
 
 This generates the approval file - which generated **for** you, but [approved **by** you](/doc/ApprovingResults.md#top).
 
-```text
+<!-- snippet: OverviewExamples.SandwichExampleWithApprovals.approved.txt -->
+<a id='snippet-OverviewExamples.SandwichExampleWithApprovals.approved.txt'/></a>
+```txt
 sandwich {
     bread: "Sourdough",
     condiments: ["Mayo", "Pepper", "Olive Oil"],
     fillings: ["Tomato", "Lettuce", "Cheddar"]
 }
 ```
+<sup>[snippet source](/tests/Catch2_Tests/documentation/approval_tests/OverviewExamples.SandwichExampleWithApprovals.approved.txt#L1-L5) / [anchor](#snippet-OverviewExamples.SandwichExampleWithApprovals.approved.txt)</sup>
+<!-- endsnippet -->
 
 ---
 

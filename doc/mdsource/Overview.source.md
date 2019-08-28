@@ -16,18 +16,7 @@ Traditional tests spend equal time focusing on creating the inputs and verifying
 
 When the objects being tested are non-trivial, either the tests become quite verbose (as shown in this example), or it's tempting to only test a small part of the behaviour.
 
-```cpp
-// Arrange, Act
-Sandwich s = createSandwichForTest();
-// Assert
-REQUIRE("Sourdough" == s.getBread());
-REQUIRE(s.getCondiments().contains("Mayo"));
-REQUIRE(s.getCondiments().contains("Pepper"));
-REQUIRE(s.getCondiments().contains("Olive Oil"));
-REQUIRE(s.getFillings().contains("Tomato"));
-REQUIRE(s.getFillings().contains("Lettuce"));
-REQUIRE(s.getFillings().contains("Cheddar"));
-```
+snippet: sandwich_example_with_requires
 
 ## Approval Tests
 
@@ -35,22 +24,11 @@ Approval Tests simplify verification of the outputs. They do this by writing the
 
 You still supply the inputs, but Approval Tests gives you powerful ways of viewing complex outputs, meaning you can move on to the next feature or next test more quickly.
 
-```cpp
-// Arrange, Act
-Sandwich s = createSandwichForTest();
-// Assert
-Approvals::verify(s);
-```
+snippet: sandwich_example_with_approvals
 
 This generates the approval file - which generated **for** you, but [approved **by** you](/doc/ApprovingResults.md#top).
 
-```text
-sandwich {
-    bread: "Sourdough",
-    condiments: ["Mayo", "Pepper", "Olive Oil"],
-    fillings: ["Tomato", "Lettuce", "Cheddar"]
-}
-```
+snippet: OverviewExamples.SandwichExampleWithApprovals.approved.txt
 
 ---
 

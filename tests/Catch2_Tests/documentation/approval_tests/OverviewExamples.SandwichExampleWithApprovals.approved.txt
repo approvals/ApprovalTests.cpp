@@ -1,0 +1,5 @@
+sandwich {
+    bread: "Sourdough",
+    condiments: ["Mayo", "Pepper", "Olive Oil"],
+    fillings: ["Tomato", "Lettuce", "Cheddar"]
+}
