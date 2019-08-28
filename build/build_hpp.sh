@@ -4,11 +4,14 @@
 set -e
 set -o pipefail
 
+# Constants
+UNSET_VERSION="v.X.X.X"
+
 LAST_VERSION="v.4.0.0"
-VERSION="v.X.X.X"
+VERSION=$UNSET_VERSION
 
 PUSH_TO_PRODUCTION="true"
-if [ "$VERSION" = "v.X.X.X" ]; then
+if [ "$VERSION" = $UNSET_VERSION ]; then
     PUSH_TO_PRODUCTION="false"
     echo "Turning off PUSH_TO_PRODUCTION as version number has not been set"
 fi
