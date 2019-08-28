@@ -5,7 +5,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
-#include "../SystemUtils.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 #include <vector>
 #include <numeric>

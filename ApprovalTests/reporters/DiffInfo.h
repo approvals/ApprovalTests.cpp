@@ -4,7 +4,7 @@
 #include <string>
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/utilities/StringUtils.h"
-#include "../SystemUtils.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 
 namespace ApprovalTests {
 enum class Type { TEXT, IMAGE, TEXT_AND_IMAGE };

@@ -2,7 +2,7 @@
 #define APPROVALTESTS_CPP_COMMANDLINEREPORTER_H
 
 #include "Reporter.h"
-#include "../SystemUtils.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 
 
 #include <string>

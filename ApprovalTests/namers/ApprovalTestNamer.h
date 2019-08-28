@@ -7,7 +7,7 @@
 #include <vector>
 #include <stdexcept>
 #include "ApprovalTests/utilities/Macros.h"
-#include "../SystemUtils.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 
 namespace ApprovalTests {
 class TestName {

@@ -2,7 +2,7 @@
 #include "ApprovalTests/utilities/FileUtilsSystemSpecific.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/Approvals.h"
-#include "ApprovalTests/SystemUtils.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 #include <stdio.h>
 
 TEST_CASE("ItCanCopyAFile")
