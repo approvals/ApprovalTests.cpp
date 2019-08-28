@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_DONOTHINGLAUNCHER_H
 #define APPROVALTESTS_CPP_DONOTHINGLAUNCHER_H
 
-#include "ApprovalTests/reporters/CommandLauncher.h"
+#include "ApprovalTests/launchers/CommandLauncher.h"
 
 #include <string>
 #include <vector>

@@ -3,7 +3,7 @@
 
 #include "DiffPrograms.h"
 #include "CommandReporter.h"
-#include "SystemLauncher.h"
+#include "ApprovalTests/launchers/SystemLauncher.h"
 #include <string>
 #include <vector>
 

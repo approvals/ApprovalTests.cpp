@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_COMMANDREPORTER_H
 #define APPROVALTESTS_CPP_COMMANDREPORTER_H
 
-#include "CommandLauncher.h"
+#include "ApprovalTests/launchers/CommandLauncher.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "Reporter.h"
 
