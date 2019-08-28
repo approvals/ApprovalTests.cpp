@@ -8,6 +8,10 @@ LAST_VERSION="v.4.0.0"
 VERSION="v.X.X.X"
 
 PUSH_TO_PRODUCTION="true"
+if [ "$VERSION" = "v.X.X.X" ]; then
+    PUSH_TO_PRODUCTION="false"
+    echo "Turning off PUSH_TO_PRODUCTION as version number has not been set"
+fi
 
 OLD_SINGLE_HEADER=ApprovalTests.$LAST_VERSION.hpp
 NEW_SINGLE_HEADER=ApprovalTests.$VERSION.hpp
@@ -61,6 +65,7 @@ if [ "$VERSION" == "v.X.X.X" ] ; then
 fi
 
 if [ "$PUSH_TO_PRODUCTION" == "false" ] ; then
+    # Don't push to production if we haven't set the version number
     echo "Everything worked - didn't commit or push"
     exit
 fi
