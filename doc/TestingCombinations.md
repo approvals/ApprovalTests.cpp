@@ -27,7 +27,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2") {
             numbers);
 }
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/CombinationTests.cpp#L33-L42) / [anchor](#snippet-youcanverifycombinationsof2)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/CombinationTests.cpp#L33-L42) / [anchor](#snippet-youcanverifycombinationsof2)</sup>
 <!-- endsnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
@@ -43,7 +43,7 @@ The format is carefully chosen to show both inputs and outputs, to make the test
 (world, 3) => (world, 3)
 
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/approval_tests/CombinationTests.YouCanVerifyCombinationsOf2.approved.txt#L1-L7) / [anchor](#snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/approval_tests/CombinationTests.YouCanVerifyCombinationsOf2.approved.txt#L1-L7) / [anchor](#snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt)</sup>
 <!-- endsnippet -->
 
 For advice on effective formatting, see [To String](/doc/ToString.md#top). As you write out larger volumes of data in your approval files, experience has shown that the choice of layout of text in approval files can make a big difference to maintainability of tests, when failures occur.

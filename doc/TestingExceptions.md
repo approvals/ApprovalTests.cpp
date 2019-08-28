@@ -29,7 +29,7 @@ The exception thrown must inherit `std::exception`.
 ```cpp
 ApprovalTests::Approvals::verifyExceptionMessage([](){/* your code goes here */});
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/ApprovalsTests.cpp#L106-L108) / [anchor](#snippet-verify_exception_message_example)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/ApprovalsTests.cpp#L106-L108) / [anchor](#snippet-verify_exception_message_example)</sup>
 <!-- endsnippet -->
 
 ---

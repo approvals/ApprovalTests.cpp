@@ -63,7 +63,7 @@ TEST_CASE("Only run this test on John's machine")
     REQUIRE(ApprovalTests::SystemUtils::getMachineName() == "JOHNS_MACHINE");
 }
 ```
-<sup>[snippet source](/tests/ApprovalTests_Catch2_Tests/utilities/MachineBlockerTests.cpp#L21-L32) / [anchor](#snippet-machine_specific_test_runner)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/utilities/MachineBlockerTests.cpp#L21-L32) / [anchor](#snippet-machine_specific_test_runner)</sup>
 <!-- endsnippet -->
 
 ## Front Loaded Reporters
