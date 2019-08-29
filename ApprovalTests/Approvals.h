@@ -64,7 +64,7 @@ public:
         {
             message = e.what();
         }
-        Approvals::verify(message, reporter);
+        verify(message, reporter);
     }
 
     template<typename Iterator>
