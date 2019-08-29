@@ -33,7 +33,12 @@ target_link_libraries(${PROJECT_NAME} ApprovalTests catch2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
-if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND CMAKE_CXX_SIMULATE_ID MATCHES "MSVC")
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        /W4
+        /WX
+        )
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(${PROJECT_NAME} PRIVATE
         -Wall
         -Wextra
