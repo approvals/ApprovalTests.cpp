@@ -6,7 +6,7 @@ toc
 
 Use `Approvals::verifyAll()` to test containers of objects.
 
-For some examples, see [VectorTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests_Catch2_Tests/VectorTests.cpp).
+For some examples, see [VectorTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/Catch2_Tests/VectorTests.cpp).
 
 <!-- todo: replace this link to examples with snippets -->
 
