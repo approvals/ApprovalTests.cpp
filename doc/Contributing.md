@@ -43,7 +43,7 @@ We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommit
 
 ## Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](/CODE_OF_CONDUCT.md#top). By participating in this project you agree to abide by its terms.
 
 ## Documentation
 

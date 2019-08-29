@@ -26,5 +26,5 @@
 * **Bug fixes**
     * Check file streams are valid before using them.
 * **Other changes**
-    * Adopted [Contributor Covenant v1.4](/CODE_OF_CONDUCT.md)
+    * Adopted [Contributor Covenant v1.4](/CODE_OF_CONDUCT.md#top)
     * Implemented some code quality improvements, thanks to @alastairUK
