@@ -16,7 +16,7 @@ public:
     {
         checkForCygwin();
     }
-    GenericDiffReporter(const DiffInfo& info) : CommandReporter(info.getProgramForOs().c_str(), &launcher)
+    GenericDiffReporter(const DiffInfo& info) : CommandReporter(info.getProgramForOs(), &launcher)
     {
         checkForCygwin();
     }

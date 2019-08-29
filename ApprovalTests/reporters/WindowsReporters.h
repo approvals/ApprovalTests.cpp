@@ -9,17 +9,17 @@ namespace ApprovalTests {
 namespace Windows {
     class BeyondCompare3Reporter : public GenericDiffReporter {
     public:
-        BeyondCompare3Reporter() : GenericDiffReporter(DiffPrograms::Windows::BEYOND_COMPARE_3()) {};
+        BeyondCompare3Reporter() : GenericDiffReporter(DiffPrograms::Windows::BEYOND_COMPARE_3()) {}
     };
 
   class VisualStudioCodeReporter : public GenericDiffReporter {
     public:
-      VisualStudioCodeReporter() : GenericDiffReporter(DiffPrograms::Windows::VS_CODE()) {};
+      VisualStudioCodeReporter() : GenericDiffReporter(DiffPrograms::Windows::VS_CODE()) {}
     };
 
     class BeyondCompare4Reporter : public GenericDiffReporter {
     public:
-        BeyondCompare4Reporter() : GenericDiffReporter(DiffPrograms::Windows::BEYOND_COMPARE_4()) {};
+        BeyondCompare4Reporter() : GenericDiffReporter(DiffPrograms::Windows::BEYOND_COMPARE_4()) {}
     };
 
     class BeyondCompareReporter : public FirstWorkingReporter {
@@ -30,12 +30,12 @@ namespace Windows {
 
     class TortoiseImageDiffReporter : public GenericDiffReporter {
     public:
-        TortoiseImageDiffReporter() : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_IMAGE_DIFF()) {};
+        TortoiseImageDiffReporter() : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_IMAGE_DIFF()) {}
     };
 
     class TortoiseTextDiffReporter : public GenericDiffReporter {
     public:
-        TortoiseTextDiffReporter() : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_TEXT_DIFF()) {};
+        TortoiseTextDiffReporter() : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_TEXT_DIFF()) {}
     };
 
     class TortoiseDiffReporter : public FirstWorkingReporter {
@@ -47,22 +47,22 @@ namespace Windows {
 
     class WinMergeReporter : public GenericDiffReporter {
     public:
-        WinMergeReporter() : GenericDiffReporter(DiffPrograms::Windows::WIN_MERGE_REPORTER()) {};
+        WinMergeReporter() : GenericDiffReporter(DiffPrograms::Windows::WIN_MERGE_REPORTER()) {}
     };
 
     class AraxisMergeReporter : public GenericDiffReporter {
     public:
-        AraxisMergeReporter() : GenericDiffReporter(DiffPrograms::Windows::ARAXIS_MERGE()) {};
+        AraxisMergeReporter() : GenericDiffReporter(DiffPrograms::Windows::ARAXIS_MERGE()) {}
     };
 
     class CodeCompareReporter : public GenericDiffReporter {
     public:
-        CodeCompareReporter() : GenericDiffReporter(DiffPrograms::Windows::CODE_COMPARE()) {};
+        CodeCompareReporter() : GenericDiffReporter(DiffPrograms::Windows::CODE_COMPARE()) {}
     };
 
     class KDiff3Reporter : public GenericDiffReporter {
     public:
-        KDiff3Reporter() : GenericDiffReporter(DiffPrograms::Windows::KDIFF3()) {};
+        KDiff3Reporter() : GenericDiffReporter(DiffPrograms::Windows::KDIFF3()) {}
     };
 
     class WindowsDiffReporter : public FirstWorkingReporter {
