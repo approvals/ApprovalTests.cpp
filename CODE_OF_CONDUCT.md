@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
