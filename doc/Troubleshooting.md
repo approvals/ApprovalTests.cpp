@@ -29,33 +29,41 @@ A problem in your test program's `main()` means that ApprovalTests.cpp is not co
 
 Running tests gives the following output:
 
-```text
+<!-- snippet: ForgottenToConfigure.HelpMessage.approved.txt -->
+<a id='snippet-ForgottenToConfigure.HelpMessage.approved.txt'/></a>
+```txt
+
+
 ************************************************************************************
 *                                                                                  *
 * Welcome to Approval Tests.
-* 
+*
 * You have forgotten to configure your test framework for Approval Tests.
-* 
+*
 * To do this in Catch, add the following to your main.cpp:
-* 
+*
 *     #define APPROVALS_CATCH
 *     #include "ApprovalTests.hpp"
-* 
+*
 * To do this in Google Test, add the following to your main.cpp:
-* 
+*
 *     #define APPROVALS_GOOGLETEST
 *     #include "ApprovalTests.hpp"
 *
 * To do this in doctest, add the following to your main.cpp:
-* 
+*
 *     #define APPROVALS_DOCTEST
 *     #include "ApprovalTests.hpp"
-* 
+*
 * For more information, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/GettingStarted.md
 *                                                                                  *
 ************************************************************************************
+
+
 ```
+<sup>[snippet source](/tests/DocTest_Tests/documentation/approval_tests/ForgottenToConfigure.HelpMessage.approved.txt#L1-L29) / [anchor](#snippet-ForgottenToConfigure.HelpMessage.approved.txt)</sup>
+<!-- endsnippet -->
 
 **Things to check:**
 

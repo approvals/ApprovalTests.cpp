@@ -80,35 +80,41 @@ public:
         }
         catch( const std::runtime_error& )
         {
-            std::string lineBreak = "************************************************************************************\n";
-            std::string lineBuffer = "*                                                                                  *\n";
-            std::string helpMessage =
-                "\n\n" + lineBreak + lineBuffer + 
+            std::string helpMessage = getMisconfiguredMainHelp();
+            throw std::runtime_error( helpMessage );
+        }
+    }
+
+    static std::string getMisconfiguredMainHelp()
+    {
+        std::string lineBreak = "************************************************************************************\n";
+        std::string lineBuffer = "*                                                                                  *\n";
+        std::string helpMessage =
+                "\n\n" + lineBreak + lineBuffer +
 R"(* Welcome to Approval Tests.
-* 
+*
 * You have forgotten to configure your test framework for Approval Tests.
-* 
+*
 * To do this in Catch, add the following to your main.cpp:
-* 
+*
 *     #define APPROVALS_CATCH
 *     #include "ApprovalTests.hpp"
-* 
+*
 * To do this in Google Test, add the following to your main.cpp:
-* 
+*
 *     #define APPROVALS_GOOGLETEST
 *     #include "ApprovalTests.hpp"
-* 
+*
 * To do this in doctest, add the following to your main.cpp:
-* 
+*
 *     #define APPROVALS_DOCTEST
 *     #include "ApprovalTests.hpp"
-* 
+*
 * For more information, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/GettingStarted.md
 )" +
                     lineBuffer + lineBreak + '\n';
-            throw std::runtime_error( helpMessage );
-        }
+        return helpMessage;
     }
 // </SingleHpp>
 

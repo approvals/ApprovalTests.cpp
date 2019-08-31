@@ -16,33 +16,7 @@ A problem in your test program's `main()` means that ApprovalTests.cpp is not co
 
 Running tests gives the following output:
 
-```text
-************************************************************************************
-*                                                                                  *
-* Welcome to Approval Tests.
-* 
-* You have forgotten to configure your test framework for Approval Tests.
-* 
-* To do this in Catch, add the following to your main.cpp:
-* 
-*     #define APPROVALS_CATCH
-*     #include "ApprovalTests.hpp"
-* 
-* To do this in Google Test, add the following to your main.cpp:
-* 
-*     #define APPROVALS_GOOGLETEST
-*     #include "ApprovalTests.hpp"
-*
-* To do this in doctest, add the following to your main.cpp:
-* 
-*     #define APPROVALS_DOCTEST
-*     #include "ApprovalTests.hpp"
-* 
-* For more information, please visit:
-* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/GettingStarted.md
-*                                                                                  *
-************************************************************************************
-```
+snippet: ForgottenToConfigure.HelpMessage.approved.txt 
 
 **Things to check:**
 
