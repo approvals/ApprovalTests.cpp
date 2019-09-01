@@ -14,7 +14,7 @@ private:
     std::string ext;
 
 public:
-    StringWriter( std::string contents, std::string fileExtensionWithDot = ".txt" )
+    explicit StringWriter( std::string contents, std::string fileExtensionWithDot = ".txt" )
         : s( contents ), ext( fileExtensionWithDot ) {}
 
     std::string getFileExtensionWithDot() const override

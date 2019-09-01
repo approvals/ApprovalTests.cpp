@@ -8,7 +8,7 @@ namespace ApprovalTests {
 class ExistingFileNamer: public ApprovalNamer{
     std::string filePath;
 public:
-    ExistingFileNamer(std::string filePath): filePath(filePath){
+    explicit ExistingFileNamer(std::string filePath): filePath(filePath){
 
     }
     virtual std::string getApprovedFile(std::string extensionWithDot) const override {

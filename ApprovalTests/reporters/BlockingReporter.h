@@ -16,7 +16,7 @@ private:
     BlockingReporter() = delete;
 
 public:
-    BlockingReporter( std::shared_ptr<Blocker> blocker ) : blocker(blocker)
+    explicit BlockingReporter( std::shared_ptr<Blocker> blocker ) : blocker(blocker)
     {
     }
 

@@ -11,7 +11,7 @@ class ApprovalException : public std::exception
 private:
     std::string message;
 public:
-    ApprovalException( const std::string& msg ) : message( msg ) {}
+    explicit ApprovalException( const std::string& msg ) : message( msg ) {}
 
     virtual const char *what() const noexcept override
     {

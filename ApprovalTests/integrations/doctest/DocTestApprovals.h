@@ -54,7 +54,7 @@ namespace {
         TestName currentTest;
 
         // constructor has to accept the ContextOptions by ref as a single argument
-        DocTestApprovalListener(const doctest::ContextOptions & /*in*/) {
+        explicit DocTestApprovalListener(const doctest::ContextOptions & /*in*/) {
         }
 
         void test_case_start(const doctest::TestCaseData &testInfo) override {
