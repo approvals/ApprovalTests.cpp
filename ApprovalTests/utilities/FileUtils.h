@@ -14,12 +14,12 @@ class FileUtils {
 public:
     static bool fileExists(std::string path)
     {
-        struct stat info;
+        struct stat info{};
         return stat( path.c_str(), &info ) == 0;
     }
 
     static int fileSize(std::string path) {
-        struct stat statbuf;
+        struct stat statbuf{};
         int stat_ok = stat(path.c_str(), &statbuf);
 
         if (stat_ok == -1) {
