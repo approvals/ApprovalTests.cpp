@@ -35,7 +35,7 @@ TEST_CASE("Reporters Report Failure Status") {
 }
 
 TEST_CASE("Reporters Report Success Status") {
-    std::string knownCommand = ApprovalTests::SystemUtils::isWindowsOs() ? "C:\\Windows\\System32\\help.exe" : "echo";
+    std::string knownCommand = ApprovalTests::SystemUtils::isWindowsOs() ? R"(C:\Windows\System32\help.exe)" : "echo";
     ApprovalTests::GenericDiffReporter m(knownCommand);
     bool result = m.report("r.txt", "a.txt");
     REQUIRE(true == result);
