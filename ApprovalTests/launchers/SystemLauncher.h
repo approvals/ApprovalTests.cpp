@@ -58,7 +58,7 @@ public:
 
         argv = convertArgumentsForSystemLaunching(argv);
 
-        std::string command = std::accumulate(argv.begin(), argv.end(), std::string(""), [](std::string a, std::string b) {return a + " " + "\"" + b + "\""; });
+        std::string command = std::accumulate(argv.begin(), argv.end(), std::string(""), [](const std::string& a, const std::string& b) {return a + " " + "\"" + b + "\""; });
         std::string launch = SystemUtils::isWindowsOs() ? ("start \"\" " + command) : (command + " &");
         system(launch.c_str());
         return true;
