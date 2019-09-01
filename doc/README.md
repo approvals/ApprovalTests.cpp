@@ -72,6 +72,7 @@ Here's how to set up from:
 * [Writers](/doc/Writers.md#top)
 * [Namers](/doc/Namers.md#top)
 * [Configuration](/doc/Configuration.md#top)
+* [All Customizations of Approval Tests](/doc/AllCustomizations.md#top)
 
 ## Common Challenges
 
