@@ -5,6 +5,7 @@
 #include "../utilities/MachineBlocker.h"
 
 #include <memory>
+#include <utility>
 
 namespace ApprovalTests {
 class BlockingReporter : public Reporter
@@ -15,7 +16,7 @@ private:
     BlockingReporter() = delete;
 
 public:
-    explicit BlockingReporter( std::shared_ptr<Blocker> blocker ) : blocker(blocker)
+    explicit BlockingReporter( std::shared_ptr<Blocker> blocker ) : blocker(std::move(blocker))
     {
     }
 
