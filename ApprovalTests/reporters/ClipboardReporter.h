@@ -6,7 +6,6 @@
 
 
 #include <string>
-#include <iostream>
 
 namespace ApprovalTests {
 class ClipboardReporter : public Reporter {

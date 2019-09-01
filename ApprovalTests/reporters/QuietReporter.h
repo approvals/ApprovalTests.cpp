@@ -2,8 +2,6 @@
 #define APPROVALTESTS_CPP_QUIETREPORTER_H
 
 #include "ApprovalTests/core/Reporter.h"
-#include <memory>
-#include <vector>
 
 namespace ApprovalTests {
 // A reporter that does nothing. Failing tests will still fail, but nothing will be launched.

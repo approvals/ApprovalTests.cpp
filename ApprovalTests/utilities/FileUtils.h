@@ -8,7 +8,6 @@
 #include <string>
 #include <sys/stat.h>
 #include "ApprovalTests/writers/StringWriter.h"
-#include <sys/types.h>
 
 namespace ApprovalTests {
 class FileUtils {

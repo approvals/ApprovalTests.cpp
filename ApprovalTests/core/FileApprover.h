@@ -1,7 +1,6 @@
 #ifndef APPROVALTESTS_CPP_FILEAPPROVER_H
 #define APPROVALTESTS_CPP_FILEAPPROVER_H
 
-#include <fstream>
 #include <map>
 #include <memory>
 #include "ApprovalException.h"

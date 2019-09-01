@@ -2,7 +2,6 @@
 #ifndef APPROVALTESTS_CPP_SYSTEMLAUNCHER_H
 #define APPROVALTESTS_CPP_SYSTEMLAUNCHER_H
 
-#include <iostream>
 #include <cstdlib>
 #include <string>
 #include "ApprovalTests/utilities/SystemUtils.h"

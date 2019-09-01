@@ -4,8 +4,6 @@
 #include "Blocker.h"
 #include "SystemUtils.h"
 
-#include <memory>
-
 namespace ApprovalTests {
 class MachineBlocker : public Blocker
 {
