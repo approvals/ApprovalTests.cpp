@@ -15,11 +15,9 @@ public:
     bool working = true;
     bool launch(std::vector<std::string> argv) override
     {
-        for (std::vector<std::string>::iterator it = argv.begin();
-            it != argv.end();
-            ++it)
+        for (auto& it : argv)
         {
-            cmd += *it;
+            cmd += it;
             cmd += " ";
         }
         return working;
