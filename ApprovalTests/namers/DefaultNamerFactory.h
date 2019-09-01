@@ -10,7 +10,7 @@
 
 namespace ApprovalTests {
 
-typedef std::function<std::shared_ptr<ApprovalNamer>()> NamerCreator;
+    using NamerCreator = std::function<std::shared_ptr<ApprovalNamer>()>;
 
 //! Implementation detail of Approvals::useAsDefaultNamer()
 class DefaultNamerFactory

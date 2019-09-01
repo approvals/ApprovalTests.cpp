@@ -12,7 +12,7 @@
 #include "CommandLauncher.h"
 
 namespace ApprovalTests {
-typedef std::vector<std::string> (*ConvertArgumentsFunctionPointer)(std::vector<std::string>);
+    using ConvertArgumentsFunctionPointer = std::vector<std::string>(*)(std::vector<std::string>);
 
 class SystemLauncher : public CommandLauncher
 {
