@@ -32,7 +32,7 @@ private:
         return s.str();
     }
 public:
-    ApprovalMismatchException( std::string received, std::string approved )
+    ApprovalMismatchException(const std::string& received, const std::string& approved )
         : ApprovalException( format( received, approved ) )
     {
     }
@@ -50,7 +50,7 @@ private:
         return s.str();
     }
 public:
-    ApprovalMissingException( std::string /*received*/, std::string approved )
+    ApprovalMissingException(const std::string& /*received*/, const std::string& approved )
         : ApprovalException( format( approved ) )
     {
     }
