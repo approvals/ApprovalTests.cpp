@@ -24,7 +24,7 @@ TEST_CASE("FirstWorkingReporter") {
     ApprovalTests::FirstWorkingReporter reporter({m1, m2, m3});
     bool result = reporter.report("r.txt", "a.txt");
     REQUIRE(m2->launcher.receivedCommand() == "fake r.txt a.txt ");
-    REQUIRE(m3->launcher.receivedCommand() == "");
+    REQUIRE(m3->launcher.receivedCommand().empty());
     REQUIRE(true == result);
 }
 
