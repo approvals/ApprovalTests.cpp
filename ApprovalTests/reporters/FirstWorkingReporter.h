@@ -12,7 +12,7 @@ private:
     std::vector< std::unique_ptr<Reporter> > reporters;
 public:
     // Note that FirstWorkingReporter takes ownership of the given Reporter objects
-    explicit FirstWorkingReporter(std::vector<Reporter*> theReporters)
+    explicit FirstWorkingReporter(const std::vector<Reporter*>& theReporters)
     {
         for(auto r : theReporters)
         {

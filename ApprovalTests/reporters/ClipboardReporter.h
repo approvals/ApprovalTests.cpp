@@ -10,7 +10,7 @@
 namespace ApprovalTests {
 class ClipboardReporter : public Reporter {
 public:
-    static std::string getCommandLineFor(std::string received, std::string approved, bool isWindows)
+    static std::string getCommandLineFor(const std::string& received, const std::string& approved, bool isWindows)
     {
         if (isWindows) {
             return std::string("move /Y ") + "\"" + received + "\" \"" + approved + "\"";
