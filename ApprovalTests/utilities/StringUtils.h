@@ -20,7 +20,7 @@ public:
         return inText;
     }
 
-    static bool contains(std::string inText, const std::string& find)
+    static bool contains(const std::string& inText, const std::string& find)
     {
         return inText.find(find, 0) != std::string::npos;
     }
