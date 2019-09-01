@@ -36,7 +36,7 @@ See [Disposable Objects](/doc/DisposableObjects.md#top) for a general overview o
 
 ### Output Directories
 
-See [Using sub-directories for approved files](#using-sub-directories-for-approved-files) for putting Approval files in a sub-directory, to keep your tests directory tidy.
+See [Using sub-directories for approved files](/doc/Configuration.md#using-sub-directories-for-approved-files) for putting Approval files in a sub-directory, to keep your tests directory tidy.
 
 See [SeparateApprovedAndReceivedDirectoriesNamer](/doc/Namers.md#separateapprovedandreceiveddirectoriesnamer) to put the Approved and Received files in adjacent directories, in order to allow a folder-diffing tool to compare the two directories. 
 
