@@ -1,6 +1,7 @@
 #ifndef APPROVALTESTS_CPP_DEFAULTNAMERDISPOSER_H
 #define APPROVALTESTS_CPP_DEFAULTNAMERDISPOSER_H
 
+#include <utility>
 #include "DefaultNamerFactory.h"
 #include "ApprovalTests/utilities/Macros.h"
 
@@ -14,7 +15,7 @@ public:
     explicit DefaultNamerDisposer(NamerCreator namerCreator)
     {
         previous_result = DefaultNamerFactory::getDefaultNamer();
-        DefaultNamerFactory::setDefaultNamer(namerCreator);
+        DefaultNamerFactory::setDefaultNamer(std::move(namerCreator));
     }
 
     ~DefaultNamerDisposer()

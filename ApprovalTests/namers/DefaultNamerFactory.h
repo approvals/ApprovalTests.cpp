@@ -6,6 +6,7 @@
 #include "ApprovalTests/utilities/Macros.h"
 
 #include <memory>
+#include <utility>
 #include <vector>
 
 namespace ApprovalTests {
@@ -34,7 +35,7 @@ public:
     
     static void setDefaultNamer( NamerCreator namer)
     {
-        defaultNamerContainer().at(0) = namer;
+        defaultNamerContainer().at(0) = std::move(namer);
     }
 
 };
