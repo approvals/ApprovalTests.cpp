@@ -1,7 +1,6 @@
 #ifndef APPROVALTESTS_CPP_FILEUTILSSYSTEMSPECIFIC_H
 #define APPROVALTESTS_CPP_FILEUTILSSYSTEMSPECIFIC_H
 
-#include <utility>
 #include "SystemUtils.h"
 
 namespace ApprovalTests {
