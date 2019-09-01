@@ -59,7 +59,7 @@ namespace {
 
         void test_case_start(const doctest::TestCaseData &testInfo) override {
 
-            currentTest.sections.push_back(testInfo.m_name);
+            currentTest.sections.emplace_back(testInfo.m_name);
             currentTest.setFileName(testInfo.m_file);
             ApprovalTestNamer::currentTest(&currentTest);
         }
@@ -73,7 +73,7 @@ namespace {
 
         void subcase_start(const doctest::SubcaseSignature &signature) override {
 
-            currentTest.sections.push_back(signature.m_name);
+            currentTest.sections.emplace_back(signature.m_name);
         }
 
         void subcase_end() override {

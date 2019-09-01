@@ -37,11 +37,11 @@ public:
         currentTest.sections = {};
         if (! isDuplicate(currentTest.getFileName(), testInfo.test_case_name()))
         {
-            currentTest.sections.push_back(testInfo.test_case_name());
+            currentTest.sections.emplace_back(testInfo.test_case_name());
         }
         if (! std::string(testInfo.name()).empty())
         {
-            currentTest.sections.push_back(testInfo.name());
+            currentTest.sections.emplace_back(testInfo.name());
         }
         
         ApprovalTestNamer::currentTest(&currentTest);
