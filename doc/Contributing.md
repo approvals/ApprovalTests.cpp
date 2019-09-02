@@ -53,7 +53,7 @@ We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommit
     * [ ] A link on [Features](/doc/Features.md#top)
     * [ ] A link on [build/relnotes_X.X.X.md](https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_X.X.X.md)
     * [ ] Links on other appropriate places
-* [ ] Check the [Dashboard](https://github.com/claremacrae/dashboard) (after pushing)
+* [ ] Check the [Dashboard](https://github.com/claremacrae/dashboard#top) (after pushing)
 
 ## Code of Conduct
 
