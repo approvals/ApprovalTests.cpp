@@ -28,7 +28,11 @@ public:
     }
 
     static void verify(std::string contents, const Reporter &reporter = DefaultReporter()) {
-        StringWriter writer(contents);
+        verifyWithExtension(contents, ".txt", reporter);
+    }
+
+    static void verifyWithExtension(std::string contents, const std::string& fileExtensionWithDot, const Reporter &reporter = DefaultReporter()) {
+        StringWriter writer(contents, fileExtensionWithDot);
         FileApprover::verify(*getDefaultNamer(), writer, reporter);
     }
 
@@ -45,6 +49,13 @@ public:
             typename = IsNotDerivedFromWriter<T>>
     static void verify(const T& contents, const Reporter &reporter = DefaultReporter()) {
         verify(StringUtils::toString(contents), reporter);
+    }
+
+    template<
+            typename T,
+            typename = IsNotDerivedFromWriter<T>>
+    static void verifyWithExtension(const T& contents, const std::string& fileExtensionWithDot, const Reporter &reporter = DefaultReporter()) {
+        verifyWithExtension(StringUtils::toString(contents), fileExtensionWithDot, reporter);
     }
 
     template<

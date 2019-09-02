@@ -16,23 +16,9 @@ And by default, `StringWriter` gives the saved file the extension `.txt`.
 
 Suppose that you are serialising an object that cannot easily be represented in a text file, such as an image. In this case, the built-in `StringWriter` is not suitable, and you will need to write and use a custom implementation of `ApprovalWriter`. 
 
-There is not yet a way to customise the default `ApprovalWriter`.
+Here is a simple example of using a custom writer to produce an HTML file.
 
-This means that if you need to use a custom writer, you will need to call the low-level [`FileApprover::verify(ApprovalNamer, ApprovalWriter, Reporter)`](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/core/FileApprover.h)
-method, for example:
-
-<!-- todo: Clare has shelved example code for this - which can be committed after expected, conflicting pull-requests are merged. -->
-
-```cpp
-MyCustomWriter writer(object);
-FileApprover::verify(*Approvals::getDefaultNamer(), writer, DefaultReporter());
-```
-
-Unfortunately this absence of a customization point for writers means that the following are not yet available for use with custom writers:
-
-* `Approvals::verify()`
-* `Approvals::verifyAll()`
-* `CombinationApprovals::verifyAllCombinations()`)
+snippet: use_custom_writer
 
 ## Using custom filename extensions
 
