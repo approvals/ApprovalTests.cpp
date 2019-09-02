@@ -19,8 +19,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Existing Project - with your main()](#existing-project---with-your-main)
   * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
     * [Customizing](#customizing)
-      * [# Custom Suffixes](#-custom-suffixes)
-      * [# Custom Anything](#-custom-anything)
+      * [Custom Suffixes](#custom-suffixes)
+      * [Custom Anything](#custom-anything)
 <!-- endtoc -->
 
 
