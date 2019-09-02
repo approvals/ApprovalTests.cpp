@@ -29,8 +29,7 @@ public:
 
     static void verify(std::string contents, const Reporter &reporter = DefaultReporter()) {
         StringWriter writer(contents);
-        ApprovalTestNamer namer;
-        FileApprover::verify(namer, writer, reporter);
+        FileApprover::verify(*getDefaultNamer(), writer, reporter);
     }
 
     static void verify(const ApprovalWriter& writer, const Reporter &reporter = DefaultReporter())
