@@ -21,6 +21,19 @@ We use github's "co-author" feature, so everyone in the pairing session gets cre
 
 We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommitNotation) to prefix most commits, to indicate their level or risk.
 
+### Definition of Done
+
+*Note: Reminder for Clare and Llewellyn*
+
+* [ ] Tests
+* [ ] Documentation
+    * [ ] Sample code
+    * [ ] Copy+pastable template (if appropriate)
+    * [ ] A link on [Features](/doc/Features.md#top)
+    * [ ] A link on [build/relnotes_X.X.X.md](https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_X.X.X.md)
+    * [ ] Links on other appropriate places
+* [ ] Check the [Dashboard](https://github.com/claremacrae/dashboard) (after pushing)
+
 ## Code of Conduct
 
 Please note that this project is released with a [Contributor Code of Conduct](/CODE_OF_CONDUCT.md#top). By participating in this project you agree to abide by its terms.

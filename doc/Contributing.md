@@ -14,6 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Contributing - pairing and pull requests](#contributing---pairing-and-pull-requests)
+    * [Definition of Done](#definition-of-done)
   * [Code of Conduct](#code-of-conduct)
   * [Documentation](#documentation)
     * [Creating new pages](#creating-new-pages)
@@ -40,6 +41,19 @@ A typical session lasts between 60 to 90 minutes. We do the work directly on mas
 We use github's "co-author" feature, so everyone in the pairing session gets credit for the work. Virtually this entire project has been developed in this way, and is stronger for it.
 
 We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommitNotation) to prefix most commits, to indicate their level or risk.
+
+### Definition of Done
+
+*Note: Reminder for Clare and Llewellyn*
+
+* [ ] Tests
+* [ ] Documentation
+    * [ ] Sample code
+    * [ ] Copy+pastable template (if appropriate)
+    * [ ] A link on [Features](/doc/Features.md#top)
+    * [ ] A link on [build/relnotes_X.X.X.md](https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_X.X.X.md)
+    * [ ] Links on other appropriate places
+* [ ] Check the [Dashboard](https://github.com/claremacrae/dashboard) (after pushing)
 
 ## Code of Conduct
 
