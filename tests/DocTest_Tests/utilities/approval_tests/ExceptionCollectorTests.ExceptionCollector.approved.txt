@@ -1,0 +1,7 @@
+4 exceptions were thrown:
+
+1) error number 1
+2) error number 2
+3) error number 3
+4) error number 4
+

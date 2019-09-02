@@ -7,6 +7,7 @@ add_executable(${PROJECT_NAME}
     namers/NamerTests.cpp
     documentation/DisposableSamples.cpp
     documentation/ForgottenToConfigure.cpp
+    utilities/ExceptionCollectorTests.cpp
     ApprovalTestTests.cpp
     )
 target_link_libraries(${PROJECT_NAME} ApprovalTests doctest)
