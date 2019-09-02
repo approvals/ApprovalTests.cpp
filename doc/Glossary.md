@@ -98,9 +98,9 @@ See [Disposable Objects](/doc/DisposableObjects.md#top).
 
 This is a pattern where your object constructor opens a resource, such as memory, and your object destructor closes the resource.
 
-This is also known as "Scope-based lifetime management".
+This is also known as "Scope based resource management".
 
-See [more here](https://en.cppreference.com/w/cpp/language/raii).
+[Wikipedia Entry](https://en.cppreference.com/w/cpp/language/raii)
 
 ## Received File
 
