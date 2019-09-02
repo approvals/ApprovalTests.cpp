@@ -71,6 +71,20 @@ public:
         verify(s.str(), reporter);
     }
 
+    template<
+        typename T,
+        typename Function,
+        typename = IsNotDerivedFromReporter<Function>>
+    static void verifyWithExtension(const T& contents,
+                       Function converter,
+                       const std::string& fileExtensionWithDot,
+                       const Reporter &reporter = DefaultReporter())
+    {
+        std::stringstream s;
+        converter(contents, s);
+        verifyWithExtension(s.str(), fileExtensionWithDot, reporter);
+    }
+
     static void verifyExceptionMessage(
         std::function<void(void)> functionThatThrows,
         const Reporter &reporter = DefaultReporter())
