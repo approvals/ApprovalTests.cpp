@@ -12,7 +12,7 @@ private:
     std::vector< std::unique_ptr<Reporter> > reporters;
 public:
     // Note that CombinationReporter takes ownership of the given Reporter objects
-    CombinationReporter(std::vector<Reporter*> theReporters)
+    explicit CombinationReporter(const std::vector<Reporter*>& theReporters)
     {
         for(auto r : theReporters)
         {

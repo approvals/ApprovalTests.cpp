@@ -24,7 +24,7 @@ TEST_CASE("FirstWorkingReporter") {
     ApprovalTests::FirstWorkingReporter reporter({m1, m2, m3});
     bool result = reporter.report("r.txt", "a.txt");
     REQUIRE(m2->launcher.receivedCommand() == "fake r.txt a.txt ");
-    REQUIRE(m3->launcher.receivedCommand() == "");
+    REQUIRE(m3->launcher.receivedCommand().empty());
     REQUIRE(true == result);
 }
 
@@ -35,7 +35,7 @@ TEST_CASE("Reporters Report Failure Status") {
 }
 
 TEST_CASE("Reporters Report Success Status") {
-    std::string knownCommand = ApprovalTests::SystemUtils::isWindowsOs() ? "C:\\Windows\\System32\\help.exe" : "echo";
+    std::string knownCommand = ApprovalTests::SystemUtils::isWindowsOs() ? R"(C:\Windows\System32\help.exe)" : "echo";
     ApprovalTests::GenericDiffReporter m(knownCommand);
     bool result = m.report("r.txt", "a.txt");
     REQUIRE(true == result);

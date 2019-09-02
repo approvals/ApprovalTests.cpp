@@ -1,6 +1,7 @@
 #ifndef APPROVALTESTS_CPP_COMMANDREPORTER_H
 #define APPROVALTESTS_CPP_COMMANDREPORTER_H
 
+#include <utility>
 #include "ApprovalTests/launchers/CommandLauncher.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/core/Reporter.h"
@@ -14,7 +15,7 @@ private:
 
 protected:
     CommandReporter(std::string command, CommandLauncher *launcher)
-            : cmd(command), l(launcher) {
+            : cmd(std::move(command)), l(launcher) {
     }
 
 public:

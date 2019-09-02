@@ -7,7 +7,7 @@ namespace ApprovalTests {
 class FileUtilsSystemSpecific
 {
 public:
-    static std::string getCommandLineForCopy(std::string source, std::string destination, bool isWindows)
+    static std::string getCommandLineForCopy(const std::string& source, const std::string& destination, bool isWindows)
     {
         if (isWindows) {
             return std::string("copy /Y ") + "\"" + source + "\" \"" + destination + "\"";
@@ -16,7 +16,7 @@ public:
         }
     }
 
-    static void copyFile( std::string source, std::string destination )
+    static void copyFile(const std::string& source, const std::string& destination )
     {
         system( getCommandLineForCopy(source, destination, SystemUtils::isWindowsOs()).c_str() );
     }
