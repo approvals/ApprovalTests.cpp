@@ -14,53 +14,62 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [ExceptionCollector](#exceptioncollector)
-  * [Using custom writers](#using-custom-writers)
-  * [Using custom filename extensions](#using-custom-filename-extensions)
-  * [Multiple output files per test](#multiple-output-files-per-test)
-  * [SeparateApprovedAndReceivedDirectoriesNamer](#separateapprovedandreceiveddirectoriesnamer)
-  * [Registering a Custom Namer](#registering-a-custom-namer)
-  * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
-  * [Blocking Reporter](#blocking-reporter)
-  * [Machine Blockers](#machine-blockers)
-  * [Front Loaded Reporters](#front-loaded-reporters)
-  * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)
+  * [vNext](#vnext)
+    * [ExceptionCollector](#exceptioncollector)
+    * [Using custom writers](#using-custom-writers)
+    * [Using custom filename extensions](#using-custom-filename-extensions)
+  * [v.5.0.0](#v500)
+    * [Multiple output files per test](#multiple-output-files-per-test)
+    * [SeparateApprovedAndReceivedDirectoriesNamer](#separateapprovedandreceiveddirectoriesnamer)
+    * [Registering a Custom Namer](#registering-a-custom-namer)
+  * [Before v.5.0.0](#before-v500)
+    * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
+    * [Blocking Reporter](#blocking-reporter)
+    * [Machine Blockers](#machine-blockers)
+    * [Front Loaded Reporters](#front-loaded-reporters)
+    * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)
 <!-- endtoc -->
 
 
-## ExceptionCollector
+## vNext
+
+### ExceptionCollector
 
 See [ExceptionCollector](/doc/Utilities.md#exceptioncollector)
 
-## Using custom writers
+### Using custom writers
 
 See [Using custom writers](#using-custom-writers)
 
-## Using custom filename extensions
+### Using custom filename extensions
 
 See [Using custom filename extensions](#using-custom-filename-extensions)
 
-## Multiple output files per test
+## v.5.0.0
+
+### Multiple output files per test
 
 See [Multiple output files per test](/doc/MultipleOutputFilesPerTest.md#top).
 
-## SeparateApprovedAndReceivedDirectoriesNamer
+### SeparateApprovedAndReceivedDirectoriesNamer
 
 See [SeparateApprovedAndReceivedDirectoriesNamer](/doc/Namers.md#separateapprovedandreceiveddirectoriesnamer)
 
-## Registering a Custom Namer
+### Registering a Custom Namer
 
 See [Registering a Custom Namer](/doc/Namers.md#registering-a-custom-namer)
 
-## Customizing Google Tests Approval File Names
+## Before v.5.0.0
+
+### Customizing Google Tests Approval File Names
 
 See [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#customizing-google-tests-approval-file-names)
 
-## Blocking Reporter
+### Blocking Reporter
 
 See [Blocking Reporters](/doc/Reporters.md#blocking-reporters)
 
-## Machine Blockers
+### Machine Blockers
 
 Sometimes you will want tests to only run on certain machines. Machine blockers are a great way to do this.
 
@@ -81,11 +90,11 @@ TEST_CASE("Only run this test on John's machine")
 <sup>[snippet source](/tests/Catch2_Tests/utilities/MachineBlockerTests.cpp#L21-L32) / [anchor](#snippet-machine_specific_test_runner)</sup>
 <!-- endsnippet -->
 
-## Front Loaded Reporters
+### Front Loaded Reporters
 
 See [Front Loaded Reporters](/doc/Reporters.md#front-loaded-reporters)
 
-## Using sub-directories for approved files
+### Using sub-directories for approved files
 
 See [Using sub-directories for approved files](/doc/Configuration.md#using-sub-directories-for-approved-files)
 

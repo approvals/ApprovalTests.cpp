@@ -20,6 +20,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Requirements](#requirements)
   * [Getting Started](#getting-started)
   * [ToString (ostream insertion)](#tostring-ostream-insertion)
+  * [What's new?](#whats-new)
   * [Feedback](#feedback)
 <!-- endtoc -->
 
@@ -47,6 +48,10 @@ They are great for testing objects with lots of fields, or lists of objects.
 ## ToString (ostream insertion)
 Often, you will need to create functions to allow objects to print their state. This is commonly done with on ostream `<< operator`.
 You can find examples here: [To String](/doc/ToString.md#top)
+
+## What's new?
+
+Check out the [Features](/doc/Features.md#top) page to see what we've been working on lately, or browse the [release notes](https://github.com/approvals/ApprovalTests.cpp/releases).
 
 ## Feedback
 

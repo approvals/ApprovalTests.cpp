@@ -10,6 +10,7 @@ Preparation:
 - [ ] Write summary of changes since last release, based on changes since [the last release](https://github.com/approvals/ApprovalTests.cpp/releases)
 - [ ] Determine the semantic version number
 - [ ] Update the version number in [build_hpp.sh](/build/build_hpp.sh)
+- [ ] On the features page, add the line `## [new version number]` after `## vNext`
 
 Creating the Build
 
@@ -23,7 +24,7 @@ Publishing
 - [ ] Finish off the release Tweet
 - [ ] Close any Issues that were resolved in this release
 
-Prepare for next repease
+Prepare for next release
 
 - [ ] Make sure the release notes named with the new version exist
 - [ ] `cp relnotes_template.md relnotes_X.X.X.md`
