@@ -22,37 +22,11 @@ snippet: use_custom_writer
 
 ## Using custom filename extensions
 
-Suppose that you are serializing an object in some text format like `JSON` or `CSV`, and you would like your chosen [Reporter](/doc/Reporters.md#top) to detect the file name extension, in order to give nice syntax-highlighting when reviewing diffs.
+Suppose that you are serializing an object in some text format like `JSON` or `CSV`. By writing to this file extension, different tools will render it appropriately.
 
-The default file name extension for Approval files is `.txt`. When using the standard verification methods, the filename extension cannot currently be changed.
+If all you want to do is change the file extension, there are many convenience functions to enable this, for example:
 
-<!-- todo: Clare has shelved example code for these - which can be committed after expected, conflicting pull-requests are merged. -->
-
-Currently, the only ways to modify the filename extensions of Approved and Received files are quite specialised:
-
-**Either:** Write the received file yourself, and then use `Approvals::verifyExistingFile()` to verify it.
-
-```cpp
-const std::string text = "1,2,3,4";
-
-const std::string extensionWithDot(".tsv");
-StringWriter writer(text, extensionWithDot);
-
-const std::string receivedFile =
-    Approvals::getDefaultNamer()->getReceivedFile(extensionWithDot);
-writer.write(receivedFile);
-
-Approvals::verifyExistingFile(receivedFile);
-// Note: verifyExistingFile() does not remove the received file when the test passes
-```
-
-**Or:** Call `FileApprover::verify(ApprovalNamer, ApprovalWriter, Reporter)` and pass in a `StringWriter` you've supplied an extension to, e.g. `StringWriter(".tsv")`, for example:
-
-```cpp
-std::string text = "1,2,3,4";
-StringWriter writer(text, ".tsv");
-FileApprover::verify( *Approvals::getDefaultNamer(), writer, DefaultReporter() );
-```
+snippet: use_custom_file_extension 
 
 ---
 

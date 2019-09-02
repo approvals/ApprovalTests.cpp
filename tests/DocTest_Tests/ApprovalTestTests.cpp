@@ -6,8 +6,9 @@ using namespace ApprovalTests;
 
 TEST_CASE("YouCanUseAWriter")
 {
+    using HtmlWriter = StringWriter;
     // begin-snippet: use_custom_writer
-    StringWriter writer("<h1>hello world</h1>", ".html");
+    HtmlWriter writer("<h1>hello world</h1>", ".html");
     Approvals::verify(writer);
     // end-snippet
 }

@@ -6,6 +6,14 @@
 
 toc
 
+## Using custom writers
+
+See [Using custom writers](#using-custom-writers)
+
+## Using custom filename extensions
+
+See [Using custom filename extensions](#using-custom-filename-extensions)
+
 ## Multiple output files per test
 
 See [Multiple output files per test](/doc/MultipleOutputFilesPerTest.md#top).
