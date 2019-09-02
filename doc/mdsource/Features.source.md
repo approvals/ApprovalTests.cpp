@@ -14,11 +14,11 @@ See [ExceptionCollector](/doc/Utilities.md#exceptioncollector)
 
 ### Using custom writers
 
-See [Using custom writers](#using-custom-writers)
+See [Using custom writers](/doc/Writers.md#using-custom-writers)
 
 ### Using custom filename extensions
 
-See [Using custom filename extensions](#using-custom-filename-extensions)
+See [Using custom filename extensions](/doc/Writers.md#using-custom-filename-extensions)
 
 ## v.5.0.0
 
