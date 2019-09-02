@@ -18,3 +18,14 @@ TEST_CASE("ExceptionCollector")
           exceptions.release();
       });
 }
+
+TEST_CASE("ExceptionCollectorSampleTemplate")
+{
+    // begin-snippet: exception_collector_template
+    ExceptionCollector exceptions;
+    for (int i = 1; i <= 4; ++i) {
+        exceptions.gather([&](){/* Code that may throw errors here */});
+    }
+    exceptions.release(); // All errors actually thrown together here
+    // end-snippet
+}

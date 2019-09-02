@@ -2,6 +2,8 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/namers/NamerFactory.h"
 #include <vector>
+#include <ApprovalTests/reporters/AutoApproveIfMissingReporter.h>
+#include <ApprovalTests/utilities/ExceptionCollector.h>
 
 enum Nationality
 {
@@ -110,3 +112,24 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
     }
 }
 // end-snippet
+
+// begin-snippet: approvals_multiple_output_files_auto_approving
+TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
+{
+    using namespace ApprovalTests;
+
+    ExceptionCollector exceptions; // Allow all files to be written, regardless of errors
+    std::vector<Greeting> greetings{Greeting(British), Greeting(American), Greeting(French)};
+    for (auto greeting: greetings)
+    {
+        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
+        exceptions.gather([&](){
+            Approvals::verify(
+                greeting.getGreeting(),
+                AutoApproveIfMissingReporter()); // Automatically approve first time
+        });
+    }
+    exceptions.release();
+}
+// end-snippet
+
