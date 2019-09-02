@@ -33,7 +33,17 @@ public:
         FileApprover::verify(namer, writer, reporter);
     }
 
+    static void verify(const ApprovalWriter& writer, const Reporter &reporter = DefaultReporter())
+    {
+        FileApprover::verify(*getDefaultNamer(), writer, reporter);
+    }
+
     template<typename T>
+    using IsNotDerivedFromWriter = typename std::enable_if<!std::is_base_of<ApprovalWriter, T>::value, int>::type;
+
+    template<
+            typename T,
+            typename = IsNotDerivedFromWriter<T>>
     static void verify(const T& contents, const Reporter &reporter = DefaultReporter()) {
         verify(StringUtils::toString(contents), reporter);
     }
