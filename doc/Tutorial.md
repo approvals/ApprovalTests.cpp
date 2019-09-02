@@ -47,7 +47,7 @@ TEST_CASE("HelloApprovals")
     ApprovalTests::Approvals::verify("Hello Approvals");
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L12-L17) / [anchor](#snippet-hello_approvals)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L13-L18) / [anchor](#snippet-hello_approvals)</sup>
 <!-- endsnippet -->
 
 ### Approving the Test
@@ -123,7 +123,7 @@ public:
     std::string isbn;
 };
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L19-L38) / [anchor](#snippet-library_book)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L20-L39) / [anchor](#snippet-library_book)</sup>
 <!-- endsnippet -->
 
 What we would like to be able to write is:
@@ -137,7 +137,7 @@ LibraryBook harry_potter(
 
 Approvals::verify(harry_potter); // This does not compile
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L44-L50) / [anchor](#snippet-non_printable_object)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L45-L51) / [anchor](#snippet-non_printable_object)</sup>
 <!-- endsnippet -->
 
 The problem is that this will not compile, because at present there is no way to turn the LibraryBook in to a string representation.
@@ -153,7 +153,7 @@ ApprovalTests::Approvals::verify(
     harry_potter,
     [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L60-L64) / [anchor](#snippet-printable_object_simple)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L61-L65) / [anchor](#snippet-printable_object_simple)</sup>
 <!-- endsnippet -->
 
 There's a lot going on here, so let's break it down:
@@ -176,7 +176,7 @@ ApprovalTests::Approvals::verify(harry_potter, [](const LibraryBook& b, std::ost
     "isbn: " << b.isbn << "\n";
 });
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L73-L83) / [anchor](#snippet-printable_object)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L74-L84) / [anchor](#snippet-printable_object)</sup>
 <!-- endsnippet -->
 
 When you run and approve this, you will end up with the approval file:

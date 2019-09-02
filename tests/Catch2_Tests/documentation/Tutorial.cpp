@@ -23,8 +23,8 @@ class LibraryBook
 public:
     LibraryBook(std::string title, std::string author, int available_copies,
                 std::string language, int pages, std::string isbn) : 
-                title(std::move(title)), author(std::move(author)), available_copies(available_copies),
-                language(std::move(language)), pages(pages), isbn(std::move(isbn))
+                title(title), author(author), available_copies(available_copies),
+                language(language), pages(pages), isbn(isbn)
     {
     }
     // Data public for simplicity of test demo case.

@@ -35,7 +35,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2") {
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
     ApprovalTests::CombinationApprovals::verifyAllCombinations(
-            [](const std::string& s, int i){return std::make_pair(s, i);},
+            [](std::string s, int i){return std::make_pair(s, i);},
             v,
             numbers);
 }
