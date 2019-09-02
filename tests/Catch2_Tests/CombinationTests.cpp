@@ -2,6 +2,7 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <ApprovalTests/reporters/BlockingReporter.h>
 #include "PairUtilities.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "reporters/FakeReporter.h"
@@ -16,7 +17,15 @@ TEST_CASE("YouCanVerifyCombinationsOf1WithTemplateParameters") {
     ApprovalTests::CombinationApprovals::verifyAllCombinations([](const std::string& s){return s + "!";}, words);
 }
 
-TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
+ApprovalTests::FrontLoadedReporterDisposer clearFrontLoadedReporter()
+{
+    return ApprovalTests::Approvals::useAsFrontLoadedReporter(
+            ApprovalTests::BlockingReporter::onMachineNamed("safadfasdfas"));
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf1Reports")
+{
+    auto d = clearFrontLoadedReporter();
     std::vector<std::string> words{"hello", "world"};
     FakeReporter reporter;
     try
@@ -29,6 +38,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
     }
     REQUIRE(reporter.called == true);
 }
+
 
 // begin-snippet: YouCanVerifyCombinationsOf2
 TEST_CASE("YouCanVerifyCombinationsOf2") {
