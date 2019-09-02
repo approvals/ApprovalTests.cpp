@@ -6,6 +6,10 @@
 
 toc
 
+## ExceptionCollector
+
+See [ExceptionCollector](/doc/Utilities.md#exceptioncollector)
+
 ## Using custom writers
 
 See [Using custom writers](#using-custom-writers)

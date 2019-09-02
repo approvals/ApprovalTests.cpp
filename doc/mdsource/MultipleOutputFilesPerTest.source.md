@@ -52,9 +52,11 @@ TestQtDialog.loginScreen.onLinux.approved.png
 
 &nbsp;
 
+## Mechanisms
+
 Here are a few ways to do that.
 
-## Catch2
+### Catch2
 
 You can have a file-per-subsection.
 
@@ -68,7 +70,7 @@ snippet: catch2_multiple_output_files_hard_coded
 
 Note: Catch2 sub-sections continue to run even if the previous one failed. This is useful, as it allows you to approve all the files in one test run.
 
-## doctest
+### doctest
 
 You can have a file-per-subcase.
 
@@ -78,7 +80,7 @@ You can have hard-coded, with multiple sections:
 
 snippet: doctest_multiple_output_files_hard_coded
 
-## Approval Tests
+### Approval Tests
 
 Approval Tests also allows for multiple files per test, via the `NamerFactory`. This works for all supported test frameworks.
 
@@ -89,7 +91,22 @@ snippet: approvals_multiple_output_files_dynamic
 Or hard-coded, with multiple sections:
 
 snippet: approvals_multiple_output_files_hard_coded
+
+## Approving multiple files in one test
+
+Often, when you have multiple output files in one test, there is an annoyance that you have to run the test multiple times, once per output file. This is because Approvals throws an exception after each test failure, which the test framework immediately traps as a failure,  stopping your test from writing the remaining files.
+
+There are two things that work well to do this.
+
+First, you can use an [ExceptionCollector](/doc/Utilities.md#exceptioncollector) so that the test does not stop after the first failure.
+
+Second, you can use [AutoApproveIfMissingReporter](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/AutoApproveIfMissingReporter.h) so that the first time a verify is run, it is automatically approving the result. There are more options in [Auto-approving](/doc/Reporters.md#auto-approving)
+
+For example:
+
+snippet: approvals_multiple_output_files_auto_approving
  
+
 
 ---
 

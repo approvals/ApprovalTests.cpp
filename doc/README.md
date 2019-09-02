@@ -90,6 +90,7 @@ Here's how to set up from:
 ## Extras
 
 * [Frequently Asked Questions](/doc/FAQ.md#top)
+* [Utilities](/doc/Utilities.md#top)
 * [Videos](/doc/Videos.md#top)
 * [Troubleshooting](/doc/Troubleshooting.md#top)
 * 4 benefits of testing

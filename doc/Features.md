@@ -14,6 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [ExceptionCollector](#exceptioncollector)
   * [Using custom writers](#using-custom-writers)
   * [Using custom filename extensions](#using-custom-filename-extensions)
   * [Multiple output files per test](#multiple-output-files-per-test)
@@ -26,6 +27,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)
 <!-- endtoc -->
 
+
+## ExceptionCollector
+
+See [ExceptionCollector](/doc/Utilities.md#exceptioncollector)
 
 ## Using custom writers
 

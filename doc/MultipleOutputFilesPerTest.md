@@ -14,9 +14,11 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Introduction](#introduction)
   * [Scenarios](#scenarios)
-  * [Catch2](#catch2)
-  * [doctest](#doctest)
-  * [Approval Tests](#approval-tests)
+  * [Mechanisms](#mechanisms)
+    * [Catch2](#catch2)
+    * [doctest](#doctest)
+    * [Approval Tests](#approval-tests)
+  * [Approving multiple files in one test](#approving-multiple-files-in-one-test)
 <!-- endtoc -->
 
 
@@ -68,9 +70,11 @@ TestQtDialog.loginScreen.onLinux.approved.png
 
 &nbsp;
 
+## Mechanisms
+
 Here are a few ways to do that.
 
-## Catch2
+### Catch2
 
 You can have a file-per-subsection.
 
@@ -125,7 +129,7 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
 
 Note: Catch2 sub-sections continue to run even if the previous one failed. This is useful, as it allows you to approve all the files in one test run.
 
-## doctest
+### doctest
 
 You can have a file-per-subcase.
 
@@ -153,10 +157,10 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L60-L77) / [anchor](#snippet-doctest_multiple_output_files_hard_coded)</sup>
+<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L62-L79) / [anchor](#snippet-doctest_multiple_output_files_hard_coded)</sup>
 <!-- endsnippet -->
 
-## Approval Tests
+### Approval Tests
 
 Approval Tests also allows for multiple files per test, via the `NamerFactory`. This works for all supported test frameworks.
 
@@ -179,7 +183,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
     }
 }
 ```
-<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L79-L93) / [anchor](#snippet-approvals_multiple_output_files_dynamic)</sup>
+<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L81-L95) / [anchor](#snippet-approvals_multiple_output_files_dynamic)</sup>
 <!-- endsnippet -->
 
 Or hard-coded, with multiple sections:
@@ -204,9 +208,46 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L95-L112) / [anchor](#snippet-approvals_multiple_output_files_hard_coded)</sup>
+<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L97-L114) / [anchor](#snippet-approvals_multiple_output_files_hard_coded)</sup>
+<!-- endsnippet -->
+
+## Approving multiple files in one test
+
+Often, when you have multiple output files in one test, there is an annoyance that you have to run the test multiple times, once per output file. This is because Approvals throws an exception after each test failure, which the test framework immediately traps as a failure,  stopping your test from writing the remaining files.
+
+There are two things that work well to do this.
+
+First, you can use an [ExceptionCollector](/doc/Utilities.md#exceptioncollector) so that the test does not stop after the first failure.
+
+Second, you can use [AutoApproveIfMissingReporter](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/AutoApproveIfMissingReporter.h) so that the first time a verify is run, it is automatically approving the result. There are more options in [Auto-approving](/doc/Reporters.md#auto-approving)
+
+For example:
+
+<!-- snippet: approvals_multiple_output_files_auto_approving -->
+<a id='snippet-approvals_multiple_output_files_auto_approving'/></a>
+```cpp
+TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
+{
+    using namespace ApprovalTests;
+
+    ExceptionCollector exceptions; // Allow all files to be written, regardless of errors
+    std::vector<Greeting> greetings{Greeting(British), Greeting(American), Greeting(French)};
+    for (auto greeting: greetings)
+    {
+        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
+        exceptions.gather([&](){
+            Approvals::verify(
+                greeting.getGreeting(),
+                AutoApproveIfMissingReporter()); // Automatically approve first time
+        });
+    }
+    exceptions.release();
+}
+```
+<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L116-L134) / [anchor](#snippet-approvals_multiple_output_files_auto_approving)</sup>
 <!-- endsnippet -->
  
+
 
 ---
 
