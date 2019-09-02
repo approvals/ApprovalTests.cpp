@@ -1,7 +1,6 @@
 #ifndef APPROVALTESTS_CPP_FILEAPPROVER_H
 #define APPROVALTESTS_CPP_FILEAPPROVER_H
 
-#include <fstream>
 #include <map>
 #include <memory>
 #include "ApprovalException.h"
@@ -25,12 +24,12 @@ public:
 
     ~FileApprover() = default;
 
-    static void registerComparator(std::string extensionWithDot, std::shared_ptr<ApprovalComparator> comparator)
+    static void registerComparator(const std::string& extensionWithDot, std::shared_ptr<ApprovalComparator> comparator)
     {
         comparators()[extensionWithDot] = comparator;
     }
 
-    static std::shared_ptr<ApprovalComparator> getComparatorForFile(std::string receivedPath) {
+    static std::shared_ptr<ApprovalComparator> getComparatorForFile(const std::string& receivedPath) {
         const std::string fileExtension = FileUtils::getExtensionWithDot(receivedPath);
         auto iterator = comparators().find(fileExtension);
         if (iterator != comparators().end()) {
@@ -40,8 +39,8 @@ public:
     }
 
     //! This overload is an implementation detail. To add a new comparator, use registerComparator().
-    static void verify(std::string receivedPath,
-                       std::string approvedPath,
+    static void verify(const std::string& receivedPath,
+                       const std::string& approvedPath,
                        const ApprovalComparator& comparator) {
         if (!FileUtils::fileExists(approvedPath)) {
             throw ApprovalMissingException(receivedPath, approvedPath);
@@ -56,8 +55,8 @@ public:
         }
     }
 
-    static void verify(std::string receivedPath,
-                       std::string approvedPath) {
+    static void verify(const std::string& receivedPath,
+                       const std::string& approvedPath) {
         verify(receivedPath, approvedPath, *getComparatorForFile(receivedPath));
     }
 

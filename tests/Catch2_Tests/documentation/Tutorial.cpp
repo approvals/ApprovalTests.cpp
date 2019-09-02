@@ -3,6 +3,7 @@
 
 #include <string>
 #include <ostream>
+#include <utility>
 
 // See the tutorial at:
 //   https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Tutorial.md#top
@@ -22,8 +23,8 @@ class LibraryBook
 public:
     LibraryBook(std::string title, std::string author, int available_copies,
                 std::string language, int pages, std::string isbn) : 
-                title(title), author(author), available_copies(available_copies),
-                language(language), pages(pages), isbn(isbn)
+                title(std::move(title)), author(std::move(author)), available_copies(available_copies),
+                language(std::move(language)), pages(pages), isbn(std::move(isbn))
     {
     }
     // Data public for simplicity of test demo case.

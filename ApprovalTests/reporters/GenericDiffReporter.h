@@ -12,11 +12,11 @@ class GenericDiffReporter : public CommandReporter {
 private:
     SystemLauncher launcher;
 public:
-    GenericDiffReporter(const std::string& program) : CommandReporter(program, &launcher)
+    explicit GenericDiffReporter(const std::string& program) : CommandReporter(program, &launcher)
     {
         checkForCygwin();
     }
-    GenericDiffReporter(const DiffInfo& info) : CommandReporter(info.getProgramForOs(), &launcher)
+    explicit GenericDiffReporter(const DiffInfo& info) : CommandReporter(info.getProgramForOs(), &launcher)
     {
         checkForCygwin();
     }

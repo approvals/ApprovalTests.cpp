@@ -6,11 +6,12 @@
 #include "ApprovalTests/utilities/Macros.h"
 
 #include <memory>
+#include <utility>
 #include <vector>
 
 namespace ApprovalTests {
 
-typedef std::function<std::shared_ptr<ApprovalNamer>()> NamerCreator;
+    using NamerCreator = std::function<std::shared_ptr<ApprovalNamer>()>;
 
 //! Implementation detail of Approvals::useAsDefaultNamer()
 class DefaultNamerFactory
@@ -34,7 +35,7 @@ public:
     
     static void setDefaultNamer( NamerCreator namer)
     {
-        defaultNamerContainer().at(0) = namer;
+        defaultNamerContainer().at(0) = std::move(namer);
     }
 
 };

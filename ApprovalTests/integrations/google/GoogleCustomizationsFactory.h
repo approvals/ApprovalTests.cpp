@@ -21,7 +21,7 @@ private:
     {
         auto container = new ComparatorContainer;
 
-        auto exactNameMatching = [](std::string testFileNameWithExtension, std::string testCaseName)
+        auto exactNameMatching = [](const std::string& testFileNameWithExtension, const std::string& testCaseName)
         {
             return StringUtils::contains(testFileNameWithExtension, testCaseName + ".");
         };
@@ -35,7 +35,7 @@ public:
         return comparatorContainer();
     }
 
-    APPROVAL_TESTS_NO_DISCARD static bool addTestCaseNameRedundancyCheck(Comparator comparator)
+    APPROVAL_TESTS_NO_DISCARD static bool addTestCaseNameRedundancyCheck(const Comparator& comparator)
     {
         comparatorContainer().push_back(comparator);
         return true;

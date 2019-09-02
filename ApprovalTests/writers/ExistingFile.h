@@ -3,6 +3,7 @@
 
 
 #include <string>
+#include <utility>
 #include "ApprovalTests/core/ApprovalWriter.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 
@@ -10,7 +11,7 @@ namespace ApprovalTests {
 class ExistingFile : public ApprovalWriter{
     std::string filePath;
 public:
-    ExistingFile(std::string filePath) : filePath(filePath){}
+    explicit ExistingFile(std::string filePath) : filePath(std::move(filePath)){}
     virtual std::string getFileExtensionWithDot() const override {
         return FileUtils::getExtensionWithDot(filePath);
     }

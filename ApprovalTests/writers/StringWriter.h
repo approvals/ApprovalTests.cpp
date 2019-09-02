@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <stdexcept>
+#include <utility>
 #include "ApprovalTests/core/ApprovalWriter.h"
 
 namespace ApprovalTests {
@@ -14,8 +15,8 @@ private:
     std::string ext;
 
 public:
-    StringWriter( std::string contents, std::string fileExtensionWithDot = ".txt" )
-        : s( contents ), ext( fileExtensionWithDot ) {}
+    explicit StringWriter( std::string contents, std::string fileExtensionWithDot = ".txt" )
+        : s(std::move(contents)), ext(std::move(fileExtensionWithDot)) {}
 
     std::string getFileExtensionWithDot() const override
     {

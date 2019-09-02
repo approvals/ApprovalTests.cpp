@@ -162,7 +162,7 @@ R"(* Welcome to Approval Tests.
         return getSourceFileName() + "." + getTestName();
     }
 
-    std::string getFullFileName(std::string approved, std::string extensionWithDot) const {
+    std::string getFullFileName(const std::string& approved, const std::string& extensionWithDot) const {
         std::stringstream ext;
         ext << getDirectory() << getOutputFileBaseName() << approved << extensionWithDot;
         return ext.str();

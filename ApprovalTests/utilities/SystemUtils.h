@@ -131,7 +131,7 @@ public:
         return "Unknown Computer";
     }
 
-    static void makeDirectoryForWindows(std::string directory)
+    static void makeDirectoryForWindows(const std::string& directory)
     {
         APPROVAL_TESTS_UNUSED(directory);
 #ifdef _WIN32
@@ -144,7 +144,7 @@ public:
 #endif
     }
 
-    static void makeDirectoryForNonWindows(std::string directory)
+    static void makeDirectoryForNonWindows(const std::string& directory)
     {
         APPROVAL_TESTS_UNUSED(directory);
 #ifndef _WIN32
@@ -158,13 +158,13 @@ public:
 #endif
     }
 
-    static void makeDirectory(std::string directory)
+    static void makeDirectory(const std::string& directory)
     {
         makeDirectoryForWindows(directory);
         makeDirectoryForNonWindows(directory);
     }
 
-    static void ensureDirectoryExists(std::string fullFilePath)
+    static void ensureDirectoryExists(const std::string& fullFilePath)
     {
         if (!FileUtils::fileExists(fullFilePath))
         {

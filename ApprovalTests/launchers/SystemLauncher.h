@@ -2,7 +2,6 @@
 #ifndef APPROVALTESTS_CPP_SYSTEMLAUNCHER_H
 #define APPROVALTESTS_CPP_SYSTEMLAUNCHER_H
 
-#include <iostream>
 #include <cstdlib>
 #include <string>
 #include "ApprovalTests/utilities/SystemUtils.h"
@@ -12,7 +11,7 @@
 #include "CommandLauncher.h"
 
 namespace ApprovalTests {
-typedef std::vector<std::string> (*ConvertArgumentsFunctionPointer)(std::vector<std::string>);
+    using ConvertArgumentsFunctionPointer = std::vector<std::string>(*)(std::vector<std::string>);
 
 class SystemLauncher : public CommandLauncher
 {
@@ -59,7 +58,7 @@ public:
 
         argv = convertArgumentsForSystemLaunching(argv);
 
-        std::string command = std::accumulate(argv.begin(), argv.end(), std::string(""), [](std::string a, std::string b) {return a + " " + "\"" + b + "\""; });
+        std::string command = std::accumulate(argv.begin(), argv.end(), std::string(""), [](const std::string& a, const std::string& b) {return a + " " + "\"" + b + "\""; });
         std::string launch = SystemUtils::isWindowsOs() ? ("start \"\" " + command) : (command + " &");
         system(launch.c_str());
         return true;

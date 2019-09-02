@@ -8,7 +8,7 @@
 class StringList
 {
 public:
-    bool contains(std::string value) const
+    bool contains(const std::string& value) const
     {
         auto iter = std::find(contents.begin(), contents.end(), value);
         return (iter != contents.end());

@@ -2,10 +2,10 @@
 #define APPROVALTESTS_CPP_BLOCKINGREPORTER_H
 
 #include "ApprovalTests/core/Reporter.h"
-#include "ApprovalTests/utilities/SystemUtils.h"
 #include "../utilities/MachineBlocker.h"
 
 #include <memory>
+#include <utility>
 
 namespace ApprovalTests {
 class BlockingReporter : public Reporter
@@ -16,7 +16,7 @@ private:
     BlockingReporter() = delete;
 
 public:
-    BlockingReporter( std::shared_ptr<Blocker> blocker ) : blocker(blocker)
+    explicit BlockingReporter( std::shared_ptr<Blocker> blocker ) : blocker(std::move(blocker))
     {
     }
 

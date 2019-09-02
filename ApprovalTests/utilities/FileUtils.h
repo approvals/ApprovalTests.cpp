@@ -8,19 +8,18 @@
 #include <string>
 #include <sys/stat.h>
 #include "ApprovalTests/writers/StringWriter.h"
-#include <sys/types.h>
 
 namespace ApprovalTests {
 class FileUtils {
 public:
-    static bool fileExists(std::string path)
+    static bool fileExists(const std::string& path)
     {
-        struct stat info;
+        struct stat info{};
         return stat( path.c_str(), &info ) == 0;
     }
 
-    static int fileSize(std::string path) {
-        struct stat statbuf;
+    static int fileSize(const std::string& path) {
+        struct stat statbuf{};
         int stat_ok = stat(path.c_str(), &statbuf);
 
         if (stat_ok == -1) {
@@ -30,19 +29,19 @@ public:
         return int(statbuf.st_size);
     }
 
-    static void ensureFileExists(std::string fullFilePath) {
+    static void ensureFileExists(const std::string& fullFilePath) {
         if (!fileExists(fullFilePath)) {
             StringWriter s("", "");
             s.write(fullFilePath);
         }
     }
 
-    static std::string getExtensionWithDot(std::string filePath) {
+    static std::string getExtensionWithDot(const std::string& filePath) {
         std::size_t found = filePath.find_last_of('.');
         return filePath.substr(found);
     }
 
-    static void writeToFile(std::string filePath, std::string content)
+    static void writeToFile(const std::string& filePath, const std::string& content)
     {
         std::ofstream out(filePath.c_str(), std::ios::binary | std::ofstream::out);
         if ( ! out)

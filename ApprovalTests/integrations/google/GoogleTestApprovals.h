@@ -15,7 +15,7 @@
 #include "gtest/gtest.h"
 
 namespace ApprovalTests {
-class GoogleTestListener : public ::testing::EmptyTestEventListener
+class GoogleTestListener : public testing::EmptyTestEventListener
 {
     TestName currentTest;
 public:
@@ -31,17 +31,17 @@ public:
         return false;
     }
 
-    virtual void OnTestStart(const ::testing::TestInfo& testInfo) override
+    virtual void OnTestStart(const testing::TestInfo& testInfo) override
     {
         currentTest.setFileName(testInfo.file());
         currentTest.sections = {};
         if (! isDuplicate(currentTest.getFileName(), testInfo.test_case_name()))
         {
-            currentTest.sections.push_back(testInfo.test_case_name());
+            currentTest.sections.emplace_back(testInfo.test_case_name());
         }
         if (! std::string(testInfo.name()).empty())
         {
-            currentTest.sections.push_back(testInfo.name());
+            currentTest.sections.emplace_back(testInfo.name());
         }
         
         ApprovalTestNamer::currentTest(&currentTest);
