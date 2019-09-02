@@ -18,6 +18,7 @@ add_executable(${PROJECT_NAME}
     documentation/Tutorial.cpp
     namers/NamerTests.cpp
     reporters/BlockingReporterTests.cpp
+    reporters/CIBuildOnlyReporterTests.cpp
     reporters/DoNothingLauncher.h
     reporters/FakeReporter.h
     reporters/ReporterTests.cpp

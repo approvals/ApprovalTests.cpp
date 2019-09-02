@@ -1,8 +1,8 @@
 #ifndef APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H
 #define APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H
 
-#include "reporters/Reporter.h"
-#include "SystemUtils.h"
+#include "ApprovalTests/core/Reporter.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 #include "ApprovalTests/Approvals.h"
 
 #include <vector>
