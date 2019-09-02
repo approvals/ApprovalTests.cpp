@@ -10,9 +10,7 @@ ExceptionCollector is a utility that allows you to have multiple exceptions thro
 
 snippet: exception_collector_template
 
-### Use with Approval Tests
-
-See..
+**Use with Approval Tests**: See [Approving multiple files in one test](/doc/MultipleOutputFilesPerTest.md#approving-multiple-files-in-one-test).
 
 ---
 

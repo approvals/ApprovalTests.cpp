@@ -13,7 +13,6 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [ExceptionCollector](#exceptioncollector)
-    * [Use with Approval Tests](#use-with-approval-tests)
 <!-- endtoc -->
 
 
@@ -33,9 +32,7 @@ exceptions.release(); // All errors actually thrown together here
 <sup>[snippet source](/tests/DocTest_Tests/utilities/ExceptionCollectorTests.cpp#L24-L30) / [anchor](#snippet-exception_collector_template)</sup>
 <!-- endsnippet -->
 
-### Use with Approval Tests
-
-See..
+**Use with Approval Tests**: See [Approving multiple files in one test](/doc/MultipleOutputFilesPerTest.md#approving-multiple-files-in-one-test).
 
 ---
 
