@@ -27,7 +27,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2") {
             numbers);
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/CombinationTests.cpp#L33-L42) / [anchor](#snippet-youcanverifycombinationsof2)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/CombinationTests.cpp#L43-L52) / [anchor](#snippet-youcanverifycombinationsof2)</sup>
 <!-- endsnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
