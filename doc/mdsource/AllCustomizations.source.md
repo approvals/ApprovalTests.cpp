@@ -29,13 +29,13 @@ for multiple ways to control file names when verifying more than one output file
 
 See [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top) for how to control the names of Approval files if using that framework. 
 
-### Filename Extensions
-
-See [Writers](/doc/Writers.md#top) for how to control the file extension used to save Approval files.
+**Filename Extensions**: Although it seems like the file extension would be created by the namer, it is actually created by the writer. See below.
 
 ## Writers - how things being verified are written to file
 
 See [Writers](/doc/Writers.md#top) for how to customize the serialization of objects.
+
+**Filename Extensions**: If you only want to change a file extension, you might want to consider using the convenience functions `Approvals::verifyWithExtension`: see [Using custom filename extensions](/doc/Writers.md#using-custom-filename-extensions)
 
 ## Comparators - how files are compared
 
