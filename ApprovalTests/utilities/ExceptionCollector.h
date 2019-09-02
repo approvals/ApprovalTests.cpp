@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_EXCEPTIONCOLLECTOR_H
 #define APPROVALTESTS_CPP_EXCEPTIONCOLLECTOR_H
 
-#include <strstream>
+#include <sstream>
 #include <exception>
 #include <string>
 #include <vector>
