@@ -1,7 +1,6 @@
 #ifndef APPROVALTESTS_CPP_FRONTLOADEDREPORTERDISPOSER_H
 #define APPROVALTESTS_CPP_FRONTLOADEDREPORTERDISPOSER_H
 
-#include "DefaultFrontLoadedReporter.h"
 #include "FrontLoadedReporterFactory.h"
 
 namespace ApprovalTests {

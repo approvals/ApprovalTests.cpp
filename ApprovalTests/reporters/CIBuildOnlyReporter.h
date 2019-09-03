@@ -3,7 +3,7 @@
 
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
-#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/reporters/QuietReporter.h"
 
 #include <vector>
 #include <memory>
@@ -17,15 +17,9 @@ namespace ApprovalTests
         std::shared_ptr<Reporter> m_reporter;
 
     public:
-        explicit CIBuildOnlyReporter(std::shared_ptr<Reporter> reporter)
+        explicit CIBuildOnlyReporter(std::shared_ptr<Reporter> reporter = std::make_shared<QuietReporter>())
             : m_reporter(reporter)
         {
-        }
-
-        static FrontLoadedReporterDisposer useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
-        {
-            return Approvals::useAsFrontLoadedReporter(
-                    std::make_shared<ApprovalTests::CIBuildOnlyReporter>( reporter ));
         }
 
         bool report(std::string received, std::string approved) const override
