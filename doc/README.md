@@ -15,20 +15,25 @@ Once you're up and running, consider the following reference material.
 <!-- toc -->
 ## Contents
 
-  * [Introduction](#introduction)
-  * [Setup](#setup)
-  * [Writing Tests](#writing-tests)
-  * [Test Frameworks](#test-frameworks)
-  * [Customising behaviour](#customising-behaviour)
-  * [Common Challenges](#common-challenges)
-  * [Common Scenarios](#common-scenarios)
-  * [Extras](#extras)
-  * [Advanced Topics](#advanced-topics)
-  * [Suggested Examples](#suggested-examples)
+  * [Preparation](#preparation)
+    * [Introduction](#introduction)
+    * [Setup](#setup)
+  * [Use](#use)
+    * [Writing Tests](#writing-tests)
+    * [Test Frameworks](#test-frameworks)
+    * [Customising behaviour](#customising-behaviour)
+    * [Common Challenges](#common-challenges)
+    * [Common Scenarios](#common-scenarios)
+  * [Miscellaneous](#miscellaneous)
+    * [Extras](#extras)
+    * [Advanced Topics](#advanced-topics)
+    * [Suggested Examples](#suggested-examples)
 <!-- endtoc -->
 
 
-## Introduction
+## Preparation
+
+### Introduction
 
 * [Overview](/doc/Overview.md#top)
 * [Approval Testing (the concept)](/doc/ApprovalTestingConcept.md#top)
@@ -37,7 +42,7 @@ Once you're up and running, consider the following reference material.
 * [The Path to Approval Testing](/doc/PathToApprovalTesting.md#top)
 * [Glossary](/doc/Glossary.md#top)
 
-## Setup
+### Setup
 
 There are three different places you might be starting your setup from.
 
@@ -47,7 +52,9 @@ Here's how to set up from:
 * [I have code but no tests](/doc/Setup.md#i-have-code-but-no-tests)
 * [I have tests and code and want to add Approval Tests](/doc/Setup.md#i-have-tests-and-code-and-want-to-add-approval-tests)
 
-## Writing Tests
+## Use
+
+### Writing Tests
 
 * [Tutorial](/doc/Tutorial.md#top)
 * [Testing single objects](/doc/TestingSingleObjects.md#top)
@@ -58,14 +65,14 @@ Here's how to set up from:
 * Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
 * [Features](/doc/Features.md#top) - recent additions
 
-## Test Frameworks
+### Test Frameworks
 
 * [Using Approval Tests With Catch](/doc/UsingCatch.md#top)
 * [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
 * [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
 * [Supporting a new test framework](/doc/SupportingNewTestFramework.md#top)
 
-## Customising behaviour
+### Customising behaviour
 
 * [Reporters](/doc/Reporters.md#top)
 * [Custom Comparators](/doc/CustomComparators.md#top)
@@ -74,7 +81,7 @@ Here's how to set up from:
 * [Configuration](/doc/Configuration.md#top)
 * [All Customizations of Approval Tests](/doc/AllCustomizations.md#top)
 
-## Common Challenges
+### Common Challenges
 
 * Unstable output, e.g. with Dates and Times
 * Non-deterministic code
@@ -82,12 +89,14 @@ Here's how to set up from:
 * Testing images
 * Embedded development
 
-## Common Scenarios
+### Common Scenarios
 
 * Non-graphical environments
 * Build Machines and Continuous Integration servers
 
-## Extras
+## Miscellaneous
+
+### Extras
 
 * [Frequently Asked Questions](/doc/FAQ.md#top)
 * [Utilities](/doc/Utilities.md#top)
@@ -99,10 +108,10 @@ Here's how to set up from:
     * Regression
     * Granularity
 
-## Advanced Topics
+### Advanced Topics
 
 * [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top)
 
-## Suggested Examples
+### Suggested Examples
 * [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/Catch2_Tests/ApprovalsTests.cpp)
 
