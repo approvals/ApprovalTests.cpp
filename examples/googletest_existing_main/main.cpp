@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 }
 // end-snippet
 
-// begin-snippet: do_not_report_on_ci
+// begin-snippet: do_not_report_on_named_machine
 // main.cpp
 auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
     ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName") );

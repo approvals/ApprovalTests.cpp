@@ -96,14 +96,14 @@ Other times, you will want to run the tests on all machines, but only report if 
 
 Here is an example of not launching any reporters of you are on the CI machine.
 
-<!-- snippet: do_not_report_on_ci -->
-<a id='snippet-do_not_report_on_ci'/></a>
+<!-- snippet: do_not_report_on_named_machine -->
+<a id='snippet-do_not_report_on_named_machine'/></a>
 ```cpp
 // main.cpp
 auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
     ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName") );
 ```
-<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_ci)</sup>
+<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_named_machine)</sup>
 <!-- endsnippet -->
 
 Once you have added that, even calling approvals with a specific Reporter will not launch it on the CI system (but will for all other systems). For example:
@@ -120,14 +120,14 @@ ApprovalTests::Approvals::verify("text to be verified", ApprovalTests::Windows::
 
 Blocking reporters are a simple class, designed for use with FrontLoadedReporters, to prevent launching of reporters in certain environments.
 
-<!-- snippet: do_not_report_on_ci -->
-<a id='snippet-do_not_report_on_ci'/></a>
+<!-- snippet: do_not_report_on_named_machine -->
+<a id='snippet-do_not_report_on_named_machine'/></a>
 ```cpp
 // main.cpp
 auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
     ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName") );
 ```
-<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_ci)</sup>
+<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_named_machine)</sup>
 <!-- endsnippet -->
 
 ## Miscellaneous Helper Reporters

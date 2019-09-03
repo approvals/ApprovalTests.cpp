@@ -37,7 +37,7 @@ Other times, you will want to run the tests on all machines, but only report if 
 
 Here is an example of not launching any reporters of you are on the CI machine.
 
-snippet: do_not_report_on_ci
+snippet: do_not_report_on_named_machine
 
 Once you have added that, even calling approvals with a specific Reporter will not launch it on the CI system (but will for all other systems). For example:
 
@@ -47,7 +47,7 @@ snippet: basic_approval_with_reporter
 
 Blocking reporters are a simple class, designed for use with FrontLoadedReporters, to prevent launching of reporters in certain environments.
 
-snippet: do_not_report_on_ci
+snippet: do_not_report_on_named_machine
 
 ## Miscellaneous Helper Reporters
 
