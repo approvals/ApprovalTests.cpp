@@ -8,6 +8,8 @@
 # All paths must be given relative to the directory containing this script,
 # and must begin with ../../
 
+# Use doc/mdsource/link_page.sh to link to an arbitrary file or directory
+
 # TODO Document this in Contributing page
 
 for source_file in "$@"

@@ -6,9 +6,8 @@
 # This writes out text that can be pasted in to Markdown files, to link to 
 # the generated versions of these source files. 
 
-# TODO Make this link to more types of files, and more locations
-# TODO Only add #top if it's a markdown file
-# TODO Link to directories - files at multiple levels etc
+# Use doc/mdsource/link_file.sh to link to an arbitrary file or directory
+
 # TODO Document this in Contributing page
 
 for source_file in "$@"
