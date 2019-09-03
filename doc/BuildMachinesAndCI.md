@@ -11,12 +11,24 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 In automated builds, if a file verification fails, there is no point opening up a graphical diff tool to show any errors. At best it is a waste of resources, and at worst, it may stop the build from completing.
 
-If your build machine doesn't have any graphical tools, no action is required.
+So by default, Approval tests will never launch any reporters on supported CI machines. To do this, we use [Front Loaded Reporters](/doc/Reporters.md#front-loaded-reporters).
 
-However, if your build machine *does* have any graphical diff tools installed, you will need to prevent Approvals from opening them on failure. The following Reporter features provide ways of doing this: 
+Supported CI systems:
 
-* [Front Loaded Reporters](/doc/Reporters.md#front-loaded-reporters)
-* [Blocking Reporters](/doc/Reporters.md#blocking-reporters)
+<!-- snippet: supported_ci_systems -->
+<a id='snippet-supported_ci_systems'/></a>
+```h
+Travis,
+AppVeyor,
+TeamCity
+```
+<sup>[snippet source](/ApprovalTests/reporters/CIBuildOnlyReporter.h#L44-L48) / [anchor](#snippet-supported_ci_systems)</sup>
+<!-- endsnippet -->
+
+The CI detection is based on environment variables, so it may also just work on other systems that we are unaware of.
+
+However, if your CI system is not supported, and you want to create a custom CI reporter, we suggest you start by looking at [CIBuildOnlyReporter](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/CIBuildOnlyReporter.h).
+
 
 ---
 

@@ -92,22 +92,13 @@ The return value is ["Disposable"](/doc/DisposableObjects.md#top), meaning it wi
 
 ## Front Loaded Reporters
 
-Other times, you will want to run the tests on all machines, but only report if certain conditions are true. Front loaded reporters allow a mechanism to jump in front of the standard Reporter path, and divert early.
+By default, Approval tests will not launch any reporters on supported CI machines. To do this, we use front loaded reporters...
 
-Here is an example of not launching any reporters of you are on the CI (Continuous Integration) machine, by using [CIBuildOnlyReporter](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/CIBuildOnlyReporter.h), which provides a convenient way to supply a Reporter object that should only be used on builds running in CI environments.
+Front loaded reporters allow you to block all normal reporting behaviour. This is useful in situations like running on a CI Machine, where you wouldn't want a reporter to open.
 
-<!-- snippet: report_quietly_on_ci -->
-<a id='snippet-report_quietly_on_ci'/></a>
-```cpp
-// main.cpp
-auto ciReporterDisposer = CIBuildOnlyReporter::useAsFrontLoadedReporter(
-    std::make_shared<QuietReporter>());
-```
-<sup>[snippet source](/tests/Catch2_Tests/reporters/CIBuildOnlyReporterTests.cpp#L9-L13) / [anchor](#snippet-report_quietly_on_ci)</sup>
-<!-- endsnippet -->
+For more information, see [Build Machines and Continuous Integration servers](/doc/BuildMachinesAndCI.md#top).
 
-Here is an example of not launching any reporters if you are on a machine with a particular name, by using [BlockingReporter](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/BlockingReporter.h)
-.
+Here is an example of not launching any reporters if you are on a machine with a particular name, by using [BlockingReporter](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/BlockingReporter.h).
 
 <!-- snippet: do_not_report_on_named_machine -->
 <a id='snippet-do_not_report_on_named_machine'/></a>

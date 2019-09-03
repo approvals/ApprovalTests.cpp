@@ -36,9 +36,18 @@ namespace ApprovalTests
 
         static bool isRunningUnderCI()
         {
-//            auto travis = {"CI", "TRAVIS", "CONTINUOUS_INTEGRATION"}; // https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
-//            auto appVeyor = {"CI", "APPVEYOR"}; // https://www.appveyor.com/docs/environment-variables/
-//            auto teamCity = {"TEAMCITY_VERSION"}; // https://confluence.jetbrains.com/display/TCD18/Predefined+Build+Parameters
+            /*
+            auto Travis = {"CI", "TRAVIS", "CONTINUOUS_INTEGRATION"}; // https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
+            auto AppVeyor = {"CI", "APPVEYOR"}; // https://www.appveyor.com/docs/environment-variables/
+            auto TeamCity = {"TEAMCITY_VERSION"}; // https://confluence.jetbrains.com/display/TCD18/Predefined+Build+Parameters
+            auto environmentVariablesForCI = combine({
+                // begin-snippet: supported_ci_systems
+                Travis,
+                AppVeyor,
+                TeamCity
+                // end-snippet
+            });
+             */
             auto environmentVariablesForCI = {"CI", "CONTINUOUS_INTEGRATION", "TEAMCITY_VERSION"};
             for (const auto& variable : environmentVariablesForCI)
             {
