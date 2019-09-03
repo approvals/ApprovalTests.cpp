@@ -68,7 +68,8 @@ Here's how to set up from:
 ### Common Scenarios
 
 * Non-graphical environments
-* Build Machines and Continuous Integration servers
+* [Build Machines and Continuous Integration servers](/doc/BuildMachinesAndCI.md#top)
+
 
 ## Miscellaneous
 
