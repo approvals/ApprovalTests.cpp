@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [vNext](#vnext)
+    * [Approving multiple files in one test](#approving-multiple-files-in-one-test)
     * [ExceptionCollector](#exceptioncollector)
     * [Using custom writers](#using-custom-writers)
     * [Using custom filename extensions](#using-custom-filename-extensions)
@@ -32,6 +33,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 
 ## vNext
+
+### Approving multiple files in one test
+
+See [Approving multiple files in one test](/doc/MultipleOutputFilesPerTest.md#approving-multiple-files-in-one-test)
 
 ### ExceptionCollector
 

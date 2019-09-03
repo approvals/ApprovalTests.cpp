@@ -8,6 +8,10 @@ toc
 
 ## vNext
 
+### Approving multiple files in one test
+
+See [Approving multiple files in one test](/doc/MultipleOutputFilesPerTest.md#approving-multiple-files-in-one-test)
+
 ### ExceptionCollector
 
 See [ExceptionCollector](/doc/Utilities.md#exceptioncollector)
