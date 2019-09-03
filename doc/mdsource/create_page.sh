@@ -24,5 +24,5 @@ do
 
     # Make it easy to add links to the file
     echo "Created $new_source_file - use this for links to it:"
-    ./link_page.sh $new_source_file
+    ./page_link.sh $new_source_file
 done

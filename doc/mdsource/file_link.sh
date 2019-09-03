@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # Make it easy to add links to any files in the repo
-#   ./link_file.sh ../../ApprovalTests/core/Reporter.h ../../ApprovalTests/core
+#   ./file_link.sh ../../ApprovalTests/core/Reporter.h ../../ApprovalTests/core
 #
 # This writes out text that can be pasted in to Markdown files.
 #
 # All paths must be given relative to the directory containing this script,
 # and must begin with ../../
 
-# Use doc/mdsource/link_page.sh to link to an arbitrary file or directory
+# Use doc/mdsource/page_link.sh to link to an arbitrary file or directory
 
 # TODO Document this in Contributing page
 
