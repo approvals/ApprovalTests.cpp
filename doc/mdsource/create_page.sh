@@ -4,6 +4,10 @@
 # Supply one or more new file names as arguments: 
 #   ./create_page.sh TestingSingleObjects TestingContainers TestingCombinations
 
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
+
 for page in "$@"
 do
     new_source_file="${page}.source.md"

@@ -12,6 +12,10 @@
 
 # TODO Document this in Contributing page
 
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
+
 for source_file in "$@"
 do
     abs_path=$(echo "$source_file" | sed -e "s|../../||")
