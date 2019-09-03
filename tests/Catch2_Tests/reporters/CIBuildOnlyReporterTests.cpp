@@ -6,5 +6,9 @@ using namespace ApprovalTests;
 
 TEST_CASE("SampleCIReporter")
 {
-    auto ciReporterDisposer = CIBuildOnlyReporter::useAsFrontLoadedReporter( std::make_shared<QuietReporter>() );
+    // begin-snippet: report_quietly_on_ci
+    // main.cpp
+    auto ciReporterDisposer = CIBuildOnlyReporter::useAsFrontLoadedReporter(
+        std::make_shared<QuietReporter>());
+    // end-snippet
 }

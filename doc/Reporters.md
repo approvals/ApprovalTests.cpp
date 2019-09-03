@@ -96,6 +96,18 @@ Other times, you will want to run the tests on all machines, but only report if 
 
 Here is an example of not launching any reporters of you are on the CI machine.
 
+<!-- snippet: report_quietly_on_ci -->
+<a id='snippet-report_quietly_on_ci'/></a>
+```cpp
+// main.cpp
+auto ciReporterDisposer = CIBuildOnlyReporter::useAsFrontLoadedReporter(
+    std::make_shared<QuietReporter>());
+```
+<sup>[snippet source](/tests/Catch2_Tests/reporters/CIBuildOnlyReporterTests.cpp#L9-L13) / [anchor](#snippet-report_quietly_on_ci)</sup>
+<!-- endsnippet -->
+
+Here is an example of not launching any reporters if you are on a machine with a particular name.
+
 <!-- snippet: do_not_report_on_named_machine -->
 <a id='snippet-do_not_report_on_named_machine'/></a>
 ```cpp
