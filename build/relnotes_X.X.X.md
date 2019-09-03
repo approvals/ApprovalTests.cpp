@@ -8,7 +8,9 @@
 * **Bug fixes**
     * The default namer is now used everywhere 
 * **Other changes**
-    * New documentation: [Writers](/doc/Writers.md#top)
-    * New documentation: [All Customizations of Approval Tests](/doc/AllCustomizations.md#top)
-    * New documentation: [Definition of Done](/doc/Contributing.md#definition-of-done)
+    * New documentation:
+        * [All Customizations of Approval Tests](/doc/AllCustomizations.md#top)
+        * [Utilities](/doc/Utilities.md#top)
+        * [Writers](/doc/Writers.md#top)
+        * [Definition of Done](/doc/Contributing.md#definition-of-done) - reminders to ourselves, mainly
     * Lots more code quality improvements, thanks to @alastairUK
