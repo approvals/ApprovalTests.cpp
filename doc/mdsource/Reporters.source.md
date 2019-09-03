@@ -35,11 +35,12 @@ The return value is ["Disposable"](/doc/DisposableObjects.md#top), meaning it wi
 
 Other times, you will want to run the tests on all machines, but only report if certain conditions are true. Front loaded reporters allow a mechanism to jump in front of the standard Reporter path, and divert early.
 
-Here is an example of not launching any reporters of you are on the CI machine.
+Here is an example of not launching any reporters of you are on the CI (Continuous Integration) machine, by using [CIBuildOnlyReporter](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/CIBuildOnlyReporter.h), which provides a convenient way to supply a Reporter object that should only be used on builds running in CI environments.
 
 snippet: report_quietly_on_ci
 
-Here is an example of not launching any reporters if you are on a machine with a particular name.
+Here is an example of not launching any reporters if you are on a machine with a particular name, by using [BlockingReporter](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/BlockingReporter.h)
+.
 
 snippet: do_not_report_on_named_machine
 
