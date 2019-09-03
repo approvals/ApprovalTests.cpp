@@ -14,5 +14,6 @@ for source_file in "$@"
 do
     doc_base=$(echo "$source_file" | sed -e "s/.source.md//")
     doc_title=$(grep '^# ' "$source_file" | head -1 | sed -e "s/^# //")
-    echo "[$doc_title](/doc/$doc_base.md#top)"
+    doc_abs_path="/doc/$doc_base.md"
+    echo "[$doc_title]($doc_abs_path#top)"
 done
