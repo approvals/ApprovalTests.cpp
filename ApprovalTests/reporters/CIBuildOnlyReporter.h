@@ -48,7 +48,13 @@ namespace ApprovalTests
                 // end-snippet
             });
              */
-            auto environmentVariablesForCI = {"CI", "CONTINUOUS_INTEGRATION", "TEAMCITY_VERSION"};
+            auto environmentVariablesForCI = {
+                    // begin-snippet: supported_ci_env_vars
+                    "CI",
+                    "CONTINUOUS_INTEGRATION",
+                    "TEAMCITY_VERSION"
+                    // end-snippet
+            };
             for (const auto& variable : environmentVariablesForCI)
             {
                 if (!SystemUtils::safeGetEnv(variable).empty())

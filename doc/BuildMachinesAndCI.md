@@ -25,7 +25,19 @@ TeamCity
 <sup>[snippet source](/ApprovalTests/reporters/CIBuildOnlyReporter.h#L44-L48) / [anchor](#snippet-supported_ci_systems)</sup>
 <!-- endsnippet -->
 
-The CI detection is based on environment variables, so it may also just work on other systems that we are unaware of.
+The CI detection is based on environment variables, so it may also just work on other systems that we are unaware of:
+
+<!-- snippet: supported_ci_env_vars -->
+<a id='snippet-supported_ci_env_vars'/></a>
+```h
+"CI",
+"CONTINUOUS_INTEGRATION",
+"TEAMCITY_VERSION"
+```
+<sup>[snippet source](/ApprovalTests/reporters/CIBuildOnlyReporter.h#L52-L56) / [anchor](#snippet-supported_ci_env_vars)</sup>
+<!-- endsnippet -->
+
+Or you may be able to set one of these environment variables in the configuration of your CI system, to tell Approval Tests it's running under CI. 
 
 However, if your CI system is not supported, and you want to create a custom CI reporter, we suggest you start by looking at [CIBuildOnlyReporter](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/CIBuildOnlyReporter.h).
 
