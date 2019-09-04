@@ -8,6 +8,8 @@ toc
 
 ## vNext
 
+## v.5.1.0
+
 ### Continuous Integration Builds
 
 Approval tests will now [never launch any reporters on supported Continuous Integration machines](/doc/BuildMachinesAndCI.md#top).

@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [vNext](#vnext)
+  * [v.5.1.0](#v510)
     * [Continuous Integration Builds](#continuous-integration-builds)
     * [Approving multiple files in one test](#approving-multiple-files-in-one-test)
     * [ExceptionCollector](#exceptioncollector)
@@ -34,6 +35,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 
 ## vNext
+
+## v.5.1.0
 
 ### Continuous Integration Builds
 

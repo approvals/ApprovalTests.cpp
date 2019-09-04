@@ -7,7 +7,7 @@ set -o pipefail
 # Constants
 UNSET_VERSION="v.X.X.X"
 
-LAST_VERSION="v.5.0.0"
+LAST_VERSION="v.5.1.0"
 VERSION=$UNSET_VERSION
 
 PUSH_TO_PRODUCTION="true"
