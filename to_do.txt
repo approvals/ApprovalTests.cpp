@@ -48,6 +48,7 @@ FORMATTING OF CODE
 
 CODE QUALITY
 
+. Clean up CIBuildOnlyReporter
 . run through Qt Creator analysis tools
 . memory leaks in our tests
 

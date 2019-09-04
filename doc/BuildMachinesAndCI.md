@@ -18,11 +18,13 @@ Supported CI systems:
 <!-- snippet: supported_ci_systems -->
 <a id='snippet-supported_ci_systems'/></a>
 ```h
-Travis,
 AppVeyor,
-TeamCity
+GoCD
+Jenkins,
+TeamCity,
+Travis,
 ```
-<sup>[snippet source](/ApprovalTests/reporters/CIBuildOnlyReporter.h#L44-L48) / [anchor](#snippet-supported_ci_systems)</sup>
+<sup>[snippet source](/ApprovalTests/reporters/CIBuildOnlyReporter.h#L46-L52) / [anchor](#snippet-supported_ci_systems)</sup>
 <!-- endsnippet -->
 
 The CI detection is based on environment variables, so it may also just work on other systems that we are unaware of:
@@ -32,9 +34,11 @@ The CI detection is based on environment variables, so it may also just work on 
 ```h
 "CI",
 "CONTINUOUS_INTEGRATION",
+"GO_SERVER_URL",
+"JENKINS_URL",
 "TEAMCITY_VERSION"
 ```
-<sup>[snippet source](/ApprovalTests/reporters/CIBuildOnlyReporter.h#L52-L56) / [anchor](#snippet-supported_ci_env_vars)</sup>
+<sup>[snippet source](/ApprovalTests/reporters/CIBuildOnlyReporter.h#L56-L62) / [anchor](#snippet-supported_ci_env_vars)</sup>
 <!-- endsnippet -->
 
 Or you may be able to set one of these environment variables in the configuration of your CI system, to tell Approval Tests it's running under CI. 

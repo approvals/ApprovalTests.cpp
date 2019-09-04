@@ -37,14 +37,18 @@ namespace ApprovalTests
         static bool isRunningUnderCI()
         {
             /*
-            auto Travis = {"CI", "TRAVIS", "CONTINUOUS_INTEGRATION"}; // https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
             auto AppVeyor = {"CI", "APPVEYOR"}; // https://www.appveyor.com/docs/environment-variables/
+            auto GoCD = {"GO_SERVER_URL"}: // https://docs.gocd.org/current/faq/dev_use_current_revision_in_build.html
+            auto Jenkins = {"JENKINS_URL"}: // https://wiki.jenkins.io/display/JENKINS/Building+a+software+project
             auto TeamCity = {"TEAMCITY_VERSION"}; // https://confluence.jetbrains.com/display/TCD18/Predefined+Build+Parameters
+            auto Travis = {"CI", "TRAVIS", "CONTINUOUS_INTEGRATION"}; // https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
             auto environmentVariablesForCI = combine({
                 // begin-snippet: supported_ci_systems
-                Travis,
                 AppVeyor,
-                TeamCity
+                GoCD
+                Jenkins,
+                TeamCity,
+                Travis,
                 // end-snippet
             });
              */
@@ -52,6 +56,8 @@ namespace ApprovalTests
                     // begin-snippet: supported_ci_env_vars
                     "CI",
                     "CONTINUOUS_INTEGRATION",
+                    "GO_SERVER_URL",
+                    "JENKINS_URL",
                     "TEAMCITY_VERSION"
                     // end-snippet
             };
