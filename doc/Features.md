@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [vNext](#vnext)
+    * [Continuous Integration Builds](#continuous-integration-builds)
     * [Approving multiple files in one test](#approving-multiple-files-in-one-test)
     * [ExceptionCollector](#exceptioncollector)
     * [Using custom writers](#using-custom-writers)
@@ -33,6 +34,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 
 ## vNext
+
+### Continuous Integration Builds
+
+Approval tests will now [never launch any reporters on supported Continuous Integration machines](/doc/BuildMachinesAndCI.md#top).
 
 ### Approving multiple files in one test
 

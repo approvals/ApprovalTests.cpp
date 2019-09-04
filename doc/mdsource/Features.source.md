@@ -8,6 +8,10 @@ toc
 
 ## vNext
 
+### Continuous Integration Builds
+
+Approval tests will now [never launch any reporters on supported Continuous Integration machines](/doc/BuildMachinesAndCI.md#top).
+
 ### Approving multiple files in one test
 
 See [Approving multiple files in one test](/doc/MultipleOutputFilesPerTest.md#approving-multiple-files-in-one-test)
