@@ -21,13 +21,13 @@ In this small example, all combinations of `{"hello", "world"}` and `{1, 2, 3}` 
 TEST_CASE("YouCanVerifyCombinationsOf2") {
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
-    ApprovalTests::CombinationApprovals::verifyAllCombinations(
+    CombinationApprovals::verifyAllCombinations(
             [](std::string s, int i){return std::make_pair(s, i);},
             v,
             numbers);
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/CombinationTests.cpp#L43-L52) / [anchor](#snippet-youcanverifycombinationsof2)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/CombinationTests.cpp#L45-L54) / [anchor](#snippet-youcanverifycombinationsof2)</sup>
 <!-- endsnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:

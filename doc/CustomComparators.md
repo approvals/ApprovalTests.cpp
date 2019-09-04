@@ -54,16 +54,16 @@ First, we write our custom `ApprovalComparator` implementation:
 <!-- snippet: create_custom_comparator -->
 <a id='snippet-create_custom_comparator'/></a>
 ```cpp
-class LengthComparator : public ApprovalTests::ApprovalComparator
+class LengthComparator : public ApprovalComparator
 {
 public:
     bool contentsAreEquivalent(std::string receivedPath, std::string approvedPath) const override
     {
-        return ApprovalTests::FileUtils::fileSize(receivedPath) == ApprovalTests::FileUtils::fileSize(approvedPath);
+        return FileUtils::fileSize(receivedPath) == FileUtils::fileSize(approvedPath);
     }
 };
 ```
-<sup>[snippet source](/tests/Catch2_Tests/core/FileApproverTests.cpp#L46-L55) / [anchor](#snippet-create_custom_comparator)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/core/FileApproverTests.cpp#L48-L57) / [anchor](#snippet-create_custom_comparator)</sup>
 <!-- endsnippet -->
 
 Then we call `FileApprover::registerComparator()` to tell Approval Tests to use `LengthComparator` to compare all files with extension `.length`. This customisation will last for the rest of the test run, and we would typically put this in our `main.cpp`.
@@ -71,9 +71,9 @@ Then we call `FileApprover::registerComparator()` to tell Approval Tests to use 
 <!-- snippet: use_custom_comparator -->
 <a id='snippet-use_custom_comparator'/></a>
 ```cpp
-ApprovalTests::FileApprover::registerComparator(".length", std::make_shared<LengthComparator>());
+FileApprover::registerComparator(".length", std::make_shared<LengthComparator>());
 ```
-<sup>[snippet source](/tests/Catch2_Tests/core/FileApproverTests.cpp#L61-L63) / [anchor](#snippet-use_custom_comparator)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/core/FileApproverTests.cpp#L63-L65) / [anchor](#snippet-use_custom_comparator)</sup>
 <!-- endsnippet -->
 
 ---

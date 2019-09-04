@@ -17,6 +17,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Approving the Test](#approving-the-test)
     * [What just happened?](#what-just-happened)
     * [Approval Files](#approval-files)
+  * [The ApprovalTests namespace](#the-approvaltests-namespace)
   * [Approving Objects](#approving-objects)
   * [Dealing with test failures](#dealing-with-test-failures)
   * [Demo](#demo)
@@ -47,7 +48,7 @@ TEST_CASE("HelloApprovals")
     ApprovalTests::Approvals::verify("Hello Approvals");
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L13-L18) / [anchor](#snippet-hello_approvals)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L18-L23) / [anchor](#snippet-hello_approvals)</sup>
 <!-- endsnippet -->
 
 ### Approving the Test
@@ -97,6 +98,21 @@ So in this case, it will be:
 
 It will be located in the same directory as your tests. (This is [configurable](/doc/Configuration.md#using-sub-directories-for-approved-files)).
 
+
+## The ApprovalTests namespace
+
+In all other code examples in this site, have already included the code:
+
+<!-- snippet: using_namespace_approvaltests -->
+<a id='snippet-using_namespace_approvaltests'/></a>
+```cpp
+using namespace ApprovalTests;
+```
+<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L8-L10) / [anchor](#snippet-using_namespace_approvaltests)</sup>
+<!-- endsnippet -->
+
+... So that code samples are simpler and easier to read. This is a recommended practice in your tests.
+
 ## Approving Objects
 
 The above example is a bit simplistic. Normally, you will want to test actual objects from your code base. To explore this, let's create an object called `LibraryBook`:
@@ -123,7 +139,7 @@ public:
     std::string isbn;
 };
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L20-L39) / [anchor](#snippet-library_book)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L25-L44) / [anchor](#snippet-library_book)</sup>
 <!-- endsnippet -->
 
 What we would like to be able to write is:
@@ -137,7 +153,7 @@ LibraryBook harry_potter(
 
 Approvals::verify(harry_potter); // This does not compile
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L45-L51) / [anchor](#snippet-non_printable_object)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L50-L56) / [anchor](#snippet-non_printable_object)</sup>
 <!-- endsnippet -->
 
 The problem is that this will not compile, because at present there is no way to turn the LibraryBook in to a string representation.
@@ -149,11 +165,11 @@ Let's start by just printing the title:
 <!-- snippet: printable_object_simple -->
 <a id='snippet-printable_object_simple'/></a>
 ```cpp
-ApprovalTests::Approvals::verify(
+Approvals::verify(
     harry_potter,
     [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L61-L65) / [anchor](#snippet-printable_object_simple)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L66-L70) / [anchor](#snippet-printable_object_simple)</sup>
 <!-- endsnippet -->
 
 There's a lot going on here, so let's break it down:
@@ -166,7 +182,7 @@ This works, but of course, there is a lot more that we want to look at than the 
 <!-- snippet: printable_object -->
 <a id='snippet-printable_object'/></a>
 ```cpp
-ApprovalTests::Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os){
+Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os){
     os << 
     "title: " << b.title << "\n" <<
     "author: " << b.author << "\n" <<
@@ -176,7 +192,7 @@ ApprovalTests::Approvals::verify(harry_potter, [](const LibraryBook& b, std::ost
     "isbn: " << b.isbn << "\n";
 });
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L74-L84) / [anchor](#snippet-printable_object)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L79-L89) / [anchor](#snippet-printable_object)</sup>
 <!-- endsnippet -->
 
 When you run and approve this, you will end up with the approval file:

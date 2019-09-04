@@ -39,7 +39,7 @@ friend std::ostream &operator<<(std::ostream &os, const Rectangle2 &rectangle) {
     return os;
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/ToStringExample.cpp#L10-L16) / [anchor](#snippet-to_string_standard_example)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/ToStringExample.cpp#L12-L18) / [anchor](#snippet-to_string_standard_example)</sup>
 <!-- endsnippet -->
 
 You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
@@ -56,7 +56,7 @@ friend STREAM &operator<<(STREAM &os, const Rectangle2 &rectangle) {
     return os;
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/ToStringTemplateExample.cpp#L12-L19) / [anchor](#snippet-to_string_template_example)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/ToStringTemplateExample.cpp#L14-L21) / [anchor](#snippet-to_string_template_example)</sup>
 <!-- endsnippet -->
 
 Wrapper classes or functions can be used to provide additional output formats for types of data:
@@ -83,14 +83,14 @@ struct FormatRectangleForMultipleLines{
 };
 
 TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
-    ApprovalTests::Approvals::verifyAll(
+    Approvals::verifyAll(
         "rectangles",
         getRectangles(),
         [](auto r, auto& os){os << FormatRectangleForMultipleLines(r);}
     );
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/ToStringWrapperExample.cpp#L36-L62) / [anchor](#snippet-to_string_wrapper_example)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/ToStringWrapperExample.cpp#L38-L64) / [anchor](#snippet-to_string_wrapper_example)</sup>
 <!-- endsnippet -->
 
 ## Design
@@ -132,11 +132,11 @@ Here's an example of verifing a list of rectangles
 <!-- snippet: verify_list -->
 <a id='snippet-verify_list'/></a>
 ```cpp
-ApprovalTests::Approvals::verifyAll(
+Approvals::verifyAll(
     "rectangles",
     getRectangles());
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/ToStringWrapperExample.cpp#L28-L32) / [anchor](#snippet-verify_list)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/ToStringWrapperExample.cpp#L30-L34) / [anchor](#snippet-verify_list)</sup>
 <!-- endsnippet -->
 
 Notice how this:

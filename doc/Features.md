@@ -88,16 +88,16 @@ Sometimes you will want tests to only run on certain machines. Machine blockers 
 ```cpp
 TEST_CASE("Only run this test on John's machine")
 {
-    auto blocker = ApprovalTests::MachineBlocker::onMachinesNotNamed("JOHNS_MACHINE");
+    auto blocker = MachineBlocker::onMachinesNotNamed("JOHNS_MACHINE");
     if ( blocker.isBlockingOnThisMachine() )
     {
         return;
     }
     // Write tests here that depend on John's environment.
-    REQUIRE(ApprovalTests::SystemUtils::getMachineName() == "JOHNS_MACHINE");
+    REQUIRE(SystemUtils::getMachineName() == "JOHNS_MACHINE");
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/utilities/MachineBlockerTests.cpp#L21-L32) / [anchor](#snippet-machine_specific_test_runner)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/utilities/MachineBlockerTests.cpp#L23-L34) / [anchor](#snippet-machine_specific_test_runner)</sup>
 <!-- endsnippet -->
 
 ### Front Loaded Reporters

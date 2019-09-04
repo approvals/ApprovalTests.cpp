@@ -69,6 +69,15 @@ So in this case, it will be:
 
 It will be located in the same directory as your tests. (This is [configurable](/doc/Configuration.md#using-sub-directories-for-approved-files)).
 
+
+## The ApprovalTests namespace
+
+In all other code examples in this site, have already included the code:
+
+snippet: using_namespace_approvaltests
+
+... So that code samples are simpler and easier to read. This is a recommended practice in your tests.
+
 ## Approving Objects
 
 The above example is a bit simplistic. Normally, you will want to test actual objects from your code base. To explore this, let's create an object called `LibraryBook`:

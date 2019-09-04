@@ -44,7 +44,7 @@ REQUIRE(s.getFillings().contains("Tomato"));
 REQUIRE(s.getFillings().contains("Lettuce"));
 REQUIRE(s.getFillings().contains("Cheddar"));
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/OverviewExamples.cpp#L87-L98) / [anchor](#snippet-sandwich_example_with_requires)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/OverviewExamples.cpp#L89-L100) / [anchor](#snippet-sandwich_example_with_requires)</sup>
 <!-- endsnippet -->
 
 ## Approval Tests
@@ -59,9 +59,9 @@ You still supply the inputs, but Approval Tests gives you powerful ways of viewi
 // Arrange, Act
 Sandwich s = createSandwichForTest();
 // Assert
-ApprovalTests::Approvals::verify(s);
+Approvals::verify(s);
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/OverviewExamples.cpp#L103-L108) / [anchor](#snippet-sandwich_example_with_approvals)</sup>
+<sup>[snippet source](/tests/Catch2_Tests/documentation/OverviewExamples.cpp#L105-L110) / [anchor](#snippet-sandwich_example_with_approvals)</sup>
 <!-- endsnippet -->
 
 This generates the approval file - which generated **for** you, but [approved **by** you](/doc/ApprovingResults.md#top).

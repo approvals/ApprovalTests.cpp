@@ -5,17 +5,20 @@
 #include <ostream>
 #include <utility>
 
+// begin-snippet: using_namespace_approvaltests
 using namespace ApprovalTests;
+// end-snippet
 
 // See the tutorial at:
 //   https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Tutorial.md#top
 
 
 
+// Maintainance note: keep the 'ApprovalTests::' - for the docs
 // begin-snippet: hello_approvals
 TEST_CASE("HelloApprovals")
 {
-    Approvals::verify("Hello Approvals");
+    ApprovalTests::Approvals::verify("Hello Approvals");
 }
 // end-snippet
 

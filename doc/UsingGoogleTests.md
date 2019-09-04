@@ -102,7 +102,7 @@ Google Tests has an additional piece of information: `TestCaseName`.
 ```cpp
 TEST(TestCaseName, TestName)
 ```
-<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L11-L13) / [anchor](#snippet-googletest_name_parts)</sup>
+<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L13-L15) / [anchor](#snippet-googletest_name_parts)</sup>
 <!-- endsnippet -->
 
 With Google Tests, this will result in Approvals creating output files beginning with:
@@ -139,9 +139,9 @@ For example, if you are Google test fixtures, you might have a lot of class name
 <a id='snippet-googletest_customize_suffix'/></a>
 ```cpp
 // main.cpp
-auto customization = ApprovalTests::GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
+auto customization = GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
 ```
-<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L6-L9) / [anchor](#snippet-googletest_customize_suffix)</sup>
+<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L8-L11) / [anchor](#snippet-googletest_customize_suffix)</sup>
 <!-- endsnippet -->
 
 #### Custom Anything
@@ -157,7 +157,7 @@ So:
 ```cpp
 TEST(TestCaseName_IgnoreThis, TestName )
 ```
-<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L52-L54) / [anchor](#snippet-googletest_customize_test)</sup>
+<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L54-L56) / [anchor](#snippet-googletest_customize_test)</sup>
 <!-- endsnippet -->
 
 Would produce an output file beginning with:
@@ -167,7 +167,7 @@ Would produce an output file beginning with:
 ```cpp
 auto outputFileBaseName = "GoogleFixtureNamerCustomizationTests.TestName";
 ```
-<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L58-L60) / [anchor](#snippet-googletest_customize_test_name)</sup>
+<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L60-L62) / [anchor](#snippet-googletest_customize_test_name)</sup>
 <!-- endsnippet -->
 
 You could achieve this by registering a function pointer like this:
@@ -178,12 +178,12 @@ You could achieve this by registering a function pointer like this:
 // main.cpp
 bool dropTestCaseNamesWithIgnoreThis(const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
 {
-    return ApprovalTests::StringUtils::contains(testCaseName, "IgnoreThis");
+    return StringUtils::contains(testCaseName, "IgnoreThis");
 }
 
-auto ignoreNames = ApprovalTests::GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
+auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
 ```
-<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L33-L41) / [anchor](#snippet-googletest_customize_function)</sup>
+<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L35-L43) / [anchor](#snippet-googletest_customize_function)</sup>
 <!-- endsnippet -->
 
 Or by using a lambda like this:
@@ -192,13 +192,13 @@ Or by using a lambda like this:
 <a id='snippet-googletest_customize_lambda'/></a>
 ```cpp
 // main.cpp
-auto ignoreNamesLambda = ApprovalTests::GoogleConfiguration::addTestCaseNameRedundancyCheck(
+auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
     [](const std::string& /*testFileNameWithExtension*/, const std::string& testCaseName)
     {
-        return ApprovalTests::StringUtils::contains(testCaseName, "IgnoreThis");
+        return StringUtils::contains(testCaseName, "IgnoreThis");
     });
 ```
-<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L43-L50) / [anchor](#snippet-googletest_customize_lambda)</sup>
+<sup>[snippet source](/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L45-L52) / [anchor](#snippet-googletest_customize_lambda)</sup>
 <!-- endsnippet -->
 
 
