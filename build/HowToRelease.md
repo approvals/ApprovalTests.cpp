@@ -22,7 +22,7 @@ Publishing
 - [ ] Commit and push `ApprovalTests.cpp`
 - [ ] Finish off the upload to github, by uploading the new .hpp, pasting in the release notes, and hitting "Publish release"
 - [ ] Finish off the release Tweet
-- [ ] Close any Issues that were resolved in this release
+- [ ] Close any [Issues](https://github.com/approvals/ApprovalTests.cpp/issues) that were resolved in this release
 
 Prepare for next release
 
