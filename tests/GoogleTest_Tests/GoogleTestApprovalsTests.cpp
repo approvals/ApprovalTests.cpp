@@ -1,13 +1,15 @@
 #include "gtest/gtest.h"
 #include "ApprovalTests/Approvals.h"
 
+using namespace ApprovalTests;
+
 TEST(GoogleTestApprovalsTests, YouCanVerifyText)
 {
     //std::cout << __FILE__ << std::endl;
-    ApprovalTests::Approvals::verify("My objects!");
+    Approvals::verify("My objects!");
 }
 
 TEST(GoogleTestApprovalsTests, TestStreamableObject)
 {
-    ApprovalTests::Approvals::verify(42);
+    Approvals::verify(42);
 }

@@ -5,6 +5,8 @@
 #include <ostream>
 #include <utility>
 
+using namespace ApprovalTests;
+
 // See the tutorial at:
 //   https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Tutorial.md#top
 
@@ -13,7 +15,7 @@
 // begin-snippet: hello_approvals
 TEST_CASE("HelloApprovals")
 {
-    ApprovalTests::Approvals::verify("Hello Approvals");
+    Approvals::verify("Hello Approvals");
 }
 // end-snippet
 
@@ -59,7 +61,7 @@ TEST_CASE("WritableBooks1")
         30, "English", 752, "978-0439139595");
 
     // begin-snippet: printable_object_simple
-    ApprovalTests::Approvals::verify(
+    Approvals::verify(
         harry_potter,
         [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
     // end-snippet
@@ -72,7 +74,7 @@ TEST_CASE("WritableBooks2")
         30, "English", 752, "978-0439139595");
 
     // begin-snippet: printable_object
-    ApprovalTests::Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os){
+    Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os){
         os << 
         "title: " << b.title << "\n" <<
         "author: " << b.author << "\n" <<

@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 
+using namespace ApprovalTests;
+
 class StringList
 {
 public:
@@ -104,6 +106,6 @@ TEST_CASE("SandwichExampleWithApprovals")
     // Arrange, Act
     Sandwich s = createSandwichForTest();
     // Assert
-    ApprovalTests::Approvals::verify(s);
+    Approvals::verify(s);
     // end-snippet
 }

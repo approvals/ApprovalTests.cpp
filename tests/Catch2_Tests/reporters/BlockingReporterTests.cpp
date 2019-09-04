@@ -2,8 +2,10 @@
 
 #include "ApprovalTests/reporters/BlockingReporter.h"
 
+using namespace ApprovalTests;
+
 TEST_CASE("Ensure this compiles")
 {
-    ApprovalTests::BlockingReporter::onMachineNamed("THIS MACHINE");
-    ApprovalTests::BlockingReporter::onMachinesNotNamed("THIS MACHINE");
+    BlockingReporter::onMachineNamed("THIS MACHINE");
+    BlockingReporter::onMachinesNotNamed("THIS MACHINE");
 }

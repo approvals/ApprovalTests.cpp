@@ -5,4 +5,6 @@
 #include "ApprovalTests.hpp"
 // end-snippet
 
-auto directory = ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");
+using namespace ApprovalTests;
+
+auto directory = Approvals::useApprovalsSubdirectory("approval_tests");

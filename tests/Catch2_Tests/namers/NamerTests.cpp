@@ -5,9 +5,11 @@
 
 using Catch::Matchers::EndsWith;
 
+using namespace ApprovalTests;
+
 TEST_CASE("ItCanGiveYouTheSpecName") {
 
-    ApprovalTests::ApprovalTestNamer namer;
+    ApprovalTestNamer namer;
     REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName");
 
     SECTION("andSectionNames") {
@@ -20,17 +22,17 @@ TEST_CASE("ItCanGiveYouTheSpecName") {
 
 
 TEST_CASE("ItCanGiveYouTheTestFileName") {
-    ApprovalTests::ApprovalTestNamer namer;
+    ApprovalTestNamer namer;
     REQUIRE(namer.getFileName() == "NamerTests");
 }
 
 
 TEST_CASE("TestProperNameCaseOnWindows") {
-    if (ApprovalTests::SystemUtils::isWindowsOs())
+    if (SystemUtils::isWindowsOs())
     {
-        ApprovalTests::ApprovalTestNamer namer;
+        ApprovalTestNamer namer;
         auto test = namer.currentTest();
-        test.setFileName(ApprovalTests::StringUtils::toLower(test.getFileName()));
+        test.setFileName(StringUtils::toLower(test.getFileName()));
         namer.currentTest(&test);
         REQUIRE(namer.getFileName() == "NamerTests");
     }
@@ -42,16 +44,16 @@ TEST_CASE("ItCanGiveYouTheTestDirectory") {
     // However, it would fail when run in Visual Studio 2017 as lower-case source-file names are returned.
     // We've fixed this for filenames, but not directory names, so this test ignores case.
     // See https://stackoverflow.com/questions/49068785/how-to-find-the-filename-from-a-c11-stat-objects-file-serial-number-on-window
-    auto suppress_subdirectory = ApprovalTests::Approvals::useApprovalsSubdirectory("");
-    ApprovalTests::ApprovalTestNamer namer;
-    auto __ = ApprovalTests::SystemUtils::getDirectorySeparator();
+    auto suppress_subdirectory = Approvals::useApprovalsSubdirectory("");
+    ApprovalTestNamer namer;
+    auto __ = SystemUtils::getDirectorySeparator();
     REQUIRE_THAT(namer.getDirectory(), EndsWith(__ + "Catch2_Tests" + __ + "namers" + __, Catch::CaseSensitive::No));
 }
 
 
 TEST_CASE("ItIncludesFileContextAndSpecNames") {
-    ApprovalTests::ApprovalTestNamer namer;
-    auto __ = ApprovalTests::SystemUtils::getDirectorySeparator();
+    ApprovalTestNamer namer;
+    auto __ = SystemUtils::getDirectorySeparator();
 
     REQUIRE_THAT(namer.getApprovedFile(".txt"),
         EndsWith(__ + "NamerTests.ItIncludesFileContextAndSpecNames.approved.txt"));
@@ -63,23 +65,23 @@ TEST_CASE("ItIncludesFileContextAndSpecNames") {
 TEST_CASE("Clean Up Filename Transforms")
 {
     std::vector<std::string> names = { "CleanUpFilenameTransforms", "Spaces In File \\" };
-    ApprovalTests::Approvals::verifyAll("File Names", names, [&](const std::string& name, std::ostream &s) {s << name << " => " << ApprovalTests::ApprovalTestNamer::convertToFileName(name); });
+    Approvals::verifyAll("File Names", names, [&](const std::string& name, std::ostream &s) {s << name << " => " << ApprovalTestNamer::convertToFileName(name); });
 }
 
 TEST_CASE("Use sub-directory")
 {
-    auto subdirectory = ApprovalTests::Approvals::useApprovalsSubdirectory("approved_files");
-    auto namer = ApprovalTests::Approvals::getDefaultNamer();
+    auto subdirectory = Approvals::useApprovalsSubdirectory("approved_files");
+    auto namer = Approvals::getDefaultNamer();
     REQUIRE_THAT( namer->getApprovedFile(".txt"), Catch::Matchers::Contains( "approved_files" ) );
 }
 
 TEST_CASE("Use sub-directories clean to previous results")
 {
-    auto subdirectory = ApprovalTests::Approvals::useApprovalsSubdirectory("outer");
-    auto namer = ApprovalTests::Approvals::getDefaultNamer();
+    auto subdirectory = Approvals::useApprovalsSubdirectory("outer");
+    auto namer = Approvals::getDefaultNamer();
     
     {
-        auto subdirectory2 = ApprovalTests::Approvals::useApprovalsSubdirectory("inner");
+        auto subdirectory2 = Approvals::useApprovalsSubdirectory("inner");
         REQUIRE_THAT( namer->getApprovedFile(".txt"), Catch::Matchers::Contains( "inner" ) );
     }
     

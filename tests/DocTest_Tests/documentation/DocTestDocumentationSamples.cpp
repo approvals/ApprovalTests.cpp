@@ -5,6 +5,8 @@
 #include <ApprovalTests/reporters/AutoApproveIfMissingReporter.h>
 #include <ApprovalTests/utilities/ExceptionCollector.h>
 
+using namespace ApprovalTests;
+
 enum Nationality
 {
     British,
@@ -65,15 +67,15 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     Greeting object_under_test;
     SUBCASE("British")
     {
-        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(British));
+        Approvals::verify(object_under_test.getGreetingFor(British));
     }
     SUBCASE("American")
     {
-        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(American));
+        Approvals::verify(object_under_test.getGreetingFor(American));
     }
     SUBCASE("French")
     {
-        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(French));
+        Approvals::verify(object_under_test.getGreetingFor(French));
     }
 }
 // end-snippet
@@ -88,8 +90,8 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
     std::vector<Greeting> greetings{ Greeting(British), Greeting(American), Greeting(French) };
     for(auto greeting: greetings)
     {
-        auto section = ApprovalTests::NamerFactory::appendToOutputFilename(greeting.getNationality());
-        ApprovalTests::Approvals::verify(greeting.getGreeting());
+        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
+        Approvals::verify(greeting.getGreeting());
     }
 }
 // end-snippet
@@ -99,16 +101,16 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
 {
     Greeting object_under_test;
     {
-        auto section = ApprovalTests::NamerFactory::appendToOutputFilename("British");
-        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(British));
+        auto section = NamerFactory::appendToOutputFilename("British");
+        Approvals::verify(object_under_test.getGreetingFor(British));
     }
     {
-        auto section = ApprovalTests::NamerFactory::appendToOutputFilename("American");
-        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(American));
+        auto section = NamerFactory::appendToOutputFilename("American");
+        Approvals::verify(object_under_test.getGreetingFor(American));
     }
     {
-        auto section = ApprovalTests::NamerFactory::appendToOutputFilename("French");
-        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(French));
+        auto section = NamerFactory::appendToOutputFilename("French");
+        Approvals::verify(object_under_test.getGreetingFor(French));
     }
 }
 // end-snippet

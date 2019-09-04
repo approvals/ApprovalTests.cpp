@@ -3,6 +3,8 @@
 
 #include <ostream>
 
+using namespace ApprovalTests;
+
 struct Rectangle2{
 
     int x,y, width, height;
@@ -18,7 +20,7 @@ struct Rectangle2{
 };
 TEST_CASE("ToStringsAreHelpful") {
     Rectangle2 r = {40,50,100,60};
-    ApprovalTests::Approvals::verify(r);
+    Approvals::verify(r);
 
 }
 

@@ -2,6 +2,8 @@
 #include "ApprovalTests/writers/StringWriter.h"
 #include "ApprovalTests/Approvals.h"
 
+using namespace ApprovalTests;
+
 std::string readFileAndDelete(const char *fileName) {
     std::ifstream in(fileName, std::ios_base::in);
     std::stringstream written;
@@ -14,7 +16,7 @@ std::string readFileAndDelete(const char *fileName) {
 }
 
 TEST_CASE("ItWritesTheContentsToAFile") {
-    ApprovalTests::StringWriter s("Hello");
+    StringWriter s("Hello");
     auto fileName = "out.txt";
     s.write(fileName);
 
@@ -24,23 +26,23 @@ TEST_CASE("ItWritesTheContentsToAFile") {
 
 TEST_CASE("ItWritesTheContentsToAStream") {
     std::stringstream out;
-    ApprovalTests::StringWriter s("Hello");
+    StringWriter s("Hello");
     s.Write(out);
     REQUIRE(out.str() == "Hello\n");
 }
 
 TEST_CASE("TheDefaultExtensionIsText") {
-    ApprovalTests::StringWriter s("Hello");
+    StringWriter s("Hello");
     REQUIRE(s.getFileExtensionWithDot() == ".txt");
 }
 
 TEST_CASE("TheExtensionIsConfigurable") {
-    ApprovalTests::StringWriter s("Hello", ".html");
+    StringWriter s("Hello", ".html");
     REQUIRE(s.getFileExtensionWithDot() == ".html");
 }
 
 TEST_CASE("ItGivesMeaningfulErrorIfWritingFails") {
-    ApprovalTests::StringWriter s("Hello");
+    StringWriter s("Hello");
     auto fileName = "I/do/not/exist/out.txt";
-    ApprovalTests::Approvals::verifyExceptionMessage([&](){s.write(fileName);});
+    Approvals::verifyExceptionMessage([&](){s.write(fileName);});
 }

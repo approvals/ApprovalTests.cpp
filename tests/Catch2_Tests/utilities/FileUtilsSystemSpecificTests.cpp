@@ -5,18 +5,20 @@
 #include "ApprovalTests/utilities/SystemUtils.h"
 #include <stdio.h>
 
+using namespace ApprovalTests;
+
 TEST_CASE("ItCanCopyAFile")
 {
-  ApprovalTests::ApprovalTestNamer namer;
-  const auto& sep = ApprovalTests::SystemUtils::getDirectorySeparator();
+  ApprovalTestNamer namer;
+  const auto& sep = SystemUtils::getDirectorySeparator();
   auto source = namer.getDirectory() + ".." + sep + ".." + sep + "sample.txt";
     auto destination = namer.getDirectory() + ".." + sep + "copy.temp.received.txt";
 
-    if ( ApprovalTests::FileUtils::fileExists(destination))
+    if ( FileUtils::fileExists(destination))
     {
         ::remove(destination.c_str());
     }
-    CHECK( ! ApprovalTests::FileUtils::fileExists(destination) );
-    ApprovalTests::FileUtilsSystemSpecific::copyFile(source, destination);
-    ApprovalTests::Approvals::verifyExistingFile(destination);
+    CHECK( ! FileUtils::fileExists(destination) );
+    FileUtilsSystemSpecific::copyFile(source, destination);
+    Approvals::verifyExistingFile(destination);
 }

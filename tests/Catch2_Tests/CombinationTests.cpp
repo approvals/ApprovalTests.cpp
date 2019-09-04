@@ -7,20 +7,22 @@
 #include "ApprovalTests/CombinationApprovals.h"
 #include "reporters/FakeReporter.h"
 
+using namespace ApprovalTests;
+
 TEST_CASE("YouCanVerifyCombinationsOf1") {
     std::vector<std::string> words{"hello", "world"};
-    ApprovalTests::CombinationApprovals::verifyAllCombinations([](const std::string& s){return s + "!";}, words);
+    CombinationApprovals::verifyAllCombinations([](const std::string& s){return s + "!";}, words);
 }
 
 TEST_CASE("YouCanVerifyCombinationsOf1WithTemplateParameters") {
     std::vector<std::string> words{"hello", "world"};
-    ApprovalTests::CombinationApprovals::verifyAllCombinations([](const std::string& s){return s + "!";}, words);
+    CombinationApprovals::verifyAllCombinations([](const std::string& s){return s + "!";}, words);
 }
 
-ApprovalTests::FrontLoadedReporterDisposer clearFrontLoadedReporter()
+FrontLoadedReporterDisposer clearFrontLoadedReporter()
 {
-    return ApprovalTests::Approvals::useAsFrontLoadedReporter(
-            ApprovalTests::BlockingReporter::onMachineNamed("safadfasdfas"));
+    return Approvals::useAsFrontLoadedReporter(
+            BlockingReporter::onMachineNamed("safadfasdfas"));
 }
 
 TEST_CASE("YouCanVerifyCombinationsOf1Reports")
@@ -30,9 +32,9 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports")
     FakeReporter reporter;
     try
     {
-        ApprovalTests::CombinationApprovals::verifyAllCombinations([](const std::string& s){return s + "!";}, words, reporter);
+        CombinationApprovals::verifyAllCombinations([](const std::string& s){return s + "!";}, words, reporter);
     }
-    catch(const ApprovalTests::ApprovalException&)
+    catch(const ApprovalException&)
     {
         // ignore
     }
@@ -44,7 +46,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports")
 TEST_CASE("YouCanVerifyCombinationsOf2") {
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
-    ApprovalTests::CombinationApprovals::verifyAllCombinations(
+    CombinationApprovals::verifyAllCombinations(
             [](std::string s, int i){return std::make_pair(s, i);},
             v,
             numbers);
@@ -53,7 +55,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2") {
 
 TEST_CASE("YouCanVerifyCombinationsOf9") {
     std::vector<std::string> letters{"a", "b"};
-    ApprovalTests::CombinationApprovals::verifyAllCombinations([](
+    CombinationApprovals::verifyAllCombinations([](
                                                                const std::string& s1,
                                                                const std::string& s2,
                                                                const std::string& s3,

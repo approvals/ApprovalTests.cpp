@@ -2,9 +2,11 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/Approvals.h"
 
+using namespace ApprovalTests;
+
 TEST_CASE("ItCanGiveYouTheSpecName")
 {
-    ApprovalTests::ApprovalTestNamer namer;
+    ApprovalTestNamer namer;
     REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName");
 
     SUBCASE("andSectionNames")
@@ -19,11 +21,11 @@ TEST_CASE("ItCanGiveYouTheSpecName")
 
 TEST_CASE("ItCanGiveYouTheTestFileName")
 {
-    ApprovalTests::ApprovalTestNamer namer;
+    ApprovalTestNamer namer;
     REQUIRE(namer.getFileName() == "DocTestNamerTests");
 }
 
 TEST_CASE("It can verify tests with spaces")
 {
-    ApprovalTests::Approvals::verify("hello world");
+    Approvals::verify("hello world");
 }
