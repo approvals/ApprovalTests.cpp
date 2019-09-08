@@ -26,7 +26,7 @@ You still supply the inputs, but Approval Tests gives you powerful ways of viewi
 
 snippet: sandwich_example_with_approvals
 
-This generates the approval file - which generated **for** you, but [approved **by** you](/doc/ApprovingResults.md#top).
+This generates the approval file - which is generated **for** you, but [approved **by** you](/doc/ApprovingResults.md#top).
 
 snippet: OverviewExamples.SandwichExampleWithApprovals.approved.txt
 
