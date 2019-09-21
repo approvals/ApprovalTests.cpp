@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Catch.hpp"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/StringUtils.h"
