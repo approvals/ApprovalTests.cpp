@@ -4,7 +4,6 @@ BUGS
 
 IMPROVE USABILITY OF CURRENT FEATURES
 
-. make it easy to add approvals to existing catch2 tests
 . use a disposer for GoogleConfiguration::addIgnorableTestCaseNameSuffix() - to make it reversible
 
 NEW FEATURES
