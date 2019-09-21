@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Catch.hpp"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/StringUtils.h"
@@ -86,4 +87,10 @@ TEST_CASE("Use sub-directories clean to previous results")
     }
     
     REQUIRE_THAT( namer->getApprovedFile(".txt"), Catch::Matchers::Contains( "outer" ) );
+}
+
+TEST_CASE("Tags not included in file name", "[tag_name]")
+{
+    auto namer = Approvals::getDefaultNamer();
+    REQUIRE_THAT(namer->getApprovedFile(".txt"), !Catch::Matchers::Contains("tag_name" ) );
 }
