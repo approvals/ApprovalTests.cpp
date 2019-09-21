@@ -5,8 +5,14 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 
 // <SingleHpp unalterable>
+#if defined(APPROVALS_CATCH_EXISTING_MAIN)
+    #define APPROVALS_CATCH
+    #define CATCH_CONFIG_RUNNER
+#elif defined(APPROVALS_CATCH)
+    #define CATCH_CONFIG_MAIN
+#endif
+
 #ifdef APPROVALS_CATCH
-#define CATCH_CONFIG_MAIN
 
 #include <Catch.hpp>
 
