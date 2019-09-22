@@ -70,7 +70,6 @@ public:
         return result.str();
     }
 
-// <SingleHpp unalterable>
     static TestName &getCurrentTest()
     {
         try
@@ -84,6 +83,7 @@ public:
         }
     }
 
+// <SingleHpp unalterable>
     static std::string getMisconfiguredMainHelp()
     {
         std::string lineBreak = "************************************************************************************\n";
