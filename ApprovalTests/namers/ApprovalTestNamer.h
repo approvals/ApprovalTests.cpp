@@ -146,7 +146,12 @@ R"(* Welcome to Approval Tests.
     }
 
     APPROVAL_TESTS_MACROS_STATIC(TestName, currentTest, NULL)
-    APPROVAL_TESTS_MACROS_STATIC(TestConfiguration, testConfiguration, new TestConfiguration)
+
+    static TestConfiguration& testConfiguration()
+    {
+        static TestConfiguration configuration;
+        return configuration;
+    }
 
     virtual std::string getApprovedFile(std::string extensionWithDot) const override {
 
