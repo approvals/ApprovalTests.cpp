@@ -12,25 +12,34 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [What are approval tests?](#what-are-approval-tests)
-  * [How do they differ from unit tests?](#how-do-they-differ-from-unit-tests)
-  * [Why are approval tests particularly good for testing legacy code?](#why-are-approval-tests-particularly-good-for-testing-legacy-code)
-  * [Does it integrate with other unit testing libraries?](#does-it-integrate-with-other-unit-testing-libraries)
-  * [I wrote a test, but the output file has loads of stuff I'm not interested in](#i-wrote-a-test-but-the-output-file-has-loads-of-stuff-im-not-interested-in)
+  * [Overview](#overview)
+    * [What are approval tests?](#what-are-approval-tests)
+    * [How do they differ from unit tests?](#how-do-they-differ-from-unit-tests)
+    * [Why are approval tests particularly good for testing legacy code?](#why-are-approval-tests-particularly-good-for-testing-legacy-code)
+  * [Test Frameworks](#test-frameworks)
+    * [Does it integrate with other unit testing libraries?](#does-it-integrate-with-other-unit-testing-libraries)
+  * [Writing Tests](#writing-tests)
+    * [I wrote a test, but the output file has loads of stuff I'm not interested in](#i-wrote-a-test-but-the-output-file-has-loads-of-stuff-im-not-interested-in)
 <!-- endtoc -->
 
 
 *If you would like us to add any more questions here, please contact us via [the Contributing page](/doc/Contributing.md#top).*
 
-## What are approval tests?
+## Overview
 
-## How do they differ from unit tests?
+### What are approval tests?
 
-## Why are approval tests particularly good for testing legacy code?
+### How do they differ from unit tests?
 
-## Does it integrate with other unit testing libraries?
+### Why are approval tests particularly good for testing legacy code?
 
-## I wrote a test, but the output file has loads of stuff I'm not interested in
+## Test Frameworks
+
+### Does it integrate with other unit testing libraries?
+
+## Writing Tests
+
+### I wrote a test, but the output file has loads of stuff I'm not interested in
 
 Things to say:
 

@@ -6,15 +6,21 @@ toc
 
 *If you would like us to add any more questions here, please contact us via [the Contributing page](/doc/Contributing.md#top).*
 
-## What are approval tests?
+## Overview
 
-## How do they differ from unit tests?
+### What are approval tests?
 
-## Why are approval tests particularly good for testing legacy code?
+### How do they differ from unit tests?
 
-## Does it integrate with other unit testing libraries?
+### Why are approval tests particularly good for testing legacy code?
 
-## I wrote a test, but the output file has loads of stuff I'm not interested in
+## Test Frameworks
+
+### Does it integrate with other unit testing libraries?
+
+## Writing Tests
+
+### I wrote a test, but the output file has loads of stuff I'm not interested in
 
 Things to say:
 
