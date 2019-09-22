@@ -151,10 +151,6 @@ R"(* Welcome to Approval Tests.
         {
             staticValue = value;
         }
-        if (staticValue == nullptr)
-        {
-            staticValue = nullptr;
-        }
         if ( staticValue == nullptr )
         {
             const char* helpMessage = "The variable in " "currentTest" "() is not initialised";
