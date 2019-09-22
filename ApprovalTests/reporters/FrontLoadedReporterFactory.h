@@ -4,36 +4,27 @@
 #include "ApprovalTests/core/Reporter.h"
 #include "DefaultFrontLoadedReporter.h"
 
-#include <vector>
 #include <memory>
 
 namespace ApprovalTests {
 //! Implementation detail of Approvals::useAsFrontLoadedReporter()
 class FrontLoadedReporterFactory
 {
-    using ReporterContainer = std::vector< std::shared_ptr<Reporter> >;
-    static ReporterContainer& frontLoadedReporterContainer()
+    static std::shared_ptr<Reporter>& frontLoadedReporter()
     {
-        static ReporterContainer frontLoadedReporterContainer = *createReporterContainer();
-        return frontLoadedReporterContainer;
-    }
-
-    static ReporterContainer* createReporterContainer()
-    {
-        auto container = new ReporterContainer;
-        container->push_back( std::make_shared<DefaultFrontLoadedReporter>());
-        return container;
+        static std::shared_ptr<Reporter> reporter = std::make_shared<DefaultFrontLoadedReporter>();
+        return reporter;
     }
 
 public:
     static std::shared_ptr<Reporter> getFrontLoadedReporter()
     {
-        return frontLoadedReporterContainer().at(0);
+        return frontLoadedReporter();
     }
 
     static void setFrontLoadedReporter( const std::shared_ptr<Reporter>& reporter)
     {
-        frontLoadedReporterContainer().at(0) = reporter;
+        frontLoadedReporter() = reporter;
     }
 };
 }
