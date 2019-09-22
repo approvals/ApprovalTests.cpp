@@ -1,7 +1,6 @@
 #ifndef APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H
 #define APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H
 
-#include "ApprovalTests/utilities/Macros.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 
 #include <vector>
@@ -15,7 +14,11 @@ public:
     using Comparator = std::function<bool(const std::string&, const std::string&)>;
 private:
     using ComparatorContainer = std::vector< Comparator >;
-    APPROVAL_TESTS_MACROS_STATIC(ComparatorContainer, comparatorContainer, GoogleCustomizationsFactory::createContainer())
+    static ComparatorContainer& comparatorContainer()
+    {
+        static ComparatorContainer container = *createContainer();
+        return container;
+    }
 
     static ComparatorContainer* createContainer()
     {
