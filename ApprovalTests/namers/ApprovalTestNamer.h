@@ -153,8 +153,7 @@ R"(* Welcome to Approval Tests.
         }
         if ( staticValue == nullptr )
         {
-            const char* helpMessage = "The variable in currentTest() is not initialised";
-            throw std::runtime_error( helpMessage );
+            throw std::runtime_error("The variable in currentTest() is not initialised");
         }
         return *staticValue;
     }
