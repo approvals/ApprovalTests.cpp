@@ -6,7 +6,6 @@
 #include <sstream>
 #include <vector>
 #include <stdexcept>
-#include "ApprovalTests/utilities/Macros.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 
 namespace ApprovalTests {
@@ -145,7 +144,24 @@ R"(* Welcome to Approval Tests.
         return directory;
     }
 
-    APPROVAL_TESTS_MACROS_STATIC(TestName, currentTest, NULL)
+    static TestName& currentTest(TestName* value = NULL)
+    {
+        static TestName* staticValue;
+        if (value != NULL)
+        {
+            staticValue = value;
+        }
+        if (staticValue == NULL)
+        {
+            staticValue = NULL;
+        }
+        if ( staticValue == nullptr )
+        {
+            const char* helpMessage = "The variable in " "currentTest" "() is not initialised";
+            throw std::runtime_error( helpMessage );
+        }
+        return *staticValue;
+    }
 
     static TestConfiguration& testConfiguration()
     {
