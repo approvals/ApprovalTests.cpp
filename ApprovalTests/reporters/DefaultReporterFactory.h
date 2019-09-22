@@ -3,7 +3,6 @@
 
 #include "ApprovalTests/core/Reporter.h"
 #include "DiffReporter.h"
-#include "ApprovalTests/utilities/Macros.h"
 
 #include <memory>
 #include <vector>
@@ -14,11 +13,15 @@ class DefaultReporterFactory
 {
 private:
     using ReporterContainer = std::vector< std::shared_ptr<Reporter> >;
-    APPROVAL_TESTS_MACROS_STATIC(ReporterContainer, defaultReporterContainer, DefaultReporterFactory::createReporterContainer())
+    static ReporterContainer& defaultReporterContainer()
+    {
+        static ReporterContainer reporters = *createReporterContainer();
+        return reporters;
+    }
     
     static ReporterContainer* createReporterContainer()
     {
-        auto container = new ReporterContainer; 
+        auto container = new ReporterContainer;
         container->push_back( std::make_shared<DiffReporter>());
         return container;
     }
