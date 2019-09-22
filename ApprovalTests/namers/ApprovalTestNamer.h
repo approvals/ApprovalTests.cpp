@@ -144,16 +144,16 @@ R"(* Welcome to Approval Tests.
         return directory;
     }
 
-    static TestName& currentTest(TestName* value = NULL)
+    static TestName& currentTest(TestName* value = nullptr)
     {
         static TestName* staticValue;
-        if (value != NULL)
+        if (value != nullptr)
         {
             staticValue = value;
         }
-        if (staticValue == NULL)
+        if (staticValue == nullptr)
         {
-            staticValue = NULL;
+            staticValue = nullptr;
         }
         if ( staticValue == nullptr )
         {
