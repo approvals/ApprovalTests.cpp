@@ -3,7 +3,6 @@
 
 #include "ApprovalTests/core/Reporter.h"
 #include "DefaultFrontLoadedReporter.h"
-#include "ApprovalTests/utilities/Macros.h"
 
 #include <vector>
 #include <memory>
@@ -13,7 +12,11 @@ namespace ApprovalTests {
 class FrontLoadedReporterFactory
 {
     using ReporterContainer = std::vector< std::shared_ptr<Reporter> >;
-    APPROVAL_TESTS_MACROS_STATIC(ReporterContainer, frontLoadedReporterContainer, FrontLoadedReporterFactory::createReporterContainer())
+    static ReporterContainer& frontLoadedReporterContainer()
+    {
+        static ReporterContainer frontLoadedReporterContainer = *createReporterContainer();
+        return frontLoadedReporterContainer;
+    }
 
     static ReporterContainer* createReporterContainer()
     {
