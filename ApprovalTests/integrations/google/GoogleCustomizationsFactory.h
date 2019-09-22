@@ -16,19 +16,15 @@ private:
     using ComparatorContainer = std::vector< Comparator >;
     static ComparatorContainer& comparatorContainer()
     {
-        static ComparatorContainer container = *createContainer();
-        return container;
-    }
-
-    static ComparatorContainer* createContainer()
-    {
-        auto container = new ComparatorContainer;
-
-        auto exactNameMatching = [](const std::string& testFileNameWithExtension, const std::string& testCaseName)
+        static ComparatorContainer container;
+        if (container.empty())
         {
-            return StringUtils::contains(testFileNameWithExtension, testCaseName + ".");
-        };
-        container->push_back( exactNameMatching );
+            auto exactNameMatching = [](const std::string& testFileNameWithExtension, const std::string& testCaseName)
+            {
+                return StringUtils::contains(testFileNameWithExtension, testCaseName + ".");
+            };
+            container.push_back( exactNameMatching );
+        }
         return container;
     }
 
