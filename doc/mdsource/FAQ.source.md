@@ -16,6 +16,10 @@ toc
 
 ## Test Frameworks
 
+### Do I need to use the Catch2 in the Approval Tests repo?
+
+No, you can use your own. We use this copy of Catch2 to run our own tests.
+
 ### Does it integrate with other unit testing libraries?
 
 ## Writing Tests

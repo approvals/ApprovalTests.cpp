@@ -17,6 +17,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [How do they differ from unit tests?](#how-do-they-differ-from-unit-tests)
     * [Why are approval tests particularly good for testing legacy code?](#why-are-approval-tests-particularly-good-for-testing-legacy-code)
   * [Test Frameworks](#test-frameworks)
+    * [Do I need to use the Catch2 in the Approval Tests repo?](#do-i-need-to-use-the-catch2-in-the-approval-tests-repo)
     * [Does it integrate with other unit testing libraries?](#does-it-integrate-with-other-unit-testing-libraries)
   * [Writing Tests](#writing-tests)
     * [I wrote a test, but the output file has loads of stuff I'm not interested in](#i-wrote-a-test-but-the-output-file-has-loads-of-stuff-im-not-interested-in)
@@ -34,6 +35,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ### Why are approval tests particularly good for testing legacy code?
 
 ## Test Frameworks
+
+### Do I need to use the Catch2 in the Approval Tests repo?
+
+No, you can use your own. We use this copy of Catch2 to run our own tests.
 
 ### Does it integrate with other unit testing libraries?
 
