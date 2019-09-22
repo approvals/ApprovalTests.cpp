@@ -11,13 +11,16 @@
 #include "ApprovalComparator.h"
 #include "ApprovalTests/comparators/TextFileComparator.h"
 #include "ApprovalTests/utilities/FileUtils.h"
-#include "ApprovalTests/utilities/Macros.h"
 
 namespace ApprovalTests {
 class FileApprover {
 private:
     using ComparatorContainer = std::map< std::string, std::shared_ptr<ApprovalComparator> >;
-    APPROVAL_TESTS_MACROS_STATIC(ComparatorContainer, comparators, new ComparatorContainer())
+    static ComparatorContainer& comparators()
+    {
+        static ComparatorContainer allComparators;
+        return allComparators;
+    }
 
 public:
     FileApprover() = default;
