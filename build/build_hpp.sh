@@ -11,10 +11,7 @@ LAST_VERSION="v.5.1.0"
 VERSION=$UNSET_VERSION
 
 PUSH_TO_PRODUCTION="true"
-if [ "$VERSION" = $UNSET_VERSION ]; then
-    PUSH_TO_PRODUCTION="false"
-    echo "Turning off PUSH_TO_PRODUCTION as version number has not been set"
-fi
+# Note that we won't push if the version number is unset
 
 OLD_SINGLE_HEADER=ApprovalTests.$LAST_VERSION.hpp
 NEW_SINGLE_HEADER=ApprovalTests.$VERSION.hpp
