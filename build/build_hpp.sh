@@ -65,7 +65,7 @@ pushd $STARTER_PROJECT_DIR/cmake-build-debug
 cmake --build .
 popd
 
-if [ "$VERSION" == "v.X.X.X" ] ; then
+if [ "$VERSION" == "$UNSET_VERSION" ] ; then
     echo "Everything worked - version number not set, so didn't commit or push"
     exit
 fi
