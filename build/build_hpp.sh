@@ -17,6 +17,9 @@ OLD_SINGLE_HEADER=ApprovalTests.$LAST_VERSION.hpp
 NEW_SINGLE_HEADER=ApprovalTests.$VERSION.hpp
 NEW_SINGLE_HEADER_TEMP=${NEW_SINGLE_HEADER}.tmp
 
+RELEASE_NEW_SINGLE_HEADER=../build/releases/$NEW_SINGLE_HEADER
+RELEASE_NEW_SINGLE_HEADER_TEMP=../build/releases/$NEW_SINGLE_HEADER_TEMP
+
 STARTER_PROJECT_DIR=../../ApprovalTests.Cpp.StarterProject
 
 STARTER_PATH_OLD_SINGLE_HEADER=$STARTER_PROJECT_DIR/lib/$OLD_SINGLE_HEADER
@@ -28,17 +31,17 @@ STARTER_PATH_NEW_SINGLE_HEADER=$STARTER_PROJECT_DIR/lib/$NEW_SINGLE_HEADER
 # Create new single-header file
 
 cd ../ApprovalTests
-java -jar ../build/SingleHpp.v.0.0.2.jar ../build/releases/$NEW_SINGLE_HEADER_TEMP
+java -jar ../build/SingleHpp.v.0.0.2.jar $RELEASE_NEW_SINGLE_HEADER_TEMP
 
 # TODO make sed command work on all platforms:
 # https://stackoverflow.com/a/22084103/104370
 
-cat << EOF > ../build/releases/$NEW_SINGLE_HEADER
+cat << EOF > $RELEASE_NEW_SINGLE_HEADER
 // Approval Tests version $VERSION
 // More information at: https://github.com/approvals/ApprovalTests.cpp
 EOF
-cat ../build/releases/$NEW_SINGLE_HEADER_TEMP >> ../build/releases/$NEW_SINGLE_HEADER
-rm  ../build/releases/$NEW_SINGLE_HEADER_TEMP
+cat $RELEASE_NEW_SINGLE_HEADER_TEMP >> $RELEASE_NEW_SINGLE_HEADER
+rm  $RELEASE_NEW_SINGLE_HEADER_TEMP
 
 # ------------------------------------------------------------------------------------------------
 # Update Starter Project 
@@ -49,7 +52,7 @@ git clean -fx
 git reset --hard
 popd
 
-cp ../build/releases/ApprovalTests.$VERSION.hpp $STARTER_PROJECT_DIR/lib
+cp $RELEASE_NEW_SINGLE_HEADER $STARTER_PROJECT_DIR/lib
 
 # Delete the last release:
 if [ -f $STARTER_PATH_OLD_SINGLE_HEADER ] ; then
