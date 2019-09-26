@@ -15,6 +15,7 @@ PUSH_TO_PRODUCTION="true"
 
 OLD_SINGLE_HEADER=ApprovalTests.$LAST_VERSION.hpp
 NEW_SINGLE_HEADER=ApprovalTests.$VERSION.hpp
+NEW_SINGLE_HEADER_TEMP=${NEW_SINGLE_HEADER}.tmp
 
 STARTER_PROJECT_DIR=../../ApprovalTests.Cpp.StarterProject
 
@@ -27,13 +28,17 @@ STARTER_PATH_NEW_SINGLE_HEADER=$STARTER_PROJECT_DIR/lib/$NEW_SINGLE_HEADER
 # Create new single-header file
 
 cd ../ApprovalTests
-java -jar ../build/SingleHpp.v.0.0.2.jar ../build/releases/$NEW_SINGLE_HEADER
+java -jar ../build/SingleHpp.v.0.0.2.jar ../build/releases/$NEW_SINGLE_HEADER_TEMP
 
 # TODO make sed command work on all platforms:
 # https://stackoverflow.com/a/22084103/104370
 
-sed -i '' '1s|^|// More information at: https://github.com/approvals/ApprovalTests.cpp\n|' ../build/releases/$NEW_SINGLE_HEADER
-sed -i '' "1s|^|// Approval Tests version $VERSION\n|" ../build/releases/$NEW_SINGLE_HEADER
+cat << EOF > ../build/releases/$NEW_SINGLE_HEADER
+// Approval Tests version $VERSION
+// More information at: https://github.com/approvals/ApprovalTests.cpp
+EOF
+cat ../build/releases/$NEW_SINGLE_HEADER_TEMP >> ../build/releases/$NEW_SINGLE_HEADER
+rm  ../build/releases/$NEW_SINGLE_HEADER_TEMP
 
 # ------------------------------------------------------------------------------------------------
 # Update Starter Project 
