@@ -17,11 +17,11 @@ OLD_SINGLE_HEADER=ApprovalTests.$LAST_VERSION.hpp
 NEW_SINGLE_HEADER=ApprovalTests.$VERSION.hpp
 NEW_SINGLE_HEADER_TEMP=${NEW_SINGLE_HEADER}.tmp
 
-RELEASE_NEW_SINGLE_HEADER=../build/releases/$NEW_SINGLE_HEADER
-RELEASE_NEW_SINGLE_HEADER_TEMP=../build/releases/$NEW_SINGLE_HEADER_TEMP
+RELEASE_DIR=../build/releases
+RELEASE_NEW_SINGLE_HEADER=$RELEASE_DIR/$NEW_SINGLE_HEADER
+RELEASE_NEW_SINGLE_HEADER_TEMP=$RELEASE_DIR/$NEW_SINGLE_HEADER_TEMP
 
 STARTER_PROJECT_DIR=../../ApprovalTests.Cpp.StarterProject
-
 STARTER_PATH_OLD_SINGLE_HEADER=$STARTER_PROJECT_DIR/lib/$OLD_SINGLE_HEADER
 STARTER_PATH_NEW_SINGLE_HEADER=$STARTER_PROJECT_DIR/lib/$NEW_SINGLE_HEADER
 
@@ -102,7 +102,7 @@ open "https://github.com/approvals/ApprovalTests.cpp/releases/new?tag=$VERSION&t
 # Draft the tweet
 open "https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+$VERSION+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F$VERSION+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21"
 
-open ../build/releases/
+open $RELEASE_DIR/
 
 # The prefixes used in our commit messages come from: https://github.com/RefactoringCombos/ArlosCommitNotation
 git log ${LAST_VERSION}..HEAD --pretty=format:%s | \
