@@ -52,7 +52,7 @@ git clean -fx
 git reset --hard
 popd
 
-cp $RELEASE_NEW_SINGLE_HEADER $STARTER_PROJECT_DIR/lib
+cp $RELEASE_NEW_SINGLE_HEADER $STARTER_PATH_NEW_SINGLE_HEADER
 
 # Delete the last release:
 if [ -f $STARTER_PATH_OLD_SINGLE_HEADER ] ; then
