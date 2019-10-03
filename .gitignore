@@ -13,3 +13,4 @@ CMakeLists.txt.user
 *.source.md-e
 .DS_Store
 [Oo]ut/build
+*.swp
