@@ -29,6 +29,7 @@ template<std::size_t... Is>
 struct make_index_sequence<0, Is...> : index_sequence<Is...> {};
 // End of C++14 compatibility
 
+// Return the size of a tuple - constexpr for use as a template argument
 template<class Tuple>
 constexpr std::size_t tuple_size() {
     return std::tuple_size<typename std::remove_reference<Tuple>::type>::value;
@@ -52,6 +53,7 @@ auto apply(F&& f, Tuple&& t)
     apply_impl(std::forward<F>(f), std::forward<Tuple>(t), make_tuple_idxs<Tuple>{});
 }
 
+// TODO What does disjunction do?
 template<class...> struct disjunction : std::false_type {};
 template<class B1> struct disjunction<B1> : B1 {};
 template<class B1, class... Bn>
@@ -90,9 +92,9 @@ struct find_if_body {
     std::size_t& index;
     std::size_t currentIndex = 0;
     bool found = false;
-    
-    find_if_body(const Predicate& p, std::size_t& i) : pred(p), index(i) {} 
-    
+
+    find_if_body(const Predicate& p, std::size_t& i) : pred(p), index(i) {}
+
     template<typename T>
     void operator()(T&& value) {
         if (found) return;
@@ -125,6 +127,7 @@ struct is_range_empty {
     }
 };
 
+// TODO Why is this needed?
 struct dereference_iterator {
     template<class It>
     auto operator()(It&& it) const -> decltype(*std::forward<It>(it)) {
@@ -132,12 +135,14 @@ struct dereference_iterator {
     }
 };
 
+// Move on to next row, for when only one input container was supplied
 template<class Its, std::size_t I = tuple_size<Its>()-1>
 enable_if_t<I == 0>
-increment_iterator(Its& it, const Its&, const Its&) { 
+increment_iterator(Its& it, const Its&, const Its&) {
     ++std::get<I>(it);
 }
 
+// Move on to next row, for when more than one input container was supplied
 template<class Its, std::size_t I = tuple_size<Its>()-1>
 enable_if_t<I != 0>
 increment_iterator(Its& its, const Its& begins, const Its& ends) {
@@ -147,6 +152,9 @@ increment_iterator(Its& its, const Its& begins, const Its& ends) {
     }
 }
 
+// This is what actually loops over all the containers, one element at a time
+// It is called with a template type F that writes the inputs, and runs the converter, which writes the result(s)
+// all for one set of container values.
 template<class F, class... Ranges>
 void cartesian_product(F&& f, const Ranges&... ranges) {
     using std::begin;
@@ -157,12 +165,18 @@ void cartesian_product(F&& f, const Ranges&... ranges) {
 
     const auto begins = std::make_tuple(begin(ranges)...);
     const auto ends = std::make_tuple(end(ranges)...);
-        
+
     for (auto its = begins; std::get<0>(its) != std::get<0>(ends); increment_iterator(its, begins, ends)) {
+        // Command-clicking on transform in CLion 2019.2.1 hangs with CLion with high CPU
+        // 'Use clang tidy' is turned off.
+        // Power-save turned on.
+        // Power-sacve mode turned on.
+        // Mac
         Detail::apply(std::forward<F>(f), transform<dereference_iterator>(its));
     }
 }
 
+// Write out second or subsequent input value, with preceding comma and space
 struct print_input {
     std::ostream& out;
     template<class T>
@@ -171,13 +185,16 @@ struct print_input {
     }
 };
 
+// Write out one row of output
 template<class Converter>
 struct serialize {
     std::ostream& out;
     Converter converter;
     template<class T, class... Ts>
     void operator()(T&& input1, Ts&&... inputs) {
+        // First value is printed without trailing comma
         out << "(" << input1;
+        // Remaining values are printed with prefix of a comma
         for_each(std::forward_as_tuple(inputs...), print_input{out});
         out << ") => " << converter(input1, inputs...) << '\n';
     }
