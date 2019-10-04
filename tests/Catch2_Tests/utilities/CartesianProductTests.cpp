@@ -29,7 +29,8 @@ TEST_CASE("Single Container-Single Value")
 {
     std::vector<std::string> words{"hello"};
     auto result = run_cartesian_product([](const std::string& s){return s + "!";}, words);
-    REQUIRE(result == "hello!\n");
+    Result expected = "hello!\n";
+    REQUIRE(result == expected);
 }
 
 TEST_CASE("Two Containers-Single Value")
@@ -37,7 +38,8 @@ TEST_CASE("Two Containers-Single Value")
     std::vector<std::string> input1{"hello"};
     std::vector<std::string> input2{"world"};
     auto result = run_cartesian_product([](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
-    REQUIRE(result == "hello,world\n");
+    Result expected = "hello,world\n";
+    REQUIRE(result == expected);
 }
 
 TEST_CASE("Two Containers-Two Values")
@@ -45,5 +47,6 @@ TEST_CASE("Two Containers-Two Values")
     std::vector<std::string> input1{"A", "B"};
     std::vector<std::string> input2{"1", "2"};
     auto result = run_cartesian_product([](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
-    REQUIRE(result == "A,1\nA,2\nB,1\nB,2\n");
+    Result expected = "A,1\nA,2\nB,1\nB,2\n";
+    REQUIRE(result == expected);
 }
