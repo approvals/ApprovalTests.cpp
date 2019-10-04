@@ -43,7 +43,7 @@ struct serialize {
         // First value is printed without trailing comma
         out << "(" << input1;
         // Remaining values are printed with prefix of a comma
-        ApprovalTests::CartesianProduct::Detail::for_each(std::forward_as_tuple(inputs...), print_input{out});
+        CartesianProduct::Detail::for_each(std::forward_as_tuple(inputs...), print_input{out});
         out << ") => " << converter(input1, inputs...) << '\n';
     }
 };
@@ -53,12 +53,12 @@ template<class Converter, class Container, class... Containers>
 void verifyAllCombinations(Converter&& converter, const Reporter& reporter, const Container& input0, const Containers&... inputs)
 {
     std::stringstream s;
-    ApprovalTests::CartesianProduct::cartesian_product(Detail::serialize<Converter>{s, std::forward<Converter>(converter)}, input0, inputs...);
+    CartesianProduct::cartesian_product(Detail::serialize<Converter>{s, std::forward<Converter>(converter)}, input0, inputs...);
     Approvals::verify(s.str(), reporter);
 }
 
 template<class Converter, class... Containers>
-ApprovalTests::CartesianProduct::Detail::enable_if_t<!Detail::disjunction<std::is_base_of<Reporter, Containers>...>::value>
+CartesianProduct::Detail::enable_if_t<!Detail::disjunction<std::is_base_of<Reporter, Containers>...>::value>
 verifyAllCombinations(Converter&& converter, const Containers&... inputs)
 {
     verifyAllCombinations(std::forward<Converter>(converter), DefaultReporter(), inputs...);
