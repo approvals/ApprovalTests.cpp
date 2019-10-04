@@ -61,12 +61,17 @@ TEST_CASE("Single Vector-Single Value")
     test_cartesian_product(expected, [](const std::string& s){return s + "!";}, words);
 }
 
+std::string concatenate_2_strings_comma_separated(const std::string& s1, const std::string& s2)
+{
+    return (s1 + "," + s2);
+}
+
 TEST_CASE("Two Vectors-Single Value")
 {
     std::vector<std::string> input1{"hello"};
     std::vector<std::string> input2{"world"};
     Result expected{"hello,world"};
-    test_cartesian_product(expected, [](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
+    test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
 }
 
 TEST_CASE("Cartesian product works with vector input")
@@ -74,7 +79,7 @@ TEST_CASE("Cartesian product works with vector input")
     std::vector<std::string> input1{"A", "B"};
     std::vector<std::string> input2{"1", "2"};
     Result expected{"A,1", "A,2", "B,1", "B,2"};
-    test_cartesian_product(expected, [](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
+    test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
 }
 
 // TODO Rename this to describe the type of iterator
@@ -83,7 +88,7 @@ TEST_CASE("Cartesian product works with set input")
     std::set<std::string> input1{"A", "B"};
     std::set<std::string> input2{"1", "2"};
     Result expected{"A,1", "A,2", "B,1", "B,2"};
-    test_cartesian_product(expected, [](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
+    test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
 }
 
 TEST_CASE("Cartesian product works with mixed inputs")
@@ -91,7 +96,7 @@ TEST_CASE("Cartesian product works with mixed inputs")
     std::vector<std::string> input1{"hello"};
     std::set<std::string> input2{"world"};
     Result expected{"hello,world"};
-    test_cartesian_product(expected, [](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
+    test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
 }
 
 TEST_CASE("Cartesian product wwith an empty input gives empty output")
@@ -99,5 +104,5 @@ TEST_CASE("Cartesian product wwith an empty input gives empty output")
     std::set<std::string> input1{"A", "B"};
     std::set<std::string> input2;
     Result expected;
-    test_cartesian_product(expected, [](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
+    test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
 }
