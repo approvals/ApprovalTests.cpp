@@ -154,7 +154,8 @@ increment_iterator(Its& its, const Its& begins, const Its& ends) {
 
 // This is what actually loops over all the containers, one element at a time
 // It is called with a template type F that writes the inputs, and runs the converter, which writes the result(s)
-// all for one set of container values.
+// all for one set of container values - when called by verifyAllCombinations()
+// More generally, F must have an operator() that acts on one set of input values.
 template<class F, class... Ranges>
 void cartesian_product(F&& f, const Ranges&... ranges) {
     using std::begin;
