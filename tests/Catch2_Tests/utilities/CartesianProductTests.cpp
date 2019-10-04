@@ -52,3 +52,13 @@ TEST_CASE("Cartesian product works with vector input")
     Result expected{"A,1", "A,2", "B,1", "B,2"};
     REQUIRE(result == expected);
 }
+
+// TODO Rename this to describe the type of iterator
+TEST_CASE("Cartesian product works with set input")
+{
+    std::set<std::string> input1{"A", "B"};
+    std::set<std::string> input2{"1", "2"};
+    auto result = run_cartesian_product([](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
+    Result expected{"A,1", "A,2", "B,1", "B,2"};
+    REQUIRE(result == expected);
+}
