@@ -8,6 +8,7 @@ using namespace ApprovalTests::CombinationApprovals;
 
 using Result = std::vector<std::string>;
 
+// Converter is the lambda, function or similar, that takes a set of input values, and returns a calculated result
 template<class Converter>
 struct serialize
 {
