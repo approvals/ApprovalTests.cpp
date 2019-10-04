@@ -1,6 +1,8 @@
 #include "Catch.hpp"
 #include "ApprovalTests/CombinationApprovals.h"
 
+#include <set>
+
 using namespace ApprovalTests;
 using namespace ApprovalTests::CombinationApprovals;
 
@@ -25,7 +27,7 @@ Result run_cartesian_product(Converter&& converter, const Container& input0, con
     return s;
 }
 
-TEST_CASE("Single Container-Single Value")
+TEST_CASE("Single Vector-Single Value")
 {
     std::vector<std::string> words{"hello"};
     auto result = run_cartesian_product([](const std::string& s){return s + "!";}, words);
@@ -33,7 +35,7 @@ TEST_CASE("Single Container-Single Value")
     REQUIRE(result == expected);
 }
 
-TEST_CASE("Two Containers-Single Value")
+TEST_CASE("Two Vectors-Single Value")
 {
     std::vector<std::string> input1{"hello"};
     std::vector<std::string> input2{"world"};
@@ -42,7 +44,7 @@ TEST_CASE("Two Containers-Single Value")
     REQUIRE(result == expected);
 }
 
-TEST_CASE("Two Containers-Two Values")
+TEST_CASE("Cartesian product works with vector input")
 {
     std::vector<std::string> input1{"A", "B"};
     std::vector<std::string> input2{"1", "2"};
