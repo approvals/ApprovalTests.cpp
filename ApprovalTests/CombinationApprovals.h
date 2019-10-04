@@ -16,6 +16,14 @@ namespace ApprovalTests {
 namespace CombinationApprovals {
 namespace Detail {
 
+// C++17 compatibility
+// TODO What does disjunction do?
+template<class...> struct disjunction : std::false_type {};
+template<class B1> struct disjunction<B1> : B1 {};
+template<class B1, class... Bn>
+struct disjunction<B1, Bn...> : std::conditional<bool(B1::value), B1, disjunction<Bn...>>::type  {};
+// End of C++17 compatibility
+
 // Write out second or subsequent input value, with preceding comma and space
 struct print_input {
     std::ostream& out;
@@ -50,7 +58,7 @@ void verifyAllCombinations(Converter&& converter, const Reporter& reporter, cons
 }
 
 template<class Converter, class... Containers>
-ApprovalTests::CartesianProduct::Detail::enable_if_t<!ApprovalTests::CartesianProduct::Detail::disjunction<std::is_base_of<Reporter, Containers>...>::value>
+ApprovalTests::CartesianProduct::Detail::enable_if_t<!Detail::disjunction<std::is_base_of<Reporter, Containers>...>::value>
 verifyAllCombinations(Converter&& converter, const Containers&... inputs)
 {
     verifyAllCombinations(std::forward<Converter>(converter), DefaultReporter(), inputs...);

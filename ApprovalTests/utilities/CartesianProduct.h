@@ -48,12 +48,6 @@ auto apply(F&& f, Tuple&& t)
 {
     apply_impl(std::forward<F>(f), std::forward<Tuple>(t), make_tuple_idxs<Tuple>{});
 }
-
-// TODO What does disjunction do?
-template<class...> struct disjunction : std::false_type {};
-template<class B1> struct disjunction<B1> : B1 {};
-template<class B1, class... Bn>
-struct disjunction<B1, Bn...> : std::conditional<bool(B1::value), B1, disjunction<Bn...>>::type  {};
 // End of C++17 compatibility
 
 template <class Tuple, class F, std::size_t... Is>
