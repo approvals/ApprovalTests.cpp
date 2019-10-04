@@ -34,7 +34,7 @@ TEST_CASE("Two Vectors-Single Value-hard-coded-converter")
 
 // Converter is the lambda, function or similar, that takes a set of input values, and returns a calculated result
 template<class Converter>
-struct accumulate_results
+struct AccumulateResults
 {
     Result out;
     Converter converter;
@@ -47,7 +47,7 @@ struct accumulate_results
 template<class Converter, class Container, class... Containers>
 void test_cartesian_product(const Result& expected, Converter&& converter, const Container& input0, const Containers&... inputs)
 {
-    auto results_store = accumulate_results<Converter>{
+    auto results_store = AccumulateResults<Converter>{
         Result(),
         std::forward<Converter>(converter)};
     Detail::cartesian_product(results_store, input0, inputs...);
