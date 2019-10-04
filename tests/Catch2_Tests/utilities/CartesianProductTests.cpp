@@ -24,7 +24,10 @@ template<class Converter, class Container, class... Containers>
 Result run_cartesian_product(Converter&& converter, const Container& input0, const Containers&... inputs)
 {
     Result s;
-    Detail::cartesian_product(accumulate_results<Converter>{s, std::forward<Converter>(converter)}, input0, inputs...);
+    auto results_store = accumulate_results<Converter>{
+        s,
+        std::forward<Converter>(converter)};
+    Detail::cartesian_product(results_store, input0, inputs...);
     return s;
 }
 
