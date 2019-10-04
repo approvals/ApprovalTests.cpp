@@ -37,3 +37,11 @@ TEST_CASE("Two Containers-Single Value")
     auto result = run_cartesian_product([](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
     REQUIRE(result == "hello,world\n");
 }
+
+TEST_CASE("Two Containers-Two Values")
+{
+    std::vector<std::string> input1{"A", "B"};
+    std::vector<std::string> input2{"1", "2"};
+    auto result = run_cartesian_product([](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
+    REQUIRE(result == "A,1\nA,2\nB,1\nB,2\n");
+}
