@@ -72,3 +72,11 @@ TEST_CASE("Cartesian product works with mixed inputs")
     Result expected{"hello,world"};
     REQUIRE(result == expected);
 }
+
+TEST_CASE("Cartesian product wwith an empty input gives empty output")
+{
+    std::set<std::string> input1{"A", "B"};
+    std::set<std::string> input2;
+    auto result = run_cartesian_product([](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
+    REQUIRE(result.empty());
+}
