@@ -12,7 +12,7 @@ using Result = std::vector<std::string>;
 template<class Converter>
 struct accumulate_results
 {
-    Result& out;
+    Result out;
     Converter converter;
     template<class T, class... Ts>
     void operator()(T&& input1, Ts&&... inputs) {
@@ -23,12 +23,11 @@ struct accumulate_results
 template<class Converter, class Container, class... Containers>
 Result run_cartesian_product(Converter&& converter, const Container& input0, const Containers&... inputs)
 {
-    Result s;
     auto results_store = accumulate_results<Converter>{
-        s,
+        Result(),
         std::forward<Converter>(converter)};
     Detail::cartesian_product(results_store, input0, inputs...);
-    return s;
+    return results_store.out;
 }
 
 TEST_CASE("Single Vector-Single Value")
