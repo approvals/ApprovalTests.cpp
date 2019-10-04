@@ -4,10 +4,12 @@
 using namespace ApprovalTests;
 using namespace ApprovalTests::CombinationApprovals;
 
+using Result = std::string;
+
 template<class Converter>
 struct serialize
 {
-    std::string& out;
+    Result& out;
     Converter converter;
     template<class T, class... Ts>
     void operator()(T&& input1, Ts&&... inputs) {
@@ -16,9 +18,9 @@ struct serialize
 };
 
 template<class Converter, class Container, class... Containers>
-std::string run_cartesian_product(Converter&& converter, const Container& input0, const Containers&... inputs)
+Result run_cartesian_product(Converter&& converter, const Container& input0, const Containers&... inputs)
 {
-    std::string s;
+    Result s;
     Detail::cartesian_product(serialize<Converter>{s, std::forward<Converter>(converter)}, input0, inputs...);
     return s;
 }
