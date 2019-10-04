@@ -8,6 +8,30 @@ using namespace ApprovalTests::CombinationApprovals;
 
 using Result = std::vector<std::string>;
 
+// ------------------------------------------------------------------
+
+// A hard-coded struct for acculuating results
+struct accumulate_results_2_strings_comma_separated
+{
+    Result out;
+    void operator()(std::string&& s1, std::string&& s2)
+    {
+        out.push_back(s1 + "," + s2);
+    }
+};
+
+TEST_CASE("Two Vectors-Single Value-hard-coded-converter")
+{
+    std::vector<std::string> input1{"hello"};
+    std::vector<std::string> input2{"world"};
+    accumulate_results_2_strings_comma_separated results_store;
+    Detail::cartesian_product(results_store, input1, input2);
+    Result expected{"hello,world"};
+    REQUIRE(results_store.out == expected);
+}
+
+// ------------------------------------------------------------------
+
 // Converter is the lambda, function or similar, that takes a set of input values, and returns a calculated result
 template<class Converter>
 struct accumulate_results
