@@ -10,7 +10,7 @@ using Result = std::vector<std::string>;
 
 // Converter is the lambda, function or similar, that takes a set of input values, and returns a calculated result
 template<class Converter>
-struct serialize
+struct accumulate_results
 {
     Result& out;
     Converter converter;
@@ -24,7 +24,7 @@ template<class Converter, class Container, class... Containers>
 Result run_cartesian_product(Converter&& converter, const Container& input0, const Containers&... inputs)
 {
     Result s;
-    Detail::cartesian_product(serialize<Converter>{s, std::forward<Converter>(converter)}, input0, inputs...);
+    Detail::cartesian_product(accumulate_results<Converter>{s, std::forward<Converter>(converter)}, input0, inputs...);
     return s;
 }
 
