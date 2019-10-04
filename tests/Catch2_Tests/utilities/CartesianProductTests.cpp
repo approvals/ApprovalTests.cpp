@@ -66,9 +66,9 @@ TEST_CASE("Cartesian product works with set input")
 
 TEST_CASE("Cartesian product works with mixed inputs")
 {
-    std::vector<std::string> input1{"A", "B"};
-    std::set<std::string> input2{"1", "2"};
+    std::vector<std::string> input1{"hello"};
+    std::set<std::string> input2{"world"};
     auto result = run_cartesian_product([](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
-    Result expected{"A,1", "A,2", "B,1", "B,2"};
+    Result expected{"hello,world"};
     REQUIRE(result == expected);
 }
