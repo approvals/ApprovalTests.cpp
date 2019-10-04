@@ -24,6 +24,7 @@ add_executable(${PROJECT_NAME}
     reporters/ReporterTests.cpp
     reporters/ReporterTests.cpp
     reporters/TestReporter.h
+    utilities/CartesianProductTests.cpp
     utilities/FileUtilsSystemSpecificTests.cpp
     utilities/MachineBlockerTests.cpp
     utilities/StringUtilsTests.cpp
