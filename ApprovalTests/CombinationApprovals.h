@@ -1,12 +1,7 @@
 #ifndef APPROVALTESTS_CPP_COMBINATIONAPPROVALS_H
 #define APPROVALTESTS_CPP_COMBINATIONAPPROVALS_H
 
-#include <functional>
-#include <ostream>
-#include <tuple>
 #include <type_traits>
-#include <utility>
-#include <vector>
 #include "reporters/DefaultReporter.h"
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/utilities/CartesianProduct.h"
