@@ -147,6 +147,7 @@ increment_iterator(Its& its, const Its& begins, const Its& ends) {
         increment_iterator<Its, I-1>(its, begins, ends);
     }
 }
+} // namespace Detail
 
 // This is what actually loops over all the containers, one element at a time
 // It is called with a template type F that writes the inputs, and runs the converter, which writes the result(s)
@@ -157,22 +158,20 @@ void cartesian_product(F&& f, const Ranges&... ranges) {
     using std::begin;
     using std::end;
 
-    if (any_of<is_range_empty>(std::forward_as_tuple(ranges...)))
+    if (Detail::any_of<Detail::is_range_empty>(std::forward_as_tuple(ranges...)))
         return;
 
     const auto begins = std::make_tuple(begin(ranges)...);
     const auto ends = std::make_tuple(end(ranges)...);
 
-    for (auto its = begins; std::get<0>(its) != std::get<0>(ends); increment_iterator(its, begins, ends)) {
+    for (auto its = begins; std::get<0>(its) != std::get<0>(ends); Detail::increment_iterator(its, begins, ends)) {
         // Command-clicking on transform in CLion 2019.2.1 hangs with CLion with high CPU
         // 'Use clang tidy' is turned off.
         // Power-save turned on.
         // Mac
-        Detail::apply(std::forward<F>(f), transform<dereference_iterator>(its));
+        Detail::apply(std::forward<F>(f), Detail::transform<Detail::dereference_iterator>(its));
     }
 }
-
-} // namespace Detail
 } // namespace CartesianProduct
 } // namespace ApprovalTests
 

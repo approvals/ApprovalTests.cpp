@@ -25,7 +25,7 @@ TEST_CASE("Two Vectors-Single Value-hard-coded-converter")
     std::vector<std::string> input1{"hello"};
     std::vector<std::string> input2{"world"};
     AccumulateResults2StringsCommaSeparated results_store;
-    Detail::cartesian_product(results_store, input1, input2);
+    cartesian_product(results_store, input1, input2);
     Result expected{"hello,world"};
     REQUIRE(results_store.out == expected);
 }
@@ -50,7 +50,7 @@ void test_cartesian_product(const Result& expected, Converter&& converter, const
     auto results_store = AccumulateResults<Converter>{
         Result(),
         std::forward<Converter>(converter)};
-    Detail::cartesian_product(results_store, input0, inputs...);
+    cartesian_product(results_store, input0, inputs...);
     REQUIRE(results_store.out == expected);
 }
 
