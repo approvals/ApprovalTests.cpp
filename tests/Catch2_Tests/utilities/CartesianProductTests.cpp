@@ -1,10 +1,10 @@
 #include "Catch.hpp"
-#include "ApprovalTests/CombinationApprovals.h"
+#include "ApprovalTests/utilities/CartesianProduct.h"
 
 #include <set>
 
 using namespace ApprovalTests;
-using namespace ApprovalTests::CombinationApprovals;
+using namespace ApprovalTests::CartesianProduct;
 
 using Result = std::vector<std::string>;
 
