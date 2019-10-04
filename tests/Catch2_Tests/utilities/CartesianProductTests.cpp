@@ -29,3 +29,11 @@ TEST_CASE("Single Container-Single Value")
     auto result = run_cartesian_product([](const std::string& s){return s + "!";}, words);
     REQUIRE(result == "hello!\n");
 }
+
+TEST_CASE("Two Containers-Single Value")
+{
+    std::vector<std::string> input1{"hello"};
+    std::vector<std::string> input2{"world"};
+    auto result = run_cartesian_product([](const std::string& s1, const std::string& s2){return s1 + "," + s2;}, input1, input2);
+    REQUIRE(result == "hello,world\n");
+}
