@@ -7,20 +7,20 @@ using namespace ApprovalTests::CombinationApprovals;
 template<class Converter>
 struct serialize
 {
-    std::ostream& out;
+    std::string& out;
     Converter converter;
     template<class T, class... Ts>
     void operator()(T&& input1, Ts&&... inputs) {
-        out << converter(input1, inputs...) << '\n';
+        out += converter(input1, inputs...) + '\n';
     }
 };
 
 template<class Converter, class Container, class... Containers>
 std::string run_cartesian_product(Converter&& converter, const Container& input0, const Containers&... inputs)
 {
-    std::stringstream s;
+    std::string s;
     Detail::cartesian_product(serialize<Converter>{s, std::forward<Converter>(converter)}, input0, inputs...);
-    return s.str();
+    return s;
 }
 
 TEST_CASE("Single Container-Single Value")
