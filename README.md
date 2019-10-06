@@ -46,7 +46,7 @@ They are great for testing objects with lots of fields, or lists of objects.
 * Watch the [Videos](/doc/Videos.md#top)
 
 ## ToString (ostream insertion)
-Often, you will need to create functions to allow objects to print their state. This is commonly done with on ostream `<< operator`.
+Often, you will need to create functions to allow objects to print their state. This is commonly done with an ostream `<< operator`.
 You can find examples here: [To String](/doc/ToString.md#top)
 
 ## What's new?
