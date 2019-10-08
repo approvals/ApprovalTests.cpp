@@ -26,7 +26,7 @@ namespace {
         virtual void test_case_start(const doctest::TestCaseData &) override {}
 
         // called when a test case is reentered because of unfinished subcases (safe to cache a pointer to the input)
-        virtual void test_case_reenter(const doctest::TestCaseData&) override {}
+        virtual void test_case_reenter(const doctest::TestCaseData&) /*override*/ {} // Not override, to support doctest v2.3.4
         
         // called when a test case has ended
         virtual void test_case_end(const doctest::CurrentTestCaseStats &) override {}
