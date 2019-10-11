@@ -12,9 +12,11 @@ namespace CartesianProduct {
 namespace Detail {
 
 // C++14 compatibility
+// See https://en.cppreference.com/w/cpp/types/enable_if
 template<bool B, class T=void>
 using enable_if_t = typename std::enable_if<B, T>::type;
 
+// See https://en.cppreference.com/w/cpp/utility/integer_sequence
 template<std::size_t... Is>
 struct index_sequence {};
 
@@ -26,6 +28,7 @@ struct make_index_sequence<0, Is...> : index_sequence<Is...> {};
 // End of C++14 compatibility
 
 // Return the size of a tuple - constexpr for use as a template argument
+// See https://en.cppreference.com/w/cpp/utility/tuple/tuple_size
 template<class Tuple>
 constexpr std::size_t tuple_size() {
     return std::tuple_size<typename std::remove_reference<Tuple>::type>::value;
@@ -35,6 +38,7 @@ template<class Tuple>
 using make_tuple_idxs = make_index_sequence<tuple_size<Tuple>()>;
 
 // C++17 compatibility
+// See https://en.cppreference.com/w/cpp/utility/apply
 template <class F, class Tuple, std::size_t... I>
 constexpr auto apply_impl(F&& f, Tuple&& t, index_sequence<I...>)
     -> decltype(std::forward<F>(f)(std::get<I>(std::forward<Tuple>(t))...))

@@ -12,7 +12,8 @@ namespace CombinationApprovals {
 namespace Detail {
 
 // C++17 compatibility
-// TODO What does disjunction do?
+// Effectively performs a logical OR on the sequence of traits.
+// See https://en.cppreference.com/w/cpp/types/disjunction
 template<class...> struct disjunction : std::false_type {};
 template<class B1> struct disjunction<B1> : B1 {};
 template<class B1, class... Bn>
