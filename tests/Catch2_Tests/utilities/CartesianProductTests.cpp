@@ -76,6 +76,24 @@ TEST_CASE("Cartesian product with iterator types")
     }
 }
 
+TEST_CASE("Cartesian product with different types of converter")
+{
+    const Result expected{"A,1", "A,2", "B,1", "B,2"};
+    const std::vector<std::string> input1{"A", "B"};
+    const std::vector<std::string> input2{"1", "2"};
+    SECTION("free function")
+    {
+        test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
+    }
+
+    SECTION("lambda expression")
+    {
+        test_cartesian_product(
+                expected,
+                [](const std::string& s1, const std::string& s2){return s1 + "," + s2;},
+                input1, input2);
+    }
+}
 
 TEST_CASE("Cartesian product works with mixed input types")
 {
