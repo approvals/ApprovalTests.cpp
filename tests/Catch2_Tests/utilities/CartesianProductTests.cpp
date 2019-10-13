@@ -7,7 +7,7 @@
 
 using namespace ApprovalTests;
 
-using Result = std::vector<std::string>;
+using Results = std::vector<std::string>;
 
 // ------------------------------------------------------------------
 // Tests which use a non-template object for accumulating results
@@ -18,10 +18,10 @@ using Result = std::vector<std::string>;
 // A hard-coded struct for accumulating results
 struct AccumulateResults2StringsCommaSeparated
 {
-    Result out;
+    Results results;
     void operator()(std::string&& s1, std::string&& s2)
     {
-        out.push_back(s1 + "," + s2);
+        results.push_back(s1 + "," + s2);
     }
 };
 
@@ -31,8 +31,8 @@ TEST_CASE("Cartesian product with hard-coded-converter")
     const std::vector<std::string> input2{"world"};
     AccumulateResults2StringsCommaSeparated results_store;
     CartesianProduct::cartesian_product(results_store, input1, input2);
-    const Result expected{"hello,world"};
-    REQUIRE(results_store.out == expected);
+    const Results expected{"hello,world"};
+    REQUIRE(results_store.results == expected);
 }
 
 // ------------------------------------------------------------------
@@ -45,22 +45,22 @@ TEST_CASE("Cartesian product with hard-coded-converter")
 template<class Converter>
 struct AccumulateResults
 {
-    Result out;
+    Results results;
     Converter converter;
     template<class T, class... Ts>
     void operator()(T&& input1, Ts&&... inputs) {
-        out.push_back(converter(input1, inputs...));
+        results.push_back(converter(input1, inputs...));
     }
 };
 
 template<class Converter, class Container, class... Containers>
-void test_cartesian_product(const Result& expected, Converter&& converter, const Container& input0, const Containers&... inputs)
+void test_cartesian_product(const Results& expected, Converter&& converter, const Container& input0, const Containers&... inputs)
 {
     auto results_store = AccumulateResults<Converter>{
-        Result(),
+        Results(),
         std::forward<Converter>(converter)};
     CartesianProduct::cartesian_product(results_store, input0, inputs...);
-    REQUIRE(results_store.out == expected);
+    REQUIRE(results_store.results == expected);
 }
 
 std::string concatenate_2_strings_comma_separated(const std::string& s1, const std::string& s2)
@@ -70,7 +70,7 @@ std::string concatenate_2_strings_comma_separated(const std::string& s1, const s
 
 TEST_CASE("Cartesian product with iterator types")
 {
-    const Result expected{"A,1", "A,2", "B,1", "B,2"};
+    const Results expected{"A,1", "A,2", "B,1", "B,2"};
     SECTION("random-access")
     {
         const std::vector<std::string> input1{"A", "B"};
@@ -88,7 +88,7 @@ TEST_CASE("Cartesian product with iterator types")
 
 TEST_CASE("Cartesian product with different types of converter")
 {
-    const Result expected{"A,1", "A,2", "B,1", "B,2"};
+    const Results expected{"A,1", "A,2", "B,1", "B,2"};
     const std::vector<std::string> input1{"A", "B"};
     const std::vector<std::string> input2{"1", "2"};
     SECTION("free function")
@@ -109,7 +109,7 @@ TEST_CASE("Cartesian product works with mixed input types")
 {
     const std::vector<std::string> input1{"hello"};
     const std::set<std::string> input2{"world"};
-    const Result expected{"hello,world"};
+    const Results expected{"hello,world"};
     test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
 }
 
@@ -117,6 +117,6 @@ TEST_CASE("Cartesian product with an empty input gives empty output")
 {
     const std::set<std::string> input1{"A", "B"};
     const std::set<std::string> input2;
-    const Result expected;
+    const Results expected;
     test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
 }
