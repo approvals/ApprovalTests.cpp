@@ -9,7 +9,7 @@ using Result = std::vector<std::string>;
 
 // ------------------------------------------------------------------
 
-// A hard-coded struct for acculuating results
+// A hard-coded struct for accumulating results
 struct AccumulateResults2StringsCommaSeparated
 {
     Result out;
@@ -98,7 +98,7 @@ TEST_CASE("Cartesian product works with mixed inputs")
     test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
 }
 
-TEST_CASE("Cartesian product wwith an empty input gives empty output")
+TEST_CASE("Cartesian product with an empty input gives empty output")
 {
     std::set<std::string> input1{"A", "B"};
     std::set<std::string> input2;
