@@ -65,15 +65,7 @@ std::string concatenate_2_strings_comma_separated(const std::string& s1, const s
     return (s1 + "," + s2);
 }
 
-TEST_CASE("Two Vectors-Single Value")
-{
-    std::vector<std::string> input1{"hello"};
-    std::vector<std::string> input2{"world"};
-    Result expected{"hello,world"};
-    test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
-}
-
-TEST_CASE("Cartesian product works with vector input")
+TEST_CASE("Cartesian product works with random-access inputs")
 {
     std::vector<std::string> input1{"A", "B"};
     std::vector<std::string> input2{"1", "2"};
@@ -81,8 +73,7 @@ TEST_CASE("Cartesian product works with vector input")
     test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
 }
 
-// TODO Rename this to describe the type of iterator
-TEST_CASE("Cartesian product works with set input")
+TEST_CASE("Cartesian product works with bi-directional-access inputs")
 {
     std::set<std::string> input1{"A", "B"};
     std::set<std::string> input2{"1", "2"};
@@ -90,7 +81,7 @@ TEST_CASE("Cartesian product works with set input")
     test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
 }
 
-TEST_CASE("Cartesian product works with mixed inputs")
+TEST_CASE("Cartesian product works with mixed input types")
 {
     std::vector<std::string> input1{"hello"};
     std::set<std::string> input2{"world"};
