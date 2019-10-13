@@ -65,21 +65,24 @@ std::string concatenate_2_strings_comma_separated(const std::string& s1, const s
     return (s1 + "," + s2);
 }
 
-TEST_CASE("Cartesian product works with random-access inputs")
+TEST_CASE("Cartesian product with iterator types")
 {
-    std::vector<std::string> input1{"A", "B"};
-    std::vector<std::string> input2{"1", "2"};
     Result expected{"A,1", "A,2", "B,1", "B,2"};
-    test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
+    SECTION("random-access")
+    {
+        std::vector<std::string> input1{"A", "B"};
+        std::vector<std::string> input2{"1", "2"};
+        test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
+    }
+
+    SECTION("bi-directional-access")
+    {
+        std::set<std::string> input1{"A", "B"};
+        std::set<std::string> input2{"1", "2"};
+        test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
+    }
 }
 
-TEST_CASE("Cartesian product works with bi-directional-access inputs")
-{
-    std::set<std::string> input1{"A", "B"};
-    std::set<std::string> input2{"1", "2"};
-    Result expected{"A,1", "A,2", "B,1", "B,2"};
-    test_cartesian_product(expected, concatenate_2_strings_comma_separated, input1, input2);
-}
 
 TEST_CASE("Cartesian product works with mixed input types")
 {
