@@ -15,15 +15,18 @@ using Results = std::vector<std::string>;
 // way of using that function.
 // ------------------------------------------------------------------
 
-// A hard-coded struct for accumulating results
-struct AccumulateResults2StringsCommaSeparated
+namespace
 {
-    Results results;
-    void operator()(std::string&& s1, std::string&& s2)
+// A hard-coded struct for accumulating results
+    struct AccumulateResults2StringsCommaSeparated
     {
-        results.push_back(s1 + "," + s2);
-    }
-};
+        Results results;
+        void operator()(std::string&& s1, std::string&& s2)
+        {
+            results.push_back(s1 + "," + s2);
+        }
+    };
+}
 
 TEST_CASE("Cartesian product with hard-coded-converter")
 {
@@ -41,31 +44,35 @@ TEST_CASE("Cartesian product with hard-coded-converter")
 // flexibility, but perhaps slightly more complex code.
 // ------------------------------------------------------------------
 
-// Converter is the lambda, function or similar, that takes a set of input values, and returns a calculated result
-template<class Converter>
-struct AccumulateResults
+namespace
 {
-    Results results;
-    Converter converter;
-    template<class T, class... Ts>
-    void operator()(T&& input1, Ts&&... inputs) {
-        results.push_back(converter(input1, inputs...));
+    // Converter is the lambda, function or similar, that takes a set of input values, and returns a calculated result
+    template<class Converter>
+    struct AccumulateResults
+    {
+        Results results;
+        Converter converter;
+        template<class T, class... Ts>
+        void operator()(T&& input1, Ts&&... inputs) {
+            results.push_back(converter(input1, inputs...));
+        }
+    };
+
+    template<class Converter, class Container, class... Containers>
+    void test_cartesian_product(const Results& expected, Converter&& converter, const Container& input0,
+                                const Containers&... inputs)
+    {
+        auto results_store = AccumulateResults<Converter>{
+                Results(),
+                std::forward<Converter>(converter)};
+        CartesianProduct::cartesian_product(results_store, input0, inputs...);
+        REQUIRE(results_store.results == expected);
     }
-};
 
-template<class Converter, class Container, class... Containers>
-void test_cartesian_product(const Results& expected, Converter&& converter, const Container& input0, const Containers&... inputs)
-{
-    auto results_store = AccumulateResults<Converter>{
-        Results(),
-        std::forward<Converter>(converter)};
-    CartesianProduct::cartesian_product(results_store, input0, inputs...);
-    REQUIRE(results_store.results == expected);
-}
-
-std::string concatenate_2_strings_comma_separated(const std::string& s1, const std::string& s2)
-{
-    return (s1 + "," + s2);
+    std::string concatenate_2_strings_comma_separated(const std::string& s1, const std::string& s2)
+    {
+        return (s1 + "," + s2);
+    }
 }
 
 TEST_CASE("Cartesian product with iterator types")
