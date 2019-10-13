@@ -121,7 +121,7 @@ struct is_range_empty {
     }
 };
 
-// TODO Why is this needed?
+// Transform an iterator into a value reference which will then be passed to the visitor function:
 struct dereference_iterator {
     template<class It>
     auto operator()(It&& it) const -> decltype(*std::forward<It>(it)) {
@@ -129,14 +129,14 @@ struct dereference_iterator {
     }
 };
 
-// Move on to next row, for when only one input container was supplied
+// Increment outermost iterator. If it reaches its end, we're finished and do nothing.
 template<class Its, std::size_t I = tuple_size<Its>()-1>
 enable_if_t<I == 0>
 increment_iterator(Its& it, const Its&, const Its&) {
     ++std::get<I>(it);
 }
 
-// Move on to next row, for when more than one input container was supplied
+// Increment inner iterator. If it reaches its end, we reset it and increment the previous iterator.
 template<class Its, std::size_t I = tuple_size<Its>()-1>
 enable_if_t<I != 0>
 increment_iterator(Its& its, const Its& begins, const Its& ends) {
