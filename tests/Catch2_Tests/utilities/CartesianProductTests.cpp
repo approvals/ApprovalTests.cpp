@@ -53,13 +53,6 @@ void test_cartesian_product(const Result& expected, Converter&& converter, const
     REQUIRE(results_store.out == expected);
 }
 
-TEST_CASE("Single Vector-Single Value")
-{
-    const std::vector<std::string> words{"hello"};
-    const Result expected{"hello!"};
-    test_cartesian_product(expected, [](const std::string& s){return s + "!";}, words);
-}
-
 std::string concatenate_2_strings_comma_separated(const std::string& s1, const std::string& s2)
 {
     return (s1 + "," + s2);
