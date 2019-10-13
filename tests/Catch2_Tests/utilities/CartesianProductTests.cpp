@@ -1,6 +1,8 @@
 #include "Catch.hpp"
 #include "ApprovalTests/utilities/CartesianProduct.h"
 
+#include <string>
+#include <vector>
 #include <set>
 
 using namespace ApprovalTests;
