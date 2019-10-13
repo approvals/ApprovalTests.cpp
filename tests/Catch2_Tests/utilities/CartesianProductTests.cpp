@@ -25,11 +25,11 @@ struct AccumulateResults2StringsCommaSeparated
 
 TEST_CASE("Cartesian product with hard-coded-converter")
 {
-    std::vector<std::string> input1{"hello"};
-    std::vector<std::string> input2{"world"};
+    const std::vector<std::string> input1{"hello"};
+    const std::vector<std::string> input2{"world"};
     AccumulateResults2StringsCommaSeparated results_store;
     CartesianProduct::cartesian_product(results_store, input1, input2);
-    Result expected{"hello,world"};
+    const Result expected{"hello,world"};
     REQUIRE(results_store.out == expected);
 }
 
