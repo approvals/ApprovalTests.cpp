@@ -8,6 +8,10 @@ using namespace ApprovalTests;
 using Result = std::vector<std::string>;
 
 // ------------------------------------------------------------------
+// Tests which use a non-template object for accumulating results
+// from CartesianProduct::cartesian_product(), to show the simplest
+// way of using the that function.
+// ------------------------------------------------------------------
 
 // A hard-coded struct for accumulating results
 struct AccumulateResults2StringsCommaSeparated
@@ -19,7 +23,7 @@ struct AccumulateResults2StringsCommaSeparated
     }
 };
 
-TEST_CASE("Two Vectors-Single Value-hard-coded-converter")
+TEST_CASE("Cartesian product with hard-coded-converter")
 {
     std::vector<std::string> input1{"hello"};
     std::vector<std::string> input2{"world"};
@@ -29,6 +33,10 @@ TEST_CASE("Two Vectors-Single Value-hard-coded-converter")
     REQUIRE(results_store.out == expected);
 }
 
+// ------------------------------------------------------------------
+// Tests which use atemplate object for accumulating results
+// from CartesianProduct::cartesian_product(). This gives greater
+// flexibility, but perhaps slightly more complex code.
 // ------------------------------------------------------------------
 
 // Converter is the lambda, function or similar, that takes a set of input values, and returns a calculated result
