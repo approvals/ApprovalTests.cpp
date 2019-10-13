@@ -34,7 +34,7 @@ TEST_CASE("Cartesian product with hard-coded-converter")
 }
 
 // ------------------------------------------------------------------
-// Tests which use atemplate object for accumulating results
+// Tests which use template object for accumulating results
 // from CartesianProduct::cartesian_product(). This gives greater
 // flexibility, but perhaps slightly more complex code.
 // ------------------------------------------------------------------
