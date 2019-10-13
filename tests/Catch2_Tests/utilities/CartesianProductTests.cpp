@@ -10,7 +10,7 @@ using Result = std::vector<std::string>;
 // ------------------------------------------------------------------
 // Tests which use a non-template object for accumulating results
 // from CartesianProduct::cartesian_product(), to show the simplest
-// way of using the that function.
+// way of using that function.
 // ------------------------------------------------------------------
 
 // A hard-coded struct for accumulating results
