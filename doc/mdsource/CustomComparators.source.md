@@ -42,6 +42,8 @@ Then we call `FileApprover::registerComparator()` to tell Approval Tests to use 
 
 snippet: use_custom_comparator
 
+The return value is ["Disposable"](/doc/DisposableObjects.md#top), meaning it will restore the original comparator when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
+
 ---
 
 [Back to User Guide](/doc/README.md#top)
