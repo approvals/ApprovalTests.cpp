@@ -76,21 +76,11 @@ You should make the following additions to your own source file that contains `m
 <!-- snippet: catch_existing_main -->
 <a id='snippet-catch_existing_main'/></a>
 ```cpp
-// main.cpp:
-
-// Add these two lines to your main:
+// Add these two lines to the top of your main.cpp file:
 #define APPROVALS_CATCH_EXISTING_MAIN
 #include "ApprovalTests.hpp"
-
-int main( int argc, char* argv[] )
-{
-    // your existing setup...
-    int result = Catch::Session().run( argc, argv );
-    // your existing clean-up...
-    return result;
-}
 ```
-<sup>[snippet source](/examples/catch2_existing_main/main.cpp#L1-L15) / [anchor](#snippet-catch_existing_main)</sup>
+<sup>[snippet source](/examples/catch2_existing_main/main.cpp#L1-L5) / [anchor](#snippet-catch_existing_main)</sup>
 <!-- endsnippet -->
 
 

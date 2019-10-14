@@ -1,9 +1,8 @@
 // begin-snippet: catch_existing_main
-// main.cpp:
-
-// Add these two lines to your main:
+// Add these two lines to the top of your main.cpp file:
 #define APPROVALS_CATCH_EXISTING_MAIN
 #include "ApprovalTests.hpp"
+// end-snippet
 
 int main( int argc, char* argv[] )
 {
@@ -12,4 +11,3 @@ int main( int argc, char* argv[] )
     // your existing clean-up...
     return result;
 }
-// end-snippet
