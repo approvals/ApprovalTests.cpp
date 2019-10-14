@@ -17,12 +17,14 @@ public:
     ComparatorDisposer(
             ComparatorContainer &comparators,
             std::string extensionWithDot,
-            std::shared_ptr<ApprovalTests::ApprovalComparator> previousComparator)
+            std::shared_ptr<ApprovalTests::ApprovalComparator> previousComparator,
+            std::shared_ptr<ApprovalTests::ApprovalComparator> newComparator)
             :
             comparators(comparators),
             ext_(extensionWithDot),
             previousComparator(previousComparator)
     {
+        comparators[extensionWithDot] = newComparator;
     }
 
     ~ComparatorDisposer()

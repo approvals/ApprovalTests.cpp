@@ -19,10 +19,9 @@ private:
 public:
     static ComparatorDisposer
     registerComparator(const std::string &extensionWithDot, std::shared_ptr<ApprovalComparator> comparator) {
-        ComparatorDisposer disposer(comparators(), extensionWithDot,
-                                    getComparatorForFileExtensionWithDot(extensionWithDot));
-        comparators()[extensionWithDot] = comparator;
-        return disposer;
+        return ComparatorDisposer(comparators(), extensionWithDot,
+                                  getComparatorForFileExtensionWithDot(extensionWithDot),
+                                  comparator);
     }
 
     static std::shared_ptr<ApprovalComparator> getComparatorForFile(const std::string &receivedPath) {
