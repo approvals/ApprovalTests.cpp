@@ -11,16 +11,17 @@ LAST_VERSION="v.5.1.0"
 VERSION=$UNSET_VERSION
 
 PUSH_TO_PRODUCTION="true"
-if [ "$VERSION" = $UNSET_VERSION ]; then
-    PUSH_TO_PRODUCTION="false"
-    echo "Turning off PUSH_TO_PRODUCTION as version number has not been set"
-fi
+# Note that we won't push if the version number is unset
 
 OLD_SINGLE_HEADER=ApprovalTests.$LAST_VERSION.hpp
 NEW_SINGLE_HEADER=ApprovalTests.$VERSION.hpp
+NEW_SINGLE_HEADER_TEMP=${NEW_SINGLE_HEADER}.tmp
+
+RELEASE_DIR=../build/releases
+RELEASE_NEW_SINGLE_HEADER=$RELEASE_DIR/$NEW_SINGLE_HEADER
+RELEASE_NEW_SINGLE_HEADER_TEMP=$RELEASE_DIR/$NEW_SINGLE_HEADER_TEMP
 
 STARTER_PROJECT_DIR=../../ApprovalTests.Cpp.StarterProject
-
 STARTER_PATH_OLD_SINGLE_HEADER=$STARTER_PROJECT_DIR/lib/$OLD_SINGLE_HEADER
 STARTER_PATH_NEW_SINGLE_HEADER=$STARTER_PROJECT_DIR/lib/$NEW_SINGLE_HEADER
 
@@ -30,13 +31,17 @@ STARTER_PATH_NEW_SINGLE_HEADER=$STARTER_PROJECT_DIR/lib/$NEW_SINGLE_HEADER
 # Create new single-header file
 
 cd ../ApprovalTests
-java -jar ../build/SingleHpp.v.0.0.2.jar ../build/releases/$NEW_SINGLE_HEADER
+java -jar ../build/SingleHpp.v.0.0.2.jar $RELEASE_NEW_SINGLE_HEADER_TEMP
 
 # TODO make sed command work on all platforms:
 # https://stackoverflow.com/a/22084103/104370
 
-sed -i '' '1s|^|// More information at: https://github.com/approvals/ApprovalTests.cpp\n|' ../build/releases/$NEW_SINGLE_HEADER
-sed -i '' "1s|^|// Approval Tests version $VERSION\n|" ../build/releases/$NEW_SINGLE_HEADER
+cat << EOF > $RELEASE_NEW_SINGLE_HEADER
+// Approval Tests version $VERSION
+// More information at: https://github.com/approvals/ApprovalTests.cpp
+EOF
+cat $RELEASE_NEW_SINGLE_HEADER_TEMP >> $RELEASE_NEW_SINGLE_HEADER
+rm  $RELEASE_NEW_SINGLE_HEADER_TEMP
 
 # ------------------------------------------------------------------------------------------------
 # Update Starter Project 
@@ -47,7 +52,7 @@ git clean -fx
 git reset --hard
 popd
 
-cp ../build/releases/ApprovalTests.$VERSION.hpp $STARTER_PROJECT_DIR/lib
+cp $RELEASE_NEW_SINGLE_HEADER $STARTER_PATH_NEW_SINGLE_HEADER
 
 # Delete the last release:
 if [ -f $STARTER_PATH_OLD_SINGLE_HEADER ] ; then
@@ -65,7 +70,7 @@ pushd $STARTER_PROJECT_DIR/cmake-build-debug
 cmake --build .
 popd
 
-if [ "$VERSION" == "v.X.X.X" ] ; then
+if [ "$VERSION" == "$UNSET_VERSION" ] ; then
     echo "Everything worked - version number not set, so didn't commit or push"
     exit
 fi
@@ -97,7 +102,7 @@ open "https://github.com/approvals/ApprovalTests.cpp/releases/new?tag=$VERSION&t
 # Draft the tweet
 open "https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+$VERSION+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F$VERSION+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21"
 
-open ../build/releases/
+open $RELEASE_DIR/
 
 # The prefixes used in our commit messages come from: https://github.com/RefactoringCombos/ArlosCommitNotation
 git log ${LAST_VERSION}..HEAD --pretty=format:%s | \
