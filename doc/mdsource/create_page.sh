@@ -21,8 +21,6 @@ do
     # Create the file
     cp TemplatePage.source.md "$new_source_file"
     sed -i -e "s/Put Title Here/${page}/" "$new_source_file"
-
-    # Make it easy to add links to the file
-    echo "Created $new_source_file - use this for links to it:"
-    ./page_link.sh $new_source_file
 done
+
+echo "Now run run_markdown_templates.sh, then use page_link.sh to create links to the new file "
