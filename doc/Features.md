@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [vNext](#vnext)
+  * [v.6.0.0](#v600)
     * [Existing Catch Project - with your main()](#existing-catch-project---with-your-main)
   * [v.5.1.0](#v510)
     * [Continuous Integration Builds](#continuous-integration-builds)
@@ -36,6 +37,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 
 ## vNext
+
+## v.6.0.0
 
 ### Existing Catch Project - with your main()
 

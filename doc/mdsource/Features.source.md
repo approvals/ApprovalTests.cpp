@@ -8,6 +8,8 @@ toc
 
 ## vNext
 
+## v.6.0.0
+
 ### Existing Catch Project - with your main()
 
 See [Existing Project - with your main()](/doc/UsingCatch.md#existing-project---with-your-main).
