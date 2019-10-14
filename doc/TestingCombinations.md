@@ -9,6 +9,17 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 # Testing Combinations
 
+<!-- toc -->
+## Contents
+
+  * [The Basics](#the-basics)
+    * [Passing in a Reporter](#passing-in-a-reporter)
+  * [Code samples](#code-samples)
+<!-- endtoc -->
+
+
+## The Basics
+
 You can use `CombinationApprovals::verifyAllCombinations` to test the content of multiple containers.
 
 This makes a kind of approval test matrix, automatically testing all combinations of a set of inputs. It's a powerful way to quickly get very good test coverage.
@@ -47,6 +58,10 @@ The format is carefully chosen to show both inputs and outputs, to make the test
 <!-- endsnippet -->
 
 For advice on effective formatting, see [To String](/doc/ToString.md#top). As you write out larger volumes of data in your approval files, experience has shown that the choice of layout of text in approval files can make a big difference to maintainability of tests, when failures occur.
+
+### Passing in a Reporter
+
+Note: Because of the limitations of C++, the Reporter is not optional at the end, as in the rest of Approval Tests. Instead, you can optionally add a Reporter as the second argument.
 
 ## Code samples
 
