@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [vNext](#vnext)
+    * [Existing Catch Project - with your main()](#existing-catch-project---with-your-main)
   * [v.5.1.0](#v510)
     * [Continuous Integration Builds](#continuous-integration-builds)
     * [Approving multiple files in one test](#approving-multiple-files-in-one-test)
@@ -35,6 +36,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 
 ## vNext
+
+### Existing Catch Project - with your main()
+
+See [Existing Project - with your main()](/doc/UsingCatch.md#existing-project---with-your-main).
 
 ## v.5.1.0
 

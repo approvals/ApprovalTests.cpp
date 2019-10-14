@@ -47,11 +47,9 @@ If you have a Catch (1 or 2) project with your own `main.cpp` that contains the 
 
 If you have [supplied your own `main()` for Catch](https://github.com/catchorg/Catch2/blob/master/docs/own-main.md#top), you will need to teach it how to supply test names to Approval Tests.
 
-There is not yet a streamlined way of doing this.
+You should make the following additions to your own source file that contains `main()`.  
 
-For now, please see the code in [ApprovalTests/Catch2Approvals.h](/ApprovalTests/integrations/catch/Catch2Approvals.h) for the code you will need to add to your `main.cpp`.
-
-If it would be helpful for us to provide an easier way to do this, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top). 
+snippet: catch_existing_main
 
 
 ---

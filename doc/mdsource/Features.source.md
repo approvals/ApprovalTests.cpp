@@ -8,6 +8,10 @@ toc
 
 ## vNext
 
+### Existing Catch Project - with your main()
+
+See [Existing Project - with your main()](/doc/UsingCatch.md#existing-project---with-your-main).
+
 ## v.5.1.0
 
 ### Continuous Integration Builds
