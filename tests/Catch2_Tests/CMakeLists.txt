@@ -11,6 +11,7 @@ add_executable(${PROJECT_NAME}
     StyleGuide.h
     VectorTests.cpp
     documentation/Catch2DocumentationSamples.cpp
+    documentation/CombinationsSampleCode.cpp
     documentation/OverviewExamples.cpp
     documentation/ToStringExample.cpp
     documentation/ToStringTemplateExample.cpp

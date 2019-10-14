@@ -48,6 +48,23 @@ The format is carefully chosen to show both inputs and outputs, to make the test
 
 For advice on effective formatting, see [To String](/doc/ToString.md#top). As you write out larger volumes of data in your approval files, experience has shown that the choice of layout of text in approval files can make a big difference to maintainability of tests, when failures occur.
 
+## Code samples
+
+<!-- snippet: sample_combinations_of_three -->
+<a id='snippet-sample_combinations_of_three'/></a>
+```cpp
+CombinationApprovals::verifyAllCombinations(
+        []( const std::string& input1, const int input2, const double input3)
+        {
+            return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
+        }, // This is the converter function
+        listOfInput1s,
+        listOfInput2s,
+        listOfInput3s);
+```
+<sup>[snippet source](/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L25-L34) / [anchor](#snippet-sample_combinations_of_three)</sup>
+<!-- endsnippet -->
+
 ---
 
 [Back to User Guide](/doc/README.md#top)

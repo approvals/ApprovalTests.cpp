@@ -16,6 +16,10 @@ snippet: CombinationTests.YouCanVerifyCombinationsOf2.approved.txt
 
 For advice on effective formatting, see [To String](/doc/ToString.md#top). As you write out larger volumes of data in your approval files, experience has shown that the choice of layout of text in approval files can make a big difference to maintainability of tests, when failures occur.
 
+## Code samples
+
+snippet: sample_combinations_of_three
+
 ---
 
 [Back to User Guide](/doc/README.md#top)

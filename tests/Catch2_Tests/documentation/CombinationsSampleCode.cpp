@@ -1,0 +1,35 @@
+#include "Catch.hpp"
+#include <vector>
+#include <string>
+#include "ApprovalTests/CombinationApprovals.h"
+
+using namespace ApprovalTests;
+
+
+namespace
+{
+double
+functionThatReturnsSomethingOutputStreamable(const std::string& /*input1*/, const int input2, const double input3)
+{
+    return input2 * input3;
+}
+
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf3")
+
+{
+    std::vector<std::string> listOfInput1s{"a", "b"};
+    std::vector<int> listOfInput2s{1, 2, 3};
+    std::vector<double> listOfInput3s{1.1, 2.2};
+    // begin-snippet: sample_combinations_of_three
+    CombinationApprovals::verifyAllCombinations(
+            []( const std::string& input1, const int input2, const double input3)
+            {
+                return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
+            }, // This is the converter function
+            listOfInput1s,
+            listOfInput2s,
+            listOfInput3s);
+    // end-snippet
+}
