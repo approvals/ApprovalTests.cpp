@@ -33,3 +33,21 @@ TEST_CASE("YouCanVerifyCombinationsOf3")
             listOfInput3s);
     // end-snippet
 }
+
+TEST_CASE("YouCanVerifyCombinationsOf3WithAuto")
+
+{
+    std::vector<std::string> listOfInput1s{"a", "b"};
+    std::vector<int> listOfInput2s{1, 2, 3};
+    std::vector<double> listOfInput3s{1.1, 2.2};
+    // begin-snippet: sample_combinations_of_three_with_auto
+    CombinationApprovals::verifyAllCombinations(
+            []( auto& input1, auto& input2, auto& input3)
+            {
+                return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
+            }, // This is the converter function
+            listOfInput1s,
+            listOfInput2s,
+            listOfInput3s);
+    // end-snippet
+}

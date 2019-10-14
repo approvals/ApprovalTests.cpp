@@ -65,6 +65,23 @@ CombinationApprovals::verifyAllCombinations(
 <sup>[snippet source](/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L25-L34) / [anchor](#snippet-sample_combinations_of_three)</sup>
 <!-- endsnippet -->
 
+If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
+
+<!-- snippet: sample_combinations_of_three_with_auto -->
+<a id='snippet-sample_combinations_of_three_with_auto'/></a>
+```cpp
+CombinationApprovals::verifyAllCombinations(
+        []( auto& input1, auto& input2, auto& input3)
+        {
+            return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
+        }, // This is the converter function
+        listOfInput1s,
+        listOfInput2s,
+        listOfInput3s);
+```
+<sup>[snippet source](/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L43-L52) / [anchor](#snippet-sample_combinations_of_three_with_auto)</sup>
+<!-- endsnippet -->
+
 ---
 
 [Back to User Guide](/doc/README.md#top)

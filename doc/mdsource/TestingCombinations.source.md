@@ -20,6 +20,10 @@ For advice on effective formatting, see [To String](/doc/ToString.md#top). As yo
 
 snippet: sample_combinations_of_three
 
+If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
+
+snippet: sample_combinations_of_three_with_auto
+
 ---
 
 [Back to User Guide](/doc/README.md#top)
