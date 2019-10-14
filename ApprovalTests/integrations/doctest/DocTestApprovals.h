@@ -25,7 +25,7 @@ namespace {
         // called when a test case is started (safe to cache a pointer to the input)
         virtual void test_case_start(const doctest::TestCaseData &) override {}
 
-#if DOCTEST_VERSION >= 20305
+#if 20305 <= DOCTEST_VERSION
         // called when a test case is reentered because of unfinished subcases (safe to cache a pointer to the input)
         virtual void test_case_reenter(const doctest::TestCaseData&) override {}
 #endif
