@@ -11,7 +11,8 @@ namespace ApprovalTests
 
 using ComparatorContainer = std::map<std::string, std::shared_ptr<ApprovalComparator> >;
 
-class APPROVAL_TESTS_NO_DISCARD ComparatorDisposer {
+class APPROVAL_TESTS_NO_DISCARD ComparatorDisposer
+{
 public:
     ComparatorDisposer(
             ComparatorContainer &comparators,
@@ -20,10 +21,12 @@ public:
             :
             comparators(comparators),
             ext_(extensionWithDot),
-            previousComparator(previousComparator) {
+            previousComparator(previousComparator)
+    {
     }
 
-    ~ComparatorDisposer() {
+    ~ComparatorDisposer()
+    {
         comparators[ext_] = previousComparator;
     }
 
