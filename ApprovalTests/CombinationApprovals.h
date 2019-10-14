@@ -60,62 +60,6 @@ verifyAllCombinations(Converter&& converter, const Containers&... inputs)
     verifyAllCombinations(std::forward<Converter>(converter), DefaultReporter(), inputs...);
 }
 
-// These are here for backwards compatibility
-// Maybe they should be deprecated and removed in the future?
-template<class Converter, class C1>
-void verifyAllCombinations(Converter&& converter, const C1& i1, const Reporter& reporter)
-{
-    verifyAllCombinations(std::forward<Converter>(converter), reporter, i1);
-}
-
-template<class Converter, class C1, class C2>
-void verifyAllCombinations(Converter&& converter, const C1& i1, const C2& i2, const Reporter& reporter)
-{
-    verifyAllCombinations(std::forward<Converter>(converter), reporter, i1, i2);
-}
-
-template<class Converter, class C1, class C2, class C3>
-void verifyAllCombinations(Converter&& converter, const C1& i1, const C2& i2, const C3& i3, const Reporter& reporter)
-{
-    verifyAllCombinations(std::forward<Converter>(converter), reporter, i1, i2, i3);
-}
-
-template<class Converter, class C1, class C2, class C3, class C4>
-void verifyAllCombinations(Converter&& converter, const C1& i1, const C2& i2, const C3& i3, const C4& i4, const Reporter& reporter)
-{
-    verifyAllCombinations(std::forward<Converter>(converter), reporter, i1, i2, i3, i4);
-}
-
-template<class Converter, class C1, class C2, class C3, class C4, class C5>
-void verifyAllCombinations(Converter&& converter, const C1& i1, const C2& i2, const C3& i3, const C4& i4, const C5& i5, const Reporter& reporter)
-{
-    verifyAllCombinations(std::forward<Converter>(converter), reporter, i1, i2, i3, i4, i5);
-}
-
-template<class Converter, class C1, class C2, class C3, class C4, class C5, class C6>
-void verifyAllCombinations(Converter&& converter, const C1& i1, const C2& i2, const C3& i3, const C4& i4, const C5& i5, const C6& i6, const Reporter& reporter)
-{
-    verifyAllCombinations(std::forward<Converter>(converter), reporter, i1, i2, i3, i4, i5, i6);
-}
-
-template<class Converter, class C1, class C2, class C3, class C4, class C5, class C6, class C7>
-void verifyAllCombinations(Converter&& converter, const C1& i1, const C2& i2, const C3& i3, const C4& i4, const C5& i5, const C6& i6, const C7& i7, const Reporter& reporter)
-{
-    verifyAllCombinations(std::forward<Converter>(converter), reporter, i1, i2, i3, i4, i5, i6, i7);
-}
-
-template<class Converter, class C1, class C2, class C3, class C4, class C5, class C6, class C7, class C8>
-void verifyAllCombinations(Converter&& converter, const C1& i1, const C2& i2, const C3& i3, const C4& i4, const C5& i5, const C6& i6, const C7& i7, const C8& i8, const Reporter& reporter)
-{
-    verifyAllCombinations(std::forward<Converter>(converter), reporter, i1, i2, i3, i4, i5, i6, i7, i8);
-}
-
-template<class Converter, class C1, class C2, class C3, class C4, class C5, class C6, class C7, class C8, class C9>
-void verifyAllCombinations(Converter&& converter, const C1& i1, const C2& i2, const C3& i3, const C4& i4, const C5& i5, const C6& i6, const C7& i7, const C8& i8, const C9& i9, const Reporter& reporter)
-{
-    verifyAllCombinations(std::forward<Converter>(converter), reporter, i1, i2, i3, i4, i5, i6, i7, i8, i9);
-}
-
 } // namespace CombinationApprovals
 } // namespace ApprovalTests
 
