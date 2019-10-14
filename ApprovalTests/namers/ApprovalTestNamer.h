@@ -6,7 +6,6 @@
 #include <sstream>
 #include <vector>
 #include <stdexcept>
-#include "ApprovalTests/utilities/Macros.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 
 namespace ApprovalTests {
@@ -71,7 +70,6 @@ public:
         return result.str();
     }
 
-// <SingleHpp unalterable>
     static TestName &getCurrentTest()
     {
         try
@@ -85,6 +83,7 @@ public:
         }
     }
 
+// <SingleHpp unalterable>
     static std::string getMisconfiguredMainHelp()
     {
         std::string lineBreak = "************************************************************************************\n";
@@ -145,8 +144,25 @@ R"(* Welcome to Approval Tests.
         return directory;
     }
 
-    APPROVAL_TESTS_MACROS_STATIC(TestName, currentTest, NULL)
-    APPROVAL_TESTS_MACROS_STATIC(TestConfiguration, testConfiguration, new TestConfiguration)
+    static TestName& currentTest(TestName* value = nullptr)
+    {
+        static TestName* staticValue;
+        if (value != nullptr)
+        {
+            staticValue = value;
+        }
+        if ( staticValue == nullptr )
+        {
+            throw std::runtime_error("The variable in currentTest() is not initialised");
+        }
+        return *staticValue;
+    }
+
+    static TestConfiguration& testConfiguration()
+    {
+        static TestConfiguration configuration;
+        return configuration;
+    }
 
     virtual std::string getApprovedFile(std::string extensionWithDot) const override {
 

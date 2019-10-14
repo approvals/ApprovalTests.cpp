@@ -3,11 +3,9 @@
 
 #include "ApprovalTests/core/ApprovalNamer.h"
 #include "ApprovalTestNamer.h"
-#include "ApprovalTests/utilities/Macros.h"
 
 #include <memory>
 #include <utility>
-#include <vector>
 
 namespace ApprovalTests {
 
@@ -17,25 +15,21 @@ namespace ApprovalTests {
 class DefaultNamerFactory
 {
 private:
-    using NamerContainer = std::vector< NamerCreator >;
-    APPROVAL_TESTS_MACROS_STATIC(NamerContainer, defaultNamerContainer, DefaultNamerFactory::createNamerContainer())
-    
-    static NamerContainer* createNamerContainer()
+    static NamerCreator& defaultNamer()
     {
-        auto container = new NamerContainer; 
-        container->push_back( [](){return std::make_shared<ApprovalTestNamer>();} );
-        return container;
+        static NamerCreator namer = [](){return std::make_shared<ApprovalTestNamer>();};
+        return namer;
     }
 
 public:
     static NamerCreator getDefaultNamer()
     {
-        return defaultNamerContainer().at(0);
+        return defaultNamer();
     }
     
     static void setDefaultNamer( NamerCreator namer)
     {
-        defaultNamerContainer().at(0) = std::move(namer);
+        defaultNamer() = std::move(namer);
     }
 
 };

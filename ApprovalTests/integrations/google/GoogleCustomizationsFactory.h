@@ -1,7 +1,6 @@
 #ifndef APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H
 #define APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H
 
-#include "ApprovalTests/utilities/Macros.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 
 #include <vector>
@@ -15,17 +14,17 @@ public:
     using Comparator = std::function<bool(const std::string&, const std::string&)>;
 private:
     using ComparatorContainer = std::vector< Comparator >;
-    APPROVAL_TESTS_MACROS_STATIC(ComparatorContainer, comparatorContainer, GoogleCustomizationsFactory::createContainer())
-
-    static ComparatorContainer* createContainer()
+    static ComparatorContainer& comparatorContainer()
     {
-        auto container = new ComparatorContainer;
-
-        auto exactNameMatching = [](const std::string& testFileNameWithExtension, const std::string& testCaseName)
+        static ComparatorContainer container;
+        if (container.empty())
         {
-            return StringUtils::contains(testFileNameWithExtension, testCaseName + ".");
-        };
-        container->push_back( exactNameMatching );
+            auto exactNameMatching = [](const std::string& testFileNameWithExtension, const std::string& testCaseName)
+            {
+                return StringUtils::contains(testFileNameWithExtension, testCaseName + ".");
+            };
+            container.push_back( exactNameMatching );
+        }
         return container;
     }
 
