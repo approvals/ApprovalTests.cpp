@@ -81,7 +81,7 @@ public:
 
     ~FileApprover() = default;
 
-    static ComparatorDisposer registerComparator(const std::string& extensionWithDot, std::shared_ptr<ApprovalComparator> comparator)
+    static ComparatorDisposer registerComparatorForExtension(const std::string& extensionWithDot, std::shared_ptr<ApprovalComparator> comparator)
     {
         return ComparatorFactory::registerComparator(extensionWithDot, comparator);
     }
