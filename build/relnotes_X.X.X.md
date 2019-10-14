@@ -1,11 +1,11 @@
 * **Breaking changes**
-    * Combinations with reporter
-    * Disposable object on comparator
+    * If you pass in a report to CombinationApprovals::verifyAllCombinations(), the argument order has changed: see [Passing in a Reporter](/doc/TestingCombinations.md#passing-in-a-reporter).
+    * FileApprover::registerComparator() has been renamed to  FileApprover::registerComparatorForExtension(), and now returns a [Disposable Object](/doc/DisposableObjects.md#top). (#42)
 * **New features**
-    * Support for [Existing Catch Project - with your main()](/doc/UsingCatch.md#existing-project---with-your-main)
-    * Combinations more than 9
-    * Comparator changes can be reverted
+    * Support for [Existing Catch Project - with your main()](/doc/UsingCatch.md#existing-project---with-your-main) (#36)
+    * CombinationApprovals::verifyAllCombinations() now handles more than 9 parameters in the function being tested. (#33)
+    * [Custom Comparators](/doc/CustomComparators.md#top) can be reverted (#42)
 * **Bug fixes**
     * None
 * **Other changes**
-    * doctest 2.3.5 now supported (2.3.4 remains supported)
+    * doctest 2.3.5 is now supported (2.3.4 remains supported)
