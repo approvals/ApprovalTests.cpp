@@ -16,6 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Contributing - pairing and pull requests](#contributing---pairing-and-pull-requests)
     * [Definition of Done](#definition-of-done)
   * [Code of Conduct](#code-of-conduct)
+  * [Coding Patterns](#coding-patterns)
   * [Documentation](#documentation)
     * [Creating new pages](#creating-new-pages)
     * [Internal links need to be absolute](#internal-links-need-to-be-absolute)
@@ -59,6 +60,10 @@ We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommit
 ## Code of Conduct
 
 Please note that this project is released with a [Contributor Code of Conduct](/CODE_OF_CONDUCT.md#top). By participating in this project you agree to abide by its terms.
+
+## Coding Patterns
+
+See [Static variables for header-only releases](/doc/CodingPatterns.md#static-variables-for-header-only-releases).
 
 ## Documentation
 

@@ -39,6 +39,10 @@ We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommit
 
 Please note that this project is released with a [Contributor Code of Conduct](/CODE_OF_CONDUCT.md#top). By participating in this project you agree to abide by its terms.
 
+## Coding Patterns
+
+See [Static variables for header-only releases](/doc/CodingPatterns.md#static-variables-for-header-only-releases).
+
 ## Documentation
 
 We welcome improvements to the documentation! Here's how we manage the documentation files. 
