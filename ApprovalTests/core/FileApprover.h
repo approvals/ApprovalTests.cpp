@@ -1,7 +1,6 @@
 #ifndef APPROVALTESTS_CPP_FILEAPPROVER_H
 #define APPROVALTESTS_CPP_FILEAPPROVER_H
 
-#include <map>
 #include <memory>
 #include "ApprovalException.h"
 #include "ApprovalTests/writers/StringWriter.h"
@@ -9,14 +8,10 @@
 #include "ApprovalTests/reporters/FrontLoadedReporterDisposer.h"
 #include "ApprovalTests/core/ApprovalNamer.h"
 #include "ApprovalComparator.h"
-#include "ApprovalTests/comparators/TextFileComparator.h"
 #include "ApprovalTests/comparators/ComparatorFactory.h"
 #include "ApprovalTests/utilities/FileUtils.h"
-#include "ApprovalTests/utilities/Macros.h"
 
 namespace ApprovalTests {
-
-//using ComparatorContainer = std::map< std::string, std::shared_ptr<ApprovalComparator> >;
 
 class FileApprover {
 
