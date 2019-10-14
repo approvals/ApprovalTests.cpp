@@ -42,7 +42,8 @@ private:
     std::shared_ptr<ApprovalTests::ApprovalComparator> previousComparator;
 };
 
-class FileApprover {
+class ComparatorFactory
+{
 private:
     static ComparatorContainer& comparators()
     {
@@ -51,10 +52,6 @@ private:
     }
 
 public:
-    FileApprover() = default;
-
-    ~FileApprover() = default;
-
     static ComparatorDisposer registerComparator(const std::string& extensionWithDot, std::shared_ptr<ApprovalComparator> comparator)
     {
         ComparatorDisposer disposer(comparators(), extensionWithDot,
@@ -74,6 +71,19 @@ public:
             return iterator->second;
         }
         return std::make_shared<TextFileComparator>();
+    }
+};
+
+class FileApprover {
+
+public:
+    FileApprover() = default;
+
+    ~FileApprover() = default;
+
+    static ComparatorDisposer registerComparator(const std::string& extensionWithDot, std::shared_ptr<ApprovalComparator> comparator)
+    {
+        return ComparatorFactory::registerComparator(extensionWithDot, comparator);
     }
 
     //! This overload is an implementation detail. To add a new comparator, use registerComparator().
@@ -95,7 +105,7 @@ public:
 
     static void verify(const std::string& receivedPath,
                        const std::string& approvedPath) {
-        verify(receivedPath, approvedPath, *getComparatorForFile(receivedPath));
+        verify(receivedPath, approvedPath, *ComparatorFactory::getComparatorForFile(receivedPath));
     }
 
     static void verify(const ApprovalNamer& n, const ApprovalWriter& s, const Reporter& r) {
