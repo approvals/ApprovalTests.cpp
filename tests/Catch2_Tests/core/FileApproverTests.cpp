@@ -61,7 +61,7 @@ TEST_CASE("ItUsesCustomComparator") {
     FileUtils::writeToFile("b.length", "56789");
 
     // begin-snippet: use_custom_comparator
-    FileApprover::registerComparator(".length", std::make_shared<LengthComparator>());
+    auto disposer = FileApprover::registerComparator(".length", std::make_shared<LengthComparator>());
     // end-snippet
 
     FileApprover::verify("a.length", "b.length");
