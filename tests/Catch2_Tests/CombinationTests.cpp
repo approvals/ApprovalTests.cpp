@@ -32,7 +32,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports")
     FakeReporter reporter;
     try
     {
-        CombinationApprovals::verifyAllCombinations([](const std::string& s){return s + "!";}, reporter, words);
+        CombinationApprovals::verifyAllCombinations(reporter, [](const std::string& s){return s + "!";}, words);
     }
     catch(const ApprovalException&)
     {
@@ -76,10 +76,10 @@ TEST_CASE("YouCanVerifyCombinationsOf9Reports")
     {
         std::vector<std::string> letters{"a", "b"};
         CombinationApprovals::verifyAllCombinations(
+            reporter,
             [](const std::string& s1, const std::string& s2, const std::string& s3, const std::string& s4, const std::string& s5,
                const std::string& s6, const std::string& s7, const std::string& s8, const std::string& s9)
             {return s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9;},
-            reporter,
             letters, letters, letters, letters, letters, letters, letters, letters, letters
         );
     }
