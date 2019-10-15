@@ -22,7 +22,7 @@ For advice on effective formatting, see [To String](/doc/ToString.md#top). As yo
 
 ### Passing in a Reporter
 
-Note: Because of the limitations of C++, the Reporter is not optional at the end, as in the rest of Approval Tests. Instead, you can optionally add a Reporter as the second argument.
+Note: Because of the limitations of C++, the Reporter is not optional at the end, as in the rest of Approval Tests. Instead, you can optionally add a Reporter as the first argument.
 
 ## Code samples
 
