@@ -61,7 +61,13 @@ For advice on effective formatting, see [To String](/doc/ToString.md#top). As yo
 
 ### Passing in a Reporter
 
-Note: Because of the limitations of C++, the Reporter is not optional at the end, as in the rest of Approval Tests. Instead, you can optionally add a Reporter as the first argument.
+Note: Over releases, the position of the optional Reporter parameter to `verifyAllCombinations` has changed, as the code has evolved:
+
+| Release  | Position of optional Reporter argument
+|---|--|
+| Before [v.6.0.0](https://github.com/approvals/ApprovalTests.cpp/releases/tag/v.6.0.0) | The optional Reporter argument goes after all the inputs |
+| In v.6.0.0 | The optional Reporter argument should be the **second** argument. |
+| After v.6.0.0 | The optional Reporter argument should be the **first** argument. |
 
 ## Code samples
 
