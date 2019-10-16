@@ -16,7 +16,7 @@ namespace Detail
 //! Helper to prevent compilation failure when types are wrongly treated as Reporter:
 template<typename T, typename R = void>
 using IsNotDerivedFromReporter = typename std::enable_if<!std::is_base_of<Reporter, T>::value, R>::type;
-}
+} // namespace Detail
 }
 
 #endif
