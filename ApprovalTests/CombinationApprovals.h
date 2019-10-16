@@ -34,9 +34,6 @@ struct serialize {
         out << ") => " << converter(input1, inputs...) << '\n';
     }
 };
-
-template<class T, class R = void>
-using EnableIfNotDerivedFromReporter = typename std::enable_if<!std::is_base_of<Reporter, typename std::decay<T>::type>::value, R>::type;
 } // namespace Detail
 
 template<class Converter, class Container, class... Containers>
@@ -48,7 +45,7 @@ void verifyAllCombinations(const Reporter& reporter, Converter&& converter, cons
 }
 
 template<class Converter, class... Containers>
-Detail::EnableIfNotDerivedFromReporter<Converter>
+ApprovalTests::Detail::EnableIfNotDerivedFromReporter<Converter>
 verifyAllCombinations(Converter&& converter, const Containers&... inputs)
 {
     verifyAllCombinations(DefaultReporter(), std::forward<Converter>(converter), inputs...);

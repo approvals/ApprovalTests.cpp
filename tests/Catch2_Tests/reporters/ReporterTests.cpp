@@ -172,7 +172,7 @@ namespace
 {
     template<
             typename Type,
-            typename = Detail::IsNotDerivedFromReporter<Type, bool>
+            typename = Detail::EnableIfNotDerivedFromReporter<Type, bool>
             >
     bool test_reporter_enabled()
     {
@@ -180,7 +180,7 @@ namespace
     }
 }
 
-TEST_CASE("IsNotDerivedFromReporter")
+TEST_CASE("EnableIfNotDerivedFromReporter")
 {
     test_reporter_enabled<int>();
     test_reporter_enabled<FileApprover>();
