@@ -61,7 +61,7 @@ public:
     template<
         typename T,
         typename Function,
-        typename = IsNotDerivedFromReporter<Function>>
+        typename = Detail::IsNotDerivedFromReporter<Function>>
     static void verify(const T& contents,
                        Function converter,
                        const Reporter &reporter = DefaultReporter())
@@ -74,7 +74,7 @@ public:
     template<
         typename T,
         typename Function,
-        typename = IsNotDerivedFromReporter<Function>>
+        typename = Detail::IsNotDerivedFromReporter<Function>>
     static void verifyWithExtension(const T& contents,
                        Function converter,
                        const std::string& fileExtensionWithDot,

@@ -11,9 +11,12 @@ public:
     virtual bool report(std::string received, std::string approved) const = 0;
 };
 
+namespace Detail 
+{
 //! Helper to prevent compilation failure when types are wrongly treated as Reporter:
 template<typename T>
 using IsNotDerivedFromReporter = typename std::enable_if<!std::is_base_of<Reporter, T>::value, int>::type;
+}
 }
 
 #endif
