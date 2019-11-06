@@ -180,15 +180,23 @@ namespace
     }
 }
 
+class PossibleReporter
+#if false
+        : public Reporter
+#endif
+{
+};
+
 TEST_CASE("EnableIfNotDerivedFromReporter")
 {
     test_reporter_enabled<int>();
     test_reporter_enabled<FileApprover>();
 
-    // Must not compile:
 //    test_reporter_enabled<Reporter>();
 //    test_reporter_enabled<Reporter&>();
 //    test_reporter_enabled<const Reporter&>();
-//    test_reporter_enabled<FakeReporter&>();
-//    test_reporter_enabled<const FakeReporter&>();
+    // Must only compile if PossibleReporter's #if is edited:
+    test_reporter_enabled<PossibleReporter>();
+    test_reporter_enabled<PossibleReporter&>();
+    test_reporter_enabled<const PossibleReporter&>();
 }
