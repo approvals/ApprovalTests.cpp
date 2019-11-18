@@ -5,10 +5,23 @@ if(NOT DEFINED PROJECT_NAME)
     set(NOT_SUBPROJECT ON)
 endif()
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+
 project(ApprovalTests.cpp)
 add_subdirectory(ApprovalTests)
 
 set(CMAKE_VERBOSE_MAKEFILE off)
+
+option(APPROVAL_TESTS_ENABLE_CODE_COVERAGE "Enable coverage reporting for selected tests" OFF)
+
+if(APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
+    message(STATUS "Enable Code Coverage")
+    include(CodeCoverage)
+    # Stop Mac from bleating:
+    # clang: : error: : argument unused during compilation: '--coverage' [-Werror,-Wunused-command-line-argument]argument unused during compilation: '--coverage' [-Werror,-Wunused-command-line-argument]
+    string(REPLACE "--coverage" "" COVERAGE_COMPILER_FLAGS ${COVERAGE_COMPILER_FLAGS})
+    append_coverage_compiler_flags()
+endif()
 
 if (NOT_SUBPROJECT)
     # Download and unpack googletest at configure time

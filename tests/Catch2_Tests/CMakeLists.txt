@@ -36,6 +36,13 @@ target_link_libraries(${PROJECT_NAME} ApprovalTests catch2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
+if(APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
+    setup_target_for_coverage_lcov(
+            NAME ${PROJECT_NAME}_coverage
+            EXECUTABLE ${PROJECT_NAME}
+            DEPENDENCIES ${PROJECT_NAME})
+endif()
+
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND CMAKE_CXX_SIMULATE_ID MATCHES "MSVC")
     target_compile_options(${PROJECT_NAME} PRIVATE
         /W4
