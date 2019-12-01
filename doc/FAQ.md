@@ -21,6 +21,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Does it integrate with other unit testing libraries?](#does-it-integrate-with-other-unit-testing-libraries)
   * [Writing Tests](#writing-tests)
     * [I wrote a test, but the output file has loads of stuff I'm not interested in](#i-wrote-a-test-but-the-output-file-has-loads-of-stuff-im-not-interested-in)
+    * [I want to test images](#i-want-to-test-images)
 <!-- endtoc -->
 
 
@@ -58,6 +59,12 @@ Things to say:
 * Readability of the output is important
 * Someone reviewing a test failure needs to understand the purpose and intent of the test
 * **Recommendation**: write your own formatting that's specific to particular tests - see [To String](/doc/ToString.md#top) for examples.
+
+### I want to test images
+
+You may find that your tests fail, even though equivalent Approved and Received files are being compared, if the image file formats being used encode things like the date the file was created. This is because ApprovalTests.cpp's default behaviour is a character-for-character comparison of file content.
+
+If you can use the Qt framework, then we have provided a way to verify the contents of PNG images: please see `ApprovalTestsQt::verifyQImage()` in [ApprovalTests.cpp.Qt](https://github.com/approvals/ApprovalTests.cpp.Qt).
 
 --
 

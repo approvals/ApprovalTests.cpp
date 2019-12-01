@@ -39,6 +39,12 @@ Things to say:
 * Someone reviewing a test failure needs to understand the purpose and intent of the test
 * **Recommendation**: write your own formatting that's specific to particular tests - see [To String](/doc/ToString.md#top) for examples.
 
+### I want to test images
+
+You may find that your tests fail, even though equivalent Approved and Received files are being compared, if the image file formats being used encode things like the date the file was created. This is because ApprovalTests.cpp's default behaviour is a character-for-character comparison of file content.
+
+If you can use the Qt framework, then we have provided a way to verify the contents of PNG images: please see `ApprovalTestsQt::verifyQImage()` in [ApprovalTests.cpp.Qt](https://github.com/approvals/ApprovalTests.cpp.Qt).
+
 --
 
 [Back to User Guide](/doc/README.md#top)
