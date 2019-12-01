@@ -18,7 +18,13 @@ toc
 
 ### Do I need to use the Catch2 in the Approval Tests repo?
 
-No, you can use your own. We use this copy of Catch2 to run our own tests.
+No. The intention is that you can provide your own copy of Catch2.
+
+We use the copy of Catch2 and other test frameworks in [third_party/](https://github.com/approvals/ApprovalTests.cpp/blob/master/third_party/) in this project only to run our own tests.
+
+Certainly, if you download a [Single Header release](https://github.com/approvals/ApprovalTests.cpp/releases) of this library, no Catch2 is provided, so you need to provide your own.
+
+However, we are investigating a report of a problem with this, if you download or fork this repo. If you are having problems with using your own Catch2, please see #53 and tell us about your setup. Thank you.
 
 ### Does it integrate with other unit testing libraries?
 
