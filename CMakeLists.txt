@@ -17,9 +17,6 @@ option(APPROVAL_TESTS_ENABLE_CODE_COVERAGE "Enable coverage reporting for select
 if(APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
     message(STATUS "Enable Code Coverage")
     include(CodeCoverage)
-    # Stop Mac from bleating:
-    # clang: : error: : argument unused during compilation: '--coverage' [-Werror,-Wunused-command-line-argument]argument unused during compilation: '--coverage' [-Werror,-Wunused-command-line-argument]
-    string(REPLACE "--coverage" "" COVERAGE_COMPILER_FLAGS ${COVERAGE_COMPILER_FLAGS})
     append_coverage_compiler_flags()
 endif()
 
