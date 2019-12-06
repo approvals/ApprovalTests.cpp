@@ -1,6 +1,6 @@
-// Create with some manual editing of the output of:
+// Created with some manual editing of the output of:
 //   cd ApprovalTests.cpp
-//   find ApprovalTests/ -depth -name \*.h* | sed -e 's/^/#include "/' | sed -e 's/$/"/'
+//   find ApprovalTests -depth -name \*.h\* | sed -e 's/^/#include "/' | sed -e 's/$/"/' | sort
 
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/CombinationApprovals.h"
