@@ -1,5 +1,5 @@
 * **Breaking changes**
-    * If you pass in a report to CombinationApprovals::verifyAllCombinations(), the argument order has changed: see [Passing in a Reporter](/doc/TestingCombinations.md#passing-in-a-reporter).
+    * If you pass in a reporter to CombinationApprovals::verifyAllCombinations(), the argument order has changed: see [Passing in a Reporter](/doc/TestingCombinations.md#passing-in-a-reporter).
     * FileApprover::registerComparator() has been renamed to  FileApprover::registerComparatorForExtension(), and now returns a [Disposable Object](/doc/DisposableObjects.md#top). (#42)
 * **New features**
     * Support for [Existing Catch Project - with your main()](/doc/UsingCatch.md#existing-project---with-your-main) (#36)
