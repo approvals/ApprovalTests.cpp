@@ -47,6 +47,10 @@ public:
         {
             clipboardCommand = "clip";
         }
+        else if (SystemUtils::isMacOs())
+        {
+            clipboardCommand = "pbcopy";
+        }
         else
         {
             clipboardCommand = "pbclip";

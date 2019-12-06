@@ -43,6 +43,14 @@ public:
 #endif
     }
 
+    static bool isMacOs() {
+#ifdef __APPLE__
+      return true;
+#else
+      return false;
+#endif
+    }
+
     static std::string getDirectorySeparator()
     {
         return isWindowsOs() ? "\\" : "/";
