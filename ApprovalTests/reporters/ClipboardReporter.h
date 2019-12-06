@@ -42,7 +42,15 @@ public:
          Under Windows/cygwin, use /dev/clipboard or clip for newer versions of Windows (at least Windows 10).
          */
 
-        const std::string clipboardCommand = SystemUtils::isWindowsOs() ? "clip" : "pbclip";
+        std::string clipboardCommand;
+        if (SystemUtils::isWindowsOs())
+        {
+            clipboardCommand = "clip";
+        }
+        else
+        {
+            clipboardCommand = "pbclip";
+        }
         auto cmd = std::string("echo ") + newClipboard + " | " + clipboardCommand;
         system(cmd.c_str());
     }
