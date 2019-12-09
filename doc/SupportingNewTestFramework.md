@@ -60,6 +60,7 @@ The following lines can be ignored in the above files - they are for this projec
     * The Help message in [ApprovalTestNamer.h](/ApprovalTests/namers/ApprovalTestNamer.h)
     * [GettingStarted](/doc/GettingStarted.md#top) - see "Details" list, and "Choosing a testing framework"
     * [User Guide](/doc/README.md#test-frameworks) - see "Test Frameworks" section
+    * [Setup](/doc/Setup.md#top) - see the bullet list starting "Set up your `main()`"
     * Other documentation links: see [Definition of Done](/doc/Contributing.md#definition-of-done)
 
 
