@@ -6,9 +6,9 @@ toc
 
 ## Summary
 
-Approval Tests are an alternative way to write asserts in your test code.
+Approval Tests are an alternative to writing expression assertions in your code.
 
-As the following examples demonstrate, they give significantly simpler tests of complex objects.
+As the following examples demonstrate, Approval Tests can result in significantly simpler and more elegant tests of complex objects.
 
 ## Traditional Asserts
 
@@ -20,9 +20,9 @@ snippet: sandwich_example_with_requires
 
 ## Approval Tests
 
-Approval Tests simplify verification of the outputs. They do this by writing the outputs to a file, which once saved, becomes your spec.
+Approval Tests simplify the verification of outputs. They do this by writing the outputs to a file, which once saved, becomes your spec.
 
-You still supply the inputs, but Approval Tests gives you powerful ways of viewing complex outputs, meaning you can move on to the next feature or next test more quickly.
+You still supply the inputs, but Approval Tests gives you [powerful ways of viewing complex outputs](/doc/Reporters.md#top), meaning you can move on to the next feature or next test more quickly.
 
 snippet: sandwich_example_with_approvals
 

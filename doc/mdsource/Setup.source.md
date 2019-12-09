@@ -10,7 +10,9 @@ Here's how to set up from:
 
 ## I have nothing
 
-If you just want to start doing some TDD with Approval Tests:
+This is when you are interested in how Approval Tests work and want to see Approval Tests in action using our provided examples.
+
+If you just want to start doing some TDD with Approval Tests, the [Tutorial will walk you through the following broad steps](/doc/Tutorial.md#top):
 
 1.  download the [ApprovalTests.cpp.StarterProject](https://github.com/approvals/ApprovalTests.cpp.StarterProject)
 1. download a [Supported Diff Tool](/doc/Reporters.md#supported-diff-tools)
@@ -19,17 +21,21 @@ If you just want to start doing some TDD with Approval Tests:
 
 ## I have code but no tests
 
-[Choose a testing framework](/doc/GettingStarted.md#choosing-a-testing-framework).
+This is when you have an existing code base that you would like to start testing, as you don't yet have any tests at all.
+
+Start by [choose a testing framework](/doc/GettingStarted.md#choosing-a-testing-framework).
 
 Then continue to the next section... 
 
 ## I have tests and code and want to add Approval Tests
 
+This is when you have an existing code base that has some tests already, and you would like to improve test coverage.
+
 1. [Download the single header file](https://github.com/approvals/ApprovalTests.cpp/releases)
 1. Do one of:
     * [Add a wrapper header](https://raw.githubusercontent.com/approvals/ApprovalTests.cpp.StarterProject/master/lib/ApprovalTests.hpp)
     * Rename the header file to `ApprovalTests.hpp` (removing its version number)
-1. Set up your `main()` (this is framework-dependent:
+1. Set up your `main()` (this is framework-dependent):
     * [Using Approval Tests With Catch](/doc/UsingCatch.md#top)
     * [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
     * [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)

@@ -74,7 +74,7 @@ Now, when you re-run the tests, two things should happen:
 
 ### What just happened?
 
-Approval Tests keeps its expected result in an external file. When you run, it reads this file to do its verification.
+Approval Tests keeps its expected result in an external file. When you run the test, it reads this file to do its verification.
 
 If it matches, the test passes, and everything is finished.
 
@@ -84,7 +84,7 @@ Please note that the first time you run an Approval Test, it will always fail an
 
 ### Approval Files
 
-Approvals creates a lot of `.approved.txt` and `received.txt` files. The `received.txt` files are automatically deleted on a passing test, and should never be checked in to source control. We suggest adding `*.received.*` line to your `.gitignore` file.
+Approvals creates a lot of `.approved.txt` and `.received.txt` files. The `.received.txt` files are automatically deleted on a passing test, and should never be checked in to source control. We suggest adding `*.received.*` line to your `.gitignore` file.
 
 The  `.approved.txt` files, on the other hand, need to be checked in to your source control.
 
