@@ -44,6 +44,11 @@ namespace DiffPrograms {
 
         APPROVAL_TESTS_MACROS_ENTRY(TORTOISE_TEXT_DIFF, DiffInfo("{ProgramFiles}TortoiseSVN\\bin\\TortoiseMerge.exe", Type::TEXT))
 
+        APPROVAL_TESTS_MACROS_ENTRY(TORTOISE_GIT_IMAGE_DIFF,
+              DiffInfo("{ProgramFiles}TortoiseGit\\bin\\TortoiseGitIDiff.exe", "/left:%s /right:%s", Type::IMAGE))
+
+        APPROVAL_TESTS_MACROS_ENTRY(TORTOISE_GIT_TEXT_DIFF, DiffInfo("{ProgramFiles}TortoiseGit\\bin\\TortoiseGitMerge.exe", Type::TEXT))
+
         APPROVAL_TESTS_MACROS_ENTRY(WIN_MERGE_REPORTER, DiffInfo("{ProgramFiles}WinMerge\\WinMergeU.exe", Type::TEXT_AND_IMAGE))
 
         APPROVAL_TESTS_MACROS_ENTRY(ARAXIS_MERGE, DiffInfo("{ProgramFiles}Araxis\\Araxis Merge\\Compare.exe", Type::TEXT_AND_IMAGE))

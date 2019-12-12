@@ -38,10 +38,27 @@ namespace Windows {
         TortoiseTextDiffReporter() : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_TEXT_DIFF()) {}
     };
 
+    class TortoiseGitTextDiffReporter : public GenericDiffReporter {
+        public:
+        TortoiseGitTextDiffReporter() : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_GIT_TEXT_DIFF()) {}
+    };
+
+    class TortoiseGitImageDiffReporter : public GenericDiffReporter {
+        public:
+        TortoiseGitImageDiffReporter() : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_GIT_IMAGE_DIFF()) {}
+    };
+
     class TortoiseDiffReporter : public FirstWorkingReporter {
     public:
         TortoiseDiffReporter() : FirstWorkingReporter(
                 {new TortoiseTextDiffReporter(), new TortoiseImageDiffReporter()}) {
+        }
+    };
+
+    class TortoiseGitDiffReporter : public FirstWorkingReporter {
+    public:
+        TortoiseGitDiffReporter() : FirstWorkingReporter(
+                {new TortoiseGitTextDiffReporter(), new TortoiseGitImageDiffReporter()}) {
         }
     };
 
