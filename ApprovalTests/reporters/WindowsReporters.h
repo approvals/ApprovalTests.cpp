@@ -87,7 +87,8 @@ namespace Windows {
         WindowsDiffReporter() : FirstWorkingReporter(
                 {
                         // begin-snippet: windows_diff_reporters
-                        new TortoiseDiffReporter(),
+                        new TortoiseDiffReporter(), // Note that this uses Tortoise SVN Diff
+                        new TortoiseGitDiffReporter(),
                         new BeyondCompareReporter(),
                         new WinMergeReporter(),
                         new AraxisMergeReporter(),
