@@ -63,7 +63,8 @@ new KDiff3Reporter()
 <!-- snippet: windows_diff_reporters -->
 <a id='snippet-windows_diff_reporters'/></a>
 ```h
-new TortoiseDiffReporter(),
+new TortoiseDiffReporter(), // Note that this uses Tortoise SVN Diff
+new TortoiseGitDiffReporter(),
 new BeyondCompareReporter(),
 new WinMergeReporter(),
 new AraxisMergeReporter(),
@@ -71,7 +72,7 @@ new CodeCompareReporter(),
 new KDiff3Reporter(),
 new VisualStudioCodeReporter(),
 ```
-<sup>[snippet source](/ApprovalTests/reporters/WindowsReporters.h#L72-L80) / [anchor](#snippet-windows_diff_reporters)</sup>
+<sup>[snippet source](/ApprovalTests/reporters/WindowsReporters.h#L94-L103) / [anchor](#snippet-windows_diff_reporters)</sup>
 <!-- endsnippet -->
 
 ## Registering a default reporter
