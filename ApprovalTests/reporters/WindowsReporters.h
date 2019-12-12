@@ -7,14 +7,16 @@
 
 namespace ApprovalTests {
 namespace Windows {
+
+    class VisualStudioCodeReporter : public GenericDiffReporter {
+    public:
+        VisualStudioCodeReporter() : GenericDiffReporter(DiffPrograms::Windows::VS_CODE()) {}
+    };
+
+    // Beyond Compare -----------------------------------------
     class BeyondCompare3Reporter : public GenericDiffReporter {
     public:
         BeyondCompare3Reporter() : GenericDiffReporter(DiffPrograms::Windows::BEYOND_COMPARE_3()) {}
-    };
-
-  class VisualStudioCodeReporter : public GenericDiffReporter {
-    public:
-      VisualStudioCodeReporter() : GenericDiffReporter(DiffPrograms::Windows::VS_CODE()) {}
     };
 
     class BeyondCompare4Reporter : public GenericDiffReporter {
