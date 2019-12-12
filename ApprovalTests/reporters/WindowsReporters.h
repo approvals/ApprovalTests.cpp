@@ -51,7 +51,14 @@ namespace Windows {
     class TortoiseDiffReporter : public FirstWorkingReporter {
     public:
         TortoiseDiffReporter() : FirstWorkingReporter(
-                {new TortoiseGitTextDiffReporter(), new TortoiseGitImageDiffReporter(), new TortoiseTextDiffReporter(), new TortoiseImageDiffReporter()}) {
+                {new TortoiseTextDiffReporter(), new TortoiseImageDiffReporter()}) {
+        }
+    };
+
+    class TortoiseGitDiffReporter : public FirstWorkingReporter {
+    public:
+        TortoiseGitDiffReporter() : FirstWorkingReporter(
+                {new TortoiseGitTextDiffReporter(), new TortoiseGitImageDiffReporter()}) {
         }
     };
 
