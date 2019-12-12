@@ -13,7 +13,7 @@ namespace Windows {
         VisualStudioCodeReporter() : GenericDiffReporter(DiffPrograms::Windows::VS_CODE()) {}
     };
 
-    // Beyond Compare -----------------------------------------
+    // ----------------------- Beyond Compare ----------------------------------
     class BeyondCompare3Reporter : public GenericDiffReporter {
     public:
         BeyondCompare3Reporter() : GenericDiffReporter(DiffPrograms::Windows::BEYOND_COMPARE_3()) {}
@@ -30,7 +30,7 @@ namespace Windows {
         }
     };
 
-    // Tortoise SVN -----------------------------------------
+    // ----------------------- Tortoise SVN ------------------------------------
     class TortoiseImageDiffReporter : public GenericDiffReporter {
     public:
         TortoiseImageDiffReporter() : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_IMAGE_DIFF()) {}
@@ -48,7 +48,7 @@ namespace Windows {
         }
     };
 
-    // Tortoise Git -----------------------------------------
+    // ----------------------- Tortoise Git ------------------------------------
     class TortoiseGitTextDiffReporter : public GenericDiffReporter {
         public:
         TortoiseGitTextDiffReporter() : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_GIT_TEXT_DIFF()) {}
@@ -66,7 +66,7 @@ namespace Windows {
         }
     };
 
-    // -----------------------------------------
+    // -------------------------------------------------------------------------
     class WinMergeReporter : public GenericDiffReporter {
     public:
         WinMergeReporter() : GenericDiffReporter(DiffPrograms::Windows::WIN_MERGE_REPORTER()) {}
