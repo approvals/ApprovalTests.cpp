@@ -15,9 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Default Behaviour](#default-behaviour)
   * [Registering a custom comparator](#registering-a-custom-comparator)
     * [Overview](#overview)
-    * [Example Code](#example-code)
-<!-- endtoc -->
-
+    * [Example Code](#example-code)<!-- endtoc -->
 
 ## Default Behaviour
 
@@ -63,7 +61,7 @@ public:
     }
 };
 ```
-<sup>[snippet source](/tests/Catch2_Tests/core/FileApproverTests.cpp#L48-L57) / [anchor](#snippet-create_custom_comparator)</sup>
+<sup><a href='/tests/Catch2_Tests/core/FileApproverTests.cpp#L48-L57' title='File snippet `create_custom_comparator` was extracted from'>snippet source</a> | <a href='#snippet-create_custom_comparator' title='Navigate to start of snippet `create_custom_comparator`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Then we call `FileApprover::registerComparator()` to tell Approval Tests to use `LengthComparator` to compare all files with extension `.length`. This customisation will last for the rest of the test run, and we would typically put this in our `main.cpp`.
@@ -73,7 +71,7 @@ Then we call `FileApprover::registerComparator()` to tell Approval Tests to use 
 ```cpp
 auto disposer = FileApprover::registerComparatorForExtension(".length", std::make_shared<LengthComparator>());
 ```
-<sup>[snippet source](/tests/Catch2_Tests/core/FileApproverTests.cpp#L63-L65) / [anchor](#snippet-use_custom_comparator)</sup>
+<sup><a href='/tests/Catch2_Tests/core/FileApproverTests.cpp#L63-L65' title='File snippet `use_custom_comparator` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_comparator' title='Navigate to start of snippet `use_custom_comparator`'>anchor</a></sup>
 <!-- endsnippet -->
 
 The return value is ["Disposable"](/doc/DisposableObjects.md#top), meaning it will restore the original comparator when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.

@@ -14,9 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [The Basics](#the-basics)
     * [Passing in a Reporter](#passing-in-a-reporter)
-  * [Code samples](#code-samples)
-<!-- endtoc -->
-
+  * [Code samples](#code-samples)<!-- endtoc -->
 
 ## The Basics
 
@@ -38,7 +36,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2") {
             numbers);
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/CombinationTests.cpp#L45-L54) / [anchor](#snippet-youcanverifycombinationsof2)</sup>
+<sup><a href='/tests/Catch2_Tests/CombinationTests.cpp#L45-L54' title='File snippet `youcanverifycombinationsof2` was extracted from'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Navigate to start of snippet `youcanverifycombinationsof2`'>anchor</a></sup>
 <!-- endsnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
@@ -54,7 +52,7 @@ The format is carefully chosen to show both inputs and outputs, to make the test
 (world, 3) => (world, 3)
 
 ```
-<sup>[snippet source](/tests/Catch2_Tests/approval_tests/CombinationTests.YouCanVerifyCombinationsOf2.approved.txt#L1-L7) / [anchor](#snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt)</sup>
+<sup><a href='/tests/Catch2_Tests/approval_tests/CombinationTests.YouCanVerifyCombinationsOf2.approved.txt#L1-L7' title='File snippet `CombinationTests.YouCanVerifyCombinationsOf2.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt' title='Navigate to start of snippet `CombinationTests.YouCanVerifyCombinationsOf2.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 For advice on effective formatting, see [To String](/doc/ToString.md#top). As you write out larger volumes of data in your approval files, experience has shown that the choice of layout of text in approval files can make a big difference to maintainability of tests, when failures occur.
@@ -83,7 +81,7 @@ CombinationApprovals::verifyAllCombinations(
         listOfInput2s,
         listOfInput3s);
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L25-L34) / [anchor](#snippet-sample_combinations_of_three)</sup>
+<sup><a href='/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L25-L34' title='File snippet `sample_combinations_of_three` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Navigate to start of snippet `sample_combinations_of_three`'>anchor</a></sup>
 <!-- endsnippet -->
 
 If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
@@ -100,7 +98,7 @@ CombinationApprovals::verifyAllCombinations(
         listOfInput2s,
         listOfInput3s);
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L43-L52) / [anchor](#snippet-sample_combinations_of_three_with_auto)</sup>
+<sup><a href='/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L43-L52' title='File snippet `sample_combinations_of_three_with_auto` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Navigate to start of snippet `sample_combinations_of_three_with_auto`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---

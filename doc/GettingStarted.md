@@ -17,9 +17,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Main File](#main-file)
     * [The Basics](#the-basics)
     * [Details](#details)
-  * [Choosing a testing framework](#choosing-a-testing-framework)
-<!-- endtoc -->
-
+  * [Choosing a testing framework](#choosing-a-testing-framework)<!-- endtoc -->
 
 
 ## Introduction
@@ -45,7 +43,7 @@ For catch (1 and 2), it's these two lines:
 #define APPROVALS_CATCH // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 ```
-<sup>[snippet source](/tests/Catch2_Tests/main.cpp#L6-L10) / [anchor](#snippet-catch_2_main)</sup>
+<sup><a href='/tests/Catch2_Tests/main.cpp#L6-L10' title='File snippet `catch_2_main` was extracted from'>snippet source</a> | <a href='#snippet-catch_2_main' title='Navigate to start of snippet `catch_2_main`'>anchor</a></sup>
 <!-- endsnippet -->
 
 For all other test files, you need:

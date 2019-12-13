@@ -17,9 +17,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
     * [Existing Project - with CATCH_CONFIG_MAIN](#existing-project---with-catch_config_main)
-    * [Existing Project - with your main()](#existing-project---with-your-main)
-<!-- endtoc -->
-
+    * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endtoc -->
 
 
 
@@ -53,7 +51,7 @@ Create a file `main.cpp` and add just the following two lines:
 #define APPROVALS_CATCH // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 ```
-<sup>[snippet source](/tests/Catch2_Tests/main.cpp#L6-L10) / [anchor](#snippet-catch_2_main)</sup>
+<sup><a href='/tests/Catch2_Tests/main.cpp#L6-L10' title='File snippet `catch_2_main` was extracted from'>snippet source</a> | <a href='#snippet-catch_2_main' title='Navigate to start of snippet `catch_2_main`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Existing Project - with CATCH_CONFIG_MAIN
@@ -80,7 +78,7 @@ You should make the following additions to your own source file that contains `m
 #define APPROVALS_CATCH_EXISTING_MAIN
 #include "ApprovalTests.hpp"
 ```
-<sup>[snippet source](/examples/catch2_existing_main/main.cpp#L1-L5) / [anchor](#snippet-catch_existing_main)</sup>
+<sup><a href='/examples/catch2_existing_main/main.cpp#L1-L5' title='File snippet `catch_existing_main` was extracted from'>snippet source</a> | <a href='#snippet-catch_existing_main' title='Navigate to start of snippet `catch_existing_main`'>anchor</a></sup>
 <!-- endsnippet -->
 
 

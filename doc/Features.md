@@ -32,9 +32,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Blocking Reporter](#blocking-reporter)
     * [Machine Blockers](#machine-blockers)
     * [Front Loaded Reporters](#front-loaded-reporters)
-    * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)
-<!-- endtoc -->
-
+    * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## vNext
 
@@ -110,7 +108,7 @@ TEST_CASE("Only run this test on John's machine")
     REQUIRE(SystemUtils::getMachineName() == "JOHNS_MACHINE");
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/utilities/MachineBlockerTests.cpp#L23-L34) / [anchor](#snippet-machine_specific_test_runner)</sup>
+<sup><a href='/tests/Catch2_Tests/utilities/MachineBlockerTests.cpp#L23-L34' title='File snippet `machine_specific_test_runner` was extracted from'>snippet source</a> | <a href='#snippet-machine_specific_test_runner' title='Navigate to start of snippet `machine_specific_test_runner`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Front Loaded Reporters

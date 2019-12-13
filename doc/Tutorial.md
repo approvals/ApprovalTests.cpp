@@ -20,9 +20,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [The ApprovalTests namespace](#the-approvaltests-namespace)
   * [Approving Objects](#approving-objects)
   * [Dealing with test failures](#dealing-with-test-failures)
-  * [Demo](#demo)
-<!-- endtoc -->
-
+  * [Demo](#demo)<!-- endtoc -->
 
 The tutorial is written for someone with a decent understanding of C++, a passing understanding of traditional unit testing and of diff tools, and no experience with Approval Tests at all.
 
@@ -48,7 +46,7 @@ TEST_CASE("HelloApprovals")
     ApprovalTests::Approvals::verify("Hello Approvals");
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L18-L23) / [anchor](#snippet-hello_approvals)</sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L18-L23' title='File snippet `hello_approvals` was extracted from'>snippet source</a> | <a href='#snippet-hello_approvals' title='Navigate to start of snippet `hello_approvals`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Approving the Test
@@ -108,7 +106,7 @@ In all other code examples in this site, have already included the code:
 ```cpp
 using namespace ApprovalTests;
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L8-L10) / [anchor](#snippet-using_namespace_approvaltests)</sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L8-L10' title='File snippet `using_namespace_approvaltests` was extracted from'>snippet source</a> | <a href='#snippet-using_namespace_approvaltests' title='Navigate to start of snippet `using_namespace_approvaltests`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ... So that code samples are simpler and easier to read. This is a recommended practice in your tests.
@@ -139,7 +137,7 @@ public:
     std::string isbn;
 };
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L25-L44) / [anchor](#snippet-library_book)</sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L25-L44' title='File snippet `library_book` was extracted from'>snippet source</a> | <a href='#snippet-library_book' title='Navigate to start of snippet `library_book`'>anchor</a></sup>
 <!-- endsnippet -->
 
 What we would like to be able to write is:
@@ -153,7 +151,7 @@ LibraryBook harry_potter(
 
 Approvals::verify(harry_potter); // This does not compile
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L50-L56) / [anchor](#snippet-non_printable_object)</sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L50-L56' title='File snippet `non_printable_object` was extracted from'>snippet source</a> | <a href='#snippet-non_printable_object' title='Navigate to start of snippet `non_printable_object`'>anchor</a></sup>
 <!-- endsnippet -->
 
 The problem is that this will not compile, because at present there is no way to turn the LibraryBook in to a string representation.
@@ -169,7 +167,7 @@ Approvals::verify(
     harry_potter,
     [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L66-L70) / [anchor](#snippet-printable_object_simple)</sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L66-L70' title='File snippet `printable_object_simple` was extracted from'>snippet source</a> | <a href='#snippet-printable_object_simple' title='Navigate to start of snippet `printable_object_simple`'>anchor</a></sup>
 <!-- endsnippet -->
 
 There's a lot going on here, so let's break it down:
@@ -192,7 +190,7 @@ Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os){
     "isbn: " << b.isbn << "\n";
 });
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Tutorial.cpp#L79-L89) / [anchor](#snippet-printable_object)</sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L79-L89' title='File snippet `printable_object` was extracted from'>snippet source</a> | <a href='#snippet-printable_object' title='Navigate to start of snippet `printable_object`'>anchor</a></sup>
 <!-- endsnippet -->
 
 When you run and approve this, you will end up with the approval file:
@@ -208,7 +206,7 @@ pages: 752
 isbn: 978-0439139595
 
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/approval_tests/Tutorial.WritableBooks2.approved.txt#L1-L7) / [anchor](#snippet-Tutorial.WritableBooks2.approved.txt)</sup>
+<sup><a href='/tests/Catch2_Tests/documentation/approval_tests/Tutorial.WritableBooks2.approved.txt#L1-L7' title='File snippet `Tutorial.WritableBooks2.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-Tutorial.WritableBooks2.approved.txt' title='Navigate to start of snippet `Tutorial.WritableBooks2.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 If you would like to know how to do this more robustly, check out [To String](/doc/ToString.md#top).

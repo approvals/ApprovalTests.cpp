@@ -21,9 +21,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Front Loaded Reporters](#front-loaded-reporters)
     * [Blocking Reporters](#blocking-reporters)
   * [Miscellaneous Helper Reporters](#miscellaneous-helper-reporters)
-    * [Auto-approving](#auto-approving)
-<!-- endtoc -->
-
+    * [Auto-approving](#auto-approving)<!-- endtoc -->
 
 
 ## Supported Diff Tools
@@ -44,7 +42,7 @@ new KDiff3Reporter(),
 new TkDiffReporter(),
 new VisualStudioCodeReporter()
 ```
-<sup>[snippet source](/ApprovalTests/reporters/MacReporters.h#L49-L57) / [anchor](#snippet-mac_diff_reporters)</sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.h#L49-L57' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Linux
@@ -55,7 +53,7 @@ new VisualStudioCodeReporter()
 new MeldReporter(),
 new KDiff3Reporter()
 ```
-<sup>[snippet source](/ApprovalTests/reporters/LinuxReporters.h#L26-L29) / [anchor](#snippet-linux_diff_reporters)</sup>
+<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L26-L29' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Windows
@@ -72,7 +70,7 @@ new CodeCompareReporter(),
 new KDiff3Reporter(),
 new VisualStudioCodeReporter(),
 ```
-<sup>[snippet source](/ApprovalTests/reporters/WindowsReporters.h#L94-L103) / [anchor](#snippet-windows_diff_reporters)</sup>
+<sup><a href='/ApprovalTests/reporters/WindowsReporters.h#L94-L103' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Registering a default reporter
@@ -86,7 +84,7 @@ At present, the default Reporter is the DiffReporter. Whenever you call Approval
 #include <memory>
 auto defaultReporterDisposer = Approvals::useAsDefaultReporter(std::make_shared<DiffReporter>() );
 ```
-<sup>[snippet source](/tests/Catch2_Tests/main.cpp#L18-L22) / [anchor](#snippet-use_as_default_reporter_in_main)</sup>
+<sup><a href='/tests/Catch2_Tests/main.cpp#L18-L22' title='File snippet `use_as_default_reporter_in_main` was extracted from'>snippet source</a> | <a href='#snippet-use_as_default_reporter_in_main' title='Navigate to start of snippet `use_as_default_reporter_in_main`'>anchor</a></sup>
 <!-- endsnippet -->
 
 The return value is ["Disposable"](/doc/DisposableObjects.md#top), meaning it will restore the original reporter when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
@@ -108,7 +106,7 @@ Here is an example of not launching any reporters if you are on a machine with a
 auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
     ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName") );
 ```
-<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_named_machine)</sup>
+<sup><a href='/examples/googletest_existing_main/main.cpp#L19-L23' title='File snippet `do_not_report_on_named_machine` was extracted from'>snippet source</a> | <a href='#snippet-do_not_report_on_named_machine' title='Navigate to start of snippet `do_not_report_on_named_machine`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Once you have added that, even calling approvals with a specific Reporter will not launch it on the CI system (but will for all other systems). For example:
@@ -118,7 +116,7 @@ Once you have added that, even calling approvals with a specific Reporter will n
 ```cpp
 ApprovalTests::Approvals::verify("text to be verified", ApprovalTests::Windows::AraxisMergeReporter());
 ```
-<sup>[snippet source](/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L11-L13) / [anchor](#snippet-basic_approval_with_reporter)</sup>
+<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L11-L13' title='File snippet `basic_approval_with_reporter` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Navigate to start of snippet `basic_approval_with_reporter`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Blocking Reporters
@@ -132,7 +130,7 @@ Blocking reporters are a simple class, designed for use with FrontLoadedReporter
 auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
     ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName") );
 ```
-<sup>[snippet source](/examples/googletest_existing_main/main.cpp#L19-L23) / [anchor](#snippet-do_not_report_on_named_machine)</sup>
+<sup><a href='/examples/googletest_existing_main/main.cpp#L19-L23' title='File snippet `do_not_report_on_named_machine` was extracted from'>snippet source</a> | <a href='#snippet-do_not_report_on_named_machine' title='Navigate to start of snippet `do_not_report_on_named_machine`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Miscellaneous Helper Reporters

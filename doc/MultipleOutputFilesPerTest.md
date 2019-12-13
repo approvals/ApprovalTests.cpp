@@ -18,9 +18,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Catch2](#catch2)
     * [doctest](#doctest)
     * [Approval Tests](#approval-tests)
-  * [Approving multiple files in one test](#approving-multiple-files-in-one-test)
-<!-- endtoc -->
-
+  * [Approving multiple files in one test](#approving-multiple-files-in-one-test)<!-- endtoc -->
 
 ## Introduction
 
@@ -99,7 +97,7 @@ TEST_CASE("MultipleOutputFiles-DataDriven")
     }
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L61-L77) / [anchor](#snippet-catch2_multiple_output_files_dynamic)</sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L61-L77' title='File snippet `catch2_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_dynamic' title='Navigate to start of snippet `catch2_multiple_output_files_dynamic`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Or hard-coded, with multiple sections:
@@ -124,7 +122,7 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup>[snippet source](/tests/Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L79-L96) / [anchor](#snippet-catch2_multiple_output_files_hard_coded)</sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L79-L96' title='File snippet `catch2_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_hard_coded' title='Navigate to start of snippet `catch2_multiple_output_files_hard_coded`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Note: Catch2 sub-sections continue to run even if the previous one failed. This is useful, as it allows you to approve all the files in one test run.
@@ -157,7 +155,7 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L64-L81) / [anchor](#snippet-doctest_multiple_output_files_hard_coded)</sup>
+<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L64-L81' title='File snippet `doctest_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-doctest_multiple_output_files_hard_coded' title='Navigate to start of snippet `doctest_multiple_output_files_hard_coded`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Approval Tests
@@ -183,7 +181,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
     }
 }
 ```
-<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L83-L97) / [anchor](#snippet-approvals_multiple_output_files_dynamic)</sup>
+<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L83-L97' title='File snippet `approvals_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_dynamic' title='Navigate to start of snippet `approvals_multiple_output_files_dynamic`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Or hard-coded, with multiple sections:
@@ -208,7 +206,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L99-L116) / [anchor](#snippet-approvals_multiple_output_files_hard_coded)</sup>
+<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L99-L116' title='File snippet `approvals_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_hard_coded' title='Navigate to start of snippet `approvals_multiple_output_files_hard_coded`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Approving multiple files in one test
@@ -244,7 +242,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
     exceptions.release();
 }
 ```
-<sup>[snippet source](/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L118-L136) / [anchor](#snippet-approvals_multiple_output_files_auto_approving)</sup>
+<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L118-L136' title='File snippet `approvals_multiple_output_files_auto_approving` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Navigate to start of snippet `approvals_multiple_output_files_auto_approving`'>anchor</a></sup>
 <!-- endsnippet -->
  
 
