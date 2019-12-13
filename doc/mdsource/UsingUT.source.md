@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-# Using Approval Tests With doctest
+# Using Approval Tests With \[Boost\].UT
 
 
 toc
