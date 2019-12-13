@@ -12,9 +12,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [Testing exception messages](#testing-exception-messages)
-<!-- endtoc -->
-
+  * [Testing exception messages](#testing-exception-messages)<!-- endtoc -->
 
 
 
@@ -29,7 +27,7 @@ The exception thrown must inherit `std::exception`.
 ```cpp
 Approvals::verifyExceptionMessage([](){/* your code goes here */});
 ```
-<sup>[snippet source](/tests/Catch2_Tests/ApprovalsTests.cpp#L108-L110) / [anchor](#snippet-verify_exception_message_example)</sup>
+<sup><a href='/tests/Catch2_Tests/ApprovalsTests.cpp#L108-L110' title='File snippet `verify_exception_message_example` was extracted from'>snippet source</a> | <a href='#snippet-verify_exception_message_example' title='Navigate to start of snippet `verify_exception_message_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---

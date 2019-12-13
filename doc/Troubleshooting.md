@@ -14,9 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Test gives "You have forgotten to configure your test framework..."](#test-gives-you-have-forgotten-to-configure-your-test-framework)
-  * [My custom reporter works in development, but not CI](#my-custom-reporter-works-in-development-but-not-ci)
-<!-- endtoc -->
-
+  * [My custom reporter works in development, but not CI](#my-custom-reporter-works-in-development-but-not-ci)<!-- endtoc -->
 
 
 ## Test gives "You have forgotten to configure your test framework..."
@@ -62,7 +60,7 @@ Running tests gives the following output:
 
 
 ```
-<sup>[snippet source](/tests/DocTest_Tests/documentation/approval_tests/ForgottenToConfigure.HelpMessage.approved.txt#L1-L29) / [anchor](#snippet-ForgottenToConfigure.HelpMessage.approved.txt)</sup>
+<sup><a href='/tests/DocTest_Tests/documentation/approval_tests/ForgottenToConfigure.HelpMessage.approved.txt#L1-L29' title='File snippet `ForgottenToConfigure.HelpMessage.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessage.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessage.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 **Things to check:**

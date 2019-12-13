@@ -12,9 +12,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [ExceptionCollector](#exceptioncollector)
-<!-- endtoc -->
-
+  * [ExceptionCollector](#exceptioncollector)<!-- endtoc -->
 
 ## ExceptionCollector
 
@@ -29,7 +27,7 @@ for (int i = 1; i <= 4; ++i) {
 }
 exceptions.release(); // All errors actually thrown together here
 ```
-<sup>[snippet source](/tests/DocTest_Tests/utilities/ExceptionCollectorTests.cpp#L24-L30) / [anchor](#snippet-exception_collector_template)</sup>
+<sup><a href='/tests/DocTest_Tests/utilities/ExceptionCollectorTests.cpp#L24-L30' title='File snippet `exception_collector_template` was extracted from'>snippet source</a> | <a href='#snippet-exception_collector_template' title='Navigate to start of snippet `exception_collector_template`'>anchor</a></sup>
 <!-- endsnippet -->
 
 **Use with Approval Tests**: See [Approving multiple files in one test](/doc/MultipleOutputFilesPerTest.md#approving-multiple-files-in-one-test).

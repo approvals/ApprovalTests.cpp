@@ -12,9 +12,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [Static variables for header-only releases](#static-variables-for-header-only-releases)
-<!-- endtoc -->
-
+  * [Static variables for header-only releases](#static-variables-for-header-only-releases)<!-- endtoc -->
 
 ## Static variables for header-only releases
 
@@ -41,7 +39,7 @@ public:
         defaultReporter() = reporter;
     }
 ```
-<sup>[snippet source](/ApprovalTests/reporters/DefaultReporterFactory.h#L13-L31) / [anchor](#snippet-static_variable_sample)</sup>
+<sup><a href='/ApprovalTests/reporters/DefaultReporterFactory.h#L13-L31' title='File snippet `static_variable_sample` was extracted from'>snippet source</a> | <a href='#snippet-static_variable_sample' title='Navigate to start of snippet `static_variable_sample`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Note the use of the reference (&) on the return type of the private method, and the addition of a getter and setter method.

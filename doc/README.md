@@ -27,9 +27,7 @@ Once you're up and running, consider the following reference material.
   * [Miscellaneous](#miscellaneous)
     * [Extras](#extras)
     * [Advanced Topics](#advanced-topics)
-    * [Suggested Examples](#suggested-examples)
-<!-- endtoc -->
-
+    * [Suggested Examples](#suggested-examples)<!-- endtoc -->
 
 ## Preparation
 

@@ -14,9 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Default Behaviour](#default-behaviour)
   * [Using custom writers](#using-custom-writers)
-  * [Using custom filename extensions](#using-custom-filename-extensions)
-<!-- endtoc -->
-
+  * [Using custom filename extensions](#using-custom-filename-extensions)<!-- endtoc -->
 
 ## Default Behaviour
 
@@ -38,7 +36,7 @@ Here is a simple example of using a custom writer to produce an HTML file.
 HtmlWriter writer("<h1>hello world</h1>", ".html");
 Approvals::verify(writer);
 ```
-<sup>[snippet source](/tests/DocTest_Tests/ApprovalTestTests.cpp#L10-L13) / [anchor](#snippet-use_custom_writer)</sup>
+<sup><a href='/tests/DocTest_Tests/ApprovalTestTests.cpp#L10-L13' title='File snippet `use_custom_writer` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_writer' title='Navigate to start of snippet `use_custom_writer`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Using custom filename extensions
@@ -52,7 +50,7 @@ If all you want to do is change the file extension, there are many convenience f
 ```cpp
 Approvals::verifyWithExtension("<h1>hello world</h1>", ".html");
 ```
-<sup>[snippet source](/tests/DocTest_Tests/ApprovalTestTests.cpp#L18-L20) / [anchor](#snippet-use_custom_file_extension)</sup>
+<sup><a href='/tests/DocTest_Tests/ApprovalTestTests.cpp#L18-L20' title='File snippet `use_custom_file_extension` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Navigate to start of snippet `use_custom_file_extension`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---

@@ -19,9 +19,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Output File Names](#output-file-names)
   * [Writers - how things being verified are written to file](#writers---how-things-being-verified-are-written-to-file)
   * [Comparators - how files are compared](#comparators---how-files-are-compared)
-  * [Reporters - how test failures are shown](#reporters---how-test-failures-are-shown)
-<!-- endtoc -->
-
+  * [Reporters - how test failures are shown](#reporters---how-test-failures-are-shown)<!-- endtoc -->
 
 ## Introduction
 

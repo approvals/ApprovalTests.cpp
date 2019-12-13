@@ -12,9 +12,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [First Section Here](#first-section-here)
-<!-- endtoc -->
-
+  * [First Section Here](#first-section-here)<!-- endtoc -->
 
 ## First Section Here
 

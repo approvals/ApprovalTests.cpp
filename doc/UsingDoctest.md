@@ -15,9 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Getting Started With doctest](#getting-started-with-doctest)
     * [Requirements](#requirements)
-    * [New Project](#new-project)
-<!-- endtoc -->
-
+    * [New Project](#new-project)<!-- endtoc -->
 
 
 ## Getting Started With doctest
@@ -43,7 +41,7 @@ Create a file `main.cpp` and add just the following two lines:
 #define APPROVALS_DOCTEST // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 ```
-<sup>[snippet source](/tests/DocTest_Tests/main.cpp#L1-L5) / [anchor](#snippet-doctest_main)</sup>
+<sup><a href='/tests/DocTest_Tests/main.cpp#L1-L5' title='File snippet `doctest_main` was extracted from'>snippet source</a> | <a href='#snippet-doctest_main' title='Navigate to start of snippet `doctest_main`'>anchor</a></sup>
 <!-- endsnippet -->
 
 <!-- todo: document use of sections -->
