@@ -13,7 +13,7 @@ int main()
 
 	"Approval"_test = []() {
         expect(nothrow([] {
-            Approvals::verify("Approval Tests can verify text via the golder master method");
+            Approvals::verify("Approval Tests can verify text via the golden master method");
         }));
 	};
 }

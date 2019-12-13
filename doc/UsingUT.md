@@ -67,7 +67,7 @@ int main()
 <sup>[snippet source](/tests/UT_Tests/main.cpp#L10-L19) / [anchor](#snippet-ut_main_usage)</sup>
 <!-- endsnippet -->
 
-In thw following example, two instances of ApprovalTests are called inside the same test:
+In the following example, two instances of ApprovalTests are called inside the same test:
 
 <!-- snippet: ut_main_multiple -->
 <a id='snippet-ut_main_multiple'/></a>
