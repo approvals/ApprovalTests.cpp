@@ -58,6 +58,7 @@ For all other test files, you need:
 * [Catch 1 and 2](/doc/UsingCatch.md#getting-started-with-catch-1-and-2)
 * [Google Test](/doc/UsingGoogleTests.md#getting-started-with-google-test)
 * [doctest](/doc/UsingDoctest.md#getting-started-with-doctest)
+* [\[Boost\].UT](/doc/UsingUT.md#getting-started-with-ut)
 
 ## Choosing a testing framework
 
@@ -70,6 +71,7 @@ If not, Approval Tests works well with all the above. Here are factors to consid
 | Catch | Very easy (single-header). [StarterProject](https://github.com/approvals/ApprovalTests.Cpp.StarterProject) | Widely supported | Not bad - has options to speed up |
 | doctest | Very easy (single-header) | Unknown | Fast |
 | Google Test | Difficult | Very widely supported | Fast |
+| \[Boost\].UT | Very easy (single-header) | Unknown | Fast |
 
 ---
 
