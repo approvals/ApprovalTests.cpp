@@ -6,6 +6,10 @@
 // <SingleHpp unalterable>
 #ifdef APPROVALS_UT
 
+#if !(__GNUC__ >= 9 || __clang_major__ >= 9)
+#error "The [Boost].UT integration with Approval Tests requires source_location support by the compiler"
+#endif
+
 #include <ut.hpp>
 
 namespace ApprovalTests
