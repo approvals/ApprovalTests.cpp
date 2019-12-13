@@ -14,7 +14,7 @@ int main()
 	"Approval"_test = []() {
         expect(nothrow([] {
             Approvals::verify("Approval Tests can verify text via the golden master method");
-        }));
+        })) <<  "Approval test error";
 	};
 }
 // end-snippet
@@ -31,12 +31,12 @@ int main()
         expect(nothrow([] { 
             auto section = NamerFactory::appendToOutputFilename("test 1");
             Approvals::verify("First Approval Test"); 
-        }));
+        })) <<  "First approval test error";
 
         expect(nothrow([] { 
             auto section = NamerFactory::appendToOutputFilename("test 2");
             Approvals::verify("Second Approval Test"); 
-        }));
+        })) <<  "Second approval test error";;
     };
 }
 // end-snippet
