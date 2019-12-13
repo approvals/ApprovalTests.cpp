@@ -45,7 +45,9 @@ namespace ApprovalTests
                 }
 
                 template <class TMsg>
-                auto on(boost::ut::events::log<TMsg>) -> void {}
+                auto on(boost::ut::events::log<TMsg> log) -> void {
+                    boost::ut::reporter<boost::ut::printer>::on(log);
+                }
 
                 template <class TLocation, class TExpr>
                 auto on(boost::ut::events::assertion_pass<TLocation, TExpr> location) -> void {
