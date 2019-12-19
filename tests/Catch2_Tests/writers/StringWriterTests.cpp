@@ -1,4 +1,4 @@
-#include "Catch.hpp"
+#include "catch.hpp"
 #include "ApprovalTests/writers/StringWriter.h"
 #include "ApprovalTests/Approvals.h"
 

@@ -1,4 +1,4 @@
-#include "Catch.hpp"
+#include "catch.hpp"
 #include "tests/Catch2_Tests/ApprovalTests.hpp"
 
 #include <string>

@@ -14,7 +14,7 @@
 
 #ifdef APPROVALS_CATCH
 
-#include <Catch.hpp>
+#include <catch.hpp>
 
 //namespace ApprovalTests {
 struct Catch2ApprovalListener : Catch::TestEventListenerBase {
