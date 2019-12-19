@@ -28,8 +28,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ## Dependencies
 
-* A version of Catch2 is included in the source - see [lib/Catch.hpp](/lib/Catch.hpp)
-* A version of doctest is included in the source - see files in [lib/](/lib/)
+* See [third_party/](/third_party/) for the test frameworks that are included in this project.
 * Source code for the Google Test framework - version 1.8.1 - is downloaded automatically when CMake is run - see [CMakeLists.txt.in](/CMakeLists.txt.in), and is then built when the project is built.
 
 ## Visual Studio 2017 Community Edition

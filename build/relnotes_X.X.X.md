@@ -9,3 +9,4 @@ See also the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/
     * Fixed ClipboardReporter on macOS. (#51)
 * **Other changes**
     * Documentation improvements (Thanks to Neil Horlock)
+    * Updated our copy of Catch to v2.11.0 (from v2.7.1)
