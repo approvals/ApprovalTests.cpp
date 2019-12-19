@@ -5,5 +5,6 @@
 
 #include "ApprovalTests/integrations/ut/UTApprovals.h"
 #include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/namers/NamerFactory.h"
 
 #endif //APPROVALTESTS_CPP_APPROVALTESTS_H

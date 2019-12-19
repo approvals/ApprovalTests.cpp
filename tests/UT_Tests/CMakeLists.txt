@@ -1,6 +1,6 @@
 project(UT_Tests)
-set(CMAKE_CXX_STANDARD 17)
-if (MSVC)
+set(CMAKE_CXX_STANDARD 20)
+if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     MESSAGE("The [Boost].UT integration with Approval Tests requires source_location support by the compiler, therefore it's disabled")
 else()
     add_executable(${PROJECT_NAME}

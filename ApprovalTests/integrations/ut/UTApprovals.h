@@ -6,7 +6,7 @@
 // <SingleHpp unalterable>
 #ifdef APPROVALS_UT
 
-#if !(__GNUC__ >= 9 || __clang_major__ >= 9)
+#if !(__GNUC__ >= 9 or __clang_major__ >= 9)
 #error "The [Boost].UT integration with Approval Tests requires source_location support by the compiler"
 #endif
 
@@ -23,10 +23,7 @@ namespace ApprovalTests
                 auto on(boost::ut::events::test_begin test_begin) -> void {
                     std::string name = test_begin.name;
                     currentTest.sections.emplace_back(name);
-
-                    const std::string fileName = 
-                        boost::ut::reflection::source_location::current().file_name();
-                    currentTest.setFileName(fileName);
+                    currentTest.setFileName(test_begin.location.file_name());
 
                     ApprovalTestNamer::currentTest(&currentTest);
 
