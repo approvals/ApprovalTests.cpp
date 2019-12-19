@@ -17,6 +17,8 @@ These steps also work with the earlier version, Catch 1, which is on the [Catch 
 
 Approval Tests requires that a file called `catch.hpp` is found.
 
+(Before v7.0.0, it required `Catch.hpp`)
+
 ### Starter Project
 
 The quickest way to start experimenting with Approval Tests is to:

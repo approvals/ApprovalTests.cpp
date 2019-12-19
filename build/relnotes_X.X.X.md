@@ -1,6 +1,11 @@
 See also the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/2?closed=1) for things that have been fixed since last release, and need to be recorded here.
 
 * **Breaking changes**
+    * If you are using Catch, we have changed the casing of the file that Approval Tests looks for, to be consistent with Catch downloads (#53). If you get build failures, you'll need to change your `#include` lines like this:
+        ```diff
+        -#include "Catch.hpp"
+        +#include "catch.hpp"
+        ```
     * If you pass in a reporter to CombinationApprovals::verifyAllCombinations(), the argument order has changed, and is now the first argument: see [Passing in a Reporter](/doc/TestingCombinations.md#passing-in-a-reporter). (#47 - thanks to @mika-fischer, Mika Fischer)
 * **New features**
     * Support for differencing tools in Tortoise Git. Thanks to @lp55, Luiz Paulo M. Pires (#57)
