@@ -74,7 +74,7 @@ endif()
 Or this:
 
 ```cmake
-target_compile_options(my_program_name INTERFACE $<$<CXX_COMPILER_ID:MSVC>:/FC>)
+target_compile_options(my_program_name PUBLIC $<$<CXX_COMPILER_ID:MSVC>:/FC>)
 ```
 
 ## Situation: Visual Studio with Clang compiler (clang-cl.exe)
