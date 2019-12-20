@@ -8,6 +8,8 @@ toc
 
 ## vNext
 
+## v.7.0.0
+
 See the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/2?closed=1) for the full list of changes.
 
 ### Support for \[Boost\].UT test framework
