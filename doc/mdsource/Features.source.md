@@ -8,7 +8,7 @@ toc
 
 ## vNext
 
-See the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/2?closed=1) for things that have been fixed since last release, and may need to be recorded here.
+See the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/2?closed=1) for the full list of changes.
 
 ### Support for \[Boost\].UT test framework
 

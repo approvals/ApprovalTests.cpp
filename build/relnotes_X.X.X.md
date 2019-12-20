@@ -1,4 +1,4 @@
-See also the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/2?closed=1) for things that have been fixed since last release, and need to be recorded here.
+See the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/2?closed=1) for the full list of changes.
 
 * **Breaking changes**
     * If you are using Catch, we have changed the casing of the file that Approval Tests looks for, to be consistent with Catch downloads (#53). If you get build failures, you'll need to change your `#include` lines like this:
