@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [vNext](#vnext)
+  * [v.7.0.0](#v700)
     * [Support for \[Boost\].UT test framework](#support-for-boostut-test-framework)
   * [v.6.0.0](#v600)
     * [Existing Catch Project - with your main()](#existing-catch-project---with-your-main)
@@ -36,6 +37,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## vNext
+
+## v.7.0.0
 
 See the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/2?closed=1) for the full list of changes.
 

@@ -38,8 +38,8 @@ Running tests gives output such as the following:
 * There seems to be a problem with your build configuration.
 * We cannot find the test source file at:
 *   ../../../tests/Catch1_Tests/ApprovalsTests.cpp
-* 
-* For details on how to fix this, please visit: 
+*
+* For details on how to fix this, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
 *                                                                                  *
 ************************************************************************************
