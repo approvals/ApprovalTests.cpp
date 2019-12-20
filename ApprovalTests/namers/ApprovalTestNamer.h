@@ -12,7 +12,7 @@ namespace ApprovalTests {
 class TestName {
 public:
     const std::string& getFileName() const {
-        checkBuildConfiguration();
+        checkBuildConfiguration(fileName);
         return fileName;
     }
 
@@ -20,15 +20,38 @@ public:
         fileName = SystemUtils::checkFilenameCase(file);
     }
 
-    std::vector<std::string> sections;
 private:
-    void checkBuildConfiguration() const {
+    static void checkBuildConfiguration(const std::string& fileName) {
         if(! FileUtils::fileExists(fileName))
         {
-            throw std::runtime_error("File " + fileName + " does not exist - check your compiler args");
+            throw std::runtime_error(getMisconfiguredBuildHelp(fileName));
         }
     }
 
+public:
+    // <SingleHpp unalterable>
+    static std::string getMisconfiguredBuildHelp(const std::string& fileName)
+    {
+        std::string lineBreak = "************************************************************************************\n";
+        std::string lineBuffer = "*                                                                                  *\n";
+        std::string helpMessage =
+                "\n\n" + lineBreak + lineBuffer +
+R"(* Welcome to Approval Tests.
+*
+* There seems to be a problem with your build configuration.
+* We cannot find the test source file at:
+*   [fileName]
+* 
+* For details on how to fix this, please visit: 
+* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
+)" +
+                    lineBuffer + lineBreak + '\n';
+        return StringUtils::replaceAll(helpMessage, "[fileName]", fileName);
+    }
+// </SingleHpp>
+
+    std::vector<std::string> sections;
+private:
     std::string fileName;
 };
 
