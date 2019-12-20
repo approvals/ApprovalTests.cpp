@@ -32,8 +32,6 @@ In the following example, two instances of ApprovalTests are called inside the s
 
 snippet: ut_main_multiple
 
-<!-- todo: document use of sections -->
-
 ---
 
 [Back to User Guide](/doc/README.md#top)

@@ -62,6 +62,8 @@ In the following example, two instances of ApprovalTests are called inside the s
 ```cpp
 "ItCanUseMultipleVerify"_test = []() {
     {
+        // Here we simulate test sections, so that Approval Tests uses different
+        // output file names for the different verify() calls.
         auto section = NamerFactory::appendToOutputFilename("section 1");
         Approvals::verify("Approval Tests can verify text via the golden master method");
     }
@@ -71,10 +73,8 @@ In the following example, two instances of ApprovalTests are called inside the s
     }
 };
 ```
-<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L23-L34' title='File snippet `ut_main_multiple` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_multiple' title='Navigate to start of snippet `ut_main_multiple`'>anchor</a></sup>
+<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L23-L36' title='File snippet `ut_main_multiple` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_multiple' title='Navigate to start of snippet `ut_main_multiple`'>anchor</a></sup>
 <!-- endsnippet -->
-
-<!-- todo: document use of sections -->
 
 ---
 

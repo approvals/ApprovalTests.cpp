@@ -23,6 +23,8 @@ int main()
     // begin-snippet: ut_main_multiple
     "ItCanUseMultipleVerify"_test = []() {
         {
+            // Here we simulate test sections, so that Approval Tests uses different
+            // output file names for the different verify() calls.
             auto section = NamerFactory::appendToOutputFilename("section 1");
             Approvals::verify("Approval Tests can verify text via the golden master method");
         }
