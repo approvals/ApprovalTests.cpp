@@ -39,11 +39,11 @@ Add the following two lines to your source code:
 <!-- snippet: ut_main -->
 <a id='snippet-ut_main'/></a>
 ```cpp
-// main.cpp:
+// ApprovalTestTests.cpp:
 #define APPROVALS_UT
 #include "ApprovalTests.hpp"
 ```
-<sup>[snippet source](/tests/UT_Tests/main.cpp#L1-L5) / [anchor](#snippet-ut_main)</sup>
+<sup>[snippet source](/tests/UT_Tests/ApprovalTestTests.cpp#L2-L3) / [anchor](#snippet-ut_main)</sup>
 <!-- endsnippet -->
 
 Bellow is an example of a call to an approval test inside a \[Boost\].UT test:
@@ -51,20 +51,19 @@ Bellow is an example of a call to an approval test inside a \[Boost\].UT test:
 <!-- snippet: ut_main_usage -->
 <a id='snippet-ut_main_usage'/></a>
 ```cpp
-// main.cpp:
-int main()
-{
-    using namespace boost::ut;
-    using namespace ApprovalTests;
+// ApprovalTestTests.cpp:
+    "ItCanVerifyAFile"_test = []() {
 
-	"Approval"_test = []() {
-        expect(nothrow([] {
-            Approvals::verify("Approval Tests can verify text via the golder master method");
-        }));
+        try {
+            Approvals::verify("Approval Tests can verify text via the golden master method");
+        }
+        catch (const std::exception& e) {
+            detail::log{} << e.what();
+            expect(false);
+        }
 	};
-}
 ```
-<sup>[snippet source](/tests/UT_Tests/main.cpp#L10-L19) / [anchor](#snippet-ut_main_usage)</sup>
+<sup>[snippet source](/tests/UT_Tests/ApprovalTestTests.cpp#L14-L23) / [anchor](#snippet-ut_main_usage)</sup>
 <!-- endsnippet -->
 
 In the following example, two instances of ApprovalTests are called inside the same test:
@@ -72,25 +71,28 @@ In the following example, two instances of ApprovalTests are called inside the s
 <!-- snippet: ut_main_multiple -->
 <a id='snippet-ut_main_multiple'/></a>
 ```cpp
-int main()
-{
-    using namespace boost::ut;
-    using namespace ApprovalTests;
+// ApprovalTestTests.cpp
+    "ItCanUseMultipleVerify"_test = []() {
+        try {
+                auto section = NamerFactory::appendToOutputFilename("section 1");
+                Approvals::verify("Approval Tests can verify text via the golden master method");
+        }
+        catch (const std::exception & e) {
+            detail::log{} << e.what();
+            expect(false);
+        }
 
-	"Approval"_test = []() {
-        expect(nothrow([] { 
-            auto section = NamerFactory::appendToOutputFilename("test 1");
-            Approvals::verify("First Approval Test"); 
-        }));
-
-        expect(nothrow([] { 
-            auto section = NamerFactory::appendToOutputFilename("test 2");
-            Approvals::verify("Second Approval Test"); 
-        }));
+        try {
+            auto section = NamerFactory::appendToOutputFilename("section 2");
+            Approvals::verify("Approval Tests can verify text via the golden master method");
+        }
+        catch (const std::exception & e) {
+            detail::log{} << e.what();
+            expect(false);
+        }
     };
-}
 ```
-<sup>[snippet source](/tests/UT_Tests/main.cpp#L25-L41) / [anchor](#snippet-ut_main_multiple)</sup>
+<sup>[snippet source](/tests/UT_Tests/ApprovalTestTests.cpp#L37-L55) / [anchor](#snippet-ut_main_multiple)</sup>
 <!-- endsnippet -->
 
 

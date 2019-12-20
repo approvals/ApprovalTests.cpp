@@ -1,5 +1,7 @@
+// begin-snippet: ut_main
 #define APPROVALS_UT
 #include "ApprovalTests.hpp"
+// end-snippet
 
 int main()
 {
@@ -54,7 +56,7 @@ int main()
     // end-snippet
 
     "YouCanUseAWriter"_test = []() {
-        // begin-snippet: use_custom_writer
+        // begin-snippet: ut_use_custom_writer
         try {
             using HtmlWriter = StringWriter;
             HtmlWriter writer("<h1>hello world</h1>", ".html");
@@ -68,7 +70,7 @@ int main()
     };
 
     "YouCanSpecifyYourFileExtension"_test = []() {
-        // begin-snippet: use_custom_file_extension
+        // begin-snippet: ut_use_custom_file_extension
         try {
             Approvals::verifyWithExtension("<h1>hello world</h1>", ".html");
         }
