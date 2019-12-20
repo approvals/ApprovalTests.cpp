@@ -1,1 +1,1 @@
-Approval Tests can verify text via the golden master method
+Approval Tests can verify different text via the golden master method

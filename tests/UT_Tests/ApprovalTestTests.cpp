@@ -28,7 +28,7 @@ int main()
         }
         {
             auto section = NamerFactory::appendToOutputFilename("section 2");
-            Approvals::verify("Approval Tests can verify text via the golden master method");
+            Approvals::verify("Approval Tests can verify different text via the golden master method");
         }
     };
     // end-snippet
