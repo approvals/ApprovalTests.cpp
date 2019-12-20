@@ -53,7 +53,7 @@ Running tests gives the following output:
 *     #define APPROVALS_DOCTEST
 *     #include "ApprovalTests.hpp"
 *
-* To do this in UT, add the following to your main.cpp:
+* To do this in [Boost].UT, add the following to your main.cpp:
 *
 *     #define APPROVALS_UT
 *     #include "ApprovalTests.hpp"
