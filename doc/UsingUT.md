@@ -13,11 +13,9 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [Getting Started With \[Boost\].UT](#getting-started-with-ut)
+  * [Getting Started With \[Boost\].UT](#getting-started-with-boostut)
     * [Requirements](#requirements)
-    * [New Project](#new-project)
-<!-- endtoc -->
-
+    * [Usage example](#usage-example)<!-- endtoc -->
 
 
 ## Getting Started With \[Boost\].UT
@@ -39,11 +37,10 @@ Add the following two lines to your source code:
 <!-- snippet: ut_main -->
 <a id='snippet-ut_main'/></a>
 ```cpp
-// ApprovalTestTests.cpp:
 #define APPROVALS_UT
 #include "ApprovalTests.hpp"
 ```
-<sup>[snippet source](/tests/UT_Tests/ApprovalTestTests.cpp#L2-L3) / [anchor](#snippet-ut_main)</sup>
+<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L1-L4' title='File snippet `ut_main` was extracted from'>snippet source</a> | <a href='#snippet-ut_main' title='Navigate to start of snippet `ut_main`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Bellow is an example of a call to an approval test inside a \[Boost\].UT test:
@@ -51,19 +48,18 @@ Bellow is an example of a call to an approval test inside a \[Boost\].UT test:
 <!-- snippet: ut_main_usage -->
 <a id='snippet-ut_main_usage'/></a>
 ```cpp
-// ApprovalTestTests.cpp:
-    "ItCanVerifyAFile"_test = []() {
+"ItCanVerifyAFile"_test = []() {
 
-        try {
-            Approvals::verify("Approval Tests can verify text via the golden master method");
-        }
-        catch (const std::exception& e) {
-            detail::log{} << e.what();
-            expect(false);
-        }
+    try {
+        Approvals::verify("Approval Tests can verify text via the golden master method");
+    }
+    catch (const std::exception& e) {
+        detail::log{} << e.what();
+        expect(false);
+    }
 	};
 ```
-<sup>[snippet source](/tests/UT_Tests/ApprovalTestTests.cpp#L14-L23) / [anchor](#snippet-ut_main_usage)</sup>
+<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L13-L24' title='File snippet `ut_main_usage` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_usage' title='Navigate to start of snippet `ut_main_usage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 In the following example, two instances of ApprovalTests are called inside the same test:
@@ -71,30 +67,30 @@ In the following example, two instances of ApprovalTests are called inside the s
 <!-- snippet: ut_main_multiple -->
 <a id='snippet-ut_main_multiple'/></a>
 ```cpp
-// ApprovalTestTests.cpp
-    "ItCanUseMultipleVerify"_test = []() {
-        try {
-                auto section = NamerFactory::appendToOutputFilename("section 1");
-                Approvals::verify("Approval Tests can verify text via the golden master method");
-        }
-        catch (const std::exception & e) {
-            detail::log{} << e.what();
-            expect(false);
-        }
-
-        try {
-            auto section = NamerFactory::appendToOutputFilename("section 2");
+"ItCanUseMultipleVerify"_test = []() {
+    try {
+            auto section = NamerFactory::appendToOutputFilename("section 1");
             Approvals::verify("Approval Tests can verify text via the golden master method");
-        }
-        catch (const std::exception & e) {
-            detail::log{} << e.what();
-            expect(false);
-        }
-    };
+    }
+    catch (const std::exception & e) {
+        detail::log{} << e.what();
+        expect(false);
+    }
+
+    try {
+        auto section = NamerFactory::appendToOutputFilename("section 2");
+        Approvals::verify("Approval Tests can verify text via the golden master method");
+    }
+    catch (const std::exception & e) {
+        detail::log{} << e.what();
+        expect(false);
+    }
+};
 ```
-<sup>[snippet source](/tests/UT_Tests/ApprovalTestTests.cpp#L37-L55) / [anchor](#snippet-ut_main_multiple)</sup>
+<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L36-L56' title='File snippet `ut_main_multiple` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_multiple' title='Navigate to start of snippet `ut_main_multiple`'>anchor</a></sup>
 <!-- endsnippet -->
 
+<!-- todo: document use of sections -->
 
 ---
 

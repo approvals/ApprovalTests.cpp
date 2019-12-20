@@ -53,6 +53,11 @@ Running tests gives the following output:
 *     #define APPROVALS_DOCTEST
 *     #include "ApprovalTests.hpp"
 *
+* To do this in UT, add the following to your main.cpp:
+*
+*     #define APPROVALS_UT
+*     #include "ApprovalTests.hpp"
+*
 * For more information, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/GettingStarted.md
 *                                                                                  *
@@ -60,7 +65,7 @@ Running tests gives the following output:
 
 
 ```
-<sup><a href='/tests/DocTest_Tests/documentation/approval_tests/ForgottenToConfigure.HelpMessage.approved.txt#L1-L29' title='File snippet `ForgottenToConfigure.HelpMessage.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessage.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessage.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/documentation/approval_tests/ForgottenToConfigure.HelpMessage.approved.txt#L1-L34' title='File snippet `ForgottenToConfigure.HelpMessage.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessage.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessage.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 **Things to check:**
