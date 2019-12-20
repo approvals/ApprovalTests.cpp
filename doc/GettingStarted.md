@@ -64,12 +64,12 @@ If you are already using one of the above testing frameworks, that is the one yo
 
 If not, Approval Tests works well with all the above. Here are factors to consider.
 
-| Framework | Ease of setup | IDE Integration | Compile and link time |
-| --- | --- | --- | --- |
-| Catch | Very easy (single-header). [StarterProject](https://github.com/approvals/ApprovalTests.Cpp.StarterProject) | Widely supported | Not bad - has options to speed up |
-| doctest | Very easy (single-header) | Unknown | Fast |
-| Google Test | Difficult | Very widely supported | Fast |
-| \[Boost\].UT | Very easy (single-header) | Unknown | Fast |
+| Framework | Minimum C++ Version | Ease of setup | IDE Integration | Compile and link time |
+| --- | :-: | --- | --- | --- |
+| Catch | C++11 | Very easy (single-header). [StarterProject](https://github.com/approvals/ApprovalTests.Cpp.StarterProject) | Widely supported | Not bad - has options to speed up |
+| doctest | C++11 | Very easy (single-header) | Unknown | Fast |
+| Google Test | C++11 | Difficult | Very widely supported | Fast |
+| \[Boost\].UT | C++17 | Very easy (single-header) | Unknown | Fast |
 
 ---
 
