@@ -10,6 +10,10 @@ toc
 
 See the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/2?closed=1) for things that have been fixed since last release, and may need to be recorded here.
 
+### Support for \[Boost\].UT test framework
+
+See [Using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#top).
+
 ## v.6.0.0
 
 ### Existing Catch Project - with your main()

@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [vNext](#vnext)
+    * [Support for \[Boost\].UT test framework](#support-for-boostut-test-framework)
   * [v.6.0.0](#v600)
     * [Existing Catch Project - with your main()](#existing-catch-project---with-your-main)
   * [v.5.1.0](#v510)
@@ -37,6 +38,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## vNext
 
 See the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/2?closed=1) for things that have been fixed since last release, and may need to be recorded here.
+
+### Support for \[Boost\].UT test framework
+
+See [Using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#top).
 
 ## v.6.0.0
 

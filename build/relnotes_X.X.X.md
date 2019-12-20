@@ -8,6 +8,7 @@ See also the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/
         ```
     * If you pass in a reporter to CombinationApprovals::verifyAllCombinations(), the argument order has changed, and is now the first argument: see [Passing in a Reporter](/doc/TestingCombinations.md#passing-in-a-reporter). (#47 - thanks to @mika-fischer, Mika Fischer)
 * **New features**
+    * Added support for the [\[Boost\].UT test framework](https://github.com/boost-experimental/ut). See [Using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#top). Thanks to @lp55, Luiz Paulo M. Pires and @krzysztof-jusiak (#58)
     * Support for differencing tools in Tortoise Git. Thanks to @lp55, Luiz Paulo M. Pires (#57)
 * **Bug fixes**
     * Fixed unnecessary duplicate static functions. (#54)
