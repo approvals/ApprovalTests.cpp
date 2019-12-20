@@ -1,0 +1,27 @@
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest, windows-2016, ubuntu-latest, macOS-latest]
+        include:
+        - os: windows-latest
+          generator: '"Visual Studio 16 2019"'
+        - os: windows-2016
+          generator: '"Visual Studio 15 2017"' 
+        - os: ubuntu-latest
+          generator: '"Unix Makefiles"'
+        - os: macOS-latest
+          generator: '"Unix Makefiles"'  
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@master
+    - name: cmake
+      run: cmake -G ${{ matrix.generator }}
+    - name: build
+      run: cmake --build .
+    - name: test
+      run: ctest --verbose --parallel 4 -C Debug
