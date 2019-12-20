@@ -51,6 +51,7 @@ This is when you have an existing code base that has some tests already, and you
     * [Using Approval Tests With Catch](/doc/UsingCatch.md#top)
     * [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
     * [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
+    * [Using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#top)
 1. Download a [Supported Diff Tool](/doc/Reporters.md#supported-diff-tools)
 
 If you current test framework is not supported, see [Supporting a new test framework](/doc/SupportingNewTestFramework.md#top)
