@@ -12,6 +12,7 @@ namespace ApprovalTests {
 class TestName {
 public:
     const std::string& getFileName() const {
+        checkBuildConfiguration();
         return fileName;
     }
 
@@ -21,6 +22,13 @@ public:
 
     std::vector<std::string> sections;
 private:
+    void checkBuildConfiguration() const {
+        if(! FileUtils::fileExists(fileName))
+        {
+            throw std::runtime_error("File " + fileName + " does not exist - check your compiler args");
+        }
+    }
+
     std::string fileName;
 };
 
