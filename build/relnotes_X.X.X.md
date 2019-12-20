@@ -12,7 +12,7 @@ See the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/miles
     * Support for differencing tools in Tortoise Git. (#57 - thanks to @lp55, Luiz Paulo M. Pires)
 * **Bug fixes**
     * Fixed unnecessary duplicate static functions. (#54)
-    * Fixed ClipboardReporter on macOS. (#51)
+    * Fixed `ClipboardReporter` on macOS. (#51)
     * Fixed inability to use project as sub-module on windows due to long filenames - by shortening the names of some files and folders in the tests. (#38)
 * **Other changes**
     * Documentation improvements (Thanks to Neil Horlock)
