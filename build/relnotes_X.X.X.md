@@ -11,6 +11,8 @@ See the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/miles
     * Support for the [\[Boost\].UT test framework](https://github.com/boost-experimental/ut). See [Using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#top). (#58 - thanks to @lp55, Luiz Paulo M. Pires and @krzysztof-jusiak, Kris Jusiak)
     * Support for differencing tools in Tortoise Git. (#57 - thanks to @lp55, Luiz Paulo M. Pires)
 * **Bug fixes**
+    * Fixed tests failing when using Ninja generator used by Visual Studio 2019 (#55).
+        * See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top) if you have test failures in your VS2019 builds.
     * Fixed unnecessary duplicate static functions. (#54)
     * Fixed `ClipboardReporter` on macOS. (#51)
     * Fixed inability to use project as sub-module on windows due to long filenames - by shortening the names of some files and folders in the tests. (#38)
