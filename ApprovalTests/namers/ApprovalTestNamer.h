@@ -109,6 +109,11 @@ R"(* Welcome to Approval Tests.
 *     #define APPROVALS_DOCTEST
 *     #include "ApprovalTests.hpp"
 *
+* To do this in UT, add the following to your main.cpp:
+*
+*     #define APPROVALS_UT
+*     #include "ApprovalTests.hpp"
+*
 * For more information, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/GettingStarted.md
 )" +
