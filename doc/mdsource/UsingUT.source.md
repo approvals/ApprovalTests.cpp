@@ -20,7 +20,7 @@ Approval Tests needs \[Boost\].UT version [b970a20](https://github.com/boost-exp
 
 ### Usage examples
 
-Add the following two lines to your source code, before any of your `main()` functions that will use Approval Tests:
+Add the following two lines to your source code:
 
 snippet: ut_main
 
