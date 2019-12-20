@@ -30,15 +30,39 @@ You need to add a line like the following to your `CMakeLists.txt` file:
 
 ```cmake
 if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    target_compile_options(${PROJECT_NAME} PRIVATE /FC)
+    target_compile_options(my_program_name PUBLIC /FC)
 endif()
+```
+
+Or this:
+
+```cmake
+target_compile_options(my_program_name INTERFACE $<$<CXX_COMPILER_ID:MSVC>:/FC>) 
 ```
 
 ## Situation: Visual Studio with Clang compiler (clang-cl.exe)
 
 We have not been able to find a compiler flag that makes clang-cl put full paths in `__FILE__`.
 
-The only solution we have found is to put your build outputs in a directory outside the source tree.
+The only solution we have found is to put your build outputs in a directory outside the source tree, so that the build will use absolute paths.
+
+One way to do this is to edit your `CMakeSettings.json` file, and change all pairs of lines like this:
+
+```json
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+```
+
+To something like this (where you change `MyProjectName` to the actual name of your project):
+
+```json
+      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\MyProjectName\\build\\${name}",
+      "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\MyProjectName\\install\\${name}",
+```
+
+This would put the build outputs in to:
+
+`C:\Users\YourUserName\CMakeBuilds\MyProjectName\build`
 
 ---
 
