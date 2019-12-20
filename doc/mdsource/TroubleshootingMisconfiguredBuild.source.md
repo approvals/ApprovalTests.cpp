@@ -20,7 +20,9 @@ Approval Tests depends on the test framework to provide access to the source fil
 
 In many cases, this is implementing using `__FILE__`.
 
-With some build configurations, we have found that the path contained in `__FILE__` contains either just the file name, or contains an incorrect relative path to a non-existent directory, relative to the current working directory of the test program. 
+With some build configurations, we have found that the path contained in `__FILE__` contains either just the file name, or contains an incorrect relative path to a non-existent directory, relative to the current working directory of the test program.
+
+We think this may be associated with Visual Studio 2019's change to make Ninja the default generator.
 
 ## Situation: Visual Studio with Visual C++ compiler (cl.exe)
 
