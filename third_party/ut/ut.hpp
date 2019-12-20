@@ -5,6 +5,7 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 //
+//git version: b970a201aa88f087a997eed05bc4c1aae3592cd3
 #if defined(__cpp_modules)
 export module boost.ut;
 export import std;
@@ -64,6 +65,9 @@ auto operator>=(TLhs, TRhs) -> bool;
 #if __has_include(<unistd.h>) and __has_include(<sys/wait.h>)
 #include <sys/wait.h>
 #include <unistd.h>
+#endif
+#if defined(__cpp_exceptions)
+#include <exception>
 #endif
 #endif
 
@@ -946,7 +950,10 @@ struct log {
 template <class TMsg>
 log(TMsg)->log<TMsg>;
 struct fatal_assertion {};
-struct exception {};
+struct exception {
+  const char* msg{};
+  auto what() const -> const char* { return msg; }
+};
 struct summary {};
 }  // namespace events
 
@@ -1131,10 +1138,12 @@ class reporter {
     printer_ << l.msg;
   }
 
-  auto on(events::exception) -> void {
+  auto on(events::exception exception) -> void {
     exception_ = true;
-    printer_ << "\n  " << printer_.colors().fail << "Unexpected exception!"
-             << printer_.colors().none;
+    printer_ << "\n  " << printer_.colors().fail
+             << "Unexpected exception with message:\n"
+             << exception.what() << printer_.colors().none;
+    ++tests_.except;
   }
 
   template <class TLocation, class TExpr>
@@ -1193,6 +1202,7 @@ class reporter {
     std::size_t pass{};
     std::size_t fail{};
     std::size_t skip{};
+    std::size_t except{};
   } tests_{};
 
   struct {
@@ -1297,8 +1307,11 @@ class runner {
         test();
 #if defined(__cpp_exceptions)
       } catch (const events::fatal_assertion&) {
+      } catch (const std::exception& e) {
+        reporter_.on(events::exception{e.what()});
+        active_exception_ = true;
       } catch (...) {
-        reporter_.on(events::exception{});
+        reporter_.on(events::exception{"Unknown exception"});
         active_exception_ = true;
       }
 #endif
