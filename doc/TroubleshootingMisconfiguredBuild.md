@@ -7,18 +7,73 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 <a id="top"></a>
 
-# TroubleshootingMisconfiguredBuild
+# Troubleshooting Misconfigured Build
 
 <!-- toc -->
 ## Contents
 
-  * [First Section Here](#first-section-here)<!-- endtoc -->
+  * [Feedback Requested](#feedback-requested)
+  * [Symptoms](#symptoms)
+  * [The problem](#the-problem)
+  * [Situation: Visual Studio with Visual C++ compiler (cl.exe)](#situation-visual-studio-with-visual-c-compiler-clexe)
+  * [Situation: Visual Studio with Clang compiler (clang-cl.exe)](#situation-visual-studio-with-clang-compiler-clang-clexe)<!-- endtoc -->
 
-## First Section Here
+## Feedback Requested
 
-*Nothing to see here: this is a template file, for creating new pages of documentation...* 
+This is living documentation. If you discover extra scenarios or better solutions, please contribute back via bug reports or pull requests. Thank you. 
 
-*For help with creating and maintaining documentation in this project, see [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top).* 
+## Symptoms
+
+Running tests gives output such as the following:
+
+<!-- snippet: ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt -->
+<a id='snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt'/></a>
+```txt
+
+
+************************************************************************************
+*                                                                                  *
+* Welcome to Approval Tests.
+*
+* There seems to be a problem with your build configuration.
+* We cannot find the test source file at:
+*   ../../../tests/Catch1_Tests/ApprovalsTests.cpp
+* 
+* For details on how to fix this, please visit: 
+* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
+*                                                                                  *
+************************************************************************************
+
+
+```
+<sup><a href='/tests/DocTest_Tests/documentation/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt#L1-L16' title='File snippet `ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
+
+## The problem
+
+Approval Tests depends on the test framework to provide access to the source file of the test being run.
+
+In many cases, this is implementing using `__FILE__`.
+
+With some build configurations, we have found that the path contained in `__FILE__` contains either just the file name, or contains an incorrect relative path to a non-existent directory, relative to the current working directory of the test program. 
+
+## Situation: Visual Studio with Visual C++ compiler (cl.exe)
+
+Use `/FC` to make Visual Studio emit the full path in diagnostics, and `__FILE__` ([documentation](https://docs.microsoft.com/en-us/cpp/build/reference/fc-full-path-of-source-code-file-in-diagnostics?view=vs-2019)).
+
+You need to add a line like the following to your `CMakeLists.txt` file:
+
+```cmake
+if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    target_compile_options(${PROJECT_NAME} PRIVATE /FC)
+endif()
+```
+
+## Situation: Visual Studio with Clang compiler (clang-cl.exe)
+
+We have not been able to find a compiler flag that makes clang-cl put full paths in `__FILE__`.
+
+The only solution we have found is to put your build outputs in a directory outside the source tree.
 
 ---
 
