@@ -12,92 +12,46 @@ int main()
 
     // begin-snippet: ut_main_usage
     "ItCanVerifyAFile"_test = []() {
-
-        try {
-            Approvals::verify("Approval Tests can verify text via the golden master method");
-        }
-        catch (const std::exception& e) {
-            detail::log{} << e.what();
-            expect(false);
-        }
+        Approvals::verify("Approval Tests can verify text via the golden master method");
 	};
     // end-snippet
 
     test("AnotherWayItCanVerifyAFile") = []() {
-        try {
-            Approvals::verify("Approval Tests can verify text via the golden master method");
-        }
-        catch (const std::exception & e) {
-            detail::log{} << e.what();
-            expect(false);
-        }
+        Approvals::verify("Approval Tests can verify text via the golden master method");
     };
 
     // begin-snippet: ut_main_multiple
     "ItCanUseMultipleVerify"_test = []() {
-        try {
-                auto section = NamerFactory::appendToOutputFilename("section 1");
-                Approvals::verify("Approval Tests can verify text via the golden master method");
-        }
-        catch (const std::exception & e) {
-            detail::log{} << e.what();
-            expect(false);
-        }
-
-        try {
-            auto section = NamerFactory::appendToOutputFilename("section 2");
+        {
+            auto section = NamerFactory::appendToOutputFilename("section 1");
             Approvals::verify("Approval Tests can verify text via the golden master method");
         }
-        catch (const std::exception & e) {
-            detail::log{} << e.what();
-            expect(false);
+        {
+            auto section = NamerFactory::appendToOutputFilename("section 2");
+            Approvals::verify("Approval Tests can verify text via the golden master method");
         }
     };
     // end-snippet
 
     "YouCanUseAWriter"_test = []() {
         // begin-snippet: ut_use_custom_writer
-        try {
-            using HtmlWriter = StringWriter;
-            HtmlWriter writer("<h1>hello world</h1>", ".html");
-            Approvals::verify(writer);
-        }
-        catch (const std::exception & e) {
-            detail::log{} << e.what();
-            expect(false);
-        }
+        using HtmlWriter = StringWriter;
+        HtmlWriter writer("<h1>hello world</h1>", ".html");
+        Approvals::verify(writer);
         // end-snippet
     };
 
     "YouCanSpecifyYourFileExtension"_test = []() {
         // begin-snippet: ut_use_custom_file_extension
-        try {
-            Approvals::verifyWithExtension("<h1>hello world</h1>", ".html");
-        }
-            catch (const std::exception & e) {
-            detail::log{} << e.what();
-            expect(false);
-        }
+        Approvals::verifyWithExtension("<h1>hello world</h1>", ".html");
         // end-snippet
     };
 
     "YouCanSpecifyYourFileExtensionWithToString"_test = []() {
-        try {
-            Approvals::verifyWithExtension(1337, ".csv");
-        }
-            catch (const std::exception & e) {
-            detail::log{} << e.what();
-            expect(false);
-        }
+        Approvals::verifyWithExtension(1337, ".csv");
     };
 
     "YouCanSpecifyYourFileExtensionWithFormatter"_test = []() {
-        try {
-            Approvals::verifyWithExtension(1337, [](auto value, auto& os) {os << "**value:** " << value; }, ".md");
-        }
-        catch (const std::exception & e) {
-            detail::log{} << e.what();
-            expect(false);
-        }
+        Approvals::verifyWithExtension(1337, [](auto value, auto& os) {os << "**value:** " << value; }, ".md");
     };
 }

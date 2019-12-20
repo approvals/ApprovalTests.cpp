@@ -49,17 +49,10 @@ Bellow is an example of a call to an approval test inside a \[Boost\].UT test:
 <a id='snippet-ut_main_usage'/></a>
 ```cpp
 "ItCanVerifyAFile"_test = []() {
-
-    try {
-        Approvals::verify("Approval Tests can verify text via the golden master method");
-    }
-    catch (const std::exception& e) {
-        detail::log{} << e.what();
-        expect(false);
-    }
+    Approvals::verify("Approval Tests can verify text via the golden master method");
 	};
 ```
-<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L13-L24' title='File snippet `ut_main_usage` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_usage' title='Navigate to start of snippet `ut_main_usage`'>anchor</a></sup>
+<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L13-L17' title='File snippet `ut_main_usage` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_usage' title='Navigate to start of snippet `ut_main_usage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 In the following example, two instances of ApprovalTests are called inside the same test:
@@ -68,26 +61,17 @@ In the following example, two instances of ApprovalTests are called inside the s
 <a id='snippet-ut_main_multiple'/></a>
 ```cpp
 "ItCanUseMultipleVerify"_test = []() {
-    try {
-            auto section = NamerFactory::appendToOutputFilename("section 1");
-            Approvals::verify("Approval Tests can verify text via the golden master method");
+    {
+        auto section = NamerFactory::appendToOutputFilename("section 1");
+        Approvals::verify("Approval Tests can verify text via the golden master method");
     }
-    catch (const std::exception & e) {
-        detail::log{} << e.what();
-        expect(false);
-    }
-
-    try {
+    {
         auto section = NamerFactory::appendToOutputFilename("section 2");
         Approvals::verify("Approval Tests can verify text via the golden master method");
     }
-    catch (const std::exception & e) {
-        detail::log{} << e.what();
-        expect(false);
-    }
 };
 ```
-<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L36-L56' title='File snippet `ut_main_multiple` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_multiple' title='Navigate to start of snippet `ut_main_multiple`'>anchor</a></sup>
+<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L23-L34' title='File snippet `ut_main_multiple` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_multiple' title='Navigate to start of snippet `ut_main_multiple`'>anchor</a></sup>
 <!-- endsnippet -->
 
 <!-- todo: document use of sections -->
