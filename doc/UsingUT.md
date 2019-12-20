@@ -15,7 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Getting Started With \[Boost\].UT](#getting-started-with-boostut)
     * [Requirements](#requirements)
-    * [Usage example](#usage-example)<!-- endtoc -->
+    * [Usage examples](#usage-examples)<!-- endtoc -->
 
 
 ## Getting Started With \[Boost\].UT
@@ -28,9 +28,9 @@ The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework work
 
 Approval Tests for \[Boost\].UT requires that a file called `ut.hpp` is found.
 
-Approval Tests needs \[Boost\].UT version 1.1.4 or above.
+Approval Tests needs \[Boost\].UT version [b970a20](https://github.com/boost-experimental/ut/commit/b970a201aa88f087a997eed05bc4c1aae3592cd3) or above.
 
-### Usage example
+### Usage examples
 
 Add the following two lines to your source code:
 
@@ -43,7 +43,7 @@ Add the following two lines to your source code:
 <sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L1-L4' title='File snippet `ut_main` was extracted from'>snippet source</a> | <a href='#snippet-ut_main' title='Navigate to start of snippet `ut_main`'>anchor</a></sup>
 <!-- endsnippet -->
 
-Bellow is an example of a call to an approval test inside a \[Boost\].UT test:
+Below is an example of a call to an approval test inside a \[Boost\].UT test:
 
 <!-- snippet: ut_main_usage -->
 <a id='snippet-ut_main_usage'/></a>
@@ -55,7 +55,7 @@ Bellow is an example of a call to an approval test inside a \[Boost\].UT test:
 <sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L13-L17' title='File snippet `ut_main_usage` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_usage' title='Navigate to start of snippet `ut_main_usage`'>anchor</a></sup>
 <!-- endsnippet -->
 
-In the following example, two instances of ApprovalTests are called inside the same test:
+In the following example, two instances of ApprovalTests are called inside the same test. We need to use sections with different names, to prevent Approval Tests from using the same output file for both tests:
 
 <!-- snippet: ut_main_multiple -->
 <a id='snippet-ut_main_multiple'/></a>
