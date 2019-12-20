@@ -14,6 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Test gives "You have forgotten to configure your test framework..."](#test-gives-you-have-forgotten-to-configure-your-test-framework)
+  * [Test gives "There seems to be a problem with your build configuration"](#test-gives-there-seems-to-be-a-problem-with-your-build-configuration)
   * [My custom reporter works in development, but not CI](#my-custom-reporter-works-in-development-but-not-ci)<!-- endtoc -->
 
 
@@ -81,6 +82,10 @@ Running tests gives the following output:
     * To fix, copy in the Approvals-specific lines from [examples/googletest_existing_main/main.cpp](/examples/googletest_existing_main/main.cpp)
 * Is your code calling `Approvals::verify()` or any other methods in this library from outside a Google Test?
     * This is much less likely to be the cause, but the file-naming code in Approval Tests (`ApprovalTestNamer`) does require that approvals are used from inside a test method in a supported test framework. 
+
+## Test gives "There seems to be a problem with your build configuration"
+
+See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top).
 
 ## My custom reporter works in development, but not CI
 
