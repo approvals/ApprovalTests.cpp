@@ -96,11 +96,11 @@ sed -i -e "s/$LAST_VERSION/$VERSION/g" mdsource/README.source.md
 ./run_markdown_templates.sh
 popd
 
-# Draft the upload to github
-open "https://github.com/approvals/ApprovalTests.cpp/releases/new?tag=$VERSION&title=Single%20Hpp%20File%20-%20$VERSION"
-
 # Draft the tweet
 open "https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+$VERSION+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F$VERSION+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21"
+
+# Draft the upload to github - do this last, so this tab appears on top
+open "https://github.com/approvals/ApprovalTests.cpp/releases/new?tag=$VERSION&title=Single%20Hpp%20File%20-%20$VERSION"
 
 open $RELEASE_DIR/
 
