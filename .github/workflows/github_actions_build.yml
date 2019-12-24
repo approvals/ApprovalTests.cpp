@@ -6,15 +6,22 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [windows-latest, windows-2016, ubuntu-latest, macOS-latest]
+        buildtype: [windows-latest, windows-latest (clangcl), windows-2016, ubuntu-latest, macOS-latest]
         include:
-        - os: windows-latest
+        - buildtype: windows-latest
+          os: windows-latest
           generator: '"Visual Studio 16 2019"'
-        - os: windows-2016
+        - buildtype: windows-latest (clangcl)
+          os: windows-latest
+          generator: '"Visual Studio 16 2019" -T "clangcl"'
+        - buildtype: windows-2016
+          os: windows-2016
           generator: '"Visual Studio 15 2017"' 
-        - os: ubuntu-latest
+        - buildtype: ubuntu-latest
+          os: ubuntu-latest
           generator: '"Unix Makefiles"'
-        - os: macOS-latest
+        - buildtype:  macOS-latest
+          os: macOS-latest
           generator: '"Unix Makefiles"'  
     runs-on: ${{ matrix.os }}
     steps:
