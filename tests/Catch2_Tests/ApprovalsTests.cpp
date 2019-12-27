@@ -1,6 +1,6 @@
 #include <ostream>
 #include <stdexcept>
-#include "catch.hpp"
+#include "catch2/catch.hpp"
 #include "ApprovalTests/Approvals.h"
 
 using namespace ApprovalTests;

@@ -1,4 +1,4 @@
-#include "catch.hpp"
+#include "catch2/catch.hpp"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/Approvals.h"
@@ -79,12 +79,12 @@ TEST_CASE("Use sub-directories clean to previous results")
 {
     auto subdirectory = Approvals::useApprovalsSubdirectory("outer");
     auto namer = Approvals::getDefaultNamer();
-    
+
     {
         auto subdirectory2 = Approvals::useApprovalsSubdirectory("inner");
         REQUIRE_THAT( namer->getApprovedFile(".txt"), Catch::Matchers::Contains( "inner" ) );
     }
-    
+
     REQUIRE_THAT( namer->getApprovedFile(".txt"), Catch::Matchers::Contains( "outer" ) );
 }
 

@@ -1,4 +1,4 @@
-#include "catch.hpp"
+#include "catch2/catch.hpp"
 #include <vector>
 #include <string>
 #include "ApprovalTests/CombinationApprovals.h"
