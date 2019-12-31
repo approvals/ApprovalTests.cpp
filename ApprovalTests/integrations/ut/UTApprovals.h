@@ -30,11 +30,11 @@ namespace ApprovalTests
                     boost::ut::reporter<boost::ut::printer>::on(test_begin);
                 }
 
-                auto on(boost::ut::events::test_run test_run) -> void { 
+                auto on(boost::ut::events::test_run test_run) -> void {
                     boost::ut::reporter<boost::ut::printer>::on(test_run);
                 }
 
-                auto on(boost::ut::events::test_skip test_skip) -> void { 
+                auto on(boost::ut::events::test_skip test_skip) -> void {
                     boost::ut::reporter<boost::ut::printer>::on(test_skip);
                 }
 
@@ -50,25 +50,25 @@ namespace ApprovalTests
                     boost::ut::reporter<boost::ut::printer>::on(log);
                 }
 
-                template <class TLocation, class TExpr>
-                auto on(boost::ut::events::assertion_pass<TLocation, TExpr> location) -> void {
+                template <class TExpr>
+                auto on(boost::ut::events::assertion_pass<TExpr> location) -> void {
                     boost::ut::reporter<boost::ut::printer>::on(location);
                 }
 
-                template <class TLocation, class TExpr>
-                auto on(boost::ut::events::assertion_fail<TLocation, TExpr> fail) -> void { 
+                template <class TExpr>
+                auto on(boost::ut::events::assertion_fail<TExpr> fail) -> void {
                     boost::ut::reporter<boost::ut::printer>::on(fail);
                 }
 
-                auto on(boost::ut::events::fatal_assertion fatal) -> void { 
+                auto on(boost::ut::events::fatal_assertion fatal) -> void {
                     boost::ut::reporter<boost::ut::printer>::on(fatal);
                 }
 
-                auto on(boost::ut::events::exception exception) -> void { 
+                auto on(boost::ut::events::exception exception) -> void {
                     boost::ut::reporter<boost::ut::printer>::on(exception);
                 }
 
-                auto on(boost::ut::events::summary summary) -> void { 
+                auto on(boost::ut::events::summary summary) -> void {
                     boost::ut::reporter<boost::ut::printer>::on(summary);
                 }
         };
