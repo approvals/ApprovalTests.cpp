@@ -5,7 +5,7 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 //
-//git version: b970a201aa88f087a997eed05bc4c1aae3592cd3
+//git version: 8004290d195b08eda531eb015ddcda2e11d41ce9
 #if defined(__cpp_modules)
 export module boost.ut;
 export import std;
@@ -38,7 +38,7 @@ export import std;
 #elif not defined(__cpp_static_assert)
 #error "[Boost].UT requires support for static assert";
 #else
-#define BOOST_UT_VERSION 1'1'2
+#define BOOST_UT_VERSION 1'1'5
 
 #if defined(BOOST_UT_FORWARD)
 namespace std {
@@ -77,15 +77,22 @@ export namespace boost::ut {
 namespace boost::ut {
 #endif
 
-inline namespace v1_1_4 {
+inline namespace v1_1_5 {
 namespace utility {
 class string_view {
  public:
   constexpr string_view() = default;
   template <class TStr>
-  constexpr explicit string_view(const TStr& str)
+  constexpr /*explicit(false)*/ string_view(const TStr& str)
       : data_{str.c_str()}, size_{str.size()} {}
-  constexpr string_view(const char* data, decltype(sizeof("")) size)
+  constexpr /*explicit(false)*/ string_view(const char* const data)
+      : data_{data}, size_{[data] {
+          decltype(sizeof("")) size{};
+          for (size = {}; data[size] != '\0'; ++size)
+            ;
+          return size;
+        }()} {}
+  constexpr string_view(const char* const data, decltype(sizeof("")) size)
       : data_{data}, size_{size} {}
   template <auto N>
   constexpr string_view(const char (&data)[N]) : data_{data}, size_{N - 1} {}
@@ -203,18 +210,18 @@ class function<R(TArgs...)> {
 namespace reflection {
 class source_location {
  public:
-#if (__GNUC__ >= 9 or __clang_major__ >= 9)
   [[nodiscard]] static constexpr auto current(
-      const char* file = __builtin_FILE(),
-      int line = __builtin_LINE()) noexcept {
+#if (__GNUC__ >= 9 or __clang_major__ >= 9)
+      const char* file = __builtin_FILE(), int line = __builtin_LINE()
+#else
+      const char* file = {}, int line = {}
+#endif
+          ) noexcept {
     source_location sl{};
     sl.file_ = file;
     sl.line_ = line;
     return sl;
   }
-#else
-  [[nodiscard]] static constexpr auto current() { return source_location{}; }
-#endif
   [[nodiscard]] constexpr auto file_name() const noexcept { return file_; }
   [[nodiscard]] constexpr auto line() const noexcept { return line_; }
 
@@ -402,7 +409,6 @@ extern auto operator<<(ostream& os, float) -> ostream&;
 extern auto operator<<(ostream& os, double) -> ostream&;
 extern auto operator<<(ostream& os, long double) -> ostream&;
 extern auto operator<<(ostream& os, char const*) -> ostream&;
-extern auto operator<<(ostream& os, const utility::string_view) -> ostream&;
 #elif defined(BOOST_UT_IMPLEMENTATION)
 struct ostream : std::ostream {
   using std::ostream::ostream;
@@ -463,10 +469,6 @@ auto operator<<(ostream& os, char const* s) -> ostream& {
   static_cast<std::ostream&>(os) << s;
   return os;
 }
-auto operator<<(ostream& os, const utility::string_view sv) -> ostream& {
-  static_cast<std::ostream&>(os) << std::string_view{sv};
-  return os;
-}
 #endif
 }  // namespace io
 
@@ -488,6 +490,10 @@ template <class T>
 
 template <class T>
 struct type_ : op {
+  template <class TOther>
+  [[nodiscard]] constexpr auto operator()(TOther) const -> const type_<TOther> {
+    return {};
+  }
   [[nodiscard]] constexpr auto operator==(type_<T>) -> bool { return true; }
   template <class TOther>
   [[nodiscard]] constexpr auto operator==(type_<TOther>) -> bool {
@@ -862,9 +868,9 @@ template <class Test, class TArg = none>
 struct test {
   utility::string_view type{};
   utility::string_view name{};
+  reflection::source_location location{};
   TArg arg{};
   Test run{};
-  reflection::source_location location{};
 
   constexpr auto operator()() { run_impl(static_cast<Test&&>(run), arg); }
   constexpr auto operator()() const { run_impl(static_cast<Test&&>(run), arg); }
@@ -885,8 +891,8 @@ struct test {
   }
 };
 template <class Test, class TArg>
-test(utility::string_view, utility::string_view, TArg, Test,
-     reflection::source_location)
+test(utility::string_view, utility::string_view, reflection::source_location,
+     TArg, Test)
     ->test<Test, TArg>;
 template <class TSuite>
 struct suite {
@@ -912,33 +918,33 @@ struct test_skip {
   utility::string_view type{};
   utility::string_view name{};
 };
-template <class TLocation, class TExpr>
+template <class TExpr>
 struct assertion {
-  TLocation location{};
   TExpr expr{};
+  reflection::source_location location{};
 };
-template <class TLocation, class TExpr>
-assertion(TLocation, TExpr)->assertion<TLocation, TExpr>;
+template <class TExpr>
+assertion(TExpr, reflection::source_location)->assertion<TExpr>;
 #if defined(BOOST_UT_FORWARD) or defined(BOOST_UT_IMPLEMENTATION)
 struct expr {
   bool result;
   utility::function<io::ostream&(io::ostream&)> out;
 };
 #endif
-template <class TLocation, class TExpr>
+template <class TExpr>
 struct assertion_pass {
-  TLocation location{};
   TExpr expr{};
+  reflection::source_location location{};
 };
-template <class TLocation, class TExpr>
-assertion_pass(TLocation, TExpr)->assertion_pass<TLocation, TExpr>;
-template <class TLocation, class TExpr>
+template <class TExpr>
+assertion_pass(TExpr)->assertion_pass<TExpr>;
+template <class TExpr>
 struct assertion_fail {
-  TLocation location{};
   TExpr expr{};
+  reflection::source_location location{};
 };
-template <class TLocation, class TExpr>
-assertion_fail(TLocation, TExpr)->assertion_fail<TLocation, TExpr>;
+template <class TExpr>
+assertion_fail(TExpr)->assertion_fail<TExpr>;
 struct test_end {
   utility::string_view type{};
   utility::string_view name{};
@@ -947,7 +953,7 @@ template <class TMsg>
 struct log {
   TMsg msg{};
 };
-template <class TMsg>
+template <class TMsg = utility::string_view>
 log(TMsg)->log<TMsg>;
 struct fatal_assertion {};
 struct exception {
@@ -1146,13 +1152,13 @@ class reporter {
     ++tests_.except;
   }
 
-  template <class TLocation, class TExpr>
-  auto on(events::assertion_pass<TLocation, TExpr>) -> void {
+  template <class TExpr>
+  auto on(events::assertion_pass<TExpr>) -> void {
     ++asserts_.pass;
   }
 
-  template <class TLocation, class TExpr>
-  auto on(events::assertion_fail<TLocation, TExpr> assertion) -> void {
+  template <class TExpr>
+  auto on(events::assertion_fail<TExpr> assertion) -> void {
     constexpr auto short_name = [](std::string_view name) {
       return name.rfind('/') != std::string_view::npos
                  ? name.substr(name.rfind('/') + 1)
@@ -1288,9 +1294,10 @@ class runner {
 
     if (filter_(level_, path_)) {
       if (not level_++) {
-        reporter_.on(events::test_begin{test.type, test.name, test.location});
+        reporter_.on(events::test_begin{
+            .type = test.type, .name = test.name, .location = test.location});
       } else {
-        reporter_.on(events::test_run{test.type, test.name});
+        reporter_.on(events::test_run{.type = test.type, .name = test.name});
       }
 
       if (dry_run_) {
@@ -1317,50 +1324,52 @@ class runner {
 #endif
 
       if (not--level_) {
-        reporter_.on(events::test_end{test.type, test.name});
+        reporter_.on(events::test_end{.type = test.type, .name = test.name});
       }
     }
   }
 
   template <class... Ts>
   auto on(events::skip<Ts...> test) {
-    reporter_.on(events::test_skip{test.type, test.name});
+    reporter_.on(events::test_skip{.type = test.type, .name = test.name});
   }
 
-  template <class TLocation, class TExpr>
-  [[nodiscard]] auto on(events::assertion<TLocation, TExpr> assertion) -> bool {
+  template <class TExpr>
+  [[nodiscard]] auto on(events::assertion<TExpr> assertion) -> bool {
     if (dry_run_) {
       return true;
     }
 
     if (static_cast<bool>(assertion.expr)) {
-      reporter_.on(events::assertion_pass{assertion.location, assertion.expr});
+      reporter_.on(events::assertion_pass<TExpr>{
+          .expr = assertion.expr, .location = assertion.location});
       return true;
     } else {
       ++fails_;
-      reporter_.on(events::assertion_fail{assertion.location, assertion.expr});
+      reporter_.on(events::assertion_fail<TExpr>{
+          .expr = assertion.expr, .location = assertion.location});
       return false;
     }
   }
 
 #if defined(BOOST_UT_IMPLEMENTATION)
-  [[nodiscard]] auto on(
-      events::assertion<reflection::source_location, events::expr> assertion)
-      -> bool {
+  [[nodiscard]] auto on(events::assertion<events::expr> assertion) -> bool {
     if (dry_run_) {
       return true;
     }
 
     if (assertion.expr.result) {
-      reporter_.on(events::assertion_pass{
-          assertion.location,
-          static_cast<decltype(assertion.expr.out)&&>(assertion.expr.out)});
+      reporter_.on(events::assertion_pass<decltype(assertion.expr.out)>{
+          .expr =
+              static_cast<decltype(assertion.expr.out)&&>(assertion.expr.out),
+          .location = assertion.location});
       return true;
     } else {
       ++fails_;
-      reporter_.on(events::assertion_fail{
-          assertion.location,
-          static_cast<decltype(assertion.expr.out)&&>(assertion.expr.out)});
+      reporter_.on(events::assertion_fail<decltype(assertion.expr.out)>{
+          .expr =
+              static_cast<decltype(assertion.expr.out)&&>(assertion.expr.out),
+          .location = assertion.location});
       return false;
     }
   }
@@ -1426,8 +1435,7 @@ extern void on(events::suite<void (*)()>);
 extern void on(events::test<void (*)()>);
 extern void on(events::test<utility::function<void()>>);
 extern void on(events::skip<>);
-[[nodiscard]] extern auto on(
-    events::assertion<reflection::source_location, events::expr>) -> bool;
+[[nodiscard]] extern auto on(events::assertion<events::expr>) -> bool;
 extern void on(events::fatal_assertion);
 extern void on(events::log<utility::string_view>);
 #endif
@@ -1439,9 +1447,7 @@ void on(events::test<utility::function<void()>> test) {
   cfg<override>.on(static_cast<decltype(test)&&>(test));
 }
 void on(events::skip<> skip) { cfg<override>.on(skip); }
-[[nodiscard]] auto on(
-    events::assertion<reflection::source_location, events::expr> assertion)
-    -> bool {
+[[nodiscard]] auto on(events::assertion<events::expr> assertion) -> bool {
   return cfg<override>.on(static_cast<decltype(assertion)&&>(assertion));
 }
 void on(events::fatal_assertion assertion) { cfg<override>.on(assertion); }
@@ -1454,29 +1460,31 @@ struct skip {};
 
 #if defined(BOOST_UT_FORWARD)
 template <class..., class TEvent>
-constexpr auto on(const TEvent& event) {
-  link::on(event);
+constexpr auto on(TEvent&& event) {
+  link::on(static_cast<TEvent&&>(event));
 }
 
 template <class..., class Test, class TArg>
 auto on(events::test<Test, TArg> test) -> void {
-  link::on(events::test<utility::function<void()>>{test.type, test.name, TArg{},
-                                                   test.run});
+  link::on(events::test<utility::function<void()>, TArg>{
+      .type = test.type, .name = test.name, .arg = TArg{}, .run = test.run});
 }
 
-template <class..., class TLocation, class TExpr>
-[[nodiscard]] auto on(events::assertion<TLocation, TExpr> assertion) -> bool {
-  return link::on(events::assertion<reflection::source_location, events::expr>{
-      assertion.location,
-      {assertion.expr, [assertion](io::ostream& os) -> io::ostream& {
-         return (os << assertion.expr);
-       }}});
+template <class..., class TExpr>
+[[nodiscard]] auto on(events::assertion<TExpr> assertion) -> bool {
+  return link::on(events::assertion<events::expr>{
+      .expr = {assertion.expr,
+               [assertion](io::ostream& os) -> io::ostream& {
+                 return (os << assertion.expr);
+               }},
+      .location = assertion.location,
+  });
 }
 #else
 template <class... Ts, class TEvent>
-[[nodiscard]] constexpr decltype(auto) on(const TEvent& event) {
+[[nodiscard]] constexpr decltype(auto) on(TEvent&& event) {
   return ut::cfg<typename type_traits::identity<override, Ts...>::type>.on(
-      event);
+      static_cast<TEvent&&>(event));
 }
 #endif
 
@@ -1497,8 +1505,12 @@ struct test {
 
   template <class... Ts>
   constexpr auto operator=(test_location<void (*)()> test) {
-    on<Ts...>(events::test{type, name, none{}, test.test, test.location});
-    return test;
+    on<Ts...>(events::test<void (*)()>{.type = type,
+                                       .name = name,
+                                       .location = test.location,
+                                       .arg = none{},
+                                       .run = test.test});
+    return test.test;
   }
 
   template <class Test,
@@ -1506,7 +1518,11 @@ struct test {
                 not type_traits::is_convertible_v<Test, void (*)()>> = 0>
   constexpr auto operator=(Test test) ->
       typename type_traits::identity<Test, decltype(test())>::type {
-    on<Test>(events::test{type, name, none{}, test, {}});
+    on<Test>(events::test<Test>{.type = type,
+                                .name = name,
+                                .location = {},
+                                .arg = {},
+                                .run = static_cast<Test&&>(test)});
     return test;
   }
 
@@ -1530,7 +1546,7 @@ class test_skip {
 
   template <class... Ts>
   constexpr auto operator=(void (*test)()) {
-    on<Ts...>(events::skip{t_.type, t_.name, none{}});
+    on<Ts...>(events::skip<>{.type = t_.type, .name = t_.name, .arg = none{}});
     return test;
   }
 
@@ -1539,7 +1555,7 @@ class test_skip {
                 not type_traits::is_convertible_v<Test, void (*)()>> = 0>
   constexpr auto operator=(Test test) ->
       typename type_traits::identity<Test, decltype(test())>::type {
-    on<Test>(events::skip{t_.type, t_.name, none{}});
+    on<Test>(events::skip{.type = t_.type, .name = t_.name, .arg = none{}});
     return test;
   }
 
@@ -1825,9 +1841,10 @@ template <class T>
 template <class F, class T,
           type_traits::requires_t<type_traits::is_container_v<T>> = 0>
 [[nodiscard]] constexpr auto operator|(const F& f, const T& t) {
-  return [f, t](auto name) {
+  return [f, t](const auto name) {
     for (const auto& arg : t) {
-      detail::on<F>(events::test{"test", name, arg, f, {}});
+      detail::on<F>(events::test<F, typename T::value_type>{
+          .type = "test", .name = name, .location = {}, .arg = arg, .run = f});
     }
   };
 }
@@ -1836,10 +1853,15 @@ template <
     class F, template <class...> class T, class... Ts,
     type_traits::requires_t<not type_traits::is_container_v<T<Ts...>>> = 0>
 [[nodiscard]] constexpr auto operator|(const F& f, const T<Ts...>& t) {
-  return [f, t](auto name) {
+  return [f, t](const auto name) {
     apply(
         [f, name](const auto&... args) {
-          (detail::on<F>(events::test{"test", name, args, f, {}}), ...);
+          (detail::on<F>(events::test<F, Ts>{.type = "test",
+                                             .name = name,
+                                             .location = {},
+                                             .arg = args,
+                                             .run = f}),
+           ...);
         },
         t);
   };
@@ -1852,7 +1874,8 @@ template <class TExpr, type_traits::requires_t<
 constexpr auto expect(const TExpr& expr,
                       const reflection::source_location& sl =
                           reflection::source_location::current()) {
-  return detail::expect_<TExpr>{detail::on<TExpr>(events::assertion{sl, expr})};
+  return detail::expect_<TExpr>{detail::on<TExpr>(
+      events::assertion<TExpr>{.expr = expr, .location = sl})};
 }
 
 #if defined(__cpp_nontype_template_parameter_class)
@@ -1914,7 +1937,8 @@ struct suite {
   template <class TSuite>
   constexpr /*explicit(false)*/ suite(TSuite suite) {
     static_assert(1 == sizeof(suite));
-    detail::on<decltype(+suite)>(events::suite{+suite});
+    detail::on<decltype(+suite)>(
+        events::suite<decltype(+suite)>{.run = +suite});
   }
 };
 
@@ -1923,21 +1947,21 @@ struct suite {
 
 [[maybe_unused]] inline auto log = detail::log{};
 [[maybe_unused]] inline auto that = detail::that_{};
-[[maybe_unused]] constexpr auto test = [](utility::string_view name) {
+[[maybe_unused]] constexpr auto test = [](const auto name) {
   return detail::test{"test", name};
 };
 [[maybe_unused]] constexpr auto should = test;
 [[maybe_unused]] constexpr auto skip = detail::skip{};
-[[maybe_unused]] constexpr auto given = [](utility::string_view name) {
+[[maybe_unused]] constexpr auto given = [](const auto name) {
   return detail::test{"given", name};
 };
-[[maybe_unused]] constexpr auto when = [](utility::string_view name) {
+[[maybe_unused]] constexpr auto when = [](const auto name) {
   return detail::test{"when", name};
 };
-[[maybe_unused]] constexpr auto then = [](utility::string_view name) {
+[[maybe_unused]] constexpr auto then = [](const auto name) {
   return detail::test{"then", name};
 };
-template <class T>
+template <class T = void>
 [[maybe_unused]] constexpr auto type = detail::type_<T>();
 
 template <class TLhs, class TRhs>
@@ -1993,6 +2017,7 @@ using operators::operator and;
 using operators::operator or;
 using operators::operator not;
 using operators::operator|;
-}  // namespace v1_1_4
+}  // namespace v1_1_5
 }  // namespace boost::ut
 #endif
+
