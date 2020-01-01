@@ -10,7 +10,7 @@
 #error "The [Boost].UT integration with Approval Tests requires source_location support by the compiler"
 #endif
 
-#include <ut.hpp>
+#include <boost/ut.hpp>
 
 namespace ApprovalTests
 {
