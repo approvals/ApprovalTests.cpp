@@ -1,4 +1,4 @@
-#include "catch.hpp"
+#include "catch2/catch.hpp"
 #include "ApprovalTests/utilities/FileUtilsSystemSpecific.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/Approvals.h"

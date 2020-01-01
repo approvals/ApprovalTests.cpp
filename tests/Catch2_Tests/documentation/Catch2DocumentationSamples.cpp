@@ -1,4 +1,4 @@
-#include "catch.hpp"
+#include "catch2/catch.hpp"
 #include "ApprovalTests/Approvals.h"
 #include <vector>
 
@@ -21,7 +21,7 @@ struct Greeting
     explicit Greeting(Nationality nationality) : nationality(nationality)
     {
     }
-    
+
     std::string getGreeting() const
     {
         return getGreetingFor(nationality);

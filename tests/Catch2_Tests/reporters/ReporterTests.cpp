@@ -1,5 +1,5 @@
 
-#include "catch.hpp"
+#include "catch2/catch.hpp"
 #include "TestReporter.h"
 #include "FakeReporter.h"
 #include "ApprovalTests/reporters/FirstWorkingReporter.h"
@@ -75,7 +75,7 @@ TEST_CASE("CombinationReporter fails if all fail") {
 TEST_CASE("Launching on PC with cygwin and Araxis Merge")
 {
     // Keeping for manual testing when needed
-    
+
 //    REQUIRE_FALSE(SystemUtils::isWindowsOs());
 //    auto reporter = new Windows::AraxisMergeReporter;
 //    auto namer = Approvals::getDefaultNamer();
