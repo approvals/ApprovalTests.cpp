@@ -7,49 +7,56 @@
 #include <string>
 #include <vector>
 
-namespace ApprovalTests {
-class GenericDiffReporter : public CommandReporter {
-private:
-    SystemLauncher launcher;
-public:
-    explicit GenericDiffReporter(const std::string& program) : CommandReporter(program, &launcher)
+namespace ApprovalTests
+{
+    class GenericDiffReporter : public CommandReporter
     {
-        checkForCygwin();
-    }
-    explicit GenericDiffReporter(const DiffInfo& info) : CommandReporter(info.getProgramForOs(), &launcher)
-    {
-        checkForCygwin();
-    }
+    private:
+        SystemLauncher launcher;
 
-    void checkForCygwin()
-    {
-        if ( SystemUtils::isCygwin())
+    public:
+        explicit GenericDiffReporter(const std::string& program)
+            : CommandReporter(program, &launcher)
         {
-            launcher.setConvertArgumentsForSystemLaunchingFunction(convertForCygwin);
+            checkForCygwin();
         }
-    }
+        explicit GenericDiffReporter(const DiffInfo& info)
+            : CommandReporter(info.getProgramForOs(), &launcher)
+        {
+            checkForCygwin();
+        }
 
-    static std::vector<std::string> convertForCygwin(std::vector<std::string> argv)
-    {
-        if (! SystemUtils::isCygwin())
+        void checkForCygwin()
         {
-            return argv;
-        }
-        std::vector<std::string> copy = argv;
-        for( size_t i = 0; i != argv.size(); ++i )
-        {
-            if ( i == 0)
+            if (SystemUtils::isCygwin())
             {
-                copy[i] = "$(cygpath '"  + argv[i] + "')";
-            }
-            else
-            {
-                copy[i] = "$(cygpath -aw '"  + argv[i] + "')";
+                launcher.setConvertArgumentsForSystemLaunchingFunction(
+                    convertForCygwin);
             }
         }
-        return copy;
-    }
-};
+
+        static std::vector<std::string>
+        convertForCygwin(std::vector<std::string> argv)
+        {
+            if (!SystemUtils::isCygwin())
+            {
+                return argv;
+            }
+            std::vector<std::string> copy = argv;
+            for (size_t i = 0; i != argv.size(); ++i)
+            {
+                if (i == 0)
+                {
+                    copy[i] = "$(cygpath '" + argv[i] + "')";
+                }
+                else
+                {
+                    copy[i] = "$(cygpath -aw '" + argv[i] + "')";
+                }
+            }
+            return copy;
+        }
+    };
 }
 
 #endif //APPROVALTESTS_CPP_GENERICDIFFREPORTER_H

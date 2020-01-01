@@ -4,10 +4,10 @@
 #include "ApprovalTests.hpp"
 // end-snippet
 
-int main( int argc, char* argv[] )
+int main(int argc, char* argv[])
 {
     // your existing setup...
-    int result = Catch::Session().run( argc, argv );
+    int result = Catch::Session().run(argc, argv);
     // your existing clean-up...
     return result;
 }

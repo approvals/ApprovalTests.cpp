@@ -17,7 +17,8 @@ namespace ApprovalTests
         std::shared_ptr<Reporter> m_reporter;
 
     public:
-        explicit CIBuildOnlyReporter(std::shared_ptr<Reporter> reporter = std::make_shared<QuietReporter>())
+        explicit CIBuildOnlyReporter(std::shared_ptr<Reporter> reporter =
+                                         std::make_shared<QuietReporter>())
             : m_reporter(reporter)
         {
         }
@@ -53,13 +54,13 @@ namespace ApprovalTests
             });
              */
             auto environmentVariablesForCI = {
-                    // begin-snippet: supported_ci_env_vars
-                    "CI",
-                    "CONTINUOUS_INTEGRATION",
-                    "GO_SERVER_URL",
-                    "JENKINS_URL",
-                    "TEAMCITY_VERSION"
-                    // end-snippet
+                // begin-snippet: supported_ci_env_vars
+                "CI",
+                "CONTINUOUS_INTEGRATION",
+                "GO_SERVER_URL",
+                "JENKINS_URL",
+                "TEAMCITY_VERSION"
+                // end-snippet
             };
             for (const auto& variable : environmentVariablesForCI)
             {

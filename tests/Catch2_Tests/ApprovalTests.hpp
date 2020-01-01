@@ -6,5 +6,4 @@
 #include "ApprovalTests/integrations/catch/Catch2Approvals.h"
 #include "ApprovalTests/Approvals.h"
 
-
 #endif //APPROVALTESTS_CPP_APPROVALTESTS_H

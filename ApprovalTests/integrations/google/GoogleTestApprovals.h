@@ -14,44 +14,50 @@
 // <SingleHpp unalterable>
 #include "gtest/gtest.h"
 
-namespace ApprovalTests {
-class GoogleTestListener : public testing::EmptyTestEventListener
+namespace ApprovalTests
 {
-    TestName currentTest;
-public:
-    bool isDuplicate(std::string testFileNameWithExtension, std::string testCaseName)
+    class GoogleTestListener : public testing::EmptyTestEventListener
     {
-        for( auto check : GoogleCustomizationsFactory::getEquivalencyChecks())
+        TestName currentTest;
+
+    public:
+        bool isDuplicate(std::string testFileNameWithExtension,
+                         std::string testCaseName)
         {
-            if (check(testFileNameWithExtension, testCaseName))
+            for (auto check :
+                 GoogleCustomizationsFactory::getEquivalencyChecks())
             {
-                return true;
+                if (check(testFileNameWithExtension, testCaseName))
+                {
+                    return true;
+                }
             }
+            return false;
         }
-        return false;
-    }
 
-    virtual void OnTestStart(const testing::TestInfo& testInfo) override
+        virtual void OnTestStart(const testing::TestInfo& testInfo) override
+        {
+            currentTest.setFileName(testInfo.file());
+            currentTest.sections = {};
+            if (!isDuplicate(currentTest.getFileName(),
+                             testInfo.test_case_name()))
+            {
+                currentTest.sections.emplace_back(testInfo.test_case_name());
+            }
+            if (!std::string(testInfo.name()).empty())
+            {
+                currentTest.sections.emplace_back(testInfo.name());
+            }
+
+            ApprovalTestNamer::currentTest(&currentTest);
+        }
+    };
+
+    inline void initializeApprovalTestsForGoogleTests()
     {
-        currentTest.setFileName(testInfo.file());
-        currentTest.sections = {};
-        if (! isDuplicate(currentTest.getFileName(), testInfo.test_case_name()))
-        {
-            currentTest.sections.emplace_back(testInfo.test_case_name());
-        }
-        if (! std::string(testInfo.name()).empty())
-        {
-            currentTest.sections.emplace_back(testInfo.name());
-        }
-        
-        ApprovalTestNamer::currentTest(&currentTest);
+        auto& listeners = testing::UnitTest::GetInstance()->listeners();
+        listeners.Append(new GoogleTestListener);
     }
-};
-
-inline void initializeApprovalTestsForGoogleTests() {
-    auto& listeners = testing::UnitTest::GetInstance()->listeners();
-    listeners.Append(new GoogleTestListener);
-}
 }
 
 #ifndef APPROVALS_GOOGLETEST_EXISTING_MAIN

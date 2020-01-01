@@ -7,7 +7,8 @@
 
 using namespace ApprovalTests;
 
-TEST_CASE("ItVerifiesApprovedFileExists") {
+TEST_CASE("ItVerifiesApprovedFileExists")
+{
 
     ApprovalTestNamer namer;
     StringWriter writer("Hello");
@@ -17,53 +18,59 @@ TEST_CASE("ItVerifiesApprovedFileExists") {
     std::string received = namer.getReceivedFile(".txt");
 
     std::string expected = "Failed Approval: \n"
-                              "Approval File Not Found \n"
-                              "File: \"" + approved+"\"";
-    REQUIRE_THROWS_WITH(FileApprover::verify(namer, writer, reporter), expected);
+                           "Approval File Not Found \n"
+                           "File: \"" +
+                           approved + "\"";
+    REQUIRE_THROWS_WITH(FileApprover::verify(namer, writer, reporter),
+                        expected);
 
     remove(approved.c_str());
     remove(received.c_str());
 }
 
-
-TEST_CASE("ItVerifiesExistingFiles") {
+TEST_CASE("ItVerifiesExistingFiles")
+{
     ApprovalTestNamer namer;
     Approvals::verifyExistingFile(namer.getDirectory() + "../../sample.txt");
 }
 
-
-TEST_CASE("ItIgnoresLineEndingDifferences") {
+TEST_CASE("ItIgnoresLineEndingDifferences")
+{
     FileUtils::writeToFile("a.txt", "1\r\n2\n3\r\n4\r\n5");
     FileUtils::writeToFile("b.txt", "1\n2\r\n3\r\n4\n5");
     FileApprover::verify("a.txt", "b.txt");
 }
 
-
-TEST_CASE("ItComparesTheEntireFile") {
+TEST_CASE("ItComparesTheEntireFile")
+{
     FileUtils::writeToFile("a.txt", "12345");
     FileUtils::writeToFile("b.txt", "123");
-    CHECK_THROWS_AS(FileApprover::verify("a.txt", "b.txt"), ApprovalMismatchException);
+    CHECK_THROWS_AS(FileApprover::verify("a.txt", "b.txt"),
+                    ApprovalMismatchException);
 }
 
 // begin-snippet: create_custom_comparator
 class LengthComparator : public ApprovalComparator
 {
 public:
-    bool contentsAreEquivalent(std::string receivedPath, std::string approvedPath) const override
+    bool contentsAreEquivalent(std::string receivedPath,
+                               std::string approvedPath) const override
     {
-        return FileUtils::fileSize(receivedPath) == FileUtils::fileSize(approvedPath);
+        return FileUtils::fileSize(receivedPath) ==
+               FileUtils::fileSize(approvedPath);
     }
 };
 // end-snippet
 
-TEST_CASE("ItUsesCustomComparator") {
+TEST_CASE("ItUsesCustomComparator")
+{
     FileUtils::writeToFile("a.length", "12345");
     FileUtils::writeToFile("b.length", "56789");
 
     // begin-snippet: use_custom_comparator
-    auto disposer = FileApprover::registerComparatorForExtension(".length", std::make_shared<LengthComparator>());
+    auto disposer = FileApprover::registerComparatorForExtension(
+        ".length", std::make_shared<LengthComparator>());
     // end-snippet
 
     FileApprover::verify("a.length", "b.length");
 }
-

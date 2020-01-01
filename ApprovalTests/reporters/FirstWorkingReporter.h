@@ -5,33 +5,36 @@
 #include <memory>
 #include <vector>
 
-namespace ApprovalTests {
-class FirstWorkingReporter : public Reporter
+namespace ApprovalTests
 {
-private:
-    std::vector< std::unique_ptr<Reporter> > reporters;
-public:
-    // Note that FirstWorkingReporter takes ownership of the given Reporter objects
-    explicit FirstWorkingReporter(const std::vector<Reporter*>& theReporters)
+    class FirstWorkingReporter : public Reporter
     {
-        for(auto r : theReporters)
-        {
-            reporters.push_back(std::unique_ptr<Reporter>(r));
-        }
-    }
+    private:
+        std::vector<std::unique_ptr<Reporter>> reporters;
 
-    bool report(std::string received, std::string approved) const override
-    {
-        for(auto& r : reporters)
+    public:
+        // Note that FirstWorkingReporter takes ownership of the given Reporter objects
+        explicit FirstWorkingReporter(
+            const std::vector<Reporter*>& theReporters)
         {
-            if (r->report(received, approved))
+            for (auto r : theReporters)
             {
-                return true;
+                reporters.push_back(std::unique_ptr<Reporter>(r));
             }
         }
-        return false;
-    }
-};
+
+        bool report(std::string received, std::string approved) const override
+        {
+            for (auto& r : reporters)
+            {
+                if (r->report(received, approved))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+    };
 }
 
 #endif //APPROVALTESTS_CPP_FIRSTWORKINGREPORTER_H

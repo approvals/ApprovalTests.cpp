@@ -6,14 +6,17 @@
 
 #include <string>
 
-namespace ApprovalTests {
-struct NamerFactory
+namespace ApprovalTests
 {
-    static SectionNameDisposer appendToOutputFilename(const std::string& sectionName)
+    struct NamerFactory
     {
-        return SectionNameDisposer(ApprovalTestNamer::currentTest(), sectionName);
-    }
-};
+        static SectionNameDisposer
+        appendToOutputFilename(const std::string& sectionName)
+        {
+            return SectionNameDisposer(ApprovalTestNamer::currentTest(),
+                                       sectionName);
+        }
+    };
 }
 
 #endif //APPROVALTESTS_CPP_NAMERFACTORY_H

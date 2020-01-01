@@ -5,35 +5,41 @@
 #include "GenericDiffReporter.h"
 #include "FirstWorkingReporter.h"
 
-namespace ApprovalTests {
-namespace Linux
+namespace ApprovalTests
 {
-    class KDiff3Reporter : public GenericDiffReporter {
-    public:
-        KDiff3Reporter() : GenericDiffReporter(DiffPrograms::Linux::KDIFF3()) {}
-    };
-
-    class MeldReporter : public GenericDiffReporter {
-    public:
-        MeldReporter() : GenericDiffReporter(DiffPrograms::Linux::MELD()) {}
-    };
-
-    class LinuxDiffReporter : public FirstWorkingReporter
+    namespace Linux
     {
-    public:
-        LinuxDiffReporter() : FirstWorkingReporter(
-                {
-                        // begin-snippet: linux_diff_reporters
-                        new MeldReporter(),
-                        new KDiff3Reporter()
-                        // end-snippet
-                }
-        )
+        class KDiff3Reporter : public GenericDiffReporter
         {
-        }
-    };
+        public:
+            KDiff3Reporter()
+                : GenericDiffReporter(DiffPrograms::Linux::KDIFF3())
+            {
+            }
+        };
 
-}
+        class MeldReporter : public GenericDiffReporter
+        {
+        public:
+            MeldReporter() : GenericDiffReporter(DiffPrograms::Linux::MELD())
+            {
+            }
+        };
+
+        class LinuxDiffReporter : public FirstWorkingReporter
+        {
+        public:
+            LinuxDiffReporter()
+                : FirstWorkingReporter({
+                      // begin-snippet: linux_diff_reporters
+                      new MeldReporter(),
+                      new KDiff3Reporter()
+                      // end-snippet
+                  })
+            {
+            }
+        };
+    }
 }
 
 #endif //APPROVALTESTS_CPP_LINUXREPORTERS_H

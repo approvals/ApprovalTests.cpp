@@ -5,17 +5,22 @@
 #include "ApprovalTests/utilities/StringUtils.h"
 
 // <SingleHpp unalterable>
-namespace ApprovalTests {
-    class HelpMessages {
+namespace ApprovalTests
+{
+    class HelpMessages
+    {
     public:
-
-        static std::string getMisconfiguredBuildHelp(const std::string& fileName)
+        static std::string
+        getMisconfiguredBuildHelp(const std::string& fileName)
         {
-            std::string lineBreak = "************************************************************************************\n";
-            std::string lineBuffer = "*                                                                                  *\n";
-            std::string helpMessage =
-                    "\n\n" + lineBreak + lineBuffer +
-                    R"(* Welcome to Approval Tests.
+            std::string lineBreak =
+                "**************************************************************"
+                "**********************\n";
+            std::string lineBuffer =
+                "*                                                             "
+                "                     *\n";
+            std::string helpMessage = "\n\n" + lineBreak + lineBuffer +
+                                      R"(* Welcome to Approval Tests.
 *
 * There seems to be a problem with your build configuration.
 * We cannot find the test source file at:
@@ -23,17 +28,19 @@ namespace ApprovalTests {
 *
 * For details on how to fix this, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
-)" +
-                    lineBuffer + lineBreak + '\n';
+)" + lineBuffer + lineBreak + '\n';
             return StringUtils::replaceAll(helpMessage, "[fileName]", fileName);
         }
         static std::string getMisconfiguredMainHelp()
         {
-            std::string lineBreak = "************************************************************************************\n";
-            std::string lineBuffer = "*                                                                                  *\n";
-            std::string helpMessage =
-                    "\n\n" + lineBreak + lineBuffer +
-                    R"(* Welcome to Approval Tests.
+            std::string lineBreak =
+                "**************************************************************"
+                "**********************\n";
+            std::string lineBuffer =
+                "*                                                             "
+                "                     *\n";
+            std::string helpMessage = "\n\n" + lineBreak + lineBuffer +
+                                      R"(* Welcome to Approval Tests.
 *
 * You have forgotten to configure your test framework for Approval Tests.
 *
@@ -59,8 +66,7 @@ namespace ApprovalTests {
 *
 * For more information, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/GettingStarted.md
-)" +
-                    lineBuffer + lineBreak + '\n';
+)" + lineBuffer + lineBreak + '\n';
             return helpMessage;
         }
     };

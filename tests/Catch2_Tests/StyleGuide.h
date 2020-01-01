@@ -19,5 +19,4 @@ namespace ExampleNameSpace
     };
 }
 
-
 #endif //APPROVALTESTS_CPP_STYLEGUIDE_H

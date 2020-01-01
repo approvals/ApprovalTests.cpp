@@ -5,11 +5,13 @@
 
 using namespace ApprovalTests;
 
-TEST_CASE("YouCanVerifyText") {
+TEST_CASE("YouCanVerifyText")
+{
     Approvals::verify("My objects!");
 }
 
-TEST_CASE("TestStreamableObject") {
+TEST_CASE("TestStreamableObject")
+{
     Approvals::verify(42);
 }
 
@@ -19,12 +21,15 @@ public:
     NonCopyable() = default;
     NonCopyable(const NonCopyable& x) = delete; // prevent copy construction
 
-    friend std::ostream &operator<<(std::ostream &os, const NonCopyable &/*copyable*/) {
+    friend std::ostream& operator<<(std::ostream& os,
+                                    const NonCopyable& /*copyable*/)
+    {
         return os << 999;
     }
 };
 
-TEST_CASE("TestNonCopyableStreamableObject") {
+TEST_CASE("TestNonCopyableStreamableObject")
+{
     NonCopyable object;
     Approvals::verify(object);
 }
@@ -45,44 +50,41 @@ NonStreamablePoint getPoint()
 
 TEST_CASE("YouCanVerifyWithConverterLambda")
 {
-    Approvals::verify(
-        getPoint(),
-        [](const auto& p, auto& os)
-        {
-            os << "[x: " << p.x << " y: " << p.y << "]";
-        });
+    Approvals::verify(getPoint(), [](const auto& p, auto& os) {
+        os << "[x: " << p.x << " y: " << p.y << "]";
+    });
 }
 
 // ==============================================================
 
 struct FormatNonStreamablePoint
 {
-    explicit FormatNonStreamablePoint(const NonStreamablePoint& point) : point(point)
+    explicit FormatNonStreamablePoint(const NonStreamablePoint& point)
+        : point(point)
     {
     }
 
     const NonStreamablePoint& point;
 
-    friend std::ostream &operator<<(std::ostream &os, const FormatNonStreamablePoint &wrapper)
+    friend std::ostream& operator<<(std::ostream& os,
+                                    const FormatNonStreamablePoint& wrapper)
     {
-        os << "(x,y) = (" <<
-           wrapper.point.x << "," <<
-           wrapper.point.y << ")";
+        os << "(x,y) = (" << wrapper.point.x << "," << wrapper.point.y << ")";
         return os;
     }
 };
 
 TEST_CASE("YouCanVerifyWithConverterWrapperClass")
 {
-    Approvals::verify(
-        getPoint(),
-        [](auto r, auto& os){os << FormatNonStreamablePoint(r);}
-    );
+    Approvals::verify(getPoint(), [](auto r, auto& os) {
+        os << FormatNonStreamablePoint(r);
+    });
 }
 
 // ==============================================================
 
-std::ostream& customToStreamFunction(std::ostream &os, const NonStreamablePoint& point)
+std::ostream& customToStreamFunction(std::ostream& os,
+                                     const NonStreamablePoint& point)
 {
     os << point.x << "," << point.y;
     return os;
@@ -90,22 +92,21 @@ std::ostream& customToStreamFunction(std::ostream &os, const NonStreamablePoint&
 
 TEST_CASE("YouCanVerifyWithConverterWrapperFunction")
 {
-    Approvals::verify(
-        getPoint(),
-        [](auto r, auto& os){ customToStreamFunction(os, r);}
-    );
+    Approvals::verify(getPoint(),
+                      [](auto r, auto& os) { customToStreamFunction(os, r); });
 }
 
 // ==============================================================
 
 TEST_CASE("VerifyingException")
 {
-    Approvals::verifyExceptionMessage([](){throw std::runtime_error("Here is my exception message");});
+    Approvals::verifyExceptionMessage(
+        []() { throw std::runtime_error("Here is my exception message"); });
 }
 
 TEST_CASE("VerifyingNoException")
 {
     // begin-snippet: verify_exception_message_example
-    Approvals::verifyExceptionMessage([](){/* your code goes here */});
+    Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
     // end-snippet
 }

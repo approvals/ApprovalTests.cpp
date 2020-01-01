@@ -9,7 +9,7 @@ TEST_CASE("DisposableSample")
     // end-snippet
 
     auto disposer2 =
-    // begin-snippet: disposable_incorrect
-    Approvals::useApprovalsSubdirectory("directory");
+        // begin-snippet: disposable_incorrect
+        Approvals::useApprovalsSubdirectory("directory");
     // end-snippet
 }

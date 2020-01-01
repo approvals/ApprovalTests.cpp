@@ -6,20 +6,18 @@
 #include "MacReporters.h"
 #include "LinuxReporters.h"
 
-namespace ApprovalTests {
-class DiffReporter : public FirstWorkingReporter
+namespace ApprovalTests
 {
-public:
-    DiffReporter() : FirstWorkingReporter(
-            {
-                    new Mac::MacDiffReporter(),
-                    new Linux::LinuxDiffReporter(),
-                    new Windows::WindowsDiffReporter()
-            }
-    )
+    class DiffReporter : public FirstWorkingReporter
     {
-    }
-};
+    public:
+        DiffReporter()
+            : FirstWorkingReporter({new Mac::MacDiffReporter(),
+                                    new Linux::LinuxDiffReporter(),
+                                    new Windows::WindowsDiffReporter()})
+        {
+        }
+    };
 }
 
 #endif //APPROVALTESTS_CPP_DIFFREPORTER_H

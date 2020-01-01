@@ -4,13 +4,13 @@
 #include "ApprovalTests/utilities/WinMinGWUtils.h"
 // <SingleHpp unalterable>
 #ifdef _WIN32
-    // ReSharper disable once CppUnusedIncludeDirective
-    #include <io.h>
-    #include <windows.h>
-    #include <direct.h>
+// ReSharper disable once CppUnusedIncludeDirective
+#include <io.h>
+#include <windows.h>
+#include <direct.h>
 #else
-    // ReSharper disable once CppUnusedIncludeDirective
-    #include <unistd.h>
+// ReSharper disable once CppUnusedIncludeDirective
+#include <unistd.h>
 #endif
 // </SingleHpp>
 
@@ -20,165 +20,169 @@
 
 #include <stdexcept>
 
-namespace ApprovalTests {
-class SystemUtils
+namespace ApprovalTests
 {
-public:
-    static bool isWindowsOs()
+    class SystemUtils
     {
-#ifdef _WIN32
-        return true;
-#else
-        return false;
-#endif
-
-    }
-
-    static bool isCygwin()
-    {
-#ifdef __CYGWIN__
-        return true;
-#else
-        return false;
-#endif
-    }
-
-    static bool isMacOs() {
-#ifdef __APPLE__
-      return true;
-#else
-      return false;
-#endif
-    }
-
-    static std::string getDirectorySeparator()
-    {
-        return isWindowsOs() ? "\\" : "/";
-    }
-
-    // Properly cases the filename, but not the directories, on Windows.
-    static std::string checkFilenameCase(const std::string& fullPath)
-    {
-        if (!isWindowsOs() || !FileUtils::fileExists(fullPath))
+    public:
+        static bool isWindowsOs()
         {
+#ifdef _WIN32
+            return true;
+#else
+            return false;
+#endif
+        }
+
+        static bool isCygwin()
+        {
+#ifdef __CYGWIN__
+            return true;
+#else
+            return false;
+#endif
+        }
+
+        static bool isMacOs()
+        {
+#ifdef __APPLE__
+            return true;
+#else
+            return false;
+#endif
+        }
+
+        static std::string getDirectorySeparator()
+        {
+            return isWindowsOs() ? "\\" : "/";
+        }
+
+        // Properly cases the filename, but not the directories, on Windows.
+        static std::string checkFilenameCase(const std::string& fullPath)
+        {
+            if (!isWindowsOs() || !FileUtils::fileExists(fullPath))
+            {
+                return fullPath;
+            }
+#ifdef _WIN32
+
+            WIN32_FIND_DATAA findFileData;
+            HANDLE hFind = FindFirstFileA(fullPath.c_str(), &findFileData);
+
+            if (hFind != INVALID_HANDLE_VALUE)
+            {
+                const std::string fixedFilename = findFileData.cFileName;
+                const std::string fixedPath =
+                    StringUtils::replaceAll(fullPath,
+                                            StringUtils::toLower(fixedFilename),
+                                            fixedFilename);
+                FindClose(hFind);
+                return fixedPath;
+            }
+
+#endif
             return fullPath;
         }
-#ifdef _WIN32
 
-        WIN32_FIND_DATAA findFileData;
-        HANDLE hFind = FindFirstFileA(fullPath.c_str(), &findFileData);
-
-        if (hFind != INVALID_HANDLE_VALUE)
+        static std::string safeGetEnvForWindows(char const* name)
         {
-            const std::string fixedFilename = findFileData.cFileName;
-            const std::string fixedPath =
-                StringUtils::replaceAll( fullPath, StringUtils::toLower(fixedFilename), fixedFilename );
-            FindClose(hFind);
-            return fixedPath;
+            APPROVAL_TESTS_UNUSED(name);
+#ifdef _WIN32
+            // We use getenv_s on Windows, as use of getenv there gives:
+            //      warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead.
+            //      To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+
+            size_t size;
+            getenv_s(&size, nullptr, 0, name);
+
+            if (size != 0)
+            {
+                std::string result;
+                result.resize(size);
+                getenv_s(&size, &*result.begin(), size, name);
+                result.pop_back();
+                return result;
+            }
+#endif
+            return std::string();
         }
 
-
-#endif
-        return fullPath;
-
-    }
-
-    static std::string safeGetEnvForWindows(char const *name)
-    {
-        APPROVAL_TESTS_UNUSED(name);
-#ifdef _WIN32
-        // We use getenv_s on Windows, as use of getenv there gives:
-        //      warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead.
-        //      To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-
-        size_t size;
-        getenv_s(&size, nullptr, 0, name);
-
-        if (size != 0)
+        static std::string safeGetEnvForNonWindows(char const* name)
         {
-            std::string result;
-            result.resize(size);
-            getenv_s(&size, &*result.begin(), size, name);
-            result.pop_back();
-            return result;
-        }
-#endif
-        return std::string();
-    }
-
-    static std::string safeGetEnvForNonWindows(char const *name)
-    {
-        APPROVAL_TESTS_UNUSED(name);
-        char* p = nullptr;
+            APPROVAL_TESTS_UNUSED(name);
+            char* p = nullptr;
 #ifndef _WIN32
-        p = getenv(name);
+            p = getenv(name);
 #endif
-        return (p != nullptr) ? p : std::string();
-    }
-
-    //! Return the value of the environment variable, or an empty string if the variable is not set.
-    static std::string safeGetEnv(char const *name)
-    {
-        return isWindowsOs() ? safeGetEnvForWindows(name) : safeGetEnvForNonWindows(name);
-    }
-
-    static std::string getMachineName()
-    {
-        auto name = safeGetEnv("COMPUTERNAME");
-        if ( ! name.empty())
-        {
-            return name;
+            return (p != nullptr) ? p : std::string();
         }
 
-        name = safeGetEnv("HOSTNAME");
-        if ( ! name.empty())
+        //! Return the value of the environment variable, or an empty string if the variable is not set.
+        static std::string safeGetEnv(char const* name)
         {
-            return name;
+            return isWindowsOs() ? safeGetEnvForWindows(name)
+                                 : safeGetEnvForNonWindows(name);
         }
 
-        return "Unknown Computer";
-    }
+        static std::string getMachineName()
+        {
+            auto name = safeGetEnv("COMPUTERNAME");
+            if (!name.empty())
+            {
+                return name;
+            }
 
-    static void makeDirectoryForWindows(const std::string& directory)
-    {
-        APPROVAL_TESTS_UNUSED(directory);
+            name = safeGetEnv("HOSTNAME");
+            if (!name.empty())
+            {
+                return name;
+            }
+
+            return "Unknown Computer";
+        }
+
+        static void makeDirectoryForWindows(const std::string& directory)
+        {
+            APPROVAL_TESTS_UNUSED(directory);
 #ifdef _WIN32
-        int nError = _mkdir(directory.c_str());
-        if (nError != 0)
-        {
-            std::string helpMessage = std::string("Unable to create directory: ") + directory;
-            throw std::runtime_error( helpMessage );
-        }
+            int nError = _mkdir(directory.c_str());
+            if (nError != 0)
+            {
+                std::string helpMessage =
+                    std::string("Unable to create directory: ") + directory;
+                throw std::runtime_error(helpMessage);
+            }
 #endif
-    }
+        }
 
-    static void makeDirectoryForNonWindows(const std::string& directory)
-    {
-        APPROVAL_TESTS_UNUSED(directory);
+        static void makeDirectoryForNonWindows(const std::string& directory)
+        {
+            APPROVAL_TESTS_UNUSED(directory);
 #ifndef _WIN32
-        mode_t nMode = 0733; // UNIX style permissions
-        int nError = mkdir(directory.c_str(),nMode);
-        if (nError != 0)
-        {
-            std::string helpMessage = std::string("Unable to create directory: ") + directory;
-            throw std::runtime_error( helpMessage );
-        }
+            mode_t nMode = 0733; // UNIX style permissions
+            int nError = mkdir(directory.c_str(), nMode);
+            if (nError != 0)
+            {
+                std::string helpMessage =
+                    std::string("Unable to create directory: ") + directory;
+                throw std::runtime_error(helpMessage);
+            }
 #endif
-    }
-
-    static void makeDirectory(const std::string& directory)
-    {
-        makeDirectoryForWindows(directory);
-        makeDirectoryForNonWindows(directory);
-    }
-
-    static void ensureDirectoryExists(const std::string& fullFilePath)
-    {
-        if (!FileUtils::fileExists(fullFilePath))
-        {
-            makeDirectory(fullFilePath);
         }
-    }
-};
+
+        static void makeDirectory(const std::string& directory)
+        {
+            makeDirectoryForWindows(directory);
+            makeDirectoryForNonWindows(directory);
+        }
+
+        static void ensureDirectoryExists(const std::string& fullFilePath)
+        {
+            if (!FileUtils::fileExists(fullFilePath))
+            {
+                makeDirectory(fullFilePath);
+            }
+        }
+    };
 }
 #endif

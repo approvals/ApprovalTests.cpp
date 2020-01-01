@@ -3,23 +3,34 @@
 
 #include "SystemUtils.h"
 
-namespace ApprovalTests {
-class FileUtilsSystemSpecific
+namespace ApprovalTests
 {
-public:
-    static std::string getCommandLineForCopy(const std::string& source, const std::string& destination, bool isWindows)
+    class FileUtilsSystemSpecific
     {
-        if (isWindows) {
-            return std::string("copy /Y ") + "\"" + source + "\" \"" + destination + "\"";
-        } else {
-            return std::string("cp ") + "\"" + source + "\" \"" + destination + "\"";
+    public:
+        static std::string getCommandLineForCopy(const std::string& source,
+                                                 const std::string& destination,
+                                                 bool isWindows)
+        {
+            if (isWindows)
+            {
+                return std::string("copy /Y ") + "\"" + source + "\" \"" +
+                       destination + "\"";
+            }
+            else
+            {
+                return std::string("cp ") + "\"" + source + "\" \"" +
+                       destination + "\"";
+            }
         }
-    }
 
-    static void copyFile(const std::string& source, const std::string& destination )
-    {
-        system( getCommandLineForCopy(source, destination, SystemUtils::isWindowsOs()).c_str() );
-    }
-};
+        static void copyFile(const std::string& source,
+                             const std::string& destination)
+        {
+            system(getCommandLineForCopy(
+                       source, destination, SystemUtils::isWindowsOs())
+                       .c_str());
+        }
+    };
 }
 #endif

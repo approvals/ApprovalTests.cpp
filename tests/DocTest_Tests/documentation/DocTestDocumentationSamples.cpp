@@ -24,7 +24,7 @@ struct Greeting
     explicit Greeting(Nationality nationality) : nationality(nationality)
     {
     }
-    
+
     std::string getGreeting() const
     {
         return getGreetingFor(nationality);
@@ -32,31 +32,31 @@ struct Greeting
 
     std::string getGreetingFor(Nationality aNationality) const
     {
-        switch(aNationality)
+        switch (aNationality)
         {
-            case British:
-                return "Cheers";
-            case American:
-                return "Howdy";
-            case French:
-                return "Bonjour";
-            default:
-                return "Unknown";
+        case British:
+            return "Cheers";
+        case American:
+            return "Howdy";
+        case French:
+            return "Bonjour";
+        default:
+            return "Unknown";
         }
     }
 
     std::string getNationality() const
     {
-        switch(nationality)
+        switch (nationality)
         {
-            case British:
-                return "British";
-            case American:
-                return "American";
-            case French:
-                return "French";
-            default:
-                return "Unknown";
+        case British:
+            return "British";
+        case American:
+            return "American";
+        case French:
+            return "French";
+        default:
+            return "Unknown";
         }
     }
 };
@@ -87,10 +87,12 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
     // Note: For data as small as this, in practice we would recommend passing the
     // greetings container in to Approvals::verifyAll(), with a lambda to format the output,
     // in order to write all data to a single file.
-    std::vector<Greeting> greetings{ Greeting(British), Greeting(American), Greeting(French) };
-    for(auto greeting: greetings)
+    std::vector<Greeting> greetings{
+        Greeting(British), Greeting(American), Greeting(French)};
+    for (auto greeting : greetings)
     {
-        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
+        auto section =
+            NamerFactory::appendToOutputFilename(greeting.getNationality());
         Approvals::verify(greeting.getGreeting());
     }
 }
@@ -120,12 +122,15 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
 {
     using namespace ApprovalTests;
 
-    ExceptionCollector exceptions; // Allow all files to be written, regardless of errors
-    std::vector<Greeting> greetings{Greeting(British), Greeting(American), Greeting(French)};
-    for (auto greeting: greetings)
+    ExceptionCollector
+        exceptions; // Allow all files to be written, regardless of errors
+    std::vector<Greeting> greetings{
+        Greeting(British), Greeting(American), Greeting(French)};
+    for (auto greeting : greetings)
     {
-        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
-        exceptions.gather([&](){
+        auto section =
+            NamerFactory::appendToOutputFilename(greeting.getNationality());
+        exceptions.gather([&]() {
             Approvals::verify(
                 greeting.getGreeting(),
                 AutoApproveIfMissingReporter()); // Automatically approve first time
@@ -134,4 +139,3 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
     exceptions.release();
 }
 // end-snippet
-
