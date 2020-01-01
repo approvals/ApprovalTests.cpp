@@ -1,5 +1,5 @@
 #include "ApprovalTests/Approvals.h"
-#include "doctest.h"
+#include "doctest/doctest.h"
 
 using namespace ApprovalTests;
 TEST_CASE("HelpMessage")

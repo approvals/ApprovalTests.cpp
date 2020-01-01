@@ -8,7 +8,7 @@
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
-#include <doctest.h>
+#include <doctest/doctest.h>
 
 namespace ApprovalTests {
 // anonymous namespace to prevent compiler -Wsubobject-linkage warnings

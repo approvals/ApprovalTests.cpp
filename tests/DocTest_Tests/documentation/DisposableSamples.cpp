@@ -1,4 +1,4 @@
-#include "doctest.h"
+#include "doctest/doctest.h"
 #include "ApprovalTests/Approvals.h"
 
 TEST_CASE("DisposableSample")
