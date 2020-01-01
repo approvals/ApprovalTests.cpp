@@ -10,7 +10,7 @@ add_executable(${PROJECT_NAME}
     utilities/ExceptionCollectorTests.cpp
     ApprovalTestTests.cpp
     )
-target_link_libraries(${PROJECT_NAME} ApprovalTests doctest)
+target_link_libraries(${PROJECT_NAME} ApprovalTests doctest::doctest)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
 if(APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
