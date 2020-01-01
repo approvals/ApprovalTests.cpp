@@ -122,7 +122,7 @@ class LibraryBook
 {
 public:
     LibraryBook(std::string title, std::string author, int available_copies,
-                std::string language, int pages, std::string isbn) : 
+                std::string language, int pages, std::string isbn) :
                 title(title), author(author), available_copies(available_copies),
                 language(language), pages(pages), isbn(isbn)
     {
@@ -181,7 +181,7 @@ This works, but of course, there is a lot more that we want to look at than the 
 <a id='snippet-printable_object'/></a>
 ```cpp
 Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os){
-    os << 
+    os <<
     "title: " << b.title << "\n" <<
     "author: " << b.author << "\n" <<
     "available_copies: " << b.available_copies << "\n" <<
