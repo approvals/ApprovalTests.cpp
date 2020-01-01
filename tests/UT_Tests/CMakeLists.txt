@@ -4,7 +4,7 @@ if((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION GREATER_
     add_executable(${PROJECT_NAME}
         ApprovalTestTests.cpp
         )
-    target_link_libraries(${PROJECT_NAME} ApprovalTests ut)
+    target_link_libraries(${PROJECT_NAME} ApprovalTests boost.ut)
     add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
     if(APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
