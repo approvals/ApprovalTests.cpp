@@ -5,20 +5,21 @@
 #include "AutoApproveReporter.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 
-namespace ApprovalTests {
-class AutoApproveIfMissingReporter : public Reporter
+namespace ApprovalTests
 {
-public:
-    bool report(std::string received, std::string approved) const override
+    class AutoApproveIfMissingReporter : public Reporter
     {
-        if (FileUtils::fileExists(approved))
+    public:
+        bool report(std::string received, std::string approved) const override
         {
-            return false;
-        }
+            if (FileUtils::fileExists(approved))
+            {
+                return false;
+            }
 
-        return AutoApproveReporter().report(received, approved);
-    }
-};
+            return AutoApproveReporter().report(received, approved);
+        }
+    };
 }
 
 #endif //APPROVALTESTS_CPP_AUTOAPPROVEIFMISSINGREPORTER_H

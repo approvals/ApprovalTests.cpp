@@ -9,16 +9,17 @@ using namespace ApprovalTests;
 
 TEST_CASE("ItCanCopyAFile")
 {
-  ApprovalTestNamer namer;
-  const auto& sep = SystemUtils::getDirectorySeparator();
-  auto source = namer.getDirectory() + ".." + sep + ".." + sep + "sample.txt";
-    auto destination = namer.getDirectory() + ".." + sep + "copy.temp.received.txt";
+    ApprovalTestNamer namer;
+    const auto& sep = SystemUtils::getDirectorySeparator();
+    auto source = namer.getDirectory() + ".." + sep + ".." + sep + "sample.txt";
+    auto destination =
+        namer.getDirectory() + ".." + sep + "copy.temp.received.txt";
 
-    if ( FileUtils::fileExists(destination))
+    if (FileUtils::fileExists(destination))
     {
         ::remove(destination.c_str());
     }
-    CHECK( ! FileUtils::fileExists(destination) );
+    CHECK(!FileUtils::fileExists(destination));
     FileUtilsSystemSpecific::copyFile(source, destination);
     Approvals::verifyExistingFile(destination);
 }

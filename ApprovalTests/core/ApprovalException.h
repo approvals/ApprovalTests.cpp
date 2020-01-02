@@ -5,56 +5,65 @@
 #include <string>
 #include <sstream>
 
-namespace ApprovalTests {
-class ApprovalException : public std::exception
+namespace ApprovalTests
 {
-private:
-    std::string message;
-public:
-    explicit ApprovalException( const std::string& msg ) : message( msg ) {}
+    class ApprovalException : public std::exception
+    {
+    private:
+        std::string message;
 
-    virtual const char *what() const noexcept override
-    {
-        return message.c_str();
-    }
-};
+    public:
+        explicit ApprovalException(const std::string& msg) : message(msg)
+        {
+        }
 
-class ApprovalMismatchException : public ApprovalException
-{
-private:
-    std::string format( const std::string &received, const std::string &approved )
-    {
-        std::stringstream s;
-        s << "Failed Approval: \n"
-          << "Received does not match approved \n"
-          << "Received : \"" << received << "\" \n"
-          << "Approved : \"" << approved << "\"";
-        return s.str();
-    }
-public:
-    ApprovalMismatchException(const std::string& received, const std::string& approved )
-        : ApprovalException( format( received, approved ) )
-    {
-    }
-};
+        virtual const char* what() const noexcept override
+        {
+            return message.c_str();
+        }
+    };
 
-class ApprovalMissingException : public ApprovalException
-{
-private:
-    std::string format( const std::string &file )
+    class ApprovalMismatchException : public ApprovalException
     {
-        std::stringstream s;
-        s << "Failed Approval: \n"
-          << "Approval File Not Found \n"
-          << "File: \"" << file << '"';
-        return s.str();
-    }
-public:
-    ApprovalMissingException(const std::string& /*received*/, const std::string& approved )
-        : ApprovalException( format( approved ) )
+    private:
+        std::string format(const std::string& received,
+                           const std::string& approved)
+        {
+            std::stringstream s;
+            s << "Failed Approval: \n"
+              << "Received does not match approved \n"
+              << "Received : \"" << received << "\" \n"
+              << "Approved : \"" << approved << "\"";
+            return s.str();
+        }
+
+    public:
+        ApprovalMismatchException(const std::string& received,
+                                  const std::string& approved)
+            : ApprovalException(format(received, approved))
+        {
+        }
+    };
+
+    class ApprovalMissingException : public ApprovalException
     {
-    }
-};
+    private:
+        std::string format(const std::string& file)
+        {
+            std::stringstream s;
+            s << "Failed Approval: \n"
+              << "Approval File Not Found \n"
+              << "File: \"" << file << '"';
+            return s.str();
+        }
+
+    public:
+        ApprovalMissingException(const std::string& /*received*/,
+                                 const std::string& approved)
+            : ApprovalException(format(approved))
+        {
+        }
+    };
 }
 
 #endif

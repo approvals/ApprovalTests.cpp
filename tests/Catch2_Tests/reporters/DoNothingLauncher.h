@@ -11,6 +11,7 @@ class DoNothingLauncher : public ApprovalTests::CommandLauncher
 {
 private:
     std::string cmd;
+
 public:
     bool working = true;
     bool launch(std::vector<std::string> argv) override
@@ -29,4 +30,4 @@ public:
     }
 };
 
-#endif  
+#endif

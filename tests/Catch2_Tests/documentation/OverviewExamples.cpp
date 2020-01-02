@@ -20,7 +20,7 @@ public:
         std::stringstream os;
         bool written = false;
         os << "[";
-        for(const auto& thing : contents)
+        for (const auto& thing : contents)
         {
             if (written)
             {
@@ -74,7 +74,7 @@ static Sandwich createSandwichForTest()
     return result;
 }
 
-std::ostream &operator<<(std::ostream&os, const Sandwich& sandwich)
+std::ostream& operator<<(std::ostream& os, const Sandwich& sandwich)
 {
     os << "sandwich {\n";
     os << "    bread: \"" << sandwich.bread << "\",\n";

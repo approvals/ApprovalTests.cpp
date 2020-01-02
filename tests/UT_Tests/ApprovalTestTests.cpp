@@ -12,12 +12,14 @@ int main()
 
     // begin-snippet: ut_main_usage
     "ItCanVerifyAFile"_test = []() {
-        Approvals::verify("Approval Tests can verify text via the golden master method");
-	};
+        Approvals::verify(
+            "Approval Tests can verify text via the golden master method");
+    };
     // end-snippet
 
     test("AnotherWayItCanVerifyAFile") = []() {
-        Approvals::verify("Approval Tests can verify text via the golden master method");
+        Approvals::verify(
+            "Approval Tests can verify text via the golden master method");
     };
 
     // begin-snippet: ut_main_multiple
@@ -26,11 +28,13 @@ int main()
             // Here we simulate test sections, so that Approval Tests uses different
             // output file names for the different verify() calls.
             auto section = NamerFactory::appendToOutputFilename("section 1");
-            Approvals::verify("Approval Tests can verify text via the golden master method");
+            Approvals::verify(
+                "Approval Tests can verify text via the golden master method");
         }
         {
             auto section = NamerFactory::appendToOutputFilename("section 2");
-            Approvals::verify("Approval Tests can verify different text via the golden master method");
+            Approvals::verify("Approval Tests can verify different text via "
+                              "the golden master method");
         }
     };
     // end-snippet
@@ -54,6 +58,9 @@ int main()
     };
 
     "YouCanSpecifyYourFileExtensionWithFormatter"_test = []() {
-        Approvals::verifyWithExtension(1337, [](auto value, auto& os) {os << "**value:** " << value; }, ".md");
+        Approvals::verifyWithExtension(
+            1337,
+            [](auto value, auto& os) { os << "**value:** " << value; },
+            ".md");
     };
 }

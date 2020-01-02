@@ -7,11 +7,13 @@ using namespace ApprovalTests;
 
 TEST_CASE("ItCanFixCaseOfFileNameOnWindows")
 {
-    if( SystemUtils::isWindowsOs())
+    if (SystemUtils::isWindowsOs())
     {
         const std::string original_filename = __FILE__;
-        const std::string lowercased_filename = StringUtils::toLower(original_filename);
-        const std::string fixed_filename = SystemUtils::checkFilenameCase(lowercased_filename);
+        const std::string lowercased_filename =
+            StringUtils::toLower(original_filename);
+        const std::string fixed_filename =
+            SystemUtils::checkFilenameCase(lowercased_filename);
         INFO("The 'fixed' filename is " << fixed_filename);
 
         REQUIRE(original_filename.length() == fixed_filename.length());
@@ -31,7 +33,8 @@ TEST_CASE("ItCanGetEnvironmentVariable")
 
 TEST_CASE("ItCanGetNonExistentEnvironmentVariable")
 {
-    const auto result = SystemUtils::safeGetEnv("THIS_ENVIRONMENT_VARIABLE_SHOULD_NOT_EXIST");
+    const auto result =
+        SystemUtils::safeGetEnv("THIS_ENVIRONMENT_VARIABLE_SHOULD_NOT_EXIST");
     REQUIRE(result.length() == 0);
 }
 
@@ -41,5 +44,5 @@ TEST_CASE("ItCanCreateSubDirectory")
     ApprovalTestNamer namer;
     auto directory = namer.getDirectory();
     REQUIRE(FileUtils::fileExists(directory) == true);
-//    SystemUtils::removeDirectory(directory);
+    //    SystemUtils::removeDirectory(directory);
 }

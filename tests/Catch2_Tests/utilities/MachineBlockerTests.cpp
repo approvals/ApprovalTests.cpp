@@ -24,7 +24,7 @@ TEST_CASE("Does not block in this environment")
 TEST_CASE("Only run this test on John's machine")
 {
     auto blocker = MachineBlocker::onMachinesNotNamed("JOHNS_MACHINE");
-    if ( blocker.isBlockingOnThisMachine() )
+    if (blocker.isBlockingOnThisMachine())
     {
         return;
     }

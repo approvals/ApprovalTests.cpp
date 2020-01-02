@@ -4,11 +4,13 @@
 #include "ApprovalTests/reporters/GenericDiffReporter.h"
 #include "DoNothingLauncher.h"
 
-class TestReporter : public ApprovalTests::CommandReporter {
+class TestReporter : public ApprovalTests::CommandReporter
+{
 public:
     DoNothingLauncher launcher;
 
-    TestReporter(bool working = true) : CommandReporter("fake", &launcher) {
+    TestReporter(bool working = true) : CommandReporter("fake", &launcher)
+    {
         launcher.working = working;
     };
 };

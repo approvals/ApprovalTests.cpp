@@ -7,32 +7,34 @@
 #include <memory>
 #include <utility>
 
-namespace ApprovalTests {
+namespace ApprovalTests
+{
 
     using NamerCreator = std::function<std::shared_ptr<ApprovalNamer>()>;
 
-//! Implementation detail of Approvals::useAsDefaultNamer()
-class DefaultNamerFactory
-{
-private:
-    static NamerCreator& defaultNamer()
+    //! Implementation detail of Approvals::useAsDefaultNamer()
+    class DefaultNamerFactory
     {
-        static NamerCreator namer = [](){return std::make_shared<ApprovalTestNamer>();};
-        return namer;
-    }
+    private:
+        static NamerCreator& defaultNamer()
+        {
+            static NamerCreator namer = []() {
+                return std::make_shared<ApprovalTestNamer>();
+            };
+            return namer;
+        }
 
-public:
-    static NamerCreator getDefaultNamer()
-    {
-        return defaultNamer();
-    }
-    
-    static void setDefaultNamer( NamerCreator namer)
-    {
-        defaultNamer() = std::move(namer);
-    }
+    public:
+        static NamerCreator getDefaultNamer()
+        {
+            return defaultNamer();
+        }
 
-};
+        static void setDefaultNamer(NamerCreator namer)
+        {
+            defaultNamer() = std::move(namer);
+        }
+    };
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTNAMERFACTORY_H

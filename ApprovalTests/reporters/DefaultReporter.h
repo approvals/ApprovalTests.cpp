@@ -6,15 +6,18 @@
 
 #include <string>
 
-namespace ApprovalTests {
-class DefaultReporter : public Reporter
+namespace ApprovalTests
 {
-public:
-    virtual bool report(std::string received, std::string approved) const override
+    class DefaultReporter : public Reporter
     {
-        return DefaultReporterFactory::getDefaultReporter()->report(received, approved);
-    }
-};
+    public:
+        virtual bool report(std::string received,
+                            std::string approved) const override
+        {
+            return DefaultReporterFactory::getDefaultReporter()->report(
+                received, approved);
+        }
+    };
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTREPORTER_H
