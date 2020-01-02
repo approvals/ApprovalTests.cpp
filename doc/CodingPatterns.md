@@ -24,7 +24,8 @@ Here is a sample of the pattern that we are using:
 private:
     static std::shared_ptr<Reporter>& defaultReporter()
     {
-        static std::shared_ptr<Reporter> reporter = std::make_shared<DiffReporter>();
+        static std::shared_ptr<Reporter> reporter =
+            std::make_shared<DiffReporter>();
         return reporter;
     }
 
@@ -33,13 +34,14 @@ public:
     {
         return defaultReporter();
     }
-    
-    static void setDefaultReporter( const std::shared_ptr<Reporter>& reporter)
+
+    static void
+    setDefaultReporter(const std::shared_ptr<Reporter>& reporter)
     {
         defaultReporter() = reporter;
     }
 ```
-<sup><a href='/ApprovalTests/reporters/DefaultReporterFactory.h#L13-L31' title='File snippet `static_variable_sample` was extracted from'>snippet source</a> | <a href='#snippet-static_variable_sample' title='Navigate to start of snippet `static_variable_sample`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DefaultReporterFactory.h#L14-L34' title='File snippet `static_variable_sample` was extracted from'>snippet source</a> | <a href='#snippet-static_variable_sample' title='Navigate to start of snippet `static_variable_sample`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Note the use of the reference (&) on the return type of the private method, and the addition of a getter and setter method.

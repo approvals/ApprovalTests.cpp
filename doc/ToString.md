@@ -31,13 +31,16 @@ For example:
 <!-- snippet: to_string_standard_example -->
 <a id='snippet-to_string_standard_example'/></a>
 ```cpp
-friend std::ostream &operator<<(std::ostream &os, const Rectangle2 &rectangle) {
-    os << "[x: " << rectangle.x << " y: " << rectangle.y << " width: " << rectangle.width << " height: "
-       << rectangle.height << "]";
+friend std::ostream& operator<<(std::ostream& os,
+                                const Rectangle2& rectangle)
+{
+    os << "[x: " << rectangle.x << " y: " << rectangle.y
+       << " width: " << rectangle.width << " height: " << rectangle.height
+       << "]";
     return os;
 }
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/ToStringExample.cpp#L12-L18' title='File snippet `to_string_standard_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_standard_example' title='Navigate to start of snippet `to_string_standard_example`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/ToStringExample.cpp#L13-L22' title='File snippet `to_string_standard_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_standard_example' title='Navigate to start of snippet `to_string_standard_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
 You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
@@ -48,13 +51,15 @@ If including `<iostream>` or similar is problematic, for example because your co
 <a id='snippet-to_string_template_example'/></a>
 ```cpp
 template <class STREAM>
-friend STREAM &operator<<(STREAM &os, const Rectangle2 &rectangle) {
-    os << "[x: " << rectangle.x << " y: " << rectangle.y << " width: " << rectangle.width << " height: "
-       << rectangle.height << "]";
+friend STREAM& operator<<(STREAM& os, const Rectangle2& rectangle)
+{
+    os << "[x: " << rectangle.x << " y: " << rectangle.y
+       << " width: " << rectangle.width << " height: " << rectangle.height
+       << "]";
     return os;
 }
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/ToStringTemplateExample.cpp#L14-L21' title='File snippet `to_string_template_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_template_example' title='Navigate to start of snippet `to_string_template_example`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/ToStringTemplateExample.cpp#L15-L24' title='File snippet `to_string_template_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_template_example' title='Navigate to start of snippet `to_string_template_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Wrapper classes or functions can be used to provide additional output formats for types of data:
@@ -62,33 +67,34 @@ Wrapper classes or functions can be used to provide additional output formats fo
 <!-- snippet: to_string_wrapper_example -->
 <a id='snippet-to_string_wrapper_example'/></a>
 ```cpp
-struct FormatRectangleForMultipleLines{
+struct FormatRectangleForMultipleLines
+{
 
-    explicit FormatRectangleForMultipleLines(const Rectangle3& rectangle) : rectangle(rectangle)
+    explicit FormatRectangleForMultipleLines(const Rectangle3& rectangle)
+        : rectangle(rectangle)
     {
     }
 
     const Rectangle3& rectangle;
 
-    friend std::ostream &operator<<(std::ostream &os, const FormatRectangleForMultipleLines &wrapper) {
-        os << "(x,y,width,height) = (" <<
-           wrapper.rectangle.x << "," <<
-           wrapper.rectangle.y << "," <<
-           wrapper.rectangle.width << "," <<
-           wrapper.rectangle.height << ")";
+    friend std::ostream&
+    operator<<(std::ostream& os, const FormatRectangleForMultipleLines& wrapper)
+    {
+        os << "(x,y,width,height) = (" << wrapper.rectangle.x << ","
+           << wrapper.rectangle.y << "," << wrapper.rectangle.width << ","
+           << wrapper.rectangle.height << ")";
         return os;
     }
 };
 
-TEST_CASE("AlternativeFormattingCanBeEasyToRead") {
-    Approvals::verifyAll(
-        "rectangles",
-        getRectangles(),
-        [](auto r, auto& os){os << FormatRectangleForMultipleLines(r);}
-    );
+TEST_CASE("AlternativeFormattingCanBeEasyToRead")
+{
+    Approvals::verifyAll("rectangles", getRectangles(), [](auto r, auto& os) {
+        os << FormatRectangleForMultipleLines(r);
+    });
 }
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/ToStringWrapperExample.cpp#L38-L64' title='File snippet `to_string_wrapper_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_wrapper_example' title='Navigate to start of snippet `to_string_wrapper_example`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/ToStringWrapperExample.cpp#L39-L66' title='File snippet `to_string_wrapper_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_wrapper_example' title='Navigate to start of snippet `to_string_wrapper_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Design
@@ -130,11 +136,9 @@ Here's an example of verifing a list of rectangles
 <!-- snippet: verify_list -->
 <a id='snippet-verify_list'/></a>
 ```cpp
-Approvals::verifyAll(
-    "rectangles",
-    getRectangles());
+Approvals::verifyAll("rectangles", getRectangles());
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/ToStringWrapperExample.cpp#L30-L34' title='File snippet `verify_list` was extracted from'>snippet source</a> | <a href='#snippet-verify_list' title='Navigate to start of snippet `verify_list`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/ToStringWrapperExample.cpp#L34-L36' title='File snippet `verify_list` was extracted from'>snippet source</a> | <a href='#snippet-verify_list' title='Navigate to start of snippet `verify_list`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Notice how this:

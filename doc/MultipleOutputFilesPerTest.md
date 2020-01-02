@@ -87,8 +87,9 @@ TEST_CASE("MultipleOutputFiles-DataDriven")
     // Note: For data as small as this, in practice we would recommend passing the
     // greetings container in to Approvals::verifyAll(), with a lambda to format the output,
     // in order to write all data to a single file.
-    std::vector<Greeting> greetings{ Greeting(British), Greeting(American), Greeting(French) };
-    for(auto greeting: greetings)
+    std::vector<Greeting> greetings{
+        Greeting(British), Greeting(American), Greeting(French)};
+    for (auto greeting : greetings)
     {
         SECTION(greeting.getNationality())
         {
@@ -97,7 +98,7 @@ TEST_CASE("MultipleOutputFiles-DataDriven")
     }
 }
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L61-L77' title='File snippet `catch2_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_dynamic' title='Navigate to start of snippet `catch2_multiple_output_files_dynamic`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L61-L78' title='File snippet `catch2_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_dynamic' title='Navigate to start of snippet `catch2_multiple_output_files_dynamic`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Or hard-coded, with multiple sections:
@@ -122,7 +123,7 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L79-L96' title='File snippet `catch2_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_hard_coded' title='Navigate to start of snippet `catch2_multiple_output_files_hard_coded`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L80-L97' title='File snippet `catch2_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_hard_coded' title='Navigate to start of snippet `catch2_multiple_output_files_hard_coded`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Note: Catch2 sub-sections continue to run even if the previous one failed. This is useful, as it allows you to approve all the files in one test run.
@@ -173,15 +174,17 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
     // Note: For data as small as this, in practice we would recommend passing the
     // greetings container in to Approvals::verifyAll(), with a lambda to format the output,
     // in order to write all data to a single file.
-    std::vector<Greeting> greetings{ Greeting(British), Greeting(American), Greeting(French) };
-    for(auto greeting: greetings)
+    std::vector<Greeting> greetings{
+        Greeting(British), Greeting(American), Greeting(French)};
+    for (auto greeting : greetings)
     {
-        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
+        auto section =
+            NamerFactory::appendToOutputFilename(greeting.getNationality());
         Approvals::verify(greeting.getGreeting());
     }
 }
 ```
-<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L83-L97' title='File snippet `approvals_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_dynamic' title='Navigate to start of snippet `approvals_multiple_output_files_dynamic`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L83-L99' title='File snippet `approvals_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_dynamic' title='Navigate to start of snippet `approvals_multiple_output_files_dynamic`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Or hard-coded, with multiple sections:
@@ -206,7 +209,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L99-L116' title='File snippet `approvals_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_hard_coded' title='Navigate to start of snippet `approvals_multiple_output_files_hard_coded`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L101-L118' title='File snippet `approvals_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_hard_coded' title='Navigate to start of snippet `approvals_multiple_output_files_hard_coded`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Approving multiple files in one test
@@ -228,12 +231,15 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
 {
     using namespace ApprovalTests;
 
-    ExceptionCollector exceptions; // Allow all files to be written, regardless of errors
-    std::vector<Greeting> greetings{Greeting(British), Greeting(American), Greeting(French)};
-    for (auto greeting: greetings)
+    ExceptionCollector
+        exceptions; // Allow all files to be written, regardless of errors
+    std::vector<Greeting> greetings{
+        Greeting(British), Greeting(American), Greeting(French)};
+    for (auto greeting : greetings)
     {
-        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
-        exceptions.gather([&](){
+        auto section =
+            NamerFactory::appendToOutputFilename(greeting.getNationality());
+        exceptions.gather([&]() {
             Approvals::verify(
                 greeting.getGreeting(),
                 AutoApproveIfMissingReporter()); // Automatically approve first time
@@ -242,7 +248,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
     exceptions.release();
 }
 ```
-<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L118-L136' title='File snippet `approvals_multiple_output_files_auto_approving` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Navigate to start of snippet `approvals_multiple_output_files_auto_approving`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L120-L141' title='File snippet `approvals_multiple_output_files_auto_approving` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Navigate to start of snippet `approvals_multiple_output_files_auto_approving`'>anchor</a></sup>
 <!-- endsnippet -->
  
 

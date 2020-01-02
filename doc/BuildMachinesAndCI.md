@@ -24,7 +24,7 @@ Jenkins,
 TeamCity,
 Travis,
 ```
-<sup><a href='/ApprovalTests/reporters/CIBuildOnlyReporter.h#L46-L52' title='File snippet `supported_ci_systems` was extracted from'>snippet source</a> | <a href='#snippet-supported_ci_systems' title='Navigate to start of snippet `supported_ci_systems`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/CIBuildOnlyReporter.h#L47-L53' title='File snippet `supported_ci_systems` was extracted from'>snippet source</a> | <a href='#snippet-supported_ci_systems' title='Navigate to start of snippet `supported_ci_systems`'>anchor</a></sup>
 <!-- endsnippet -->
 
 The CI detection is based on environment variables, so it may also just work on other systems that we are unaware of:
@@ -38,7 +38,7 @@ The CI detection is based on environment variables, so it may also just work on 
 "JENKINS_URL",
 "TEAMCITY_VERSION"
 ```
-<sup><a href='/ApprovalTests/reporters/CIBuildOnlyReporter.h#L56-L62' title='File snippet `supported_ci_env_vars` was extracted from'>snippet source</a> | <a href='#snippet-supported_ci_env_vars' title='Navigate to start of snippet `supported_ci_env_vars`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/CIBuildOnlyReporter.h#L57-L63' title='File snippet `supported_ci_env_vars` was extracted from'>snippet source</a> | <a href='#snippet-supported_ci_env_vars' title='Navigate to start of snippet `supported_ci_env_vars`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Or you may be able to set one of these environment variables in the configuration of your CI system, to tell Approval Tests it's running under CI. 

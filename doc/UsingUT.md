@@ -49,10 +49,11 @@ Below is an example of a call to an approval test inside a \[Boost\].UT test:
 <a id='snippet-ut_main_usage'/></a>
 ```cpp
 "ItCanVerifyAFile"_test = []() {
-    Approvals::verify("Approval Tests can verify text via the golden master method");
-	};
+    Approvals::verify(
+        "Approval Tests can verify text via the golden master method");
+};
 ```
-<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L13-L17' title='File snippet `ut_main_usage` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_usage' title='Navigate to start of snippet `ut_main_usage`'>anchor</a></sup>
+<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L13-L18' title='File snippet `ut_main_usage` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_usage' title='Navigate to start of snippet `ut_main_usage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 In the following example, two instances of ApprovalTests are called inside the same test. We need to use sections with different names, to prevent Approval Tests from using the same output file for both tests:
@@ -65,15 +66,17 @@ In the following example, two instances of ApprovalTests are called inside the s
         // Here we simulate test sections, so that Approval Tests uses different
         // output file names for the different verify() calls.
         auto section = NamerFactory::appendToOutputFilename("section 1");
-        Approvals::verify("Approval Tests can verify text via the golden master method");
+        Approvals::verify(
+            "Approval Tests can verify text via the golden master method");
     }
     {
         auto section = NamerFactory::appendToOutputFilename("section 2");
-        Approvals::verify("Approval Tests can verify different text via the golden master method");
+        Approvals::verify("Approval Tests can verify different text via "
+                          "the golden master method");
     }
 };
 ```
-<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L23-L36' title='File snippet `ut_main_multiple` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_multiple' title='Navigate to start of snippet `ut_main_multiple`'>anchor</a></sup>
+<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L25-L40' title='File snippet `ut_main_multiple` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_multiple' title='Navigate to start of snippet `ut_main_multiple`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---

@@ -27,16 +27,15 @@ In this small example, all combinations of `{"hello", "world"}` and `{1, 2, 3}` 
 <!-- snippet: YouCanVerifyCombinationsOf2 -->
 <a id='snippet-youcanverifycombinationsof2'/></a>
 ```cpp
-TEST_CASE("YouCanVerifyCombinationsOf2") {
+TEST_CASE("YouCanVerifyCombinationsOf2")
+{
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
     CombinationApprovals::verifyAllCombinations(
-            [](std::string s, int i){return std::make_pair(s, i);},
-            v,
-            numbers);
+        [](std::string s, int i) { return std::make_pair(s, i); }, v, numbers);
 }
 ```
-<sup><a href='/tests/Catch2_Tests/CombinationTests.cpp#L45-L54' title='File snippet `youcanverifycombinationsof2` was extracted from'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Navigate to start of snippet `youcanverifycombinationsof2`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/CombinationTests.cpp#L49-L57' title='File snippet `youcanverifycombinationsof2` was extracted from'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Navigate to start of snippet `youcanverifycombinationsof2`'>anchor</a></sup>
 <!-- endsnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
@@ -73,15 +72,15 @@ Note: Over releases, the position of the optional Reporter parameter to `verifyA
 <a id='snippet-sample_combinations_of_three'/></a>
 ```cpp
 CombinationApprovals::verifyAllCombinations(
-        []( const std::string& input1, const int input2, const double input3)
-        {
-            return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
-        }, // This is the converter function
-        listOfInput1s,
-        listOfInput2s,
-        listOfInput3s);
+    [](const std::string& input1, const int input2, const double input3) {
+        return functionThatReturnsSomethingOutputStreamable(
+            input1, input2, input3);
+    }, // This is the converter function
+    listOfInput1s,
+    listOfInput2s,
+    listOfInput3s);
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L25-L34' title='File snippet `sample_combinations_of_three` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Navigate to start of snippet `sample_combinations_of_three`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L23-L32' title='File snippet `sample_combinations_of_three` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Navigate to start of snippet `sample_combinations_of_three`'>anchor</a></sup>
 <!-- endsnippet -->
 
 If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
@@ -90,15 +89,15 @@ If you are using C++14 or above, you can simplify this by using `auto` or `auto&
 <a id='snippet-sample_combinations_of_three_with_auto'/></a>
 ```cpp
 CombinationApprovals::verifyAllCombinations(
-        []( auto& input1, auto& input2, auto& input3)
-        {
-            return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
-        }, // This is the converter function
-        listOfInput1s,
-        listOfInput2s,
-        listOfInput3s);
+    [](auto& input1, auto& input2, auto& input3) {
+        return functionThatReturnsSomethingOutputStreamable(
+            input1, input2, input3);
+    }, // This is the converter function
+    listOfInput1s,
+    listOfInput2s,
+    listOfInput3s);
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L43-L52' title='File snippet `sample_combinations_of_three_with_auto` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Navigate to start of snippet `sample_combinations_of_three_with_auto`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L41-L50' title='File snippet `sample_combinations_of_three_with_auto` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Navigate to start of snippet `sample_combinations_of_three_with_auto`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---

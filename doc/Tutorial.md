@@ -46,7 +46,7 @@ TEST_CASE("HelloApprovals")
     ApprovalTests::Approvals::verify("Hello Approvals");
 }
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L18-L23' title='File snippet `hello_approvals` was extracted from'>snippet source</a> | <a href='#snippet-hello_approvals' title='Navigate to start of snippet `hello_approvals`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L16-L21' title='File snippet `hello_approvals` was extracted from'>snippet source</a> | <a href='#snippet-hello_approvals' title='Navigate to start of snippet `hello_approvals`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Approving the Test
@@ -121,10 +121,18 @@ The above example is a bit simplistic. Normally, you will want to test actual ob
 class LibraryBook
 {
 public:
-    LibraryBook(std::string title, std::string author, int available_copies,
-                std::string language, int pages, std::string isbn) :
-                title(title), author(author), available_copies(available_copies),
-                language(language), pages(pages), isbn(isbn)
+    LibraryBook(std::string title,
+                std::string author,
+                int available_copies,
+                std::string language,
+                int pages,
+                std::string isbn)
+        : title(title)
+        , author(author)
+        , available_copies(available_copies)
+        , language(language)
+        , pages(pages)
+        , isbn(isbn)
     {
     }
     // Data public for simplicity of test demo case.
@@ -137,7 +145,7 @@ public:
     std::string isbn;
 };
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L25-L44' title='File snippet `library_book` was extracted from'>snippet source</a> | <a href='#snippet-library_book' title='Navigate to start of snippet `library_book`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L23-L50' title='File snippet `library_book` was extracted from'>snippet source</a> | <a href='#snippet-library_book' title='Navigate to start of snippet `library_book`'>anchor</a></sup>
 <!-- endsnippet -->
 
 What we would like to be able to write is:
@@ -151,7 +159,7 @@ LibraryBook harry_potter(
 
 Approvals::verify(harry_potter); // This does not compile
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L50-L56' title='File snippet `non_printable_object` was extracted from'>snippet source</a> | <a href='#snippet-non_printable_object' title='Navigate to start of snippet `non_printable_object`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L56-L62' title='File snippet `non_printable_object` was extracted from'>snippet source</a> | <a href='#snippet-non_printable_object' title='Navigate to start of snippet `non_printable_object`'>anchor</a></sup>
 <!-- endsnippet -->
 
 The problem is that this will not compile, because at present there is no way to turn the LibraryBook in to a string representation.
@@ -163,11 +171,11 @@ Let's start by just printing the title:
 <!-- snippet: printable_object_simple -->
 <a id='snippet-printable_object_simple'/></a>
 ```cpp
-Approvals::verify(
-    harry_potter,
-    [](const LibraryBook& b, std::ostream& os){ os << "title: " << b.title; });
+Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os) {
+    os << "title: " << b.title;
+});
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L66-L70' title='File snippet `printable_object_simple` was extracted from'>snippet source</a> | <a href='#snippet-printable_object_simple' title='Navigate to start of snippet `printable_object_simple`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L75-L79' title='File snippet `printable_object_simple` was extracted from'>snippet source</a> | <a href='#snippet-printable_object_simple' title='Navigate to start of snippet `printable_object_simple`'>anchor</a></sup>
 <!-- endsnippet -->
 
 There's a lot going on here, so let's break it down:
@@ -180,17 +188,16 @@ This works, but of course, there is a lot more that we want to look at than the 
 <!-- snippet: printable_object -->
 <a id='snippet-printable_object'/></a>
 ```cpp
-Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os){
-    os <<
-    "title: " << b.title << "\n" <<
-    "author: " << b.author << "\n" <<
-    "available_copies: " << b.available_copies << "\n" <<
-    "language: " << b.language << "\n" <<
-    "pages: " << b.pages << "\n" <<
-    "isbn: " << b.isbn << "\n";
+Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os) {
+    os << "title: " << b.title << "\n"
+       << "author: " << b.author << "\n"
+       << "available_copies: " << b.available_copies << "\n"
+       << "language: " << b.language << "\n"
+       << "pages: " << b.pages << "\n"
+       << "isbn: " << b.isbn << "\n";
 });
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L79-L89' title='File snippet `printable_object` was extracted from'>snippet source</a> | <a href='#snippet-printable_object' title='Navigate to start of snippet `printable_object`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/documentation/Tutorial.cpp#L91-L100' title='File snippet `printable_object` was extracted from'>snippet source</a> | <a href='#snippet-printable_object' title='Navigate to start of snippet `printable_object`'>anchor</a></sup>
 <!-- endsnippet -->
 
 When you run and approve this, you will end up with the approval file:

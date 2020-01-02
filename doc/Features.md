@@ -108,7 +108,7 @@ Sometimes you will want tests to only run on certain machines. Machine blockers 
 TEST_CASE("Only run this test on John's machine")
 {
     auto blocker = MachineBlocker::onMachinesNotNamed("JOHNS_MACHINE");
-    if ( blocker.isBlockingOnThisMachine() )
+    if (blocker.isBlockingOnThisMachine())
     {
         return;
     }
