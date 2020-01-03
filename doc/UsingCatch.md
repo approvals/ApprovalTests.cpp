@@ -13,7 +13,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [Getting Started With Catch 1 and 2](#getting-started-with-catch-1-and-2)
+  * [Getting Started With Catch 2](#getting-started-with-catch-2)
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
     * [Existing Project - with CATCH_CONFIG_MAIN](#existing-project---with-catch_config_main)
@@ -21,15 +21,13 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 
 
-## Getting Started With Catch 1 and 2
+## Getting Started With Catch 2
 
 The [Catch2](https://github.com/catchorg/Catch2) test framework works well with Approval Tests.
 
 This section describes the various ways of using Approval Tests with Catch 2.
 
-These steps also work with the earlier version, Catch 1, which is on the [Catch 1.x branch](https://github.com/catchorg/Catch2/tree/Catch1.x), and is still provided for those on pre-C++11 compilers. (Please note that the Approval Tests library requires C++11 or newer, however). 
-
-Approval Tests requires that a file called `catch.hpp` is found.
+Approval Tests requires that a file called `catch2/catch.hpp` is found.
 
 (Before v7.0.0, it required `Catch.hpp`)
 
@@ -58,11 +56,11 @@ Create a file `main.cpp` and add just the following two lines:
 
 ### Existing Project - with CATCH_CONFIG_MAIN
 
-If you have a Catch (1 or 2) project with your own `main.cpp` that contains the following lines, you will need to replace them with the code in the previous section.
+If you have a Catch 2 project with your own `main.cpp` that contains the following lines, you will need to replace them with the code in the previous section.
 
 ```cpp
 #define CATCH_CONFIG_MAIN // remove these lines, and replace with Approval Tests lines
-#include "catch.hpp"
+#include "catch2/catch.hpp"
 ```
 
 <!-- todo: document use of sections -->
