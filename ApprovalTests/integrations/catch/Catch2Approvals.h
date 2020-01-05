@@ -13,7 +13,9 @@
 #endif
 
 #ifdef APPROVALS_CATCH
+// begin-snippet: required_header_for_catch
 #include <catch2/catch.hpp>
+// end-snippet
 
 //namespace ApprovalTests {
 struct Catch2ApprovalListener : Catch::TestEventListenerBase

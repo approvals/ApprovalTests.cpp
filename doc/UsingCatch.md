@@ -27,7 +27,15 @@ The [Catch2](https://github.com/catchorg/Catch2) test framework works well with 
 
 This section describes the various ways of using Approval Tests with Catch 2.
 
-Approval Tests requires that a file called `catch2/catch.hpp` is found.
+Approval Tests requires that a file called the following is found:
+
+<!-- snippet: required_header_for_catch -->
+<a id='snippet-required_header_for_catch'/></a>
+```h
+#include <catch2/catch.hpp>
+```
+<sup><a href='/ApprovalTests/integrations/catch/Catch2Approvals.h#L16-L18' title='File snippet `required_header_for_catch` was extracted from'>snippet source</a> | <a href='#snippet-required_header_for_catch' title='Navigate to start of snippet `required_header_for_catch`'>anchor</a></sup>
+<!-- endsnippet -->
 
 (Before v7.0.0, it required `Catch.hpp`)
 
