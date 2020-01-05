@@ -38,7 +38,7 @@
 
  The following test frameworks are currently supported, via these files:
 
- - <a href="https://github.com/catchorg/Catch2">Catch 1 and 2</a>: Catch2Approvals.h
+ - <a href="https://github.com/catchorg/Catch2">Catch 2</a>: Catch2Approvals.h
  - <a href="https://github.com/google/googletest">Google Test</a>: GoogleTestApprovals.h
  - <a href="https://github.com/JayBazuzi/Okra">Okra</a>: OkraApprovals.h
 
