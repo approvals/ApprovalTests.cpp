@@ -18,7 +18,7 @@ jobs:
       matrix:
 #        disabled Ninja builds, as these fail, as expected:
 #        ubuntu-latest-ninja, macOS-latest-ninja
-        buildtype: [windows-latest, windows-latest (clangcl), windows-2016, ubuntu-latest, macOS-latest ]
+        buildtype: [windows-latest, windows-latest (clangcl), windows-2016, ubuntu-latest, macOS-latest, ubuntu-latest-ninja, macOS-latest-ninja ]
         include:
         - buildtype: windows-latest
           os: windows-latest
