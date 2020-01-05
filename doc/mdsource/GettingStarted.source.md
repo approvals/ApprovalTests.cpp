@@ -31,7 +31,7 @@ For all other test files, you need:
 
 ### Details 
 
-* [Catch 2](/doc/UsingCatch.md#top)
+* [Catch2](/doc/UsingCatch.md#top)
 * [Google Test](/doc/UsingGoogleTests.md#top)
 * [doctest](/doc/UsingDoctest.md#top)
 * [\[Boost\].UT](/doc/UsingUT.md#top)

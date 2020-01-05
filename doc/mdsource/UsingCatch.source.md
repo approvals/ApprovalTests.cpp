@@ -7,11 +7,11 @@ toc
 
 
 
-## Getting Started With Catch 2
+## Getting Started With Catch2
 
 The [Catch2](https://github.com/catchorg/Catch2) test framework works well with Approval Tests.
 
-This section describes the various ways of using Approval Tests with Catch 2.
+This section describes the various ways of using Approval Tests with Catch2.
 
 Approval Tests requires that a file called the following is found:
 
@@ -36,7 +36,7 @@ snippet: catch_2_main
 
 ### Existing Project - with CATCH_CONFIG_MAIN
 
-If you have a Catch 2 project with your own `main.cpp` that contains the following lines, you will need to replace them with the code in the previous section.
+If you have a Catch2 project with your own `main.cpp` that contains the following lines, you will need to replace them with the code in the previous section.
 
 ```cpp
 #define CATCH_CONFIG_MAIN // remove these lines, and replace with Approval Tests lines

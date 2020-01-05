@@ -15,7 +15,7 @@ This section describes the various ways of using Approval Tests with Google Test
 
 We haven't yet provided a Starter Project for using Approval Tests with Google Tests.
 
-This is partly based on the assumption that anyone already using Google Tests will have their own project set up, and anyone else would probably use Catch 2 instead.
+This is partly based on the assumption that anyone already using Google Tests will have their own project set up, and anyone else would probably use Catch2 instead.
  
 If it would be helpful for us to such a Starter Project, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top). 
 
