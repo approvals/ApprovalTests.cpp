@@ -16,6 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Contributing - pairing and pull requests](#contributing---pairing-and-pull-requests)
     * [Definition of Done](#definition-of-done)
   * [Code of Conduct](#code-of-conduct)
+  * [Formatting Code](#formatting-code)
   * [Coding Patterns](#coding-patterns)
   * [Documentation](#documentation)
     * [Creating new pages](#creating-new-pages)
@@ -59,6 +60,18 @@ We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommit
 
 Please note that this project is released with a [Contributor Code of Conduct](/CODE_OF_CONDUCT.md#top). By participating in this project you agree to abide by its terms.
 
+## Formatting Code
+
+If possible, please configure your editor to use this repository's [.clang-format](https://github.com/approvals/ApprovalTests.cpp/blob/master/.clang-format) file.
+
+Instructions for this are available:
+
+* CLion:
+    * Settings/Preferences | Editor | Code Style | Turn on "Enable ClangFormat with clangd server" checkbox.
+    * More information: [ClangFormat as Alternative Formatter](https://www.jetbrains.com/help/clion/clangformat-as-alternative-formatter.html)
+
+We have a CI job that checks for code not correctly formatted.
+
 ## Coding Patterns
 
 See [Static variables for header-only releases](/doc/CodingPatterns.md#static-variables-for-header-only-releases).
@@ -78,7 +91,7 @@ This contains some boilerplate text which is tedious to create by hand.
 
 The new file needs to be in a `mdsource` sub-directory.
 
-**Creating mutliple pages**
+**Creating multiple pages**
 
 If creating multiple files, on Unix, you can use the script `doc/mdsource/create_page.sh`
 
