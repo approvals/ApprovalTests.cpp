@@ -74,6 +74,10 @@ Here's how to set up from:
 
 ## Miscellaneous
 
+### Build Systems
+
+* [CMake Integration](/doc/CMakeIntegration.md#top)
+
 ### Extras
 
 * [Frequently Asked Questions](/doc/FAQ.md#top)

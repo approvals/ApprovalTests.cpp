@@ -25,6 +25,7 @@ Once you're up and running, consider the following reference material.
     * [Common Challenges](#common-challenges)
     * [Common Scenarios](#common-scenarios)
   * [Miscellaneous](#miscellaneous)
+    * [Build Systems](#build-systems)
     * [Extras](#extras)
     * [Advanced Topics](#advanced-topics)
     * [Suggested Examples](#suggested-examples)<!-- endtoc -->
@@ -95,6 +96,10 @@ Here's how to set up from:
 
 
 ## Miscellaneous
+
+### Build Systems
+
+* [CMake Integration](/doc/CMakeIntegration.md#top)
 
 ### Extras
 
