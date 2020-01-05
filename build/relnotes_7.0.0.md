@@ -15,7 +15,7 @@ See the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/miles
         * See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top) if you have test failures in your VS2019 builds.
     * Fixed unnecessary duplicate static functions. (#54)
     * Fixed `ClipboardReporter` on macOS. (#51)
-    * Fixed inability to use project as sub-module on windows due to long filenames - by shortening the names of some files and folders in the tests. (#38)
+    * ~~Fixed inability to use project as sub-module on windows due to long filenames - by shortening the names of some files and folders in the tests. (#38)~~
 * **Other changes**
     * Documentation improvements (Thanks to Neil Horlock)
     * Updated our copy of Catch to v2.11.0 (from v2.7.1)
