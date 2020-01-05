@@ -14,6 +14,7 @@ jobs:
           clangFormatVersion: 9
   build:
     strategy:
+      fail-fast: false
       matrix:
         buildtype: [windows-latest, windows-latest-ninja, windows-latest (clangcl), windows-latest (clangcl)-ninja, windows-2016, ubuntu-latest, ubuntu-latest-ninja, macOS-latest, macOS-latest-ninja]
         include:
