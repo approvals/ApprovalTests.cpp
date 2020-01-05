@@ -18,7 +18,7 @@ Approval Tests for \[Boost\].UT requires that a file called the following is fou
 
 snippet: required_header_for_ut
 
-Approval Tests needs \[Boost\].UT version [b970a20](https://github.com/boost-experimental/ut/commit/b970a201aa88f087a997eed05bc4c1aae3592cd3) or above.
+Approval Tests needs \[Boost\].UT version [ec49196](https://github.com/boost-experimental/ut/commit/ec49196855078d98738f54023b488b2f85299826) or above.
 
 ### Usage examples
 
