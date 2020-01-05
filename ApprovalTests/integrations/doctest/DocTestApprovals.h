@@ -8,7 +8,9 @@
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
+// begin-snippet: required_header_for_doctest
 #include <doctest/doctest.h>
+// end-snippet
 
 namespace ApprovalTests
 {

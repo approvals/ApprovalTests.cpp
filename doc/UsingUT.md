@@ -26,7 +26,15 @@ The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework work
 
 ### Requirements
 
-Approval Tests for \[Boost\].UT requires that a file called `ut.hpp` is found.
+Approval Tests for \[Boost\].UT requires that a file called the following is found:
+
+<!-- snippet: required_header_for_ut -->
+<a id='snippet-required_header_for_ut'/></a>
+```h
+#include <boost/ut.hpp>
+```
+<sup><a href='/ApprovalTests/integrations/ut/UTApprovals.h#L14-L16' title='File snippet `required_header_for_ut` was extracted from'>snippet source</a> | <a href='#snippet-required_header_for_ut' title='Navigate to start of snippet `required_header_for_ut`'>anchor</a></sup>
+<!-- endsnippet -->
 
 Approval Tests needs \[Boost\].UT version [b970a20](https://github.com/boost-experimental/ut/commit/b970a201aa88f087a997eed05bc4c1aae3592cd3) or above.
 

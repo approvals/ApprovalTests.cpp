@@ -14,7 +14,9 @@ Doctest is similar to Catch, but claims to give faster compilation times.
 
 ### Requirements
 
-Approval Tests for doctest requires that a file called `doctest.h` is found.
+Approval Tests for doctest requires that a file called the following is found:
+
+snippet: required_header_for_doctest
 
 Approval Tests needs doctest version 2.3.4 or above.
 

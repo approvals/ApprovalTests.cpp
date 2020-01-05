@@ -11,7 +11,9 @@
     "The [Boost].UT integration with Approval Tests requires source_location support by the compiler"
 #endif
 
+// begin-snippet: required_header_for_ut
 #include <boost/ut.hpp>
+// end-snippet
 
 namespace ApprovalTests
 {
