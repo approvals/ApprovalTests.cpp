@@ -139,8 +139,6 @@
 
  \section tests Tests of Approvals itself
 
- - ApprovalTests_Catch1_Tests
-    - Tests integration with Catch1
  - ApprovalTests_Catch2_Tests
     - Tests both Approvals.cpp and its integration with Catch2
     - Would be good to add new sub-directories 'namers' and 'writers', to make structure consistent with that if
