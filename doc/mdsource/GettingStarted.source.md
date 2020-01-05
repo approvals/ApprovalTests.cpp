@@ -31,10 +31,10 @@ For all other test files, you need:
 
 ### Details 
 
-* [Catch 1 and 2](/doc/UsingCatch.md#getting-started-with-catch-1-and-2)
-* [Google Test](/doc/UsingGoogleTests.md#getting-started-with-google-test)
-* [doctest](/doc/UsingDoctest.md#getting-started-with-doctest)
-* [\[Boost\].UT](/doc/UsingUT.md#getting-started-with-ut)
+* [Catch 1 and 2](/doc/UsingCatch.md#top)
+* [Google Test](/doc/UsingGoogleTests.md#top)
+* [doctest](/doc/UsingDoctest.md#top)
+* [\[Boost\].UT](/doc/UsingUT.md#top)
 
 ## Choosing a testing framework
 
