@@ -22,7 +22,7 @@ Because we use CMake to build Catch2, we also provide integration points for our
 
 ## CMake target
 
-Approval Tests' CMake build exports an interface target `ApprovalTests`. Linking
+Approval Tests' CMake build exports an interface target `ApprovalTests::ApprovalTests`. Linking
 against it will add the proper include path and all necessary capabilities
 to the resulting binary.
 
@@ -31,10 +31,8 @@ Assuming that ApprovalTests.cpp has been cloned to `lib/ApprovalTests.cpp`:
 
 ```cmake
 add_subdirectory(lib/ApprovalTests.cpp)
-target_link_libraries(tests ApprovalTests)
+target_link_libraries(tests ApprovalTests::ApprovalTests)
 ```
-
-Note that we will soon be changing this to `ApprovalTests::ApprovalTests`.
 
 ## CMake project options
 

@@ -25,6 +25,7 @@ See also this list of [recently-fixed issues that don't yet have a milestone](ht
         * `third_party/ut/include/boost`
 * **New features**
     * Greatly improved and documented [CMake Integration](/doc/CMakeIntegration.md#top).
+    * Created a namespaced CMake target for ApprovalTests (#75)
 * **Bug fixes**
     * None
 * **Other changes**

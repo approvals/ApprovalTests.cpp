@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [vNext](#vnext)
+    * [Documented CMake Integration](#documented-cmake-integration)
   * [v.7.0.0](#v700)
     * [Support for \[Boost\].UT test framework](#support-for-boostut-test-framework)
   * [v.6.0.0](#v600)
@@ -37,6 +38,11 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## vNext
+
+
+### Documented CMake Integration
+
+See [CMake Integration](/doc/CMakeIntegration.md#top).
 
 ## v.7.0.0
 
