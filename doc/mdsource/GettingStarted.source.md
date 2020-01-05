@@ -20,7 +20,7 @@ If, after following these steps, you need help with running your program, please
 
 You need to include 2 lines for your main file to work.
 
-For catch (1 and 2), it's these two lines:
+For Catch2, it's these two lines:
 
 snippet: catch_2_main
 
@@ -44,7 +44,7 @@ If not, Approval Tests works well with all the above. Here are factors to consid
 
 | Framework | Minimum C++ Version | Ease of setup | IDE Integration | Compile and link time |
 | --- | :-: | --- | --- | --- |
-| Catch | C++11 | Very easy (single-header). [StarterProject](https://github.com/approvals/ApprovalTests.Cpp.StarterProject) | Widely supported | Not bad - has options to speed up |
+| Catch2 | C++11 | Very easy (single-header). [StarterProject](https://github.com/approvals/ApprovalTests.Cpp.StarterProject) | Widely supported | Not bad - has options to speed up |
 | doctest | C++11 | Very easy (single-header) | Unknown | Fast |
 | Google Test | C++11 | Difficult | Very widely supported | Fast |
 | \[Boost\].UT | C++20 <sup>[1](#footnote1)</sup> | Very easy (single-header) | Unknown | Fast |
