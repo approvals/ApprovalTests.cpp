@@ -51,6 +51,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@master
+    - uses: seanmiddleditch/gha-setup-ninja@v1
     - name: cmake
       run: cmake -G ${{ matrix.generator }}
     - name: build
