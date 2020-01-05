@@ -8,6 +8,11 @@ toc
 
 ## vNext
 
+
+### Documented CMake Integration
+
+See [CMake Integration](/doc/CMakeIntegration.md#top).
+
 ## v.7.0.0
 
 See the [v.7.0.0 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/2?closed=1) for the full list of changes.

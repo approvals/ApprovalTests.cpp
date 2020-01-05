@@ -24,7 +24,7 @@ See also this list of [recently-fixed issues that don't yet have a milestone](ht
         * `third_party/doctest/include/doctest`
         * `third_party/ut/include/boost`
 * **New features**
-    * None
+    * Greatly improved and documented [CMake Integration](/doc/CMakeIntegration.md#top).
 * **Bug fixes**
     * None
 * **Other changes**
