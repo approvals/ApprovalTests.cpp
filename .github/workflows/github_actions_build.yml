@@ -15,23 +15,39 @@ jobs:
   build:
     strategy:
       matrix:
-        buildtype: [windows-latest, windows-latest (clangcl), windows-2016, ubuntu-latest, macOS-latest]
+        buildtype: [windows-latest, windows-latest-ninja, windows-latest (clangcl), windows-latest (clangcl)-ninja, windows-2016, ubuntu-latest, ubuntu-latest-ninja, macOS-latest, macOS-latest-ninja]
         include:
         - buildtype: windows-latest
           os: windows-latest
           generator: '"Visual Studio 16 2019"'
+        - buildtype: windows-latest-ninja
+          os: windows-latest
+          generator: '"Ninja"'
+
         - buildtype: windows-latest (clangcl)
           os: windows-latest
           generator: '"Visual Studio 16 2019" -T "clangcl"'
+        - buildtype: windows-latest (clangcl)-ninja
+          os: windows-latest
+          generator: '"Ninja" -T "clangcl"'
+
         - buildtype: windows-2016
           os: windows-2016
           generator: '"Visual Studio 15 2017"' 
+
         - buildtype: ubuntu-latest
           os: ubuntu-latest
           generator: '"Unix Makefiles"'
+        - buildtype: ubuntu-latest-ninja
+          os: ubuntu-latest
+          generator: '"Ninja"'
+
         - buildtype:  macOS-latest
           os: macOS-latest
           generator: '"Unix Makefiles"'  
+        - buildtype:  macOS-latest-ninja
+          os: macOS-latest
+          generator: '"Ninja"'
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@master
