@@ -10,5 +10,5 @@ TEST_CASE("HelpMessage")
 TEST_CASE("HelpMessageForIncorrectBuildConfig")
 {
     Approvals::verify(TestName::getMisconfiguredBuildHelp(
-        "../../../tests/Catch1_Tests/ApprovalsTests.cpp"));
+        "../../../tests/Catch2_Tests/ApprovalsTests.cpp"));
 }
