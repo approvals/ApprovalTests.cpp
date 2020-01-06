@@ -18,7 +18,8 @@ jobs:
       matrix:
 #        disabled Ninja builds, as these fail, as expected:
 #        ubuntu-latest-ninja, macOS-latest-ninja
-        buildtype: [windows-latest, windows-latest (clangcl), windows-2016, ubuntu-latest, macOS-latest, ubuntu-latest-ninja, macOS-latest-ninja ]
+#        In order to fix them, we would need to create out-of-tree builds.
+        buildtype: [windows-latest, windows-latest (clangcl), windows-2016, ubuntu-latest, macOS-latest ]
         include:
         - buildtype: windows-latest
           os: windows-latest
@@ -48,7 +49,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@master
-    - uses: seanmiddleditch/gha-setup-ninja@v1
+#    - uses: seanmiddleditch/gha-setup-ninja@v1
     - name: cmake
       run: cmake -G ${{ matrix.generator }}
     - name: build
