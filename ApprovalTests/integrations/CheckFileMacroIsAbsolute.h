@@ -10,10 +10,10 @@ static_assert(__FILE__[1] == ':',
 #else
 static_assert(__FILE__[0] == '/',
 #endif
-// clang-format off
+              // clang-format off
 "There seems to be a problem with your build configuration, probably with Ninja. "
 "Please visit https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md"
-// clang-format on
-    );
+              // clang-format on
+);
 
 #endif //APPROVALTESTS_CPP_CHECKFILEMACROISABSOLUTE_H
