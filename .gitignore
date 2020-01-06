@@ -15,4 +15,3 @@ CMakeLists.txt.user
 [Oo]ut/build
 *.swp
 /CMakeSettings.json
-/x64-Clang-Release/
