@@ -3,9 +3,9 @@
 
 #ifdef _MSC_VER
 static_assert(__FILE__[1] == ':',
-              "Please compile with /FC, see <link> for details");
 #else
 static_assert(__FILE__[0] == '/',
+#endif
               R"(
 ********************************************************************************
 * Welcome to Approval Tests.
@@ -22,6 +22,5 @@ static_assert(__FILE__[0] == '/',
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
 ********************************************************************************
 )");
-#endif
 
 #endif //APPROVALTESTS_CPP_CHECKFILEMACROISABSOLUTE_H
