@@ -17,7 +17,13 @@ environment:
 #    - more_travis_builds
 
 before_build:
-- cmd: cmake -G %GENERATOR% .
+- cmd: |
+    # Workaround for CMake not wanting sh.exe on PATH for MinGW
+    # See https://help.appveyor.com/discussions/problems/3193-cmake-building-for-mingw-issue-with-git-shexe
+    # and https://github.com/jibsen/brieflz/blob/0c6fb73984f11e697dfaade5cdc5e291c1655c67/appveyor.yml
+    - set PATH=%PATH:C:\Program Files (x86)\Git\bin;=%
+    - set PATH=C:\MinGW\bin;%PATH%
+    - cmake -G %GENERATOR% .
 
 build_script:
 - cmd: cmake --build .
