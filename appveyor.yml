@@ -24,6 +24,7 @@ environment:
 
 before_build:
 - cmd: |
+    IF "%TARGET%" == "mingw" set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
     IF "%TARGET%" == "mingw" set PATH=%MINGWPATH%;%PATH%
     IF "%TARGET%" == "cygwin" set PATH=C:\cygwin\bin
     cmake -G %GENERATOR% .
