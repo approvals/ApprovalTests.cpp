@@ -31,10 +31,10 @@ before_build:
 
 build_script:
 - cmd: |
-    IF "%TARGET%" == "cygwin" %CYG_BASH% -c "cmake --build ."
-    IF NOT "%TARGET%" == "cygwin"            cmake --build .
+    IF "%TARGET%" == "cygwin" %CYG_BASH% -c "/usr/bin/cmake --build ."
+    IF NOT "%TARGET%" == "cygwin"                     cmake --build .
 
 test_script:
 - cmd: |
-    IF "%TARGET%" == "cygwin" %CYG_BASH% -c "ctest --verbose --parallel 4 -C Debug"
-    IF NOT "%TARGET%" == "cygwin"            ctest --verbose --parallel 4 -C Debug
+    IF "%TARGET%" == "cygwin" %CYG_BASH% -c "/usr/bin/ctest --verbose --parallel 4 -C Debug"
+    IF NOT "%TARGET%" == "cygwin"                     ctest --verbose --parallel 4 -C Debug
