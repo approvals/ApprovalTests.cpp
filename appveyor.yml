@@ -4,7 +4,6 @@ environment:
     - TARGET: cygwin
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
       GENERATOR: '"Unix Makefiles"'
-      CYG_BASH: C:\cygwin\bin\bash
 
     - TARGET: mingw
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
@@ -19,16 +18,13 @@ before_build:
 - cmd: |
     IF "%TARGET%" == "mingw" set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
     IF "%TARGET%" == "mingw" set PATH=%MINGWPATH%;%PATH%
-    IF "%TARGET%" == "cygwin" set PATH=C:\cygwin\bin
-    IF "%TARGET%" == "cygwin" %CYG_BASH% -c "/usr/bin/cmake -G %GENERATOR% ."
-    IF NOT "%TARGET%" == "cygwin"                     cmake -G %GENERATOR% .
+    IF "%TARGET%" == "cygwin" set "PATH=C:\cygwin\bin;C:\cygwin\usr\bin;%PATH%"
+    cmake -G %GENERATOR% .
 
 build_script:
 - cmd: |
-    IF "%TARGET%" == "cygwin" %CYG_BASH% -c "/usr/bin/cmake --build ."
-    IF NOT "%TARGET%" == "cygwin"                     cmake --build .
+    cmake --build .
 
 test_script:
 - cmd: |
-    IF "%TARGET%" == "cygwin" %CYG_BASH% -c "/usr/bin/ctest --verbose --parallel 4 -C Debug"
-    IF NOT "%TARGET%" == "cygwin"                     ctest --verbose --parallel 4 -C Debug
+    ctest --verbose --parallel 4 -C Debug
