@@ -18,8 +18,11 @@ environment:
 
 before_build:
 - cmd: |
-    set PATH=%PATH:C:\Program Files (x86)\Git\bin;=%
+    echo %PATH%
+    set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
+    echo %PATH%
     set PATH=C:\MinGW\bin;%PATH%
+    echo %PATH%
     cmake -G %GENERATOR% .
 
 build_script:
