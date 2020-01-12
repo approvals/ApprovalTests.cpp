@@ -5,7 +5,7 @@
 // not contain any newline characters, as their display looks messy
 // in some compiler outputs.
 
-#ifdef _MSC_VER
+#ifdef _WIN32
 static_assert(__FILE__[1] == ':',
 #else
 static_assert(__FILE__[0] == '/',
