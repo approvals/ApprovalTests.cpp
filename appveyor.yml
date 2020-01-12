@@ -2,7 +2,7 @@ environment:
   matrix:
     - TARGET: vs2019
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      GENERATOR: '"MinGW Makefiles"'
+      GENERATOR: '"MSYS Makefiles"'
 
     - TARGET: vs2017
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
@@ -23,6 +23,7 @@ before_build:
     echo %PATH%
     set PATH=C:\MinGW\bin;%PATH%
     echo %PATH%
+    cmake --help
     cmake -G %GENERATOR% .
 
 build_script:
