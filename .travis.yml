@@ -4,9 +4,9 @@
 sudo: required
 language: cpp
 
-branches:
-  except:
-    - compile_time_ninja_check_74
+#branches:
+#  except:
+#    - compile_time_ninja_check_74
 
 # -------------------------------------------------------------------------
 # Linux gcc

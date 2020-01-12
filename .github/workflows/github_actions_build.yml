@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - '*'
-      - '!compile_time_ninja_check_74'
+#      - '!compile_time_ninja_check_74'
   pull_request:
     branches:
       - '*'
-      - '!compile_time_ninja_check_74'
+#      - '!compile_time_ninja_check_74'
 
 jobs:
   clang-format:
