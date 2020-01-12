@@ -2,9 +2,13 @@ name: build
 
 on:
   push:
-    - !compile_time_ninja_check_74
+    branches:
+      - '*'
+      - '!compile_time_ninja_check_74'
   pull_request:
-    - !compile_time_ninja_check_74
+    branches:
+      - '*'
+      - '!compile_time_ninja_check_74'
 
 jobs:
   clang-format:
