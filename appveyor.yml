@@ -8,6 +8,10 @@ environment:
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
       GENERATOR: '"Visual Studio 16 2019"'
 
+    - TARGET: vs2019
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      GENERATOR: '"MinGW Makefiles"'
+
 #branches:
 #  except:
 #    - more_travis_builds
