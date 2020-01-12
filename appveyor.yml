@@ -23,7 +23,6 @@ before_build:
     IF "%TARGET%" == "mingw" set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
     echo %PATH%
     IF "%TARGET%" == "mingw" dir %MINGWPATH%
-    IF "%TARGET%" == "mingw" dir C:/MinGW/bin/
     IF "%TARGET%" == "mingw" set PATH=%MINGWPATH%;%PATH%
     echo %PATH%
     cmake --help
