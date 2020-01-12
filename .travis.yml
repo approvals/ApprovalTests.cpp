@@ -6,7 +6,7 @@ language: cpp
 
 branches:
   except:
-    - more_appveyor_builds
+    - compile_time_ninja_check_74
 
 # -------------------------------------------------------------------------
 # Linux gcc
