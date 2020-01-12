@@ -20,11 +20,11 @@ environment:
 before_build:
 - cmd: |
     echo %PATH%
-    IF "%MINGWPATH%" == "MinGW Makefiles" set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
+    IF "%TARGET%" == "mingw" set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
     echo %PATH%
-    IF "%MINGWPATH%" == "MinGW Makefiles" dir %MINGWPATH%
-    IF "%MINGWPATH%" == "MinGW Makefiles" dir C:/MinGW/bin/
-    IF "%MINGWPATH%" == "MinGW Makefiles" set PATH=%MINGWPATH%;%PATH%
+    IF "%TARGET%" == "mingw" dir %MINGWPATH%
+    IF "%TARGET%" == "mingw" dir C:/MinGW/bin/
+    IF "%TARGET%" == "mingw" set PATH=%MINGWPATH%;%PATH%
     echo %PATH%
     cmake --help
     cmake -G %GENERATOR% .
