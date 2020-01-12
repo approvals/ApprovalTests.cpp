@@ -1,5 +1,9 @@
 environment:
   matrix:
+    - TARGET: vs2019
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      GENERATOR: '"MinGW Makefiles"'
+
     - TARGET: vs2017
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       GENERATOR: '"Visual Studio 15 2017"'
@@ -7,10 +11,6 @@ environment:
     - TARGET: vs2019
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
       GENERATOR: '"Visual Studio 16 2019"'
-
-    - TARGET: vs2019
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      GENERATOR: '"MinGW Makefiles"'
 
 #branches:
 #  except:
