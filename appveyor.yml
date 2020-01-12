@@ -2,7 +2,7 @@ environment:
   matrix:
     - TARGET: mingw
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      GENERATOR: '"MinGW Makefiles"' -DCMAKE_IGNORE_PATH="C:/Program Files/Git/usr/bin"
+      GENERATOR: '"MinGW Makefiles" -DCMAKE_IGNORE_PATH="C:/Program Files/Git/usr/bin"'
       MINGWPATH: 'C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin'
 
     - TARGET: vs2017
