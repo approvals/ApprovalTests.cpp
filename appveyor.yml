@@ -19,13 +19,7 @@ environment:
 
 before_build:
 - cmd: |
-    echo %PATH%
-    IF "%TARGET%" == "mingw" set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
-    echo %PATH%
-    IF "%TARGET%" == "mingw" dir %MINGWPATH%
     IF "%TARGET%" == "mingw" set PATH=%MINGWPATH%;%PATH%
-    echo %PATH%
-    cmake --help
     cmake -G %GENERATOR% .
 
 build_script:
