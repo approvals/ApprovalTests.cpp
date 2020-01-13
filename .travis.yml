@@ -91,6 +91,9 @@ language: cpp
   apt:
     packages:
       - clang-9
+      - libclang-cpp9
+      - libllvm9
+      - libclang-common-9-dev
       - libstdc++-9-dev
     sources:
       - ubuntu-toolchain-r-test
