@@ -64,7 +64,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@master
-#    - uses: seanmiddleditch/gha-setup-ninja@v1
+    - uses: seanmiddleditch/gha-setup-ninja@v1
+      if: matrix.generator == '"Ninja"'
     - name: cmake
       run: |
         mkdir ${{ env.BUILD_DIR }}
