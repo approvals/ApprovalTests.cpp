@@ -36,7 +36,10 @@ This means that **if Ninja is used to create a build-space that is inside the so
 
 Visual C++ has a way to over-ride this and force absolute paths, if given `/FC`
 
-## Situation: Visual Studio with Visual C++ compiler (cl.exe)
+
+## Solutions
+
+### Situation: Visual Studio with Visual C++ compiler (cl.exe)
 
 Use `/FC` to make Visual Studio emit the full path in diagnostics, and `__FILE__` ([documentation](https://docs.microsoft.com/en-us/cpp/build/reference/fc-full-path-of-source-code-file-in-diagnostics?view=vs-2019)).
 
@@ -54,7 +57,7 @@ Or this:
 target_compile_options(my_program_name PUBLIC $<$<CXX_COMPILER_ID:MSVC>:/FC>)
 ```
 
-## Situation: Visual Studio with Clang compiler (clang-cl.exe)
+### Situation: Visual Studio with Clang compiler (clang-cl.exe)
 
 We have not been able to find a compiler flag that makes clang-cl put full paths in `__FILE__`.
 
