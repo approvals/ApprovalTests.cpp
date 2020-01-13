@@ -66,11 +66,11 @@ jobs:
 #    - uses: seanmiddleditch/gha-setup-ninja@v1
     - name: cmake
       run: |
-        mkdir ${{ build_dir }}
-        cmake -G ${{ matrix.generator }} -S ${{ github.workspace }} -B ${{ build_dir }}
+        mkdir ${{ matrix.build_dir }}
+        cmake -G ${{ matrix.generator }} -S ${{ github.workspace }} -B ${{ matrix.build_dir }}
     - name: build
       run: cmake --build .
-      working-directory: ${{ build_dir }}
+      working-directory: ${{ matrix.build_dir }}
     - name: test
       run: ctest --verbose --parallel 4 -C Debug
-      working-directory: ${{ build_dir }}
+      working-directory: ${{ matrix.build_dir }}
