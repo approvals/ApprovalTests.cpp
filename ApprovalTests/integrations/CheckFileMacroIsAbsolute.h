@@ -4,7 +4,7 @@
 // Maintenance note: the following help message must be short, and
 // not contain any newline characters, as their display looks messy
 // in some compiler outputs.
-
+// <SingleHpp unalterable>
 #ifdef _WIN32
 static_assert(__FILE__[1] == ':',
 #else
@@ -17,5 +17,6 @@ static_assert(__FILE__[0] == '/',
               // end-snippet
               // clang-format on
 );
+// </SingleHpp>
 
 #endif //APPROVALTESTS_CPP_CHECKFILEMACROISABSOLUTE_H
