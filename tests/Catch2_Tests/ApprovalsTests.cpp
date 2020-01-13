@@ -1,21 +1,9 @@
 #include <ostream>
 #include <stdexcept>
-#include <iostream>
 #include "catch2/catch.hpp"
 #include "ApprovalTests/Approvals.h"
 
 using namespace ApprovalTests;
-
-TEST_CASE("Print debug info to check Ninja workaround")
-{
-#ifdef _MSC_VER
-    // This is defined for both Visual C++ and clang-cl
-    std::cout << "_MSC_VER is defined " << std::endl;
-#else
-    std::cout << "_MSC_VER is NOT defined " << std::endl;
-#endif
-    std::cout << __FILE__ << std::endl;
-}
 
 TEST_CASE("YouCanVerifyText")
 {
