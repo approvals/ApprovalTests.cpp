@@ -87,18 +87,18 @@ language: cpp
       - ubuntu-toolchain-r-test
       - llvm-toolchain-trusty-8
 
-.addons-clang9: &clang9
-  apt:
-    packages:
-      - clang-9
-      - libclang-cpp9
-      - libllvm9
-      - libclang-common-9-dev
-      - libstdc++-9-dev
-    sources:
-      - ubuntu-toolchain-r-test
-      - sourceline: 'deb https://apt.llvm.org/xenial/ llvm-toolchain-xenial-9 main'
-        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
+#.addons-clang9: &clang9
+#  apt:
+#    packages:
+#      - clang-9
+#      - libclang-cpp9
+#      - libllvm9
+#      - libclang-common-9-dev
+#      - libstdc++-9-dev
+#    sources:
+#      - ubuntu-toolchain-r-test
+#      - sourceline: 'deb https://apt.llvm.org/xenial/ llvm-toolchain-xenial-9 main'
+#        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
 
 matrix:
   include:
@@ -151,10 +151,10 @@ matrix:
       dist: trusty
       addons: *clang8
 
-    - env: CLANG_VERSION=9
-      os: linux
-      dist: trusty
-      addons: *clang9
+#    - env: CLANG_VERSION=9
+#      os: linux
+#      dist: trusty
+#      addons: *clang9
 
     # -------------------------------------------------------------------------
     # Mac clang
