@@ -38,7 +38,8 @@ namespace ApprovalTests
         static std::string
         getMisconfiguredBuildHelp(const std::string& fileName)
         {
-            return "\n\n" + HelpMessages::getMisconfiguredBuildHelp(fileName) + "\n\n";
+            return "\n\n" + HelpMessages::getMisconfiguredBuildHelp(fileName) +
+                   "\n\n";
         }
 
         std::vector<std::string> sections;
