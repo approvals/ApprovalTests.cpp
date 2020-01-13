@@ -34,7 +34,13 @@ snippet: ForgottenToConfigure.HelpMessage.approved.txt
 
 ## Test gives "There seems to be a problem with your build configuration"
 
-**Symptom**
+**Symptom 1: Compilation Error**
+
+Compiling tests in Ninja-generated builds gives a compilation failure, with this message:
+
+snippet: compiler_error_for_misconfigured_build
+
+**Symptom 2: Test Failure**
 
 Running tests in Ninja-generated builds gives output such as the following:
 

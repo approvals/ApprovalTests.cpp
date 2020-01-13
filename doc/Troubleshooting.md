@@ -85,7 +85,20 @@ Running tests gives the following output:
 
 ## Test gives "There seems to be a problem with your build configuration"
 
-**Symptom**
+**Symptom 1: Compilation Error**
+
+Compiling tests in Ninja-generated builds gives a compilation failure, with this message:
+
+<!-- snippet: compiler_error_for_misconfigured_build -->
+<a id='snippet-compiler_error_for_misconfigured_build'/></a>
+```h
+"There seems to be a problem with your build configuration, probably with Ninja. "
+"Please visit https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md"
+```
+<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L14-L17' title='File snippet `compiler_error_for_misconfigured_build` was extracted from'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Navigate to start of snippet `compiler_error_for_misconfigured_build`'>anchor</a></sup>
+<!-- endsnippet -->
+
+**Symptom 2: Test Failure**
 
 Running tests in Ninja-generated builds gives output such as the following:
 

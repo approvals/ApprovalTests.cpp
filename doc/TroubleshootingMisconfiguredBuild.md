@@ -14,6 +14,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Feedback Requested](#feedback-requested)
   * [Symptoms](#symptoms)
+    * [Compilation Error](#compilation-error)
+    * [Test Failure](#test-failure)
   * [The problem](#the-problem)
     * [Ninja generator](#ninja-generator)
   * [Solutions](#solutions)
@@ -25,6 +27,21 @@ To change this file edit the source file and then execute ./run_markdown_templat
 This is living documentation. If you discover extra scenarios or better solutions, please contribute back via bug reports or pull requests. Thank you. 
 
 ## Symptoms
+
+### Compilation Error
+
+Compiling tests in Ninja-generated builds gives a compilation failure, with this message:
+
+<!-- snippet: compiler_error_for_misconfigured_build -->
+<a id='snippet-compiler_error_for_misconfigured_build'/></a>
+```h
+"There seems to be a problem with your build configuration, probably with Ninja. "
+"Please visit https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md"
+```
+<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L14-L17' title='File snippet `compiler_error_for_misconfigured_build` was extracted from'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Navigate to start of snippet `compiler_error_for_misconfigured_build`'>anchor</a></sup>
+<!-- endsnippet -->
+
+### Test Failure
 
 Running tests gives output such as the following:
 

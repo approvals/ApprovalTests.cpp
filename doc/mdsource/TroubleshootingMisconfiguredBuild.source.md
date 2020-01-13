@@ -10,6 +10,14 @@ This is living documentation. If you discover extra scenarios or better solution
 
 ## Symptoms
 
+### Compilation Error
+
+Compiling tests in Ninja-generated builds gives a compilation failure, with this message:
+
+snippet: compiler_error_for_misconfigured_build
+
+### Test Failure
+
 Running tests gives output such as the following:
 
 snippet: ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt
