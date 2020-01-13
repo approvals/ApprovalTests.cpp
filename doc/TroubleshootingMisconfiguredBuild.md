@@ -19,6 +19,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [The problem](#the-problem)
     * [Ninja generator](#ninja-generator)
   * [Solutions](#solutions)
+    * [Use a non-Ninja generator](#use-a-non-ninja-generator)
+    * [Force the compiler to use full-paths in `__FILE__`](#force-the-compiler-to-use-full-paths-in-__file__)
     * [Situation: Visual Studio with Visual C++ compiler (cl.exe)](#situation-visual-studio-with-visual-c-compiler-clexe)
     * [Situation: Visual Studio with Clang compiler (clang-cl.exe)](#situation-visual-studio-with-clang-compiler-clang-clexe)
     * [Situation: CMake's Ninja Generator](#situation-cmakes-ninja-generator)<!-- endtoc -->
@@ -93,6 +95,14 @@ Visual C++ has a way to over-ride this and force absolute paths, if given `/FC`
 
 
 ## Solutions
+
+### Use a non-Ninja generator
+
+The easiest way to work around this Ninja limitation is probably to switch to a [different CMake generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) than Ninja.
+
+### Force the compiler to use full-paths in `__FILE__`
+
+This can be done with Visual C++: see below.
 
 ### Situation: Visual Studio with Visual C++ compiler (cl.exe)
 

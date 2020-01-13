@@ -47,6 +47,14 @@ Visual C++ has a way to over-ride this and force absolute paths, if given `/FC`
 
 ## Solutions
 
+### Use a non-Ninja generator
+
+The easiest way to work around this Ninja limitation is probably to switch to a [different CMake generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) than Ninja.
+
+### Force the compiler to use full-paths in `__FILE__`
+
+This can be done with Visual C++: see below.
+
 ### Situation: Visual Studio with Visual C++ compiler (cl.exe)
 
 Use `/FC` to make Visual Studio emit the full path in diagnostics, and `__FILE__` ([documentation](https://docs.microsoft.com/en-us/cpp/build/reference/fc-full-path-of-source-code-file-in-diagnostics?view=vs-2019)).
