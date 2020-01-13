@@ -37,4 +37,4 @@ See also this list of [recently-fixed issues that don't yet have a milestone](ht
     * Code now formatted with clang-format (#39 - thanks @dheater and @alastairUK)
     * Added CI build for clang-cl (#30 - thanks @alastairUK))
     * Added CI builds for mingw/MSYS and CygWin (#79)
-    * Added disabled CI builds for Ninja generator (#79)
+    * Added CI builds for Ninja generator (#74)
