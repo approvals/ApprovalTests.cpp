@@ -80,7 +80,7 @@ With some build configurations, we have found that the path contained in `__FILE
 This is what we have established:
 
 * Some compilers only put a relative path in to `__FILE__`, if the filename they are given on the command line was relative
-* On all platforms, the Ninja generator:
+* On all platforms, the [Ninja build generator](https://ninja-build.org):
   * gives the compiler **relative paths**, if the build tree is inside the source tree
   * gives the compiler **absolute paths** if build tree is outside the source tree
 * Visual Studio recently changed its default generator to Ninja, making the problem much more common.
