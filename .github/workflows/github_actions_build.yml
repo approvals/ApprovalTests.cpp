@@ -69,6 +69,7 @@ jobs:
     - name: cmake
       run: |
         mkdir ${{ env.BUILD_DIR }}
+        cmake --version
         cmake -G ${{ matrix.generator }} -S ${{ github.workspace }} -B ${{ env.BUILD_DIR }}
     - name: build
       run: cmake --build .
