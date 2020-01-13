@@ -60,13 +60,13 @@ namespace ApprovalTests
 
         static std::string topAndTailHelpMessage(const std::string& message)
         {
-            std::string lineBreak =
+            const std::string lineBreak =
                 "**************************************************************"
                 "**********************\n";
-            std::string lineBuffer =
+            const std::string lineBuffer =
                 "*                                                             "
                 "                     *\n";
-            std::string helpMessage = "\n\n" + lineBreak + lineBuffer +
+            const std::string helpMessage = "\n\n" + lineBreak + lineBuffer +
                                       message + lineBuffer + lineBreak + '\n';
             return helpMessage;
         }
