@@ -3,6 +3,7 @@
 #define APPROVALTESTS_CPP_CATCH2APPROVALS_H
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
 
 // <SingleHpp unalterable>
 #if defined(APPROVALS_CATCH_EXISTING_MAIN)

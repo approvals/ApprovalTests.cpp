@@ -1,22 +1,30 @@
+# Visual Studio builds are run by GitHub actions
 environment:
   matrix:
-    - TARGET: vs2017
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-      GENERATOR: '"Visual Studio 15 2017"'
-
-    - TARGET: vs2019
+    - TARGET: cygwin
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      GENERATOR: '"Visual Studio 16 2019"'
+      GENERATOR: '"Unix Makefiles"'
+
+    - TARGET: mingw
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      GENERATOR: '"MinGW Makefiles" -DCMAKE_IGNORE_PATH="C:/Program Files/Git/usr/bin"'
+      MINGWPATH: 'C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin'
 
 #branches:
 #  except:
 #    - more_travis_builds
 
 before_build:
-- cmd: cmake -G %GENERATOR% .
+- cmd: |
+    IF "%TARGET%" == "mingw" set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
+    IF "%TARGET%" == "mingw" set PATH=%MINGWPATH%;%PATH%
+    IF "%TARGET%" == "cygwin" set "PATH=C:\cygwin\bin;C:\cygwin\usr\bin;%PATH%"
+    cmake -G %GENERATOR% .
 
 build_script:
-- cmd: cmake --build .
+- cmd: |
+    cmake --build .
 
 test_script:
-- cmd: ctest --verbose --parallel 4 -C Debug
+- cmd: |
+    ctest --verbose --parallel 4 -C Debug

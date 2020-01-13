@@ -2,6 +2,7 @@
 #define APPROVALTESTS_CPP_DOCTESTAPPROVALS_H
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
 
 // <SingleHpp unalterable>
 #ifdef APPROVALS_DOCTEST

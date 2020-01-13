@@ -1,6 +1,14 @@
 name: build
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - '*'
+#      - '!compile_time_ninja_check_74'
+  pull_request:
+    branches:
+      - '*'
+#      - '!compile_time_ninja_check_74'
 
 jobs:
   clang-format:
@@ -14,27 +22,42 @@ jobs:
           clangFormatVersion: 9
   build:
     strategy:
+      fail-fast: false
       matrix:
+#        disabled Ninja builds, as these fail, as expected:
+#        ubuntu-latest-ninja, macOS-latest-ninja
+#        In order to fix them, we would need to create out-of-tree builds.
         buildtype: [windows-latest, windows-latest (clangcl), windows-2016, ubuntu-latest, macOS-latest]
         include:
         - buildtype: windows-latest
           os: windows-latest
           generator: '"Visual Studio 16 2019"'
+
         - buildtype: windows-latest (clangcl)
           os: windows-latest
           generator: '"Visual Studio 16 2019" -T "clangcl"'
+
         - buildtype: windows-2016
           os: windows-2016
           generator: '"Visual Studio 15 2017"' 
+
         - buildtype: ubuntu-latest
           os: ubuntu-latest
           generator: '"Unix Makefiles"'
+        - buildtype: ubuntu-latest-ninja
+          os: ubuntu-latest
+          generator: '"Ninja"'
+
         - buildtype:  macOS-latest
           os: macOS-latest
           generator: '"Unix Makefiles"'  
+        - buildtype:  macOS-latest-ninja
+          os: macOS-latest
+          generator: '"Ninja"'
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@master
+#    - uses: seanmiddleditch/gha-setup-ninja@v1
     - name: cmake
       run: cmake -G ${{ matrix.generator }}
     - name: build
