@@ -23,6 +23,9 @@ See also this list of [recently-fixed issues that don't yet have a milestone](ht
         * `third_party/catch2/include/catch2/`
         * `third_party/doctest/include/doctest`
         * `third_party/ut/include/boost`
+    * Catch1 is no longer supported as a test framework, in order to better support more CMake build layouts. (#64)
+        * Catch2 remains fully supported.
+        * Catch1's main benefit was that it supported pre-C++11 compilers, but as ApprovalTests.cpp requires C++11 or newer, this wasn't useful in practice
 * **New features**
     * Greatly improved and documented [CMake Integration](/doc/CMakeIntegration.md#top).
     * Created a namespaced CMake target for ApprovalTests (#75)
@@ -31,9 +34,6 @@ See also this list of [recently-fixed issues that don't yet have a milestone](ht
         * See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top) if you have test failures in your Ninja builds.
 * **Other changes**
     * Updated \[Boost\].UT integration to work with [a change](https://github.com/boost-experimental/ut/commit/94220e8c95b323349bfd94ef30b2568916fb1421#diff-04c6e90faac2675aa89e2176d2eec7d8) made for the v1.1.5 release of that library. (#66 - thanks @krzysztof-jusiak)
-    * Catch1 is no longer supported as a test framework, in order to better support more CMake build layouts. (#64)
-        * Catch2 remains fully supported.
-        * Catch1's main benefit was that it supported pre-C++11 compilers, but as ApprovalTests.cpp requires C++11 or newer, this wasn't useful in practice
     * Code now formatted with clang-format (#39 - thanks @dheater and @alastairUK)
     * Added CI build for clang-cl (#30 - thanks @alastairUK))
     * Added CI builds for mingw/MSYS and CygWin (#79)
