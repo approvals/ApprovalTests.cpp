@@ -34,6 +34,14 @@ snippet: ForgottenToConfigure.HelpMessage.approved.txt
 
 ## Test gives "There seems to be a problem with your build configuration"
 
+**Symptom**
+
+Running tests in Ninja-generated builds gives output such as the following:
+
+snippet: ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt
+
+**Things to check:**
+
 See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top).
 
 ## My custom reporter works in development, but not CI

@@ -85,6 +85,35 @@ Running tests gives the following output:
 
 ## Test gives "There seems to be a problem with your build configuration"
 
+**Symptom**
+
+Running tests in Ninja-generated builds gives output such as the following:
+
+<!-- snippet: ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt -->
+<a id='snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt'/></a>
+```txt
+
+
+************************************************************************************
+*                                                                                  *
+* Welcome to Approval Tests.
+*
+* There seems to be a problem with your build configuration.
+* We cannot find the test source file at:
+*   ../../../tests/Catch2_Tests/ApprovalsTests.cpp
+*
+* For details on how to fix this, please visit:
+* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
+*                                                                                  *
+************************************************************************************
+
+
+```
+<sup><a href='/tests/DocTest_Tests/documentation/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt#L1-L16' title='File snippet `ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
+
+**Things to check:**
+
 See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top).
 
 ## My custom reporter works in development, but not CI
