@@ -4,11 +4,11 @@
 using namespace ApprovalTests;
 TEST_CASE("HelpMessage")
 {
-    Approvals::verify(ApprovalTestNamer::getMisconfiguredMainHelp());
+    Approvals::verify(HelpMessages::getMisconfiguredMainHelp());
 }
 
 TEST_CASE("HelpMessageForIncorrectBuildConfig")
 {
-    Approvals::verify(TestName::getMisconfiguredBuildHelp(
+    Approvals::verify(HelpMessages::getMisconfiguredBuildHelp(
         "../../../tests/Catch2_Tests/ApprovalsTests.cpp"));
 }
