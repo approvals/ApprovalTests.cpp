@@ -27,7 +27,13 @@ jobs:
 #        disabled Ninja builds, as these fail, as expected:
 #        ubuntu-latest-ninja, macOS-latest-ninja
 #        In order to fix them, we would need to create out-of-tree builds.
-        buildtype: [windows-latest, windows-latest (clangcl), windows-2016, ubuntu-latest, macOS-latest]
+        buildtype: [
+          windows-latest,
+          windows-latest (clangcl),
+          windows-2016,
+          ubuntu-latest,
+          macOS-latest,
+        ]
         include:
         - buildtype: windows-latest
           os: windows-latest
