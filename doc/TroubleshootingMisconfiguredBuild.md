@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Feedback Requested](#feedback-requested)
   * [Symptoms](#symptoms)
   * [The problem](#the-problem)
+    * [Ninja generator](#ninja-generator)
   * [Situation: Visual Studio with Visual C++ compiler (cl.exe)](#situation-visual-studio-with-visual-c-compiler-clexe)
   * [Situation: Visual Studio with Clang compiler (clang-cl.exe)](#situation-visual-studio-with-clang-compiler-clang-clexe)<!-- endtoc -->
 
@@ -51,13 +52,25 @@ Running tests gives output such as the following:
 
 ## The problem
 
-Approval Tests depends on the test framework to provide access to the source file of the test being run.
+### Ninja generator
 
-In many cases, this is implementing using `__FILE__`.
+Approval Tests depends on the test framework to provide access to the full path of the source file of the test being run.
+
+In many cases, this is implemented using `__FILE__`.
 
 With some build configurations, we have found that the path contained in `__FILE__` contains either just the file name, or contains an incorrect relative path to a non-existent directory, relative to the current working directory of the test program.
 
-We think this may be associated with Visual Studio 2019's change to make Ninja the default generator.
+This is what we have established:
+
+* Some compilers only put a relative path in to `__FILE__`, if the filename they are given on the command line was relative
+* On all platforms, the Ninja generator:
+  * gives the compiler **relative paths**, if the build tree is inside the source tree
+  * gives the compiler **absolute paths** if build tree is outside the source tree
+* Visual Studio recently changed its default generator to Ninja, making the problem much more common.
+
+This means that **if Ninja is used to create a build-space that is inside the source tree, Approval Tests-based tests will fail**.
+
+Visual C++ has a way to over-ride this and force absolute paths, if given `/FC`
 
 ## Situation: Visual Studio with Visual C++ compiler (cl.exe)
 
