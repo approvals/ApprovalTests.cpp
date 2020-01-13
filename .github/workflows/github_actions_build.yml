@@ -23,6 +23,7 @@ jobs:
   build:
     env:
       BUILD_DIR: ${{ github.workspace }}/buildspace
+      NINJA_BUILD_DIR: ${{ github.workspace }}/../buildspace
     strategy:
       fail-fast: false
       matrix:
@@ -56,7 +57,7 @@ jobs:
           os: ubuntu-latest
           generator: '"Ninja"'
           env:
-            BUILD_DIR: ${{ github.workspace }}/../buildspace
+            BUILD_DIR: ${{ env.NINJA_BUILD_DIR }}
 
         - buildtype:  macOS-latest
           os: macOS-latest
@@ -66,7 +67,7 @@ jobs:
           os: macOS-latest
           generator: '"Ninja"'
           env:
-            BUILD_DIR: ${{ github.workspace }}/../buildspace
+            BUILD_DIR: ${{ env.NINJA_BUILD_DIR }}
 
     runs-on: ${{ matrix.os }}
     steps:
