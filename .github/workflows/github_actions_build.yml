@@ -22,7 +22,8 @@ jobs:
           clangFormatVersion: 9
   build:
     env:
-      BUILD_DIR: ${{ github.workspace }}/../build
+      BUILD_DIR: ${{ github.workspace }}/buildspace
+      NINJA_BUILD_DIR: ${{ github.workspace }}/../buildspace
     strategy:
       fail-fast: false
       matrix:
@@ -51,16 +52,23 @@ jobs:
         - buildtype: ubuntu-latest
           os: ubuntu-latest
           generator: '"Unix Makefiles"'
+
         - buildtype: ubuntu-latest-ninja
           os: ubuntu-latest
           generator: '"Ninja"'
+          env:
+            BUILD_DIR: ${{ env.NINJA_BUILD_DIR }}
 
         - buildtype:  macOS-latest
           os: macOS-latest
           generator: '"Unix Makefiles"'  
+
         - buildtype:  macOS-latest-ninja
           os: macOS-latest
           generator: '"Ninja"'
+          env:
+            BUILD_DIR: ${{ env.NINJA_BUILD_DIR }}
+
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@master
