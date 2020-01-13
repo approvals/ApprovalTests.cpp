@@ -21,10 +21,10 @@ jobs:
           exclude: './third_party'
           clangFormatVersion: 9
   build:
+    env:
+      BUILD_DIR: ${{ github.workspace }}/../build
     strategy:
       fail-fast: false
-      env:
-        BUILD_DIR: ${{ github.workspace }}/../build
       matrix:
         buildtype: [
           windows-latest,
