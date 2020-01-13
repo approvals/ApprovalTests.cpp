@@ -91,8 +91,7 @@ This is what we have established:
 
 This means that **if Ninja is used to create a build-space that is inside the source tree, Approval Tests-based tests will fail**.
 
-Visual C++ has a way to over-ride this and force absolute paths, if given `/FC`
-
+Note that Visual C++ has a way to over-ride this and force absolute paths, if given `/FC`. This is described below, in [Situation: Visual Studio with Visual C++ compiler (cl.exe)](/doc/TroubleshootingMisconfiguredBuild.md#situation-visual-studio-with-visual-c-compiler-clexe).
 
 ## Solutions
 
@@ -108,7 +107,9 @@ This can be done with Visual C++: see below.
 
 Use `/FC` to make Visual Studio emit the full path in diagnostics, and `__FILE__` ([documentation](https://docs.microsoft.com/en-us/cpp/build/reference/fc-full-path-of-source-code-file-in-diagnostics?view=vs-2019)).
 
-You need to add a line like the following to your `CMakeLists.txt` file:
+If you are using this project by cloning or forking its repository, and then using CMake's `add_subdirectory()`, this will be done for you automatically, for all targets that use the provided [CMake target](/doc/CMakeIntegration.md#cmake-target).
+
+Otherwise (such as if you are using the downloaded single-header file, or you have set up your own CMake builds), you need to add a line like the following to your `CMakeLists.txt` file:
 
 ```cmake
 if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
