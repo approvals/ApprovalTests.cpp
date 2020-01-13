@@ -66,11 +66,14 @@ jobs:
     - uses: actions/checkout@master
     - uses: seanmiddleditch/gha-setup-ninja@v1
       if: matrix.generator == '"Ninja"'
-    - name: cmake
+    - name: make build space
       run: |
         mkdir ${{ env.BUILD_DIR }}
+    - name: cmake
+      run: |
         cmake --version
-        cmake -G ${{ matrix.generator }} -S ${{ github.workspace }} -B ${{ env.BUILD_DIR }}
+        cmake -G ${{ matrix.generator }} ${{ github.workspace }}
+      working-directory: ${{ env.BUILD_DIR }}
     - name: build
       run: cmake --build .
       working-directory: ${{ env.BUILD_DIR }}
