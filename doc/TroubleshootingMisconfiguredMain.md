@@ -69,7 +69,10 @@ Approval Tests needs to know which test framework to connect to, and that usuall
 
 This error usually indicates that a problem in your test program's `main()` means that ApprovalTests.cpp is not correctly set up for your test framework. 
 
-* See [Getting Started - Creating your main()](/doc/GettingStarted.md#top) to find out what you need to do for your chosen est framework, or to select one, if you have not yet done so.
+The following resources should help:
+
+* The text in the error message above may be enough to get you going.
+* If not, see [Getting Started - Creating your main()](/doc/GettingStarted.md#top) to find out what you need to do for your chosen test framework, or to select one, if you have not yet done so.
 
 ### Check Google Test Framework
 
