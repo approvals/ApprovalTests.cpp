@@ -52,7 +52,6 @@ language: cpp
 # -------------------------------------------------------------------------
 
 .addons-clang5: &clang5
-  compiler: clang
   apt:
     packages:
       - clang-5.0
@@ -62,7 +61,6 @@ language: cpp
       - llvm-toolchain-trusty-5.0
 
 .addons-clang6: &clang6
-  compiler: clang
   apt:
     packages:
       - clang-6.0
@@ -72,7 +70,6 @@ language: cpp
       - llvm-toolchain-trusty-6.0
 
 .addons-clang7: &clang7
-  compiler: clang
   apt:
     packages:
       - clang-7
@@ -82,7 +79,6 @@ language: cpp
       - llvm-toolchain-trusty-7
 
 .addons-clang8: &clang8
-  compiler: clang
   apt:
     packages:
       - clang-8
