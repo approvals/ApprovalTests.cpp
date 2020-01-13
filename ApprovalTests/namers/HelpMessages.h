@@ -53,7 +53,7 @@ namespace ApprovalTests
 *     #include "ApprovalTests.hpp"
 *
 * For more information, please visit:
-* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/GettingStarted.md
+* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredMain.md
 )";
             return topAndTailHelpMessage(helpMessage);
         }
