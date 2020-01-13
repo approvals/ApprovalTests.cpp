@@ -23,8 +23,9 @@ jobs:
   build:
     strategy:
       fail-fast: false
+      env:
+        BUILD_DIR: ${{ github.workspace }}/../build
       matrix:
-        build_dir: ${{ github.workspace }}/../build
         buildtype: [
           windows-latest,
           windows-latest (clangcl),
@@ -66,11 +67,11 @@ jobs:
 #    - uses: seanmiddleditch/gha-setup-ninja@v1
     - name: cmake
       run: |
-        mkdir ${{ matrix.build_dir }}
-        cmake -G ${{ matrix.generator }} -S ${{ github.workspace }} -B ${{ matrix.build_dir }}
+        mkdir ${{ env.BUILD_DIR }}
+        cmake -G ${{ matrix.generator }} -S ${{ github.workspace }} -B ${{ env.BUILD_DIR }}
     - name: build
       run: cmake --build .
-      working-directory: ${{ matrix.build_dir }}
+      working-directory: ${{ env.BUILD_DIR }}
     - name: test
       run: ctest --verbose --parallel 4 -C Debug
-      working-directory: ${{ matrix.build_dir }}
+      working-directory: ${{ env.BUILD_DIR }}
