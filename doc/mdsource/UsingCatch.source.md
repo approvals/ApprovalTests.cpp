@@ -13,6 +13,10 @@ The [Catch2](https://github.com/catchorg/Catch2) test framework works well with 
 
 This section describes the various ways of using Approval Tests with Catch2.
 
+include: include_ninja_warning_note
+
+### Requirements
+
 Approval Tests requires that a file called the following is found:
 
 snippet: required_header_for_catch

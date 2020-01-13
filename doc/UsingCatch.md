@@ -14,6 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Getting Started With Catch2](#getting-started-with-catch2)
+    * [Requirements](#requirements)
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
     * [Existing Project - with CATCH_CONFIG_MAIN](#existing-project---with-catch_config_main)
@@ -26,6 +27,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
 The [Catch2](https://github.com/catchorg/Catch2) test framework works well with Approval Tests.
 
 This section describes the various ways of using Approval Tests with Catch2.
+
+**Note:** Approval Tests has problems with the [Ninja build generator](https://ninja-build.org/), if using in-source builds. If you use Ninja, special care is needed when setting up builds, to avoid compilation errors or test failures. **It is probably best to avoid using Ninja with Approval Tests**, but if you wish to do so, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
+
+### Requirements
 
 Approval Tests requires that a file called the following is found:
 

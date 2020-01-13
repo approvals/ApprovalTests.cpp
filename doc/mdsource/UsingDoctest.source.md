@@ -10,6 +10,8 @@ toc
 
 The [doctest](https://github.com/onqtam/doctest) test framework works well with Approval Tests.
 
+include: include_ninja_warning_note
+
 Doctest is similar to Catch, but claims to give faster compilation times.
 
 ### Requirements

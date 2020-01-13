@@ -12,6 +12,8 @@ The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework work
 
 \[Boost\].UT is a single header/single module, macro-free μ(micro)/Unit Testing Framework that requires C++17 / C++20
 
+include: include_ninja_warning_note
+
 ### Requirements
 
 Approval Tests for \[Boost\].UT requires that a file called the following is found:

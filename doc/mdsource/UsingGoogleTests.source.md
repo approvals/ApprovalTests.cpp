@@ -11,6 +11,8 @@ The [Google Test](https://github.com/google/googletest) test framework works wel
 
 This section describes the various ways of using Approval Tests with Google Test.
 
+include: include_ninja_warning_note
+
 ### Starter Project
 
 We haven't yet provided a Starter Project for using Approval Tests with Google Tests.

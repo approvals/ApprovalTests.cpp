@@ -29,6 +29,8 @@ The [Google Test](https://github.com/google/googletest) test framework works wel
 
 This section describes the various ways of using Approval Tests with Google Test.
 
+**Note:** Approval Tests has problems with the [Ninja build generator](https://ninja-build.org/), if using in-source builds. If you use Ninja, special care is needed when setting up builds, to avoid compilation errors or test failures. **It is probably best to avoid using Ninja with Approval Tests**, but if you wish to do so, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
+
 ### Starter Project
 
 We haven't yet provided a Starter Project for using Approval Tests with Google Tests.

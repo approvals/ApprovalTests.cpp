@@ -24,6 +24,8 @@ The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework work
 
 \[Boost\].UT is a single header/single module, macro-free μ(micro)/Unit Testing Framework that requires C++17 / C++20
 
+**Note:** Approval Tests has problems with the [Ninja build generator](https://ninja-build.org/), if using in-source builds. If you use Ninja, special care is needed when setting up builds, to avoid compilation errors or test failures. **It is probably best to avoid using Ninja with Approval Tests**, but if you wish to do so, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
+
 ### Requirements
 
 Approval Tests for \[Boost\].UT requires that a file called the following is found:
