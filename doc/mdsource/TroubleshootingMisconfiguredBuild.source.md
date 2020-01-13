@@ -89,6 +89,23 @@ This would put the build outputs in to:
 
 `C:\Users\YourUserName\CMakeBuilds\MyProjectName\build`
 
+### Situation: CMake's Ninja Generator
+
+The easiest solution is probably to use a [different CMake generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) instead of Ninja.
+
+However, if you wish to continue using Ninja, you will need to create and use a build directory outside of your source directory. 
+
+For example, with CMake, you might do this:
+
+```bash
+cd ApprovalTests.cpp
+mkdir ../build_approval_tests_ninja
+cd    ../build_approval_tests_ninja
+cmake -G Ninja ../ApprovalTests.cpp
+cmake --build .
+ctest
+``` 
+
 ---
 
 [Back to User Guide](/doc/README.md#top)
