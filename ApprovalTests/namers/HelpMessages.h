@@ -66,9 +66,8 @@ namespace ApprovalTests
             const std::string lineBuffer =
                 "*                                                             "
                 "                     *\n";
-            const std::string helpMessage = "\n\n" + lineBreak + lineBuffer +
-                                      message + lineBuffer + lineBreak + '\n';
-            return helpMessage;
+            return "\n\n" + lineBreak + lineBuffer + message + lineBuffer +
+                   lineBreak + '\n';
         }
     };
 }
