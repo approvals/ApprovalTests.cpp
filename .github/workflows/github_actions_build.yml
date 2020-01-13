@@ -24,15 +24,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-#        disabled Ninja builds, as these fail, as expected:
-#        ubuntu-latest-ninja, macOS-latest-ninja
-#        In order to fix them, we would need to create out-of-tree builds.
+        build_dir: ${{ github.workspace }}/../build
         buildtype: [
           windows-latest,
           windows-latest (clangcl),
           windows-2016,
           ubuntu-latest,
+          ubuntu-latest-ninja,
           macOS-latest,
+          macOS-latest-ninja,
         ]
         include:
         - buildtype: windows-latest
@@ -65,8 +65,12 @@ jobs:
     - uses: actions/checkout@master
 #    - uses: seanmiddleditch/gha-setup-ninja@v1
     - name: cmake
-      run: cmake -G ${{ matrix.generator }}
+      run: |
+        mkdir ${{ build_dir }}
+        cmake -G ${{ matrix.generator }} -S ${{ github.workspace }} -B ${{ build_dir }}
     - name: build
       run: cmake --build .
+      working-directory: ${{ build_dir }}
     - name: test
       run: ctest --verbose --parallel 4 -C Debug
+      working-directory: ${{ build_dir }}
