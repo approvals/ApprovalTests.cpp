@@ -108,6 +108,7 @@ Here's how to set up from:
 * [Videos](/doc/Videos.md#top)
 * [Troubleshooting](/doc/Troubleshooting.md#top)
     * [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top)
+    * [Troubleshooting Misconfigured Main](/doc/TroubleshootingMisconfiguredMain.md#top)
 * 4 benefits of testing
     * Spec
     * Feedback
