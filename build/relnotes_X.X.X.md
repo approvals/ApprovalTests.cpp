@@ -38,3 +38,4 @@ See also this list of [recently-fixed issues that don't yet have a milestone](ht
     * Added CI build for clang-cl (#30 - thanks @alastairUK))
     * Added CI builds for mingw/MSYS and CygWin (#79)
     * Added CI builds for Ninja generator (#74)
+    * The help text for problem misconfigured `main()` functions now links straight to the [relevant help page](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredMain.md#top). (#84)
