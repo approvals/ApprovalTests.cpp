@@ -1,5 +1,5 @@
-************************************************************************************
-*                                                                                  *
+*****************************************************************************
+*                                                                           *
 * Welcome to Approval Tests.
 *
 * There seems to be a problem with your build configuration.
@@ -8,5 +8,5 @@
 *
 * For details on how to fix this, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
-*                                                                                  *
-************************************************************************************
+*                                                                           *
+*****************************************************************************

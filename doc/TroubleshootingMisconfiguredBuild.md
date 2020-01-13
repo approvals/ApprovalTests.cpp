@@ -51,8 +51,8 @@ Running tests gives output such as the following:
 <!-- snippet: ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt -->
 <a id='snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt'/></a>
 ```txt
-************************************************************************************
-*                                                                                  *
+*****************************************************************************
+*                                                                           *
 * Welcome to Approval Tests.
 *
 * There seems to be a problem with your build configuration.
@@ -61,8 +61,8 @@ Running tests gives output such as the following:
 *
 * For details on how to fix this, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
-*                                                                                  *
-************************************************************************************
+*                                                                           *
+*****************************************************************************
 ```
 <sup><a href='/tests/DocTest_Tests/documentation/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt#L1-L12' title='File snippet `ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->

@@ -62,10 +62,10 @@ namespace ApprovalTests
         {
             const std::string lineBreak =
                 "**************************************************************"
-                "**********************";
+                "***************";
             const std::string lineBuffer =
                 "*                                                             "
-                "                     *\n";
+                "              *\n";
             return lineBreak + '\n' + lineBuffer + message + lineBuffer +
                    lineBreak;
         }
