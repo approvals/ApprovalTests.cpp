@@ -39,7 +39,11 @@ target_link_libraries(tests ApprovalTests::ApprovalTests)
 ApprovalTests.cpp's CMake project also provides some options for other projects
 that consume it. These are:
 
-* `APPROVAL_TESTS_ENABLE_CODE_COVERAGE` -- When `ON`, Approval Test's own tests are run with code coverage enabled. This uses [Lars Bilke's CodeCoverage.cmake](https://github.com/bilke/cmake-modules/blob/master/CodeCoverage.cmake)
+* `APPROVAL_TESTS_ENABLE_CODE_COVERAGE` -- When `ON`, Approval Test's own tests are run with code coverage enabled. This uses [Lars Bilke's CodeCoverage.cmake](https://github.com/bilke/cmake-modules/blob/master/CodeCoverage.cmake).  Defaults to `OFF`.
+
+Options that only affect the main project, and have no effect if `add_subdirectory()` or similar is used:
+
+* `APPROVAL_TESTS_ENABLE_CMAKE_INTEGRATION_TESTS` -- When `ON`, the tests in [tests/CMake_Tests](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/CMake_Tests) are run. Their job is to check that our CMake integrations still work. Defaults to `ON`.
 
 ---
 
