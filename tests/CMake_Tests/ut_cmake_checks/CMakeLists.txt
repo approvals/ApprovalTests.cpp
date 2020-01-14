@@ -13,6 +13,9 @@ if((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION GREATER_
             ut_cmake_checks_ut ut_cmake_checks.cpp)
     target_link_libraries(
             ut_cmake_checks_ut ut)
+
+    # Check that our real target name for Boost.UT matches that used in the Catch2 project
+    target_compile_definitions(boost.ut INTERFACE DUMMY_TEST_DEFINE)
 else()
     MESSAGE("The [Boost].UT integration with Approval Tests requires source_location support by the compiler, therefore it's disabled")
 endif()
