@@ -77,7 +77,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: seanmiddleditch/gha-setup-ninja@v1
-      if: matrix.generator == '"Ninja"'
+      if: contains(matrix.generator, 'Ninja')
     - name: make build space
       run: |
         mkdir ${{ env.BUILD_DIR }}
