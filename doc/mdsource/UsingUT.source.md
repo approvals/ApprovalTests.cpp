@@ -20,7 +20,12 @@ Approval Tests for \[Boost\].UT requires that a file called the following is fou
 
 snippet: required_header_for_ut
 
-Approval Tests needs \[Boost\].UT version [ec49196](https://github.com/boost-experimental/ut/commit/ec49196855078d98738f54023b488b2f85299826) or above.
+It also requires:
+
+* A C++ compiler that supports the C++ 20 [`std::source_location`](https://en.cppreference.com/w/cpp/utility/source_location). See [C++ compiler support](https://en.cppreference.com/w/cpp/compiler_support).
+* A build that enables C++20 - for example, with: `set(CMAKE_CXX_STANDARD 20)`
+* A \[Boost\].UT version that is compatible with the version of ApprovalTests.cpp being used. See the version we test against: 
+[third_party/ut/include/boost/ut.hpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/third_party/ut/include/boost/ut.hpp)
 
 ### Usage examples
 
