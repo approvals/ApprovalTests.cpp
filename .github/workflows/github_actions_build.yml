@@ -31,9 +31,9 @@ jobs:
           windows-latest (clangcl),
           windows-2016,
           ubuntu-latest,
-          ubuntu-latest-unity-build,
           ubuntu-latest-ninja,
           macOS-latest,
+          macOS-latest-unity-build,
           macOS-latest-ninja,
         ]
         include:
@@ -53,10 +53,6 @@ jobs:
           os: ubuntu-latest
           generator: '"Unix Makefiles"'
 
-        - buildtype: ubuntu-latest-unity-build
-          os: ubuntu-latest
-          generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
-
         - buildtype: ubuntu-latest-ninja
           os: ubuntu-latest
           generator: '"Ninja"'
@@ -64,6 +60,10 @@ jobs:
         - buildtype:  macOS-latest
           os: macOS-latest
           generator: '"Unix Makefiles"'  
+
+        - buildtype:  macOS-latest-unity-build
+          os: macOS-latest
+          generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
 
         - buildtype:  macOS-latest-ninja
           os: macOS-latest
