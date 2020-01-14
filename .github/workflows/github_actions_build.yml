@@ -91,12 +91,12 @@ jobs:
       if: contains(matrix.generator, 'Ninja')
 
     - name: set env
+      if {{ matrix.in_source_build }} == true
       run: |
-        if {{ matrix.in_source_build }} == true
         echo "::set-env name=BUILD_DIR_PATH::${{ env.IN_TREE_BUILD_DIR }}"
     - name: set env out-of-source
+      if {{ matrix.in_source_build }} == false
       run: |
-        if {{ matrix.in_source_build }} == false
         echo "::set-env name=BUILD_DIR_PATH::${{ env.OUT_OF_TREE_BUILD_DIR }}"
     - name: check env
       run: |
