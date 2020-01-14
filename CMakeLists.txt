@@ -13,6 +13,7 @@ add_subdirectory(ApprovalTests)
 set(CMAKE_VERBOSE_MAKEFILE off)
 
 option(APPROVAL_TESTS_ENABLE_CODE_COVERAGE "Enable coverage reporting for selected tests" OFF)
+option(APPROVAL_TESTS_ENABLE_CMAKE_INTEGRATION_TESTS "Enable tests that check our CMake integration" ON)
 
 if(APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
     message(STATUS "Enable Code Coverage")
