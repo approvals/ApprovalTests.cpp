@@ -19,8 +19,12 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [The problem](#the-problem)
     * [Ninja generator](#ninja-generator)
   * [Solutions](#solutions)
-    * [Use a non-Ninja generator](#use-a-non-ninja-generator)
+    * [Use a Ninja Unity build, if you can](#use-a-ninja-unity-build-if-you-can)
+    * [Move your build outside the source tree](#move-your-build-outside-the-source-tree)
     * [Force the compiler to use full-paths in `__FILE__`](#force-the-compiler-to-use-full-paths-in-__file__)
+    * [With \[Boost\].UT, check compiler and build options](#with-boostut-check-compiler-and-build-options)
+    * [Use a non-Ninja generator](#use-a-non-ninja-generator)
+  * [Specific Situations](#specific-situations)
     * [Situation: Visual Studio with Visual C++ compiler (cl.exe)](#situation-visual-studio-with-visual-c-compiler-clexe)
     * [Situation: Visual Studio with Clang compiler (clang-cl.exe)](#situation-visual-studio-with-clang-compiler-clang-clexe)
     * [Situation: CMake's Ninja Generator](#situation-cmakes-ninja-generator)<!-- endtoc -->
@@ -41,7 +45,7 @@ Compiling tests in Ninja-generated builds gives a compilation failure, with this
 "There seems to be a problem with your build configuration, probably with Ninja. "
 "Please visit https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md"
 ```
-<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L14-L17' title='File snippet `compiler_error_for_misconfigured_build` was extracted from'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Navigate to start of snippet `compiler_error_for_misconfigured_build`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L24-L27' title='File snippet `compiler_error_for_misconfigured_build` was extracted from'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Navigate to start of snippet `compiler_error_for_misconfigured_build`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Test Failure
@@ -91,13 +95,90 @@ Note that Visual C++ has a way to over-ride this and force absolute paths, if gi
 
 ## Solutions
 
-### Use a non-Ninja generator
+This section lists the known types of workaround for the above problems.
 
-The easiest way to work around this Ninja limitation is probably to switch to a [different CMake generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) than Ninja.
+### Use a Ninja Unity build, if you can
+
+When used to generate Unity builds, the Ninja build generator creates executables that run correctly with Approval Tests, finding the source file location correctly. 
+
+For more information about Unity builds in CMake, see this article: [CMake 3.16 added support for precompiled headers & unity builds - what you need to know](http://onqtam.com/programming/2019-12-20-pch-unity-cmake-3-16/). It also describes the initial problems you may encounter when trying to compile a project as Unity, and how to fix them.
+
+If you are using **CMake 3.16 or above**, it is easy to turn on Unity builds, and the following examples show you how.
+
+**Using the ApprovalTests.cpp repo**
+
+Here is an example CMake command-line for creating Unity builds with the Ninja generator:
+
+```bash
+# CMake 3.16 or above:
+cmake -G "Ninja" -DCMAKE_UNITY_BUILD=yes <source_location>
+```
+
+In the following situations, the above is all you need to do, for all the supported test frameworks to work correctly:
+
+* You are building the ApprovalTests.cpp project with CMake.
+* You have added the ApprovalTests.cpp project to your own CMake build, via `add_subdirectory()`. For more information on the options for this, see [CMake Integration](/doc/CMakeIntegration.md#top).
+
+**Using the ApprovalTests.cpp single-header download**
+
+If you are using the single-header download of Approval Tests with a Ninja Unity builc, you may find that you get a compilation failure, pointing to this page, when in fact the tests would run correctly.
+
+In this case, you will need to disable the compilation check of `__FILE__`, which can be done by defining the `APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK` macro. This can be done line this:
+
+```bash
+# CMake 3.16 or above - with other frameworks, including Catch2, doctest, Google Test:
+cmake -G "Ninja" -DCMAKE_UNITY_BUILD=yes \
+    -DCMAKE_CXX_FLAGS_INIT=-DAPPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK \
+    <source_location>
+```
+
+### Move your build outside the source tree
+
+The problem with Ninja builds generating relative paths to source files only occurs if the build is inside the source tree.
+
+If you are able to move your build outside the source tree, Ninja will generate absolute paths to source files, and Approval Tests will work fine.
+
+If you need help to do this, see the various sections in [Specific Situations](/doc/TroubleshootingMisconfiguredBuild.md#specific-situations) below.
 
 ### Force the compiler to use full-paths in `__FILE__`
 
 This can be done with Visual C++: see below.
+
+### With \[Boost\].UT, check compiler and build options
+
+The \[Boost\].UT framework uses very recent features of C++, and is changing somewhat rapidly.
+
+If the ApprovalTests.cpp integration with \[Boost\].UT is not working in your build, you will see probably the following output at run-time, where the filename is `unknown`:
+
+<!-- snippet: ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt -->
+<a id='snippet-ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt'/></a>
+```txt
+*****************************************************************************
+*                                                                           *
+* Welcome to Approval Tests.
+*
+* There seems to be a problem with your build configuration.
+* We cannot find the test source file at:
+*   unknown
+*
+* For details on how to fix this, please visit:
+* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
+*                                                                           *
+*****************************************************************************
+```
+<sup><a href='/tests/DocTest_Tests/documentation/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt#L1-L12' title='File snippet `ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
+
+These are possible causes:
+
+* Check that your compiler and build options satisfy the [requirements for using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#requirements).
+* If you have downloaded your own copy of the \[Boost\].UT framework, it's possible that it is not compatible with the ApprovalTests.cpp version you are using. It will be worth comparing your version of the \[Boost\].UT header with the one in this project: [third_party/ut/include/boost/ut.hpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/third_party/ut/include/boost/ut.hpp).
+
+### Use a non-Ninja generator
+
+If you can't use any of the above, your only option to work around this Ninja limitation is probably to switch to a [different CMake generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) than Ninja.
+
+## Specific Situations
 
 ### Situation: Visual Studio with Visual C++ compiler (cl.exe)
 
