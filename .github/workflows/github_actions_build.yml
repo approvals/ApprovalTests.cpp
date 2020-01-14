@@ -22,7 +22,6 @@ jobs:
           clangFormatVersion: 9
   build:
     env:
-      BUILD_DIR: ${{ github.workspace }}/../build
       IN_TREE_BUILD_DIR: ${{ github.workspace }}/build_space
       OUT_OF_TREE_BUILD_DIR: ${{ github.workspace }}/../build_space
     strategy:
@@ -90,7 +89,7 @@ jobs:
     - uses: seanmiddleditch/gha-setup-ninja@v1
       if: contains(matrix.generator, 'Ninja')
 
-    - name: set env
+    - name: set env for in-source build tree
       if: matrix.in_source_build == true
       run: |
         echo "::set-env name=BUILD_DIR_PATH::${{ env.IN_TREE_BUILD_DIR }}"
@@ -104,15 +103,15 @@ jobs:
 
     - name: make build space
       run: |
-        mkdir ${{ env.BUILD_DIR }}
+        mkdir ${{ env.BUILD_DIR_PATH }}
     - name: cmake
       run: |
         cmake --version
         cmake -G ${{ matrix.generator }} ${{ github.workspace }}
-      working-directory: ${{ env.BUILD_DIR }}
+      working-directory: ${{ env.BUILD_DIR_PATH }}
     - name: build
       run: cmake --build .
-      working-directory: ${{ env.BUILD_DIR }}
+      working-directory: ${{ env.BUILD_DIR_PATH }}
     - name: test
       run: ctest --verbose --parallel 4 -C Debug
-      working-directory: ${{ env.BUILD_DIR }}
+      working-directory: ${{ env.BUILD_DIR_PATH }}
