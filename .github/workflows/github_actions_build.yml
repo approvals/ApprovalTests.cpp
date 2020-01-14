@@ -35,6 +35,7 @@ jobs:
           macOS-latest,
           macOS-latest-unity,
           macOS-latest-ninja,
+          macOS-latest-ninja-unity,
         ]
         include:
         - buildtype: windows-latest
@@ -68,6 +69,10 @@ jobs:
         - buildtype:  macOS-latest-ninja
           os: macOS-latest
           generator: '"Ninja"'
+
+        - buildtype:  macOS-latest-ninja-unity
+          os: macOS-latest
+          generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@master
