@@ -33,7 +33,7 @@ jobs:
           ubuntu-latest,
           ubuntu-latest-ninja,
           macOS-latest,
-          macOS-latest-unity-build,
+          macOS-latest-unity,
           macOS-latest-ninja,
         ]
         include:
@@ -61,7 +61,7 @@ jobs:
           os: macOS-latest
           generator: '"Unix Makefiles"'  
 
-        - buildtype:  macOS-latest-unity-build
+        - buildtype:  macOS-latest-unity
           os: macOS-latest
           generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
 
