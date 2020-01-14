@@ -23,6 +23,7 @@ jobs:
   build:
     env:
       BUILD_DIR: ${{ github.workspace }}/../build
+      BUILD_DIR_EXPERIMENTAL: ${{ github.workspace }}/build_space
     strategy:
       fail-fast: false
       matrix:
@@ -56,6 +57,8 @@ jobs:
 
         - buildtype: ubuntu-latest-ninja
           os: ubuntu-latest
+          env:
+            BUILD_DIR_EXPERIMENTAL: ${{ github.workspace }}/../build_space
           generator: '"Ninja"'
 
         - buildtype:  macOS-latest
@@ -68,6 +71,8 @@ jobs:
 
         - buildtype:  macOS-latest-ninja
           os: macOS-latest
+          env:
+            BUILD_DIR_EXPERIMENTAL: ${{ github.workspace }}/../build_space
           generator: '"Ninja"'
 
         - buildtype:  macOS-latest-ninja-unity
@@ -81,6 +86,7 @@ jobs:
     - name: make build space
       run: |
         mkdir ${{ env.BUILD_DIR }}
+        echo ${{ env.BUILD_DIR_EXPERIMENTAL }}
     - name: cmake
       run: |
         cmake --version
