@@ -19,3 +19,6 @@ add_executable(
         catch2_cmake_checks_lower_case_catch2 catch2_cmake_checks.cpp)
 target_link_libraries(
         catch2_cmake_checks_lower_case_catch2 catch2)
+
+# Check that our real target name for Catch2 matches that used in the Catch2 project
+target_compile_definitions(Catch2 INTERFACE DUMMY_TEST_DEFINE)
