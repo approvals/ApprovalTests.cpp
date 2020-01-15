@@ -68,7 +68,7 @@ Below is an example of a call to an approval test inside a \[Boost\].UT test:
         "Approval Tests can verify text via the golden master method");
 };
 ```
-<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L13-L18' title='File snippet `ut_main_usage` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_usage' title='Navigate to start of snippet `ut_main_usage`'>anchor</a></sup>
+<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L48-L53' title='File snippet `ut_main_usage` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_usage' title='Navigate to start of snippet `ut_main_usage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 In the following example, two instances of ApprovalTests are called inside the same test. We need to use sections with different names, to prevent Approval Tests from using the same output file for both tests:
@@ -91,7 +91,7 @@ In the following example, two instances of ApprovalTests are called inside the s
     }
 };
 ```
-<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L25-L40' title='File snippet `ut_main_multiple` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_multiple' title='Navigate to start of snippet `ut_main_multiple`'>anchor</a></sup>
+<sup><a href='/tests/UT_Tests/ApprovalTestTests.cpp#L60-L75' title='File snippet `ut_main_multiple` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_multiple' title='Navigate to start of snippet `ut_main_multiple`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---
