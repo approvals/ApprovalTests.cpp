@@ -3,12 +3,41 @@
 #include "ApprovalTests.hpp"
 // end-snippet
 
+#include "tests/Catch2_Tests/reporters/FakeReporter.h"
+
 int main()
 {
     using namespace boost::ut;
     using namespace ApprovalTests;
 
     auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+
+    "ItReportsAndThrowsIfVerifyFails"_test = []() {
+        auto front_loader = std::make_shared<FakeReporter>(true);
+
+        // Use a front-loaded reporter so this is used even we are running
+        // in a CI system.
+        auto front_loaded_reporter_disposer =
+            Approvals::useAsFrontLoadedReporter(front_loader);
+
+        bool approvalMissingExceptionReceived = false;
+        try
+        {
+            Approvals::verify("cucumber");
+        }
+        catch (const ApprovalMissingException&)
+        {
+            approvalMissingExceptionReceived = true;
+        }
+
+        // If these start failing, run the tests with verbose on.
+        // You will probably find that Boost.UT is unable to find the
+        // name of the source file.
+        // For ways to fix this, see:
+        // https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
+        expect(approvalMissingExceptionReceived == true_b);
+        expect(front_loader->called == true_b);
+    };
 
     // begin-snippet: ut_main_usage
     "ItCanVerifyAFile"_test = []() {
