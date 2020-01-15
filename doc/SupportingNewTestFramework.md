@@ -31,7 +31,8 @@ ApprovalTests.cpp can be made to work with any test framework that supplies the 
 
 * The current test's name 
 * The current test's full source file path (with correct case of filename) 
-* Ability to report unexpected exceptions as test failures, including reporting the text in `exception.what()` , and ideally also the exception type.
+* Ability to report unexpected exceptions as test failures, including reporting the text in `exception.what()`, and ideally also the exception type.
+* Ability to return a non-zero exit status from the test program if there were any unexpected exceptions.
 
 ## Steps to add support
 
