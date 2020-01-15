@@ -22,7 +22,7 @@ if((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION GREATER_
         add_executable(
                 ut_cmake_checks_ut ut_cmake_checks.cpp)
         target_link_libraries(
-                ut_cmake_checks_ut Boost.ut)
+                ut_cmake_checks_ut boost.ut)
         add_test(
                 NAME
                 ut_cmake_checks_ut
