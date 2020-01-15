@@ -29,8 +29,14 @@ int main()
         {
             approvalMissingExceptionReceived = true;
         }
+        catch (const std::exception& e)
+        {
+            expect(approvalMissingExceptionReceived == true_b)
+                << "Unexpected exception received: " << e.what();
+        }
 
-        // If these start failing, run the tests with verbose on.
+        // If these start failing, run the tests with verbose on,
+        // or ctest's --output-on-failure.
         // You will probably find that Boost.UT is unable to find the
         // name of the source file.
         // For ways to fix this, see:
