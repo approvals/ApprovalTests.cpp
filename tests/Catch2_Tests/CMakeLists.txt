@@ -32,7 +32,7 @@ add_executable(${PROJECT_NAME}
     writers/StringWriterTests.cpp
     )
 
-set_source_files_properties(CombinationTests.cpp PROPERTIES SKIP_UNITY_BUILD_INCLUSION YES)
+set_source_files_properties(main.cpp PROPERTIES SKIP_UNITY_BUILD_INCLUSION YES)
 
 target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests Catch2::Catch2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
