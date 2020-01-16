@@ -2,7 +2,6 @@ project(GoogleTest_Tests)
 set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}
     main.cpp
-    CompileAllIncludes.cpp
     GoogleTestApprovalsTests.cpp
     namers/GoogleNamerTest.cpp
     namers/GoogleFixtureNamerCustomizationTests.cpp
