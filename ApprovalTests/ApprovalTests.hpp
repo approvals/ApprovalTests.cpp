@@ -1,8 +1,10 @@
+#ifndef APPROVALTESTS_CPP_APPROVALS_HPP
+#define APPROVALTESTS_CPP_APPROVALS_HPP
+
 // Created with some manual editing of the output of:
 //   cd ApprovalTests.cpp
 //   find ApprovalTests -depth -name \*.h\* | sed -e 's/^/#include "/' | sed -e 's/$/"/' | sort
 
-// TODO Add include-guards
 // TODO Add mechanism to update this - and check it is kept uptodate
 
 #include "ApprovalTests/Approvals.h"
@@ -69,3 +71,5 @@
 #include "ApprovalTests/utilities/WinMinGWUtils.h"
 #include "ApprovalTests/writers/ExistingFile.h"
 #include "ApprovalTests/writers/StringWriter.h"
+
+#endif // APPROVALTESTS_CPP_APPROVALS_HPP
