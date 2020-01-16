@@ -1,3 +1,6 @@
+#ifndef APPROVALTESTS_CPP_PAIR_UTILITIES_HPP
+#define APPROVALTESTS_CPP_PAIR_UTILITIES_HPP
+
 #include <map>
 #include <ostream>
 
@@ -10,3 +13,5 @@ namespace ApprovalTests
         return os;
     }
 }
+
+#endif // APPROVALTESTS_CPP_PAIR_UTILITIES_HPP
