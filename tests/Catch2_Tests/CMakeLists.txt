@@ -31,6 +31,9 @@ add_executable(${PROJECT_NAME}
     utilities/SystemUtilsTests.cpp
     writers/StringWriterTests.cpp
     )
+
+set_source_files_properties(CombinationTests.cpp PROPERTIES SKIP_UNITY_BUILD_INCLUSION YES)
+
 target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests Catch2::Catch2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
