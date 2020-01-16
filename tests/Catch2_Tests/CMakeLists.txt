@@ -4,7 +4,6 @@ add_executable(${PROJECT_NAME}
     main.cpp
     core/ApprovalExceptionTests.cpp
     ApprovalsTests.cpp
-    ApprovalTests.hpp
     CombinationTests.cpp
     core/FileApproverTests.cpp
     PairUtilities.h

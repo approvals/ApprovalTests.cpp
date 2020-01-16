@@ -4,7 +4,6 @@
 
 // TODO Add include-guards
 // TODO Add mechanism to update this - and check it is kept uptodate
-// TODO Remove the other shims elsewhere in the main ApprovalTests.cpp project
 
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/CombinationApprovals.h"
