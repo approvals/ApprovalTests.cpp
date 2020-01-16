@@ -3,7 +3,7 @@
 
 // Created with some manual editing of the output of:
 //   cd ApprovalTests.cpp
-//   find ApprovalTests -depth -name \*.h\* | sed -e 's/^/#include "/' | sed -e 's/$/"/' | sort
+//   find ApprovalTests -depth -name \*.h | sed -e 's/^/#include "/' | sed -e 's/$/"/' | sort
 
 // TODO Add mechanism to update this - and check it is kept uptodate
 
