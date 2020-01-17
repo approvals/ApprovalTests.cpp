@@ -5,7 +5,10 @@ if(NOT DEFINED PROJECT_NAME)
     set(NOT_SUBPROJECT ON)
 endif()
 
+message("CMAKE_CURRENT_SOURCE_DIR = ${CMAKE_CURRENT_SOURCE_DIR}")
+message("CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/")
+message("CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}")
 
 project(ApprovalTests.cpp)
 add_subdirectory(ApprovalTests)
