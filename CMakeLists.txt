@@ -5,17 +5,19 @@ if(NOT DEFINED PROJECT_NAME)
     set(NOT_SUBPROJECT ON)
 endif()
 
+project(ApprovalTests.cpp)
+
 message("CMAKE_CURRENT_SOURCE_DIR = ${CMAKE_CURRENT_SOURCE_DIR}")
 message("CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/")
 message("CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}")
+include(ApprovalTestsOptions)
 
-project(ApprovalTests.cpp)
 add_subdirectory(ApprovalTests)
 
-set(CMAKE_VERBOSE_MAKEFILE off)
+message("CMAKE_MODULE_PATH after ApprovalTests dir = ${CMAKE_MODULE_PATH}")
 
-include(ApprovalTestsOptions)
+set(CMAKE_VERBOSE_MAKEFILE off)
 
 if(APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
     include(CodeCoverage)
