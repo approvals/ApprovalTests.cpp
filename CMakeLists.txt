@@ -7,15 +7,10 @@ endif()
 
 project(ApprovalTests.cpp)
 
-message("CMAKE_CURRENT_SOURCE_DIR = ${CMAKE_CURRENT_SOURCE_DIR}")
-message("CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/CMake/")
-message("CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}")
 include(ApprovalTestsOptions)
 
 add_subdirectory(ApprovalTests)
-
-message("CMAKE_MODULE_PATH after ApprovalTests dir = ${CMAKE_MODULE_PATH}")
 
 set(CMAKE_VERBOSE_MAKEFILE off)
 
