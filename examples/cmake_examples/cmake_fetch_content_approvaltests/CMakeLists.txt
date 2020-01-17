@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 # This version is needed for FetchContent_Declare & FetchContent_MakeAvailable
 
-# TODO Set language version
-
 project(cmake_fetch_content_approvaltests)
 
 include(FetchContent)
@@ -13,5 +11,7 @@ if (NOT TARGET ApprovalTests)
     set(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2 ON CACHE BOOL "")
     FetchContent_MakeAvailable(ApprovalTests)
 endif ()
+
+enable_testing()
 
 add_subdirectory(cmake_fetch_content_approvaltests_tests)
