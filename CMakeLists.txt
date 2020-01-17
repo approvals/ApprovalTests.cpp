@@ -19,7 +19,7 @@ if(APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
     append_coverage_compiler_flags()
 endif()
 
-if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_THIRD_PARTY)
+if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_THIRD_PARTY_GOOGLE_TEST)
     if(NOT TARGET gtest_main)
         # Download and unpack googletest at configure time
         configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
@@ -38,9 +38,10 @@ if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_THIRD_PARTY)
         add_subdirectory("${CMAKE_BINARY_DIR}/googletest-src"
                          "${CMAKE_BINARY_DIR}/googletest-build")
     endif()
-
-    add_subdirectory(third_party)
 endif()
+
+# This will optionally add the other third-party sub-directories
+add_subdirectory(third_party)
 
 if(NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_TESTING OR APPROVAL_TESTS_BUILD_EXAMPLES)
     enable_testing()
