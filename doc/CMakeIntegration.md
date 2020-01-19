@@ -148,20 +148,21 @@ It will use the file: `dependencies/CMakeLists.txt`:
 
 ```cmake
 include(FetchContent)
-if (NOT TARGET ApprovalTests)
-    FetchContent_Declare(ApprovalTests
-            GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
-            GIT_TAG cmake_docs) # TODO Merge cmake_docs to default - then change this to master
 
-    # Tell the ApprovalTests CMake files that we want to use its copy of Catch2:
-    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2 ON CACHE BOOL "")
+# -------------------------------------------------------------------
+# ApprovalTests.cpp
+FetchContent_Declare(ApprovalTests
+        GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
+        GIT_TAG cmake_docs) # TODO Merge cmake_docs to default - then change this to master
 
-    # These are also available:
-    #    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST ON CACHE BOOL "")
-    #    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_UT ON CACHE BOOL "")
+# Tell the ApprovalTests CMake files that we want to use its copy of Catch2:
+set(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2 ON CACHE BOOL "")
 
-    FetchContent_MakeAvailable(ApprovalTests)
-endif ()
+# These are also available:
+#    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST ON CACHE BOOL "")
+#    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_UT ON CACHE BOOL "")
+
+FetchContent_MakeAvailable(ApprovalTests)
 ```
  <!-- end include: inc_fetch_content_approvaltests_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
 
@@ -179,20 +180,22 @@ We use this file: `dependencies/CMakeLists.txt`:
 
 ```cmake
 include(FetchContent)
-if (NOT TARGET ApprovalTests)
-    FetchContent_Declare(ApprovalTests
-            GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
-            GIT_TAG cmake_docs) # TODO Merge cmake_docs to default - then change this to master
 
-    FetchContent_MakeAvailable(ApprovalTests)
-endif ()
+# -------------------------------------------------------------------
+# ApprovalTests.cpp
+FetchContent_Declare(ApprovalTests
+        GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
+        GIT_TAG cmake_docs) # TODO Merge cmake_docs to default - then change this to master
 
-if (NOT TARGET Catch2)
-    FetchContent_Declare(Catch2
-            GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-            GIT_TAG v2.11.1)
-    FetchContent_MakeAvailable(Catch2)
-endif ()
+FetchContent_MakeAvailable(ApprovalTests)
+
+# -------------------------------------------------------------------
+# Catch2
+FetchContent_Declare(Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG v2.11.1)
+
+FetchContent_MakeAvailable(Catch2)
 ```
  <!-- end include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
