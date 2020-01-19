@@ -15,12 +15,12 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Introduction](#introduction)
   * [CMake target](#cmake-target)
   * [CMake project options](#cmake-project-options)
-  * [Scenarios using ApprovalTests.cpp](#scenarios-using-approvaltestscpp)
+  * [Scenarios when using ApprovalTests.cpp](#scenarios-when-using-approvaltestscpp)
     * [Context](#context)
     * [Make CMake clone ApprovalTests.cpp](#make-cmake-clone-approvaltestscpp)
     * [Make CMake clone ApprovalTests.cpp and Catch2](#make-cmake-clone-approvaltestscpp-and-catch2)
     * [Use own ApprovalTests.cpp and Catch2 clones](#use-own-approvaltestscpp-and-catch2-clones)
-  * [Scenarios developing ApprovalTests.cpp](#scenarios-developing-approvaltestscpp)
+  * [Scenarios when developing ApprovalTests.cpp](#scenarios-when-developing-approvaltestscpp)
     * [Developing ApprovalTests.cpp with test framework sources](#developing-approvaltestscpp-with-test-framework-sources)<!-- endtoc -->
 
 ## Introduction
@@ -87,7 +87,7 @@ option(APPROVAL_TESTS_BUILD_EXAMPLES
 <sup><a href='/CMake/ApprovalTestsOptions.cmake#L1-L26' title='File snippet `ApprovalTestsOptions.cmake` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsOptions.cmake' title='Navigate to start of snippet `ApprovalTestsOptions.cmake`'>anchor</a></sup>
 <!-- endsnippet -->
 
-## Scenarios using ApprovalTests.cpp 
+## Scenarios when using ApprovalTests.cpp 
 
 ### Context
 
@@ -198,7 +198,9 @@ endif ()
 
 ### Use own ApprovalTests.cpp and Catch2 clones
 
-Here, instead of getting CMake to download these dependencies, we have got our own clones or forks of them, which we want to use.
+Here, instead of getting CMake to download ApprovalTests.cpp and Catch2, we have got our own clones or forks of them, which we want to use with our own tests.
+
+This works with older versions of CMake, unlike the `FetchContent` examples above. The following `dependencies/CMakeLists.txt` file was tested with CMake 3.8.
 
  <!-- include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
@@ -220,13 +222,15 @@ add_subdirectory(
 ```
  <!-- end include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
-## Scenarios developing ApprovalTests.cpp 
+## Scenarios when developing ApprovalTests.cpp 
 
 ### Developing ApprovalTests.cpp with test framework sources
 
 It is useful to be able to edit and debug both this project and the test frameworks that it depends upon. It helps to be able to see the source code of these frameworks, rather than just the single-header releases that are copied in to the third_party directory here.
 
 This also allows us to update to different commits of any of these projects.
+
+Here we want to enable and run all the ApprovalTests.cpp tests, unlike the cases above, where we only want to run the tests of the project that is being developed by using this library.
 
 If the repositories for all these projects are checked out in the the same directory, then this `CMakeLists.txt` file can be put in to a parallel directory.
 

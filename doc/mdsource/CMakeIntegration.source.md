@@ -37,7 +37,7 @@ Currently, these are all the supported options:
 
 snippet: ApprovalTestsOptions.cmake
 
-## Scenarios using ApprovalTests.cpp 
+## Scenarios when using ApprovalTests.cpp 
 
 ### Context
 
@@ -87,13 +87,15 @@ This works with older versions of CMake, unlike the `FetchContent` examples abov
 
 include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists
 
-## Scenarios developing ApprovalTests.cpp 
+## Scenarios when developing ApprovalTests.cpp 
 
 ### Developing ApprovalTests.cpp with test framework sources
 
 It is useful to be able to edit and debug both this project and the test frameworks that it depends upon. It helps to be able to see the source code of these frameworks, rather than just the single-header releases that are copied in to the third_party directory here.
 
 This also allows us to update to different commits of any of these projects.
+
+Here we want to enable and run all the ApprovalTests.cpp tests, unlike the cases above, where we only want to run the tests of the project that is being developed by using this library.
 
 If the repositories for all these projects are checked out in the the same directory, then this `CMakeLists.txt` file can be put in to a parallel directory.
 
