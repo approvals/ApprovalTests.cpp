@@ -139,7 +139,7 @@ add_test(
 
 This says that the libraries `ApprovalTests::ApprovalTests` and `Catch2::Catch2` are required.
 
-Here is [this example test directory](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests/tests).
+Here is [this example project's test directory](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests/tests).
 
 **Dependencies**
 
@@ -261,7 +261,7 @@ The same principles apply when using all the other test frameworks supported by 
 
 It is useful to be able to edit and debug both this project and the test frameworks that it depends upon. It helps to be able to see the source code of these frameworks, rather than just the single-header releases that are copied in to the third_party directory here.
 
-This also allows us to update to different commits of any of these projects.
+This also allows us to checkout different commits of any of these projects.
 
 Here we want to enable and run all the ApprovalTests.cpp tests, unlike the cases above, where we only want to run the tests of the project that is being developed by using this library.
 
@@ -308,7 +308,6 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/doctest_build
 )
 
-
 # -------------------------------------------------------------------
 # GoogleTest
 # Prevent GoogleTest from overriding our compiler/linker options
@@ -321,8 +320,6 @@ add_subdirectory(
 
 # -------------------------------------------------------------------
 # Boost.ut
-# ec49196855078d98738f54023b488b2f85299826 is the first commit that works with FetchContent
-# TODO Add a Boost.UT issue asking for option names to have a prefix added
 set(BUILD_BENCHMARKS OFF CACHE BOOL "")
 set(BUILD_EXAMPLES OFF CACHE BOOL "")
 set(BUILD_TESTS OFF CACHE BOOL "")
@@ -333,11 +330,8 @@ add_subdirectory(
 )
 
 if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
-    # Turn off some checks for issues that should be fixed in ApprovalTests code
+    # Turn off some checks for extensions needed for Boost.ut
     target_compile_options(boost.ut INTERFACE
-            -Wno-newline-eof
-            -Wno-shadow-field-in-constructor
-            -Wno-weak-vtables
             -Wno-c99-extensions # Needed for Boost.ut, at least in v1.1.6
             )
 endif()
