@@ -20,6 +20,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Make CMake clone ApprovalTests.cpp](#make-cmake-clone-approvaltestscpp)
     * [Make CMake clone ApprovalTests.cpp and Catch2](#make-cmake-clone-approvaltestscpp-and-catch2)
     * [Use own ApprovalTests.cpp and Catch2 clones](#use-own-approvaltestscpp-and-catch2-clones)
+    * [Using other supported test frameworks](#using-other-supported-test-frameworks)
   * [Scenarios when developing ApprovalTests.cpp](#scenarios-when-developing-approvaltestscpp)
     * [Developing ApprovalTests.cpp with test framework sources](#developing-approvaltestscpp-with-test-framework-sources)<!-- endtoc -->
 
@@ -158,13 +159,14 @@ FetchContent_Declare(ApprovalTests
 # Tell the ApprovalTests CMake files that we want to use its copy of Catch2:
 set(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2 ON CACHE BOOL "")
 
-# These are also available:
-#    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST ON CACHE BOOL "")
-#    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_UT ON CACHE BOOL "")
-
 FetchContent_MakeAvailable(ApprovalTests)
 ```
  <!-- end include: inc_fetch_content_approvaltests_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
+
+There are also options to enable use of ApprovalTests.cpp's copies of all other supported test frameworks except GoogleTest, including:
+
+* `APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST`
+* `APPROVAL_TESTS_BUILD_THIRD_PARTY_UT`
 
 Note the `GIT_TAG` value: CMake needs to know which revision to use.
 
@@ -224,6 +226,12 @@ add_subdirectory(
 )
 ```
  <!-- end include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
+
+### Using other supported test frameworks
+
+To save space and repetition, the examples above only show the Catch2 framework.
+
+The same principles apply when using all the other test frameworks supported by ApprovalTests.cpp.
 
 ## Scenarios when developing ApprovalTests.cpp 
 

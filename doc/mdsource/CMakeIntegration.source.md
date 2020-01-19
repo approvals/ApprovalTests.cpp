@@ -67,6 +67,11 @@ It will use the file: `dependencies/CMakeLists.txt`:
 
 include: inc_fetch_content_approvaltests_dependencies_cmakelists
 
+There are also options to enable use of ApprovalTests.cpp's copies of all other supported test frameworks except GoogleTest, including:
+
+* `APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST`
+* `APPROVAL_TESTS_BUILD_THIRD_PARTY_UT`
+
 Note the `GIT_TAG` value: CMake needs to know which revision to use.
 
 Note also that here we are using the copy of Catch2 that is included in the ApprovalTests.cpp repository.
@@ -86,6 +91,12 @@ Here, instead of getting CMake to download ApprovalTests.cpp and Catch2, we have
 This works with older versions of CMake, unlike the `FetchContent` examples above. The following `dependencies/CMakeLists.txt` file was tested with CMake 3.8.
 
 include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists
+
+### Using other supported test frameworks
+
+To save space and repetition, the examples above only show the Catch2 framework.
+
+The same principles apply when using all the other test frameworks supported by ApprovalTests.cpp.
 
 ## Scenarios when developing ApprovalTests.cpp 
 
