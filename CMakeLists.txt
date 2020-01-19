@@ -19,7 +19,7 @@ if(APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
     append_coverage_compiler_flags()
 endif()
 
-if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_THIRD_PARTY_GOOGLE_TEST)
+if (NOT_SUBPROJECT)
     if(NOT TARGET gtest_main)
         # Download and unpack googletest at configure time
         configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)

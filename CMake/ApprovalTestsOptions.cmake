@@ -2,10 +2,7 @@ option(APPROVAL_TESTS_ENABLE_CODE_COVERAGE "Enable coverage reporting for select
 
 option(APPROVAL_TESTS_BUILD_CMAKE_INTEGRATION_TESTING "Enable tests that check our CMake integration" OFF)
 
-# Control which of our copies/downloads of third_party libraries are made available
-option(APPROVAL_TESTS_BUILD_THIRD_PARTY_GOOGLE_TEST
-        "Download the Google Test framework"
-        OFF)
+# Control which of our copies of third_party libraries are made available
 option(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2
         "Include this project's copy of the Catch2 test framework"
         OFF)
