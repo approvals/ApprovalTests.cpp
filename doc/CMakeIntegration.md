@@ -148,6 +148,7 @@ It will use the file: `dependencies/CMakeLists.txt`:
  <!-- include: inc_fetch_content_approvaltests_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
 
 ```cmake
+# Needs CMake 3.14 or above
 include(FetchContent)
 
 # -------------------------------------------------------------------
@@ -181,6 +182,7 @@ We use this file: `dependencies/CMakeLists.txt`:
  <!-- include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 ```cmake
+# Needs CMake 3.14 or above
 include(FetchContent)
 
 # -------------------------------------------------------------------
