@@ -67,7 +67,17 @@ It will use the file: `dependencies/CMakeLists.txt`:
 
 include: inc_fetch_content_approvaltests_dependencies_cmakelists
 
-Note that here we are using the copy of Catch2 that is included in the ApprovalTests.cpp repository.
+Note the `GIT_TAG` value: CMake needs to know which revision to use.
+
+Note also that here we are using the copy of Catch2 that is included in the ApprovalTests.cpp repository.
+
+### Make CMake clone ApprovalTests.cpp and Catch2
+
+The only difference between the previous example and this one is that we get CMake to also download and use the Catch2 repository. 
+
+We use this file: `dependencies/CMakeLists.txt`:
+
+include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists
 
 ## Scenarios developing ApprovalTests.cpp 
 

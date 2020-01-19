@@ -18,6 +18,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Scenarios using ApprovalTests.cpp](#scenarios-using-approvaltestscpp)
     * [Context](#context)
     * [Make CMake clone ApprovalTests.cpp](#make-cmake-clone-approvaltestscpp)
+    * [Make CMake clone ApprovalTests.cpp and Catch2](#make-cmake-clone-approvaltestscpp-and-catch2)
   * [Scenarios developing ApprovalTests.cpp](#scenarios-developing-approvaltestscpp)
     * [Developing ApprovalTests.cpp with test framework sources](#developing-approvaltestscpp-with-test-framework-sources)<!-- endtoc -->
 
@@ -163,7 +164,36 @@ endif ()
 ```
  <!-- end include: inc_fetch_content_approvaltests_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
 
-Note that here we are using the copy of Catch2 that is included in the ApprovalTests.cpp repository.
+Note the `GIT_TAG` value: CMake needs to know which revision to use.
+
+Note also that here we are using the copy of Catch2 that is included in the ApprovalTests.cpp repository.
+
+### Make CMake clone ApprovalTests.cpp and Catch2
+
+The only difference between the previous example and this one is that we get CMake to also download and use the Catch2 repository. 
+
+We use this file: `dependencies/CMakeLists.txt`:
+
+ <!-- include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
+
+```cmake
+include(FetchContent)
+if (NOT TARGET ApprovalTests)
+    FetchContent_Declare(ApprovalTests
+            GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
+            GIT_TAG cmake_docs) # TODO Merge cmake_docs to default - then change this to master
+
+    FetchContent_MakeAvailable(ApprovalTests)
+endif ()
+
+if (NOT TARGET Catch2)
+    FetchContent_Declare(Catch2
+            GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+            GIT_TAG v2.11.1)
+    FetchContent_MakeAvailable(Catch2)
+endif ()
+```
+ <!-- end include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 ## Scenarios developing ApprovalTests.cpp 
 
