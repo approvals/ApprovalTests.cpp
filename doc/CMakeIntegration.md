@@ -265,7 +265,24 @@ This also allows us to update to different commits of any of these projects.
 
 Here we want to enable and run all the ApprovalTests.cpp tests, unlike the cases above, where we only want to run the tests of the project that is being developed by using this library.
 
-If the repositories for all these projects are checked out in the the same directory, then this `CMakeLists.txt` file can be put in to a parallel directory.
+Imagine this directory structure, where the repositories for all these projects are checked out side-by-side, and there is an extra directory `develop_approvaltests/`:
+
+```
+ApprovalTests.cpp/
+  .git/
+Catch2/
+  .git/
+doctest/
+  .git/
+googletest/
+  .git/
+ut/
+  .git/
+develop_approvaltests/
+  CMakeLists.txt
+```
+
+The file `develop_approvaltests/CMakeLists.txt` creates a "super build": one project for developing ApprovalTests.cpp and all the projects it depends on:
 
  <!-- include: inc_develop_approvaltests_cmakelists. path: /doc/mdsource/inc_develop_approvaltests_cmakelists.include.md -->
 
