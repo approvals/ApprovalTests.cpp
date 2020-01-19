@@ -37,9 +37,41 @@ Currently, these are all the supported options:
 
 snippet: ApprovalTestsOptions.cmake
 
-## Scenarios
+## Scenarios using ApprovalTests.cpp 
 
-### Developing ApprovalTests.cpp
+### Context
+
+Suppose you are writing some tests that use ApprovalTests.cpp with the Catch2 test framework.
+
+Your CMakeLists.txt file might look something like this:
+
+include: inc_fetch_content_approvaltests_tests_cmakelists
+
+This says that the libraries `ApprovalTests::ApprovalTests` and `Catch2::Catch2` are required.
+
+How might you enable CMake to provide those libraries?
+
+### Make CMake clone ApprovalTests.cpp
+
+The following is for when you just want ApprovalTests.cpp to be downloaded as part of your project's build. You don't particularly want to see its source code, although you're happy if your debugger steps in to its source code.
+
+It also needs CMake 3.14 or above.
+
+This might be your project's top level CMake file:
+
+include: inc_fetch_content_approvaltests_cmakelists
+
+The important thing to note is the `add_subdirectory(dependencies)` line.
+
+It will use the file: `dependencies/CMakeLists.txt`:
+
+include: inc_fetch_content_approvaltests_dependencies_cmakelists
+
+Note that here we are using the copy of Catch2 that is included in the ApprovalTests.cpp repository.
+
+## Scenarios developing ApprovalTests.cpp 
+
+### Developing ApprovalTests.cpp with test framework sources
 
 It is useful to be able to edit and debug both this project and the test frameworks that it depends upon. It helps to be able to see the source code of these frameworks, rather than just the single-header releases that are copied in to the third_party directory here.
 

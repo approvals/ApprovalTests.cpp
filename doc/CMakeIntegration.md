@@ -15,8 +15,11 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Introduction](#introduction)
   * [CMake target](#cmake-target)
   * [CMake project options](#cmake-project-options)
-  * [Scenarios](#scenarios)
-    * [Developing ApprovalTests.cpp](#developing-approvaltestscpp)<!-- endtoc -->
+  * [Scenarios using ApprovalTests.cpp](#scenarios-using-approvaltestscpp)
+    * [Context](#context)
+    * [Make CMake clone ApprovalTests.cpp](#make-cmake-clone-approvaltestscpp)
+  * [Scenarios developing ApprovalTests.cpp](#scenarios-developing-approvaltestscpp)
+    * [Developing ApprovalTests.cpp with test framework sources](#developing-approvaltestscpp-with-test-framework-sources)<!-- endtoc -->
 
 ## Introduction
 
@@ -82,9 +85,89 @@ option(APPROVAL_TESTS_BUILD_EXAMPLES
 <sup><a href='/CMake/ApprovalTestsOptions.cmake#L1-L26' title='File snippet `ApprovalTestsOptions.cmake` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsOptions.cmake' title='Navigate to start of snippet `ApprovalTestsOptions.cmake`'>anchor</a></sup>
 <!-- endsnippet -->
 
-## Scenarios
+## Scenarios using ApprovalTests.cpp 
 
-### Developing ApprovalTests.cpp
+### Context
+
+Suppose you are writing some tests that use ApprovalTests.cpp with the Catch2 test framework.
+
+Your CMakeLists.txt file might look something like this:
+
+ <!-- include: inc_fetch_content_approvaltests_tests_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_tests_cmakelists.include.md -->
+
+```cmake
+add_executable(tests
+        main.cpp
+        tests.cpp
+)
+target_link_libraries(tests ApprovalTests::ApprovalTests Catch2::Catch2)
+
+target_compile_features(tests PUBLIC cxx_std_11)
+set_target_properties(tests PROPERTIES CXX_EXTENSIONS OFF)
+
+add_test(
+        NAME tests
+        COMMAND tests)
+```
+ <!-- end include: inc_fetch_content_approvaltests_tests_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_tests_cmakelists.include.md -->
+
+This says that the libraries `ApprovalTests::ApprovalTests` and `Catch2::Catch2` are required.
+
+How might you enable CMake to provide those libraries?
+
+### Make CMake clone ApprovalTests.cpp
+
+The following is for when you just want ApprovalTests.cpp to be downloaded as part of your project's build. You don't particularly want to see its source code, although you're happy if your debugger steps in to its source code.
+
+It also needs CMake 3.14 or above.
+
+This might be your project's top level CMake file:
+
+ <!-- include: inc_fetch_content_approvaltests_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_cmakelists.include.md -->
+
+```cmake
+cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
+# This version is needed for FetchContent_Declare & FetchContent_MakeAvailable
+
+project(fetch_content_approvaltests)
+
+enable_testing()
+
+add_subdirectory(dependencies)
+add_subdirectory(tests)
+```
+ <!-- end include: inc_fetch_content_approvaltests_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_cmakelists.include.md -->
+
+The important thing to note is the `add_subdirectory(dependencies)` line.
+
+It will use the file: `dependencies/CMakeLists.txt`:
+
+ <!-- include: inc_fetch_content_approvaltests_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
+
+```cmake
+include(FetchContent)
+if (NOT TARGET ApprovalTests)
+    FetchContent_Declare(ApprovalTests
+            GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
+            GIT_TAG cmake_docs) # TODO Merge cmake_docs to default - then change this to master
+
+    # Tell the ApprovalTests CMake files that we want to use its copy of Catch2:
+    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2 ON CACHE BOOL "")
+
+    # These are also available:
+    #    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST ON CACHE BOOL "")
+    #    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_UT ON CACHE BOOL "")
+
+    FetchContent_MakeAvailable(ApprovalTests)
+endif ()
+```
+ <!-- end include: inc_fetch_content_approvaltests_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
+
+Note that here we are using the copy of Catch2 that is included in the ApprovalTests.cpp repository.
+
+## Scenarios developing ApprovalTests.cpp 
+
+### Developing ApprovalTests.cpp with test framework sources
 
 It is useful to be able to edit and debug both this project and the test frameworks that it depends upon. It helps to be able to see the source code of these frameworks, rather than just the single-header releases that are copied in to the third_party directory here.
 
