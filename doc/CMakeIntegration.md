@@ -19,6 +19,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Context](#context)
     * [Make CMake clone ApprovalTests.cpp](#make-cmake-clone-approvaltestscpp)
     * [Make CMake clone ApprovalTests.cpp and Catch2](#make-cmake-clone-approvaltestscpp-and-catch2)
+    * [Use own ApprovalTests.cpp and Catch2 clones](#use-own-approvaltestscpp-and-catch2-clones)
   * [Scenarios developing ApprovalTests.cpp](#scenarios-developing-approvaltestscpp)
     * [Developing ApprovalTests.cpp with test framework sources](#developing-approvaltestscpp-with-test-framework-sources)<!-- endtoc -->
 
@@ -194,6 +195,30 @@ if (NOT TARGET Catch2)
 endif ()
 ```
  <!-- end include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
+
+### Use own ApprovalTests.cpp and Catch2 clones
+
+Here, instead of getting CMake to download these dependencies, we have got our own clones or forks of them, which we want to use.
+
+ <!-- include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
+
+```cmake
+# -------------------------------------------------------------------
+# ApprovalTests.cpp
+add_subdirectory(
+        ../../ApprovalTests.cpp
+        ${CMAKE_CURRENT_BINARY_DIR}/approvaltests.cpp_build
+)
+
+# -------------------------------------------------------------------
+# Catch2
+set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
+add_subdirectory(
+        ../../Catch2
+        ${CMAKE_CURRENT_BINARY_DIR}/catch2_build
+)
+```
+ <!-- end include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 ## Scenarios developing ApprovalTests.cpp 
 
