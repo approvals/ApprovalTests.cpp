@@ -17,3 +17,4 @@ if (NOT TARGET ApprovalTests)
     FetchContent_MakeAvailable(ApprovalTests)
 endif ()
 ```
+

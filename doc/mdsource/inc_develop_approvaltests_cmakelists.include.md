@@ -68,3 +68,4 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/approvaltests.cpp_build
 )
 ```
+

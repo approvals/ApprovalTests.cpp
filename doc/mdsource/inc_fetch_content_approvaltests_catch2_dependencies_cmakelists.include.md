@@ -17,3 +17,4 @@ if (NOT TARGET Catch2)
     FetchContent_MakeAvailable(Catch2)
 endif ()
 ```
+
