@@ -33,6 +33,10 @@ Options that only affect the main project, and have no effect if `add_subdirecto
 
 * `APPROVAL_TESTS_BUILD_CMAKE_INTEGRATION_TESTING` -- When `ON`, the tests in [tests/CMake_Tests](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/CMake_Tests) are run. Their job is to check that our CMake integrations still work. Note that these tests always run if this is the top-level project. Otherwise, they are only run if this is on and `APPROVAL_TESTS_BUILD_TESTING` is also on. Defaults to `OFF`.
 
+Currently, these are all the supported options:
+
+snippet: ApprovalTestsOptions.cmake
+
 ---
 
 [Back to User Guide](/doc/README.md#top)

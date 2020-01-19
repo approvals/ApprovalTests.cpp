@@ -45,6 +45,41 @@ Options that only affect the main project, and have no effect if `add_subdirecto
 
 * `APPROVAL_TESTS_BUILD_CMAKE_INTEGRATION_TESTING` -- When `ON`, the tests in [tests/CMake_Tests](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/CMake_Tests) are run. Their job is to check that our CMake integrations still work. Note that these tests always run if this is the top-level project. Otherwise, they are only run if this is on and `APPROVAL_TESTS_BUILD_TESTING` is also on. Defaults to `OFF`.
 
+Currently, these are all the supported options:
+
+<!-- snippet: ApprovalTestsOptions.cmake -->
+<a id='snippet-ApprovalTestsOptions.cmake'/></a>
+```cmake
+# TODO Move this to the end
+option(APPROVAL_TESTS_ENABLE_CODE_COVERAGE "Enable coverage reporting for selected tests" OFF)
+
+# TODO Remove this
+option(APPROVAL_TESTS_BUILD_CMAKE_INTEGRATION_TESTING "Enable tests that check our CMake integration" OFF)
+
+# Control which of our copies of third_party libraries are made available
+# TODO Add APPROVAL_TESTS_BUILD_THIRD_PARTY_ALL
+option(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2
+        "Include this project's copy of the Catch2 test framework"
+        OFF)
+option(APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST
+        "Include this project's copy of the doctest test framework"
+        OFF)
+option(APPROVAL_TESTS_BUILD_THIRD_PARTY_UT
+        "Include this project's copy of the Boost.UT test framework"
+        OFF)
+
+# Control of what targets are built
+# TODO Add APPROVAL_TESTS_BUILD_ALL
+option(APPROVAL_TESTS_BUILD_TESTING
+        "Build self-tests. Note that these are always built if this is the top-level project"
+        OFF)
+option(APPROVAL_TESTS_BUILD_EXAMPLES
+        "Build documentation examples. Note that these are always built if this is the top-level project"
+        OFF)
+```
+<sup><a href='/CMake/ApprovalTestsOptions.cmake#L1-L26' title='File snippet `ApprovalTestsOptions.cmake` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsOptions.cmake' title='Navigate to start of snippet `ApprovalTestsOptions.cmake`'>anchor</a></sup>
+<!-- endsnippet -->
+
 ---
 
 [Back to User Guide](/doc/README.md#top)
