@@ -61,9 +61,6 @@ def read_file(file_name):
     return text
 
 
-# ------------------------------------------------------------------------------------------------
-# Update Starter Project
-
 # https://stackoverflow.com/a/10528259/104370
 # initialise a directory stack
 pushstack = list()
@@ -125,7 +122,7 @@ def check_starter_project_builds():
 def commit_and_push_starter_project():
     pushdir(STARTER_PROJECT_DIR)
     run(["git", "add", "."])
-    run(["git", "commit", "-m", "Update to Approvals " + str(VERSION.val)])
+    run(["git", "commit", "-m", F"Update to Approvals {VERSION}"])
     run(["git", "push", "origin", "master"])
     popdir()
 
