@@ -9,9 +9,13 @@ toc
 ## vNext
 
 
-### Documented CMake Integration
+### CMake Integration documented
 
 See [CMake Integration](/doc/CMakeIntegration.md#top).
+
+### Use with Ninja generator documented
+
+See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top), for explanations, fixes and workarounds.
 
 ## v.7.0.0
 

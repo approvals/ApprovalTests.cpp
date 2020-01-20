@@ -27,11 +27,18 @@ See also this list of [recently-fixed issues that don't yet have a milestone](ht
         * Catch2 remains fully supported.
         * Catch1's main benefit was that it supported pre-C++11 compilers, but as ApprovalTests.cpp requires C++11 or newer, this wasn't useful in practice
 * **New features**
-    * Greatly improved and documented [CMake Integration](/doc/CMakeIntegration.md#top).
-    * Created a namespaced CMake target for ApprovalTests (#75)
+    * Greatly improved and documented [CMake Integration](/doc/CMakeIntegration.md#top) (#69):
+        * Approval Tests can now be added to other projects with any of  CMake's `add_subdirectory()`, `FetchContent` and `ExternalProject`. (#62, #65, #68, #75, #70, #88, #89)
+        * Created wrapper [ApprovalTests.hpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/ApprovalTests.hpp)
+ so that code can work interchangeably with the single header and via CMake integration (#89)
+        * Made CMake targets for targets in third_party consistent with those of the original projects, adding `Catch2::Catch2`, `doctest::doctest` and `boost.ut` (#70)
+        * Created a namespaced CMake target for ApprovalTests `ApprovalTests::ApprovalTests` (#75)
+        * Don't create third_party targets if they have been created already (#88)
 * **Bug fixes**
-    * Added compile-time checks for GoogleTest, Catch2 and doctest, to detect problems with `__FILE__` macro caused by the Ninja generator on all platforms (#79).
-        * See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top) if you have test failures in your Ninja builds.
+    * Significant effort to improve behaviour with the Ninja build tool:
+        * Understood, work-around and documented issues with the Ninja generator.  See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top) if you have test failures in your Ninja builds. (#74 - thanks @jwillikers)
+        * Added compile-time checks for GoogleTest, Catch2 and doctest, to detect problems with `__FILE__` macro caused by the Ninja generator on all platforms (#79 - thanks @jwillikers).
+        * Added option to disable the `__FILE__` compile-time check (#86)
 * **Other changes**
     * Updated \[Boost\].UT integration to work with [a change](https://github.com/boost-experimental/ut/commit/94220e8c95b323349bfd94ef30b2568916fb1421#diff-04c6e90faac2675aa89e2176d2eec7d8) made for the v1.1.5 release of that library. (#66 - thanks @krzysztof-jusiak)
     * Code now formatted with clang-format (#39 - thanks @dheater and @alastairUK)

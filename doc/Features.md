@@ -15,7 +15,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [vNext](#vnext)
-    * [Documented CMake Integration](#documented-cmake-integration)
+    * [CMake Integration documented](#cmake-integration-documented)
+    * [Use with Ninja generator documented](#use-with-ninja-generator-documented)
   * [v.7.0.0](#v700)
     * [Support for \[Boost\].UT test framework](#support-for-boostut-test-framework)
   * [v.6.0.0](#v600)
@@ -40,9 +41,13 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## vNext
 
 
-### Documented CMake Integration
+### CMake Integration documented
 
 See [CMake Integration](/doc/CMakeIntegration.md#top).
+
+### Use with Ninja generator documented
+
+See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top), for explanations, fixes and workarounds.
 
 ## v.7.0.0
 
