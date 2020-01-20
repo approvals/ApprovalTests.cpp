@@ -121,13 +121,14 @@ check_starter_project_builds()
 
 # Commit and push starter project
 
+def commit_and_push_starter_project():
+    pushdir(STARTER_PROJECT_DIR)
+    subprocess.call(["git", "add", "."], shell=True)
+    subprocess.call(["git", "commit", "-m", "Update to Approvals " + str(VERSION.val)], shell=True)
+    subprocess.call(["git", "push", "origin", "master"], shell=True)
+    popdir()
 
-pushd $STARTER_PROJECT_DIR
-git add .
-git commit -m "Update to Approvals $VERSION"
-git push origin master
-popd
-
+commit_and_push_starter_project()
 # ------------------------------------------------------------------------------------------------
 
 # Update the top-level readme file and other documentation
