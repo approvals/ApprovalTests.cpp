@@ -45,14 +45,19 @@ The file [CMake/ApprovalTestsOptions.cmake](https://github.com/approvals/Approva
 
 ### CMake commands support
 
-See [Scenarios when using Approval Tests](/doc/CMakeIntegration.md#scenarios-when-using-approval-tests) 
-below for examples below of using [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) and [`FetchContent`](https://cmake.org/cmake/help/latest/module/FetchContent.html), which are two options to incorporate Approval Tests in to CMake builds.
-
-The examples below use `FetchContent_MakeAvailable()`, which requires CMake 3.14. If you only have CMake 3.11 or above, see [FetchContent (CMake 3.11+)](https://cliutils.gitlab.io/modern-cmake/chapters/projects/fetch.html).
-
-With CMake before 3.11, see [`ExternalProject` module](https://cmake.org/cmake/help/latest/module/ExternalProject.html). The `FetchContent` examples below should help get started with `ExternalProject`.
-
-There is not yet support for [`find_package()`](https://cmake.org/cmake/help/latest/command/find_package.html).
+* `add_subdirectory()`
+    * See [Use own ApprovalTests.cpp and Catch2 clones](/doc/CMakeIntegration.md#use-own-approvaltestscpp-and-catch2-clones) below, for an example using [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html).
+    * **Use case:** This is typically for you have your own copy of the Approval Tests project directory that you want to re-use.
+* `FetchContent`
+    * See [Make CMake clone ApprovalTests.cpp](/doc/CMakeIntegration.md#make-cmake-clone-approvaltestscpp) below, for an example using the [`FetchContent` module](https://cmake.org/cmake/help/latest/module/FetchContent.html).
+    * The examples below use `FetchContent_MakeAvailable()`, which requires CMake 3.14 or above.
+    * If you only have CMake 3.11 or above, see [FetchContent (CMake 3.11+)](https://cliutils.gitlab.io/modern-cmake/chapters/projects/fetch.html) for how to use `FetchContent_Populate()`.
+    * **Use case:** This is typically for when you want CMake to download a specific version of Approval Tests for you, behind the scenes.
+* `ExternalProject`
+    * With CMake before 3.11, see the [`ExternalProject` module](https://cmake.org/cmake/help/latest/module/ExternalProject.html). The `FetchContent` examples below should help get started with `ExternalProject`.
+    * **Use case:** This is typically for when you want CMake to download a specific version of Approval Tests for you, behind the scenes, and you are using an older version of CMake.
+* `find_package()` - not supported
+    * There is not yet support for [`find_package()`](https://cmake.org/cmake/help/latest/command/find_package.html).
 
 ## Single header or CMake Integration?
 
