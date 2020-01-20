@@ -140,6 +140,23 @@ There are also options to enable use of ApprovalTests.cpp's copies of all other 
 
 Note also the `GIT_TAG` value: This tells CMake which revision of ApprovalTests.cpp to use. The value can be a tag or a git commit ID.
 
+After CMake has generated the build files, the directory structure would look something like this, where the `cmake-build-debug` directory is the build space, and the `cmake-build-debug/_deps` contains the downloaded and built ApprovalTests.cpp repository:
+
+```
+fetch_content_approvaltests/
+  .git/
+  cmake-build-debug/
+    _deps/
+      approvaltests-build/
+      approvaltests-src/
+      approvaltests-subbuild/
+    ...
+  CMakeLists.txt
+  dependencies/
+    CMakeLists.txt
+  tests/
+    ...
+```
 
 ### Make CMake clone ApprovalTests.cpp and Catch2
 
@@ -157,11 +174,35 @@ include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists
 
 Here, instead of getting CMake to download ApprovalTests.cpp and Catch2, we have got our own clones or forks of them, which we want to use with our own tests.
 
-We use `add_subdirectory()`. This works with older versions of CMake, unlike the `FetchContent` examples above.
+In this example, the directory structure looks like this:
 
-The following `dependencies/CMakeLists.txt` file was tested with CMake 3.8:
+```
+ApprovalTests.cpp/
+  .git/
+  CMakeLists.txt
+  ...
+Catch2/
+  .git/
+  CMakeLists.txt
+  ...
+
+add_subdirectory_approvaltests_catch2/
+  .git/
+  CMakeLists.txt
+  dependencies/
+    CMakeLists.txt
+  tests/
+```
+
+We use this `dependencies/CMakeLists.txt` file:
 
 include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists
+
+Here we use `add_subdirectory()`. This works with older versions of CMake, unlike the `FetchContent` examples above.
+
+The above was tested with CMake 3.8.
+
+If your directory layout differed from the above, you would change the relative paths in the `add_subdirectory()` lines.
 
 ### Using other supported test frameworks
 
