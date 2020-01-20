@@ -15,3 +15,4 @@ CMakeLists.txt.user
 [Oo]ut/build
 *.swp
 /CMakeSettings.json
+__pycache__/
