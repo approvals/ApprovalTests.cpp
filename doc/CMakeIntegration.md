@@ -191,7 +191,7 @@ include(FetchContent)
 # ApprovalTests.cpp
 FetchContent_Declare(ApprovalTests
         GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
-        GIT_TAG cmake_docs) # TODO Merge cmake_docs to default - then change this to master
+        GIT_TAG master)
 
 # Tell the ApprovalTests CMake files that we want to use its copy of Catch2:
 set(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2 ON CACHE BOOL "")
@@ -207,7 +207,7 @@ There are also options to enable use of ApprovalTests.cpp's copies of all other 
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST`
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_UT`
 
-Note also the `GIT_TAG` value: This tells CMake which revision of ApprovalTests.cpp to use. The value can be a tag or a git commit ID.
+Note also the `GIT_TAG` value: This tells CMake which revision of ApprovalTests.cpp to use. The value can be a tag or a git commit ID. Here we use `master`, to always test our integrations with the latest code. However, it is generally recommended to pin your dependencies to specific versions, and test behaviour before updating to newer versions. 
 
 After CMake has generated the build files, the directory structure would look something like this, where the `cmake-build-debug` directory is the build space, and the `cmake-build-debug/_deps` contains the downloaded and built ApprovalTests.cpp repository:
 
@@ -245,7 +245,7 @@ include(FetchContent)
 # ApprovalTests.cpp
 FetchContent_Declare(ApprovalTests
         GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
-        GIT_TAG cmake_docs) # TODO Merge cmake_docs to default - then change this to master
+        GIT_TAG master)
 
 FetchContent_MakeAvailable(ApprovalTests)
 

@@ -8,7 +8,7 @@ include(FetchContent)
 # ApprovalTests.cpp
 FetchContent_Declare(ApprovalTests
         GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
-        GIT_TAG cmake_docs) # TODO Merge cmake_docs to default - then change this to master
+        GIT_TAG master)
 
 FetchContent_MakeAvailable(ApprovalTests)
 
