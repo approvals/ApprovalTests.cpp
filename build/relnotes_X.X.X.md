@@ -42,6 +42,7 @@ See also this list of [recently-fixed issues that don't yet have a milestone](ht
 * **Other changes**
     * Updated \[Boost\].UT integration to work with [a change](https://github.com/boost-experimental/ut/commit/94220e8c95b323349bfd94ef30b2568916fb1421#diff-04c6e90faac2675aa89e2176d2eec7d8) made for the v1.1.5 release of that library. (#66 - thanks @krzysztof-jusiak)
     * Code now formatted with clang-format (#39 - thanks @dheater and @alastairUK)
+        * See [Formatting Code](/doc/Contributing.md#formatting-code) to configure your editor to use the [.clang-format](https://github.com/approvals/ApprovalTests.cpp/blob/master/.clang-format) file automatically.
     * Added CI build for clang-cl (#30 - thanks @alastairUK))
     * Added CI builds for mingw/MSYS and CygWin (#79)
     * Added CI builds for Ninja generator (#74)
