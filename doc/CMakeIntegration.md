@@ -12,9 +12,9 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [Introduction](#introduction)
-  * [CMake target](#cmake-target)
-  * [CMake project options](#cmake-project-options)
+  * [Integration Points](#integration-points)
+    * [CMake target](#cmake-target)
+    * [CMake project options](#cmake-project-options)
   * [Scenarios when using ApprovalTests.cpp](#scenarios-when-using-approvaltestscpp)
     * [Context](#context)
     * [Make CMake clone ApprovalTests.cpp](#make-cmake-clone-approvaltestscpp)
@@ -24,11 +24,11 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Scenarios when developing ApprovalTests.cpp](#scenarios-when-developing-approvaltestscpp)
     * [Developing ApprovalTests.cpp with test framework sources](#developing-approvaltestscpp-with-test-framework-sources)<!-- endtoc -->
 
-## Introduction
+## Integration Points
 
-Because we use CMake to build Catch2, we also provide integration points for our users.
+Because we use CMake to build ApprovalTests.cpp, we also provide integration points for our users.
 
-## CMake target
+### CMake target
 
 Approval Tests' CMake build exports an interface target `ApprovalTests::ApprovalTests`. Linking
 against it will add the proper include path and all necessary capabilities
@@ -42,7 +42,7 @@ add_subdirectory(lib/ApprovalTests.cpp)
 target_link_libraries(tests ApprovalTests::ApprovalTests)
 ```
 
-## CMake project options
+### CMake project options
 
 ApprovalTests.cpp's CMake project also provides some options for other projects
 that consume it.

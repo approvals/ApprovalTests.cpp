@@ -4,11 +4,11 @@
 
 toc
 
-## Introduction
+## Integration Points
 
-Because we use CMake to build Catch2, we also provide integration points for our users.
+Because we use CMake to build ApprovalTests.cpp, we also provide integration points for our users.
 
-## CMake target
+### CMake target
 
 Approval Tests' CMake build exports an interface target `ApprovalTests::ApprovalTests`. Linking
 against it will add the proper include path and all necessary capabilities
@@ -22,7 +22,7 @@ add_subdirectory(lib/ApprovalTests.cpp)
 target_link_libraries(tests ApprovalTests::ApprovalTests)
 ```
 
-## CMake project options
+### CMake project options
 
 ApprovalTests.cpp's CMake project also provides some options for other projects
 that consume it.
