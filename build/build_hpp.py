@@ -20,10 +20,6 @@ NEW_SINGLE_HEADER_TEMP = F"{NEW_SINGLE_HEADER}.tmp"
 RELEASE_DIR = F"../build/releases"
 RELEASE_NEW_SINGLE_HEADER = F"{RELEASE_DIR}/{NEW_SINGLE_HEADER}"
 
-STARTER_PROJECT_DIR = F"../../ApprovalTests.Cpp.StarterProject"
-STARTER_PATH_OLD_SINGLE_HEADER = F"{STARTER_PROJECT_DIR}/lib/{OLD_SINGLE_HEADER}"
-STARTER_PATH_NEW_SINGLE_HEADER = F"{STARTER_PROJECT_DIR}/lib/{NEW_SINGLE_HEADER}"
-
 
 # TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
 
@@ -34,7 +30,6 @@ def run(command):
 
 
 def create_single_header_file():
-    # TODO Rework to not write tmp file
     os.chdir("../ApprovalTests")
     print(os.getcwd())
     run(["java", "-version"])
@@ -77,6 +72,10 @@ def popdir():
 
 
 def update_starter_project():
+    STARTER_PROJECT_DIR = F"../../ApprovalTests.Cpp.StarterProject"
+    STARTER_PATH_OLD_SINGLE_HEADER = F"{STARTER_PROJECT_DIR}/lib/{OLD_SINGLE_HEADER}"
+    STARTER_PATH_NEW_SINGLE_HEADER = F"{STARTER_PROJECT_DIR}/lib/{NEW_SINGLE_HEADER}"
+
     # Make sure starter project folder is clean
     pushdir(STARTER_PROJECT_DIR)
     run(["git", "clean", "-fx"])
