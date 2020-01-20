@@ -28,10 +28,17 @@ STARTER_PATH_NEW_SINGLE_HEADER=F"{STARTER_PROJECT_DIR}/lib/{NEW_SINGLE_HEADER}"
 # TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
 
 
+def run(command):
+    print(command)
+    subprocess.run(" ".join(command), shell=True, check=True)
+
+
 def create_single_header_file():
     # TODO Rework to not write tmp file
     os.chdir("../ApprovalTests")
-    subprocess.call(["java", "-jar", "../build/SingleHpp.v.0.0.2.jar", RELEASE_NEW_SINGLE_HEADER_TEMP], shell=True)
+    print(os.getcwd())
+    run(["java", "-version"])
+    run(["java", "-jar", "../build/SingleHpp.v.0.0.2.jar", RELEASE_NEW_SINGLE_HEADER_TEMP])
     text = read_file(RELEASE_NEW_SINGLE_HEADER_TEMP)
     text = F"""
 // Approval Tests version {VERSION}
@@ -73,8 +80,8 @@ def update_starter_project():
 
     # Make sure starter project folder is clean
     pushdir(STARTER_PROJECT_DIR)
-    subprocess.call(["git", "clean", "-fx"], shell=True)
-    subprocess.call(["git", "reset", "--hard"], shell=True)
+    run(["git", "clean", "-fx"])
+    run(["git", "reset", "--hard"])
     popdir()
 
     shutil.copyfile(RELEASE_NEW_SINGLE_HEADER, STARTER_PATH_NEW_SINGLE_HEADER)
@@ -84,21 +91,21 @@ def update_starter_project():
         os.remove(STARTER_PATH_OLD_SINGLE_HEADER)
 
     # Update the version in the "redirect" header:
-    replace_text_in_file(F"{STARTER_PROJECT_DIR}/lib/ApprovalTests.hpp", VERSION, LAST_VERSION)
+    replace_text_in_file(F"{STARTER_PROJECT_DIR}/lib/ApprovalTests.hpp", LAST_VERSION, VERSION)
 
     # Update the version number in the Visual Studio project:
     replace_text_in_file(F"{STARTER_PROJECT_DIR}/visual-studio-2017/StarterProject.vcxproj", OLD_SINGLE_HEADER, NEW_SINGLE_HEADER)
 
 
-def replace_text_in_file(file_name, new_text, old_text):
+def replace_text_in_file(file_name, old_text, new_text):
     text = read_file(file_name)
-    text.replace(old_text, new_text)
+    text = text.replace(old_text, new_text)
     write_file(file_name, text)
 
 
 def check_starter_project_builds():
     pushdir(F"{STARTER_PROJECT_DIR}/cmake-build-debug")
-    subprocess.call(["cmake", "--build", "."], shell=True)
+    run(["cmake", "--build", "."])
     popdir()
 
     if VERSION == UNSET_VERSION:
@@ -113,29 +120,29 @@ def check_starter_project_builds():
 
 def commit_and_push_starter_project():
     pushdir(STARTER_PROJECT_DIR)
-    subprocess.call(["git", "add", "."], shell=True)
-    subprocess.call(["git", "commit", "-m", "Update to Approvals " + str(VERSION.val)], shell=True)
-    subprocess.call(["git", "push", "origin", "master"], shell=True)
+    run(["git", "add", "."])
+    run(["git", "commit", "-m", "Update to Approvals " + str(VERSION.val)])
+    run(["git", "push", "origin", "master"])
     popdir()
 
 
 def update_readme_and_docs():
     pushdir("..")
     replace_text_in_file("mdsource/README.source.md", LAST_VERSION, VERSION)
-    subprocess.call(["./run_markdown_templates.sh"],shell=True)
+    run(["./run_markdown_templates.sh"],shell=True)
     popdir()
 
 
 def publish():
     # Draft the tweet
     tweet_text = F"https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+{VERSION}+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F{VERSION}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21"
-    subprocess.call(["open", tweet_text], shell=True)
+    run(["open", tweet_text])
 
     # Draft the upload to github - do this last, so this tab appears on top
     github_url = F"https://github.com/approvals/ApprovalTests.cpp/releases/new?tag={VERSION}&title=Single%20Hpp%20File%20-%20{VERSION}"
-    subprocess.call(["open", github_url], shell=True)
+    run(["open", github_url])
 
-    subprocess.call(["open", RELEASE_DIR], shell=True)
+    run(["open", RELEASE_DIR])
 
 
 def build_hpp():
