@@ -4,41 +4,8 @@
 import os
 import subprocess
 import shutil
-import configparser
 
-
-class Version:
-    @staticmethod
-    def get_version(version):
-        return F"v.{version['major']}.{version['minor']}.{version['patch']}"
-
-    @staticmethod
-    def update_major(version):
-        return {"major": int(version['major']) + 1, "minor": 0, "patch": 0}
-
-    @staticmethod
-    def update_minor(version):
-        return {"major": version['major'], "minor": int(version['minor']) + 1, "patch": 0}
-
-    @staticmethod
-    def update_patch(version):
-        return {"major": version['major'], "minor": version['minor'], "patch": int(version['patch'] + 1)}
-
-
-def load_version():
-    config = configparser.ConfigParser()
-    config.read('version.ini')
-    return config['VERSION']
-
-
-def write_version(version):
-    config = configparser.ConfigParser()
-    config['VERSION'] = version
-
-    with open('version.ini', 'w') as configfile:
-        config.write(configfile)
-
-
+from Version import Version
 
 UNSET_VERSION = "v.X.X.X"
 
@@ -189,7 +156,7 @@ def build_hpp(old_version, new_version, publish_release):
     commit_and_push_starter_project()
     update_readme_and_docs()
     publish()
-    write_version(new_version)
+    Version.write_version(new_version)
 
 
 if __name__ == '__main__':
