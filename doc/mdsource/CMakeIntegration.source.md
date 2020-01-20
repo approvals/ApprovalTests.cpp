@@ -4,11 +4,13 @@
 
 toc
 
-## Integration Points
+## Part 1: Reference
+
+### Integration Points
 
 Because we use CMake to build ApprovalTests.cpp, we also provide integration points for our users.
 
-### CMake target
+#### CMake target
 
 Approval Tests' CMake build exports an interface target `ApprovalTests::ApprovalTests`. Linking
 against it will add the proper include path and all necessary capabilities
@@ -22,7 +24,7 @@ add_subdirectory(lib/ApprovalTests.cpp)
 target_link_libraries(tests ApprovalTests::ApprovalTests)
 ```
 
-### CMake project options
+#### CMake project options
 
 ApprovalTests.cpp's CMake project also provides some options for other projects
 that consume it.
@@ -43,7 +45,7 @@ They are:
 
 The file [CMake/ApprovalTestsOptions.cmake](https://github.com/approvals/ApprovalTests.cpp/blob/master/CMake/ApprovalTestsOptions.cmake) defines these options.
 
-### CMake commands support
+#### CMake commands support
 
 * `add_subdirectory()`
     * See [Use own ApprovalTests.cpp and Catch2 clones](/doc/CMakeIntegration.md#use-own-approvaltestscpp-and-catch2-clones) below, for an example using [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html).
@@ -60,7 +62,7 @@ The file [CMake/ApprovalTestsOptions.cmake](https://github.com/approvals/Approva
 * `find_package()` - not supported
     * There is not yet support for [`find_package()`](https://cmake.org/cmake/help/latest/command/find_package.html).
 
-## Single header or CMake Integration?
+### Single header or CMake Integration?
 
 There are two main options for incorporating Approval Tests in to your project:
 
@@ -74,7 +76,7 @@ Options for obtaining the repository typically include:
 * including it as a sub-repository
 * having a build tool, such as CMake, download it for you automatically as part of your builds
 
-### CMake Integration Benefits
+#### CMake Integration Benefits
 
 We recommend using the CMake integration route, which has several user benefits over the single header:
 
@@ -85,10 +87,12 @@ We recommend using the CMake integration route, which has several user benefits 
     * There is also the option to include just the headers in [ApprovalTests/](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests) that you use.
     * This may slightly improve build speeds.
 * It may occasionally [provide workarounds to bugs](https://github.com/approvals/ApprovalTests.cpp/issues/90).
-  
-## Scenarios when using Approval Tests 
 
-### Context
+## Part 2: Optional Explanatory Examples
+
+### Scenarios when using Approval Tests 
+
+#### Context
 
 **Example Project**
 
@@ -120,7 +124,7 @@ How might you enable CMake to provide those libraries? In other words, what are 
 
 The next few sections describe some options.
 
-### Make CMake clone ApprovalTests.cpp and Catch2
+#### Make CMake clone ApprovalTests.cpp and Catch2
 
 **Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests_catch2](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests_catch2).
 
@@ -155,7 +159,7 @@ fetch_content_approvaltests_catch2/
     ...
 ```
 
-### Make CMake clone ApprovalTests.cpp
+#### Make CMake clone ApprovalTests.cpp
 
 **Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests).
 
@@ -172,7 +176,7 @@ There are also options to enable use of ApprovalTests.cpp's copies of all other 
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST`
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_UT`
 
-### Use own ApprovalTests.cpp and Catch2 clones
+#### Use own ApprovalTests.cpp and Catch2 clones
 
 **Note:** The files in this section can be viewed and downloaded from [add_subdirectory_approvaltests_catch2](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/add_subdirectory_approvaltests_catch2).
 
@@ -208,15 +212,15 @@ The above was tested with CMake 3.8.
 
 If your directory layout differed from the above, you would change the relative paths in the `add_subdirectory()` lines.
 
-### Using other supported test frameworks
+#### Using other supported test frameworks
 
 To save space and repetition, the examples above only show the Catch2 test framework.
 
 The same principles apply when using all the other test frameworks supported by ApprovalTests.cpp.
 
-## Scenarios when developing ApprovalTests.cpp 
+### Scenarios when developing ApprovalTests.cpp 
 
-### Developing ApprovalTests.cpp with test framework sources
+#### Developing ApprovalTests.cpp with test framework sources
 
 **Note:** The files in this section can be viewed and downloaded from [develop_approvaltests](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/develop_approvaltests).
 
