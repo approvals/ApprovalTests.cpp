@@ -145,7 +145,7 @@ Note also the `GIT_TAG` value: This tells CMake which revision of ApprovalTests.
 
 **Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests_catch2](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests_catch2).
 
-The only difference between the previous example and this one is that we get CMake to also download and use the Catch2 repository. 
+The only difference between the previous example and this one is that here we also get CMake to download and use the Catch2 repository. 
 
 We use this `dependencies/CMakeLists.txt` file:
 
@@ -165,7 +165,7 @@ include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists
 
 ### Using other supported test frameworks
 
-To save space and repetition, the examples above only show the Catch2 framework.
+To save space and repetition, the examples above only show the Catch2 test framework.
 
 The same principles apply when using all the other test frameworks supported by ApprovalTests.cpp.
 
@@ -175,13 +175,13 @@ The same principles apply when using all the other test frameworks supported by 
 
 **Note:** The files in this section can be viewed and downloaded from [develop_approvaltests](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/develop_approvaltests).
 
-It is useful to be able to edit and debug both this project and the test frameworks that it depends upon. It helps to be able to see the source code of these frameworks, rather than just the single-header releases that are copied in to the third_party directory here.
+For Approval Tests project maintainers, it is useful to be able to edit and debug both this project and the test frameworks that it depends upon. It helps to be able to see the source of these frameworks, rather than just the single-header releases that are copied in to the third_party directory here.
 
 This also allows us to checkout different commits of any of these projects.
 
-Here we want to enable and run all the ApprovalTests.cpp tests, unlike the cases above, where we only want to run the tests of the project that is being developed by using this library.
+Here we want to enable and run all the ApprovalTests.cpp tests, unlike the cases above, where we only want to run the tests of the project that is being developed.
 
-Imagine this directory structure, where the repositories for all these projects are checked out side-by-side, and there is an extra directory `develop_approvaltests/` that will contain just a `CMakeLists.txt` file, to set up a project containing all the other directories:
+Consider this directory structure, where the repositories for all these projects are checked out side-by-side, and there is an extra directory `develop_approvaltests/` that will contain just a `CMakeLists.txt` file, to set up a project containing all the other directories:
 
 ```
 ApprovalTests.cpp/
@@ -209,7 +209,7 @@ develop_approvaltests/
   CMakeLists.txt
 ```
 
-The file `develop_approvaltests/CMakeLists.txt` creates a "super build": one project for developing ApprovalTests.cpp and all the projects it depends on:
+The file `develop_approvaltests/CMakeLists.txt` creates a kind of "super build": one project for developing ApprovalTests.cpp and all the projects it depends on:
 
 include: inc_develop_approvaltests_cmakelists
 
