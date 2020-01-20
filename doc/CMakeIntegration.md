@@ -72,7 +72,8 @@ The file [CMake/ApprovalTestsOptions.cmake](https://github.com/approvals/Approva
     * See [Use own ApprovalTests.cpp and Catch2 clones](/doc/CMakeIntegration.md#use-own-approvaltestscpp-and-catch2-clones) below, for an example using [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html).
     * **Use case:** This is typically for you have your own copy of the Approval Tests project directory that you want to re-use.
 * `FetchContent`
-    * See [Make CMake clone ApprovalTests.cpp](/doc/CMakeIntegration.md#make-cmake-clone-approvaltestscpp) below, for an example using the [`FetchContent` module](https://cmake.org/cmake/help/latest/module/FetchContent.html).
+    * See [Make CMake clone ApprovalTests.cpp and Catch2](/doc/CMakeIntegration.md#make-cmake-clone-approvaltestscpp-and-catch2)
+ below, for an example using the [`FetchContent` module](https://cmake.org/cmake/help/latest/module/FetchContent.html).
     * The examples below use `FetchContent_MakeAvailable()`, which requires CMake 3.14 or above.
     * If you only have CMake 3.11 or above, see [FetchContent (CMake 3.11+)](https://cliutils.gitlab.io/modern-cmake/chapters/projects/fetch.html) for how to use `FetchContent_Populate()`.
     * **Use case:** This is typically for when you want CMake to download a specific version of Approval Tests for you, behind the scenes.
@@ -207,7 +208,7 @@ FetchContent_MakeAvailable(Catch2)
 
 Note the `GIT_TAG` values: This tells CMake which revision of dependencies to use. The value can be a tag or a git commit ID. Here we use `master`, to always test our integrations with the latest Approval Tests code. However, it is generally recommended to pin your dependencies to specific versions, and test behaviour before updating to newer versions. 
 
-After CMake has generated the build files, the directory structure would look something like this, where the `cmake-build-debug` directory is the build space, and the `cmake-build-debug/_deps` contains the downloaded and built ApprovalTests.cpp repository:
+After CMake has generated the build files, the directory structure would look something like this, where the `cmake-build-debug` directory is the build space, and the `cmake-build-debug/_deps` contains the downloaded and built ApprovalTests.cpp and Catch2 repositories:
 
 ```
 fetch_content_approvaltests_catch2/
@@ -217,6 +218,9 @@ fetch_content_approvaltests_catch2/
       approvaltests-build/
       approvaltests-src/
       approvaltests-subbuild/
+      catch2-build
+      catch2-src
+      catch2-subbuild
     ...
   CMakeLists.txt
   dependencies/
