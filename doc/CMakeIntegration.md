@@ -17,7 +17,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [CMake project options](#cmake-project-options)
   * [Single header or CMake Integration?](#single-header-or-cmake-integration)
     * [CMake Integration Benefits](#cmake-integration-benefits)
-  * [Scenarios when using ApprovalTests.cpp](#scenarios-when-using-approvaltestscpp)
+  * [Scenarios when using Approval Tests](#scenarios-when-using-approval-tests)
     * [Context](#context)
     * [Make CMake clone ApprovalTests.cpp](#make-cmake-clone-approvaltestscpp)
     * [Make CMake clone ApprovalTests.cpp and Catch2](#make-cmake-clone-approvaltestscpp-and-catch2)
@@ -43,6 +43,9 @@ Assuming that ApprovalTests.cpp has been cloned to `lib/ApprovalTests.cpp`:
 add_subdirectory(lib/ApprovalTests.cpp)
 target_link_libraries(tests ApprovalTests::ApprovalTests)
 ```
+
+See [Scenarios when using Approval Tests](/doc/CMakeIntegration.md#scenarios-when-using-approval-tests) 
+below for examples below of using [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) and [`FetchContent()`](https://cmake.org/cmake/help/latest/module/FetchContent.html) to incorporate Approval Tests in to CMake builds.
 
 ### CMake project options
 
@@ -91,7 +94,7 @@ We recommend using the CMake integration route, which has several user benefits 
     * This may slightly improve build speeds.
 * It may occasionally [provide workarounds to bugs](https://github.com/approvals/ApprovalTests.cpp/issues/90).
   
-## Scenarios when using ApprovalTests.cpp 
+## Scenarios when using Approval Tests 
 
 ### Context
 
