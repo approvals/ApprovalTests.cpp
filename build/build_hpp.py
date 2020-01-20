@@ -75,12 +75,6 @@ class Release:
         run(["cmake", "--build", "."])
         popdir()
 
-        if not self.PUSH_TO_PRODUCTION:
-            # Don't push to production if we haven't set the version number
-            print("Everything worked - didn't commit or push")
-            exit(0)
-
-
     def commit_and_push_starter_project(self):
         pushdir(self.STARTER_PROJECT_DIR)
         run(["git", "add", "."])
@@ -112,6 +106,12 @@ class Release:
         self.create_single_header_file()
         self.update_starter_project()
         self.check_starter_project_builds()
+        if not self.PUSH_TO_PRODUCTION:
+            print("Everything worked - didn't commit or push")
+        else:
+            self.push_live()
+
+    def push_live(self):
         self.commit_and_push_starter_project()
         self.update_readme_and_docs()
         self.publish()
