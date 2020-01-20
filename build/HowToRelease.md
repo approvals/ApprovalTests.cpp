@@ -9,8 +9,11 @@ Preparation:
 - [ ] Check that the [builds are passing](https://github.com/approvals/ApprovalTests.cpp/commits/master)
 - [ ] Write in [build/relnotes_X.X.X.md](https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_X.X.X.md) a  summary of changes since last release, based on changes since [the last release](https://github.com/approvals/ApprovalTests.cpp/releases)
 - [ ] Determine the semantic version number
-- [ ] Update the version number in [build_hpp.sh](/build/build_hpp.sh)
-- [ ] On the features page, add the line `## [new version number]` after `## vNext`
+- On github:
+    - [ ] If a [Milestone](https://github.com/approvals/ApprovalTests.cpp/milestones) was created for this release, rename it to the release version number, and check that all issues are closed
+- On local machine
+    - [ ] Update the version number in [build_hpp.sh](/build/build_hpp.sh)
+    - [ ] On the [Features](/doc/Features.md#top) page, add the line `## [new version number]` after `## vNext`
 
 Creating the Build
 
