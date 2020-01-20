@@ -3,6 +3,7 @@
 # Constants
 import os
 import subprocess
+import shutil
 
 UNSET_VERSION="v.X.X.X"
 
@@ -33,41 +34,71 @@ STARTER_PATH_NEW_SINGLE_HEADER=F"{STARTER_PROJECT_DIR}/lib/{NEW_SINGLE_HEADER}"
 def create_single_header_file():
     os.chdir("../ApprovalTests")
     subprocess.call(["java", "-jar", "../build/SingleHpp.v.0.0.2.jar", RELEASE_NEW_SINGLE_HEADER_TEMP], shell=True)
-    with open(RELEASE_NEW_SINGLE_HEADER_TEMP) as input:
-        text = input.read()
+    text = read_file(RELEASE_NEW_SINGLE_HEADER_TEMP)
     text = F"""
 // Approval Tests version {VERSION}
 // More information at: https://github.com/approvals/ApprovalTests.cpp
 
 {text}
 """
-    with open(RELEASE_NEW_SINGLE_HEADER, 'w') as output:
+    write_file(RELEASE_NEW_SINGLE_HEADER, text)
+
+
+def write_file(file_name, text):
+    with open(file_name, 'w') as output:
         output.write(text)
+
+
+def read_file(file_name):
+    with open(file_name) as input:
+        text = input.read()
+    return text
 
 
 create_single_header_file()
 
 # ------------------------------------------------------------------------------------------------
-# Update Starter Project 
+# Update Starter Project
 
-# Make sure starter project folder is clean
-pushd $STARTER_PROJECT_DIR
-git clean -fx
-git reset --hard
-popd
+# https://stackoverflow.com/a/10528259/104370
+# initialise a directory stack
+pushstack = list()
 
-cp $RELEASE_NEW_SINGLE_HEADER $STARTER_PATH_NEW_SINGLE_HEADER
+def pushdir(dirname):
+  global pushstack
+  pushstack.append(os.getcwd())
+  os.chdir(dirname)
 
-# Delete the last release:
-if [ -f $STARTER_PATH_OLD_SINGLE_HEADER ] ; then
-    rm $STARTER_PATH_OLD_SINGLE_HEADER
-fi
+def popdir():
+  global pushstack
+  os.chdir(pushstack.pop())
 
-# Update the version in the "redirect" header:
-sed -i '' -e "s/$LAST_VERSION/$VERSION/" $STARTER_PROJECT_DIR/lib/ApprovalTests.hpp
+def update_starter_project():
 
-# Update the version number in the Visual Studio project:
-sed -i '' -e "s/$OLD_SINGLE_HEADER/$NEW_SINGLE_HEADER/" $STARTER_PROJECT_DIR/visual-studio-2017/StarterProject.vcxproj
+    # Make sure starter project folder is clean
+    pushdir(STARTER_PROJECT_DIR)
+    subprocess.call(["git", "clean", "-fx"], shell=True)
+    subprocess.call(["git", "reset", "--hard"], shell=True)
+    popdir()
+
+    shutil.copyfile(RELEASE_NEW_SINGLE_HEADER, STARTER_PATH_NEW_SINGLE_HEADER)
+
+    # Delete the last release:
+    if os.path.exists(STARTER_PATH_OLD_SINGLE_HEADER):
+        os.remove(STARTER_PATH_OLD_SINGLE_HEADER)
+
+    # Update the version in the "redirect" header:
+    replace_text_in_file(F"{STARTER_PROJECT_DIR}/lib/ApprovalTests.hpp", VERSION, LAST_VERSION)
+
+    # Update the version number in the Visual Studio project:
+    replace_text_in_file(F"{STARTER_PROJECT_DIR}/visual-studio-2017/StarterProject.vcxproj", OLD_SINGLE_HEADER, NEW_SINGLE_HEADER)
+
+
+def replace_text_in_file(file_name, new_text, old_text):
+    text = read_file(file_name)
+    text.replace(old_text, new_text)
+    write_file(file_name, text)
+
 
 # Check the starter project builds
 pushd $STARTER_PROJECT_DIR/cmake-build-debug
