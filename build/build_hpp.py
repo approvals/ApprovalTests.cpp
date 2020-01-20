@@ -2,9 +2,9 @@
 
 # Constants
 import os
-import subprocess
 import shutil
 
+from Utilities import run, write_file, read_file, pushdir, popdir, replace_text_in_file
 from Version import Version
 
 UNSET_VERSION = "v.X.X.X"
@@ -27,11 +27,6 @@ STARTER_PROJECT_DIR = F"../../ApprovalTests.Cpp.StarterProject"
 # TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
 
 
-def run(command):
-    print(command)
-    subprocess.run(" ".join(command), shell=True, check=True)
-
-
 def create_single_header_file():
     os.chdir("../ApprovalTests")
     print(os.getcwd())
@@ -47,31 +42,8 @@ def create_single_header_file():
     write_file(RELEASE_NEW_SINGLE_HEADER, text)
 
 
-def write_file(file_name, text):
-    with open(file_name, 'w') as output:
-        output.write(text)
-
-
-def read_file(file_name):
-    with open(file_name) as input:
-        text = input.read()
-    return text
-
-
 # https://stackoverflow.com/a/10528259/104370
 # initialise a directory stack
-pushstack = list()
-
-
-def pushdir(dirname):
-    global pushstack
-    pushstack.append(os.getcwd())
-    os.chdir(dirname)
-
-
-def popdir():
-    global pushstack
-    os.chdir(pushstack.pop())
 
 
 def update_starter_project():
@@ -96,12 +68,6 @@ def update_starter_project():
     # Update the version number in the Visual Studio project:
     replace_text_in_file(F"{STARTER_PROJECT_DIR}/visual-studio-2017/StarterProject.vcxproj", OLD_SINGLE_HEADER,
                          NEW_SINGLE_HEADER)
-
-
-def replace_text_in_file(file_name, old_text, new_text):
-    text = read_file(file_name)
-    text = text.replace(old_text, new_text)
-    write_file(file_name, text)
 
 
 def check_starter_project_builds():
