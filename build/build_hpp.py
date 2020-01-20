@@ -31,6 +31,15 @@ def load_version():
     return config['VERSION']
 
 
+def write_version(version):
+    config = configparser.ConfigParser()
+    config['VERSION'] = version
+
+    with open('version.ini', 'w') as configfile:
+        config.write(configfile)
+
+
+
 UNSET_VERSION = "v.X.X.X"
 
 LAST_VERSION = "v.7.0.0"
@@ -170,13 +179,17 @@ def publish():
     run(["open", RELEASE_DIR])
 
 
-def build_hpp():
+def build_hpp(old_version, new_version, publish_release):
+    LAST_VERSION = Version.get_version(old_version)
+    VERSION = Version.get_version(new_version)
+    PUSH_TO_PRODUCTION = publish_release
     create_single_header_file()
     update_starter_project()
     check_starter_project_builds()
     commit_and_push_starter_project()
     update_readme_and_docs()
     publish()
+    write_version(new_version)
 
 
 if __name__ == '__main__':
