@@ -97,6 +97,10 @@ Your top-level `CMakeLists.txt` file might look something like this:
 
 include: inc_fetch_content_approvaltests_cmakelists
 
+The important thing to note, for following the examples below, is the `add_subdirectory(dependencies)` line. It makes CMake load a file `dependencies/CMakeLists.txt`.
+
+Each example below shows a `dependencies/CMakeLists.txt`, for the corresponding scenario. All other code is identical between the example directories.
+
 Here is [this example project](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests).
 
 **Example Tests**
@@ -105,7 +109,7 @@ Your `tests/CMakeLists.txt` file might look something like this:
 
 include: inc_fetch_content_approvaltests_tests_cmakelists
 
-This says that the libraries `ApprovalTests::ApprovalTests` and `Catch2::Catch2` are required.
+This says that the libraries `ApprovalTests::ApprovalTests` and `Catch2::Catch2` are required by the `tests` executable.
 
 Here is [this example project's test directory](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests/tests).
 
@@ -123,9 +127,7 @@ The following is for when you just want ApprovalTests.cpp to be downloaded as pa
 
 It also needs CMake 3.14 or above.
 
-The important thing to note is the `add_subdirectory(dependencies)` line.
-
-It will use the file: `dependencies/CMakeLists.txt`:
+We use this `dependencies/CMakeLists.txt` file:
 
 include: inc_fetch_content_approvaltests_dependencies_cmakelists
 
@@ -144,7 +146,7 @@ Note also that here we are using the copy of Catch2 that is included in the Appr
 
 The only difference between the previous example and this one is that we get CMake to also download and use the Catch2 repository. 
 
-We use this file: `dependencies/CMakeLists.txt`:
+We use this `dependencies/CMakeLists.txt` file:
 
 include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists
 
@@ -154,7 +156,9 @@ include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists
 
 Here, instead of getting CMake to download ApprovalTests.cpp and Catch2, we have got our own clones or forks of them, which we want to use with our own tests.
 
-This works with older versions of CMake, unlike the `FetchContent` examples above. The following `dependencies/CMakeLists.txt` file was tested with CMake 3.8.
+We use `add_subdirectory()`. This works with older versions of CMake, unlike the `FetchContent` examples above.
+
+The following `dependencies/CMakeLists.txt` file was tested with CMake 3.8:
 
 include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists
 
