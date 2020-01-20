@@ -7,4 +7,4 @@ if __name__ == '__main__':
 
     new_version = Version.Version.update_major(version)
 
-    build_hpp.build_hpp(version, new_version, False)
+    build_hpp.Release(version, new_version, False).build_hpp()
