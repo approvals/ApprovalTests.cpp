@@ -130,6 +130,15 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
     * This will update the tables of contents and the machine-generated `[something].md` files.
     * If this does not work, see that script for how to install the tools it uses
 
+#### Managing CMake code samples
+
+The repository [claremacrae/ApprovalTests.cpp.CMakeSamples](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples) has some sample CMake projects for various development scenarios.
+
+I'm exploring ways of embedding some CMake files from that repo in to [CMake Integration](/doc/CMakeIntegration.md#top) - see [MarkdownSnippets #157](https://github.com/SimonCropp/MarkdownSnippets/issues/157).
+
+For now, I've used [claremacrae/ApprovalTests.cpp.CMakeSamples/create_markdown.py](
+https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/create_markdown.py) to convert the interesting CMake files to Markdown, and copy them to [doc/mdsource/](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/mdsource) with file names `inc_*.include.md`.
+
 ### Checking the documentation
 
 The script [fix_markdown.sh](/fix_markdown.sh) can be used to do some checks of the Markdown documentation files.
