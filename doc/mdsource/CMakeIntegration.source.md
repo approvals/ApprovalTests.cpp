@@ -128,19 +128,30 @@ This also allows us to checkout different commits of any of these projects.
 
 Here we want to enable and run all the ApprovalTests.cpp tests, unlike the cases above, where we only want to run the tests of the project that is being developed by using this library.
 
-Imagine this directory structure, where the repositories for all these projects are checked out side-by-side, and there is an extra directory `develop_approvaltests/`:
+Imagine this directory structure, where the repositories for all these projects are checked out side-by-side, and there is an extra directory `develop_approvaltests/` that will contain just a `CMakeLists.txt` file, to set up a project containing all the other directories:
 
 ```
 ApprovalTests.cpp/
   .git/
+  CMakeLists.txt
+  ...
 Catch2/
   .git/
+  CMakeLists.txt
+  ...
 doctest/
   .git/
+  CMakeLists.txt
+  ...
 googletest/
   .git/
+  CMakeLists.txt
+  ...
 ut/
   .git/
+  CMakeLists.txt
+  ...
+
 develop_approvaltests/
   CMakeLists.txt
 ```
