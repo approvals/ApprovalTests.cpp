@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Integration Points](#integration-points)
     * [CMake target](#cmake-target)
     * [CMake project options](#cmake-project-options)
+    * [CMake commands support](#cmake-commands-support)
   * [Single header or CMake Integration?](#single-header-or-cmake-integration)
     * [CMake Integration Benefits](#cmake-integration-benefits)
   * [Scenarios when using Approval Tests](#scenarios-when-using-approval-tests)
@@ -44,9 +45,6 @@ add_subdirectory(lib/ApprovalTests.cpp)
 target_link_libraries(tests ApprovalTests::ApprovalTests)
 ```
 
-See [Scenarios when using Approval Tests](/doc/CMakeIntegration.md#scenarios-when-using-approval-tests) 
-below for examples below of using [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) and [`FetchContent()`](https://cmake.org/cmake/help/latest/module/FetchContent.html) to incorporate Approval Tests in to CMake builds.
-
 ### CMake project options
 
 ApprovalTests.cpp's CMake project also provides some options for other projects
@@ -67,6 +65,17 @@ They are:
     * `APPROVAL_TESTS_ENABLE_CODE_COVERAGE` -- When `ON`, Approval Test's own tests are run with code coverage enabled. This uses [Lars Bilke's CodeCoverage.cmake](https://github.com/bilke/cmake-modules/blob/master/CodeCoverage.cmake).  Defaults to `OFF`.
 
 The file [CMake/ApprovalTestsOptions.cmake](https://github.com/approvals/ApprovalTests.cpp/blob/master/CMake/ApprovalTestsOptions.cmake) defines these options.
+
+### CMake commands support
+
+See [Scenarios when using Approval Tests](/doc/CMakeIntegration.md#scenarios-when-using-approval-tests) 
+below for examples below of using [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) and [`FetchContent`](https://cmake.org/cmake/help/latest/module/FetchContent.html), which are two options to incorporate Approval Tests in to CMake builds.
+
+The examples below use `FetchContent_MakeAvailable()`, which requires CMake 3.14. If you only have CMake 3.11 or above, see [FetchContent (CMake 3.11+)](https://cliutils.gitlab.io/modern-cmake/chapters/projects/fetch.html).
+
+With CMake before 3.11, see [`ExternalProject` module](https://cmake.org/cmake/help/latest/module/ExternalProject.html). The `FetchContent` examples below should help get started with `ExternalProject`.
+
+There is not yet support for [`find_package()`](https://cmake.org/cmake/help/latest/command/find_package.html).
 
 ## Single header or CMake Integration?
 
