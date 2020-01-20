@@ -117,3 +117,8 @@ class Release:
         self.publish()
         Version.write_version(self.VERSION)
 
+
+def build(update_version):
+    version = Version.load_version()
+    new_version = update_version(version)
+    Release(version, new_version, False).build_hpp()
