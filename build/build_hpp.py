@@ -93,6 +93,7 @@ def update_starter_project():
     # Update the version number in the Visual Studio project:
     replace_text_in_file(F"{STARTER_PROJECT_DIR}/visual-studio-2017/StarterProject.vcxproj", OLD_SINGLE_HEADER, NEW_SINGLE_HEADER)
 
+update_starter_project()
 
 def replace_text_in_file(file_name, new_text, old_text):
     text = read_file(file_name)
@@ -101,22 +102,26 @@ def replace_text_in_file(file_name, new_text, old_text):
 
 
 # Check the starter project builds
-pushd $STARTER_PROJECT_DIR/cmake-build-debug
-cmake --build .
-popd
 
-if [ "$VERSION" == "$UNSET_VERSION" ] ; then
-    echo "Everything worked - version number not set, so didn't commit or push"
-    exit
-fi
+def check_starter_project_builds():
+    pushdir(F"{STARTER_PROJECT_DIR}/cmake-build-debug")
+    subprocess.call(["cmake", "--build", "."], shell=True)
+    popdir()
 
-if [ "$PUSH_TO_PRODUCTION" == "false" ] ; then
-    # Don't push to production if we haven't set the version number
-    echo "Everything worked - didn't commit or push"
-    exit
-fi
+    if VERSION == UNSET_VERSION:
+        print("Everything worked - version number not set, so didn't commit or push")
+        exit(0)
+
+    if not PUSH_TO_PRODUCTION:
+        # Don't push to production if we haven't set the version number
+        print("Everything worked - didn't commit or push")
+        exit(0)
+
+check_starter_project_builds()
 
 # Commit and push starter project
+
+
 pushd $STARTER_PROJECT_DIR
 git add .
 git commit -m "Update to Approvals $VERSION"
