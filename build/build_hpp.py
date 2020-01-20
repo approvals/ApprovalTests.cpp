@@ -19,7 +19,6 @@ NEW_SINGLE_HEADER_TEMP = F"{NEW_SINGLE_HEADER}.tmp"
 
 RELEASE_DIR = F"../build/releases"
 RELEASE_NEW_SINGLE_HEADER = F"{RELEASE_DIR}/{NEW_SINGLE_HEADER}"
-RELEASE_NEW_SINGLE_HEADER_TEMP = F"{RELEASE_DIR}/{NEW_SINGLE_HEADER_TEMP}"
 
 STARTER_PROJECT_DIR = F"../../ApprovalTests.Cpp.StarterProject"
 STARTER_PATH_OLD_SINGLE_HEADER = F"{STARTER_PROJECT_DIR}/lib/{OLD_SINGLE_HEADER}"
@@ -39,8 +38,8 @@ def create_single_header_file():
     os.chdir("../ApprovalTests")
     print(os.getcwd())
     run(["java", "-version"])
-    run(["java", "-jar", "../build/SingleHpp.v.0.0.2.jar", RELEASE_NEW_SINGLE_HEADER_TEMP])
-    text = read_file(RELEASE_NEW_SINGLE_HEADER_TEMP)
+    run(["java", "-jar", "../build/SingleHpp.v.0.0.2.jar", RELEASE_NEW_SINGLE_HEADER])
+    text = read_file(RELEASE_NEW_SINGLE_HEADER)
     text = F"""
 // Approval Tests version {VERSION}
 // More information at: https://github.com/approvals/ApprovalTests.cpp
