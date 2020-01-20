@@ -49,10 +49,6 @@ that consume it. These are:
 
 * `APPROVAL_TESTS_ENABLE_CODE_COVERAGE` -- When `ON`, Approval Test's own tests are run with code coverage enabled. This uses [Lars Bilke's CodeCoverage.cmake](https://github.com/bilke/cmake-modules/blob/master/CodeCoverage.cmake).  Defaults to `OFF`.
 
-Options that only affect the main project, and have no effect if `add_subdirectory()` or similar is used:
-
-* `APPROVAL_TESTS_BUILD_CMAKE_INTEGRATION_TESTING` -- When `ON`, the tests in [tests/CMake_Tests](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/CMake_Tests) are run. Their job is to check that our CMake integrations still work. Note that these tests always run if this is the top-level project. Otherwise, they are only run if this is on and `APPROVAL_TESTS_BUILD_TESTING` is also on. Defaults to `OFF`.
-
 Currently, these are all the supported options:
 
 <!-- snippet: ApprovalTestsOptions.cmake -->
@@ -60,9 +56,6 @@ Currently, these are all the supported options:
 ```cmake
 # TODO Move this to the end
 option(APPROVAL_TESTS_ENABLE_CODE_COVERAGE "Enable coverage reporting for selected tests" OFF)
-
-# TODO Remove this
-option(APPROVAL_TESTS_BUILD_CMAKE_INTEGRATION_TESTING "Enable tests that check our CMake integration" OFF)
 
 # Control which of our copies of third_party libraries are made available
 # TODO Add APPROVAL_TESTS_BUILD_THIRD_PARTY_ALL
@@ -85,7 +78,7 @@ option(APPROVAL_TESTS_BUILD_EXAMPLES
         "Build documentation examples. Note that these are always built if this is the top-level project"
         OFF)
 ```
-<sup><a href='/CMake/ApprovalTestsOptions.cmake#L1-L26' title='File snippet `ApprovalTestsOptions.cmake` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsOptions.cmake' title='Navigate to start of snippet `ApprovalTestsOptions.cmake`'>anchor</a></sup>
+<sup><a href='/CMake/ApprovalTestsOptions.cmake#L1-L23' title='File snippet `ApprovalTestsOptions.cmake` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsOptions.cmake' title='Navigate to start of snippet `ApprovalTestsOptions.cmake`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Scenarios when using ApprovalTests.cpp 
@@ -352,7 +345,6 @@ endif()
 
 set(APPROVAL_TESTS_BUILD_TESTING ON CACHE BOOL "")
 set(APPROVAL_TESTS_BUILD_EXAMPLES ON CACHE BOOL "")
-set(APPROVAL_TESTS_BUILD_CMAKE_INTEGRATION_TESTING ON CACHE BOOL "")
 
 add_subdirectory(
         ../ApprovalTests.cpp
