@@ -9,7 +9,8 @@ namespace ApprovalTests
     class SeparateApprovedAndReceivedDirectoriesNamer : public ApprovalTestNamer
     {
     public:
-        virtual ~SeparateApprovedAndReceivedDirectoriesNamer() override = default;
+        virtual ~SeparateApprovedAndReceivedDirectoriesNamer() override =
+            default;
 
         std::string getFullFileNameWithExtraDirectory(
             const std::string& approved,
