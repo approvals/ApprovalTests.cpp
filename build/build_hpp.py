@@ -27,11 +27,9 @@ STARTER_PATH_NEW_SINGLE_HEADER=F"{STARTER_PROJECT_DIR}/lib/{NEW_SINGLE_HEADER}"
 
 # TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
 
-# ------------------------------------------------------------------------------------------------
-# Create new single-header file
 
-# TODO Rework to not write tmp file
 def create_single_header_file():
+    # TODO Rework to not write tmp file
     os.chdir("../ApprovalTests")
     subprocess.call(["java", "-jar", "../build/SingleHpp.v.0.0.2.jar", RELEASE_NEW_SINGLE_HEADER_TEMP], shell=True)
     text = read_file(RELEASE_NEW_SINGLE_HEADER_TEMP)
@@ -54,8 +52,6 @@ def read_file(file_name):
         text = input.read()
     return text
 
-
-create_single_header_file()
 
 # ------------------------------------------------------------------------------------------------
 # Update Starter Project
@@ -93,15 +89,12 @@ def update_starter_project():
     # Update the version number in the Visual Studio project:
     replace_text_in_file(F"{STARTER_PROJECT_DIR}/visual-studio-2017/StarterProject.vcxproj", OLD_SINGLE_HEADER, NEW_SINGLE_HEADER)
 
-update_starter_project()
 
 def replace_text_in_file(file_name, new_text, old_text):
     text = read_file(file_name)
     text.replace(old_text, new_text)
     write_file(file_name, text)
 
-
-# Check the starter project builds
 
 def check_starter_project_builds():
     pushdir(F"{STARTER_PROJECT_DIR}/cmake-build-debug")
@@ -117,9 +110,6 @@ def check_starter_project_builds():
         print("Everything worked - didn't commit or push")
         exit(0)
 
-check_starter_project_builds()
-
-# Commit and push starter project
 
 def commit_and_push_starter_project():
     pushdir(STARTER_PROJECT_DIR)
@@ -128,17 +118,13 @@ def commit_and_push_starter_project():
     subprocess.call(["git", "push", "origin", "master"], shell=True)
     popdir()
 
-commit_and_push_starter_project()
-# ------------------------------------------------------------------------------------------------
 
-# Update the top-level readme file and other documentation
 def update_readme_and_docs():
     pushdir("..")
     replace_text_in_file("mdsource/README.source.md", LAST_VERSION, VERSION)
     subprocess.call(["./run_markdown_templates.sh"],shell=True)
     popdir()
 
-update_readme_and_docs()
 
 def publish():
     # Draft the tweet
@@ -151,6 +137,15 @@ def publish():
 
     subprocess.call(["open", RELEASE_DIR], shell=True)
 
-publish()
+
+def build_hpp():
+    create_single_header_file()
+    update_starter_project()
+    check_starter_project_builds()
+    commit_and_push_starter_project()
+    update_readme_and_docs()
+    publish()
 
 
+if __name__ == '__main__':
+    build_hpp()
