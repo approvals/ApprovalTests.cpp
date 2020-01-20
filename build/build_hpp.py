@@ -7,6 +7,14 @@ import shutil
 from Utilities import run, write_file, read_file, pushdir, popdir, replace_text_in_file
 import Version
 
+
+def check_step(step):
+    print("\nCHECK: ", step)
+    response = input("  Press Y OR y to continue; Anything else to Quit: ")
+    if response not in ['Y', 'y']:
+        exit(0)
+
+
 class Release:
 
     def __init__(self, old_version, new_version, publish_release):
@@ -26,6 +34,13 @@ class Release:
 
     # TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
 
+    def check_pre_conditions_for_publish(self):
+        if not self.PUSH_TO_PRODUCTION:
+            return
+        check_step("we are on the master branch")
+        check_step("everything is committed")
+        check_step("everything is pushed")
+        check_step("the builds are passing")
 
     def create_single_header_file(self):
         os.chdir("../ApprovalTests")
@@ -103,6 +118,7 @@ class Release:
 
 
     def build_hpp(self):
+        self.check_pre_conditions_for_publish()
         self.create_single_header_file()
         self.update_starter_project()
         self.check_starter_project_builds()
