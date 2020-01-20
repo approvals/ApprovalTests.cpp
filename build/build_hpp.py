@@ -5,25 +5,26 @@ import os
 import subprocess
 import shutil
 
-UNSET_VERSION="v.X.X.X"
+UNSET_VERSION = "v.X.X.X"
 
-LAST_VERSION="v.7.0.0"
-VERSION=UNSET_VERSION
+LAST_VERSION = "v.7.0.0"
+VERSION = UNSET_VERSION
 
-PUSH_TO_PRODUCTION=True
+PUSH_TO_PRODUCTION = True
 # Note that we won't push if the version number is unset
 
-OLD_SINGLE_HEADER=F"ApprovalTests.{LAST_VERSION}.hpp"
-NEW_SINGLE_HEADER=F"ApprovalTests.{VERSION}.hpp"
-NEW_SINGLE_HEADER_TEMP=F"{NEW_SINGLE_HEADER}.tmp"
+OLD_SINGLE_HEADER = F"ApprovalTests.{LAST_VERSION}.hpp"
+NEW_SINGLE_HEADER = F"ApprovalTests.{VERSION}.hpp"
+NEW_SINGLE_HEADER_TEMP = F"{NEW_SINGLE_HEADER}.tmp"
 
-RELEASE_DIR=F"../build/releases"
-RELEASE_NEW_SINGLE_HEADER=F"{RELEASE_DIR}/{NEW_SINGLE_HEADER}"
-RELEASE_NEW_SINGLE_HEADER_TEMP=F"{RELEASE_DIR}/{NEW_SINGLE_HEADER_TEMP}"
+RELEASE_DIR = F"../build/releases"
+RELEASE_NEW_SINGLE_HEADER = F"{RELEASE_DIR}/{NEW_SINGLE_HEADER}"
+RELEASE_NEW_SINGLE_HEADER_TEMP = F"{RELEASE_DIR}/{NEW_SINGLE_HEADER_TEMP}"
 
-STARTER_PROJECT_DIR=F"../../ApprovalTests.Cpp.StarterProject"
-STARTER_PATH_OLD_SINGLE_HEADER=F"{STARTER_PROJECT_DIR}/lib/{OLD_SINGLE_HEADER}"
-STARTER_PATH_NEW_SINGLE_HEADER=F"{STARTER_PROJECT_DIR}/lib/{NEW_SINGLE_HEADER}"
+STARTER_PROJECT_DIR = F"../../ApprovalTests.Cpp.StarterProject"
+STARTER_PATH_OLD_SINGLE_HEADER = F"{STARTER_PROJECT_DIR}/lib/{OLD_SINGLE_HEADER}"
+STARTER_PATH_NEW_SINGLE_HEADER = F"{STARTER_PROJECT_DIR}/lib/{NEW_SINGLE_HEADER}"
+
 
 # TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
 
@@ -67,17 +68,19 @@ def read_file(file_name):
 # initialise a directory stack
 pushstack = list()
 
+
 def pushdir(dirname):
-  global pushstack
-  pushstack.append(os.getcwd())
-  os.chdir(dirname)
+    global pushstack
+    pushstack.append(os.getcwd())
+    os.chdir(dirname)
+
 
 def popdir():
-  global pushstack
-  os.chdir(pushstack.pop())
+    global pushstack
+    os.chdir(pushstack.pop())
+
 
 def update_starter_project():
-
     # Make sure starter project folder is clean
     pushdir(STARTER_PROJECT_DIR)
     run(["git", "clean", "-fx"])
@@ -94,7 +97,8 @@ def update_starter_project():
     replace_text_in_file(F"{STARTER_PROJECT_DIR}/lib/ApprovalTests.hpp", LAST_VERSION, VERSION)
 
     # Update the version number in the Visual Studio project:
-    replace_text_in_file(F"{STARTER_PROJECT_DIR}/visual-studio-2017/StarterProject.vcxproj", OLD_SINGLE_HEADER, NEW_SINGLE_HEADER)
+    replace_text_in_file(F"{STARTER_PROJECT_DIR}/visual-studio-2017/StarterProject.vcxproj", OLD_SINGLE_HEADER,
+                         NEW_SINGLE_HEADER)
 
 
 def replace_text_in_file(file_name, old_text, new_text):
@@ -129,7 +133,7 @@ def commit_and_push_starter_project():
 def update_readme_and_docs():
     pushdir("..")
     replace_text_in_file("mdsource/README.source.md", LAST_VERSION, VERSION)
-    run(["./run_markdown_templates.sh"],shell=True)
+    run(["./run_markdown_templates.sh"], shell=True)
     popdir()
 
 
