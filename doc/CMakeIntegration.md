@@ -15,6 +15,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Integration Points](#integration-points)
     * [CMake target](#cmake-target)
     * [CMake project options](#cmake-project-options)
+  * [Single header or CMake Integration?](#single-header-or-cmake-integration)
+    * [CMake Integration Benefits](#cmake-integration-benefits)
   * [Scenarios when using ApprovalTests.cpp](#scenarios-when-using-approvaltestscpp)
     * [Context](#context)
     * [Make CMake clone ApprovalTests.cpp](#make-cmake-clone-approvaltestscpp)
@@ -63,6 +65,32 @@ They are:
 
 The file [CMake/ApprovalTestsOptions.cmake](https://github.com/approvals/ApprovalTests.cpp/blob/master/CMake/ApprovalTestsOptions.cmake) defines these options.
 
+## Single header or CMake Integration?
+
+There are two main options for incorporating Approval Tests in to your project:
+
+1. Download the single-header file from the [Releases page](https://github.com/approvals/ApprovalTests.cpp/releases) and, typically, add the header to your source code.
+2. Obtain a copy of the entire ApprovalTests.cpp repository and incorporate it in to your CMake build scripts.
+
+Options for obtaining the repository typically include:
+
+* cloning it
+* forking it
+* including it as a sub-repository
+* having a build tool, such as CMake, download it for you automatically as part of your builds
+
+### CMake Integration Benefits
+
+We recommend using the CMake integration route, which has several user benefits over the single header:
+
+* Automatic prevention of most of the scenarios listed in [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top).
+* Source-code compatibility with the single header download:
+    * For convenience, we provide a wrapper header file [ApprovalTests.hpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/ApprovalTests.hpp), which can be used to access all the features of this library, without having to know which features are provided by which header files.
+* Flexibility in how many of the Approval Tests include files you include:
+    * There is also the option to include just the headers in [ApprovalTests/](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests) that you use.
+    * This may slightly improve build speeds.
+* It may occasionally [provide workarounds to bugs](https://github.com/approvals/ApprovalTests.cpp/issues/90).
+  
 ## Scenarios when using ApprovalTests.cpp 
 
 ### Context
