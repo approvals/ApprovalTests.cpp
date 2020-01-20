@@ -119,6 +119,16 @@ How might you enable CMake to provide those libraries? In other words, what are 
 
 The next few sections describe some options.
 
+### Make CMake clone ApprovalTests.cpp and Catch2
+
+**Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests_catch2](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests_catch2).
+
+The only difference between the previous example and this one is that here we also get CMake to download and use the Catch2 repository. 
+
+We use this `dependencies/CMakeLists.txt` file:
+
+include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists
+
 ### Make CMake clone ApprovalTests.cpp
 
 **Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests).
@@ -157,16 +167,6 @@ fetch_content_approvaltests/
   tests/
     ...
 ```
-
-### Make CMake clone ApprovalTests.cpp and Catch2
-
-**Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests_catch2](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests_catch2).
-
-The only difference between the previous example and this one is that here we also get CMake to download and use the Catch2 repository. 
-
-We use this `dependencies/CMakeLists.txt` file:
-
-include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists
 
 ### Use own ApprovalTests.cpp and Catch2 clones
 

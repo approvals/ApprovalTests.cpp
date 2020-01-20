@@ -20,8 +20,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [CMake Integration Benefits](#cmake-integration-benefits)
   * [Scenarios when using Approval Tests](#scenarios-when-using-approval-tests)
     * [Context](#context)
-    * [Make CMake clone ApprovalTests.cpp](#make-cmake-clone-approvaltestscpp)
     * [Make CMake clone ApprovalTests.cpp and Catch2](#make-cmake-clone-approvaltestscpp-and-catch2)
+    * [Make CMake clone ApprovalTests.cpp](#make-cmake-clone-approvaltestscpp)
     * [Use own ApprovalTests.cpp and Catch2 clones](#use-own-approvaltestscpp-and-catch2-clones)
     * [Using other supported test frameworks](#using-other-supported-test-frameworks)
   * [Scenarios when developing ApprovalTests.cpp](#scenarios-when-developing-approvaltestscpp)
@@ -171,6 +171,38 @@ How might you enable CMake to provide those libraries? In other words, what are 
 
 The next few sections describe some options.
 
+### Make CMake clone ApprovalTests.cpp and Catch2
+
+**Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests_catch2](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests_catch2).
+
+The only difference between the previous example and this one is that here we also get CMake to download and use the Catch2 repository. 
+
+We use this `dependencies/CMakeLists.txt` file:
+
+ <!-- include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
+
+```cmake
+# Needs CMake 3.14 or above
+include(FetchContent)
+
+# -------------------------------------------------------------------
+# ApprovalTests.cpp
+FetchContent_Declare(ApprovalTests
+        GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
+        GIT_TAG master)
+
+FetchContent_MakeAvailable(ApprovalTests)
+
+# -------------------------------------------------------------------
+# Catch2
+FetchContent_Declare(Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG v2.11.1)
+
+FetchContent_MakeAvailable(Catch2)
+```
+ <!-- end include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
+
 ### Make CMake clone ApprovalTests.cpp
 
 **Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests).
@@ -226,38 +258,6 @@ fetch_content_approvaltests/
   tests/
     ...
 ```
-
-### Make CMake clone ApprovalTests.cpp and Catch2
-
-**Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests_catch2](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests_catch2).
-
-The only difference between the previous example and this one is that here we also get CMake to download and use the Catch2 repository. 
-
-We use this `dependencies/CMakeLists.txt` file:
-
- <!-- include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
-
-```cmake
-# Needs CMake 3.14 or above
-include(FetchContent)
-
-# -------------------------------------------------------------------
-# ApprovalTests.cpp
-FetchContent_Declare(ApprovalTests
-        GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
-        GIT_TAG master)
-
-FetchContent_MakeAvailable(ApprovalTests)
-
-# -------------------------------------------------------------------
-# Catch2
-FetchContent_Declare(Catch2
-        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-        GIT_TAG v2.11.1)
-
-FetchContent_MakeAvailable(Catch2)
-```
- <!-- end include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 ### Use own ApprovalTests.cpp and Catch2 clones
 
