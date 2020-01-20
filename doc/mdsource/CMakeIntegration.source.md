@@ -25,13 +25,23 @@ target_link_libraries(tests ApprovalTests::ApprovalTests)
 ## CMake project options
 
 ApprovalTests.cpp's CMake project also provides some options for other projects
-that consume it. These are:
+that consume it.
+ 
+They are:
 
-* `APPROVAL_TESTS_ENABLE_CODE_COVERAGE` -- When `ON`, Approval Test's own tests are run with code coverage enabled. This uses [Lars Bilke's CodeCoverage.cmake](https://github.com/bilke/cmake-modules/blob/master/CodeCoverage.cmake).  Defaults to `OFF`.
+* Options to control what targets are built.
+    * Note that these are always built if this is the top-level project.
+    * `APPROVAL_TESTS_BUILD_TESTING` -- When `ON`, the self-tests are run.  Defaults to `OFF`.
+    * `APPROVAL_TESTS_BUILD_EXAMPLES` -- When `ON`, the examples are run.  Defaults to `OFF`.
+* Options to control which of our copies of header-only third_party libraries are made available.
+    * Note that these are always included if this is the top-level project.
+    * `APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2` --  When `ON`, this project's copy of the Catch2 test framework is included.  Defaults to `OFF`.
+    * `APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST` --  When `ON`, this project's copy of the doctest test framework is included.  Defaults to `OFF`.
+    * `APPROVAL_TESTS_BUILD_THIRD_PARTY_UT` --  When `ON`, this project's copy of the Boost.UT test framework is included.  Defaults to `OFF`.
+* Options to control the behaviour of our builds.
+    * `APPROVAL_TESTS_ENABLE_CODE_COVERAGE` -- When `ON`, Approval Test's own tests are run with code coverage enabled. This uses [Lars Bilke's CodeCoverage.cmake](https://github.com/bilke/cmake-modules/blob/master/CodeCoverage.cmake).  Defaults to `OFF`.
 
-Currently, these are all the supported options:
-
-snippet: ApprovalTestsOptions.cmake
+The file [CMake/ApprovalTestsOptions.cmake](https://github.com/approvals/ApprovalTests.cpp/blob/master/CMake/ApprovalTestsOptions.cmake) defines these options.
 
 ## Scenarios when using ApprovalTests.cpp 
 
