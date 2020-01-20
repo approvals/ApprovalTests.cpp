@@ -175,7 +175,9 @@ The next few sections describe some options.
 
 **Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests_catch2](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests_catch2).
 
-The only difference between the previous example and this one is that here we also get CMake to download and use the Catch2 repository. 
+The following is for when you just want ApprovalTests.cpp and Catch2 to be downloaded as part of your project's build. You don't particularly want to see their source code, although you're happy if your debugger steps in to them.
+
+It also needs CMake 3.14 or above.
 
 We use this `dependencies/CMakeLists.txt` file:
 
@@ -203,13 +205,31 @@ FetchContent_MakeAvailable(Catch2)
 ```
  <!-- end include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
+Note the `GIT_TAG` values: This tells CMake which revision of dependencies to use. The value can be a tag or a git commit ID. Here we use `master`, to always test our integrations with the latest Approval Tests code. However, it is generally recommended to pin your dependencies to specific versions, and test behaviour before updating to newer versions. 
+
+After CMake has generated the build files, the directory structure would look something like this, where the `cmake-build-debug` directory is the build space, and the `cmake-build-debug/_deps` contains the downloaded and built ApprovalTests.cpp repository:
+
+```
+fetch_content_approvaltests_catch2/
+  .git/
+  cmake-build-debug/
+    _deps/
+      approvaltests-build/
+      approvaltests-src/
+      approvaltests-subbuild/
+    ...
+  CMakeLists.txt
+  dependencies/
+    CMakeLists.txt
+  tests/
+    ...
+```
+
 ### Make CMake clone ApprovalTests.cpp
 
 **Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/master/fetch_content_approvaltests).
 
-The following is for when you just want ApprovalTests.cpp to be downloaded as part of your project's build. You don't particularly want to see its source code, although you're happy if your debugger steps in to its source code.
-
-It also needs CMake 3.14 or above.
+The only difference between the previous example and this one is that here we use the Catch2 header that is in the ApprovalTests.cpp project.
 
 We use this `dependencies/CMakeLists.txt` file:
 
@@ -238,26 +258,6 @@ There are also options to enable use of ApprovalTests.cpp's copies of all other 
 
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST`
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_UT`
-
-Note also the `GIT_TAG` value: This tells CMake which revision of ApprovalTests.cpp to use. The value can be a tag or a git commit ID. Here we use `master`, to always test our integrations with the latest code. However, it is generally recommended to pin your dependencies to specific versions, and test behaviour before updating to newer versions. 
-
-After CMake has generated the build files, the directory structure would look something like this, where the `cmake-build-debug` directory is the build space, and the `cmake-build-debug/_deps` contains the downloaded and built ApprovalTests.cpp repository:
-
-```
-fetch_content_approvaltests/
-  .git/
-  cmake-build-debug/
-    _deps/
-      approvaltests-build/
-      approvaltests-src/
-      approvaltests-subbuild/
-    ...
-  CMakeLists.txt
-  dependencies/
-    CMakeLists.txt
-  tests/
-    ...
-```
 
 ### Use own ApprovalTests.cpp and Catch2 clones
 
