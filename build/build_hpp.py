@@ -5,7 +5,7 @@ import os
 import shutil
 
 from Utilities import run, write_file, read_file, pushdir, popdir, replace_text_in_file
-from Version import Version
+import Version
 
 class Release:
 
