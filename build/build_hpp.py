@@ -132,29 +132,25 @@ commit_and_push_starter_project()
 # ------------------------------------------------------------------------------------------------
 
 # Update the top-level readme file and other documentation
-pushd ..
-sed -i -e "s/$LAST_VERSION/$VERSION/g" mdsource/README.source.md
-./run_markdown_templates.sh
-popd
+def update_readme_and_docs():
+    pushdir("..")
+    replace_text_in_file("mdsource/README.source.md", LAST_VERSION, VERSION)
+    subprocess.call(["./run_markdown_templates.sh"],shell=True)
+    popdir()
 
-# Draft the tweet
-open "https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+$VERSION+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F$VERSION+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21"
+update_readme_and_docs()
 
-# Draft the upload to github - do this last, so this tab appears on top
-open "https://github.com/approvals/ApprovalTests.cpp/releases/new?tag=$VERSION&title=Single%20Hpp%20File%20-%20$VERSION"
+def publish():
+    # Draft the tweet
+    tweet_text = F"https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+{VERSION}+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F{VERSION}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21"
+    subprocess.call(["open", tweet_text], shell=True)
 
-open $RELEASE_DIR/
+    # Draft the upload to github - do this last, so this tab appears on top
+    github_url = F"https://github.com/approvals/ApprovalTests.cpp/releases/new?tag={VERSION}&title=Single%20Hpp%20File%20-%20{VERSION}"
+    subprocess.call(["open", github_url], shell=True)
 
-# The prefixes used in our commit messages come from: https://github.com/RefactoringCombos/ArlosCommitNotation
-git log ${LAST_VERSION}..HEAD --pretty=format:%s | \
-    grep -v '^[dert] ' | \
-    grep -v 'Update to_do.txt' | \
-    grep -v 'Update HowToRelease.md' | \
-    grep -v 'Update README.md' | \
-    grep -v 'Update StyleGuide.h' | \
-    sort
+    subprocess.call(["open", RELEASE_DIR], shell=True)
 
-# TODO In future - prompt for version number
-#read -p "Enter the next version number (last was:  $LAST_VERSION )" VERSION
-#sed -i -e "s/$LAST_VERSION/$VERSION/g" ../build/build_hpp.sh
+publish()
+
 
