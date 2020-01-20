@@ -131,14 +131,15 @@ We use this `dependencies/CMakeLists.txt` file:
 
 include: inc_fetch_content_approvaltests_dependencies_cmakelists
 
+We have set `APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2` to `ON`, so that CMake will use the copy of Catch2 that is included in the ApprovalTests.cpp repository.
+
 There are also options to enable use of ApprovalTests.cpp's copies of all other supported test frameworks except GoogleTest, including:
 
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST`
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_UT`
 
-Note the `GIT_TAG` value: CMake needs to know which revision to use.
+Note also the `GIT_TAG` value: This tells CMake which revision of ApprovalTests.cpp to use. The value can be a tag or a git commit ID.
 
-Note also that here we are using the copy of Catch2 that is included in the ApprovalTests.cpp repository.
 
 ### Make CMake clone ApprovalTests.cpp and Catch2
 
