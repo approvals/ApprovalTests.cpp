@@ -9,8 +9,6 @@ from Version import Version
 
 class Release:
 
-    UNSET_VERSION = "v.X.X.X"
-
     def __init__(self, old_version, new_version, publish_release):
         self.LAST_VERSION = Version.get_version(old_version)
         self.VERSION = Version.get_version(new_version)
@@ -76,10 +74,6 @@ class Release:
         pushdir(F"{self.STARTER_PROJECT_DIR}/cmake-build-debug")
         run(["cmake", "--build", "."])
         popdir()
-
-        if self.VERSION == self.UNSET_VERSION:
-            print("Everything worked - version number not set, so didn't commit or push")
-            exit(0)
 
         if not self.PUSH_TO_PRODUCTION:
             # Don't push to production if we haven't set the version number
