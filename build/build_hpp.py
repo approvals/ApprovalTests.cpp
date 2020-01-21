@@ -27,4 +27,9 @@ def build(update_version):
     version = Version.load_version()
     new_version = update_version(version)
     release_details = ReleaseDetails(version, new_version, False)
-    DeployRelease(release_details).build_hpp()
+    deploy_release = DeployRelease(release_details)
+    deploy_release.prepare_everything()
+    if not deploy_release.details.push_to_production:
+        print("Everything worked - didn't commit or push")
+    else:
+        deploy_release.push_everything_live()
