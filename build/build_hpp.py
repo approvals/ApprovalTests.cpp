@@ -181,14 +181,17 @@ class Release:
         run(["open", tweet_text])
 
     def build_hpp(self):
-        self.check_pre_conditions_for_publish()
-        self.create_single_header_file()
-        self.update_starter_project()
-        self.check_starter_project_builds()
+        self.prepare_everything()
         if not self.PUSH_TO_PRODUCTION:
             print("Everything worked - didn't commit or push")
         else:
             self.push_everything_live()
+
+    def prepare_everything(self):
+        self.check_pre_conditions_for_publish()
+        self.create_single_header_file()
+        self.update_starter_project()
+        self.check_starter_project_builds()
 
     def push_everything_live(self):
         self.commit_starter_project()
