@@ -39,6 +39,7 @@ See also this list of [recently-fixed issues that don't yet have a milestone](ht
         * Understood, work-around and documented issues with the Ninja generator.  See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top) if you have test failures in your Ninja builds. (#74 - thanks @jwillikers)
         * Added compile-time checks for GoogleTest, Catch2 and doctest, to detect problems with `__FILE__` macro caused by the Ninja generator on all platforms (#79 - thanks @jwillikers).
         * Added option to disable the `__FILE__` compile-time check (#86)
+    * Project now works with [Unity builds](http://onqtam.com/programming/2018-07-07-unity-builds/) (#86)
 * **Other changes**
     * Updated \[Boost\].UT integration to work with [a change](https://github.com/boost-experimental/ut/commit/94220e8c95b323349bfd94ef30b2568916fb1421#diff-04c6e90faac2675aa89e2176d2eec7d8) made for the v1.1.5 release of that library. (#66 - thanks @krzysztof-jusiak)
     * Code now formatted with clang-format (#39 - thanks @dheater and @alastairUK)
