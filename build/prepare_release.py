@@ -1,5 +1,6 @@
 import os
 import shutil
+import time
 
 from Utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir
 
@@ -101,6 +102,10 @@ class PrepareRelease:
 
     def prepare_release_notes(self):
         shutil.move(self.details.xxx_release_notes_path, self.details.new_release_notes_path)
+
+        # Make sure the above move has finished, before we create the new xxx file:
+        time.sleep(1)
+
         shutil.copyfile(self.details.template_release_notes_path, self.details.xxx_release_notes_path)
 
     def prepare_everything(self):
