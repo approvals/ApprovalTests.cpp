@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-# Constants
+import os
 
 import Version
 from prepare_release import PrepareRelease
@@ -22,6 +22,10 @@ class ReleaseDetails:
 
         self.main_project_dir = F"../../ApprovalTests.Cpp"
         self.starter_project_dir = F"../../ApprovalTests.Cpp.StarterProject"
+
+        self.new_release_notes_path = os.path.join(self.details.build_dir, F'relnotes_{Version.get_version_without_v(self.details.new_version)}.md')
+        self.xxx_release_notes_path = os.path.join(self.details.build_dir, F'relnotes_X.X.X.md')
+        self.template_release_notes_path = os.path.join(self.details.build_dir, F'relnotes_template.md')
 
 
 def build(update_version):

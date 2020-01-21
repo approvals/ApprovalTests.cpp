@@ -37,18 +37,14 @@ class DeployRelease:
         popdir()
 
     def publish_main_project(self):
-        new_release_notes_path = os.path.join(self.details.build_dir, F'relnotes_{Version.get_version_without_v(self.details.new_version)}.md')
-        xxx_release_notes_path = os.path.join(self.details.build_dir, F'relnotes_X.X.X.md')
-        template_release_notes_path = os.path.join(self.details.build_dir, F'relnotes_template.md')
-
-        shutil.move(xxx_release_notes_path, new_release_notes_path)
-        shutil.copyfile(template_release_notes_path, xxx_release_notes_path)
+        shutil.move(self.details.xxx_release_notes_path, self.details.new_release_notes_path)
+        shutil.copyfile(self.details.template_release_notes_path, self.details.xxx_release_notes_path)
 
         self.commit_main_project()
         self.push_main_project()
 
         # Draft the upload to github
-        release_notes = read_file(new_release_notes_path)
+        release_notes = read_file(self.details.new_release_notes_path)
         pyperclip.copy(release_notes)
         print('The release notes are on the clipboard')
         github_url = F"https://github.com/approvals/ApprovalTests.cpp/releases/new?tag={self.details.new_version}&title=Single%20Hpp%20File%20-%20{self.details.new_version}"
