@@ -6,8 +6,7 @@
 
 toc
 
-## vNext
-
+## v.x.y.z
 
 ### CMake Integration documented
 
