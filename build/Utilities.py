@@ -36,3 +36,10 @@ def replace_text_in_file(file_name, old_text, new_text):
     text = read_file(file_name)
     text = text.replace(old_text, new_text)
     write_file(file_name, text)
+
+
+def check_step(step):
+    print("\nCHECK: ", step)
+    response = input("  Press Y OR y to continue; Anything else to Quit: ")
+    if response not in ['Y', 'y']:
+        exit(0)

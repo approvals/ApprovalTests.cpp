@@ -5,15 +5,8 @@ import os
 import shutil
 import pyperclip
 
-from Utilities import run, write_file, read_file, pushdir, popdir, replace_text_in_file
+from Utilities import run, write_file, read_file, pushdir, popdir, replace_text_in_file, check_step
 import Version
-
-
-def check_step(step):
-    print("\nCHECK: ", step)
-    response = input("  Press Y OR y to continue; Anything else to Quit: ")
-    if response not in ['Y', 'y']:
-        exit(0)
 
 
 class Release:
