@@ -97,8 +97,14 @@ class PrepareRelease:
         run(["./run_markdown_templates.sh"], shell=True)
         popdir()
 
+    def prepare_release_notes(self):
+        shutil.move(self.details.xxx_release_notes_path, self.details.new_release_notes_path)
+        shutil.copyfile(self.details.template_release_notes_path, self.details.xxx_release_notes_path)
+
     def prepare_everything(self):
         self.check_pre_conditions_for_publish()
         self.create_single_header_file()
         self.update_starter_project()
         self.check_starter_project_builds()
+        self.update_readme_and_docs()
+        self.prepare_release_notes()

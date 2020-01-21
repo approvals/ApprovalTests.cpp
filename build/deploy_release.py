@@ -14,6 +14,7 @@ class DeployRelease:
 
     # TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
 
+    # Starter Project
     def commit_starter_project(self):
         pushdir(self.details.starter_project_dir)
         run(["git", "add", "."])
@@ -25,6 +26,11 @@ class DeployRelease:
         run(["git", "push", "origin", "master"])
         popdir()
 
+    def publish_starter_project(self):
+        self.commit_starter_project()
+        self.push_starter_project()
+
+    # Main Project
     def commit_main_project(self):
         pushdir(self.details.main_project_dir)
         run(["git", "add", "."])
@@ -37,9 +43,6 @@ class DeployRelease:
         popdir()
 
     def publish_main_project(self):
-        shutil.move(self.details.xxx_release_notes_path, self.details.new_release_notes_path)
-        shutil.copyfile(self.details.template_release_notes_path, self.details.xxx_release_notes_path)
-
         self.commit_main_project()
         self.push_main_project()
 
@@ -57,8 +60,6 @@ class DeployRelease:
         run(["open", tweet_text])
 
     def push_everything_live(self):
-        self.commit_starter_project()
-        self.push_starter_project()
-        self.update_readme_and_docs()
         self.publish_main_project()
+        self.publish_starter_project()
         Version.write_version(self.details.new_version)
