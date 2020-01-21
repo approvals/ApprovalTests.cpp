@@ -5,19 +5,16 @@
 
 Preparation:
 
-- [ ] Push all changes
-- [ ] Check that the [builds are passing](https://github.com/approvals/ApprovalTests.cpp/commits/master)
-- [ ] Write in [build/relnotes_X.X.X.md](https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_X.X.X.md) a  summary of changes since last release, based on changes since [the last release](https://github.com/approvals/ApprovalTests.cpp/releases)
-- [ ] Determine the semantic version number
-- On github:
-    - [ ] If a [Milestone](https://github.com/approvals/ApprovalTests.cpp/milestones) was created for this release, rename it to the release version number, and check that all issues are closed
-- On local machine
-    - [ ] Update the version number in [build_hpp.sh](/build/build_hpp.sh)
-    - [ ] On the [Features](/doc/Features.md#top) page, add the line `## [new version number]` after `## vNext`
+TODO Eliminate most of this...
+
+- [ ] Determine the type of semantic - major, minor or patch 
 
 Creating the Build
 
-- [ ] Run `build_hpp.sh` - this updates [the starter project](https://github.com/approvals/ApprovalTests.cpp.StarterProject), tests that it builds, and if so, **commits and pushes it**
+- Run one of:
+  - majorRelease.py
+  - minorRelease.py
+  - patchRelease.py
 
 Publishing
 

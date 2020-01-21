@@ -34,13 +34,47 @@ class Release:
 
     # TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
 
+
+    def update_features_page(self):
+        features_file = '../doc/mdsource/Features.source.md'
+        content = read_file(features_file)
+        missing_features = F"""
+## v.x.y.z
+
+## {self.LAST_VERSION}
+"""
+        if missing_features in content:
+            check_step("the Features page is empty: are you sure you want this?")
+        else:
+            update_version = F"""
+## v.x.y.z
+
+## {self.VERSION}
+"""
+
+            replace_text_in_file(features_file, '\n## v.x.y.z\n', update_version)
+
     def check_pre_conditions_for_publish(self):
         if not self.PUSH_TO_PRODUCTION:
             return
+        run(["git", "branch"])
         check_step("we are on the master branch")
+
+        run(["git", "status"])
         check_step("everything is committed")
         check_step("everything is pushed")
+
+        run(["open", "https://github.com/approvals/ApprovalTests.cpp/commits/master"])
         check_step("the builds are passing")
+
+        run(["open", "https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_X.X.X.md"])
+        run(["open", "https://github.com/approvals/ApprovalTests.cpp/releases"])
+        check_step("the release notes are ready")
+
+        run(["open", "https://github.com/approvals/ApprovalTests.cpp/milestones"])
+        check_step("the milestone (if any) is up to date, including actual version number of release")
+
+        self.update_features_page()
 
     def create_single_header_file(self):
         os.chdir("../ApprovalTests")
