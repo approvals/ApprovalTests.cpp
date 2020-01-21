@@ -3,6 +3,7 @@
 # Constants
 import os
 import shutil
+import pyperclip
 
 from Utilities import run, write_file, read_file, pushdir, popdir, replace_text_in_file
 import Version
@@ -26,6 +27,7 @@ class Release:
         self.OLD_SINGLE_HEADER = F"ApprovalTests.{self.LAST_VERSION}.hpp"
         self.NEW_SINGLE_HEADER = F"ApprovalTests.{self.VERSION}.hpp"
 
+        self.BUILD_DIR = F"../build"
         self.RELEASE_DIR = F"../build/releases"
         self.RELEASE_NEW_SINGLE_HEADER = F"{self.RELEASE_DIR}/{self.NEW_SINGLE_HEADER}"
 
@@ -155,19 +157,28 @@ class Release:
 
 
     def publish_main_project(self):
+        new_release_notes_path = os.path.join(self.BUILD_DIR, F'relnotes_{Version.get_version_without_v(self.VERSION)}.md')
+        xxx_release_notes_path = os.path.join(self.BUILD_DIR, F'relnotes_X.X.X.md')
+        template_release_notes_path = os.path.join(self.BUILD_DIR, F'relnotes_template.md')
+
+        shutil.move(xxx_release_notes_path, new_release_notes_path)
+        shutil.copyfile(template_release_notes_path, xxx_release_notes_path)
+
         self.commit_main_project()
         self.push_main_project()
+
+        # Draft the upload to github
+        release_notes = read_file(new_release_notes_path)
+        pyperclip.copy(release_notes)
+        print('The release notes are on the clipboard')
+        github_url = F"https://github.com/approvals/ApprovalTests.cpp/releases/new?tag={self.VERSION}&title=Single%20Hpp%20File%20-%20{self.VERSION}"
+        run(["open", github_url])
+        run(["open", self.RELEASE_DIR])
+        check_step("that the release is published")
 
         # Draft the tweet
         tweet_text = F"https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+{self.VERSION}+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F{self.VERSION}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21"
         run(["open", tweet_text])
-
-        # Draft the upload to github - do this last, so this tab appears on top
-        github_url = F"https://github.com/approvals/ApprovalTests.cpp/releases/new?tag={self.VERSION}&title=Single%20Hpp%20File%20-%20{self.VERSION}"
-        run(["open", github_url])
-
-        run(["open", self.RELEASE_DIR])
-
 
     def build_hpp(self):
         self.check_pre_conditions_for_publish()

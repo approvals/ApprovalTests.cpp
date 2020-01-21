@@ -4,6 +4,9 @@ import configparser
 def get_version(version):
     return F"v.{version['major']}.{version['minor']}.{version['patch']}"
 
+def get_version_without_v(version_string):
+    return version_string.replace("v.", "")
+
 def update_major(version):
     return {"major": int(version['major']) + 1, "minor": 0, "patch": 0}
 
