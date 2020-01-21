@@ -3,6 +3,7 @@
 # Constants
 
 import Version
+from prepare_release import PrepareRelease
 from deploy_release import DeployRelease
 
 
@@ -26,10 +27,12 @@ class ReleaseDetails:
 def build(update_version):
     version = Version.load_version()
     new_version = update_version(version)
+
     release_details = ReleaseDetails(version, new_version, False)
-    deploy_release = DeployRelease(release_details)
-    deploy_release.prepare_everything()
-    if not deploy_release.details.push_to_production:
+    prepare_release = PrepareRelease(release_details)
+    prepare_release.prepare_everything()
+    if not release_details.push_to_production:
         print("Everything worked - didn't commit or push")
     else:
+        deploy_release = DeployRelease(release_details)
         deploy_release.push_everything_live()

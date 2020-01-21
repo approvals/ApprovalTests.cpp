@@ -8,12 +8,11 @@ from Utilities import read_file, check_step, run, pushdir, popdir
 from prepare_release import PrepareRelease
 
 
-class DeployRelease(PrepareRelease):
+class DeployRelease:
+    def __init__(self, details):
+        self.details = details
 
     # TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
-
-    # https://stackoverflow.com/a/10528259/104370
-    # initialise a directory stack
 
     def commit_starter_project(self):
         pushdir(self.details.starter_project_dir)
