@@ -54,12 +54,10 @@ class PrepareRelease:
         run(["java", "-version"])
         run(["java", "-jar", "../build/SingleHpp.v.0.0.2.jar", self.details.release_new_single_header])
         text = read_file(self.details.release_new_single_header)
-        text = F"""
-    // Approval Tests version {self.details.new_version}
-    // More information at: https://github.com/approvals/ApprovalTests.cpp
-    
-    {text}
-    """
+        text = \
+F"""// Approval Tests version {self.details.new_version}
+// More information at: https://github.com/approvals/ApprovalTests.cpp
+{text}"""
         write_file(self.details.release_new_single_header, text)
 
     def update_starter_project(self):
