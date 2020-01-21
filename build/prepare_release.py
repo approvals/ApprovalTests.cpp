@@ -94,7 +94,11 @@ class PrepareRelease:
     def update_readme_and_docs(self):
         pushdir("..")
         replace_text_in_file("mdsource/README.source.md", self.details.old_version, self.details.new_version)
-        run(["./run_markdown_templates.sh"], shell=True)
+        popdir()
+
+    def regenerate_markdown(self):
+        pushdir("..")
+        run(["./run_markdown_templates.sh"])
         popdir()
 
     def prepare_release_notes(self):
@@ -108,3 +112,4 @@ class PrepareRelease:
         self.check_starter_project_builds()
         self.update_readme_and_docs()
         self.prepare_release_notes()
+        self.regenerate_markdown()
