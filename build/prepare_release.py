@@ -47,8 +47,6 @@ class PrepareRelease:
         run(["open", "https://github.com/approvals/ApprovalTests.cpp/milestones"])
         check_step("the milestone (if any) is up to date, including actual version number of release")
 
-        self.update_features_page()
-
     def create_single_header_file(self):
         os.chdir("../ApprovalTests")
         print(os.getcwd())
@@ -110,6 +108,7 @@ class PrepareRelease:
         self.create_single_header_file()
         self.update_starter_project()
         self.check_starter_project_builds()
+        self.update_features_page()
         self.update_readme_and_docs()
         self.prepare_release_notes()
         self.regenerate_markdown()
