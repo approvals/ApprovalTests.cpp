@@ -29,6 +29,7 @@ class Release:
         self.RELEASE_DIR = F"../build/releases"
         self.RELEASE_NEW_SINGLE_HEADER = F"{self.RELEASE_DIR}/{self.NEW_SINGLE_HEADER}"
 
+        self.MAIN_PROJECT_DIR = F"../../ApprovalTests.Cpp"
         self.STARTER_PROJECT_DIR = F"../../ApprovalTests.Cpp.StarterProject"
 
 
@@ -124,13 +125,27 @@ class Release:
         run(["cmake", "--build", "."])
         popdir()
 
-    def commit_and_push_starter_project(self):
+    def commit_starter_project(self):
         pushdir(self.STARTER_PROJECT_DIR)
         run(["git", "add", "."])
         run(["git", "commit", "-m", F"Update to Approvals {self.VERSION}"])
+        popdir()
+
+    def push_starter_project(self):
+        pushdir(self.STARTER_PROJECT_DIR)
         run(["git", "push", "origin", "master"])
         popdir()
 
+    def commit_main_project(self):
+        pushdir(self.MAIN_PROJECT_DIR)
+        run(["git", "add", "."])
+        run(["git", "commit", "-m", F"{self.VERSION} release"])
+        popdir()
+
+    def push_main_project(self):
+        pushdir(self.MAIN_PROJECT_DIR)
+        run(["git", "push", "origin", "master"])
+        popdir()
 
     def update_readme_and_docs(self):
         pushdir("..")
@@ -139,7 +154,10 @@ class Release:
         popdir()
 
 
-    def publish(self):
+    def publish_main_project(self):
+        self.commit_main_project()
+        self.push_main_project()
+
         # Draft the tweet
         tweet_text = F"https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+{self.VERSION}+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F{self.VERSION}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21"
         run(["open", tweet_text])
@@ -159,12 +177,13 @@ class Release:
         if not self.PUSH_TO_PRODUCTION:
             print("Everything worked - didn't commit or push")
         else:
-            self.push_live()
+            self.push_everything_live()
 
-    def push_live(self):
-        self.commit_and_push_starter_project()
+    def push_everything_live(self):
+        self.commit_starter_project()
+        self.push_starter_project()
         self.update_readme_and_docs()
-        self.publish()
+        self.publish_main_project()
         Version.write_version(self.VERSION)
 
 
