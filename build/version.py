@@ -1,4 +1,5 @@
 import configparser
+import os
 
 
 def get_version(version):
@@ -16,14 +17,18 @@ def update_minor(version):
 def update_patch(version):
     return {"major": version['major'], "minor": version['minor'], "patch": int(version['patch'] + 1)}
 
+def version_file_path():
+    path, filename = os.path.split(__file__)
+    return os.path.join(path, 'version.ini')
+
 def load_version():
     config = configparser.ConfigParser()
-    config.read('version.ini')
+    config.read(version_file_path())
     return config['VERSION']
 
 def write_version(version):
     config = configparser.ConfigParser()
     config['VERSION'] = version
 
-    with open('version.ini', 'w') as configfile:
+    with open(version_file_path(), 'w') as configfile:
         config.write(configfile)

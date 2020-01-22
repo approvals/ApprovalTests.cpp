@@ -3,7 +3,6 @@ import shutil
 
 import pyperclip
 
-import version
 from utilities import read_file, check_step, run, pushdir, popdir
 from prepare_release import PrepareRelease
 
@@ -62,4 +61,3 @@ class DeployRelease:
     def push_everything_live(self):
         self.publish_main_project()
         self.publish_starter_project()
-        version.write_version(self.details.new_version_object)

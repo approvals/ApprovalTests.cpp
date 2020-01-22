@@ -1,6 +1,7 @@
 import os
 import shutil
 import time
+import version
 
 from utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir
 
@@ -115,3 +116,4 @@ F"""// Approval Tests version {self.details.new_version}
         self.update_readme_and_docs()
         self.prepare_release_notes()
         self.regenerate_markdown()
+        version.write_version(self.details.new_version_object)
