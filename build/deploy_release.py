@@ -16,7 +16,6 @@ class DeployRelease:
     # Starter Project
     def commit_starter_project(self):
         pushdir(self.details.starter_project_dir)
-        run(["git", "add", "."])
         run(["git", "commit", "-m", F"Update to Approvals {self.details.new_version}"])
         popdir()
 
@@ -32,7 +31,6 @@ class DeployRelease:
     # Main Project
     def commit_main_project(self):
         pushdir(self.details.main_project_dir)
-        run(["git", "add", "."])
         run(["git", "commit", "-m", F"{self.details.new_version} release"])
         popdir()
 

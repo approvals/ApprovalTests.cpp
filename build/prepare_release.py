@@ -107,6 +107,22 @@ F"""// Approval Tests version {self.details.new_version}
 
         shutil.copyfile(self.details.template_release_notes_path, self.details.xxx_release_notes_path)
 
+    def add_to_git(self):
+        pushdir(self.details.starter_project_dir)
+        run(["git", "add", "."])
+        popdir()
+
+        pushdir(self.details.main_project_dir)
+        run(["git", "add", "."])
+        popdir()
+
+    # def check_changes():
+    #     def revert():
+    #         pass
+    #
+    #     check_step_with_revert("you are happy with the changes?", revert)
+
+
     def prepare_everything(self):
         self.check_pre_conditions_for_publish()
         self.create_single_header_file()
@@ -117,3 +133,6 @@ F"""// Approval Tests version {self.details.new_version}
         self.prepare_release_notes()
         self.regenerate_markdown()
         version.write_version(self.details.new_version_object)
+        self.add_to_git()
+
+        # self.check_changes()
