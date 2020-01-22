@@ -28,10 +28,10 @@ class ReleaseDetails:
 
 
 def build(update_version):
-    version = version.load_version()
-    new_version = update_version(version)
+    old_version = version.load_version()
+    new_version = update_version(old_version)
 
-    release_details = ReleaseDetails(version, new_version, False)
+    release_details = ReleaseDetails(old_version, new_version, False)
     prepare_release = PrepareRelease(release_details)
     prepare_release.prepare_everything()
     if not release_details.push_to_production:
