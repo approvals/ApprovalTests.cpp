@@ -14,7 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [vNext](#vnext)
+  * [v.x.y.z](#vxyz)
     * [CMake Integration documented](#cmake-integration-documented)
     * [Use with Ninja generator documented](#use-with-ninja-generator-documented)
   * [v.7.0.0](#v700)
@@ -38,8 +38,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Front Loaded Reporters](#front-loaded-reporters)
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
-## vNext
-
+## v.x.y.z
 
 ### CMake Integration documented
 
