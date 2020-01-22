@@ -62,4 +62,4 @@ class DeployRelease:
     def push_everything_live(self):
         self.publish_main_project()
         self.publish_starter_project()
-        Version.write_version(self.details.new_version)
+        Version.write_version(self.details.new_version_object)

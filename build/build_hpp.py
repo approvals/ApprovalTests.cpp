@@ -9,6 +9,7 @@ class ReleaseDetails:
     def __init__(self, old_version, new_version, publish_release):
         self.old_version = Version.get_version(old_version)
         self.new_version = Version.get_version(new_version)
+        self.new_version_object = new_version
         self.push_to_production = publish_release
 
         self.old_single_header = F"ApprovalTests.{self.old_version}.hpp"
