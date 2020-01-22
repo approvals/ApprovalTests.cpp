@@ -39,7 +39,14 @@ def replace_text_in_file(file_name, old_text, new_text):
 
 
 def check_step(step):
+    def do_nothing():
+        pass
+    check_step_with_revert(step, do_nothing)
+
+
+def check_step_with_revert(step, revert_function):
     print("\nCHECK: ", step)
     response = input("  Press Y OR y to continue; Anything else to Quit: ")
     if response not in ['Y', 'y']:
+        revert_function()
         exit(0)

@@ -3,7 +3,8 @@ import shutil
 import time
 import version
 
-from utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir
+from utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir, \
+    check_step_with_revert
 
 
 class PrepareRelease:
@@ -116,11 +117,12 @@ F"""// Approval Tests version {self.details.new_version}
         run(["git", "add", "."])
         popdir()
 
-    # def check_changes():
-    #     def revert():
-    #         pass
-    #
-    #     check_step_with_revert("you are happy with the changes?", revert)
+    def check_changes(self):
+        def revert():
+            print("Reverting...")
+            pass
+
+        check_step_with_revert("you are happy with the changes?", revert)
 
 
     def prepare_everything(self):
@@ -135,4 +137,4 @@ F"""// Approval Tests version {self.details.new_version}
         version.write_version(self.details.new_version_object)
         self.add_to_git()
 
-        # self.check_changes()
+        self.check_changes()
