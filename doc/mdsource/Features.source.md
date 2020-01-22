@@ -8,6 +8,8 @@ toc
 
 ## v.x.y.z
 
+## v.8.0.0
+
 ### CMake Integration documented
 
 See [CMake Integration](/doc/CMakeIntegration.md#top).

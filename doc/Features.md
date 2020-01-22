@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.8.0.0](#v800)
     * [CMake Integration documented](#cmake-integration-documented)
     * [Use with Ninja generator documented](#use-with-ninja-generator-documented)
   * [v.7.0.0](#v700)
@@ -39,6 +40,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+## v.8.0.0
 
 ### CMake Integration documented
 
