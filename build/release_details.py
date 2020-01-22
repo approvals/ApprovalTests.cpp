@@ -27,11 +27,11 @@ class ReleaseDetails:
         self.template_release_notes_path = os.path.join(self.build_dir, F'relnotes_template.md')
 
 
-def build(update_version):
+def build(update_version, deploy):
     old_version = version.load_version()
     new_version = update_version(old_version)
 
-    release_details = ReleaseDetails(old_version, new_version, False)
+    release_details = ReleaseDetails(old_version, new_version, deploy)
     prepare_release = PrepareRelease(release_details)
     prepare_release.prepare_everything()
     if not release_details.push_to_production:
