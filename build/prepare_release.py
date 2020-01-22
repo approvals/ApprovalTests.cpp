@@ -101,6 +101,7 @@ F"""// Approval Tests version {self.details.new_version}
         popdir()
 
     def prepare_release_notes(self):
+        replace_text_in_file(self.details.xxx_release_notes_path, 'v.x.y.z', self.details.new_version)
         shutil.move(self.details.xxx_release_notes_path, self.details.new_release_notes_path)
 
         # Make sure the above move has finished, before we create the new xxx file:
