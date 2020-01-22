@@ -130,7 +130,10 @@ F"""// Approval Tests version {self.details.new_version}
         def revert_all():
             self.do_things_in_starter_project_and_main(revert)
 
-        check_step_with_revert("you are happy with the changes?", revert_all)
+        def do_nothing():
+            pass
+
+        check_step_with_revert("you are happy with the changes?", do_nothing)
 
 
     def prepare_everything(self):
