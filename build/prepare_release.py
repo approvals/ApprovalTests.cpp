@@ -109,20 +109,28 @@ F"""// Approval Tests version {self.details.new_version}
         shutil.copyfile(self.details.template_release_notes_path, self.details.xxx_release_notes_path)
 
     def add_to_git(self):
-        pushdir(self.details.starter_project_dir)
-        run(["git", "add", "."])
-        popdir()
+        def add():
+            run(["git", "add", "."])
 
+        self.do_things_in_starter_project_and_main(add)
+
+    def do_things_in_starter_project_and_main(self, function):
+        pushdir(self.details.starter_project_dir)
+        function()
+        popdir()
         pushdir(self.details.main_project_dir)
-        run(["git", "add", "."])
+        function()
         popdir()
 
     def check_changes(self):
         def revert():
-            print("Reverting...")
-            pass
+            run(["git", "clean", "-fx"])
+            run(["git", "reset", "--hard"])
 
-        check_step_with_revert("you are happy with the changes?", revert)
+        def revert_all():
+            self.do_things_in_starter_project_and_main(revert)
+
+        check_step_with_revert("you are happy with the changes?", revert_all)
 
 
     def prepare_everything(self):
