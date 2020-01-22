@@ -5,14 +5,20 @@
 
 Preparation:
 
-TODO Eliminate most of this...
+- Determine the type of semantic release - major, minor or patch 
 
-- [ ] Determine the type of semantic - major, minor or patch 
+Doing the release:
 
-Creating the Build
+```bash
+cd build
 
-- Run one of:
-  - major_release.py
-  - minor_release.py
-  - patch_release.py
+# Run one of:
 
+deploy_major_release.py
+deploy_minor_release.py
+deploy_patch_release.py
+
+prepare_major_release.py
+prepare_minor_release.py
+prepare_patch_release.py
+```
