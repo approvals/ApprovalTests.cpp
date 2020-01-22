@@ -72,7 +72,7 @@ In the following situations, the above is all you need to do, for all the suppor
 
 **Using the ApprovalTests.cpp single-header download**
 
-If you are using the single-header download of Approval Tests with a Ninja Unity builc, you may find that you get a compilation failure, pointing to this page, when in fact the tests would run correctly.
+If you are using the single-header download of Approval Tests with a Ninja Unity build, you may find that you get a compilation failure, pointing to this page, when in fact the tests would run correctly.
 
 In this case, you will need to disable the compilation check of `__FILE__`, which can be done by defining the `APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK` macro. This can be done line this:
 
