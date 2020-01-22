@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import Version
 from build_hpp import build
 
