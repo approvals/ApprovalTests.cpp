@@ -2,7 +2,7 @@ import os
 import shutil
 import time
 
-from Utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir
+from utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir
 
 
 class PrepareRelease:

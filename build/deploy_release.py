@@ -4,7 +4,7 @@ import shutil
 import pyperclip
 
 import Version
-from Utilities import read_file, check_step, run, pushdir, popdir
+from utilities import read_file, check_step, run, pushdir, popdir
 from prepare_release import PrepareRelease
 
 
