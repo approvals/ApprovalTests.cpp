@@ -43,7 +43,7 @@ class PrepareRelease:
             check_step("the builds are passing")
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_x.y.z.md"])
-            run(["open", "https://github.com/approvals/ApprovalTests.cpp/releases"])
+            run(["open", F"https://github.com/approvals/ApprovalTests.cpp/compare/{self.details.old_version}...master"])
             check_step("the release notes are ready")
 
         run(["open", "https://github.com/approvals/ApprovalTests.cpp/issues"])
