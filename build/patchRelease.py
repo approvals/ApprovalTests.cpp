@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
-import Version
+import version
 from release_details import build
 
 if __name__ == '__main__':
-    build(Version.update_patch)
+    build(version.update_patch)

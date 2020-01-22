@@ -1,14 +1,14 @@
 import os
 
-import Version
+import version
 from prepare_release import PrepareRelease
 from deploy_release import DeployRelease
 
 
 class ReleaseDetails:
     def __init__(self, old_version, new_version, publish_release):
-        self.old_version = Version.get_version(old_version)
-        self.new_version = Version.get_version(new_version)
+        self.old_version = version.get_version(old_version)
+        self.new_version = version.get_version(new_version)
         self.new_version_object = new_version
         self.push_to_production = publish_release
 
@@ -22,13 +22,13 @@ class ReleaseDetails:
         self.main_project_dir = F"../../ApprovalTests.Cpp"
         self.starter_project_dir = F"../../ApprovalTests.Cpp.StarterProject"
 
-        self.new_release_notes_path = os.path.join(self.build_dir, F'relnotes_{Version.get_version_without_v(self.new_version)}.md')
+        self.new_release_notes_path = os.path.join(self.build_dir, F'relnotes_{version.get_version_without_v(self.new_version)}.md')
         self.xxx_release_notes_path = os.path.join(self.build_dir, F'relnotes_X.X.X.md')
         self.template_release_notes_path = os.path.join(self.build_dir, F'relnotes_template.md')
 
 
 def build(update_version):
-    version = Version.load_version()
+    version = version.load_version()
     new_version = update_version(version)
 
     release_details = ReleaseDetails(version, new_version, False)
