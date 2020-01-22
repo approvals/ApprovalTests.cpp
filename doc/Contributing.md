@@ -19,6 +19,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Formatting Code](#formatting-code)
   * [Coding Patterns](#coding-patterns)
   * [Documentation](#documentation)
+    * [Future version numbers](#future-version-numbers)
     * [Creating new pages](#creating-new-pages)
     * [Internal links need to be absolute](#internal-links-need-to-be-absolute)
     * [Adding code and file samples](#adding-code-and-file-samples)
@@ -80,6 +81,10 @@ See [Static variables for header-only releases](/doc/CodingPatterns.md#static-va
 ## Documentation
 
 We welcome improvements to the documentation! Here's how we manage the documentation files. 
+
+### Future version numbers
+
+To refer to the next release, use 'v.x.y.z', and make sure that there is a step to edit the file to update that text to the actual version number in the release scripts.
 
 ### Creating new pages
 

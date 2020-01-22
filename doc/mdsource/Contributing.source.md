@@ -59,6 +59,10 @@ See [Static variables for header-only releases](/doc/CodingPatterns.md#static-va
 
 We welcome improvements to the documentation! Here's how we manage the documentation files. 
 
+### Future version numbers
+
+To refer to the next release, use 'v.x.y.z', and make sure that there is a step to edit the file to update that text to the actual version number in the release scripts.
+
 ### Creating new pages
 
 *Note: All the master Markdown pages in this project are called `mdsource/[something].source.md`*
