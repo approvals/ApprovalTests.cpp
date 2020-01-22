@@ -31,21 +31,23 @@ class PrepareRelease:
             replace_text_in_file(features_file, '\n## v.x.y.z\n', update_version)
 
     def check_pre_conditions_for_publish(self):
-        if not self.details.push_to_production:
-            return
-        run(["git", "branch"])
-        check_step("we are on the master branch")
+        if self.details.push_to_production:
+            run(["git", "branch"])
+            check_step("we are on the master branch")
 
-        run(["git", "status"])
-        check_step("everything is committed")
-        check_step("everything is pushed")
+            run(["git", "status"])
+            check_step("everything is committed")
+            check_step("everything is pushed")
 
-        run(["open", "https://github.com/approvals/ApprovalTests.cpp/commits/master"])
-        check_step("the builds are passing")
+            run(["open", "https://github.com/approvals/ApprovalTests.cpp/commits/master"])
+            check_step("the builds are passing")
 
-        run(["open", "https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_x.y.z.md"])
-        run(["open", "https://github.com/approvals/ApprovalTests.cpp/releases"])
-        check_step("the release notes are ready")
+            run(["open", "https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_x.y.z.md"])
+            run(["open", "https://github.com/approvals/ApprovalTests.cpp/releases"])
+            check_step("the release notes are ready")
+
+        run(["open", "https://github.com/approvals/ApprovalTests.cpp/issues"])
+        check_step("any issues resolved in this release are closed")
 
         run(["open", "https://github.com/approvals/ApprovalTests.cpp/milestones"])
         check_step("the milestone (if any) is up to date, including actual version number of release")

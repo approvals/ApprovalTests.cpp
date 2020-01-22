@@ -16,7 +16,3 @@ Creating the Build
   - minor_release.py
   - patch_release.py
 
-Publishing
-
-- [ ] Close any [Issues](https://github.com/approvals/ApprovalTests.cpp/issues) that were resolved in this release
-
