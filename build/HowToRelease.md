@@ -12,9 +12,9 @@ TODO Eliminate most of this...
 Creating the Build
 
 - Run one of:
-  - majorRelease.py
-  - minorRelease.py
-  - patchRelease.py
+  - major_release.py
+  - minor_release.py
+  - patch_release.py
 
 Publishing
 
