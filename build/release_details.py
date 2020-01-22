@@ -23,7 +23,7 @@ class ReleaseDetails:
         self.starter_project_dir = F"../../ApprovalTests.Cpp.StarterProject"
 
         self.new_release_notes_path = os.path.join(self.build_dir, F'relnotes_{version.get_version_without_v(self.new_version)}.md')
-        self.xxx_release_notes_path = os.path.join(self.build_dir, F'relnotes_X.X.X.md')
+        self.xxx_release_notes_path = os.path.join(self.build_dir, F'relnotes_x.y.z.md')
         self.template_release_notes_path = os.path.join(self.build_dir, F'relnotes_template.md')
 
 
