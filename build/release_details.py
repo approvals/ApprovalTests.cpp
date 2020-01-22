@@ -4,6 +4,14 @@ import version
 from prepare_release import PrepareRelease
 from deploy_release import DeployRelease
 
+# TODOs
+# Automate the check_steps
+# Improve the chdir to start at the top-level directory - and check that we are the top-level
+# Simplify pushdir/popdir - ideally make it RAII - with with!
+# Create Python requirements.txt file
+# Review folder structure for Python scripts
+# Add CI step to check this prepare process works on every push
+# Add a reminder to close any release milestone
 
 class ReleaseDetails:
     def __init__(self, old_version, new_version, publish_release):
