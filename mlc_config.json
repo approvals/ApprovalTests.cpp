@@ -4,5 +4,10 @@
       "pattern": "^https://github.com/SimonCropp/MarkdownSnippets"
     }
   ],
-  "baseUrl": "https://github.com/approvals/ApprovalTests.cpp/"
+  "replacementPatterns": [
+    {
+      "pattern": "^/",
+      "replacement": "https://github.com/approvals/ApprovalTests.cpp/"
+    }
+    ]
 }
