@@ -20,6 +20,15 @@ jobs:
           source: '.'
           exclude: './third_party'
           clangFormatVersion: 9
+
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - uses: gaurav-nelson/github-action-markdown-link-check@0.4.0
+
   build:
     env:
       IN_TREE_BUILD_DIR: ${{ github.workspace }}/build_space
