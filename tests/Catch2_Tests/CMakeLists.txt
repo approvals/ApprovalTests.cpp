@@ -9,13 +9,13 @@ add_executable(${PROJECT_NAME}
     PairUtilities.h
     StyleGuide.h
     VectorTests.cpp
-    documentation/Catch2DocumentationSamples.cpp
-    documentation/CombinationsSampleCode.cpp
-    documentation/OverviewExamples.cpp
-    documentation/ToStringExample.cpp
-    documentation/ToStringTemplateExample.cpp
-    documentation/ToStringWrapperExample.cpp
-    documentation/Tutorial.cpp
+    docs/Catch2DocumentationSamples.cpp
+    docs/CombinationsSampleCode.cpp
+    docs/OverviewExamples.cpp
+    docs/ToStringExample.cpp
+    docs/ToStringTemplateExample.cpp
+    docs/ToStringWrapperExample.cpp
+    docs/Tutorial.cpp
     namers/NamerTests.cpp
     reporters/BlockingReporterTests.cpp
     reporters/CIBuildOnlyReporterTests.cpp

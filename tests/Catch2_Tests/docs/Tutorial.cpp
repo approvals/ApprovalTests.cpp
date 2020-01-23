@@ -50,7 +50,7 @@ public:
 // end-snippet
 
 #if 0
-// Non-compiling example for documentation
+// Non-compiling example for docs
 TEST_CASE("WritableBooks Does Not Compile")
 {
     // begin-snippet: non_printable_object
