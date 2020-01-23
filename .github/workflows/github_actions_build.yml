@@ -31,7 +31,7 @@ jobs:
       - name: Install markdown-link-check
         run: npm i -g markdown-link-check
       - name: Run markdown-link-check on *.source.md files
-        run: ind . -name \*.source.md -exec markdown-link-check --config mlc_config.json --quiet  {} \;
+        run: find . -name \*.source.md -exec markdown-link-check --config mlc_config.json --quiet  {} \;
 
   build:
     env:
