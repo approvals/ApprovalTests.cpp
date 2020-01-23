@@ -3,10 +3,10 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(${PROJECT_NAME}
     main.cpp
     namers/DocTestNamerTests.cpp
-    documentation/DocTestDocumentationSamples.cpp
+    docs/DocTestDocumentationSamples.cpp
     namers/NamerTests.cpp
-    documentation/DisposableSamples.cpp
-    documentation/ForgottenToConfigure.cpp
+    docs/DisposableSamples.cpp
+    docs/ForgottenToConfigure.cpp
     utilities/ExceptionCollectorTests.cpp
     ApprovalTestTests.cpp
     )
