@@ -80,7 +80,7 @@ CombinationApprovals::verifyAllCombinations(
     listOfInput2s,
     listOfInput3s);
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L23-L32' title='File snippet `sample_combinations_of_three` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Navigate to start of snippet `sample_combinations_of_three`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/docs/CombinationsSampleCode.cpp#L23-L32' title='File snippet `sample_combinations_of_three` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Navigate to start of snippet `sample_combinations_of_three`'>anchor</a></sup>
 <!-- endsnippet -->
 
 If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
@@ -97,7 +97,7 @@ CombinationApprovals::verifyAllCombinations(
     listOfInput2s,
     listOfInput3s);
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/CombinationsSampleCode.cpp#L41-L50' title='File snippet `sample_combinations_of_three_with_auto` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Navigate to start of snippet `sample_combinations_of_three_with_auto`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/docs/CombinationsSampleCode.cpp#L41-L50' title='File snippet `sample_combinations_of_three_with_auto` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Navigate to start of snippet `sample_combinations_of_three_with_auto`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---

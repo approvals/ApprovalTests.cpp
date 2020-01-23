@@ -98,7 +98,7 @@ TEST_CASE("MultipleOutputFiles-DataDriven")
     }
 }
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L61-L78' title='File snippet `catch2_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_dynamic' title='Navigate to start of snippet `catch2_multiple_output_files_dynamic`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/docs/Catch2DocsSamples.cpp#L61-L78' title='File snippet `catch2_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_dynamic' title='Navigate to start of snippet `catch2_multiple_output_files_dynamic`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Or hard-coded, with multiple sections:
@@ -123,7 +123,7 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup><a href='/tests/Catch2_Tests/documentation/Catch2DocumentationSamples.cpp#L80-L97' title='File snippet `catch2_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_hard_coded' title='Navigate to start of snippet `catch2_multiple_output_files_hard_coded`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/docs/Catch2DocsSamples.cpp#L80-L97' title='File snippet `catch2_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_hard_coded' title='Navigate to start of snippet `catch2_multiple_output_files_hard_coded`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Note: Catch2 sub-sections continue to run even if the previous one failed. This is useful, as it allows you to approve all the files in one test run.
@@ -156,7 +156,7 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L64-L81' title='File snippet `doctest_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-doctest_multiple_output_files_hard_coded' title='Navigate to start of snippet `doctest_multiple_output_files_hard_coded`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L64-L81' title='File snippet `doctest_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-doctest_multiple_output_files_hard_coded' title='Navigate to start of snippet `doctest_multiple_output_files_hard_coded`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Approval Tests
@@ -184,7 +184,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
     }
 }
 ```
-<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L83-L99' title='File snippet `approvals_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_dynamic' title='Navigate to start of snippet `approvals_multiple_output_files_dynamic`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L83-L99' title='File snippet `approvals_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_dynamic' title='Navigate to start of snippet `approvals_multiple_output_files_dynamic`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Or hard-coded, with multiple sections:
@@ -209,7 +209,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L101-L118' title='File snippet `approvals_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_hard_coded' title='Navigate to start of snippet `approvals_multiple_output_files_hard_coded`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L101-L118' title='File snippet `approvals_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_hard_coded' title='Navigate to start of snippet `approvals_multiple_output_files_hard_coded`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Approving multiple files in one test
@@ -248,7 +248,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
     exceptions.release();
 }
 ```
-<sup><a href='/tests/DocTest_Tests/documentation/DocTestDocumentationSamples.cpp#L120-L141' title='File snippet `approvals_multiple_output_files_auto_approving` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Navigate to start of snippet `approvals_multiple_output_files_auto_approving`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L120-L141' title='File snippet `approvals_multiple_output_files_auto_approving` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Navigate to start of snippet `approvals_multiple_output_files_auto_approving`'>anchor</a></sup>
 <!-- endsnippet -->
  
 
