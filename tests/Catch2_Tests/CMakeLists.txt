@@ -9,7 +9,7 @@ add_executable(${PROJECT_NAME}
     PairUtilities.h
     StyleGuide.h
     VectorTests.cpp
-    docs/Catch2DocumentationSamples.cpp
+        docs/Catch2DocsSamples.cpp
     docs/CombinationsSampleCode.cpp
     docs/OverviewExamples.cpp
     docs/ToStringExample.cpp
