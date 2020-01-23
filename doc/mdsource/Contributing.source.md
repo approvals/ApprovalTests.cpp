@@ -145,7 +145,17 @@ https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/create
 
 ### Checking the documentation
 
+#### Automated checking of links in documentation
+
 There is a "markdown-link-check" github workflow that checks for broken links all in the Markdown files. It checks for missing file names, but will not detect missing anchors.
+
+* It runs the script [scripts/check_links.sh](/scripts/check_links.sh) ...
+* ... which uses the configuration file [mlc_config.json](/mlc_config.json) ...
+* ... and runs [tcort's markdown-link-check](https://github.com/tcort/markdown-link-check)
+
+If there are any failures, the output is slightly verbose to look through - you have to find lines beginning `[*]`, but I think that these will be sufficiently few and far between that this is good enough.
+
+#### Other checks of documentation
 
 The script [fix_markdown.sh](/fix_markdown.sh) can be used to do some checks of the Markdown documentation files.
 
