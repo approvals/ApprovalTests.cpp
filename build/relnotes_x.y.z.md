@@ -7,4 +7,4 @@ See the [v.x.y.z milestone](https://github.com/approvals/ApprovalTests.cpp/miles
 * **Bug fixes**
     * None
 * **Other changes**
-    * None
+    * Implement check for broken links in documentation (#26)
