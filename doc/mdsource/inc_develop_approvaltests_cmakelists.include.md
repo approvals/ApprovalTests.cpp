@@ -61,4 +61,5 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/approvaltests.cpp_build
 )
 ```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./develop_approvaltests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
 

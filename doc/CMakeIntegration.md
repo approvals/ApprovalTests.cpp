@@ -138,6 +138,7 @@ enable_testing()
 add_subdirectory(dependencies)
 add_subdirectory(tests)
 ```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_fetch_content_approvaltests_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_cmakelists.include.md -->
 
 The important thing to note, for following the examples below, is the `add_subdirectory(dependencies)` line. It makes CMake load a file `dependencies/CMakeLists.txt`.
@@ -166,6 +167,7 @@ add_test(
         NAME tests
         COMMAND tests)
 ```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_fetch_content_approvaltests_tests_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_tests_cmakelists.include.md -->
 
 This says that the libraries `ApprovalTests::ApprovalTests` and `Catch2::Catch2` are required by the `tests` executable.
@@ -210,6 +212,7 @@ FetchContent_Declare(Catch2
 
 FetchContent_MakeAvailable(Catch2)
 ```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 Note the `GIT_TAG` values: This tells CMake which revision of dependencies to use. The value can be a tag or a git commit ID. Here we use `master`, to always test our integrations with the latest Approval Tests code. However, it is generally recommended to pin your dependencies to specific versions, and test behaviour before updating to newer versions. 
@@ -260,6 +263,7 @@ set(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2 ON CACHE BOOL "")
 
 FetchContent_MakeAvailable(ApprovalTests)
 ```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_fetch_content_approvaltests_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
 
 We have set `APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2` to `ON`, so that CMake will use the copy of Catch2 that is included in the ApprovalTests.cpp repository.
@@ -315,6 +319,7 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/catch2_build
 )
 ```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./add_subdirectory_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 Here we use `add_subdirectory()`. This works with older versions of CMake, unlike the `FetchContent` examples above.
@@ -434,6 +439,7 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/approvaltests.cpp_build
 )
 ```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./develop_approvaltests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_develop_approvaltests_cmakelists. path: /doc/mdsource/inc_develop_approvaltests_cmakelists.include.md -->
 
 ---

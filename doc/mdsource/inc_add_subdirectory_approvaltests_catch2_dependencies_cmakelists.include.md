@@ -16,4 +16,5 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/catch2_build
 )
 ```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./add_subdirectory_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
 

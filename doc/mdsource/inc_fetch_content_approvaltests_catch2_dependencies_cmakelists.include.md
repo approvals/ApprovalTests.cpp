@@ -20,4 +20,5 @@ FetchContent_Declare(Catch2
 
 FetchContent_MakeAvailable(Catch2)
 ```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
 

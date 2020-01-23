@@ -14,4 +14,5 @@ add_test(
         NAME tests
         COMMAND tests)
 ```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
 
