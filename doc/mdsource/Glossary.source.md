@@ -74,7 +74,7 @@ See [Features](/doc/Features.md#top) - whose sections need to be moved around
 
 ## Scrubber
 
-[ApprovalTests.Net](https://github.com/approvals/ApprovalTests.Net/tree/master/ApprovalTests/Scrubber)
+[ApprovalTests.Net](https://github.com/approvals/ApprovalTests.Net/tree/master/src/ApprovalTests/Scrubber)
 
 ## Stringification
 

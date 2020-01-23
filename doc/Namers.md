@@ -44,7 +44,7 @@ The conventional layout for files saved with `Approvals::verify()` and related f
 
 The Approval Namer is responsible for creating these two names.
 
-The interface for this is [`ApprovalNamer`](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/namers/ApprovalNamer.h).
+The interface for this is [`ApprovalNamer`](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/core/ApprovalNamer.h).
 
 
 ## Registering a Custom Namer
