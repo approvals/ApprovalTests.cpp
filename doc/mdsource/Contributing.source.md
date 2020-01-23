@@ -145,6 +145,8 @@ https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/create
 
 ### Checking the documentation
 
+There is a "markdown-link-check" github workflow that checks for broken links all in the Markdown files. It checks for missing file names, but will not detect missing anchors.
+
 The script [fix_markdown.sh](/fix_markdown.sh) can be used to do some checks of the Markdown documentation files.
 
 ## Releases
