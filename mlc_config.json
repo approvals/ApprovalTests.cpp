@@ -7,7 +7,7 @@
   "replacementPatterns": [
     {
       "pattern": "^/",
-      "replacement": "https://github.com/approvals/ApprovalTests.cpp/"
+      "replacement": "https://github.com/approvals/ApprovalTests.cpp/blob/master/"
     }
     ]
 }
