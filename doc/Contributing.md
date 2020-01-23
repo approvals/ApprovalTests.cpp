@@ -180,8 +180,6 @@ There is a "markdown-link-check" github workflow that checks for broken links al
 
 If there are any failures, the output is slightly verbose to look through - you have to find lines beginning `[*]`, but I think that these will be sufficiently few and far between that this is good enough.
 
-**Note:** If there are lots of pushes in quick succession, it can fail the builds with 429 "Too many requests" on `https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#top`. If this keeps happening, we may have to work around it in the script that runs the checks, stripping out that URL, or perhaps find another checking tool.
-
 #### Other checks of documentation
 
 The script [fix_markdown.sh](/fix_markdown.sh) can be used to do some checks of the Markdown documentation files.
