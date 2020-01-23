@@ -4,6 +4,9 @@
       "pattern": "^https://github.com/SimonCropp/MarkdownSnippets"
     },
     {
+      "pattern": "^https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md"
+    },
+    {
       "pattern": "^https://github.com/approvals/ApprovalTests.cpp/actions"
     }
   ],
