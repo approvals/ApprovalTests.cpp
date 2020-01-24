@@ -3,7 +3,7 @@ See the [v.x.y.z milestone](https://github.com/approvals/ApprovalTests.cpp/miles
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * Added ability to detect version in code: see [Version detection](/doc/Features.md#version-detection) (#40)
 * **Bug fixes**
     * None
 * **Other changes**
