@@ -50,3 +50,4 @@ def check_step_with_revert(step, revert_function):
     if response not in ['Y', 'y']:
         revert_function()
         exit(0)
+    print('---------------------------------------------------------------')
