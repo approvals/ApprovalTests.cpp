@@ -23,6 +23,7 @@ class ReleaseDetails:
         self.old_single_header = F"ApprovalTests.{self.old_version}.hpp"
         self.new_single_header = F"ApprovalTests.{self.new_version}.hpp"
 
+        self.approval_tests_dir = F"../ApprovalTests"
         self.build_dir = F"../build"
         self.release_dir = F"../build/releases"
         self.release_new_single_header = F"{self.release_dir}/{self.new_single_header}"

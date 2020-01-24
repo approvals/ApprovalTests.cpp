@@ -52,6 +52,28 @@ class PrepareRelease:
         run(["open", "https://github.com/approvals/ApprovalTests.cpp/milestones"])
         check_step("the milestone (if any) is up to date, including actual version number of release")
 
+    def update_version_number_header(self):
+        pushdir(self.details.approval_tests_dir)
+        version_header = os.path.join("ApprovalTestsVersion.h")
+
+        text = \
+            F"""#ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
+#define APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
+
+#define APPROVALTESTS_VERSION_MAJOR {self.details.new_version_object['major']}
+#define APPROVALTESTS_VERSION_MINOR {self.details.new_version_object['minor']}
+#define APPROVALTESTS_VERSION_PATCH {self.details.new_version_object['patch']}
+#define APPROVALTESTS_VERSION_STR "{version.get_version_without_v(self.details.new_version)}"
+
+#define APPROVALTESTS_VERSION                                                  \\
+    (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 + \\
+     APPROVALTESTS_VERSION_PATCH)
+
+#endif //APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
+"""
+        write_file(version_header, text)
+        popdir()
+
     def create_single_header_file(self):
         os.chdir("../ApprovalTests")
         print(os.getcwd())
@@ -61,15 +83,6 @@ class PrepareRelease:
         text = \
 F"""// Approval Tests version {self.details.new_version}
 // More information at: https://github.com/approvals/ApprovalTests.cpp
-
-//#define APPROVALTESTS_VERSION_MAJOR {self.details.new_version_object['major']}
-//#define APPROVALTESTS_VERSION_MINOR {self.details.new_version_object['minor']}
-//#define APPROVALTESTS_VERSION_PATCH {self.details.new_version_object['patch']}
-//#define APPROVALTESTS_VERSION_STR "{version.get_version_without_v(self.details.new_version)}"
-//
-//#define APPROVALTESTS_VERSION                                                  \\
-//    (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 + \\
-//     APPROVALTESTS_VERSION_PATCH)
 
 {text}"""
         write_file(self.details.release_new_single_header, text)
@@ -151,6 +164,7 @@ F"""// Approval Tests version {self.details.new_version}
 
     def prepare_everything(self):
         self.check_pre_conditions_for_publish()
+        self.update_version_number_header()
         self.create_single_header_file()
         self.update_starter_project()
         self.check_starter_project_builds()
