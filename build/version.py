@@ -15,7 +15,7 @@ def update_minor(version):
     return {"major": version['major'], "minor": int(version['minor']) + 1, "patch": 0}
 
 def update_patch(version):
-    return {"major": version['major'], "minor": version['minor'], "patch": int(version['patch'] + 1)}
+    return {"major": version['major'], "minor": version['minor'], "patch": int(version['patch']) + 1}
 
 def version_file_path():
     path, filename = os.path.split(__file__)
