@@ -62,14 +62,14 @@ class PrepareRelease:
 F"""// Approval Tests version {self.details.new_version}
 // More information at: https://github.com/approvals/ApprovalTests.cpp
 
-#define APPROVALTESTS_VERSION_MAJOR {self.details.new_version_object['major']}
-#define APPROVALTESTS_VERSION_MINOR {self.details.new_version_object['minor']}
-#define APPROVALTESTS_VERSION_PATCH {self.details.new_version_object['patch']}
-#define APPROVALTESTS_VERSION_STR "{version.get_version_without_v(self.details.new_version)}"
-
-#define APPROVALTESTS_VERSION                                                  \\
-    (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 + \\
-     APPROVALTESTS_VERSION_PATCH)
+//#define APPROVALTESTS_VERSION_MAJOR {self.details.new_version_object['major']}
+//#define APPROVALTESTS_VERSION_MINOR {self.details.new_version_object['minor']}
+//#define APPROVALTESTS_VERSION_PATCH {self.details.new_version_object['patch']}
+//#define APPROVALTESTS_VERSION_STR "{version.get_version_without_v(self.details.new_version)}"
+//
+//#define APPROVALTESTS_VERSION                                                  \\
+//    (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 + \\
+//     APPROVALTESTS_VERSION_PATCH)
 
 {text}"""
         write_file(self.details.release_new_single_header, text)

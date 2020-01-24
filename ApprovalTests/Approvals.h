@@ -4,6 +4,8 @@
 #include <string>
 #include <functional>
 #include <exception>
+
+#include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/core/FileApprover.h"
 #include "reporters/DefaultReporter.h"
 #include "reporters/DefaultReporterDisposer.h"

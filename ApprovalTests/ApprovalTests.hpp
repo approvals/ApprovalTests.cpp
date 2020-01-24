@@ -7,6 +7,7 @@
 
 // TODO Add mechanism to update this - and check it is kept uptodate
 
+#include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "ApprovalTests/comparators/ComparatorDisposer.h"
