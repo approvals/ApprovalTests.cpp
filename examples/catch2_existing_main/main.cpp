@@ -4,10 +4,25 @@
 #include "ApprovalTests.hpp"
 // end-snippet
 
+#include <iostream>
+
 int main(int argc, char* argv[])
 {
     // your existing setup...
     int result = Catch::Session().run(argc, argv);
+
+#ifdef _WIN32
+    std::cout << "_WIN32 defined\n";
+#endif
+
+#ifdef __CYGWIN__
+    std::cout << "__CYGWIN__ defined\n";
+#endif
+
+#ifdef __APPLE__
+    std::cout << "__APPLE__ defined\n";
+#endif
+
     // your existing clean-up...
     return result;
 }
