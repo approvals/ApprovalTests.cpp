@@ -8,9 +8,7 @@
 
 int main(int argc, char* argv[])
 {
-    // your existing setup...
-    int result = Catch::Session().run(argc, argv);
-
+    std::cout << "macros defined:\n";
 #ifdef _WIN32
     std::cout << "_WIN32 defined\n";
 #endif
@@ -22,6 +20,9 @@ int main(int argc, char* argv[])
 #ifdef __APPLE__
     std::cout << "__APPLE__ defined\n";
 #endif
+
+    // your existing setup...
+    int result = Catch::Session().run(argc, argv);
 
     // your existing clean-up...
     return result;
