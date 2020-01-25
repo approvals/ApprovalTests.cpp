@@ -15,12 +15,11 @@
 // at run-time instead, for test frameworks that use it to
 // detect the source file name.
 #ifndef APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK
-#ifdef _WIN32
-static_assert(__FILE__[1] == ':',
-#else
-static_assert(__FILE__[0] == '/',
-#endif
-              // clang-format off
+// clang-format off
+static_assert(
+    (__FILE__[1] == ':') ||
+    (__FILE__[0] == '/') ||
+    (__FILE__[0] == '\\'),
               // begin-snippet: compiler_error_for_misconfigured_build
 "There seems to be a problem with your build configuration, probably with Ninja. "
 "Please visit https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md "
