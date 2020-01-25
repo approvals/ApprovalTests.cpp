@@ -18,8 +18,7 @@
 // clang-format off
 static_assert(
     (__FILE__[1] == ':') ||
-    (__FILE__[0] == '/') ||
-    (__FILE__[0] == '\\'),
+    (__FILE__[0] == '/'),
               // begin-snippet: compiler_error_for_misconfigured_build
 "There seems to be a problem with your build configuration, probably with Ninja. "
 "Please visit https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md "
