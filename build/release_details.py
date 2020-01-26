@@ -4,7 +4,7 @@ import version
 from prepare_release import PrepareRelease
 from deploy_release import DeployRelease
 
-# TODOs
+# TODO list
 # Automate the check_steps
 # Improve the chdir to start at the top-level directory - and check that we are the top-level
 # Simplify pushdir/popdir - ideally make it RAII - with with!
@@ -12,6 +12,7 @@ from deploy_release import DeployRelease
 # Review folder structure for Python scripts
 # Add CI step to check this prepare process works on every push
 # Add a reminder to close any release milestone
+# Don't remove ignored files when resetting Starter Project - it removes CLion .idea including configs and shelves
 
 class ReleaseDetails:
     def __init__(self, old_version, new_version, publish_release):
