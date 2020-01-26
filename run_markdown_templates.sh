@@ -14,8 +14,6 @@
 dotnet tool update  -g MarkdownSnippets.Tool
 mdsnippets
 
-# Custom Markdown linting
-# todo: fix
-# ./fix_markdown.sh
-
-# todo: linkcheck https://github.com/approvals/ApprovalTests.cpp
+echo "------------------------------------------"
+echo "Custom Markdown linting:"
+./fix_markdown.sh
