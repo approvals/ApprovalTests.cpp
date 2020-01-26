@@ -8,6 +8,8 @@ toc
 
 ## v.x.y.z
 
+## v.8.1.0
+
 ### Version detection
 
 ApprovalTests provides the following macros to detect the release version, with a set of example values shown in italics:

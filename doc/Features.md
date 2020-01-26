@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.8.1.0](#v810)
     * [Version detection](#version-detection)
   * [v.8.0.0](#v800)
     * [CMake Integration documented](#cmake-integration-documented)
@@ -41,6 +42,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+## v.8.1.0
 
 ### Version detection
 
