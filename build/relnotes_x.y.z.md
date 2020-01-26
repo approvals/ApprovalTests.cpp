@@ -6,7 +6,7 @@ See the [v.x.y.z milestone](https://github.com/approvals/ApprovalTests.cpp/miles
     * Added ability to detect ApprovalTests.cpp version in code: see [Version detection](/doc/Features.md#version-detection) (#40)
 * **Bug fixes**
     * Relaxed the static_assert check on `__FILE__` to stop it wrongly triggering in Cygwin builds that don't define `_WIN32` (#92)
-    * Fixed inability to use project as sub-module on windows due to long filenames - by shortening the names of some files and folders in the tests. (#38)
+    * Fixed inability to use project as sub-module on Windows due to long filenames - by shortening the names of some files and folders in the tests. (#38)
 * **Other changes**
     * Include `__FILE__` value in static_assert message, to aid diagnosis
     * Implement check for broken links in documentation (#26)
