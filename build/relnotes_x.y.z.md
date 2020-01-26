@@ -7,4 +7,4 @@
 * **Bug fixes**
     * None
 * **Other changes**
-    * None
+    * Update to Boost.UT [commit 46a4f2e3f41212dd6db2a77bf7c3795cf461b55e](https://github.com/boost-experimental/ut/commit/46a4f2e3f41212dd6db2a77bf7c3795cf461b55e)

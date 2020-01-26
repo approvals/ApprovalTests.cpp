@@ -1,11 +1,11 @@
 //
-// Copyright (c) 2019 Kris Jusiak (kris at jusiak dot net)
+// Copyright (c) 2019-2020 Kris Jusiak (kris at jusiak dot net)
 //
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 //
-//git version: 8004290d195b08eda531eb015ddcda2e11d41ce9
+//git version: 46a4f2e3f41212dd6db2a77bf7c3795cf461b55e
 #if defined(__cpp_modules)
 export module boost.ut;
 export import std;
@@ -38,9 +38,21 @@ export import std;
 #elif not defined(__cpp_static_assert)
 #error "[Boost].UT requires support for static assert";
 #else
-#define BOOST_UT_VERSION 1'1'5
+#define BOOST_UT_VERSION 1'1'6
 
-#if defined(BOOST_UT_FORWARD)
+#if defined(__has_builtin) and (__GNUC__ < 10) and not defined(__clang__)
+#undef __has_builtin
+#endif
+
+#if not defined(__has_builtin)
+#if (__GNUC__ >= 9)
+#define __has___builtin_FILE 1
+#define __has___builtin_LINE 1
+#endif
+#define __has_builtin(...) __has_##__VA_ARGS__
+#endif
+
+#if defined(BOOST_UT_FORWARD) and (__GNUC__ < 10)
 namespace std {
 template <class TLhs, class TRhs>
 auto operator==(TLhs, TRhs) -> bool;
@@ -77,7 +89,7 @@ export namespace boost::ut {
 namespace boost::ut {
 #endif
 
-inline namespace v1_1_5 {
+inline namespace v1_1_6 {
 namespace utility {
 class string_view {
  public:
@@ -211,10 +223,11 @@ namespace reflection {
 class source_location {
  public:
   [[nodiscard]] static constexpr auto current(
-#if (__GNUC__ >= 9 or __clang_major__ >= 9)
+
+#if (__has_builtin(__builtin_FILE) and __has_builtin(__builtin_LINE))
       const char* file = __builtin_FILE(), int line = __builtin_LINE()
 #else
-      const char* file = {}, int line = {}
+      const char* file = "unknown", int line = {}
 #endif
           ) noexcept {
     source_location sl{};
@@ -565,8 +578,10 @@ class eq_ : op {
  public:
   constexpr eq_(const TLhs& lhs = {}, const TRhs& rhs = {})
       : lhs_{lhs}, rhs_{rhs}, value_{[&] {
+#if (__GNUC__ < 10)
           using std::operator==;
           using std::operator<;
+#endif
           if constexpr (type_traits::has_value_v<TLhs> and
                         type_traits::has_value_v<TRhs>) {
             return TLhs::value == TRhs::value;
@@ -581,7 +596,8 @@ class eq_ : op {
           } else {
             return get(lhs) == get(rhs);
           }
-        }()} {}
+        }()} {
+  }
 
   [[nodiscard]] constexpr operator bool() const { return value_; }
   [[nodiscard]] constexpr auto lhs() const { return get(lhs_); }
@@ -598,8 +614,10 @@ class neq_ : op {
  public:
   constexpr neq_(const TLhs& lhs = {}, const TRhs& rhs = {})
       : lhs_{lhs}, rhs_{rhs}, value_{[&] {
+#if (__GNUC__ < 10)
           using std::operator!=;
           using std::operator>;
+#endif
           if constexpr (type_traits::has_value_v<TLhs> and
                         type_traits::has_value_v<TRhs>) {
             return TLhs::value != TRhs::value;
@@ -614,7 +632,8 @@ class neq_ : op {
           } else {
             return get(lhs_) != get(rhs_);
           }
-        }()} {}
+        }()} {
+  }
 
   [[nodiscard]] constexpr operator bool() const { return value_; }
   [[nodiscard]] constexpr auto lhs() const { return get(lhs_); }
@@ -631,14 +650,17 @@ class gt_ : op {
  public:
   constexpr gt_(const TLhs& lhs = {}, const TRhs& rhs = {})
       : lhs_{lhs}, rhs_{rhs}, value_{[&] {
+#if (__GNUC__ < 10)
           using std::operator>;
+#endif
           if constexpr (type_traits::has_value_v<TLhs> and
                         type_traits::has_value_v<TRhs>) {
             return TLhs::value > TRhs::value;
           } else {
             return get(lhs_) > get(rhs_);
           }
-        }()} {}
+        }()} {
+  }
 
   [[nodiscard]] constexpr operator bool() const { return value_; }
   [[nodiscard]] constexpr auto lhs() const { return get(lhs_); }
@@ -655,14 +677,17 @@ class ge_ : op {
  public:
   constexpr ge_(const TLhs& lhs = {}, const TRhs& rhs = {})
       : lhs_{lhs}, rhs_{rhs}, value_{[&] {
+#if (__GNUC__ < 10)
           using std::operator>=;
+#endif
           if constexpr (type_traits::has_value_v<TLhs> and
                         type_traits::has_value_v<TRhs>) {
             return TLhs::value >= TRhs::value;
           } else {
             return get(lhs_) >= get(rhs_);
           }
-        }()} {}
+        }()} {
+  }
 
   [[nodiscard]] constexpr operator bool() const { return value_; }
   [[nodiscard]] constexpr auto lhs() const { return get(lhs_); }
@@ -679,14 +704,17 @@ class lt_ : op {
  public:
   constexpr lt_(const TLhs& lhs = {}, const TRhs& rhs = {})
       : lhs_{lhs}, rhs_{rhs}, value_{[&] {
+#if (__GNUC__ < 10)
           using std::operator<;
+#endif
           if constexpr (type_traits::has_value_v<TLhs> and
                         type_traits::has_value_v<TRhs>) {
             return TLhs::value < TRhs::value;
           } else {
             return get(lhs_) < get(rhs_);
           }
-        }()} {}
+        }()} {
+  }
 
   [[nodiscard]] constexpr operator bool() const { return value_; }
   [[nodiscard]] constexpr auto lhs() const { return get(lhs_); }
@@ -703,14 +731,17 @@ class le_ : op {
  public:
   constexpr le_(const TLhs& lhs = {}, const TRhs& rhs = {})
       : lhs_{lhs}, rhs_{rhs}, value_{[&] {
+#if (__GNUC__ < 10)
           using std::operator<=;
+#endif
           if constexpr (type_traits::has_value_v<TLhs> and
                         type_traits::has_value_v<TRhs>) {
             return TLhs::value <= TRhs::value;
           } else {
             return get(lhs_) <= get(rhs_);
           }
-        }()} {}
+        }()} {
+  }
 
   [[nodiscard]] constexpr operator bool() const { return value_; }
   [[nodiscard]] constexpr auto lhs() const { return get(lhs_); }
@@ -1399,7 +1430,7 @@ class runner {
 
   [[nodiscard]] auto run(run_cfg rc = {}) -> bool {
     run_ = true;
-    for (auto& suite : suites_) {
+    for (const auto& suite : suites_) {
       suite();
     }
     suites_.clear();
@@ -1655,20 +1686,6 @@ class expect_ {
  private:
   bool result_{}, fatal_{};
 };
-
-template <class TExpr>
-class matcher_ : op {
- public:
-  constexpr explicit matcher_(const TExpr& expr) : expr_{expr} {}
-
-  template <class... TArgs>
-  [[nodiscard]] constexpr auto operator()(const TArgs&... args) const {
-    return expr_(args...);
-  }
-
- private:
-  TExpr expr_{};
-};
 }  // namespace detail
 
 namespace literals {
@@ -1750,7 +1767,8 @@ constexpr auto is_op_v = __is_base_of(detail::op, T);
 }  // namespace type_traits
 
 namespace operators {
-#if defined(__cpp_lib_string_view)
+#if not defined(BOOST_UT_FORWARD) and \
+    (defined(__cpp_lib_string_view) or defined(__APPLE__))
 [[nodiscard]] constexpr auto operator==(std::string_view lhs,
                                         std::string_view rhs) {
   return detail::eq_{lhs, rhs};
@@ -1885,11 +1903,6 @@ template <bool Constant>
 #endif
 constexpr auto constant = Constant;
 
-template <class TExpr>
-[[nodiscard]] constexpr auto matcher(const TExpr& expr) {
-  return detail::matcher_<TExpr>{expr};
-}
-
 #if defined(__cpp_exceptions)
 template <class TException, class TExpr>
 [[nodiscard]] constexpr auto throws(const TExpr& expr) {
@@ -2017,7 +2030,6 @@ using operators::operator and;
 using operators::operator or;
 using operators::operator not;
 using operators::operator|;
-}  // namespace v1_1_5
+}  // namespace v1_1_6
 }  // namespace boost::ut
 #endif
-
