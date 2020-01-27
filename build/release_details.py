@@ -5,15 +5,15 @@ from prepare_release import PrepareRelease
 from deploy_release import DeployRelease
 
 # TODO list
+# Don't remove ignored files when resetting Starter Project - it removes CLion .idea including configs and shelves
+# Add CI step to check this prepare process works on every push
 # Rewrite the SingleHpp Java program in Python
 # Automate the check_steps
 # Improve the chdir to start at the top-level directory - and check that we are the top-level
 # Simplify pushdir/popdir - ideally make it RAII - with with!
 # Create Python requirements.txt file
 # Review folder structure for Python scripts
-# Add CI step to check this prepare process works on every push
 # Add a reminder to close any release milestone
-# Don't remove ignored files when resetting Starter Project - it removes CLion .idea including configs and shelves
 
 class ReleaseDetails:
     def __init__(self, old_version, new_version, publish_release):
