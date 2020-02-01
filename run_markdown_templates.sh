@@ -16,4 +16,4 @@ mdsnippets || exit 1
 
 echo "------------------------------------------"
 echo "Custom Markdown linting:"
-./fix_markdown.sh
+./fix_markdown.sh | grep -v cmake-build
