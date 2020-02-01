@@ -1,7 +1,3 @@
-BUGS
-
-. arguments member in DiffInfo is unused after construction - beware - will need to handle arguments differently on cygwin (which currently assumes all arguments are file paths)
-
 IMPROVE USABILITY OF CURRENT FEATURES
 
 . use a disposer for GoogleConfiguration::addIgnorableTestCaseNameSuffix() - to make it reversible
@@ -10,7 +6,6 @@ NEW FEATURES
 
 . add a non-gui reporter, e.g. for use in CI systems
 . catch reporter
-. tortoise git diff reporter
 . maps
 . reports
 . asJson
@@ -33,16 +28,8 @@ DOCUMENTATION
 
 RELEASES
 
-. try Markdown Navigator to allow checkboxes in build steps
 . get cmake to generate build from command line (to remove requirement that CLion needs to have built starter project)
-. see if we can streamline setup of relnotes files for next release
 . include licence in released header
-
-FORMATTING OF CODE
-
-. tabs to spaces
-. add pre-commit check to detect tabs
-. Implement auto-formatting of code to match style guide
 
 CODE QUALITY
 
@@ -52,10 +39,4 @@ CODE QUALITY
 
 ENVIRONMENT AND BUILDS
 
-. fix Appveyor builds for Starter Project
-. set up a git tab policy
 . fix issues in source code with eol warnings in clion on PC (little red crlf warnings)
-
-FUTURE DEVELOPMENT
-
-. review directory and file structure of other popular C++ testing libraries, to look for ways to improve the structure of this project, e.g. add a single header file in source that mimics the released single header, e.g. put Catch and Google headers into an integration folder???
