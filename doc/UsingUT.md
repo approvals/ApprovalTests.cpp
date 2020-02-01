@@ -14,19 +14,11 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Getting Started With \[Boost\].UT](#getting-started-with-boostut)
-    * [Important Note: Issue 87](#important-note-issue-87)
     * [Requirements](#requirements)
     * [Usage examples](#usage-examples)<!-- endtoc -->
 
 
 ## Getting Started With \[Boost\].UT
-
-### Important Note: Issue 87
-
-* As of 2020-01-15, there is a known serious issue with using this test framework with Approval Tests, in that **the test framework does not currently report any Approval Test test failures via the exit status of the test program**.
-* This means that any CI builds or ctest runs will look like they succeeded, whereas they may in fact not have done.
-* For details and progress, please see [issue 87: Boost.UT tests spuriously pass, by returning 0 exit status even after failure](https://github.com/approvals/ApprovalTests.cpp/issues/87).  
----
 
 The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework works well with Approval Tests.
 
