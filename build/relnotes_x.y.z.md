@@ -5,6 +5,6 @@
 * **New features**
     * None
 * **Bug fixes**
-    * Boost.UT tests now correctly return non-zero exit status if any Approval Tests failed. (#87)
+    * None
 * **Other changes**
-    * Update to Boost.UT [commit dde2cba5123444faa82e5c17fcd99f68fe991d89](https://github.com/boost-experimental/ut/commit/dde2cba5123444faa82e5c17fcd99f68fe991d89)
+    * None

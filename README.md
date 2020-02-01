@@ -15,7 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](/CODE_OF_CONDUCT.md#top)
 
-<a href="https://github.com/approvals/ApprovalTests.cpp/releases/download/v.8.1.0/ApprovalTests.v.8.1.0.hpp">Download the latest version (v.8.1.0) of the **single header file** here.</a>
+<a href="https://github.com/approvals/ApprovalTests.cpp/releases/download/v.8.1.1/ApprovalTests.v.8.1.1.hpp">Download the latest version (v.8.1.1) of the **single header file** here.</a>
 
 <!-- toc -->
 ## Contents
