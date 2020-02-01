@@ -28,12 +28,28 @@ namespace ApprovalTests
             comparators[extensionWithDot] = newComparator;
         }
 
+        ComparatorDisposer(const ComparatorDisposer&) = delete;
+
+        ComparatorDisposer(ComparatorDisposer&& other)
+            : comparators(other.comparators)
+            , ext_(std::move(other.ext_))
+            , previousComparator(std::move(other.previousComparator))
+        {
+            other.isActive = false;
+        }
+
         ~ComparatorDisposer()
         {
-            comparators[ext_] = previousComparator;
+            if (isActive)
+            {
+                comparators[ext_] = previousComparator;
+            }
         }
 
     private:
+        // A disposer becomes inactive when it is moved from.
+        // This is done to prevent a comparator from being disposed twice.
+        bool isActive = true;
         ComparatorContainer& comparators;
         std::string ext_;
         std::shared_ptr<ApprovalTests::ApprovalComparator> previousComparator;
