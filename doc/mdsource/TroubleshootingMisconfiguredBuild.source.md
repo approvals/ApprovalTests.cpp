@@ -52,7 +52,7 @@ This section lists the known types of workaround for the above problems.
 
 When used to generate Unity builds, the Ninja build generator creates executables that run correctly with Approval Tests, finding the source file location correctly. 
 
-For more information about Unity builds in CMake, see this article: [CMake 3.16 added support for precompiled headers & unity builds - what you need to know](http://onqtam.com/programming/2019-12-20-pch-unity-cmake-3-16/). It also describes the initial problems you may encounter when trying to compile a project as Unity, and how to fix them.
+For more information about Unity builds in CMake, see this article: [CMake 3.16 added support for precompiled headers & unity builds - what you need to know](https://web.archive.org/web/20191228105351/http://onqtam.com/programming/2019-12-20-pch-unity-cmake-3-16/). It also describes the initial problems you may encounter when trying to compile a project as Unity, and how to fix them.
 
 If you are using **CMake 3.16 or above**, it is easy to turn on Unity builds, and the following examples show you how.
 
