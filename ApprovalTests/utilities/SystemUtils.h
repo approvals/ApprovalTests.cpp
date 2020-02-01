@@ -183,6 +183,17 @@ namespace ApprovalTests
                 makeDirectory(fullFilePath);
             }
         }
+
+        static void runSystemCommand(const std::string& command)
+        {
+            int exitCode = system(command.c_str());
+
+            if (exitCode != 0)
+            {
+                throw std::runtime_error(command + ": failed with exit code " +
+                                         std::to_string(exitCode));
+            }
+        }
     };
 }
 #endif

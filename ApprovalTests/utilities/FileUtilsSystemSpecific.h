@@ -27,9 +27,9 @@ namespace ApprovalTests
         static void copyFile(const std::string& source,
                              const std::string& destination)
         {
-            system(getCommandLineForCopy(
-                       source, destination, SystemUtils::isWindowsOs())
-                       .c_str());
+            auto cmd = getCommandLineForCopy(
+                source, destination, SystemUtils::isWindowsOs());
+            SystemUtils::runSystemCommand(cmd);
         }
     };
 }

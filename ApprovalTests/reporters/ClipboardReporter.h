@@ -68,7 +68,7 @@ namespace ApprovalTests
             }
             auto cmd =
                 std::string("echo ") + newClipboard + " | " + clipboardCommand;
-            system(cmd.c_str());
+            SystemUtils::runSystemCommand(cmd);
         }
     };
 }
