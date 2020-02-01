@@ -56,7 +56,7 @@ The following lines can be ignored in the above files - they are for this projec
 
 1. Add a new file about the customisation, such as [UsingCatch](/doc/UsingCatch.md#top)
 2. Record the new framework support in:
-    * The Help message in [ApprovalTestNamer.h](/ApprovalTests/namers/ApprovalTestNamer.h)
+    * The `getMisconfiguredMainHelp()` help message in [HelpMessages.h](/ApprovalTests/namers/HelpMessages.h)
     * [GettingStarted](/doc/GettingStarted.md#top) - see "Details" list, and "Choosing a testing framework"
     * [User Guide](/doc/README.md#test-frameworks) - see "Test Frameworks" section
     * [Setup](/doc/Setup.md#top) - see the bullet list starting "Set up your `main()`"
