@@ -12,7 +12,7 @@
 #   dotnet tool update  -g MarkdownSnippets.Tool
 
 dotnet tool update  -g MarkdownSnippets.Tool
-mdsnippets
+mdsnippets || exit 1
 
 echo "------------------------------------------"
 echo "Custom Markdown linting:"
