@@ -2,7 +2,7 @@ project(UT_Tests)
 if((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION GREATER_EQUAL 9.2) OR (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND CMAKE_CXX_COMPILER_VERSION GREATER_EQUAL 9.0))
     set(CMAKE_CXX_STANDARD 20)
     add_executable(${PROJECT_NAME}
-        ApprovalTestTests.cpp
+        UTApprovalTestTests.cpp
         )
     target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests boost.ut)
     add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
