@@ -31,10 +31,7 @@ For all other test files, you need:
 
 ### Details 
 
-* [Catch2](/doc/UsingCatch.md#top)
-* [Google Test](/doc/UsingGoogleTests.md#top)
-* [doctest](/doc/UsingDoctest.md#top)
-* [\[Boost\].UT](/doc/UsingUT.md#top)
+include: include_using_test_frameworks_list
 
 ## Choosing a testing framework
 

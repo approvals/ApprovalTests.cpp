@@ -43,10 +43,7 @@ Here's how to set up from:
 
 ### Test Frameworks
 
-* [Using Approval Tests With Catch](/doc/UsingCatch.md#top)
-* [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
-* [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
-* [Using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#top)
+include: include_using_test_frameworks_list
 * [Supporting a new test framework](/doc/SupportingNewTestFramework.md#top)
 
 ### Customising behaviour

@@ -53,10 +53,10 @@ For all other test files, you need:
 
 ### Details 
 
-* [Catch2](/doc/UsingCatch.md#top)
-* [Google Test](/doc/UsingGoogleTests.md#top)
-* [doctest](/doc/UsingDoctest.md#top)
-* [\[Boost\].UT](/doc/UsingUT.md#top)
+* [Using Approval Tests With Catch](/doc/UsingCatch.md#top) <!-- include: include_using_test_frameworks_list. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
+* [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
+* [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
+* [Using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#top) <!-- end include: include_using_test_frameworks_list. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
 
 ## Choosing a testing framework
 
