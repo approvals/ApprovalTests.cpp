@@ -184,7 +184,7 @@ namespace ApprovalTests
             }
         }
 
-        static void runSystemCommand(const std::string& command)
+        static void runSystemCommandOrThrow(const std::string& command)
         {
             int exitCode = system(command.c_str());
 

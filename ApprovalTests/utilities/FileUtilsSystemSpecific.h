@@ -29,7 +29,7 @@ namespace ApprovalTests
         {
             auto cmd = getCommandLineForCopy(
                 source, destination, SystemUtils::isWindowsOs());
-            SystemUtils::runSystemCommand(cmd);
+            SystemUtils::runSystemCommandOrThrow(cmd);
         }
     };
 }
