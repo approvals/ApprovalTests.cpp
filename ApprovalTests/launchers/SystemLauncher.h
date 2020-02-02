@@ -74,7 +74,7 @@ namespace ApprovalTests
             std::string launch = SystemUtils::isWindowsOs()
                                      ? ("start \"\" " + command)
                                      : (command + " &");
-            system(launch.c_str());
+            SystemUtils::runSystemCommand(launch);
             return true;
         }
     };
