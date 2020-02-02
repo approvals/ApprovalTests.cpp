@@ -5,6 +5,9 @@
 * **New features**
     * None
 * **Bug fixes**
-    * None
+    * 3 locations now throw an exception if their `system()` call failed. Previously they silently ignored the error. (#94, thank you @p-podsiadly)
+        * `ClipboardReporter`
+        * `SystemLauncher::launch()`
+        * `FileUtilsSystemSpecific::copyFile()`
 * **Other changes**
     * None
