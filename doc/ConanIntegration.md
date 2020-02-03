@@ -18,7 +18,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ## Using Conan to obtain ApprovalTests.cpp
 
-See  Daniel Heater's [ApprovalTests-ConanDemo repo](https://github.com/dheater/ApprovalTests-ConanDemo) for an example that demonstrates using ApprovalTests.cpp with the Conan package manager.
+See  Daniel Heater's [ApprovalTests-ConanDemo repo](https://github.com/dheater/ApprovalTests-ConanDemo) for an example that demonstrates using ApprovalTests.cpp with the [Conan package manager]([Conan](https://conan.io)).
 
 ## Links
 
