@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [Conan Integration documented](#conan-integration-documented)
   * [v.8.1.0](#v810)
     * [Version detection](#version-detection)
   * [v.8.0.0](#v800)
@@ -42,6 +43,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+### Conan Integration documented
+
+See [Conan Integration](/doc/ConanIntegration.md#top).
 
 ## v.8.1.0
 

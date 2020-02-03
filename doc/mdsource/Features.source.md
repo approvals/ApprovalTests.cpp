@@ -8,6 +8,10 @@ toc
 
 ## v.x.y.z
 
+### Conan Integration documented
+
+See [Conan Integration](/doc/ConanIntegration.md#top).
+
 ## v.8.1.0
 
 ### Version detection
