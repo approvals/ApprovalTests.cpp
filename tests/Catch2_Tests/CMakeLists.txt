@@ -2,6 +2,7 @@ project(Catch2_Tests)
 set(CMAKE_CXX_STANDARD 17)
 add_executable(${PROJECT_NAME}
     main.cpp
+    comparators/ComparatorDisposerTest.cpp
     core/ApprovalExceptionTests.cpp
     ApprovalsTests.cpp
     CombinationTests.cpp
