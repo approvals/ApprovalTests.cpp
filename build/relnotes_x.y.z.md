@@ -1,4 +1,4 @@
-<!-- See the [v.x.y.z milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/__MILESTONE_NUMBER__?closed=1) for the full list of changes. -->
+See the [v.x.y.z milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/6?closed=1) for the full list of changes.
 
 * **Breaking changes**
     * None
@@ -11,4 +11,4 @@
         * `FileUtilsSystemSpecific::copyFile()`
     * Fixed a bug that could break [custom comparators](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CustomComparators.md#top), stopping them from taking effect, depending on how their disposers were stored (#93, thank you @p-podsiadly)
 * **Other changes**
-    * None
+    * Windows.h no longer included in SystemUtils.h (#96, thank you @p-podsiadly)
