@@ -74,6 +74,7 @@ include: include_using_test_frameworks_list
 ### Build Systems
 
 * [CMake Integration](/doc/CMakeIntegration.md#top)
+* [Conan Integration](/doc/ConanIntegration.md#top)
 
 ### Extras
 

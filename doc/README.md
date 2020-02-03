@@ -100,6 +100,7 @@ Here's how to set up from:
 ### Build Systems
 
 * [CMake Integration](/doc/CMakeIntegration.md#top)
+* [Conan Integration](/doc/ConanIntegration.md#top)
 
 ### Extras
 
