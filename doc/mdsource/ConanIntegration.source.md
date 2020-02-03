@@ -6,7 +6,7 @@ toc
 
 ## Using Conan to obtain ApprovalTests.cpp
 
-See  Daniel Heater's [ApprovalTests-ConanDemo repo](https://github.com/dheater/ApprovalTests-ConanDemo) for an example that demonstrates using ApprovalTests.cpp with the [Conan package manager]([Conan](https://conan.io)).
+See  Daniel Heater's [ApprovalTests-ConanDemo repo](https://github.com/dheater/ApprovalTests-ConanDemo) for an example that demonstrates using ApprovalTests.cpp with the [Conan package manager]([Conan](https://conan.io/)).
 
 ## Links
 
