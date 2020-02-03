@@ -3,6 +3,7 @@
 
 #include <map>
 #include <memory>
+#include <utility>
 #include "ApprovalTests/core/ApprovalComparator.h"
 #include "ApprovalTests/utilities/Macros.h"
 
@@ -17,20 +18,20 @@ namespace ApprovalTests
     public:
         ComparatorDisposer(
             ComparatorContainer& comparators,
-            std::string extensionWithDot,
+            const std::string& extensionWithDot,
             std::shared_ptr<ApprovalTests::ApprovalComparator>
                 previousComparator,
             std::shared_ptr<ApprovalTests::ApprovalComparator> newComparator)
             : comparators(comparators)
             , ext_(extensionWithDot)
-            , previousComparator(previousComparator)
+            , previousComparator(std::move(previousComparator))
         {
-            comparators[extensionWithDot] = newComparator;
+            comparators[extensionWithDot] = std::move(newComparator);
         }
 
         ComparatorDisposer(const ComparatorDisposer&) = delete;
 
-        ComparatorDisposer(ComparatorDisposer&& other)
+        ComparatorDisposer(ComparatorDisposer&& other) noexcept
             : comparators(other.comparators)
             , ext_(std::move(other.ext_))
             , previousComparator(std::move(other.previousComparator))
