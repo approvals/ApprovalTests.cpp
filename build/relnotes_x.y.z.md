@@ -9,5 +9,6 @@
         * `ClipboardReporter`
         * `SystemLauncher::launch()`
         * `FileUtilsSystemSpecific::copyFile()`
+    * Fixed a bug that could break [custom comparators](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CustomComparators.md#top), stopping them from taking effect, depending on how their disposers were stored (#93, thank you @p-podsiadly)
 * **Other changes**
     * None
