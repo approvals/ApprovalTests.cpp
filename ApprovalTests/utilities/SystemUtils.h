@@ -6,7 +6,6 @@
 #ifdef _WIN32
 // ReSharper disable once CppUnusedIncludeDirective
 #include <io.h>
-#include <windows.h>
 #include <direct.h>
 #else
 // ReSharper disable once CppUnusedIncludeDirective
@@ -66,17 +65,17 @@ namespace ApprovalTests
             }
 #ifdef _WIN32
 
-            WIN32_FIND_DATAA findFileData;
-            HANDLE hFind = FindFirstFileA(fullPath.c_str(), &findFileData);
+            _finddata_t findFileData;
+            auto hFind = _findfirst(fullPath.c_str(), &findFileData);
 
-            if (hFind != INVALID_HANDLE_VALUE)
+            if (hFind != -1)
             {
-                const std::string fixedFilename = findFileData.cFileName;
+                const std::string fixedFilename = findFileData.name;
                 const std::string fixedPath =
                     StringUtils::replaceAll(fullPath,
                                             StringUtils::toLower(fixedFilename),
                                             fixedFilename);
-                FindClose(hFind);
+                _findclose(hFind);
                 return fixedPath;
             }
 
