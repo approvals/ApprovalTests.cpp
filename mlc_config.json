@@ -4,6 +4,9 @@
       "pattern": "^https://github.com/SimonCropp/MarkdownSnippets"
     },
     {
+      "pattern": "^https://conan.io/"
+    },
+    {
       "pattern": "^/doc/README.md"
     },
     {
