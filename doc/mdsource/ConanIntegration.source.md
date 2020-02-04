@@ -6,7 +6,14 @@ toc
 
 ## Using Conan to obtain ApprovalTests.cpp
 
-See  Daniel Heater's [ApprovalTests-ConanDemo repo](https://github.com/dheater/ApprovalTests-ConanDemo) for an example that demonstrates using ApprovalTests.cpp with the [Conan package manager]([Conan](https://conan.io/)).
+Some examples of using the [Conan package manager](https://conan.io/):
+
+* Daniel Heater's [ApprovalTests-ConanDemo repo](https://github.com/dheater/ApprovalTests-ConanDemo)
+    * This demonstrates using ApprovalTests.cpp with Conan's `cmake` generator in a `conanfile.txt` file.
+* p-podsiadly's 
+[ImageApprovals](https://github.com/p-podsiadly/ImageApprovals)
+    * This shows a different approach, using Conan's `cmake_find_package` generator from purely CMake code.
+    * It's also a nice example of extending ApprovalTests.cpp to compare images.
 
 ## Links
 
