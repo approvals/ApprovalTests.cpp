@@ -68,6 +68,9 @@ class DeployRelease:
         run(["open", tweet_text])
         check_step("that the tweet is published")
 
+        self.publish_on_reddit_optionally()
+
+    def publish_on_reddit_optionally(self):
         # Announce on Reddit - maybe?
         run(["open", "https://www.reddit.com/r/cpp/"])
         check_step("if you want to announce this on Reddit r/cpp")
