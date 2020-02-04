@@ -138,6 +138,7 @@ F"""// Approval Tests version {self.details.new_version}
         new_version_without_v = version.get_version_without_v(self.details.new_version)
 
         self.update_conandata_yml(new_version_with_v, new_version_without_v)
+        self.update_conan_config_yml(new_version_without_v)
 
     def update_conandata_yml(self, new_version_with_v, new_version_without_v):
         conan_data_file = self.details.conan_data_file
@@ -152,6 +153,18 @@ F'''  {new_version_without_v}:
       sha256: {calculate_sha256(new_single_header)}
     - url: "https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/{new_version_with_v}/LICENSE"
       sha256: {calculate_sha256(licence_file)}
+'''
+        conandata_yml_text += conan_data
+
+        write_file(conan_data_file, conandata_yml_text)
+
+    def update_conan_config_yml(self, new_version_without_v):
+        conan_data_file = self.details.conan_config_file
+        conandata_yml_text = read_file(conan_data_file)
+
+        conan_data = \
+F'''  {new_version_without_v}:
+    folder: all
 '''
         conandata_yml_text += conan_data
 
