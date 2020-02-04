@@ -8,6 +8,8 @@ toc
 
 ## v.x.y.z
 
+## v.8.2.0
+
 ### Conan Integration documented
 
 See [Conan Integration](/doc/ConanIntegration.md#top).
