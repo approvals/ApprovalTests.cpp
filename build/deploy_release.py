@@ -62,10 +62,6 @@ class DeployRelease:
         run(["open", self.details.release_dir])
         check_step("that the release is published")
 
-        self.publish_tweet()
-
-        self.publish_on_reddit_optionally()
-
     def publish_tweet(self):
         # Draft the tweet
         check_step("that you have created a screenshot of the release notes, for the Tweet")
@@ -82,3 +78,5 @@ class DeployRelease:
         self.publish_main_project()
         self.publish_starter_project()
         self.test_conan_and_create_pr()
+        self.publish_tweet()
+        self.publish_on_reddit_optionally()
