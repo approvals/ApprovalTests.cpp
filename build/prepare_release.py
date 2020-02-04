@@ -120,7 +120,20 @@ F"""// Approval Tests version {self.details.new_version}
         replace_text_in_file("mdsource/README.source.md", self.details.old_version, self.details.new_version)
         popdir()
 
+    def check_conan_repo(self):
+        pushdir(self.details.conan_repo_dir)
+
+        run(["git", "branch"])
+        check_step("we are on the correct branch - master or a feature branch")
+
+        run(["git", "status"])
+        check_step("no changes present")
+
+        popdir()
+
     def update_conan_recipe(self):
+        self.check_conan_repo()
+
         conandata_yml_text = read_file(self.details.conan_data_file)
 
         new_version_with_v = self.details.new_version
