@@ -137,6 +137,9 @@ F"""// Approval Tests version {self.details.new_version}
         new_version_with_v = self.details.new_version
         new_version_without_v = version.get_version_without_v(self.details.new_version)
 
+        self.update_conandata_yml(new_version_with_v, new_version_without_v)
+
+    def update_conandata_yml(self, new_version_with_v, new_version_without_v):
         conandata_yml_text = read_file(self.details.conan_data_file)
 
         new_single_header = self.details.release_new_single_header
