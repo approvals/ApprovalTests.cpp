@@ -31,9 +31,6 @@ class ReleaseDetails:
         self.release_new_single_header = F"{self.release_dir}/{self.new_single_header}"
 
         self.conan_repo_dir = '../../../conan/conan-center-index-claremacrae'
-        self.conan_data_dir = os.path.join(self.conan_repo_dir, 'recipes', 'approvaltests.cpp')
-        self.conan_data_file = os.path.join(self.conan_data_dir, 'all', 'conandata.yml')
-        self.conan_config_file = os.path.join(self.conan_data_dir, 'config.yml')
 
         self.main_project_dir = F"../../ApprovalTests.Cpp"
         self.starter_project_dir = F"../../ApprovalTests.Cpp.StarterProject"
