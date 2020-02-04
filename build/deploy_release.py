@@ -28,6 +28,7 @@ class DeployRelease:
     def publish_starter_project(self):
         self.commit_starter_project()
         self.push_starter_project()
+        check_step("that the starter project is published")
 
     # Main Project
     def commit_main_project(self):
@@ -65,6 +66,7 @@ class DeployRelease:
         check_step("that you have created a screenshot of the release notes, for the Tweet")
         tweet_text = F"'https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+{self.details.new_version}+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F{self.details.new_version}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21'"
         run(["open", tweet_text])
+        check_step("that the tweet is published")
 
         # Announce on Reddit - maybe?
         run(["open", "https://www.reddit.com/r/cpp/"])
