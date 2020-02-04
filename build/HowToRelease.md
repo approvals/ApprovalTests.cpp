@@ -40,9 +40,4 @@ You will need to:
     * Create a branch for the patch
     * Edit [build/release_details.py](/build/release_details.py) to give the relative path to your cloned fork
 * Run the release process as normal - this appends lines for your new release to your copy of `conandata.yml`
-* Test the edit: **WHERE YOU MANUALLY PUT IN THE NEW VERSION NUMBER**
-    ```bash
-    cd conan-center-index/recipes/approvaltests.cpp/all
-    conan create . 8.1.1@
-    ```
-* Submit a pull request
+* The 'deploy' step will test the changes, and prompt you to submit a pull request

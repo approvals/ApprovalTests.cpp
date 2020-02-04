@@ -3,6 +3,7 @@ import shutil
 
 import pyperclip
 
+import version
 from utilities import read_file, check_step, run, pushdir, popdir
 from prepare_release import PrepareRelease
 
@@ -39,6 +40,14 @@ class DeployRelease:
         run(["git", "push", "origin", "master"])
         popdir()
 
+    def test_conan_and_create_pr(self):
+        pushdir(self.details.conan_data_dir)
+        new_version_without_v = version.get_version_without_v(self.details.new_version)
+        run(F'conan create . {new_version_without_v}@')
+        popdir()
+
+        check_step("that you have created a Pull Request for conan-center-index?")
+
     def publish_main_project(self):
         self.commit_main_project()
         self.push_main_project()
@@ -52,7 +61,7 @@ class DeployRelease:
         run(["open", self.details.release_dir])
         check_step("that the release is published")
 
-        check_step("that you have created a Pull Request for conan-center-index?")
+        self.test_conan_and_create_pr()
 
         # Draft the tweet
         check_step("that you have created a screenshot of the release notes, for the Tweet")
@@ -62,7 +71,6 @@ class DeployRelease:
         # Announce on Reddit - maybe?
         run(["open", "https://www.reddit.com/r/cpp/"])
         check_step("if you want to announce this on Reddit r/cpp")
-
 
     def push_everything_live(self):
         self.publish_main_project()
