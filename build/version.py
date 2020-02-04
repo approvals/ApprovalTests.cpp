@@ -17,6 +17,10 @@ def update_minor(version):
 def update_patch(version):
     return {"major": version['major'], "minor": version['minor'], "patch": int(version['patch']) + 1}
 
+def no_version_change(version):
+    # This is useful if a deploy failed part-way through, and we don't want to incremen the version number
+    return {"major": version['major'], "minor": version['minor'], "patch": int(version['patch'])}
+
 def version_file_path():
     path, filename = os.path.split(__file__)
     return os.path.join(path, 'version.ini')
