@@ -140,7 +140,8 @@ F"""// Approval Tests version {self.details.new_version}
         self.update_conandata_yml(new_version_with_v, new_version_without_v)
 
     def update_conandata_yml(self, new_version_with_v, new_version_without_v):
-        conandata_yml_text = read_file(self.details.conan_data_file)
+        conan_data_file = self.details.conan_data_file
+        conandata_yml_text = read_file(conan_data_file)
 
         new_single_header = self.details.release_new_single_header
         licence_file = '../LICENSE'
@@ -154,7 +155,7 @@ F'''  {new_version_without_v}:
 '''
         conandata_yml_text += conan_data
 
-        write_file(self.details.conan_data_file, conandata_yml_text)
+        write_file(conan_data_file, conandata_yml_text)
 
     def regenerate_markdown(self):
         pushdir("..")
