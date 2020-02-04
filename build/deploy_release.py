@@ -43,7 +43,7 @@ class DeployRelease:
     def test_conan_and_create_pr(self):
         pushdir(self.details.conan_data_dir)
         new_version_without_v = version.get_version_without_v(self.details.new_version)
-        run(F'conan create . {new_version_without_v}@')
+        run(['conan', 'create', '.', F'{new_version_without_v}@'])
         popdir()
 
         check_step("that you have created a Pull Request for conan-center-index?")
