@@ -1,5 +1,6 @@
 import os
 import subprocess
+import hashlib
 
 
 def run(command):
@@ -36,6 +37,14 @@ def replace_text_in_file(file_name, old_text, new_text):
     text = read_file(file_name)
     text = text.replace(old_text, new_text)
     write_file(file_name, text)
+
+
+def calculate_sha256(file_name):
+    with open(file_name, "rb") as f:
+        bytes = f.read()  # read entire file as bytes
+        readable_hash = hashlib.sha256(bytes).hexdigest()
+        # print(readable_hash)
+        return readable_hash
 
 
 def check_step(step):

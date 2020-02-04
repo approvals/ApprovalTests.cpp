@@ -4,7 +4,7 @@ import time
 import version
 
 from utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir, \
-    check_step_with_revert
+    check_step_with_revert, calculate_sha256
 
 
 class PrepareRelease:
@@ -120,6 +120,25 @@ F"""// Approval Tests version {self.details.new_version}
         replace_text_in_file("mdsource/README.source.md", self.details.old_version, self.details.new_version)
         popdir()
 
+    def update_conan_recipe(self):
+        conandata_yml_text = read_file(self.details.conan_data_file)
+
+        new_version_with_v = self.details.new_version
+        new_version_without_v = version.get_version_without_v(self.details.new_version)
+        new_single_header = self.details.release_new_single_header
+        licence_file = '../LICENSE'
+
+        conan_data = \
+F'''  {new_version_without_v}:
+    - url: https://github.com/approvals/ApprovalTests.cpp/releases/download/{new_version_with_v}/ApprovalTests.{new_version_with_v}.hpp
+      sha256: {calculate_sha256(new_single_header)}
+    - url: "https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/{new_version_with_v}/LICENSE"
+      sha256: {calculate_sha256(licence_file)}
+'''
+        conandata_yml_text += conan_data
+
+        write_file(self.details.conan_data_file, conandata_yml_text)
+
     def regenerate_markdown(self):
         pushdir("..")
         run(["./run_markdown_templates.sh"])
@@ -171,6 +190,7 @@ F"""// Approval Tests version {self.details.new_version}
         self.update_features_page()
         self.update_readme_and_docs()
         self.prepare_release_notes()
+        self.update_conan_recipe()
         self.regenerate_markdown()
         version.write_version(self.details.new_version_object)
         self.add_to_git()
