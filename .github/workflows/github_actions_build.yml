@@ -21,17 +21,17 @@ jobs:
           exclude: './third_party'
           clangFormatVersion: 9
 
-#  markdown-link-check:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@master
-#      - uses: actions/setup-node@v1
-#        with:
-#          node-version: '12.x'
-#      - name: Install markdown-link-check
-#        run: npm i -g markdown-link-check
-#      - name: Run markdown-link-check on *.md files
-#        run: ./scripts/check_links.sh
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install markdown-link-check
+        run: npm i -g markdown-link-check
+      - name: Run markdown-link-check on *.md files
+        run: ./scripts/check_links.sh
 
   build:
     env:
