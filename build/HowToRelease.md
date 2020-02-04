@@ -22,3 +22,27 @@ prepare_major_release.py
 prepare_minor_release.py
 prepare_patch_release.py
 ```
+
+## How to add a new release to Conan
+
+The release process needs to submit a pull request to add the new release to [https://github.com/conan-io/conan-center-index/blob/master/recipes/approvaltests.cpp/all/conandata.yml](https://github.com/conan-io/conan-center-index/blob/master/recipes/approvaltests.cpp/all/conandata.yml)
+
+This is only partially automated at the moment.
+
+You will need to:
+
+* Once-off Preparation
+    * Fork the [conan-center-index](https://github.com/conan-io/conan-center-index/) repo.
+    * Clone that fork to your machine
+    * Install Conan
+* Before each release
+    * Syncronise your Conan fork with the main repo
+    * Create a branch for the patch
+    * Edit [build/release_details.py](/build/release_details.py) to give the relative path to your cloned fork
+* Run the release process as normal - this appends lines for your new release to your copy of `conandata.yml`
+* Test the edit: **WHERE YOU MANUALLY PUT IN THE NEW VERSION NUMBER**
+    ```bash
+    cd conan-center-index/recipes/approvaltests.cpp/all
+    conan create . 8.1.1@
+    ```
+* Submit a pull request
