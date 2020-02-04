@@ -53,8 +53,6 @@ class DeployRelease:
         self.commit_main_project()
         self.push_main_project()
 
-        self.upload_release_to_github()
-
     def upload_release_to_github(self):
         # Draft the upload to github
         release_notes = read_file(self.details.new_release_notes_path)
@@ -79,6 +77,7 @@ class DeployRelease:
 
     def push_everything_live(self):
         self.publish_main_project()
+        self.upload_release_to_github()
         self.publish_starter_project()
         self.test_conan_and_create_pr()
         self.publish_tweet()
