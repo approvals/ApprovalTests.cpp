@@ -43,6 +43,8 @@ class DeployRelease:
 
     def test_conan_and_create_pr(self):
         pushdir(self.details.conan_data_dir)
+        # We cannot test the new Conan recipe until the new release has been
+        # published on github
         new_version_without_v = version.get_version_without_v(self.details.new_version)
         run(['conan', 'create', '.', F'{new_version_without_v}@'])
         popdir()
