@@ -5,7 +5,6 @@ from prepare_release import PrepareRelease
 from deploy_release import DeployRelease
 
 # TODO list
-# Don't remove ignored files when resetting Starter Project - it removes CLion .idea including configs and shelves
 # Add CI step to check this prepare process works on every push
 # Rewrite the SingleHpp Java program in Python
 # Automate the check_steps

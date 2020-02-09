@@ -93,7 +93,12 @@ F"""// Approval Tests version {self.details.new_version}
 
         # Make sure starter project folder is clean
         pushdir(self.details.starter_project_dir)
-        run(["git", "clean", "-fx"])
+
+        # Delete untracked files:
+        # - does not delete ignored files
+        # - does not delete untracked files in new, untracked directories
+        run(["git", "clean", "-f"])
+
         run(["git", "reset", "--hard"])
         popdir()
 
