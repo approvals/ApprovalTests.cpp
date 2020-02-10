@@ -1,2 +1,3 @@
-BeyondCompareReporter =>  "/Applications/Beyond Compare.app/Contents/MacOS/bcomp" "a.txt" "b.txt" &
+ "/Applications/Beyond Compare.app/Contents/MacOS/bcomp" "a.txt" "b.txt" &
+Not Run
 
