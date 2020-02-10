@@ -9,6 +9,7 @@ add_executable(${PROJECT_NAME}
     docs/ForgottenToConfigure.cpp
     utilities/ExceptionCollectorTests.cpp
     DocTestApprovalTestTests.cpp
+    reporters/CustomReporterTests.cpp
     )
 target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests doctest::doctest)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
