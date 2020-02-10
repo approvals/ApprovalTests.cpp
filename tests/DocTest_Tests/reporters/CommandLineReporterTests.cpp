@@ -38,16 +38,12 @@ TEST_CASE("Test Command Lines")
         std::make_shared<Linux::KDiff3Reporter>()};
     for (const auto& reporter : reporters)
     {
-        reporter->isTest = true;
-
         reporter->useCygwinConversions(false);
-        reporter->report("a.txt", "b.txt");
-        stream << "native: " << reporter->lastCommand
+        stream << "native: " << reporter->getCommandLine("a.txt", "b.txt")
                << '\n';
 
         reporter->useCygwinConversions(true);
-        reporter->report("a.txt", "b.txt");
-        stream << "cygwin: " << reporter->lastCommand
+        stream << "cygwin: " << reporter->getCommandLine("a.txt", "b.txt")
                << '\n';
         stream << '\n';
     }
