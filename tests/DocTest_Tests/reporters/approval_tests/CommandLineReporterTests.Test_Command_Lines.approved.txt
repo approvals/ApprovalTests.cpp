@@ -1,3 +1,5 @@
  "/Applications/Beyond Compare.app/Contents/MacOS/bcomp" "a.txt" "b.txt" &
+cygwin  "$(cygpath '/Applications/Beyond Compare.app/Contents/MacOS/bcomp')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
  "/Applications/Kaleidoscope.app/Contents/MacOS/ksdiff" "a.txt" "b.txt" &
+cygwin  "$(cygpath '/Applications/Kaleidoscope.app/Contents/MacOS/ksdiff')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 

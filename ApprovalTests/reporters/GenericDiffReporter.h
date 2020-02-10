@@ -26,9 +26,9 @@ namespace ApprovalTests
             checkForCygwin();
         }
 
-        void checkForCygwin()
+        void checkForCygwin(bool force = false)
         {
-            if (SystemUtils::isCygwin())
+            if (force || SystemUtils::isCygwin())
             {
                 launcher.setConvertArgumentsForSystemLaunchingFunction(
                     convertForCygwin);
@@ -38,10 +38,6 @@ namespace ApprovalTests
         static std::vector<std::string>
         convertForCygwin(std::vector<std::string> argv)
         {
-            if (!SystemUtils::isCygwin())
-            {
-                return argv;
-            }
             std::vector<std::string> copy = argv;
             for (size_t i = 0; i != argv.size(); ++i)
             {
