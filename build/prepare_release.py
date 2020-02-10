@@ -2,6 +2,7 @@ import os
 import shutil
 import time
 import version
+from git import Repo
 
 from utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir, \
     check_step_with_revert, calculate_sha256
@@ -32,12 +33,22 @@ class PrepareRelease:
 
     def check_pre_conditions_for_publish(self):
         if self.details.push_to_production:
-            run(["git", "branch"])
-            check_step("we are on the master branch")
+            repo = Repo(self.details.main_project_dir)
+            assert not repo.bare
 
-            run(["git", "status"])
-            check_step("everything is committed")
-            check_step("everything is pushed")
+            # run(["git", "branch"])
+            assert (repo.active_branch.name == 'master')
+            # check_step("we are on the master branch")
+
+            # run(["git", "status"])
+            # From https://stackoverflow.com/questions/31959425/how-to-get-staged-files-using-gitpython
+            assert (len(repo.index.diff(None)) == 0)  # Modified
+            assert (len(repo.index.diff("HEAD")) == 0)  # Staged
+            # check_step("everything is committed")
+
+            # From https://stackoverflow.com/questions/15849640/how-to-get-count-of-unpublished-commit-with-gitpython
+            assert (len(list(repo.iter_commits('master@{u}..master'))) == 0)
+            # check_step("everything is pushed")
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/commits/master"])
             check_step("the builds are passing")
