@@ -7,11 +7,12 @@ using namespace ApprovalTests;
 
 TEST_CASE("Test Command Lines")
 {
+    std::stringstream stream;
     SystemUtils::debugCommandLines().isTest = true;
     auto reporter = Mac::BeyondCompareReporter();
     reporter.report("a.txt", "b.txt");
-    std::string output = "BeyondCompareReporter => " +
-                         SystemUtils::debugCommandLines().lastCommand;
+    stream << "BeyondCompareReporter => "
+           << SystemUtils::debugCommandLines().lastCommand << '\n';
     SystemUtils::debugCommandLines().isTest = false;
-    Approvals::verify(output);
+    Approvals::verify(stream.str());
 }
