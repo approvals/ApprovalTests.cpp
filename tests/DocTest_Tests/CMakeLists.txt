@@ -10,6 +10,7 @@ add_executable(${PROJECT_NAME}
     utilities/ExceptionCollectorTests.cpp
     DocTestApprovalTestTests.cpp
     reporters/CustomReporterTests.cpp
+    reporters/CommandLineReporterTests.cpp
     )
 target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests doctest::doctest)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
