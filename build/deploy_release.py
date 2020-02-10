@@ -13,6 +13,7 @@ class DeployRelease:
         self.details = details
 
     # TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
+    # TODO try out https://pypi.org/project/GitPython/
 
     # Starter Project
     def commit_starter_project(self):
