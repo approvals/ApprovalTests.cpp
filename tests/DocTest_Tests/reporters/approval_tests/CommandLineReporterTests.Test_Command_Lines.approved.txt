@@ -1,7 +1,22 @@
 native:  "/Applications/Beyond Compare.app/Contents/MacOS/bcomp" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '/Applications/Beyond Compare.app/Contents/MacOS/bcomp')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
+native:  "/Applications/DiffMerge.app/Contents/MacOS/DiffMerge" "a.txt" "b.txt" &
+cygwin:  "$(cygpath '/Applications/DiffMerge.app/Contents/MacOS/DiffMerge')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
+
 native:  "/Applications/Kaleidoscope.app/Contents/MacOS/ksdiff" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '/Applications/Kaleidoscope.app/Contents/MacOS/ksdiff')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
+
+native:  "/Applications/p4merge.app/Contents/MacOS/p4merge" "a.txt" "b.txt" &
+cygwin:  "$(cygpath '/Applications/p4merge.app/Contents/MacOS/p4merge')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
+
+native:  "/Applications/kdiff3.app/Contents/MacOS/kdiff3" "a.txt" "b.txt" &
+cygwin:  "$(cygpath '/Applications/kdiff3.app/Contents/MacOS/kdiff3')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
+
+native:  "/Applications/TkDiff.app/Contents/MacOS/tkdiff" "a.txt" "b.txt" &
+cygwin:  "$(cygpath '/Applications/TkDiff.app/Contents/MacOS/tkdiff')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
+
+native:  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "a.txt" "b.txt" &
+cygwin:  "$(cygpath '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
 
