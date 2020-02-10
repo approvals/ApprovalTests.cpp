@@ -20,12 +20,13 @@ TEST_CASE("Test Command Lines")
     {
         SystemUtils::debugCommandLines().lastCommand = "Not Run";
         reporter->report("a.txt", "b.txt");
-        stream << SystemUtils::debugCommandLines().lastCommand << '\n';
+        stream << "native: " << SystemUtils::debugCommandLines().lastCommand << '\n';
 
         reporter->checkForCygwin(true);
         SystemUtils::debugCommandLines().lastCommand = "Not Run";
         reporter->report("a.txt", "b.txt");
-        stream << "cygwin " << SystemUtils::debugCommandLines().lastCommand << '\n';
+        stream << "cygwin: " << SystemUtils::debugCommandLines().lastCommand << '\n';
+        stream << '\n';
     }
     SystemUtils::debugCommandLines().isTest = false;
     Approvals::verify(stream.str());
