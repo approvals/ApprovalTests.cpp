@@ -28,10 +28,20 @@ namespace ApprovalTests
 
         void checkForCygwin()
         {
-            if (SystemUtils::isCygwin())
+            useCygwinConversions(SystemUtils::isCygwin());
+        }
+
+        void useCygwinConversions(bool useCygwin)
+        {
+            if (useCygwin)
             {
                 launcher.setConvertArgumentsForSystemLaunchingFunction(
                     convertForCygwin);
+            }
+            else
+            {
+                launcher.setConvertArgumentsForSystemLaunchingFunction(
+                    SystemLauncher::doNothing);
             }
         }
 
