@@ -11,7 +11,7 @@ namespace ApprovalTests
 {
     class GenericDiffReporter : public CommandReporter
     {
-    private:
+    public:
         SystemLauncher launcher;
 
     public:
@@ -26,9 +26,9 @@ namespace ApprovalTests
             checkForCygwin();
         }
 
-        void checkForCygwin(bool force = false)
+        void checkForCygwin()
         {
-            if (force || SystemUtils::isCygwin())
+            if (SystemUtils::isCygwin())
             {
                 launcher.setConvertArgumentsForSystemLaunchingFunction(
                     convertForCygwin);

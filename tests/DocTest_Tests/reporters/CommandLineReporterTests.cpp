@@ -39,12 +39,15 @@ TEST_CASE("Test Command Lines")
         std::make_shared<Linux::KDiff3Reporter>()};
     for (const auto& reporter : reporters)
     {
+        reporter->launcher.setConvertArgumentsForSystemLaunchingFunction(
+            SystemLauncher::doNothing);
         SystemUtils::debugCommandLines().lastCommand = "Not Run";
         reporter->report("a.txt", "b.txt");
         stream << "native: " << SystemUtils::debugCommandLines().lastCommand
                << '\n';
 
-        reporter->checkForCygwin(true);
+        reporter->launcher.setConvertArgumentsForSystemLaunchingFunction(
+            GenericDiffReporter::convertForCygwin);
         SystemUtils::debugCommandLines().lastCommand = "Not Run";
         reporter->report("a.txt", "b.txt");
         stream << "cygwin: " << SystemUtils::debugCommandLines().lastCommand
