@@ -10,7 +10,6 @@ using namespace ApprovalTests;
 TEST_CASE("Test Command Lines")
 {
     std::stringstream stream;
-    SystemUtils::debugCommandLines().isTest = true;
     std::vector<std::shared_ptr<GenericDiffReporter>> reporters = {
         // Mac
         std::make_shared<Mac::BeyondCompareReporter>(),
@@ -39,19 +38,18 @@ TEST_CASE("Test Command Lines")
         std::make_shared<Linux::KDiff3Reporter>()};
     for (const auto& reporter : reporters)
     {
+        reporter->isTest = true;
+
         reporter->useCygwinConversions(false);
-        SystemUtils::debugCommandLines().lastCommand = "Not Run";
         reporter->report("a.txt", "b.txt");
-        stream << "native: " << SystemUtils::debugCommandLines().lastCommand
+        stream << "native: " << reporter->lastCommand
                << '\n';
 
         reporter->useCygwinConversions(true);
-        SystemUtils::debugCommandLines().lastCommand = "Not Run";
         reporter->report("a.txt", "b.txt");
-        stream << "cygwin: " << SystemUtils::debugCommandLines().lastCommand
+        stream << "cygwin: " << reporter->lastCommand
                << '\n';
         stream << '\n';
     }
-    SystemUtils::debugCommandLines().isTest = false;
     Approvals::verify(stream.str());
 }

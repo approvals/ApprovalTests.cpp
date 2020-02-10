@@ -22,10 +22,22 @@ namespace ApprovalTests
         }
 
     public:
+        bool isTest = false;
+        mutable std::string lastCommand;
+
         bool report(std::string received, std::string approved) const override
         {
             FileUtils::ensureFileExists(approved);
-            return l->launch(getFullCommand(received, approved));
+            if (isTest)
+            {
+                lastCommand =
+                    l->getCommandLine(getFullCommand(received, approved));
+                return true;
+            }
+            else
+            {
+                return l->launch(getFullCommand(received, approved));
+            }
         }
 
         std::vector<std::string>

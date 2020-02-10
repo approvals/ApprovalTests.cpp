@@ -57,12 +57,19 @@ namespace ApprovalTests
 
         bool launch(std::vector<std::string> argv) override
         {
-            if (!exists(argv.front()) &&
-                (!SystemUtils::debugCommandLines().isTest))
+            if (!exists(argv.front()))
             {
                 return false;
             }
 
+            std::string launch = getCommandLine(argv);
+
+            SystemUtils::runSystemCommandOrThrow(launch);
+            return true;
+        }
+
+        std::string getCommandLine(std::vector<std::string> argv) const override
+        {
             argv = convertArgumentsForSystemLaunching(argv);
 
             std::string command =
@@ -75,8 +82,7 @@ namespace ApprovalTests
             std::string launch = SystemUtils::isWindowsOs()
                                      ? ("start \"\" " + command)
                                      : (command + " &");
-            SystemUtils::runSystemCommandOrThrow(launch);
-            return true;
+            return launch;
         }
     };
 }
