@@ -10,7 +10,6 @@ from deploy_release import DeployRelease
 # Automate the check_steps
 # Improve the chdir to start at the top-level directory - and check that we are the top-level
 # Simplify pushdir/popdir - ideally make it RAII - with with!
-# Create Python requirements.txt file
 # Review folder structure for Python scripts
 # Add a reminder to close any release milestone
 
