@@ -47,6 +47,10 @@ class DeployRelease:
         # published on github
         new_version_without_v = version.get_version_without_v(self.details.new_version)
         run(['conan', 'create', '.', F'{new_version_without_v}@'])
+
+        # TODO Commit the changes - with message f'Add approvaltests.cpp {new_version_without_v}'
+        # TODO Push the changes - NB on the feature branch for the release
+
         popdir()
 
         check_step("that you have created a Pull Request for conan-center-index?")
