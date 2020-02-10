@@ -57,7 +57,8 @@ namespace ApprovalTests
 
         bool launch(std::vector<std::string> argv) override
         {
-            if (!exists(argv.front()) && (! SystemUtils::debugCommandLines().isTest))
+            if (!exists(argv.front()) &&
+                (!SystemUtils::debugCommandLines().isTest))
             {
                 return false;
             }

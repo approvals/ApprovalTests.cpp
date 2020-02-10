@@ -36,18 +36,19 @@ TEST_CASE("Test Command Lines")
 
         // Linux
         std::make_shared<Linux::MeldReporter>(),
-        std::make_shared<Linux::KDiff3Reporter>()
-    };
+        std::make_shared<Linux::KDiff3Reporter>()};
     for (const auto& reporter : reporters)
     {
         SystemUtils::debugCommandLines().lastCommand = "Not Run";
         reporter->report("a.txt", "b.txt");
-        stream << "native: " << SystemUtils::debugCommandLines().lastCommand << '\n';
+        stream << "native: " << SystemUtils::debugCommandLines().lastCommand
+               << '\n';
 
         reporter->checkForCygwin(true);
         SystemUtils::debugCommandLines().lastCommand = "Not Run";
         reporter->report("a.txt", "b.txt");
-        stream << "cygwin: " << SystemUtils::debugCommandLines().lastCommand << '\n';
+        stream << "cygwin: " << SystemUtils::debugCommandLines().lastCommand
+               << '\n';
         stream << '\n';
     }
     SystemUtils::debugCommandLines().isTest = false;
