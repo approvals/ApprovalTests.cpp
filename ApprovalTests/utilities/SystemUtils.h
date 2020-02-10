@@ -183,8 +183,28 @@ namespace ApprovalTests
             }
         }
 
+        // Begin temporary test enabler
+        struct DebugCommandLines
+        {
+            bool isTest = false;
+            std::string lastCommand;
+        };
+
+        static DebugCommandLines& debugCommandLines()
+        {
+            static DebugCommandLines value;
+            return value;
+        }
+        // End temporary test enabler
+
         static void runSystemCommandOrThrow(const std::string& command)
         {
+            if (debugCommandLines().isTest)
+            {
+                debugCommandLines().lastCommand = command;
+                return;
+            }
+
             int exitCode = system(command.c_str());
 
             if (exitCode != 0)
