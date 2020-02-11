@@ -1,4 +1,4 @@
-#include "catch2/catch.hpp"
+#include "doctest/doctest.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 
 using namespace ApprovalTests;

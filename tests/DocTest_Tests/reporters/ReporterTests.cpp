@@ -1,5 +1,5 @@
 
-#include "catch2/catch.hpp"
+#include "doctest/doctest.h"
 #include "TestReporter.h"
 #include "FakeReporter.h"
 #include "ApprovalTests/reporters/FirstWorkingReporter.h"

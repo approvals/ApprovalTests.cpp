@@ -1,4 +1,4 @@
-#include "catch2/catch.hpp"
+#include "doctest/doctest.h"
 #include "ApprovalTests/core/ApprovalException.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/reporters/QuietReporter.h"

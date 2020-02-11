@@ -1,6 +1,6 @@
 #include "catch2/catch.hpp"
 #include "ApprovalTests/writers/StringWriter.h"
-#include "../reporters/TestReporter.h"
+#include "../../DocTest_Tests/reporters/TestReporter.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/core/FileApprover.h"
 #include "ApprovalTests/Approvals.h"
