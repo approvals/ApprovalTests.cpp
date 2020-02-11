@@ -7,7 +7,6 @@
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
-#include "CommandReporter.h"
 
 namespace ApprovalTests
 {
@@ -20,9 +19,24 @@ namespace ApprovalTests
 
     struct DiffInfo
     {
+        static std::string receivedFileTemplate()
+        {
+            return "{Received}";
+        }
+
+        static std::string approvedFileTemplate()
+        {
+            return "{Approved}";
+        }
+
+        static std::string getDefaultArguments()
+        {
+            return receivedFileTemplate() + ' ' + approvedFileTemplate();
+        }
+
         DiffInfo(std::string program, Type type)
             : program(std::move(program))
-            , arguments(CommandReporter::getDefaultArguments())
+            , arguments(getDefaultArguments())
             , type(type)
         {
         }
