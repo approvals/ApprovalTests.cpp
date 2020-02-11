@@ -117,6 +117,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_MACROS_ENTRY(
                 KDIFF3,
                 DiffInfo("{ProgramFiles}KDiff3\\kdiff3.exe", Type::TEXT))
+
             APPROVAL_TESTS_MACROS_ENTRY(
                 VS_CODE,
                 DiffInfo("{ProgramFiles}Microsoft VS Code\\Code.exe",
