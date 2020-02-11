@@ -1,11 +1,9 @@
 #ifndef APPROVALTESTS_CPP_APPROVALS_HPP
 #define APPROVALTESTS_CPP_APPROVALS_HPP
 
-// Created with some manual editing of the output of:
+// Created with:
 //   cd ApprovalTests.cpp
-//   find ApprovalTests -depth -name \*.h | sed -e 's/^/#include "/' | sed -e 's/$/"/' | sort
-
-// TODO Add mechanism to update this - and check it is kept uptodate
+//   ./scripts/create_simulated_single_header.sh
 
 #include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/Approvals.h"
@@ -27,6 +25,7 @@
 #include "ApprovalTests/integrations/google/GoogleTestApprovals.h"
 #include "ApprovalTests/integrations/ut/UTApprovals.h"
 #include "ApprovalTests/launchers/CommandLauncher.h"
+#include "ApprovalTests/launchers/ForegroundSystemLauncher.h"
 #include "ApprovalTests/launchers/SystemLauncher.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/namers/DefaultNamerDisposer.h"
@@ -45,6 +44,8 @@
 #include "ApprovalTests/reporters/ClipboardReporter.h"
 #include "ApprovalTests/reporters/CombinationReporter.h"
 #include "ApprovalTests/reporters/CommandReporter.h"
+#include "ApprovalTests/reporters/ConsoleDiffReporter.h"
+#include "ApprovalTests/reporters/CustomReporter.h"
 #include "ApprovalTests/reporters/DefaultFrontLoadedReporter.h"
 #include "ApprovalTests/reporters/DefaultReporter.h"
 #include "ApprovalTests/reporters/DefaultReporterDisposer.h"
@@ -59,6 +60,7 @@
 #include "ApprovalTests/reporters/LinuxReporters.h"
 #include "ApprovalTests/reporters/MacReporters.h"
 #include "ApprovalTests/reporters/QuietReporter.h"
+#include "ApprovalTests/reporters/TextDiffReporter.h"
 #include "ApprovalTests/reporters/WindowsReporters.h"
 #include "ApprovalTests/utilities/Blocker.h"
 #include "ApprovalTests/utilities/CartesianProduct.h"
