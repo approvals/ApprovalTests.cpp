@@ -12,30 +12,21 @@ Let's say that you really enjoy using Sublime Merge, and on your system it's loc
 
 If you were to run this the command line, the full command would look this this:
 
-```bash
-"/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" \
-    mergetool --no-wait test.received.txt test.approved.txt -o test.approved.txt
-```
+snippet: CustomReporterTests.Creating_Custom_Reporters.approved.txt
 
 You can do this simply by creating a Reporter using:
 
-```c++
-auto path = "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
-auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
-auto reporter = CustomReporter::create(path, arguments);
-```
+snippet: use_custom_reporter
 
 By default, this will run in the background. Most of the time this is what you want.
 
-However, you can force it to run in the foreground with:
+However, **COMING SOON!** you can force it to run in the foreground with:
 
 ```c++
 auto reporter = CustomReporter::createForegroundReporter(path, arguments);
 ```
 
 On Windows, you can specify a search path for the installed location of a program with `{ProgramFiles}`.
-
-TODO Note the inconsistent case of the values in `{}` - we used lower-case for `{Received}` and `{Approved}`.
 
 ```c++
 auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";

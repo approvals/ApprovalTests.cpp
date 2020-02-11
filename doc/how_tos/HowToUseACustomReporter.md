@@ -19,30 +19,36 @@ Let's say that you really enjoy using Sublime Merge, and on your system it's loc
 
 If you were to run this the command line, the full command would look this this:
 
-```bash
-"/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" \
-    mergetool --no-wait test.received.txt test.approved.txt -o test.approved.txt
+<!-- snippet: CustomReporterTests.Creating_Custom_Reporters.approved.txt -->
+<a id='snippet-CustomReporterTests.Creating_Custom_Reporters.approved.txt'/></a>
+```txt
+"/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" mergetool --no-wait "test.received.txt" "test.approved.txt" -o "test.approved.txt" &
 ```
+<sup><a href='/tests/DocTest_Tests/reporters/approval_tests/CustomReporterTests.Creating_Custom_Reporters.approved.txt#L1-L1' title='File snippet `CustomReporterTests.Creating_Custom_Reporters.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-CustomReporterTests.Creating_Custom_Reporters.approved.txt' title='Navigate to start of snippet `CustomReporterTests.Creating_Custom_Reporters.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
 
 You can do this simply by creating a Reporter using:
 
-```c++
-auto path = "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
+<!-- snippet: use_custom_reporter -->
+<a id='snippet-use_custom_reporter'/></a>
+```cpp
+auto path =
+    "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
 auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
 auto reporter = CustomReporter::create(path, arguments);
 ```
+<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L10-L15' title='File snippet `use_custom_reporter` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_reporter' title='Navigate to start of snippet `use_custom_reporter`'>anchor</a></sup>
+<!-- endsnippet -->
 
 By default, this will run in the background. Most of the time this is what you want.
 
-However, you can force it to run in the foreground with:
+However, **COMING SOON!** you can force it to run in the foreground with:
 
 ```c++
 auto reporter = CustomReporter::createForegroundReporter(path, arguments);
 ```
 
 On Windows, you can specify a search path for the installed location of a program with `{ProgramFiles}`.
-
-TODO Note the inconsistent case of the values in `{}` - we used lower-case for `{Received}` and `{Approved}`.
 
 ```c++
 auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";

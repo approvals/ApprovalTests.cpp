@@ -37,10 +37,11 @@ By way of an example, for supporting a new Reporter on macOS, the steps are:
 ```h
 APPROVAL_TESTS_MACROS_ENTRY(
     ARAXIS_MERGE,
-    DiffInfo("/Applications/Araxis Merge.app/Contents/Utilities/compare",
-             Type::TEXT_AND_IMAGE))
+    DiffInfo(
+        "/Applications/Araxis Merge.app/Contents/Utilities/compare",
+        Type::TEXT_AND_IMAGE))
 ```
-<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L27-L32' title='File snippet `add_reporter_macro` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro' title='Navigate to start of snippet `add_reporter_macro`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L27-L33' title='File snippet `add_reporter_macro` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro' title='Navigate to start of snippet `add_reporter_macro`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Edit [ApprovalTests/reporters/MacReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/MacReporters.h)

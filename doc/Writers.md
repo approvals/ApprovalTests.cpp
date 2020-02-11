@@ -37,11 +37,6 @@ HtmlWriter writer("<h1>hello world</h1>", ".html");
 Approvals::verify(writer);
 ```
 <sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L10-L13' title='File snippet `use_custom_writer` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_writer' title='Navigate to start of snippet `use_custom_writer`'>anchor</a></sup>
-<a id='snippet-use_custom_writer-1'/></a>
-```cpp
-
-```
-<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L10-L11' title='File snippet `use_custom_writer` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_writer-1' title='Navigate to start of snippet `use_custom_writer`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Using custom filename extensions
