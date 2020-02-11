@@ -2,6 +2,7 @@
 #define APPROVALTESTS_CPP_COMMANDREPORTER_H
 
 #include <utility>
+#include <memory>
 #include "ApprovalTests/launchers/CommandLauncher.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/core/Reporter.h"
@@ -11,20 +12,49 @@ namespace ApprovalTests
     using ConvertArgumentsFunctionPointer =
         std::vector<std::string> (*)(std::vector<std::string>);
 
+    class ConvertForCygwin
+    {
+    public:
+        virtual std::string convertProgramForCygwin(const std::string& filePath)
+        {
+            return "$(cygpath '" + filePath + "')";
+        }
+
+        virtual std::string
+        convertFileArgumentForCygwin(const std::string& filePath)
+        {
+            return "$(cygpath -aw '" + filePath + "')";
+        }
+    };
+
+    class DoNothing : public ConvertForCygwin
+    {
+    public:
+        virtual std::string convertProgramForCygwin(const std::string& filePath)
+        {
+            return filePath;
+        }
+
+        virtual std::string
+        convertFileArgumentForCygwin(const std::string& filePath)
+        {
+            return filePath;
+        }
+    };
+
     // Generic reporter to launch arbitrary command
     class CommandReporter : public Reporter
     {
     private:
         std::string cmd;
         CommandLauncher* l;
-        ConvertArgumentsFunctionPointer convertArgumentsForSystemLaunching;
+        std::shared_ptr<ConvertForCygwin> converter;
 
     protected:
         CommandReporter(std::string command, CommandLauncher* launcher)
             : cmd(std::move(command)), l(launcher)
         {
             checkForCygwin();
-            convertArgumentsForSystemLaunching = doNothing;
         }
 
     public:
@@ -40,13 +70,6 @@ namespace ApprovalTests
             return l->getCommandLine(getFullCommand(received, approved));
         }
 
-        // This function is an implementation detail for the support of Reporters on cygwin
-        void setConvertArgumentsForSystemLaunchingFunction(
-            ConvertArgumentsFunctionPointer function)
-        {
-            convertArgumentsForSystemLaunching = function;
-        }
-
         std::vector<std::string>
         getFullCommand(const std::string& received,
                        const std::string& approved) const
@@ -56,7 +79,7 @@ namespace ApprovalTests
             fullCommand.push_back(received);
             fullCommand.push_back(approved);
 
-            fullCommand = convertArgumentsForSystemLaunching(fullCommand);
+            fullCommand = convertForCygwin(fullCommand);
 
             return fullCommand;
         }
@@ -70,11 +93,11 @@ namespace ApprovalTests
         {
             if (useCygwin)
             {
-                setConvertArgumentsForSystemLaunchingFunction(convertForCygwin);
+                converter = std::make_shared<ConvertForCygwin>();
             }
             else
             {
-                setConvertArgumentsForSystemLaunchingFunction(doNothing);
+                converter = std::make_shared<DoNothing>();
             }
         }
 
@@ -83,8 +106,8 @@ namespace ApprovalTests
             return argv;
         }
 
-        static std::vector<std::string>
-        convertForCygwin(std::vector<std::string> argv)
+        std::vector<std::string>
+        convertForCygwin(std::vector<std::string> argv) const
         {
             std::vector<std::string> copy = argv;
             for (size_t i = 0; i != argv.size(); ++i)
@@ -92,26 +115,18 @@ namespace ApprovalTests
                 if (i == 0)
                 {
                     const std::string& arg_value = argv[i];
-                    copy[i] = convertProgramForCygwin(arg_value);
+                    copy[i] = converter->convertProgramForCygwin(arg_value);
                 }
                 else
                 {
                     const std::string& arg_value = argv[i];
-                    copy[i] = convertFileArgumentForCygwin(arg_value);
+                    copy[i] =
+                        converter->convertFileArgumentForCygwin(arg_value);
                 }
             }
             return copy;
         }
 
-        static std::string convertProgramForCygwin(const std::string& arg_value)
-        {
-            return "$(cygpath '" + arg_value + "')";
-        }
-
-        static std::string convertFileArgumentForCygwin(const std::string& arg_value)
-        {
-            return "$(cygpath -aw '" + arg_value + "')";
-        }
     };
 }
 #endif //APPROVALTESTS_CPP_COMMANDREPORTER_H
