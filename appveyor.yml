@@ -27,4 +27,4 @@ build_script:
 
 test_script:
 - cmd: |
-    ctest --verbose --parallel 4 -C Debug
+    ctest --verbose -C Debug

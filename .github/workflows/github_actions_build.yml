@@ -126,5 +126,5 @@ jobs:
       run: cmake --build .
       working-directory: ${{ env.BUILD_DIR_PATH }}
     - name: test
-      run: ctest --verbose --parallel 4 -C Debug
+      run: ctest --verbose -C Debug
       working-directory: ${{ env.BUILD_DIR_PATH }}
