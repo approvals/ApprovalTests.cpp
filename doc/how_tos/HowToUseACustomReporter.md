@@ -11,9 +11,9 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 
 
-This guide is creating the ability to use a custom reporter on that works on your machine.
+This guide is for creating the ability to use a custom reporter that works on your machine.
 
-For figuring out how to make a more robust custom reporter, that you might want to submit back to us as a Pull Request, check out 'How to Create and Submit a New Reporter to the ApprovalTests.cpp'
+For figuring out how to make a more robust custom reporter, that you might want to submit back to us as a Pull Request, check out 'How to Create and Submit a New Reporter to ApprovalTests.cpp'
 
 Let's say that you really enjoy using Sublime Merge, and on your system it's located in `"/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge"`
 
@@ -40,7 +40,17 @@ However, you can force it to run in the foreground with:
 auto reporter = CustomReporter::createForegroundReporter(path, arguments);
 ```
 
-See blah for wiring up this reporter as default, or pass it in to individual `verify()` method calls...
+On Windows, you can specify a search path for the installed location of a program with `{ProgramFiles}`.
+
+TODO Note the inconsistent case of the values in `{}` - we used lower-case for `{received}` and `{approved}`.
+
+```c++
+auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";
+auto arguments = "{received} {approved}"; // Do we want to make these values the default?
+auto reporter = CustomReporter::create(path, arguments);
+```
+
+See TODO for wiring up this reporter as default, or pass it in to individual `verify()` method calls...
 
 ---
 
