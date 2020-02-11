@@ -28,7 +28,7 @@ You can do this simply by creating a Reporter using:
 
 ```c++
 auto path = "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
-auto arguments = "mergetool --no-wait {received} {approved} -o {approved}";
+auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
 auto reporter = CustomReporter::create(path, arguments);
 ```
 
@@ -42,11 +42,11 @@ auto reporter = CustomReporter::createForegroundReporter(path, arguments);
 
 On Windows, you can specify a search path for the installed location of a program with `{ProgramFiles}`.
 
-TODO Note the inconsistent case of the values in `{}` - we used lower-case for `{received}` and `{approved}`.
+TODO Note the inconsistent case of the values in `{}` - we used lower-case for `{Received}` and `{Approved}`.
 
 ```c++
 auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";
-auto arguments = "{received} {approved}"; // Do we want to make these values the default?
+auto arguments = "{Received} {Approved}"; // Do we want to make these values the default?
 auto reporter = CustomReporter::create(path, arguments);
 ```
 
