@@ -39,7 +39,7 @@ TEST_CASE("Test Command Lines")
     for (const auto& reporter : reporters)
     {
         reporter->useCygwinConversions(false);
-        stream << "native: " << reporter->getCommandLine("a.txt", "b.txt")
+        stream << "unix: " << reporter->getCommandLine("a.txt", "b.txt")
                << '\n';
 
         reporter->useCygwinConversions(true);

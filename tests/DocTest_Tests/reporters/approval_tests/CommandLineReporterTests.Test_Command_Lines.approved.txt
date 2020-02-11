@@ -1,61 +1,61 @@
-native:  "/Applications/Beyond Compare.app/Contents/MacOS/bcomp" "a.txt" "b.txt" &
+unix:  "/Applications/Beyond Compare.app/Contents/MacOS/bcomp" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '/Applications/Beyond Compare.app/Contents/MacOS/bcomp')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "/Applications/DiffMerge.app/Contents/MacOS/DiffMerge" "a.txt" "b.txt" &
+unix:  "/Applications/DiffMerge.app/Contents/MacOS/DiffMerge" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '/Applications/DiffMerge.app/Contents/MacOS/DiffMerge')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "/Applications/Kaleidoscope.app/Contents/MacOS/ksdiff" "a.txt" "b.txt" &
+unix:  "/Applications/Kaleidoscope.app/Contents/MacOS/ksdiff" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '/Applications/Kaleidoscope.app/Contents/MacOS/ksdiff')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "/Applications/p4merge.app/Contents/MacOS/p4merge" "a.txt" "b.txt" &
+unix:  "/Applications/p4merge.app/Contents/MacOS/p4merge" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '/Applications/p4merge.app/Contents/MacOS/p4merge')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "/Applications/kdiff3.app/Contents/MacOS/kdiff3" "a.txt" "b.txt" &
+unix:  "/Applications/kdiff3.app/Contents/MacOS/kdiff3" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '/Applications/kdiff3.app/Contents/MacOS/kdiff3')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "/Applications/TkDiff.app/Contents/MacOS/tkdiff" "a.txt" "b.txt" &
+unix:  "/Applications/TkDiff.app/Contents/MacOS/tkdiff" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '/Applications/TkDiff.app/Contents/MacOS/tkdiff')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "a.txt" "b.txt" &
+unix:  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "{ProgramFiles}TortoiseSVN\bin\TortoiseMerge.exe" "a.txt" "b.txt" &
+unix:  "{ProgramFiles}TortoiseSVN\bin\TortoiseMerge.exe" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '{ProgramFiles}TortoiseSVN\bin\TortoiseMerge.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "{ProgramFiles}TortoiseSVN\bin\TortoiseIDiff.exe" "a.txt" "b.txt" &
+unix:  "{ProgramFiles}TortoiseSVN\bin\TortoiseIDiff.exe" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '{ProgramFiles}TortoiseSVN\bin\TortoiseIDiff.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "{ProgramFiles}TortoiseGit\bin\TortoiseGitMerge.exe" "a.txt" "b.txt" &
+unix:  "{ProgramFiles}TortoiseGit\bin\TortoiseGitMerge.exe" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '{ProgramFiles}TortoiseGit\bin\TortoiseGitMerge.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "{ProgramFiles}TortoiseGit\bin\TortoiseGitIDiff.exe" "a.txt" "b.txt" &
+unix:  "{ProgramFiles}TortoiseGit\bin\TortoiseGitIDiff.exe" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '{ProgramFiles}TortoiseGit\bin\TortoiseGitIDiff.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "{ProgramFiles}Beyond Compare 3\BCompare.exe" "a.txt" "b.txt" &
+unix:  "{ProgramFiles}Beyond Compare 3\BCompare.exe" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '{ProgramFiles}Beyond Compare 3\BCompare.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "{ProgramFiles}Beyond Compare 4\BCompare.exe" "a.txt" "b.txt" &
+unix:  "{ProgramFiles}Beyond Compare 4\BCompare.exe" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '{ProgramFiles}Beyond Compare 4\BCompare.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "{ProgramFiles}WinMerge\WinMergeU.exe" "a.txt" "b.txt" &
+unix:  "{ProgramFiles}WinMerge\WinMergeU.exe" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '{ProgramFiles}WinMerge\WinMergeU.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "{ProgramFiles}Araxis\Araxis Merge\Compare.exe" "a.txt" "b.txt" &
+unix:  "{ProgramFiles}Araxis\Araxis Merge\Compare.exe" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '{ProgramFiles}Araxis\Araxis Merge\Compare.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "{ProgramFiles}Devart\Code Compare\CodeCompare.exe" "a.txt" "b.txt" &
+unix:  "{ProgramFiles}Devart\Code Compare\CodeCompare.exe" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '{ProgramFiles}Devart\Code Compare\CodeCompare.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "{ProgramFiles}KDiff3\kdiff3.exe" "a.txt" "b.txt" &
+unix:  "{ProgramFiles}KDiff3\kdiff3.exe" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '{ProgramFiles}KDiff3\kdiff3.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "{ProgramFiles}Microsoft VS Code\Code.exe" "a.txt" "b.txt" &
+unix:  "{ProgramFiles}Microsoft VS Code\Code.exe" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '{ProgramFiles}Microsoft VS Code\Code.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "meld" "a.txt" "b.txt" &
+unix:  "meld" "a.txt" "b.txt" &
 cygwin:  "$(cygpath 'meld')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
-native:  "kdiff3" "a.txt" "b.txt" &
+unix:  "kdiff3" "a.txt" "b.txt" &
 cygwin:  "$(cygpath 'kdiff3')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
 
