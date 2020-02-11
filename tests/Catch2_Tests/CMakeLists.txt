@@ -6,7 +6,7 @@ add_executable(${PROJECT_NAME}
     StyleGuide.h
     comparators/ComparatorDisposerTest.cpp
     docs/Catch2DocsSamples.cpp
-    namers/NamerTests.cpp
+    namers/Catch2NamerTests.cpp
     utilities/FileUtilsSystemSpecificTests.cpp
     utilities/MachineBlockerTests.cpp
     )

@@ -29,7 +29,7 @@ TEST_CASE("ItCanGiveYouTheSpecName")
 TEST_CASE("ItCanGiveYouTheTestFileName")
 {
     ApprovalTestNamer namer;
-    REQUIRE(namer.getFileName() == "NamerTests");
+    REQUIRE(namer.getFileName() == "Catch2NamerTests");
 }
 
 TEST_CASE("TestProperNameCaseOnWindows")
@@ -40,7 +40,7 @@ TEST_CASE("TestProperNameCaseOnWindows")
         auto test = namer.currentTest();
         test.setFileName(StringUtils::toLower(test.getFileName()));
         namer.currentTest(&test);
-        REQUIRE(namer.getFileName() == "NamerTests");
+        REQUIRE(namer.getFileName() == "Catch2NamerTests");
     }
 }
 
@@ -66,11 +66,11 @@ TEST_CASE("ItIncludesFileContextAndSpecNames")
     REQUIRE_THAT(
         namer.getApprovedFile(".txt"),
         EndsWith(__ +
-                 "NamerTests.ItIncludesFileContextAndSpecNames.approved.txt"));
+                 "Catch2NamerTests.ItIncludesFileContextAndSpecNames.approved.txt"));
     REQUIRE_THAT(
         namer.getReceivedFile(".txt"),
         EndsWith(__ +
-                 "NamerTests.ItIncludesFileContextAndSpecNames.received.txt"));
+                 "Catch2NamerTests.ItIncludesFileContextAndSpecNames.received.txt"));
 }
 
 TEST_CASE("Clean Up Filename Transforms")
