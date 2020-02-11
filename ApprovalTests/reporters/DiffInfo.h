@@ -29,6 +29,11 @@ namespace ApprovalTests
             return "{Approved}";
         }
 
+        static std::string programFileTemplate()
+        {
+            return "{ProgramFiles}";
+        }
+
         static std::string getDefaultArguments()
         {
             return receivedFileTemplate() + ' ' + approvedFileTemplate();
@@ -53,7 +58,7 @@ namespace ApprovalTests
         std::string getProgramForOs() const
         {
             std::string result = program;
-            if (result.rfind("{ProgramFiles}", 0) == 0)
+            if (result.rfind(programFileTemplate(), 0) == 0)
             {
                 const std::vector<const char*> envVars = {
                     "ProgramFiles", "ProgramW6432", "ProgramFiles(x86)"};
@@ -68,7 +73,7 @@ namespace ApprovalTests
                     envVarValue += '\\';
 
                     auto result1 = StringUtils::replaceAll(
-                        result, "{ProgramFiles}", envVarValue);
+                        result, programFileTemplate(), envVarValue);
                     if (FileUtils::fileExists(result1))
                     {
                         return result1;
