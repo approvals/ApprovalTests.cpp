@@ -2,14 +2,14 @@ project(Catch2_Tests)
 set(CMAKE_CXX_STANDARD 17)
 add_executable(${PROJECT_NAME}
     main.cpp
-    comparators/ComparatorDisposerTest.cpp
-    core/ApprovalExceptionTests.cpp
     ApprovalsTests.cpp
     CombinationTests.cpp
-    core/FileApproverTests.cpp
     PairUtilities.h
     StyleGuide.h
     VectorTests.cpp
+    comparators/ComparatorDisposerTest.cpp
+    core/ApprovalExceptionTests.cpp
+    core/FileApproverTests.cpp
     docs/Catch2DocsSamples.cpp
     docs/CombinationsSampleCode.cpp
     docs/OverviewExamples.cpp
