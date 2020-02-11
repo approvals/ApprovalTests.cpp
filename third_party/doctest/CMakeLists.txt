@@ -1,4 +1,4 @@
-if(NOT TARGET doctest)
+if (NOT TARGET doctest)
     project(doctest CXX)
     set(CMAKE_CXX_STANDARD 11)
     add_library(${PROJECT_NAME} INTERFACE)
@@ -7,4 +7,4 @@ if(NOT TARGET doctest)
 
     # Mimic the library names in doctest's own CMake files:
     add_library(doctest::doctest ALIAS doctest)
-endif()
+endif ()

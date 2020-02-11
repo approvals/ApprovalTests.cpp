@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.8)
 
 # disable testsuite if used via add_subdirectory()
-if(NOT DEFINED PROJECT_NAME)
+if (NOT DEFINED PROJECT_NAME)
     set(NOT_SUBPROJECT ON)
-endif()
+endif ()
 
 project(ApprovalTests.cpp)
 
@@ -14,19 +14,19 @@ add_subdirectory(ApprovalTests)
 
 set(CMAKE_VERBOSE_MAKEFILE off)
 
-if(APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
+if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
     include(CodeCoverage)
     append_coverage_compiler_flags()
-endif()
+endif ()
 
 if (NOT_SUBPROJECT)
-    if(NOT TARGET gtest_main)
+    if (NOT TARGET gtest_main)
         # Download and unpack googletest at configure time
         configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
         execute_process(COMMAND "${CMAKE_COMMAND}" -G "${CMAKE_GENERATOR}" .
-                WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download" )
+                WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download")
         execute_process(COMMAND "${CMAKE_COMMAND}" --build .
-                WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download" )
+                WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download")
 
         # Prevent GoogleTest from overriding our compiler/linker options
         # when building with Visual Studio
@@ -36,24 +36,24 @@ if (NOT_SUBPROJECT)
         # the following targets: gtest, gtest_main, gmock
         # and gmock_main
         add_subdirectory("${CMAKE_BINARY_DIR}/googletest-src"
-                         "${CMAKE_BINARY_DIR}/googletest-build")
-    endif()
-endif()
+                "${CMAKE_BINARY_DIR}/googletest-build")
+    endif ()
+endif ()
 
 # This will optionally add the other third-party sub-directories
 add_subdirectory(third_party)
 
-if(NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_TESTING OR APPROVAL_TESTS_BUILD_EXAMPLES)
+if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_TESTING OR APPROVAL_TESTS_BUILD_EXAMPLES)
     enable_testing()
-endif()
+endif ()
 
-if(NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_TESTING)
+if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_TESTING)
     add_subdirectory(tests)
-endif()
+endif ()
 
-if(NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_EXAMPLES)
+if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_EXAMPLES)
     add_subdirectory(examples)
-endif()
+endif ()
 
 #message("CMAKE_VERSION = ${CMAKE_VERSION}")
 #message("CMAKE_GENERATOR = ${CMAKE_GENERATOR}")

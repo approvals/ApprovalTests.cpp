@@ -1,4 +1,4 @@
-if(NOT TARGET Catch2)
+if (NOT TARGET Catch2)
     project(Catch2 CXX)
     set(CMAKE_CXX_STANDARD 11)
     add_library(${PROJECT_NAME} INTERFACE)
@@ -11,4 +11,4 @@ if(NOT TARGET Catch2)
     # This one is historical, left over from when ApprovalTests.cpp was first created.
     # We could encourage users to move away from it.
     add_library(catch2 ALIAS Catch2)
-endif()
+endif ()

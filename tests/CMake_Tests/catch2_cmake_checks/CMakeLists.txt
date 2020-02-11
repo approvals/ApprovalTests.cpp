@@ -13,7 +13,7 @@ add_library(
 target_link_libraries(
         catch2_cmake_checks_capital_Catch2 Catch2)
 
-if(NOT_SUBPROJECT)
+if (NOT_SUBPROJECT)
     # Don't build this if we are in a sub-project, in case the user has pulled in
     # a full Catch2 clone, as in that case, our old, non-standard library won't exist...
     #
@@ -23,7 +23,7 @@ if(NOT_SUBPROJECT)
             catch2_cmake_checks_lower_case_catch2 catch2_cmake_checks.cpp)
     target_link_libraries(
             catch2_cmake_checks_lower_case_catch2 catch2)
-endif()
+endif ()
 
 # Check that our real target name for Catch2 matches that used in the Catch2 project
 target_compile_definitions(Catch2 INTERFACE DUMMY_TEST_DEFINE)

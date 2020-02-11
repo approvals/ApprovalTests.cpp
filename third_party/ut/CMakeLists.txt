@@ -1,4 +1,4 @@
-if(NOT TARGET boost.ut)
+if (NOT TARGET boost.ut)
     project(boost.ut CXX)
     set(CMAKE_CXX_STANDARD 17)
     add_library(${PROJECT_NAME} INTERFACE)
@@ -9,8 +9,8 @@ if(NOT TARGET boost.ut)
         target_compile_options(boost.ut INTERFACE
                 -Wno-c99-extensions # Suppress "designated initializers are a C99 feature"
                 )
-    endif()
+    endif ()
 
     # Mimic the library names in BOOST.ut's own CMake files:
     add_library(ut ALIAS boost.ut)
-endif()
+endif ()
