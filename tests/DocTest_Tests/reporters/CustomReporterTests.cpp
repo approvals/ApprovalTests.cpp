@@ -5,9 +5,9 @@
 
 using namespace ApprovalTests;
 
-TEST_CASE("YouCanUseAWriter")
+TEST_CASE("Creating Custom Reporters")
 {
-    // begin-snippet: use_custom_writer
+    // begin-snippet: use_custom_reporter
     auto path =
         "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
     auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
@@ -16,5 +16,6 @@ TEST_CASE("YouCanUseAWriter")
 
     reporter->useCygwinConversions(false);
     reporter->launcher.invokeForWindows(false);
-    Approvals::verify(reporter->getCommandLine("r.txt", "a.txt"));
+    Approvals::verify(
+        reporter->getCommandLine("test.received.txt", "test.approved.txt"));
 }

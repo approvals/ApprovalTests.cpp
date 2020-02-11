@@ -1,0 +1,1 @@
+"/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" mergetool --no-wait "test.received.txt" "test.approved.txt" -o "test.approved.txt" &
