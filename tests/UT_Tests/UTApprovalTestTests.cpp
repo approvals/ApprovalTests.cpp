@@ -3,7 +3,7 @@
 #include "ApprovalTests.hpp"
 // end-snippet
 
-#include "tests/Catch2_Tests/reporters/FakeReporter.h"
+#include "tests/DocTest_Tests/reporters/FakeReporter.h"
 
 int main()
 {
