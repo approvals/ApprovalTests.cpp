@@ -20,7 +20,9 @@ namespace ApprovalTests
     struct DiffInfo
     {
         DiffInfo(std::string program, Type type)
-            : program(std::move(program)), arguments("%s %s"), type(type)
+            : program(std::move(program))
+            , arguments("{Received} {Approved}")
+            , type(type)
         {
         }
         DiffInfo(std::string program, std::string arguments, Type type)
