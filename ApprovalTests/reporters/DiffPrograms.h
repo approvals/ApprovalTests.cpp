@@ -58,6 +58,7 @@ namespace ApprovalTests
                          "-d %s %s",
                          Type::TEXT))
         }
+
         namespace Linux
         {
             // More ideas available from: https://www.tecmint.com/best-linux-file-diff-tools-comparison/
@@ -65,6 +66,7 @@ namespace ApprovalTests
 
             APPROVAL_TESTS_MACROS_ENTRY(MELD, DiffInfo("meld", Type::TEXT))
         }
+
         namespace Windows
         {
             APPROVAL_TESTS_MACROS_ENTRY(
