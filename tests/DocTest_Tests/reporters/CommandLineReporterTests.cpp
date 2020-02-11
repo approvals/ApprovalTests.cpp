@@ -39,10 +39,16 @@ TEST_CASE("Test Command Lines")
     for (const auto& reporter : reporters)
     {
         reporter->useCygwinConversions(false);
+        reporter->launcher.invokeForWindows(true);
+        stream << "windows: " << reporter->getCommandLine("a.txt", "b.txt")
+               << '\n';
+
+        reporter->launcher.invokeForWindows(false);
         stream << "unix: " << reporter->getCommandLine("a.txt", "b.txt")
                << '\n';
 
         reporter->useCygwinConversions(true);
+        reporter->launcher.invokeForWindows(false);
         stream << "cygwin: " << reporter->getCommandLine("a.txt", "b.txt")
                << '\n';
         stream << '\n';

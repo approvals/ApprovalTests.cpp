@@ -19,6 +19,7 @@ namespace ApprovalTests
     {
     private:
         ConvertArgumentsFunctionPointer convertArgumentsForSystemLaunching;
+        bool useWindows_ = SystemUtils::isWindowsOs();
 
     public:
         SystemLauncher() : SystemLauncher(doNothing)
@@ -68,6 +69,11 @@ namespace ApprovalTests
             return true;
         }
 
+        void invokeForWindows(bool useWindows)
+        {
+            useWindows_ = useWindows;
+        }
+
         std::string getCommandLine(std::vector<std::string> argv) const override
         {
             argv = convertArgumentsForSystemLaunching(argv);
@@ -79,7 +85,7 @@ namespace ApprovalTests
                                 [](const std::string& a, const std::string& b) {
                                     return a + " " + "\"" + b + "\"";
                                 });
-            std::string launch = SystemUtils::isWindowsOs()
+            std::string launch = useWindows_
                                      ? ("start \"\" " + command)
                                      : (command + " &");
             return launch;
