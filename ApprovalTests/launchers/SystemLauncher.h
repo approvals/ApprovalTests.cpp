@@ -7,7 +7,6 @@
 #include "ApprovalTests/utilities/SystemUtils.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 #include <vector>
-#include <numeric>
 #include "CommandLauncher.h"
 
 namespace ApprovalTests
@@ -18,9 +17,9 @@ namespace ApprovalTests
         bool useWindows_ = SystemUtils::isWindowsOs();
 
     public:
-        bool launch(std::vector<std::string> argv) override
+        bool launch(const std::string& commandLine) override
         {
-            std::string launch = getCommandLine(argv);
+            std::string launch = getCommandLine(commandLine);
 
             SystemUtils::runSystemCommandOrThrow(launch);
             return true;
@@ -31,17 +30,11 @@ namespace ApprovalTests
             useWindows_ = useWindows;
         }
 
-        std::string getCommandLine(std::vector<std::string> argv) const override
+        std::string
+        getCommandLine(const std::string& commandLine) const override
         {
-            std::string command =
-                std::accumulate(argv.begin(),
-                                argv.end(),
-                                std::string(""),
-                                [](const std::string& a, const std::string& b) {
-                                    return a + " " + "\"" + b + "\"";
-                                });
-            std::string launch =
-                useWindows_ ? ("start \"\" " + command) : (command + " &");
+            std::string launch = useWindows_ ? ("start \"\" " + commandLine)
+                                             : (commandLine + " &");
             return launch;
         }
     };

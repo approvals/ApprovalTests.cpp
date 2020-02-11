@@ -15,7 +15,8 @@ TEST_CASE("Reporters Launch Command")
     TestReporter m(true);
     bool result = m.report("r.txt", "a.txt");
     REQUIRE(m.launcher.receivedCommand() ==
-            TestReporter::getKnownGoodCommand() + " r.txt a.txt ");
+            " \"" + TestReporter::getKnownGoodCommand() +
+                "\" \"r.txt\" \"a.txt\"");
     REQUIRE(true == result);
 }
 
@@ -27,7 +28,8 @@ TEST_CASE("FirstWorkingReporter")
     FirstWorkingReporter reporter({m1, m2, m3});
     bool result = reporter.report("r.txt", "a.txt");
     REQUIRE(m2->launcher.receivedCommand() ==
-            TestReporter::getKnownGoodCommand() + " r.txt a.txt ");
+            " \"" + TestReporter::getKnownGoodCommand() +
+                "\" \"r.txt\" \"a.txt\"");
     REQUIRE(m3->launcher.receivedCommand().empty());
     REQUIRE(true == result);
 }

@@ -11,9 +11,9 @@ namespace ApprovalTests
     {
     public:
         virtual ~CommandLauncher() = default;
-        virtual bool launch(std::vector<std::string> argv) = 0;
+        virtual bool launch(const std::string& commandLine) = 0;
         virtual std::string
-        getCommandLine(std::vector<std::string> argv) const = 0;
+        getCommandLine(const std::string& commandLine) const = 0;
     };
 }
 

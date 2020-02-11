@@ -3,6 +3,7 @@
 
 #include <utility>
 #include <memory>
+#include <numeric>
 #include "ApprovalTests/launchers/CommandLauncher.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/core/Reporter.h"
@@ -86,9 +87,8 @@ namespace ApprovalTests
             return l->getCommandLine(getFullCommand(received, approved));
         }
 
-        std::vector<std::string>
-        getFullCommand(const std::string& received,
-                       const std::string& approved) const
+        std::string getFullCommand(const std::string& received,
+                                   const std::string& approved) const
         {
             auto convertedCommand = converter->convertProgramForCygwin(cmd);
             auto convertedReceived =
@@ -100,7 +100,14 @@ namespace ApprovalTests
             fullCommand.push_back(convertedReceived);
             fullCommand.push_back(convertedApproved);
 
-            return fullCommand;
+            std::string command =
+                std::accumulate(fullCommand.begin(),
+                                fullCommand.end(),
+                                std::string(""),
+                                [](const std::string& a, const std::string& b) {
+                                    return a + " " + "\"" + b + "\"";
+                                });
+            return command;
         }
 
         void checkForCygwin()

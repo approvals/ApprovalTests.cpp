@@ -12,9 +12,9 @@ namespace ApprovalTests
     class ForegroundSystemLauncher : public CommandLauncher
     {
     public:
-        bool launch(std::vector<std::string> argv) override
+        bool launch(const std::string& commandLine) override
         {
-            std::string launch = getCommandLine(argv);
+            std::string launch = getCommandLine(commandLine);
 
             // Here we may be using textual diff tools to show the diffs between
             // two files that we already know are different.
@@ -30,25 +30,14 @@ namespace ApprovalTests
             return true;
         }
 
-        std::string getCommandLine(std::vector<std::string> argv) const override
+        std::string
+        getCommandLine(const std::string& commandLine) const override
         {
-            // TODO
-            // argv = convertArgumentsForSystemLaunching(argv);
-
-            // Surround each of the arguments by double-quotes:
-            const std::string command =
-                std::accumulate(argv.begin(),
-                                argv.end(),
-                                std::string(""),
-                                [](const std::string& a, const std::string& b) {
-                                    return a + " " + "\"" + b + "\"";
-                                });
-
             // See https://stackoverflow.com/a/9965141/104370 for why the Windows string is so complex:
             const std::string launch =
                 SystemUtils::isWindowsOs()
-                    ? (std::string("cmd /S /C ") + "\"" + command + "\"")
-                    : (command);
+                    ? (std::string("cmd /S /C ") + "\"" + commandLine + "\"")
+                    : (commandLine);
             return launch;
         }
     };

@@ -14,9 +14,9 @@ private:
 
 public:
     bool working = true;
-    bool launch(std::vector<std::string> argv) override
+    bool launch(const std::string& commandLine) override
     {
-        cmd = getCommandLine(argv);
+        cmd = commandLine;
         return working;
     }
 
@@ -25,15 +25,9 @@ public:
         return cmd;
     }
 
-    std::string getCommandLine(std::vector<std::string> argv) const override
+    std::string getCommandLine(const std::string& commandLine) const override
     {
-        std::string result;
-        for (auto& it : argv)
-        {
-            result += it;
-            result += " ";
-        }
-        return result;
+        return commandLine;
     }
 };
 
