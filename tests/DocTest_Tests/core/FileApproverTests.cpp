@@ -21,7 +21,8 @@ TEST_CASE("ItVerifiesApprovedFileExists")
                            "Approval File Not Found \n"
                            "File: \"" +
                            approved + "\"";
-    REQUIRE_THROWS_MESSAGE(FileApprover::verify(namer, writer, reporter), expected);
+    REQUIRE_THROWS_MESSAGE(FileApprover::verify(namer, writer, reporter),
+                           expected);
 
     remove(approved.c_str());
     remove(received.c_str());

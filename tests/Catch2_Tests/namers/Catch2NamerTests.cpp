@@ -65,12 +65,14 @@ TEST_CASE("ItIncludesFileContextAndSpecNames")
 
     REQUIRE_THAT(
         namer.getApprovedFile(".txt"),
-        EndsWith(__ +
-                 "Catch2NamerTests.ItIncludesFileContextAndSpecNames.approved.txt"));
+        EndsWith(
+            __ +
+            "Catch2NamerTests.ItIncludesFileContextAndSpecNames.approved.txt"));
     REQUIRE_THAT(
         namer.getReceivedFile(".txt"),
-        EndsWith(__ +
-                 "Catch2NamerTests.ItIncludesFileContextAndSpecNames.received.txt"));
+        EndsWith(
+            __ +
+            "Catch2NamerTests.ItIncludesFileContextAndSpecNames.received.txt"));
 }
 
 TEST_CASE("Clean Up Filename Transforms")

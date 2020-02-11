@@ -2,5 +2,5 @@
 
 void someFunction()
 {
-        CHECK(1 == 1);
+    CHECK(1 == 1);
 }
