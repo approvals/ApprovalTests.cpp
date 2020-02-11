@@ -3,8 +3,10 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * Added support for GitHub Actions CI system - see [Build Machines and Continuous Integration servers](/doc/BuildMachinesAndCI.md#top)
 * **Bug fixes**
     * None
 * **Other changes**
-    * None
+    * Added
+        * `ApprovalTests::FileUtils::readFileThrowIfMissing()` and
+        * `ApprovalTests::FileUtils::readFileReturnEmptyIfMissing()`
