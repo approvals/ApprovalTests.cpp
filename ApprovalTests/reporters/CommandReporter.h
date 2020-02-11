@@ -4,7 +4,6 @@
 #include <utility>
 #include <memory>
 #include <numeric>
-#include <sstream>
 #include "ApprovalTests/launchers/CommandLauncher.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/core/Reporter.h"
@@ -49,6 +48,7 @@ namespace ApprovalTests
     {
     private:
         std::string cmd;
+        std::string arguments = "{Received} {Approved}";
         CommandLauncher* l;
         std::shared_ptr<ConvertForCygwin> converter;
 
@@ -98,10 +98,13 @@ namespace ApprovalTests
             auto convertedApproved =
                 '"' + converter->convertFileArgumentForCygwin(approved) + '"';
 
-            std::stringstream stream;
-            stream << convertedCommand << ' ' << convertedReceived << ' '
-                   << convertedApproved;
-            return stream.str();
+            std::string args;
+            args = StringUtils::replaceAll(
+                arguments, "{Received}", convertedReceived);
+            args =
+                StringUtils::replaceAll(args, "{Approved}", convertedApproved);
+
+            return convertedCommand + ' ' + args;
         }
 
         void checkForCygwin()
