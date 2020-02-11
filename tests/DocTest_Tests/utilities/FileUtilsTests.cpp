@@ -37,7 +37,6 @@ TEST_CASE("readFileThrowIfMissing() throws if file is missing")
 TEST_CASE(
     "readFileReturnEmptyIfMissing() returns empty string if file is missing")
 {
-    REQUIRE("" ==
-            ApprovalTests::FileUtils::readFileReturnEmptyIfMissing(
-                "some file name that does not exist 1234567890.txt"));
+    REQUIRE("" == ApprovalTests::FileUtils::readFileReturnEmptyIfMissing(
+                      "some file name that does not exist 1234567890.txt"));
 }
