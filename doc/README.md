@@ -121,5 +121,5 @@ Here's how to set up from:
 * [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top)
 
 ### Suggested Examples
-* [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/Catch2_Tests/ApprovalsTests.cpp)
+* [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/ApprovalsTests.cpp)
 
