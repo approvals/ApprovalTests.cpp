@@ -44,6 +44,36 @@ namespace ApprovalTests
             fullCommand.push_back(approved);
             return fullCommand;
         }
+
+        static std::vector<std::string>
+        convertForCygwin(std::vector<std::string> argv)
+        {
+            std::vector<std::string> copy = argv;
+            for (size_t i = 0; i != argv.size(); ++i)
+            {
+                if (i == 0)
+                {
+                    const std::string& arg_value = argv[i];
+                    copy[i] = convertProgramForCygwin(arg_value);
+                }
+                else
+                {
+                    const std::string& arg_value = argv[i];
+                    copy[i] = convertFileArgumentForCygwin(arg_value);
+                }
+            }
+            return copy;
+        }
+
+        static std::string convertProgramForCygwin(const std::string& arg_value)
+        {
+            return "$(cygpath '" + arg_value + "')";
+        }
+
+        static std::string convertFileArgumentForCygwin(const std::string& arg_value)
+        {
+            return "$(cygpath -aw '" + arg_value + "')";
+        }
     };
 }
 #endif //APPROVALTESTS_CPP_COMMANDREPORTER_H
