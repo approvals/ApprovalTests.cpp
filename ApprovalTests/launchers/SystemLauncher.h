@@ -12,33 +12,12 @@
 
 namespace ApprovalTests
 {
-    using ConvertArgumentsFunctionPointer =
-        std::vector<std::string> (*)(std::vector<std::string>);
-
     class SystemLauncher : public CommandLauncher
     {
     private:
-        ConvertArgumentsFunctionPointer convertArgumentsForSystemLaunching;
         bool useWindows_ = SystemUtils::isWindowsOs();
 
     public:
-        SystemLauncher() : SystemLauncher(doNothing)
-        {
-        }
-
-        explicit SystemLauncher(
-            std::vector<std::string> (*pointer)(std::vector<std::string>))
-            : convertArgumentsForSystemLaunching(pointer)
-        {
-        }
-
-        // This function is an implementation detail for the support of Reporters on cygwin
-        void setConvertArgumentsForSystemLaunchingFunction(
-            ConvertArgumentsFunctionPointer function) override
-        {
-            convertArgumentsForSystemLaunching = function;
-        }
-
         bool exists(const std::string& command)
         {
             bool foundByWhich = false;
@@ -49,11 +28,6 @@ namespace ApprovalTests
                 foundByWhich = (result == 0);
             }
             return foundByWhich || FileUtils::fileExists(command);
-        }
-
-        static std::vector<std::string> doNothing(std::vector<std::string> argv)
-        {
-            return argv;
         }
 
         bool launch(std::vector<std::string> argv) override
@@ -76,8 +50,6 @@ namespace ApprovalTests
 
         std::string getCommandLine(std::vector<std::string> argv) const override
         {
-            argv = convertArgumentsForSystemLaunching(argv);
-
             std::string command =
                 std::accumulate(argv.begin(),
                                 argv.end(),

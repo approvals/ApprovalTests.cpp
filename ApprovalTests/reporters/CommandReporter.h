@@ -8,18 +8,23 @@
 
 namespace ApprovalTests
 {
+    using ConvertArgumentsFunctionPointer =
+        std::vector<std::string> (*)(std::vector<std::string>);
+
     // Generic reporter to launch arbitrary command
     class CommandReporter : public Reporter
     {
     private:
         std::string cmd;
         CommandLauncher* l;
+        ConvertArgumentsFunctionPointer convertArgumentsForSystemLaunching;
 
     protected:
         CommandReporter(std::string command, CommandLauncher* launcher)
             : cmd(std::move(command)), l(launcher)
         {
             checkForCygwin();
+            convertArgumentsForSystemLaunching = doNothing;
         }
 
     public:
@@ -35,6 +40,13 @@ namespace ApprovalTests
             return l->getCommandLine(getFullCommand(received, approved));
         }
 
+        // This function is an implementation detail for the support of Reporters on cygwin
+        void setConvertArgumentsForSystemLaunchingFunction(
+            ConvertArgumentsFunctionPointer function)
+        {
+            convertArgumentsForSystemLaunching = function;
+        }
+
         std::vector<std::string>
         getFullCommand(const std::string& received,
                        const std::string& approved) const
@@ -43,6 +55,9 @@ namespace ApprovalTests
             fullCommand.push_back(cmd);
             fullCommand.push_back(received);
             fullCommand.push_back(approved);
+
+            fullCommand = convertArgumentsForSystemLaunching(fullCommand);
+
             return fullCommand;
         }
 
@@ -55,12 +70,11 @@ namespace ApprovalTests
         {
             if (useCygwin)
             {
-                l->setConvertArgumentsForSystemLaunchingFunction(
-                    convertForCygwin);
+                setConvertArgumentsForSystemLaunchingFunction(convertForCygwin);
             }
             else
             {
-                l->setConvertArgumentsForSystemLaunchingFunction(doNothing);
+                setConvertArgumentsForSystemLaunchingFunction(doNothing);
             }
         }
 
