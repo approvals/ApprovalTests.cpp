@@ -4,6 +4,7 @@
 #include <utility>
 #include <memory>
 #include <numeric>
+#include <sstream>
 #include "ApprovalTests/launchers/CommandLauncher.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/core/Reporter.h"
@@ -90,24 +91,17 @@ namespace ApprovalTests
         std::string getFullCommand(const std::string& received,
                                    const std::string& approved) const
         {
-            auto convertedCommand = converter->convertProgramForCygwin(cmd);
+            auto convertedCommand =
+                '"' + converter->convertProgramForCygwin(cmd) + '"';
             auto convertedReceived =
-                converter->convertFileArgumentForCygwin(received);
+                '"' + converter->convertFileArgumentForCygwin(received) + '"';
             auto convertedApproved =
-                converter->convertFileArgumentForCygwin(approved);
-            std::vector<std::string> fullCommand;
-            fullCommand.push_back(convertedCommand);
-            fullCommand.push_back(convertedReceived);
-            fullCommand.push_back(convertedApproved);
+                '"' + converter->convertFileArgumentForCygwin(approved) + '"';
 
-            std::string command =
-                std::accumulate(fullCommand.begin(),
-                                fullCommand.end(),
-                                std::string(""),
-                                [](const std::string& a, const std::string& b) {
-                                    return a + " " + "\"" + b + "\"";
-                                });
-            return command;
+            std::stringstream stream;
+            stream << ' ' << convertedCommand << ' ' << convertedReceived << ' '
+                   << convertedApproved;
+            return stream.str();
         }
 
         void checkForCygwin()
