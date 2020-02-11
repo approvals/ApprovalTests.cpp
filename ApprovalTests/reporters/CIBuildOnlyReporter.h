@@ -39,6 +39,7 @@ namespace ApprovalTests
         {
             /*
             auto AppVeyor = {"CI", "APPVEYOR"}; // https://www.appveyor.com/docs/environment-variables/
+            auto GitHubActions = {"GITHUB_ACTIONS"}; // https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
             auto GoCD = {"GO_SERVER_URL"}: // https://docs.gocd.org/current/faq/dev_use_current_revision_in_build.html
             auto Jenkins = {"JENKINS_URL"}: // https://wiki.jenkins.io/display/JENKINS/Building+a+software+project
             auto TeamCity = {"TEAMCITY_VERSION"}; // https://confluence.jetbrains.com/display/TCD18/Predefined+Build+Parameters
@@ -46,6 +47,7 @@ namespace ApprovalTests
             auto environmentVariablesForCI = combine({
                 // begin-snippet: supported_ci_systems
                 AppVeyor,
+                GitHubActions,
                 GoCD
                 Jenkins,
                 TeamCity,
@@ -57,6 +59,7 @@ namespace ApprovalTests
                 // begin-snippet: supported_ci_env_vars
                 "CI",
                 "CONTINUOUS_INTEGRATION",
+                "GITHUB_ACTIONS",
                 "GO_SERVER_URL",
                 "JENKINS_URL",
                 "TEAMCITY_VERSION"
