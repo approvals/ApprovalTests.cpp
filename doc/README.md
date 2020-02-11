@@ -24,6 +24,7 @@ Once you're up and running, consider the following reference material.
     * [Customising behaviour](#customising-behaviour)
     * [Common Challenges](#common-challenges)
     * [Common Scenarios](#common-scenarios)
+  * [How-to Guides](#how-to-guides)
   * [Miscellaneous](#miscellaneous)
     * [Build Systems](#build-systems)
     * [Extras](#extras)
@@ -94,6 +95,10 @@ Here's how to set up from:
 * Non-graphical environments
 * [Build Machines and Continuous Integration servers](/doc/BuildMachinesAndCI.md#top)
 
+## How-to Guides
+
+* [How To Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top)
+* [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top).
 
 ## Miscellaneous
 

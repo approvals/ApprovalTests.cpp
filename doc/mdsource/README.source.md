@@ -68,6 +68,10 @@ include: include_using_test_frameworks_list
 * Non-graphical environments
 * [Build Machines and Continuous Integration servers](/doc/BuildMachinesAndCI.md#top)
 
+## How-to Guides
+
+* [How To Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top)
+* [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top).
 
 ## Miscellaneous
 
