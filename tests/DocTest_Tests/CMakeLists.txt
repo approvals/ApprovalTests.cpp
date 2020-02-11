@@ -8,6 +8,7 @@ add_executable(${PROJECT_NAME}
     docs/DisposableSamples.cpp
     docs/ForgottenToConfigure.cpp
     utilities/ExceptionCollectorTests.cpp
+    utilities/FileUtilsTests.cpp
     DocTestApprovalTestTests.cpp
     reporters/CustomReporterTests.cpp
     reporters/CommandLineReporterTests.cpp
