@@ -20,6 +20,7 @@ namespace ApprovalTests
             {
                 return false;
             }
+
             std::string launch = getCommandLine(argv);
 
             system(launch.c_str());
@@ -28,6 +29,9 @@ namespace ApprovalTests
 
         std::string getCommandLine(std::vector<std::string> argv) const override
         {
+            // TODO
+            // argv = convertArgumentsForSystemLaunching(argv);
+
             // Surround each of the arguments by double-quotes:
             const std::string command =
                 std::accumulate(argv.begin(),
