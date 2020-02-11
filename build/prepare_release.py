@@ -153,10 +153,10 @@ F"""// Approval Tests version {self.details.new_version}
         new_version_with_v = self.details.new_version
         new_version_without_v = version.get_version_without_v(self.details.new_version)
 
-        # TODO Check out master
-        # TODO Pull all changes in from upstream master
-        # TODO Create branch F'approvaltests.cpp.{new_version_without_v}', if it does not already exist
-        # TODO Check out branch F'approvaltests.cpp.{new_version_without_v}'
+        check_step("Check out Conan master")
+        check_step("Pull all changes in from upstream master")
+        check_step("Create branch F'approvaltests.cpp.{new_version_without_v}', if it does not already exist")
+        check_step("Check out branch F'approvaltests.cpp.{new_version_without_v}'")
 
         conan_approvaltests_dir = os.path.join(self.details.conan_repo_dir, 'recipes', 'approvaltests.cpp')
 
