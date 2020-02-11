@@ -20,6 +20,25 @@ namespace ApprovalTests
         CommandLauncher* l;
         std::shared_ptr<ConvertForCygwin> converter;
 
+        std::string getFullCommand(const std::string& received,
+                                   const std::string& approved) const
+        {
+            auto convertedCommand =
+                '"' + converter->convertProgramForCygwin(cmd) + '"';
+            auto convertedReceived =
+                '"' + converter->convertFileArgumentForCygwin(received) + '"';
+            auto convertedApproved =
+                '"' + converter->convertFileArgumentForCygwin(approved) + '"';
+
+            std::string args;
+            args = StringUtils::replaceAll(
+                arguments, "{Received}", convertedReceived);
+            args =
+                StringUtils::replaceAll(args, "{Approved}", convertedApproved);
+
+            return convertedCommand + ' ' + args;
+        }
+
     protected:
         CommandReporter(std::string command, CommandLauncher* launcher)
             : cmd(std::move(command)), l(launcher)
@@ -62,26 +81,6 @@ namespace ApprovalTests
                                    const std::string& approved) const
         {
             return l->getCommandLine(getFullCommand(received, approved));
-        }
-
-    private:
-        std::string getFullCommand(const std::string& received,
-                                   const std::string& approved) const
-        {
-            auto convertedCommand =
-                '"' + converter->convertProgramForCygwin(cmd) + '"';
-            auto convertedReceived =
-                '"' + converter->convertFileArgumentForCygwin(received) + '"';
-            auto convertedApproved =
-                '"' + converter->convertFileArgumentForCygwin(approved) + '"';
-
-            std::string args;
-            args = StringUtils::replaceAll(
-                arguments, "{Received}", convertedReceived);
-            args =
-                StringUtils::replaceAll(args, "{Approved}", convertedApproved);
-
-            return convertedCommand + ' ' + args;
         }
 
     public:
