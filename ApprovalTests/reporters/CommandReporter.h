@@ -20,8 +20,8 @@ namespace ApprovalTests
         CommandLauncher* l;
         std::shared_ptr<ConvertForCygwin> converter;
 
-        std::string getFullCommand(const std::string& received,
-                                   const std::string& approved) const
+        std::string assembleFullCommand(const std::string& received,
+                                        const std::string& approved) const
         {
             auto convertedCommand =
                 '"' + converter->convertProgramForCygwin(cmd) + '"';
@@ -74,13 +74,13 @@ namespace ApprovalTests
                 return false;
             }
             FileUtils::ensureFileExists(approved);
-            return l->launch(getFullCommand(received, approved));
+            return l->launch(assembleFullCommand(received, approved));
         }
 
         std::string getCommandLine(const std::string& received,
                                    const std::string& approved) const
         {
-            return l->getCommandLine(getFullCommand(received, approved));
+            return l->getCommandLine(assembleFullCommand(received, approved));
         }
 
     public:
