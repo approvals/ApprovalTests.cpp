@@ -5,10 +5,8 @@ add_executable(${PROJECT_NAME}
     PairUtilities.h
     StyleGuide.h
     comparators/ComparatorDisposerTest.cpp
-    core/FileApproverTests.cpp
     docs/Catch2DocsSamples.cpp
     namers/NamerTests.cpp
-    utilities/CartesianProductTests.cpp
     utilities/FileUtilsSystemSpecificTests.cpp
     utilities/MachineBlockerTests.cpp
     )

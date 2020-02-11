@@ -1,4 +1,4 @@
-#include "catch2/catch.hpp"
+#include "doctest/doctest.h"
 #include "ApprovalTests/utilities/CartesianProduct.h"
 
 #include <string>
@@ -80,7 +80,7 @@ namespace
 TEST_CASE("Cartesian product with iterator types")
 {
     const Results expected{"A,1", "A,2", "B,1", "B,2"};
-    SECTION("random-access")
+    DOCTEST_SUBCASE("random-access")
     {
         const std::vector<std::string> input1{"A", "B"};
         const std::vector<std::string> input2{"1", "2"};
@@ -88,7 +88,7 @@ TEST_CASE("Cartesian product with iterator types")
             expected, concatenate_2_strings_comma_separated, input1, input2);
     }
 
-    SECTION("bi-directional-access")
+    DOCTEST_SUBCASE("bi-directional-access")
     {
         const std::set<std::string> input1{"A", "B"};
         const std::set<std::string> input2{"1", "2"};
@@ -102,13 +102,13 @@ TEST_CASE("Cartesian product with different types of converter")
     const Results expected{"A,1", "A,2", "B,1", "B,2"};
     const std::vector<std::string> input1{"A", "B"};
     const std::vector<std::string> input2{"1", "2"};
-    SECTION("free function")
+    DOCTEST_SUBCASE("free function")
     {
         test_cartesian_product(
             expected, concatenate_2_strings_comma_separated, input1, input2);
     }
 
-    SECTION("lambda expression")
+    DOCTEST_SUBCASE("lambda expression")
     {
         test_cartesian_product(
             expected,

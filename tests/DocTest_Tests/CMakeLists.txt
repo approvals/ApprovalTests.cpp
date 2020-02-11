@@ -4,6 +4,7 @@ add_executable(${PROJECT_NAME}
     main.cpp
     DocTestApprovalTestTests.cpp
     core/ApprovalExceptionTests.cpp
+    core/FileApproverTests.cpp
     docs/CombinationsSampleCode.cpp
     docs/DisposableSamples.cpp
     docs/DocTestDocsSamples.cpp
@@ -24,6 +25,7 @@ add_executable(${PROJECT_NAME}
     reporters/ReporterTests.cpp
     reporters/ReporterTests.cpp
     reporters/TestReporter.h
+    utilities/CartesianProductTests.cpp
     utilities/ExceptionCollectorTests.cpp
     utilities/FileUtilsTests.cpp
     utilities/StringUtilsTests.cpp

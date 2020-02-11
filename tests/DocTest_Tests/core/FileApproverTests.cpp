@@ -1,4 +1,4 @@
-#include "catch2/catch.hpp"
+#include "doctest/doctest.h"
 #include "ApprovalTests/writers/StringWriter.h"
 #include "../../DocTest_Tests/reporters/TestReporter.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
@@ -21,8 +21,7 @@ TEST_CASE("ItVerifiesApprovedFileExists")
                            "Approval File Not Found \n"
                            "File: \"" +
                            approved + "\"";
-    REQUIRE_THROWS_WITH(FileApprover::verify(namer, writer, reporter),
-                        expected);
+    REQUIRE_THROWS_MESSAGE(FileApprover::verify(namer, writer, reporter), expected);
 
     remove(approved.c_str());
     remove(received.c_str());
