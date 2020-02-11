@@ -45,6 +45,7 @@
 #include "ApprovalTests/reporters/CombinationReporter.h"
 #include "ApprovalTests/reporters/CommandReporter.h"
 #include "ApprovalTests/reporters/ConsoleDiffReporter.h"
+#include "ApprovalTests/reporters/ConvertForCygwin.h"
 #include "ApprovalTests/reporters/CustomReporter.h"
 #include "ApprovalTests/reporters/DefaultFrontLoadedReporter.h"
 #include "ApprovalTests/reporters/DefaultReporter.h"
