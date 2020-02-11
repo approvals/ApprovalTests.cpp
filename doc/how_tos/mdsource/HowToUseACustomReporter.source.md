@@ -20,11 +20,13 @@ snippet: use_custom_reporter
 
 By default, this will run in the background. Most of the time this is what you want.
 
+<!--
 However, **COMING SOON!** you can force it to run in the foreground with:
 
 ```c++
 auto reporter = CustomReporter::createForegroundReporter(path, arguments);
 ```
+-->
 
 On Windows, you can specify a search path for the installed location of a program with `{ProgramFiles}`.
 
@@ -34,7 +36,7 @@ auto arguments = "{Received} {Approved}"; // Do we want to make these values the
 auto reporter = CustomReporter::create(path, arguments);
 ```
 
-See TODO for wiring up this reporter as default, or pass it in to individual `verify()` method calls...
+See [Registering a default reporter](/doc/Reporters.md#registering-a-default-reporter) for wiring up this reporter as default, or pass it in to individual `verify()` method calls...
 
 ---
 
