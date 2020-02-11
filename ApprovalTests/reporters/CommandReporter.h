@@ -9,9 +9,6 @@
 
 namespace ApprovalTests
 {
-    using ConvertArgumentsFunctionPointer =
-        std::vector<std::string> (*)(std::vector<std::string>);
-
     class ConvertForCygwin
     {
     public:
@@ -74,12 +71,15 @@ namespace ApprovalTests
         getFullCommand(const std::string& received,
                        const std::string& approved) const
         {
+            auto convertedCommand = converter->convertProgramForCygwin(cmd);
+            auto convertedReceived =
+                converter->convertFileArgumentForCygwin(received);
+            auto convertedApproved =
+                converter->convertFileArgumentForCygwin(approved);
             std::vector<std::string> fullCommand;
-            fullCommand.push_back(cmd);
-            fullCommand.push_back(received);
-            fullCommand.push_back(approved);
-
-            fullCommand = convertForCygwin(fullCommand);
+            fullCommand.push_back(convertedCommand);
+            fullCommand.push_back(convertedReceived);
+            fullCommand.push_back(convertedApproved);
 
             return fullCommand;
         }
@@ -100,33 +100,6 @@ namespace ApprovalTests
                 converter = std::make_shared<DoNothing>();
             }
         }
-
-        static std::vector<std::string> doNothing(std::vector<std::string> argv)
-        {
-            return argv;
-        }
-
-        std::vector<std::string>
-        convertForCygwin(std::vector<std::string> argv) const
-        {
-            std::vector<std::string> copy = argv;
-            for (size_t i = 0; i != argv.size(); ++i)
-            {
-                if (i == 0)
-                {
-                    const std::string& arg_value = argv[i];
-                    copy[i] = converter->convertProgramForCygwin(arg_value);
-                }
-                else
-                {
-                    const std::string& arg_value = argv[i];
-                    copy[i] =
-                        converter->convertFileArgumentForCygwin(arg_value);
-                }
-            }
-            return copy;
-        }
-
     };
 }
 #endif //APPROVALTESTS_CPP_COMMANDREPORTER_H
