@@ -23,7 +23,17 @@ namespace ApprovalTests
 
             std::string launch = getCommandLine(argv);
 
-            system(launch.c_str());
+            // Here we may be using textual diff tools to show the diffs between
+            // two files that we already know are different.
+            // And some diff-tools returns a non-zero status if the two files
+            // are different.
+            // So for this particular invoking of system(), it is fine if the
+            // result is non-zero.
+            // But we use the result, in order to suppress warnings from
+            // static analysis tools.
+            int exitCode = system(launch.c_str());
+            APPROVAL_TESTS_UNUSED(exitCode);
+
             return true;
         }
 
