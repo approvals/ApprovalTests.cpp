@@ -8,6 +8,7 @@
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/core/Reporter.h"
 #include "ConvertForCygwin.h"
+#include "DiffInfo.h"
 
 namespace ApprovalTests
 {
