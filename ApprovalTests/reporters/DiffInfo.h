@@ -7,6 +7,7 @@
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
+#include "CommandReporter.h"
 
 namespace ApprovalTests
 {
@@ -21,7 +22,7 @@ namespace ApprovalTests
     {
         DiffInfo(std::string program, Type type)
             : program(std::move(program))
-            , arguments("{Received} {Approved}")
+            , arguments(CommandReporter::getDefaultArguments())
             , type(type)
         {
         }

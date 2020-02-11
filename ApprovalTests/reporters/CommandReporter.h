@@ -16,7 +16,7 @@ namespace ApprovalTests
     {
     private:
         std::string cmd;
-        std::string arguments = "{Received} {Approved}";
+        std::string arguments = getDefaultArguments();
         CommandLauncher* l;
         std::shared_ptr<ConvertForCygwin> converter;
 
@@ -32,9 +32,9 @@ namespace ApprovalTests
 
             std::string args;
             args = StringUtils::replaceAll(
-                arguments, "{Received}", convertedReceived);
-            args =
-                StringUtils::replaceAll(args, "{Approved}", convertedApproved);
+                arguments, receivedFileTemplate(), convertedReceived);
+            args = StringUtils::replaceAll(
+                args, approvedFileTemplate(), convertedApproved);
 
             return convertedCommand + ' ' + args;
         }
@@ -55,6 +55,21 @@ namespace ApprovalTests
         }
 
     public:
+        static std::string receivedFileTemplate()
+        {
+            return "{Received}";
+        }
+
+        static std::string approvedFileTemplate()
+        {
+            return "{Approved}";
+        }
+
+        static std::string getDefaultArguments()
+        {
+            return receivedFileTemplate() + ' ' + approvedFileTemplate();
+        }
+
         static bool exists(const std::string& command)
         {
             bool foundByWhich = false;
