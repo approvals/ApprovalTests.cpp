@@ -21,7 +21,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_MACROS_ENTRY(
                 DIFF_MERGE,
                 DiffInfo("/Applications/DiffMerge.app/Contents/MacOS/DiffMerge",
-                         "%s %s -nosplash",
+                         "{Received} {Approved} -nosplash",
                          Type::TEXT))
 
             // begin-snippet: add_reporter_macro
@@ -46,7 +46,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_MACROS_ENTRY(
                 KDIFF3,
                 DiffInfo("/Applications/kdiff3.app/Contents/MacOS/kdiff3",
-                         "%s %s -m",
+                         "{Received} {Approved} -m",
                          Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
@@ -63,7 +63,7 @@ namespace ApprovalTests
                 VS_CODE,
                 DiffInfo("/Applications/Visual Studio "
                          "Code.app/Contents/Resources/app/bin/code",
-                         "-d %s %s",
+                         "-d {Received} {Approved}",
                          Type::TEXT))
         }
 
@@ -90,7 +90,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_MACROS_ENTRY(
                 TORTOISE_IMAGE_DIFF,
                 DiffInfo("{ProgramFiles}TortoiseSVN\\bin\\TortoiseIDiff.exe",
-                         "/left:%s /right:%s",
+                         "/left:{Received} /right:{Approved}",
                          Type::IMAGE))
 
             APPROVAL_TESTS_MACROS_ENTRY(
@@ -101,7 +101,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_MACROS_ENTRY(
                 TORTOISE_GIT_IMAGE_DIFF,
                 DiffInfo("{ProgramFiles}TortoiseGit\\bin\\TortoiseGitIDiff.exe",
-                         "/left:%s /right:%s",
+                         "/left:{Received} /right:{Approved}",
                          Type::IMAGE))
 
             APPROVAL_TESTS_MACROS_ENTRY(
@@ -131,7 +131,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_MACROS_ENTRY(
                 VS_CODE,
                 DiffInfo("{ProgramFiles}Microsoft VS Code\\Code.exe",
-                         "-d %s %s",
+                         "-d {Received} {Approved}",
                          Type::TEXT))
         }
     }

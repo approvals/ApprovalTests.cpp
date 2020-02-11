@@ -21,7 +21,7 @@ namespace ApprovalTests
         }
 
         explicit GenericDiffReporter(const DiffInfo& info)
-            : CommandReporter(info.getProgramForOs(), &launcher)
+            : CommandReporter(info.getProgramForOs(), info.arguments, &launcher)
         {
         }
     };

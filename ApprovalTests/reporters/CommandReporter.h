@@ -59,6 +59,14 @@ namespace ApprovalTests
             checkForCygwin();
         }
 
+        CommandReporter(std::string command,
+                        std::string args,
+                        CommandLauncher* launcher)
+            : cmd(std::move(command)), arguments(std::move(args)), l(launcher)
+        {
+            checkForCygwin();
+        }
+
     public:
         static bool exists(const std::string& command)
         {
