@@ -18,6 +18,17 @@ namespace ApprovalTests
             }
         };
 
+        // begin-snippet: add_reporter_class
+        class AraxisMergeReporter : public GenericDiffReporter
+        {
+        public:
+            AraxisMergeReporter()
+                : GenericDiffReporter(DiffPrograms::Mac::ARAXIS_MERGE())
+            {
+            }
+        };
+        // end-snippet
+
         class VisualStudioCodeReporter : public GenericDiffReporter
         {
         public:
@@ -76,6 +87,7 @@ namespace ApprovalTests
             MacDiffReporter()
                 : FirstWorkingReporter({
                       // begin-snippet: mac_diff_reporters
+                      new AraxisMergeReporter(),
                       new BeyondCompareReporter(),
                       new DiffMergeReporter(),
                       new KaleidoscopeReporter(),

@@ -11,7 +11,9 @@ TEST_CASE("Test Command Lines")
 {
     std::stringstream stream;
     std::vector<std::shared_ptr<GenericDiffReporter>> reporters = {
+        // begin-snippet: add_reporter_command_test
         // Mac
+        std::make_shared<Mac::AraxisMergeReporter>(),
         std::make_shared<Mac::BeyondCompareReporter>(),
         std::make_shared<Mac::DiffMergeReporter>(),
         std::make_shared<Mac::KaleidoscopeReporter>(),
@@ -19,6 +21,7 @@ TEST_CASE("Test Command Lines")
         std::make_shared<Mac::KDiff3Reporter>(),
         std::make_shared<Mac::TkDiffReporter>(),
         std::make_shared<Mac::VisualStudioCodeReporter>(),
+        // end-snippet
 
         // Windows
         std::make_shared<Windows::TortoiseTextDiffReporter>(),

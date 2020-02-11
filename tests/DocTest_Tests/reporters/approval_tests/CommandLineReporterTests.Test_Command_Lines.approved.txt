@@ -1,3 +1,7 @@
+windows: start ""  "/Applications/Araxis Merge.app/Contents/Utilities/compare" "a.txt" "b.txt"
+unix:  "/Applications/Araxis Merge.app/Contents/Utilities/compare" "a.txt" "b.txt" &
+cygwin:  "$(cygpath '/Applications/Araxis Merge.app/Contents/Utilities/compare')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
+
 windows: start ""  "/Applications/Beyond Compare.app/Contents/MacOS/bcomp" "a.txt" "b.txt"
 unix:  "/Applications/Beyond Compare.app/Contents/MacOS/bcomp" "a.txt" "b.txt" &
 cygwin:  "$(cygpath '/Applications/Beyond Compare.app/Contents/MacOS/bcomp')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
