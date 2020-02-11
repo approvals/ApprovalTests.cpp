@@ -23,7 +23,7 @@ namespace ApprovalTests
 
             std::string launch = getCommandLine(argv);
 
-            SystemUtils::runSystemCommandOrThrow(launch);
+            system(launch.c_str());
             return true;
         }
 
