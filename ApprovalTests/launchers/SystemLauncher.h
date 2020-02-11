@@ -85,9 +85,8 @@ namespace ApprovalTests
                                 [](const std::string& a, const std::string& b) {
                                     return a + " " + "\"" + b + "\"";
                                 });
-            std::string launch = useWindows_
-                                     ? ("start \"\" " + command)
-                                     : (command + " &");
+            std::string launch =
+                useWindows_ ? ("start \"\" " + command) : (command + " &");
             return launch;
         }
     };
