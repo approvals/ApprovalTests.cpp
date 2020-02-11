@@ -8,6 +8,7 @@ using namespace ApprovalTests;
 
 #include "core/Reporter.h"
 #include "utilities/FileUtils.h"
+#include "reporters/TextDiffReporter.h"
 
 #include <iostream>
 
@@ -47,6 +48,6 @@ namespace ApprovalTests
 } // namespace ApprovalTests
 
 auto ciReporterDisposer = CIBuildOnlyReporterUtils::useAsFrontLoadedReporter(
-    std::make_shared<DocTestReporter>());
+    std::make_shared<TextDiffReporter>());
 
 auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
