@@ -53,7 +53,7 @@ namespace ApprovalTests
             return filePath.substr(found);
         }
 
-        static std::string readFileThrowIfMissing(std::string fileName)
+        static std::string readFileThrowIfMissing(const std::string& fileName)
         {
             std::ifstream in(fileName.c_str(), std::ios_base::in);
             if (!in)
@@ -68,7 +68,7 @@ namespace ApprovalTests
             return text;
         }
 
-        static std::string readFileReturnEmptyIfMissing(std::string fileName)
+        static std::string readFileReturnEmptyIfMissing(const std::string& fileName)
         {
             if (FileUtils::fileExists(fileName))
             {
