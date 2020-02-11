@@ -51,6 +51,17 @@ Instructions for this are available:
 
 We have a CI job that checks for code not correctly formatted.
 
+## Updating the simulated single-header
+
+After adding new header files to the library, we need to update [ApprovalTests/ApprovalTests.hpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/ApprovalTests.hpp).
+
+This is done by running [scripts/create_simulated_single_header.sh](https://github.com/approvals/ApprovalTests.cpp/blob/master/scripts/create_simulated_single_header.sh):
+
+```bash
+cd ApprovalTests.cpp
+./scripts/create_simulated_single_header.sh
+```
+
 ## Coding Patterns
 
 See [Static variables for header-only releases](/doc/CodingPatterns.md#static-variables-for-header-only-releases).
