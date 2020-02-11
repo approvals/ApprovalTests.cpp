@@ -1,4 +1,4 @@
-#include "catch2/catch.hpp"
+#include "doctest/doctest.h"
 #include "ApprovalTests/comparators/ComparatorDisposer.h"
 #include "Approvals.h"
 #include <fstream>

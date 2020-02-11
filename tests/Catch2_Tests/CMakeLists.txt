@@ -4,7 +4,6 @@ add_executable(${PROJECT_NAME}
     main.cpp
     PairUtilities.h
     StyleGuide.h
-    comparators/ComparatorDisposerTest.cpp
     docs/Catch2DocsSamples.cpp
     namers/Catch2NamerTests.cpp
     utilities/FileUtilsSystemSpecificTests.cpp
