@@ -8,12 +8,13 @@ using namespace ApprovalTests;
 TEST_CASE("YouCanUseAWriter")
 {
     // begin-snippet: use_custom_writer
+    auto path =
+        "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
+    auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
+    auto reporter = CustomReporter::create(path, arguments);
     // end-snippet
 
-    //    auto path = "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
-    auto path = "/Applications/Araxis Merge.app/Contents/Utilities/compare";
-    auto arguments = "mergetool --no-wait {received} {approved} -o {approved}";
-    auto reporter = CustomReporter::create(path, arguments);
-
-    //    Approvals::verify("apple sauce", *reporter);
+    reporter->useCygwinConversions(false);
+    reporter->launcher.invokeForWindows(false);
+    Approvals::verify(reporter->getCommandLine("r.txt", "a.txt"));
 }

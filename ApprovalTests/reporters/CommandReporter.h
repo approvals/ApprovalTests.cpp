@@ -96,6 +96,7 @@ namespace ApprovalTests
             return l->getCommandLine(getFullCommand(received, approved));
         }
 
+    private:
         std::string getFullCommand(const std::string& received,
                                    const std::string& approved) const
         {
@@ -115,6 +116,7 @@ namespace ApprovalTests
             return convertedCommand + ' ' + args;
         }
 
+    public:
         void checkForCygwin()
         {
             useCygwinConversions(SystemUtils::isCygwin());
