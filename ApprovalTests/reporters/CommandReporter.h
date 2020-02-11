@@ -99,7 +99,7 @@ namespace ApprovalTests
                 '"' + converter->convertFileArgumentForCygwin(approved) + '"';
 
             std::stringstream stream;
-            stream << ' ' << convertedCommand << ' ' << convertedReceived << ' '
+            stream << convertedCommand << ' ' << convertedReceived << ' '
                    << convertedApproved;
             return stream.str();
         }
