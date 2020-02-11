@@ -34,7 +34,7 @@ namespace ApprovalTests
 
         // This function is an implementation detail for the support of Reporters on cygwin
         void setConvertArgumentsForSystemLaunchingFunction(
-            ConvertArgumentsFunctionPointer function)
+            ConvertArgumentsFunctionPointer function) override
         {
             convertArgumentsForSystemLaunching = function;
         }

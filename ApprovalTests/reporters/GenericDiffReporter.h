@@ -18,33 +18,11 @@ namespace ApprovalTests
         explicit GenericDiffReporter(const std::string& program)
             : CommandReporter(program, &launcher)
         {
-            checkForCygwin();
         }
         explicit GenericDiffReporter(const DiffInfo& info)
             : CommandReporter(info.getProgramForOs(), &launcher)
         {
-            checkForCygwin();
         }
-
-        void checkForCygwin()
-        {
-            useCygwinConversions(SystemUtils::isCygwin());
-        }
-
-        void useCygwinConversions(bool useCygwin)
-        {
-            if (useCygwin)
-            {
-                launcher.setConvertArgumentsForSystemLaunchingFunction(
-                    convertForCygwin);
-            }
-            else
-            {
-                launcher.setConvertArgumentsForSystemLaunchingFunction(
-                    SystemLauncher::doNothing);
-            }
-        }
-
     };
 }
 

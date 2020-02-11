@@ -35,6 +35,11 @@ public:
         }
         return result;
     }
+
+    void setConvertArgumentsForSystemLaunchingFunction(
+        ApprovalTests::ConvertArgumentsFunctionPointer) override
+    {
+    }
 };
 
 #endif

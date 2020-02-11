@@ -58,6 +58,11 @@ namespace ApprovalTests
                     : (command);
             return launch;
         }
+
+        void setConvertArgumentsForSystemLaunchingFunction(
+            ConvertArgumentsFunctionPointer) override
+        {
+        }
     };
 } // namespace ApprovalTests
 

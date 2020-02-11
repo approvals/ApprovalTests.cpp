@@ -19,6 +19,7 @@ namespace ApprovalTests
         CommandReporter(std::string command, CommandLauncher* launcher)
             : cmd(std::move(command)), l(launcher)
         {
+            checkForCygwin();
         }
 
     public:
@@ -43,6 +44,29 @@ namespace ApprovalTests
             fullCommand.push_back(received);
             fullCommand.push_back(approved);
             return fullCommand;
+        }
+
+        void checkForCygwin()
+        {
+            useCygwinConversions(SystemUtils::isCygwin());
+        }
+
+        void useCygwinConversions(bool useCygwin)
+        {
+            if (useCygwin)
+            {
+                l->setConvertArgumentsForSystemLaunchingFunction(
+                    convertForCygwin);
+            }
+            else
+            {
+                l->setConvertArgumentsForSystemLaunchingFunction(doNothing);
+            }
+        }
+
+        static std::vector<std::string> doNothing(std::vector<std::string> argv)
+        {
+            return argv;
         }
 
         static std::vector<std::string>
