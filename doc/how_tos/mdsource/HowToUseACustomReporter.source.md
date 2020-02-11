@@ -6,7 +6,7 @@ toc
 
 This guide is for creating the ability to use a custom reporter that works on your machine.
 
-For figuring out how to make a more robust custom reporter, that you might want to submit back to us as a Pull Request, check out 'How to Create and Submit a New Reporter to ApprovalTests.cpp'
+For figuring out how to make a more robust custom reporter, that you might want to submit back to us as a Pull Request, check out [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/HowToSubmitANewReporterToApprovalTests.md#top).
 
 Let's say that you really enjoy using Sublime Merge, and on your system it's located in `"/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge"`
 
