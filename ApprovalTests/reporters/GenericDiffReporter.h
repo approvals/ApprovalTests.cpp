@@ -53,14 +53,26 @@ namespace ApprovalTests
             {
                 if (i == 0)
                 {
-                    copy[i] = "$(cygpath '" + argv[i] + "')";
+                    const std::string& arg_value = argv[i];
+                    copy[i] = convertProgramForCygwin(arg_value);
                 }
                 else
                 {
-                    copy[i] = "$(cygpath -aw '" + argv[i] + "')";
+                    const std::string& arg_value = argv[i];
+                    copy[i] = convertFileArgumentForCygwin(arg_value);
                 }
             }
             return copy;
+        }
+
+        static std::string convertProgramForCygwin(const std::string& arg_value)
+        {
+            return "$(cygpath '" + arg_value + "')";
+        }
+
+        static std::string convertFileArgumentForCygwin(const std::string& arg_value)
+        {
+            return "$(cygpath -aw '" + arg_value + "')";
         }
     };
 }
