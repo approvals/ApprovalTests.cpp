@@ -68,7 +68,8 @@ namespace ApprovalTests
             return text;
         }
 
-        static std::string readFileReturnEmptyIfMissing(const std::string& fileName)
+        static std::string
+        readFileReturnEmptyIfMissing(const std::string& fileName)
         {
             if (FileUtils::fileExists(fileName))
             {
