@@ -8,6 +8,14 @@ toc
 
 ## v.x.y.z
 
+### Flexibility for adding custom merge tools
+
+`CustomReporter::create()` adds flexibility for adding custom merge tools: see [How To Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top).
+
+### Supporting new merge tools.
+
+See [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top).
+
 ## v.8.2.0
 
 ### Conan Integration documented

@@ -15,6 +15,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [Flexibility for adding custom merge tools](#flexibility-for-adding-custom-merge-tools)
+    * [Supporting new merge tools.](#supporting-new-merge-tools)
   * [v.8.2.0](#v820)
     * [Conan Integration documented](#conan-integration-documented)
   * [v.8.1.0](#v810)
@@ -44,6 +46,14 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+### Flexibility for adding custom merge tools
+
+`CustomReporter::create()` adds flexibility for adding custom merge tools: see [How To Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top).
+
+### Supporting new merge tools.
+
+See [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top).
 
 ## v.8.2.0
 
