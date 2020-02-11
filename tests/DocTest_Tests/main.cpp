@@ -27,12 +27,20 @@ namespace ApprovalTests
             // Note that ApprovalTests will later throw an exception though.
             std::cout << "Checking content of files:" << std::endl;
             std::cout << "received: " << received << std::endl;
-            std::cout << "********************************************************\n" << receivedText << std::endl;
-            std::cout << "********************************************************\n" << std::endl;
+            std::cout
+                << "********************************************************\n"
+                << receivedText << std::endl;
+            std::cout
+                << "********************************************************\n"
+                << std::endl;
             std::cout << "approved: " << approved << std::endl;
-            std::cout << "********************************************************\n" << approvedText << std::endl;
-            std::cout << "********************************************************\n" << std::endl;
-//            CHECK(receivedText == approvedText);
+            std::cout
+                << "********************************************************\n"
+                << approvedText << std::endl;
+            std::cout
+                << "********************************************************\n"
+                << std::endl;
+            //            CHECK(receivedText == approvedText);
             return true;
         }
     };
