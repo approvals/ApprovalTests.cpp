@@ -6,12 +6,10 @@
 
 using namespace ApprovalTests;
 
-
 #include "core/Reporter.h"
 #include "utilities/FileUtils.h"
 
 #include <iostream>
-
 
 namespace ApprovalTests
 {
