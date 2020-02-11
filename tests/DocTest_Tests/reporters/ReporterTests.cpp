@@ -5,9 +5,7 @@
 #include "ApprovalTests/reporters/FirstWorkingReporter.h"
 #include "ApprovalTests/reporters/ClipboardReporter.h"
 #include "ApprovalTests/reporters/CombinationReporter.h"
-#include "ApprovalTests/reporters/WindowsReporters.h"
 #include "ApprovalTests/Approvals.h"
-#include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/core/FileApprover.h"
 
 using namespace ApprovalTests;
@@ -16,7 +14,8 @@ TEST_CASE("Reporters Launch Command")
 {
     TestReporter m(true);
     bool result = m.report("r.txt", "a.txt");
-    REQUIRE(m.launcher.receivedCommand() == "fake r.txt a.txt ");
+    REQUIRE(m.launcher.receivedCommand() ==
+            TestReporter::getKnownGoodCommand() + " r.txt a.txt ");
     REQUIRE(true == result);
 }
 
@@ -27,7 +26,8 @@ TEST_CASE("FirstWorkingReporter")
     TestReporter* m3 = new TestReporter(true);
     FirstWorkingReporter reporter({m1, m2, m3});
     bool result = reporter.report("r.txt", "a.txt");
-    REQUIRE(m2->launcher.receivedCommand() == "fake r.txt a.txt ");
+    REQUIRE(m2->launcher.receivedCommand() ==
+            TestReporter::getKnownGoodCommand() + " r.txt a.txt ");
     REQUIRE(m3->launcher.receivedCommand().empty());
     REQUIRE(true == result);
 }
@@ -41,9 +41,7 @@ TEST_CASE("Reporters Report Failure Status")
 
 TEST_CASE("Reporters Report Success Status")
 {
-    std::string knownCommand =
-        SystemUtils::isWindowsOs() ? R"(C:\Windows\System32\help.exe)" : "echo";
-    GenericDiffReporter m(knownCommand);
+    GenericDiffReporter m(TestReporter::getKnownGoodCommand());
     bool result = m.report("r.txt", "a.txt");
     REQUIRE(true == result);
 }
@@ -51,7 +49,7 @@ TEST_CASE("Reporters Report Success Status")
 TEST_CASE("CommandLauncher can detect missing file")
 {
     REQUIRE(false ==
-            SystemLauncher().exists("this_file_does_not_exist.txxxxxt"));
+            CommandReporter::exists("this_file_does_not_exist.txxxxxt"));
 }
 
 TEST_CASE("ClipboardReporter")

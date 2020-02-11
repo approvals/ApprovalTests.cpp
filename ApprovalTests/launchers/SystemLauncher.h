@@ -18,25 +18,8 @@ namespace ApprovalTests
         bool useWindows_ = SystemUtils::isWindowsOs();
 
     public:
-        bool exists(const std::string& command)
-        {
-            bool foundByWhich = false;
-            if (!SystemUtils::isWindowsOs())
-            {
-                std::string which = "which " + command + " > /dev/null 2>&1";
-                int result = system(which.c_str());
-                foundByWhich = (result == 0);
-            }
-            return foundByWhich || FileUtils::fileExists(command);
-        }
-
         bool launch(std::vector<std::string> argv) override
         {
-            if (!exists(argv.front()))
-            {
-                return false;
-            }
-
             std::string launch = getCommandLine(argv);
 
             SystemUtils::runSystemCommandOrThrow(launch);

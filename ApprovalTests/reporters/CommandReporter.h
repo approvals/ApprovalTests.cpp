@@ -58,8 +58,24 @@ namespace ApprovalTests
         }
 
     public:
+        static bool exists(const std::string& command)
+        {
+            bool foundByWhich = false;
+            if (!SystemUtils::isWindowsOs())
+            {
+                std::string which = "which " + command + " > /dev/null 2>&1";
+                int result = system(which.c_str());
+                foundByWhich = (result == 0);
+            }
+            return foundByWhich || FileUtils::fileExists(command);
+        }
+
         bool report(std::string received, std::string approved) const override
         {
+            if (!exists(cmd))
+            {
+                return false;
+            }
             FileUtils::ensureFileExists(approved);
             return l->launch(getFullCommand(received, approved));
         }

@@ -2,7 +2,6 @@
 #define APPROVALTESTS_CPP_FOREGROUNDSYSTEMLAUNCHER_H
 
 #include "launchers/CommandLauncher.h"
-#include "launchers/SystemLauncher.h"
 
 namespace ApprovalTests
 {
@@ -15,12 +14,6 @@ namespace ApprovalTests
     public:
         bool launch(std::vector<std::string> argv) override
         {
-            SystemLauncher temp_launcher;
-            if (!temp_launcher.exists(argv.front()))
-            {
-                return false;
-            }
-
             std::string launch = getCommandLine(argv);
 
             // Here we may be using textual diff tools to show the diffs between
