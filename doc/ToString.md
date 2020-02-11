@@ -40,7 +40,7 @@ friend std::ostream& operator<<(std::ostream& os,
     return os;
 }
 ```
-<sup><a href='/tests/Catch2_Tests/docs/ToStringExample.cpp#L13-L22' title='File snippet `to_string_standard_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_standard_example' title='Navigate to start of snippet `to_string_standard_example`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringExample.cpp#L13-L22' title='File snippet `to_string_standard_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_standard_example' title='Navigate to start of snippet `to_string_standard_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
 You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
@@ -59,7 +59,7 @@ friend STREAM& operator<<(STREAM& os, const Rectangle2& rectangle)
     return os;
 }
 ```
-<sup><a href='/tests/Catch2_Tests/docs/ToStringTemplateExample.cpp#L15-L24' title='File snippet `to_string_template_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_template_example' title='Navigate to start of snippet `to_string_template_example`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringTemplateExample.cpp#L15-L24' title='File snippet `to_string_template_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_template_example' title='Navigate to start of snippet `to_string_template_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Wrapper classes or functions can be used to provide additional output formats for types of data:
@@ -94,7 +94,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead")
     });
 }
 ```
-<sup><a href='/tests/Catch2_Tests/docs/ToStringWrapperExample.cpp#L39-L66' title='File snippet `to_string_wrapper_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_wrapper_example' title='Navigate to start of snippet `to_string_wrapper_example`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L39-L66' title='File snippet `to_string_wrapper_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_wrapper_example' title='Navigate to start of snippet `to_string_wrapper_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Design
@@ -138,7 +138,7 @@ Here's an example of verifing a list of rectangles
 ```cpp
 Approvals::verifyAll("rectangles", getRectangles());
 ```
-<sup><a href='/tests/Catch2_Tests/docs/ToStringWrapperExample.cpp#L34-L36' title='File snippet `verify_list` was extracted from'>snippet source</a> | <a href='#snippet-verify_list' title='Navigate to start of snippet `verify_list`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L34-L36' title='File snippet `verify_list` was extracted from'>snippet source</a> | <a href='#snippet-verify_list' title='Navigate to start of snippet `verify_list`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Notice how this:
@@ -154,7 +154,7 @@ rectangles
 [2] = [x: 60 y: 3 width: 7 height: 63]
 
 ```
-<sup><a href='/tests/Catch2_Tests/docs/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L7' title='File snippet `ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt' title='Navigate to start of snippet `ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L7' title='File snippet `ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt' title='Navigate to start of snippet `ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 compares to this:
@@ -170,7 +170,7 @@ rectangles
 (x,y,width,height) = (60,3,7,63)
 
 ```
-<sup><a href='/tests/Catch2_Tests/docs/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L7' title='File snippet `ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt' title='Navigate to start of snippet `ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L7' title='File snippet `ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt' title='Navigate to start of snippet `ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Tools

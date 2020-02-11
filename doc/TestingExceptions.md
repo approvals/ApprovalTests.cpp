@@ -27,7 +27,7 @@ The exception thrown must inherit `std::exception`.
 ```cpp
 Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
 ```
-<sup><a href='/tests/Catch2_Tests/ApprovalsTests.cpp#L109-L111' title='File snippet `verify_exception_message_example` was extracted from'>snippet source</a> | <a href='#snippet-verify_exception_message_example' title='Navigate to start of snippet `verify_exception_message_example`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/ApprovalsTests.cpp#L109-L111' title='File snippet `verify_exception_message_example` was extracted from'>snippet source</a> | <a href='#snippet-verify_exception_message_example' title='Navigate to start of snippet `verify_exception_message_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---
