@@ -19,3 +19,11 @@ TEST_CASE("Creating Custom Reporters")
     Approvals::verify(
         reporter->getCommandLine("test.received.txt", "test.approved.txt"));
 }
+
+TEST_CASE("Demo Windows")
+{
+    // begin-snippet: use_custom_windows_reporter
+    auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";
+    auto reporter = CustomReporter::create(path);
+    // end-snippet
+}

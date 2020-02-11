@@ -30,13 +30,9 @@ auto reporter = CustomReporter::createForegroundReporter(path, arguments);
 
 On Windows, you can specify a search path for the installed location of a program with `{ProgramFiles}`.
 
-```c++
-auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";
-auto arguments = "{Received} {Approved}"; // Do we want to make these values the default?
-auto reporter = CustomReporter::create(path, arguments);
-```
+snippet: use_custom_windows_reporter
 
-See [Registering a default reporter](/doc/Reporters.md#registering-a-default-reporter) for wiring up this reporter as default, or pass it in to individual `verify()` method calls...
+See [Registering a default reporter](/doc/Reporters.md#registering-a-default-reporter) for wiring up this reporter as default, or you can dereference it and pass it in to individual `verify("text", *reporter)` method calls...
 
 ---
 
