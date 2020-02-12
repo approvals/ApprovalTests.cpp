@@ -43,6 +43,7 @@ class DeployRelease:
         popdir()
 
     def test_conan_and_create_pr(self):
+        # TODO Fix this directory name
         pushdir(self.details.conan_data_dir)
         # We cannot test the new Conan recipe until the new release has been
         # published on github
