@@ -137,15 +137,13 @@ F"""// Approval Tests version {self.details.new_version}
         popdir()
 
     def check_conan_repo(self):
-        pushdir(self.details.conan_repo_dir)
+        repo = Repo(self.details.conan_repo_dir)
+        assert not repo.bare
 
-        run(["git", "branch"])
-        check_step("we are on the master branch")
+        assert (repo.active_branch.name == 'master')
 
-        run(["git", "status"])
-        check_step("no changes present")
-
-        popdir()
+        assert (len(repo.index.diff(None)) == 0)  # Modified
+        assert (len(repo.index.diff("HEAD")) == 0)  # Staged
 
     def update_conan_recipe(self):
         self.check_conan_repo()
