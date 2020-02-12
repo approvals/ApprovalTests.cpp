@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.8.3.0](#v830)
     * [Flexibility for adding custom merge tools](#flexibility-for-adding-custom-merge-tools)
     * [Supporting new merge tools.](#supporting-new-merge-tools)
   * [v.8.2.0](#v820)
@@ -46,6 +47,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+## v.8.3.0
 
 ### Flexibility for adding custom merge tools
 

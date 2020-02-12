@@ -3,14 +3,8 @@
 * **Breaking changes**
     * None
 * **New features**
-    * `CustomReporter::create()` adds flexibility for adding custom merge tools: see [How To Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top) (#43)
-    * Add support for Araxis Merge on Mac
-    * Added support for GitHub Actions CI system - see [Build Machines and Continuous Integration servers](/doc/BuildMachinesAndCI.md#top)
+    * None
 * **Bug fixes**
-    * Reporters now respect the arguments they are supplied with (#82)
+    * None
 * **Other changes**
-    * Document [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top).
-    * Lots of refactoring around reporters
-    * Added
-        * `ApprovalTests::FileUtils::readFileThrowIfMissing()` and
-        * `ApprovalTests::FileUtils::readFileReturnEmptyIfMissing()`
+    * None

@@ -8,6 +8,8 @@ toc
 
 ## v.x.y.z
 
+## v.8.3.0
+
 ### Flexibility for adding custom merge tools
 
 `CustomReporter::create()` adds flexibility for adding custom merge tools: see [How To Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top).
