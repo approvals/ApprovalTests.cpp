@@ -2,7 +2,6 @@
 #define APPROVALTESTS_CPP_APPROVALTESTNAMER_H
 
 #include "ApprovalTests/core/ApprovalNamer.h"
-#include <stack>
 #include <sstream>
 #include <vector>
 #include <stdexcept>
