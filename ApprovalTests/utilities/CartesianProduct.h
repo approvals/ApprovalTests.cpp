@@ -64,9 +64,9 @@ namespace ApprovalTests
                                        std::forward<Tuple>(t),
                                        make_tuple_idxs<Tuple>{}))
             {
-                apply_impl(std::forward<F>(f),
-                           std::forward<Tuple>(t),
-                           make_tuple_idxs<Tuple>{});
+                return apply_impl(std::forward<F>(f),
+                                  std::forward<Tuple>(t),
+                                  make_tuple_idxs<Tuple>{});
             }
             // End of C++17 compatibility
 
