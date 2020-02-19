@@ -7,6 +7,13 @@
 
 using namespace ApprovalTests;
 
+std::string scrubProgramFiles(const std::string& output)
+{
+    auto scrubbed = StringUtils::replaceAll(
+        output, "C:\\Program Files\\", DiffInfo::programFileTemplate());
+    return scrubbed;
+}
+
 TEST_CASE("Test Command Lines")
 {
     std::stringstream stream;
@@ -56,8 +63,5 @@ TEST_CASE("Test Command Lines")
                << '\n';
         stream << '\n';
     }
-    std::string output = stream.str();
-    output = StringUtils::replaceAll(
-        output, "C:\\Program Files\\", DiffInfo::programFileTemplate());
-    Approvals::verify(output);
+    Approvals::verify(scrubProgramFiles(stream.str()));
 }
