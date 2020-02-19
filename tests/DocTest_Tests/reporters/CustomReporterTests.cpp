@@ -8,10 +8,10 @@ using namespace ApprovalTests;
 TEST_CASE("Creating Custom Reporters")
 {
     // begin-snippet: use_custom_reporter
-    auto path =
+    const auto path =
         "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
-    auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
-    auto reporter = CustomReporter::create(path, arguments);
+    const auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
+    const auto reporter = CustomReporter::create(path, arguments);
     // end-snippet
 
     reporter->useCygwinConversions(false);
@@ -23,7 +23,14 @@ TEST_CASE("Creating Custom Reporters")
 TEST_CASE("Demo Windows")
 {
     // begin-snippet: use_custom_windows_reporter
-    auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";
+    const auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";
     auto reporter = CustomReporter::create(path);
     // end-snippet
+}
+
+TEST_CASE("Can construct a CustomReporter from const std::string arguments")
+{
+    const std::string program = "diff";
+    const std::string arguments = DiffInfo::getDefaultArguments();
+    auto reporter = CustomReporter::create(program, arguments);
 }
