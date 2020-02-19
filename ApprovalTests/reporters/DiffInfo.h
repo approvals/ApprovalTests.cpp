@@ -58,22 +58,27 @@ namespace ApprovalTests
         std::string getProgramForOs() const
         {
             std::string result = program;
+            std::vector<std::string> possibleWindowsPaths;
+            const std::vector<const char*> envVars = {
+                "ProgramFiles", "ProgramW6432", "ProgramFiles(x86)"};
+
+            for (const auto& envVar : envVars)
+            {
+                std::string envVarValue = SystemUtils::safeGetEnv(envVar);
+                if (!envVarValue.empty())
+                {
+                    envVarValue += '\\';
+                    possibleWindowsPaths.push_back(envVarValue);
+                }
+            }
+
             if (result.rfind(programFileTemplate(), 0) == 0)
             {
-                const std::vector<const char*> envVars = {
-                    "ProgramFiles", "ProgramW6432", "ProgramFiles(x86)"};
 
-                for (const auto& envVar : envVars)
+                for (const auto& path : possibleWindowsPaths)
                 {
-                    std::string envVarValue = SystemUtils::safeGetEnv(envVar);
-                    if (envVarValue.empty())
-                    {
-                        continue;
-                    }
-                    envVarValue += '\\';
-
                     auto result1 = StringUtils::replaceAll(
-                        result, programFileTemplate(), envVarValue);
+                        result, programFileTemplate(), path);
                     if (FileUtils::fileExists(result1))
                     {
                         return result1;
