@@ -55,9 +55,8 @@ namespace ApprovalTests
         std::string arguments;
         Type type;
 
-        std::string getProgramForOs() const
+        static std::vector<std::string> getProgramFileLocations()
         {
-            std::string result = program;
             std::vector<std::string> possibleWindowsPaths;
             const std::vector<const char*> envVars = {
                 "ProgramFiles", "ProgramW6432", "ProgramFiles(x86)"};
@@ -71,10 +70,17 @@ namespace ApprovalTests
                     possibleWindowsPaths.push_back(envVarValue);
                 }
             }
+            return possibleWindowsPaths;
+        }
+
+        std::string getProgramForOs() const
+        {
+            std::string result = program;
+            std::vector<std::string> possibleWindowsPaths =
+                getProgramFileLocations();
 
             if (result.rfind(programFileTemplate(), 0) == 0)
             {
-
                 for (const auto& path : possibleWindowsPaths)
                 {
                     auto result1 = StringUtils::replaceAll(
