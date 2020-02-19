@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * Provide a way to launch reporters in foreground (See #98)
 * **Bug fixes**
     * None
 * **Other changes**
