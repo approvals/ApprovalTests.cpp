@@ -25,6 +25,7 @@ namespace ApprovalTests
             return true;
         }
 
+        // Seam for testing
         void invokeForWindows(bool useWindows)
         {
             useWindows_ = useWindows;

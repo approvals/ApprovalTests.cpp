@@ -90,6 +90,7 @@ namespace ApprovalTests
             useCygwinConversions(SystemUtils::isCygwin());
         }
 
+        // Seam for testing
         void useCygwinConversions(bool useCygwin)
         {
             if (useCygwin)
