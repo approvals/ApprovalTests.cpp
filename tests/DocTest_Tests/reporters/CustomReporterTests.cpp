@@ -10,7 +10,8 @@ TEST_CASE("Creating Custom Reporters")
     // begin-snippet: use_custom_reporter
     const auto path =
         "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
-    const auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
+    const auto arguments =
+        "mergetool --no-wait {Received} {Approved} -o {Approved}";
     const auto reporter = CustomReporter::create(path, arguments);
     // end-snippet
 
