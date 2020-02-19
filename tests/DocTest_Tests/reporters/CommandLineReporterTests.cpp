@@ -9,8 +9,12 @@ using namespace ApprovalTests;
 
 std::string scrubProgramFiles(const std::string& output)
 {
-    auto scrubbed = StringUtils::replaceAll(
-        output, "C:\\Program Files\\", DiffInfo::programFileTemplate());
+    auto scrubbed = output;
+    for (const auto& path : DiffInfo::getProgramFileLocations())
+    {
+        scrubbed = StringUtils::replaceAll(
+            scrubbed, path, DiffInfo::programFileTemplate());
+    }
     return scrubbed;
 }
 
