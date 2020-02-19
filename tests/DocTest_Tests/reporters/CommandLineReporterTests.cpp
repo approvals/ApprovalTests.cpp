@@ -56,5 +56,8 @@ TEST_CASE("Test Command Lines")
                << '\n';
         stream << '\n';
     }
-    Approvals::verify(stream.str());
+    std::string output = stream.str();
+    output = StringUtils::replaceAll(
+        output, "C:\\Program Files\\", DiffInfo::programFileTemplate());
+    Approvals::verify(output);
 }
