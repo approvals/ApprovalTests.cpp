@@ -35,3 +35,19 @@ TEST_CASE("Can construct a CustomReporter from const std::string arguments")
     const std::string arguments = DiffInfo::getDefaultArguments();
     auto reporter = CustomReporter::create(program, arguments);
 }
+
+TEST_CASE("Test foreground reporter")
+{
+    const auto path = "echo";
+    const auto arguments = DiffInfo::getDefaultArguments();
+    // begin-snippet: use_custom_foreground_reporter
+    auto reporter = CustomReporter::createForegroundReporter(path, arguments);
+    // end-snippet
+    REQUIRE(reporter->launcher.isForeground());
+
+    reporter->launcher.invokeForWindows(false);
+    REQUIRE("echo" == reporter->launcher.getCommandLine(path));
+
+    reporter->launcher.invokeForWindows(true);
+    REQUIRE("cmd /S /C \"echo\"" == reporter->launcher.getCommandLine(path));
+}
