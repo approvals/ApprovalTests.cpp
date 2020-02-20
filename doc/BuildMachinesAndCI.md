@@ -11,7 +11,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 In automated builds, if a file verification fails, there is no point opening up a graphical diff tool to show any errors. At best it is a waste of resources, and at worst, it may stop the build from completing.
 
-So by default, Approval tests will never launch any reporters on supported CI machines. To do this, we use [Front Loaded Reporters](/doc/Reporters.md#front-loaded-reporters).
+So by default, Approval tests will never launch any graphical reporters on supported CI machines. To do this, we use [Front Loaded Reporters](/doc/Reporters.md#front-loaded-reporters).
 
 Supported CI systems:
 
