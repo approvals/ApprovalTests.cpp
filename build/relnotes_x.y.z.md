@@ -4,6 +4,7 @@
     * None
 * **New features**
     * Provide a way to launch reporters in foreground (See #98)
+    * CI builds now print meaningful differences on failure
 * **Bug fixes**
     * None
 * **Other changes**
