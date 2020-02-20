@@ -22,9 +22,7 @@ By default, this will run in the background. Most of the time this is what you w
 
 However, you can force it to run in the foreground with:
 
-```c++
-auto reporter = CustomReporter::createForegroundReporter(path, arguments);
-```
+snippet: use_custom_foreground_reporter
 
 On Windows, you can specify a search path for the installed location of a program with `{ProgramFiles}`.
 

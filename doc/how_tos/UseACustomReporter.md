@@ -45,9 +45,13 @@ By default, this will run in the background. Most of the time this is what you w
 
 However, you can force it to run in the foreground with:
 
-```c++
+<!-- snippet: use_custom_foreground_reporter -->
+<a id='snippet-use_custom_foreground_reporter'/></a>
+```cpp
 auto reporter = CustomReporter::createForegroundReporter(path, arguments);
 ```
+<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L43-L45' title='File snippet `use_custom_foreground_reporter` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_foreground_reporter' title='Navigate to start of snippet `use_custom_foreground_reporter`'>anchor</a></sup>
+<!-- endsnippet -->
 
 On Windows, you can specify a search path for the installed location of a program with `{ProgramFiles}`.
 
