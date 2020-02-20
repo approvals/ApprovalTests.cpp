@@ -2,6 +2,8 @@
 #define APPROVALTESTS_CPP_TEXTDIFFREPORTER_H
 
 #include "core/Reporter.h"
+#include "reporters/CustomReporter.h"
+#include "reporters/FirstWorkingReporter.h"
 
 #include <memory>
 #include <iostream>

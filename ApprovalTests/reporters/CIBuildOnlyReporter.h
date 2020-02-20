@@ -3,7 +3,7 @@
 
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
-#include "ApprovalTests/reporters/QuietReporter.h"
+#include "ApprovalTests/reporters/TextDiffReporter.h"
 
 #include <vector>
 #include <memory>
@@ -18,7 +18,7 @@ namespace ApprovalTests
 
     public:
         explicit CIBuildOnlyReporter(std::shared_ptr<Reporter> reporter =
-                                         std::make_shared<QuietReporter>())
+                                         std::make_shared<TextDiffReporter>())
             : m_reporter(reporter)
         {
         }
