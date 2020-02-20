@@ -76,11 +76,10 @@ namespace ApprovalTests
         std::string getProgramForOs() const
         {
             std::string result = program;
-            std::vector<std::string> possibleWindowsPaths =
-                getProgramFileLocations();
-
             if (result.rfind(programFileTemplate(), 0) == 0)
             {
+                std::vector<std::string> possibleWindowsPaths =
+                    getProgramFileLocations();
                 for (const auto& path : possibleWindowsPaths)
                 {
                     auto result1 = StringUtils::replaceAll(
