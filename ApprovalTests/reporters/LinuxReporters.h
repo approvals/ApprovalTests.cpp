@@ -30,24 +30,38 @@ namespace ApprovalTests
             }
         };
 
-        class SublimeMergeReporter : public GenericDiffReporter
+        class SublimeMergeRepositoryPackageReporter : public GenericDiffReporter
         {
         public:
-            SublimeMergeReporter()
-                : GenericDiffReporter(DiffPrograms::Linux::SUBLIME_MERGE())
+            SublimeMergeRepositoryPackageReporter()
+                : GenericDiffReporter(
+                      DiffPrograms::Linux::SUBLIME_MERGE_REPOSITORY_PACKAGE())
             {
                 launcher.setForeground(true);
             }
         };
 
-        class SublimeMergeTarballReporter : public GenericDiffReporter
+        class SublimeMergeDirectDownloadReporter : public GenericDiffReporter
         {
         public:
-            SublimeMergeTarballReporter()
+            SublimeMergeDirectDownloadReporter()
                 : GenericDiffReporter(
-                      DiffPrograms::Linux::SUBLIME_MERGE_TARBALL())
+                      DiffPrograms::Linux::SUBLIME_MERGE_DIRECT_DOWNLOAD())
             {
                 launcher.setForeground(true);
+            }
+        };
+
+        class SublimeMergeReporter : public FirstWorkingReporter
+        {
+        public:
+            SublimeMergeReporter()
+                : FirstWorkingReporter(
+                      {new SublimeMergeSnapReporter(),
+                       new SublimeMergeFlatpakReporter(),
+                       new SublimeMergeRepositoryPackageReporter(),
+                       new SublimeMergeDirectDownloadReporter()})
+            {
             }
         };
 
@@ -75,10 +89,7 @@ namespace ApprovalTests
                 : FirstWorkingReporter({
                       // begin-snippet: linux_diff_reporters
                       new MeldReporter(),
-                      new SublimeMergeSnapReporter(),
-                      new SublimeMergeFlatpakReporter(),
                       new SublimeMergeReporter(),
-                      new SublimeMergeTarballReporter(),
                       new KDiff3Reporter()
                       // end-snippet
                   })

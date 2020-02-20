@@ -92,14 +92,14 @@ namespace ApprovalTests
                     Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
-                SUBLIME_MERGE,
+                SUBLIME_MERGE_REPOSITORY_PACKAGE,
                 DiffInfo(
                     "smerge",
                     "mergetool --no-wait {Received} {Approved} -o {Approved}",
                     Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
-                SUBLIME_MERGE_TARBALL,
+                SUBLIME_MERGE_DIRECT_DOWNLOAD,
                 DiffInfo(
                     "/opt/sublime_merge/sublime_merge",
                     "mergetool --no-wait {Received} {Approved} -o {Approved}",

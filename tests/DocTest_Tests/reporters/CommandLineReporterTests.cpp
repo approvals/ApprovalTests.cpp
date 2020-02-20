@@ -53,8 +53,8 @@ TEST_CASE("Test Command Lines")
         std::make_shared<Linux::MeldReporter>(),
         std::make_shared<Linux::SublimeMergeSnapReporter>(),
         std::make_shared<Linux::SublimeMergeFlatpakReporter>(),
-        std::make_shared<Linux::SublimeMergeReporter>(),
-        std::make_shared<Linux::SublimeMergeTarballReporter>(),
+        std::make_shared<Linux::SublimeMergeRepositoryPackageReporter>(),
+        std::make_shared<Linux::SublimeMergeDirectDownloadReporter>(),
         std::make_shared<Linux::KDiff3Reporter>()};
     for (const auto& reporter : reporters)
     {
