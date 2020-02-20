@@ -29,6 +29,7 @@ class DeployRelease:
     def publish_starter_project(self):
         self.commit_starter_project()
         self.push_starter_project()
+        run(["open", "https://github.com/approvals/ApprovalTests.cpp.StarterProject/commits/master"])
         check_step("that the starter project is published")
 
     # Main Project
