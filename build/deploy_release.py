@@ -55,6 +55,8 @@ class DeployRelease:
 
         popdir()
 
+        print(
+            F"Create a pull request, including this in the description: **approvaltests.cpp/{new_version_without_v}**")
         check_step("that you have created a Pull Request for conan-center-index?")
 
     def publish_main_project(self):
