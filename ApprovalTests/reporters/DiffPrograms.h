@@ -163,7 +163,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_MACROS_ENTRY(
                 SUBLIME_MERGE,
                 DiffInfo(
-                    "{ProgramFiles}Sublime Merge\\\\smerge.exe",
+                    "{ProgramFiles}Sublime Merge\\smerge.exe",
                     "mergetool --no-wait {Received} {Approved} -o {Approved}",
                     Type::TEXT))
 
