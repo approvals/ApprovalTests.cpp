@@ -10,7 +10,7 @@ namespace ApprovalTests
     class FirstWorkingReporter : public Reporter
     {
     private:
-        std::vector<std::unique_ptr<Reporter>> reporters;
+        std::vector<std::shared_ptr<Reporter>> reporters;
 
     public:
         // Note that FirstWorkingReporter takes ownership of the given Reporter objects
@@ -19,8 +19,14 @@ namespace ApprovalTests
         {
             for (auto r : theReporters)
             {
-                reporters.push_back(std::unique_ptr<Reporter>(r));
+                reporters.push_back(std::shared_ptr<Reporter>(r));
             }
+        }
+
+        explicit FirstWorkingReporter(
+            const std::vector<std::shared_ptr<Reporter>>& reporters)
+        {
+            this->reporters = reporters;
         }
 
         bool report(std::string received, std::string approved) const override

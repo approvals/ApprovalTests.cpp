@@ -2,8 +2,6 @@
 #define APPROVALTESTS_CPP_TEXTDIFFREPORTER_H
 
 #include "core/Reporter.h"
-#include "ConsoleDiffReporter.h"
-#include "reporters/FirstWorkingReporter.h"
 
 #include <memory>
 #include <iostream>
@@ -22,9 +20,10 @@ namespace ApprovalTests
     public:
         TextDiffReporter()
         {
-            std::vector<Reporter*> reporters = {
-                new ConsoleDiffReporter("diff"),
-                new ConsoleDiffReporter("C:/Windows/System32/fc.exe")};
+            std::vector<std::shared_ptr<Reporter>> reporters = {
+                CustomReporter::createForegroundReporter("diff"),
+                CustomReporter::createForegroundReporter(
+                    "C:/Windows/System32/fc.exe")};
             m_reporter =
                 std::unique_ptr<Reporter>(new FirstWorkingReporter(reporters));
         }
