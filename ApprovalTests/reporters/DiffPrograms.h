@@ -44,10 +44,12 @@ namespace ApprovalTests
                          Type::TEXT_AND_IMAGE))
 
             APPROVAL_TESTS_MACROS_ENTRY(
-                    SUBLIME_MERGE,
-                    DiffInfo("/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge",
-                             "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                             Type::TEXT))
+                SUBLIME_MERGE,
+                DiffInfo(
+                    "/Applications/Sublime "
+                    "Merge.app/Contents/SharedSupport/bin/smerge",
+                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                    Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 KDIFF3,
@@ -76,28 +78,32 @@ namespace ApprovalTests
         namespace Linux
         {
             APPROVAL_TESTS_MACROS_ENTRY(
-                    SUBLIME_MERGE_SNAP,
-                    DiffInfo("/snap/bin/sublime-merge",
-                            "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                            Type::TEXT))
+                SUBLIME_MERGE_SNAP,
+                DiffInfo(
+                    "/snap/bin/sublime-merge",
+                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                    Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
-                    SUBLIME_MERGE_FLATPAK,
-                    DiffInfo("/var/lib/flatpak/exports/bin/com.sublimemerge.App",
-                            "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                            Type::TEXT))
+                SUBLIME_MERGE_FLATPAK,
+                DiffInfo(
+                    "/var/lib/flatpak/exports/bin/com.sublimemerge.App",
+                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                    Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
-                    SUBLIME_MERGE,
-                    DiffInfo("smerge",
-                            "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                            Type::TEXT))
+                SUBLIME_MERGE,
+                DiffInfo(
+                    "smerge",
+                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                    Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
-                    SUBLIME_MERGE_TARBALL,
-                    DiffInfo("/opt/sublime_merge/sublime_merge",
-                            "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                            Type::TEXT))
+                SUBLIME_MERGE_TARBALL,
+                DiffInfo(
+                    "/opt/sublime_merge/sublime_merge",
+                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                    Type::TEXT))
 
             // More ideas available from: https://www.tecmint.com/best-linux-file-diff-tools-comparison/
             APPROVAL_TESTS_MACROS_ENTRY(KDIFF3, DiffInfo("kdiff3", Type::TEXT))
@@ -155,10 +161,11 @@ namespace ApprovalTests
                          Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
-                    SUBLIME_MERGE,
-                    DiffInfo("{ProgramFiles}Sublime Merge\\\\smerge.exe",
-                             "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                             Type::TEXT))
+                SUBLIME_MERGE,
+                DiffInfo(
+                    "{ProgramFiles}Sublime Merge\\\\smerge.exe",
+                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                    Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 KDIFF3,
