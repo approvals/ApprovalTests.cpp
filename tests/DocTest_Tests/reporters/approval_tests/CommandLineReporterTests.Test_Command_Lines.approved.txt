@@ -18,6 +18,10 @@ windows: start "" "/Applications/p4merge.app/Contents/MacOS/p4merge" "a.txt" "b.
 unix   : "/Applications/p4merge.app/Contents/MacOS/p4merge" "a.txt" "b.txt" &
 cygwin : "$(cygpath '/Applications/p4merge.app/Contents/MacOS/p4merge')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
+windows: cmd /S /C ""/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" mergetool --no-wait "a.txt" "b.txt" -o "b.txt""
+unix   : "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" mergetool --no-wait "a.txt" "b.txt" -o "b.txt"
+cygwin : "$(cygpath '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge')" mergetool --no-wait "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" -o "$(cygpath -aw 'b.txt')"
+
 windows: start "" "/Applications/kdiff3.app/Contents/MacOS/kdiff3" "a.txt" "b.txt" -m
 unix   : "/Applications/kdiff3.app/Contents/MacOS/kdiff3" "a.txt" "b.txt" -m &
 cygwin : "$(cygpath '/Applications/kdiff3.app/Contents/MacOS/kdiff3')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" -m &
@@ -66,6 +70,10 @@ windows: start "" "{ProgramFiles}Devart\Code Compare\CodeCompare.exe" "a.txt" "b
 unix   : "{ProgramFiles}Devart\Code Compare\CodeCompare.exe" "a.txt" "b.txt" &
 cygwin : "$(cygpath '{ProgramFiles}Devart\Code Compare\CodeCompare.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
+windows: cmd /S /C ""{ProgramFiles}Sublime Merge\\smerge.exe" mergetool --no-wait "a.txt" "b.txt" -o "b.txt""
+unix   : "{ProgramFiles}Sublime Merge\\smerge.exe" mergetool --no-wait "a.txt" "b.txt" -o "b.txt"
+cygwin : "$(cygpath '{ProgramFiles}Sublime Merge\\smerge.exe')" mergetool --no-wait "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" -o "$(cygpath -aw 'b.txt')"
+
 windows: start "" "{ProgramFiles}KDiff3\kdiff3.exe" "a.txt" "b.txt"
 unix   : "{ProgramFiles}KDiff3\kdiff3.exe" "a.txt" "b.txt" &
 cygwin : "$(cygpath '{ProgramFiles}KDiff3\kdiff3.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
@@ -77,6 +85,22 @@ cygwin : "$(cygpath '{ProgramFiles}Microsoft VS Code\Code.exe')" -d "$(cygpath -
 windows: start "" "meld" "a.txt" "b.txt"
 unix   : "meld" "a.txt" "b.txt" &
 cygwin : "$(cygpath 'meld')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
+
+windows: cmd /S /C ""/snap/bin/sublime-merge" mergetool --no-wait "a.txt" "b.txt" -o "b.txt""
+unix   : "/snap/bin/sublime-merge" mergetool --no-wait "a.txt" "b.txt" -o "b.txt"
+cygwin : "$(cygpath '/snap/bin/sublime-merge')" mergetool --no-wait "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" -o "$(cygpath -aw 'b.txt')"
+
+windows: cmd /S /C ""/var/lib/flatpak/exports/bin/com.sublimemerge.App" mergetool --no-wait "a.txt" "b.txt" -o "b.txt""
+unix   : "/var/lib/flatpak/exports/bin/com.sublimemerge.App" mergetool --no-wait "a.txt" "b.txt" -o "b.txt"
+cygwin : "$(cygpath '/var/lib/flatpak/exports/bin/com.sublimemerge.App')" mergetool --no-wait "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" -o "$(cygpath -aw 'b.txt')"
+
+windows: cmd /S /C ""smerge" mergetool --no-wait "a.txt" "b.txt" -o "b.txt""
+unix   : "smerge" mergetool --no-wait "a.txt" "b.txt" -o "b.txt"
+cygwin : "$(cygpath 'smerge')" mergetool --no-wait "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" -o "$(cygpath -aw 'b.txt')"
+
+windows: cmd /S /C ""/opt/sublime_merge/sublime_merge" mergetool --no-wait "a.txt" "b.txt" -o "b.txt""
+unix   : "/opt/sublime_merge/sublime_merge" mergetool --no-wait "a.txt" "b.txt" -o "b.txt"
+cygwin : "$(cygpath '/opt/sublime_merge/sublime_merge')" mergetool --no-wait "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" -o "$(cygpath -aw 'b.txt')"
 
 windows: start "" "kdiff3" "a.txt" "b.txt"
 unix   : "kdiff3" "a.txt" "b.txt" &

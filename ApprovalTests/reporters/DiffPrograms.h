@@ -44,6 +44,12 @@ namespace ApprovalTests
                          Type::TEXT_AND_IMAGE))
 
             APPROVAL_TESTS_MACROS_ENTRY(
+                    SUBLIME_MERGE,
+                    DiffInfo("/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge",
+                             "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                             Type::TEXT))
+
+            APPROVAL_TESTS_MACROS_ENTRY(
                 KDIFF3,
                 DiffInfo("/Applications/kdiff3.app/Contents/MacOS/kdiff3",
                          "{Received} {Approved} -m",
@@ -69,6 +75,30 @@ namespace ApprovalTests
 
         namespace Linux
         {
+            APPROVAL_TESTS_MACROS_ENTRY(
+                    SUBLIME_MERGE_SNAP,
+                    DiffInfo("/snap/bin/sublime-merge",
+                            "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                            Type::TEXT))
+
+            APPROVAL_TESTS_MACROS_ENTRY(
+                    SUBLIME_MERGE_FLATPAK,
+                    DiffInfo("/var/lib/flatpak/exports/bin/com.sublimemerge.App",
+                            "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                            Type::TEXT))
+
+            APPROVAL_TESTS_MACROS_ENTRY(
+                    SUBLIME_MERGE,
+                    DiffInfo("smerge",
+                            "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                            Type::TEXT))
+
+            APPROVAL_TESTS_MACROS_ENTRY(
+                    SUBLIME_MERGE_TARBALL,
+                    DiffInfo("/opt/sublime_merge/sublime_merge",
+                            "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                            Type::TEXT))
+
             // More ideas available from: https://www.tecmint.com/best-linux-file-diff-tools-comparison/
             APPROVAL_TESTS_MACROS_ENTRY(KDIFF3, DiffInfo("kdiff3", Type::TEXT))
 
@@ -123,6 +153,12 @@ namespace ApprovalTests
                 CODE_COMPARE,
                 DiffInfo("{ProgramFiles}Devart\\Code Compare\\CodeCompare.exe",
                          Type::TEXT))
+
+            APPROVAL_TESTS_MACROS_ENTRY(
+                    SUBLIME_MERGE,
+                    DiffInfo("{ProgramFiles}Sublime Merge\\\\smerge.exe",
+                             "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                             Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 KDIFF3,

@@ -8,6 +8,10 @@ toc
 
 ## v.x.y.z
 
+### Support for SublimeMerge
+
+Added support for [SublimeMerge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (#102)
+
 ## v.8.3.0
 
 ### Flexibility for adding custom merge tools

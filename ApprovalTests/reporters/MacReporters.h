@@ -56,6 +56,16 @@ namespace ApprovalTests
             }
         };
 
+        class SublimeMergeReporter : public GenericDiffReporter
+        {
+        public:
+            SublimeMergeReporter()
+                    : GenericDiffReporter(DiffPrograms::Mac::SUBLIME_MERGE())
+            {
+                launcher.setForeground(true);
+            }
+        };
+
         class KDiff3Reporter : public GenericDiffReporter
         {
         public:
@@ -92,6 +102,7 @@ namespace ApprovalTests
                       new DiffMergeReporter(),
                       new KaleidoscopeReporter(),
                       new P4MergeReporter(),
+                      new SublimeMergeReporter(),
                       new KDiff3Reporter(),
                       new TkDiffReporter(),
                       new VisualStudioCodeReporter()
