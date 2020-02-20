@@ -19,7 +19,7 @@ A typical session lasts between 60 to 90 minutes. We do the work directly on mas
 
 We use github's "co-author" feature, so everyone in the pairing session gets credit for the work. Virtually this entire project has been developed in this way, and is stronger for it.
 
-We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommitNotation) to prefix most commits, to indicate their level or risk.
+We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommitNotation) to prefix most commits, to indicate their level of risk.
 
 ### Definition of Done
 
@@ -49,7 +49,9 @@ Instructions for this are available:
     * Settings/Preferences | Editor | Code Style | Turn on "Enable ClangFormat with clangd server" checkbox.
     * More information: [ClangFormat as Alternative Formatter](https://www.jetbrains.com/help/clion/clangformat-as-alternative-formatter.html)
 
-We have a CI job that checks for code not correctly formatted.
+There is a script to apply clang-format to the whole project: [scripts/reformat_code.sh](https://github.com/approvals/ApprovalTests.cpp/blob/master/scripts/reformat_code.sh).
+
+We have a CI job called `clang-format` that checks for code not correctly formatted: [.github/workflows/github_actions_build.yml](https://github.com/approvals/ApprovalTests.cpp/blob/master/.github/workflows/github_actions_build.yml).
 
 ## Updating the simulated single-header
 
