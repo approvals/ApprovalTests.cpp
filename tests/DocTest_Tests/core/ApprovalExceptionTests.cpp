@@ -27,6 +27,8 @@ TEST_CASE("ApprovalMissingException is thrown")
 {
     // Important to note that QuietReporter doesn't create the missing
     // approved file
+    auto disposer =
+        Approvals::useAsFrontLoadedReporter(std::make_shared<QuietReporter>());
     bool exception_caught = false;
     try
     {
