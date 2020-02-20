@@ -43,7 +43,7 @@ class DeployRelease:
         popdir()
 
     def test_conan_and_create_pr(self):
-        pushdir(self.details.conan_approvaltests_dir)
+        pushdir(os.path.join(self.details.conan_approvaltests_dir, 'all'))
         # We cannot test the new Conan recipe until the new release has been
         # published on github
         new_version_without_v = version.get_version_without_v(self.details.new_version)
