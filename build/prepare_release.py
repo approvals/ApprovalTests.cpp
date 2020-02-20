@@ -36,19 +36,15 @@ class PrepareRelease:
             repo = Repo(self.details.main_project_dir)
             assert not repo.bare
 
-            # run(["git", "branch"])
             assert (repo.active_branch.name == 'master')
-            # check_step("we are on the master branch")
 
-            # run(["git", "status"])
             # From https://stackoverflow.com/questions/31959425/how-to-get-staged-files-using-gitpython
-            assert (len(repo.index.diff(None)) == 0)  # Modified
-            assert (len(repo.index.diff("HEAD")) == 0)  # Staged
-            # check_step("everything is committed")
+            assert len(repo.index.diff(None)) == 0, "there are un-committed changes to ApprovalTests.cpp"  # Modified
+            assert len(repo.index.diff("HEAD")) == 0, "there are un-committed changes to ApprovalTests.cpp"  # Staged
 
             # From https://stackoverflow.com/questions/15849640/how-to-get-count-of-unpublished-commit-with-gitpython
-            assert (len(list(repo.iter_commits('master@{u}..master'))) == 0)
-            # check_step("everything is pushed")
+            assert len(
+                list(repo.iter_commits('master@{u}..master'))) == 0, "there are un-pushed changes in ApprovalTests.cpp"
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/commits/master"])
             check_step("the builds are passing")
