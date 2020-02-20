@@ -13,7 +13,7 @@ namespace ApprovalTests
         {
         public:
             SublimeMergeSnapReporter()
-                    : GenericDiffReporter(DiffPrograms::Linux::SUBLIME_MERGE_SNAP())
+                : GenericDiffReporter(DiffPrograms::Linux::SUBLIME_MERGE_SNAP())
             {
                 launcher.setForeground(true);
             }
@@ -23,7 +23,8 @@ namespace ApprovalTests
         {
         public:
             SublimeMergeFlatpakReporter()
-                    : GenericDiffReporter(DiffPrograms::Linux::SUBLIME_MERGE_FLATPAK())
+                : GenericDiffReporter(
+                      DiffPrograms::Linux::SUBLIME_MERGE_FLATPAK())
             {
                 launcher.setForeground(true);
             }
@@ -33,7 +34,7 @@ namespace ApprovalTests
         {
         public:
             SublimeMergeReporter()
-                    : GenericDiffReporter(DiffPrograms::Linux::SUBLIME_MERGE())
+                : GenericDiffReporter(DiffPrograms::Linux::SUBLIME_MERGE())
             {
                 launcher.setForeground(true);
             }
@@ -43,7 +44,8 @@ namespace ApprovalTests
         {
         public:
             SublimeMergeTarballReporter()
-                    : GenericDiffReporter(DiffPrograms::Linux::SUBLIME_MERGE_TARBALL())
+                : GenericDiffReporter(
+                      DiffPrograms::Linux::SUBLIME_MERGE_TARBALL())
             {
                 launcher.setForeground(true);
             }

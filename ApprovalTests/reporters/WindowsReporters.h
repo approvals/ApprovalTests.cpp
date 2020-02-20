@@ -143,7 +143,7 @@ namespace ApprovalTests
         {
         public:
             SublimeMergeReporter()
-                    : GenericDiffReporter(DiffPrograms::Windows::SUBLIME_MERGE())
+                : GenericDiffReporter(DiffPrograms::Windows::SUBLIME_MERGE())
             {
                 launcher.setForeground(true);
             }

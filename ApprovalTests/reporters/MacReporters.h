@@ -60,7 +60,7 @@ namespace ApprovalTests
         {
         public:
             SublimeMergeReporter()
-                    : GenericDiffReporter(DiffPrograms::Mac::SUBLIME_MERGE())
+                : GenericDiffReporter(DiffPrograms::Mac::SUBLIME_MERGE())
             {
                 launcher.setForeground(true);
             }
