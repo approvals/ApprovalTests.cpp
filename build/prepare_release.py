@@ -142,6 +142,11 @@ F"""// Approval Tests version {self.details.new_version}
         assert (len(repo.index.diff(None)) == 0)  # Modified
         assert (len(repo.index.diff("HEAD")) == 0)  # Staged
 
+        run(["open", "https://github.com/conan-io/conan/releases"])
+        run(["conan", "--version"])
+        # TODO pip3 install --upgrade conan
+        check_step("you are running the latest Conan release")
+
     def update_conan_recipe(self):
         self.check_conan_repo()
 
