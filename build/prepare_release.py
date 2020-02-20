@@ -136,6 +136,7 @@ F"""// Approval Tests version {self.details.new_version}
         repo = Repo(self.details.conan_repo_dir)
         assert not repo.bare
 
+        # TODO Add descriptions in case of failure
         assert (repo.active_branch.name == 'master')
 
         assert (len(repo.index.diff(None)) == 0)  # Modified
@@ -146,6 +147,12 @@ F"""// Approval Tests version {self.details.new_version}
 
         new_version_with_v = self.details.new_version
         new_version_without_v = version.get_version_without_v(self.details.new_version)
+
+        # TODO Execute or show these commands...
+        # cd conan-center-index-claremacrae
+        # git pull upstream master
+        # git push
+        # git checkout -b approvaltests.cpp.8.4.0
 
         check_step("Check out Conan master")
         check_step("Pull all changes in from upstream master")
