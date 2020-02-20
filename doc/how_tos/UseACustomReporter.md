@@ -32,13 +32,12 @@ You can do this simply by creating a Reporter using:
 <!-- snippet: use_custom_reporter -->
 <a id='snippet-use_custom_reporter'/></a>
 ```cpp
-const auto path =
+auto path =
     "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
-const auto arguments =
-    "mergetool --no-wait {Received} {Approved} -o {Approved}";
-const auto reporter = CustomReporter::create(path, arguments);
+auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
+auto reporter = CustomReporter::create(path, arguments);
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L10-L16' title='File snippet `use_custom_reporter` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_reporter' title='Navigate to start of snippet `use_custom_reporter`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L10-L15' title='File snippet `use_custom_reporter` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_reporter' title='Navigate to start of snippet `use_custom_reporter`'>anchor</a></sup>
 <!-- endsnippet -->
 
 By default, this will run in the background. Most of the time this is what you want.
@@ -50,7 +49,7 @@ However, you can force it to run in the foreground with:
 ```cpp
 auto reporter = CustomReporter::createForegroundReporter(path, arguments);
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L43-L45' title='File snippet `use_custom_foreground_reporter` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_foreground_reporter' title='Navigate to start of snippet `use_custom_foreground_reporter`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L42-L44' title='File snippet `use_custom_foreground_reporter` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_foreground_reporter' title='Navigate to start of snippet `use_custom_foreground_reporter`'>anchor</a></sup>
 <!-- endsnippet -->
 
 On Windows, you can specify a search path for the installed location of a program with `{ProgramFiles}`.
@@ -58,10 +57,10 @@ On Windows, you can specify a search path for the installed location of a progra
 <!-- snippet: use_custom_windows_reporter -->
 <a id='snippet-use_custom_windows_reporter'/></a>
 ```cpp
-const auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";
+auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";
 auto reporter = CustomReporter::create(path);
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L26-L29' title='File snippet `use_custom_windows_reporter` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_windows_reporter' title='Navigate to start of snippet `use_custom_windows_reporter`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L25-L28' title='File snippet `use_custom_windows_reporter` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_windows_reporter' title='Navigate to start of snippet `use_custom_windows_reporter`'>anchor</a></sup>
 <!-- endsnippet -->
 
 See [Registering a default reporter](/doc/Reporters.md#registering-a-default-reporter) for wiring up this reporter as default, or you can dereference it and pass it in to individual `verify("text", *reporter)` method calls...
