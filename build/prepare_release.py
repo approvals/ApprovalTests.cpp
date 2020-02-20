@@ -156,7 +156,7 @@ F"""// Approval Tests version {self.details.new_version}
         check_step(F"Create branch 'approvaltests.cpp.{new_version_without_v}', if it does not already exist")
         check_step(F"Check out branch 'approvaltests.cpp.{new_version_without_v}'")
 
-        conan_approvaltests_dir = os.path.join(self.details.conan_repo_dir, 'recipes', 'approvaltests.cpp')
+        conan_approvaltests_dir = self.details.conan_approvaltests_dir
 
         self.update_conandata_yml(conan_approvaltests_dir, new_version_with_v, new_version_without_v)
         self.update_conan_config_yml(conan_approvaltests_dir, new_version_without_v)

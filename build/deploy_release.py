@@ -43,15 +43,14 @@ class DeployRelease:
         popdir()
 
     def test_conan_and_create_pr(self):
-        # TODO Fix this directory name
-        pushdir(self.details.conan_data_dir)
+        pushdir(self.details.conan_approvaltests_dir)
         # We cannot test the new Conan recipe until the new release has been
         # published on github
         new_version_without_v = version.get_version_without_v(self.details.new_version)
         run(['conan', 'create', '.', F'{new_version_without_v}@'])
 
-        # TODO Commit the changes - with message f'Add approvaltests.cpp {new_version_without_v}'
-        # TODO Push the changes - NB on the feature branch for the release
+        check_step(F"Commit the changes - with message 'Add approvaltests.cpp {new_version_without_v}'")
+        check_step('Push the changes - NB on the feature branch for the release')
 
         popdir()
 
