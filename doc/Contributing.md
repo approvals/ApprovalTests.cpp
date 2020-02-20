@@ -45,6 +45,12 @@ A typical session lasts between 60 to 90 minutes. We do the work directly on mas
 
 We use github's "co-author" feature, so everyone in the pairing session gets credit for the work. Virtually this entire project has been developed in this way, and is stronger for it.
 
+Example co-author text, for use if not using the GitHub Desktop application:
+
+```
+Co-Authored-By: Llewellyn Falco <isidore@users.noreply.github.com>
+```
+
 We use [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommitNotation) to prefix most commits, to indicate their level of risk.
 
 ### Definition of Done
