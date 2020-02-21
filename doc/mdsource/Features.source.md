@@ -10,7 +10,7 @@ toc
 
 ### Support for SublimeMerge
 
-Added support for [SublimeMerge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (#102)
+Added support for [SublimeMerge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (See [#102](https://github.com/approvals/ApprovalTests.cpp/pull/103#issue-377938792))
 
 ## v.8.3.0
 
