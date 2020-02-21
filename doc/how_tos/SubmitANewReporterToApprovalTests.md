@@ -75,11 +75,12 @@ new BeyondCompareReporter(),
 new DiffMergeReporter(),
 new KaleidoscopeReporter(),
 new P4MergeReporter(),
+new SublimeMergeReporter(),
 new KDiff3Reporter(),
 new TkDiffReporter(),
 new VisualStudioCodeReporter()
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.h#L89-L98' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.h#L99-L109' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Edit [tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp)
@@ -95,11 +96,12 @@ std::make_shared<Mac::BeyondCompareReporter>(),
 std::make_shared<Mac::DiffMergeReporter>(),
 std::make_shared<Mac::KaleidoscopeReporter>(),
 std::make_shared<Mac::P4MergeReporter>(),
+std::make_shared<Mac::SublimeMergeReporter>(),
 std::make_shared<Mac::KDiff3Reporter>(),
 std::make_shared<Mac::TkDiffReporter>(),
 std::make_shared<Mac::VisualStudioCodeReporter>(),
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp#L25-L35' title='File snippet `add_reporter_command_test` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_command_test' title='Navigate to start of snippet `add_reporter_command_test`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp#L25-L36' title='File snippet `add_reporter_command_test` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_command_test' title='Navigate to start of snippet `add_reporter_command_test`'>anchor</a></sup>
 <!-- endsnippet -->
 
 * Run this test, review and accept the changes.

@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [Support for SublimeMerge](#support-for-sublimemerge)
   * [v.8.3.0](#v830)
     * [Flexibility for adding custom merge tools](#flexibility-for-adding-custom-merge-tools)
     * [Supporting new merge tools.](#supporting-new-merge-tools)
@@ -47,6 +48,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+### Support for SublimeMerge
+
+Added support for [SublimeMerge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (#102)
 
 ## v.8.3.0
 

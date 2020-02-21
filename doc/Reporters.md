@@ -39,11 +39,12 @@ new BeyondCompareReporter(),
 new DiffMergeReporter(),
 new KaleidoscopeReporter(),
 new P4MergeReporter(),
+new SublimeMergeReporter(),
 new KDiff3Reporter(),
 new TkDiffReporter(),
 new VisualStudioCodeReporter()
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.h#L89-L98' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.h#L99-L109' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Linux
@@ -52,9 +53,10 @@ new VisualStudioCodeReporter()
 <a id='snippet-linux_diff_reporters'/></a>
 ```h
 new MeldReporter(),
+new SublimeMergeReporter(),
 new KDiff3Reporter()
 ```
-<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L34-L37' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L90-L94' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Windows
@@ -68,10 +70,11 @@ new BeyondCompareReporter(),
 new WinMergeReporter(),
 new AraxisMergeReporter(),
 new CodeCompareReporter(),
+new SublimeMergeReporter(),
 new KDiff3Reporter(),
 new VisualStudioCodeReporter(),
 ```
-<sup><a href='/ApprovalTests/reporters/WindowsReporters.h#L156-L165' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/WindowsReporters.h#L166-L176' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Registering a default reporter
