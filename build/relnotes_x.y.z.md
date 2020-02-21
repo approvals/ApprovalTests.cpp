@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * Added support for [SublimeMerge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (#102)
+    * Added support for [SublimeMerge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (#103, thank you @jwillikers)
 * **Bug fixes**
     * None
 * **Other changes**
