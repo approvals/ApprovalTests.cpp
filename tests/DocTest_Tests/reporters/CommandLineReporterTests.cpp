@@ -29,6 +29,7 @@ TEST_CASE("Test Command Lines")
         std::make_shared<Mac::DiffMergeReporter>(),
         std::make_shared<Mac::KaleidoscopeReporter>(),
         std::make_shared<Mac::P4MergeReporter>(),
+        std::make_shared<Mac::SublimeMergeReporter>(),
         std::make_shared<Mac::KDiff3Reporter>(),
         std::make_shared<Mac::TkDiffReporter>(),
         std::make_shared<Mac::VisualStudioCodeReporter>(),
@@ -44,11 +45,16 @@ TEST_CASE("Test Command Lines")
         std::make_shared<Windows::WinMergeReporter>(),
         std::make_shared<Windows::AraxisMergeReporter>(),
         std::make_shared<Windows::CodeCompareReporter>(),
+        std::make_shared<Windows::SublimeMergeReporter>(),
         std::make_shared<Windows::KDiff3Reporter>(),
         std::make_shared<Windows::VisualStudioCodeReporter>(),
 
         // Linux
         std::make_shared<Linux::MeldReporter>(),
+        std::make_shared<Linux::SublimeMergeSnapReporter>(),
+        std::make_shared<Linux::SublimeMergeFlatpakReporter>(),
+        std::make_shared<Linux::SublimeMergeRepositoryPackageReporter>(),
+        std::make_shared<Linux::SublimeMergeDirectDownloadReporter>(),
         std::make_shared<Linux::KDiff3Reporter>()};
     for (const auto& reporter : reporters)
     {

@@ -139,6 +139,16 @@ namespace ApprovalTests
             }
         };
 
+        class SublimeMergeReporter : public GenericDiffReporter
+        {
+        public:
+            SublimeMergeReporter()
+                : GenericDiffReporter(DiffPrograms::Windows::SUBLIME_MERGE())
+            {
+                launcher.setForeground(true);
+            }
+        };
+
         class KDiff3Reporter : public GenericDiffReporter
         {
         public:
@@ -160,6 +170,7 @@ namespace ApprovalTests
                       new WinMergeReporter(),
                       new AraxisMergeReporter(),
                       new CodeCompareReporter(),
+                      new SublimeMergeReporter(),
                       new KDiff3Reporter(),
                       new VisualStudioCodeReporter(),
                       // end-snippet
