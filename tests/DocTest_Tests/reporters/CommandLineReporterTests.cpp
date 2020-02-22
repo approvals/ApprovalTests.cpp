@@ -1,7 +1,8 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/Approvals.h"
-#include "ApprovalTests/writers/StringWriter.h"
-#include "ApprovalTests/reporters/CustomReporter.h"
+#include "ApprovalTests/reporters/WindowsReporters.h"
+#include "ApprovalTests/reporters/MacReporters.h"
+#include "ApprovalTests/reporters/LinuxReporters.h"
 
 #include <vector>
 
