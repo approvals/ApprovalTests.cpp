@@ -1,10 +1,6 @@
 #ifndef APPROVALTESTS_CPP_BLOCKER_H
 #define APPROVALTESTS_CPP_BLOCKER_H
 
-// Force the include with Version information to appear at the start
-// of the release single-header.
-#include "ApprovalTestsVersion.h"
-
 namespace ApprovalTests
 {
     class Blocker
