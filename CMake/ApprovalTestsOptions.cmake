@@ -10,6 +10,9 @@ option(APPROVAL_TESTS_BUILD_EXAMPLES
 
 # -------------------------------------------------------------------
 # Control which of our copies of header-only third_party libraries are made available.
+# These only affect builds where ApprovalTests.cpp is a sub-project.
+# All the third-party libraries are made available
+# if this is the top-level project, so that we can run our tests.
 option(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2
         "Include this project's copy of the Catch2 test framework"
         OFF)
