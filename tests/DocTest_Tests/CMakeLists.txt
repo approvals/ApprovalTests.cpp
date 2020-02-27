@@ -28,6 +28,7 @@ add_executable(${PROJECT_NAME}
         reporters/TestReporter.h
         utilities/CartesianProductTests.cpp
         utilities/ExceptionCollectorTests.cpp
+        utilities/FileUtilsSystemSpecificTests.cpp
         utilities/FileUtilsTests.cpp
         utilities/StringUtilsTests.cpp
         utilities/SystemUtilsTests.cpp
