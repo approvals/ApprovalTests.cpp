@@ -26,6 +26,8 @@ Wrapper classes or functions can be used to provide additional output formats fo
 
 snippet: to_string_wrapper_example
 
+**Note** The output operator (`<<`) needs to be declared before Approval Tests. Usually this is handled by putting it in its own header file, and including that at the top of the test source code.
+
 ## Design
 
 If your code already has output operators, then go ahead and use them in Approvals.

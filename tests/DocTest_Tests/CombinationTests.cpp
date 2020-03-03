@@ -3,7 +3,6 @@
 #include <vector>
 #include <string>
 #include <ApprovalTests/reporters/BlockingReporter.h>
-#include "PairUtilities.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "reporters/FakeReporter.h"
 
@@ -52,7 +51,11 @@ TEST_CASE("YouCanVerifyCombinationsOf2")
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
     CombinationApprovals::verifyAllCombinations(
-        [](std::string s, int i) { return std::make_pair(s, i); }, v, numbers);
+        [](std::string s, int i) {
+            return std::string("(") + s + ", " + std::to_string(i) + ")";
+        },
+        v,
+        numbers);
 }
 // end-snippet
 

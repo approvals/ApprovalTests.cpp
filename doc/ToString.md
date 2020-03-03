@@ -94,6 +94,8 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead")
 <sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L37-L64' title='File snippet `to_string_wrapper_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_wrapper_example' title='Navigate to start of snippet `to_string_wrapper_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
+**Note** The output operator (`<<`) needs to be declared before Approval Tests. Usually this is handled by putting it in its own header file, and including that at the top of the test source code.
+
 ## Design
 
 If your code already has output operators, then go ahead and use them in Approvals.

@@ -51,8 +51,10 @@ Note: Over releases, the position of the optional Reporter parameter to `verifyA
 | In v.6.0.0 | The optional Reporter argument should be the **second** argument. |
 | After v.6.0.0 | The optional Reporter argument should be the **first** argument. |
 
-## Code samples
+## C++ Language Versions
 
+If you are using C++11, you will need to supply the exact parameter types to your lambda:
+ 
 snippet: sample_combinations_of_three
 
 If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
