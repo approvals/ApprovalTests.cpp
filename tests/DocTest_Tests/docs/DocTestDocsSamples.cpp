@@ -91,8 +91,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
         Greeting(British), Greeting(American), Greeting(French)};
     for (auto greeting : greetings)
     {
-        auto section =
-            NamerFactory::appendToOutputFilename(greeting.getNationality());
+        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
         Approvals::verify(greeting.getGreeting());
     }
 }
@@ -122,14 +121,12 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
 {
     using namespace ApprovalTests;
 
-    ExceptionCollector
-        exceptions; // Allow all files to be written, regardless of errors
+    ExceptionCollector exceptions; // Allow all files to be written, regardless of errors
     std::vector<Greeting> greetings{
         Greeting(British), Greeting(American), Greeting(French)};
     for (auto greeting : greetings)
     {
-        auto section =
-            NamerFactory::appendToOutputFilename(greeting.getNationality());
+        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
         exceptions.gather([&]() {
             Approvals::verify(
                 greeting.getGreeting(),

@@ -23,8 +23,7 @@ namespace ApprovalTests
         {
         public:
             SublimeMergeFlatpakReporter()
-                : GenericDiffReporter(
-                      DiffPrograms::Linux::SUBLIME_MERGE_FLATPAK())
+                : GenericDiffReporter(DiffPrograms::Linux::SUBLIME_MERGE_FLATPAK())
             {
                 launcher.setForeground(true);
             }
@@ -56,11 +55,10 @@ namespace ApprovalTests
         {
         public:
             SublimeMergeReporter()
-                : FirstWorkingReporter(
-                      {new SublimeMergeSnapReporter(),
-                       new SublimeMergeFlatpakReporter(),
-                       new SublimeMergeRepositoryPackageReporter(),
-                       new SublimeMergeDirectDownloadReporter()})
+                : FirstWorkingReporter({new SublimeMergeSnapReporter(),
+                                        new SublimeMergeFlatpakReporter(),
+                                        new SublimeMergeRepositoryPackageReporter(),
+                                        new SublimeMergeDirectDownloadReporter()})
             {
             }
         };
@@ -68,8 +66,7 @@ namespace ApprovalTests
         class KDiff3Reporter : public GenericDiffReporter
         {
         public:
-            KDiff3Reporter()
-                : GenericDiffReporter(DiffPrograms::Linux::KDIFF3())
+            KDiff3Reporter() : GenericDiffReporter(DiffPrograms::Linux::KDIFF3())
             {
             }
         };

@@ -12,8 +12,7 @@ namespace ApprovalTests
     class GoogleCustomizationsFactory
     {
     public:
-        using Comparator =
-            std::function<bool(const std::string&, const std::string&)>;
+        using Comparator = std::function<bool(const std::string&, const std::string&)>;
 
     private:
         using ComparatorContainer = std::vector<Comparator>;
@@ -22,12 +21,11 @@ namespace ApprovalTests
             static ComparatorContainer container;
             if (container.empty())
             {
-                auto exactNameMatching =
-                    [](const std::string& testFileNameWithExtension,
-                       const std::string& testCaseName) {
-                        return StringUtils::contains(testFileNameWithExtension,
-                                                     testCaseName + ".");
-                    };
+                auto exactNameMatching = [](const std::string& testFileNameWithExtension,
+                                            const std::string& testCaseName) {
+                    return StringUtils::contains(testFileNameWithExtension,
+                                                 testCaseName + ".");
+                };
                 container.push_back(exactNameMatching);
             }
             return container;

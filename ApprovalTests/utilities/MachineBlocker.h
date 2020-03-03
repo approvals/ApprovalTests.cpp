@@ -33,8 +33,7 @@ namespace ApprovalTests
 
         virtual bool isBlockingOnThisMachine() const override
         {
-            const auto isMachine =
-                (SystemUtils::getMachineName() == machineName);
+            const auto isMachine = (SystemUtils::getMachineName() == machineName);
             return isMachine == block;
         }
     };

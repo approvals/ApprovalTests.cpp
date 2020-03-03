@@ -7,8 +7,7 @@ using namespace ApprovalTests;
 
 // begin-snippet: googletest_customize_suffix
 // main.cpp
-auto customization =
-    GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
+auto customization = GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
 // end-snippet
 
 // begin-snippet: googletest_name_parts
@@ -23,9 +22,8 @@ TEST(TestCaseName, TestName)
 TEST(GoogleFixtureNamerCustomizationTests, EliminatesDuplicatedClassName)
 {
     ApprovalTestNamer namer;
-    EXPECT_EQ(
-        namer.getOutputFileBaseName(),
-        "GoogleFixtureNamerCustomizationTests.EliminatesDuplicatedClassName");
+    EXPECT_EQ(namer.getOutputFileBaseName(),
+              "GoogleFixtureNamerCustomizationTests.EliminatesDuplicatedClassName");
 }
 
 class GoogleFixtureNamerCustomizationTestsFixture : public ::testing::Test
@@ -41,15 +39,14 @@ TEST_F(GoogleFixtureNamerCustomizationTestsFixture, OnlyMatchesFixtureAtEnd)
 
 // begin-snippet: googletest_customize_function
 // main.cpp
-bool dropTestCaseNamesWithIgnoreThis(
-    const std::string& /*testFileNameWithExtension*/,
-    const std::string& testCaseName)
+bool dropTestCaseNamesWithIgnoreThis(const std::string& /*testFileNameWithExtension*/,
+                                     const std::string& testCaseName)
 {
     return StringUtils::contains(testCaseName, "IgnoreThis");
 }
 
-auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(
-    dropTestCaseNamesWithIgnoreThis);
+auto ignoreNames =
+    GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
 // end-snippet
 
 // begin-snippet: googletest_customize_lambda

@@ -17,16 +17,14 @@ TEST(GoogleNamerTest, ItDropsFirstNameWhenItEqualsTheFilename)
 TEST(TestCaseNameDifferentNameThanFile, TestName)
 {
     ApprovalTestNamer namer;
-    EXPECT_EQ(namer.getTestName(),
-              "TestCaseNameDifferentNameThanFile.TestName");
+    EXPECT_EQ(namer.getTestName(), "TestCaseNameDifferentNameThanFile.TestName");
 }
 
 std::string createSuffix(const std::string& suffix,
                          const std::string& fileName,
                          const std::string& testCaseName)
 {
-    auto converter =
-        GoogleConfiguration::createIgnorableTestCaseNameSuffixCheck(suffix);
+    auto converter = GoogleConfiguration::createIgnorableTestCaseNameSuffixCheck(suffix);
     return converter(fileName, testCaseName) ? "redundant" : "";
 }
 
@@ -55,7 +53,6 @@ TEST(GoogleNamerTest, TestSuffixMatcherBug)
     std::string testCaseName = "ApprovalTestsTest";
     std::string suffix = "Test";
     std::string fileName = "/a/b/c/testApprovalTests.cpp";
-    auto converter =
-        GoogleConfiguration::createIgnorableTestCaseNameSuffixCheck(suffix);
+    auto converter = GoogleConfiguration::createIgnorableTestCaseNameSuffixCheck(suffix);
     EXPECT_EQ(converter(fileName, testCaseName), true);
 }

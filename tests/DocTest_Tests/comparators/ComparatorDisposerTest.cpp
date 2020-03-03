@@ -20,10 +20,8 @@ namespace
 
             using InputIter = std::istreambuf_iterator<char>;
 
-            auto receivedText =
-                std::string(InputIter{receivedStream}, InputIter{});
-            auto approvedText =
-                std::string(InputIter{approvedStream}, InputIter{});
+            auto receivedText = std::string(InputIter{receivedStream}, InputIter{});
+            auto approvedText = std::string(InputIter{approvedStream}, InputIter{});
 
             return StringUtils::toLower(receivedText) ==
                    StringUtils::toLower(approvedText);
@@ -48,8 +46,7 @@ TEST_CASE("ComparatorDisposer object can be moved without disposing a "
     FileUtils::writeToFile("b.txt", "FOO");
 
     // Case-insensitive comparator is not registered - files are not equivalent
-    REQUIRE_THROWS_AS(FileApprover::verify("a.txt", "b.txt"),
-                      ApprovalMismatchException);
+    REQUIRE_THROWS_AS(FileApprover::verify("a.txt", "b.txt"), ApprovalMismatchException);
 
     std::unique_ptr<ComparatorDisposer> disposer;
 
@@ -70,6 +67,5 @@ TEST_CASE("ComparatorDisposer object can be moved without disposing a "
     disposer.reset();
 
     // The comparator is no longer registered - files are not equivalent
-    REQUIRE_THROWS_AS(FileApprover::verify("a.txt", "b.txt"),
-                      ApprovalMismatchException);
+    REQUIRE_THROWS_AS(FileApprover::verify("a.txt", "b.txt"), ApprovalMismatchException);
 }

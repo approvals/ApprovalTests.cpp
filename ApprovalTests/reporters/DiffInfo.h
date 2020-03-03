@@ -40,15 +40,11 @@ namespace ApprovalTests
         }
 
         DiffInfo(std::string program, Type type)
-            : program(std::move(program))
-            , arguments(getDefaultArguments())
-            , type(type)
+            : program(std::move(program)), arguments(getDefaultArguments()), type(type)
         {
         }
         DiffInfo(std::string program, std::string arguments, Type type)
-            : program(std::move(program))
-            , arguments(std::move(arguments))
-            , type(type)
+            : program(std::move(program)), arguments(std::move(arguments)), type(type)
         {
         }
         std::string program;
@@ -78,12 +74,11 @@ namespace ApprovalTests
             std::string result = program;
             if (result.rfind(programFileTemplate(), 0) == 0)
             {
-                std::vector<std::string> possibleWindowsPaths =
-                    getProgramFileLocations();
+                std::vector<std::string> possibleWindowsPaths = getProgramFileLocations();
                 for (const auto& path : possibleWindowsPaths)
                 {
-                    auto result1 = StringUtils::replaceAll(
-                        result, programFileTemplate(), path);
+                    auto result1 =
+                        StringUtils::replaceAll(result, programFileTemplate(), path);
                     if (FileUtils::fileExists(result1))
                     {
                         return result1;

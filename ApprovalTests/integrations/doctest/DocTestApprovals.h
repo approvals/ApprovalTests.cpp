@@ -41,27 +41,23 @@ namespace ApprovalTests
 
 #if 20305 <= DOCTEST_VERSION
             // called when a test case is reentered because of unfinished subcases (safe to cache a pointer to the input)
-            virtual void
-            test_case_reenter(const doctest::TestCaseData&) override
+            virtual void test_case_reenter(const doctest::TestCaseData&) override
             {
             }
 #endif
 
             // called when a test case has ended
-            virtual void
-            test_case_end(const doctest::CurrentTestCaseStats&) override
+            virtual void test_case_end(const doctest::CurrentTestCaseStats&) override
             {
             }
 
             // called when an exception is thrown from the test case (or it crashes)
-            virtual void
-            test_case_exception(const doctest::TestCaseException&) override
+            virtual void test_case_exception(const doctest::TestCaseException&) override
             {
             }
 
             // called whenever a subcase is entered (don't cache pointers to the input)
-            virtual void
-            subcase_start(const doctest::SubcaseSignature&) override
+            virtual void subcase_start(const doctest::SubcaseSignature&) override
             {
             }
 
@@ -82,8 +78,7 @@ namespace ApprovalTests
 
             // called when a test case is skipped either because it doesn't pass the filters, has a skip decorator
             // or isn't in the execution range (between first and last) (safe to cache a pointer to the input)
-            virtual void
-            test_case_skipped(const doctest::TestCaseData&) override
+            virtual void test_case_skipped(const doctest::TestCaseData&) override
             {
             }
         };
@@ -93,8 +88,7 @@ namespace ApprovalTests
             TestName currentTest;
 
             // constructor has to accept the ContextOptions by ref as a single argument
-            explicit DocTestApprovalListener(
-                const doctest::ContextOptions& /*in*/)
+            explicit DocTestApprovalListener(const doctest::ContextOptions& /*in*/)
             {
             }
 
@@ -106,8 +100,7 @@ namespace ApprovalTests
                 ApprovalTestNamer::currentTest(&currentTest);
             }
 
-            void
-            test_case_end(const doctest::CurrentTestCaseStats& /*in*/) override
+            void test_case_end(const doctest::CurrentTestCaseStats& /*in*/) override
             {
 
                 while (!currentTest.sections.empty())
@@ -116,8 +109,7 @@ namespace ApprovalTests
                 }
             }
 
-            void
-            subcase_start(const doctest::SubcaseSignature& signature) override
+            void subcase_start(const doctest::SubcaseSignature& signature) override
             {
 
                 currentTest.sections.emplace_back(signature.m_name);

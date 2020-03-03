@@ -21,8 +21,7 @@ TEST_CASE("ItVerifiesApprovedFileExists")
                            "Approval File Not Found \n"
                            "File: \"" +
                            approved + "\"";
-    REQUIRE_THROWS_MESSAGE(FileApprover::verify(namer, writer, reporter),
-                           expected);
+    REQUIRE_THROWS_MESSAGE(FileApprover::verify(namer, writer, reporter), expected);
 
     remove(approved.c_str());
     remove(received.c_str());
@@ -45,8 +44,7 @@ TEST_CASE("ItComparesTheEntireFile")
 {
     FileUtils::writeToFile("a.txt", "12345");
     FileUtils::writeToFile("b.txt", "123");
-    CHECK_THROWS_AS(FileApprover::verify("a.txt", "b.txt"),
-                    ApprovalMismatchException);
+    CHECK_THROWS_AS(FileApprover::verify("a.txt", "b.txt"), ApprovalMismatchException);
 }
 
 // begin-snippet: create_custom_comparator
@@ -56,8 +54,7 @@ public:
     bool contentsAreEquivalent(std::string receivedPath,
                                std::string approvedPath) const override
     {
-        return FileUtils::fileSize(receivedPath) ==
-               FileUtils::fileSize(approvedPath);
+        return FileUtils::fileSize(receivedPath) == FileUtils::fileSize(approvedPath);
     }
 };
 // end-snippet

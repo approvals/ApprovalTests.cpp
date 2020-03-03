@@ -35,8 +35,8 @@ namespace ApprovalTests
                     // First value is printed without trailing comma
                     out << "(" << input1;
                     // Remaining values are printed with prefix of a comma
-                    CartesianProduct::Detail::for_each(
-                        std::forward_as_tuple(inputs...), print_input{out});
+                    CartesianProduct::Detail::for_each(std::forward_as_tuple(inputs...),
+                                                       print_input{out});
                     out << ") => " << converter(input1, inputs...) << '\n';
                 }
             };
@@ -50,8 +50,7 @@ namespace ApprovalTests
         {
             std::stringstream s;
             CartesianProduct::cartesian_product(
-                Detail::serialize<Converter>{
-                    s, std::forward<Converter>(converter)},
+                Detail::serialize<Converter>{s, std::forward<Converter>(converter)},
                 input0,
                 inputs...);
             Approvals::verify(s.str(), reporter);
@@ -59,12 +58,10 @@ namespace ApprovalTests
 
         template <class Converter, class... Containers>
         ApprovalTests::Detail::EnableIfNotDerivedFromReporter<Converter>
-        verifyAllCombinations(Converter&& converter,
-                              const Containers&... inputs)
+        verifyAllCombinations(Converter&& converter, const Containers&... inputs)
         {
-            verifyAllCombinations(DefaultReporter(),
-                                  std::forward<Converter>(converter),
-                                  inputs...);
+            verifyAllCombinations(
+                DefaultReporter(), std::forward<Converter>(converter), inputs...);
         }
 
     } // namespace CombinationApprovals

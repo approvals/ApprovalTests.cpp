@@ -10,8 +10,7 @@ namespace ApprovalTests
     class HelpMessages
     {
     public:
-        static std::string
-        getMisconfiguredBuildHelp(const std::string& fileName)
+        static std::string getMisconfiguredBuildHelp(const std::string& fileName)
         {
             std::string helpMessage = R"(* Welcome to Approval Tests.
 *
@@ -66,8 +65,7 @@ namespace ApprovalTests
             const std::string lineBuffer =
                 "*                                                             "
                 "              *\n";
-            return lineBreak + '\n' + lineBuffer + message + lineBuffer +
-                   lineBreak;
+            return lineBreak + '\n' + lineBuffer + message + lineBuffer + lineBreak;
         }
     };
 }

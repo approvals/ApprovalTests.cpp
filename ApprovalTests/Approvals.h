@@ -37,10 +37,9 @@ namespace ApprovalTests
             verifyWithExtension(contents, ".txt", reporter);
         }
 
-        static void
-        verifyWithExtension(std::string contents,
-                            const std::string& fileExtensionWithDot,
-                            const Reporter& reporter = DefaultReporter())
+        static void verifyWithExtension(std::string contents,
+                                        const std::string& fileExtensionWithDot,
+                                        const Reporter& reporter = DefaultReporter())
         {
             StringWriter writer(contents, fileExtensionWithDot);
             FileApprover::verify(*getDefaultNamer(), writer, reporter);
@@ -65,14 +64,12 @@ namespace ApprovalTests
         }
 
         template <typename T, typename = IsNotDerivedFromWriter<T>>
-        static void
-        verifyWithExtension(const T& contents,
-                            const std::string& fileExtensionWithDot,
-                            const Reporter& reporter = DefaultReporter())
+        static void verifyWithExtension(const T& contents,
+                                        const std::string& fileExtensionWithDot,
+                                        const Reporter& reporter = DefaultReporter())
         {
-            verifyWithExtension(StringUtils::toString(contents),
-                                fileExtensionWithDot,
-                                reporter);
+            verifyWithExtension(
+                StringUtils::toString(contents), fileExtensionWithDot, reporter);
         }
 
         template <typename T,
@@ -90,20 +87,18 @@ namespace ApprovalTests
         template <typename T,
                   typename Function,
                   typename = Detail::EnableIfNotDerivedFromReporter<Function>>
-        static void
-        verifyWithExtension(const T& contents,
-                            Function converter,
-                            const std::string& fileExtensionWithDot,
-                            const Reporter& reporter = DefaultReporter())
+        static void verifyWithExtension(const T& contents,
+                                        Function converter,
+                                        const std::string& fileExtensionWithDot,
+                                        const Reporter& reporter = DefaultReporter())
         {
             std::stringstream s;
             converter(contents, s);
             verifyWithExtension(s.str(), fileExtensionWithDot, reporter);
         }
 
-        static void
-        verifyExceptionMessage(std::function<void(void)> functionThatThrows,
-                               const Reporter& reporter = DefaultReporter())
+        static void verifyExceptionMessage(std::function<void(void)> functionThatThrows,
+                                           const Reporter& reporter = DefaultReporter())
         {
             std::string message = "*** no exception thrown ***";
             try
@@ -118,12 +113,12 @@ namespace ApprovalTests
         }
 
         template <typename Iterator>
-        static void verifyAll(std::string header,
-                              const Iterator& start,
-                              const Iterator& finish,
-                              std::function<void(typename Iterator::value_type,
-                                                 std::ostream&)> converter,
-                              const Reporter& reporter = DefaultReporter())
+        static void verifyAll(
+            std::string header,
+            const Iterator& start,
+            const Iterator& finish,
+            std::function<void(typename Iterator::value_type, std::ostream&)> converter,
+            const Reporter& reporter = DefaultReporter())
         {
             std::stringstream s;
             if (!header.empty())
@@ -139,11 +134,11 @@ namespace ApprovalTests
         }
 
         template <typename Container>
-        static void verifyAll(std::string header,
-                              const Container& list,
-                              std::function<void(typename Container::value_type,
-                                                 std::ostream&)> converter,
-                              const Reporter& reporter = DefaultReporter())
+        static void verifyAll(
+            std::string header,
+            const Container& list,
+            std::function<void(typename Container::value_type, std::ostream&)> converter,
+            const Reporter& reporter = DefaultReporter())
         {
             verifyAll<typename Container::const_iterator>(
                 header, list.begin(), list.end(), converter, reporter);
@@ -169,9 +164,8 @@ namespace ApprovalTests
             verifyAll<T>("", list, reporter);
         }
 
-        static void
-        verifyExistingFile(const std::string filePath,
-                           const Reporter& reporter = DefaultReporter())
+        static void verifyExistingFile(const std::string filePath,
+                                       const Reporter& reporter = DefaultReporter())
         {
             ExistingFile writer(filePath);
             ExistingFileNamer namer(filePath);

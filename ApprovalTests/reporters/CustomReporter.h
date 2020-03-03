@@ -10,11 +10,10 @@ namespace ApprovalTests
     class CustomReporter
     {
     public:
-        static std::shared_ptr<GenericDiffReporter>
-        create(std::string path, Type type = Type::TEXT)
+        static std::shared_ptr<GenericDiffReporter> create(std::string path,
+                                                           Type type = Type::TEXT)
         {
-            return create(
-                std::move(path), DiffInfo::getDefaultArguments(), type);
+            return create(std::move(path), DiffInfo::getDefaultArguments(), type);
         }
 
         static std::shared_ptr<GenericDiffReporter>

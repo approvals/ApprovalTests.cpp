@@ -47,14 +47,12 @@ int main()
 
     // begin-snippet: ut_main_usage
     "ItCanVerifyAFile"_test = []() {
-        Approvals::verify(
-            "Approval Tests can verify text via the golden master method");
+        Approvals::verify("Approval Tests can verify text via the golden master method");
     };
     // end-snippet
 
     test("AnotherWayItCanVerifyAFile") = []() {
-        Approvals::verify(
-            "Approval Tests can verify text via the golden master method");
+        Approvals::verify("Approval Tests can verify text via the golden master method");
     };
 
     // begin-snippet: ut_main_multiple
@@ -94,8 +92,6 @@ int main()
 
     "YouCanSpecifyYourFileExtensionWithFormatter"_test = []() {
         Approvals::verifyWithExtension(
-            1337,
-            [](auto value, auto& os) { os << "**value:** " << value; },
-            ".md");
+            1337, [](auto value, auto& os) { os << "**value:** " << value; }, ".md");
     };
 }

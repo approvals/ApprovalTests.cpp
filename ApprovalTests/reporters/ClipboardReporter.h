@@ -17,21 +17,19 @@ namespace ApprovalTests
         {
             if (isWindows)
             {
-                return std::string("move /Y ") + "\"" + received + "\" \"" +
-                       approved + "\"";
+                return std::string("move /Y ") + "\"" + received + "\" \"" + approved +
+                       "\"";
             }
             else
             {
-                return std::string("mv ") + "\"" + received + "\" \"" +
-                       approved + "\"";
+                return std::string("mv ") + "\"" + received + "\" \"" + approved + "\"";
             }
         }
 
-        virtual bool report(std::string received,
-                            std::string approved) const override
+        virtual bool report(std::string received, std::string approved) const override
         {
-            copyToClipboard(getCommandLineFor(
-                received, approved, SystemUtils::isWindowsOs()));
+            copyToClipboard(
+                getCommandLineFor(received, approved, SystemUtils::isWindowsOs()));
             return true;
         }
 
@@ -66,8 +64,7 @@ namespace ApprovalTests
             {
                 clipboardCommand = "pbclip";
             }
-            auto cmd =
-                std::string("echo ") + newClipboard + " | " + clipboardCommand;
+            auto cmd = std::string("echo ") + newClipboard + " | " + clipboardCommand;
             SystemUtils::runSystemCommandOrThrow(cmd);
         }
     };

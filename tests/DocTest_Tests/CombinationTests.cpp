@@ -68,9 +68,7 @@ TEST_CASE("YouCanVerifyCombinationsOf9")
            const std::string& s6,
            const std::string& s7,
            const std::string& s8,
-           const std::string& s9) {
-            return s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9;
-        },
+           const std::string& s9) { return s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9; },
         letters,
         letters,
         letters,

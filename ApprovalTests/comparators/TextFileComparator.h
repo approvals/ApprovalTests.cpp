@@ -8,8 +8,7 @@ namespace ApprovalTests
     class TextFileComparator : public ApprovalComparator
     {
     public:
-        static std::ifstream::int_type
-        getNextRelevantCharacter(std::ifstream& astream)
+        static std::ifstream::int_type getNextRelevantCharacter(std::ifstream& astream)
         {
             auto ch = astream.get();
             if (ch == '\r')
@@ -22,9 +21,8 @@ namespace ApprovalTests
             }
         }
 
-        virtual bool
-        contentsAreEquivalent(std::string receivedPath,
-                              std::string approvedPath) const override
+        virtual bool contentsAreEquivalent(std::string receivedPath,
+                                           std::string approvedPath) const override
         {
             std::ifstream astream(approvedPath.c_str(),
                                   std::ios::binary | std::ifstream::in);

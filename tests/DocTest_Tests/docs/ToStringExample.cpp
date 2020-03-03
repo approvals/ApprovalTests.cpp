@@ -11,12 +11,10 @@ struct Rectangle1
     int x, y, width, height;
 
     // begin-snippet: to_string_standard_example
-    friend std::ostream& operator<<(std::ostream& os,
-                                    const Rectangle1& rectangle)
+    friend std::ostream& operator<<(std::ostream& os, const Rectangle1& rectangle)
     {
         os << "[x: " << rectangle.x << " y: " << rectangle.y
-           << " width: " << rectangle.width << " height: " << rectangle.height
-           << "]";
+           << " width: " << rectangle.width << " height: " << rectangle.height << "]";
         return os;
     }
     // end-snippet

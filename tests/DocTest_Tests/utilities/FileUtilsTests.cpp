@@ -14,9 +14,8 @@ TEST_CASE("It reads sample_file.txt correctly")
     const auto directory = namer.getDirectory();
     const std::string inputFile = directory + "sample_file.txt";
 
-    Approvals::verify(
-        ApprovalTests::FileUtils::readFileThrowIfMissing(inputFile),
-        DiffReporter());
+    Approvals::verify(ApprovalTests::FileUtils::readFileThrowIfMissing(inputFile),
+                      DiffReporter());
 }
 
 TEST_CASE("readFileThrowIfMissing() throws if file is missing")
@@ -34,8 +33,7 @@ TEST_CASE("readFileThrowIfMissing() throws if file is missing")
     REQUIRE(exceptionThrown);
 }
 
-TEST_CASE(
-    "readFileReturnEmptyIfMissing() returns empty string if file is missing")
+TEST_CASE("readFileReturnEmptyIfMissing() returns empty string if file is missing")
 {
     REQUIRE("" == ApprovalTests::FileUtils::readFileReturnEmptyIfMissing(
                       "some file name that does not exist 1234567890.txt"));

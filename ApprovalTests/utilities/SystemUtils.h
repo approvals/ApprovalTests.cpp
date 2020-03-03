@@ -71,10 +71,8 @@ namespace ApprovalTests
             if (hFind != -1)
             {
                 const std::string fixedFilename = findFileData.name;
-                const std::string fixedPath =
-                    StringUtils::replaceAll(fullPath,
-                                            StringUtils::toLower(fixedFilename),
-                                            fixedFilename);
+                const std::string fixedPath = StringUtils::replaceAll(
+                    fullPath, StringUtils::toLower(fixedFilename), fixedFilename);
                 _findclose(hFind);
                 return fixedPath;
             }

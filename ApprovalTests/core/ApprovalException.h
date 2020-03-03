@@ -26,8 +26,7 @@ namespace ApprovalTests
     class ApprovalMismatchException : public ApprovalException
     {
     private:
-        std::string format(const std::string& received,
-                           const std::string& approved)
+        std::string format(const std::string& received, const std::string& approved)
         {
             std::stringstream s;
             s << "Failed Approval: \n"

@@ -51,8 +51,7 @@ namespace
     {
         Results results;
         Converter converter;
-        template <class T, class... Ts>
-        void operator()(T&& input1, Ts&&... inputs)
+        template <class T, class... Ts> void operator()(T&& input1, Ts&&... inputs)
         {
             results.push_back(converter(input1, inputs...));
         }
@@ -64,8 +63,8 @@ namespace
                                 const Container& input0,
                                 const Containers&... inputs)
     {
-        auto results_store = AccumulateResults<Converter>{
-            Results(), std::forward<Converter>(converter)};
+        auto results_store =
+            AccumulateResults<Converter>{Results(), std::forward<Converter>(converter)};
         CartesianProduct::cartesian_product(results_store, input0, inputs...);
         REQUIRE(results_store.results == expected);
     }
@@ -112,9 +111,7 @@ TEST_CASE("Cartesian product with different types of converter")
     {
         test_cartesian_product(
             expected,
-            [](const std::string& s1, const std::string& s2) {
-                return s1 + "," + s2;
-            },
+            [](const std::string& s1, const std::string& s2) { return s1 + "," + s2; },
             input1,
             input2);
     }

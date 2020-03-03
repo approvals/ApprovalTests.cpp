@@ -9,8 +9,7 @@ namespace ApprovalTests
     class DefaultFrontLoadedReporter : public FirstWorkingReporter
     {
     public:
-        DefaultFrontLoadedReporter()
-            : FirstWorkingReporter({new CIBuildOnlyReporter()})
+        DefaultFrontLoadedReporter() : FirstWorkingReporter({new CIBuildOnlyReporter()})
         {
         }
     };

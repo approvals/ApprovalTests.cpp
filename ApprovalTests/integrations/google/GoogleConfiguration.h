@@ -9,8 +9,8 @@ namespace ApprovalTests
     {
     public:
         // This result is not used, it is only there to allow the method to execute, when this is used outside a function.
-        APPROVAL_TESTS_NO_DISCARD static bool addTestCaseNameRedundancyCheck(
-            GoogleCustomizationsFactory::Comparator comparator)
+        APPROVAL_TESTS_NO_DISCARD static bool
+        addTestCaseNameRedundancyCheck(GoogleCustomizationsFactory::Comparator comparator)
         {
             return GoogleCustomizationsFactory::addTestCaseNameRedundancyCheck(
                 comparator);
@@ -35,8 +35,8 @@ namespace ApprovalTests
                     return false;
                 }
 
-                auto withoutSuffix = testCaseName.substr(
-                    0, testCaseName.length() - suffix.length());
+                auto withoutSuffix =
+                    testCaseName.substr(0, testCaseName.length() - suffix.length());
                 auto withFileExtension = withoutSuffix + ".";
                 return StringUtils::contains(testFileNameWithExtension,
                                              withFileExtension);

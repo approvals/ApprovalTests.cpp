@@ -34,11 +34,9 @@ namespace ApprovalTests
         }
 
     public:
-        static std::string
-        getMisconfiguredBuildHelp(const std::string& fileName)
+        static std::string getMisconfiguredBuildHelp(const std::string& fileName)
         {
-            return "\n\n" + HelpMessages::getMisconfiguredBuildHelp(fileName) +
-                   "\n\n";
+            return "\n\n" + HelpMessages::getMisconfiguredBuildHelp(fileName) + "\n\n";
         }
 
         std::vector<std::string> sections;
@@ -166,15 +164,13 @@ namespace ApprovalTests
             return configuration;
         }
 
-        virtual std::string
-        getApprovedFile(std::string extensionWithDot) const override
+        virtual std::string getApprovedFile(std::string extensionWithDot) const override
         {
 
             return getFullFileName(".approved", extensionWithDot);
         }
 
-        virtual std::string
-        getReceivedFile(std::string extensionWithDot) const override
+        virtual std::string getReceivedFile(std::string extensionWithDot) const override
         {
 
             return getFullFileName(".received", extensionWithDot);

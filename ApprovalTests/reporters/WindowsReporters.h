@@ -42,8 +42,8 @@ namespace ApprovalTests
         {
         public:
             BeyondCompareReporter()
-                : FirstWorkingReporter({new BeyondCompare4Reporter(),
-                                        new BeyondCompare3Reporter()})
+                : FirstWorkingReporter(
+                      {new BeyondCompare4Reporter(), new BeyondCompare3Reporter()})
             {
             }
         };
@@ -53,8 +53,7 @@ namespace ApprovalTests
         {
         public:
             TortoiseImageDiffReporter()
-                : GenericDiffReporter(
-                      DiffPrograms::Windows::TORTOISE_IMAGE_DIFF())
+                : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_IMAGE_DIFF())
             {
             }
         };
@@ -63,8 +62,7 @@ namespace ApprovalTests
         {
         public:
             TortoiseTextDiffReporter()
-                : GenericDiffReporter(
-                      DiffPrograms::Windows::TORTOISE_TEXT_DIFF())
+                : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_TEXT_DIFF())
             {
             }
         };
@@ -73,8 +71,8 @@ namespace ApprovalTests
         {
         public:
             TortoiseDiffReporter()
-                : FirstWorkingReporter({new TortoiseTextDiffReporter(),
-                                        new TortoiseImageDiffReporter()})
+                : FirstWorkingReporter(
+                      {new TortoiseTextDiffReporter(), new TortoiseImageDiffReporter()})
             {
             }
         };
@@ -84,8 +82,7 @@ namespace ApprovalTests
         {
         public:
             TortoiseGitTextDiffReporter()
-                : GenericDiffReporter(
-                      DiffPrograms::Windows::TORTOISE_GIT_TEXT_DIFF())
+                : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_GIT_TEXT_DIFF())
             {
             }
         };
@@ -94,8 +91,7 @@ namespace ApprovalTests
         {
         public:
             TortoiseGitImageDiffReporter()
-                : GenericDiffReporter(
-                      DiffPrograms::Windows::TORTOISE_GIT_IMAGE_DIFF())
+                : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_GIT_IMAGE_DIFF())
             {
             }
         };
@@ -115,8 +111,7 @@ namespace ApprovalTests
         {
         public:
             WinMergeReporter()
-                : GenericDiffReporter(
-                      DiffPrograms::Windows::WIN_MERGE_REPORTER())
+                : GenericDiffReporter(DiffPrograms::Windows::WIN_MERGE_REPORTER())
             {
             }
         };
@@ -152,8 +147,7 @@ namespace ApprovalTests
         class KDiff3Reporter : public GenericDiffReporter
         {
         public:
-            KDiff3Reporter()
-                : GenericDiffReporter(DiffPrograms::Windows::KDIFF3())
+            KDiff3Reporter() : GenericDiffReporter(DiffPrograms::Windows::KDIFF3())
             {
             }
         };

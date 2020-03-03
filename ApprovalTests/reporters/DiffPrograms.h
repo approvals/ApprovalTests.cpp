@@ -4,10 +4,10 @@
 #include "DiffInfo.h"
 
 ///////////////////////////////////////////////////////////////////////////////
-#define APPROVAL_TESTS_MACROS_ENTRY(name, defaultValue)                        \
-    inline DiffInfo name()                                                     \
-    {                                                                          \
-        return defaultValue;                                                   \
+#define APPROVAL_TESTS_MACROS_ENTRY(name, defaultValue)                                  \
+    inline DiffInfo name()                                                               \
+    {                                                                                    \
+        return defaultValue;                                                             \
     }
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -27,16 +27,14 @@ namespace ApprovalTests
             // begin-snippet: add_reporter_macro
             APPROVAL_TESTS_MACROS_ENTRY(
                 ARAXIS_MERGE,
-                DiffInfo(
-                    "/Applications/Araxis Merge.app/Contents/Utilities/compare",
-                    Type::TEXT_AND_IMAGE))
+                DiffInfo("/Applications/Araxis Merge.app/Contents/Utilities/compare",
+                         Type::TEXT_AND_IMAGE))
             // end-snippet
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 BEYOND_COMPARE,
-                DiffInfo(
-                    "/Applications/Beyond Compare.app/Contents/MacOS/bcomp",
-                    Type::TEXT))
+                DiffInfo("/Applications/Beyond Compare.app/Contents/MacOS/bcomp",
+                         Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 KALEIDOSCOPE,
@@ -45,11 +43,10 @@ namespace ApprovalTests
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 SUBLIME_MERGE,
-                DiffInfo(
-                    "/Applications/Sublime "
-                    "Merge.app/Contents/SharedSupport/bin/smerge",
-                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                    Type::TEXT))
+                DiffInfo("/Applications/Sublime "
+                         "Merge.app/Contents/SharedSupport/bin/smerge",
+                         "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                         Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 KDIFF3,
@@ -64,8 +61,7 @@ namespace ApprovalTests
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 TK_DIFF,
-                DiffInfo("/Applications/TkDiff.app/Contents/MacOS/tkdiff",
-                         Type::TEXT))
+                DiffInfo("/Applications/TkDiff.app/Contents/MacOS/tkdiff", Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 VS_CODE,
@@ -79,31 +75,27 @@ namespace ApprovalTests
         {
             APPROVAL_TESTS_MACROS_ENTRY(
                 SUBLIME_MERGE_SNAP,
-                DiffInfo(
-                    "/snap/bin/sublime-merge",
-                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                    Type::TEXT))
+                DiffInfo("/snap/bin/sublime-merge",
+                         "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                         Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 SUBLIME_MERGE_FLATPAK,
-                DiffInfo(
-                    "/var/lib/flatpak/exports/bin/com.sublimemerge.App",
-                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                    Type::TEXT))
+                DiffInfo("/var/lib/flatpak/exports/bin/com.sublimemerge.App",
+                         "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                         Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 SUBLIME_MERGE_REPOSITORY_PACKAGE,
-                DiffInfo(
-                    "smerge",
-                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                    Type::TEXT))
+                DiffInfo("smerge",
+                         "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                         Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 SUBLIME_MERGE_DIRECT_DOWNLOAD,
-                DiffInfo(
-                    "/opt/sublime_merge/sublime_merge",
-                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                    Type::TEXT))
+                DiffInfo("/opt/sublime_merge/sublime_merge",
+                         "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                         Type::TEXT))
 
             // More ideas available from: https://www.tecmint.com/best-linux-file-diff-tools-comparison/
             APPROVAL_TESTS_MACROS_ENTRY(KDIFF3, DiffInfo("kdiff3", Type::TEXT))
@@ -131,8 +123,7 @@ namespace ApprovalTests
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 TORTOISE_TEXT_DIFF,
-                DiffInfo("{ProgramFiles}TortoiseSVN\\bin\\TortoiseMerge.exe",
-                         Type::TEXT))
+                DiffInfo("{ProgramFiles}TortoiseSVN\\bin\\TortoiseMerge.exe", Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 TORTOISE_GIT_IMAGE_DIFF,
@@ -145,10 +136,9 @@ namespace ApprovalTests
                 DiffInfo("{ProgramFiles}TortoiseGit\\bin\\TortoiseGitMerge.exe",
                          Type::TEXT))
 
-            APPROVAL_TESTS_MACROS_ENTRY(
-                WIN_MERGE_REPORTER,
-                DiffInfo("{ProgramFiles}WinMerge\\WinMergeU.exe",
-                         Type::TEXT_AND_IMAGE))
+            APPROVAL_TESTS_MACROS_ENTRY(WIN_MERGE_REPORTER,
+                                        DiffInfo("{ProgramFiles}WinMerge\\WinMergeU.exe",
+                                                 Type::TEXT_AND_IMAGE))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 ARAXIS_MERGE,
@@ -162,14 +152,13 @@ namespace ApprovalTests
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 SUBLIME_MERGE,
-                DiffInfo(
-                    "{ProgramFiles}Sublime Merge\\smerge.exe",
-                    "mergetool --no-wait {Received} {Approved} -o {Approved}",
-                    Type::TEXT))
+                DiffInfo("{ProgramFiles}Sublime Merge\\smerge.exe",
+                         "mergetool --no-wait {Received} {Approved} -o {Approved}",
+                         Type::TEXT))
 
-            APPROVAL_TESTS_MACROS_ENTRY(
-                KDIFF3,
-                DiffInfo("{ProgramFiles}KDiff3\\kdiff3.exe", Type::TEXT))
+            APPROVAL_TESTS_MACROS_ENTRY(KDIFF3,
+                                        DiffInfo("{ProgramFiles}KDiff3\\kdiff3.exe",
+                                                 Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 VS_CODE,

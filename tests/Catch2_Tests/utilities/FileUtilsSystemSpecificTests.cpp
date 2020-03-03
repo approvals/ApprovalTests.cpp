@@ -34,8 +34,7 @@ TEST_CASE("ItCanCopyAFile")
     ApprovalTestNamer namer;
     const auto& sep = SystemUtils::getDirectorySeparator();
     auto source = namer.getDirectory() + ".." + sep + ".." + sep + "sample.txt";
-    auto destination =
-        namer.getDirectory() + ".." + sep + "copy.temp.received.txt";
+    auto destination = namer.getDirectory() + ".." + sep + "copy.temp.received.txt";
 
     if (FileUtils::fileExists(destination))
     {

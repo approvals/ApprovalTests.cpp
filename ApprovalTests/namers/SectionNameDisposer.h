@@ -8,8 +8,7 @@ namespace ApprovalTests
     class APPROVAL_TESTS_NO_DISCARD SectionNameDisposer
     {
     public:
-        SectionNameDisposer(TestName& currentTest,
-                            const std::string& scope_name)
+        SectionNameDisposer(TestName& currentTest, const std::string& scope_name)
             : currentTest(currentTest)
         {
             // Add extra section to output filename, to allow multiple files

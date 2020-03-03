@@ -29,9 +29,8 @@ namespace ApprovalTests
         {
             if (!exceptionMessages.empty())
             {
-                exceptionMessages.emplace_back(
-                    "ERROR: Calling code forgot to call "
-                    "exceptionCollector.release()");
+                exceptionMessages.emplace_back("ERROR: Calling code forgot to call "
+                                               "exceptionCollector.release()");
             }
             release();
         }

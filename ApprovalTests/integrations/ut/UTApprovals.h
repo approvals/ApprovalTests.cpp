@@ -7,7 +7,7 @@
 #ifdef APPROVALS_UT
 
 #if !(__GNUC__ >= 9 or __clang_major__ >= 9)
-#error                                                                         \
+#error                                                                                   \
     "The [Boost].UT integration with Approval Tests requires source_location support by the compiler"
 #endif
 
@@ -55,8 +55,7 @@ namespace ApprovalTests
                 boost::ut::reporter<boost::ut::printer>::on(test_end);
             }
 
-            template <class TMsg>
-            auto on(boost::ut::events::log<TMsg> log) -> void
+            template <class TMsg> auto on(boost::ut::events::log<TMsg> log) -> void
             {
                 boost::ut::reporter<boost::ut::printer>::on(log);
             }

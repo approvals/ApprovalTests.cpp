@@ -21,8 +21,7 @@ public:
     NonCopyable() = default;
     NonCopyable(const NonCopyable& x) = delete; // prevent copy construction
 
-    friend std::ostream& operator<<(std::ostream& os,
-                                    const NonCopyable& /*copyable*/)
+    friend std::ostream& operator<<(std::ostream& os, const NonCopyable& /*copyable*/)
     {
         return os << 999;
     }
@@ -59,8 +58,7 @@ TEST_CASE("YouCanVerifyWithConverterLambda")
 
 struct FormatNonStreamablePoint
 {
-    explicit FormatNonStreamablePoint(const NonStreamablePoint& point)
-        : point(point)
+    explicit FormatNonStreamablePoint(const NonStreamablePoint& point) : point(point)
     {
     }
 
@@ -76,15 +74,13 @@ struct FormatNonStreamablePoint
 
 TEST_CASE("YouCanVerifyWithConverterWrapperClass")
 {
-    Approvals::verify(getPoint(), [](auto r, auto& os) {
-        os << FormatNonStreamablePoint(r);
-    });
+    Approvals::verify(getPoint(),
+                      [](auto r, auto& os) { os << FormatNonStreamablePoint(r); });
 }
 
 // ==============================================================
 
-std::ostream& customToStreamFunction(std::ostream& os,
-                                     const NonStreamablePoint& point)
+std::ostream& customToStreamFunction(std::ostream& os, const NonStreamablePoint& point)
 {
     os << point.x << "," << point.y;
     return os;

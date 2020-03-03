@@ -17,8 +17,7 @@ struct Rectangle2
     friend STREAM& operator<<(STREAM& os, const Rectangle2& rectangle)
     {
         os << "[x: " << rectangle.x << " y: " << rectangle.y
-           << " width: " << rectangle.width << " height: " << rectangle.height
-           << "]";
+           << " width: " << rectangle.width << " height: " << rectangle.height << "]";
         return os;
     }
     // end-snippet

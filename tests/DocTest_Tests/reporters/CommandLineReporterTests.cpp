@@ -13,8 +13,8 @@ std::string scrubProgramFiles(const std::string& output)
     auto scrubbed = output;
     for (const auto& path : DiffInfo::getProgramFileLocations())
     {
-        scrubbed = StringUtils::replaceAll(
-            scrubbed, path, DiffInfo::programFileTemplate());
+        scrubbed =
+            StringUtils::replaceAll(scrubbed, path, DiffInfo::programFileTemplate());
     }
     return scrubbed;
 }
@@ -61,17 +61,14 @@ TEST_CASE("Test Command Lines")
     {
         reporter->useCygwinConversions(false);
         reporter->launcher.invokeForWindows(true);
-        stream << "windows: " << reporter->getCommandLine("a.txt", "b.txt")
-               << '\n';
+        stream << "windows: " << reporter->getCommandLine("a.txt", "b.txt") << '\n';
 
         reporter->launcher.invokeForWindows(false);
-        stream << "unix   : " << reporter->getCommandLine("a.txt", "b.txt")
-               << '\n';
+        stream << "unix   : " << reporter->getCommandLine("a.txt", "b.txt") << '\n';
 
         reporter->useCygwinConversions(true);
         reporter->launcher.invokeForWindows(false);
-        stream << "cygwin : " << reporter->getCommandLine("a.txt", "b.txt")
-               << '\n';
+        stream << "cygwin : " << reporter->getCommandLine("a.txt", "b.txt") << '\n';
         stream << '\n';
     }
     Approvals::verify(scrubProgramFiles(stream.str()));

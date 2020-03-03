@@ -31,8 +31,7 @@ struct Catch2ApprovalListener : Catch::TestEventListenerBase
         ApprovalTests::ApprovalTestNamer::currentTest(&currentTest);
     }
 
-    virtual void
-    testCaseEnded(Catch::TestCaseStats const& /*testCaseStats*/) override
+    virtual void testCaseEnded(Catch::TestCaseStats const& /*testCaseStats*/) override
     {
         while (!currentTest.sections.empty())
         {
@@ -45,8 +44,7 @@ struct Catch2ApprovalListener : Catch::TestEventListenerBase
         currentTest.sections.push_back(sectionInfo.name);
     }
 
-    virtual void
-    sectionEnded(Catch::SectionStats const& /*sectionStats*/) override
+    virtual void sectionEnded(Catch::SectionStats const& /*sectionStats*/) override
     {
         currentTest.sections.pop_back();
     }

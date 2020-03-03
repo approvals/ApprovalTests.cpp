@@ -11,13 +11,11 @@ TEST_CASE("ItCanGiveYouTheSpecName")
 
     SUBCASE("andSectionNames")
     {
-        REQUIRE(namer.getTestName() ==
-                "ItCanGiveYouTheSpecName.andSectionNames");
+        REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName.andSectionNames");
         SUBCASE("andEvenMoreSectionNames")
         {
-            REQUIRE(namer.getTestName() ==
-                    "ItCanGiveYouTheSpecName.andSectionNames."
-                    "andEvenMoreSectionNames");
+            REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName.andSectionNames."
+                                           "andEvenMoreSectionNames");
         }
     }
 }

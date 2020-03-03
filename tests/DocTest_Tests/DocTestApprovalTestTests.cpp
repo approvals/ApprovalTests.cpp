@@ -28,7 +28,5 @@ TEST_CASE("YouCanSpecifyYourFileExtensionWithToString")
 TEST_CASE("YouCanSpecifyYourFileExtensionWithFormatter")
 {
     Approvals::verifyWithExtension(
-        1337,
-        [](auto value, auto& os) { os << "**value:** " << value; },
-        ".md");
+        1337, [](auto value, auto& os) { os << "**value:** " << value; }, ".md");
 }

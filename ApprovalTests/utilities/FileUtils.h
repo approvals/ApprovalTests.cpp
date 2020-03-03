@@ -68,8 +68,7 @@ namespace ApprovalTests
             return text;
         }
 
-        static std::string
-        readFileReturnEmptyIfMissing(const std::string& fileName)
+        static std::string readFileReturnEmptyIfMissing(const std::string& fileName)
         {
             if (FileUtils::fileExists(fileName))
             {
@@ -81,11 +80,9 @@ namespace ApprovalTests
             }
         }
 
-        static void writeToFile(const std::string& filePath,
-                                const std::string& content)
+        static void writeToFile(const std::string& filePath, const std::string& content)
         {
-            std::ofstream out(filePath.c_str(),
-                              std::ios::binary | std::ofstream::out);
+            std::ofstream out(filePath.c_str(), std::ios::binary | std::ofstream::out);
             if (!out)
             {
                 throw std::runtime_error("Unable to write file: " + filePath);

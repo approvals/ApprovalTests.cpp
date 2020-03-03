@@ -15,13 +15,11 @@ TEST_CASE("ItCanGiveYouTheSpecName")
 
     SECTION("andSectionNames")
     {
-        REQUIRE(namer.getTestName() ==
-                "ItCanGiveYouTheSpecName.andSectionNames");
+        REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName.andSectionNames");
         SECTION("andEvenMoreSectionNames")
         {
-            REQUIRE(namer.getTestName() ==
-                    "ItCanGiveYouTheSpecName.andSectionNames."
-                    "andEvenMoreSectionNames");
+            REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName.andSectionNames."
+                                           "andEvenMoreSectionNames");
         }
     }
 }
@@ -53,9 +51,9 @@ TEST_CASE("ItCanGiveYouTheTestDirectory")
     auto suppress_subdirectory = Approvals::useApprovalsSubdirectory("");
     ApprovalTestNamer namer;
     auto __ = SystemUtils::getDirectorySeparator();
-    REQUIRE_THAT(namer.getDirectory(),
-                 EndsWith(__ + "Catch2_Tests" + __ + "namers" + __,
-                          Catch::CaseSensitive::No));
+    REQUIRE_THAT(
+        namer.getDirectory(),
+        EndsWith(__ + "Catch2_Tests" + __ + "namers" + __, Catch::CaseSensitive::No));
 }
 
 TEST_CASE("ItIncludesFileContextAndSpecNames")
@@ -65,20 +63,15 @@ TEST_CASE("ItIncludesFileContextAndSpecNames")
 
     REQUIRE_THAT(
         namer.getApprovedFile(".txt"),
-        EndsWith(
-            __ +
-            "Catch2NamerTests.ItIncludesFileContextAndSpecNames.approved.txt"));
+        EndsWith(__ + "Catch2NamerTests.ItIncludesFileContextAndSpecNames.approved.txt"));
     REQUIRE_THAT(
         namer.getReceivedFile(".txt"),
-        EndsWith(
-            __ +
-            "Catch2NamerTests.ItIncludesFileContextAndSpecNames.received.txt"));
+        EndsWith(__ + "Catch2NamerTests.ItIncludesFileContextAndSpecNames.received.txt"));
 }
 
 TEST_CASE("Clean Up Filename Transforms")
 {
-    std::vector<std::string> names = {"CleanUpFilenameTransforms",
-                                      "Spaces In File \\"};
+    std::vector<std::string> names = {"CleanUpFilenameTransforms", "Spaces In File \\"};
     Approvals::verifyAll(
         "File Names", names, [&](const std::string& name, std::ostream& s) {
             s << name << " => " << ApprovalTestNamer::convertToFileName(name);
@@ -100,17 +93,14 @@ TEST_CASE("Use sub-directories clean to previous results")
 
     {
         auto subdirectory2 = Approvals::useApprovalsSubdirectory("inner");
-        REQUIRE_THAT(namer->getApprovedFile(".txt"),
-                     Catch::Matchers::Contains("inner"));
+        REQUIRE_THAT(namer->getApprovedFile(".txt"), Catch::Matchers::Contains("inner"));
     }
 
-    REQUIRE_THAT(namer->getApprovedFile(".txt"),
-                 Catch::Matchers::Contains("outer"));
+    REQUIRE_THAT(namer->getApprovedFile(".txt"), Catch::Matchers::Contains("outer"));
 }
 
 TEST_CASE("Tags not included in file name", "[tag_name]")
 {
     auto namer = Approvals::getDefaultNamer();
-    REQUIRE_THAT(namer->getApprovedFile(".txt"),
-                 !Catch::Matchers::Contains("tag_name"));
+    REQUIRE_THAT(namer->getApprovedFile(".txt"), !Catch::Matchers::Contains("tag_name"));
 }

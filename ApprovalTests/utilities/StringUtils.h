@@ -17,8 +17,7 @@ namespace ApprovalTests
                                       const std::string& replaceWith)
         {
             size_t start_pos = 0;
-            while ((start_pos = inText.find(find, start_pos)) !=
-                   std::string::npos)
+            while ((start_pos = inText.find(find, start_pos)) != std::string::npos)
             {
                 inText.replace(start_pos, find.length(), replaceWith);
                 start_pos +=
@@ -36,10 +35,9 @@ namespace ApprovalTests
         static std::string toLower(std::string inText)
         {
             std::string copy(inText);
-            std::transform(
-                inText.begin(), inText.end(), copy.begin(), [](char c) {
-                    return static_cast<char>(tolower(c));
-                });
+            std::transform(inText.begin(), inText.end(), copy.begin(), [](char c) {
+                return static_cast<char>(tolower(c));
+            });
             return copy;
         }
 

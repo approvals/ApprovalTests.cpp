@@ -12,8 +12,7 @@ namespace ApprovalTests
         class DiffMergeReporter : public GenericDiffReporter
         {
         public:
-            DiffMergeReporter()
-                : GenericDiffReporter(DiffPrograms::Mac::DIFF_MERGE())
+            DiffMergeReporter() : GenericDiffReporter(DiffPrograms::Mac::DIFF_MERGE())
             {
             }
         };
@@ -22,8 +21,7 @@ namespace ApprovalTests
         class AraxisMergeReporter : public GenericDiffReporter
         {
         public:
-            AraxisMergeReporter()
-                : GenericDiffReporter(DiffPrograms::Mac::ARAXIS_MERGE())
+            AraxisMergeReporter() : GenericDiffReporter(DiffPrograms::Mac::ARAXIS_MERGE())
             {
             }
         };
@@ -32,8 +30,7 @@ namespace ApprovalTests
         class VisualStudioCodeReporter : public GenericDiffReporter
         {
         public:
-            VisualStudioCodeReporter()
-                : GenericDiffReporter(DiffPrograms::Mac::VS_CODE())
+            VisualStudioCodeReporter() : GenericDiffReporter(DiffPrograms::Mac::VS_CODE())
             {
             }
         };
@@ -77,8 +74,7 @@ namespace ApprovalTests
         class P4MergeReporter : public GenericDiffReporter
         {
         public:
-            P4MergeReporter()
-                : GenericDiffReporter(DiffPrograms::Mac::P4MERGE())
+            P4MergeReporter() : GenericDiffReporter(DiffPrograms::Mac::P4MERGE())
             {
             }
         };

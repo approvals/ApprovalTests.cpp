@@ -14,8 +14,7 @@ namespace ApprovalTests
 
     public:
         // Note that FirstWorkingReporter takes ownership of the given Reporter objects
-        explicit FirstWorkingReporter(
-            const std::vector<Reporter*>& theReporters)
+        explicit FirstWorkingReporter(const std::vector<Reporter*>& theReporters)
         {
             for (auto r : theReporters)
             {

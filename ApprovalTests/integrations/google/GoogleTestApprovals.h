@@ -22,11 +22,9 @@ namespace ApprovalTests
         TestName currentTest;
 
     public:
-        bool isDuplicate(std::string testFileNameWithExtension,
-                         std::string testCaseName)
+        bool isDuplicate(std::string testFileNameWithExtension, std::string testCaseName)
         {
-            for (auto check :
-                 GoogleCustomizationsFactory::getEquivalencyChecks())
+            for (auto check : GoogleCustomizationsFactory::getEquivalencyChecks())
             {
                 if (check(testFileNameWithExtension, testCaseName))
                 {
@@ -40,8 +38,7 @@ namespace ApprovalTests
         {
             currentTest.setFileName(testInfo.file());
             currentTest.sections = {};
-            if (!isDuplicate(currentTest.getFileName(),
-                             testInfo.test_case_name()))
+            if (!isDuplicate(currentTest.getFileName(), testInfo.test_case_name()))
             {
                 currentTest.sections.emplace_back(testInfo.test_case_name());
             }

@@ -7,7 +7,7 @@ AlwaysBreakAfterReturnType: None
 BinPackArguments: false
 BinPackParameters: false
 BreakBeforeBraces: Allman
-ColumnLimit: 80
+ColumnLimit: 90
 IndentWidth: 4
 FixNamespaceComments: false
 ConstructorInitializerAllOnOneLineOrOnePerLine: true

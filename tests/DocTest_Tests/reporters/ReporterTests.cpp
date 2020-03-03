@@ -15,8 +15,7 @@ TEST_CASE("Reporters Launch Command")
     TestReporter m(true);
     bool result = m.report("r.txt", "a.txt");
     REQUIRE(m.launcher.receivedCommand() ==
-            "\"" + TestReporter::getKnownGoodCommand() +
-                "\" \"r.txt\" \"a.txt\"");
+            "\"" + TestReporter::getKnownGoodCommand() + "\" \"r.txt\" \"a.txt\"");
     REQUIRE(true == result);
 }
 
@@ -28,8 +27,7 @@ TEST_CASE("FirstWorkingReporter")
     FirstWorkingReporter reporter({m1, m2, m3});
     bool result = reporter.report("r.txt", "a.txt");
     REQUIRE(m2->launcher.receivedCommand() ==
-            "\"" + TestReporter::getKnownGoodCommand() +
-                "\" \"r.txt\" \"a.txt\"");
+            "\"" + TestReporter::getKnownGoodCommand() + "\" \"r.txt\" \"a.txt\"");
     REQUIRE(m3->launcher.receivedCommand().empty());
     REQUIRE(true == result);
 }
@@ -50,8 +48,7 @@ TEST_CASE("Reporters Report Success Status")
 
 TEST_CASE("CommandLauncher can detect missing file")
 {
-    REQUIRE(false ==
-            CommandReporter::exists("this_file_does_not_exist.txxxxxt"));
+    REQUIRE(false == CommandReporter::exists("this_file_does_not_exist.txxxxxt"));
 }
 
 TEST_CASE("ClipboardReporter")
@@ -100,12 +97,10 @@ TEST_CASE("Launching on PC with cygwin and Araxis Merge")
 TEST_CASE("Registering default Reporter")
 {
     auto fake_reporter = std::make_shared<FakeReporter>(true);
-    auto default_reporter_disposer =
-        Approvals::useAsDefaultReporter(fake_reporter);
+    auto default_reporter_disposer = Approvals::useAsDefaultReporter(fake_reporter);
     {
         auto fake_reporter2 = std::make_shared<FakeReporter>(true);
-        auto default_reporter_disposer2 =
-            Approvals::useAsDefaultReporter(fake_reporter2);
+        auto default_reporter_disposer2 = Approvals::useAsDefaultReporter(fake_reporter2);
 
         DefaultReporter r;
         r.report("r.txt", "a.txt");
@@ -123,8 +118,7 @@ TEST_CASE("Front Loaded Reporter Always Takes Precedence")
     auto front_loader = std::make_shared<FakeReporter>(true);
     auto our_reporter = std::make_shared<FakeReporter>(true);
 
-    auto default_reporter_disposer =
-        Approvals::useAsFrontLoadedReporter(front_loader);
+    auto default_reporter_disposer = Approvals::useAsFrontLoadedReporter(front_loader);
 
     try
     {
@@ -143,8 +137,7 @@ TEST_CASE("Front Loaded Reporter flows through if not needed")
     auto front_loader = std::make_shared<FakeReporter>(false);
     auto our_reporter = std::make_shared<FakeReporter>(true);
 
-    auto default_reporter_disposer =
-        Approvals::useAsFrontLoadedReporter(front_loader);
+    auto default_reporter_disposer = Approvals::useAsFrontLoadedReporter(front_loader);
 
     try
     {
@@ -178,8 +171,7 @@ TEST_CASE("Unregistering Front Loaded Reporter restores previous")
         REQUIRE(front_loader1->called == false);
         REQUIRE(our_reporter1.called == false);
     }
-    FileApprover::reportAfterTryingFrontLoadedReporter(
-        "r.txt", "a.txt", our_reporter1);
+    FileApprover::reportAfterTryingFrontLoadedReporter("r.txt", "a.txt", our_reporter1);
 
     REQUIRE(front_loader1->called == true);
     REQUIRE(our_reporter1.called == false);

@@ -10,12 +10,10 @@ struct Rectangle3
 
     int x, y, width, height;
 
-    friend std::ostream& operator<<(std::ostream& os,
-                                    const Rectangle3& rectangle)
+    friend std::ostream& operator<<(std::ostream& os, const Rectangle3& rectangle)
     {
         os << "[x: " << rectangle.x << " y: " << rectangle.y
-           << " width: " << rectangle.width << " height: " << rectangle.height
-           << "]";
+           << " width: " << rectangle.width << " height: " << rectangle.height << "]";
         return os;
     }
 };
@@ -47,8 +45,8 @@ struct FormatRectangleForMultipleLines
 
     const Rectangle3& rectangle;
 
-    friend std::ostream&
-    operator<<(std::ostream& os, const FormatRectangleForMultipleLines& wrapper)
+    friend std::ostream& operator<<(std::ostream& os,
+                                    const FormatRectangleForMultipleLines& wrapper)
     {
         os << "(x,y,width,height) = (" << wrapper.rectangle.x << ","
            << wrapper.rectangle.y << "," << wrapper.rectangle.width << ","
@@ -65,8 +63,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead")
 }
 // end-snippet
 
-std::ostream& toStringForMultipleLines(std::ostream& os,
-                                       const Rectangle3& rectangle)
+std::ostream& toStringForMultipleLines(std::ostream& os, const Rectangle3& rectangle)
 {
     os << "(x,y,width,height) = (" << rectangle.x << "," << rectangle.y << ","
        << rectangle.width << "," << rectangle.height << ")";

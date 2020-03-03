@@ -15,8 +15,7 @@ namespace ApprovalTests
             return "$(cygpath '" + filePath + "')";
         }
 
-        virtual std::string
-        convertFileArgumentForCygwin(const std::string& filePath)
+        virtual std::string convertFileArgumentForCygwin(const std::string& filePath)
         {
             return "$(cygpath -aw '" + filePath + "')";
         }
@@ -25,14 +24,12 @@ namespace ApprovalTests
     class DoNothing : public ConvertForCygwin
     {
     public:
-        std::string
-        convertProgramForCygwin(const std::string& filePath) override
+        std::string convertProgramForCygwin(const std::string& filePath) override
         {
             return filePath;
         }
 
-        std::string
-        convertFileArgumentForCygwin(const std::string& filePath) override
+        std::string convertFileArgumentForCygwin(const std::string& filePath) override
         {
             return filePath;
         }

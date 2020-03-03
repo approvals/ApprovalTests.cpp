@@ -24,8 +24,7 @@ namespace ApprovalTests
         std::string assembleFullCommand(const std::string& received,
                                         const std::string& approved) const
         {
-            auto convertedCommand =
-                '"' + converter->convertProgramForCygwin(cmd) + '"';
+            auto convertedCommand = '"' + converter->convertProgramForCygwin(cmd) + '"';
             auto convertedReceived =
                 '"' + converter->convertFileArgumentForCygwin(received) + '"';
             auto convertedApproved =
@@ -47,9 +46,7 @@ namespace ApprovalTests
             checkForCygwin();
         }
 
-        CommandReporter(std::string command,
-                        std::string args,
-                        CommandLauncher* launcher)
+        CommandReporter(std::string command, std::string args, CommandLauncher* launcher)
             : cmd(std::move(command)), arguments(std::move(args)), l(launcher)
         {
             checkForCygwin();

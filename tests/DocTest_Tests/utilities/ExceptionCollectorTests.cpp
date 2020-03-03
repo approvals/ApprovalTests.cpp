@@ -13,8 +13,7 @@ TEST_CASE("ExceptionCollector")
         for (int i = 1; i <= 4; ++i)
         {
             exceptions.gather([&]() {
-                throw std::runtime_error("error number " +
-                                         StringUtils::toString(i));
+                throw std::runtime_error("error number " + StringUtils::toString(i));
             });
         }
         exceptions.release();

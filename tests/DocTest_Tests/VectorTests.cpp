@@ -7,10 +7,9 @@ using namespace ApprovalTests;
 TEST_CASE("YouCanVerifyIteratorRange")
 {
     std::vector<std::string> v{"hello", "world"};
-    Approvals::verifyAll("FIRST LETTER",
-                         v.begin(),
-                         v.end(),
-                         [](auto s, auto& os) { os << s << " => " << s[0]; });
+    Approvals::verifyAll("FIRST LETTER", v.begin(), v.end(), [](auto s, auto& os) {
+        os << s << " => " << s[0];
+    });
 }
 
 TEST_CASE("YouCanVerifyVectors")

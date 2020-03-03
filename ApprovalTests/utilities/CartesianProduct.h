@@ -25,8 +25,7 @@ namespace ApprovalTests
             };
 
             template <std::size_t N, std::size_t... Is>
-            struct make_index_sequence
-                : make_index_sequence<N - 1, N - 1, Is...>
+            struct make_index_sequence : make_index_sequence<N - 1, N - 1, Is...>
             {
             };
 
@@ -51,22 +50,18 @@ namespace ApprovalTests
             // See https://en.cppreference.com/w/cpp/utility/apply
             template <class F, class Tuple, std::size_t... I>
             constexpr auto apply_impl(F&& f, Tuple&& t, index_sequence<I...>)
-                -> decltype(
-                    std::forward<F>(f)(std::get<I>(std::forward<Tuple>(t))...))
+                -> decltype(std::forward<F>(f)(std::get<I>(std::forward<Tuple>(t))...))
             {
-                return std::forward<F>(f)(
-                    std::get<I>(std::forward<Tuple>(t))...);
+                return std::forward<F>(f)(std::get<I>(std::forward<Tuple>(t))...);
             }
 
             template <class F, class Tuple>
-            auto apply(F&& f, Tuple&& t)
-                -> decltype(apply_impl(std::forward<F>(f),
-                                       std::forward<Tuple>(t),
-                                       make_tuple_idxs<Tuple>{}))
+            auto apply(F&& f, Tuple&& t) -> decltype(apply_impl(std::forward<F>(f),
+                                                                std::forward<Tuple>(t),
+                                                                make_tuple_idxs<Tuple>{}))
             {
-                return apply_impl(std::forward<F>(f),
-                                  std::forward<Tuple>(t),
-                                  make_tuple_idxs<Tuple>{});
+                return apply_impl(
+                    std::forward<F>(f), std::forward<Tuple>(t), make_tuple_idxs<Tuple>{});
             }
             // End of C++17 compatibility
 
@@ -74,24 +69,22 @@ namespace ApprovalTests
             void for_each_impl(Tuple&& t, F&& f, index_sequence<Is...>)
             {
                 (void)std::initializer_list<int>{
-                    (std::forward<F>(f)(std::get<Is>(std::forward<Tuple>(t))),
-                     0)...};
+                    (std::forward<F>(f)(std::get<Is>(std::forward<Tuple>(t))), 0)...};
             }
 
             template <class Tuple, class F> void for_each(Tuple&& t, F&& f)
             {
-                for_each_impl(std::forward<Tuple>(t),
-                              std::forward<F>(f),
-                              make_tuple_idxs<Tuple>{});
+                for_each_impl(
+                    std::forward<Tuple>(t), std::forward<F>(f), make_tuple_idxs<Tuple>{});
             }
 
             template <class Tuple, class F, std::size_t... Is>
             auto transform_impl(Tuple&& t, F&& f, index_sequence<Is...>)
-                -> decltype(std::make_tuple(std::forward<F>(f)(
-                    std::get<Is>(std::forward<Tuple>(t)))...))
+                -> decltype(std::make_tuple(
+                    std::forward<F>(f)(std::get<Is>(std::forward<Tuple>(t)))...))
             {
-                return std::make_tuple(std::forward<F>(f)(
-                    std::get<Is>(std::forward<Tuple>(t)))...);
+                return std::make_tuple(
+                    std::forward<F>(f)(std::get<Is>(std::forward<Tuple>(t)))...);
             }
 
             template <class F, class Tuple>
@@ -100,9 +93,8 @@ namespace ApprovalTests
                                            std::forward<F>(f),
                                            make_tuple_idxs<Tuple>{}))
             {
-                return transform_impl(std::forward<Tuple>(t),
-                                      std::forward<F>(f),
-                                      make_tuple_idxs<Tuple>{});
+                return transform_impl(
+                    std::forward<Tuple>(t), std::forward<F>(f), make_tuple_idxs<Tuple>{});
             }
 
             template <class Predicate> struct find_if_body
@@ -112,8 +104,7 @@ namespace ApprovalTests
                 std::size_t currentIndex = 0;
                 bool found = false;
 
-                find_if_body(const Predicate& p, std::size_t& i)
-                    : pred(p), index(i)
+                find_if_body(const Predicate& p, std::size_t& i) : pred(p), index(i)
                 {
                 }
 
@@ -134,16 +125,14 @@ namespace ApprovalTests
             std::size_t find_if(Tuple&& tuple, Predicate pred = {})
             {
                 std::size_t idx = tuple_size<Tuple>();
-                for_each(std::forward<Tuple>(tuple),
-                         find_if_body<Predicate>(pred, idx));
+                for_each(std::forward<Tuple>(tuple), find_if_body<Predicate>(pred, idx));
                 return idx;
             }
 
             template <class Predicate, class Tuple>
             bool any_of(Tuple&& tuple, Predicate pred = {})
             {
-                return find_if(std::forward<Tuple>(tuple), pred) !=
-                       tuple_size<Tuple>();
+                return find_if(std::forward<Tuple>(tuple), pred) != tuple_size<Tuple>();
             }
 
             struct is_range_empty
@@ -160,8 +149,7 @@ namespace ApprovalTests
             struct dereference_iterator
             {
                 template <class It>
-                auto operator()(It&& it) const
-                    -> decltype(*std::forward<It>(it))
+                auto operator()(It&& it) const -> decltype(*std::forward<It>(it))
                 {
                     return *std::forward<It>(it);
                 }
@@ -169,8 +157,7 @@ namespace ApprovalTests
 
             // Increment outermost iterator. If it reaches its end, we're finished and do nothing.
             template <class Its, std::size_t I = tuple_size<Its>() - 1>
-            enable_if_t<I == 0>
-            increment_iterator(Its& it, const Its&, const Its&)
+            enable_if_t<I == 0> increment_iterator(Its& it, const Its&, const Its&)
             {
                 ++std::get<I>(it);
             }
@@ -198,8 +185,7 @@ namespace ApprovalTests
             using std::begin;
             using std::end;
 
-            if (Detail::any_of<Detail::is_range_empty>(
-                    std::forward_as_tuple(ranges...)))
+            if (Detail::any_of<Detail::is_range_empty>(std::forward_as_tuple(ranges...)))
                 return;
 
             const auto begins = std::make_tuple(begin(ranges)...);
@@ -212,9 +198,8 @@ namespace ApprovalTests
                 // 'Use clang tidy' is turned off.
                 // Power-save turned on.
                 // Mac
-                Detail::apply(
-                    std::forward<F>(f),
-                    Detail::transform<Detail::dereference_iterator>(its));
+                Detail::apply(std::forward<F>(f),
+                              Detail::transform<Detail::dereference_iterator>(its));
             }
         }
     } // namespace CartesianProduct

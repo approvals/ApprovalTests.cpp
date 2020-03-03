@@ -10,8 +10,7 @@ TEST_CASE("ItCanFixCaseOfFileNameOnWindows")
     if (SystemUtils::isWindowsOs())
     {
         const std::string original_filename = __FILE__;
-        const std::string lowercased_filename =
-            StringUtils::toLower(original_filename);
+        const std::string lowercased_filename = StringUtils::toLower(original_filename);
         const std::string fixed_filename =
             SystemUtils::checkFilenameCase(lowercased_filename);
         INFO("The 'fixed' filename is " << fixed_filename);

@@ -9,7 +9,7 @@ TEST(GoogleTestApprovalsTests, TestStreamableObject)
 TEST(GoogleTestApprovalsTests, SpecificReporter)
 {
     // begin-snippet: basic_approval_with_reporter
-    ApprovalTests::Approvals::verify(
-        "text to be verified", ApprovalTests::Windows::AraxisMergeReporter());
+    ApprovalTests::Approvals::verify("text to be verified",
+                                     ApprovalTests::Windows::AraxisMergeReporter());
     // end-snippet
 }

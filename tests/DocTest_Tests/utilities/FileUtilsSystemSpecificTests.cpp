@@ -10,11 +10,9 @@ TEST_CASE("Test FileUtilsSystemSpecific getCommandLineForCopy")
 
     // Windowsa
     REQUIRE("copy /Y \"source.txt\" \"destination.txt\"" ==
-            FileUtilsSystemSpecific::getCommandLineForCopy(
-                source, destination, true));
+            FileUtilsSystemSpecific::getCommandLineForCopy(source, destination, true));
 
     // Unix
     REQUIRE("cp \"source.txt\" \"destination.txt\"" ==
-            FileUtilsSystemSpecific::getCommandLineForCopy(
-                source, destination, false));
+            FileUtilsSystemSpecific::getCommandLineForCopy(source, destination, false));
 }

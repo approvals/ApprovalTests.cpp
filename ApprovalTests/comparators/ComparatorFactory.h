@@ -40,8 +40,7 @@ namespace ApprovalTests
         }
 
         static std::shared_ptr<ApprovalComparator>
-        getComparatorForFileExtensionWithDot(
-            const std::string& fileExtensionWithDot)
+        getComparatorForFileExtensionWithDot(const std::string& fileExtensionWithDot)
         {
             auto iterator = comparators().find(fileExtensionWithDot);
             if (iterator != comparators().end())

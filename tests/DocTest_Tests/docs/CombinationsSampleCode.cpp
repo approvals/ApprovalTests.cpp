@@ -7,8 +7,9 @@ using namespace ApprovalTests;
 
 namespace
 {
-    double functionThatReturnsSomethingOutputStreamable(
-        const std::string& /*input1*/, const int input2, const double input3)
+    double functionThatReturnsSomethingOutputStreamable(const std::string& /*input1*/,
+                                                        const int input2,
+                                                        const double input3)
     {
         return input2 * input3;
     }
@@ -23,8 +24,7 @@ TEST_CASE("YouCanVerifyCombinationsOf3")
     // begin-snippet: sample_combinations_of_three
     CombinationApprovals::verifyAllCombinations(
         [](const std::string& input1, const int input2, const double input3) {
-            return functionThatReturnsSomethingOutputStreamable(
-                input1, input2, input3);
+            return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
         }, // This is the converter function
         listOfInput1s,
         listOfInput2s,
@@ -41,8 +41,7 @@ TEST_CASE("YouCanVerifyCombinationsOf3WithAuto")
     // begin-snippet: sample_combinations_of_three_with_auto
     CombinationApprovals::verifyAllCombinations(
         [](auto& input1, auto& input2, auto& input3) {
-            return functionThatReturnsSomethingOutputStreamable(
-                input1, input2, input3);
+            return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
         }, // This is the converter function
         listOfInput1s,
         listOfInput2s,

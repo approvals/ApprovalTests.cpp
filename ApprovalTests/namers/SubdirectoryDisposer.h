@@ -17,16 +17,13 @@ namespace ApprovalTests
     public:
         explicit SubdirectoryDisposer(std::string subdirectory)
         {
-            previous_result =
-                ApprovalTestNamer::testConfiguration().subdirectory;
-            ApprovalTestNamer::testConfiguration().subdirectory =
-                std::move(subdirectory);
+            previous_result = ApprovalTestNamer::testConfiguration().subdirectory;
+            ApprovalTestNamer::testConfiguration().subdirectory = std::move(subdirectory);
         }
 
         ~SubdirectoryDisposer()
         {
-            ApprovalTestNamer::testConfiguration().subdirectory =
-                previous_result;
+            ApprovalTestNamer::testConfiguration().subdirectory = previous_result;
         }
     };
 }

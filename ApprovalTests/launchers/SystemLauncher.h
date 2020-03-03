@@ -18,8 +18,7 @@ namespace ApprovalTests
         bool isForeground_ = false;
 
     public:
-        explicit SystemLauncher(bool isForeground = false)
-            : isForeground_(isForeground)
+        explicit SystemLauncher(bool isForeground = false) : isForeground_(isForeground)
         {
         }
 
@@ -47,12 +46,11 @@ namespace ApprovalTests
             return isForeground_;
         }
 
-        std::string
-        getCommandLine(const std::string& commandLine) const override
+        std::string getCommandLine(const std::string& commandLine) const override
         {
-            std::string launch =
-                useWindows_ ? getWindowsCommandLine(commandLine, isForeground_)
-                            : getUnixCommandLine(commandLine, isForeground_);
+            std::string launch = useWindows_
+                                     ? getWindowsCommandLine(commandLine, isForeground_)
+                                     : getUnixCommandLine(commandLine, isForeground_);
             return launch;
         }
 
@@ -60,9 +58,8 @@ namespace ApprovalTests
                                           bool foreground) const
         {
             std::string launch =
-                foreground
-                    ? (std::string("cmd /S /C ") + "\"" + commandLine + "\"")
-                    : ("start \"\" " + commandLine);
+                foreground ? (std::string("cmd /S /C ") + "\"" + commandLine + "\"")
+                           : ("start \"\" " + commandLine);
 
             return launch;
         }
@@ -70,8 +67,7 @@ namespace ApprovalTests
         std::string getUnixCommandLine(const std::string& commandLine,
                                        bool foreground) const
         {
-            std::string launch =
-                foreground ? commandLine : (commandLine + " &");
+            std::string launch = foreground ? commandLine : (commandLine + " &");
 
             return launch;
         }

@@ -17,8 +17,8 @@ namespace ApprovalTests
         std::shared_ptr<Reporter> m_reporter;
 
     public:
-        explicit CIBuildOnlyReporter(std::shared_ptr<Reporter> reporter =
-                                         std::make_shared<TextDiffReporter>())
+        explicit CIBuildOnlyReporter(
+            std::shared_ptr<Reporter> reporter = std::make_shared<TextDiffReporter>())
             : m_reporter(reporter)
         {
         }

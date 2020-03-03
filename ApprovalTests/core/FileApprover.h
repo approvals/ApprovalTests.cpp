@@ -22,12 +22,11 @@ namespace ApprovalTests
 
         ~FileApprover() = default;
 
-        static ComparatorDisposer registerComparatorForExtension(
-            const std::string& extensionWithDot,
-            std::shared_ptr<ApprovalComparator> comparator)
+        static ComparatorDisposer
+        registerComparatorForExtension(const std::string& extensionWithDot,
+                                       std::shared_ptr<ApprovalComparator> comparator)
         {
-            return ComparatorFactory::registerComparator(extensionWithDot,
-                                                         comparator);
+            return ComparatorFactory::registerComparator(extensionWithDot, comparator);
         }
 
         //! This overload is an implementation detail. To add a new comparator, use registerComparator().
@@ -59,14 +58,11 @@ namespace ApprovalTests
                    *ComparatorFactory::getComparatorForFile(receivedPath));
         }
 
-        static void verify(const ApprovalNamer& n,
-                           const ApprovalWriter& s,
-                           const Reporter& r)
+        static void
+        verify(const ApprovalNamer& n, const ApprovalWriter& s, const Reporter& r)
         {
-            std::string approvedPath =
-                n.getApprovedFile(s.getFileExtensionWithDot());
-            std::string receivedPath =
-                n.getReceivedFile(s.getFileExtensionWithDot());
+            std::string approvedPath = n.getApprovedFile(s.getFileExtensionWithDot());
+            std::string receivedPath = n.getReceivedFile(s.getFileExtensionWithDot());
             s.write(receivedPath);
             try
             {
@@ -75,19 +71,16 @@ namespace ApprovalTests
             }
             catch (const ApprovalException&)
             {
-                reportAfterTryingFrontLoadedReporter(
-                    receivedPath, approvedPath, r);
+                reportAfterTryingFrontLoadedReporter(receivedPath, approvedPath, r);
                 throw;
             }
         }
 
-        static void
-        reportAfterTryingFrontLoadedReporter(const std::string& receivedPath,
-                                             const std::string& approvedPath,
-                                             const Reporter& r)
+        static void reportAfterTryingFrontLoadedReporter(const std::string& receivedPath,
+                                                         const std::string& approvedPath,
+                                                         const Reporter& r)
         {
-            auto tryFirst =
-                FrontLoadedReporterFactory::getFrontLoadedReporter();
+            auto tryFirst = FrontLoadedReporterFactory::getFrontLoadedReporter();
             if (!tryFirst->report(receivedPath, approvedPath))
             {
                 r.report(receivedPath, approvedPath);

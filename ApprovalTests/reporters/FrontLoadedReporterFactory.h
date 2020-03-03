@@ -24,8 +24,7 @@ namespace ApprovalTests
             return frontLoadedReporter();
         }
 
-        static void
-        setFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
+        static void setFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
         {
             frontLoadedReporter() = reporter;
         }

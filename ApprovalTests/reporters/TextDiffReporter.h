@@ -24,10 +24,8 @@ namespace ApprovalTests
         {
             std::vector<std::shared_ptr<Reporter>> reporters = {
                 CustomReporter::createForegroundReporter("diff"),
-                CustomReporter::createForegroundReporter(
-                    "C:/Windows/System32/fc.exe")};
-            m_reporter =
-                std::unique_ptr<Reporter>(new FirstWorkingReporter(reporters));
+                CustomReporter::createForegroundReporter("C:/Windows/System32/fc.exe")};
+            m_reporter = std::unique_ptr<Reporter>(new FirstWorkingReporter(reporters));
         }
 
         bool report(std::string received, std::string approved) const override

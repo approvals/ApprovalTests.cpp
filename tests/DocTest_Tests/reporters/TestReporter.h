@@ -10,8 +10,7 @@ class TestReporter : public ApprovalTests::CommandReporter
 public:
     DoNothingLauncher launcher;
 
-    TestReporter(bool working = true)
-        : CommandReporter(getCommand(working), &launcher)
+    TestReporter(bool working = true) : CommandReporter(getCommand(working), &launcher)
     {
         launcher.working = working;
         useCygwinConversions(false);

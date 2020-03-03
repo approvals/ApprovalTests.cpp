@@ -15,8 +15,7 @@ namespace ApprovalTests
     private:
         static std::shared_ptr<Reporter>& defaultReporter()
         {
-            static std::shared_ptr<Reporter> reporter =
-                std::make_shared<DiffReporter>();
+            static std::shared_ptr<Reporter> reporter = std::make_shared<DiffReporter>();
             return reporter;
         }
 
@@ -26,8 +25,7 @@ namespace ApprovalTests
             return defaultReporter();
         }
 
-        static void
-        setDefaultReporter(const std::shared_ptr<Reporter>& reporter)
+        static void setDefaultReporter(const std::shared_ptr<Reporter>& reporter)
         {
             defaultReporter() = reporter;
         }

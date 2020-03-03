@@ -25,7 +25,7 @@ static_assert(
 "The filename is: "
 __FILE__
               // end-snippet
-              // clang-format on
+    // clang-format on
 );
 #endif // APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK
 // </SingleHpp>

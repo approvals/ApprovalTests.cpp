@@ -8,8 +8,7 @@ using namespace ApprovalTests;
 TEST_CASE("ApprovalMissingExceptionHasAMessage")
 {
     ApprovalMissingException a("r.txt", "a.txt");
-    std::string expected =
-        "Failed Approval: \nApproval File Not Found \nFile: \"a.txt\"";
+    std::string expected = "Failed Approval: \nApproval File Not Found \nFile: \"a.txt\"";
     REQUIRE(a.what() == expected);
 }
 
