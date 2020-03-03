@@ -56,6 +56,16 @@ TEST_CASE("YouCanVerifyCombinationsOf2")
 }
 // end-snippet
 
+// begin-snippet: CombinationsStartingPoint
+TEST_CASE("CombinationsStartingPoint")
+{
+    std::vector<std::string> inputs1{"input1.value1", "input1.value2"};
+    std::vector<std::string> inputs2{"input2.value1", "input2.value2", "input2.value3"};
+    CombinationApprovals::verifyAllCombinations(
+        [](auto /*input1*/, auto /*input2*/) { return "placeholder"; }, inputs1, inputs2);
+}
+// end-snippet
+
 TEST_CASE("YouCanVerifyCombinationsOf9")
 {
     std::vector<std::string> letters{"a", "b"};

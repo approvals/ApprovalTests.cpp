@@ -4,6 +4,27 @@
 
 toc
 
+## When to use Combinations
+
+You have a function that takes, for example, 3 parameters, and you want to test its behaviour with a bunch of different values for each of those parameters.
+
+## Steps
+
+1. Copy this starter text, and adjust for the number of inputs that you have.
+
+snippet: CombinationsStartingPoint
+
+2. Modify each input container for your chosen values.
+3. Make sure each input type has an ostream operator<< (See [To String](/doc/ToString.md#how))
+4. Run it, and make sure that you have your inputs wired up correctly.
+
+If they are wired up correctly, you will see a file that looks like this: it is the left hand side of the file that matters at this point: all combinations of your own input values should be listed:
+
+snippet: CombinationTests.CombinationsStartingPoint.approved.txt
+
+5. Implement the body of your lambda
+6. Make sure that your lambda's return value also has an ostream operator<<
+
 ## The Basics
 
 You can use `CombinationApprovals::verifyAllCombinations` to test the content of multiple containers.

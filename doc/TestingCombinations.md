@@ -12,9 +12,57 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [When to use Combinations](#when-to-use-combinations)
+  * [Steps](#steps)
   * [The Basics](#the-basics)
     * [Passing in a Reporter](#passing-in-a-reporter)
   * [Code samples](#code-samples)<!-- endtoc -->
+
+## When to use Combinations
+
+You have a function that takes, for example, 3 parameters, and you want to test its behaviour with a bunch of different values for each of those parameters.
+
+## Steps
+
+1. Copy this starter text, and adjust for the number of inputs that you have.
+
+<!-- snippet: CombinationsStartingPoint -->
+<a id='snippet-combinationsstartingpoint'/></a>
+```cpp
+TEST_CASE("CombinationsStartingPoint")
+{
+    using namespace std;
+    std::vector<std::string> inputs1{"input1.value1", "input1.value2"};
+    std::vector<std::string> inputs2{"input2.value1", "input2.value2", "input2.value3"};
+    CombinationApprovals::verifyAllCombinations(
+        [](auto /*input1*/, auto /*input2*/) { return "placeholder"; }, inputs1, inputs2);
+}
+```
+<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L59-L68' title='File snippet `combinationsstartingpoint` was extracted from'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Navigate to start of snippet `combinationsstartingpoint`'>anchor</a></sup>
+<!-- endsnippet -->
+
+2. Modify each input container for your chosen values.
+3. Make sure each input type has an ostream operator<< (See [To String](/doc/ToString.md#how))
+4. Run it, and make sure that you have your inputs wired up correctly.
+
+If they are wired up correctly, you will see a file that looks like this: it is the left hand side of the file that matters at this point: all combinations of your own input values should be listed:
+
+<!-- snippet: CombinationTests.CombinationsStartingPoint.approved.txt -->
+<a id='snippet-CombinationTests.CombinationsStartingPoint.approved.txt'/></a>
+```txt
+(input1.value1, input2.value1) => placeholder
+(input1.value1, input2.value2) => placeholder
+(input1.value1, input2.value3) => placeholder
+(input1.value2, input2.value1) => placeholder
+(input1.value2, input2.value2) => placeholder
+(input1.value2, input2.value3) => placeholder
+
+```
+<sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.CombinationsStartingPoint.approved.txt#L1-L7' title='File snippet `CombinationTests.CombinationsStartingPoint.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-CombinationTests.CombinationsStartingPoint.approved.txt' title='Navigate to start of snippet `CombinationTests.CombinationsStartingPoint.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
+
+5. Implement the body of your lambda
+6. Make sure that your lambda's return value also has an ostream operator<<
 
 ## The Basics
 
