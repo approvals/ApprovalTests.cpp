@@ -102,7 +102,7 @@ Google Tests has an additional piece of information: `TestCaseName`.
 ```cpp
 TEST(TestCaseName, TestName)
 ```
-<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L14-L16' title='File snippet `googletest_name_parts` was extracted from'>snippet source</a> | <a href='#snippet-googletest_name_parts' title='Navigate to start of snippet `googletest_name_parts`'>anchor</a></sup>
+<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L13-L15' title='File snippet `googletest_name_parts` was extracted from'>snippet source</a> | <a href='#snippet-googletest_name_parts' title='Navigate to start of snippet `googletest_name_parts`'>anchor</a></sup>
 <!-- endsnippet -->
 
 With Google Tests, this will result in Approvals creating output files beginning with:
@@ -139,10 +139,9 @@ For example, if you are Google test fixtures, you might have a lot of class name
 <a id='snippet-googletest_customize_suffix'/></a>
 ```cpp
 // main.cpp
-auto customization =
-    GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
+auto customization = GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
 ```
-<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L8-L12' title='File snippet `googletest_customize_suffix` was extracted from'>snippet source</a> | <a href='#snippet-googletest_customize_suffix' title='Navigate to start of snippet `googletest_customize_suffix`'>anchor</a></sup>
+<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L8-L11' title='File snippet `googletest_customize_suffix` was extracted from'>snippet source</a> | <a href='#snippet-googletest_customize_suffix' title='Navigate to start of snippet `googletest_customize_suffix`'>anchor</a></sup>
 <!-- endsnippet -->
 
 #### Custom Anything
@@ -158,7 +157,7 @@ So:
 ```cpp
 TEST(TestCaseName_IgnoreThis, TestName)
 ```
-<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L64-L66' title='File snippet `googletest_customize_test` was extracted from'>snippet source</a> | <a href='#snippet-googletest_customize_test' title='Navigate to start of snippet `googletest_customize_test`'>anchor</a></sup>
+<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L61-L63' title='File snippet `googletest_customize_test` was extracted from'>snippet source</a> | <a href='#snippet-googletest_customize_test' title='Navigate to start of snippet `googletest_customize_test`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Would produce an output file beginning with:
@@ -168,7 +167,7 @@ Would produce an output file beginning with:
 ```cpp
 auto outputFileBaseName = "GoogleFixtureNamerCustomizationTests.TestName";
 ```
-<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L70-L72' title='File snippet `googletest_customize_test_name` was extracted from'>snippet source</a> | <a href='#snippet-googletest_customize_test_name' title='Navigate to start of snippet `googletest_customize_test_name`'>anchor</a></sup>
+<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L67-L69' title='File snippet `googletest_customize_test_name` was extracted from'>snippet source</a> | <a href='#snippet-googletest_customize_test_name' title='Navigate to start of snippet `googletest_customize_test_name`'>anchor</a></sup>
 <!-- endsnippet -->
 
 You could achieve this by registering a function pointer like this:
@@ -177,17 +176,16 @@ You could achieve this by registering a function pointer like this:
 <a id='snippet-googletest_customize_function'/></a>
 ```cpp
 // main.cpp
-bool dropTestCaseNamesWithIgnoreThis(
-    const std::string& /*testFileNameWithExtension*/,
-    const std::string& testCaseName)
+bool dropTestCaseNamesWithIgnoreThis(const std::string& /*testFileNameWithExtension*/,
+                                     const std::string& testCaseName)
 {
     return StringUtils::contains(testCaseName, "IgnoreThis");
 }
 
-auto ignoreNames = GoogleConfiguration::addTestCaseNameRedundancyCheck(
-    dropTestCaseNamesWithIgnoreThis);
+auto ignoreNames =
+    GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
 ```
-<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L42-L53' title='File snippet `googletest_customize_function` was extracted from'>snippet source</a> | <a href='#snippet-googletest_customize_function' title='Navigate to start of snippet `googletest_customize_function`'>anchor</a></sup>
+<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L40-L50' title='File snippet `googletest_customize_function` was extracted from'>snippet source</a> | <a href='#snippet-googletest_customize_function' title='Navigate to start of snippet `googletest_customize_function`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Or by using a lambda like this:
@@ -202,7 +200,7 @@ auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
         return StringUtils::contains(testCaseName, "IgnoreThis");
     });
 ```
-<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L55-L62' title='File snippet `googletest_customize_lambda` was extracted from'>snippet source</a> | <a href='#snippet-googletest_customize_lambda' title='Navigate to start of snippet `googletest_customize_lambda`'>anchor</a></sup>
+<sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L52-L59' title='File snippet `googletest_customize_lambda` was extracted from'>snippet source</a> | <a href='#snippet-googletest_customize_lambda' title='Navigate to start of snippet `googletest_customize_lambda`'>anchor</a></sup>
 <!-- endsnippet -->
 
 

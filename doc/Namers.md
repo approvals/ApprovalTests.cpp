@@ -55,10 +55,10 @@ If you ever want to create a custom namer, Approval Tests has a mechanism to cha
 <!-- snippet: register_default_namer -->
 <a id='snippet-register_default_namer'/></a>
 ```cpp
-auto default_namer_disposer = Approvals::useAsDefaultNamer(
-    []() { return std::make_shared<FakeNamer>(); });
+auto default_namer_disposer =
+    Approvals::useAsDefaultNamer([]() { return std::make_shared<FakeNamer>(); });
 ```
-<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L28-L31' title='File snippet `register_default_namer` was extracted from'>snippet source</a> | <a href='#snippet-register_default_namer' title='Navigate to start of snippet `register_default_namer`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L26-L29' title='File snippet `register_default_namer` was extracted from'>snippet source</a> | <a href='#snippet-register_default_namer' title='Navigate to start of snippet `register_default_namer`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Alternative Namers
@@ -81,7 +81,7 @@ To register this as your default namer, use:
 auto default_namer_disposer =
     SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
 ```
-<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L48-L51' title='File snippet `register_separate_directories_namer` was extracted from'>snippet source</a> | <a href='#snippet-register_separate_directories_namer' title='Navigate to start of snippet `register_separate_directories_namer`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L46-L49' title='File snippet `register_separate_directories_namer` was extracted from'>snippet source</a> | <a href='#snippet-register_separate_directories_namer' title='Navigate to start of snippet `register_separate_directories_namer`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Approving multiple files from one test 

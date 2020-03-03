@@ -73,14 +73,13 @@ Note: Over releases, the position of the optional Reporter parameter to `verifyA
 ```cpp
 CombinationApprovals::verifyAllCombinations(
     [](const std::string& input1, const int input2, const double input3) {
-        return functionThatReturnsSomethingOutputStreamable(
-            input1, input2, input3);
+        return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
     }, // This is the converter function
     listOfInput1s,
     listOfInput2s,
     listOfInput3s);
 ```
-<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L23-L32' title='File snippet `sample_combinations_of_three` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Navigate to start of snippet `sample_combinations_of_three`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L24-L32' title='File snippet `sample_combinations_of_three` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Navigate to start of snippet `sample_combinations_of_three`'>anchor</a></sup>
 <!-- endsnippet -->
 
 If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
@@ -90,14 +89,13 @@ If you are using C++14 or above, you can simplify this by using `auto` or `auto&
 ```cpp
 CombinationApprovals::verifyAllCombinations(
     [](auto& input1, auto& input2, auto& input3) {
-        return functionThatReturnsSomethingOutputStreamable(
-            input1, input2, input3);
+        return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
     }, // This is the converter function
     listOfInput1s,
     listOfInput2s,
     listOfInput3s);
 ```
-<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L41-L50' title='File snippet `sample_combinations_of_three_with_auto` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Navigate to start of snippet `sample_combinations_of_three_with_auto`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L41-L49' title='File snippet `sample_combinations_of_three_with_auto` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Navigate to start of snippet `sample_combinations_of_three_with_auto`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---

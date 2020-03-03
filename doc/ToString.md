@@ -31,16 +31,14 @@ For example:
 <!-- snippet: to_string_standard_example -->
 <a id='snippet-to_string_standard_example'/></a>
 ```cpp
-friend std::ostream& operator<<(std::ostream& os,
-                                const Rectangle1& rectangle)
+friend std::ostream& operator<<(std::ostream& os, const Rectangle1& rectangle)
 {
     os << "[x: " << rectangle.x << " y: " << rectangle.y
-       << " width: " << rectangle.width << " height: " << rectangle.height
-       << "]";
+       << " width: " << rectangle.width << " height: " << rectangle.height << "]";
     return os;
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/ToStringExample.cpp#L13-L22' title='File snippet `to_string_standard_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_standard_example' title='Navigate to start of snippet `to_string_standard_example`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringExample.cpp#L13-L20' title='File snippet `to_string_standard_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_standard_example' title='Navigate to start of snippet `to_string_standard_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
 You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
@@ -54,12 +52,11 @@ template <class STREAM>
 friend STREAM& operator<<(STREAM& os, const Rectangle2& rectangle)
 {
     os << "[x: " << rectangle.x << " y: " << rectangle.y
-       << " width: " << rectangle.width << " height: " << rectangle.height
-       << "]";
+       << " width: " << rectangle.width << " height: " << rectangle.height << "]";
     return os;
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/ToStringTemplateExample.cpp#L15-L24' title='File snippet `to_string_template_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_template_example' title='Navigate to start of snippet `to_string_template_example`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringTemplateExample.cpp#L15-L23' title='File snippet `to_string_template_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_template_example' title='Navigate to start of snippet `to_string_template_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Wrapper classes or functions can be used to provide additional output formats for types of data:
@@ -77,8 +74,8 @@ struct FormatRectangleForMultipleLines
 
     const Rectangle3& rectangle;
 
-    friend std::ostream&
-    operator<<(std::ostream& os, const FormatRectangleForMultipleLines& wrapper)
+    friend std::ostream& operator<<(std::ostream& os,
+                                    const FormatRectangleForMultipleLines& wrapper)
     {
         os << "(x,y,width,height) = (" << wrapper.rectangle.x << ","
            << wrapper.rectangle.y << "," << wrapper.rectangle.width << ","
@@ -94,7 +91,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead")
     });
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L39-L66' title='File snippet `to_string_wrapper_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_wrapper_example' title='Navigate to start of snippet `to_string_wrapper_example`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L37-L64' title='File snippet `to_string_wrapper_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_wrapper_example' title='Navigate to start of snippet `to_string_wrapper_example`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Design
@@ -138,7 +135,7 @@ Here's an example of verifing a list of rectangles
 ```cpp
 Approvals::verifyAll("rectangles", getRectangles());
 ```
-<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L34-L36' title='File snippet `verify_list` was extracted from'>snippet source</a> | <a href='#snippet-verify_list' title='Navigate to start of snippet `verify_list`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L32-L34' title='File snippet `verify_list` was extracted from'>snippet source</a> | <a href='#snippet-verify_list' title='Navigate to start of snippet `verify_list`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Notice how this:

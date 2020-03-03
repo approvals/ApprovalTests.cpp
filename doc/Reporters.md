@@ -44,7 +44,7 @@ new KDiff3Reporter(),
 new TkDiffReporter(),
 new VisualStudioCodeReporter()
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.h#L99-L109' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.h#L95-L105' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Linux
@@ -56,7 +56,7 @@ new MeldReporter(),
 new SublimeMergeReporter(),
 new KDiff3Reporter()
 ```
-<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L90-L94' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L87-L91' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Windows
@@ -74,7 +74,7 @@ new SublimeMergeReporter(),
 new KDiff3Reporter(),
 new VisualStudioCodeReporter(),
 ```
-<sup><a href='/ApprovalTests/reporters/WindowsReporters.h#L166-L176' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/WindowsReporters.h#L160-L170' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Registering a default reporter
@@ -108,11 +108,10 @@ Here is an example of not launching any reporters if you are on a machine with a
 <a id='snippet-do_not_report_on_named_machine'/></a>
 ```cpp
 // main.cpp
-auto frontLoadedReportDisposer =
-    ApprovalTests::Approvals::useAsFrontLoadedReporter(
-        ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName"));
+auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
+    ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName"));
 ```
-<sup><a href='/examples/googletest_existing_main/main.cpp#L19-L24' title='File snippet `do_not_report_on_named_machine` was extracted from'>snippet source</a> | <a href='#snippet-do_not_report_on_named_machine' title='Navigate to start of snippet `do_not_report_on_named_machine`'>anchor</a></sup>
+<sup><a href='/examples/googletest_existing_main/main.cpp#L19-L23' title='File snippet `do_not_report_on_named_machine` was extracted from'>snippet source</a> | <a href='#snippet-do_not_report_on_named_machine' title='Navigate to start of snippet `do_not_report_on_named_machine`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Once you have added that, even calling approvals with a specific Reporter will not launch it on the CI system (but will for all other systems). For example:
@@ -120,8 +119,8 @@ Once you have added that, even calling approvals with a specific Reporter will n
 <!-- snippet: basic_approval_with_reporter -->
 <a id='snippet-basic_approval_with_reporter'/></a>
 ```cpp
-ApprovalTests::Approvals::verify(
-    "text to be verified", ApprovalTests::Windows::AraxisMergeReporter());
+ApprovalTests::Approvals::verify("text to be verified",
+                                 ApprovalTests::Windows::AraxisMergeReporter());
 ```
 <sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L11-L14' title='File snippet `basic_approval_with_reporter` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Navigate to start of snippet `basic_approval_with_reporter`'>anchor</a></sup>
 <!-- endsnippet -->
@@ -134,11 +133,10 @@ Blocking reporters are a simple class, designed for use with FrontLoadedReporter
 <a id='snippet-do_not_report_on_named_machine'/></a>
 ```cpp
 // main.cpp
-auto frontLoadedReportDisposer =
-    ApprovalTests::Approvals::useAsFrontLoadedReporter(
-        ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName"));
+auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
+    ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName"));
 ```
-<sup><a href='/examples/googletest_existing_main/main.cpp#L19-L24' title='File snippet `do_not_report_on_named_machine` was extracted from'>snippet source</a> | <a href='#snippet-do_not_report_on_named_machine' title='Navigate to start of snippet `do_not_report_on_named_machine`'>anchor</a></sup>
+<sup><a href='/examples/googletest_existing_main/main.cpp#L19-L23' title='File snippet `do_not_report_on_named_machine` was extracted from'>snippet source</a> | <a href='#snippet-do_not_report_on_named_machine' title='Navigate to start of snippet `do_not_report_on_named_machine`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Miscellaneous Helper Reporters

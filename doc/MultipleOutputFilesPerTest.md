@@ -178,13 +178,12 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
         Greeting(British), Greeting(American), Greeting(French)};
     for (auto greeting : greetings)
     {
-        auto section =
-            NamerFactory::appendToOutputFilename(greeting.getNationality());
+        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
         Approvals::verify(greeting.getGreeting());
     }
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L83-L99' title='File snippet `approvals_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_dynamic' title='Navigate to start of snippet `approvals_multiple_output_files_dynamic`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L83-L98' title='File snippet `approvals_multiple_output_files_dynamic` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_dynamic' title='Navigate to start of snippet `approvals_multiple_output_files_dynamic`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Or hard-coded, with multiple sections:
@@ -209,7 +208,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L101-L118' title='File snippet `approvals_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_hard_coded' title='Navigate to start of snippet `approvals_multiple_output_files_hard_coded`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L100-L117' title='File snippet `approvals_multiple_output_files_hard_coded` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_hard_coded' title='Navigate to start of snippet `approvals_multiple_output_files_hard_coded`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Approving multiple files in one test
@@ -231,14 +230,12 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
 {
     using namespace ApprovalTests;
 
-    ExceptionCollector
-        exceptions; // Allow all files to be written, regardless of errors
+    ExceptionCollector exceptions; // Allow all files to be written, regardless of errors
     std::vector<Greeting> greetings{
         Greeting(British), Greeting(American), Greeting(French)};
     for (auto greeting : greetings)
     {
-        auto section =
-            NamerFactory::appendToOutputFilename(greeting.getNationality());
+        auto section = NamerFactory::appendToOutputFilename(greeting.getNationality());
         exceptions.gather([&]() {
             Approvals::verify(
                 greeting.getGreeting(),
@@ -248,7 +245,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
     exceptions.release();
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L120-L141' title='File snippet `approvals_multiple_output_files_auto_approving` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Navigate to start of snippet `approvals_multiple_output_files_auto_approving`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L119-L138' title='File snippet `approvals_multiple_output_files_auto_approving` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Navigate to start of snippet `approvals_multiple_output_files_auto_approving`'>anchor</a></sup>
 <!-- endsnippet -->
  
 
