@@ -8,6 +8,8 @@ toc
 
 You have a function that takes, for example, 3 parameters, and you want to test its behaviour with a bunch of different values for each of those parameters.
 
+If you have only one parameter that you want to vary, check out [How to Test a Variety of Values for One Input](/doc/how_tos/TestAVarietyOfValues.md#top).
+
 ## Steps
 
 1. Copy this starter text, and adjust for the number of inputs that you have.
@@ -24,6 +26,7 @@ snippet: CombinationTests.CombinationsStartingPoint.approved.txt
 
 5. Implement the body of your lambda
 6. Make sure that your lambda's return value also has an ostream operator<<
+7. Run it, and approve the output.
 
 ## The Basics
 

@@ -9,15 +9,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 # Testing Containers
 
+There are two scenarios:
 
-
-Use `Approvals::verifyAll()` to test containers of objects.
-
-For some examples, see [VectorTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/VectorTests.cpp).
-
-<!-- todo: replace this link to examples with snippets -->
-
-For advice on effective formatting, see [To String](/doc/ToString.md#top). As you write out larger volumes of data in your approval files, experience has shown that the choice of layout of text in approval files can make a big difference to maintainability of tests, when failures occur.
+* [How to Test the Contents of a Container](/doc/how_tos/TestContainerContents.md#top).
+* [How to Test a Variety of Values for One Input](/doc/how_tos/TestAVarietyOfValues.md#top).
 
 ---
 

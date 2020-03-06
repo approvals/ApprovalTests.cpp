@@ -70,7 +70,9 @@ include: include_using_test_frameworks_list
 
 ## How-to Guides
 
-* [How To Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top)
+* [How to Test the Contents of a Container](/doc/how_tos/TestContainerContents.md#top).
+* [How to Test a Variety of Values for One Input](/doc/how_tos/TestAVarietyOfValues.md#top).
+* [How to Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top)
 * [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top).
 
 ## Miscellaneous
