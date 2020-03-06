@@ -30,3 +30,14 @@ TEST_CASE("YouCanVerifyVectorsWithStandardTextNoHeader")
     std::vector<std::string> v{"hello", "world"};
     Approvals::verifyAll(v);
 }
+
+// begin-snippet: VerifyAllStartingPoint
+TEST_CASE("VerifyAllStartingPoint")
+{
+    std::vector<std::string> inputs{"input.value1", "input.value2"};
+    Approvals::verifyAll("Title", inputs, [](auto input, auto& stream) {
+        stream << input << " => "
+               << "placeholder";
+    });
+}
+// end-snippet

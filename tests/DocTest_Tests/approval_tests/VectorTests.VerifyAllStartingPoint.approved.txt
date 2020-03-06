@@ -1,0 +1,6 @@
+Title
+
+
+input.value1 => placeholder
+input.value2 => placeholder
+
