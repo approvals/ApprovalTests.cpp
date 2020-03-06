@@ -1,4 +1,4 @@
-WORDS
+TITLE
 
 
 [0] = hello
