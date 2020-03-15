@@ -7,4 +7,5 @@
 * **Bug fixes**
     * None
 * **Other changes**
-    * None
+    * Updated to doctest 2.3.7 (#108, thank you @p-podsiadly)
+    * New section in documentation: [How-to Guides](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#how-to-guides)
