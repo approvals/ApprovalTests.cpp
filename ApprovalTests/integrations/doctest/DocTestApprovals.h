@@ -112,7 +112,11 @@ namespace ApprovalTests
             void subcase_start(const doctest::SubcaseSignature& signature) override
             {
 
+#if DOCTEST_VERSION >= 20307
+                currentTest.sections.emplace_back(signature.m_name.c_str());
+#else
                 currentTest.sections.emplace_back(signature.m_name);
+#endif
             }
 
             void subcase_end() override
