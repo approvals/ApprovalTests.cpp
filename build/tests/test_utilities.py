@@ -1,6 +1,6 @@
 import os
 import unittest
-from scripts.utilities import pushdir, popdir, use_directory
+from scripts.utilities import pushdir, popdir, use_directory, write_file, replace_text_in_file, read_file
 
 
 class TestUtilities(unittest.TestCase):
@@ -16,6 +16,15 @@ class TestUtilities(unittest.TestCase):
         with use_directory('..'):
             self.assertNotEqual(cwd, os.getcwd())
         self.assertEqual(cwd, os.getcwd())
+
+    def test_file_reading_and_writing(self):
+        text = '<caterpillar>blue</caterpillar>'
+        file_name = 'bug.txt'
+        write_file(file_name, text)
+        replace_text_in_file(file_name, 'caterpillar', 'butterfly')
+        new_text = read_file(file_name)
+        self.assertEqual(new_text, '<butterfly>blue</butterfly>')
+        os.remove(file_name)
 
 
 if __name__ == '__main__':
