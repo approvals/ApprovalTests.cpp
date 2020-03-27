@@ -3,7 +3,7 @@ import os
 import pyperclip
 
 from scripts import version
-from scripts.utilities import read_file, check_step, run, pushdir, popdir
+from scripts.utilities import read_file, check_step, run, use_directory
 
 
 class DeployRelease:
@@ -15,14 +15,12 @@ class DeployRelease:
 
     # Starter Project
     def commit_starter_project(self):
-        pushdir(self.details.starter_project_dir)
-        run(["git", "commit", "-m", F"'Update to Approvals {self.details.new_version}'"])
-        popdir()
+        with use_directory(self.details.starter_project_dir):
+            run(["git", "commit", "-m", F"'Update to Approvals {self.details.new_version}'"])
 
     def push_starter_project(self):
-        pushdir(self.details.starter_project_dir)
-        run(["git", "push", "origin", "master"])
-        popdir()
+        with use_directory(self.details.starter_project_dir):
+            run(["git", "push", "origin", "master"])
 
     def publish_starter_project(self):
         self.commit_starter_project()
@@ -32,26 +30,22 @@ class DeployRelease:
 
     # Main Project
     def commit_main_project(self):
-        pushdir(self.details.main_project_dir)
-        run(["git", "commit", "-m", F"'{self.details.new_version} release'"])
-        popdir()
+        with use_directory(self.details.main_project_dir):
+            run(["git", "commit", "-m", F"'{self.details.new_version} release'"])
 
     def push_main_project(self):
-        pushdir(self.details.main_project_dir)
-        run(["git", "push", "origin", "master"])
-        popdir()
+        with use_directory(self.details.main_project_dir):
+            run(["git", "push", "origin", "master"])
 
     def test_conan_and_create_pr(self):
-        pushdir(os.path.join(self.details.conan_approvaltests_dir, 'all'))
-        # We cannot test the new Conan recipe until the new release has been
-        # published on github
-        new_version_without_v = version.get_version_without_v(self.details.new_version)
-        run(['conan', 'create', '.', F'{new_version_without_v}@'])
+        with use_directory(os.path.join(self.details.conan_approvaltests_dir, 'all')):
+            # We cannot test the new Conan recipe until the new release has been
+            # published on github
+            new_version_without_v = version.get_version_without_v(self.details.new_version)
+            run(['conan', 'create', '.', F'{new_version_without_v}@'])
 
-        check_step(F"Commit the changes - with message 'Add approvaltests.cpp {new_version_without_v}'")
-        check_step('Push the changes - NB on the feature branch for the release')
-
-        popdir()
+            check_step(F"Commit the changes - with message 'Add approvaltests.cpp {new_version_without_v}'")
+            check_step('Push the changes - NB on the feature branch for the release')
 
         print(
             F"Create a pull request, including this in the description: **approvaltests.cpp/{new_version_without_v}**")
