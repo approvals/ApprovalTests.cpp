@@ -15,21 +15,30 @@ class PrepareRelease:
     def update_features_page(self):
         features_file = '../doc/mdsource/Features.source.md'
         content = read_file(features_file)
+        update_file = PrepareRelease.prepare_update_features_page(self.details.old_version, self.details.new_version, content)
+        update_file(features_file)
+
+    @staticmethod
+    def prepare_update_features_page(old_version, new_version, content):
         missing_features = F"""
 ## v.x.y.z
 
-## {self.details.old_version}
+## {old_version}
 """
         if missing_features in content:
-            check_step("the Features page is empty: are you sure you want this?")
+            def check(features_file, action = check_step):
+                return action("the Features page is empty: are you sure you want this?")
+            return check
         else:
             update_version = F"""
 ## v.x.y.z
 
-## {self.details.new_version}
+## {new_version}
 """
 
-            replace_text_in_file(features_file, '\n## v.x.y.z\n', update_version)
+            def replace(features_file, replace_text_in_file_action = replace_text_in_file):
+                return replace_text_in_file_action(features_file, '\n## v.x.y.z\n', update_version)
+            return replace
 
     def check_pre_conditions_for_publish(self):
         if self.details.push_to_production:
