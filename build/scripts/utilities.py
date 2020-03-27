@@ -33,6 +33,19 @@ def popdir():
     os.chdir(pushstack.pop())
 
 
+def use_directory(dir):
+    class PushPopDirectory:
+        def __init__(self, dir):
+            self.dir = dir
+
+        def __enter__(self):
+            pushdir(dir)
+
+        def __exit__(self, exc_type, exc_val, exc_tb):
+            popdir()
+    return PushPopDirectory(dir)
+
+
 def replace_text_in_file(file_name, old_text, new_text):
     text = read_file(file_name)
     text = text.replace(old_text, new_text)
