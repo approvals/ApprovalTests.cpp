@@ -47,6 +47,10 @@ def calculate_sha256(file_name):
         return readable_hash
 
 
+def assert_step(condition, message = ""):
+    assert condition, message
+
+
 def check_step(step):
     def do_nothing():
         pass

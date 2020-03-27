@@ -5,7 +5,7 @@ import version
 from git import Repo
 
 from utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir, \
-    check_step_with_revert, calculate_sha256
+    check_step_with_revert, calculate_sha256, assert_step
 
 
 class PrepareRelease:
@@ -34,17 +34,17 @@ class PrepareRelease:
     def check_pre_conditions_for_publish(self):
         if self.details.push_to_production:
             repo = Repo(self.details.main_project_dir)
-            assert not repo.bare
+            assert_step(not repo.bare)
 
-            assert (repo.active_branch.name == 'master')
+            assert_step((repo.active_branch.name == 'master'))
 
             # From https://stackoverflow.com/questions/31959425/how-to-get-staged-files-using-gitpython
-            assert len(repo.index.diff(None)) == 0, "there are un-committed changes to ApprovalTests.cpp"  # Modified
-            assert len(repo.index.diff("HEAD")) == 0, "there are un-committed changes to ApprovalTests.cpp"  # Staged
+            assert_step(len(repo.index.diff(None)) == 0, "there are un-committed changes to ApprovalTests.cpp")  # Modified
+            assert_step(len(repo.index.diff("HEAD")) == 0, "there are un-committed changes to ApprovalTests.cpp")  # Staged
 
             # From https://stackoverflow.com/questions/15849640/how-to-get-count-of-unpublished-commit-with-gitpython
-            assert len(
-                list(repo.iter_commits('master@{u}..master'))) == 0, "there are un-pushed changes in ApprovalTests.cpp"
+            assert_step(len(
+                list(repo.iter_commits('master@{u}..master'))) == 0, "there are un-pushed changes in ApprovalTests.cpp")
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/commits/master"])
             check_step("the builds are passing")
@@ -134,13 +134,13 @@ F"""// Approval Tests version {self.details.new_version}
 
     def check_conan_repo(self):
         repo = Repo(self.details.conan_repo_dir)
-        assert not repo.bare
+        assert_step(not repo.bare)
 
         # TODO Add descriptions in case of failure
-        assert (repo.active_branch.name == 'master')
+        assert_step((repo.active_branch.name == 'master'))
 
-        assert (len(repo.index.diff(None)) == 0)  # Modified
-        assert (len(repo.index.diff("HEAD")) == 0)  # Staged
+        assert_step((len(repo.index.diff(None)) == 0))  # Modified
+        assert_step((len(repo.index.diff("HEAD")) == 0))  # Staged
 
         run(["open", "https://github.com/conan-io/conan/releases"])
         run(["conan", "--version"])
