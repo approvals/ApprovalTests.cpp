@@ -14,8 +14,8 @@ from scripts.deploy_release import DeployRelease
 
 class ReleaseDetails:
     def __init__(self, old_version, new_version, publish_release):
-        self.old_version = version.get_version(old_version)
-        self.new_version = version.get_version(new_version)
+        self.old_version = version.get_version_text(old_version)
+        self.new_version = version.get_version_text(new_version)
         self.new_version_object = new_version
         self.push_to_production = publish_release
 

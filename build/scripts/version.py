@@ -2,7 +2,7 @@ import configparser
 import os
 
 
-def get_version(version):
+def get_version_text(version):
     return F"v.{version['major']}.{version['minor']}.{version['patch']}"
 
 def get_version_without_v(version_string):
