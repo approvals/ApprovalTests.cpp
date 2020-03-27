@@ -13,7 +13,7 @@ class TestUtilities(unittest.TestCase):
 
     def test_with_push_directory(self):
         cwd = os.getcwd()
-        with use_directory('..') as dir:
+        with use_directory('..'):
             self.assertNotEqual(cwd, os.getcwd())
         self.assertEqual(cwd, os.getcwd())
 
