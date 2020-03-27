@@ -9,7 +9,6 @@ from scripts.deploy_release import DeployRelease
 # Rewrite the SingleHpp Java program in Python
 # Automate the check_steps
 # Improve the chdir to start at the top-level directory - and check that we are the top-level
-# Simplify pushdir/popdir - ideally make it RAII - with with!
 # Review folder structure for Python scripts
 # Add a reminder to close any release milestone
 
