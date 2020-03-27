@@ -1,9 +1,8 @@
 #! /usr/bin/env python3
 
-import version
-from deploy_release import DeployRelease
-from prepare_release import PrepareRelease
-from release_details import ReleaseDetails
+from scripts import version
+from scripts.deploy_release import DeployRelease
+from scripts.release_details import ReleaseDetails
 
 if __name__ == '__main__':
     old_version = version.load_version()

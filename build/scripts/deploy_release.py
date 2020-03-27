@@ -1,11 +1,9 @@
 import os
-import shutil
 
 import pyperclip
 
-import version
-from utilities import read_file, check_step, run, pushdir, popdir
-from prepare_release import PrepareRelease
+from scripts import version
+from scripts.utilities import read_file, check_step, run, pushdir, popdir
 
 
 class DeployRelease:

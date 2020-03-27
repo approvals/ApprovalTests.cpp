@@ -22,7 +22,7 @@ def no_version_change(version):
     return {"major": version['major'], "minor": version['minor'], "patch": int(version['patch'])}
 
 def version_file_path():
-    path, filename = os.path.split(__file__)
+    path = os.getcwd()
     return os.path.join(path, 'version.ini')
 
 def load_version():

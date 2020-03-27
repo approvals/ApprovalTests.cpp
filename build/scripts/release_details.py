@@ -1,8 +1,8 @@
 import os
 
-import version
-from prepare_release import PrepareRelease
-from deploy_release import DeployRelease
+from scripts import version
+from scripts.prepare_release import PrepareRelease
+from scripts.deploy_release import DeployRelease
 
 # TODO list
 # Add CI step to check this prepare process works on every push

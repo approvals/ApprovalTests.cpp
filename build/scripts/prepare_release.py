@@ -1,10 +1,10 @@
 import os
 import shutil
 import time
-import version
+from scripts import version
 from git import Repo
 
-from utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir, \
+from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir, \
     check_step_with_revert, calculate_sha256, assert_step
 
 

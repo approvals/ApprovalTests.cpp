@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
-import version
-from release_details import build
+from scripts import version
+from scripts.release_details import build
 
 if __name__ == '__main__':
     build(version.update_patch, deploy = True)
