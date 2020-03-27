@@ -9,17 +9,26 @@ def get_version_without_v(version_string):
     return version_string.replace("v.", "")
 
 def update_major(version):
-    return {"major": int(version['major']) + 1, "minor": 0, "patch": 0}
+    return create_version(get_major(version) + 1, 0, 0)
 
 def update_minor(version):
-    return {"major": version['major'], "minor": int(version['minor']) + 1, "patch": 0}
+    return create_version(get_major(version), get_minor(version) + 1, 0)
 
 def update_patch(version):
-    return {"major": version['major'], "minor": version['minor'], "patch": int(version['patch']) + 1}
+    return create_version(get_major(version), get_minor(version), get_patch(version) + 1)
+
+def get_major(version):
+    return int(version['major'])
+
+def get_minor(version):
+    return int(version['minor'])
+
+def get_patch(version):
+    return int(version['patch'])
 
 def no_version_change(version):
-    # This is useful if a deploy failed part-way through, and we don't want to incremen the version number
-    return {"major": version['major'], "minor": version['minor'], "patch": int(version['patch'])}
+    # This is useful if a deploy failed part-way through, and we don't want to increment the version number
+    return create_version(get_major(version), get_minor(version), get_patch(version))
 
 def version_file_path():
     path = os.getcwd()
