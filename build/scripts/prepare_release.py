@@ -4,7 +4,7 @@ import time
 from scripts import version
 from git import Repo
 
-from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, pushdir, popdir, \
+from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
     check_step_with_revert, calculate_sha256, assert_step
 
 
@@ -60,11 +60,11 @@ class PrepareRelease:
         check_step("the milestone (if any) is up to date, including actual version number of release")
 
     def update_version_number_header(self):
-        pushdir(self.details.approval_tests_dir)
-        version_header = os.path.join("ApprovalTestsVersion.h")
+        with use_directory(self.details.approval_tests_dir):
+            version_header = os.path.join("ApprovalTestsVersion.h")
 
-        text = \
-            F"""#ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
+            text = \
+                F"""#ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
 #define APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
 
 #define APPROVALTESTS_VERSION_MAJOR {self.details.new_version_object['major']}
@@ -78,8 +78,7 @@ class PrepareRelease:
 
 #endif //APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
 """
-        write_file(version_header, text)
-        popdir()
+            write_file(version_header, text)
 
     def create_single_header_file(self):
         os.chdir("../ApprovalTests")
@@ -99,15 +98,13 @@ F"""// Approval Tests version {self.details.new_version}
         STARTER_PATH_NEW_SINGLE_HEADER = F"{self.details.starter_project_dir}/lib/{self.details.new_single_header}"
 
         # Make sure starter project folder is clean
-        pushdir(self.details.starter_project_dir)
+        with use_directory(self.details.starter_project_dir):
+            # Delete untracked files:
+            # - does not delete ignored files
+            # - does not delete untracked files in new, untracked directories
+            run(["git", "clean", "-f"])
 
-        # Delete untracked files:
-        # - does not delete ignored files
-        # - does not delete untracked files in new, untracked directories
-        run(["git", "clean", "-f"])
-
-        run(["git", "reset", "--hard"])
-        popdir()
+            run(["git", "reset", "--hard"])
 
         shutil.copyfile(self.details.release_new_single_header, STARTER_PATH_NEW_SINGLE_HEADER)
 
@@ -123,14 +120,12 @@ F"""// Approval Tests version {self.details.new_version}
                              self.details.new_single_header)
 
     def check_starter_project_builds(self):
-        pushdir(F"{self.details.starter_project_dir}/cmake-build-debug")
-        run(["cmake", "--build", "."])
-        popdir()
+        with use_directory(F"{self.details.starter_project_dir}/cmake-build-debug"):
+            run(["cmake", "--build", "."])
 
     def update_readme_and_docs(self):
-        pushdir("..")
-        replace_text_in_file("mdsource/README.source.md", self.details.old_version, self.details.new_version)
-        popdir()
+        with use_directory(".."):
+            replace_text_in_file("mdsource/README.source.md", self.details.old_version, self.details.new_version)
 
     def check_conan_repo(self):
         repo = Repo(self.details.conan_repo_dir)
@@ -200,9 +195,8 @@ F'''  {new_version_without_v}:
         write_file(conan_data_file, conandata_yml_text)
 
     def regenerate_markdown(self):
-        pushdir("..")
-        run(["./run_markdown_templates.sh"])
-        popdir()
+        with use_directory(".."):
+            run(["./run_markdown_templates.sh"])
 
     def prepare_release_notes(self):
         replace_text_in_file(self.details.xxx_release_notes_path, 'v.x.y.z', self.details.new_version)
@@ -220,12 +214,10 @@ F'''  {new_version_without_v}:
         self.do_things_in_starter_project_and_main(add)
 
     def do_things_in_starter_project_and_main(self, function):
-        pushdir(self.details.starter_project_dir)
-        function()
-        popdir()
-        pushdir(self.details.main_project_dir)
-        function()
-        popdir()
+        with use_directory(self.details.starter_project_dir):
+            function()
+        with use_directory(self.details.main_project_dir):
+            function()
 
     def check_changes(self):
         def revert():
