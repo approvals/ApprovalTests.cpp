@@ -30,6 +30,9 @@ def load_version():
     config.read(version_file_path())
     return config['VERSION']
 
+def create_version(major, minor, patch):
+    return {"major": major, "minor": minor, "patch": patch}
+
 def write_version(version):
     config = configparser.ConfigParser()
     config['VERSION'] = version
