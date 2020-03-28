@@ -5,9 +5,14 @@
 #include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
 
 // <SingleHpp unalterable>
-#ifdef APPROVALS_DOCTEST
-
+#if defined(APPROVALS_DOCTEST_EXISTING_MAIN)
+#define APPROVALS_DOCTEST
+#define DOCTEST_CONFIG_IMPLEMENT
+#elif defined(APPROVALS_DOCTEST)
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#endif
+
+#ifdef APPROVALS_DOCTEST
 
 // begin-snippet: required_header_for_doctest
 #include <doctest/doctest.h>

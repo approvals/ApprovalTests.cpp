@@ -56,6 +56,22 @@ Create a file `main.cpp` and add just the following two lines:
 
 <!-- todo: document use of sections -->
 
+### Existing Project - with your main()
+
+If you have [supplied your own `main()` for Doctest](hhttps://github.com/onqtam/doctest/blob/master/doc/markdown/main.md), you will need to teach it how to supply test names to Approval Tests.
+
+You should make the following additions to your own source file that contains `main()`.  
+
+<a id='snippet-doctest_existing_main'></a>
+```cpp
+// Add these two lines to the top of your main.cpp file:
+#define APPROVALS_DOCTEST_EXISTING_MAIN
+#include "ApprovalTests.hpp"
+```
+
+<sup><a href='/examples/doctest_existing_main/main.cpp#L1-L5' title='File snippet `doctest_existing_main` was extracted from'>snippet source</a> | <a href='#snippet-doctest_existing_main' title='Navigate to start of snippet `doctest_existing_main`'>anchor</a></sup>
+<!-- endsnippet -->
+
 ---
 
 [Back to User Guide](/doc/README.md#top)
