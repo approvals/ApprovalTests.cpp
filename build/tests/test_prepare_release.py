@@ -15,22 +15,16 @@ toc
 {self.old_feature_text()}
 
 '''
-        expected_new_content = '''
+        expected_new_content = f'''
 toc
 
 ## v.x.y.z
 
 ## v.1.2.4
 
-### New Feature
+{self.new_feature_text()}
 
-New feature details.
-
-## v.1.2.3
-
-### Old Feature
-
-Old feature details.
+{self.old_feature_text()}
 
 '''
         old_version = "v.1.2.3"
@@ -40,16 +34,12 @@ Old feature details.
         self.assertEqual(expected_new_content, new_content)
 
     def test_update_features_with_no_new_features(self):
-        content = '''
+        content = f'''
 toc
 
 ## v.x.y.z
 
-## v.1.2.3
-
-### Old Feature
-
-Old feature details.
+{self.old_feature_text()}
 
 '''
         old_version = "v.1.2.3"
