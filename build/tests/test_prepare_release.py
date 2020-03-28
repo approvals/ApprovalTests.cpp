@@ -5,20 +5,14 @@ from scripts.prepare_release import PrepareRelease
 
 class TestPrepareRelease(unittest.TestCase):
     def test_update_features_with_new_features(self):
-        content = '''
+        content = f'''
 toc
 
 ## v.x.y.z
 
-### New Feature
+{self.new_feature_text()}
 
-New feature details.
-
-## v.1.2.3
-
-### Old Feature
-
-Old feature details.
+{self.old_feature_text()}
 
 '''
         expected_new_content = '''
@@ -63,6 +57,18 @@ Old feature details.
         action = PrepareRelease.prepare_update_features_page(old_version, new_version, content)
         new_content = action("", lambda text: f'CHECK: {text}')
         self.assertEqual(new_content, 'CHECK: the Features page is empty: are you sure you want this?')
+
+    def new_feature_text(self):
+        return '''### New Feature
+
+New feature details.'''
+
+    def old_feature_text(self):
+        return '''## v.1.2.3
+
+### Old Feature
+
+Old feature details.'''
 
 
 if __name__ == '__main__':
