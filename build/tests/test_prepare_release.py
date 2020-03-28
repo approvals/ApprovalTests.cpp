@@ -48,12 +48,14 @@ toc
         new_content = action("", lambda text: f'CHECK: {text}')
         self.assertEqual(new_content, 'CHECK: the Features page is empty: are you sure you want this?')
 
-    def new_feature_text(self):
+    @staticmethod
+    def new_feature_text():
         return '''### New Feature
 
 New feature details.'''
 
-    def old_feature_text(self):
+    @staticmethod
+    def old_feature_text():
         return '''## v.1.2.3
 
 ### Old Feature
