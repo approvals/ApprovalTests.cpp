@@ -20,7 +20,7 @@ class PrepareConanRelease:
 
     @staticmethod
     def prepare_release(details):
-        PrepareConanRelease.check_conan_repo()
+        GitUtilities.reset_and_clean_working_directory(ConanReleaseDetails().conan_repo_dir)
 
         response = input("  Conan: Has the previous pull request been accepted? [Y/y] ")
         if response in ['Y', 'y']:
@@ -88,10 +88,6 @@ class PrepareConanRelease:
         conandata_yml_text += conan_data
 
         write_file(conan_data_file, conandata_yml_text)
-
-    @staticmethod
-    def check_conan_repo():
-        GitUtilities.reset_and_clean_working_directory(ConanReleaseDetails().conan_repo_dir)
 
     @staticmethod
     def update_conan_to_latest():
