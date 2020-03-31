@@ -11,6 +11,6 @@ def set_home_directory():
 
 
 class TestConanRelease(unittest.TestCase):
-    def disabled_test_demo(self):
+    def disabled_test_entry_point_for_sync_conan(self):
         set_home_directory()
         PrepareConanRelease.sync_conan_repo('v.8.4.1')

@@ -72,7 +72,7 @@ f'{self.old_feature_text()}',
 ])"""
         self.assertEqual(expected, result)
 
-    def test_demo_convert_to_concatenation(self):
+    def test_entry_point_for_convert_to_concatenation(self):
         print(CodeGeneration.convert_string_to_concatenation(concatened_string))
 
 
