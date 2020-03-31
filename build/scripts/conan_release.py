@@ -15,18 +15,20 @@ class ConanReleaseDetails:
 class PrepareConanRelease:
     @staticmethod
     def prepare_release(details):
-        response = input("  Has your previous pull request been accepted? [Y/y] ")
+        response = input("  Conan: Has the previous pull request been accepted? [Y/y] ")
         if response not in ['Y', 'y']:
             PrepareConanRelease.sync_conan_repo(details.new_version)
         else:
             # Do nothing - we are adding to our previous Pull Request
             # This does assume the same user is doing the previous and current release.
-            pass
+            print('Staying on current branch in conan repo')
         PrepareConanRelease.update_conan_recipe(details)
 
     @staticmethod
     def sync_conan_repo(new_version):
+        print('Updating conan repo and creating branch')
         with use_directory(ConanReleaseDetails().conan_repo_dir):
+            print(os.getcwd())
             repo = Repo('.')
             repo.git.checkout('master')
 
@@ -43,11 +45,6 @@ class PrepareConanRelease:
 
         new_version_with_v = details.new_version
         new_version_without_v = version.get_version_without_v(details.new_version)
-
-        check_step("Check out Conan master")
-        check_step("Pull all changes in from upstream master")
-        check_step(F"Create branch 'approvaltests.cpp.{new_version_without_v}', if it does not already exist")
-        check_step(F"Check out branch 'approvaltests.cpp.{new_version_without_v}'")
 
         conan_approvaltests_dir = ConanReleaseDetails().conan_approvaltests_dir
 
