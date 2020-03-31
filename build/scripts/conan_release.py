@@ -17,6 +17,8 @@ class PrepareConanRelease:
     @staticmethod
     def prepare_release(details):
         PrepareConanRelease.check_conan_installed_version()
+        PrepareConanRelease.check_conan_repo()
+
         response = input("  Conan: Has the previous pull request been accepted? [Y/y] ")
         if response not in ['Y', 'y']:
             PrepareConanRelease.sync_conan_repo(details.new_version)
@@ -43,8 +45,6 @@ class PrepareConanRelease:
 
     @staticmethod
     def update_conan_recipe(details):
-        PrepareConanRelease.check_conan_repo()
-
         new_version_with_v = details.new_version
         new_version_without_v = version.get_version_without_v(details.new_version)
 
