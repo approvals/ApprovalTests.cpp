@@ -38,7 +38,7 @@ class ReleaseDetails:
 
 
 def build(update_version, deploy):
-    old_version = version.load_version()
+    old_version = version.load_version('.')
     new_version = update_version(old_version)
 
     release_details = ReleaseDetails(old_version, new_version, deploy)

@@ -30,21 +30,20 @@ def no_version_change(version):
     # This is useful if a deploy failed part-way through, and we don't want to increment the version number
     return create_version(get_major(version), get_minor(version), get_patch(version))
 
-def version_file_path():
-    path = os.getcwd()
-    return os.path.join(path, 'version.ini')
+def version_file_path(directory):
+    return os.path.join(directory, 'version.ini')
 
-def load_version():
+def load_version(directory):
     config = configparser.ConfigParser()
-    config.read(version_file_path())
+    config.read(version_file_path(directory))
     return config['VERSION']
 
 def create_version(major, minor, patch):
     return {"major": major, "minor": minor, "patch": patch}
 
-def write_version(version):
+def write_version(version, directory):
     config = configparser.ConfigParser()
     config['VERSION'] = version
 
-    with open(version_file_path(), 'w') as configfile:
+    with open(version_file_path(directory), 'w') as configfile:
         config.write(configfile)
