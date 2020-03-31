@@ -50,17 +50,21 @@ toc
 
     @staticmethod
     def new_feature_text():
-        return '''### New Feature
-
-New feature details.'''
+        return (
+            '### New Feature\n'
+            '\n'
+            'New feature details.'
+        )
 
     @staticmethod
     def old_feature_text():
-        return '''## v.1.2.3
-
-### Old Feature
-
-Old feature details.'''
+        return (
+            '## v.1.2.3\n'
+            '\n'
+            '### Old Feature\n'
+            '\n'
+            'Old feature details.'
+        )
 
 
 if __name__ == '__main__':
