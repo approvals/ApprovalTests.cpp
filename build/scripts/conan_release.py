@@ -42,7 +42,7 @@ class PrepareConanRelease:
 
     @staticmethod
     def update_conan_recipe(details):
-        PrepareConanRelease.check_conan_repo(details)
+        PrepareConanRelease.check_conan_repo()
 
         new_version_with_v = details.new_version
         new_version_without_v = version.get_version_without_v(details.new_version)
@@ -86,7 +86,7 @@ class PrepareConanRelease:
         write_file(conan_data_file, conandata_yml_text)
 
     @staticmethod
-    def check_conan_repo(details):
+    def check_conan_repo():
         repo = Repo(ConanReleaseDetails().conan_repo_dir)
         assert_step(not repo.bare)
 
