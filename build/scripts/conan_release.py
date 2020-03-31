@@ -6,6 +6,12 @@ from scripts import version
 from scripts.utilities import check_step, read_file, write_file, calculate_sha256, assert_step, run, use_directory
 
 
+class ConanReleaseDetails:
+    def __init__(self):
+        self.conan_repo_dir = '../../../conan/conan-center-index-claremacrae'
+        self.conan_approvaltests_dir = os.path.join(self.conan_repo_dir, 'recipes', 'approvaltests.cpp')
+
+
 class PrepareConanRelease:
     @staticmethod
     def update_conan_recipe(details):
@@ -25,9 +31,9 @@ class PrepareConanRelease:
         check_step(F"Create branch 'approvaltests.cpp.{new_version_without_v}', if it does not already exist")
         check_step(F"Check out branch 'approvaltests.cpp.{new_version_without_v}'")
 
-        conan_approvaltests_dir = details.conan_approvaltests_dir
+        conan_approvaltests_dir = ConanReleaseDetails().conan_approvaltests_dir
 
-        PrepareConanRelease.update_conandata_yml(details, conan_approvaltests_dir, new_version_with_v,
+        PrepareConanRelease.update_conandata_yml(details, ConanReleaseDetails().conan_approvaltests_dir, new_version_with_v,
                                                  new_version_without_v)
         PrepareConanRelease.update_conan_config_yml(conan_approvaltests_dir, new_version_without_v)
 
@@ -65,7 +71,7 @@ class PrepareConanRelease:
 
     @staticmethod
     def check_conan_repo(details):
-        repo = Repo(details.conan_repo_dir)
+        repo = Repo(ConanReleaseDetails().conan_repo_dir)
         assert_step(not repo.bare)
 
         # TODO Add descriptions in case of failure
@@ -83,7 +89,7 @@ class PrepareConanRelease:
 class DeployConanRelease:
     @staticmethod
     def test_conan_and_create_pr(details):
-        with use_directory(os.path.join(details.conan_approvaltests_dir, 'all')):
+        with use_directory(os.path.join(ConanReleaseDetails().conan_approvaltests_dir, 'all')):
             # We cannot test the new Conan recipe until the new release has been
             # published on github
             new_version_without_v = version.get_version_without_v(details.new_version)
