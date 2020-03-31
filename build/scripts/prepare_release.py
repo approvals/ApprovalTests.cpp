@@ -80,13 +80,8 @@ F"""// Approval Tests version {self.details.new_version}
         STARTER_PATH_NEW_SINGLE_HEADER = F"{self.details.starter_project_dir}/lib/{self.details.new_single_header}"
 
         # Make sure starter project folder is clean
-        with use_directory(self.details.starter_project_dir):
-            # Delete untracked files:
-            # - does not delete ignored files
-            # - does not delete untracked files in new, untracked directories
-            run(["git", "clean", "-f"])
-
-            run(["git", "reset", "--hard"])
+        project_dir = self.details.starter_project_dir
+        GitUtilities.reset_and_clean_working_directory(project_dir)
 
         shutil.copyfile(self.details.release_new_single_header, STARTER_PATH_NEW_SINGLE_HEADER)
 
