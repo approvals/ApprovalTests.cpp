@@ -10,3 +10,5 @@
 * **Other changes**
     * Updated to doctest 2.3.7 (#108, thank you @p-podsiadly)
     * New section in documentation: [How-to Guides](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#how-to-guides)
+    * Lots of improvements to our Python release scripts
+    * Line-length increased from 80 to 90 characters
