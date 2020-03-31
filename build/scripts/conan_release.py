@@ -90,9 +90,6 @@ class PrepareConanRelease:
         repo = Repo(ConanReleaseDetails().conan_repo_dir)
         assert_step(not repo.bare)
 
-        # TODO Add descriptions in case of failure
-        assert_step((repo.active_branch.name == 'master'))
-
         assert_step((len(repo.index.diff(None)) == 0))  # Modified
         assert_step((len(repo.index.diff("HEAD")) == 0))  # Staged
 
