@@ -4,7 +4,7 @@ import time
 from scripts import version
 from git import Repo
 
-from scripts.conan_release import update_conan_recipe
+from scripts.conan_release import PrepareConanRelease
 from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
     check_step_with_revert, assert_step
 
@@ -185,7 +185,7 @@ F"""// Approval Tests version {self.details.new_version}
         self.update_features_page()
         self.update_readme_and_docs()
         self.prepare_release_notes()
-        update_conan_recipe(self.details)
+        PrepareConanRelease.update_conan_recipe(self.details)
         self.regenerate_markdown()
         version.write_version(self.details.new_version_object)
         self.add_to_git()
