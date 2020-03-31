@@ -1,5 +1,10 @@
 import unittest
 
+# Convenience variable, so we can paste in code and run test_demo_convert_to_concatenation.
+# This is at global scope to prevent PyCharm reformatting the indentation when we
+# paste code in.
+concatened_string = 'your string here'
+
 
 class CodeGeneration:
     @staticmethod
@@ -66,6 +71,9 @@ f'{self.old_feature_text()}',
 '',
 ])"""
         self.assertEqual(expected, result)
+
+    def test_demo_convert_to_concatenation(self):
+        print(CodeGeneration.convert_string_to_concatenation(concatened_string))
 
 
 if __name__ == '__main__':
