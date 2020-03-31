@@ -142,13 +142,13 @@ F"""// Approval Tests version {self.details.new_version}
         self.update_starter_project()
         self.check_starter_project_builds()
 
+        PrepareConanRelease.update_conan_recipe(self.details)
+
         PrepareDocumentationRelease.update_features_page(self.details)
         PrepareDocumentationRelease.update_readme_and_docs(self.details)
         PrepareDocumentationRelease.prepare_release_notes(self.details)
-
-        PrepareConanRelease.update_conan_recipe(self.details)
-
         PrepareDocumentationRelease.regenerate_markdown()
+
         version.write_version(self.details.new_version_object)
         self.add_to_git()
 
