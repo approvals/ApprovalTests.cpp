@@ -142,7 +142,7 @@ F"""// Approval Tests version {self.details.new_version}
         self.update_starter_project()
         self.check_starter_project_builds()
 
-        PrepareConanRelease.update_conan_recipe(self.details)
+        PrepareConanRelease.prepare_release(self.details)
 
         PrepareDocumentationRelease.prepare_documentation(self.details)
 

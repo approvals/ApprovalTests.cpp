@@ -14,17 +14,35 @@ class ConanReleaseDetails:
 
 class PrepareConanRelease:
     @staticmethod
+    def prepare_release(details):
+        response = input("  Has your previous pull request been accepted? [Y/y] ")
+        if response not in ['Y', 'y']:
+            PrepareConanRelease.sync_conan_repo(details.new_version)
+        else:
+            # Do nothing - we are adding to our previous Pull Request
+            # This does assume the same user is doing the previous and current release.
+            pass
+        PrepareConanRelease.update_conan_recipe(details)
+
+    @staticmethod
+    def sync_conan_repo(new_version):
+        with use_directory(ConanReleaseDetails().conan_repo_dir):
+            repo = Repo('.')
+            repo.git.checkout('master')
+
+            repo.remote('upstream').pull('master')
+            repo.remote('origin').push('master')
+
+            new_branch = f'approvaltests.cpp.{version.get_version_without_v(new_version)}'
+            current = repo.create_head(new_branch)
+            current.checkout()
+
+    @staticmethod
     def update_conan_recipe(details):
         PrepareConanRelease.check_conan_repo(details)
 
         new_version_with_v = details.new_version
         new_version_without_v = version.get_version_without_v(details.new_version)
-
-        # TODO Execute or show these commands...
-        # cd conan-center-index-claremacrae
-        # git pull upstream master
-        # git push
-        # git checkout -b approvaltests.cpp.8.4.0
 
         check_step("Check out Conan master")
         check_step("Pull all changes in from upstream master")
