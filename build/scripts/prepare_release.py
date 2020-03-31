@@ -1,9 +1,10 @@
 import os
 import shutil
 import time
-from scripts import version
+
 from git import Repo
 
+from scripts import version
 from scripts.conan_release import PrepareConanRelease
 from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
     check_step_with_revert, assert_step
@@ -21,21 +22,21 @@ class PrepareRelease:
 
     @staticmethod
     def prepare_update_features_page(old_version, new_version, content):
-        missing_features = F"""
-## v.x.y.z
-
-## {old_version}
-"""
+        missing_features = ('\n'
+                            '## v.x.y.z\n'
+                            '\n'
+                            f'## {old_version}\n'
+                            )
         if missing_features in content:
             def check(features_file, action = check_step):
                 return action("the Features page is empty: are you sure you want this?")
             return check
         else:
-            update_version = F"""
-## v.x.y.z
-
-## {new_version}
-"""
+            update_version = ('\n'
+                              '## v.x.y.z\n'
+                              '\n'
+                              f'## {new_version}\n'
+                              )
 
             def replace(features_file, replace_text_in_file_action = replace_text_in_file):
                 return replace_text_in_file_action(features_file, '\n## v.x.y.z\n', update_version)
@@ -178,14 +179,20 @@ F"""// Approval Tests version {self.details.new_version}
 
     def prepare_everything(self):
         self.check_pre_conditions_for_publish()
+
         self.update_version_number_header()
+
         self.create_single_header_file()
+
         self.update_starter_project()
         self.check_starter_project_builds()
+
         self.update_features_page()
         self.update_readme_and_docs()
         self.prepare_release_notes()
+
         PrepareConanRelease.update_conan_recipe(self.details)
+
         self.regenerate_markdown()
         version.write_version(self.details.new_version_object)
         self.add_to_git()
