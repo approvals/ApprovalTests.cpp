@@ -91,8 +91,7 @@ class PrepareConanRelease:
 
     @staticmethod
     def check_conan_repo():
-        repo = Repo(ConanReleaseDetails().conan_repo_dir)
-        GitUtilities.check_no_uncommitted_changes(repo)
+        GitUtilities.reset_and_clean_working_directory(ConanReleaseDetails().conan_repo_dir)
 
     @staticmethod
     def update_conan_to_latest():
