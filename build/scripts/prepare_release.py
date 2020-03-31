@@ -133,6 +133,7 @@ F"""// Approval Tests version {self.details.new_version}
 
     def prepare_everything(self):
         self.check_pre_conditions_for_publish()
+        PrepareConanRelease.check_preconditions(self.details)
 
         self.update_version_number_header()
 

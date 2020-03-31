@@ -15,8 +15,11 @@ class ConanReleaseDetails:
 
 class PrepareConanRelease:
     @staticmethod
-    def prepare_release(details):
+    def check_preconditions(details):
         PrepareConanRelease.check_conan_installed_version()
+
+    @staticmethod
+    def prepare_release(details):
         PrepareConanRelease.check_conan_repo()
 
         response = input("  Conan: Has the previous pull request been accepted? [Y/y] ")
