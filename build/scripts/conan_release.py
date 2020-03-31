@@ -15,6 +15,7 @@ class ConanReleaseDetails:
 class PrepareConanRelease:
     @staticmethod
     def prepare_release(details):
+        PrepareConanRelease.check_conan_installed_version()
         response = input("  Conan: Has the previous pull request been accepted? [Y/y] ")
         if response not in ['Y', 'y']:
             PrepareConanRelease.sync_conan_repo(details.new_version)
@@ -95,6 +96,8 @@ class PrepareConanRelease:
         assert_step((len(repo.index.diff(None)) == 0))  # Modified
         assert_step((len(repo.index.diff("HEAD")) == 0))  # Staged
 
+    @staticmethod
+    def check_conan_installed_version():
         run(["open", "https://github.com/conan-io/conan/releases"])
         run(["conan", "--version"])
         # TODO pip3 install --upgrade conan
