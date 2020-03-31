@@ -14,7 +14,7 @@ class CodeGeneration:
         return code
 
     @staticmethod
-    def convert_string_to_expected(content):
+    def convert_string_to_joined_list(content):
         lines = content.splitlines()
         code = "'\\n'.join([\n"
         for line in lines:
@@ -55,7 +55,7 @@ toc
 {self.old_feature_text()}
 
 '''
-        result = CodeGeneration.convert_string_to_expected(content)
+        result = CodeGeneration.convert_string_to_joined_list(content)
         expected = r"""'\n'.join([
 '',
 'toc',
