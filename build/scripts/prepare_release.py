@@ -6,6 +6,7 @@ from git import Repo
 from scripts import version
 from scripts.conan_release import PrepareConanRelease
 from scripts.documentation_release import PrepareDocumentationRelease
+from scripts.git_utilities import GitUtilities
 from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
     check_step_with_revert, assert_step
 
@@ -21,9 +22,7 @@ class PrepareRelease:
 
             assert_step((repo.active_branch.name == 'master'))
 
-            # From https://stackoverflow.com/questions/31959425/how-to-get-staged-files-using-gitpython
-            assert_step(len(repo.index.diff(None)) == 0, "there are un-committed changes to ApprovalTests.cpp")  # Modified
-            assert_step(len(repo.index.diff("HEAD")) == 0, "there are un-committed changes to ApprovalTests.cpp")  # Staged
+            GitUtilities.check_no_uncommitted_changes(repo)
 
             # From https://stackoverflow.com/questions/15849640/how-to-get-count-of-unpublished-commit-with-gitpython
             assert_step(len(
