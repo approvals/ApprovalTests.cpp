@@ -23,7 +23,7 @@ class PrepareConanRelease:
         PrepareConanRelease.check_conan_repo()
 
         response = input("  Conan: Has the previous pull request been accepted? [Y/y] ")
-        if response not in ['Y', 'y']:
+        if response in ['Y', 'y']:
             PrepareConanRelease.sync_conan_repo(details.new_version)
         else:
             # Do nothing - we are adding to our previous Pull Request
