@@ -6,6 +6,13 @@ from scripts.utilities import read_file, use_directory, replace_text_in_file, ru
 
 class PrepareDocumentationRelease:
     @staticmethod
+    def prepare_documentation(details):
+        PrepareDocumentationRelease.update_features_page(details)
+        PrepareDocumentationRelease.update_readme_and_docs(details)
+        PrepareDocumentationRelease.prepare_release_notes(details)
+        PrepareDocumentationRelease.regenerate_markdown()
+
+    @staticmethod
     def prepare_update_features_page(old_version, new_version, content):
         missing_features = ('\n'
                             '## v.x.y.z\n'

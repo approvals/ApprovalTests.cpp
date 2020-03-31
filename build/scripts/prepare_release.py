@@ -144,10 +144,7 @@ F"""// Approval Tests version {self.details.new_version}
 
         PrepareConanRelease.update_conan_recipe(self.details)
 
-        PrepareDocumentationRelease.update_features_page(self.details)
-        PrepareDocumentationRelease.update_readme_and_docs(self.details)
-        PrepareDocumentationRelease.prepare_release_notes(self.details)
-        PrepareDocumentationRelease.regenerate_markdown()
+        PrepareDocumentationRelease.prepare_documentation(self.details)
 
         version.write_version(self.details.new_version_object)
         self.add_to_git()
