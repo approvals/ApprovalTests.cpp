@@ -1,6 +1,6 @@
 import pyperclip
 
-from scripts.conan_release import test_conan_and_create_pr
+from scripts.conan_release import DeployConanRelease
 from scripts.utilities import read_file, check_step, run, use_directory
 
 
@@ -65,6 +65,6 @@ class DeployRelease:
         self.publish_main_project()
         self.upload_release_to_github()
         self.publish_starter_project()
-        test_conan_and_create_pr(self.details)
+        DeployConanRelease.test_conan_and_create_pr(self.details)
         self.publish_tweet()
         self.publish_on_reddit_optionally()
