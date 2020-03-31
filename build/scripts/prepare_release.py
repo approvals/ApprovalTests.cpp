@@ -1,11 +1,12 @@
 import os
 import shutil
-import time
 
 from git import Repo
 
 from scripts import version
 from scripts.conan_release import PrepareConanRelease
+from scripts.documentation_release import update_features_page, update_readme_and_docs, prepare_release_notes, \
+    regenerate_markdown
 from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
     check_step_with_revert, assert_step
 
@@ -13,34 +14,6 @@ from scripts.utilities import read_file, check_step, replace_text_in_file, run, 
 class PrepareRelease:
     def __init__(self, details):
         self.details = details
-
-    def update_features_page(self):
-        features_file = '../doc/mdsource/Features.source.md'
-        content = read_file(features_file)
-        update_file = PrepareRelease.prepare_update_features_page(self.details.old_version, self.details.new_version, content)
-        update_file(features_file)
-
-    @staticmethod
-    def prepare_update_features_page(old_version, new_version, content):
-        missing_features = ('\n'
-                            '## v.x.y.z\n'
-                            '\n'
-                            f'## {old_version}\n'
-                            )
-        if missing_features in content:
-            def check(features_file, action = check_step):
-                return action("the Features page is empty: are you sure you want this?")
-            return check
-        else:
-            update_version = ('\n'
-                              '## v.x.y.z\n'
-                              '\n'
-                              f'## {new_version}\n'
-                              )
-
-            def replace(features_file, replace_text_in_file_action = replace_text_in_file):
-                return replace_text_in_file_action(features_file, '\n## v.x.y.z\n', update_version)
-            return replace
 
     def check_pre_conditions_for_publish(self):
         if self.details.push_to_production:
@@ -134,23 +107,6 @@ F"""// Approval Tests version {self.details.new_version}
         with use_directory(F"{self.details.starter_project_dir}/cmake-build-debug"):
             run(["cmake", "--build", "."])
 
-    def update_readme_and_docs(self):
-        with use_directory(".."):
-            replace_text_in_file("mdsource/README.source.md", self.details.old_version, self.details.new_version)
-
-    def regenerate_markdown(self):
-        with use_directory(".."):
-            run(["./run_markdown_templates.sh"])
-
-    def prepare_release_notes(self):
-        replace_text_in_file(self.details.xxx_release_notes_path, 'v.x.y.z', self.details.new_version)
-        shutil.move(self.details.xxx_release_notes_path, self.details.new_release_notes_path)
-
-        # Make sure the above move has finished, before we create the new xxx file:
-        time.sleep(1)
-
-        shutil.copyfile(self.details.template_release_notes_path, self.details.xxx_release_notes_path)
-
     def add_to_git(self):
         def add():
             run(["git", "add", "."])
@@ -187,13 +143,13 @@ F"""// Approval Tests version {self.details.new_version}
         self.update_starter_project()
         self.check_starter_project_builds()
 
-        self.update_features_page()
-        self.update_readme_and_docs()
-        self.prepare_release_notes()
+        update_features_page(self.details)
+        update_readme_and_docs(self.details)
+        prepare_release_notes(self.details)
 
         PrepareConanRelease.update_conan_recipe(self.details)
 
-        self.regenerate_markdown()
+        regenerate_markdown()
         version.write_version(self.details.new_version_object)
         self.add_to_git()
 
