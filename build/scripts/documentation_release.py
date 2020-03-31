@@ -27,29 +27,29 @@ class PrepareDocumentationRelease:
                 return replace_text_in_file_action(features_file, '\n## v.x.y.z\n', update_version)
             return replace
 
+    @staticmethod
+    def update_features_page(details):
+        features_file = '../doc/mdsource/Features.source.md'
+        content = read_file(features_file)
+        update_file = PrepareDocumentationRelease.prepare_update_features_page(details.old_version, details.new_version, content)
+        update_file(features_file)
 
-def update_features_page(details):
-    features_file = '../doc/mdsource/Features.source.md'
-    content = read_file(features_file)
-    update_file = PrepareDocumentationRelease.prepare_update_features_page(details.old_version, details.new_version, content)
-    update_file(features_file)
+    @staticmethod
+    def update_readme_and_docs(details):
+        with use_directory(".."):
+            replace_text_in_file("mdsource/README.source.md", details.old_version, details.new_version)
 
+    @staticmethod
+    def prepare_release_notes(details):
+        replace_text_in_file(details.xxx_release_notes_path, 'v.x.y.z', details.new_version)
+        shutil.move(details.xxx_release_notes_path, details.new_release_notes_path)
 
-def update_readme_and_docs(details):
-    with use_directory(".."):
-        replace_text_in_file("mdsource/README.source.md", details.old_version, details.new_version)
+        # Make sure the above move has finished, before we create the new xxx file:
+        time.sleep(1)
 
+        shutil.copyfile(details.template_release_notes_path, details.xxx_release_notes_path)
 
-def prepare_release_notes(details):
-    replace_text_in_file(details.xxx_release_notes_path, 'v.x.y.z', details.new_version)
-    shutil.move(details.xxx_release_notes_path, details.new_release_notes_path)
-
-    # Make sure the above move has finished, before we create the new xxx file:
-    time.sleep(1)
-
-    shutil.copyfile(details.template_release_notes_path, details.xxx_release_notes_path)
-
-
-def regenerate_markdown():
-    with use_directory(".."):
-        run(["./run_markdown_templates.sh"])
+    @staticmethod
+    def regenerate_markdown():
+        with use_directory(".."):
+            run(["./run_markdown_templates.sh"])

@@ -5,8 +5,7 @@ from git import Repo
 
 from scripts import version
 from scripts.conan_release import PrepareConanRelease
-from scripts.documentation_release import update_features_page, update_readme_and_docs, prepare_release_notes, \
-    regenerate_markdown
+from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
     check_step_with_revert, assert_step
 
@@ -143,13 +142,13 @@ F"""// Approval Tests version {self.details.new_version}
         self.update_starter_project()
         self.check_starter_project_builds()
 
-        update_features_page(self.details)
-        update_readme_and_docs(self.details)
-        prepare_release_notes(self.details)
+        PrepareDocumentationRelease.update_features_page(self.details)
+        PrepareDocumentationRelease.update_readme_and_docs(self.details)
+        PrepareDocumentationRelease.prepare_release_notes(self.details)
 
         PrepareConanRelease.update_conan_recipe(self.details)
 
-        regenerate_markdown()
+        PrepareDocumentationRelease.regenerate_markdown()
         version.write_version(self.details.new_version_object)
         self.add_to_git()
 
