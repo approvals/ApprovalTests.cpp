@@ -16,7 +16,7 @@ class ConanReleaseDetails:
 class PrepareConanRelease:
     @staticmethod
     def check_preconditions(details):
-        PrepareConanRelease.check_conan_installed_version()
+        PrepareConanRelease.update_conan_to_latest()
 
     @staticmethod
     def prepare_release(details):
@@ -95,11 +95,8 @@ class PrepareConanRelease:
         GitUtilities.check_no_uncommitted_changes(repo)
 
     @staticmethod
-    def check_conan_installed_version():
-        run(["open", "https://github.com/conan-io/conan/releases"])
-        run(["conan", "--version"])
-        # TODO pip3 install --upgrade conan
-        check_step("you are running the latest Conan release")
+    def update_conan_to_latest():
+        run(["pip3", "install", "--upgrade", "conan"])
 
 
 class DeployConanRelease:
