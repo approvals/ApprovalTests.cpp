@@ -1,8 +1,6 @@
-import os
-
 import pyperclip
 
-from scripts import version
+from scripts.conan_release import test_conan_and_create_pr
 from scripts.utilities import read_file, check_step, run, use_directory
 
 
@@ -37,20 +35,6 @@ class DeployRelease:
         with use_directory(self.details.main_project_dir):
             run(["git", "push", "origin", "master"])
 
-    def test_conan_and_create_pr(self):
-        with use_directory(os.path.join(self.details.conan_approvaltests_dir, 'all')):
-            # We cannot test the new Conan recipe until the new release has been
-            # published on github
-            new_version_without_v = version.get_version_without_v(self.details.new_version)
-            run(['conan', 'create', '.', F'{new_version_without_v}@'])
-
-            check_step(F"Commit the changes - with message 'Add approvaltests.cpp {new_version_without_v}'")
-            check_step('Push the changes - NB on the feature branch for the release')
-
-        print(
-            F"Create a pull request, including this in the description: **approvaltests.cpp/{new_version_without_v}**")
-        check_step("that you have created a Pull Request for conan-center-index?")
-
     def publish_main_project(self):
         self.commit_main_project()
         self.push_main_project()
@@ -81,6 +65,6 @@ class DeployRelease:
         self.publish_main_project()
         self.upload_release_to_github()
         self.publish_starter_project()
-        self.test_conan_and_create_pr()
+        test_conan_and_create_pr(self.details)
         self.publish_tweet()
         self.publish_on_reddit_optionally()

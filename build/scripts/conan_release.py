@@ -3,7 +3,7 @@ import os
 from git import Repo
 
 from scripts import version
-from scripts.utilities import check_step, read_file, write_file, calculate_sha256, assert_step, run
+from scripts.utilities import check_step, read_file, write_file, calculate_sha256, assert_step, run, use_directory
 
 
 class PrepareConanRelease:
@@ -78,3 +78,18 @@ class PrepareConanRelease:
         run(["conan", "--version"])
         # TODO pip3 install --upgrade conan
         check_step("you are running the latest Conan release")
+
+
+def test_conan_and_create_pr(details):
+    with use_directory(os.path.join(details.conan_approvaltests_dir, 'all')):
+        # We cannot test the new Conan recipe until the new release has been
+        # published on github
+        new_version_without_v = version.get_version_without_v(details.new_version)
+        run(['conan', 'create', '.', F'{new_version_without_v}@'])
+
+        check_step(F"Commit the changes - with message 'Add approvaltests.cpp {new_version_without_v}'")
+        check_step('Push the changes - NB on the feature branch for the release')
+
+    print(
+        F"Create a pull request, including this in the description: **approvaltests.cpp/{new_version_without_v}**")
+    check_step("that you have created a Pull Request for conan-center-index?")
