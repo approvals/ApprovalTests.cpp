@@ -3,6 +3,7 @@ import os
 from git import Repo
 
 from scripts import version
+from scripts.git_utilities import GitUtilities
 from scripts.utilities import check_step, read_file, write_file, calculate_sha256, assert_step, run, use_directory
 
 
@@ -88,10 +89,7 @@ class PrepareConanRelease:
     @staticmethod
     def check_conan_repo():
         repo = Repo(ConanReleaseDetails().conan_repo_dir)
-        assert_step(not repo.bare)
-
-        assert_step((len(repo.index.diff(None)) == 0))  # Modified
-        assert_step((len(repo.index.diff("HEAD")) == 0))  # Staged
+        GitUtilities.check_no_uncommitted_changes(repo)
 
     @staticmethod
     def check_conan_installed_version():
