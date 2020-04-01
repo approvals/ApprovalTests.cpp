@@ -18,6 +18,8 @@ def read_file(file_name):
         text = input.read()
     return text
 
+def get_file_name(path):
+    return os.path.split(path)[1]
 
 pushstack = list()
 

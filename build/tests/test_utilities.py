@@ -1,6 +1,6 @@
 import os
 import unittest
-from scripts.utilities import pushdir, popdir, use_directory, write_file, replace_text_in_file, read_file
+from scripts.utilities import pushdir, popdir, use_directory, write_file, replace_text_in_file, read_file, get_file_name
 
 
 class TestUtilities(unittest.TestCase):
@@ -26,6 +26,9 @@ class TestUtilities(unittest.TestCase):
         self.assertEqual(new_text, '<butterfly>blue</butterfly>')
         os.remove(file_name)
 
+    def test_get_file_name(self):
+        self.assertEqual('file.txt', get_file_name('directory/file.txt'))
+        self.assertEqual('file.txt', get_file_name('file.txt'))
 
 if __name__ == '__main__':
     unittest.main()
