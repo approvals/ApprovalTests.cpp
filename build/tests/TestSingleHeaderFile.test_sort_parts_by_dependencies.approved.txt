@@ -1,0 +1,4 @@
+sorted
+
+0) {'file': 'lower.h', 'include': []}
+1) {'file': 'higher.h', 'include': ['lower.h']}
