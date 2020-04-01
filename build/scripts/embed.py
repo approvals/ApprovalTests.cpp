@@ -25,7 +25,7 @@ default_includes_path = ['.']
 # pp tokens regexp
 r_escape_line = re.compile(r'^.*\\\n$')
 r_empty_line = re.compile('^[ \t]*\n$')
-r_pp_include = re.compile('^\s*#\s*include\s+["|<](.*)["|>]$')
+r_pp_include = re.compile('^\s*#\s*include\s+["](.*)["]$')
 r_pp_ifndef = re.compile('^\s*#\s*ifndef\s+(.*)\s*$')
 r_pp_if_defined = re.compile('^\s*#\s*if\s+defined\(\s*(.*)\s*\)\s*$')
 r_pp_if = re.compile('^\s*#\s*if.*$')
