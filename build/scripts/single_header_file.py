@@ -31,7 +31,7 @@ class SingleHeaderFile(object):
         files = get_all_files(directory)
         print(files)
         output_file = os.path.abspath('ApprovalTests.hpp')
-        includes = '\n'.join(files)
+        includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
         output = f'''
 #ifndef APPROVALTESTS_CPP_APPROVALS_HPP
 #define APPROVALTESTS_CPP_APPROVALS_HPP
