@@ -75,6 +75,7 @@ F"""// Approval Tests version {self.details.new_version}
 
 {text}"""
             write_file(self.details.release_new_single_header, text)
+            return os.path.abspath(self.details.release_new_single_header)
 
     def update_starter_project(self):
         STARTER_PATH_OLD_SINGLE_HEADER = F"{self.details.starter_project_dir}/lib/{self.details.old_single_header}"
