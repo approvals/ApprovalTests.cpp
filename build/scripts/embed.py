@@ -1,12 +1,12 @@
 #!/bin/env python3
 
-#==============================================================================
+# ==============================================================================
 #  SPY - C++ Informations Broker
 #  Copyright 2020 Joel FALCOU
 #
 # Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 # SPDX-License-Identifier: MIT
-#==============================================================================
+# ==============================================================================
 
 
 """
@@ -48,37 +48,45 @@ in_C_block_comments = False
 Parse options. Here is the list of supported options:
     see `help`(s)
 """
+
+
 def parse_opts(args):
     p = argparse.ArgumentParser(
-            description='Aggregates headers into one single file')
+        description='Aggregates headers into one single file')
     p.add_argument('-I', type=str, action='append', metavar='<dir>', default=[], dest='includes_path',
-            help='Add the specified directory to the search path for include files')
+                   help='Add the specified directory to the search path for include files')
     p.add_argument('-v', dest='verbose', action='store_true', default=False,
-            help='Enable verbose mode, useful for debugging')
+                   help='Enable verbose mode, useful for debugging')
     p.add_argument('--include-match', type=str, metavar='<regexp>', default='.*', dest='r_include',
-            help='The regexp to match includes that will be expanded')
+                   help='The regexp to match includes that will be expanded')
     p.add_argument('--guard-match', type=str, metavar='<regexp>', default='^.*_INCLUDED$', dest='r_guard',
-            help='The regexp to match includes guard')
+                   help='The regexp to match includes guard')
     p.add_argument('-o', type=argparse.FileType('w'), metavar='<output-file>', dest='output', default=sys.stdout,
-            help='The output file')
+                   help='The output file')
     p.add_argument('filename', type=str, metavar='<input-file>',
-            help='The file to preprocess')
+                   help='The file to preprocess')
 
     opts = p.parse_args(args)
     opts.r_guard = re.compile(opts.r_guard)
     opts.r_include = re.compile(opts.r_include)
     return opts
 
+
 """
 Print only if 'verbose' option is enabled
 """
+
+
 def vprint(opts, what):
     if opts.verbose:
         sys.stderr.write('verbose: {}\n'.format(what))
 
+
 """
 Try to find a valid path for the given filename, if not found then exit
 """
+
+
 def get_path_for(f, opts):
     for path in opts.includes_path:
         path = os.path.join(path, f)
@@ -88,9 +96,12 @@ def get_path_for(f, opts):
     sys.stderr.write('{}: file not found! aborting.\n'.format(f))
     sys.exit(1)
 
+
 """
 Preprocess a single line
 """
+
+
 def pp_line(line, output, opts):
     global will_escape
     global keep_guard
@@ -187,9 +198,12 @@ def pp_line(line, output, opts):
     # everything has been checked now! so we can print the current line
     output.write(line)
 
+
 """
 Preprocess the file here!
 """
+
+
 def pp_file(f, output, opts):
     # use the absolute version of the filename to always get the same path
     # e.g. ./foo.h == foo.h == bar/../foo.h
@@ -210,9 +224,12 @@ def pp_file(f, output, opts):
         sys.stderr.write(str(e) + '\n')
         sys.exit(1)
 
+
 """
 The top-level function
 """
+
+
 def embed():
     args = sys.argv[1:]
     for path in default_includes_path:
@@ -221,7 +238,7 @@ def embed():
     opts = parse_opts(args)
     pp_file(opts.filename, opts.output, opts)
 
+
 # The entry point!
 if __name__ == '__main__':
     embed()
-
