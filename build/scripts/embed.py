@@ -188,6 +188,9 @@ def pp_file(f, output, opts):
         with open(f, 'r') as f:
             dirname = os.path.dirname(f.name)
             opts.includes_path.append(dirname)
+            filename = os.path.split(f.name)[1]
+            pp_line('\n', output, opts)
+            pp_line(f' // ******************** From: {filename}', output, opts)
             for line in f.readlines():
                 pp_line(line, output, opts)
             opts.includes_path.remove(dirname)

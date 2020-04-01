@@ -1,6 +1,8 @@
 // Approval Tests version v.8.5.0
 // More information at: https://github.com/approvals/ApprovalTests.cpp
 
+
+ // ******************** From: ApprovalTests.hpp
 #ifndef APPROVALTESTS_CPP_APPROVALS_HPP
 #define APPROVALTESTS_CPP_APPROVALS_HPP
 
@@ -8,6 +10,8 @@
 //   cd ApprovalTests.cpp
 //   ./scripts/create_simulated_single_header.sh
 
+
+ // ******************** From: ApprovalTestsVersion.h
 #ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
 #define APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
 
@@ -21,6 +25,8 @@
      APPROVALTESTS_VERSION_PATCH)
 
 #endif //APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
+
+ // ******************** From: Reporter.h
 #ifndef APPROVALTESTS_CPP_REPORTER_H
 #define APPROVALTESTS_CPP_REPORTER_H
 
@@ -50,6 +56,8 @@ namespace ApprovalTests
 }
 
 #endif
+
+ // ******************** From: QuietReporter.h
 #ifndef APPROVALTESTS_CPP_QUIETREPORTER_H
 #define APPROVALTESTS_CPP_QUIETREPORTER_H
 
@@ -68,6 +76,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_QUIETREPORTER_H
+
+ // ******************** From: Blocker.h
 #ifndef APPROVALTESTS_CPP_BLOCKER_H
 #define APPROVALTESTS_CPP_BLOCKER_H
 
@@ -89,6 +99,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_BLOCKER_H
+
+ // ******************** From: StringUtils.h
 
 
 #ifndef APPROVALTESTS_CPP_STRINGUTILS_H
@@ -150,6 +162,8 @@ namespace ApprovalTests
     };
 }
 #endif //APPROVALTESTS_CPP_STRINGUTILS_H
+
+ // ******************** From: Macros.h
 #ifndef APPROVALTESTS_CPP_MACROS_H
 #define APPROVALTESTS_CPP_MACROS_H
 
@@ -169,6 +183,8 @@ namespace ApprovalTests
 #endif
 
 #endif //APPROVALTESTS_CPP_MACROS_H
+
+ // ******************** From: WinMinGWUtils.h
 #ifndef APPROVALTESTS_CPP_WINMINGWUTILS_H
 #define APPROVALTESTS_CPP_WINMINGWUTILS_H
 
@@ -200,6 +216,8 @@ extern "C"
 // </SingleHpp>
 
 #endif //APPROVALTESTS_CPP_WINMINGWUTILS_H
+
+ // ******************** From: ApprovalWriter.h
 #ifndef APPROVALTESTS_CPP_APPROVALWRITER_H
 #define APPROVALTESTS_CPP_APPROVALWRITER_H
 
@@ -216,6 +234,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_APPROVALWRITER_H
+
+ // ******************** From: StringWriter.h
 #ifndef APPROVALTESTS_CPP_STRINGWRITER_H
 #define APPROVALTESTS_CPP_STRINGWRITER_H
 
@@ -267,6 +287,8 @@ namespace ApprovalTests
     };
 }
 #endif
+
+ // ******************** From: FileUtils.h
 //
 // Created by LLEWELLYN FALCO on 12/2/17.
 //
@@ -361,6 +383,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_FILEUTILS_H
+
+ // ******************** From: SystemUtils.h
 #ifndef APPROVALTESTS_CPP_SYSTEMUTILS_H
 #define APPROVALTESTS_CPP_SYSTEMUTILS_H
 
@@ -553,6 +577,8 @@ namespace ApprovalTests
     };
 }
 #endif
+
+ // ******************** From: MachineBlocker.h
 #ifndef APPROVALTESTS_CPP_MACHINEBLOCKER_H
 #define APPROVALTESTS_CPP_MACHINEBLOCKER_H
 
@@ -593,6 +619,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_MACHINEBLOCKER_H
+
+ // ******************** From: FileUtilsSystemSpecific.h
 #ifndef APPROVALTESTS_CPP_FILEUTILSSYSTEMSPECIFIC_H
 #define APPROVALTESTS_CPP_FILEUTILSSYSTEMSPECIFIC_H
 
@@ -626,6 +654,8 @@ namespace ApprovalTests
     };
 }
 #endif
+
+ // ******************** From: AutoApproveReporter.h
 #ifndef APPROVALTESTS_CPP_AUTOAPPROVEREPORTER_H
 #define APPROVALTESTS_CPP_AUTOAPPROVEREPORTER_H
 
@@ -648,6 +678,8 @@ namespace ApprovalTests
 }
 
 #endif
+
+ // ******************** From: HelpMessages.h
 #ifndef APPROVALTESTS_CPP_HELPMESSAGES_H
 #define APPROVALTESTS_CPP_HELPMESSAGES_H
 
@@ -721,6 +753,8 @@ namespace ApprovalTests
 // </SingleHpp>
 
 #endif //APPROVALTESTS_CPP_HELPMESSAGES_H
+
+ // ******************** From: ApprovalNamer.h
 #ifndef APPROVALTESTS_CPP_APPROVALNAMER_H
 #define APPROVALTESTS_CPP_APPROVALNAMER_H
 
@@ -738,6 +772,8 @@ namespace ApprovalTests
 }
 
 #endif
+
+ // ******************** From: ApprovalTestNamer.h
 #ifndef APPROVALTESTS_CPP_APPROVALTESTNAMER_H
 #define APPROVALTESTS_CPP_APPROVALTESTNAMER_H
 
@@ -930,6 +966,8 @@ namespace ApprovalTests
 }
 
 #endif
+
+ // ******************** From: SectionNameDisposer.h
 #ifndef APPROVALTESTS_CPP_SECTIONNAMEDISPOSER_H
 #define APPROVALTESTS_CPP_SECTIONNAMEDISPOSER_H
 
@@ -959,6 +997,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_SECTIONNAMEDISPOSER_H
+
+ // ******************** From: GoogleCustomizationsFactory.h
 #ifndef APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H
 #define APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H
 
@@ -1007,6 +1047,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H
+
+ // ******************** From: CartesianProduct.h
 #ifndef APPROVALTESTS_CPP_CARTESIANPRODUCT_H
 #define APPROVALTESTS_CPP_CARTESIANPRODUCT_H
 
@@ -1215,6 +1257,8 @@ namespace ApprovalTests
 } // namespace ApprovalTests
 
 #endif
+
+ // ******************** From: ExistingFile.h
 #ifndef APPROVALTESTS_CPP_EXISTINGFILE_H
 #define APPROVALTESTS_CPP_EXISTINGFILE_H
 
@@ -1247,6 +1291,8 @@ namespace ApprovalTests
 }
 
 #endif
+
+ // ******************** From: ConvertForCygwin.h
 #ifndef APPROVALTESTS_CPP_CONVERTFORCYGWIN_H
 #define APPROVALTESTS_CPP_CONVERTFORCYGWIN_H
 
@@ -1286,6 +1332,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_CONVERTFORCYGWIN_H
+
+ // ******************** From: DiffInfo.h
 #ifndef APPROVALTESTS_CPP_DIFFINFO_H
 #define APPROVALTESTS_CPP_DIFFINFO_H
 
@@ -1376,6 +1424,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_DIFFINFO_H
+
+ // ******************** From: CommandLauncher.h
 #ifndef APPROVALTESTS_CPP_COMMANDLAUNCHER_H
 #define APPROVALTESTS_CPP_COMMANDLAUNCHER_H
 
@@ -1395,6 +1445,8 @@ namespace ApprovalTests
 }
 
 #endif
+
+ // ******************** From: CommandReporter.h
 #ifndef APPROVALTESTS_CPP_COMMANDREPORTER_H
 #define APPROVALTESTS_CPP_COMMANDREPORTER_H
 
@@ -1495,6 +1547,8 @@ namespace ApprovalTests
 }
 #endif //APPROVALTESTS_CPP_COMMANDREPORTER_H
 
+ // ******************** From: SystemLauncher.h
+
 #ifndef APPROVALTESTS_CPP_SYSTEMLAUNCHER_H
 #define APPROVALTESTS_CPP_SYSTEMLAUNCHER_H
 
@@ -1568,6 +1622,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_SYSTEMLAUNCHER_H
+
+ // ******************** From: DiffPrograms.h
 #ifndef APPROVALTESTS_CPP_DIFFPROGRAMS_H
 #define APPROVALTESTS_CPP_DIFFPROGRAMS_H
 
@@ -1739,6 +1795,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_DIFFPROGRAMS_H
+
+ // ******************** From: GenericDiffReporter.h
 #ifndef APPROVALTESTS_CPP_GENERICDIFFREPORTER_H
 #define APPROVALTESTS_CPP_GENERICDIFFREPORTER_H
 
@@ -1766,6 +1824,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_GENERICDIFFREPORTER_H
+
+ // ******************** From: FirstWorkingReporter.h
 #ifndef APPROVALTESTS_CPP_FIRSTWORKINGREPORTER_H
 #define APPROVALTESTS_CPP_FIRSTWORKINGREPORTER_H
 
@@ -1810,6 +1870,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_FIRSTWORKINGREPORTER_H
+
+ // ******************** From: LinuxReporters.h
 #ifndef APPROVALTESTS_CPP_LINUXREPORTERS_H
 #define APPROVALTESTS_CPP_LINUXREPORTERS_H
 
@@ -1906,6 +1968,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_LINUXREPORTERS_H
+
+ // ******************** From: MacReporters.h
 #ifndef APPROVALTESTS_CPP_MACREPORTERS_H
 #define APPROVALTESTS_CPP_MACREPORTERS_H
 
@@ -2016,6 +2080,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_MACREPORTERS_H
+
+ // ******************** From: WindowsReporters.h
 #ifndef APPROVALTESTS_CPP_WINDOWSREPORTERS_H
 #define APPROVALTESTS_CPP_WINDOWSREPORTERS_H
 
@@ -2191,6 +2257,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_WINDOWSREPORTERS_H
+
+ // ******************** From: DiffReporter.h
 #ifndef APPROVALTESTS_CPP_DIFFREPORTER_H
 #define APPROVALTESTS_CPP_DIFFREPORTER_H
 
@@ -2210,6 +2278,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_DIFFREPORTER_H
+
+ // ******************** From: DefaultReporterFactory.h
 #ifndef APPROVALTESTS_CPP_DEFAULTREPORTERFACTORY_H
 #define APPROVALTESTS_CPP_DEFAULTREPORTERFACTORY_H
 
@@ -2244,6 +2314,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTREPORTERFACTORY_H
+
+ // ******************** From: DefaultReporterDisposer.h
 #ifndef APPROVALTESTS_CPP_DEFAULTREPORTERDISPOSER_H
 #define APPROVALTESTS_CPP_DEFAULTREPORTERDISPOSER_H
 
@@ -2271,6 +2343,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTREPORTERDISPOSER_H
+
+ // ******************** From: DefaultReporter.h
 #ifndef APPROVALTESTS_CPP_DEFAULTREPORTER_H
 #define APPROVALTESTS_CPP_DEFAULTREPORTER_H
 
@@ -2291,6 +2365,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTREPORTER_H
+
+ // ******************** From: SubdirectoryDisposer.h
 #ifndef APPROVALTESTS_CPP_SUBDIRECTORYDISPOSER_H
 #define APPROVALTESTS_CPP_SUBDIRECTORYDISPOSER_H
 
@@ -2321,6 +2397,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_SUBDIRECTORYDISPOSER_H
+
+ // ******************** From: DefaultNamerFactory.h
 #ifndef APPROVALTESTS_CPP_DEFAULTNAMERFACTORY_H
 #define APPROVALTESTS_CPP_DEFAULTNAMERFACTORY_H
 
@@ -2359,6 +2437,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTNAMERFACTORY_H
+
+ // ******************** From: ExistingFileNamer.h
 #ifndef APPROVALTESTS_CPP_EXISTINGFILENAMER_H
 #define APPROVALTESTS_CPP_EXISTINGFILENAMER_H
 
@@ -2388,6 +2468,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_EXISTINGFILENAMER_H
+
+ // ******************** From: DefaultNamerDisposer.h
 #ifndef APPROVALTESTS_CPP_DEFAULTNAMERDISPOSER_H
 #define APPROVALTESTS_CPP_DEFAULTNAMERDISPOSER_H
 
@@ -2416,6 +2498,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTNAMERDISPOSER_H
+
+ // ******************** From: CustomReporter.h
 #ifndef APPROVALTESTS_CPP_CUSTOMREPORTER_H
 #define APPROVALTESTS_CPP_CUSTOMREPORTER_H
 
@@ -2458,6 +2542,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_CUSTOMREPORTER_H
+
+ // ******************** From: TextDiffReporter.h
 #ifndef APPROVALTESTS_CPP_TEXTDIFFREPORTER_H
 #define APPROVALTESTS_CPP_TEXTDIFFREPORTER_H
 
@@ -2503,6 +2589,8 @@ namespace ApprovalTests
 } // namespace ApprovalTests
 
 #endif //APPROVALTESTS_CPP_TEXTDIFFREPORTER_H
+
+ // ******************** From: CIBuildOnlyReporter.h
 #ifndef APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H
 #define APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H
 
@@ -2580,6 +2668,8 @@ namespace ApprovalTests
 } // namespace ApprovalTests
 
 #endif //APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H
+
+ // ******************** From: DefaultFrontLoadedReporter.h
 #ifndef APPROVALTESTS_CPP_DEFAULTFRONTLOADEDREPORTER_H
 #define APPROVALTESTS_CPP_DEFAULTFRONTLOADEDREPORTER_H
 
@@ -2596,6 +2686,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_DEFAULTFRONTLOADEDREPORTER_H
+
+ // ******************** From: FrontLoadedReporterFactory.h
 #ifndef APPROVALTESTS_CPP_FRONTLOADEDREPORTERFACTORY_H
 #define APPROVALTESTS_CPP_FRONTLOADEDREPORTERFACTORY_H
 
@@ -2628,6 +2720,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_FRONTLOADEDREPORTERFACTORY_H
+
+ // ******************** From: FrontLoadedReporterDisposer.h
 #ifndef APPROVALTESTS_CPP_FRONTLOADEDREPORTERDISPOSER_H
 #define APPROVALTESTS_CPP_FRONTLOADEDREPORTERDISPOSER_H
 
@@ -2655,6 +2749,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_FRONTLOADEDREPORTERDISPOSER_H
+
+ // ******************** From: ApprovalException.h
 #ifndef APPROVALTESTS_CPP_APPROVALEXCEPTION_H
 #define APPROVALTESTS_CPP_APPROVALEXCEPTION_H
 
@@ -2723,6 +2819,8 @@ namespace ApprovalTests
 }
 
 #endif
+
+ // ******************** From: ApprovalComparator.h
 #ifndef APPROVALTESTS_CPP_APPROVALCOMPARATOR_H
 #define APPROVALTESTS_CPP_APPROVALCOMPARATOR_H
 
@@ -2741,6 +2839,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_APPROVALCOMPARATOR_H
+
+ // ******************** From: TextFileComparator.h
 #ifndef APPROVALTESTS_CPP_TEXTFILECOMPARATOR_H
 #define APPROVALTESTS_CPP_TEXTFILECOMPARATOR_H
 
@@ -2786,6 +2886,8 @@ namespace ApprovalTests
     };
 }
 #endif //APPROVALTESTS_CPP_TEXTFILECOMPARATOR_H
+
+ // ******************** From: ComparatorDisposer.h
 #ifndef APPROVALTESTS_CPP_COMPARATORDISPOSER_H
 #define APPROVALTESTS_CPP_COMPARATORDISPOSER_H
 
@@ -2843,6 +2945,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_COMPARATORDISPOSER_H
+
+ // ******************** From: ComparatorFactory.h
 #ifndef APPROVALTESTS_CPP_COMPARATORFACTORY_H
 #define APPROVALTESTS_CPP_COMPARATORFACTORY_H
 
@@ -2894,6 +2998,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_COMPARATORFACTORY_H
+
+ // ******************** From: FileApprover.h
 #ifndef APPROVALTESTS_CPP_FILEAPPROVER_H
 #define APPROVALTESTS_CPP_FILEAPPROVER_H
 
@@ -2978,6 +3084,8 @@ namespace ApprovalTests
 }
 
 #endif
+
+ // ******************** From: Approvals.h
 #ifndef APPROVALTESTS_CPP_APPROVALS_H
 #define APPROVALTESTS_CPP_APPROVALS_H
 
@@ -3168,6 +3276,8 @@ namespace ApprovalTests
 }
 
 #endif
+
+ // ******************** From: CombinationApprovals.h
 #ifndef APPROVALTESTS_CPP_COMBINATIONAPPROVALS_H
 #define APPROVALTESTS_CPP_COMBINATIONAPPROVALS_H
 
@@ -3234,6 +3344,8 @@ namespace ApprovalTests
 } // namespace ApprovalTests
 
 #endif
+
+ // ******************** From: CheckFileMacroIsAbsolute.h
 #ifndef APPROVALTESTS_CPP_CHECKFILEMACROISABSOLUTE_H
 #define APPROVALTESTS_CPP_CHECKFILEMACROISABSOLUTE_H
 
@@ -3267,6 +3379,8 @@ __FILE__
 // </SingleHpp>
 
 #endif //APPROVALTESTS_CPP_CHECKFILEMACROISABSOLUTE_H
+
+ // ******************** From: Catch2Approvals.h
 
 #ifndef APPROVALTESTS_CPP_CATCH2APPROVALS_H
 #define APPROVALTESTS_CPP_CATCH2APPROVALS_H
@@ -3348,6 +3462,8 @@ CATCH_REGISTER_LISTENER(Catch2TestCommitRevert)
 #endif
 // </SingleHpp>
 #endif //APPROVALTESTS_CPP_CATCH2APPROVALS_H
+
+ // ******************** From: DocTestApprovals.h
 #ifndef APPROVALTESTS_CPP_DOCTESTAPPROVALS_H
 #define APPROVALTESTS_CPP_DOCTESTAPPROVALS_H
 
@@ -3486,6 +3602,8 @@ REGISTER_LISTENER("approvals", 0, ApprovalTests::DocTestApprovalListener);
 #endif // APPROVALS_DOCTEST
 // </SingleHpp>
 #endif //APPROVALTESTS_CPP_DOCTESTAPPROVALS_H
+
+ // ******************** From: GoogleConfiguration.h
 #ifndef APPROVALTESTS_CPP_GOOGLECONFIGURATION_H
 #define APPROVALTESTS_CPP_GOOGLECONFIGURATION_H
 
@@ -3533,6 +3651,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_GOOGLECONFIGURATION_H
+
+ // ******************** From: GoogleTestApprovals.h
 #ifndef APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H
 #define APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H
 
@@ -3601,6 +3721,8 @@ int main(int argc, char** argv)
 // </SingleHpp>
 #endif
 #endif //APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H
+
+ // ******************** From: UTApprovals.h
 #ifndef APPROVALTESTS_CPP_UTAPPROVALS_H
 #define APPROVALTESTS_CPP_UTAPPROVALS_H
 
@@ -3699,6 +3821,8 @@ auto boost::ut::cfg<boost::ut::override> =
 #endif // APPROVALS_UT
 // </SingleHpp>
 #endif //APPROVALTESTS_CPP_UTAPPROVALS_H
+
+ // ******************** From: NamerFactory.h
 #ifndef APPROVALTESTS_CPP_NAMERFACTORY_H
 #define APPROVALTESTS_CPP_NAMERFACTORY_H
 
@@ -3717,6 +3841,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_NAMERFACTORY_H
+
+ // ******************** From: SeparateApprovedAndReceivedDirectoriesNamer.h
 #ifndef APPROVALTESTS_CPP_SEPARATEAPPROVEDANDRECEIVEDDIRECTORIESNAMER_H
 #define APPROVALTESTS_CPP_SEPARATEAPPROVEDANDRECEIVEDDIRECTORIESNAMER_H
 
@@ -3761,6 +3887,8 @@ namespace ApprovalTests
 }
 
 #endif // APPROVALTESTS_CPP_SEPARATEAPPROVEDANDRECEIVEDDIRECTORIESNAMER_H
+
+ // ******************** From: AutoApproveIfMissingReporter.h
 #ifndef APPROVALTESTS_CPP_AUTOAPPROVEIFMISSINGREPORTER_H
 #define APPROVALTESTS_CPP_AUTOAPPROVEIFMISSINGREPORTER_H
 
@@ -3783,6 +3911,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_AUTOAPPROVEIFMISSINGREPORTER_H
+
+ // ******************** From: BlockingReporter.h
 #ifndef APPROVALTESTS_CPP_BLOCKINGREPORTER_H
 #define APPROVALTESTS_CPP_BLOCKINGREPORTER_H
 
@@ -3830,6 +3960,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_BLOCKINGREPORTER_H
+
+ // ******************** From: CIBuildOnlyReporterUtils.h
 #ifndef APPROVALTESTS_CPP_CIBUILDONLYREPORTERUTILS_H
 #define APPROVALTESTS_CPP_CIBUILDONLYREPORTERUTILS_H
 
@@ -3848,6 +3980,8 @@ namespace ApprovalTests
 } // namespace ApprovalTests
 
 #endif //APPROVALTESTS_CPP_CIBUILDONLYREPORTERUTILS_H
+
+ // ******************** From: ClipboardReporter.h
 #ifndef APPROVALTESTS_CPP_COMMANDLINEREPORTER_H
 #define APPROVALTESTS_CPP_COMMANDLINEREPORTER_H
 
@@ -3919,6 +4053,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_COMMANDLINEREPORTER_H
+
+ // ******************** From: CombinationReporter.h
 #ifndef APPROVALTESTS_CPP_COMBINATIONREPORTER_H
 #define APPROVALTESTS_CPP_COMBINATIONREPORTER_H
 
@@ -3955,6 +4091,8 @@ namespace ApprovalTests
 }
 
 #endif //APPROVALTESTS_CPP_COMBINATIONREPORTER_H
+
+ // ******************** From: ExceptionCollector.h
 #ifndef APPROVALTESTS_CPP_EXCEPTIONCOLLECTOR_H
 #define APPROVALTESTS_CPP_EXCEPTIONCOLLECTOR_H
 
