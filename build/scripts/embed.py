@@ -110,7 +110,7 @@ def pp_line(line, output, opts):
     is_escaped = will_escape
     will_escape = False
     if r_empty_line.match(line):
-        # skip empty lines
+        output.write(line)
         return
     # we do not want to remove comments before the first guard as
     # its content may be a license or whatever else important
