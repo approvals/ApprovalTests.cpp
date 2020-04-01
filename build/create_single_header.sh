@@ -5,7 +5,6 @@
 # https://github.com/jfalcou/spy's script/embed.py
 #
 # Issues
-# - temporarily delete all '//' comments, for easier comparison with Java output
 # - does not include comment indicating name of include file that was pulled in
 # - work out how to work out if there are missing files not included in ApprovalTests.hpp
 # - creation of ApprovalTests.hpp is no longer maintainable
