@@ -64,16 +64,17 @@ class PrepareRelease:
 
     def create_single_header_file(self):
         os.chdir("../ApprovalTests")
-        print(os.getcwd())
-        run(["java", "-version"])
-        run(["java", "-jar", "../build/SingleHpp.v.0.0.2.jar", self.details.release_new_single_header])
-        text = read_file(self.details.release_new_single_header)
-        text = \
+
+        with use_directory("../build"):
+            print(os.getcwd())
+            run(["./create_single_header.sh", ">", self.details.release_new_single_header])
+            text = read_file(self.details.release_new_single_header)
+            text = \
 F"""// Approval Tests version {self.details.new_version}
 // More information at: https://github.com/approvals/ApprovalTests.cpp
 
 {text}"""
-        write_file(self.details.release_new_single_header, text)
+            write_file(self.details.release_new_single_header, text)
 
     def update_starter_project(self):
         STARTER_PATH_OLD_SINGLE_HEADER = F"{self.details.starter_project_dir}/lib/{self.details.old_single_header}"
