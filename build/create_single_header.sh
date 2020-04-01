@@ -5,12 +5,7 @@
 # https://github.com/jfalcou/spy's script/embed.py
 #
 # Issues
-# - strips out comments /* */ - even if they are small parts of line, e.g.
-#         bool report(std::string /*received*/, std::string /*approved*/) const override
 # - does not include comment indicating name of include file that was pulled in
-# - it tried pulling in <string> and similar - had to make this edit:
-#-r_pp_include = re.compile('^\s*#\s*include\s+["|<](.*)["|>]$')
-#+r_pp_include = re.compile('^\s*#\s*include\s+["](.*)["]$')
 #
 #-------------------------------------------------------
 
