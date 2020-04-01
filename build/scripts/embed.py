@@ -114,7 +114,7 @@ def pp_line(line, output, opts):
         return
     # we do not want to remove comments before the first guard as
     # its content may be a license or whatever else important
-    if not keep_guard:
+    if not keep_guard and False:
         # C comments (one line) '//'
         m = r_C_one_line_comment.match(line)
         if m:
