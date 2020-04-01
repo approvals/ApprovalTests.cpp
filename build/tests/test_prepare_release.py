@@ -59,6 +59,11 @@ toc
         output = prepare_release.create_single_header_file()
         verify_file(output)
 
+    def test_create_simulated_single_header_file(self):
+        prepare_release = self.get_prepare_release()
+        output = prepare_release.create_simulated_single_header_file()
+        verify_file(output)
+
     def get_prepare_release(self):
         set_home_directory()
         old_version = create_version(8, 4, 0)

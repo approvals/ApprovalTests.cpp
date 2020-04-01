@@ -62,6 +62,9 @@ class PrepareRelease:
 """
             write_file(version_header, text)
 
+    def create_simulated_single_header_file(self):
+        return os.path.abspath('ApprovalTests.hpp')
+
     def create_single_header_file(self):
         os.chdir("../ApprovalTests")
 
@@ -147,4 +150,3 @@ F"""// Approval Tests version {self.details.new_version}
         self.add_to_git()
 
         self.check_changes()
-
