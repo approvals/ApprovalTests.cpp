@@ -7,6 +7,7 @@ from scripts import version
 from scripts.conan_release import PrepareConanRelease
 from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.git_utilities import GitUtilities
+from scripts.single_header_file import SingleHeaderFile
 from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
     check_step_with_revert, assert_step
 
@@ -63,7 +64,7 @@ class PrepareRelease:
             write_file(version_header, text)
 
     def create_simulated_single_header_file(self):
-        return os.path.abspath('ApprovalTests.hpp')
+        return SingleHeaderFile.create('.')
 
     def create_single_header_file(self):
         os.chdir("../ApprovalTests")
