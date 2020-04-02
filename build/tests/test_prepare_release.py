@@ -2,6 +2,8 @@ import os
 import unittest
 
 from approvaltests.approvals import verify_file
+
+from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.prepare_release import PrepareRelease
 from scripts.release_details import ReleaseDetails
 from scripts.utilities import run
@@ -35,7 +37,7 @@ toc
 '''
         old_version = "v.1.2.3"
         new_version = "v.1.2.4"
-        action = PrepareRelease.prepare_update_features_page(old_version, new_version, content)
+        action = PrepareDocumentationRelease.prepare_update_features_page(old_version, new_version, content)
         new_content = action("", lambda _, old, new: content.replace(old, new))
         self.assertEqual(expected_new_content, new_content)
 
@@ -50,7 +52,7 @@ toc
 '''
         old_version = "v.1.2.3"
         new_version = "v.1.2.4"
-        action = PrepareRelease.prepare_update_features_page(old_version, new_version, content)
+        action = PrepareDocumentationRelease.prepare_update_features_page(old_version, new_version, content)
         new_content = action("", lambda text: f'CHECK: {text}')
         self.assertEqual(new_content, 'CHECK: the Features page is empty: are you sure you want this?')
 
