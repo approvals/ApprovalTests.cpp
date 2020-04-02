@@ -10,6 +10,8 @@ from approvaltests import verify
 from approvaltests.reporters import GenericDiffReporterFactory
 from approvaltests.reporters.generic_diff_reporter import GenericDiffReporter
 
+from scripts.multiline_string_utilities import remove_indentation
+
 concatened_string = 'your string here'
 
 
@@ -41,44 +43,48 @@ class CodeGeneration:
 class TestCodeGeneration(unittest.TestCase):
 
     def test_convert_string_to_concatentation(self):
-        content = '''
-toc
-
-## v.x.y.z
-
-{self.old_feature_text()}
-
-'''
+        content = remove_indentation << '''
+        
+            toc
+            
+            ## v.x.y.z
+            
+            {self.old_feature_text()}
+            
+            '''
         result = CodeGeneration.convert_string_to_concatenation(content)
-        expected = r"""('\n'
-'toc\n'
-'\n'
-'## v.x.y.z\n'
-'\n'
-f'{self.old_feature_text()}\n'
-'\n'
-)"""
+        expected = remove_indentation << r"""
+            ('\n'
+            'toc\n'
+            '\n'
+            '## v.x.y.z\n'
+            '\n'
+            f'{self.old_feature_text()}\n'
+            '\n'
+            )"""
         self.assertEqual(expected, result)
 
     def test_convert_string_to_joined_list(self):
-        content = '''
-toc
-
-## v.x.y.z
-
-{self.old_feature_text()}
-
-'''
+        content = remove_indentation << '''
+        
+            toc
+            
+            ## v.x.y.z
+            
+            {self.old_feature_text()}
+            
+            '''
         result = CodeGeneration.convert_string_to_joined_list(content)
-        expected = r"""'\n'.join([
-'',
-'toc',
-'',
-'## v.x.y.z',
-'',
-f'{self.old_feature_text()}',
-'',
-])"""
+        expected = remove_indentation << r"""
+        '\n'.join([
+        '',
+        'toc',
+        '',
+        '## v.x.y.z',
+        '',
+        f'{self.old_feature_text()}',
+        '',
+        ])"""
         self.assertEqual(expected, result)
 
     def test_entry_point_for_convert_to_concatenation(self):
