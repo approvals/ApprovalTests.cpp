@@ -48,21 +48,20 @@ class PrepareRelease:
         with use_directory(release_constants.approval_tests_dir):
             version_header = os.path.join("ApprovalTestsVersion.h")
 
-            text = \
-                F"""#ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
-#define APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
-
-#define APPROVALTESTS_VERSION_MAJOR {self.details.new_version_object['major']}
-#define APPROVALTESTS_VERSION_MINOR {self.details.new_version_object['minor']}
-#define APPROVALTESTS_VERSION_PATCH {self.details.new_version_object['patch']}
-#define APPROVALTESTS_VERSION_STR "{version.get_version_without_v(self.details.new_version)}"
-
-#define APPROVALTESTS_VERSION                                                  \\
-    (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 + \\
-     APPROVALTESTS_VERSION_PATCH)
-
-#endif //APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
-"""
+            text = ('#ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H\n'
+                    '#define APPROVALTESTS_CPP_APPROVALTESTSVERSION_H\n'
+                    '\n'
+                    f'#define APPROVALTESTS_VERSION_MAJOR {self.details.new_version_object["major"]}\n'
+                    f'#define APPROVALTESTS_VERSION_MINOR {self.details.new_version_object["minor"]}\n'
+                    f'#define APPROVALTESTS_VERSION_PATCH {self.details.new_version_object["patch"]}\n'
+                    f'#define APPROVALTESTS_VERSION_STR "{version.get_version_without_v(self.details.new_version)}"\n'
+                    '\n'
+                    '#define APPROVALTESTS_VERSION                                                  \\n'
+                    '    (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 + \\n'
+                    '     APPROVALTESTS_VERSION_PATCH)\n'
+                    '\n'
+                    '#endif //APPROVALTESTS_CPP_APPROVALTESTSVERSION_H\n'
+                    )
             write_file(version_header, text)
 
     def create_simulated_single_header_file(self):
