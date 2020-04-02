@@ -43,6 +43,8 @@ class SingleHeaderFile(object):
 
     @staticmethod
     def get_parts(file):
+        # This is effectively creating a Directed Acyclic Graph of all files
+        # and their #includes, which we later sort by dependency order.
         content = read_file(os.path.join('..', file))
         lines = content.splitlines()
         include_lines = filter(lambda t: t.startswith('#include "'), lines)
