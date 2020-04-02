@@ -7,7 +7,7 @@ from scripts import version
 from scripts.conan_release import PrepareConanRelease
 from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.git_utilities import GitUtilities
-from scripts.release_details import release_constants
+from scripts.release_constants import release_constants
 from scripts.single_header_file import SingleHeaderFile
 from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
     check_step_with_revert, assert_step

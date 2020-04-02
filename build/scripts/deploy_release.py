@@ -1,7 +1,7 @@
 import pyperclip
 
 from scripts.conan_release import DeployConanRelease
-from scripts.release_details import release_constants
+from scripts.release_constants import release_constants
 from scripts.utilities import read_file, check_step, run, use_directory
 
 

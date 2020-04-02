@@ -2,7 +2,7 @@ import unittest
 
 from approvaltests import verify_as_json
 
-from scripts.release_details import release_constants
+from scripts.release_constants import release_constants
 
 
 class TestReleaseConstants(unittest.TestCase):
