@@ -1,17 +1,7 @@
-import os
 import unittest
 
-from scripts.conan_release import PrepareConanRelease
-from scripts.utilities import get_file_name
-
-
-def set_home_directory():
-    current_dir = os.getcwd().replace('\\', '/')
-    if current_dir.endswith('ApprovalTests.cpp/ApprovalTests'):
-        return
-    source_dir = os.path.split(__file__)[0]
-    library_dir = os.path.join(source_dir, "../../ApprovalTests")
-    os.chdir(library_dir)
+# from scripts.conan_release import PrepareConanRelease
+from tests.helpers import set_home_directory
 
 
 class TestConanRelease(unittest.TestCase):

@@ -8,7 +8,7 @@ from scripts.prepare_release import PrepareRelease
 from scripts.release_details import ReleaseDetails
 from scripts.utilities import run
 from scripts.version import create_version
-from tests.test_conan_release import set_home_directory
+from tests.helpers import set_home_directory
 
 
 class TestPrepareRelease(unittest.TestCase):
