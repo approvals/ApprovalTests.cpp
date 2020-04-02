@@ -1,0 +1,10 @@
+{
+    "approval_tests_dir": "../ApprovalTests",
+    "build_dir": "../build",
+    "main_project_dir": "../../ApprovalTests.Cpp",
+    "release_dir": "../build/releases",
+    "release_notes_dir": "../build/release_notes",
+    "starter_project_dir": "../../ApprovalTests.Cpp.StarterProject",
+    "template_release_notes_path": "../build/release_notes/relnotes_template.md",
+    "xxx_release_notes_path": "../build/relnotes_x.y.z.md"
+}
