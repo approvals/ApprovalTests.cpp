@@ -215,12 +215,14 @@ def embed(args):
 
 
 def run_for_approval_tests(initial_file, output_file):
+    include_search_path1 = ".."
+    include_search_path2 = "../ApprovalTests/"
     embed([
         initial_file,
         "-I",
-        "..",
+        include_search_path1,
         "-I",
-        "../ApprovalTests/",
+        include_search_path2,
         "-o",
         output_file
     ])
