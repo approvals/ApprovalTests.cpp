@@ -148,7 +148,7 @@ F"""// Approval Tests version {self.details.new_version}
 
         PrepareDocumentationRelease.prepare_documentation(self.details)
 
-        version.write_version(self.details.new_version_object, release_constants.ConanReleaseDetails().conan)
+        version.write_version(self.details.new_version_object, release_constants.build_dir)
         self.add_to_git()
 
         self.check_changes()
