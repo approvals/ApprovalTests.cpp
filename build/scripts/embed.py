@@ -214,9 +214,9 @@ def embed(args):
         opts.output.close()
 
 
-def run_for_approval_tests(output_file):
+def run_for_approval_tests(initial_file, output_file):
     embed([
-        "../ApprovalTests/ApprovalTests.hpp",
+        initial_file,
         "-I",
         "..",
         "-I",

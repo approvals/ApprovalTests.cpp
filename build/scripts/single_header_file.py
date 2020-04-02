@@ -1,5 +1,6 @@
 import os
 
+from scripts.release_constants import release_constants
 from scripts.utilities import write_file, read_file, get_file_name
 
 
@@ -8,7 +9,7 @@ class SingleHeaderFile(object):
     def create(directory):
         files = SingleHeaderFile.get_all_files(directory)
         files = SingleHeaderFile.sort_by_dependencies(files)
-        output_file = os.path.abspath('ApprovalTests.hpp')
+        output_file = os.path.abspath(release_constants.simulated_single_header_file_path)
 
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
         output = ('#ifndef APPROVALTESTS_CPP_APPROVALS_HPP\n'

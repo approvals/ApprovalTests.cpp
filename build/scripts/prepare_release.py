@@ -71,9 +71,10 @@ class PrepareRelease:
     def create_single_header_file(self):
         self.create_simulated_single_header_file()
 
+        simulated_single_header = os.path.abspath(release_constants.simulated_single_header_file_path)
         with use_directory("../build"):
             print(os.getcwd())
-            run_for_approval_tests(self.details.release_new_single_header)
+            run_for_approval_tests(simulated_single_header, self.details.release_new_single_header)
             text = read_file(self.details.release_new_single_header)
             text = \
 F"""// Approval Tests version {self.details.new_version}
