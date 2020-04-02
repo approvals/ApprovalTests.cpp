@@ -21,13 +21,6 @@ def get_all_files(directory):
 class SingleHeaderFile(object):
     @staticmethod
     def create(directory):
-
-        # 	public static List<File> getAllFiles(String directory) {
-        # 		FileFilter filter = p -> p.getName().endsWith(".h") || p.getName().endsWith(".cpp");
-        # 		File[] list = FileUtils.getRecursiveFileList(new File(directory), filter);
-        # 		Arrays.sort(list);
-        # 		return Arrays.asList(list);
-        # 	}
         files = get_all_files(directory)
         files = SingleHeaderFile.sort_by_dependencies(files)
         output_file = os.path.abspath('ApprovalTests.hpp')
