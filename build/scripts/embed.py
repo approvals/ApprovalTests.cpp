@@ -213,10 +213,7 @@ def embed(args):
     if opts.output != sys.stdout:
         opts.output.close()
 
-
-def run_for_approval_tests(initial_file, output_file):
-    include_search_path1 = ".."
-    include_search_path2 = "../ApprovalTests/"
+def create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2):
     embed([
         initial_file,
         "-I",

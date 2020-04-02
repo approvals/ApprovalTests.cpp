@@ -6,7 +6,7 @@ from git import Repo
 from scripts import version
 from scripts.conan_release import PrepareConanRelease
 from scripts.documentation_release import PrepareDocumentationRelease
-from scripts.embed import run_for_approval_tests
+from scripts.embed import create_single_header_file
 from scripts.git_utilities import GitUtilities
 from scripts.release_constants import release_constants
 from scripts.single_header_file import SingleHeaderFile
@@ -74,7 +74,7 @@ class PrepareRelease:
         simulated_single_header = os.path.abspath(release_constants.simulated_single_header_file_path)
         with use_directory("../build"):
             print(os.getcwd())
-            run_for_approval_tests(simulated_single_header, self.details.release_new_single_header)
+            self.run_for_approval_tests(simulated_single_header, self.details.release_new_single_header)
             text = read_file(self.details.release_new_single_header)
             text = \
 F"""// Approval Tests version {self.details.new_version}
@@ -83,6 +83,11 @@ F"""// Approval Tests version {self.details.new_version}
 {text}"""
             write_file(self.details.release_new_single_header, text)
             return os.path.abspath(self.details.release_new_single_header)
+
+    def run_for_approval_tests(self, initial_file, output_file):
+        include_search_path1 = ".."
+        include_search_path2 = "../ApprovalTests/"
+        create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2)
 
     def update_starter_project(self):
         STARTER_PATH_OLD_SINGLE_HEADER = F"{release_constants.starter_project_dir}/lib/{self.details.old_single_header}"
