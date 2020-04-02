@@ -1,10 +1,6 @@
 #ifndef APPROVALTESTS_CPP_APPROVALS_HPP
 #define APPROVALTESTS_CPP_APPROVALS_HPP
 
-// Created with:
-//   cd ApprovalTests.cpp
-//   ./scripts/create_simulated_single_header.sh
-
 #include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/reporters/QuietReporter.h"

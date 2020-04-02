@@ -6,10 +6,6 @@
 #ifndef APPROVALTESTS_CPP_APPROVALS_HPP
 #define APPROVALTESTS_CPP_APPROVALS_HPP
 
-// Created with:
-//   cd ApprovalTests.cpp
-//   ./scripts/create_simulated_single_header.sh
-
 
  // ******************** From: ApprovalTestsVersion.h
 #ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
