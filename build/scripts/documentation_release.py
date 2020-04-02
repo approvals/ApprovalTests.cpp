@@ -1,6 +1,7 @@
 import shutil
 import time
 
+from scripts.release_details import release_constants
 from scripts.utilities import read_file, use_directory, replace_text_in_file, run, check_step
 
 
@@ -54,7 +55,7 @@ class PrepareDocumentationRelease:
         # Make sure the above move has finished, before we create the new xxx file:
         time.sleep(1)
 
-        shutil.copyfile(details.template_release_notes_path, details.xxx_release_notes_path)
+        shutil.copyfile(release_constants.template_release_notes_path, details.xxx_release_notes_path)
 
     @staticmethod
     def regenerate_markdown():

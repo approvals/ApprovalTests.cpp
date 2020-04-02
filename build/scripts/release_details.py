@@ -51,7 +51,6 @@ class ReleaseDetails:
         self.release_notes_dir = os.path.join(release_constants.build_dir, 'release_notes')
         self.new_release_notes_path = os.path.join(self.release_notes_dir,
                                                    F'relnotes_{version.get_version_without_v(self.new_version)}.md')
-        self.template_release_notes_path = os.path.join(self.release_notes_dir, F'relnotes_template.md')
 
 
 def build(update_version, deploy):
