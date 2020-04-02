@@ -29,11 +29,11 @@ class DeployRelease:
 
     # Main Project
     def commit_main_project(self):
-        with use_directory(self.details.main_project_dir):
+        with use_directory(release_constants.main_project_dir):
             run(["git", "commit", "-m", F"'{self.details.new_version} release'"])
 
     def push_main_project(self):
-        with use_directory(self.details.main_project_dir):
+        with use_directory(release_constants.main_project_dir):
             run(["git", "push", "origin", "master"])
 
     def publish_main_project(self):

@@ -27,8 +27,6 @@ class ReleaseDetails:
         self.release_dir = F"../build/releases"
         self.release_new_single_header = F"{self.release_dir}/{self.new_single_header}"
 
-        self.main_project_dir = F"../../ApprovalTests.Cpp"
-
         self.new_release_notes_path = os.path.join(release_constants.release_notes_dir,
                                                    F'relnotes_{version.get_version_without_v(self.new_version)}.md')
 

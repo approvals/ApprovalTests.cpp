@@ -19,7 +19,7 @@ class PrepareRelease:
 
     def check_pre_conditions_for_publish(self):
         if self.details.push_to_production:
-            repo = Repo(self.details.main_project_dir)
+            repo = Repo(release_constants.main_project_dir)
             assert_step(not repo.bare)
 
             assert_step((repo.active_branch.name == 'master'))
@@ -116,7 +116,7 @@ F"""// Approval Tests version {self.details.new_version}
     def do_things_in_starter_project_and_main(self, function):
         with use_directory(release_constants.starter_project_dir):
             function()
-        with use_directory(self.details.main_project_dir):
+        with use_directory(release_constants.main_project_dir):
             function()
 
     def check_changes(self):
