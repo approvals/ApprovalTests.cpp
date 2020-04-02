@@ -1,3 +1,4 @@
+import pyperclip
 import unittest
 
 # Convenience variable, so we can paste in code and run test_demo_convert_to_concatenation.
@@ -73,7 +74,9 @@ f'{self.old_feature_text()}',
         self.assertEqual(expected, result)
 
     def test_entry_point_for_convert_to_concatenation(self):
-        print(CodeGeneration.convert_string_to_concatenation(concatened_string))
+        if concatened_string != 'your string here':
+            pyperclip.copy(CodeGeneration.convert_string_to_concatenation(concatened_string))
+            print("converted text copied to clipboard")
 
 
 if __name__ == '__main__':
