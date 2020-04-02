@@ -11,13 +11,13 @@ class SingleHeaderFile(object):
         output_file = os.path.abspath('ApprovalTests.hpp')
 
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
-        output = f'''#ifndef APPROVALTESTS_CPP_APPROVALS_HPP
-#define APPROVALTESTS_CPP_APPROVALS_HPP
-
-{includes}
-
-#endif // APPROVALTESTS_CPP_APPROVALS_HPP
-'''
+        output = ('#ifndef APPROVALTESTS_CPP_APPROVALS_HPP\n'
+                  '#define APPROVALTESTS_CPP_APPROVALS_HPP\n'
+                  '\n'
+                  f'{includes}\n'
+                  '\n'
+                  '#endif // APPROVALTESTS_CPP_APPROVALS_HPP\n'
+                  )
         write_file(output_file, output)
         return output_file
 
@@ -47,7 +47,7 @@ class SingleHeaderFile(object):
         lines = content.splitlines()
         include_lines = filter(lambda t: t.startswith('#include "'), lines)
         include_files = list(map(lambda i: i.replace('#include ', '').replace('"', ''), include_lines))
-        include_files = list(map(lambda f:get_file_name(f), include_files))
+        include_files = list(map(lambda f: get_file_name(f), include_files))
         return {'file': file, 'include': include_files}
 
     @staticmethod
