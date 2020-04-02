@@ -48,8 +48,7 @@ class ReleaseDetails:
         self.starter_project_dir = F"../../ApprovalTests.Cpp.StarterProject"
 
         self.xxx_release_notes_path = os.path.join(release_constants.build_dir, F'relnotes_x.y.z.md')
-        self.release_notes_dir = os.path.join(release_constants.build_dir, 'release_notes')
-        self.new_release_notes_path = os.path.join(self.release_notes_dir,
+        self.new_release_notes_path = os.path.join(release_constants.release_notes_dir,
                                                    F'relnotes_{version.get_version_without_v(self.new_version)}.md')
 
 
