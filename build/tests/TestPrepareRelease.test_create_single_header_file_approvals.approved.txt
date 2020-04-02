@@ -6,6 +6,8 @@
 #ifndef APPROVALTESTS_CPP_APPROVALS_HPP
 #define APPROVALTESTS_CPP_APPROVALS_HPP
 
+// This file is machine-generated. Do not edit.
+
 
  // ******************** From: ApprovalTestsVersion.h
 #ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H

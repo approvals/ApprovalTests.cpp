@@ -1,6 +1,8 @@
 #ifndef APPROVALTESTS_CPP_APPROVALS_HPP
 #define APPROVALTESTS_CPP_APPROVALS_HPP
 
+// This file is machine-generated. Do not edit.
+
 #include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/reporters/QuietReporter.h"

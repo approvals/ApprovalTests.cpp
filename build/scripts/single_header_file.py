@@ -14,6 +14,8 @@ class SingleHeaderFile(object):
         output = ('#ifndef APPROVALTESTS_CPP_APPROVALS_HPP\n'
                   '#define APPROVALTESTS_CPP_APPROVALS_HPP\n'
                   '\n'
+                  '// This file is machine-generated. Do not edit.\n'
+                  '\n'
                   f'{includes}\n'
                   '\n'
                   '#endif // APPROVALTESTS_CPP_APPROVALS_HPP\n'
