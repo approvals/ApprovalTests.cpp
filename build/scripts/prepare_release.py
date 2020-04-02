@@ -76,11 +76,12 @@ class PrepareRelease:
             print(os.getcwd())
             self.run_for_approval_tests(simulated_single_header, self.details.release_new_single_header)
             text = read_file(self.details.release_new_single_header)
-            text = \
-F"""// Approval Tests version {self.details.new_version}
-// More information at: https://github.com/approvals/ApprovalTests.cpp
-
-{text}"""
+            text = (
+                f'// Approval Tests version {self.details.new_version}\n'
+                '// More information at: https://github.com/approvals/ApprovalTests.cpp\n'
+                '\n'
+                f'{text}'
+            )
             write_file(self.details.release_new_single_header, text)
             return os.path.abspath(self.details.release_new_single_header)
 
