@@ -67,7 +67,6 @@ class PrepareRelease:
         return SingleHeaderFile.create('.')
 
     def create_single_header_file(self):
-        os.chdir("../ApprovalTests")
         self.create_simulated_single_header_file()
 
         with use_directory("../build"):
