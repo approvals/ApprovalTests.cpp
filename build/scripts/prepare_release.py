@@ -83,11 +83,11 @@ F"""// Approval Tests version {self.details.new_version}
             return os.path.abspath(self.details.release_new_single_header)
 
     def update_starter_project(self):
-        STARTER_PATH_OLD_SINGLE_HEADER = F"{self.details.starter_project_dir}/lib/{self.details.old_single_header}"
-        STARTER_PATH_NEW_SINGLE_HEADER = F"{self.details.starter_project_dir}/lib/{self.details.new_single_header}"
+        STARTER_PATH_OLD_SINGLE_HEADER = F"{release_constants.starter_project_dir}/lib/{self.details.old_single_header}"
+        STARTER_PATH_NEW_SINGLE_HEADER = F"{release_constants.starter_project_dir}/lib/{self.details.new_single_header}"
 
         # Make sure starter project folder is clean
-        project_dir = self.details.starter_project_dir
+        project_dir = release_constants.starter_project_dir
         GitUtilities.reset_and_clean_working_directory(project_dir)
 
         shutil.copyfile(self.details.release_new_single_header, STARTER_PATH_NEW_SINGLE_HEADER)
@@ -97,14 +97,14 @@ F"""// Approval Tests version {self.details.new_version}
             os.remove(STARTER_PATH_OLD_SINGLE_HEADER)
 
         # Update the version in the "redirect" header:
-        replace_text_in_file(F"{self.details.starter_project_dir}/lib/ApprovalTests.hpp", self.details.old_version, self.details.new_version)
+        replace_text_in_file(F"{release_constants.starter_project_dir}/lib/ApprovalTests.hpp", self.details.old_version, self.details.new_version)
 
         # Update the version number in the Visual Studio project:
-        replace_text_in_file(F"{self.details.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj", self.details.old_single_header,
+        replace_text_in_file(F"{release_constants.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj", self.details.old_single_header,
                              self.details.new_single_header)
 
     def check_starter_project_builds(self):
-        with use_directory(F"{self.details.starter_project_dir}/cmake-build-debug"):
+        with use_directory(F"{release_constants.starter_project_dir}/cmake-build-debug"):
             run(["cmake", "--build", "."])
 
     def add_to_git(self):
@@ -114,7 +114,7 @@ F"""// Approval Tests version {self.details.new_version}
         self.do_things_in_starter_project_and_main(add)
 
     def do_things_in_starter_project_and_main(self, function):
-        with use_directory(self.details.starter_project_dir):
+        with use_directory(release_constants.starter_project_dir):
             function()
         with use_directory(self.details.main_project_dir):
             function()
@@ -148,7 +148,7 @@ F"""// Approval Tests version {self.details.new_version}
 
         PrepareDocumentationRelease.prepare_documentation(self.details)
 
-        version.write_version(self.details.new_version_object, release_constants.build_dir)
+        version.write_version(self.details.new_version_object, release_constants.ConanReleaseDetails().conan)
         self.add_to_git()
 
         self.check_changes()
