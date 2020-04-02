@@ -36,11 +36,11 @@ class PrepareRelease:
             run(["open", F"https://github.com/approvals/ApprovalTests.cpp/compare/{self.details.old_version}...master"])
             check_step("the release notes are ready")
 
-        run(["open", "https://github.com/approvals/ApprovalTests.cpp/issues"])
-        check_step("any issues resolved in this release are closed")
+            run(["open", "https://github.com/approvals/ApprovalTests.cpp/issues"])
+            check_step("any issues resolved in this release are closed")
 
-        run(["open", "https://github.com/approvals/ApprovalTests.cpp/milestones"])
-        check_step("the milestone (if any) is up to date, including actual version number of release")
+            run(["open", "https://github.com/approvals/ApprovalTests.cpp/milestones"])
+            check_step("the milestone (if any) is up to date, including actual version number of release")
 
     def update_version_number_header(self):
         with use_directory(self.details.approval_tests_dir):
