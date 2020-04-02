@@ -3,25 +3,10 @@ import os
 from scripts.utilities import write_file, read_file, get_file_name
 
 
-def get_all_files(directory):
-    all_files = []
-    abs = os.path.abspath(directory)
-    relative = get_file_name(abs)
-
-    for root, directories, files in os.walk(directory):
-        for file in files:
-            if file.endswith('.h'):
-                file_text = os.path.join(root, file)
-                file_text = file_text.replace('./', relative + '/')
-                all_files.append(file_text)
-    all_files.sort()
-    return all_files
-
-
 class SingleHeaderFile(object):
     @staticmethod
     def create(directory):
-        files = get_all_files(directory)
+        files = SingleHeaderFile.get_all_files(directory)
         files = SingleHeaderFile.sort_by_dependencies(files)
         output_file = os.path.abspath('ApprovalTests.hpp')
 
@@ -41,6 +26,21 @@ class SingleHeaderFile(object):
 '''
         write_file(output_file, output)
         return output_file
+
+    @staticmethod
+    def get_all_files(directory):
+        all_files = []
+        abs = os.path.abspath(directory)
+        relative = get_file_name(abs)
+
+        for root, directories, files in os.walk(directory):
+            for file in files:
+                if file.endswith('.h'):
+                    file_text = os.path.join(root, file)
+                    file_text = file_text.replace('./', relative + '/')
+                    all_files.append(file_text)
+        all_files.sort()
+        return all_files
 
     @staticmethod
     def sort_by_dependencies(files):
