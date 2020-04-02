@@ -204,15 +204,28 @@ The top-level function
 """
 
 
-def embed():
-    args = sys.argv[1:]
+def embed(args):
     for path in default_includes_path:
         args.append('-I')
         args.append(path)
     opts = parse_opts(args)
     pp_file(opts.filename, opts.output, opts)
+    if opts.output != sys.stdout:
+        opts.output.close()
+
+
+def run_for_approval_tests(output_file):
+    embed([
+        "../ApprovalTests/ApprovalTests.hpp",
+        "-I",
+        "..",
+        "-I",
+        "../ApprovalTests/",
+        "-o",
+        output_file
+    ])
 
 
 # The entry point!
 if __name__ == '__main__':
-    embed()
+    embed(sys.argv[1:])

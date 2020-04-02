@@ -6,6 +6,7 @@ from git import Repo
 from scripts import version
 from scripts.conan_release import PrepareConanRelease
 from scripts.documentation_release import PrepareDocumentationRelease
+from scripts.embed import run_for_approval_tests
 from scripts.git_utilities import GitUtilities
 from scripts.release_constants import release_constants
 from scripts.single_header_file import SingleHeaderFile
@@ -72,7 +73,7 @@ class PrepareRelease:
 
         with use_directory("../build"):
             print(os.getcwd())
-            run(["./create_single_header.sh", ">", self.details.release_new_single_header])
+            run_for_approval_tests(self.details.release_new_single_header)
             text = read_file(self.details.release_new_single_header)
             text = \
 F"""// Approval Tests version {self.details.new_version}
