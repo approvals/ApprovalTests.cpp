@@ -36,25 +36,9 @@ class CodeGeneration:
         code += '])'
         return code
 
-class Normalize:
-    def __lshift__(self, text):
-        cleaned = textwrap.dedent(text)
-        if cleaned.startswith("\n"):
-            cleaned = cleaned[1:]
-        return cleaned
 
-remove_indentation = Normalize()
 
 class TestCodeGeneration(unittest.TestCase):
-
-    def test_dedent(self):
-        text = remove_indentation << '''
-            Here is some text
-              1. with some indentation
-              2. and more
-                a. even more
-              3. little less'''
-        verify(text, GenericDiffReporterFactory().get("DiffMerge"))
 
     def test_convert_string_to_concatentation(self):
         content = '''
