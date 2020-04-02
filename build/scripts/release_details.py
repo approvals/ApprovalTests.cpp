@@ -24,8 +24,7 @@ class ReleaseDetails:
         self.old_single_header = F"ApprovalTests.{self.old_version}.hpp"
         self.new_single_header = F"ApprovalTests.{self.new_version}.hpp"
 
-        self.release_dir = F"../build/releases"
-        self.release_new_single_header = F"{self.release_dir}/{self.new_single_header}"
+        self.release_new_single_header = F"{release_constants.release_dir}/{self.new_single_header}"
 
         self.new_release_notes_path = os.path.join(release_constants.release_notes_dir,
                                                    F'relnotes_{version.get_version_without_v(self.new_version)}.md')

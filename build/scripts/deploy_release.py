@@ -47,7 +47,7 @@ class DeployRelease:
         print('The release notes are on the clipboard')
         github_url = F"'https://github.com/approvals/ApprovalTests.cpp/releases/new?tag={self.details.new_version}&title=Single%20Hpp%20File%20-%20{self.details.new_version}'"
         run(["open", github_url])
-        run(["open", self.details.release_dir])
+        run(["open", release_constants.release_dir])
         check_step("that the release is published")
 
     def publish_tweet(self):
