@@ -289,10 +289,6 @@ namespace ApprovalTests
 #endif
 
  // ******************** From: FileUtils.h
-//
-// Created by LLEWELLYN FALCO on 12/2/17.
-//
-
 #ifndef APPROVALTESTS_CPP_FILEUTILS_H
 #define APPROVALTESTS_CPP_FILEUTILS_H
 
