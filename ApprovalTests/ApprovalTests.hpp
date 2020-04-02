@@ -1,4 +1,3 @@
-
 #ifndef APPROVALTESTS_CPP_APPROVALS_HPP
 #define APPROVALTESTS_CPP_APPROVALS_HPP
 
@@ -76,4 +75,3 @@
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 
 #endif // APPROVALTESTS_CPP_APPROVALS_HPP
-

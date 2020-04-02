@@ -11,8 +11,7 @@ class SingleHeaderFile(object):
         output_file = os.path.abspath('ApprovalTests.hpp')
 
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
-        output = f'''
-#ifndef APPROVALTESTS_CPP_APPROVALS_HPP
+        output = f'''#ifndef APPROVALTESTS_CPP_APPROVALS_HPP
 #define APPROVALTESTS_CPP_APPROVALS_HPP
 
 // Created with:
@@ -22,7 +21,6 @@ class SingleHeaderFile(object):
 {includes}
 
 #endif // APPROVALTESTS_CPP_APPROVALS_HPP
-
 '''
         write_file(output_file, output)
         return output_file
