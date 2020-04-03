@@ -8,7 +8,7 @@ from tests.helpers import diff_merge_reporter
 # This is at global scope to prevent PyCharm reformatting the indentation when we
 # paste code in.
 
-to_concatened_string = 'your string here'
+to_concatenated_string = 'your string here'
 
 to_multiline_string = ('your string here')
 
@@ -109,8 +109,8 @@ class TestCodeGeneration(unittest.TestCase):
         verify(output, diff_merge_reporter)
 
     def test_entry_point_for_convert_to_concatenation(self):
-        if to_concatened_string != 'your string here':
-            pyperclip.copy(CodeGeneration.convert_string_to_concatenation(to_concatened_string))
+        if to_concatenated_string != 'your string here':
+            pyperclip.copy(CodeGeneration.convert_string_to_concatenation(to_concatenated_string))
             print("converted concatened text copied to clipboard")
 
     def test_entry_point_for_convert_to_multiline(self):
