@@ -15,14 +15,10 @@ to_multiline_string = ('your string here')
 class CodeGeneration:
     @staticmethod
     def convert_concatenation_to_multiline(content):
-        stripped = content.strip()[1:-1]
-        lines = stripped.splitlines()
+        lines = content.splitlines()
         code = "remove_indentation << f'''\n"
-        for line in lines[:-1]:
-            if line.startswith("f"):
-                line = line [1:]
-            cleaned = line[1:-1].replace("\\n", "\n")
-            code += cleaned
+        for line in lines:
+            code += line + '\n'
         code += "'''"
         return code
 
@@ -96,15 +92,14 @@ class TestCodeGeneration(unittest.TestCase):
 
     def test_concatentation_to_multiline(self):
 
-        input = remove_indentation << r"""
-            ('\n'
+        input = ('\n'
             'toc\n'
             '\n'
             '## v.x.y.z\n'
+            '\n'  
+            '{self.old_feature_text()}\n'
             '\n'
-            f'{self.old_feature_text()}\n'
-            '\n'
-            )"""
+            )
         output = CodeGeneration.convert_concatenation_to_multiline(input)
         verify(output, diff_merge_reporter)
 
@@ -115,7 +110,9 @@ class TestCodeGeneration(unittest.TestCase):
 
     def test_entry_point_for_convert_to_multiline(self):
         if to_multiline_string != 'your string here':
-            pyperclip.copy(CodeGeneration.convert_string_to_concatenation(to_multiline_string))
+            code = CodeGeneration.convert_concatenation_to_multiline(to_multiline_string)
+            print(code)
+            pyperclip.copy(code)
             print("converted multiline text copied to clipboard")
 
 
