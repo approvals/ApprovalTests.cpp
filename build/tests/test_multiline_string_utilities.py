@@ -1,9 +1,9 @@
 import unittest
 
 from approvaltests import verify
-from approvaltests.reporters import GenericDiffReporterFactory
 
 from scripts.multiline_string_utilities import remove_indentation
+from tests.helpers import diff_merge_reporter
 
 
 class TestMultilineStringUtilities(unittest.TestCase):
@@ -16,7 +16,7 @@ class TestMultilineStringUtilities(unittest.TestCase):
                 a. even more
               3. little less
             '''
-        verify(text, GenericDiffReporterFactory().get("DiffMerge"))
+        verify(text, diff_merge_reporter)
 
 
 if __name__ == '__main__':
