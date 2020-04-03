@@ -8,6 +8,7 @@ from scripts.conan_release import PrepareConanRelease
 from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.embed import create_single_header_file
 from scripts.git_utilities import GitUtilities
+from scripts.multiline_string_utilities import remove_indentation
 from scripts.release_constants import release_constants
 from scripts.single_header_file import SingleHeaderFile
 from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
@@ -48,20 +49,19 @@ class PrepareRelease:
         with use_directory(release_constants.approval_tests_dir):
             version_header = os.path.join("ApprovalTestsVersion.h")
 
-            text = ('#ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H\n'
-                    '#define APPROVALTESTS_CPP_APPROVALTESTSVERSION_H\n'
-                    '\n'
-                    f'#define APPROVALTESTS_VERSION_MAJOR {self.details.new_version_object["major"]}\n'
-                    f'#define APPROVALTESTS_VERSION_MINOR {self.details.new_version_object["minor"]}\n'
-                    f'#define APPROVALTESTS_VERSION_PATCH {self.details.new_version_object["patch"]}\n'
-                    f'#define APPROVALTESTS_VERSION_STR "{version.get_version_without_v(self.details.new_version)}"\n'
-                    '\n'
-                    '#define APPROVALTESTS_VERSION                                                  \\n'
-                    '    (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 + \\n'
-                    '     APPROVALTESTS_VERSION_PATCH)\n'
-                    '\n'
-                    '#endif //APPROVALTESTS_CPP_APPROVALTESTSVERSION_H\n'
-                    )
+            text = remove_indentation << f'''
+                #ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
+                #define APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
+                
+                #define APPROVALTESTS_VERSION_MAJOR {self.details.new_version_object["major"]}
+                #define APPROVALTESTS_VERSION_MINOR {self.details.new_version_object["minor"]}
+                #define APPROVALTESTS_VERSION_PATCH {self.details.new_version_object["patch"]}
+                #define APPROVALTESTS_VERSION_STR "{version.get_version_without_v(self.details.new_version)}"
+                
+                #define APPROVALTESTS_VERSION                                                  \n    (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 + \n     APPROVALTESTS_VERSION_PATCH)
+                
+                #endif //APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
+                '''
             write_file(version_header, text)
 
     def create_simulated_single_header_file(self):
