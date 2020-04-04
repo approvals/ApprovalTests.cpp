@@ -9,6 +9,7 @@ elseif (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
             -Wextra
             -Wpedantic
             -Werror
+            -Wshadow
             )
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     string(REGEX REPLACE " /W[0-4]" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
