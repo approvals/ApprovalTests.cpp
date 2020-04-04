@@ -21,7 +21,7 @@ If you have a lot of approval files, you might want to put them in a subdirector
 <!-- snippet: use_subdirectory_in_main -->
 <a id='snippet-use_subdirectory_in_main'/></a>
 ```cpp
-auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
 ```
 <sup><a href='/tests/Catch2_Tests/main.cpp#L14-L16' title='File snippet `use_subdirectory_in_main` was extracted from'>snippet source</a> | <a href='#snippet-use_subdirectory_in_main' title='Navigate to start of snippet `use_subdirectory_in_main`'>anchor</a></sup>
 <!-- endsnippet -->

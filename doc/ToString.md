@@ -67,8 +67,8 @@ Wrapper classes or functions can be used to provide additional output formats fo
 struct FormatRectangleForMultipleLines
 {
 
-    explicit FormatRectangleForMultipleLines(const Rectangle3& rectangle)
-        : rectangle(rectangle)
+    explicit FormatRectangleForMultipleLines(const Rectangle3& rectangle_)
+        : rectangle(rectangle_)
     {
     }
 
