@@ -5,6 +5,7 @@ See the [v.x.y.z milestone](https://github.com/approvals/ApprovalTests.cpp/miles
 * **New features**
     * Added support for [SublimeMerge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (#103, thank you @jwillikers)
     * Added support for custom main() function with doctest: see [Existing Project - with your main()](/doc/mdsource/UsingDoctest.source.md#existing-project---with-your-main) (#110, thank you @p-podsiadly)
+    * Added support for Azure Pipelines, Azure DevOps Server and TFS CI systems (#117)
 * **Bug fixes**
     * None
 * **Other changes**
