@@ -17,8 +17,8 @@ namespace ApprovalTests
         BlockingReporter() = delete;
 
     public:
-        explicit BlockingReporter(std::shared_ptr<Blocker> blocker)
-            : blocker(std::move(blocker))
+        explicit BlockingReporter(std::shared_ptr<Blocker> blocker_)
+            : blocker(std::move(blocker_))
         {
         }
 

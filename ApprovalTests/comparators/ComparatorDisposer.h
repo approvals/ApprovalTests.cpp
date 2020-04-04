@@ -17,15 +17,15 @@ namespace ApprovalTests
     {
     public:
         ComparatorDisposer(
-            ComparatorContainer& comparators,
+            ComparatorContainer& comparators_,
             const std::string& extensionWithDot,
-            std::shared_ptr<ApprovalTests::ApprovalComparator> previousComparator,
+            std::shared_ptr<ApprovalTests::ApprovalComparator> previousComparator_,
             std::shared_ptr<ApprovalTests::ApprovalComparator> newComparator)
-            : comparators(comparators)
+            : comparators(comparators_)
             , ext_(extensionWithDot)
-            , previousComparator(std::move(previousComparator))
+            , previousComparator(std::move(previousComparator_))
         {
-            comparators[extensionWithDot] = std::move(newComparator);
+            comparators_[extensionWithDot] = std::move(newComparator);
         }
 
         ComparatorDisposer(const ComparatorDisposer&) = delete;

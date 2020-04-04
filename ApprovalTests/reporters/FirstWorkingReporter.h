@@ -23,9 +23,9 @@ namespace ApprovalTests
         }
 
         explicit FirstWorkingReporter(
-            const std::vector<std::shared_ptr<Reporter>>& reporters)
+            const std::vector<std::shared_ptr<Reporter>>& reporters_)
         {
-            this->reporters = reporters;
+            this->reporters = reporters_;
         }
 
         bool report(std::string received, std::string approved) const override

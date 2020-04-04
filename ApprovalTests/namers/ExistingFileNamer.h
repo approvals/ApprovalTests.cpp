@@ -12,7 +12,7 @@ namespace ApprovalTests
         std::string filePath;
 
     public:
-        explicit ExistingFileNamer(std::string filePath) : filePath(std::move(filePath))
+        explicit ExistingFileNamer(std::string filePath_) : filePath(std::move(filePath_))
         {
         }
         virtual std::string getApprovedFile(std::string extensionWithDot) const override

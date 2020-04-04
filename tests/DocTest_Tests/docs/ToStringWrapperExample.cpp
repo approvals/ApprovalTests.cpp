@@ -38,8 +38,8 @@ TEST_CASE("MultipleLinesCanBeHardToRead")
 struct FormatRectangleForMultipleLines
 {
 
-    explicit FormatRectangleForMultipleLines(const Rectangle3& rectangle)
-        : rectangle(rectangle)
+    explicit FormatRectangleForMultipleLines(const Rectangle3& rectangle_)
+        : rectangle(rectangle_)
     {
     }
 

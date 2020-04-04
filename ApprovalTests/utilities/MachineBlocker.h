@@ -16,8 +16,8 @@ namespace ApprovalTests
         MachineBlocker() = delete;
 
     public:
-        MachineBlocker(std::string machineName, bool block)
-            : machineName(std::move(machineName)), block(block)
+        MachineBlocker(std::string machineName_, bool block_)
+            : machineName(std::move(machineName_)), block(block_)
         {
         }
 

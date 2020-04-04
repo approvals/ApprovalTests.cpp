@@ -58,7 +58,7 @@ TEST_CASE("YouCanVerifyWithConverterLambda")
 
 struct FormatNonStreamablePoint
 {
-    explicit FormatNonStreamablePoint(const NonStreamablePoint& point) : point(point)
+    explicit FormatNonStreamablePoint(const NonStreamablePoint& point_) : point(point_)
     {
     }
 

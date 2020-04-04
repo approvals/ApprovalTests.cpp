@@ -18,7 +18,7 @@ struct Greeting
     {
     }
 
-    explicit Greeting(Nationality nationality) : nationality(nationality)
+    explicit Greeting(Nationality nationality_) : nationality(nationality_)
     {
     }
 

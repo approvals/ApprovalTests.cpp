@@ -9,7 +9,7 @@ public:
     bool working;
     mutable bool called = false;
 
-    inline FakeReporter(bool working = true) : working(working)
+    inline FakeReporter(bool working_ = true) : working(working_)
     {
     }
 

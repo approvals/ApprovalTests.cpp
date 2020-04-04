@@ -39,12 +39,12 @@ namespace ApprovalTests
             return receivedFileTemplate() + ' ' + approvedFileTemplate();
         }
 
-        DiffInfo(std::string program, Type type)
-            : program(std::move(program)), arguments(getDefaultArguments()), type(type)
+        DiffInfo(std::string program_, Type type_)
+            : program(std::move(program_)), arguments(getDefaultArguments()), type(type_)
         {
         }
-        DiffInfo(std::string program, std::string arguments, Type type)
-            : program(std::move(program)), arguments(std::move(arguments)), type(type)
+        DiffInfo(std::string program_, std::string arguments_, Type type_)
+            : program(std::move(program_)), arguments(std::move(arguments_)), type(type_)
         {
         }
         std::string program;
