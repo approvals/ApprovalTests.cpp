@@ -15,7 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
-    * [Support for SublimeMerge](#support-for-sublimemerge)
+    * [Support for Sublime Merge](#support-for-sublime-merge)
     * [Support for Beyond Compare on Linux](#support-for-beyond-compare-on-linux)
   * [v.8.3.0](#v830)
     * [Flexibility for adding custom merge tools](#flexibility-for-adding-custom-merge-tools)
@@ -50,13 +50,13 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ## v.x.y.z
 
-### Support for SublimeMerge
+### Support for Sublime Merge
 
-Added support for [SublimeMerge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (See [#103](https://github.com/approvals/ApprovalTests.cpp/pull/103#issue-377938792))
+Added support for [Sublime Merge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (See [#103](https://github.com/approvals/ApprovalTests.cpp/pull/103#issue-377938792))
 
 ### Support for Beyond Compare on Linux
 
-Added support for [BeyondCompare](https://www.scootersoftware.com) on Linux (See [#114](https://github.com/approvals/ApprovalTests.cpp/issues/114)).
+Added support for [Beyond Compare](https://www.scootersoftware.com) on Linux (See [#114](https://github.com/approvals/ApprovalTests.cpp/issues/114)).
 
 ## v.8.3.0
 
