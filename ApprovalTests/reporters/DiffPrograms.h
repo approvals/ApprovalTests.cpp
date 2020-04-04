@@ -102,10 +102,8 @@ namespace ApprovalTests
 
             APPROVAL_TESTS_MACROS_ENTRY(MELD, DiffInfo("meld", Type::TEXT))
 
-            APPROVAL_TESTS_MACROS_ENTRY(
-                BEYOND_COMPARE,
-                DiffInfo("bcomp",
-                         Type::TEXT_AND_IMAGE))
+            APPROVAL_TESTS_MACROS_ENTRY(BEYOND_COMPARE,
+                                        DiffInfo("bcomp", Type::TEXT_AND_IMAGE))
         }
 
         namespace Windows
