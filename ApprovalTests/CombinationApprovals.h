@@ -30,14 +30,14 @@ namespace ApprovalTests
                 std::ostream& out;
                 Converter converter;
                 template <class T, class... Ts>
-                void operator()(T&& input1, Ts&&... inputs)
+                void operator()(T&& input1_, Ts&&... inputs)
                 {
                     // First value is printed without trailing comma
-                    out << "(" << input1;
+                    out << "(" << input1_;
                     // Remaining values are printed with prefix of a comma
                     CartesianProduct::Detail::for_each(std::forward_as_tuple(inputs...),
                                                        print_input{out});
-                    out << ") => " << converter(input1, inputs...) << '\n';
+                    out << ") => " << converter(input1_, inputs...) << '\n';
                 }
             };
         } // namespace Detail
