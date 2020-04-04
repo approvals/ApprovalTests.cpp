@@ -82,6 +82,10 @@ windows: start "" "{ProgramFiles}Microsoft VS Code\Code.exe" -d "a.txt" "b.txt"
 unix   : "{ProgramFiles}Microsoft VS Code\Code.exe" -d "a.txt" "b.txt" &
 cygwin : "$(cygpath '{ProgramFiles}Microsoft VS Code\Code.exe')" -d "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
+windows: start "" "bcomp" "a.txt" "b.txt"
+unix   : "bcomp" "a.txt" "b.txt" &
+cygwin : "$(cygpath 'bcomp')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
+
 windows: start "" "meld" "a.txt" "b.txt"
 unix   : "meld" "a.txt" "b.txt" &
 cygwin : "$(cygpath 'meld')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &

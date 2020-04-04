@@ -51,6 +51,7 @@ TEST_CASE("Test Command Lines")
         std::make_shared<Windows::VisualStudioCodeReporter>(),
 
         // Linux
+        std::make_shared<Linux::BeyondCompareReporter>(),
         std::make_shared<Linux::MeldReporter>(),
         std::make_shared<Linux::SublimeMergeSnapReporter>(),
         std::make_shared<Linux::SublimeMergeFlatpakReporter>(),

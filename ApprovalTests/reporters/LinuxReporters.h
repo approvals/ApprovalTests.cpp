@@ -79,12 +79,22 @@ namespace ApprovalTests
             }
         };
 
+        class BeyondCompareReporter : public GenericDiffReporter
+        {
+        public:
+            BeyondCompareReporter()
+                : GenericDiffReporter(DiffPrograms::Linux::BEYOND_COMPARE())
+            {
+            }
+        };
+
         class LinuxDiffReporter : public FirstWorkingReporter
         {
         public:
             LinuxDiffReporter()
                 : FirstWorkingReporter({
                       // begin-snippet: linux_diff_reporters
+                      new BeyondCompareReporter(),
                       new MeldReporter(),
                       new SublimeMergeReporter(),
                       new KDiff3Reporter()
