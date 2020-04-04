@@ -12,7 +12,7 @@
 using namespace ApprovalTests;
 
 // begin-snippet: use_subdirectory_in_main
-auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
 // end-snippet
 
 // begin-snippet: use_as_default_reporter_in_main
