@@ -12,6 +12,10 @@ toc
 
 Added support for [SublimeMerge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (See [#103](https://github.com/approvals/ApprovalTests.cpp/pull/103#issue-377938792))
 
+### Support for Beyond Compare on Linux
+
+Added support for [BeyondCompare](https://www.scootersoftware.com) on Linux (See [#114](https://github.com/approvals/ApprovalTests.cpp/issues/114)).
+
 ## v.8.3.0
 
 ### Flexibility for adding custom merge tools

@@ -52,11 +52,12 @@ new VisualStudioCodeReporter()
 <!-- snippet: linux_diff_reporters -->
 <a id='snippet-linux_diff_reporters'/></a>
 ```h
+new BeyondCompareReporter(),
 new MeldReporter(),
 new SublimeMergeReporter(),
 new KDiff3Reporter()
 ```
-<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L87-L91' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L96-L101' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Windows
