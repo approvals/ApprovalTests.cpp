@@ -186,8 +186,6 @@ namespace ApprovalTests
 #ifndef APPROVALTESTS_CPP_WINMINGWUTILS_H
 #define APPROVALTESTS_CPP_WINMINGWUTILS_H
 
-// <SingleHpp unalterable>
-
 #if (defined(__MINGW32__) || defined(__MINGW64__))
 #define APPROVAL_TESTS_MINGW
 #endif
@@ -210,8 +208,6 @@ extern "C"
 #endif
 
 #endif // APPROVAL_TESTS_MINGW
-
-// </SingleHpp>
 
 #endif //APPROVALTESTS_CPP_WINMINGWUTILS_H
 
@@ -382,7 +378,6 @@ namespace ApprovalTests
 #ifndef APPROVALTESTS_CPP_SYSTEMUTILS_H
 #define APPROVALTESTS_CPP_SYSTEMUTILS_H
 
-// <SingleHpp unalterable>
 #ifdef _WIN32
 // ReSharper disable once CppUnusedIncludeDirective
 #include <io.h>
@@ -391,7 +386,6 @@ namespace ApprovalTests
 // ReSharper disable once CppUnusedIncludeDirective
 #include <unistd.h>
 #endif
-// </SingleHpp>
 
 
 #include <stdexcept>
@@ -679,7 +673,6 @@ namespace ApprovalTests
 
 #include <string>
 
-// <SingleHpp unalterable>
 namespace ApprovalTests
 {
     class HelpMessages
@@ -744,7 +737,6 @@ namespace ApprovalTests
         }
     };
 }
-// </SingleHpp>
 
 #endif //APPROVALTESTS_CPP_HELPMESSAGES_H
 
@@ -3346,7 +3338,6 @@ namespace ApprovalTests
 // Maintenance note: the following help message must be short, and
 // not contain any newline characters, as their display looks messy
 // in some compiler outputs.
-// <SingleHpp unalterable>
 //
 // This static_assert can be disabled by
 // defining APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK.
@@ -3370,7 +3361,6 @@ __FILE__
     // clang-format on
 );
 #endif // APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK
-// </SingleHpp>
 
 #endif //APPROVALTESTS_CPP_CHECKFILEMACROISABSOLUTE_H
 
@@ -3380,7 +3370,6 @@ __FILE__
 #define APPROVALTESTS_CPP_CATCH2APPROVALS_H
 
 
-// <SingleHpp unalterable>
 #if defined(APPROVALS_CATCH_EXISTING_MAIN)
 #define APPROVALS_CATCH
 #define CATCH_CONFIG_RUNNER
@@ -3454,7 +3443,6 @@ struct Catch2TestCommitRevert : Catch::TestEventListenerBase
 //}
 CATCH_REGISTER_LISTENER(Catch2TestCommitRevert)
 #endif
-// </SingleHpp>
 #endif //APPROVALTESTS_CPP_CATCH2APPROVALS_H
 
  // ******************** From: DocTestApprovals.h
@@ -3462,7 +3450,6 @@ CATCH_REGISTER_LISTENER(Catch2TestCommitRevert)
 #define APPROVALTESTS_CPP_DOCTESTAPPROVALS_H
 
 
-// <SingleHpp unalterable>
 #if defined(APPROVALS_DOCTEST_EXISTING_MAIN)
 #define APPROVALS_DOCTEST
 #define DOCTEST_CONFIG_IMPLEMENT
@@ -3594,7 +3581,6 @@ namespace ApprovalTests
 REGISTER_LISTENER("approvals", 0, ApprovalTests::DocTestApprovalListener);
 
 #endif // APPROVALS_DOCTEST
-// </SingleHpp>
 #endif //APPROVALTESTS_CPP_DOCTESTAPPROVALS_H
 
  // ******************** From: GoogleConfiguration.h
@@ -3657,7 +3643,6 @@ namespace ApprovalTests
 
 #ifdef APPROVALS_GOOGLETEST
 
-// <SingleHpp unalterable>
 #include <gtest/gtest.h>
 
 namespace ApprovalTests
@@ -3712,7 +3697,6 @@ int main(int argc, char** argv)
 }
 #endif //APPROVALS_GOOGLETEST_EXISTING_MAIN
 
-// </SingleHpp>
 #endif
 #endif //APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H
 
@@ -3721,7 +3705,6 @@ int main(int argc, char** argv)
 #define APPROVALTESTS_CPP_UTAPPROVALS_H
 
 
-// <SingleHpp unalterable>
 #ifdef APPROVALS_UT
 
 #if !(__GNUC__ >= 9 or __clang_major__ >= 9)
@@ -3813,7 +3796,6 @@ auto boost::ut::cfg<boost::ut::override> =
     boost::ut::runner<ApprovalTests::cfg::reporter>{};
 
 #endif // APPROVALS_UT
-// </SingleHpp>
 #endif //APPROVALTESTS_CPP_UTAPPROVALS_H
 
  // ******************** From: NamerFactory.h
