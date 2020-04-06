@@ -4,6 +4,7 @@ import shutil
 from git import Repo
 
 from scripts import version
+from scripts.PragmaOnceDiscarder import PragmaOnceDiscarder
 from scripts.conan_release import PrepareConanRelease
 from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.embed import create_single_header_file
@@ -99,44 +100,12 @@ class PrepareRelease:
         def mdsnippets_discarder(line):
             return line.strip().startswith('// begin-snippet:') or line.strip().startswith('// end-snippet')
 
-        class ErrorTracking:
-            def __init__(self):
-                self.ifndef_count = 0
-                self.defined_count = 0
-                self.endif_count = 0
-                self.toggle = ""
 
-            def pragma_once_discarder(self, line):
-                stripped_line = line.strip()
-                if stripped_line.startswith('#ifndef') and stripped_line.endswith('_H'):
-                    self.ifndef_count += 1
-                    if self.toggle != "":
-                        print("Error: The #endif for this line needs a comment added:", self.toggle)
-                    toggle = line
-                    return True
-                if stripped_line.startswith('#define') and stripped_line.endswith('_H'):
-                    self.defined_count += 1
-                    return True
-                if stripped_line.startswith('#endif') and stripped_line.endswith('_H'):
-                    self.endif_count += 1
-                    toggle = ""
-                    return True
-                return False
+        pragma_once = PragmaOnceDiscarder()
+        discardables = [mdsnippets_discarder, pragma_once.get_method()]
 
-            def get_method(self):
-                def is_discardable(line):
-                    return self.pragma_once_discarder(line)
-
-                return is_discardable
-
-            def assert_checks(self):
-                error = "mismatched include guards - scroll up to see the error"
-                assert self.ifndef_count == self.defined_count, error
-                assert self.ifndef_count == self.endif_count, error
-
-        pragma_once = ErrorTracking()
         create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2,
-                                  [mdsnippets_discarder, pragma_once.get_method()])
+                                  discardables)
 
         pragma_once.assert_checks()
 
