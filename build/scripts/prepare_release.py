@@ -14,6 +14,7 @@ from scripts.single_header_file import SingleHeaderFile
 from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
     check_step_with_revert, assert_step
 
+
 class PrepareRelease:
     def __init__(self, details):
         self.details = details
@@ -57,16 +58,16 @@ class PrepareRelease:
         text = remove_indentation << f'''
                 #ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
                 #define APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
-                
+
                 #define APPROVALTESTS_VERSION_MAJOR {version_object["major"]}
                 #define APPROVALTESTS_VERSION_MINOR {version_object["minor"]}
                 #define APPROVALTESTS_VERSION_PATCH {version_object["patch"]}
                 #define APPROVALTESTS_VERSION_STR "{version_string}"
-                
+
                 #define APPROVALTESTS_VERSION                                                            \\
                     (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 +           \\
                      APPROVALTESTS_VERSION_PATCH)
-                
+
                 #endif //APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
                 '''
         return text
@@ -98,38 +99,46 @@ class PrepareRelease:
         def mdsnippets_discarder(line):
             return line.strip().startswith('// begin-snippet:') or line.strip().startswith('// end-snippet')
 
-        ifndef_count = 0
-        defined_count = 0
-        endif_count = 0
-        toggle = ""
+        class ErrorTracking:
+            def __init__(self):
+                self.ifndef_count = 0
+                self.defined_count = 0
+                self.endif_count = 0
+                self.toggle = ""
 
-        def pragma_once_discarder(line):
-            stripped_line = line.strip()
-            nonlocal toggle
-            if stripped_line.startswith('#ifndef') and stripped_line.endswith('_H'):
-                nonlocal ifndef_count
-                ifndef_count += 1
-                if toggle != "":
-                    print("Error: The #endif for this line needs a comment added:", toggle)
-                toggle = line
-                return True
-            if stripped_line.startswith('#define') and stripped_line.endswith('_H'):
-                nonlocal defined_count
-                defined_count += 1
-                return True
-            if stripped_line.startswith('#endif') and stripped_line.endswith('_H'):
-                nonlocal endif_count
-                endif_count += 1
-                toggle = ""
-                return True
-            return False
+            def pragma_once_discarder(self, line):
+                stripped_line = line.strip()
+                if stripped_line.startswith('#ifndef') and stripped_line.endswith('_H'):
+                    self.ifndef_count += 1
+                    if self.toggle != "":
+                        print("Error: The #endif for this line needs a comment added:", self.toggle)
+                    toggle = line
+                    return True
+                if stripped_line.startswith('#define') and stripped_line.endswith('_H'):
+                    self.defined_count += 1
+                    return True
+                if stripped_line.startswith('#endif') and stripped_line.endswith('_H'):
+                    self.endif_count += 1
+                    toggle = ""
+                    return True
+                return False
 
+            def get_method(self):
+                def is_discardable(line):
+                    return self.pragma_once_discarder(line)
+
+                return is_discardable
+
+            def assert_checks(self):
+                error = "mismatched include guards - scroll up to see the error"
+                assert self.ifndef_count == self.defined_count, error
+                assert self.ifndef_count == self.endif_count, error
+
+        pragma_once = ErrorTracking()
         create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2,
-                                  [mdsnippets_discarder, pragma_once_discarder])
+                                  [mdsnippets_discarder, pragma_once.get_method()])
 
-        error = "mismatched include guards - scroll up to see the error"
-        assert ifndef_count == defined_count, error
-        assert ifndef_count == endif_count, error
+        pragma_once.assert_checks()
 
     def update_starter_project(self):
         STARTER_PATH_OLD_SINGLE_HEADER = F"{release_constants.starter_project_dir}/lib/{self.details.old_single_header}"
@@ -146,10 +155,12 @@ class PrepareRelease:
             os.remove(STARTER_PATH_OLD_SINGLE_HEADER)
 
         # Update the version in the "redirect" header:
-        replace_text_in_file(F"{release_constants.starter_project_dir}/lib/ApprovalTests.hpp", self.details.old_version, self.details.new_version)
+        replace_text_in_file(F"{release_constants.starter_project_dir}/lib/ApprovalTests.hpp", self.details.old_version,
+                             self.details.new_version)
 
         # Update the version number in the Visual Studio project:
-        replace_text_in_file(F"{release_constants.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj", self.details.old_single_header,
+        replace_text_in_file(F"{release_constants.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj",
+                             self.details.old_single_header,
                              self.details.new_single_header)
 
     def check_starter_project_builds(self):
@@ -180,7 +191,6 @@ class PrepareRelease:
             pass
 
         check_step_with_revert("you are happy with the changes?", do_nothing)
-
 
     def prepare_everything(self):
         self.check_pre_conditions_for_publish()
