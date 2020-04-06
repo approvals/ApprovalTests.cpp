@@ -2,12 +2,13 @@ import unittest
 
 from approvaltests.approvals import verify
 
+from scripts.code_generation import CppGeneration
 from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.prepare_release import PrepareRelease
 from scripts.version import create_version
 
 
-class TestPrepareRelease(unittest.TestCase):
+class TestPrepareDocumentation(unittest.TestCase):
     def test_update_features_with_new_features(self):
         content = f'''
 toc
@@ -51,12 +52,6 @@ toc
         action = PrepareDocumentationRelease.prepare_update_features_page(old_version, new_version, content)
         new_content = action("", lambda text: f'CHECK: {text}')
         self.assertEqual(new_content, 'CHECK: the Features page is empty: are you sure you want this?')
-
-
-    def test_update_version_number_header(self):
-        new_version = create_version(8, 5, 0)
-        output = PrepareRelease.get_version_number_hpp_text(new_version)
-        verify(output)
 
     @staticmethod
     def new_feature_text():

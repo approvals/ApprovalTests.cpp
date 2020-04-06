@@ -1,7 +1,6 @@
 import os
 
 from scripts import version
-from scripts.prepare_release import PrepareRelease
 from scripts.deploy_release import DeployRelease
 
 # TODO list
@@ -30,16 +29,4 @@ class ReleaseDetails:
                                                    F'relnotes_{version.get_version_without_v(self.new_version)}.md')
 
 
-def build(update_version, deploy):
-    old_version = version.load_version('.')
-    new_version = update_version(old_version)
-    os.chdir("../ApprovalTests")
 
-    release_details = ReleaseDetails(old_version, new_version, deploy)
-    prepare_release = PrepareRelease(release_details)
-    prepare_release.prepare_everything()
-    if not release_details.push_to_production:
-        print("Everything worked - didn't commit or push")
-    else:
-        deploy_release = DeployRelease(release_details)
-        deploy_release.push_everything_live()

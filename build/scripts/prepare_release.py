@@ -4,15 +4,14 @@ import shutil
 from git import Repo
 
 from scripts import version
-from scripts.pragma_once_discarder import PragmaOnceDiscarder
+from scripts.code_generation import CppGeneration
 from scripts.conan_release import PrepareConanRelease
+from scripts.deploy_release import DeployRelease
 from scripts.documentation_release import PrepareDocumentationRelease
-from scripts.embed import create_single_header_file
 from scripts.git_utilities import GitUtilities
-from scripts.multiline_string_utilities import remove_indentation
 from scripts.release_constants import release_constants
-from scripts.single_header_file import SingleHeaderFile
-from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
+from scripts.release_details import ReleaseDetails
+from scripts.utilities import check_step, replace_text_in_file, run, use_directory, \
     check_step_with_revert, assert_step
 
 
@@ -45,69 +44,6 @@ class PrepareRelease:
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/milestones"])
             check_step("the milestone (if any) is up to date, including actual version number of release")
-
-    def update_version_number_header(self):
-        with use_directory(release_constants.approval_tests_dir):
-            version_header = os.path.join("ApprovalTestsVersion.h")
-
-            text = PrepareRelease.get_version_number_hpp_text(self.details.new_version_object)
-            write_file(version_header, text)
-
-    @staticmethod
-    def get_version_number_hpp_text(version_object):
-        version_string = version.get_version_without_v(version.get_version_text(version_object))
-        text = remove_indentation << f'''
-                #ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
-                #define APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
-
-                #define APPROVALTESTS_VERSION_MAJOR {version_object["major"]}
-                #define APPROVALTESTS_VERSION_MINOR {version_object["minor"]}
-                #define APPROVALTESTS_VERSION_PATCH {version_object["patch"]}
-                #define APPROVALTESTS_VERSION_STR "{version_string}"
-
-                #define APPROVALTESTS_VERSION                                                            \\
-                    (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 +           \\
-                     APPROVALTESTS_VERSION_PATCH)
-
-                #endif //APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
-                '''
-        return text
-
-    def create_simulated_single_header_file(self):
-        return SingleHeaderFile.create('.')
-
-    def create_single_header_file(self):
-        self.create_simulated_single_header_file()
-
-        simulated_single_header = os.path.abspath(release_constants.simulated_single_header_file_path)
-        with use_directory("../build"):
-            print(os.getcwd())
-            self.run_for_approval_tests(simulated_single_header, self.details.release_new_single_header)
-            text = read_file(self.details.release_new_single_header)
-            text = (
-                f'// Approval Tests version {self.details.new_version}\n'
-                '// More information at: https://github.com/approvals/ApprovalTests.cpp\n'
-                '\n'
-                f'{text}'
-            )
-            write_file(self.details.release_new_single_header, text)
-            return os.path.abspath(self.details.release_new_single_header)
-
-    def run_for_approval_tests(self, initial_file, output_file):
-        include_search_path1 = ".."
-        include_search_path2 = "../ApprovalTests/"
-
-        def mdsnippets_discarder(line):
-            return line.strip().startswith('// begin-snippet:') or line.strip().startswith('// end-snippet')
-
-
-        pragma_once = PragmaOnceDiscarder()
-        discardables = [mdsnippets_discarder, pragma_once.get_method()]
-
-        create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2,
-                                  discardables)
-
-        pragma_once.assert_checks()
 
     def update_starter_project(self):
         STARTER_PATH_OLD_SINGLE_HEADER = F"{release_constants.starter_project_dir}/lib/{self.details.old_single_header}"
@@ -165,9 +101,7 @@ class PrepareRelease:
         self.check_pre_conditions_for_publish()
         PrepareConanRelease.check_preconditions(self.details)
 
-        self.update_version_number_header()
-
-        self.create_single_header_file()
+        CppGeneration.prepare_release(self.details)
 
         self.update_starter_project()
         self.check_starter_project_builds()
@@ -180,3 +114,17 @@ class PrepareRelease:
         self.add_to_git()
 
         self.check_changes()
+
+def build(update_version, deploy):
+    old_version = version.load_version('.')
+    new_version = update_version(old_version)
+    os.chdir("../ApprovalTests")
+
+    release_details = ReleaseDetails(old_version, new_version, deploy)
+    prepare_release = PrepareRelease(release_details)
+    prepare_release.prepare_everything()
+    if not release_details.push_to_production:
+        print("Everything worked - didn't commit or push")
+    else:
+        deploy_release = DeployRelease(release_details)
+        deploy_release.push_everything_live()
