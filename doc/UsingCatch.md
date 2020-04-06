@@ -39,7 +39,7 @@ Approval Tests requires that a file called the following is found:
 ```h
 #include <catch2/catch.hpp>
 ```
-<sup><a href='/ApprovalTests/integrations/catch/Catch2Approvals.h#L17-L19' title='File snippet `required_header_for_catch` was extracted from'>snippet source</a> | <a href='#snippet-required_header_for_catch' title='Navigate to start of snippet `required_header_for_catch`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/catch/Catch2Approvals.h#L16-L18' title='File snippet `required_header_for_catch` was extracted from'>snippet source</a> | <a href='#snippet-required_header_for_catch' title='Navigate to start of snippet `required_header_for_catch`'>anchor</a></sup>
 <!-- endsnippet -->
 
 (Before v7.0.0, it required `Catch.hpp`)

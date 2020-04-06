@@ -35,7 +35,7 @@ Approval Tests for \[Boost\].UT requires that a file called the following is fou
 ```h
 #include <boost/ut.hpp>
 ```
-<sup><a href='/ApprovalTests/integrations/ut/UTApprovals.h#L14-L16' title='File snippet `required_header_for_ut` was extracted from'>snippet source</a> | <a href='#snippet-required_header_for_ut' title='Navigate to start of snippet `required_header_for_ut`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/ut/UTApprovals.h#L13-L15' title='File snippet `required_header_for_ut` was extracted from'>snippet source</a> | <a href='#snippet-required_header_for_ut' title='Navigate to start of snippet `required_header_for_ut`'>anchor</a></sup>
 <!-- endsnippet -->
 
 It also requires:

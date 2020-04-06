@@ -8,6 +8,8 @@ toc
 
 ## v.x.y.z
 
+## v.8.5.0
+
 ### Support for Sublime Merge
 
 Added support for [Sublime Merge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (See [#103](https://github.com/approvals/ApprovalTests.cpp/pull/103#issue-377938792))

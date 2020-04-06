@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.8.5.0](#v850)
     * [Support for Sublime Merge](#support-for-sublime-merge)
     * [Support for Beyond Compare on Linux](#support-for-beyond-compare-on-linux)
   * [v.8.3.0](#v830)
@@ -49,6 +50,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+## v.8.5.0
 
 ### Support for Sublime Merge
 
