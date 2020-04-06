@@ -67,8 +67,8 @@ toc
         verify_file(output)
 
     def test_update_version_number_header(self):
-        prepare_release = self.get_prepare_release()
-        output = prepare_release.get_version_number_hpp_text()
+        new_version = create_version(8, 5, 0)
+        output = PrepareRelease.get_version_number_hpp_text(new_version)
         verify(output)
 
     def get_prepare_release(self):
