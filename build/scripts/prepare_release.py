@@ -14,7 +14,6 @@ from scripts.single_header_file import SingleHeaderFile
 from scripts.utilities import read_file, check_step, replace_text_in_file, run, write_file, use_directory, \
     check_step_with_revert, assert_step
 
-
 class PrepareRelease:
     def __init__(self, details):
         self.details = details
@@ -99,7 +98,38 @@ class PrepareRelease:
         def mdsnippets_discarder(line):
             return line.strip().startswith('// begin-snippet:') or line.strip().startswith('// end-snippet')
 
-        create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2, [mdsnippets_discarder])
+        ifndef_count = 0
+        defined_count = 0
+        endif_count = 0
+        toggle = ""
+
+        def pragma_once_discarder(line):
+            stripped_line = line.strip()
+            nonlocal toggle
+            if stripped_line.startswith('#ifndef') and stripped_line.endswith('_H'):
+                nonlocal ifndef_count
+                ifndef_count += 1
+                if toggle != "":
+                    print("Error: The #endif for this line needs a comment added:", toggle)
+                toggle = line
+                return True
+            if stripped_line.startswith('#define') and stripped_line.endswith('_H'):
+                nonlocal defined_count
+                defined_count += 1
+                return True
+            if stripped_line.startswith('#endif') and stripped_line.endswith('_H'):
+                nonlocal endif_count
+                endif_count += 1
+                toggle = ""
+                return True
+            return False
+
+        create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2,
+                                  [mdsnippets_discarder, pragma_once_discarder])
+
+        error = "mismatched include guards - scroll up to see the error"
+        assert ifndef_count == defined_count, error
+        assert ifndef_count == endif_count, error
 
     def update_starter_project(self):
         STARTER_PATH_OLD_SINGLE_HEADER = F"{release_constants.starter_project_dir}/lib/{self.details.old_single_header}"
