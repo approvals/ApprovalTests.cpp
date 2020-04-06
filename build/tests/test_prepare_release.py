@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from approvaltests.approvals import verify_file
+from approvaltests.approvals import verify_file, verify
 
 from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.prepare_release import PrepareRelease
@@ -65,6 +65,11 @@ toc
         prepare_release = self.get_prepare_release()
         output = prepare_release.create_simulated_single_header_file()
         verify_file(output)
+
+    def test_update_version_number_header(self):
+        prepare_release = self.get_prepare_release()
+        output = prepare_release.get_version_number_hpp_text()
+        verify(output)
 
     def get_prepare_release(self):
         set_home_directory()
