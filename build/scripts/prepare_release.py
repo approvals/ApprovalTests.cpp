@@ -54,6 +54,7 @@ class PrepareRelease:
 
     @staticmethod
     def get_version_number_hpp_text(version_object):
+        version_string = version.get_version_without_v(version.get_version_text(version_object))
         text = remove_indentation << f'''
                 #ifndef APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
                 #define APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
@@ -61,7 +62,7 @@ class PrepareRelease:
                 #define APPROVALTESTS_VERSION_MAJOR {version_object["major"]}
                 #define APPROVALTESTS_VERSION_MINOR {version_object["minor"]}
                 #define APPROVALTESTS_VERSION_PATCH {version_object["patch"]}
-                #define APPROVALTESTS_VERSION_STR "{version.get_version_without_v(version.get_version_text(version_object))}"
+                #define APPROVALTESTS_VERSION_STR "{version_string}"
                 
                 #define APPROVALTESTS_VERSION                                                            \\
                     (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 +           \\
