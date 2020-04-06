@@ -116,9 +116,10 @@ class PrepareRelease:
         self.check_changes()
 
 def build(update_version, deploy):
-    old_version = version.load_version('.')
-    new_version = update_version(old_version)
     os.chdir("../ApprovalTests")
+
+    old_version = version.load_version(release_constants.build_dir)
+    new_version = update_version(old_version)
 
     release_details = ReleaseDetails(old_version, new_version, deploy)
     prepare_release = PrepareRelease(release_details)
