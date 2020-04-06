@@ -33,7 +33,7 @@ class PragmaOnceDiscarder:
         return is_discardable
 
     def assert_checks(self):
-        if (self.ifndef_count == self.defined_count or self.ifndef_count == self.endif_count):
+        if (self.ifndef_count != self.defined_count or self.ifndef_count != self.endif_count):
             stats = remove_indentation << f'''
                 ifndef  # {self.ifndef_count}
                 defined # {self.defined_count}
@@ -41,3 +41,4 @@ class PragmaOnceDiscarder:
             '''
             print(stats)
             print(self.missing)
+            assert False

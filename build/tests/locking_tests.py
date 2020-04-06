@@ -33,5 +33,4 @@ class TestForRegression(unittest.TestCase):
         new_version = create_version(8, 5, 0)
         deploy = False
         release_details = ReleaseDetails(old_version, new_version, deploy)
-        prepare_release = PrepareRelease(release_details)
-        return prepare_release
+        return PrepareRelease(release_details)
