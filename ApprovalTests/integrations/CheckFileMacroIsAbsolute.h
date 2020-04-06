@@ -4,7 +4,6 @@
 // Maintenance note: the following help message must be short, and
 // not contain any newline characters, as their display looks messy
 // in some compiler outputs.
-// <SingleHpp unalterable>
 //
 // This static_assert can be disabled by
 // defining APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK.
@@ -28,6 +27,5 @@ __FILE__
     // clang-format on
 );
 #endif // APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK
-// </SingleHpp>
 
 #endif //APPROVALTESTS_CPP_CHECKFILEMACROISABSOLUTE_H

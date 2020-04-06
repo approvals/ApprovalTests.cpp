@@ -4,7 +4,6 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
 
-// <SingleHpp unalterable>
 #if defined(APPROVALS_DOCTEST_EXISTING_MAIN)
 #define APPROVALS_DOCTEST
 #define DOCTEST_CONFIG_IMPLEMENT
@@ -136,5 +135,4 @@ namespace ApprovalTests
 REGISTER_LISTENER("approvals", 0, ApprovalTests::DocTestApprovalListener);
 
 #endif // APPROVALS_DOCTEST
-// </SingleHpp>
 #endif //APPROVALTESTS_CPP_DOCTESTAPPROVALS_H

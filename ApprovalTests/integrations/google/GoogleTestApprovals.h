@@ -12,7 +12,6 @@
 
 #ifdef APPROVALS_GOOGLETEST
 
-// <SingleHpp unalterable>
 #include <gtest/gtest.h>
 
 namespace ApprovalTests
@@ -67,6 +66,5 @@ int main(int argc, char** argv)
 }
 #endif //APPROVALS_GOOGLETEST_EXISTING_MAIN
 
-// </SingleHpp>
 #endif
 #endif //APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H

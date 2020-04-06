@@ -1,8 +1,6 @@
 #ifndef APPROVALTESTS_CPP_WINMINGWUTILS_H
 #define APPROVALTESTS_CPP_WINMINGWUTILS_H
 
-// <SingleHpp unalterable>
-
 #if (defined(__MINGW32__) || defined(__MINGW64__))
 #define APPROVAL_TESTS_MINGW
 #endif
@@ -25,7 +23,5 @@ extern "C"
 #endif
 
 #endif // APPROVAL_TESTS_MINGW
-
-// </SingleHpp>
 
 #endif //APPROVALTESTS_CPP_WINMINGWUTILS_H

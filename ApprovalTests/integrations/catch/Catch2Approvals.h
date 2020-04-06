@@ -5,7 +5,6 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
 
-// <SingleHpp unalterable>
 #if defined(APPROVALS_CATCH_EXISTING_MAIN)
 #define APPROVALS_CATCH
 #define CATCH_CONFIG_RUNNER
@@ -79,5 +78,4 @@ struct Catch2TestCommitRevert : Catch::TestEventListenerBase
 //}
 CATCH_REGISTER_LISTENER(Catch2TestCommitRevert)
 #endif
-// </SingleHpp>
 #endif //APPROVALTESTS_CPP_CATCH2APPROVALS_H
