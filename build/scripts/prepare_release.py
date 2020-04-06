@@ -95,7 +95,11 @@ class PrepareRelease:
     def run_for_approval_tests(self, initial_file, output_file):
         include_search_path1 = ".."
         include_search_path2 = "../ApprovalTests/"
-        create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2)
+
+        def mdsnippets_discarder(line):
+            return line.strip().startswith('// begin-snippet:') or line.strip().startswith('// end-snippet')
+
+        create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2, [mdsnippets_discarder])
 
     def update_starter_project(self):
         STARTER_PATH_OLD_SINGLE_HEADER = F"{release_constants.starter_project_dir}/lib/{self.details.old_single_header}"

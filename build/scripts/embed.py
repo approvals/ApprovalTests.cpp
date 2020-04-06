@@ -98,10 +98,6 @@ Preprocess a single line
 """
 
 
-def is_discardable(line):
-    return line.strip().startswith('// begin-snippet:') or line.strip().startswith('// end-snippet')
-
-
 def pp_line(line, output, opts):
     global will_escape
     global keep_guard
@@ -151,8 +147,9 @@ def pp_line(line, output, opts):
             m = r_pp_define.match(line)
             if m and opts.r_guard.match(m.group(1)):
                 return
-    if is_discardable(line):
-        return
+    for i in opts.discardables:
+        if i(line):
+            return
     # add missing '\n' if needed, for example:
     #
     # '/* foo */\n'
@@ -210,16 +207,17 @@ The top-level function
 """
 
 
-def embed(args):
+def embed(args, discardables = []):
     for path in default_includes_path:
         args.append('-I')
         args.append(path)
     opts = parse_opts(args)
+    opts.discardables = discardables
     pp_file(opts.filename, opts.output, opts)
     if opts.output != sys.stdout:
         opts.output.close()
 
-def create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2):
+def create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2, discardables = []):
     embed([
         initial_file,
         "-I",
@@ -228,7 +226,7 @@ def create_single_header_file(initial_file, output_file, include_search_path1, i
         include_search_path2,
         "-o",
         output_file
-    ])
+    ], discardables)
 
 
 # The entry point!
