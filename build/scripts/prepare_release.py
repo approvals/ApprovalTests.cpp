@@ -58,7 +58,9 @@ class PrepareRelease:
                 #define APPROVALTESTS_VERSION_PATCH {self.details.new_version_object["patch"]}
                 #define APPROVALTESTS_VERSION_STR "{version.get_version_without_v(self.details.new_version)}"
                 
-                #define APPROVALTESTS_VERSION                                                  \n    (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 + \n     APPROVALTESTS_VERSION_PATCH)
+                #define APPROVALTESTS_VERSION                                                            \\
+                    (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 +           \\
+                     APPROVALTESTS_VERSION_PATCH)
                 
                 #endif //APPROVALTESTS_CPP_APPROVALTESTSVERSION_H
                 '''
