@@ -1635,12 +1635,10 @@ namespace ApprovalTests
                          "{Received} {Approved} -nosplash",
                          Type::TEXT))
 
-            // begin-snippet: add_reporter_macro
             APPROVAL_TESTS_MACROS_ENTRY(
                 ARAXIS_MERGE,
                 DiffInfo("/Applications/Araxis Merge.app/Contents/Utilities/compare",
                          Type::TEXT_AND_IMAGE))
-            // end-snippet
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 BEYOND_COMPARE,
@@ -1941,11 +1939,9 @@ namespace ApprovalTests
         public:
             LinuxDiffReporter()
                 : FirstWorkingReporter({
-                      // begin-snippet: linux_diff_reporters
                       new MeldReporter(),
                       new SublimeMergeReporter(),
                       new KDiff3Reporter()
-                      // end-snippet
                   })
             {
             }
@@ -1972,7 +1968,6 @@ namespace ApprovalTests
             }
         };
 
-        // begin-snippet: add_reporter_class
         class AraxisMergeReporter : public GenericDiffReporter
         {
         public:
@@ -1980,7 +1975,6 @@ namespace ApprovalTests
             {
             }
         };
-        // end-snippet
 
         class VisualStudioCodeReporter : public GenericDiffReporter
         {
@@ -2047,7 +2041,6 @@ namespace ApprovalTests
         public:
             MacDiffReporter()
                 : FirstWorkingReporter({
-                      // begin-snippet: mac_diff_reporters
                       new AraxisMergeReporter(),
                       new BeyondCompareReporter(),
                       new DiffMergeReporter(),
@@ -2057,7 +2050,6 @@ namespace ApprovalTests
                       new KDiff3Reporter(),
                       new TkDiffReporter(),
                       new VisualStudioCodeReporter()
-                      // end-snippet
                   })
             {
             }
@@ -2224,7 +2216,6 @@ namespace ApprovalTests
         public:
             WindowsDiffReporter()
                 : FirstWorkingReporter({
-                      // begin-snippet: windows_diff_reporters
                       new TortoiseDiffReporter(), // Note that this uses Tortoise SVN Diff
                       new TortoiseGitDiffReporter(),
                       new BeyondCompareReporter(),
@@ -2234,7 +2225,6 @@ namespace ApprovalTests
                       new SublimeMergeReporter(),
                       new KDiff3Reporter(),
                       new VisualStudioCodeReporter(),
-                      // end-snippet
                   })
             {
             }
@@ -2277,7 +2267,6 @@ namespace ApprovalTests
     //! Implementation detail of Approvals::useAsDefaultReporter()
     class DefaultReporterFactory
     {
-        // begin-snippet: static_variable_sample
     private:
         static std::shared_ptr<Reporter>& defaultReporter()
         {
@@ -2295,7 +2284,6 @@ namespace ApprovalTests
         {
             defaultReporter() = reporter;
         }
-        // end-snippet
     };
 }
 
@@ -2621,25 +2609,21 @@ namespace ApprovalTests
             auto TeamCity = {"TEAMCITY_VERSION"}; // https://confluence.jetbrains.com/display/TCD18/Predefined+Build+Parameters
             auto Travis = {"CI", "TRAVIS", "CONTINUOUS_INTEGRATION"}; // https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
             auto environmentVariablesForCI = combine({
-                // begin-snippet: supported_ci_systems
                 AppVeyor,
                 GitHubActions,
                 GoCD
                 Jenkins,
                 TeamCity,
                 Travis,
-                // end-snippet
             });
              */
             auto environmentVariablesForCI = {
-                // begin-snippet: supported_ci_env_vars
                 "CI",
                 "CONTINUOUS_INTEGRATION",
                 "GITHUB_ACTIONS",
                 "GO_SERVER_URL",
                 "JENKINS_URL",
                 "TEAMCITY_VERSION"
-                // end-snippet
             };
             for (const auto& variable : environmentVariablesForCI)
             {
@@ -3352,12 +3336,10 @@ namespace ApprovalTests
 static_assert(
     (__FILE__[1] == ':') ||
     (__FILE__[0] == '/'),
-              // begin-snippet: compiler_error_for_misconfigured_build
 "There seems to be a problem with your build configuration, probably with Ninja. "
 "Please visit https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md "
 "The filename is: "
 __FILE__
-              // end-snippet
     // clang-format on
 );
 #endif // APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK
@@ -3378,9 +3360,7 @@ __FILE__
 #endif
 
 #ifdef APPROVALS_CATCH
-// begin-snippet: required_header_for_catch
 #include <catch2/catch.hpp>
-// end-snippet
 
 //namespace ApprovalTests {
 struct Catch2ApprovalListener : Catch::TestEventListenerBase
@@ -3459,9 +3439,7 @@ CATCH_REGISTER_LISTENER(Catch2TestCommitRevert)
 
 #ifdef APPROVALS_DOCTEST
 
-// begin-snippet: required_header_for_doctest
 #include <doctest/doctest.h>
-// end-snippet
 
 namespace ApprovalTests
 {
@@ -3712,9 +3690,7 @@ int main(int argc, char** argv)
     "The [Boost].UT integration with Approval Tests requires source_location support by the compiler"
 #endif
 
-// begin-snippet: required_header_for_ut
 #include <boost/ut.hpp>
-// end-snippet
 
 namespace ApprovalTests
 {

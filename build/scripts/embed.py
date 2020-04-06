@@ -98,6 +98,10 @@ Preprocess a single line
 """
 
 
+def is_discardable(line):
+    return line.strip().startswith('// begin-snippet:') or line.strip().startswith('// end-snippet')
+
+
 def pp_line(line, output, opts):
     global will_escape
     global keep_guard
@@ -147,6 +151,8 @@ def pp_line(line, output, opts):
             m = r_pp_define.match(line)
             if m and opts.r_guard.match(m.group(1)):
                 return
+    if is_discardable(line):
+        return
     # add missing '\n' if needed, for example:
     #
     # '/* foo */\n'
