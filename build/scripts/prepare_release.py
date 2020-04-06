@@ -4,7 +4,7 @@ import shutil
 from git import Repo
 
 from scripts import version
-from scripts.PragmaOnceDiscarder import PragmaOnceDiscarder
+from scripts.pragma_once_discarder import PragmaOnceDiscarder
 from scripts.conan_release import PrepareConanRelease
 from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.embed import create_single_header_file
