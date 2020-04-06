@@ -197,4 +197,4 @@ namespace ApprovalTests
     };
 }
 
-#endif
+#endif // APPROVALTESTS_CPP_APPROVALS_H

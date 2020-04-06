@@ -205,4 +205,4 @@ namespace ApprovalTests
     } // namespace CartesianProduct
 } // namespace ApprovalTests
 
-#endif
+#endif // APPROVALTESTS_CPP_CARTESIANPRODUCT_H

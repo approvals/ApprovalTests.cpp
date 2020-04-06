@@ -191,4 +191,4 @@ namespace ApprovalTests
         }
     };
 }
-#endif
+#endif // APPROVALTESTS_CPP_SYSTEMUTILS_H

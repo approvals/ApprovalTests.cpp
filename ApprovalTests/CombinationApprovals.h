@@ -67,4 +67,4 @@ namespace ApprovalTests
     } // namespace CombinationApprovals
 } // namespace ApprovalTests
 
-#endif
+#endif // APPROVALTESTS_CPP_COMBINATIONAPPROVALS_H

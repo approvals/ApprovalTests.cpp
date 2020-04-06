@@ -27,4 +27,4 @@ namespace ApprovalTests
     } // namespace Detail
 }
 
-#endif
+#endif // APPROVALTESTS_CPP_REPORTER_H

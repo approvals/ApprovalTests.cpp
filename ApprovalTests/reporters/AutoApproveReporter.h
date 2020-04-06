@@ -21,4 +21,4 @@ namespace ApprovalTests
     };
 }
 
-#endif
+#endif // APPROVALTESTS_CPP_AUTOAPPROVEREPORTER_H
