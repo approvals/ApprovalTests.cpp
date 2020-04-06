@@ -2,14 +2,14 @@
 // More information at: https://github.com/approvals/ApprovalTests.cpp
 
 
- // ******************** From: ApprovalTests.hpp
+// ******************** From: ApprovalTests.hpp
 #ifndef APPROVALTESTS_CPP_APPROVALS_HPP
 #define APPROVALTESTS_CPP_APPROVALS_HPP
 
 // This file is machine-generated. Do not edit.
 
 
- // ******************** From: ApprovalTestsVersion.h
+// ******************** From: ApprovalTestsVersion.h
 
 #define APPROVALTESTS_VERSION_MAJOR 8
 #define APPROVALTESTS_VERSION_MINOR 4
@@ -21,7 +21,7 @@
      APPROVALTESTS_VERSION_PATCH)
 
 
- // ******************** From: Reporter.h
+// ******************** From: Reporter.h
 
 #include <string>
 
@@ -49,7 +49,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: QuietReporter.h
+// ******************** From: QuietReporter.h
 
 
 namespace ApprovalTests
@@ -66,7 +66,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: Blocker.h
+// ******************** From: Blocker.h
 
 namespace ApprovalTests
 {
@@ -86,7 +86,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: StringUtils.h
+// ******************** From: StringUtils.h
 
 
 
@@ -146,7 +146,7 @@ namespace ApprovalTests
     };
 }
 
- // ******************** From: Macros.h
+// ******************** From: Macros.h
 
 // Use this in places where we have parameters that are sometimes unused,
 // e.g. because of #if
@@ -164,7 +164,7 @@ namespace ApprovalTests
 #endif
 
 
- // ******************** From: WinMinGWUtils.h
+// ******************** From: WinMinGWUtils.h
 
 #if (defined(__MINGW32__) || defined(__MINGW64__))
 #define APPROVAL_TESTS_MINGW
@@ -190,7 +190,7 @@ extern "C"
 #endif // APPROVAL_TESTS_MINGW
 
 
- // ******************** From: ApprovalWriter.h
+// ******************** From: ApprovalWriter.h
 
 namespace ApprovalTests
 {
@@ -205,7 +205,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: StringWriter.h
+// ******************** From: StringWriter.h
 
 #include <string>
 #include <fstream>
@@ -255,7 +255,7 @@ namespace ApprovalTests
     };
 }
 
- // ******************** From: FileUtils.h
+// ******************** From: FileUtils.h
 
 #include <string>
 #include <sys/stat.h>
@@ -344,7 +344,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: SystemUtils.h
+// ******************** From: SystemUtils.h
 
 #ifdef _WIN32
 // ReSharper disable once CppUnusedIncludeDirective
@@ -533,7 +533,7 @@ namespace ApprovalTests
     };
 }
 
- // ******************** From: MachineBlocker.h
+// ******************** From: MachineBlocker.h
 
 #include <utility>
 
@@ -572,7 +572,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: FileUtilsSystemSpecific.h
+// ******************** From: FileUtilsSystemSpecific.h
 
 
 namespace ApprovalTests
@@ -604,7 +604,7 @@ namespace ApprovalTests
     };
 }
 
- // ******************** From: AutoApproveReporter.h
+// ******************** From: AutoApproveReporter.h
 
 
 #include <iostream>
@@ -625,7 +625,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: HelpMessages.h
+// ******************** From: HelpMessages.h
 
 #include <string>
 
@@ -695,7 +695,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: ApprovalNamer.h
+// ******************** From: ApprovalNamer.h
 
 #include <string>
 
@@ -711,7 +711,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: ApprovalTestNamer.h
+// ******************** From: ApprovalTestNamer.h
 
 #include <sstream>
 #include <vector>
@@ -902,7 +902,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: SectionNameDisposer.h
+// ******************** From: SectionNameDisposer.h
 
 
 namespace ApprovalTests
@@ -930,7 +930,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: GoogleCustomizationsFactory.h
+// ******************** From: GoogleCustomizationsFactory.h
 
 
 #include <vector>
@@ -977,7 +977,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: CartesianProduct.h
+// ******************** From: CartesianProduct.h
 
 #include <functional>
 #include <tuple>
@@ -1184,7 +1184,7 @@ namespace ApprovalTests
 } // namespace ApprovalTests
 
 
- // ******************** From: ExistingFile.h
+// ******************** From: ExistingFile.h
 
 #include <string>
 #include <utility>
@@ -1215,7 +1215,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: ConvertForCygwin.h
+// ******************** From: ConvertForCygwin.h
 
 #include <string>
 
@@ -1253,7 +1253,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: DiffInfo.h
+// ******************** From: DiffInfo.h
 
 #include <string>
 #include <utility>
@@ -1342,7 +1342,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: CommandLauncher.h
+// ******************** From: CommandLauncher.h
 
 #include <string>
 #include <vector>
@@ -1360,7 +1360,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: CommandReporter.h
+// ******************** From: CommandReporter.h
 
 #include <utility>
 #include <memory>
@@ -1458,7 +1458,7 @@ namespace ApprovalTests
     };
 }
 
- // ******************** From: SystemLauncher.h
+// ******************** From: SystemLauncher.h
 
 
 #include <cstdlib>
@@ -1531,7 +1531,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: DiffPrograms.h
+// ******************** From: DiffPrograms.h
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1699,7 +1699,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: GenericDiffReporter.h
+// ******************** From: GenericDiffReporter.h
 
 #include <string>
 #include <vector>
@@ -1725,7 +1725,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: FirstWorkingReporter.h
+// ******************** From: FirstWorkingReporter.h
 
 #include <memory>
 #include <vector>
@@ -1768,7 +1768,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: LinuxReporters.h
+// ******************** From: LinuxReporters.h
 
 
 namespace ApprovalTests
@@ -1861,7 +1861,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: MacReporters.h
+// ******************** From: MacReporters.h
 
 
 namespace ApprovalTests
@@ -1966,7 +1966,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: WindowsReporters.h
+// ******************** From: WindowsReporters.h
 
 
 namespace ApprovalTests
@@ -2138,7 +2138,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: DiffReporter.h
+// ******************** From: DiffReporter.h
 
 
 namespace ApprovalTests
@@ -2156,7 +2156,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: DefaultReporterFactory.h
+// ******************** From: DefaultReporterFactory.h
 
 
 #include <memory>
@@ -2187,7 +2187,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: DefaultReporterDisposer.h
+// ******************** From: DefaultReporterDisposer.h
 
 
 namespace ApprovalTests
@@ -2213,7 +2213,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: DefaultReporter.h
+// ******************** From: DefaultReporter.h
 
 
 #include <string>
@@ -2232,7 +2232,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: SubdirectoryDisposer.h
+// ******************** From: SubdirectoryDisposer.h
 
 
 #include <string>
@@ -2261,7 +2261,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: DefaultNamerFactory.h
+// ******************** From: DefaultNamerFactory.h
 
 
 #include <memory>
@@ -2298,7 +2298,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: ExistingFileNamer.h
+// ******************** From: ExistingFileNamer.h
 
 #include <utility>
 
@@ -2326,7 +2326,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: DefaultNamerDisposer.h
+// ******************** From: DefaultNamerDisposer.h
 
 #include <utility>
 
@@ -2353,7 +2353,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: CustomReporter.h
+// ******************** From: CustomReporter.h
 
 #include <memory>
 
@@ -2394,7 +2394,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: TextDiffReporter.h
+// ******************** From: TextDiffReporter.h
 
 
 #include <memory>
@@ -2438,7 +2438,7 @@ namespace ApprovalTests
 } // namespace ApprovalTests
 
 
- // ******************** From: CIBuildOnlyReporter.h
+// ******************** From: CIBuildOnlyReporter.h
 
 
 #include <vector>
@@ -2510,7 +2510,7 @@ namespace ApprovalTests
 } // namespace ApprovalTests
 
 
- // ******************** From: DefaultFrontLoadedReporter.h
+// ******************** From: DefaultFrontLoadedReporter.h
 
 
 namespace ApprovalTests
@@ -2525,7 +2525,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: FrontLoadedReporterFactory.h
+// ******************** From: FrontLoadedReporterFactory.h
 
 
 #include <memory>
@@ -2556,7 +2556,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: FrontLoadedReporterDisposer.h
+// ******************** From: FrontLoadedReporterDisposer.h
 
 
 namespace ApprovalTests
@@ -2582,7 +2582,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: ApprovalException.h
+// ******************** From: ApprovalException.h
 
 #include <exception>
 #include <string>
@@ -2649,7 +2649,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: ApprovalComparator.h
+// ******************** From: ApprovalComparator.h
 
 #include <string>
 
@@ -2666,7 +2666,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: TextFileComparator.h
+// ******************** From: TextFileComparator.h
 
 
 namespace ApprovalTests
@@ -2710,7 +2710,7 @@ namespace ApprovalTests
     };
 }
 
- // ******************** From: ComparatorDisposer.h
+// ******************** From: ComparatorDisposer.h
 
 #include <map>
 #include <memory>
@@ -2766,7 +2766,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: ComparatorFactory.h
+// ******************** From: ComparatorFactory.h
 
 #include <memory>
 
@@ -2816,7 +2816,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: FileApprover.h
+// ******************** From: FileApprover.h
 
 #include <memory>
 
@@ -2899,7 +2899,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: Approvals.h
+// ******************** From: Approvals.h
 
 #include <string>
 #include <functional>
@@ -3088,7 +3088,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: CombinationApprovals.h
+// ******************** From: CombinationApprovals.h
 
 #include <type_traits>
 
@@ -3153,7 +3153,7 @@ namespace ApprovalTests
 } // namespace ApprovalTests
 
 
- // ******************** From: CheckFileMacroIsAbsolute.h
+// ******************** From: CheckFileMacroIsAbsolute.h
 
 // Maintenance note: the following help message must be short, and
 // not contain any newline characters, as their display looks messy
@@ -3181,7 +3181,7 @@ __FILE__
 #endif // APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK
 
 
- // ******************** From: Catch2Approvals.h
+// ******************** From: Catch2Approvals.h
 
 
 
@@ -3257,7 +3257,7 @@ struct Catch2TestCommitRevert : Catch::TestEventListenerBase
 CATCH_REGISTER_LISTENER(Catch2TestCommitRevert)
 #endif
 
- // ******************** From: DocTestApprovals.h
+// ******************** From: DocTestApprovals.h
 
 
 #if defined(APPROVALS_DOCTEST_EXISTING_MAIN)
@@ -3390,7 +3390,7 @@ REGISTER_LISTENER("approvals", 0, ApprovalTests::DocTestApprovalListener);
 
 #endif // APPROVALS_DOCTEST
 
- // ******************** From: GoogleConfiguration.h
+// ******************** From: GoogleConfiguration.h
 
 
 namespace ApprovalTests
@@ -3436,7 +3436,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: GoogleTestApprovals.h
+// ******************** From: GoogleTestApprovals.h
 
 
 #ifdef APPROVALS_GOOGLETEST_EXISTING_MAIN
@@ -3501,7 +3501,7 @@ int main(int argc, char** argv)
 
 #endif
 
- // ******************** From: UTApprovals.h
+// ******************** From: UTApprovals.h
 
 
 #ifdef APPROVALS_UT
@@ -3594,7 +3594,7 @@ auto boost::ut::cfg<boost::ut::override> =
 
 #endif // APPROVALS_UT
 
- // ******************** From: NamerFactory.h
+// ******************** From: NamerFactory.h
 
 
 #include <string>
@@ -3611,7 +3611,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: SeparateApprovedAndReceivedDirectoriesNamer.h
+// ******************** From: SeparateApprovedAndReceivedDirectoriesNamer.h
 
 
 namespace ApprovalTests
@@ -3654,7 +3654,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: AutoApproveIfMissingReporter.h
+// ******************** From: AutoApproveIfMissingReporter.h
 
 
 namespace ApprovalTests
@@ -3675,7 +3675,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: BlockingReporter.h
+// ******************** From: BlockingReporter.h
 
 
 #include <memory>
@@ -3721,7 +3721,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: CIBuildOnlyReporterUtils.h
+// ******************** From: CIBuildOnlyReporterUtils.h
 
 
 namespace ApprovalTests
@@ -3738,7 +3738,7 @@ namespace ApprovalTests
 } // namespace ApprovalTests
 
 
- // ******************** From: ClipboardReporter.h
+// ******************** From: ClipboardReporter.h
 
 
 #include <string>
@@ -3808,7 +3808,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: CombinationReporter.h
+// ******************** From: CombinationReporter.h
 
 #include <memory>
 #include <vector>
@@ -3843,7 +3843,7 @@ namespace ApprovalTests
 }
 
 
- // ******************** From: ExceptionCollector.h
+// ******************** From: ExceptionCollector.h
 
 #include <sstream>
 #include <exception>
