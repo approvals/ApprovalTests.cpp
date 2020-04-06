@@ -1,0 +1,9 @@
+remove_indentation << f'''
+
+toc
+
+## v.x.y.z
+
+{self.old_feature_text()}
+
+'''

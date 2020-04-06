@@ -31,4 +31,4 @@ namespace ApprovalTests
         }
     };
 }
-#endif
+#endif // APPROVALTESTS_CPP_FILEUTILSSYSTEMSPECIFIC_H

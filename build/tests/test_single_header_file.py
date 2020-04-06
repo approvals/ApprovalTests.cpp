@@ -1,0 +1,26 @@
+import unittest
+
+from approvaltests import verify_all
+
+from scripts.single_header_file import SingleHeaderFile
+
+
+class TestSingleHeaderFile(unittest.TestCase):
+    def test_sort_parts_by_dependencies(self):
+        parts = [
+            {'file': 'higher.h', 'include': ['lower.h']},
+            {'file': 'lower.h', 'include': []}]
+        self.assertTrue(SingleHeaderFile.depends_on(parts[0], parts[1]))
+        self.assertFalse(SingleHeaderFile.depends_on(parts[1], parts[0]))
+
+        parts = SingleHeaderFile.sort_parts_by_dependencies(parts)
+        verify_all('sorted', parts)
+
+    def test_depends_on_uses_whole_file_name(self):
+        file1 = {'file': 'file1.h', 'include': []}
+        file2 = {'file': 'file2.h', 'include': ['prefixed_file1.h']}
+        self.assertFalse(SingleHeaderFile.depends_on(file2, file1))
+
+
+if __name__ == '__main__':
+    unittest.main()

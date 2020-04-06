@@ -1,6 +1,7 @@
 import pyperclip
 
 from scripts.conan_release import DeployConanRelease
+from scripts.release_constants import release_constants
 from scripts.utilities import read_file, check_step, run, use_directory
 
 
@@ -13,11 +14,11 @@ class DeployRelease:
 
     # Starter Project
     def commit_starter_project(self):
-        with use_directory(self.details.starter_project_dir):
+        with use_directory(release_constants.starter_project_dir):
             run(["git", "commit", "-m", F"'Update to Approvals {self.details.new_version}'"])
 
     def push_starter_project(self):
-        with use_directory(self.details.starter_project_dir):
+        with use_directory(release_constants.starter_project_dir):
             run(["git", "push", "origin", "master"])
 
     def publish_starter_project(self):
@@ -28,11 +29,11 @@ class DeployRelease:
 
     # Main Project
     def commit_main_project(self):
-        with use_directory(self.details.main_project_dir):
+        with use_directory(release_constants.main_project_dir):
             run(["git", "commit", "-m", F"'{self.details.new_version} release'"])
 
     def push_main_project(self):
-        with use_directory(self.details.main_project_dir):
+        with use_directory(release_constants.main_project_dir):
             run(["git", "push", "origin", "master"])
 
     def publish_main_project(self):
@@ -46,7 +47,7 @@ class DeployRelease:
         print('The release notes are on the clipboard')
         github_url = F"'https://github.com/approvals/ApprovalTests.cpp/releases/new?tag={self.details.new_version}&title=Single%20Hpp%20File%20-%20{self.details.new_version}'"
         run(["open", github_url])
-        run(["open", self.details.release_dir])
+        run(["open", release_constants.release_dir])
         check_step("that the release is published")
 
     def publish_tweet(self):

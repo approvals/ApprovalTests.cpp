@@ -4,7 +4,6 @@
 #include <string>
 #include "ApprovalTests/utilities/StringUtils.h"
 
-// <SingleHpp unalterable>
 namespace ApprovalTests
 {
     class HelpMessages
@@ -69,6 +68,5 @@ namespace ApprovalTests
         }
     };
 }
-// </SingleHpp>
 
 #endif //APPROVALTESTS_CPP_HELPMESSAGES_H

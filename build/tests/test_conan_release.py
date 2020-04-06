@@ -1,13 +1,7 @@
-import os
 import unittest
 
-from scripts.conan_release import PrepareConanRelease
-
-
-def set_home_directory():
-    print(os.getcwd())
-    os.chdir("../../ApprovalTests")
-    print(os.getcwd())
+# from scripts.conan_release import PrepareConanRelease
+from tests.helpers import set_home_directory
 
 
 class TestConanRelease(unittest.TestCase):

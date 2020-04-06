@@ -49,4 +49,4 @@ namespace ApprovalTests
         }
     };
 }
-#endif
+#endif // APPROVALTESTS_CPP_STRINGWRITER_H

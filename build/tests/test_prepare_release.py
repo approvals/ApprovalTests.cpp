@@ -1,6 +1,14 @@
+import os
 import unittest
 
+from approvaltests.approvals import verify_file, verify
+
+from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.prepare_release import PrepareRelease
+from scripts.release_details import ReleaseDetails
+from scripts.utilities import run
+from scripts.version import create_version
+from tests.helpers import set_home_directory
 
 
 class TestPrepareRelease(unittest.TestCase):
@@ -29,7 +37,7 @@ toc
 '''
         old_version = "v.1.2.3"
         new_version = "v.1.2.4"
-        action = PrepareRelease.prepare_update_features_page(old_version, new_version, content)
+        action = PrepareDocumentationRelease.prepare_update_features_page(old_version, new_version, content)
         new_content = action("", lambda _, old, new: content.replace(old, new))
         self.assertEqual(expected_new_content, new_content)
 
@@ -44,9 +52,37 @@ toc
 '''
         old_version = "v.1.2.3"
         new_version = "v.1.2.4"
-        action = PrepareRelease.prepare_update_features_page(old_version, new_version, content)
+        action = PrepareDocumentationRelease.prepare_update_features_page(old_version, new_version, content)
         new_content = action("", lambda text: f'CHECK: {text}')
         self.assertEqual(new_content, 'CHECK: the Features page is empty: are you sure you want this?')
+
+    def disabled_locking_test_create_single_header_file_approvals(self):
+        # The output of this depends on the current C++ code, so changes
+        # over time. It is here to help when refactoring the release process.
+        prepare_release = self.get_prepare_release()
+        output = prepare_release.create_single_header_file()
+        verify_file(output)
+
+    def disabled_locking_test_create_simulated_single_header_file(self):
+        # The output of this depends on the current C++ code, so changes
+        # over time. It is here to help when refactoring the release process.
+        prepare_release = self.get_prepare_release()
+        output = prepare_release.create_simulated_single_header_file()
+        verify_file(output)
+
+    def test_update_version_number_header(self):
+        new_version = create_version(8, 5, 0)
+        output = PrepareRelease.get_version_number_hpp_text(new_version)
+        verify(output)
+
+    def get_prepare_release(self):
+        set_home_directory()
+        old_version = create_version(8, 4, 0)
+        new_version = create_version(8, 5, 0)
+        deploy = False
+        release_details = ReleaseDetails(old_version, new_version, deploy)
+        prepare_release = PrepareRelease(release_details)
+        return prepare_release
 
     @staticmethod
     def new_feature_text():

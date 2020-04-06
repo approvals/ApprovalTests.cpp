@@ -11,6 +11,8 @@ from scripts.deploy_release import DeployRelease
 # Improve the chdir to start at the top-level directory - and check that we are the top-level
 # Review folder structure for Python scripts
 # Add a reminder to close any release milestone
+from scripts.release_constants import release_constants
+
 
 class ReleaseDetails:
     def __init__(self, old_version, new_version, publish_release):
@@ -22,24 +24,16 @@ class ReleaseDetails:
         self.old_single_header = F"ApprovalTests.{self.old_version}.hpp"
         self.new_single_header = F"ApprovalTests.{self.new_version}.hpp"
 
-        self.approval_tests_dir = F"../ApprovalTests"
-        self.build_dir = F"../build"
-        self.release_dir = F"../build/releases"
-        self.release_new_single_header = F"{self.release_dir}/{self.new_single_header}"
+        self.release_new_single_header = F"{release_constants.release_dir}/{self.new_single_header}"
 
-        self.main_project_dir = F"../../ApprovalTests.Cpp"
-        self.starter_project_dir = F"../../ApprovalTests.Cpp.StarterProject"
-
-        self.xxx_release_notes_path = os.path.join(self.build_dir, F'relnotes_x.y.z.md')
-        self.release_notes_dir = os.path.join(self.build_dir, 'release_notes')
-        self.new_release_notes_path = os.path.join(self.release_notes_dir,
+        self.new_release_notes_path = os.path.join(release_constants.release_notes_dir,
                                                    F'relnotes_{version.get_version_without_v(self.new_version)}.md')
-        self.template_release_notes_path = os.path.join(self.release_notes_dir, F'relnotes_template.md')
 
 
 def build(update_version, deploy):
     old_version = version.load_version('.')
     new_version = update_version(old_version)
+    os.chdir("../ApprovalTests")
 
     release_details = ReleaseDetails(old_version, new_version, deploy)
     prepare_release = PrepareRelease(release_details)

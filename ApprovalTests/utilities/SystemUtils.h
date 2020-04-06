@@ -2,7 +2,6 @@
 #define APPROVALTESTS_CPP_SYSTEMUTILS_H
 
 #include "ApprovalTests/utilities/WinMinGWUtils.h"
-// <SingleHpp unalterable>
 #ifdef _WIN32
 // ReSharper disable once CppUnusedIncludeDirective
 #include <io.h>
@@ -11,7 +10,6 @@
 // ReSharper disable once CppUnusedIncludeDirective
 #include <unistd.h>
 #endif
-// </SingleHpp>
 
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/utilities/StringUtils.h"
@@ -193,4 +191,4 @@ namespace ApprovalTests
         }
     };
 }
-#endif
+#endif // APPROVALTESTS_CPP_SYSTEMUTILS_H

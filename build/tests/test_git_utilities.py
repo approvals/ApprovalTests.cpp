@@ -5,7 +5,7 @@ from git import Repo
 
 from scripts.conan_release import ConanReleaseDetails
 from scripts.git_utilities import GitUtilities
-from tests.test_conan_release import set_home_directory
+from tests.helpers import set_home_directory
 
 
 class TestGitUtilities(unittest.TestCase):
