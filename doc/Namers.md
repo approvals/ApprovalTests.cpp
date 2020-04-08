@@ -84,6 +84,12 @@ auto default_namer_disposer =
 <sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L46-L49' title='File snippet `register_separate_directories_namer` was extracted from'>snippet source</a> | <a href='#snippet-register_separate_directories_namer' title='Navigate to start of snippet `register_separate_directories_namer`'>anchor</a></sup>
 <!-- endsnippet -->
 
+When using this namer, you will want to add the following line to your `.gitignore` file:
+
+```
+**/received/
+```
+
 ## Approving multiple files from one test 
 
 See [MultipleOutputFilesPerTest](/doc/MultipleOutputFilesPerTest.md#top).

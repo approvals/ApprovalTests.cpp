@@ -55,6 +55,12 @@ To register this as your default namer, use:
 
 snippet: register_separate_directories_namer
 
+When using this namer, you will want to add the following line to your `.gitignore` file:
+
+```
+**/received/
+```
+
 ## Approving multiple files from one test 
 
 See [MultipleOutputFilesPerTest](/doc/MultipleOutputFilesPerTest.md#top).
