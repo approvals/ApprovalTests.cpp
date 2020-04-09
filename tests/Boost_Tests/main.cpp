@@ -7,6 +7,6 @@ BOOST_AUTO_TEST_SUITE(Suite)
 
 BOOST_AUTO_TEST_CASE(return_true)
 {
-    BOOST_CHECK(false);
+    BOOST_CHECK(true);
 }
 BOOST_AUTO_TEST_SUITE_END()
