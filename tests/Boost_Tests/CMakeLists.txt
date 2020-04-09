@@ -5,7 +5,7 @@ add_executable(${PROJECT_NAME}
         )
 
 # Specific to Clare's Mac
-set(Boost_INCLUDE_DIR /Users/clare/Documents/develop/tools/boost/boost_1_71_0_install/include/ CACHE FILEPATH "" FORCE)
+#set(Boost_INCLUDE_DIR /Users/clare/Documents/develop/tools/boost/boost_1_71_0_install/include/ CACHE FILEPATH "" FORCE)
 
 find_package(Boost 1.1.0 COMPONENTS unit_test_framework REQUIRED)
 if (Boost_FOUND)
