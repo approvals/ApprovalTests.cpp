@@ -58,60 +58,60 @@ language: cpp
 
 .addons-clang5: &clang5
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-5.0
     packages:
       - clang-5.0
       - libstdc++-8-dev
       - libboost-all-dev
-    sources:
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-5.0
 
 .addons-clang6: &clang6
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-6.0
     packages:
       - clang-6.0
       - libstdc++-8-dev
       - libboost-all-dev
-    sources:
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-6.0
 
 .addons-clang7: &clang7
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-7
     packages:
       - clang-7
       - libstdc++-8-dev
       - libboost-all-dev
-    sources:
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-7
 
 .addons-clang8: &clang8
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-8
     packages:
       - clang-8
       - libstdc++-8-dev
       - libboost-all-dev
-    sources:
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-8
 
 #.addons-clang9: &clang9
 #  apt:
+#    sources:
+#      - ubuntu-toolchain-r-test
+#      - sourceline: 'deb https://apt.llvm.org/xenial/ llvm-toolchain-xenial-9 main'
+#        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
 #    packages:
 #      - clang-9
 #      - libclang-cpp9
 #      - libllvm9
 #      - libclang-common-9-dev
 #      - libstdc++-9-dev
-#    sources:
-#      - ubuntu-toolchain-r-test
-#      - sourceline: 'deb https://apt.llvm.org/xenial/ llvm-toolchain-xenial-9 main'
-#        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
 
 matrix:
   include:
-    
+
     # -------------------------------------------------------------------------
     # Linux gcc
     # -------------------------------------------------------------------------
