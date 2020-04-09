@@ -83,6 +83,7 @@ language: cpp
     packages:
       - clang-8
       - libstdc++-8-dev
+      - libboost-all-dev
     sources:
       - ubuntu-toolchain-r-test
       - llvm-toolchain-trusty-8
