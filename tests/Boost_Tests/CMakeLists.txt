@@ -7,11 +7,14 @@ add_executable(${PROJECT_NAME}
 # Specific to Clare's Mac - temporary for testing...
 if (DEFINED ENV{USER})
     if ("$ENV{USER}" STREQUAL "clare")
-        set(Boost_INCLUDE_DIR /Users/clare/Documents/develop/tools/boost/boost_1_71_0_install/include/ CACHE FILEPATH "" FORCE)
+        #        set(Boost_INCLUDE_DIR /Users/clare/Documents/develop/tools/boost/boost_1_71_0_install/include/ CACHE FILEPATH "" FORCE)
+        set(Boost_INCLUDE_DIR /Users/clare/Documents/develop/tools/boost/boost_1_71_0/
+                CACHE FILEPATH "" FORCE)
     endif ()
 endif ()
 
-find_package(Boost 1.1.0 COMPONENTS unit_test_framework REQUIRED)
+# unit_test_framework
+find_package(Boost 1.1.0 COMPONENTS REQUIRED)
 if (Boost_FOUND)
 
     include_directories(${Boost_INCLUDE_DIRS})
