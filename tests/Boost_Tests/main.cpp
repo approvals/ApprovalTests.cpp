@@ -1,5 +1,5 @@
 #define BOOST_TEST_DYN_LINK
-#define BOOST_TEST_MODULE Sample
+#define BOOST_TEST_MODULE ModuleName
 
 //#include <boost/test/unit_test.hpp>
 #include <boost/test/included/unit_test.hpp>
@@ -39,9 +39,9 @@ int register_our_observer(Observer& t)
 Observer o;
 auto i = register_our_observer(o);
 
-BOOST_AUTO_TEST_SUITE(Suite)
+BOOST_AUTO_TEST_SUITE(SuiteName)
 
-BOOST_AUTO_TEST_CASE(return_true)
+BOOST_AUTO_TEST_CASE(TestCaseName)
 {
     BOOST_CHECK(true);
     Approvals::verify("hello");
