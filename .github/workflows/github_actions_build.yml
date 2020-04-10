@@ -116,6 +116,12 @@ jobs:
       run: |
         echo Build space: ${{ env.BUILD_DIR_PATH }}
 
+
+    - name: install dependencies for macOS
+      if: matrix.os == 'macOS-latest'
+      run: |
+        brew install boost
+
     - name: make build space
       run: |
         mkdir ${{ env.BUILD_DIR_PATH }}
