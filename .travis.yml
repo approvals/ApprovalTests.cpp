@@ -18,7 +18,6 @@ language: cpp
       - ubuntu-toolchain-r-test
     packages:
       - g++-5
-      - libboost-all-dev
 
 .addons-gcc6: &gcc6
   apt:
@@ -26,7 +25,6 @@ language: cpp
       - ubuntu-toolchain-r-test
     packages:
       - g++-6
-      - libboost-all-dev
 
 .addons-gcc7: &gcc7
   apt:
@@ -34,7 +32,6 @@ language: cpp
       - ubuntu-toolchain-r-test
     packages:
       - g++-7
-      - libboost-all-dev
 
 .addons-gcc8: &gcc8
   apt:
@@ -42,7 +39,6 @@ language: cpp
       - ubuntu-toolchain-r-test
     packages:
       - g++-8
-      - libboost-all-dev
 
 .addons-gcc9: &gcc9
   apt:
@@ -50,7 +46,6 @@ language: cpp
       - ubuntu-toolchain-r-test
     packages:
       - g++-9
-      - libboost-all-dev
 
 # -------------------------------------------------------------------------
 # Linux clang
@@ -64,7 +59,6 @@ language: cpp
     packages:
       - clang-5.0
       - libstdc++-8-dev
-      - libboost-all-dev
 
 .addons-clang6: &clang6
   apt:
@@ -74,7 +68,6 @@ language: cpp
     packages:
       - clang-6.0
       - libstdc++-8-dev
-      - libboost-all-dev
 
 .addons-clang7: &clang7
   apt:
@@ -84,7 +77,6 @@ language: cpp
     packages:
       - clang-7
       - libstdc++-8-dev
-      - libboost-all-dev
 
 .addons-clang8: &clang8
   apt:
@@ -94,7 +86,6 @@ language: cpp
     packages:
       - clang-8
       - libstdc++-8-dev
-      - libboost-all-dev
 
 #.addons-clang9: &clang9
 #  apt:
