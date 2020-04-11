@@ -13,7 +13,7 @@ if (DEFINED ENV{USER})
 endif ()
 
 # unit_test_framework
-find_package(Boost 1.1.0 COMPONENTS REQUIRED)
+find_package(Boost 1.60.0 COMPONENTS REQUIRED)
 if (Boost_FOUND)
 
     include_directories(${Boost_INCLUDE_DIRS})
