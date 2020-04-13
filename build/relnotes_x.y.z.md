@@ -3,8 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * Add support for [Boost.Test framework](https://www.boost.org/doc/libs/1_72_0/libs/test/doc/html/index.html) 
-      See [Using Approval Tests With Boost.Test](/doc/UsingBoostTest.md#top) (#41)
+    * None
 * **Bug fixes**
     * None
 * **Other changes**

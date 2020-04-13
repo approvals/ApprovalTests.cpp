@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.8.6.0](#v860)
     * [Support for Boost.Test framework](#support-for-boosttest-framework)
   * [v.8.5.0](#v850)
     * [Support for Sublime Merge](#support-for-sublime-merge)
@@ -51,6 +52,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+## v.8.6.0
 
 ### Support for Boost.Test framework
 

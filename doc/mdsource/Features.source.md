@@ -8,6 +8,8 @@ toc
 
 ## v.x.y.z
 
+## v.8.6.0
+
 ### Support for Boost.Test framework
 
 See [Using Approval Tests With Boost.Test](/doc/UsingBoostTest.md#top)
