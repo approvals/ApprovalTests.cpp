@@ -1,5 +1,7 @@
-#define BOOST_TEST_INCLUDED
-#include <boost/test/unit_test.hpp>
+#include "main.cpp"
+
+//#define BOOST_TEST_INCLUDED
+//#include <boost/test/unit_test.hpp>
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/Approvals.h"
