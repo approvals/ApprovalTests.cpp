@@ -46,6 +46,11 @@ Running tests gives the following output:
 *     #define APPROVALS_DOCTEST
 *     #include "ApprovalTests.hpp"
 *
+* To do this in Boost.Test, add the following to your main.cpp:
+*
+*     #define APPROVALS_BOOSTTEST
+*     #include "ApprovalTests.hpp"
+*
 * To do this in [Boost].UT, add the following to your main.cpp:
 *
 *     #define APPROVALS_UT
@@ -56,7 +61,7 @@ Running tests gives the following output:
 *                                                                           *
 *****************************************************************************
 ```
-<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessage.approved.txt#L1-L30' title='File snippet `ForgottenToConfigure.HelpMessage.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessage.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessage.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessage.approved.txt#L1-L35' title='File snippet `ForgottenToConfigure.HelpMessage.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessage.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessage.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Solutions
