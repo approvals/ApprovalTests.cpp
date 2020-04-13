@@ -5,6 +5,13 @@ add_executable(${PROJECT_NAME}
         )
 
 # unit_test_framework
+
+# Hints for specifying Boost location:
+# 1. It's possible to specify your Boost location on the CMake command line,
+# for example:
+#  -DBOOST_ROOT=/Users/clare/Documents/develop/tools/boost/boost_1_71_0/
+# 2. In CLion, you can supply this argument in each of your CMake profiles, with:
+#    Preferences -> Build, Execution, Deployment -> CMake -> 'CMake options:'
 find_package(Boost 1.60.0 COMPONENTS REQUIRED)
 if (Boost_FOUND)
 
