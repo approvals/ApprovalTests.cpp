@@ -57,8 +57,7 @@ class PrepareConanRelease:
 
         conan_approvaltests_dir = ConanReleaseDetails().conan_approvaltests_dir
 
-        PrepareConanRelease.update_conandata_yml(details, ConanReleaseDetails().conan_approvaltests_dir, new_version_with_v,
-                                                 new_version_without_v)
+        PrepareConanRelease.update_conandata_yml(details, ConanReleaseDetails().conan_approvaltests_dir)
         PrepareConanRelease.update_conan_config_yml(conan_approvaltests_dir, new_version_without_v)
 
     @staticmethod
@@ -79,7 +78,7 @@ class PrepareConanRelease:
         return conan_data
 
     @staticmethod
-    def update_conandata_yml(details, conan_approvaltests_dir, new_version_with_v, new_version_without_v):
+    def update_conandata_yml(details, conan_approvaltests_dir):
         version = details.new_version_object
         conan_data_file = os.path.join(conan_approvaltests_dir, 'all', 'conandata.yml')
         conandata_yml_text = read_file(conan_data_file)
