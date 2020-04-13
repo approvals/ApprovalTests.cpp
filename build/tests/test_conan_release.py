@@ -3,6 +3,7 @@ import unittest
 from approvaltests import verify
 
 from scripts.conan_release import PrepareConanRelease
+from scripts.version import create_version
 from tests.helpers import set_home_directory
 
 
@@ -20,6 +21,6 @@ class TestConanRelease(unittest.TestCase):
     def test_conandata_yml(self):
         text = ''
         for i in range(3):
-            text += PrepareConanRelease.create_conandata_yml_text(F"1.1.{i}", F"v.1.1.{i}", "single_header_sha",
+            text += PrepareConanRelease.create_conandata_yml_text(create_version(1, 1, i), "single_header_sha",
                                                                   "licence_sha")
         verify(text)

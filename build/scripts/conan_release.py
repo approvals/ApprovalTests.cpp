@@ -5,6 +5,7 @@ from git import Repo
 from scripts import version
 from scripts.git_utilities import GitUtilities
 from scripts.utilities import check_step, read_file, write_file, calculate_sha256, assert_step, run, use_directory
+from scripts.version import get_version_without_v
 
 
 class ConanReleaseDetails:
@@ -79,6 +80,7 @@ class PrepareConanRelease:
 
     @staticmethod
     def update_conandata_yml(details, conan_approvaltests_dir, new_version_with_v, new_version_without_v):
+        version = details.new_version_object
         conan_data_file = os.path.join(conan_approvaltests_dir, 'all', 'conandata.yml')
         conandata_yml_text = read_file(conan_data_file)
 
@@ -87,16 +89,17 @@ class PrepareConanRelease:
 
         single_header_sha = calculate_sha256(new_single_header)
         licence_file_sha = calculate_sha256(licence_file)
-        conan_data = PrepareConanRelease.create_conandata_yml_text(new_version_with_v, new_version_without_v,
+        conan_data = PrepareConanRelease.create_conandata_yml_text(version,
                                                                    single_header_sha, licence_file_sha)
         conandata_yml_text += conan_data
 
         write_file(conan_data_file, conandata_yml_text)
 
     @staticmethod
-    def create_conandata_yml_text(new_version_with_v, new_version_without_v, single_header_sha, licence_file_sha):
+    def create_conandata_yml_text(new_version, single_header_sha, licence_file_sha):
+        new_version_with_v = version.get_version_text(new_version)
         conan_data = \
-            F'''  {new_version_without_v}:
+            F'''  {get_version_without_v(new_version_with_v)}:
     - url: https://github.com/approvals/ApprovalTests.cpp/releases/download/{new_version_with_v}/ApprovalTests.{new_version_with_v}.hpp
       sha256: {single_header_sha}
     - url: "https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/{new_version_with_v}/LICENSE"
