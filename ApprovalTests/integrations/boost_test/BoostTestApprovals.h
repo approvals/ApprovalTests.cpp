@@ -9,7 +9,7 @@
 namespace ApprovalTests
 {
 
-    class Observer : public boost::unit_test::test_observer
+    class BoostApprovalListener : public boost::unit_test::test_observer
     {
         ApprovalTests::TestName currentTest;
 
@@ -29,14 +29,14 @@ namespace ApprovalTests
         }
     };
 
-    int register_our_observer(Observer& t)
+    int register_our_listener(BoostApprovalListener& t)
     {
         boost::unit_test::framework::register_observer(t);
         return 1;
     }
 
-    Observer o;
-    auto dummy_variable = register_our_observer(o);
+    BoostApprovalListener o;
+    auto dummy_variable = register_our_listener(o);
 }
 
 #endif // APPROVALS_BOOSTTEST
