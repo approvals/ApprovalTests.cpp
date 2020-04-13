@@ -22,7 +22,7 @@ namespace ApprovalTests
             ApprovalTests::ApprovalTestNamer::currentTest(&currentTest);
         }
 
-        void test_unit_finish(boost::unit_test::test_unit const& test,
+        void test_unit_finish(boost::unit_test::test_unit const& /*test*/,
                               unsigned long) override
         {
             currentTest.sections.pop_back();
