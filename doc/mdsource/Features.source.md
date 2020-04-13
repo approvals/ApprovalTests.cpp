@@ -8,6 +8,10 @@ toc
 
 ## v.x.y.z
 
+### Support for Boost.Test framework
+
+See [using Boost.Test](/doc/UsingBoostTest.md#top)
+
 ## v.8.5.0
 
 ### Support for Sublime Merge
