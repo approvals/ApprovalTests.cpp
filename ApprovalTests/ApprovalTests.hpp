@@ -58,6 +58,7 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
+#include "ApprovalTests/integrations/boost_test/BoostTestApprovals.h"
 #include "ApprovalTests/integrations/catch/Catch2Approvals.h"
 #include "ApprovalTests/integrations/doctest/DocTestApprovals.h"
 #include "ApprovalTests/integrations/google/GoogleConfiguration.h"

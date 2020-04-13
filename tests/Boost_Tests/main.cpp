@@ -3,5 +3,8 @@
 //#include <boost/test/unit_test.hpp>
 #include <boost/test/included/unit_test.hpp>
 
+// begin-snippet: boost_test_main
+// main.cpp (after #including boost.test)
 #define APPROVALS_BOOSTTEST
-#include "ApprovalTests/integrations/boost_test/BoostTestApprovals.h"
+#include "ApprovalTests.hpp"
+// end-snippet
