@@ -45,6 +45,11 @@ namespace ApprovalTests
 *     #define APPROVALS_DOCTEST
 *     #include "ApprovalTests.hpp"
 *
+* To do this in Boost.Test, add the following to your main.cpp:
+*
+*     #define APPROVALS_BOOSTTEST
+*     #include "ApprovalTests.hpp"
+*
 * To do this in [Boost].UT, add the following to your main.cpp:
 *
 *     #define APPROVALS_UT

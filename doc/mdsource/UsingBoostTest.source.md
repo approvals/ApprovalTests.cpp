@@ -17,21 +17,13 @@ This allows ApprovalTests to work with all the different configurations of boost
 
 Approval Tests needs Boost.Test version 1.60.0 or above.
 
-### New Project
+### Adding Approvaltests to your Boost.Test
 
-Create a file `main.cpp` and add just the following two lines:
+To enable any Boost.Test test files to use ApprovalTests, 
+add the following lines of code to your [Test module's entry point](https://www.boost.org/doc/libs/1_72_0/libs/test/doc/html/boost_test/adv_scenarios/entry_point_overview.html) 
+after the boost headers:
 
 snippet: boost_test_main
-
-<!-- todo: document use of sections -->
-
-### Existing Project - with your main()
-
-If you have [supplied your own `main()` for Boost.Test](hhttps://github.com/onqtam/Boost.Test/blob/master/doc/markdown/main.md#top), you will need to teach it how to supply test names to Approval Tests.
-
-You should make the following additions to your own source file that contains `main()`.  
-
-snippet: Boost.Test_existing_main
 
 ---
 
