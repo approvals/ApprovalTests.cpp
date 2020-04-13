@@ -116,6 +116,17 @@ jobs:
       run: |
         echo Build space: ${{ env.BUILD_DIR_PATH }}
 
+
+    - name: install boost for macOS
+      if: matrix.os == 'macOS-latest'
+      run: |
+        brew install boost
+    - name: install boost for linux
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update -qq
+        sudo apt-get install -y libboost-all-dev
+
     - name: make build space
       run: |
         mkdir ${{ env.BUILD_DIR_PATH }}
