@@ -65,13 +65,17 @@ class PrepareConanRelease:
         conan_data_file = os.path.join(conan_approvaltests_dir, 'config.yml')
         conandata_yml_text = read_file(conan_data_file)
 
+        conandata_yml_text += PrepareConanRelease.create_conan_config_yml_text(new_version_without_v)
+
+        write_file(conan_data_file, conandata_yml_text)
+
+    @staticmethod
+    def create_conan_config_yml_text(new_version_without_v):
         conan_data = \
             F'''  {new_version_without_v}:
     folder: all
 '''
-        conandata_yml_text += conan_data
-
-        write_file(conan_data_file, conandata_yml_text)
+        return conan_data
 
     @staticmethod
     def update_conandata_yml(details, conan_approvaltests_dir, new_version_with_v, new_version_without_v):
@@ -81,16 +85,24 @@ class PrepareConanRelease:
         new_single_header = details.release_new_single_header
         licence_file = '../LICENSE'
 
-        conan_data = \
-            F'''  {new_version_without_v}:
-    - url: https://github.com/approvals/ApprovalTests.cpp/releases/download/{new_version_with_v}/ApprovalTests.{new_version_with_v}.hpp
-      sha256: {calculate_sha256(new_single_header)}
-    - url: "https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/{new_version_with_v}/LICENSE"
-      sha256: {calculate_sha256(licence_file)}
-'''
+        single_header_sha = calculate_sha256(new_single_header)
+        licence_file_sha = calculate_sha256(licence_file)
+        conan_data = PrepareConanRelease.create_conandata_yml_text(new_version_with_v, new_version_without_v,
+                                                                   single_header_sha, licence_file_sha)
         conandata_yml_text += conan_data
 
         write_file(conan_data_file, conandata_yml_text)
+
+    @staticmethod
+    def create_conandata_yml_text(new_version_with_v, new_version_without_v, single_header_sha, licence_file_sha):
+        conan_data = \
+            F'''  {new_version_without_v}:
+    - url: https://github.com/approvals/ApprovalTests.cpp/releases/download/{new_version_with_v}/ApprovalTests.{new_version_with_v}.hpp
+      sha256: {single_header_sha}
+    - url: "https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/{new_version_with_v}/LICENSE"
+      sha256: {licence_file_sha}
+'''
+        return conan_data
 
     @staticmethod
     def update_conan_to_latest():
