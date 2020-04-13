@@ -31,12 +31,6 @@ ApprovalTests.cpp can be made to work with any test framework that supplies the 
 
 This is perhaps best understood by reviewing the implementations for frameworks that are already supported - see [/ApprovalTests/integrations/](/ApprovalTests/integrations/).
  
-The following lines can be ignored in the above files - they are for this project's release process:
-
-```cpp
-// <SingleHpp unalterable>
-// </SingleHpp>
-``` 
 
 ## Adding new framework to documentation
 
