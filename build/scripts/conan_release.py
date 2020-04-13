@@ -68,7 +68,7 @@ class PrepareConanRelease:
         conan_data = \
             F'''  {new_version_without_v}:
     folder: all
-    '''
+'''
         conandata_yml_text += conan_data
 
         write_file(conan_data_file, conandata_yml_text)
@@ -87,7 +87,7 @@ class PrepareConanRelease:
       sha256: {calculate_sha256(new_single_header)}
     - url: "https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/{new_version_with_v}/LICENSE"
       sha256: {calculate_sha256(licence_file)}
-    '''
+'''
         conandata_yml_text += conan_data
 
         write_file(conan_data_file, conandata_yml_text)
