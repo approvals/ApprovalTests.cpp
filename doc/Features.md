@@ -54,7 +54,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ### Support for Boost.Test framework
 
-See [using Boost.Test](/doc/UsingBoostTest.md#top)
+See [Using Approval Tests With Boost.Test](/doc/UsingBoostTest.md#top)
 
 ## v.8.5.0
 
