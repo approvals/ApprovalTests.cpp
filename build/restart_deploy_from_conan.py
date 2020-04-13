@@ -3,13 +3,12 @@
 from scripts import version
 from scripts.conan_release import DeployConanRelease
 from scripts.deploy_release import DeployRelease
+from scripts.prepare_release import load_current_version
 from scripts.release_details import ReleaseDetails
 
 if __name__ == '__main__':
-    old_version = version.load_version()
+    old_version = load_current_version()
     new_version = version.no_version_change(old_version)
     details = ReleaseDetails(old_version, new_version, True)
     deploy_release = DeployRelease(details)
-    DeployConanRelease.test_conan_and_create_pr(deploy_release.details)
-    deploy_release.publish_tweet()
-    deploy_release.publish_on_reddit_optionally()
+    deploy_release.push_everything_live(start_at_conan=True)

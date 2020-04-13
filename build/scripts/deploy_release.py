@@ -62,10 +62,11 @@ class DeployRelease:
         run(["open", "https://www.reddit.com/r/cpp/"])
         check_step("if you want to announce this on Reddit r/cpp")
 
-    def push_everything_live(self):
-        self.publish_main_project()
-        self.upload_release_to_github()
-        self.publish_starter_project()
+    def push_everything_live(self, start_at_conan = False):
+        if not start_at_conan:
+            self.publish_main_project()
+            self.upload_release_to_github()
+            self.publish_starter_project()
         DeployConanRelease.test_conan_and_create_pr(self.details)
         self.publish_tweet()
         self.publish_on_reddit_optionally()
