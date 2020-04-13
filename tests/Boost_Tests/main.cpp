@@ -5,5 +5,3 @@
 
 #define APPROVALS_BOOSTTEST
 #include "ApprovalTests/integrations/boost_test/BoostTestApprovals.h"
-
-
