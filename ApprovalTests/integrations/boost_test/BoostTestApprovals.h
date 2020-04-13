@@ -4,21 +4,10 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
 
-//#if defined(APPROVALS_BOOSTTEST_EXISTING_MAIN)
-//#define APPROVALS_BOOSTTEST
-//#define BOOSTTEST_CONFIG_IMPLEMENT
-//#elif defined(APPROVALS_BOOSTTEST)
-//#define BOOSTTEST_CONFIG_IMPLEMENT_WITH_MAIN
-//#endif
-
 #ifdef APPROVALS_BOOSTTEST
 
-//// begin-snippet: required_header_for_doctest
-//#include <doctest/doctest.h>
-//// end-snippet
-
-//namespace ApprovalTests
-//{
+namespace ApprovalTests
+{
 
     class Observer : public boost::unit_test::test_observer
     {
@@ -49,8 +38,7 @@
     }
     Observer o;
     auto dummy_variable = register_our_observer(o);
-//}
-
+}
 
 #endif // APPROVALS_BOOSTTEST
 #endif //APPROVALTESTS_CPP_BOOSTTESTAPPROVALS_H
