@@ -51,9 +51,9 @@ if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_TESTING)
     add_subdirectory(tests)
 endif ()
 
-if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_EXAMPLES)
-    add_subdirectory(examples)
-endif ()
+#if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_EXAMPLES)
+#    add_subdirectory(examples)
+#endif ()
 
 #message("CMAKE_VERSION = ${CMAKE_VERSION}")
 #message("CMAKE_GENERATOR = ${CMAKE_GENERATOR}")
