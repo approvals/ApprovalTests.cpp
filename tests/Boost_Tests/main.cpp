@@ -37,20 +37,3 @@ int register_our_observer(Observer& t)
 }
 Observer o;
 auto dummy_variable = register_our_observer(o);
-
-BOOST_AUTO_TEST_SUITE(SuiteName)
-BOOST_AUTO_TEST_CASE(TestCaseName)
-{
-    BOOST_CHECK(true);
-    Approvals::verify("hello");
-}
-
-BOOST_AUTO_TEST_SUITE(NestedSuiteName)
-BOOST_AUTO_TEST_CASE(TestCaseName)
-{
-    BOOST_CHECK(true);
-    Approvals::verify("hello");
-}
-BOOST_AUTO_TEST_SUITE_END()
-
-BOOST_AUTO_TEST_SUITE_END()
