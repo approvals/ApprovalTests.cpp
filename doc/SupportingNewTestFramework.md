@@ -36,7 +36,7 @@ ApprovalTests.cpp can be made to work with any test framework that supplies the 
 
 ## Steps to add support
 
-* Provide some code to add to the test's `main()` function, to list out for the running of test cases
+* Provide some code to add to the test's `main()` function, to listen out for the running of test cases
 * Give that code a `TestName` instance, that will store information about the test being executed
 * As each test case starts, update the `TestName` instance with details of the source file name, and test case name
 * Ideally, provide a mechanism (such as a macro) that makes it easy for users to use this code in their own tests
