@@ -1,5 +1,4 @@
 #include "doctest/doctest.h"
-#include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/scrubbers/Scrubbers.h"
 
 using namespace ApprovalTests;
@@ -15,5 +14,5 @@ TEST_CASE("Input with no GUIDs")
 {
     auto input = "";
     auto output = Scrubbers::scrubGuid(input);
-    //    REQUIRE(output == "");
+    REQUIRE(output == "");
 }
