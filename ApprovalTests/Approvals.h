@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_APPROVALS_H
-#define APPROVALTESTS_CPP_APPROVALS_H
+#pragma once
 
 #include <string>
 #include <functional>
@@ -196,5 +195,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif // APPROVALTESTS_CPP_APPROVALS_H
