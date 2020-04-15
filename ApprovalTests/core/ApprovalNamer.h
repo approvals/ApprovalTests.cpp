@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_APPROVALNAMER_H
-#define APPROVALTESTS_CPP_APPROVALNAMER_H
+#pragma once
 
 #include <string>
 
@@ -13,5 +12,3 @@ namespace ApprovalTests
         virtual std::string getReceivedFile(std::string extensionWithDot) const = 0;
     };
 }
-
-#endif // APPROVALTESTS_CPP_APPROVALNAMER_H

@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_COMMANDREPORTER_H
-#define APPROVALTESTS_CPP_COMMANDREPORTER_H
+#pragma once
 
 #include <utility>
 #include <memory>
@@ -101,4 +100,3 @@ namespace ApprovalTests
         }
     };
 }
-#endif //APPROVALTESTS_CPP_COMMANDREPORTER_H

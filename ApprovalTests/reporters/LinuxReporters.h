@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_LINUXREPORTERS_H
-#define APPROVALTESTS_CPP_LINUXREPORTERS_H
+#pragma once
 
 #include "DiffPrograms.h"
 #include "GenericDiffReporter.h"
@@ -105,5 +104,3 @@ namespace ApprovalTests
         };
     }
 }
-
-#endif //APPROVALTESTS_CPP_LINUXREPORTERS_H

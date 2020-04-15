@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H
-#define APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H
+#pragma once
 
 #include "ApprovalTests/utilities/StringUtils.h"
 
@@ -45,5 +44,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_GOOGLECUSTOMIZATIONSFACTORY_H

@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_MACROS_H
-#define APPROVALTESTS_CPP_MACROS_H
+#pragma once
 
 // Use this in places where we have parameters that are sometimes unused,
 // e.g. because of #if
@@ -15,5 +14,3 @@
 #else
 #define APPROVAL_TESTS_NO_DISCARD
 #endif
-
-#endif //APPROVALTESTS_CPP_MACROS_H

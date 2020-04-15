@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_CONVERTFORCYGWIN_H
-#define APPROVALTESTS_CPP_CONVERTFORCYGWIN_H
+#pragma once
 
 #include <string>
 
@@ -35,5 +34,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_CONVERTFORCYGWIN_H

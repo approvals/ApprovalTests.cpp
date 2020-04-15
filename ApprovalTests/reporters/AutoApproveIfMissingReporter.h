@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_AUTOAPPROVEIFMISSINGREPORTER_H
-#define APPROVALTESTS_CPP_AUTOAPPROVEIFMISSINGREPORTER_H
+#pragma once
 
 #include "ApprovalTests/core/Reporter.h"
 #include "AutoApproveReporter.h"
@@ -21,5 +20,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_AUTOAPPROVEIFMISSINGREPORTER_H

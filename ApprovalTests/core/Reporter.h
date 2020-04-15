@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_REPORTER_H
-#define APPROVALTESTS_CPP_REPORTER_H
+#pragma once
 
 #include <string>
 
@@ -26,5 +25,3 @@ namespace ApprovalTests
             R>::type;
     } // namespace Detail
 }
-
-#endif // APPROVALTESTS_CPP_REPORTER_H

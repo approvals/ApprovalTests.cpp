@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_UTAPPROVALS_H
-#define APPROVALTESTS_CPP_UTAPPROVALS_H
+#pragma once
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 
@@ -94,4 +93,3 @@ auto boost::ut::cfg<boost::ut::override> =
     boost::ut::runner<ApprovalTests::cfg::reporter>{};
 
 #endif // APPROVALS_UT
-#endif //APPROVALTESTS_CPP_UTAPPROVALS_H

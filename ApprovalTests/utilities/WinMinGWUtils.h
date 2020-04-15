@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_WINMINGWUTILS_H
-#define APPROVALTESTS_CPP_WINMINGWUTILS_H
+#pragma once
 
 #if (defined(__MINGW32__) || defined(__MINGW64__))
 #define APPROVAL_TESTS_MINGW
@@ -23,5 +22,3 @@ extern "C"
 #endif
 
 #endif // APPROVAL_TESTS_MINGW
-
-#endif //APPROVALTESTS_CPP_WINMINGWUTILS_H

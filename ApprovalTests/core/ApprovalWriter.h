@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_APPROVALWRITER_H
-#define APPROVALTESTS_CPP_APPROVALWRITER_H
+#pragma once
 
 namespace ApprovalTests
 {
@@ -12,5 +11,3 @@ namespace ApprovalTests
         virtual void cleanUpReceived(std::string receivedPath) const = 0;
     };
 }
-
-#endif //APPROVALTESTS_CPP_APPROVALWRITER_H

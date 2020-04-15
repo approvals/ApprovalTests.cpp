@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_EXCEPTIONCOLLECTOR_H
-#define APPROVALTESTS_CPP_EXCEPTIONCOLLECTOR_H
+#pragma once
 
 #include <sstream>
 #include <exception>
@@ -52,5 +51,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_EXCEPTIONCOLLECTOR_H

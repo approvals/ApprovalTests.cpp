@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_CHECKFILEMACROISABSOLUTE_H
-#define APPROVALTESTS_CPP_CHECKFILEMACROISABSOLUTE_H
+#pragma once
 
 // Maintenance note: the following help message must be short, and
 // not contain any newline characters, as their display looks messy
@@ -27,5 +26,3 @@ __FILE__
     // clang-format on
 );
 #endif // APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK
-
-#endif //APPROVALTESTS_CPP_CHECKFILEMACROISABSOLUTE_H

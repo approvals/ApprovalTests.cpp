@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_DEFAULTREPORTERFACTORY_H
-#define APPROVALTESTS_CPP_DEFAULTREPORTERFACTORY_H
+#pragma once
 
 #include "ApprovalTests/core/Reporter.h"
 #include "DiffReporter.h"
@@ -32,5 +31,3 @@ namespace ApprovalTests
         // end-snippet
     };
 }
-
-#endif //APPROVALTESTS_CPP_DEFAULTREPORTERFACTORY_H

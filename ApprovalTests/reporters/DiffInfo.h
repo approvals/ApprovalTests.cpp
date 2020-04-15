@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_DIFFINFO_H
-#define APPROVALTESTS_CPP_DIFFINFO_H
+#pragma once
 
 #include <string>
 #include <utility>
@@ -89,5 +88,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_DIFFINFO_H

@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_DONOTHINGLAUNCHER_H
-#define APPROVALTESTS_CPP_DONOTHINGLAUNCHER_H
+#pragma once
 
 #include "ApprovalTests/launchers/CommandLauncher.h"
 
@@ -30,5 +29,3 @@ public:
         return commandLine;
     }
 };
-
-#endif

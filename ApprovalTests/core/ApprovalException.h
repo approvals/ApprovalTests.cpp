@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_APPROVALEXCEPTION_H
-#define APPROVALTESTS_CPP_APPROVALEXCEPTION_H
+#pragma once
 
 #include <exception>
 #include <string>
@@ -64,5 +63,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif // APPROVALTESTS_CPP_APPROVALEXCEPTION_H

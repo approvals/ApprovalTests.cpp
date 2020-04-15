@@ -1,7 +1,6 @@
 
 
-#ifndef APPROVALTESTS_CPP_STRINGUTILS_H
-#define APPROVALTESTS_CPP_STRINGUTILS_H
+#pragma once
 
 #include <string>
 #include <algorithm>
@@ -58,4 +57,3 @@ namespace ApprovalTests
         }
     };
 }
-#endif //APPROVALTESTS_CPP_STRINGUTILS_H

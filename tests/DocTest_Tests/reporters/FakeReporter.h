@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_FAKEREPORTER_H
-#define APPROVALTESTS_CPP_FAKEREPORTER_H
+#pragma once
 
 #include "ApprovalTests/core/Reporter.h"
 
@@ -20,5 +19,3 @@ public:
         return working;
     }
 };
-
-#endif //APPROVALTESTS_CPP_FAKEREPORTER_H

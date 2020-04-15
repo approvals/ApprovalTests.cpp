@@ -1,6 +1,5 @@
 
-#ifndef APPROVALTESTS_CPP_CATCH2APPROVALS_H
-#define APPROVALTESTS_CPP_CATCH2APPROVALS_H
+#pragma once
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
@@ -78,4 +77,3 @@ struct Catch2TestCommitRevert : Catch::TestEventListenerBase
 //}
 CATCH_REGISTER_LISTENER(Catch2TestCommitRevert)
 #endif
-#endif //APPROVALTESTS_CPP_CATCH2APPROVALS_H

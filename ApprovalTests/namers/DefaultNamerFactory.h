@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_DEFAULTNAMERFACTORY_H
-#define APPROVALTESTS_CPP_DEFAULTNAMERFACTORY_H
+#pragma once
 
 #include "ApprovalTests/core/ApprovalNamer.h"
 #include "ApprovalTestNamer.h"
@@ -36,5 +35,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_DEFAULTNAMERFACTORY_H

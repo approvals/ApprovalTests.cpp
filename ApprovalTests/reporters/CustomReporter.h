@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_CUSTOMREPORTER_H
-#define APPROVALTESTS_CPP_CUSTOMREPORTER_H
+#pragma once
 
 #include "DiffInfo.h"
 #include "GenericDiffReporter.h"
@@ -40,5 +39,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_CUSTOMREPORTER_H

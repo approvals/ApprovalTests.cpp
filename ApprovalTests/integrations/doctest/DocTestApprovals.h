@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_DOCTESTAPPROVALS_H
-#define APPROVALTESTS_CPP_DOCTESTAPPROVALS_H
+#pragma once
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
@@ -135,4 +134,3 @@ namespace ApprovalTests
 REGISTER_LISTENER("approvals", 0, ApprovalTests::DocTestApprovalListener);
 
 #endif // APPROVALS_DOCTEST
-#endif //APPROVALTESTS_CPP_DOCTESTAPPROVALS_H

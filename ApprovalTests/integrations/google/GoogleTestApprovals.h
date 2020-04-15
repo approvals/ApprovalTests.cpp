@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H
-#define APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H
+#pragma once
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "GoogleCustomizationsFactory.h"
@@ -67,4 +66,3 @@ int main(int argc, char** argv)
 #endif //APPROVALS_GOOGLETEST_EXISTING_MAIN
 
 #endif
-#endif //APPROVALTESTS_CPP_GOOGLTESTAPPPROVALS_H

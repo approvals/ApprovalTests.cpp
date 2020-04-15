@@ -12,6 +12,4 @@ namespace ApprovalTests
         os << "(" << pair.first << ", " << pair.second << ")";
         return os;
     }
-}
-
-#endif // APPROVALTESTS_CPP_PAIR_UTILITIES_HPP
+}PP

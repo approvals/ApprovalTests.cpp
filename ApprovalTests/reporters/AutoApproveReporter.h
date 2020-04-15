@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_AUTOAPPROVEREPORTER_H
-#define APPROVALTESTS_CPP_AUTOAPPROVEREPORTER_H
+#pragma once
 
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/utilities/FileUtilsSystemSpecific.h"
@@ -20,5 +19,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif // APPROVALTESTS_CPP_AUTOAPPROVEREPORTER_H

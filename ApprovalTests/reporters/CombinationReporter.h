@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_COMBINATIONREPORTER_H
-#define APPROVALTESTS_CPP_COMBINATIONREPORTER_H
+#pragma once
 
 #include "ApprovalTests/core/Reporter.h"
 #include <memory>
@@ -33,5 +32,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_COMBINATIONREPORTER_H

@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_MACHINEBLOCKER_H
-#define APPROVALTESTS_CPP_MACHINEBLOCKER_H
+#pragma once
 
 #include "Blocker.h"
 #include <utility>
@@ -38,5 +37,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_MACHINEBLOCKER_H

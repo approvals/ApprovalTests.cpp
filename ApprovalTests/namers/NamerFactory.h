@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_NAMERFACTORY_H
-#define APPROVALTESTS_CPP_NAMERFACTORY_H
+#pragma once
 
 #include "ApprovalTestNamer.h"
 #include "SectionNameDisposer.h"
@@ -16,5 +15,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_NAMERFACTORY_H

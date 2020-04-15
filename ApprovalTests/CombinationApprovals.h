@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_COMBINATIONAPPROVALS_H
-#define APPROVALTESTS_CPP_COMBINATIONAPPROVALS_H
+#pragma once
 
 #include <type_traits>
 #include "reporters/DefaultReporter.h"
@@ -66,5 +65,3 @@ namespace ApprovalTests
 
     } // namespace CombinationApprovals
 } // namespace ApprovalTests
-
-#endif // APPROVALTESTS_CPP_COMBINATIONAPPROVALS_H

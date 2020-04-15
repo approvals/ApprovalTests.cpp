@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_DEFAULTREPORTERDISPOSER_H
-#define APPROVALTESTS_CPP_DEFAULTREPORTERDISPOSER_H
+#pragma once
 
 #include "DefaultReporterFactory.h"
 
@@ -24,5 +23,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_DEFAULTREPORTERDISPOSER_H

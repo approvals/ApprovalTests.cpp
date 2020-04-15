@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_TESTREPORTER_H
-#define APPROVALTESTS_CPP_TESTREPORTER_H
+#pragma once
 
 #include "ApprovalTests/reporters/GenericDiffReporter.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
@@ -28,4 +27,3 @@ public:
         return working ? getKnownGoodCommand() : "fake";
     }
 };
-#endif //APPROVALTESTS_CPP_TESTREPORTER_H

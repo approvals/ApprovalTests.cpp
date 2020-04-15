@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_DIFFREPORTER_H
-#define APPROVALTESTS_CPP_DIFFREPORTER_H
+#pragma once
 
 #include "FirstWorkingReporter.h"
 #include "WindowsReporters.h"
@@ -19,5 +18,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_DIFFREPORTER_H

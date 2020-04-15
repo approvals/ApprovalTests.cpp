@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_BLOCKINGREPORTER_H
-#define APPROVALTESTS_CPP_BLOCKINGREPORTER_H
+#pragma once
 
 #include "ApprovalTests/core/Reporter.h"
 #include "../utilities/MachineBlocker.h"
@@ -45,5 +44,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_BLOCKINGREPORTER_H

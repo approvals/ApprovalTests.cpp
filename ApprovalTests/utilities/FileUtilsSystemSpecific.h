@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_FILEUTILSSYSTEMSPECIFIC_H
-#define APPROVALTESTS_CPP_FILEUTILSSYSTEMSPECIFIC_H
+#pragma once
 
 #include "SystemUtils.h"
 
@@ -31,4 +30,3 @@ namespace ApprovalTests
         }
     };
 }
-#endif // APPROVALTESTS_CPP_FILEUTILSSYSTEMSPECIFIC_H

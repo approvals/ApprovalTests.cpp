@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_STRINGWRITER_H
-#define APPROVALTESTS_CPP_STRINGWRITER_H
+#pragma once
 
 #include <string>
 #include <fstream>
@@ -49,4 +48,3 @@ namespace ApprovalTests
         }
     };
 }
-#endif // APPROVALTESTS_CPP_STRINGWRITER_H

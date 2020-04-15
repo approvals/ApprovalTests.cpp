@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_SECTIONNAMEDISPOSER_H
-#define APPROVALTESTS_CPP_SECTIONNAMEDISPOSER_H
+#pragma once
 
 #include "ApprovalTestNamer.h"
 
@@ -26,5 +25,3 @@ namespace ApprovalTests
         TestName& currentTest;
     };
 }
-
-#endif //APPROVALTESTS_CPP_SECTIONNAMEDISPOSER_H

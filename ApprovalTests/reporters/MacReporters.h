@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_MACREPORTERS_H
-#define APPROVALTESTS_CPP_MACREPORTERS_H
+#pragma once
 
 #include "DiffPrograms.h"
 #include "GenericDiffReporter.h"
@@ -109,5 +108,3 @@ namespace ApprovalTests
         };
     }
 }
-
-#endif //APPROVALTESTS_CPP_MACREPORTERS_H

@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_DIFFPROGRAMS_H
-#define APPROVALTESTS_CPP_DIFFPROGRAMS_H
+#pragma once
 
 #include "DiffInfo.h"
 
@@ -171,5 +170,3 @@ namespace ApprovalTests
         }
     }
 }
-
-#endif //APPROVALTESTS_CPP_DIFFPROGRAMS_H

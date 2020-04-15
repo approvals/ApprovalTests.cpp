@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_DEFAULTFRONTLOADEDREPORTER_H
-#define APPROVALTESTS_CPP_DEFAULTFRONTLOADEDREPORTER_H
+#pragma once
 
 #include "ApprovalTests/reporters/CIBuildOnlyReporter.h"
 #include "ApprovalTests/reporters/FirstWorkingReporter.h"
@@ -14,5 +13,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_DEFAULTFRONTLOADEDREPORTER_H

@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_EXISTINGFILENAMER_H
-#define APPROVALTESTS_CPP_EXISTINGFILENAMER_H
+#pragma once
 
 #include <utility>
 #include "ApprovalTests/core/ApprovalNamer.h"
@@ -27,5 +26,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_EXISTINGFILENAMER_H

@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_GENERICDIFFREPORTER_H
-#define APPROVALTESTS_CPP_GENERICDIFFREPORTER_H
+#pragma once
 
 #include "DiffPrograms.h"
 #include "CommandReporter.h"
@@ -26,5 +25,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_GENERICDIFFREPORTER_H

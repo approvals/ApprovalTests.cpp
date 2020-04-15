@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_HELPMESSAGES_H
-#define APPROVALTESTS_CPP_HELPMESSAGES_H
+#pragma once
 
 #include <string>
 #include "ApprovalTests/utilities/StringUtils.h"
@@ -73,5 +72,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_HELPMESSAGES_H

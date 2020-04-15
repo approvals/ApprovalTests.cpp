@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_COMPARATORFACTORY_H
-#define APPROVALTESTS_CPP_COMPARATORFACTORY_H
+#pragma once
 
 #include <memory>
 #include "ApprovalTests/core/ApprovalComparator.h"
@@ -51,5 +50,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_COMPARATORFACTORY_H

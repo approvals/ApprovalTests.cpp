@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_SYSTEMUTILS_H
-#define APPROVALTESTS_CPP_SYSTEMUTILS_H
+#pragma once
 
 #include "ApprovalTests/utilities/WinMinGWUtils.h"
 #ifdef _WIN32
@@ -191,4 +190,3 @@ namespace ApprovalTests
         }
     };
 }
-#endif // APPROVALTESTS_CPP_SYSTEMUTILS_H

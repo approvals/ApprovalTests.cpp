@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_APPROVALTESTNAMER_H
-#define APPROVALTESTS_CPP_APPROVALTESTNAMER_H
+#pragma once
 
 #include "ApprovalTests/core/ApprovalNamer.h"
 #include <sstream>
@@ -191,5 +190,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif // APPROVALTESTS_CPP_APPROVALTESTNAMER_H

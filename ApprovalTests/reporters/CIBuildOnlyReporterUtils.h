@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_CIBUILDONLYREPORTERUTILS_H
-#define APPROVALTESTS_CPP_CIBUILDONLYREPORTERUTILS_H
+#pragma once
 
 #include "ApprovalTests/reporters/QuietReporter.h"
 #include "ApprovalTests/reporters/FrontLoadedReporterDisposer.h"
@@ -17,5 +16,3 @@ namespace ApprovalTests
         }
     }
 } // namespace ApprovalTests
-
-#endif //APPROVALTESTS_CPP_CIBUILDONLYREPORTERUTILS_H

@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_TEXTDIFFREPORTER_H
-#define APPROVALTESTS_CPP_TEXTDIFFREPORTER_H
+#pragma once
 
 #include "core/Reporter.h"
 #include "reporters/CustomReporter.h"
@@ -44,5 +43,3 @@ namespace ApprovalTests
         }
     };
 } // namespace ApprovalTests
-
-#endif //APPROVALTESTS_CPP_TEXTDIFFREPORTER_H

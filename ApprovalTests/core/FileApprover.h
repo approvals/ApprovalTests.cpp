@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_FILEAPPROVER_H
-#define APPROVALTESTS_CPP_FILEAPPROVER_H
+#pragma once
 
 #include <memory>
 #include "ApprovalException.h"
@@ -88,5 +87,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif // APPROVALTESTS_CPP_FILEAPPROVER_H

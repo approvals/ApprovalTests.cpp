@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_GOOGLECONFIGURATION_H
-#define APPROVALTESTS_CPP_GOOGLECONFIGURATION_H
+#pragma once
 
 #include "GoogleCustomizationsFactory.h"
 
@@ -44,5 +43,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_GOOGLECONFIGURATION_H

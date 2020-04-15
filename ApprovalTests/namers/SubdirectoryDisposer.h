@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_SUBDIRECTORYDISPOSER_H
-#define APPROVALTESTS_CPP_SUBDIRECTORYDISPOSER_H
+#pragma once
 
 #include "ApprovalTestNamer.h"
 
@@ -27,5 +26,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_SUBDIRECTORYDISPOSER_H

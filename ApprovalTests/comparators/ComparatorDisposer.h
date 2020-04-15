@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_COMPARATORDISPOSER_H
-#define APPROVALTESTS_CPP_COMPARATORDISPOSER_H
+#pragma once
 
 #include <map>
 #include <memory>
@@ -55,5 +54,3 @@ namespace ApprovalTests
         std::shared_ptr<ApprovalTests::ApprovalComparator> previousComparator;
     };
 }
-
-#endif //APPROVALTESTS_CPP_COMPARATORDISPOSER_H

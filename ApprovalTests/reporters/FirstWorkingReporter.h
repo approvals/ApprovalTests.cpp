@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_FIRSTWORKINGREPORTER_H
-#define APPROVALTESTS_CPP_FIRSTWORKINGREPORTER_H
+#pragma once
 
 #include "ApprovalTests/core/Reporter.h"
 #include <memory>
@@ -41,5 +40,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_FIRSTWORKINGREPORTER_H

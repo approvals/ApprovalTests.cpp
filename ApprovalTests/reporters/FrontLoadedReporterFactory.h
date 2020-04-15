@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_FRONTLOADEDREPORTERFACTORY_H
-#define APPROVALTESTS_CPP_FRONTLOADEDREPORTERFACTORY_H
+#pragma once
 
 #include "ApprovalTests/core/Reporter.h"
 #include "DefaultFrontLoadedReporter.h"
@@ -30,5 +29,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_FRONTLOADEDREPORTERFACTORY_H

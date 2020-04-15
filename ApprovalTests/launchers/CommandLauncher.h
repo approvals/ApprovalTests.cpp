@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_COMMANDLAUNCHER_H
-#define APPROVALTESTS_CPP_COMMANDLAUNCHER_H
+#pragma once
 
 #include <string>
 #include <vector>
@@ -15,5 +14,3 @@ namespace ApprovalTests
         virtual std::string getCommandLine(const std::string& commandLine) const = 0;
     };
 }
-
-#endif // APPROVALTESTS_CPP_COMMANDLAUNCHER_H

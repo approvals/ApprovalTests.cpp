@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_FILEUTILS_H
-#define APPROVALTESTS_CPP_FILEUTILS_H
+#pragma once
 
 #include <string>
 #include <sys/stat.h>
@@ -87,5 +86,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_FILEUTILS_H

@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_COMMANDLINEREPORTER_H
-#define APPROVALTESTS_CPP_COMMANDLINEREPORTER_H
+#pragma once
 
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
@@ -69,5 +68,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_COMMANDLINEREPORTER_H

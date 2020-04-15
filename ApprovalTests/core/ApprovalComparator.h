@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_APPROVALCOMPARATOR_H
-#define APPROVALTESTS_CPP_APPROVALCOMPARATOR_H
+#pragma once
 
 #include <string>
 
@@ -14,5 +13,3 @@ namespace ApprovalTests
                                            std::string approvedPath) const = 0;
     };
 }
-
-#endif //APPROVALTESTS_CPP_APPROVALCOMPARATOR_H

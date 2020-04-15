@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_DEFAULTNAMERDISPOSER_H
-#define APPROVALTESTS_CPP_DEFAULTNAMERDISPOSER_H
+#pragma once
 
 #include <utility>
 #include "DefaultNamerFactory.h"
@@ -26,5 +25,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_DEFAULTNAMERDISPOSER_H

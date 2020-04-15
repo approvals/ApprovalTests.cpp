@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_BOOSTTESTAPPROVALS_H
-#define APPROVALTESTS_CPP_BOOSTTESTAPPROVALS_H
+#pragma once
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
@@ -40,4 +39,3 @@ namespace ApprovalTests
 }
 
 #endif // APPROVALS_BOOSTTEST
-#endif //APPROVALTESTS_CPP_BOOSTTESTAPPROVALS_H

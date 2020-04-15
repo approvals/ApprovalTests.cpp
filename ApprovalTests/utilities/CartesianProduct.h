@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_CARTESIANPRODUCT_H
-#define APPROVALTESTS_CPP_CARTESIANPRODUCT_H
+#pragma once
 
 #include <functional>
 #include <tuple>
@@ -204,5 +203,3 @@ namespace ApprovalTests
         }
     } // namespace CartesianProduct
 } // namespace ApprovalTests
-
-#endif // APPROVALTESTS_CPP_CARTESIANPRODUCT_H

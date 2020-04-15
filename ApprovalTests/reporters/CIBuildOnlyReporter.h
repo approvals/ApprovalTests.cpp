@@ -1,5 +1,4 @@
-#ifndef APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H
-#define APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H
+#pragma once
 
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
@@ -79,5 +78,3 @@ namespace ApprovalTests
         }
     };
 } // namespace ApprovalTests
-
-#endif //APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H

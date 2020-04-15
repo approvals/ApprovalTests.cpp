@@ -1,6 +1,5 @@
 
-#ifndef APPROVALTESTS_CPP_SYSTEMLAUNCHER_H
-#define APPROVALTESTS_CPP_SYSTEMLAUNCHER_H
+#pragma once
 
 #include <cstdlib>
 #include <string>
@@ -73,5 +72,3 @@ namespace ApprovalTests
         }
     };
 }
-
-#endif //APPROVALTESTS_CPP_SYSTEMLAUNCHER_H
