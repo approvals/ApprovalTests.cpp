@@ -44,7 +44,7 @@ new KDiff3Reporter(),
 new TkDiffReporter(),
 new VisualStudioCodeReporter()
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.h#L95-L105' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.h#L94-L104' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Linux
@@ -57,7 +57,7 @@ new MeldReporter(),
 new SublimeMergeReporter(),
 new KDiff3Reporter()
 ```
-<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L96-L101' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L95-L100' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Windows
@@ -75,7 +75,7 @@ new SublimeMergeReporter(),
 new KDiff3Reporter(),
 new VisualStudioCodeReporter(),
 ```
-<sup><a href='/ApprovalTests/reporters/WindowsReporters.h#L160-L170' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/WindowsReporters.h#L159-L169' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Registering a default reporter

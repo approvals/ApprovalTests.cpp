@@ -40,7 +40,7 @@ APPROVAL_TESTS_MACROS_ENTRY(
     DiffInfo("/Applications/Araxis Merge.app/Contents/Utilities/compare",
              Type::TEXT_AND_IMAGE))
 ```
-<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L27-L32' title='File snippet `add_reporter_macro` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro' title='Navigate to start of snippet `add_reporter_macro`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L26-L31' title='File snippet `add_reporter_macro` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro' title='Navigate to start of snippet `add_reporter_macro`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Edit [ApprovalTests/reporters/MacReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/MacReporters.h)
@@ -58,7 +58,7 @@ public:
     }
 };
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.h#L20-L28' title='File snippet `add_reporter_class` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class' title='Navigate to start of snippet `add_reporter_class`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.h#L19-L27' title='File snippet `add_reporter_class` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class' title='Navigate to start of snippet `add_reporter_class`'>anchor</a></sup>
 <!-- endsnippet -->
 
 * Scroll to the end of this file, and add an instance of the new reporter class to the `MacDiffReporter`
@@ -78,7 +78,7 @@ new KDiff3Reporter(),
 new TkDiffReporter(),
 new VisualStudioCodeReporter()
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.h#L95-L105' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.h#L94-L104' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Edit [tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp)
