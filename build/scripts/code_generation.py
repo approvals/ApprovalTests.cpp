@@ -35,7 +35,6 @@ class CppGeneration:
                 #define APPROVALTESTS_VERSION                                                            \\
                     (APPROVALTESTS_VERSION_MAJOR * 10000 + APPROVALTESTS_VERSION_MINOR * 100 +           \\
                      APPROVALTESTS_VERSION_PATCH)
-
                 '''
         return text
 
