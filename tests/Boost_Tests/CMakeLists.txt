@@ -16,7 +16,7 @@ add_executable(${PROJECT_NAME}
 find_package(Boost 1.60.0 COMPONENTS REQUIRED)
 if (Boost_FOUND)
 
-    include_directories(${Boost_INCLUDE_DIRS})
+    include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
     target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 
 endif ()
