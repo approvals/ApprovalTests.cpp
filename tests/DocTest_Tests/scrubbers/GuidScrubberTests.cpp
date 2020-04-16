@@ -1,6 +1,9 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/scrubbers/Scrubbers.h"
 
+// <iostream> is needed to fix linker error on XCode Release builds:
+#include <iostream>
+
 using namespace ApprovalTests;
 
 TEST_CASE("Input with single GUID")
