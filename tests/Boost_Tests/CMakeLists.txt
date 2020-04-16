@@ -13,10 +13,20 @@ add_executable(${PROJECT_NAME}
 #  -DBOOST_ROOT=/Users/clare/Documents/develop/tools/boost/boost_1_71_0/
 # 2. In CLion, you can supply this argument in each of your CMake profiles, with:
 #    Preferences -> Build, Execution, Deployment -> CMake -> 'CMake options:'
+
+message("CYGWIN: ${CYGWIN}")
 find_package(Boost 1.60.0 COMPONENTS REQUIRED)
 if (Boost_FOUND)
 
     include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
+    if (CYGWIN)
+        # When ${Boost_INCLUDE_DIRS} is added as a SYSTEM location,
+        # the cygwin Appveyor builds fail to find <stdlib.h>.
+        # Searches suggest that manually adding /usr/include
+        # to the system include path will fix this:
+        message("Adjusting include path for cygwin")
+        include_directories(AFTER SYSTEM /usr/include)
+    endif ()
     target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 
 endif ()
