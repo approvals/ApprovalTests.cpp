@@ -6,7 +6,7 @@ namespace ApprovalTests
 {
     namespace Scrubbers
     {
-        std::string scrubGuid(const std::string& input)
+        inline std::string scrubGuid(const std::string& input)
         {
             // Match against the input to see if it's a GUID or not
             if (input == "")
