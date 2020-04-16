@@ -18,14 +18,13 @@ message("CYGWIN: ${CYGWIN}")
 find_package(Boost 1.60.0 COMPONENTS REQUIRED)
 if (Boost_FOUND)
 
-    include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
     if (CYGWIN)
         # When ${Boost_INCLUDE_DIRS} is added as a SYSTEM location,
         # the cygwin Appveyor builds fail to find <stdlib.h>.
-        # Searches suggest that manually adding /usr/include
-        # to the system include path will fix this:
-        message("Adjusting include path for cygwin")
-        include_directories(AFTER SYSTEM /usr/include)
+        # So for just this platform, don't use SYSTEM.
+        include_directories(${Boost_INCLUDE_DIRS})
+    else ()
+        include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
     endif ()
     target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 
