@@ -13,6 +13,7 @@ from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
 from scripts.utilities import check_step, replace_text_in_file, run, use_directory, \
     check_step_with_revert, assert_step
+from scripts.version import Version
 
 
 class PrepareRelease:
@@ -119,7 +120,7 @@ def build(update_version, deploy):
     old_version = load_current_version()
     new_version = update_version(old_version)
 
-    release_details = ReleaseDetails(old_version, new_version, deploy)
+    release_details = ReleaseDetails(old_version.as_map(), new_version.as_map(), deploy)
     prepare_release = PrepareRelease(release_details)
     prepare_release.prepare_everything()
     if not release_details.push_to_production:
@@ -129,7 +130,6 @@ def build(update_version, deploy):
         deploy_release.push_everything_live()
 
 
-def load_current_version():
+def load_current_version() -> Version:
     os.chdir("../ApprovalTests")
-    old_version = version.load_version(release_constants.build_dir)
-    return old_version
+    return Version.read(release_constants.build_dir)
