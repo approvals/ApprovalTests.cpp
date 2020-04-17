@@ -16,3 +16,5 @@ CMakeLists.txt.user
 *.swp
 /CMakeSettings.json
 __pycache__/
+.mypy_cache/
+*.sqlite3
