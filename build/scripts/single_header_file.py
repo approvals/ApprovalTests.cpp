@@ -8,7 +8,7 @@ from typing import Dict, List, Union
 
 
 class Parts:
-    def __init__(self, file:str, include_files: List[str]):
+    def __init__(self, file:str, include_files: List[str]) -> None:
         self.file = file
         self.include_files = include_files
 
