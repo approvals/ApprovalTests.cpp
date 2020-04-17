@@ -21,7 +21,7 @@ class TestForRegression(unittest.TestCase):
         output = prepare_release.create_single_header_file()
         verify_file(output)
 
-    def disabled_locking_test_create_simulated_single_header_file(self):
+    def test_create_simulated_single_header_file(self):
         # The output of this depends on the current C++ code, so changes
         # over time. It is here to help when refactoring the release process.
         prepare_release = self.get_prepare_release()
