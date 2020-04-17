@@ -1,5 +1,6 @@
 import os
 
+import pyperclip
 from git import Repo
 
 from scripts import version
@@ -46,9 +47,14 @@ class PrepareConanRelease:
             # TODO If we had previously created the branch for this release version, and then
             # changes were pushed to conan master, we will get an error about the
             # branch already existing, but pointing to a different change
-            new_branch = f'approvaltests.cpp.{version.get_version_without_v(new_version)}'
+            new_branch = PrepareConanRelease.get_new_branch_name(new_version)
             current = repo.create_head(new_branch)
             current.checkout()
+
+    @staticmethod
+    def get_new_branch_name(new_version):
+        new_branch = f'approvaltests.cpp.{version.get_version_without_v(new_version)}'
+        return new_branch
 
     @staticmethod
     def update_conan_recipe(details):
@@ -123,6 +129,10 @@ class DeployConanRelease:
             check_step(F"Commit the changes - with message 'Add approvaltests.cpp {new_version_without_v}'")
             check_step('Push the changes - NB on the feature branch for the release')
 
+        new_branch = PrepareConanRelease.get_new_branch_name(details.new_version)
+        run(["open", F'https://github.com/conan-io/conan-center-index/compare/master...claremacrae:{new_branch}?expand=1'])
+        description = F'** approvaltests.cpp / {new_version_without_v} **'
+        pyperclip.copy(description)
         print(
-            F"Create a pull request, including this in the description: **approvaltests.cpp/{new_version_without_v}**")
+            F"Create a pull request, including this at the start of the description (which is on your clipboard): {description}")
         check_step("that you have created a Pull Request for conan-center-index?")
