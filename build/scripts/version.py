@@ -10,9 +10,13 @@ class Version:
         self.patch = patch
 
     @staticmethod
+    def _version_file_path(directory):
+        return os.path.join(directory, 'version.ini')
+
+    @staticmethod
     def load_version(directory: str) -> Version:
         config = configparser.ConfigParser()
-        config.read(version_file_path(directory))
+        config.read(Version._version_file_path(directory))
         version = config['VERSION']
         return Version(
             int(version['major']),
@@ -60,10 +64,6 @@ def no_version_change(version):
     return create_version(get_major(version), get_minor(version), get_patch(version))
 
 
-def version_file_path(directory):
-    return os.path.join(directory, 'version.ini')
-
-
 def load_version(directory):
     return Version.load_version(directory).as_map()
 
@@ -76,5 +76,5 @@ def write_version(version, directory):
     config = configparser.ConfigParser()
     config['VERSION'] = version
 
-    with open(version_file_path(directory), 'w') as configfile:
+    with open(Version._version_file_path(directory), 'w') as configfile:
         config.write(configfile)
