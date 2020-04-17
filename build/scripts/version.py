@@ -16,7 +16,7 @@ class Version:
         return os.path.join(directory, 'version.ini')
 
     @staticmethod
-    def load_version(directory: str) -> Version:
+    def read(directory: str) -> Version:
         config = configparser.ConfigParser()
         config.read(Version._version_file_path(directory))
         version = cast(Dict[str, str], config['VERSION'])
@@ -78,7 +78,7 @@ def no_version_change(version):
 
 
 def load_version(directory):
-    return Version.load_version(directory).as_map()
+    return Version.read(directory).as_map()
 
 
 def create_version(major, minor, patch):
