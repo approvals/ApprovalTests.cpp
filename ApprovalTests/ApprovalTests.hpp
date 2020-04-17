@@ -71,6 +71,7 @@
 #include "ApprovalTests/reporters/CIBuildOnlyReporterUtils.h"
 #include "ApprovalTests/reporters/ClipboardReporter.h"
 #include "ApprovalTests/reporters/CombinationReporter.h"
+#include "ApprovalTests/scrubbers/Scrubbers.h"
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 
 #endif // APPROVALTESTS_CPP_APPROVALS_HPP
