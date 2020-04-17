@@ -4,9 +4,21 @@ from scripts.release_constants import release_constants
 from scripts.utilities import write_file, read_file, get_file_name
 
 
+from typing import Dict, List, Union
+
+
+class Parts:
+    def __init__(self, file:str, include_files: List[str]):
+        self.file = file
+        self.include_files = include_files
+
+    def __repr__(self):
+        return f"['file': '{self.file}', 'include_files': {self.include_files}]"
+
+
 class SingleHeaderFile(object):
     @staticmethod
-    def create(directory):
+    def create(directory: str) -> str:
         files = SingleHeaderFile.get_all_files(directory)
         files = SingleHeaderFile.sort_by_dependencies(files)
         output_file = os.path.abspath(release_constants.simulated_single_header_file_path)
@@ -25,7 +37,7 @@ class SingleHeaderFile(object):
         return output_file
 
     @staticmethod
-    def get_all_files(directory):
+    def get_all_files(directory: str) -> List[str]:
         all_files = []
         abs = os.path.abspath(directory)
         relative = get_file_name(abs)
@@ -40,12 +52,12 @@ class SingleHeaderFile(object):
         return all_files
 
     @staticmethod
-    def sort_by_dependencies(files):
+    def sort_by_dependencies(files: List[str]) -> List[str]:
         parts = list(map(SingleHeaderFile.get_parts, files))
-        return list(map(lambda p: p['file'], SingleHeaderFile.sort_parts_by_dependencies(parts)))
+        return list(map(lambda p: p.file, SingleHeaderFile.sort_parts_by_dependencies(parts)))
 
     @staticmethod
-    def get_parts(file):
+    def get_parts(file: str) -> Parts:
         # This is effectively creating a Directed Acyclic Graph of all files
         # and their #includes, which we later sort by dependency order.
         content = read_file(os.path.join('..', file))
@@ -53,10 +65,10 @@ class SingleHeaderFile(object):
         include_lines = filter(lambda t: t.startswith('#include "'), lines)
         include_files = list(map(lambda i: i.replace('#include ', '').replace('"', ''), include_lines))
         include_files = list(map(lambda f: get_file_name(f), include_files))
-        return {'file': file, 'include': include_files}
+        return Parts(file, include_files)
 
     @staticmethod
-    def sort_parts_by_dependencies(parts):
+    def sort_parts_by_dependencies(parts: List[Parts]) -> List[Parts]:
         length = len(parts)
         for lower_index in range(length):
             lower = parts[lower_index]
@@ -69,6 +81,6 @@ class SingleHeaderFile(object):
         return parts
 
     @staticmethod
-    def depends_on(file1, file2):
-        file2_name = get_file_name(file2['file'])
-        return file2_name in file1['include']
+    def depends_on(file1: Parts, file2: Parts) -> bool:
+        file2_name = get_file_name(file2.file)
+        return file2_name in file1.include_files

@@ -8,17 +8,17 @@ def run(command):
     subprocess.run(" ".join(command), shell=True, check=True)
 
 
-def write_file(file_name, text):
+def write_file(file_name: str, text: str) -> None:
     with open(file_name, 'w') as output:
         output.write(text)
 
 
-def read_file(file_name):
+def read_file(file_name: str) -> str:
     with open(file_name) as input:
         text = input.read()
     return text
 
-def get_file_name(path):
+def get_file_name(path: str) -> str:
     return os.path.split(path)[1]
 
 pushstack = list()

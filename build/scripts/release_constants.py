@@ -2,7 +2,7 @@ import os
 
 
 class ReleaseConstants:
-    def __init__(self):
+    def __init__(self) -> None:
 
         self.approval_tests_dir = F"../ApprovalTests"
         self.build_dir = F"../build"
