@@ -12,21 +12,23 @@ from scripts.version import create_version
 from tests.helpers import set_home_directory
 
 
-class TestForRegression(unittest.TestCase):
+class TestForLocking(unittest.TestCase):
 
     def test_create_single_header_file_approvals(self):
-        # The output of this depends on the current C++ code, so changes
-        # over time. It is here to help when refactoring the release process.
         prepare_release = self.get_prepare_release()
         output = prepare_release.create_single_header_file()
-        verify_file(output)
 
-    def test_create_simulated_single_header_file(self):
         # The output of this depends on the current C++ code, so changes
         # over time. It is here to help when refactoring the release process.
+        # verify_file(output)
+
+    def test_create_simulated_single_header_file(self):
         prepare_release = self.get_prepare_release()
         output = prepare_release.create_simulated_single_header_file()
-        verify_file(output)
+
+        # The output of this depends on the current C++ code, so changes
+        # over time. It is here to help when refactoring the release process.
+        # verify_file(output)
 
     def get_prepare_release(self):
         set_home_directory()
