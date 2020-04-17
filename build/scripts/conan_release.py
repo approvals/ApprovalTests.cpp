@@ -26,7 +26,7 @@ class PrepareConanRelease:
 
         response = input("  Conan: Has the previous pull request been accepted? [Y/y] ")
         if response in ['Y', 'y']:
-            PrepareConanRelease.sync_conan_repo(details.new_version_as_text)
+            PrepareConanRelease.sync_conan_repo(details.new_version_as_text1())
         else:
             # Do nothing - we are adding to our previous Pull Request
             # This does assume the same user is doing the previous and current release.
@@ -58,8 +58,8 @@ class PrepareConanRelease:
 
     @staticmethod
     def update_conan_recipe(details):
-        new_version_with_v = details.new_version_as_text
-        new_version_without_v = version.get_version_without_v(details.new_version_as_text)
+        new_version_with_v = details.new_version_as_text1()
+        new_version_without_v = version.get_version_without_v(details.new_version_as_text1())
 
         conan_approvaltests_dir = ConanReleaseDetails().conan_approvaltests_dir
 
@@ -123,13 +123,13 @@ class DeployConanRelease:
         with use_directory(os.path.join(ConanReleaseDetails().conan_approvaltests_dir, 'all')):
             # We cannot test the new Conan recipe until the new release has been
             # published on github
-            new_version_without_v = version.get_version_without_v(details.new_version_as_text)
+            new_version_without_v = version.get_version_without_v(details.new_version_as_text1())
             run(['conan', 'create', '.', F'{new_version_without_v}@'])
 
             check_step(F"Commit the changes - with message 'Add approvaltests.cpp {new_version_without_v}'")
             check_step('Push the changes - NB on the feature branch for the release')
 
-        new_branch = PrepareConanRelease.get_new_branch_name(details.new_version_as_text)
+        new_branch = PrepareConanRelease.get_new_branch_name(details.new_version_as_text1())
         run(["open", F'https://github.com/conan-io/conan-center-index/compare/master...claremacrae:{new_branch}?expand=1'])
         description = F'** approvaltests.cpp / {new_version_without_v} **'
         pyperclip.copy(description)

@@ -18,7 +18,7 @@ from scripts.version import Version
 
 
 class PrepareRelease:
-    def __init__(self, details):
+    def __init__(self, details: ReleaseDetails):
         self.details = details
 
     def check_pre_conditions_for_publish(self):
@@ -38,7 +38,7 @@ class PrepareRelease:
             check_step("the builds are passing")
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_x.y.z.md"])
-            run(["open", F"https://github.com/approvals/ApprovalTests.cpp/compare/{self.details.old_version_as_text}...master"])
+            run(["open", F"https://github.com/approvals/ApprovalTests.cpp/compare/{self.details.xyz_old_version.get_version_as_text()}...master"])
             check_step("the release notes are ready")
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/issues"])
@@ -62,8 +62,9 @@ class PrepareRelease:
             os.remove(STARTER_PATH_OLD_SINGLE_HEADER)
 
         # Update the version in the "redirect" header:
-        replace_text_in_file(F"{release_constants.starter_project_dir}/lib/ApprovalTests.hpp", self.details.old_version_as_text,
-                             self.details.new_version_as_text)
+        replace_text_in_file(F"{release_constants.starter_project_dir}/lib/ApprovalTests.hpp",
+                             self.details.xyz_old_version.get_version_text(),
+                             self.details.xyz_new_version.get_version_text())
 
         # Update the version number in the Visual Studio project:
         replace_text_in_file(F"{release_constants.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj",
@@ -112,7 +113,7 @@ class PrepareRelease:
 
         PrepareDocumentationRelease.prepare_documentation(self.details)
 
-        version.write_version(self.details.new_version_object, release_constants.build_dir)
+        self.details.xyz_new_version.write(release_constants.build_dir)
         self.add_to_git()
 
         self.check_changes()

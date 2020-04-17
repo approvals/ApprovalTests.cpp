@@ -30,3 +30,9 @@ class ReleaseDetails:
 
         self.new_release_notes_path = os.path.join(release_constants.release_notes_dir,
                                                    F'relnotes_{new_version.get_version_text_without_v()}.md')
+
+    def old_version_as_text1(self) -> str:
+        return self.xyz_old_version.get_version_text()
+
+    def new_version_as_text1(self):
+        return self.xyz_new_version.get_version_text()
