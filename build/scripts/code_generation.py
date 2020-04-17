@@ -10,7 +10,7 @@ from scripts.utilities import read_file, write_file, use_directory
 
 
 class CppGeneration:
-    def __init__(self, details: ReleaseDetails) -> object:
+    def __init__(self, details: ReleaseDetails) -> None:
         self.details = details
 
     def update_version_number_header(self):
