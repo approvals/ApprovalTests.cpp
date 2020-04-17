@@ -5,6 +5,7 @@ from git import Repo
 
 from scripts import version
 from scripts.git_utilities import GitUtilities
+from scripts.release_details import ReleaseDetails
 from scripts.utilities import check_step, read_file, write_file, calculate_sha256, assert_step, run, use_directory
 from scripts.version import get_version_without_v
 
@@ -21,12 +22,12 @@ class PrepareConanRelease:
         PrepareConanRelease.update_conan_to_latest()
 
     @staticmethod
-    def prepare_release(details):
+    def prepare_release(details: ReleaseDetails):
         GitUtilities.reset_and_clean_working_directory(ConanReleaseDetails().conan_repo_dir)
 
         response = input("  Conan: Has the previous pull request been accepted? [Y/y] ")
         if response in ['Y', 'y']:
-            PrepareConanRelease.sync_conan_repo(details.new_version_as_text1())
+            PrepareConanRelease.sync_conan_repo(details.xyz_new_version.get_version_text())
         else:
             # Do nothing - we are adding to our previous Pull Request
             # This does assume the same user is doing the previous and current release.
