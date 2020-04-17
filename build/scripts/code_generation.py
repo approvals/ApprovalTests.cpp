@@ -3,7 +3,6 @@ import os
 from scripts import version
 from scripts.embed import create_single_header_file
 from scripts.multiline_string_utilities import remove_indentation
-from scripts.pragma_once_discarder import PragmaOnceDiscarder
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
 from scripts.single_header_file import SingleHeaderFile
@@ -65,14 +64,10 @@ class CppGeneration:
         include_search_path1 = ".."
         include_search_path2 = "../ApprovalTests/"
 
-        pragma_once = PragmaOnceDiscarder()
-        discardables = [mdsnippets_discarder, pragma_once.get_method()]
+        discardables = [mdsnippets_discarder]
 
         create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2,
                                   discardables)
-
-        pragma_once.assert_checks()
-
 
     @staticmethod
     def prepare_release(details: ReleaseDetails) -> None:
