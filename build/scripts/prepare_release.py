@@ -38,7 +38,7 @@ class PrepareRelease:
             check_step("the builds are passing")
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_x.y.z.md"])
-            run(["open", F"https://github.com/approvals/ApprovalTests.cpp/compare/{self.details.old_version}...master"])
+            run(["open", F"https://github.com/approvals/ApprovalTests.cpp/compare/{self.details.old_version_as_text}...master"])
             check_step("the release notes are ready")
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/issues"])
@@ -62,8 +62,8 @@ class PrepareRelease:
             os.remove(STARTER_PATH_OLD_SINGLE_HEADER)
 
         # Update the version in the "redirect" header:
-        replace_text_in_file(F"{release_constants.starter_project_dir}/lib/ApprovalTests.hpp", self.details.old_version,
-                             self.details.new_version)
+        replace_text_in_file(F"{release_constants.starter_project_dir}/lib/ApprovalTests.hpp", self.details.old_version_as_text,
+                             self.details.new_version_as_text)
 
         # Update the version number in the Visual Studio project:
         replace_text_in_file(F"{release_constants.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj",
@@ -121,7 +121,7 @@ def build(update_version: Callable[[Version], Version], deploy: bool) -> None:
     old_version = load_current_version()
     new_version = update_version(old_version)
 
-    release_details = ReleaseDetails(old_version.as_map(), new_version.as_map(), deploy)
+    release_details = ReleaseDetails(old_version, new_version, deploy)
     prepare_release = PrepareRelease(release_details)
     prepare_release.prepare_everything()
     if not release_details.push_to_production:

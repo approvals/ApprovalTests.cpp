@@ -11,22 +11,22 @@ from scripts.deploy_release import DeployRelease
 # Review folder structure for Python scripts
 # Add a reminder to close any release milestone
 from scripts.release_constants import release_constants
+from scripts.version import Version
 
 
 class ReleaseDetails:
-    def __init__(self, old_version, new_version, publish_release):
-        self.old_version = version.get_version_text(old_version)
-        self.new_version = version.get_version_text(new_version)
-        self.new_version_object = new_version
+    def __init__(self, old_version: Version, new_version: Version, publish_release: bool) -> None:
+        self.xyz_old_version = old_version
+        self.xyz_new_version = new_version
+        self.old_version_as_text = old_version.get_version_text()
+        self.new_version_as_text = new_version.get_version_text()
+        self.new_version_object = new_version.as_map()
         self.push_to_production = publish_release
 
-        self.old_single_header = F"ApprovalTests.{self.old_version}.hpp"
-        self.new_single_header = F"ApprovalTests.{self.new_version}.hpp"
+        self.old_single_header = F"ApprovalTests.{old_version.get_version_text()}.hpp"
+        self.new_single_header = F"ApprovalTests.{new_version.get_version_text()}.hpp"
 
         self.release_new_single_header = F"{release_constants.release_dir}/{self.new_single_header}"
 
         self.new_release_notes_path = os.path.join(release_constants.release_notes_dir,
-                                                   F'relnotes_{version.get_version_without_v(self.new_version)}.md')
-
-
-
+                                                   F'relnotes_{new_version.get_version_text_without_v()}.md')
