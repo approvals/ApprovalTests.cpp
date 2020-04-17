@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import configparser
 import os
+from typing import Dict, cast
+
 
 class Version:
     def __init__(self, major: int, minor: int, patch: int) -> None:
@@ -17,14 +19,25 @@ class Version:
     def load_version(directory: str) -> Version:
         config = configparser.ConfigParser()
         config.read(Version._version_file_path(directory))
-        version = config['VERSION']
+        version = cast(Dict[str, str], config['VERSION'])
+        return Version.from_map(version)
+
+    def write(self, directory: str) -> None:
+        config = configparser.ConfigParser()
+        config['VERSION'] = self.as_map()
+
+        with open(Version._version_file_path(directory), 'w') as configfile:
+            config.write(configfile)
+
+    def as_map(self) -> Dict[str, str]:
+        return {"major": str(self.major), "minor": str(self.minor), "patch": str(self.patch)}
+
+    @staticmethod
+    def from_map(version: Dict[str, str]) -> Version:
         return Version(
             int(version['major']),
             int(version['minor']),
             int(version['patch']))
-
-    def as_map(self):
-        return {"major": self.major, "minor": self.minor, "patch": self.patch}
 
 
 def get_version_text(version):
@@ -73,8 +86,4 @@ def create_version(major, minor, patch):
 
 
 def write_version(version, directory):
-    config = configparser.ConfigParser()
-    config['VERSION'] = version
-
-    with open(Version._version_file_path(directory), 'w') as configfile:
-        config.write(configfile)
+    Version.from_map(version).write(directory)
