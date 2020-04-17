@@ -1,11 +1,6 @@
 import unittest
 
-from approvaltests.approvals import verify
-
-from scripts.code_generation import CppGeneration
 from scripts.documentation_release import PrepareDocumentationRelease
-from scripts.prepare_release import PrepareRelease
-from scripts.version import create_version
 
 
 class TestPrepareDocumentation(unittest.TestCase):
