@@ -2,7 +2,6 @@ import os
 
 # TODO list
 # Add CI step to check this prepare process works on every push
-# Rewrite the SingleHpp Java program in Python
 # Automate the check_steps
 # Improve the chdir to start at the top-level directory - and check that we are the top-level
 # Review folder structure for Python scripts
