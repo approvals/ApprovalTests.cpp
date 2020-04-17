@@ -1,12 +1,23 @@
+from __future__ import annotations
+
 import configparser
 import os
 
-
 class Version:
-    def __init__(self, major, minor, patch):
+    def __init__(self, major: int, minor: int, patch: int) -> None:
         self.major = major
         self.minor = minor
         self.patch = patch
+
+    @staticmethod
+    def load_version(directory: str) -> Version:
+        config = configparser.ConfigParser()
+        config.read(version_file_path(directory))
+        version = config['VERSION']
+        return Version(
+            int(version['major']),
+            int(version['minor']),
+            int(version['patch']))
 
     def as_map(self):
         return {"major": self.major, "minor": self.minor, "patch": self.patch}
@@ -54,9 +65,7 @@ def version_file_path(directory):
 
 
 def load_version(directory):
-    config = configparser.ConfigParser()
-    config.read(version_file_path(directory))
-    return config['VERSION']
+    return Version.load_version(directory).as_map()
 
 
 def create_version(major, minor, patch):
