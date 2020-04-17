@@ -1,8 +1,5 @@
 import os
 
-from scripts import version
-from scripts.deploy_release import DeployRelease
-
 # TODO list
 # Add CI step to check this prepare process works on every push
 # Rewrite the SingleHpp Java program in Python

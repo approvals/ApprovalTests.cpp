@@ -15,7 +15,7 @@ class TestConanRelease(unittest.TestCase):
     def test_config_yml(self):
         text = ''
         for i in range(3):
-            text += PrepareConanRelease.create_conan_config_yml_text(F"1.1.{i}")
+            text += PrepareConanRelease.create_conan_config_yml_text(Version(1, 1, i))
         verify(text)
 
     def test_conandata_yml(self):

@@ -3,11 +3,10 @@ import os
 import pyperclip
 from git import Repo
 
-from scripts import version
 from scripts.git_utilities import GitUtilities
 from scripts.release_details import ReleaseDetails
 from scripts.utilities import check_step, read_file, write_file, calculate_sha256, run, use_directory
-from scripts.version import get_version_without_v, Version
+from scripts.version import Version
 
 
 class ConanReleaseDetails:
@@ -59,34 +58,31 @@ class PrepareConanRelease:
 
     @staticmethod
     def update_conan_recipe(details: ReleaseDetails) -> None:
-        new_version_with_v = details.new_version_as_text1()
-        new_version_without_v = version.get_version_without_v(details.new_version_as_text1())
-
         conan_approvaltests_dir = ConanReleaseDetails().conan_approvaltests_dir
 
         PrepareConanRelease.update_conandata_yml(details, ConanReleaseDetails().conan_approvaltests_dir)
-        PrepareConanRelease.update_conan_config_yml(conan_approvaltests_dir, new_version_without_v)
+        PrepareConanRelease.update_conan_config_yml(conan_approvaltests_dir, details.xyz_new_version)
 
     @staticmethod
-    def update_conan_config_yml(conan_approvaltests_dir: str, new_version_without_v: str) -> None:
+    def update_conan_config_yml(conan_approvaltests_dir: str, new_version: Version) -> None:
         conan_data_file = os.path.join(conan_approvaltests_dir, 'config.yml')
         conandata_yml_text = read_file(conan_data_file)
 
-        conandata_yml_text += PrepareConanRelease.create_conan_config_yml_text(new_version_without_v)
+        conandata_yml_text += PrepareConanRelease.create_conan_config_yml_text(new_version)
 
         write_file(conan_data_file, conandata_yml_text)
 
     @staticmethod
-    def create_conan_config_yml_text(new_version_without_v: str) -> str:
+    def create_conan_config_yml_text(new_version: Version) -> str:
         conan_data = \
-            F'''  {new_version_without_v}:
+            F'''  {new_version.get_version_text_without_v()}:
     folder: all
 '''
         return conan_data
 
     @staticmethod
     def update_conandata_yml(details: ReleaseDetails, conan_approvaltests_dir: str) -> None:
-        version = details.new_version_object
+        version = details.xyz_new_version
         conan_data_file = os.path.join(conan_approvaltests_dir, 'all', 'conandata.yml')
         conandata_yml_text = read_file(conan_data_file)
 
@@ -103,9 +99,9 @@ class PrepareConanRelease:
 
     @staticmethod
     def create_conandata_yml_text(new_version: Version, single_header_sha: str, licence_file_sha: str) -> str:
-        new_version_with_v = version.get_version_text(new_version)
+        new_version_with_v = new_version.get_version_text()
         conan_data = \
-            F'''  {get_version_without_v(new_version_with_v)}:
+            F'''  {new_version.get_version_text_without_v()}:
     - url: https://github.com/approvals/ApprovalTests.cpp/releases/download/{new_version_with_v}/ApprovalTests.{new_version_with_v}.hpp
       sha256: {single_header_sha}
     - url: "https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/{new_version_with_v}/LICENSE"
@@ -124,13 +120,13 @@ class DeployConanRelease:
         with use_directory(os.path.join(ConanReleaseDetails().conan_approvaltests_dir, 'all')):
             # We cannot test the new Conan recipe until the new release has been
             # published on github
-            new_version_without_v = version.get_version_without_v(details.new_version_as_text1())
+            new_version_without_v = details.xyz_new_version.get_version_text_without_v()
             run(['conan', 'create', '.', F'{new_version_without_v}@'])
 
             check_step(F"Commit the changes - with message 'Add approvaltests.cpp {new_version_without_v}'")
             check_step('Push the changes - NB on the feature branch for the release')
 
-        new_branch = PrepareConanRelease.get_new_branch_name(details.new_version_as_text1())
+        new_branch = PrepareConanRelease.get_new_branch_name(details.xyz_new_version)
         run(["open", F'https://github.com/conan-io/conan-center-index/compare/master...claremacrae:{new_branch}?expand=1'])
         description = F'** approvaltests.cpp / {new_version_without_v} **'
         pyperclip.copy(description)
