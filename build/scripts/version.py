@@ -38,6 +38,9 @@ class Version:
     def update_patch(self) -> Version:
         return Version(self.major, self.minor, self.patch + 1)
 
+    def clone(self) -> Version:
+        return Version(self.major, self.minor, self.patch)
+
     def as_map(self) -> Dict[str, str]:
         return {"major": str(self.major), "minor": str(self.minor), "patch": str(self.patch)}
 
@@ -89,7 +92,7 @@ def get_patch(version):
 
 def no_version_change(version):
     # This is useful if a deploy failed part-way through, and we don't want to increment the version number
-    return create_version(get_major(version), get_minor(version), get_patch(version))
+    return Version.from_map(version).clone().as_map()
 
 
 def load_version(directory):
