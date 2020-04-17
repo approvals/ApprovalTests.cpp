@@ -6,28 +6,28 @@ from git import Repo
 from scripts import version
 from scripts.git_utilities import GitUtilities
 from scripts.release_details import ReleaseDetails
-from scripts.utilities import check_step, read_file, write_file, calculate_sha256, assert_step, run, use_directory
-from scripts.version import get_version_without_v
+from scripts.utilities import check_step, read_file, write_file, calculate_sha256, run, use_directory
+from scripts.version import get_version_without_v, Version
 
 
 class ConanReleaseDetails:
-    def __init__(self):
+    def __init__(self) -> None:
         self.conan_repo_dir = '../../../conan/conan-center-index-claremacrae'
         self.conan_approvaltests_dir = os.path.join(self.conan_repo_dir, 'recipes', 'approvaltests.cpp')
 
 
 class PrepareConanRelease:
     @staticmethod
-    def check_preconditions(details):
+    def check_preconditions(details: ReleaseDetails) -> None:
         PrepareConanRelease.update_conan_to_latest()
 
     @staticmethod
-    def prepare_release(details: ReleaseDetails):
+    def prepare_release(details: ReleaseDetails) -> None:
         GitUtilities.reset_and_clean_working_directory(ConanReleaseDetails().conan_repo_dir)
 
         response = input("  Conan: Has the previous pull request been accepted? [Y/y] ")
         if response in ['Y', 'y']:
-            PrepareConanRelease.sync_conan_repo(details.xyz_new_version.get_version_text())
+            PrepareConanRelease.sync_conan_repo(details.xyz_new_version)
         else:
             # Do nothing - we are adding to our previous Pull Request
             # This does assume the same user is doing the previous and current release.
@@ -35,7 +35,7 @@ class PrepareConanRelease:
         PrepareConanRelease.update_conan_recipe(details)
 
     @staticmethod
-    def sync_conan_repo(new_version):
+    def sync_conan_repo(new_version: Version) -> None:
         print('Updating conan repo and creating branch')
         with use_directory(ConanReleaseDetails().conan_repo_dir):
             print(os.getcwd())
@@ -53,12 +53,12 @@ class PrepareConanRelease:
             current.checkout()
 
     @staticmethod
-    def get_new_branch_name(new_version):
-        new_branch = f'approvaltests.cpp.{version.get_version_without_v(new_version)}'
+    def get_new_branch_name(new_version: Version) -> str:
+        new_branch = f'approvaltests.cpp.{new_version.get_version_text_without_v()}'
         return new_branch
 
     @staticmethod
-    def update_conan_recipe(details):
+    def update_conan_recipe(details: ReleaseDetails) -> None:
         new_version_with_v = details.new_version_as_text1()
         new_version_without_v = version.get_version_without_v(details.new_version_as_text1())
 
@@ -68,7 +68,7 @@ class PrepareConanRelease:
         PrepareConanRelease.update_conan_config_yml(conan_approvaltests_dir, new_version_without_v)
 
     @staticmethod
-    def update_conan_config_yml(conan_approvaltests_dir, new_version_without_v):
+    def update_conan_config_yml(conan_approvaltests_dir: str, new_version_without_v: str) -> None:
         conan_data_file = os.path.join(conan_approvaltests_dir, 'config.yml')
         conandata_yml_text = read_file(conan_data_file)
 
@@ -77,7 +77,7 @@ class PrepareConanRelease:
         write_file(conan_data_file, conandata_yml_text)
 
     @staticmethod
-    def create_conan_config_yml_text(new_version_without_v):
+    def create_conan_config_yml_text(new_version_without_v: str) -> str:
         conan_data = \
             F'''  {new_version_without_v}:
     folder: all
@@ -85,7 +85,7 @@ class PrepareConanRelease:
         return conan_data
 
     @staticmethod
-    def update_conandata_yml(details, conan_approvaltests_dir):
+    def update_conandata_yml(details: ReleaseDetails, conan_approvaltests_dir: str) -> None:
         version = details.new_version_object
         conan_data_file = os.path.join(conan_approvaltests_dir, 'all', 'conandata.yml')
         conandata_yml_text = read_file(conan_data_file)
@@ -102,7 +102,7 @@ class PrepareConanRelease:
         write_file(conan_data_file, conandata_yml_text)
 
     @staticmethod
-    def create_conandata_yml_text(new_version, single_header_sha, licence_file_sha):
+    def create_conandata_yml_text(new_version: Version, single_header_sha: str, licence_file_sha: str) -> str:
         new_version_with_v = version.get_version_text(new_version)
         conan_data = \
             F'''  {get_version_without_v(new_version_with_v)}:
@@ -114,13 +114,13 @@ class PrepareConanRelease:
         return conan_data
 
     @staticmethod
-    def update_conan_to_latest():
+    def update_conan_to_latest() -> None:
         run(["pip3", "install", "--upgrade", "conan"])
 
 
 class DeployConanRelease:
     @staticmethod
-    def test_conan_and_create_pr(details):
+    def test_conan_and_create_pr(details: ReleaseDetails) -> None:
         with use_directory(os.path.join(ConanReleaseDetails().conan_approvaltests_dir, 'all')):
             # We cannot test the new Conan recipe until the new release has been
             # published on github
