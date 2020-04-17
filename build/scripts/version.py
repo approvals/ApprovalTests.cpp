@@ -29,6 +29,15 @@ class Version:
         with open(Version._version_file_path(directory), 'w') as configfile:
             config.write(configfile)
 
+    def update_major(self) -> Version:
+        return Version(self.major + 1, 0, 0)
+
+    def update_minor(self) -> Version:
+        return Version(self.major, self.minor + 1, 0)
+
+    def update_patch(self) -> Version:
+        return Version(self.major, self.minor, self.patch + 1)
+
     def as_map(self) -> Dict[str, str]:
         return {"major": str(self.major), "minor": str(self.minor), "patch": str(self.patch)}
 
@@ -55,15 +64,15 @@ def get_version_without_v(version_string):
 
 
 def update_major(version):
-    return create_version(get_major(version) + 1, 0, 0)
+    return Version.from_map(version).update_major().as_map()
 
 
 def update_minor(version):
-    return create_version(get_major(version), get_minor(version) + 1, 0)
+    return Version.from_map(version).update_minor().as_map()
 
 
 def update_patch(version):
-    return create_version(get_major(version), get_minor(version), get_patch(version) + 1)
+    return Version.from_map(version).update_patch().as_map()
 
 
 def get_major(version):
