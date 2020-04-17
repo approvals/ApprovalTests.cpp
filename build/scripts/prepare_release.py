@@ -1,5 +1,6 @@
 import os
 import shutil
+from typing import Callable
 
 from git import Repo
 
@@ -116,7 +117,7 @@ class PrepareRelease:
 
         self.check_changes()
 
-def build(update_version, deploy):
+def build(update_version: Callable[[Version], Version], deploy: bool) -> None:
     old_version = load_current_version()
     new_version = update_version(old_version)
 
