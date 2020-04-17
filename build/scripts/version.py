@@ -39,9 +39,15 @@ class Version:
             int(version['minor']),
             int(version['patch']))
 
+    def get_version_text(self, prefix:str = 'v.') -> str:
+        return F"{prefix}{self.major}.{self.minor}.{self.patch}"
 
-def get_version_text(version):
-    return F"v.{version['major']}.{version['minor']}.{version['patch']}"
+    def get_version_text_without_v(self) -> str:
+        return self.get_version_text('')
+
+
+def get_version_text(version) -> str:
+    return Version.from_map(version).get_version_text()
 
 
 def get_version_without_v(version_string):
