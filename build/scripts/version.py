@@ -2,6 +2,16 @@ import configparser
 import os
 
 
+class Version:
+    def __init__(self, major, minor, patch):
+        self.major = major
+        self.minor = minor
+        self.patch = patch
+
+    def as_map(self):
+        return {"major": self.major, "minor": self.minor, "patch": self.patch}
+
+
 def get_version_text(version):
     return F"v.{version['major']}.{version['minor']}.{version['patch']}"
 
@@ -50,7 +60,7 @@ def load_version(directory):
 
 
 def create_version(major, minor, patch):
-    return {"major": major, "minor": minor, "patch": patch}
+    return Version(major, minor, patch).as_map()
 
 
 def write_version(version, directory):
