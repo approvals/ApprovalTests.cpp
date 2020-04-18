@@ -81,7 +81,3 @@ def update_patch(version: Dict[str, str]) -> Dict[str, str]:
 def no_version_change(version: Dict[str, str]) -> Dict[str, str]:
     # This is useful if a deploy failed part-way through, and we don't want to increment the version number
     return Version.from_map(version).clone().as_map()
-
-
-def load_version(directory: str) -> Dict[str, str]:
-    return Version.read(directory).as_map()

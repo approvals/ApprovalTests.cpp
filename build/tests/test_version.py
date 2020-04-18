@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from scripts.version import load_version, get_version_text, get_version_without_v, update_minor, update_patch, \
+from scripts.version import get_version_text, get_version_without_v, update_minor, update_patch, \
     update_major, no_version_change, Version
 
 from typing import Callable, Dict
@@ -23,7 +23,7 @@ class TestVersion(unittest.TestCase):
     @staticmethod
     def load_test_version_ini() -> Dict[str, str]:
         source_dir = os.path.split(__file__)[0]
-        version = load_version(source_dir)
+        version = Version.read(source_dir).as_map()
         return version
 
     def assert_version(self, expected_version: str, update_method: Callable) -> None:
