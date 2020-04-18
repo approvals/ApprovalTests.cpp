@@ -16,7 +16,7 @@ class DeployRelease:
     # Starter Project
     def commit_starter_project(self) -> None:
         with use_directory(release_constants.starter_project_dir):
-            run(["git", "commit", "-m", F"'Update to Approvals {self.details.new_version_as_text1()}'"])
+            run(["git", "commit", "-m", F"'Update to Approvals {self.details.new_version_as_text()}'"])
 
     def push_starter_project(self) -> None:
         with use_directory(release_constants.starter_project_dir):
@@ -31,7 +31,7 @@ class DeployRelease:
     # Main Project
     def commit_main_project(self) -> None:
         with use_directory(release_constants.main_project_dir):
-            run(["git", "commit", "-m", F"'{self.details.new_version_as_text1()} release'"])
+            run(["git", "commit", "-m", F"'{self.details.new_version_as_text()} release'"])
 
     def push_main_project(self) -> None:
         with use_directory(release_constants.main_project_dir):
@@ -46,7 +46,7 @@ class DeployRelease:
         release_notes = read_file(self.details.new_release_notes_path)
         pyperclip.copy(release_notes)
         print('The release notes are on the clipboard')
-        github_url = F"'https://github.com/approvals/ApprovalTests.cpp/releases/new?tag={self.details.new_version_as_text1()}&title=Single%20Hpp%20File%20-%20{self.details.new_version_as_text1()}'"
+        github_url = F"'https://github.com/approvals/ApprovalTests.cpp/releases/new?tag={self.details.new_version_as_text()}&title=Single%20Hpp%20File%20-%20{self.details.new_version_as_text()}'"
         run(["open", github_url])
         run(["open", release_constants.release_dir])
         check_step("that the release is published")
@@ -54,7 +54,7 @@ class DeployRelease:
     def publish_tweet(self) -> None:
         # Draft the tweet
         check_step("that you have created a screenshot of the release notes, for the Tweet")
-        tweet_text = F"'https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+{self.details.new_version_as_text1()}+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F{self.details.new_version_as_text1()}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21'"
+        tweet_text = F"'https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+{self.details.new_version_as_text()}+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F{self.details.new_version_as_text()}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21'"
         run(["open", tweet_text])
         check_step("that the tweet is published")
 

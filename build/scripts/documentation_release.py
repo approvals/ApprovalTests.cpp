@@ -42,17 +42,17 @@ class PrepareDocumentationRelease:
     def update_features_page(details: ReleaseDetails) -> None:
         features_file = '../doc/mdsource/Features.source.md'
         content = read_file(features_file)
-        update_file = PrepareDocumentationRelease.prepare_update_features_page(details.old_version_as_text1(), details.new_version_as_text1(), content)
+        update_file = PrepareDocumentationRelease.prepare_update_features_page(details.old_version_as_text(), details.new_version_as_text(), content)
         update_file(features_file)
 
     @staticmethod
     def update_readme_and_docs(details: ReleaseDetails) -> None:
         with use_directory(".."):
-            replace_text_in_file("mdsource/README.source.md", details.old_version_as_text1(), details.new_version_as_text1())
+            replace_text_in_file("mdsource/README.source.md", details.old_version_as_text(), details.new_version_as_text())
 
     @staticmethod
     def prepare_release_notes(details: ReleaseDetails) -> None:
-        replace_text_in_file(release_constants.xxx_release_notes_path, 'v.x.y.z', details.new_version_as_text1())
+        replace_text_in_file(release_constants.xxx_release_notes_path, 'v.x.y.z', details.new_version_as_text())
         shutil.move(release_constants.xxx_release_notes_path, details.new_release_notes_path)
 
         # Make sure the above move has finished, before we create the new xxx file:
