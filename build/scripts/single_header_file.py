@@ -12,7 +12,7 @@ class Parts:
         self.file = file
         self.include_files = include_files
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"['file': '{self.file}', 'include_files': {self.include_files}]"
 
 

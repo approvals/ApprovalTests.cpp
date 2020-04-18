@@ -30,5 +30,5 @@ class ReleaseDetails:
     def old_version_as_text1(self) -> str:
         return self.xyz_old_version.get_version_text()
 
-    def new_version_as_text1(self):
+    def new_version_as_text1(self) -> str:
         return self.xyz_new_version.get_version_text()

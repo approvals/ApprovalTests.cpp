@@ -12,7 +12,7 @@ class Version:
         self.patch = patch
 
     @staticmethod
-    def _version_file_path(directory):
+    def _version_file_path(directory: str) -> str:
         return os.path.join(directory, 'version.ini')
 
     @staticmethod
@@ -58,50 +58,50 @@ class Version:
         return self.get_version_text('')
 
 
-def get_version_text(version) -> str:
+def get_version_text(version: Dict[str, str]) -> str:
     return Version.from_map(version).get_version_text()
 
 
-def get_version_without_v(version_string):
+def get_version_without_v(version_string: str) -> str:
     return version_string.replace("v.", "")
 
 
-def update_major(version):
+def update_major(version: Dict[str, str]) -> Dict[str, str]:
     return Version.from_map(version).update_major().as_map()
 
 
-def update_minor(version):
+def update_minor(version: Dict[str, str]) -> Dict[str, str]:
     return Version.from_map(version).update_minor().as_map()
 
 
-def update_patch(version):
+def update_patch(version: Dict[str, str]) -> Dict[str, str]:
     return Version.from_map(version).update_patch().as_map()
 
 
-def get_major(version):
+def get_major(version: Dict[str, str]) -> int:
     return int(version['major'])
 
 
-def get_minor(version):
+def get_minor(version: Dict[str, str]) -> int:
     return int(version['minor'])
 
 
-def get_patch(version):
+def get_patch(version: Dict[str, str]) -> int:
     return int(version['patch'])
 
 
-def no_version_change(version):
+def no_version_change(version: Dict[str, str]) -> Dict[str, str]:
     # This is useful if a deploy failed part-way through, and we don't want to increment the version number
     return Version.from_map(version).clone().as_map()
 
 
-def load_version(directory):
+def load_version(directory: str) -> Dict[str, str]:
     return Version.read(directory).as_map()
 
 
-def create_version(major, minor, patch):
+def create_version(major: int, minor: int, patch: int) -> Dict[str, str]:
     return Version(major, minor, patch).as_map()
 
 
-def write_version(version, directory):
+def write_version(version: Dict[str, str], directory: str) -> None:
     Version.from_map(version).write(directory)

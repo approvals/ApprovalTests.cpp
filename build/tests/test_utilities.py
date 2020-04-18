@@ -4,20 +4,20 @@ from scripts.utilities import pushdir, popdir, use_directory, write_file, replac
 
 
 class TestUtilities(unittest.TestCase):
-    def test_push_and_pop_directory(self):
+    def test_push_and_pop_directory(self) -> None:
         cwd = os.getcwd()
         pushdir('..')
         self.assertNotEqual(cwd, os.getcwd())
         popdir()
         self.assertEqual(cwd, os.getcwd())
 
-    def test_with_push_directory(self):
+    def test_with_push_directory(self) -> None:
         cwd = os.getcwd()
         with use_directory('..'):
             self.assertNotEqual(cwd, os.getcwd())
         self.assertEqual(cwd, os.getcwd())
 
-    def test_file_reading_and_writing(self):
+    def test_file_reading_and_writing(self) -> None:
         text = '<caterpillar>blue</caterpillar>'
         file_name = 'bug.txt'
         write_file(file_name, text)
@@ -26,7 +26,7 @@ class TestUtilities(unittest.TestCase):
         self.assertEqual(new_text, '<butterfly>blue</butterfly>')
         os.remove(file_name)
 
-    def test_get_file_name(self):
+    def test_get_file_name(self) -> None:
         self.assertEqual('file.txt', get_file_name('directory/file.txt'))
         self.assertEqual('file.txt', get_file_name('file.txt'))
 

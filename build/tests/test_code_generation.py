@@ -14,7 +14,7 @@ to_multiline_string = ('your string here')
 
 class CodeGeneration:
     @staticmethod
-    def convert_concatenation_to_multiline(content):
+    def convert_concatenation_to_multiline(content: str) -> str:
         lines = content.splitlines()
         code = "remove_indentation << f'''\n"
         for line in lines:
@@ -22,7 +22,8 @@ class CodeGeneration:
         code += "'''"
         return code
 
-    def convert_string_to_concatenation(content):
+    @staticmethod
+    def convert_string_to_concatenation(content: str) -> str:
         lines = content.splitlines()
         code = '('
         for line in lines:
@@ -33,7 +34,7 @@ class CodeGeneration:
         return code
 
     @staticmethod
-    def convert_string_to_joined_list(content):
+    def convert_string_to_joined_list(content: str) -> str:
         lines = content.splitlines()
         code = "'\\n'.join([\n"
         for line in lines:
@@ -45,7 +46,7 @@ class CodeGeneration:
 
 
 class TestCodeGeneration(unittest.TestCase):
-    def test_convert_string_to_concatentation(self):
+    def test_convert_string_to_concatentation(self) -> None:
         content = remove_indentation << '''
         
             toc
@@ -67,7 +68,7 @@ class TestCodeGeneration(unittest.TestCase):
             )"""
         self.assertEqual(expected, result)
 
-    def test_convert_string_to_joined_list(self):
+    def test_convert_string_to_joined_list(self) -> None:
         content = remove_indentation << '''
         
             toc
@@ -90,7 +91,7 @@ class TestCodeGeneration(unittest.TestCase):
             ])"""
         self.assertEqual(expected, result)
 
-    def test_concatentation_to_multiline(self):
+    def test_concatentation_to_multiline(self) -> None:
 
         input = ('\n'
             'toc\n'
@@ -103,12 +104,12 @@ class TestCodeGeneration(unittest.TestCase):
         output = CodeGeneration.convert_concatenation_to_multiline(input)
         verify(output, diff_merge_reporter)
 
-    def test_entry_point_for_convert_to_concatenation(self):
+    def test_entry_point_for_convert_to_concatenation(self) -> None:
         if to_concatenated_string != 'your string here':
             pyperclip.copy(CodeGeneration.convert_string_to_concatenation(to_concatenated_string))
             print("converted concatened text copied to clipboard")
 
-    def test_entry_point_for_convert_to_multiline(self):
+    def test_entry_point_for_convert_to_multiline(self) -> None:
         if to_multiline_string != 'your string here':
             code = CodeGeneration.convert_concatenation_to_multiline(to_multiline_string)
             print(code)

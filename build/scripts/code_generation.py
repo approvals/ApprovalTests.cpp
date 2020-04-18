@@ -9,11 +9,12 @@ from scripts.single_header_file import SingleHeaderFile
 from scripts.utilities import read_file, write_file, use_directory
 
 
+from typing import Dict
 class CppGeneration:
     def __init__(self, details: ReleaseDetails) -> None:
         self.details = details
 
-    def update_version_number_header(self):
+    def update_version_number_header(self) -> None:
         with use_directory(release_constants.approval_tests_dir):
             version_header = os.path.join("ApprovalTestsVersion.h")
 
@@ -21,7 +22,7 @@ class CppGeneration:
             write_file(version_header, text)
 
     @staticmethod
-    def get_version_number_hpp_text(version_object):
+    def get_version_number_hpp_text(version_object: Dict[str, str]) -> str:
         version_string = version.get_version_without_v(version.get_version_text(version_object))
         text = remove_indentation << f'''
                 #pragma once
@@ -37,10 +38,10 @@ class CppGeneration:
                 '''
         return text
 
-    def create_simulated_single_header_file(self):
+    def create_simulated_single_header_file(self) -> str:
         return SingleHeaderFile.create('.')
 
-    def create_single_header_file(self):
+    def create_single_header_file(self) -> str:
         self.create_simulated_single_header_file()
 
         simulated_single_header = os.path.abspath(release_constants.simulated_single_header_file_path)
@@ -57,8 +58,8 @@ class CppGeneration:
             write_file(self.details.release_new_single_header, text)
             return os.path.abspath(self.details.release_new_single_header)
 
-    def run_for_approval_tests(self, initial_file, output_file):
-        def mdsnippets_discarder(line):
+    def run_for_approval_tests(self, initial_file: str, output_file: str) -> None:
+        def mdsnippets_discarder(line: str) -> bool:
             return line.strip().startswith('// begin-snippet:') or line.strip().startswith('// end-snippet')
 
         include_search_path1 = ".."

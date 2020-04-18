@@ -5,28 +5,29 @@ from scripts.version import load_version, get_version_text, get_version_without_
     update_major, create_version, no_version_change
 
 
+from typing import Callable, Dict
 class TestVersion(unittest.TestCase):
-    def test_starting_point(self):
+    def test_starting_point(self) -> None:
         version = self.load_test_version_ini()
         self.assertEqual('1.1.1', get_version_without_v(get_version_text(version)))
 
-    def test_create_version(self):
+    def test_create_version(self) -> None:
         version = create_version(2, 3, 4)
         self.assertEqual('v.2.3.4', get_version_text(version))
 
-    def test_updates(self):
+    def test_updates(self) -> None:
         self.assert_version('v.1.1.1', no_version_change)
         self.assert_version('v.1.1.2', update_patch)
         self.assert_version('v.1.2.0', update_minor)
         self.assert_version('v.2.0.0', update_major)
 
     @staticmethod
-    def load_test_version_ini():
+    def load_test_version_ini() -> Dict[str, str]:
         source_dir = os.path.split(__file__)[0]
         version = load_version(source_dir)
         return version
 
-    def assert_version(self, expected_version, update_method):
+    def assert_version(self, expected_version: str, update_method: Callable) -> None:
         version = self.load_test_version_ini()
         version = update_method(version)
         self.assertEqual(expected_version, get_version_text(version))

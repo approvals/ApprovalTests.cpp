@@ -18,10 +18,10 @@ from scripts.version import Version
 
 
 class PrepareRelease:
-    def __init__(self, details: ReleaseDetails):
+    def __init__(self, details: ReleaseDetails) -> None:
         self.details = details
 
-    def check_pre_conditions_for_publish(self):
+    def check_pre_conditions_for_publish(self) -> None:
         if self.details.push_to_production:
             repo = Repo(release_constants.main_project_dir)
             assert_step(not repo.bare)
@@ -38,7 +38,7 @@ class PrepareRelease:
             check_step("the builds are passing")
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_x.y.z.md"])
-            run(["open", F"https://github.com/approvals/ApprovalTests.cpp/compare/{self.details.xyz_old_version.get_version_as_text()}...master"])
+            run(["open", F"https://github.com/approvals/ApprovalTests.cpp/compare/{self.details.xyz_old_version.get_version_text()}...master"])
             check_step("the release notes are ready")
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/issues"])
@@ -47,7 +47,7 @@ class PrepareRelease:
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/milestones"])
             check_step("the milestone (if any) is up to date, including actual version number of release")
 
-    def update_starter_project(self):
+    def update_starter_project(self) -> None:
         STARTER_PATH_OLD_SINGLE_HEADER = F"{release_constants.starter_project_dir}/lib/{self.details.old_single_header}"
         STARTER_PATH_NEW_SINGLE_HEADER = F"{release_constants.starter_project_dir}/lib/{self.details.new_single_header}"
 
@@ -71,36 +71,36 @@ class PrepareRelease:
                              self.details.old_single_header,
                              self.details.new_single_header)
 
-    def check_starter_project_builds(self):
+    def check_starter_project_builds(self) -> None:
         with use_directory(F"{release_constants.starter_project_dir}/cmake-build-debug"):
             run(["cmake", "--build", "."])
 
-    def add_to_git(self):
-        def add():
+    def add_to_git(self) -> None:
+        def add() -> None:
             run(["git", "add", "."])
 
         self.do_things_in_starter_project_and_main(add)
 
-    def do_things_in_starter_project_and_main(self, function):
+    def do_things_in_starter_project_and_main(self, function: Callable) -> None:
         with use_directory(release_constants.starter_project_dir):
             function()
         with use_directory(release_constants.main_project_dir):
             function()
 
-    def check_changes(self):
-        def revert():
+    def check_changes(self) -> None:
+        def revert() -> None:
             run(["git", "clean", "-fx"])
             run(["git", "reset", "--hard"])
 
-        def revert_all():
+        def revert_all() -> None:
             self.do_things_in_starter_project_and_main(revert)
 
-        def do_nothing():
+        def do_nothing() -> None:
             pass
 
         check_step_with_revert("you are happy with the changes?", do_nothing)
 
-    def prepare_everything(self):
+    def prepare_everything(self) -> None:
         self.check_pre_conditions_for_publish()
         PrepareConanRelease.check_preconditions(self.details)
 

@@ -6,7 +6,7 @@ from scripts.single_header_file import SingleHeaderFile, Parts
 
 
 class TestSingleHeaderFile(unittest.TestCase):
-    def test_sort_parts_by_dependencies(self):
+    def test_sort_parts_by_dependencies(self) -> None:
         parts = [
             Parts('higher.h', ['lower.h']),
             Parts('lower.h', [])]
@@ -16,7 +16,7 @@ class TestSingleHeaderFile(unittest.TestCase):
         parts = SingleHeaderFile.sort_parts_by_dependencies(parts)
         verify_all('sorted', parts)
 
-    def test_depends_on_uses_whole_file_name(self):
+    def test_depends_on_uses_whole_file_name(self) -> None:
         file1 = Parts('file1.h', [])
         file2 = Parts('file2.h', ['prefixed_file1.h'])
         self.assertFalse(SingleHeaderFile.depends_on(file2, file1))

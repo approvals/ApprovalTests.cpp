@@ -4,7 +4,7 @@ from scripts.documentation_release import PrepareDocumentationRelease
 
 
 class TestPrepareDocumentation(unittest.TestCase):
-    def test_update_features_with_new_features(self):
+    def test_update_features_with_new_features(self) -> None:
         content = f'''
 toc
 
@@ -33,7 +33,7 @@ toc
         new_content = action("", lambda _, old, new: content.replace(old, new))
         self.assertEqual(expected_new_content, new_content)
 
-    def test_update_features_with_no_new_features(self):
+    def test_update_features_with_no_new_features(self) -> None:
         content = f'''
 toc
 
@@ -49,7 +49,7 @@ toc
         self.assertEqual(new_content, 'CHECK: the Features page is empty: are you sure you want this?')
 
     @staticmethod
-    def new_feature_text():
+    def new_feature_text() -> str:
         return (
             '### New Feature\n'
             '\n'
@@ -57,7 +57,7 @@ toc
         )
 
     @staticmethod
-    def old_feature_text():
+    def old_feature_text() -> str:
         return (
             '## v.1.2.3\n'
             '\n'
