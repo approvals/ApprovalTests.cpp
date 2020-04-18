@@ -1,12 +1,13 @@
 #!/bin/sh
 
+cd ..
 git checkout -- \
-  version.ini \
-  ../ApprovalTests/ApprovalTestsVersion.h \
-  ../doc/Features.md \
-  ../doc/mdsource/Features.source.md \
-  ../mdsource/README.source.md \
-  ../README.md
+  build/version.ini \
+  ApprovalTests/ApprovalTestsVersion.h \
+  doc/Features.md \
+  doc/mdsource/Features.source.md \
+  mdsource/README.source.md \
+  README.md
 
 # TODO Un-stage and remove build/release_notes/relnotes_9.0.0.md
 # TODO Revert changes to starter project
