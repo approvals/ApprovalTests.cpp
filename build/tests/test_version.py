@@ -1,8 +1,7 @@
 import os
 import unittest
 
-from scripts.version import update_minor, update_patch, \
-    update_major, no_version_change, Version
+from scripts.version import Version
 
 from typing import Callable
 

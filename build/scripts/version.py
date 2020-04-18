@@ -56,20 +56,3 @@ class Version:
 
     def get_version_text_without_v(self) -> str:
         return self.get_version_text('')
-
-
-def update_major(version: Dict[str, str]) -> Dict[str, str]:
-    return Version.from_map(version).update_major().as_map()
-
-
-def update_minor(version: Dict[str, str]) -> Dict[str, str]:
-    return Version.from_map(version).update_minor().as_map()
-
-
-def update_patch(version: Dict[str, str]) -> Dict[str, str]:
-    return Version.from_map(version).update_patch().as_map()
-
-
-def no_version_change(version: Dict[str, str]) -> Dict[str, str]:
-    # This is useful if a deploy failed part-way through, and we don't want to increment the version number
-    return Version.from_map(version).clone().as_map()
