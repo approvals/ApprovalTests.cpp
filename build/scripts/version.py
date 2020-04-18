@@ -58,10 +58,6 @@ class Version:
         return self.get_version_text('')
 
 
-def get_version_without_v(version_string: str) -> str:
-    return version_string.replace("v.", "")
-
-
 def update_major(version: Dict[str, str]) -> Dict[str, str]:
     return Version.from_map(version).update_major().as_map()
 
