@@ -1,6 +1,6 @@
 import unittest
 
-from approvaltests import verify_as_json
+from approvaltests.approvals import verify_as_json
 
 from scripts.release_constants import release_constants
 

@@ -1,7 +1,7 @@
 import unittest
 import pyperclip
 
-from approvaltests import verify
+from approvaltests.approvals import verify
 from scripts.multiline_string_utilities import remove_indentation
 from tests.helpers import diff_merge_reporter
 # Convenience variable, so we can paste in code and run test_demo_convert_to_concatenation.

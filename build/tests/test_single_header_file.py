@@ -1,6 +1,6 @@
 import unittest
 
-from approvaltests import verify_all
+from approvaltests.approvals import verify_all
 
 from scripts.single_header_file import SingleHeaderFile, Parts
 

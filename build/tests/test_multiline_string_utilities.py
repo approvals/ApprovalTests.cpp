@@ -1,7 +1,7 @@
 import unittest
 import textwrap
 import inspect
-from approvaltests import verify
+from approvaltests.approvals import verify
 
 from scripts.multiline_string_utilities import remove_indentation, remove_indentation_from
 from tests.helpers import diff_merge_reporter

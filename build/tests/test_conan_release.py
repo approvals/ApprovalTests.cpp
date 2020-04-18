@@ -1,6 +1,6 @@
 import unittest
 
-from approvaltests import verify
+from approvaltests.approvals import verify
 
 from scripts.conan_release import PrepareConanRelease
 from scripts.version import Version
