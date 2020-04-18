@@ -7,6 +7,7 @@ from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
 from scripts.single_header_file import SingleHeaderFile
 from scripts.utilities import read_file, write_file, use_directory
+from scripts.version import Version
 
 
 from typing import Dict
@@ -18,18 +19,18 @@ class CppGeneration:
         with use_directory(release_constants.approval_tests_dir):
             version_header = os.path.join("ApprovalTestsVersion.h")
 
-            text = CppGeneration.get_version_number_hpp_text(self.details.new_version_object)
+            text = CppGeneration.get_version_number_hpp_text(self.details.xyz_new_version)
             write_file(version_header, text)
 
     @staticmethod
-    def get_version_number_hpp_text(version_object: Dict[str, str]) -> str:
-        version_string = version.get_version_without_v(version.get_version_text(version_object))
+    def get_version_number_hpp_text(version_object: Version) -> str:
+        version_string = version_object.get_version_text_without_v()
         text = remove_indentation << f'''
                 #pragma once
 
-                #define APPROVALTESTS_VERSION_MAJOR {version_object["major"]}
-                #define APPROVALTESTS_VERSION_MINOR {version_object["minor"]}
-                #define APPROVALTESTS_VERSION_PATCH {version_object["patch"]}
+                #define APPROVALTESTS_VERSION_MAJOR {version_object.major}
+                #define APPROVALTESTS_VERSION_MINOR {version_object.minor}
+                #define APPROVALTESTS_VERSION_PATCH {version_object.patch}
                 #define APPROVALTESTS_VERSION_STR "{version_string}"
 
                 #define APPROVALTESTS_VERSION                                                            \\
