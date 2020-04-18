@@ -1,14 +1,10 @@
-import os
 import unittest
 
-from approvaltests.approvals import verify_file, verify
+from approvaltests.approvals import verify_file
 
 from scripts.code_generation import CppGeneration
-from scripts.documentation_release import PrepareDocumentationRelease
-from scripts.prepare_release import PrepareRelease
 from scripts.release_details import ReleaseDetails
-from scripts.utilities import run
-from scripts.version import create_version, Version
+from scripts.version import Version
 from tests.helpers import set_home_directory
 
 
