@@ -1,10 +1,12 @@
 import os
 import unittest
 
-from scripts.version import get_version_text, get_version_without_v, update_minor, update_patch, \
+from scripts.version import update_minor, update_patch, \
     update_major, no_version_change, Version
 
-from typing import Callable, Dict
+from typing import Callable
+
+
 class TestVersion(unittest.TestCase):
     def test_starting_point(self) -> None:
         version = self.load_test_version_ini()
@@ -29,7 +31,7 @@ class TestVersion(unittest.TestCase):
     def assert_version(self, expected_version: str, update_method: Callable) -> None:
         version = self.load_test_version_ini().as_map()
         version = update_method(version)
-        self.assertEqual(expected_version, get_version_text(version))
+        self.assertEqual(expected_version, Version.from_map(version).get_version_text())
 
 
 if __name__ == '__main__':
