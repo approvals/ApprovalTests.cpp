@@ -20,7 +20,7 @@ class TestForLocking(unittest.TestCase):
 
         # The output of this depends on the current C++ code, so changes
         # over time. It is here to help when refactoring the release process.
-        # verify_file(output)
+        verify_file(output)
 
     def test_create_simulated_single_header_file(self) -> None:
         prepare_release = self.get_prepare_release()
@@ -28,7 +28,7 @@ class TestForLocking(unittest.TestCase):
 
         # The output of this depends on the current C++ code, so changes
         # over time. It is here to help when refactoring the release process.
-        # verify_file(output)
+        verify_file(output)
 
     def get_prepare_release(self) -> CppGeneration:
         set_home_directory()
