@@ -19,7 +19,7 @@ class CppGeneration:
         with use_directory(release_constants.approval_tests_dir):
             version_header = os.path.join("ApprovalTestsVersion.h")
 
-            text = CppGeneration.get_version_number_hpp_text(self.details.xyz_new_version)
+            text = CppGeneration.get_version_number_hpp_text(self.details.new_version)
             write_file(version_header, text)
 
     @staticmethod

@@ -38,7 +38,7 @@ class PrepareRelease:
             check_step("the builds are passing")
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_x.y.z.md"])
-            run(["open", F"https://github.com/approvals/ApprovalTests.cpp/compare/{self.details.xyz_old_version.get_version_text()}...master"])
+            run(["open", F"https://github.com/approvals/ApprovalTests.cpp/compare/{self.details.old_version.get_version_text()}...master"])
             check_step("the release notes are ready")
 
             run(["open", "https://github.com/approvals/ApprovalTests.cpp/issues"])
@@ -63,8 +63,8 @@ class PrepareRelease:
 
         # Update the version in the "redirect" header:
         replace_text_in_file(F"{release_constants.starter_project_dir}/lib/ApprovalTests.hpp",
-                             self.details.xyz_old_version.get_version_text(),
-                             self.details.xyz_new_version.get_version_text())
+                             self.details.old_version.get_version_text(),
+                             self.details.new_version.get_version_text())
 
         # Update the version number in the Visual Studio project:
         replace_text_in_file(F"{release_constants.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj",
@@ -113,7 +113,7 @@ class PrepareRelease:
 
         PrepareDocumentationRelease.prepare_documentation(self.details)
 
-        self.details.xyz_new_version.write(release_constants.build_dir)
+        self.details.new_version.write(release_constants.build_dir)
         self.add_to_git()
 
         self.check_changes()
