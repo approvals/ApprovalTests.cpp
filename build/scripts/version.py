@@ -89,7 +89,3 @@ def load_version(directory: str) -> Dict[str, str]:
 
 def create_version(major: int, minor: int, patch: int) -> Dict[str, str]:
     return Version(major, minor, patch).as_map()
-
-
-def write_version(version: Dict[str, str], directory: str) -> None:
-    Version.from_map(version).write(directory)
