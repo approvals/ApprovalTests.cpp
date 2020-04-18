@@ -78,18 +78,6 @@ def update_patch(version: Dict[str, str]) -> Dict[str, str]:
     return Version.from_map(version).update_patch().as_map()
 
 
-def get_major(version: Dict[str, str]) -> int:
-    return int(version['major'])
-
-
-def get_minor(version: Dict[str, str]) -> int:
-    return int(version['minor'])
-
-
-def get_patch(version: Dict[str, str]) -> int:
-    return int(version['patch'])
-
-
 def no_version_change(version: Dict[str, str]) -> Dict[str, str]:
     # This is useful if a deploy failed part-way through, and we don't want to increment the version number
     return Version.from_map(version).clone().as_map()
