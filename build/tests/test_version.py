@@ -17,10 +17,10 @@ class TestVersion(unittest.TestCase):
         self.assertEqual('v.2.3.4', version.get_version_text())
 
     def test_updates(self) -> None:
-        self.assert_version('v.1.1.1', no_version_change)
-        self.assert_version('v.1.1.2', update_patch)
-        self.assert_version('v.1.2.0', update_minor)
-        self.assert_version('v.2.0.0', update_major)
+        self.assert_version('v.1.1.1', (lambda v: v.clone()))
+        self.assert_version('v.1.1.2', (lambda v: v.update_patch()))
+        self.assert_version('v.1.2.0', (lambda v: v.update_minor()))
+        self.assert_version('v.2.0.0', (lambda v: v.update_major()))
 
     @staticmethod
     def load_test_version_ini() -> Version:
@@ -28,10 +28,10 @@ class TestVersion(unittest.TestCase):
         version = Version.read(source_dir)
         return version
 
-    def assert_version(self, expected_version: str, update_method: Callable) -> None:
-        version = self.load_test_version_ini().as_map()
+    def assert_version(self, expected_version: str, update_method: Callable[[Version], Version]) -> None:
+        version = self.load_test_version_ini()
         version = update_method(version)
-        self.assertEqual(expected_version, Version.from_map(version).get_version_text())
+        self.assertEqual(expected_version, version.get_version_text())
 
 
 if __name__ == '__main__':
