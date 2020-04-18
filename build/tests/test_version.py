@@ -8,7 +8,7 @@ from typing import Callable, Dict
 class TestVersion(unittest.TestCase):
     def test_starting_point(self) -> None:
         version = self.load_test_version_ini()
-        self.assertEqual('1.1.1', get_version_without_v(get_version_text(version)))
+        self.assertEqual('1.1.1', version.get_version_text_without_v())
 
     def test_create_version(self) -> None:
         version = Version(2, 3, 4)
@@ -21,13 +21,13 @@ class TestVersion(unittest.TestCase):
         self.assert_version('v.2.0.0', update_major)
 
     @staticmethod
-    def load_test_version_ini() -> Dict[str, str]:
+    def load_test_version_ini() -> Version:
         source_dir = os.path.split(__file__)[0]
-        version = Version.read(source_dir).as_map()
+        version = Version.read(source_dir)
         return version
 
     def assert_version(self, expected_version: str, update_method: Callable) -> None:
-        version = self.load_test_version_ini()
+        version = self.load_test_version_ini().as_map()
         version = update_method(version)
         self.assertEqual(expected_version, get_version_text(version))
 
