@@ -85,7 +85,3 @@ def no_version_change(version: Dict[str, str]) -> Dict[str, str]:
 
 def load_version(directory: str) -> Dict[str, str]:
     return Version.read(directory).as_map()
-
-
-def create_version(major: int, minor: int, patch: int) -> Dict[str, str]:
-    return Version(major, minor, patch).as_map()

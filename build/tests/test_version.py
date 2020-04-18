@@ -2,8 +2,7 @@ import os
 import unittest
 
 from scripts.version import load_version, get_version_text, get_version_without_v, update_minor, update_patch, \
-    update_major, create_version, no_version_change
-
+    update_major, no_version_change, Version
 
 from typing import Callable, Dict
 class TestVersion(unittest.TestCase):
@@ -12,8 +11,8 @@ class TestVersion(unittest.TestCase):
         self.assertEqual('1.1.1', get_version_without_v(get_version_text(version)))
 
     def test_create_version(self) -> None:
-        version = create_version(2, 3, 4)
-        self.assertEqual('v.2.3.4', get_version_text(version))
+        version = Version(2, 3, 4)
+        self.assertEqual('v.2.3.4', version.get_version_text())
 
     def test_updates(self) -> None:
         self.assert_version('v.1.1.1', no_version_change)
