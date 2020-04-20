@@ -8,8 +8,14 @@
 
 namespace ApprovalTests
 {
+    using Scrubber = std::function<std::string(const std::string&)>;
     namespace Scrubbers
     {
+        inline std::string doNothing(const std::string& input)
+        {
+            return input;
+        }
+
         inline std::string scrubGuid(const std::string& input)
         {
             static const std::regex regex("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-["

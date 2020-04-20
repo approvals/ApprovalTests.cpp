@@ -14,10 +14,10 @@
 #include "namers/ExistingFileNamer.h"
 #include "namers/SubdirectoryDisposer.h"
 #include "namers/DefaultNamerDisposer.h"
+#include "scrubbers/Scrubbers.h"
 
 namespace ApprovalTests
 {
-    using Scrubber = std::function<std::string(const std::string&)>;
 
     class Approvals
     {
@@ -35,7 +35,7 @@ namespace ApprovalTests
         static void verify(std::string contents,
                            const Reporter& reporter = DefaultReporter())
         {
-            verifyWithExtension(contents, ".txt", reporter);
+            verifyScrubbed(contents, Scrubbers::doNothing, reporter);
         }
 
         static void verifyScrubbed(std::string contents,
