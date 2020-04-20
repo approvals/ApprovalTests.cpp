@@ -31,7 +31,7 @@ TEST_CASE("Input with non-GUID")
 TEST_CASE("Input with non-GUID")
 {
 
-    std::string input =  R"(
+    std::string input = R"(
 {
     child: {
         id: b34b4da8-090e-49d8-bd35-7e79f633a2ea
@@ -49,5 +49,5 @@ TEST_CASE("Input with non-GUID")
 }
 )";
     auto output = Scrubbers::scrubGuid(input);
-    Approvals::verify(output);
+    Approvals::verifyScrubbed(input, Scrubbers::scrubGuid);
 }

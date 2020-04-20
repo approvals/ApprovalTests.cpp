@@ -17,6 +17,8 @@
 
 namespace ApprovalTests
 {
+    using Scrubber = std::function<std::string(const std::string&)>;
+
     class Approvals
     {
     private:
@@ -34,6 +36,13 @@ namespace ApprovalTests
                            const Reporter& reporter = DefaultReporter())
         {
             verifyWithExtension(contents, ".txt", reporter);
+        }
+
+        static void verifyScrubbed(std::string contents,
+                                   Scrubber scrubber,
+                                   const Reporter& reporter = DefaultReporter())
+        {
+            verifyWithExtension(scrubber(contents), ".txt", reporter);
         }
 
         static void verifyWithExtension(std::string contents,
