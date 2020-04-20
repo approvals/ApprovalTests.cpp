@@ -1,13 +1,16 @@
 #pragma once
 #include "scrubbers/Scrubbers.h"
 #include "core/Reporter.h"
+#include "reporters/DefaultReporter.h"
 namespace ApprovalTests
 {
     class Options
     {
     private:
         Scrubber scrubber_;
-        //const Reporter& reporter;
+        DefaultReporter defaultReporter;
+        const Reporter& reporter = defaultReporter;
+
     public:
         Options() : scrubber_(Scrubbers::doNothing)
         {
@@ -15,7 +18,9 @@ namespace ApprovalTests
         Options(Scrubber scrubber) : scrubber_(scrubber)
         {
         }
-        //   Options(const Reporter& reporter): reporter(reporter)
+        Options(const Reporter& reporter) : reporter(reporter)
+        {
+        }
         Scrubber getScrubber() const
         {
             return scrubber_;
@@ -26,9 +31,9 @@ namespace ApprovalTests
             return scrubber_(input);
         }
 
-        DefaultReporter getReporter() const
+        const Reporter& getReporter() const
         {
-            return DefaultReporter();
+            return reporter;
         }
     };
 }
