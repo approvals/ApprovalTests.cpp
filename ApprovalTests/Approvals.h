@@ -36,20 +36,15 @@ namespace ApprovalTests
         static void verify(std::string contents,
                            const Reporter& reporter = DefaultReporter())
         {
-            verifyScrubbed(contents, Scrubbers::doNothing, reporter);
+            Scrubber scrubber = Scrubbers::doNothing;
+            verifyWithExtension(scrubber(contents), ".txt", reporter);
         }
-        
+
         static void verify(std::string contents,
                            const Options& options)
         {
-            verifyScrubbed(contents, options.getScrubber());
-        }
-
-        static void verifyScrubbed(std::string contents,
-                                   Scrubber scrubber,
-                                   const Reporter& reporter = DefaultReporter())
-        {
-            verifyWithExtension(scrubber(contents), ".txt", reporter);
+            verifyWithExtension(
+                options.getScrubber()(contents), ".txt", options.getReporter());
         }
 
         static void verifyWithExtension(std::string contents,

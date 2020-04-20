@@ -20,5 +20,10 @@ namespace ApprovalTests
         {
             return scrubber_;
         }
+
+        DefaultReporter getReporter() const
+        {
+            return DefaultReporter();
+        }
     };
 }
