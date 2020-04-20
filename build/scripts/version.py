@@ -20,11 +20,11 @@ class Version:
         config = configparser.ConfigParser()
         config.read(Version._version_file_path(directory))
         version = cast(Dict[str, str], config['VERSION'])
-        return Version.from_map(version)
+        return Version._from_map(version)
 
     def write(self, directory: str) -> None:
         config = configparser.ConfigParser()
-        config['VERSION'] = self.as_map()
+        config['VERSION'] = self._as_map()
 
         with open(Version._version_file_path(directory), 'w') as configfile:
             config.write(configfile)
@@ -41,11 +41,11 @@ class Version:
     def clone(self) -> Version:
         return Version(self.major, self.minor, self.patch)
 
-    def as_map(self) -> Dict[str, str]:
+    def _as_map(self) -> Dict[str, str]:
         return {"major": str(self.major), "minor": str(self.minor), "patch": str(self.patch)}
 
     @staticmethod
-    def from_map(version: Dict[str, str]) -> Version:
+    def _from_map(version: Dict[str, str]) -> Version:
         return Version(
             int(version['major']),
             int(version['minor']),
