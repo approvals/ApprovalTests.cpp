@@ -1,9 +1,9 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/scrubbers/Scrubbers.h"
 
-// <iostream> is needed to fix linker error on XCode Release builds:
-#include <iostream>
-#include <ApprovalTests/Approvals.h>
+#include <iostream> // needed to fix linker error on XCode Release builds
+#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/reporters/QuietReporter.h"
 
 using namespace ApprovalTests;
 
@@ -48,5 +48,5 @@ TEST_CASE("Input with non-GUID")
     }
 }
 )";
-    Approvals::verify(input, Options(Scrubbers::scrubGuid));
+    Approvals::verify(input, Options(Scrubbers::scrubGuid).withReporter(QuietReporter()));
 }
