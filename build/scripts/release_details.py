@@ -12,11 +12,8 @@ from scripts.version import Version
 
 class ReleaseDetails:
     def __init__(self, old_version: Version, new_version: Version, publish_release: bool) -> None:
-        self.xyz_old_version = old_version
-        self.xyz_new_version = new_version
-        self.old_version_as_text = old_version.get_version_text()
-        self.new_version_as_text = new_version.get_version_text()
-        self.new_version_object = new_version.as_map()
+        self.old_version = old_version
+        self.new_version = new_version
         self.push_to_production = publish_release
 
         self.old_single_header = F"ApprovalTests.{old_version.get_version_text()}.hpp"
@@ -27,8 +24,8 @@ class ReleaseDetails:
         self.new_release_notes_path = os.path.join(release_constants.release_notes_dir,
                                                    F'relnotes_{new_version.get_version_text_without_v()}.md')
 
-    def old_version_as_text1(self) -> str:
-        return self.xyz_old_version.get_version_text()
+    def old_version_as_text(self) -> str:
+        return self.old_version.get_version_text()
 
-    def new_version_as_text1(self):
-        return self.xyz_new_version.get_version_text()
+    def new_version_as_text(self) -> str:
+        return self.new_version.get_version_text()

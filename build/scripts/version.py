@@ -12,7 +12,7 @@ class Version:
         self.patch = patch
 
     @staticmethod
-    def _version_file_path(directory):
+    def _version_file_path(directory: str) -> str:
         return os.path.join(directory, 'version.ini')
 
     @staticmethod
@@ -56,52 +56,3 @@ class Version:
 
     def get_version_text_without_v(self) -> str:
         return self.get_version_text('')
-
-
-def get_version_text(version) -> str:
-    return Version.from_map(version).get_version_text()
-
-
-def get_version_without_v(version_string):
-    return version_string.replace("v.", "")
-
-
-def update_major(version):
-    return Version.from_map(version).update_major().as_map()
-
-
-def update_minor(version):
-    return Version.from_map(version).update_minor().as_map()
-
-
-def update_patch(version):
-    return Version.from_map(version).update_patch().as_map()
-
-
-def get_major(version):
-    return int(version['major'])
-
-
-def get_minor(version):
-    return int(version['minor'])
-
-
-def get_patch(version):
-    return int(version['patch'])
-
-
-def no_version_change(version):
-    # This is useful if a deploy failed part-way through, and we don't want to increment the version number
-    return Version.from_map(version).clone().as_map()
-
-
-def load_version(directory):
-    return Version.read(directory).as_map()
-
-
-def create_version(major, minor, patch):
-    return Version(major, minor, patch).as_map()
-
-
-def write_version(version, directory):
-    Version.from_map(version).write(directory)

@@ -6,7 +6,7 @@ from scripts.release_constants import release_constants
 
 
 class TestReleaseConstants(unittest.TestCase):
-    def test(self):
+    def test(self) -> None:
         verify_as_json(release_constants)
 
 

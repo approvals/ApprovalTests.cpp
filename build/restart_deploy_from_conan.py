@@ -8,7 +8,7 @@ from scripts.release_details import ReleaseDetails
 
 if __name__ == '__main__':
     old_version = load_current_version()
-    new_version = version.no_version_change(old_version)
+    new_version = old_version.clone()
     details = ReleaseDetails(old_version, new_version, True)
     deploy_release = DeployRelease(details)
     deploy_release.push_everything_live(start_at_conan=True)

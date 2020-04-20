@@ -26,7 +26,7 @@ class PrepareConanRelease:
 
         response = input("  Conan: Has the previous pull request been accepted? [Y/y] ")
         if response in ['Y', 'y']:
-            PrepareConanRelease.sync_conan_repo(details.xyz_new_version)
+            PrepareConanRelease.sync_conan_repo(details.new_version)
         else:
             # Do nothing - we are adding to our previous Pull Request
             # This does assume the same user is doing the previous and current release.
@@ -61,7 +61,7 @@ class PrepareConanRelease:
         conan_approvaltests_dir = ConanReleaseDetails().conan_approvaltests_dir
 
         PrepareConanRelease.update_conandata_yml(details, ConanReleaseDetails().conan_approvaltests_dir)
-        PrepareConanRelease.update_conan_config_yml(conan_approvaltests_dir, details.xyz_new_version)
+        PrepareConanRelease.update_conan_config_yml(conan_approvaltests_dir, details.new_version)
 
     @staticmethod
     def update_conan_config_yml(conan_approvaltests_dir: str, new_version: Version) -> None:
@@ -82,7 +82,7 @@ class PrepareConanRelease:
 
     @staticmethod
     def update_conandata_yml(details: ReleaseDetails, conan_approvaltests_dir: str) -> None:
-        version = details.xyz_new_version
+        version = details.new_version
         conan_data_file = os.path.join(conan_approvaltests_dir, 'all', 'conandata.yml')
         conandata_yml_text = read_file(conan_data_file)
 
@@ -120,13 +120,13 @@ class DeployConanRelease:
         with use_directory(os.path.join(ConanReleaseDetails().conan_approvaltests_dir, 'all')):
             # We cannot test the new Conan recipe until the new release has been
             # published on github
-            new_version_without_v = details.xyz_new_version.get_version_text_without_v()
+            new_version_without_v = details.new_version.get_version_text_without_v()
             run(['conan', 'create', '.', F'{new_version_without_v}@'])
 
             check_step(F"Commit the changes - with message 'Add approvaltests.cpp {new_version_without_v}'")
             check_step('Push the changes - NB on the feature branch for the release')
 
-        new_branch = PrepareConanRelease.get_new_branch_name(details.xyz_new_version)
+        new_branch = PrepareConanRelease.get_new_branch_name(details.new_version)
         run(["open", F'https://github.com/conan-io/conan-center-index/compare/master...claremacrae:{new_branch}?expand=1'])
         description = F'** approvaltests.cpp / {new_version_without_v} **'
         pyperclip.copy(description)

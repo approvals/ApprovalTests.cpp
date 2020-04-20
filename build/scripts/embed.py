@@ -20,6 +20,9 @@ import os.path
 import argparse
 
 # defaults paths to look for includes
+from io import TextIOWrapper
+from argparse import Namespace
+from typing import Callable, List
 default_includes_path = ['.']
 
 # pp tokens regexp
@@ -46,7 +49,7 @@ Parse options. Here is the list of supported options:
 """
 
 
-def parse_opts(args):
+def parse_opts(args: List[str]) -> Namespace:
     p = argparse.ArgumentParser(
         description='Aggregates headers into one single file')
     p.add_argument('-I', type=str, action='append', metavar='<dir>', default=[], dest='includes_path',
@@ -73,7 +76,7 @@ Print only if 'verbose' option is enabled
 """
 
 
-def vprint(opts, what):
+def vprint(opts: Namespace, what: str) -> None:
     if opts.verbose:
         sys.stderr.write('verbose: {}\n'.format(what))
 
@@ -83,7 +86,7 @@ Try to find a valid path for the given filename, if not found then exit
 """
 
 
-def get_path_for(f, opts):
+def get_path_for(f: str, opts: Namespace) -> str:
     for path in opts.includes_path:
         path = os.path.join(path, f)
         vprint(opts, 'try to include: {}'.format(path))
@@ -98,7 +101,7 @@ Preprocess a single line
 """
 
 
-def pp_line(line, output, opts):
+def pp_line(line: str, output: TextIOWrapper, opts: Namespace) -> None:
     global will_escape
     global keep_guard
     global in_C_block_comments
@@ -178,17 +181,17 @@ Preprocess the file here!
 """
 
 
-def pp_file(f, output, opts):
+def pp_file(file_name: str, output: TextIOWrapper, opts: Namespace) -> None:
     # use the absolute version of the filename to always get the same path
     # e.g. ./foo.h == foo.h == bar/../foo.h
-    f = os.path.abspath(f)
-    if f in included_files:
+    abs_file_name = os.path.abspath(file_name)
+    if abs_file_name in included_files:
         # if included, then do not process it!
         return
-    included_files.append(f)
-    vprint(opts, 'preprocessing: {}'.format(f))
+    included_files.append(abs_file_name)
+    vprint(opts, 'preprocessing: {}'.format(abs_file_name))
     try:
-        with open(f, 'r') as f:
+        with open(abs_file_name, 'r') as f:
             dirname = os.path.dirname(f.name)
             opts.includes_path.append(dirname)
             filename = os.path.split(f.name)[1]
@@ -207,7 +210,7 @@ The top-level function
 """
 
 
-def embed(args, discardables = []):
+def embed(args: List[str], discardables: List[Callable] = []) -> None:
     for path in default_includes_path:
         args.append('-I')
         args.append(path)
@@ -217,7 +220,7 @@ def embed(args, discardables = []):
     if opts.output != sys.stdout:
         opts.output.close()
 
-def create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2, discardables = []):
+def create_single_header_file(initial_file: str, output_file: str, include_search_path1: str, include_search_path2: str, discardables: List[Callable] = []) -> None:
     embed([
         initial_file,
         "-I",
