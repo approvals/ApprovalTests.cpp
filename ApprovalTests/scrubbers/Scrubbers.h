@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <regex>
+#include <ApprovalTests/utilities/StringUtils.h>
 
 namespace ApprovalTests
 {
@@ -13,9 +14,17 @@ namespace ApprovalTests
         {
             static const std::regex regex("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-["
                                           "0-9a-fA-F]{4}-[0-9a-fA-F]{12}");
-            std::match_results<std::string::const_iterator> match;
 
-            auto result = std::regex_replace(input, regex, "guid_1");
+            int matchNumber = 1;
+            auto result = input;
+            std::smatch m;
+            while (std::regex_search(result, m, regex))
+            {
+                auto guid_match = m.str();
+                auto replacement = "guid_" + std::to_string(matchNumber);
+                result = StringUtils::replaceAll(result, guid_match, replacement);
+                matchNumber += 1;
+            }
             return result;
         }
     }
