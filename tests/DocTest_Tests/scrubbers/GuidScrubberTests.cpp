@@ -48,5 +48,7 @@ TEST_CASE("Input with non-GUID")
     }
 }
 )";
-    Approvals::verify(input, Options(Scrubbers::scrubGuid).withReporter(QuietReporter()));
+    Approvals::verify(
+        input,
+        Options().withScrubber(Scrubbers::scrubGuid).withReporter(QuietReporter()));
 }

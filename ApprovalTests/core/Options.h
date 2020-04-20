@@ -11,6 +11,11 @@ namespace ApprovalTests
         DefaultReporter defaultReporter;
         const Reporter& reporter_ = defaultReporter;
 
+        Options(Scrubber scrubber, const Reporter& reporter)
+            : scrubber_(scrubber), reporter_(reporter)
+        {
+        }
+
     public:
         Options() : scrubber_(Scrubbers::doNothing)
         {
@@ -35,11 +40,13 @@ namespace ApprovalTests
         {
             return reporter_;
         }
-        const Options withReporter(const Reporter& reporter)
+        Options withReporter(const Reporter& reporter) const
         {
-            Options o(reporter);
-            o.scrubber_ = scrubber_;
-            return o;
+            return Options(scrubber_, reporter);
+        }
+        Options withScrubber(Scrubber scrubber) const
+        {
+            return Options(scrubber, reporter_);
         }
     };
 }
