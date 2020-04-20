@@ -19,3 +19,10 @@ TEST_CASE("Input with no GUIDs")
     auto output = Scrubbers::scrubGuid(input);
     REQUIRE(output == "");
 }
+
+TEST_CASE("Input with non-GUID")
+{
+    std::string input = "hello world";
+    auto output = Scrubbers::scrubGuid(input);
+    //    REQUIRE(output == input);
+}
