@@ -7,7 +7,7 @@ namespace ApprovalTests
     class Options
     {
     private:
-        Scrubber scrubber_;
+        Scrubber scrubber_ = Scrubbers::doNothing;
         DefaultReporter defaultReporter;
         const Reporter& reporter_ = defaultReporter;
 
@@ -17,7 +17,7 @@ namespace ApprovalTests
         }
 
     public:
-        Options() : scrubber_(Scrubbers::doNothing)
+        Options()
         {
         }
         Options(Scrubber scrubber) : scrubber_(scrubber)
