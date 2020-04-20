@@ -33,15 +33,12 @@ namespace ApprovalTests
             return DefaultNamerFactory::getDefaultNamer()();
         }
 
-        static void verify(std::string contents,
-                           const Reporter& reporter = DefaultReporter())
+        static void verify(std::string contents, const Reporter& reporter)
         {
-            Scrubber scrubber = Scrubbers::doNothing;
-            verifyWithExtension(scrubber(contents), ".txt", reporter);
+            verifyWithExtension(contents, ".txt", reporter);
         }
 
-        static void verify(std::string contents,
-                           const Options& options)
+        static void verify(std::string contents, const Options& options = Options())
         {
             verifyWithExtension(options.scrub(contents), ".txt", options.getReporter());
         }
@@ -66,10 +63,15 @@ namespace ApprovalTests
                                     int>::type;
 
         template <typename T, typename = IsNotDerivedFromWriter<T>>
-        static void verify(const T& contents,
-                           const Reporter& reporter = DefaultReporter())
+        static void verify(const T& contents, const Reporter& reporter)
         {
             verify(StringUtils::toString(contents), reporter);
+        }
+
+        template <typename T, typename = IsNotDerivedFromWriter<T>>
+        static void verify(const T& contents, const Options& options = Options())
+        {
+            verify(StringUtils::toString(contents), options);
         }
 
         template <typename T, typename = IsNotDerivedFromWriter<T>>
