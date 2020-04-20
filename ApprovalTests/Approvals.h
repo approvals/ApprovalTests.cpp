@@ -36,7 +36,7 @@ namespace ApprovalTests
         APPROVAL_TESTS_DEPRECATED("use Options(reporter) instead")
         static void verify(std::string contents, const Reporter& reporter)
         {
-            verifyWithExtension(contents, ".txt", reporter);
+            verify(contents, Options(reporter));
         }
 
         static void verify(std::string contents, const Options& options = Options())
