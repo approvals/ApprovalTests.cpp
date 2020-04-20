@@ -15,6 +15,7 @@
 #include "namers/SubdirectoryDisposer.h"
 #include "namers/DefaultNamerDisposer.h"
 #include "scrubbers/Scrubbers.h"
+#include "core/Options.h"
 
 namespace ApprovalTests
 {
@@ -36,6 +37,12 @@ namespace ApprovalTests
                            const Reporter& reporter = DefaultReporter())
         {
             verifyScrubbed(contents, Scrubbers::doNothing, reporter);
+        }
+        
+        static void verify(std::string contents,
+                           const Options& options)
+        {
+            verifyScrubbed(contents, options.getScrubber());
         }
 
         static void verifyScrubbed(std::string contents,

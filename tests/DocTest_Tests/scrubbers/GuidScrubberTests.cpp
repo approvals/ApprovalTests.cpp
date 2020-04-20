@@ -48,6 +48,5 @@ TEST_CASE("Input with non-GUID")
     }
 }
 )";
-    auto output = Scrubbers::scrubGuid(input);
-    Approvals::verifyScrubbed(input, Scrubbers::scrubGuid);
+    Approvals::verify(input, Options(Scrubbers::scrubGuid));
 }
