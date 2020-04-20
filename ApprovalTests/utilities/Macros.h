@@ -14,3 +14,9 @@
 #else
 #define APPROVAL_TESTS_NO_DISCARD
 #endif
+
+#if ((__cplusplus >= 201402L) && defined(APPROVALS_SHOW_DEPRECATION_WARNINGS))
+#define APPROVAL_TESTS_DEPRECATED(text) [[deprecated(text)]]
+#else
+#define APPROVAL_TESTS_DEPRECATED(text)
+#endif

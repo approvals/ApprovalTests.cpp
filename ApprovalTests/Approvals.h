@@ -1,5 +1,5 @@
 #pragma once
-
+//#define APPROVALS_SHOW_DEPRECATION_WARNINGS
 #include <string>
 #include <functional>
 #include <exception>
@@ -33,6 +33,7 @@ namespace ApprovalTests
             return DefaultNamerFactory::getDefaultNamer()();
         }
 
+        APPROVAL_TESTS_DEPRECATED("use Options(reporter) instead")
         static void verify(std::string contents, const Reporter& reporter)
         {
             verifyWithExtension(contents, ".txt", reporter);
@@ -63,6 +64,7 @@ namespace ApprovalTests
                                     int>::type;
 
         template <typename T, typename = IsNotDerivedFromWriter<T>>
+        APPROVAL_TESTS_DEPRECATED("use Options(reporter) instead")
         static void verify(const T& contents, const Reporter& reporter)
         {
             verify(StringUtils::toString(contents), reporter);
