@@ -2,19 +2,21 @@
 
 #include <string>
 
+#include <iostream>
+#include <regex>
+
 namespace ApprovalTests
 {
     namespace Scrubbers
     {
         inline std::string scrubGuid(const std::string& input)
         {
-            // Match against the input to see if it's a GUID or not
-            if (input == "")
-            {
-                return input;
-            }
-            // If it is, replace with guid_1, return original string
-            return "guid_1";
+            static const std::regex regex("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-["
+                                          "0-9a-fA-F]{4}-[0-9a-fA-F]{12}");
+            std::match_results<std::string::const_iterator> match;
+
+            auto result = std::regex_replace(input, regex, "guid_1");
+            return result;
         }
     }
 }
