@@ -43,8 +43,7 @@ namespace ApprovalTests
         static void verify(std::string contents,
                            const Options& options)
         {
-            verifyWithExtension(
-                options.getScrubber()(contents), ".txt", options.getReporter());
+            verifyWithExtension(options.scrub(contents), ".txt", options.getReporter());
         }
 
         static void verifyWithExtension(std::string contents,

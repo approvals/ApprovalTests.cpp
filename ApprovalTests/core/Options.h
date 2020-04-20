@@ -21,6 +21,11 @@ namespace ApprovalTests
             return scrubber_;
         }
 
+        std::string scrub(const std::string& input) const
+        {
+            return scrubber_(input);
+        }
+
         DefaultReporter getReporter() const
         {
             return DefaultReporter();
