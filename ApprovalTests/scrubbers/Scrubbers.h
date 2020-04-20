@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-
+#include <functional>
 #include <iostream>
 #include <regex>
 #include <ApprovalTests/utilities/StringUtils.h>
