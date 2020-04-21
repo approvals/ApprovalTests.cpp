@@ -2,18 +2,24 @@
 #include "scrubbers/Scrubbers.h"
 #include "core/Reporter.h"
 #include "reporters/DefaultReporter.h"
+
 namespace ApprovalTests
 {
     class Options
     {
     private:
         Scrubber scrubber_ = Scrubbers::doNothing;
-        DefaultReporter defaultReporter;
-        const Reporter& reporter_ = defaultReporter;
+        const Reporter& reporter_ = defaultReporter();
 
         Options(Scrubber scrubber, const Reporter& reporter)
             : scrubber_(std::move(scrubber)), reporter_(reporter)
         {
+        }
+
+        static const Reporter& defaultReporter()
+        {
+            static DefaultReporter defaultReporter;
+            return defaultReporter;
         }
 
     public:
