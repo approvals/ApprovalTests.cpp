@@ -1,5 +1,5 @@
 #pragma once
-//#define APPROVALS_SHOW_DEPRECATION_WARNINGS
+#define APPROVALS_SHOW_DEPRECATION_WARNINGS
 #include <string>
 #include <functional>
 #include <exception>
@@ -33,7 +33,7 @@ namespace ApprovalTests
             return DefaultNamerFactory::getDefaultNamer()();
         }
 
-        APPROVAL_TESTS_DEPRECATED("use Options(reporter) instead")
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
         static void verify(std::string contents, const Reporter& reporter)
         {
             verify(contents, Options(reporter));
@@ -64,8 +64,7 @@ namespace ApprovalTests
                                     int>::type;
 
         template <typename T, typename = IsNotDerivedFromWriter<T>>
-        APPROVAL_TESTS_DEPRECATED("use Options(reporter) instead")
-        static void verify(const T& contents, const Reporter& reporter)
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void verify(const T& contents, const Reporter& reporter)
         {
             verify(StringUtils::toString(contents), reporter);
         }
@@ -88,13 +87,21 @@ namespace ApprovalTests
         template <typename T,
                   typename Function,
                   typename = Detail::EnableIfNotDerivedFromReporter<Function>>
-        static void verify(const T& contents,
-                           Function converter,
-                           const Reporter& reporter = DefaultReporter())
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void
+        verify(const T& contents, Function converter, const Reporter& reporter)
+        {
+            verify(contents, converter, Options(reporter));
+        }
+
+        template <typename T,
+                  typename Function,
+                  typename = Detail::EnableIfNotDerivedFromReporter<Function>>
+        static void
+        verify(const T& contents, Function converter, const Options& options = Options())
         {
             std::stringstream s;
             converter(contents, s);
-            verify(s.str(), reporter);
+            verify(s.str(), options);
         }
 
         template <typename T,

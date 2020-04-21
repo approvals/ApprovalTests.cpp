@@ -20,3 +20,6 @@
 #else
 #define APPROVAL_TESTS_DEPRECATED(text)
 #endif
+
+#define APPROVAL_TESTS_DEPRECATED_USE_OPTIONS                                            \
+    APPROVAL_TESTS_DEPRECATED("use Options(reporter) instead")
