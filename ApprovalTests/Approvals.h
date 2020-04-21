@@ -90,12 +90,21 @@ namespace ApprovalTests
         }
 
         template <typename T, typename = IsNotDerivedFromWriter<T>>
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void
+        verifyWithExtension(const T& contents,
+                            const std::string& fileExtensionWithDot,
+                            const Reporter& reporter)
+        {
+            verifyWithExtension(contents, fileExtensionWithDot, Options(reporter));
+        }
+
+        template <typename T, typename = IsNotDerivedFromWriter<T>>
         static void verifyWithExtension(const T& contents,
                                         const std::string& fileExtensionWithDot,
-                                        const Reporter& reporter = DefaultReporter())
+                                        const Options& options = Options())
         {
             verifyWithExtension(
-                StringUtils::toString(contents), fileExtensionWithDot, reporter);
+                StringUtils::toString(contents), fileExtensionWithDot, options);
         }
 
         template <typename T,
