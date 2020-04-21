@@ -82,7 +82,8 @@ namespace ApprovalTests
                                     int>::type;
 
         template <typename T, typename = IsNotDerivedFromWriter<T>>
-        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void verify(const T& contents, const Reporter& reporter)
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void verify(const T& contents,
+                                                                 const Reporter& reporter)
         {
             APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verify(StringUtils::toString(contents), reporter);
