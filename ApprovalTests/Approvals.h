@@ -229,16 +229,23 @@ namespace ApprovalTests
         }
 
         template <typename T>
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void verifyAll(
+            std::string header, const std::vector<T>& list, const Reporter& reporter)
+        {
+            verifyAll(header, list, Options(reporter));
+        }
+
+        template <typename T>
         static void verifyAll(std::string header,
                               const std::vector<T>& list,
-                              const Reporter& reporter = DefaultReporter())
+                              const Options& options = Options())
         {
             int i = 0;
             verifyAll<std::vector<T>>(
                 header,
                 list,
                 [&](T e, std::ostream& s) { s << "[" << i++ << "] = " << e; },
-                reporter);
+                options);
         }
 
         template <typename T>
