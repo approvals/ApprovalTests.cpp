@@ -31,7 +31,7 @@ TEST_CASE("ApprovalMissingException is thrown")
     bool exception_caught = false;
     try
     {
-        Approvals::verify("foo", QuietReporter());
+        Approvals::verify("foo", Options(QuietReporter()));
     }
     catch (const ApprovalMissingException&)
     {

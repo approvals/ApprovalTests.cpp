@@ -130,7 +130,8 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
         exceptions.gather([&]() {
             Approvals::verify(
                 greeting.getGreeting(),
-                AutoApproveIfMissingReporter()); // Automatically approve first time
+                Options(
+                    AutoApproveIfMissingReporter())); // Automatically approve first time
         });
     }
     exceptions.release();
