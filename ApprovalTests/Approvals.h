@@ -130,14 +130,27 @@ namespace ApprovalTests
         template <typename T,
                   typename Function,
                   typename = Detail::EnableIfNotDerivedFromReporter<Function>>
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void
+        verifyWithExtension(const T& contents,
+                            Function converter,
+                            const std::string& fileExtensionWithDot,
+                            const Reporter& reporter)
+        {
+            verifyWithExtension(
+                contents, converter, fileExtensionWithDot, Options(reporter));
+        }
+
+        template <typename T,
+                  typename Function,
+                  typename = Detail::EnableIfNotDerivedFromReporter<Function>>
         static void verifyWithExtension(const T& contents,
                                         Function converter,
                                         const std::string& fileExtensionWithDot,
-                                        const Reporter& reporter = DefaultReporter())
+                                        const Options& options = Options())
         {
             std::stringstream s;
             converter(contents, s);
-            verifyWithExtension(s.str(), fileExtensionWithDot, reporter);
+            verifyWithExtension(s.str(), fileExtensionWithDot, options);
         }
 
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
