@@ -41,7 +41,7 @@ namespace ApprovalTests
 
         static void verify(std::string contents, const Options& options = Options())
         {
-            verifyWithExtension(options.scrub(contents), ".txt", options.getReporter());
+            verifyWithExtension(options.scrub(contents), ".txt", options);
         }
 
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
