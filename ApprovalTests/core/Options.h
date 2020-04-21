@@ -57,5 +57,13 @@ namespace ApprovalTests
         using EnableIfNotOptions = typename std::enable_if<
             !std::is_same<Options, typename std::decay<T>::type>::value,
             R>::type;
+
+        //! Helper to prevent compilation failure when types are wrongly treated as Option
+        //  or Reporter:
+        template <typename T, typename R = void>
+        using EnableIfNotOptionsOrReporter = typename std::enable_if<
+            (!std::is_same<Options, typename std::decay<T>::type>::value) &&
+                (!std::is_base_of<Reporter, typename std::decay<T>::type>::value),
+            R>::type;
     } // namespace Detail
 }

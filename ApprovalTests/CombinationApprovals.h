@@ -57,20 +57,20 @@ namespace ApprovalTests
             Approvals::verify(s.str(), options);
         }
 
-        //        template <class Converter, class Container, class... Containers>
-        //        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
-        //        void verifyAllCombinations(const Reporter& reporter,
-        //                                   Converter&& converter,
-        //                                   const Container& input0,
-        //                                   const Containers&... inputs)
-        //        {
-        //            verifyAllCombinations(Options(reporter), converter, input0, inputs...);
-        //        }
+        template <class Converter, class Container, class... Containers>
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS void
+        verifyAllCombinations(const Reporter& reporter,
+                              Converter&& converter,
+                              const Container& input0,
+                              const Containers&... inputs)
+        {
+            verifyAllCombinations(Options(reporter), converter, input0, inputs...);
+        }
 
         template <class Converter, class... Containers>
         //        std::pair<ApprovalTests::Detail::EnableIfNotDerivedFromReporter<Converter>,
         //                  ApprovalTests::Detail::EnableIfNotOptions<Converter>>
-        ApprovalTests::Detail::EnableIfNotOptions<Converter>
+        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<Converter>
         verifyAllCombinations(Converter&& converter, const Containers&... inputs)
         {
             verifyAllCombinations(
