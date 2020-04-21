@@ -1,5 +1,8 @@
 #pragma once
 
+// TODO Move to our CMake
+#define APPROVALS_SHOW_DEPRECATION_WARNINGS
+
 // Use this in places where we have parameters that are sometimes unused,
 // e.g. because of #if
 // See https://stackoverflow.com/a/1486931/104370
