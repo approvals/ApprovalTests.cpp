@@ -6,6 +6,7 @@
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/core/Options.h"
 #include "ApprovalTests/utilities/CartesianProduct.h"
+#include "namers/MoreHelpMessages.h"
 #include "Approvals.h"
 
 namespace ApprovalTests
@@ -64,6 +65,7 @@ namespace ApprovalTests
                               const Container& input0,
                               const Containers&... inputs)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyAllCombinations(Options(reporter), converter, input0, inputs...);
         }
 

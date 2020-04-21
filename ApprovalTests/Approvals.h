@@ -15,6 +15,7 @@
 #include "namers/DefaultNamerDisposer.h"
 #include "scrubbers/Scrubbers.h"
 #include "core/Options.h"
+#include "namers/MoreHelpMessages.h"
 
 namespace ApprovalTests
 {
@@ -35,6 +36,7 @@ namespace ApprovalTests
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
         static void verify(std::string contents, const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verify(contents, Options(reporter));
         }
 
@@ -48,6 +50,7 @@ namespace ApprovalTests
                                         const std::string& fileExtensionWithDot,
                                         const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyWithExtension(contents, fileExtensionWithDot, Options(reporter));
         }
 
@@ -62,6 +65,7 @@ namespace ApprovalTests
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
         static void verify(const ApprovalWriter& writer, const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verify(writer, Options(reporter));
         }
 
@@ -80,6 +84,7 @@ namespace ApprovalTests
         template <typename T, typename = IsNotDerivedFromWriter<T>>
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void verify(const T& contents, const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verify(StringUtils::toString(contents), reporter);
         }
 
@@ -95,6 +100,7 @@ namespace ApprovalTests
                             const std::string& fileExtensionWithDot,
                             const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyWithExtension(contents, fileExtensionWithDot, Options(reporter));
         }
 
@@ -113,10 +119,13 @@ namespace ApprovalTests
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void
         verify(const T& contents, Function converter, const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verify(contents, converter, Options(reporter));
         }
 
-        template <typename T, typename Function>
+        template <typename T,
+                  typename Function,
+                  typename = Detail::EnableIfNotDerivedFromReporter<Function>>
         static void
         verify(const T& contents, Function converter, const Options& options = Options())
         {
@@ -134,6 +143,7 @@ namespace ApprovalTests
                             const std::string& fileExtensionWithDot,
                             const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyWithExtension(
                 contents, converter, fileExtensionWithDot, Options(reporter));
         }
@@ -153,6 +163,7 @@ namespace ApprovalTests
         static void verifyExceptionMessage(std::function<void(void)> functionThatThrows,
                                            const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyExceptionMessage(functionThatThrows, Options(reporter));
         }
 
@@ -179,6 +190,7 @@ namespace ApprovalTests
             std::function<void(typename Iterator::value_type, std::ostream&)> converter,
             const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyAll(header, start, finish, converter, Options(reporter));
         }
 
@@ -210,6 +222,7 @@ namespace ApprovalTests
             std::function<void(typename Container::value_type, std::ostream&)> converter,
             const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyAll(header, list, converter, Options(reporter));
         }
 
@@ -228,6 +241,7 @@ namespace ApprovalTests
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void verifyAll(
             std::string header, const std::vector<T>& list, const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyAll(header, list, Options(reporter));
         }
 
@@ -248,6 +262,7 @@ namespace ApprovalTests
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void
         verifyAll(const std::vector<T>& list, const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyAll<T>(list, Options(reporter));
         }
 
@@ -262,6 +277,7 @@ namespace ApprovalTests
         static void verifyExistingFile(const std::string filePath,
                                        const Reporter& reporter)
         {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyExistingFile(filePath, Options(reporter));
         }
 
