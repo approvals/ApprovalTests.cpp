@@ -12,41 +12,49 @@ namespace ApprovalTests
         const Reporter& reporter_ = defaultReporter;
 
         Options(Scrubber scrubber, const Reporter& reporter)
-            : scrubber_(scrubber), reporter_(reporter)
+            : scrubber_(std::move(scrubber)), reporter_(reporter)
         {
         }
 
     public:
-        Options()
+        Options() = default;
+
+        explicit Options(Scrubber scrubber) : scrubber_(std::move(scrubber))
         {
         }
-        Options(Scrubber scrubber) : scrubber_(scrubber)
+
+        explicit Options(const Reporter& reporter) : reporter_(reporter)
         {
         }
-        Options(const Reporter& reporter) : reporter_(reporter)
-        {
-        }
+
+        APPROVAL_TESTS_NO_DISCARD
         Scrubber getScrubber() const
         {
             return scrubber_;
         }
 
+        APPROVAL_TESTS_NO_DISCARD
         std::string scrub(const std::string& input) const
         {
             return scrubber_(input);
         }
 
+        APPROVAL_TESTS_NO_DISCARD
         const Reporter& getReporter() const
         {
             return reporter_;
         }
+
+        APPROVAL_TESTS_NO_DISCARD
         Options withReporter(const Reporter& reporter) const
         {
             return Options(scrubber_, reporter);
         }
+
+        APPROVAL_TESTS_NO_DISCARD
         Options withScrubber(Scrubber scrubber) const
         {
-            return Options(scrubber, reporter_);
+            return Options(std::move(scrubber), reporter_);
         }
     };
 
