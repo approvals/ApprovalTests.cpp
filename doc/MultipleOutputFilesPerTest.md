@@ -239,13 +239,14 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
         exceptions.gather([&]() {
             Approvals::verify(
                 greeting.getGreeting(),
-                AutoApproveIfMissingReporter()); // Automatically approve first time
+                Options(
+                    AutoApproveIfMissingReporter())); // Automatically approve first time
         });
     }
     exceptions.release();
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L119-L138' title='File snippet `approvals_multiple_output_files_auto_approving` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Navigate to start of snippet `approvals_multiple_output_files_auto_approving`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L119-L139' title='File snippet `approvals_multiple_output_files_auto_approving` was extracted from'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Navigate to start of snippet `approvals_multiple_output_files_auto_approving`'>anchor</a></sup>
 <!-- endsnippet -->
  
 

@@ -40,7 +40,10 @@ add_executable(${PROJECT_NAME}
         )
 target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests doctest::doctest)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
+# begin-snippet: show_deprecation_warnings_cmake
+# Replace ${PROJECT_NAME} with the name of your test executable:
 target_compile_definitions(${PROJECT_NAME} PRIVATE APPROVALS_SHOW_DEPRECATION_WARNINGS)
+# end-snippet
 
 if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
     setup_target_for_coverage_lcov(
