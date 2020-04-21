@@ -6,7 +6,7 @@
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/core/Options.h"
 #include "ApprovalTests/utilities/CartesianProduct.h"
-#include "namers/MoreHelpMessages.h"
+#include "ApprovalTests/utilities/MoreHelpMessages.h"
 #include "Approvals.h"
 
 namespace ApprovalTests

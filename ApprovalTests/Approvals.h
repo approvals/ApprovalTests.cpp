@@ -15,7 +15,7 @@
 #include "namers/DefaultNamerDisposer.h"
 #include "scrubbers/Scrubbers.h"
 #include "core/Options.h"
-#include "namers/MoreHelpMessages.h"
+#include "utilities/MoreHelpMessages.h"
 
 namespace ApprovalTests
 {
