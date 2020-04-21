@@ -60,10 +60,16 @@ namespace ApprovalTests
             FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
         }
 
-        static void verify(const ApprovalWriter& writer,
-                           const Reporter& reporter = DefaultReporter())
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
+        static void verify(const ApprovalWriter& writer, const Reporter& reporter)
         {
-            FileApprover::verify(*getDefaultNamer(), writer, reporter);
+            verify(writer, Options(reporter));
+        }
+
+        static void verify(const ApprovalWriter& writer,
+                           const Options& options = Options())
+        {
+            FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
         }
 
         template <typename T>
