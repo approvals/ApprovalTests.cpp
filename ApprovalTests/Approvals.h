@@ -262,12 +262,19 @@ namespace ApprovalTests
             verifyAll<T>("", list, options);
         }
 
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
         static void verifyExistingFile(const std::string filePath,
-                                       const Reporter& reporter = DefaultReporter())
+                                       const Reporter& reporter)
+        {
+            verifyExistingFile(filePath, Options(reporter));
+        }
+
+        static void verifyExistingFile(const std::string filePath,
+                                       const Options& options = Options())
         {
             ExistingFile writer(filePath);
             ExistingFileNamer namer(filePath);
-            FileApprover::verify(namer, writer, reporter);
+            FileApprover::verify(namer, writer, options.getReporter());
         }
 
         static SubdirectoryDisposer
