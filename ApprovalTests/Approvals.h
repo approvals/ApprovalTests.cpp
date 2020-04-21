@@ -44,12 +44,20 @@ namespace ApprovalTests
             verifyWithExtension(options.scrub(contents), ".txt", options.getReporter());
         }
 
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
         static void verifyWithExtension(std::string contents,
                                         const std::string& fileExtensionWithDot,
-                                        const Reporter& reporter = DefaultReporter())
+                                        const Reporter& reporter)
+        {
+            verifyWithExtension(contents, fileExtensionWithDot, Options(reporter));
+        }
+
+        static void verifyWithExtension(std::string contents,
+                                        const std::string& fileExtensionWithDot,
+                                        const Options& options = Options())
         {
             StringWriter writer(contents, fileExtensionWithDot);
-            FileApprover::verify(*getDefaultNamer(), writer, reporter);
+            FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
         }
 
         static void verify(const ApprovalWriter& writer,
