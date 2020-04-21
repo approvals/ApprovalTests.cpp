@@ -52,3 +52,11 @@ TEST_CASE("Input with non-GUID")
         input,
         Options().withScrubber(Scrubbers::scrubGuid).withReporter(QuietReporter()));
 }
+
+TEST_CASE("Scrubbing in verifyAll")
+{
+    std::vector<std::string> v{"b34b4da8-090e-49d8-bd35-7e79f633a2ea",
+                               "2fd78d4a-ad49-447d-96a8-deda585a9aa5",
+                               "b34b4da8-090e-49d8-bd35-7e79f633a2ea"};
+    Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
+}
