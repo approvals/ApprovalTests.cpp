@@ -122,7 +122,7 @@ TEST_CASE("Front Loaded Reporter Always Takes Precedence")
 
     try
     {
-        Approvals::verify("cucumber", *our_reporter);
+        Approvals::verify("cucumber", Options(*our_reporter));
     }
     catch (const std::exception&)
     {
@@ -141,7 +141,7 @@ TEST_CASE("Front Loaded Reporter flows through if not needed")
 
     try
     {
-        Approvals::verify("cucumber", *our_reporter);
+        Approvals::verify("cucumber", Options(*our_reporter));
     }
     catch (const std::exception&)
     {
