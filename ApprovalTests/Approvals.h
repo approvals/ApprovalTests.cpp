@@ -140,12 +140,23 @@ namespace ApprovalTests
         }
 
         template <typename Iterator>
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void verifyAll(
+            std::string header,
+            const Iterator& start,
+            const Iterator& finish,
+            std::function<void(typename Iterator::value_type, std::ostream&)> converter,
+            const Reporter& reporter)
+        {
+            verifyAll(header, start, finish, converter, Options(reporter));
+        }
+
+        template <typename Iterator>
         static void verifyAll(
             std::string header,
             const Iterator& start,
             const Iterator& finish,
             std::function<void(typename Iterator::value_type, std::ostream&)> converter,
-            const Reporter& reporter = DefaultReporter())
+            const Options& options = Options())
         {
             std::stringstream s;
             if (!header.empty())
@@ -157,7 +168,7 @@ namespace ApprovalTests
                 converter(*it, s);
                 s << '\n';
             }
-            verify(s.str(), reporter);
+            verify(s.str(), options);
         }
 
         template <typename Container>
