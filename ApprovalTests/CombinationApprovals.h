@@ -68,8 +68,6 @@ namespace ApprovalTests
         }
 
         template <class Converter, class... Containers>
-        //        std::pair<ApprovalTests::Detail::EnableIfNotDerivedFromReporter<Converter>,
-        //                  ApprovalTests::Detail::EnableIfNotOptions<Converter>>
         ApprovalTests::Detail::EnableIfNotOptionsOrReporter<Converter>
         verifyAllCombinations(Converter&& converter, const Containers&... inputs)
         {
