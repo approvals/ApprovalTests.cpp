@@ -115,9 +115,7 @@ namespace ApprovalTests
             verify(contents, converter, Options(reporter));
         }
 
-        template <typename T,
-                  typename Function,
-                  typename = Detail::EnableIfNotDerivedFromReporter<Function>>
+        template <typename T, typename Function>
         static void
         verify(const T& contents, Function converter, const Options& options = Options())
         {
@@ -139,9 +137,7 @@ namespace ApprovalTests
                 contents, converter, fileExtensionWithDot, Options(reporter));
         }
 
-        template <typename T,
-                  typename Function,
-                  typename = Detail::EnableIfNotDerivedFromReporter<Function>>
+        template <typename T, typename Function>
         static void verifyWithExtension(const T& contents,
                                         Function converter,
                                         const std::string& fileExtensionWithDot,
