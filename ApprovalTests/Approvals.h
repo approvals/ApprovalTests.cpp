@@ -117,8 +117,15 @@ namespace ApprovalTests
             verifyWithExtension(s.str(), fileExtensionWithDot, reporter);
         }
 
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
         static void verifyExceptionMessage(std::function<void(void)> functionThatThrows,
-                                           const Reporter& reporter = DefaultReporter())
+                                           const Reporter& reporter)
+        {
+            verifyExceptionMessage(functionThatThrows, Options(reporter));
+        }
+
+        static void verifyExceptionMessage(std::function<void(void)> functionThatThrows,
+                                           const Options& options = Options())
         {
             std::string message = "*** no exception thrown ***";
             try
@@ -129,7 +136,7 @@ namespace ApprovalTests
             {
                 message = e.what();
             }
-            verify(message, reporter);
+            verify(message, options);
         }
 
         template <typename Iterator>
