@@ -1,5 +1,4 @@
 #pragma once
-#define APPROVALS_SHOW_DEPRECATION_WARNINGS
 #include <string>
 #include <functional>
 #include <exception>
