@@ -38,11 +38,13 @@
 #include "ApprovalTests/reporters/DiffReporter.h"
 #include "ApprovalTests/reporters/DefaultReporterFactory.h"
 #include "ApprovalTests/reporters/DefaultReporterDisposer.h"
-#include "ApprovalTests/reporters/DefaultReporter.h"
 #include "ApprovalTests/namers/SubdirectoryDisposer.h"
 #include "ApprovalTests/namers/DefaultNamerFactory.h"
 #include "ApprovalTests/namers/ExistingFileNamer.h"
 #include "ApprovalTests/namers/DefaultNamerDisposer.h"
+#include "ApprovalTests/scrubbers/Scrubbers.h"
+#include "ApprovalTests/reporters/DefaultReporter.h"
+#include "ApprovalTests/core/Options.h"
 #include "ApprovalTests/reporters/CustomReporter.h"
 #include "ApprovalTests/reporters/TextDiffReporter.h"
 #include "ApprovalTests/reporters/CIBuildOnlyReporter.h"
@@ -71,7 +73,6 @@
 #include "ApprovalTests/reporters/CIBuildOnlyReporterUtils.h"
 #include "ApprovalTests/reporters/ClipboardReporter.h"
 #include "ApprovalTests/reporters/CombinationReporter.h"
-#include "ApprovalTests/scrubbers/Scrubbers.h"
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 
 #endif // APPROVALTESTS_CPP_APPROVALS_HPP
