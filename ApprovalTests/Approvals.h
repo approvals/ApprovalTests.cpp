@@ -249,10 +249,17 @@ namespace ApprovalTests
         }
 
         template <typename T>
-        static void verifyAll(const std::vector<T>& list,
-                              const Reporter& reporter = DefaultReporter())
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void
+        verifyAll(const std::vector<T>& list, const Reporter& reporter)
         {
-            verifyAll<T>("", list, reporter);
+            verifyAll<T>(list, Options(reporter));
+        }
+
+        template <typename T>
+        static void verifyAll(const std::vector<T>& list,
+                              const Options& options = Options())
+        {
+            verifyAll<T>("", list, options);
         }
 
         static void verifyExistingFile(const std::string filePath,
