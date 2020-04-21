@@ -1,8 +1,10 @@
 #pragma once
 
 #include <type_traits>
+#include <utility>
 #include "reporters/DefaultReporter.h"
 #include "ApprovalTests/core/Reporter.h"
+#include "ApprovalTests/core/Options.h"
 #include "ApprovalTests/utilities/CartesianProduct.h"
 #include "Approvals.h"
 
@@ -42,7 +44,7 @@ namespace ApprovalTests
         } // namespace Detail
 
         template <class Converter, class Container, class... Containers>
-        void verifyAllCombinations(const Reporter& reporter,
+        void verifyAllCombinations(const Options& options,
                                    Converter&& converter,
                                    const Container& input0,
                                    const Containers&... inputs)
@@ -52,15 +54,27 @@ namespace ApprovalTests
                 Detail::serialize<Converter>{s, std::forward<Converter>(converter)},
                 input0,
                 inputs...);
-            Approvals::verify(s.str(), reporter);
+            Approvals::verify(s.str(), options);
         }
 
+        //        template <class Converter, class Container, class... Containers>
+        //        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
+        //        void verifyAllCombinations(const Reporter& reporter,
+        //                                   Converter&& converter,
+        //                                   const Container& input0,
+        //                                   const Containers&... inputs)
+        //        {
+        //            verifyAllCombinations(Options(reporter), converter, input0, inputs...);
+        //        }
+
         template <class Converter, class... Containers>
-        ApprovalTests::Detail::EnableIfNotDerivedFromReporter<Converter>
+        //        std::pair<ApprovalTests::Detail::EnableIfNotDerivedFromReporter<Converter>,
+        //                  ApprovalTests::Detail::EnableIfNotOptions<Converter>>
+        ApprovalTests::Detail::EnableIfNotOptions<Converter>
         verifyAllCombinations(Converter&& converter, const Containers&... inputs)
         {
             verifyAllCombinations(
-                DefaultReporter(), std::forward<Converter>(converter), inputs...);
+                Options(), std::forward<Converter>(converter), inputs...);
         }
 
     } // namespace CombinationApprovals

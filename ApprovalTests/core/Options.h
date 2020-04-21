@@ -49,4 +49,13 @@ namespace ApprovalTests
             return Options(scrubber, reporter_);
         }
     };
+
+    namespace Detail
+    {
+        //! Helper to prevent compilation failure when types are wrongly treated as Option:
+        template <typename T, typename R = void>
+        using EnableIfNotOptions = typename std::enable_if<
+            !std::is_same<Options, typename std::decay<T>::type>::value,
+            R>::type;
+    } // namespace Detail
 }
