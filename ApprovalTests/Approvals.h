@@ -208,14 +208,24 @@ namespace ApprovalTests
         }
 
         template <typename Container>
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void verifyAll(
+            std::string header,
+            const Container& list,
+            std::function<void(typename Container::value_type, std::ostream&)> converter,
+            const Reporter& reporter)
+        {
+            verifyAll(header, list, converter, Options(reporter));
+        }
+
+        template <typename Container>
         static void verifyAll(
             std::string header,
             const Container& list,
             std::function<void(typename Container::value_type, std::ostream&)> converter,
-            const Reporter& reporter = DefaultReporter())
+            const Options& options = Options())
         {
             verifyAll<typename Container::const_iterator>(
-                header, list.begin(), list.end(), converter, reporter);
+                header, list.begin(), list.end(), converter, options);
         }
 
         template <typename T>
