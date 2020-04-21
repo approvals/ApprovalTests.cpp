@@ -2,8 +2,8 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/namers/NamerFactory.h"
 #include <vector>
-#include <ApprovalTests/reporters/AutoApproveIfMissingReporter.h>
-#include <ApprovalTests/utilities/ExceptionCollector.h>
+#include "ApprovalTests/reporters/AutoApproveIfMissingReporter.h"
+#include "ApprovalTests/utilities/ExceptionCollector.h"
 
 using namespace ApprovalTests;
 

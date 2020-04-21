@@ -2,7 +2,7 @@
 #include <map>
 #include <vector>
 #include <string>
-#include <ApprovalTests/reporters/BlockingReporter.h>
+#include "ApprovalTests/reporters/BlockingReporter.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "reporters/FakeReporter.h"
 
