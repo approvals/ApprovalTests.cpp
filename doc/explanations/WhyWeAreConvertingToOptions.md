@@ -53,7 +53,7 @@ Currently (2020-04-21), warnings when using the old interface are turned off. To
 <!-- snippet: show_deprecation_warnings -->
 <a id='snippet-show_deprecation_warnings'/></a>
 ```cpp
-#define APPROVALTESTS_SHOW_DEPRECATION_WARNINGS
+#define APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS
 ```
 <sup><a href='/examples/doctest_existing_main/DoctestApprovalsTests.cpp#L1-L3' title='File snippet `show_deprecation_warnings` was extracted from'>snippet source</a> | <a href='#snippet-show_deprecation_warnings' title='Navigate to start of snippet `show_deprecation_warnings`'>anchor</a></sup>
 <!-- endsnippet -->
@@ -64,7 +64,7 @@ Or this to your CMakeLists.txt:
 <a id='snippet-show_deprecation_warnings_cmake'/></a>
 ```txt
 # Replace ${PROJECT_NAME} with the name of your test executable:
-target_compile_definitions(${PROJECT_NAME} PRIVATE APPROVALTESTS_SHOW_DEPRECATION_WARNINGS)
+target_compile_definitions(${PROJECT_NAME} PRIVATE APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS)
 ```
 <sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L43-L46' title='File snippet `show_deprecation_warnings_cmake` was extracted from'>snippet source</a> | <a href='#snippet-show_deprecation_warnings_cmake' title='Navigate to start of snippet `show_deprecation_warnings_cmake`'>anchor</a></sup>
 <!-- endsnippet -->

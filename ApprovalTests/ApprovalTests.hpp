@@ -1,5 +1,5 @@
-#ifndef APPROVALTESTS_CPP_APPROVALS_HPP
-#define APPROVALTESTS_CPP_APPROVALS_HPP
+#ifndef APPROVAL_TESTS_CPP_APPROVALS_HPP
+#define APPROVAL_TESTS_CPP_APPROVALS_HPP
 
 // This file is machine-generated. Do not edit.
 
@@ -75,4 +75,4 @@
 #include "ApprovalTests/reporters/CombinationReporter.h"
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 
-#endif // APPROVALTESTS_CPP_APPROVALS_HPP
+#endif // APPROVAL_TESTS_CPP_APPROVALS_HPP

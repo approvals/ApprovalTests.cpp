@@ -1,5 +1,5 @@
 // begin-snippet: show_deprecation_warnings
-#define APPROVALTESTS_SHOW_DEPRECATION_WARNINGS
+#define APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS
 // end-snippet
 
 #include "doctest/doctest.h"

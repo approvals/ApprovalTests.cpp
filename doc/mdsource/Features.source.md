@@ -46,11 +46,11 @@ See [Conan Integration](/doc/ConanIntegration.md#top).
 
 ApprovalTests provides the following macros to detect the release version, with a set of example values shown in italics:
 
-* `APPROVALTESTS_VERSION_MAJOR`: *8*
-* `APPROVALTESTS_VERSION_MINOR`: *1*
-* `APPROVALTESTS_VERSION_PATCH`: *2*
-* `APPROVALTESTS_VERSION_STR`: *8.1.2*
-* `APPROVALTESTS_VERSION`: *80102*
+* `APPROVAL_TESTS_VERSION_MAJOR`: *8*
+* `APPROVAL_TESTS_VERSION_MINOR`: *1*
+* `APPROVAL_TESTS_VERSION_PATCH`: *2*
+* `APPROVAL_TESTS_VERSION_STR`: *8.1.2*
+* `APPROVAL_TESTS_VERSION`: *80102*
 
 ## v.8.0.0
 

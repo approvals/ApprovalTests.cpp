@@ -14,5 +14,5 @@ if (("${CMAKE_GENERATOR}" MATCHES "Ninja") AND (${CMAKE_UNITY_BUILD}))
     # Catch2 tests, and others which depend on __FILE__ - which then go on to pass,
     # even when built inside source trees.
     message(NOTICE "Ninja with Unity build detected: disabling unnecessary ApprovalTests compile-time check of __FILE__")
-    target_compile_definitions(${PROJECT_NAME} INTERFACE APPROVALTESTS_DISABLE_FILE_MACRO_CHECK)
+    target_compile_definitions(${PROJECT_NAME} INTERFACE APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK)
 endif ()
