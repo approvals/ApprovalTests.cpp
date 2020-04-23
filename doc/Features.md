@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [Consistent macro names](#consistent-macro-names)
   * [v.8.6.0](#v860)
     * [Support for Boost.Test framework](#support-for-boosttest-framework)
   * [v.8.5.0](#v850)
@@ -52,6 +53,21 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+### Consistent macro names
+
+All our Macros now start with `APPROVAL_TESTS_`.
+
+We have kept the old macros, redirecting to the new ones, for backwards compatibility.
+
+| Old                                        | New                                       |
+| ------------------------------------------ | ----------------------------------------- |
+| `APPROVALTESTS_VERSION`                    | `APPROVAL_TESTS_VERSION`                  |
+| `APPROVALTESTS_VERSION_MAJOR`              | `APPROVAL_TESTS_VERSION_MAJOR`            |
+| `APPROVALTESTS_VERSION_MINOR`              | `APPROVAL_TESTS_VERSION_MINOR`            |
+| `APPROVALTESTS_VERSION_PATCH`              | `APPROVAL_TESTS_VERSION_PATCH`            |
+| `APPROVALTESTS_VERSION_STR`                | `APPROVAL_TESTS_VERSION_STR`              |
+| `APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK` | `APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK` |
 
 ## v.8.6.0
 
@@ -195,7 +211,6 @@ See [Front Loaded Reporters](/doc/Reporters.md#front-loaded-reporters)
 ### Using sub-directories for approved files
 
 See [Using sub-directories for approved files](/doc/Configuration.md#using-sub-directories-for-approved-files)
-
 
 ---
 
