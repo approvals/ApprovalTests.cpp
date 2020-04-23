@@ -21,9 +21,9 @@
  */
 
 #ifdef IN_DOXYGEN
-#define APPROVALS_SHOW_DEPRECATION_WARNINGS
+#define APPROVALTESTS_SHOW_DEPRECATION_WARNINGS
 #endif
-/*! \def APPROVALS_SHOW_DEPRECATION_WARNINGS
+/*! \def APPROVALTESTS_SHOW_DEPRECATION_WARNINGS
  *  \brief Control whether will be shown, if using deprecated methods
  *
  *  If defined, compile-time (C++14 or above) or run-time (C++11) warnings will be shown,
