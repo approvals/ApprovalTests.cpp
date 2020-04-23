@@ -12,15 +12,11 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [First Section Here](#first-section-here)
+  * [Scrubbers](#scrubbers)
   * [API](#api)
-  * [Opting in](#opting-in)
-    * [Show warnings](#show-warnings)
-    * [Hide deprecated code](#hide-deprecated-code)<!-- endtoc -->
+  * [Opting in](#opting-in)<!-- endtoc -->
 
-## First Section Here
-
-2020-04-21
+## Scrubbers
 
 With the addition of Scrubbers, we realised that ApprovalTests has some optional parameters. The only one we had of these before was reporter. Because of that, we decided to group together all of the options in to a single container object. This gives us a few advantages:
 
@@ -43,58 +39,17 @@ When enabled, these deprecation warnings will show up as:
 
 Our plan is to:
  
-* start with the deprecations being something users can opt in to
-* deprecation warnings are opt-out
-* deprecation warnings are forced
-* the deprecated methods are removed
+1. start with the deprecations being something users can opt in to
+1. deprecation warnings are opt-out
+1. deprecation warnings are forced
+1. the deprecated methods are hidden by default
+1. the deprecated methods are removed
 
 ## Opting in
 
-### Show warnings
+Currently (2020-04-21), deprecation warnings are turned off by default.
 
-Currently (2020-04-21), warnings when using the old interface are turned off. To see them, add this line of code in your C++ code: 
-
-<!-- snippet: show_deprecation_warnings -->
-<a id='snippet-show_deprecation_warnings'/></a>
-```cpp
-#define APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS
-```
-<sup><a href='/examples/doctest_existing_main/DoctestApprovalsTests.cpp#L1-L3' title='File snippet `show_deprecation_warnings` was extracted from'>snippet source</a> | <a href='#snippet-show_deprecation_warnings' title='Navigate to start of snippet `show_deprecation_warnings`'>anchor</a></sup>
-<!-- endsnippet -->
-
-Or this to your CMakeLists.txt:
-
-<!-- snippet: show_deprecation_warnings_cmake -->
-<a id='snippet-show_deprecation_warnings_cmake'/></a>
-```txt
-# Replace ${PROJECT_NAME} with the name of your test executable:
-target_compile_definitions(${PROJECT_NAME} PRIVATE APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS)
-```
-<sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L43-L46' title='File snippet `show_deprecation_warnings_cmake` was extracted from'>snippet source</a> | <a href='#snippet-show_deprecation_warnings_cmake' title='Navigate to start of snippet `show_deprecation_warnings_cmake`'>anchor</a></sup>
-<!-- endsnippet -->
-
-### Hide deprecated code
-
-A more extreme version of this is to not even compile the deprecated code. You can do this by adding this line:
-
-<!-- snippet: hide_deprecated_code -->
-<a id='snippet-hide_deprecated_code'/></a>
-```cpp
-#define APPROVAL_TESTS_HIDE_DEPRECATED_CODE
-```
-<sup><a href='/examples/doctest_existing_main/DoctestApprovalsTests.cpp#L5-L7' title='File snippet `hide_deprecated_code` was extracted from'>snippet source</a> | <a href='#snippet-hide_deprecated_code' title='Navigate to start of snippet `hide_deprecated_code`'>anchor</a></sup>
-<!-- endsnippet -->
-
-Or this to your CMakeLists.txt:
-
-<!-- snippet: hide_deprecated_code_cmake -->
-<a id='snippet-hide_deprecated_code_cmake'/></a>
-```txt
-# Replace ${PROJECT_NAME} with the name of your test executable:
-target_compile_definitions(${PROJECT_NAME} PRIVATE APPROVAL_TESTS_HIDE_DEPRECATED_CODE)
-```
-<sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L48-L51' title='File snippet `hide_deprecated_code_cmake` was extracted from'>snippet source</a> | <a href='#snippet-hide_deprecated_code_cmake' title='Navigate to start of snippet `hide_deprecated_code_cmake`'>anchor</a></sup>
-<!-- endsnippet -->
+To change that, see [How To Toggle Enabling or Disabling of Deprecated Code](/doc/how_tos/ToggleDeprecatedCode.md#top).
 
 ---
 

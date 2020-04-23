@@ -4,9 +4,7 @@
 
 toc
 
-## First Section Here
-
-2020-04-21
+## Scrubbers
 
 With the addition of Scrubbers, we realised that ApprovalTests has some optional parameters. The only one we had of these before was reporter. Because of that, we decided to group together all of the options in to a single container object. This gives us a few advantages:
 
@@ -29,32 +27,17 @@ When enabled, these deprecation warnings will show up as:
 
 Our plan is to:
  
-* start with the deprecations being something users can opt in to
-* deprecation warnings are opt-out
-* deprecation warnings are forced
-* the deprecated methods are removed
+1. start with the deprecations being something users can opt in to
+1. deprecation warnings are opt-out
+1. deprecation warnings are forced
+1. the deprecated methods are hidden by default
+1. the deprecated methods are removed
 
 ## Opting in
 
-### Show warnings
+Currently (2020-04-21), deprecation warnings are turned off by default.
 
-Currently (2020-04-21), warnings when using the old interface are turned off. To see them, add this line of code in your C++ code: 
-
-snippet: show_deprecation_warnings
-
-Or this to your CMakeLists.txt:
-
-snippet: show_deprecation_warnings_cmake
-
-### Hide deprecated code
-
-A more extreme version of this is to not even compile the deprecated code. You can do this by adding this line:
-
-snippet: hide_deprecated_code
-
-Or this to your CMakeLists.txt:
-
-snippet: hide_deprecated_code_cmake
+To change that, see [How To Toggle Enabling or Disabling of Deprecated Code](/doc/how_tos/ToggleDeprecatedCode.md#top).
 
 ---
 
