@@ -11,7 +11,7 @@
 #define APPROVALTESTS_DISABLE_FILE_MACRO_CHECK
 #endif
 /*! \def APPROVALTESTS_DISABLE_FILE_MACRO_CHECK
- *  \brief If defined, this will disable the compile-ticket check of the <tt>__FILE__</tt>
+ *  \brief If defined, this will disable the compile-time check of the <tt>__FILE__</tt>
  *         macro.
  *
  *  See <a href="https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md#top">Troubleshooting Misconfigured Build</a>
@@ -24,7 +24,7 @@
 #define APPROVALTESTS_SHOW_DEPRECATION_WARNINGS
 #endif
 /*! \def APPROVALTESTS_SHOW_DEPRECATION_WARNINGS
- *  \brief Control whether will be shown, if using deprecated methods
+ *  \brief Control whether warnings will be shown, if using deprecated methods
  *
  *  If defined, compile-time (C++14 or above) or run-time (C++11) warnings will be shown,
  *  for any calls to deprecated methods.
