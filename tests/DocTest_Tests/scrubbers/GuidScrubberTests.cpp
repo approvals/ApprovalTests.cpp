@@ -60,3 +60,12 @@ TEST_CASE("Scrubbing in verifyAll")
                                "b34b4da8-090e-49d8-bd35-7e79f633a2ea"};
     Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
 }
+
+TEST_CASE("Scrubbing via Lambda")
+{
+    // begin-snippet: scrubbing_via_lambda
+    Approvals::verify("1 2 3 4 5 6", Options().withScrubber([](auto t) {
+        return StringUtils::replaceAll(t, "3", "Fizz");
+    }));
+    // end-snippet
+}
