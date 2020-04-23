@@ -45,6 +45,11 @@ add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 target_compile_definitions(${PROJECT_NAME} PRIVATE APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS)
 # end-snippet
 
+# begin-snippet: hide_deprecated_code_cmake
+# Replace ${PROJECT_NAME} with the name of your test executable:
+target_compile_definitions(${PROJECT_NAME} PRIVATE APPROVAL_TESTS_HIDE_DEPRECATED_CODE)
+# end-snippet
+
 if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
     setup_target_for_coverage_lcov(
             NAME ${PROJECT_NAME}_coverage

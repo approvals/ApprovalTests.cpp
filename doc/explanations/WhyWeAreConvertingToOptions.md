@@ -14,7 +14,9 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [First Section Here](#first-section-here)
   * [API](#api)
-  * [Opting in](#opting-in)<!-- endtoc -->
+  * [Opting in](#opting-in)
+    * [Show warnings](#show-warnings)
+    * [Hide deprecated code](#hide-deprecated-code)<!-- endtoc -->
 
 ## First Section Here
 
@@ -46,7 +48,9 @@ Our plan is to:
 * deprecation warnings are forced
 * the deprecated methods are removed
 
-## Opting in 
+## Opting in
+
+### Show warnings
 
 Currently (2020-04-21), warnings when using the old interface are turned off. To see them, add this line of code in your C++ code: 
 
@@ -67,6 +71,29 @@ Or this to your CMakeLists.txt:
 target_compile_definitions(${PROJECT_NAME} PRIVATE APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS)
 ```
 <sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L43-L46' title='File snippet `show_deprecation_warnings_cmake` was extracted from'>snippet source</a> | <a href='#snippet-show_deprecation_warnings_cmake' title='Navigate to start of snippet `show_deprecation_warnings_cmake`'>anchor</a></sup>
+<!-- endsnippet -->
+
+### Hide deprecated code
+
+A more extreme version of this is to not even compile the deprecated code. You can do this by adding this line:
+
+<!-- snippet: hide_deprecated_code -->
+<a id='snippet-hide_deprecated_code'/></a>
+```cpp
+#define APPROVAL_TESTS_HIDE_DEPRECATED_CODE
+```
+<sup><a href='/examples/doctest_existing_main/DoctestApprovalsTests.cpp#L5-L7' title='File snippet `hide_deprecated_code` was extracted from'>snippet source</a> | <a href='#snippet-hide_deprecated_code' title='Navigate to start of snippet `hide_deprecated_code`'>anchor</a></sup>
+<!-- endsnippet -->
+
+Or this to your CMakeLists.txt:
+
+<!-- snippet: hide_deprecated_code_cmake -->
+<a id='snippet-hide_deprecated_code_cmake'/></a>
+```txt
+# Replace ${PROJECT_NAME} with the name of your test executable:
+target_compile_definitions(${PROJECT_NAME} PRIVATE APPROVAL_TESTS_HIDE_DEPRECATED_CODE)
+```
+<sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L48-L51' title='File snippet `hide_deprecated_code_cmake` was extracted from'>snippet source</a> | <a href='#snippet-hide_deprecated_code_cmake' title='Navigate to start of snippet `hide_deprecated_code_cmake`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---

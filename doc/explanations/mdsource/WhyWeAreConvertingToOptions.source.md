@@ -34,7 +34,9 @@ Our plan is to:
 * deprecation warnings are forced
 * the deprecated methods are removed
 
-## Opting in 
+## Opting in
+
+### Show warnings
 
 Currently (2020-04-21), warnings when using the old interface are turned off. To see them, add this line of code in your C++ code: 
 
@@ -43,6 +45,16 @@ snippet: show_deprecation_warnings
 Or this to your CMakeLists.txt:
 
 snippet: show_deprecation_warnings_cmake
+
+### Hide deprecated code
+
+A more extreme version of this is to not even compile the deprecated code. You can do this by adding this line:
+
+snippet: hide_deprecated_code
+
+Or this to your CMakeLists.txt:
+
+snippet: hide_deprecated_code_cmake
 
 ---
 

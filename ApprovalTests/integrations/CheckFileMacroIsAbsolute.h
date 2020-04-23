@@ -12,9 +12,12 @@
 // ApprovalTests will then check the validity of __FILE__
 // at run-time instead, for test frameworks that use it to
 // detect the source file name.
+#ifndef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
 #if defined(APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK) // Deprecated
 #define APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK
 #endif
+#endif
+
 #ifndef APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK
 // clang-format off
 static_assert(

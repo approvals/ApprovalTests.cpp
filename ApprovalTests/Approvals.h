@@ -313,5 +313,8 @@ namespace ApprovalTests
         {
             return DefaultNamerDisposer(namerCreator);
         }
+
+#ifndef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
+#endif
     };
 }
