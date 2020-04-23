@@ -28,7 +28,7 @@ TEST_CASE("Input with non-GUID")
     REQUIRE(output == input);
 }
 
-TEST_CASE("Input with non-GUID")
+TEST_CASE("Input with multiple GUIDs")
 {
 
     std::string input = R"(
