@@ -10,7 +10,7 @@ from tests.helpers import set_home_directory
 
 class TestForLocking(unittest.TestCase):
 
-    def test_create_single_header_file_approvals(self) -> None:
+    def disabled_test_create_single_header_file_approvals(self) -> None:
         prepare_release = self.get_prepare_release()
         output = prepare_release.create_single_header_file()
 
