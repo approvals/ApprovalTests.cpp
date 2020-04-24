@@ -38,12 +38,14 @@ class CppGeneration:
                      APPROVAL_TESTS_VERSION_PATCH)
 
                 #ifndef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
+                // clang-format off
                 // Deprecated, for regression only:
                 #define APPROVALTESTS_VERSION       APPROVAL_TESTS_VERSION
                 #define APPROVALTESTS_VERSION_MAJOR APPROVAL_TESTS_VERSION_MAJOR
                 #define APPROVALTESTS_VERSION_MINOR APPROVAL_TESTS_VERSION_MINOR
                 #define APPROVALTESTS_VERSION_PATCH APPROVAL_TESTS_VERSION_PATCH
                 #define APPROVALTESTS_VERSION_STR   APPROVAL_TESTS_VERSION_STR
+                // clang-format on
                 #endif
                 '''
         return text
