@@ -33,8 +33,8 @@ class CppGeneration:
                 #define APPROVAL_TESTS_VERSION_PATCH {version_object.patch}
                 #define APPROVAL_TESTS_VERSION_STR "{version_string}"
 
-                #define APPROVAL_TESTS_VERSION                                                            \\
-                    (APPROVAL_TESTS_VERSION_MAJOR * 10000 + APPROVAL_TESTS_VERSION_MINOR * 100 +           \\
+                #define APPROVAL_TESTS_VERSION                                                           \\
+                    (APPROVAL_TESTS_VERSION_MAJOR * 10000 + APPROVAL_TESTS_VERSION_MINOR * 100 +         \\
                      APPROVAL_TESTS_VERSION_PATCH)
 
                 #ifndef APPROVAL_TESTS_HIDE_DEPRECATED_CODE

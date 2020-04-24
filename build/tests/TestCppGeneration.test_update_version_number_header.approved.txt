@@ -5,8 +5,8 @@
 #define APPROVAL_TESTS_VERSION_PATCH 0
 #define APPROVAL_TESTS_VERSION_STR "8.5.0"
 
-#define APPROVAL_TESTS_VERSION                                                            \
-    (APPROVAL_TESTS_VERSION_MAJOR * 10000 + APPROVAL_TESTS_VERSION_MINOR * 100 +           \
+#define APPROVAL_TESTS_VERSION                                                           \
+    (APPROVAL_TESTS_VERSION_MAJOR * 10000 + APPROVAL_TESTS_VERSION_MINOR * 100 +         \
      APPROVAL_TESTS_VERSION_PATCH)
 
 #ifndef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
