@@ -119,6 +119,6 @@ TEST_CASE("verifyAll")
 TEST_CASE("verifyExistingFile")
 {
     ApprovalTestNamer namer;
-    Approvals::verifyExistingFile(namer.getDirectory() + "../sample.txt",
-                                  DefaultReporter());
+    Approvals::verifyExistingFile(
+        namer.getDirectory() + "../../tests/DocTest_Tests/sample.txt", DefaultReporter());
 }
