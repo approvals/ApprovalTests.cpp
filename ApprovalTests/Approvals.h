@@ -33,12 +33,13 @@ namespace ApprovalTests
             return DefaultNamerFactory::getDefaultNamer()();
         }
 
-        static void verify(std::string contents, const Options& options = Options())
+        static void verify(const std::string& contents,
+                           const Options& options = Options())
         {
             verifyWithExtension(contents, ".txt", options);
         }
 
-        static void verifyWithExtension(std::string contents,
+        static void verifyWithExtension(const std::string& contents,
                                         const std::string& fileExtensionWithDot,
                                         const Options& options = Options())
         {
@@ -114,7 +115,7 @@ namespace ApprovalTests
 
         template <typename Iterator>
         static void verifyAll(
-            std::string header,
+            const std::string& header,
             const Iterator& start,
             const Iterator& finish,
             std::function<void(typename Iterator::value_type, std::ostream&)> converter,
@@ -145,7 +146,7 @@ namespace ApprovalTests
         }
 
         template <typename T>
-        static void verifyAll(std::string header,
+        static void verifyAll(const std::string& header,
                               const std::vector<T>& list,
                               const Options& options = Options())
         {
@@ -165,7 +166,7 @@ namespace ApprovalTests
         }
 
         // Note that this method ignores any scrubber in options
-        static void verifyExistingFile(const std::string filePath,
+        static void verifyExistingFile(const std::string& filePath,
                                        const Options& options = Options())
         {
             ExistingFile writer(filePath);
@@ -174,7 +175,7 @@ namespace ApprovalTests
         }
 
         static SubdirectoryDisposer
-        useApprovalsSubdirectory(std::string subdirectory = "approval_tests")
+        useApprovalsSubdirectory(const std::string& subdirectory = "approval_tests")
         {
             return SubdirectoryDisposer(subdirectory);
         }
