@@ -41,7 +41,9 @@ TEST_CASE("verify")
     SUBCASE("T converter Reporter")
     {
         Approvals::verify(
-            42, [](auto value, auto& os) { os << "**value:** " << value; }, reporter);
+            42,
+            [](int value, std::ostream& os) { os << "**value:** " << value; },
+            reporter);
     }
 }
 
@@ -69,7 +71,7 @@ TEST_CASE("verifyWithExtension")
     {
         Approvals::verifyWithExtension(
             42,
-            [](auto value, auto& os) { os << "**value:** " << value; },
+            [](int value, std::ostream& os) { os << "**value:** " << value; },
             ".md",
             reporter);
     }
@@ -88,7 +90,9 @@ TEST_CASE("verifyAll")
 
     {
         const std::list<int> values{1, 2, 3};
-        auto converter = [](auto value, auto& os) { os << "**value:** " << value; };
+        auto converter = [](int value, std::ostream& os) {
+            os << "**value:** " << value;
+        };
 
         SUBCASE("header start finish converter Reporter")
         {

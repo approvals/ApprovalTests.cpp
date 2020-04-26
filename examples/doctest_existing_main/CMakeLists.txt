@@ -1,5 +1,5 @@
 project(doctest_existing_main)
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}
         main.cpp
         DeprecatedApprovalsTests.cpp
