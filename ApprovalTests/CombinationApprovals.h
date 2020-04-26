@@ -58,6 +58,7 @@ namespace ApprovalTests
             Approvals::verify(s.str(), options);
         }
 
+#ifndef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
         template <class Converter, class Container, class... Containers>
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS void
         verifyAllCombinations(const Reporter& reporter,
@@ -68,6 +69,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyAllCombinations(Options(reporter), converter, input0, inputs...);
         }
+#endif
 
         template <class Converter, class... Containers>
         ApprovalTests::Detail::EnableIfNotOptionsOrReporter<Converter>
