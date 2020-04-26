@@ -84,7 +84,9 @@ namespace ApprovalTests
             verify(s.str(), options);
         }
 
-        template <typename T, typename Function>
+        template <typename T,
+                  typename Function,
+                  typename = Detail::EnableIfNotDerivedFromReporter<Function>>
         static void verifyWithExtension(const T& contents,
                                         Function converter,
                                         const std::string& fileExtensionWithDot,
