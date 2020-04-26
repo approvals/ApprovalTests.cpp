@@ -138,7 +138,7 @@ namespace ApprovalTests
 
         template <typename Container>
         static void verifyAll(
-            std::string header,
+            const std::string& header,
             const Container& list,
             std::function<void(typename Container::value_type, std::ostream&)> converter,
             const Options& options = Options())
