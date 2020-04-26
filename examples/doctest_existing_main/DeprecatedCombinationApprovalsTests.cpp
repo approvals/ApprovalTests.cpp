@@ -1,8 +1,7 @@
 // These are tests to ensure that we are maintaining the pre-Options
 // interface, i.e. methods that take a Reporter as the first argument.
 
-#undef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
-#undef APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS
+#include "DeprecationDefines.h" // must come first
 
 #include "doctest/doctest.h"
 #include "ApprovalTests/CombinationApprovals.h"
