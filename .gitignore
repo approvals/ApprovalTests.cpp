@@ -18,4 +18,3 @@ CMakeLists.txt.user
 __pycache__/
 .mypy_cache/
 *.sqlite3
-ApprovalTests/Approvals.h
