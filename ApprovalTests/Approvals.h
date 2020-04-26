@@ -99,8 +99,9 @@ namespace ApprovalTests
             verifyWithExtension(s.str(), fileExtensionWithDot, options);
         }
 
-        static void verifyExceptionMessage(std::function<void(void)> functionThatThrows,
-                                           const Options& options = Options())
+        static void
+        verifyExceptionMessage(const std::function<void(void)>& functionThatThrows,
+                               const Options& options = Options())
         {
             std::string message = "*** no exception thrown ***";
             try
