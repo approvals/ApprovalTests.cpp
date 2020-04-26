@@ -5,6 +5,7 @@ add_executable(${PROJECT_NAME}
         ApprovalsTests.cpp
         CombinationTests.cpp
         DeprecatedApprovalsTests.cpp
+        DeprecatedCombinationApprovalsTests.cpp
         DocTestApprovalTestTests.cpp
         VectorTests.cpp
         comparators/ComparatorDisposerTest.cpp
