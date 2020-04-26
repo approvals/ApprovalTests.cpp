@@ -60,6 +60,19 @@ class PrepareRelease:
         # Delete the last release:
         if os.path.exists(STARTER_PATH_OLD_SINGLE_HEADER):
             os.remove(STARTER_PATH_OLD_SINGLE_HEADER)
+        else:
+            raise RuntimeError(F"""
+----------------------------------------------------------------
+ERROR: Old header file does not exist:
+{STARTER_PATH_OLD_SINGLE_HEADER}
+Starting state of Starter Project does not match '{self.details.old_version.get_version_text()}'
+Check whether:
+1. There were uncommitted changes to version.ini in main project,
+   from a previous release preparation step.
+2. The Starter Project repo needs pulling.
+----------------------------------------------------------------
+
+""")
 
         # Update the version in the "redirect" header:
         replace_text_in_file(F"{release_constants.starter_project_dir}/lib/ApprovalTests.hpp",
