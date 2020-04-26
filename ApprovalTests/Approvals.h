@@ -2,6 +2,7 @@
 #include <string>
 #include <functional>
 #include <exception>
+#include <utility>
 
 #include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/core/FileApprover.h"
@@ -194,7 +195,7 @@ namespace ApprovalTests
 
         static DefaultNamerDisposer useAsDefaultNamer(NamerCreator namerCreator)
         {
-            return DefaultNamerDisposer(namerCreator);
+            return DefaultNamerDisposer(std::move(namerCreator));
         }
 
 #ifndef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
