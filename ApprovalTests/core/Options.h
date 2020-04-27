@@ -8,11 +8,16 @@ namespace ApprovalTests
     class Options
     {
     private:
+        std::string fileExtensionWithDot_ = ".txt";
         Scrubber scrubber_ = Scrubbers::doNothing;
         const Reporter& reporter_ = defaultReporter();
 
-        Options(Scrubber scrubber, const Reporter& reporter)
-            : scrubber_(std::move(scrubber)), reporter_(reporter)
+        Options(std::string fileExtensionWithDot,
+                Scrubber scrubber,
+                const Reporter& reporter)
+            : fileExtensionWithDot_(std::move(fileExtensionWithDot))
+            , scrubber_(std::move(scrubber))
+            , reporter_(reporter)
         {
         }
 
@@ -34,6 +39,12 @@ namespace ApprovalTests
         }
 
         APPROVAL_TESTS_NO_DISCARD
+        const std::string& getFileExtension() const
+        {
+            return fileExtensionWithDot_;
+        }
+
+        APPROVAL_TESTS_NO_DISCARD
         Scrubber getScrubber() const
         {
             return scrubber_;
@@ -52,15 +63,21 @@ namespace ApprovalTests
         }
 
         APPROVAL_TESTS_NO_DISCARD
+        Options withFileExtension(const std::string& fileExtensionWithDot) const
+        {
+            return Options(fileExtensionWithDot, scrubber_, reporter_);
+        }
+
+        APPROVAL_TESTS_NO_DISCARD
         Options withReporter(const Reporter& reporter) const
         {
-            return Options(scrubber_, reporter);
+            return Options(fileExtensionWithDot_, scrubber_, reporter);
         }
 
         APPROVAL_TESTS_NO_DISCARD
         Options withScrubber(Scrubber scrubber) const
         {
-            return Options(std::move(scrubber), reporter_);
+            return Options(fileExtensionWithDot_, std::move(scrubber), reporter_);
         }
     };
 

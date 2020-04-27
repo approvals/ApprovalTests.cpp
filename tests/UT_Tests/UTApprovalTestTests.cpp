@@ -82,16 +82,18 @@ int main()
 
     "YouCanSpecifyYourFileExtension"_test = []() {
         // begin-snippet: ut_use_custom_file_extension
-        Approvals::verifyWithExtension("<h1>hello world</h1>", ".html");
+        Approvals::verify("<h1>hello world</h1>", Options().withFileExtension(".html"));
         // end-snippet
     };
 
     "YouCanSpecifyYourFileExtensionWithToString"_test = []() {
-        Approvals::verifyWithExtension(1337, ".csv");
+        Approvals::verify(1337, Options().withFileExtension(".csv"));
     };
 
     "YouCanSpecifyYourFileExtensionWithFormatter"_test = []() {
-        Approvals::verifyWithExtension(
-            1337, [](auto value, auto& os) { os << "**value:** " << value; }, ".md");
+        Approvals::verify(
+            1337,
+            [](auto value, auto& os) { os << "**value:** " << value; },
+            Options().withFileExtension(".md"));
     };
 }

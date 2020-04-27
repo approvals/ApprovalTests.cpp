@@ -37,14 +37,7 @@ namespace ApprovalTests
         static void verify(const std::string& contents,
                            const Options& options = Options())
         {
-            verifyWithExtension(contents, ".txt", options);
-        }
-
-        static void verifyWithExtension(const std::string& contents,
-                                        const std::string& fileExtensionWithDot,
-                                        const Options& options = Options())
-        {
-            StringWriter writer(options.scrub(contents), fileExtensionWithDot);
+            StringWriter writer(options.scrub(contents), options.getFileExtension());
             FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
         }
 
@@ -66,15 +59,6 @@ namespace ApprovalTests
             verify(StringUtils::toString(contents), options);
         }
 
-        template <typename T, typename = IsNotDerivedFromWriter<T>>
-        static void verifyWithExtension(const T& contents,
-                                        const std::string& fileExtensionWithDot,
-                                        const Options& options = Options())
-        {
-            verifyWithExtension(
-                StringUtils::toString(contents), fileExtensionWithDot, options);
-        }
-
         template <typename T,
                   typename Function,
                   typename = Detail::EnableIfNotDerivedFromReporter<Function>>
@@ -84,19 +68,6 @@ namespace ApprovalTests
             std::stringstream s;
             converter(contents, s);
             verify(s.str(), options);
-        }
-
-        template <typename T,
-                  typename Function,
-                  typename = Detail::EnableIfNotDerivedFromReporter<Function>>
-        static void verifyWithExtension(const T& contents,
-                                        Function converter,
-                                        const std::string& fileExtensionWithDot,
-                                        const Options& options = Options())
-        {
-            std::stringstream s;
-            converter(contents, s);
-            verifyWithExtension(s.str(), fileExtensionWithDot, options);
         }
 
         static void
@@ -214,7 +185,7 @@ namespace ApprovalTests
                                         const Reporter& reporter)
         {
             APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
-            verifyWithExtension(contents, fileExtensionWithDot, Options(reporter));
+            verify(contents, Options(reporter).withFileExtension(fileExtensionWithDot));
         }
 
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
@@ -239,7 +210,7 @@ namespace ApprovalTests
                             const Reporter& reporter)
         {
             APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
-            verifyWithExtension(contents, fileExtensionWithDot, Options(reporter));
+            verify(contents, Options(reporter).withFileExtension(fileExtensionWithDot));
         }
 
         template <typename T,
@@ -262,8 +233,9 @@ namespace ApprovalTests
                             const Reporter& reporter)
         {
             APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
-            verifyWithExtension(
-                contents, converter, fileExtensionWithDot, Options(reporter));
+            verify(contents,
+                   converter,
+                   Options(reporter).withFileExtension(fileExtensionWithDot));
         }
 
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
