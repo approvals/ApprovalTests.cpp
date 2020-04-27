@@ -58,9 +58,9 @@ namespace ApprovalTests
         }
 
         APPROVAL_TESTS_NO_DISCARD
-        const std::string& getFileExtension() const
+        const FileOptions& fileOptions() const
         {
-            return fileOptions_.getFileExtension();
+            return fileOptions_;
         }
 
         APPROVAL_TESTS_NO_DISCARD

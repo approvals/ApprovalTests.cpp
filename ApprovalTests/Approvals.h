@@ -37,7 +37,8 @@ namespace ApprovalTests
         static void verify(const std::string& contents,
                            const Options& options = Options())
         {
-            StringWriter writer(options.scrub(contents), options.getFileExtension());
+            StringWriter writer(options.scrub(contents),
+                                options.fileOptions().getFileExtension());
             FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
         }
 
