@@ -1,21 +1,40 @@
 #pragma once
+
+#include <utility>
+
 #include "scrubbers/Scrubbers.h"
 #include "core/Reporter.h"
 #include "reporters/DefaultReporter.h"
 
 namespace ApprovalTests
 {
+    class FileOptions
+    {
+        std::string fileExtensionWithDot_ = ".txt";
+
+    public:
+        FileOptions() = default;
+        explicit FileOptions(std::string fileExtensionWithDot)
+            : fileExtensionWithDot_(std::move(fileExtensionWithDot))
+        {
+        }
+
+        APPROVAL_TESTS_NO_DISCARD
+        const std::string& getFileExtension() const
+        {
+            return fileExtensionWithDot_;
+        }
+    };
+
     class Options
     {
     private:
-        std::string fileExtensionWithDot_ = ".txt";
+        FileOptions fileOptions_;
         Scrubber scrubber_ = Scrubbers::doNothing;
         const Reporter& reporter_ = defaultReporter();
 
-        Options(std::string fileExtensionWithDot,
-                Scrubber scrubber,
-                const Reporter& reporter)
-            : fileExtensionWithDot_(std::move(fileExtensionWithDot))
+        Options(FileOptions fileOptions, Scrubber scrubber, const Reporter& reporter)
+            : fileOptions_(std::move(fileOptions))
             , scrubber_(std::move(scrubber))
             , reporter_(reporter)
         {
@@ -41,7 +60,7 @@ namespace ApprovalTests
         APPROVAL_TESTS_NO_DISCARD
         const std::string& getFileExtension() const
         {
-            return fileExtensionWithDot_;
+            return fileOptions_.getFileExtension();
         }
 
         APPROVAL_TESTS_NO_DISCARD
@@ -65,19 +84,19 @@ namespace ApprovalTests
         APPROVAL_TESTS_NO_DISCARD
         Options withFileExtension(const std::string& fileExtensionWithDot) const
         {
-            return Options(fileExtensionWithDot, scrubber_, reporter_);
+            return Options(FileOptions(fileExtensionWithDot), scrubber_, reporter_);
         }
 
         APPROVAL_TESTS_NO_DISCARD
         Options withReporter(const Reporter& reporter) const
         {
-            return Options(fileExtensionWithDot_, scrubber_, reporter);
+            return Options(fileOptions_, scrubber_, reporter);
         }
 
         APPROVAL_TESTS_NO_DISCARD
         Options withScrubber(Scrubber scrubber) const
         {
-            return Options(fileExtensionWithDot_, std::move(scrubber), reporter_);
+            return Options(fileOptions_, std::move(scrubber), reporter_);
         }
     };
 
