@@ -21,12 +21,12 @@
 namespace ApprovalTests
 {
 
-    class Approvals
+    template <typename TCompileTimeOptions> class TApprovals
     {
     private:
-        Approvals() = default;
+        TApprovals() = default;
 
-        ~Approvals() = default;
+        ~TApprovals() = default;
 
     public:
         static std::shared_ptr<ApprovalNamer> getDefaultNamer()
@@ -56,7 +56,7 @@ namespace ApprovalTests
         template <typename T, typename = IsNotDerivedFromWriter<T>>
         static void verify(const T& contents, const Options& options = Options())
         {
-            verify(StringUtils::toString(contents), options);
+            verify(TCompileTimeOptions::ToStringConverter::toString(contents), options);
         }
 
         template <typename T,
@@ -127,7 +127,10 @@ namespace ApprovalTests
             verifyAll<std::vector<T>>(
                 header,
                 list,
-                [&](T e, std::ostream& s) { s << "[" << i++ << "] = " << e; },
+                [&](T e, std::ostream& s) {
+                    s << "[" << i++
+                      << "] = " << TCompileTimeOptions::ToStringConverter::toString(e);
+                },
                 options);
         }
 
@@ -200,7 +203,7 @@ namespace ApprovalTests
                                                                  const Reporter& reporter)
         {
             APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
-            verify(StringUtils::toString(contents), reporter);
+            verify(TCompileTimeOptions::ToStringConverter::toString(contents), reporter);
         }
 
         template <typename T, typename = IsNotDerivedFromWriter<T>>
@@ -294,4 +297,21 @@ namespace ApprovalTests
         }
 #endif
     };
+
+#ifndef APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER
+#define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER StringUtils
+#endif
+
+    template <typename TToString> struct CompileTimeOptions
+    {
+        using ToStringConverter = TToString;
+    };
+
+    template <typename TToString>
+    struct ToStringCompileTimeOptions : CompileTimeOptions<TToString>
+    {
+    };
+
+    using Approvals =
+        TApprovals<ToStringCompileTimeOptions<APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER>>;
 }
