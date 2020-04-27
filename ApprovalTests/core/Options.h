@@ -8,26 +8,28 @@
 
 namespace ApprovalTests
 {
-    class FileOptions
-    {
-        std::string fileExtensionWithDot_ = ".txt";
-
-    public:
-        FileOptions() = default;
-        explicit FileOptions(std::string fileExtensionWithDot)
-            : fileExtensionWithDot_(std::move(fileExtensionWithDot))
-        {
-        }
-
-        APPROVAL_TESTS_NO_DISCARD
-        const std::string& getFileExtension() const
-        {
-            return fileExtensionWithDot_;
-        }
-    };
 
     class Options
     {
+    public:
+        class FileOptions
+        {
+            std::string fileExtensionWithDot_ = ".txt";
+
+        public:
+            FileOptions() = default;
+            explicit FileOptions(std::string fileExtensionWithDot)
+                : fileExtensionWithDot_(std::move(fileExtensionWithDot))
+            {
+            }
+
+            APPROVAL_TESTS_NO_DISCARD
+            const std::string& getFileExtension() const
+            {
+                return fileExtensionWithDot_;
+            }
+        };
+
     private:
         FileOptions fileOptions_;
         Scrubber scrubber_ = Scrubbers::doNothing;
