@@ -1,6 +1,7 @@
 #pragma once
 
 #include <utility>
+#include <exception>
 
 #include "scrubbers/Scrubbers.h"
 #include "core/Reporter.h"
@@ -13,9 +14,15 @@ namespace ApprovalTests
     public:
         class FileOptions
         {
-            mutable const Options* options_ = nullptr; // set in Options::fileOptions()
+            const Options* options_ = nullptr; // set in Options::fileOptions()
             std::string fileExtensionWithDot_ = ".txt";
             friend class Options;
+
+            FileOptions clone() const
+            {
+                // the returned options_ must be null
+                return FileOptions(fileExtensionWithDot_);
+            }
 
         public:
             FileOptions() = default;
@@ -76,10 +83,16 @@ namespace ApprovalTests
         }
 
         APPROVAL_TESTS_NO_DISCARD
-        const FileOptions& fileOptions() const
+        FileOptions fileOptions() const
         {
-            fileOptions_.options_ = this;
-            return fileOptions_;
+            if (fileOptions_.options_ != nullptr)
+            {
+                throw std::logic_error(
+                    "Incorrect assumption: A FileOptions has been re-used");
+            }
+            FileOptions copy = fileOptions_.clone();
+            copy.options_ = this;
+            return copy;
         }
 
         APPROVAL_TESTS_NO_DISCARD
