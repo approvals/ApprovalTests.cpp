@@ -39,6 +39,30 @@ Currently (2020-04-21), deprecation warnings are turned off by default.
 
 To change that, see [How To Toggle Enabling or Disabling of Deprecated Code](/doc/how_tos/ToggleDeprecatedCode.md#top).
 
+## How to Update Calls to Deprecated Code
+
+include: updating_deprecated_code
+
+### Updating verify(..., Reporter)
+
+Instead of passing in a `Reporter` instance, you are now going to pass in an Options object containing the Reporter instance, for example `Options(MyReporter())`.
+
+This is an example what the new code would look like:
+
+snippet: basic_approval_with_reporter
+
+### Updating verifyWithExtension(..., fileExtensionWithDot, Reporter)
+
+Before, we had a special method to set the file extension to be used when verifying a piece of text, for when `.txt` was not wanted.
+
+Because Options allows the file extension to be specified, all verify methods now have this capability.
+
+As such, this specialised method is redundant, and is being removed.
+
+This is an example what the new code would look like:
+
+snippet: use_custom_file_extension
+
 ---
 
 [Back to User Guide](/doc/README.md#top)

@@ -48,9 +48,10 @@ If all you want to do is change the file extension, there are many convenience f
 <!-- snippet: use_custom_file_extension -->
 <a id='snippet-use_custom_file_extension'/></a>
 ```cpp
-Approvals::verifyWithExtension("<h1>hello world</h1>", ".html");
+Approvals::verify("<h1>hello world</h1>",
+                  Options().fileOptions().withFileExtension(".html"));
 ```
-<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L18-L20' title='File snippet `use_custom_file_extension` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Navigate to start of snippet `use_custom_file_extension`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L18-L21' title='File snippet `use_custom_file_extension` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Navigate to start of snippet `use_custom_file_extension`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---

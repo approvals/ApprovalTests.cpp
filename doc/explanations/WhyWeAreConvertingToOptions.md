@@ -14,7 +14,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Scrubbers](#scrubbers)
   * [API](#api)
-  * [Opting in](#opting-in)<!-- endtoc -->
+  * [Opting in](#opting-in)
+  * [How to Update Calls to Deprecated Code](#how-to-update-calls-to-deprecated-code)
+    * [Updating verify(..., Reporter)](#updating-verify-reporter)
+    * [Updating verifyWithExtension(..., fileExtensionWithDot, Reporter)](#updating-verifywithextension-fileextensionwithdot-reporter)<!-- endtoc -->
 
 ## Scrubbers
 
@@ -50,6 +53,50 @@ Our plan is to:
 Currently (2020-04-21), deprecation warnings are turned off by default.
 
 To change that, see [How To Toggle Enabling or Disabling of Deprecated Code](/doc/how_tos/ToggleDeprecatedCode.md#top).
+
+## How to Update Calls to Deprecated Code
+
+Whenever we deprecate a method, the implementation of the deprecated method will always contain a single line, which is how we want the code to be called in the future. <!-- include: updating_deprecated_code. path: /doc/how_tos/mdsource/updating_deprecated_code.include.md -->
+
+As such, you can always open up the method to see how to convert your code.
+
+If you IDE supports inlining, you can also select your old function call, and inline just that one line, and your IDE will update the code for you.
+
+**Note** If you are reading this after we have removed the deprecated methods, please download a slightly earlier release, and then follow one of the steps above. <!-- end include: updating_deprecated_code. path: /doc/how_tos/mdsource/updating_deprecated_code.include.md -->
+
+### Updating verify(..., Reporter)
+
+Instead of passing in a `Reporter` instance, you are now going to pass in an Options object containing the Reporter instance, for example `Options(MyReporter())`.
+
+This is an example what the new code would look like:
+
+<!-- snippet: basic_approval_with_reporter -->
+<a id='snippet-basic_approval_with_reporter'/></a>
+```cpp
+ApprovalTests::Approvals::verify("text to be verified",
+                                 ApprovalTests::Windows::AraxisMergeReporter());
+```
+<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L11-L14' title='File snippet `basic_approval_with_reporter` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Navigate to start of snippet `basic_approval_with_reporter`'>anchor</a></sup>
+<!-- endsnippet -->
+
+### Updating verifyWithExtension(..., fileExtensionWithDot, Reporter)
+
+Before, we had a special method to set the file extension to be used when verifying a piece of text, for when `.txt` was not wanted.
+
+Because Options allows the file extension to be specified, all verify methods now have this capability.
+
+As such, this specialised method is redundant, and is being removed.
+
+This is an example what the new code would look like:
+
+<!-- snippet: use_custom_file_extension -->
+<a id='snippet-use_custom_file_extension'/></a>
+```cpp
+Approvals::verify("<h1>hello world</h1>",
+                  Options().fileOptions().withFileExtension(".html"));
+```
+<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L18-L21' title='File snippet `use_custom_file_extension` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Navigate to start of snippet `use_custom_file_extension`'>anchor</a></sup>
+<!-- endsnippet -->
 
 ---
 

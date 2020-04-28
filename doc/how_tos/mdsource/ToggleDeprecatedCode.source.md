@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-# How To Toggle Enabling or Disabling of Deprecated Code
+# How to Toggle Enabling or Disabling of Deprecated Code
 
 toc
 
@@ -43,6 +43,10 @@ snippet: hide_deprecated_code
 Or this to your CMakeLists.txt:
 
 snippet: hide_deprecated_code_cmake
+
+## How to Update Calls to Deprecated Code
+
+include: updating_deprecated_code
 
 ---
 
