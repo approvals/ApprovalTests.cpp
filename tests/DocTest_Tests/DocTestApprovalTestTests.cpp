@@ -16,13 +16,14 @@ TEST_CASE("YouCanUseAWriter")
 TEST_CASE("YouCanSpecifyYourFileExtension")
 {
     // begin-snippet: use_custom_file_extension
-    Approvals::verify("<h1>hello world</h1>", Options().withFileExtension(".html"));
+    Approvals::verify("<h1>hello world</h1>",
+                      Options().fileOptions().withFileExtension(".html"));
     // end-snippet
 }
 
 TEST_CASE("YouCanSpecifyYourFileExtensionWithToString")
 {
-    Approvals::verify(1337, Options().withFileExtension(".csv"));
+    Approvals::verify(1337, Options().fileOptions().withFileExtension(".csv"));
 }
 
 TEST_CASE("YouCanSpecifyYourFileExtensionWithFormatter")
@@ -30,5 +31,5 @@ TEST_CASE("YouCanSpecifyYourFileExtensionWithFormatter")
     Approvals::verify(
         1337,
         [](auto value, auto& os) { os << "**value:** " << value; },
-        Options().withFileExtension(".md"));
+        Options().fileOptions().withFileExtension(".md"));
 }

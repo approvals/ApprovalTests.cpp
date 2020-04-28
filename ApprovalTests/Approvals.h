@@ -189,7 +189,9 @@ namespace ApprovalTests
                                         const Reporter& reporter)
         {
             APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
-            verify(contents, Options(reporter).withFileExtension(fileExtensionWithDot));
+            verify(
+                contents,
+                Options(reporter).fileOptions().withFileExtension(fileExtensionWithDot));
         }
 
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
@@ -214,7 +216,9 @@ namespace ApprovalTests
                             const Reporter& reporter)
         {
             APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
-            verify(contents, Options(reporter).withFileExtension(fileExtensionWithDot));
+            verify(
+                contents,
+                Options(reporter).fileOptions().withFileExtension(fileExtensionWithDot));
         }
 
         template <typename T,
@@ -237,9 +241,10 @@ namespace ApprovalTests
                             const Reporter& reporter)
         {
             APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
-            verify(contents,
-                   converter,
-                   Options(reporter).withFileExtension(fileExtensionWithDot));
+            verify(
+                contents,
+                converter,
+                Options(reporter).fileOptions().withFileExtension(fileExtensionWithDot));
         }
 
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS

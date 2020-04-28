@@ -103,12 +103,6 @@ namespace ApprovalTests
         }
 
         APPROVAL_TESTS_NO_DISCARD
-        Options withFileExtension(const std::string& fileExtensionWithDot) const
-        {
-            return Options(FileOptions(fileExtensionWithDot), scrubber_, reporter_);
-        }
-
-        APPROVAL_TESTS_NO_DISCARD
         Options withReporter(const Reporter& reporter) const
         {
             return Options(fileOptions_, scrubber_, reporter);
