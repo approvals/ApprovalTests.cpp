@@ -40,10 +40,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_NO_DISCARD
             Options withFileExtension(const std::string& fileExtensionWithDot) const
             {
-                // Copy ourselves - and change the value
                 FileOptions newSelf(fileExtensionWithDot);
-                // Copy the previous options object - supplying the new copy of ourself
-                // Return the new Options object
                 return options_->clone(newSelf);
             }
         };
