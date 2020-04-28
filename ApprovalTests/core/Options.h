@@ -18,6 +18,7 @@ namespace ApprovalTests
             std::string fileExtensionWithDot_ = ".txt";
             friend class Options;
 
+            APPROVAL_TESTS_NO_DISCARD
             FileOptions clone() const
             {
                 // the returned options_ must be null
@@ -57,6 +58,7 @@ namespace ApprovalTests
         {
         }
 
+        APPROVAL_TESTS_NO_DISCARD
         Options clone(const FileOptions& fileOptions) const
         {
             // TODO error this can retain a previous Options* ???
