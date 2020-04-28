@@ -8,13 +8,16 @@
 
 namespace ApprovalTests
 {
-
+    class Options;
     class Options
     {
     public:
         class FileOptions
         {
+            mutable const Options* options_ =
+                nullptr; // Only set in Options::fileOptions()
             std::string fileExtensionWithDot_ = ".txt";
+            friend class Options;
 
         public:
             FileOptions() = default;
@@ -28,6 +31,16 @@ namespace ApprovalTests
             {
                 return fileExtensionWithDot_;
             }
+
+            APPROVAL_TESTS_NO_DISCARD
+            Options withFileExtension(const std::string& fileExtensionWithDot) const
+            {
+                // Copy ourselves - and change the value
+                FileOptions newSelf(fileExtensionWithDot);
+                // Copy the previous options object - supplying the new copy of ourself
+                // Return the new Options object
+                return options_->clone(newSelf);
+            }
         };
 
     private:
@@ -40,6 +53,11 @@ namespace ApprovalTests
             , scrubber_(std::move(scrubber))
             , reporter_(reporter)
         {
+        }
+
+        Options clone(const FileOptions& fileOptions) const
+        {
+            return Options(fileOptions, scrubber_, reporter_);
         }
 
         static const Reporter& defaultReporter()
@@ -62,6 +80,7 @@ namespace ApprovalTests
         APPROVAL_TESTS_NO_DISCARD
         const FileOptions& fileOptions() const
         {
+            fileOptions_.options_ = this;
             return fileOptions_;
         }
 

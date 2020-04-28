@@ -39,11 +39,26 @@ TEST_CASE("Options - FileExtension features")
     const Reporter& initialReporter = options.getReporter();
 
     CHECK(options.fileOptions().getFileExtension() == ".txt");
-    CHECK(options.withFileExtension(".xyz").fileOptions().getFileExtension() == ".xyz");
+    CHECK(options.fileOptions()
+              .withFileExtension(".xyz")
+              .fileOptions()
+              .getFileExtension() == ".xyz");
 
     // Check that setting the file extension does not change the reporter instance:
     {
-        const Reporter& reporter2 = options.withFileExtension(".abc").getReporter();
+        const Reporter& reporter2 =
+            options.fileOptions().withFileExtension(".abc").getReporter();
         CHECK(&initialReporter == &reporter2);
     }
+}
+
+TEST_CASE("copying")
+{
+    // Options.with... returns new Options, containing new FileOptions
+    // Options.fileOptions()... returns local FileOptions - but with options poi
+    // Options.fileOptions().with... returns new Options containing new FileOptions
+
+    // FileOptions contains a non-owning pointer to its parent Options
+    Options o1;
+    Options o2 = o1;
 }
