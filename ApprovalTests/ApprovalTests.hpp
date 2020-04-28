@@ -3,6 +3,7 @@
 
 // This file is machine-generated. Do not edit.
 
+#include "ApprovalTests/ApprovalsMacroDefaults.h"
 #include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/reporters/QuietReporter.h"

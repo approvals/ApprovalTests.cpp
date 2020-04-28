@@ -28,6 +28,8 @@ class CppGeneration:
         text = remove_indentation << f'''
                 #pragma once
 
+                #include "ApprovalTests/ApprovalsMacroDefaults.h"
+
                 #define APPROVAL_TESTS_VERSION_MAJOR {version_object.major}
                 #define APPROVAL_TESTS_VERSION_MINOR {version_object.minor}
                 #define APPROVAL_TESTS_VERSION_PATCH {version_object.patch}
@@ -37,7 +39,7 @@ class CppGeneration:
                     (APPROVAL_TESTS_VERSION_MAJOR * 10000 + APPROVAL_TESTS_VERSION_MINOR * 100 +         \\
                      APPROVAL_TESTS_VERSION_PATCH)
 
-                #ifndef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
+                #if !APPROVAL_TESTS_HIDE_DEPRECATED_CODE
                 // clang-format off
                 // Deprecated, for regression only:
                 #define APPROVALTESTS_VERSION       APPROVAL_TESTS_VERSION

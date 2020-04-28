@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ApprovalTests/ApprovalsMacroDefaults.h"
+
 #define APPROVAL_TESTS_VERSION_MAJOR 8
 #define APPROVAL_TESTS_VERSION_MINOR 5
 #define APPROVAL_TESTS_VERSION_PATCH 0
@@ -9,7 +11,7 @@
     (APPROVAL_TESTS_VERSION_MAJOR * 10000 + APPROVAL_TESTS_VERSION_MINOR * 100 +         \
      APPROVAL_TESTS_VERSION_PATCH)
 
-#ifndef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
+#if !APPROVAL_TESTS_HIDE_DEPRECATED_CODE
 // clang-format off
 // Deprecated, for regression only:
 #define APPROVALTESTS_VERSION       APPROVAL_TESTS_VERSION
