@@ -4,5 +4,5 @@
 // to allow quick experimentation without waiting for CMake
 // to re-run.
 
-#undef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
-#undef APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS
+#define APPROVAL_TESTS_HIDE_DEPRECATED_CODE 0
+#define APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS 0

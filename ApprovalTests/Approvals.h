@@ -4,6 +4,7 @@
 #include <exception>
 #include <utility>
 
+#include "ApprovalTests/ApprovalsMacroDefaults.h"
 #include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/core/FileApprover.h"
 #include "reporters/DefaultReporter.h"
@@ -174,7 +175,7 @@ namespace ApprovalTests
             return DefaultNamerDisposer(std::move(namerCreator));
         }
 
-#ifndef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
+#if !APPROVAL_TESTS_HIDE_DEPRECATED_CODE
 
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
         static void verify(std::string contents, const Reporter& reporter)

@@ -43,12 +43,12 @@ target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests doctest::doct
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 # begin-snippet: show_deprecation_warnings_cmake
 # Replace ${PROJECT_NAME} with the name of your test executable:
-target_compile_definitions(${PROJECT_NAME} PRIVATE APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS)
+target_compile_definitions(${PROJECT_NAME} PRIVATE -DAPPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS=1)
 # end-snippet
 
 # begin-snippet: hide_deprecated_code_cmake
 # Replace ${PROJECT_NAME} with the name of your test executable:
-target_compile_definitions(${PROJECT_NAME} PRIVATE APPROVAL_TESTS_HIDE_DEPRECATED_CODE)
+target_compile_definitions(${PROJECT_NAME} PRIVATE -DAPPROVAL_TESTS_HIDE_DEPRECATED_CODE=1)
 # end-snippet
 
 if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)

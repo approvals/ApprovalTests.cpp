@@ -2,6 +2,7 @@
 
 #include <type_traits>
 #include <utility>
+#include "ApprovalTests/ApprovalsMacroDefaults.h"
 #include "reporters/DefaultReporter.h"
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/core/Options.h"
@@ -58,7 +59,7 @@ namespace ApprovalTests
             Approvals::verify(s.str(), options);
         }
 
-#ifndef APPROVAL_TESTS_HIDE_DEPRECATED_CODE
+#if !APPROVAL_TESTS_HIDE_DEPRECATED_CODE
         template <class Converter, class Container, class... Containers>
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS void
         verifyAllCombinations(const Reporter& reporter,
