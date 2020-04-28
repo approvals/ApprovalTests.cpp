@@ -61,4 +61,6 @@ TEST_CASE("copying")
     // FileOptions contains a non-owning pointer to its parent Options
     Options o1;
     Options o2 = o1;
+
+    Options::FileOptions fo = Options().fileOptions();
 }

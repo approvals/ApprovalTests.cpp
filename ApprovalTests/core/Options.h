@@ -18,6 +18,13 @@ namespace ApprovalTests
             std::string fileExtensionWithDot_ = ".txt";
             friend class Options;
 
+            FileOptions() = default;
+
+            explicit FileOptions(std::string fileExtensionWithDot)
+                : fileExtensionWithDot_(std::move(fileExtensionWithDot))
+            {
+            }
+
             APPROVAL_TESTS_NO_DISCARD
             FileOptions clone() const
             {
@@ -26,12 +33,6 @@ namespace ApprovalTests
             }
 
         public:
-            FileOptions() = default;
-            explicit FileOptions(std::string fileExtensionWithDot)
-                : fileExtensionWithDot_(std::move(fileExtensionWithDot))
-            {
-            }
-
             APPROVAL_TESTS_NO_DISCARD
             const std::string& getFileExtension() const
             {
