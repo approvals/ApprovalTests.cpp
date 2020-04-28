@@ -9,6 +9,7 @@ add_executable(${PROJECT_NAME}
         comparators/ComparatorDisposerTest.cpp
         core/ApprovalExceptionTests.cpp
         core/FileApproverTests.cpp
+        core/OptionsTests.cpp
         docs/CombinationsSampleCode.cpp
         docs/DisposableSamples.cpp
         docs/DocTestDocsSamples.cpp
