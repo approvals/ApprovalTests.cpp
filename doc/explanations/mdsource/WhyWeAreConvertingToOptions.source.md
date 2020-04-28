@@ -25,13 +25,29 @@ When enabled, these deprecation warnings will show up as:
 * compiler C++14 and above, using the `[[deprecated("..."]]` feature
 * messages on std::cout in C++11
 
-Our plan is to:
- 
-1. start with the deprecations being something users can opt in to
-1. deprecation warnings are opt-out
-1. deprecation warnings are forced
-1. the deprecated methods are hidden by default
+## The Plan
+
+Historically, we have found that it is easier for users to update code for breaking changes if these changes are rolled out in a graduated way. This allows users to select which version of the library to use, to have the ability to update code incrementally.
+
+Our plan is therefore to do a short series of quick releases:
+
+1. deprecation warnings are off: users can opt-in
+1. deprecation warnings are on: users can opt-out
+1. deprecation warnings are forced, code still exists 
+1. the deprecated methods are hidden: users can opt-in
 1. the deprecated methods are removed
+
+| Step | Deprecation Warnings<br />See `APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS` | Deprecated Code<br />See `APPROVAL_TESTS_HIDE_DEPRECATED_CODE` |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 1    | Optional: off                                                | Optional: enabled                                            |
+| 2    | Optional: on                                                 | Optional: enabled                                            |
+| 3    | Always on                                                    | Optional: enabled                                            |
+| 4    | Always on                                                    | Optional: hidden                                             |
+| 5    | Not applicable                                               | Removed                                                      |
+
+### Suggested strategy
+
+We suggest that any time you want to remove the deprecations, you jump ahead and toggle hide-deprecations, and let the compiler help you find the code you need to update.
 
 ## Opting in
 
