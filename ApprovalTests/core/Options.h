@@ -8,14 +8,12 @@
 
 namespace ApprovalTests
 {
-    class Options;
     class Options
     {
     public:
         class FileOptions
         {
-            mutable const Options* options_ =
-                nullptr; // Only set in Options::fileOptions()
+            mutable const Options* options_ = nullptr; // set in Options::fileOptions()
             std::string fileExtensionWithDot_ = ".txt";
             friend class Options;
 
