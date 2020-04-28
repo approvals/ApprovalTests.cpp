@@ -62,6 +62,7 @@ namespace ApprovalTests
 
         Options clone(const FileOptions& fileOptions) const
         {
+            // TODO error this can retain a previous Options* ???
             return Options(fileOptions, scrubber_, reporter_);
         }
 
