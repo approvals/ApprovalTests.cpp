@@ -34,7 +34,7 @@ It is effectively preparing to use the "Introduce Parameter Object" refactoring 
 
 Our current pattern is to have an optional Reporter at the end of any verify() method.
 
-We are switching this to have an option Options object instead.
+We are switching this to have an option `Options` object instead.
 
 This temporarily doubles our API interface, and we are deprecating the Reporter overloads.
 When enabled, these deprecation warnings will show up as:
@@ -84,7 +84,7 @@ If you IDE supports inlining, you can also select your old function call, and in
 
 ### Updating verify(..., Reporter)
 
-Instead of passing in a `Reporter` instance, you are now going to pass in an Options object containing the Reporter instance, for example `Options(MyReporter())`.
+Instead of passing in a `Reporter` instance, you are now going to pass in an `Options` object containing the Reporter instance, for example `Options(MyReporter())`.
 
 This is an example what the new code would look like:
 
@@ -100,9 +100,9 @@ ApprovalTests::Approvals::verify(
 
 ### Updating verifyWithExtension(..., fileExtensionWithDot, Reporter)
 
-Before, we had a special method to set the file extension to be used when verifying a piece of text, for when `.txt` was not wanted.
+Before, we had several overloads of a special method - `verifyWithExtension()` - to set the file extension to be used when verifying a piece of text, for when `.txt` was not appropriate.
 
-Because Options allows the file extension to be specified, all verify methods now have this capability.
+Because `Options` allows the file extension to be specified, all verify methods now have this capability.
 
 As such, this specialised method is redundant, and is being removed.
 
