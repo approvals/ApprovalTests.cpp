@@ -7,6 +7,9 @@ option(APPROVAL_TESTS_BUILD_TESTING
 option(APPROVAL_TESTS_BUILD_EXAMPLES
         "Build documentation examples."
         OFF)
+option(APPROVAL_TESTS_BUILD_DOCS
+        "Build documentation - if Doxygen and Sphinx are found."
+        OFF)
 
 # -------------------------------------------------------------------
 # Control which of our copies of header-only third_party libraries are made available.

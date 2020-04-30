@@ -55,6 +55,10 @@ if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_EXAMPLES)
     add_subdirectory(examples)
 endif ()
 
+if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_DOCS)
+    add_subdirectory(doc)
+endif ()
+
 #message("CMAKE_VERSION = ${CMAKE_VERSION}")
 #message("CMAKE_GENERATOR = ${CMAKE_GENERATOR}")
 #message("CMAKE_SOURCE_DIR = ${CMAKE_SOURCE_DIR}")
