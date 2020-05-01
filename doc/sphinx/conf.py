@@ -56,14 +56,14 @@ html_static_path = []
 import subprocess, os
 
 
-def configureDoxyfile(input_dir, output_dir):
-    with open('Doxyfile.in', 'r') as file:
+def configureDoxyfile(doxygen_dir, input_dir, output_dir):
+    with open(doxygen_dir + '/Doxyfile.in', 'r') as file:
         filedata = file.read()
 
     filedata = filedata.replace('@DOXYGEN_INPUT_DIR@', input_dir)
     filedata = filedata.replace('@DOXYGEN_OUTPUT_DIR@', output_dir)
 
-    with open('Doxyfile', 'w') as file:
+    with open(doxygen_dir + '/Doxyfile', 'w') as file:
         file.write(filedata)
 
 
@@ -73,8 +73,15 @@ read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 breathe_projects = {}
 
 if read_the_docs_build:
-    input_dir = '../ApprovalTests'
-    output_dir = 'build'
-    configureDoxyfile(input_dir, output_dir)
+    input_dir = os.path.abspath('../../ApprovalTests')
+    output_dir = os.path.abspath('build')
+    doxygen_dir = os.path.abspath('../doxygen')
+    sphinx_dir = os.path.abspath('../sphinx')
+
+    configureDoxyfile(doxygen_dir, input_dir, output_dir)
+
+    os.chdir(doxygen_dir)
     subprocess.call('doxygen', shell=True)
+    os.chdir(sphinx_dir)
+
     breathe_projects['ApprovalTests.cpp'] = output_dir + '/xml'
