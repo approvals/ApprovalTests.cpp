@@ -17,7 +17,7 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         COMMENT "Generating documentation with Sphinx - for output, open ${SPHINX_INDEX_FILE}")
 
 # Nice named target so we can run the job easily
-add_custom_target(Sphinx ALL DEPENDS ${SPHINX_INDEX_FILE})
+add_custom_target(Sphinx ALL DEPENDS ${SPHINX_INDEX_FILE} Doxygen)
 
 # Add an install target to install the docs
 include(GNUInstallDirs)
