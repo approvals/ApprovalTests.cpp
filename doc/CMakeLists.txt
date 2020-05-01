@@ -3,6 +3,11 @@ if (NOT Doxygen_FOUND)
     message(STATUS "Doxygen not found: Will not generate docs")
     return()
 endif ()
+find_package(Sphinx)
+if (NOT Sphinx_FOUND)
+    message(STATUS "Sphinx not found: Will not generate docs")
+    return()
+endif ()
 
 # Find all the public headers
 set(APPROVAL_TESTS_PUBLIC_HEADER_DIR ${PROJECT_SOURCE_DIR}/ApprovalTests)
@@ -25,3 +30,13 @@ add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
         COMMENT " Generating docs ")
 
 add_custom_target(Doxygen ALL DEPENDS ${DOXYGEN_INDEX_FILE})
+
+set(SPHINX_SOURCE ${CMAKE_CURRENT_SOURCE_DIR})
+set(SPHINX_BUILD ${CMAKE_CURRENT_BINARY_DIR}/docs/sphinx)
+
+add_custom_target(Sphinx ALL
+        COMMAND
+        ${SPHINX_EXECUTABLE} -b html
+        ${SPHINX_SOURCE} ${SPHINX_BUILD}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        COMMENT "Generating documentation with Sphinx")
