@@ -18,14 +18,12 @@ Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
-Docs
-====
+API Reference
+=============
 
 .. note:: All classes listed here are in the ``ApprovalTests`` namespace.
 
-.. doxygenclass:: ApprovalTests::Approvals
-   :members:
-   :undoc-members:
+.. note:: This documentation is under construction... More content and a better structure coming soon...
+
+.. doxygenindex::
