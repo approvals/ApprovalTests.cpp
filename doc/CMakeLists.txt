@@ -5,17 +5,23 @@ if (NOT Doxygen_FOUND)
 endif ()
 
 # Find all the public headers
-get_target_property(APPROVAL_TESTS_PUBLIC_HEADER_DIR ApprovalTests INTERFACE_INCLUDE_DIRECTORIES)
+set(APPROVAL_TESTS_PUBLIC_HEADER_DIR ${PROJECT_SOURCE_DIR}/ApprovalTests)
 file(GLOB_RECURSE APPROVAL_TESTS_PUBLIC_HEADERS ${APPROVAL_TESTS_PUBLIC_HEADER_DIR}/*.h)
 
-#This will be the main output of our command
-set(DOXYGEN_INDEX_FILE ${CMAKE_CURRENT_SOURCE_DIR}/html/index.html)
+set(DOXYGEN_INPUT_DIR ${PROJECT_SOURCE_DIR}/ApprovalTests)
+set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/docs/doxygen)
+set(DOXYGEN_INDEX_FILE ${DOXYGEN_OUTPUT_DIR}/html/index.html)
+set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
+set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 
+#Replace variables inside @@ with the current values
+configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
+
+file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR}) #Doxygen won't create this for us
 add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
         DEPENDS ${APPROVAL_TESTS_PUBLIC_HEADERS}
-        COMMAND ${DOXYGEN_EXECUTABLE} Doxyfile
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        MAIN_DEPENDENCY Doxyfile
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
+        MAIN_DEPENDENCY ${DOXYFILE_OUT} ${DOXYFILE_IN}
         COMMENT " Generating docs ")
 
 add_custom_target(Doxygen ALL DEPENDS ${DOXYGEN_INDEX_FILE})
