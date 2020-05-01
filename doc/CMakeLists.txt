@@ -16,6 +16,7 @@ file(GLOB_RECURSE APPROVAL_TESTS_PUBLIC_HEADERS ${APPROVAL_TESTS_PUBLIC_HEADER_D
 set(DOXYGEN_INPUT_DIR ${PROJECT_SOURCE_DIR}/ApprovalTests)
 set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/doxygen)
 set(DOXYGEN_INDEX_FILE ${DOXYGEN_OUTPUT_DIR}/xml/index.xml)
+set(DOXYGEN_INDEX_HTML ${DOXYGEN_OUTPUT_DIR}/html/index.html)
 set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
 set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 
@@ -30,7 +31,7 @@ add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
         DEPENDS ${APPROVAL_TESTS_PUBLIC_HEADERS} ${CMAKE_CURRENT_SOURCE_DIR}/OverviewForDoxygen.cpp
         COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
         MAIN_DEPENDENCY ${DOXYFILE_OUT} ${DOXYFILE_IN}
-        COMMENT "Generating docs"
+        COMMENT "Generating docs - for output, open ${DOXYGEN_INDEX_HTML}"
         VERBATIM)
 
 # Nice named target so we can run the job easily
@@ -56,7 +57,7 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         ${CMAKE_CURRENT_SOURCE_DIR}/index.rst
         ${DOXYGEN_INDEX_FILE}
         MAIN_DEPENDENCY ${SPHINX_SOURCE}/conf.py
-        COMMENT "Generating documentation with Sphinx")
+        COMMENT "Generating documentation with Sphinx - for output, open ${SPHINX_INDEX_FILE}")
 
 # Nice named target so we can run the job easily
 add_custom_target(Sphinx ALL DEPENDS ${SPHINX_INDEX_FILE})
