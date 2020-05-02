@@ -22,6 +22,19 @@ namespace ApprovalTests
 
         ~FileApprover() = default;
 
+        /*! \brief Register a custom comparater, which will be used to compare approved
+         *         and received files with the given extension.
+         *
+         * @param extensionWithDot A file extention, such as ".jpg"
+         * @param comparator <tt>std::shared_ptr</tt> to a ApprovalTests::ApprovalComparator
+         *                   instance
+         * @return A "Disposable" object. The caller should hold on to this object.
+         *         When it is destroyed, the customisation will be reversed.
+         *
+         * \see For more information, see
+         *      <a href="https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CustomComparators.md#top">Custom Comparators</a>
+         *      in the User Guide on GitHub.
+         */
         static ComparatorDisposer
         registerComparatorForExtension(const std::string& extensionWithDot,
                                        std::shared_ptr<ApprovalComparator> comparator)
