@@ -4,6 +4,12 @@
 
 namespace ApprovalTests
 {
+    /*! \brief Interface class for controlling how output files are named.
+
+     \see For more information, see
+     <a href="https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Namers.md#top">Namers</a>
+     in the User Guide on GitHub.
+     */
     class ApprovalNamer
     {
     public:

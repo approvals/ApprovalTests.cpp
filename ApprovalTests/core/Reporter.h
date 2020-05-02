@@ -8,7 +8,19 @@
 
 namespace ApprovalTests
 {
-    // Reporters are called on test failure
+    /*! \brief Reporters are called on test failure, typically to show differences.
+
+     Most reporters launch an external diffing tool, allowing programmers
+     to understand the difference(s) between approved and received files. They
+     also typically allow the output to be "approved".
+
+     For an demonstration of this, see the
+     <a href="https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Tutorial.md#top">Tutorial</a>.
+
+     \see For more information, see
+     <a href="https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Reporters.md#top">Reporter</a>
+     in the User Guide on GitHub.
+     */
     class Reporter
     {
     public:

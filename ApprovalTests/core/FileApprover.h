@@ -12,7 +12,8 @@
 
 namespace ApprovalTests
 {
-
+    /*! \brief Low-level methods for approving files
+     */
     class FileApprover
     {
 
