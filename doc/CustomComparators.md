@@ -41,7 +41,7 @@ Real-world example scenario:
 There are two steps needed to get Approval Tests to use a custom file comparison:
 
 1. A custom implementation of the `ApprovalComparator` interface, that reads two files and reports if they are equivalent
-2. A call to `FileApprover::registerComparator()`, supplying an instance of the custom comparator, and the file extension it should be used for. 
+2. A call to `FileApprover::registerComparatorForExtension()`, supplying an instance of the custom comparator, and the file extension it should be used for. 
 
 ### Example Code
 
@@ -65,7 +65,7 @@ public:
 <sup><a href='/tests/DocTest_Tests/core/FileApproverTests.cpp#L50-L60' title='File snippet `create_custom_comparator` was extracted from'>snippet source</a> | <a href='#snippet-create_custom_comparator' title='Navigate to start of snippet `create_custom_comparator`'>anchor</a></sup>
 <!-- endsnippet -->
 
-Then we call `FileApprover::registerComparator()` to tell Approval Tests to use `LengthComparator` to compare all files with extension `.length`. This customisation will last for the rest of the test run, and we would typically put this in our `main.cpp`.
+Then we call `FileApprover::registerComparatorForExtension()` to tell Approval Tests to use `LengthComparator` to compare all files with extension `.length`. This customisation will last for the rest of the test run, and we would typically put this in our `main.cpp`.
 
 <!-- snippet: use_custom_comparator -->
 <a id='snippet-use_custom_comparator'/></a>

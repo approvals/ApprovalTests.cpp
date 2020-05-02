@@ -29,7 +29,7 @@ namespace ApprovalTests
             return ComparatorFactory::registerComparator(extensionWithDot, comparator);
         }
 
-        //! This overload is an implementation detail. To add a new comparator, use registerComparator().
+        //! This overload is an implementation detail. To add a new comparator, use registerComparatorForExtension().
         static void verify(const std::string& receivedPath,
                            const std::string& approvedPath,
                            const ApprovalComparator& comparator)
