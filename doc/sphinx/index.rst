@@ -1,29 +1,15 @@
-Welcome to ApprovalTests.cpp's documentation!
-=============================================
-
-Purpose
-=======
-
-**ApprovalTests.cpp** is a C++ implementation of Approval Tests.
-
-Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alternative to asserts. They are great for testing objects with lots of fields, or lists of objects.
+Contents
+========
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 3
+   :caption: Background
 
+   introduction
 
+.. toctree::
+   :maxdepth: 3
+   :caption: Reference
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-
-API Reference
-=============
-
-.. note:: All classes listed here are in the ``ApprovalTests`` namespace.
-
-.. note:: This documentation is under construction... More content and a better structure coming soon...
-
-.. doxygenindex::
+   approving
+   core
