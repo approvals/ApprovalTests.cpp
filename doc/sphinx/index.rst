@@ -11,28 +11,19 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
 
 .. toctree::
    :maxdepth: 3
-   :caption: Introduction
+   :caption: Concepts
 
-   generated_docs/Tutorial
    generated_docs/Overview
    generated_docs/ApprovalTestingConcept
    generated_docs/PathToApprovalTesting
-   generated_docs/Glossary
-   generated_docs/Setup
 
 .. toctree::
    :maxdepth: 3
-   :caption: Writing Tests
+   :caption: Getting Started
 
+   generated_docs/Tutorial
+   generated_docs/Setup
    generated_docs/GettingStarted
-   generated_docs/ApprovingResults
-   generated_docs/TestingSingleObjects
-   generated_docs/TestingContainers
-   generated_docs/TestingExceptions
-   generated_docs/TestingCombinations
-   generated_docs/ToString
-   generated_docs/DisposableObjects
-   generated_docs/Features
 
 .. toctree::
    :maxdepth: 3
@@ -47,8 +38,20 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
 
 .. toctree::
    :maxdepth: 3
+   :caption: Writing Tests
+
+   generated_docs/ApprovingResults
+   generated_docs/TestingSingleObjects
+   generated_docs/TestingContainers
+   generated_docs/TestingExceptions
+   generated_docs/TestingCombinations
+   generated_docs/ToString
+
+.. toctree::
+   :maxdepth: 3
    :caption: Customising behaviour
 
+   generated_docs/DisposableObjects
    generated_docs/Reporters
    generated_docs/CustomComparators
    generated_docs/Writers
@@ -61,12 +64,6 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
    :caption: Common Challenges
 
    generated_docs/MultipleOutputFilesPerTest
-
-.. toctree::
-   :maxdepth: 3
-   :caption: Common Scenarios
-
-   generated_docs/BuildMachinesAndCI
 
 .. toctree::
    :maxdepth: 3
@@ -83,28 +80,36 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
 
    generated_docs/CMakeIntegration
    generated_docs/ConanIntegration
+   generated_docs/BuildMachinesAndCI
 
 .. toctree::
    :maxdepth: 3
    :caption: Extras
 
+   generated_docs/Features
    generated_docs/FAQ
+   generated_docs/Glossary
    generated_docs/Utilities
    generated_docs/Videos
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Troubleshooting
+
    generated_docs/Troubleshooting
    generated_docs/TroubleshootingMisconfiguredBuild
    generated_docs/TroubleshootingMisconfiguredMain
 
 .. toctree::
    :maxdepth: 3
-   :caption: Advanced Topics
+   :caption: Developing ApprovalTests.cpp
 
    generated_docs/Contributing
    generated_docs/CodingPatterns
 
 .. toctree::
    :maxdepth: 3
-   :caption: Reference
+   :caption: C++ Reference
 
    approving
    core
