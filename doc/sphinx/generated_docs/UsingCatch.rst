@@ -26,7 +26,7 @@ Approval Tests requires that a file called the following is found:
 
    <!-- snippet: required_header_for_catch -->
 
-.. code:: h
+.. code:: cpp
 
    #include <catch2/catch.hpp>
 

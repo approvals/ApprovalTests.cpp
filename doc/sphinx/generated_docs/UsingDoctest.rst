@@ -27,7 +27,7 @@ found:
 
    <!-- snippet: required_header_for_doctest -->
 
-.. code:: h
+.. code:: cpp
 
    #include <doctest/doctest.h>
 

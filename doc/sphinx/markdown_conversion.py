@@ -57,4 +57,11 @@ To change this file edit the source file and then execute ./run_markdown_templat
         r"\| <a href='#snippet-[^']+' title='Navigate to start of snippet `[^']+`'>anchor</a>",
         '', content)
 
+    # Fix "WARNING: Pygments lexer name 'h' is not known"
+    # This must be done before
+    # Todo: find out how to fix this in conf.py - this is a horrible hack!
+    content = content.replace(
+        '\n```h\n',
+        '\n```cpp\n')
+
     return content

@@ -27,7 +27,7 @@ is found:
 
    <!-- snippet: required_header_for_ut -->
 
-.. code:: h
+.. code:: cpp
 
    #include <boost/ut.hpp>
 
