@@ -33,7 +33,6 @@ namespace ApprovalTests
          *
          * \see For more information, see
          *      \userguide{CustomComparators,Custom Comparators}
-         *      in the User Guide on GitHub.
          */
         static ComparatorDisposer
         registerComparatorForExtension(const std::string& extensionWithDot,

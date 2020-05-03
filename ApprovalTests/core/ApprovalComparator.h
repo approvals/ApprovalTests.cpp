@@ -8,7 +8,6 @@ namespace ApprovalTests
 
      \see For more information, see
      \userguide{CustomComparators,Custom Comparators}
-     in the User Guide on GitHub.
      */
     class ApprovalComparator
     {

@@ -8,7 +8,6 @@ namespace ApprovalTests
 
      \see For more information, see
      \userguide{Namers,Namers}
-     in the User Guide on GitHub.
      */
     class ApprovalNamer
     {

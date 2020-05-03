@@ -6,7 +6,6 @@ namespace ApprovalTests
 
      \see For more information, see
      \userguide{Writers,Writers}
-     in the User Guide on GitHub.
      */
     class ApprovalWriter
     {

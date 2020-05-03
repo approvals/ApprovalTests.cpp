@@ -19,7 +19,6 @@ namespace ApprovalTests
 
      \see For more information, see
      \userguide{Reporters,Reporter}
-     in the User Guide on GitHub.
      */
     class Reporter
     {
