@@ -5,7 +5,13 @@
 
 toc
 
+## Requirements
 
+Approval Tests requires that a file called the following is found:
+
+snippet: required_header_for_catch
+
+(Before v7.0.0, it required `Catch.hpp`)
 
 ## Getting Started With Catch2
 
@@ -14,14 +20,6 @@ The [Catch2](https://github.com/catchorg/Catch2) test framework works well with 
 This section describes the various ways of using Approval Tests with Catch2.
 
 include: include_ninja_warning_note
-
-### Requirements
-
-Approval Tests requires that a file called the following is found:
-
-snippet: required_header_for_catch
-
-(Before v7.0.0, it required `Catch.hpp`)
 
 ### Starter Project
 

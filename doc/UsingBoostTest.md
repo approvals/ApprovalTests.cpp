@@ -13,23 +13,23 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [Requirements](#requirements)
   * [Getting Started With Boost.Test](#getting-started-with-boosttest)
-    * [Requirements](#requirements)
     * [Adding ApprovalTests to your Boost.Test](#adding-approvaltests-to-your-boosttest)
       * [Understanding Boost.Test Entry points](#understanding-boosttest-entry-points)<!-- endtoc -->
+
+## Requirements
+
+Approval Tests for Boost.Test requires that you specify the `#include <.../unit_test.hpp>`  
+This allows ApprovalTests to work with all the different configurations of boost.  
+
+Approval Tests needs Boost.Test version 1.60.0 or above.
 
 ## Getting Started With Boost.Test
 
 The [Boost.Test](https://www.boost.org/doc/libs/1_72_0/libs/test/doc/html/index.html) test framework works well with Approval Tests.
 
 **Note:** this document assumes the reader is familiar with the Boost.Test framework.
-
-### Requirements
-
-Approval Tests for Boost.Test requires that you specify the `#include <.../unit_test.hpp>`  
-This allows ApprovalTests to work with all the different configurations of boost.  
-
-Approval Tests needs Boost.Test version 1.60.0 or above.
 
 ### Adding ApprovalTests to your Boost.Test
 

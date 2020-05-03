@@ -13,20 +13,12 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [Requirements](#requirements)
   * [Getting Started With \[Boost\].UT](#getting-started-with-boostut)
-    * [Requirements](#requirements)
-    * [Usage examples](#usage-examples)<!-- endtoc -->
+  * [Usage examples](#usage-examples)<!-- endtoc -->
 
 
-## Getting Started With \[Boost\].UT
-
-The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework works well with Approval Tests.
-
-\[Boost\].UT is a single header/single module, macro-free μ(micro)/Unit Testing Framework that requires C++17 / C++20
-
-**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
-
-### Requirements
+## Requirements
 
 Approval Tests for \[Boost\].UT requires that a file called the following is found:
 
@@ -45,7 +37,15 @@ It also requires:
 * A \[Boost\].UT version that is compatible with the version of ApprovalTests.cpp being used. See the version we test against: 
 [third_party/ut/include/boost/ut.hpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/third_party/ut/include/boost/ut.hpp)
 
-### Usage examples
+## Getting Started With \[Boost\].UT
+
+The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework works well with Approval Tests.
+
+\[Boost\].UT is a single header/single module, macro-free μ(micro)/Unit Testing Framework that requires C++17 / C++20
+
+**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
+
+## Usage examples
 
 Add the following two lines to your source code:
 
