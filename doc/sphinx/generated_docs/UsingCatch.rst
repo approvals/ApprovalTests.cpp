@@ -39,7 +39,7 @@ Approval Tests requires that a file called the following is found:
 
    #include <catch2/catch.hpp>
 
-snippet source \| anchor
+snippet source
 
 (Before v7.0.0, it required ``Catch.hpp``)
 
@@ -72,7 +72,7 @@ Create a file ``main.cpp`` and add just the following two lines:
    #define APPROVALS_CATCH // This tells Approval Tests to provide a main() - only do this in one cpp file
    #include "ApprovalTests.hpp"
 
-snippet source \| anchor
+snippet source
 
 Existing Project - with CATCH_CONFIG_MAIN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,4 +110,4 @@ contains ``main()``.
    #define APPROVALS_CATCH_EXISTING_MAIN
    #include "ApprovalTests.hpp"
 
-snippet source \| anchor
+snippet source

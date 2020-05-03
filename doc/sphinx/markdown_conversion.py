@@ -39,4 +39,10 @@ def fix_up_markdown_content(content):
         '[Back to User Guide](/doc/README.md#top)\n'
     )
     content = content.replace(back_to_user_guide, '')
+
+    # Remove 'anchor' links from all code snippets
+    content = re.sub(
+        r"\| <a href='#snippet-[^']+' title='Navigate to start of snippet `[^']+`'>anchor</a>",
+        '', content)
+
     return content
