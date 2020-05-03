@@ -9,8 +9,14 @@ def convertMarkdownDocsToRst():
     # TODO make various edits to improve conversion, like removing the Table of Contents
     input_dir = '../../doc'
     output_dir = 'generated_docs'
-    file_base_name = 'UsingCatch'
-    convert_markdown_to_restructured_text(file_base_name, input_dir, output_dir)
+    file_base_names = ['UsingBoostTest',
+                       'UsingCatch',
+                       'UsingDoctest',
+                       'UsingGoogleTests',
+                       'UsingUT',
+                       'SupportingNewTestFramework']
+    for file_base_name in file_base_names:
+        convert_markdown_to_restructured_text(file_base_name, input_dir, output_dir)
 
 
 def convert_markdown_to_restructured_text(file_base_name, input_dir, output_dir):
