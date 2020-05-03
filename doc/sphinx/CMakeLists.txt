@@ -14,7 +14,6 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         ${CMAKE_CURRENT_SOURCE_DIR}/approving.rst
         ${CMAKE_CURRENT_SOURCE_DIR}/core.rst
         ${CMAKE_CURRENT_SOURCE_DIR}/index.rst
-        ${CMAKE_CURRENT_SOURCE_DIR}/introduction.rst
         ${CMAKE_CURRENT_SOURCE_DIR}/markdown_conversion.py
         ${DOXYGEN_INDEX_FILE}
         MAIN_DEPENDENCY ${SPHINX_SOURCE}/conf.py

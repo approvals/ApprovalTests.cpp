@@ -1,11 +1,18 @@
 Contents
 ========
 
+Overview
+--------
+
+**ApprovalTests.cpp** is a C++ implementation of Approval Tests.
+
+Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alternative to asserts. They are great for testing objects with lots of fields, or lists of objects.
+
+
 .. toctree::
    :maxdepth: 3
    :caption: Introduction
 
-   introduction
    generated_docs/Tutorial
    generated_docs/Overview
    generated_docs/ApprovalTestingConcept
@@ -101,3 +108,9 @@ Contents
 
    approving
    core
+
+
+Indices and tables
+------------------
+
+* :ref:`genindex`
