@@ -18,11 +18,14 @@ Contents
    :caption: Writing Tests
 
    generated_docs/Tutorial
+   generated_docs/GettingStarted
+   generated_docs/ApprovingResults
    generated_docs/TestingSingleObjects
    generated_docs/TestingContainers
    generated_docs/TestingExceptions
    generated_docs/TestingCombinations
    generated_docs/ToString
+   generated_docs/DisposableObjects
    generated_docs/Features
 
 .. toctree::
@@ -91,6 +94,7 @@ Contents
    :caption: Advanced Topics
 
    generated_docs/Contributing
+   generated_docs/CodingPatterns
 
 .. toctree::
    :maxdepth: 3
