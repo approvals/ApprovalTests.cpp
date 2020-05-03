@@ -32,7 +32,7 @@ namespace ApprovalTests
          *         When it is destroyed, the customisation will be reversed.
          *
          * \see For more information, see
-         *      <a href="https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CustomComparators.md#top">Custom Comparators</a>
+         *      \userguide{CustomComparators,Custom Comparators}
          *      in the User Guide on GitHub.
          */
         static ComparatorDisposer

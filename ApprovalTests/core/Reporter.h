@@ -15,10 +15,10 @@ namespace ApprovalTests
      also typically allow the output to be "approved".
 
      For an demonstration of this, see the
-     <a href="https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Tutorial.md#top">Tutorial</a>.
+     \userguide{Tutorial,Tutorial}.
 
      \see For more information, see
-     <a href="https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Reporters.md#top">Reporter</a>
+     \userguide{Reporters,Reporter}
      in the User Guide on GitHub.
      */
     class Reporter

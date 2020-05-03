@@ -5,7 +5,7 @@ namespace ApprovalTests
     /*! \brief Write the object being verified to file.
 
      \see For more information, see
-     <a href="https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Writers.md#top">Writers</a>
+     \userguide{Writers,Writers}
      in the User Guide on GitHub.
      */
     class ApprovalWriter
