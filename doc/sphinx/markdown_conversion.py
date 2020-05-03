@@ -53,15 +53,14 @@ To change this file edit the source file and then execute ./run_markdown_templat
     content = content.replace(back_to_user_guide, '')
 
     # Remove 'snippet source' links from all code snippets
-    # TODO Change this so that it actually links to the source code on github -
-    #      this meeds to match the revision that we are documenting..
+    # TODO Instead of master, use the changeset that this was generated from
     content = re.sub(
-        r"<a href='[^']+' title='File snippet `[^`]+` was extracted from'>snippet source</a>",
-        '', content)
+        r"<sup><a href='([^']+)' title='File snippet `[^`]+` was extracted from'>snippet source</a> ",
+        r"(See [snippet source](https://github.com/approvals/ApprovalTests.cpp/blob/master\1))", content)
 
     # Remove 'anchor' links from all code snippets
     content = re.sub(
-        r"\| <a href='#snippet-[^']+' title='Navigate to start of snippet `[^']+`'>anchor</a>",
+        r"\| <a href='#snippet-[^']+' title='Navigate to start of snippet `[^']+`'>anchor</a></sup>",
         '', content)
 
     # Fix "WARNING: Pygments lexer name 'h' is not known"
@@ -70,5 +69,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     content = content.replace(
         '\n```h\n',
         '\n```cpp\n')
+
+    # with open(file_base_name + '_hacked.md', 'w') as w:
+    #     w.write(content)
 
     return content

@@ -30,6 +30,9 @@ Approval Tests requires that a file called the following is found:
 
    #include <catch2/catch.hpp>
 
+(See `snippet
+source <https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/integrations/catch/Catch2Approvals.h#L15-L17>`__)
+
 (Before v7.0.0, it required ``Catch.hpp``)
 
 Starter Project
@@ -60,6 +63,9 @@ Create a file ``main.cpp`` and add just the following two lines:
    // main.cpp:
    #define APPROVALS_CATCH // This tells Approval Tests to provide a main() - only do this in one cpp file
    #include "ApprovalTests.hpp"
+
+(See `snippet
+source <https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/Catch2_Tests/main.cpp#L6-L10>`__)
 
 Existing Project - with CATCH_CONFIG_MAIN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -96,3 +102,6 @@ contains ``main()``.
    // Add these two lines to the top of your main.cpp file:
    #define APPROVALS_CATCH_EXISTING_MAIN
    #include "ApprovalTests.hpp"
+
+(See `snippet
+source <https://github.com/approvals/ApprovalTests.cpp/blob/master/examples/catch2_existing_main/main.cpp#L1-L5>`__)
