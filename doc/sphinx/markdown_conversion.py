@@ -7,6 +7,8 @@ def convertMarkdownDocsToRst():
     download_pandoc()
 
     # TODO make various edits to improve conversion, like removing the Table of Contents
-    output = pypandoc.convert_file('../../doc/UsingCatch.md', 'rst', outputfile="generated_docs/UsingCatch.rst")
+    file_base_name = 'UsingCatch'
+    output = pypandoc.convert_file(f'../../doc/{file_base_name}.md', 'rst',
+                                   outputfile=f'generated_docs/{file_base_name}.rst')
 
     assert output == ""
