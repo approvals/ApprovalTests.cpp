@@ -251,7 +251,7 @@ TAB_SIZE               = 4
 # commands \{ and \} for these it is advised to use the version @{ and @} or use
 # a double escape (\\{ and \\})
 
-ALIASES                += userguide{2}="<a href=\"https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/\1.md#top\">\2</a>"
+ALIASES                += userguide{2}="\userguide{\1,top,\2}"
 ALIASES                += userguide{3}="<a href=\"https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/\1.md\#\2\">\3</a>"
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
