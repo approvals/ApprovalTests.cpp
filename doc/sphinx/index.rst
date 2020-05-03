@@ -17,7 +17,6 @@ Contents
    :maxdepth: 3
    :caption: Writing Tests
 
-   generated_docs/Tutorial
    generated_docs/GettingStarted
    generated_docs/ApprovingResults
    generated_docs/TestingSingleObjects
