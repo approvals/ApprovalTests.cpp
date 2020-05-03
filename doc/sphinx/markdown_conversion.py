@@ -52,6 +52,13 @@ To change this file edit the source file and then execute ./run_markdown_templat
     )
     content = content.replace(back_to_user_guide, '')
 
+    # Remove 'snippet source' links from all code snippets
+    # TODO Change this so that it actually links to the source code on github -
+    #      this meeds to match the revision that we are documenting..
+    content = re.sub(
+        r"<a href='[^']+' title='File snippet `[^`]+` was extracted from'>snippet source</a>",
+        '', content)
+
     # Remove 'anchor' links from all code snippets
     content = re.sub(
         r"\| <a href='#snippet-[^']+' title='Navigate to start of snippet `[^']+`'>anchor</a>",

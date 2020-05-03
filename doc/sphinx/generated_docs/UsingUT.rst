@@ -31,8 +31,6 @@ is found:
 
    #include <boost/ut.hpp>
 
-snippet source
-
 It also requires:
 
 -  A C++ compiler that supports the C++ 20
@@ -59,8 +57,6 @@ Add the following two lines to your source code:
    #define APPROVALS_UT
    #include "ApprovalTests.hpp"
 
-snippet source
-
 Below is an example of a call to an approval test inside a [Boost].UT
 test:
 
@@ -73,8 +69,6 @@ test:
    "ItCanVerifyAFile"_test = []() {
        Approvals::verify("Approval Tests can verify text via the golden master method");
    };
-
-snippet source
 
 In the following example, two instances of ApprovalTests are called
 inside the same test. We need to use sections with different names, to
@@ -100,5 +94,3 @@ prevent Approval Tests from using the same output file for both tests:
                              "the golden master method");
        }
    };
-
-snippet source

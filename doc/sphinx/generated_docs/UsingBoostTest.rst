@@ -40,8 +40,6 @@ Adding ApprovalTests to your Boost.Test
    #define APPROVALS_BOOSTTEST
    #include "ApprovalTests.hpp"
 
-snippet source
-
 Understanding Boost.Test Entry points
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -56,5 +54,3 @@ line:
 .. code:: cpp
 
    #define BOOST_TEST_MODULE ModuleName
-
-snippet source

@@ -31,8 +31,6 @@ found:
 
    #include <doctest/doctest.h>
 
-snippet source
-
 Approval Tests needs doctest version 2.3.4 or above.
 
 New Project
@@ -49,8 +47,6 @@ Create a file ``main.cpp`` and add just the following two lines:
    // main.cpp:
    #define APPROVALS_DOCTEST // This tells Approval Tests to provide a main() - only do this in one cpp file
    #include "ApprovalTests.hpp"
-
-snippet source
 
 .. raw:: html
 
@@ -75,5 +71,3 @@ contains ``main()``.
    // Add these two lines to the top of your main.cpp file:
    #define APPROVALS_DOCTEST_EXISTING_MAIN
    #include "ApprovalTests.hpp"
-
-snippet source

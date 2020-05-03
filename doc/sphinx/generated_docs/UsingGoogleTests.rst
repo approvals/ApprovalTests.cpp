@@ -46,8 +46,6 @@ Create a file ``main.cpp`` and add just the following two lines:
    #define APPROVALS_GOOGLETEST // This tells Approval Tests to provide a main() - only do this in one cpp file
    #include "ApprovalTests.hpp"
 
-snippet source
-
 Existing Project - no main()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -93,8 +91,6 @@ that contains ``main()``.
        return RUN_ALL_TESTS();
    }
 
-snippet source
-
 Customizing Google Tests Approval File Names
 --------------------------------------------
 
@@ -110,8 +106,6 @@ Google Tests has an additional piece of information: ``TestCaseName``.
 .. code:: cpp
 
    TEST(TestCaseName, TestName)
-
-snippet source
 
 With Google Tests, this will result in Approvals creating output files
 beginning with:
@@ -166,8 +160,6 @@ main:
    // main.cpp
    auto customization = GoogleConfiguration::addIgnorableTestCaseNameSuffix("Fixture");
 
-snippet source
-
 Custom Anything
 ^^^^^^^^^^^^^^^
 
@@ -189,8 +181,6 @@ So:
 
    TEST(TestCaseName_IgnoreThis, TestName)
 
-snippet source
-
 Would produce an output file beginning with:
 
 .. raw:: html
@@ -200,8 +190,6 @@ Would produce an output file beginning with:
 .. code:: cpp
 
    auto outputFileBaseName = "GoogleFixtureNamerCustomizationTests.TestName";
-
-snippet source
 
 You could achieve this by registering a function pointer like this:
 
@@ -221,8 +209,6 @@ You could achieve this by registering a function pointer like this:
    auto ignoreNames =
        GoogleConfiguration::addTestCaseNameRedundancyCheck(dropTestCaseNamesWithIgnoreThis);
 
-snippet source
-
 Or by using a lambda like this:
 
 .. raw:: html
@@ -237,5 +223,3 @@ Or by using a lambda like this:
           const std::string& testCaseName) {
            return StringUtils::contains(testCaseName, "IgnoreThis");
        });
-
-snippet source
