@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-# Configurating Approval Tests
+# Configuring Approval Tests
 
 toc
 
