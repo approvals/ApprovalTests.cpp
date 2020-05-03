@@ -1,6 +1,9 @@
 import pypandoc
 from pypandoc.pandoc_download import download_pandoc
+import glob
+import os
 import re
+
 
 def convertMarkdownDocsToRst():
     # TODO Only download pandoc if it's not found
@@ -9,14 +12,24 @@ def convertMarkdownDocsToRst():
     # TODO make various edits to improve conversion, like removing the Table of Contents
     input_dir = '../../doc'
     output_dir = 'generated_docs'
-    file_base_names = ['UsingBoostTest',
-                       'UsingCatch',
-                       'UsingDoctest',
-                       'UsingGoogleTests',
-                       'UsingUT',
-                       'SupportingNewTestFramework']
-    for file_base_name in file_base_names:
-        convert_markdown_to_restructured_text(file_base_name, input_dir, output_dir)
+    # subdirs = ['', 'how_tos', 'explanations']
+    subdirs = ['']
+    for subdir in subdirs:
+        print(f'>>>> {subdir}')
+        input_sub_dir = f'{input_dir}/{subdir}'
+        if not os.path.isdir(input_sub_dir):
+            print(f'Directory {input_sub_dir} does not exist. Skipping)')
+        output_sub_dir = f'{output_dir}/{subdir}'
+        md_files = glob.glob(f'{input_sub_dir}/*.md')
+        if not md_files:
+            continue
+        if not os.path.isdir(output_sub_dir):
+            os.makedirs(output_sub_dir)
+        for file in md_files:
+            file_base_file = os.path.split(file)[1]
+            file_base_name = os.path.splitext(file_base_file)[0]
+            print(file_base_name, input_sub_dir, output_sub_dir)
+            convert_markdown_to_restructured_text(file_base_name, input_sub_dir, output_sub_dir)
 
 
 def convert_markdown_to_restructured_text(file_base_name, input_dir, output_dir):
