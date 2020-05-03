@@ -60,7 +60,7 @@ Existing Project - with your main()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have `supplied your own ``main()`` for
-doctest <hhttps://github.com/onqtam/doctest/blob/master/doc/markdown/main.md#top>`__,
+doctest <https://github.com/onqtam/doctest/blob/master/doc/markdown/main.md#top>`__,
 you will need to teach it how to supply test names to Approval Tests.
 
 You should make the following additions to your own source file that
