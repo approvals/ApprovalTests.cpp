@@ -5,7 +5,6 @@ build/releases
 *.received.*
 .idea
 doc/html/
-/doc/sphinx/generated_docs/*.rst
 /doc/sphinx/pandoc-*.pkg
 .vs/
 /.vscode/
