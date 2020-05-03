@@ -10,12 +10,13 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
 
+sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
+from markdown_conversion import convertMarkdownDocsToRst
 
 project = 'ApprovalTests.cpp'
 copyright = '2020, Llewellyn Falco, Clare Macrae'
@@ -54,8 +55,6 @@ html_static_path = []
 # -- Teach RtD to use CMake config  ------------------------------------------
 
 import subprocess, os
-import pypandoc
-from pypandoc.pandoc_download import download_pandoc
 
 
 def configureDoxyfile(doxygen_dir, input_dir, output_dir):
@@ -67,16 +66,6 @@ def configureDoxyfile(doxygen_dir, input_dir, output_dir):
 
     with open(doxygen_dir + '/Doxyfile', 'w') as file:
         file.write(filedata)
-
-
-def convertMarkdownDocsToRst():
-    # TODO Only download pandoc if it's not found
-    download_pandoc()
-
-    # TODO make various edits to improve conversion, like removing the Table of Contents
-    output = pypandoc.convert_file('../../doc/UsingCatch.md', 'rst', outputfile="generated_docs/UsingCatch.rst")
-
-    assert output == ""
 
 
 # Check if we're running on Read the Docs' servers
