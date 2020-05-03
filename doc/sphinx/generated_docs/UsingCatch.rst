@@ -10,23 +10,6 @@
 Using Approval Tests With Catch
 ===============================
 
-.. raw:: html
-
-   <!-- toc -->
-
-Contents
---------
-
--  `Getting Started With Catch2 <#getting-started-with-catch2>`__
-
-   -  `Requirements <#requirements>`__
-   -  `Starter Project <#starter-project>`__
-   -  `New Project <#new-project>`__
-   -  `Existing Project - with
-      CATCH_CONFIG_MAIN <#existing-project---with-catch_config_main>`__
-   -  `Existing Project - with your
-      main() <#existing-project---with-your-main>`__\ 
-
 Getting Started With Catch2
 ---------------------------
 

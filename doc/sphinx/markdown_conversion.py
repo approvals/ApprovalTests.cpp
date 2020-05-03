@@ -1,6 +1,6 @@
 import pypandoc
 from pypandoc.pandoc_download import download_pandoc
-
+import re
 
 def convertMarkdownDocsToRst():
     # TODO Only download pandoc if it's not found
@@ -23,6 +23,10 @@ def convert_markdown_to_restructured_text(file_base_name, input_dir, output_dir)
 
 
 def fix_up_markdown_content(content):
+    # Remove table of contents
+    content = re.sub(r'<!-- toc -->.*<!-- endtoc -->', '', content, count=1, flags=re.DOTALL)
+
+    # Remove 'Back to User Guide'
     back_to_user_guide = (
         '---\n'
         '\n'
