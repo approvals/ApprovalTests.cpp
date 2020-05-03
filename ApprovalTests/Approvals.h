@@ -180,6 +180,12 @@ namespace ApprovalTests
             FileApprover::verify(namer, writer, reporter);
         }
 
+        /**@name Customising Approval Tests
+
+         These static methods customise various aspects
+         of Approval Tests behaviour.
+         */
+        ///@{
         static SubdirectoryDisposer
         useApprovalsSubdirectory(std::string subdirectory = "approval_tests")
         {
@@ -202,5 +208,6 @@ namespace ApprovalTests
         {
             return DefaultNamerDisposer(namerCreator);
         }
+        ///@}
     };
 }
