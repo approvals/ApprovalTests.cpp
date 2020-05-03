@@ -128,7 +128,3 @@ contains ``main()``.
    #include "ApprovalTests.hpp"
 
 snippet source \| anchor
-
---------------
-
-`Back to User Guide </doc/README.md#top>`__

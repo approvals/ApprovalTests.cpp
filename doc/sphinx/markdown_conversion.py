@@ -14,6 +14,14 @@ def convertMarkdownDocsToRst():
 
 
 def convert_markdown_to_restructured_text(file_base_name, input_dir, output_dir):
-    output = pypandoc.convert_file(f'{input_dir}/{file_base_name}.md', 'rst',
+    with open(f'{input_dir}/{file_base_name}.md') as markdown_file:
+        content = markdown_file.read()
+
+        back_to_user_guide = (
+            '---\n'
+            '\n'
+            '[Back to User Guide](/doc/README.md#top)\n'
+        )
+        content = content.replace(back_to_user_guide, '')
+    output = pypandoc.convert_text(''.join(content), 'rst', format='md',
                                    outputfile=f'{output_dir}/{file_base_name}.rst')
-    assert output == ""
