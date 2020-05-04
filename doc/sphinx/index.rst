@@ -24,7 +24,7 @@ If you are new to Approval Tests, or to this C++ library, start here:
   :doc:`generated_docs/ApprovingResults`
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :hidden:
    :caption: Getting Started
 
@@ -53,7 +53,7 @@ Approval Tests uses a test framework, in order to find out the names of tests an
   :doc:`generated_docs/SupportingNewTestFramework`
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :hidden:
    :caption: Test Frameworks
 
@@ -79,7 +79,7 @@ Now that you are set up to run Approval Tests, this section describes how to tes
   :doc:`generated_docs/ToString`
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :hidden:
    :caption: Writing Tests
 
@@ -94,7 +94,7 @@ Customising Behaviour
 ---------------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Customising Behaviour
 
    generated_docs/DisposableObjects
@@ -109,7 +109,7 @@ Common Challenges
 -----------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Common Challenges
 
    generated_docs/MultipleOutputFilesPerTest
@@ -118,7 +118,7 @@ How-to Guides
 -------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: How-to Guides
 
    generated_docs/how_tos/TestContainerContents
@@ -130,7 +130,7 @@ Build Systems
 -------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Build Systems
 
    generated_docs/CMakeIntegration
@@ -141,7 +141,7 @@ Extras
 ------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Extras
 
    generated_docs/Features
@@ -154,7 +154,7 @@ Troubleshooting
 ---------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Troubleshooting
 
    generated_docs/Troubleshooting
@@ -165,7 +165,7 @@ Developing ApprovalTests.cpp
 ----------------------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Developing ApprovalTests.cpp
 
    generated_docs/Contributing
@@ -175,7 +175,7 @@ C++ Reference
 -------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: C++ Reference
 
    approving
