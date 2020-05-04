@@ -20,7 +20,8 @@ If you are new to Approval Tests, or to this C++ library, start here:
 * **Start coding**:
   :doc:`generated_docs/Tutorial` |
   :doc:`generated_docs/Setup` |
-  :doc:`Choosing a test framework <generated_docs/GettingStarted>`
+  :doc:`Choosing a test framework <generated_docs/GettingStarted>` |
+  :doc:`generated_docs/ApprovingResults`
 
 .. toctree::
    :maxdepth: 3
@@ -34,6 +35,7 @@ If you are new to Approval Tests, or to this C++ library, start here:
    generated_docs/Tutorial
    generated_docs/Setup
    generated_docs/GettingStarted
+   generated_docs/ApprovingResults
 
 Test Frameworks
 ---------------
@@ -69,7 +71,6 @@ Writing Tests
    :maxdepth: 3
    :caption: Writing Tests
 
-   generated_docs/ApprovingResults
    generated_docs/TestingSingleObjects
    generated_docs/TestingContainers
    generated_docs/TestingExceptions
