@@ -67,14 +67,27 @@ Approval Tests uses a test framework, in order to find out the names of tests an
 Writing Tests
 -------------
 
+Now that you are set up to run Approval Tests, this section describes how to test various types of complex objects, and how to do so effectively.
+
+* **How to Test**:
+  :doc:`Single Objects<generated_docs/TestingSingleObjects>` |
+  :doc:`Containers <generated_docs/TestingContainers>` |
+  :doc:`Combinations of containers<generated_docs/TestingCombinations>` |
+  :doc:`Exception messages <generated_docs/TestingExceptions>`
+
+* **Good Practice**:
+  :doc:`generated_docs/ToString`
+
 .. toctree::
    :maxdepth: 3
+   :hidden:
    :caption: Writing Tests
 
    generated_docs/TestingSingleObjects
    generated_docs/TestingContainers
-   generated_docs/TestingExceptions
    generated_docs/TestingCombinations
+   generated_docs/TestingExceptions
+
    generated_docs/ToString
 
 Customising Behaviour
