@@ -38,8 +38,21 @@ If you are new to Approval Tests, or to this C++ library, start here:
 Test Frameworks
 ---------------
 
+Approval Tests uses a test framework, in order to find out the names of tests and of source files. The test framework will also report errors for any failed Approval Tests.
+
+* **Using Approval Tests with**:
+  :doc:`Boost.Test <generated_docs/UsingBoostTest>` |
+  :doc:`Catch2 <generated_docs/UsingCatch>` |
+  :doc:`doctest <generated_docs/UsingDoctest>` |
+  :doc:`Google Tests <generated_docs/UsingGoogleTests>` |
+  :doc:`[Boost].ut <generated_docs/UsingUT>`
+
+* **Extending test framework support**:
+  :doc:`generated_docs/SupportingNewTestFramework`
+
 .. toctree::
    :maxdepth: 3
+   :hidden:
    :caption: Test Frameworks
 
    generated_docs/UsingBoostTest
