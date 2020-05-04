@@ -23,7 +23,7 @@ namespace ApprovalTests
                 std::ostream& out;
                 template <class T> void operator()(const T& input)
                 {
-                    out << ", " << input;
+                    out << ", " << OStreamToString::toString(input);
                 }
             };
 
@@ -36,7 +36,7 @@ namespace ApprovalTests
                 void operator()(T&& input1_, Ts&&... inputs)
                 {
                     // First value is printed without trailing comma
-                    out << "(" << input1_;
+                    out << "(" << OStreamToString::toString(input1_);
                     // Remaining values are printed with prefix of a comma
                     CartesianProduct::Detail::for_each(std::forward_as_tuple(inputs...),
                                                        print_input{out});
