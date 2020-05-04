@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "OStreamToString.h"
+#include "StringMaker.h"
 
 #include <string>
 #include <algorithm>
@@ -53,7 +53,7 @@ namespace ApprovalTests
 
         template <typename T> static std::string toString(const T& contents)
         {
-            return OStreamToString::toString(contents);
+            return StringMaker::toString(contents);
         }
     };
 }

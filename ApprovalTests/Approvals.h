@@ -18,7 +18,7 @@
 #include "scrubbers/Scrubbers.h"
 #include "core/Options.h"
 #include "utilities/MoreHelpMessages.h"
-#include "utilities/OStreamToString.h"
+#include "utilities/StringMaker.h"
 
 namespace ApprovalTests
 {
@@ -307,7 +307,7 @@ namespace ApprovalTests
     };
 
 #ifndef APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER
-#define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER OStreamToString
+#define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER StringMaker
 #endif
 
     template <typename TToString> struct CompileTimeOptions
