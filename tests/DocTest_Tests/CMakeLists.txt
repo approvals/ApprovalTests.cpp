@@ -4,6 +4,7 @@ add_executable(${PROJECT_NAME}
         main.cpp
         ApprovalsTests.cpp
         CombinationTests.cpp
+        CustomizingToStringTests.cpp
         DocTestApprovalTestTests.cpp
         TemplateApprovalsTests.cpp
         VectorTests.cpp
