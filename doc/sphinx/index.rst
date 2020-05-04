@@ -7,24 +7,16 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
 
 .. note:: This documentation on Read the Docs is a work in progress. There will be broken links, missing images, and not-yet-stable URLS.
 
-Concepts
---------
-
-.. toctree::
-   :maxdepth: 3
-   :caption: Concepts
-
-   generated_docs/Overview
-   generated_docs/ApprovalTestingConcept
-   generated_docs/PathToApprovalTesting
-
 Getting Started
 ---------------
-
 
 .. toctree::
    :maxdepth: 3
    :caption: Getting Started
+
+   generated_docs/Overview
+   generated_docs/ApprovalTestingConcept
+   generated_docs/PathToApprovalTesting
 
    generated_docs/Tutorial
    generated_docs/Setup
