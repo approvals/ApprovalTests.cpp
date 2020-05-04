@@ -93,23 +93,43 @@ Now that you are set up to run Approval Tests, this section describes how to tes
 Customising Behaviour
 ---------------------
 
+* **Principles**:
+  :doc:`generated_docs/DisposableObjects`
+
+* **Customisation points**:
+  :doc:`Reporters <generated_docs/Reporters>` |
+  :doc:`Comparators <generated_docs/CustomComparators>` |
+  :doc:`generated_docs/Writers` |
+  :doc:`generated_docs/Namers` |
+  :doc:`generated_docs/Configuration`
+
+* **Summary**:
+  :doc:`generated_docs/AllCustomizations`
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Customising Behaviour
 
    generated_docs/DisposableObjects
+
    generated_docs/Reporters
    generated_docs/CustomComparators
    generated_docs/Writers
    generated_docs/Namers
    generated_docs/Configuration
+
    generated_docs/AllCustomizations
 
 Common Challenges
 -----------------
 
+* **Challenges**:
+  :doc:`generated_docs/MultipleOutputFilesPerTest`
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Common Challenges
 
    generated_docs/MultipleOutputFilesPerTest
@@ -117,31 +137,60 @@ Common Challenges
 How-to Guides
 -------------
 
+* **Writing Tests**:
+
+   * :doc:`generated_docs/how_tos/TestContainerContents`
+   * :doc:`generated_docs/how_tos/TestAVarietyOfValues`
+
+* **Reporters**:
+
+   * :doc:`generated_docs/how_tos/UseACustomReporter`
+   * :doc:`generated_docs/how_tos/SubmitANewReporterToApprovalTests`
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: How-to Guides
 
    generated_docs/how_tos/TestContainerContents
    generated_docs/how_tos/TestAVarietyOfValues
+
    generated_docs/how_tos/UseACustomReporter
    generated_docs/how_tos/SubmitANewReporterToApprovalTests
 
 Build Systems
 -------------
 
+* **Integrations**:
+  :doc:`CMake <generated_docs/CMakeIntegration>` |
+  :doc:`Conan <generated_docs/ConanIntegration>`
+
+* **Your builds**:
+  :doc:`Build Machines and CI servers <generated_docs/BuildMachinesAndCI>`
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Build Systems
 
    generated_docs/CMakeIntegration
    generated_docs/ConanIntegration
+
    generated_docs/BuildMachinesAndCI
 
 Extras
 ------
 
+* **Various**:
+  :doc:`generated_docs/Features` |
+  :doc:`FAQs <generated_docs/FAQ>` |
+  :doc:`generated_docs/Glossary` |
+  :doc:`generated_docs/Utilities` |
+  :doc:`generated_docs/Videos`
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Extras
 
    generated_docs/Features
@@ -153,8 +202,14 @@ Extras
 Troubleshooting
 ---------------
 
+* **Topics**:
+  :doc:`generated_docs/Troubleshooting` |
+  :doc:`Misconfigured Builds <generated_docs/TroubleshootingMisconfiguredBuild>` |
+  :doc:`Misconfigured main() <generated_docs/TroubleshootingMisconfiguredMain>`
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Troubleshooting
 
    generated_docs/Troubleshooting
@@ -164,8 +219,13 @@ Troubleshooting
 Developing ApprovalTests.cpp
 ----------------------------
 
+* **Topics**:
+  :doc:`generated_docs/Contributing` |
+  :doc:`generated_docs/CodingPatterns`
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Developing ApprovalTests.cpp
 
    generated_docs/Contributing
@@ -174,8 +234,15 @@ Developing ApprovalTests.cpp
 C++ Reference
 -------------
 
+This section contains a growing list of pages documenting the ApprovalTests.cpp API. It may be useful to see what methods, and overloads, are available. It is very short on descriptive text, as we focus our efforts on the documentation above.
+
+* **Fundamentals**:
+  :doc:`approving` |
+  :doc:`core`
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: C++ Reference
 
    approving
