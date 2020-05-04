@@ -6,7 +6,6 @@ add_executable(${PROJECT_NAME}
         CombinationTests.cpp
         CustomizingToStringTests.cpp
         DocTestApprovalTestTests.cpp
-        TemplateApprovalsTests.cpp
         VectorTests.cpp
         comparators/ComparatorDisposerTest.cpp
         core/ApprovalExceptionTests.cpp
