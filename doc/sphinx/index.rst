@@ -1,14 +1,14 @@
-Contents
-========
-
-Overview
-********
+ApprovalTests for C++
+=====================
 
 **ApprovalTests.cpp** is a C++ implementation of Approval Tests.
 
 Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alternative to asserts. They are great for testing objects with lots of fields, or lists of objects.
 
+.. note:: This documentation on Read the Docs is a work in progress. There will be broken links, missing images, and not-yet-stable URLS.
 
+Concepts
+--------
 
 .. toctree::
    :maxdepth: 3
@@ -18,6 +18,10 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
    generated_docs/ApprovalTestingConcept
    generated_docs/PathToApprovalTesting
 
+Getting Started
+---------------
+
+
 .. toctree::
    :maxdepth: 3
    :caption: Getting Started
@@ -25,6 +29,9 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
    generated_docs/Tutorial
    generated_docs/Setup
    generated_docs/GettingStarted
+
+Test Frameworks
+---------------
 
 .. toctree::
    :maxdepth: 3
@@ -37,6 +44,9 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
    generated_docs/UsingUT
    generated_docs/SupportingNewTestFramework
 
+Writing Tests
+-------------
+
 .. toctree::
    :maxdepth: 3
    :caption: Writing Tests
@@ -48,9 +58,12 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
    generated_docs/TestingCombinations
    generated_docs/ToString
 
+Customising Behaviour
+---------------------
+
 .. toctree::
    :maxdepth: 3
-   :caption: Customising behaviour
+   :caption: Customising Behaviour
 
    generated_docs/DisposableObjects
    generated_docs/Reporters
@@ -60,11 +73,17 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
    generated_docs/Configuration
    generated_docs/AllCustomizations
 
+Common Challenges
+-----------------
+
 .. toctree::
    :maxdepth: 3
    :caption: Common Challenges
 
    generated_docs/MultipleOutputFilesPerTest
+
+How-to Guides
+-------------
 
 .. toctree::
    :maxdepth: 3
@@ -75,6 +94,9 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
    generated_docs/how_tos/UseACustomReporter
    generated_docs/how_tos/SubmitANewReporterToApprovalTests
 
+Build Systems
+-------------
+
 .. toctree::
    :maxdepth: 3
    :caption: Build Systems
@@ -82,6 +104,9 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
    generated_docs/CMakeIntegration
    generated_docs/ConanIntegration
    generated_docs/BuildMachinesAndCI
+
+Extras
+------
 
 .. toctree::
    :maxdepth: 3
@@ -93,6 +118,9 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
    generated_docs/Utilities
    generated_docs/Videos
 
+Troubleshooting
+---------------
+
 .. toctree::
    :maxdepth: 3
    :caption: Troubleshooting
@@ -101,12 +129,18 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
    generated_docs/TroubleshootingMisconfiguredBuild
    generated_docs/TroubleshootingMisconfiguredMain
 
+Developing ApprovalTests.cpp
+----------------------------
+
 .. toctree::
    :maxdepth: 3
    :caption: Developing ApprovalTests.cpp
 
    generated_docs/Contributing
    generated_docs/CodingPatterns
+
+C++ Reference
+-------------
 
 .. toctree::
    :maxdepth: 3
@@ -115,8 +149,7 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
    approving
    core
 
-
-Indices and tables
-******************
+Code Index
+----------
 
 * :ref:`genindex`
