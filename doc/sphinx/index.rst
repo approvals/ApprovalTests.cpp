@@ -10,8 +10,21 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
 Getting Started
 ---------------
 
+If you are new to Approval Tests, or to this C++ library, start here:
+
+* **Concepts**:
+  :doc:`Overview <generated_docs/Overview>` |
+  :doc:`generated_docs/ApprovalTestingConcept` |
+  :doc:`generated_docs/PathToApprovalTesting`
+
+* **Start coding**:
+  :doc:`generated_docs/Tutorial` |
+  :doc:`generated_docs/Setup` |
+  :doc:`Choosing a test framework <generated_docs/GettingStarted>`
+
 .. toctree::
    :maxdepth: 3
+   :hidden:
    :caption: Getting Started
 
    generated_docs/Overview
