@@ -119,8 +119,6 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
     # content = re.sub(
     #     r".*\.md#top",
     #     r"", content)
-    # TODO  Convert any links to 'TemplatePage.source.md' to links
-    #       on the github site
     # TODO  Links to non-markdown files should go to the github website, e.g.
     #       [scripts/check_links.sh](/scripts/check_links.sh)
     # TODO  Links to .md files outside of the doc directory, or README
@@ -145,6 +143,8 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
             return full_match
         if '.md' not in full_url:
             return full_match
+
+        assert 'TemplatePage.source.md' not in full_url
 
         # Split the url and the anchor
         if '#' in full_url:
