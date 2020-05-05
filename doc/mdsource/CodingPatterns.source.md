@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-# CodingPatterns
+# Coding Patterns
 
 toc
 
