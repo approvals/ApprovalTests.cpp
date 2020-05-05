@@ -19,12 +19,12 @@ class HyperlinkUpdatingTestCase(unittest.TestCase):
             '',
             'CustomComparators')
 
-    def test_file_in_subdir_links_to_file_in_dir_above(self):
-        self.check(
-            r'See [Target 1](/doc/Doc1.md#target1).',
-            r'See [Target 1](../Doc1.html#target1).',
-            'subdir',
-            'CustomComparators')
+    # def test_file_in_subdir_links_to_file_in_dir_above(self):
+    #     self.check(
+    #         r'See [Target 1](/doc/Doc1.md#target1).',
+    #         r'See [Target 1](../Doc1.html#target1).',
+    #         'subdir',
+    #         'CustomComparators')
 
     def test_file_in_parent_dir_links_to_file_in_subdir(self):
         self.check(
