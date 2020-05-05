@@ -1,13 +1,11 @@
 import pypandoc
-from pypandoc.pandoc_download import download_pandoc
 import glob
 import os
 import re
 
 
 def convertMarkdownDocsToRst():
-    # TODO Only download pandoc if it's not found
-    download_pandoc()
+    pypandoc.ensure_pandoc_installed()
 
     # TODO make various edits to improve conversion, like removing the Table of Contents
     print("Converting all .md files to .rst...")
