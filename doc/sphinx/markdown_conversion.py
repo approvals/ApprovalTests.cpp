@@ -63,6 +63,22 @@ def fix_up_markdown_content(subdir, file_base_name, content):
     )
     content = content.replace(back_to_user_guide, '')
 
+    content = fixup_generated_snippets(content)
+
+    content = fixup_code_languages_for_pygments(content)
+
+    # with open(file_base_name + '_hacked.md', 'w') as w:
+    #     w.write(content)
+
+    return content
+
+
+def fixup_generated_snippets(content):
+    """
+    Adjust the expanded code snippets that were generated
+    by mdsnippets, to improve rendering by Sphinx
+    """
+
     # Remove 'snippet source' links from all code snippets
     # TODO Instead of master, use the changeset that this was generated from
     content = re.sub(
@@ -73,11 +89,6 @@ def fix_up_markdown_content(subdir, file_base_name, content):
     content = re.sub(
         r"\| <a href='#snippet-[^']+' title='Navigate to start of snippet `[^']+`'>anchor</a></sup>",
         '', content)
-
-    content = fixup_code_languages_for_pygments(content)
-
-    # with open(file_base_name + '_hacked.md', 'w') as w:
-    #     w.write(content)
 
     return content
 
