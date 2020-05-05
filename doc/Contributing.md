@@ -135,7 +135,7 @@ It will write out the text to paste in to other .md files, to correctly link to 
 
 If the new page will be outside of the [doc](/doc/) folder, delete the following lines at the end:
 
-```markdown
+```md
 ---
    
 [Back to User Guide](/doc/README.md#top)
@@ -147,19 +147,19 @@ All references to other files in this project, such as hyperlinks and images, mu
 
 For example, use this:
 
-```markdown
+```md
 * [this link will work everywhere](/doc/Reporters.md#top)
 ```
 
 Not this:
 
-```markdown
+```md
 * [this link is wrong](doc/Reporters.md#top)
 ```
 
 And not this:
 
-```markdown
+```md
 * [this link is wrong](Reporters.md#top)
 ```
 
