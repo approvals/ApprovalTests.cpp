@@ -55,9 +55,10 @@ def fix_up_markdown_content(subdir, file_base_name, content):
     content = fixup_boilerplate_text(content)
     content = fixup_generated_snippets(content)
     content = fixup_code_languages_for_pygments(content)
+    content = fixup_markdown_hyperlinks(content, subdir, file_base_name)
 
-    # with open(file_base_name + '_hacked.md', 'w') as w:
-    #     w.write(content)
+    with open(file_base_name + '_hacked.md', 'w') as w:
+        w.write(content)
 
     return content
 
@@ -108,4 +109,50 @@ def fixup_code_languages_for_pygments(content):
     content = content.replace(
         '\n```txt\n',
         '\n```\n')
+    return content
+
+
+def fixup_markdown_hyperlinks(content, subdir, file_base_name):
+    # [MultipleOutputFilesPerTest](/doc/MultipleOutputFilesPerTest.md#top)
+    # [MultipleOutputFilesPerTest](MultipleOutputFilesPerTest.html)
+
+    # content = re.sub(
+    #     r".*\.md#top",
+    #     r"", content)
+    # TODO  This is only correct for links in files that are in the same
+    #       level that this file is in.
+    #       For example, how_tos/TestContainerContents.html links to
+    #       /doc/ToString.md#top - which should be converted to
+    #       ../ToString.html - but gets converted to ToString.html
+    #       which is then not found.
+    # TODO  Convert any links to 'TemplatePage.source.md' to links
+    #       on the github site
+    # TODO  Also pick up anchors other than '#top', e.g.
+    #       'Configuration.md#using-sub-directories-for-approved-files'
+    # TODO  Links to non-markdown files should go to the github website, e.g.
+    #       [scripts/check_links.sh](/scripts/check_links.sh)
+    # TODO  Links to .md files outside of the doc directory, or README
+    #       (essentially, thinks that won't be copied in to Sphinx)
+    #       should go to github, e.g.
+    #       [How To Release](/build/HowToRelease.md#top)
+    # TODO  Check that the 'TCR' link on Glossary gets converted correctly - maybe
+    #       convert all -- in anchor to -
+
+    # If anchor is #top, remove it
+    content = re.sub(
+        r"\]\(/doc/(.*).md#top\)",
+        r"](\1.html)", content)
+
+    # If anchor is not #top, preserve it
+    content = re.sub(
+        r"\]\(/doc/([^. #)]*).md#([^. #)]*)\)",
+        r"](\1.html#\2)", content)
+
+    # TODO  Print out any remaining lines that contain ](/
+    # TODO  Print out a list of all adjusted URLs so that I can test them
+    lines = content.splitlines()
+    for line in lines:
+        if '](/' in line:
+            print('>>>', subdir, file_base_name, line)
+
     return content
