@@ -138,15 +138,44 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
     # TODO  Check that the 'TCR' link on Glossary gets converted correctly - maybe
     #       convert all -- in anchor to -
 
-    # If anchor is #top, remove it
-    content = re.sub(
-        r"\]\(/doc/(.*).md#top\)",
-        r"](\1.html)", content)
+    hyperlink_regex = re.compile(
+        r"""\] # the closing ] that surrounds the link text
+            \( # the escaped ( at the start of the destination
+            (  # start capturing the destination
+            [^() ]+ # the destination
+            )  # finish capturing the desintation
+            \) # the escaled ) at the end of the destination""", re.VERBOSE)
 
-    # If anchor is not #top, preserve it
-    content = re.sub(
-        r"\]\(/doc/([^. #)]*).md#([^. #)]*)\)",
-        r"](\1.html#\2)", content)
+    def convert_github_markdown_url_to_sphinx(matched_obj):
+        full_match = matched_obj.group(0)
+        full_url = matched_obj.group(1)
+
+        # Check if it is a kind of URL we know how to process:
+        if not full_url.startswith('/doc'):
+            return full_match
+        if '.md' not in full_url:
+            return
+
+        # Split the url and the anchor
+        if '#' in full_url:
+            original_url, original_anchor = full_url.split('#')
+        else:
+            original_url = full_url
+            original_anchor = ''
+
+        new_url = original_url.replace('/doc/', '')
+        new_url = new_url.replace('.md', '.html')
+        new_anchor = original_anchor
+        if new_anchor == 'top':
+            new_anchor = ''
+
+        if new_anchor != '':
+            new_full_url = f'{new_url}#{new_anchor}'
+        else:
+            new_full_url = new_url
+        return f']({new_full_url})'
+
+    content = hyperlink_regex.sub(convert_github_markdown_url_to_sphinx, content)
 
     # TODO  Print out any remaining lines that contain ](/
     # TODO  Print out a list of all adjusted URLs so that I can test them
