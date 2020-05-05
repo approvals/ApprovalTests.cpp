@@ -48,6 +48,19 @@ class HyperlinkUpdatingTestCase(unittest.TestCase):
             'subdir2',
             'CustomComparators')
 
+    def test_anchor_with_multiple_non_standard_characters(self):
+        self.check(
+            r'[Existing Project - with your main()](/doc/UsingCatch.md#existing-project---with-your-main).',
+            r'[Existing Project - with your main()](UsingCatch.html#existing-project-with-your-main).',
+            '',
+            'CustomComparators')
+
+        self.check(
+            r'[TCR](/doc/Glossary.md#test--commit--revert-tcr).',
+            r'[TCR](Glossary.html#test-commit-revert-tcr).',
+            '',
+            'CustomComparators')
+
     # def test_multiple_links_on_one_line(self):
     #     self.check(
     #         r'See [Target 1](/doc/Doc1.md#target1) join1 [Target 2](/doc/Doc2.md#target3) join2 [Target 3](/doc/Doc3.md#target3).',

@@ -127,8 +127,6 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
     #       (essentially, thinks that won't be copied in to Sphinx)
     #       should go to github, e.g.
     #       [How To Release](/build/HowToRelease.md#top)
-    # TODO  Check that the 'TCR' link on Glossary gets converted correctly - maybe
-    #       convert all -- in anchor to -
 
     hyperlink_regex = re.compile(
         r"""\] # the closing ] that surrounds the link text
@@ -164,6 +162,11 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
         new_anchor = original_anchor
         if new_anchor == 'top':
             new_anchor = ''
+
+        # mdsnippets puts a hyphen in for each unusual character in an anchor
+        # Sphinx puts a hyphen in for each run of one or more unusual characters in an anchor
+        if '--' in new_anchor:
+            new_anchor = re.sub('--+', '-', new_anchor)
 
         if new_anchor != '':
             new_full_url = f'{new_url}#{new_anchor}'
