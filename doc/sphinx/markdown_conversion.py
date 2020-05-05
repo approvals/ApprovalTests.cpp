@@ -83,11 +83,16 @@ To change this file edit the source file and then execute ./run_markdown_templat
         '', content)
 
     # Fix "WARNING: Pygments lexer name 'h' is not known"
-    # This must be done before
     # Todo: find out how to fix this in conf.py - this is a horrible hack!
     content = content.replace(
         '\n```h\n',
         '\n```cpp\n')
+
+    # Fix "WARNING: Pygments lexer name 'txt' is not known"
+    # Text files don't need any markup
+    content = content.replace(
+        '\n```txt\n',
+        '\n```\n')
 
     # with open(file_base_name + '_hacked.md', 'w') as w:
     #     w.write(content)
