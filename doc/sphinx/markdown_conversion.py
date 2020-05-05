@@ -74,19 +74,23 @@ def fix_up_markdown_content(subdir, file_base_name, content):
         r"\| <a href='#snippet-[^']+' title='Navigate to start of snippet `[^']+`'>anchor</a></sup>",
         '', content)
 
+    content = fixup_code_languages_for_pygments(content)
+
+    # with open(file_base_name + '_hacked.md', 'w') as w:
+    #     w.write(content)
+
+    return content
+
+
+def fixup_code_languages_for_pygments(content):
     # Fix "WARNING: Pygments lexer name 'h' is not known"
     # Todo: find out how to fix this in conf.py - this is a horrible hack!
     content = content.replace(
         '\n```h\n',
         '\n```cpp\n')
-
     # Fix "WARNING: Pygments lexer name 'txt' is not known"
     # Text files don't need any markup
     content = content.replace(
         '\n```txt\n',
         '\n```\n')
-
-    # with open(file_base_name + '_hacked.md', 'w') as w:
-    #     w.write(content)
-
     return content
