@@ -10,12 +10,13 @@ def convertMarkdownDocsToRst():
     download_pandoc()
 
     # TODO make various edits to improve conversion, like removing the Table of Contents
+    print("Converting all .md files to .rst...")
     input_dir = '../../doc'
     output_dir = 'generated_docs'
     subdirs = ['', 'how_tos', 'explanations']
     base_names_to_skip = ['README', 'TemplatePage']
     for subdir in subdirs:
-        print(f'>>>> {subdir}')
+        # print(f'>>>> {subdir}')
         input_sub_dir = f'{input_dir}/{subdir}'
         if not os.path.isdir(input_sub_dir):
             print(f'Directory {input_sub_dir} does not exist. Skipping)')
@@ -31,7 +32,7 @@ def convertMarkdownDocsToRst():
 
             if file_base_name in base_names_to_skip:
                 continue
-            print(file_base_name, input_sub_dir, output_sub_dir)
+            # print(file_base_name, input_sub_dir, output_sub_dir)
             convert_markdown_to_restructured_text(subdir, file_base_name, input_sub_dir, output_sub_dir)
 
 
