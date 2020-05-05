@@ -52,9 +52,19 @@ def fix_up_markdown_content(subdir, file_base_name, content):
     # as if anyone edits the derived .rst file, it nicely
     # points to the master file.
 
+    content = fixup_boilerplate_text(content)
+    content = fixup_generated_snippets(content)
+    content = fixup_code_languages_for_pygments(content)
+
+    # with open(file_base_name + '_hacked.md', 'w') as w:
+    #     w.write(content)
+
+    return content
+
+
+def fixup_boilerplate_text(content):
     # Remove table of contents
     content = re.sub(r'<!-- toc -->.*<!-- endtoc -->', '', content, count=1, flags=re.DOTALL)
-
     # Remove 'Back to User Guide'
     back_to_user_guide = (
         '---\n'
@@ -62,14 +72,6 @@ def fix_up_markdown_content(subdir, file_base_name, content):
         '[Back to User Guide](/doc/README.md#top)\n'
     )
     content = content.replace(back_to_user_guide, '')
-
-    content = fixup_generated_snippets(content)
-
-    content = fixup_code_languages_for_pygments(content)
-
-    # with open(file_base_name + '_hacked.md', 'w') as w:
-    #     w.write(content)
-
     return content
 
 
