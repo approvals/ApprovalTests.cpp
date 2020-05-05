@@ -114,7 +114,7 @@ To refer to the next release, use 'v.x.y.z', and make sure that there is a step 
 
 **Using the template page**
 
-If creating a new Markdown page, please make a copy of [doc/mdsource/TemplatePage.source.md](/doc/mdsource/TemplatePage.source.md#top).
+If creating a new Markdown page, please make a copy of [doc/mdsource/TemplatePage.source.md](https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/master/doc/mdsource/TemplatePage.source.md#top).
 This contains some boilerplate text which is tedious to create by hand.
 
 The new file needs to be in a `mdsource` sub-directory.
