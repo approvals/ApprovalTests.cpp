@@ -61,12 +61,12 @@ class HyperlinkUpdatingTestCase(unittest.TestCase):
             '',
             'CustomComparators')
 
-    # def test_multiple_links_on_one_line(self):
-    #     self.check(
-    #         r'See [Target 1](/doc/Doc1.md#target1) join1 [Target 2](/doc/Doc2.md#target3) join2 [Target 3](/doc/Doc3.md#target3).',
-    #         r'See [Target 1](Doc1.html#target1) join1 [Target 2](Doc2.html#target3) join2 [Target 3](Doc3.html#target3).',
-    #         '',
-    #         'CustomComparators')
+    def test_multiple_links_on_one_line(self):
+        self.check(
+            r'See [Target 1](/doc/Doc1.md#target1) join1 [Target 2](/doc/Doc2.md#target3) join2 [Target 3](/doc/Doc3.md#target3).',
+            r'See [Target 1](Doc1.html#target1) join1 [Target 2](Doc2.html#target3) join2 [Target 3](Doc3.html#target3).',
+            '',
+            'CustomComparators')
 
     def test_file_in_doc_links_to_top_in_file_outside_doc(self):
         # self.check(
