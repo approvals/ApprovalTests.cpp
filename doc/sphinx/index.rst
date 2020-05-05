@@ -237,16 +237,16 @@ C++ Reference
 This section contains a growing list of pages documenting the ApprovalTests.cpp API. It may be useful to see what methods, and overloads, are available. It is very short on descriptive text, as we focus our efforts on the documentation above.
 
 * **Fundamentals**:
-  :doc:`approving` |
-  :doc:`core`
+  :doc:`api/approving` |
+  :doc:`api/core`
 
 .. toctree::
    :maxdepth: 1
    :hidden:
    :caption: C++ Reference
 
-   approving
-   core
+   api/approving
+   api/core
 
 Code Index
 ----------
