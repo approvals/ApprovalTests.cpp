@@ -65,6 +65,7 @@ def fix_up_markdown_content(subdir, file_base_name, content):
 def fixup_boilerplate_text(content):
     # Remove table of contents
     content = re.sub(r'<!-- toc -->.*<!-- endtoc -->', '', content, count=1, flags=re.DOTALL)
+
     # Remove 'Back to User Guide'
     back_to_user_guide = (
         '---\n'
@@ -101,6 +102,7 @@ def fixup_code_languages_for_pygments(content):
     content = content.replace(
         '\n```h\n',
         '\n```cpp\n')
+
     # Fix "WARNING: Pygments lexer name 'txt' is not known"
     # Text files don't need any markup
     content = content.replace(
