@@ -119,16 +119,8 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
     # content = re.sub(
     #     r".*\.md#top",
     #     r"", content)
-    # TODO  This is only correct for links in files that are in the same
-    #       level that this file is in.
-    #       For example, how_tos/TestContainerContents.html links to
-    #       /doc/ToString.md#top - which should be converted to
-    #       ../ToString.html - but gets converted to ToString.html
-    #       which is then not found.
     # TODO  Convert any links to 'TemplatePage.source.md' to links
     #       on the github site
-    # TODO  Also pick up anchors other than '#top', e.g.
-    #       'Configuration.md#using-sub-directories-for-approved-files'
     # TODO  Links to non-markdown files should go to the github website, e.g.
     #       [scripts/check_links.sh](/scripts/check_links.sh)
     # TODO  Links to .md files outside of the doc directory, or README
