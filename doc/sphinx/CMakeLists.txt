@@ -25,6 +25,9 @@ add_custom_target(Sphinx ALL DEPENDS ${SPHINX_INDEX_FILE} Doxygen)
 
 # If any .source.md files have been changed, rerun mdsnippets
 # TODO Also add dependency on files containing any snippets
+# TODO If I "Rebuild 'Sphinx'", the build fails after running mdsnippets.
+#      I think it is because it removes the generated .md files, and then
+#      tries to convert .md to .rst - and then runs mdsnippets.
 list(GET APPROVAL_TESTS_GEN_DOC_MD_FILES 0 FIRST_GENERATED_MD_FILE)
 add_custom_command(OUTPUT ${FIRST_GENERATED_MD_FILE}
         COMMAND mdsnippets
