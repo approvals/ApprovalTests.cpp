@@ -142,14 +142,14 @@ The only solution we have found is to put your build outputs in a directory outs
 
 One way to do this is to edit your `CMakeSettings.json` file, and change all pairs of lines like this:
 
-```json
+```
       "buildRoot": "${projectDir}\\out\\build\\${name}",
       "installRoot": "${projectDir}\\out\\install\\${name}",
 ```
 
 To something like this (where you change `MyProjectName` to the actual name of your project):
 
-```json
+```
       "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\MyProjectName\\build\\${name}",
       "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\MyProjectName\\install\\${name}",
 ```
