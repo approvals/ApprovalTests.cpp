@@ -1,4 +1,4 @@
-# Only regenerate Sphinx when:
+# TODO Only regenerate Sphinx when:
 # - Doxygen has rerun
 # - Our doc files have been updated
 # - The Sphinx config has been updated
@@ -16,6 +16,7 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         index.rst
         markdown_conversion.py
         ${DOXYGEN_INDEX_FILE}
+        ${APPROVAL_TESTS_ALL_DOC_MD_FILES}
         MAIN_DEPENDENCY ${SPHINX_SOURCE}/conf.py
         COMMENT "Generating documentation with Sphinx")
 
