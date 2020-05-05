@@ -12,26 +12,30 @@ def convertMarkdownDocsToRst():
     input_dir = '../../doc'
     output_dir = 'generated_docs'
     subdirs = ['', 'how_tos', 'explanations']
-    base_names_to_skip = ['README', 'TemplatePage']
     for subdir in subdirs:
         # print(f'>>>> {subdir}')
         input_sub_dir = f'{input_dir}/{subdir}'
         if not os.path.isdir(input_sub_dir):
             print(f'Directory {input_sub_dir} does not exist. Skipping)')
         output_sub_dir = f'{output_dir}/{subdir}'
-        md_files = glob.glob(f'{input_sub_dir}/*.md')
-        if not md_files:
-            continue
-        if not os.path.isdir(output_sub_dir):
-            os.makedirs(output_sub_dir)
-        for file in md_files:
-            file_base_file = os.path.split(file)[1]
-            file_base_name = os.path.splitext(file_base_file)[0]
+        convert_all_markdown_files_in_dir(subdir, input_sub_dir, output_sub_dir)
 
-            if file_base_name in base_names_to_skip:
-                continue
-            # print(file_base_name, input_sub_dir, output_sub_dir)
-            convert_markdown_to_restructured_text(subdir, file_base_name, input_sub_dir, output_sub_dir)
+
+def convert_all_markdown_files_in_dir(subdir, input_sub_dir, output_sub_dir):
+    base_names_to_skip = ['README', 'TemplatePage']
+    md_files = glob.glob(f'{input_sub_dir}/*.md')
+    if not md_files:
+        return
+    if not os.path.isdir(output_sub_dir):
+        os.makedirs(output_sub_dir)
+    for file in md_files:
+        file_base_file = os.path.split(file)[1]
+        file_base_name = os.path.splitext(file_base_file)[0]
+
+        if file_base_name in base_names_to_skip:
+            continue
+        # print(file_base_name, input_sub_dir, output_sub_dir)
+        convert_markdown_to_restructured_text(subdir, file_base_name, input_sub_dir, output_sub_dir)
 
 
 def convert_markdown_to_restructured_text(subdir, file_base_name, input_dir, output_dir):
