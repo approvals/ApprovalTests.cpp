@@ -19,12 +19,12 @@ class HyperlinkUpdatingTestCase(unittest.TestCase):
             '',
             'CustomComparators')
 
-    # def test_file_in_subdir_links_to_file_in_dir_above(self):
-    #     self.check(
-    #         r'See [Target 1](/doc/Doc1.md#target1).',
-    #         r'See [Target 1](../Doc1.html#target1).',
-    #         'subdir',
-    #         'CustomComparators')
+    def test_file_in_subdir_links_to_file_in_dir_above(self):
+        self.check(
+            r'See [Target 1](/doc/Doc1.md#target1).',
+            r'See [Target 1](../Doc1.html#target1).',
+            'subdir',
+            'CustomComparators')
 
     def test_file_in_parent_dir_links_to_file_in_subdir(self):
         self.check(
@@ -33,12 +33,20 @@ class HyperlinkUpdatingTestCase(unittest.TestCase):
             '',
             'CustomComparators')
 
-    # def test_file_in_one_subdir_links_to_file_in_different_subdir(self):
-    #     self.check(
-    #         r'See [Target 1](/doc/subdir1/Doc1.md#target1).',
-    #         r'See [Target 1](../subdir1/Doc1.html#target1).',
-    #         'subdir2',
-    #         'CustomComparators')
+    def test_file_in_one_subdir_links_to_file_in_different_subdir(self):
+        self.check(
+            r'See [Target 1](/doc/subdir1/Doc1.md#target1).',
+            r'See [Target 1](../subdir1/Doc1.html#target1).',
+            'subdir2',
+            'CustomComparators')
+
+    def test_link_to_doc_directory(self):
+        # For now, this will be unchanged. Eventually it will point to github
+        self.check(
+            r'[doc](/doc/).',
+            r'[doc](/doc/).',
+            'subdir2',
+            'CustomComparators')
 
     # def test_multiple_links_on_one_line(self):
     #     self.check(

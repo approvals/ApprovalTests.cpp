@@ -154,7 +154,7 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
         if not full_url.startswith('/doc'):
             return full_match
         if '.md' not in full_url:
-            return
+            return full_match
 
         # Split the url and the anchor
         if '#' in full_url:
@@ -163,8 +163,12 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
             original_url = full_url
             original_anchor = ''
 
-        new_url = original_url.replace('/doc/', '')
+        current_path = '/doc'
+        if subdir != '':
+            current_path = f'{current_path}/{subdir}'
+        new_url = os.path.relpath(original_url, current_path)
         new_url = new_url.replace('.md', '.html')
+
         new_anchor = original_anchor
         if new_anchor == 'top':
             new_anchor = ''
