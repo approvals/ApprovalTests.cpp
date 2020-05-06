@@ -39,15 +39,18 @@ If you are already using one of the above testing frameworks, that is the one yo
 
 If not, Approval Tests works well with all the above. Here are factors to consider.
 
-| Framework    |       Minimum C++ Version        | Ease of setup                                                | IDE Integration       | Compile and link time             |
-| ------------ | :------------------------------: | ------------------------------------------------------------ | --------------------- | --------------------------------- |
-| Catch2       |              C++11               | Very easy (single-header). [StarterProject](https://github.com/approvals/ApprovalTests.Cpp.StarterProject) | Widely supported      | Not bad - has options to speed up |
-| doctest      |              C++11               | Very easy (single-header)                                    | Unknown               | Fast                              |
-| Google Test  |              C++11               | Difficult                                                    | Very widely supported | Fast                              |
-| Boost.Test   |              C++11               | Very easy (if you already have boost)                        | Unknown               | Fast                              |
-| \[Boost\].UT | C++20 <sup>[1](#footnote1)</sup> | Very easy (single-header)                                    | Unknown               | Fast                              |
+| Framework    |  Min C++  | Ease of setup                         | IDE Support           | Build time  |
+| ------------ | :-------: | ------------------------------------- | --------------------- | ----------- |
+| Catch2       |   C++11   | Very easy [1], [2]                    | Widely supported      | Not bad [3] |
+| doctest      |   C++11   | Very easy [1]                         | Unknown               | Fast        |
+| Google Test  |   C++11   | Difficult                             | Very widely supported | Fast        |
+| Boost.Test   |   C++11   | Very easy (if you already have boost) | Unknown               | Fast        |
+| \[Boost\].UT | C++20 [4] | Very easy [1]                         | Unknown               | Fast        |
 
-<a name="footnote1">1</a>: \[Boost\].UT works with C++17, but the ApprovalTests interface to that library depends on [std::source_location](https://en.cppreference.com/w/cpp/utility/source_location), which is a C++ 20 feature. 
+1. Approval Tests.cpp is [released](https://github.com/approvals/ApprovalTests.cpp/releases) as a single header file
+2. See the [Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
+3. Catch2 has [options to speed up its builds](https://github.com/catchorg/Catch2/blob/master/docs/slow-compiles.md)
+4. \[Boost\].UT works with C++17, but the ApprovalTests interface to that library depends on [std::source_location](https://en.cppreference.com/w/cpp/utility/source_location), which is a C++ 20 feature. 
 
 ---
 
