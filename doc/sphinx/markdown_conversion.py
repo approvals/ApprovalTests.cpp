@@ -88,6 +88,16 @@ def fixup_generated_snippets(content):
     by mdsnippets, to improve rendering by Sphinx
     """
 
+    # Remove lines like: <!-- snippet: verify_exception_message_example -->
+    content = re.sub(
+        r"<!-- snippet: .* -->\n",
+        r"", content)
+
+    # Remove lines like: <a id='snippet-verify_exception_message_example'/></a>
+    content = re.sub(
+        r"<a id='snippet-.*'/></a>\n",
+        r"", content)
+
     # Remove 'snippet source' links from all code snippets
     content = re.sub(
         r"<sup><a href='([^']+)' title='File snippet `[^`]+` was extracted from'>snippet source</a> ",
@@ -97,6 +107,8 @@ def fixup_generated_snippets(content):
     content = re.sub(
         r"\| <a href='#snippet-[^']+' title='Navigate to start of snippet `[^']+`'>anchor</a></sup>",
         '', content)
+
+    content = content.replace('<!-- endsnippet -->\n', '')
 
     return content
 
