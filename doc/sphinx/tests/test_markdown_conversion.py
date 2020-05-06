@@ -8,65 +8,50 @@ class HyperlinkUpdatingTestCase(unittest.TestCase):
     def test_file_in_doc_links_to_top_in_file_in_doc(self):
         self.check(
             '["Target 1"](/doc/DisposableObjects.md#top)',
-            '["Target 1"](DisposableObjects.html)',
-            '',
-            'CustomComparators')
+            '["Target 1"](DisposableObjects.html)')
 
     def test_anchor_is_not_top(self):
         self.check(
             r'[requirements for using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#requirements).',
-            r'[requirements for using Approval Tests With \[Boost\].UT](UsingUT.html#requirements).',
-            '',
-            'CustomComparators')
+            r'[requirements for using Approval Tests With \[Boost\].UT](UsingUT.html#requirements).')
 
     def test_file_in_subdir_links_to_file_in_dir_above(self):
         self.check(
             r'See [Target 1](/doc/Doc1.md#target1).',
             r'See [Target 1](../Doc1.html#target1).',
-            'subdir',
-            'CustomComparators')
+            'subdir')
 
     def test_file_in_parent_dir_links_to_file_in_subdir(self):
         self.check(
             r'See [Target 1](/doc/subdir/Doc1.md#target1).',
-            r'See [Target 1](subdir/Doc1.html#target1).',
-            '',
-            'CustomComparators')
+            r'See [Target 1](subdir/Doc1.html#target1).')
 
     def test_file_in_one_subdir_links_to_file_in_different_subdir(self):
         self.check(
             r'See [Target 1](/doc/subdir1/Doc1.md#target1).',
             r'See [Target 1](../subdir1/Doc1.html#target1).',
-            'subdir2',
-            'CustomComparators')
+            'subdir2')
 
     def test_link_to_doc_directory(self):
         # For now, this will be unchanged. Eventually it will point to github
         self.check(
             r'[doc](/doc/).',
             r'[doc](/doc/).',
-            'subdir2',
-            'CustomComparators')
+            'subdir2')
 
     def test_anchor_with_multiple_non_standard_characters(self):
         self.check(
             r'[Existing Project - with your main()](/doc/UsingCatch.md#existing-project---with-your-main).',
-            r'[Existing Project - with your main()](UsingCatch.html#existing-project-with-your-main).',
-            '',
-            'CustomComparators')
+            r'[Existing Project - with your main()](UsingCatch.html#existing-project-with-your-main).')
 
         self.check(
             r'[TCR](/doc/Glossary.md#test--commit--revert-tcr).',
-            r'[TCR](Glossary.html#test-commit-revert-tcr).',
-            '',
-            'CustomComparators')
+            r'[TCR](Glossary.html#test-commit-revert-tcr).')
 
     def test_multiple_links_on_one_line(self):
         self.check(
             r'See [Target 1](/doc/Doc1.md#target1) join1 [Target 2](/doc/Doc2.md#target3) join2 [Target 3](/doc/Doc3.md#target3).',
-            r'See [Target 1](Doc1.html#target1) join1 [Target 2](Doc2.html#target3) join2 [Target 3](Doc3.html#target3).',
-            '',
-            'CustomComparators')
+            r'See [Target 1](Doc1.html#target1) join1 [Target 2](Doc2.html#target3) join2 [Target 3](Doc3.html#target3).')
 
     def test_file_in_doc_links_to_top_in_file_outside_doc(self):
         # self.check(
@@ -91,8 +76,8 @@ class HyperlinkUpdatingTestCase(unittest.TestCase):
     def test_link_to_gif(self):
         x = r'Tutorial ![Intro Graphic](/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)'
 
-    def check(self, content, expected, subdir, file_base_name):
-        actual = markdown_conversion.fixup_markdown_hyperlinks(content, subdir, file_base_name)
+    def check(self, content, expected, subdir=''):
+        actual = markdown_conversion.fixup_markdown_hyperlinks(content, subdir, 'SomeDocFile')
         self.assertEqual(expected, actual)
 
 
