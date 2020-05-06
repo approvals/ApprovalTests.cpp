@@ -74,18 +74,15 @@ class HyperlinkUpdatingTestCase(unittest.TestCase):
 
     def test_link_that_is_already_a_hyperlink(self):
         # https:
-        self.check(
-            r'[Quickly Testing Legacy Code](https://youtu.be/dtm8V3TIB6k)',
+        self.check_unchanged(
             r'[Quickly Testing Legacy Code](https://youtu.be/dtm8V3TIB6k)')
 
         # http:
-        self.check(
-            r'[Quickly Testing Legacy Code](http://youtu.be/dtm8V3TIB6k)',
+        self.check_unchanged(
             r'[Quickly Testing Legacy Code](http://youtu.be/dtm8V3TIB6k)')
 
     def test_mailto_link(self):
-        self.check(
-            r'[Llewellyn](mailto:llewellyn.falco@gmail.com)',
+        self.check_unchanged(
             r'[Llewellyn](mailto:llewellyn.falco@gmail.com)')
 
     def test_link_to_png_image(self):
@@ -103,13 +100,16 @@ class HyperlinkUpdatingTestCase(unittest.TestCase):
             '')
 
     def test_to_anchor_in_same_document(self):
-        self.check(
-            r'[1](#footnote1)',
+        self.check_unchanged(
             r'[1](#footnote1)')
 
     def check(self, content, expected, subdir=''):
         actual = markdown_conversion.fixup_markdown_hyperlinks(content, subdir, 'SomeDocFile')
         self.assertEqual(expected, actual)
+
+    def check_unchanged(self, content, subdir=''):
+        actual = markdown_conversion.fixup_markdown_hyperlinks(content, subdir, 'SomeDocFile')
+        self.assertEqual(content, actual)
 
 
 if __name__ == '__main__':
