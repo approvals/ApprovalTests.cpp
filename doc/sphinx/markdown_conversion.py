@@ -138,11 +138,25 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
         full_match = matched_obj.group(0)
         full_url = matched_obj.group(1)
 
-        # Check if it is a kind of URL we know how to process:
+        # Check if it is a kind of URL will be embedded in Sphinx docs:
+        will_include_in_sphix_docs = True
         if not full_url.startswith('/doc'):
-            return full_match
+            will_include_in_sphix_docs = False
         if '.md' not in full_url:
-            return full_match
+            will_include_in_sphix_docs = False
+
+        if not will_include_in_sphix_docs:
+            if full_url.startswith('/'):
+                # It's an internal link, to a file or directory in our github repo
+                if full_url.endswith('/'):
+                    new_full_url = 'https://github.com/approvals/ApprovalTests.cpp/tree/master' + full_url[0:-1]
+                else:
+                    new_full_url = 'https://github.com/approvals/ApprovalTests.cpp/blob/master' + full_url
+                return f']({new_full_url})'
+            else:
+                # It's a link to somewhere else, e.g. http, mailto, or anchor ('#') in current document,
+                # so return it unchanged
+                return full_match
 
         assert 'TemplatePage.source.md' not in full_url
 
