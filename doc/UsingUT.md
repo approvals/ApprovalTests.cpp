@@ -13,10 +13,18 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [Introduction](#introduction)
   * [Requirements](#requirements)
-  * [Getting Started With \[Boost\].UT](#getting-started-with-boostut)
   * [Usage examples](#usage-examples)<!-- endtoc -->
 
+
+## Introduction
+
+The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework works well with Approval Tests.
+
+\[Boost\].UT is a single header/single module, macro-free μ(micro)/Unit Testing Framework that requires C++17 / C++20
+
+**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
 
 ## Requirements
 
@@ -36,14 +44,6 @@ It also requires:
 * A build that enables C++20 - for example, with: `set(CMAKE_CXX_STANDARD 20)`
 * A \[Boost\].UT version that is compatible with the version of ApprovalTests.cpp being used. See the version we test against: 
 [third_party/ut/include/boost/ut.hpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/third_party/ut/include/boost/ut.hpp)
-
-## Getting Started With \[Boost\].UT
-
-The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework works well with Approval Tests.
-
-\[Boost\].UT is a single header/single module, macro-free μ(micro)/Unit Testing Framework that requires C++17 / C++20
-
-**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
 
 ## Usage examples
 

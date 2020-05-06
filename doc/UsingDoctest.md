@@ -13,11 +13,20 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [Introduction](#introduction)
   * [Requirements](#requirements)
   * [Getting Started With doctest](#getting-started-with-doctest)
     * [New Project](#new-project)
     * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endtoc -->
 
+
+## Introduction
+
+The [doctest](https://github.com/onqtam/doctest) test framework works well with Approval Tests.
+
+**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
+
+Doctest is similar to Catch, but claims to give faster compilation times.
 
 ## Requirements
 
@@ -34,12 +43,6 @@ Approval Tests for doctest requires that a file called the following is found:
 Approval Tests needs doctest version 2.3.4 or above.
 
 ## Getting Started With doctest
-
-The [doctest](https://github.com/onqtam/doctest) test framework works well with Approval Tests.
-
-**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
-
-Doctest is similar to Catch, but claims to give faster compilation times.
 
 ### New Project
 

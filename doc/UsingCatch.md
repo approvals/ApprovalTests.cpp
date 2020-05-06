@@ -13,12 +13,21 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [Introduction](#introduction)
   * [Requirements](#requirements)
   * [Getting Started With Catch2](#getting-started-with-catch2)
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
     * [Existing Project - with CATCH_CONFIG_MAIN](#existing-project---with-catch_config_main)
     * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endtoc -->
+
+## Introduction
+
+The [Catch2](https://github.com/catchorg/Catch2) test framework works well with Approval Tests.
+
+This section describes the various ways of using Approval Tests with Catch2.
+
+**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
 
 ## Requirements
 
@@ -35,12 +44,6 @@ Approval Tests requires that a file called the following is found:
 (Before v7.0.0, it required `Catch.hpp`)
 
 ## Getting Started With Catch2
-
-The [Catch2](https://github.com/catchorg/Catch2) test framework works well with Approval Tests.
-
-This section describes the various ways of using Approval Tests with Catch2.
-
-**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
 
 ### Starter Project
 

@@ -5,13 +5,15 @@
 toc
 
 
-## Getting Started With Google Test
+## Introduction
 
 The [Google Test](https://github.com/google/googletest) test framework works well with Approval Tests.
 
 This section describes the various ways of using Approval Tests with Google Test.
 
 include: include_ninja_warning_note
+
+## Getting Started With Google Test
 
 ### Starter Project
 

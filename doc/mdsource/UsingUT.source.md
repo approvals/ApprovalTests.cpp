@@ -6,6 +6,14 @@
 toc
 
 
+## Introduction
+
+The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework works well with Approval Tests.
+
+\[Boost\].UT is a single header/single module, macro-free μ(micro)/Unit Testing Framework that requires C++17 / C++20
+
+include: include_ninja_warning_note
+
 ## Requirements
 
 Approval Tests for \[Boost\].UT requires that a file called the following is found:
@@ -18,14 +26,6 @@ It also requires:
 * A build that enables C++20 - for example, with: `set(CMAKE_CXX_STANDARD 20)`
 * A \[Boost\].UT version that is compatible with the version of ApprovalTests.cpp being used. See the version we test against: 
 [third_party/ut/include/boost/ut.hpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/third_party/ut/include/boost/ut.hpp)
-
-## Getting Started With \[Boost\].UT
-
-The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework works well with Approval Tests.
-
-\[Boost\].UT is a single header/single module, macro-free μ(micro)/Unit Testing Framework that requires C++17 / C++20
-
-include: include_ninja_warning_note
 
 ## Usage examples
 
