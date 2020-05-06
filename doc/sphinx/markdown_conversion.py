@@ -35,10 +35,10 @@ def convert_all_markdown_files_in_dir(subdir, input_sub_dir, output_sub_dir):
         if file_base_name in base_names_to_skip:
             continue
         # print(file_base_name, input_sub_dir, output_sub_dir)
-        convert_markdown_to_restructured_text(subdir, file_base_name, input_sub_dir, output_sub_dir)
+        convert_markdown_file_to_restructured_text(subdir, file_base_name, input_sub_dir, output_sub_dir)
 
 
-def convert_markdown_to_restructured_text(subdir, file_base_name, input_dir, output_dir):
+def convert_markdown_file_to_restructured_text(subdir, file_base_name, input_dir, output_dir):
     with open(f'{input_dir}/{file_base_name}.md') as markdown_file:
         content = markdown_file.read()
 
