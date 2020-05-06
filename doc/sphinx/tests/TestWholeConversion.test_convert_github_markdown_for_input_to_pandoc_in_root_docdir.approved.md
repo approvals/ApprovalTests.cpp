@@ -5,8 +5,6 @@ Source File: /doc/mdsource/Tutorial.source.md
 To change this file edit the source file and then execute ./run_markdown_templates.sh.
 -->
 
-<a id="top"></a>
-
 # Test cases
 
 

@@ -66,6 +66,9 @@ def fix_up_markdown_content(subdir, file_base_name, content):
 
 
 def fixup_boilerplate_text(content):
+    # Remove 'top' anchor (and the following blank line)
+    content = content.replace('<a id="top"></a>\n\n', '')
+
     # Remove table of contents
     content = re.sub(r'<!-- toc -->.*<!-- endtoc -->', '', content, count=1, flags=re.DOTALL)
 
