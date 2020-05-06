@@ -42,9 +42,7 @@ def convert_markdown_file_to_restructured_text(subdir, file_base_name, input_dir
     with open(f'{input_dir}/{file_base_name}.md') as markdown_file:
         content = markdown_file.read()
 
-    converted_markdown = fix_up_markdown_content(subdir, file_base_name, content)
-
-    converted_rst = pypandoc.convert_text(''.join(converted_markdown), 'rst', format='md')
+    converted_markdown, converted_rst = convert_markdown_text_to_restructured_text(content, file_base_name, subdir)
 
     # Temporary code for reviewing changes made, on all input files:
     with open(file_base_name + '_hacked.md', 'w') as w:
@@ -52,6 +50,12 @@ def convert_markdown_file_to_restructured_text(subdir, file_base_name, input_dir
 
     with open(f'{output_dir}/{file_base_name}.rst', 'w') as rst_output:
         rst_output.write(converted_rst)
+
+
+def convert_markdown_text_to_restructured_text(content, file_base_name, subdir):
+    converted_markdown = fix_up_markdown_content(subdir, file_base_name, content)
+    converted_rst = pypandoc.convert_text(''.join(converted_markdown), 'rst', format='md')
+    return converted_markdown, converted_rst
 
 
 def fix_up_markdown_content(subdir, file_base_name, content):
