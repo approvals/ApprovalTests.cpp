@@ -12,12 +12,15 @@ using namespace ApprovalTests;
 // operator<<(std::ostream&)
 struct OStreamPrintable
 {
-    friend std::ostream& operator<<(std::ostream& os,
-                                    const OStreamPrintable& /*printable*/)
+    int field1_ = 0;
+
+    // begin-snippet: customising_to_string_with_ostream_operator
+    friend std::ostream& operator<<(std::ostream& os, const OStreamPrintable& printable)
     {
-        os << "From ostream\n";
+        os << "From ostream: " << printable.field1_ << '\n';
         return os;
     }
+    // end-snippet
 };
 
 TEST_CASE("Test toString from ostream operator")
@@ -30,12 +33,13 @@ TEST_CASE("Test toString from ostream operator")
 // StringMaker
 struct StringMakerPrintable
 {
+    int field1_ = 0;
 };
 
 template <>
-std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& /*contents*/)
+std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& printable)
 {
-    return "From StringMaker";
+    return "From StringMaker: " + std::to_string(printable.field1_);
 }
 
 TEST_CASE("Test toString from StringMaker")
@@ -57,14 +61,15 @@ TEST_CASE("Test Combinations inputs from StringMaker")
 // Template
 struct TemplatePrintable
 {
+    int field1_ = 0;
 };
 
 class CustomToStringClass
 {
 public:
-    template <typename T> static std::string toString(const T& /*value*/)
+    template <typename T> static std::string toString(const T& printable)
     {
-        return "From Template";
+        return "From Template: " + std::to_string(printable.field1_);
     }
 };
 

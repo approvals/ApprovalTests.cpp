@@ -1,2 +1,2 @@
-From ostream
+From ostream: 0
 
