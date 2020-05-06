@@ -48,3 +48,6 @@ Tutorial ![Intro Graphic](/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=tru
 
 Tutorial ![New Failure](/doc/images/tutorial/01_new_failure.png?raw=true)
 
+## Non-HTML links - should be unchanged
+
+[Llewellyn](mailto:llewellyn.falco@gmail.com)

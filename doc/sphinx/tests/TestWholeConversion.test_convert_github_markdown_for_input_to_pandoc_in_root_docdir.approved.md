@@ -48,3 +48,6 @@ Tutorial ![Intro Graphic](https://github.com/approvals/ApprovalTests.cpp/blob/ma
 
 Tutorial ![New Failure](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/tutorial/01_new_failure.png?raw=true)
 
+## Non-HTML links - should be unchanged
+
+[Llewellyn](mailto:llewellyn.falco@gmail.com)
