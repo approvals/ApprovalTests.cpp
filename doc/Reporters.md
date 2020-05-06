@@ -7,7 +7,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 <a id="top"></a>
 
-# Reporter
+# Reporters
 
 
 <!-- toc -->
