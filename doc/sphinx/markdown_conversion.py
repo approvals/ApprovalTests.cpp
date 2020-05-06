@@ -119,7 +119,7 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
             (  # start capturing the destination
             [^() ]+ # the destination
             )  # finish capturing the desintation
-            \) # the escaled ) at the end of the destination""", re.VERBOSE)
+            \) # the escaped ) at the end of the destination""", re.VERBOSE)
 
     def convert_github_markdown_url_to_sphinx(matched_obj):
         full_match = matched_obj.group(0)
