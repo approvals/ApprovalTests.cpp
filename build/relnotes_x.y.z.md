@@ -2,13 +2,13 @@ See the [v.x.y.z milestone](https://github.com/approvals/ApprovalTests.cpp/miles
 
 * **Breaking changes**
     * If you happen to have specialised StringUtils::toString(), you would now need to specialize StringMaker::toString() instead.
+        * Note: this was previously unsupported behavior, so we are not bumping the major version number.
         * Here is how to update your code:
 ```diff
 template <>
 -std::string ApprovalTests::StringUtils::toString(const StringMakerPrintable& printable)
 +std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& printable)
 ```
-        * Note: this was previously unsupported behavior, so we are not bumping the major version number.
 * **New features**
     * New mechanics for [String conversions](/doc/ToString.md#top)
         * The class `Approvals` is now an alias for `TApprovals< ToStringCompileTimeOptions< StringMaker > >`
