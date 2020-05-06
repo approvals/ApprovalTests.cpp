@@ -32,8 +32,7 @@ class TestWholeConversion(unittest.TestCase):
     def test_convert_github_markdown_for_input_to_pandoc_in_root_docdir(self) -> None:
         with open('test_markdown_conversion_input.md') as f:
             input = f.read()
-        converted = markdown_conversion.fix_up_markdown_content(
-            '', 'test_markdown_conversion_input', input)
+        converted = markdown_conversion.fix_up_markdown_content('', input)
 
         namer = Namer('.md')
 
