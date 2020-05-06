@@ -186,9 +186,7 @@ A wide table
 | [Boost].UT  | C++20 [4] | Very easy [1]      | Unknown               | Fast        |
 +-------------+-----------+--------------------+-----------------------+-------------+
 
-1. Approval Tests.cpp is
-   `released <https://github.com/approvals/ApprovalTests.cpp/releases>`__
-   as a single header file
+1. Released as a single header file
 2. See the `Starter
    Project <https://github.com/approvals/ApprovalTests.Cpp.StarterProject>`__
 3. Catch2 has `options to speed up its
