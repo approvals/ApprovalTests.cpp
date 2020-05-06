@@ -194,6 +194,15 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
 
     content = hyperlink_regex.sub(convert_github_markdown_url_to_sphinx, content)
 
+    # Revert a very specific unwanted edit in a markdown code block,
+    # in the Contributing page.
+    # This is supposed to demonstrate how to correctly express links to
+    # other markdown documentation pages, and so it should appear
+    # unchanged in the Sphinx documentation.
+    content = content.replace(
+        '* [this link will work everywhere](Reporters.html)',
+        '* [this link will work everywhere](/doc/Reporters.md#top)')
+
     # TODO  Print out any remaining lines that contain ](/
     # TODO  Print out a list of all adjusted URLs so that I can test them
     lines = content.splitlines()

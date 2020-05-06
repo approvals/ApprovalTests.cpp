@@ -70,6 +70,24 @@ Tutorial ![New Failure](/doc/images/tutorial/01_new_failure.png?raw=true)
 
 [Llewellyn](mailto:llewellyn.falco@gmail.com)
 
+## Do not change specific links that are in code blocks
+
+```md
+* [this link will work everywhere](/doc/Reporters.md#top)
+```
+
+Not this:
+
+```md
+* [this link is wrong](doc/Reporters.md#top)
+```
+
+And not this:
+
+```md
+* [this link is wrong](Reporters.md#top)
+```
+
 ## Test code snippet - linking to lines in a file
 
 <!-- snippet: verify_exception_message_example -->
