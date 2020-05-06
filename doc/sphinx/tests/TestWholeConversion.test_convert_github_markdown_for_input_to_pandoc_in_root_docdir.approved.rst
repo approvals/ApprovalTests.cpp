@@ -119,6 +119,13 @@ From Setup.md
 
 ```tests/NewTest.cpp`` <https://github.com/approvals/ApprovalTests.cpp.StarterProject/blob/master/tests/NewTest.cpp>`__
 
+Multiple on one line
+
+```ExternalProject``
+module <https://cmake.org/cmake/help/latest/module/ExternalProject.html>`__
+and
+```add_subdirectory()`` <https://cmake.org/cmake/help/latest/command/add_subdirectory.html>`__.
+
 Test code snippet - linking to lines in a file
 ----------------------------------------------
 
