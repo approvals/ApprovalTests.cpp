@@ -88,4 +88,19 @@ input.value2 => placeholder
 (See [snippet source](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/approval_tests/VectorTests.VerifyAllStartingPoint.approved.txt#L1-L6))
 <!-- endsnippet -->
 
+## Test changes made to satisfy Pygments
+
+### Convert h to cpp
+
+```cpp
+class Wibble
+{
+};
+```
+
+### Remove txt
+
+```
+I am some text
+```
 

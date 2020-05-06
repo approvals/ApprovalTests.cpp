@@ -95,6 +95,21 @@ input.value2 => placeholder
 <sup><a href='/tests/DocTest_Tests/approval_tests/VectorTests.VerifyAllStartingPoint.approved.txt#L1-L6' title='File snippet `VectorTests.VerifyAllStartingPoint.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-VectorTests.VerifyAllStartingPoint.approved.txt' title='Navigate to start of snippet `VectorTests.VerifyAllStartingPoint.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
+## Test changes made to satisfy Pygments
+
+### Convert h to cpp
+
+```h
+class Wibble
+{
+};
+```
+
+### Remove txt
+
+```txt
+I am some text
+```
 
 ---
 
