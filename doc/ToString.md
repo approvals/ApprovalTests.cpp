@@ -13,16 +13,34 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [How](#how)
-  * [Design](#design)
-    * [Composability](#composability)
-    * [Lists](#lists)
-    * [Tools](#tools)<!-- endtoc -->
+  * [Introduction](#introduction)
+  * [How Approval Tests converts your objects to strings](#how-approval-tests-converts-your-objects-to-strings)
+  * [Pass in a string](#pass-in-a-string)
+  * [Write a custom std::ostream operator (`<<`)](#write-a-custom-stdostream-operator-)
+  * [Specialize StringMaker](#specialize-stringmaker)
+  * [Use `TApprovals<YourStringConvertingClass>`](#use-tapprovalsyourstringconvertingclass)<!-- endtoc -->
 
+## Introduction
 
-When you use Approval tests, the results of the things you are testing are going to be stored on disk. It is good if you can diff the files, to gain an understanding of what is created and how they change. Mainly this is done by creating strings.
+When you use Approval tests, any object you pass in is going to be converted to a string. This is how Approval Tests does that, and how you can customize that behavior.
 
-## How
+## How Approval Tests converts your objects to strings
+
+The process from your input to the final output looks like:
+
+1. Input
+1. The TApprovals class has a template parameter StringConverter
+1. Approvals uses the default StringMaker
+1. StringMaker converts via std::ostream operator (<<)
+
+You can customize the string at any of these 4 points. 
+
+## Pass in a string
+
+Approval Tests can take a string, so it can be simple to simply create that string before you call `verify()`.
+This has the advantage of being straight-forward, but won't interact well with calls like `verifyAll()` or Combination Approvals.
+
+## Write a custom std::ostream operator (`<<`)
 
 This is often done by providing an output operator (`<<`) for types you wish to test.
 
@@ -96,90 +114,71 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead")
 
 **Note** The output operator (`<<`) needs to be declared before Approval Tests. Usually this is handled by putting it in its own header file, and including that at the top of the test source code.
 
-## Design
+## Specialize StringMaker
 
-If your code already has output operators, then go ahead and use them in Approvals.
+If you want to use something other than an output operator (`<<`), one option is to create a specific specialization for StringMaker, for your specific type.
 
-If your code doesn't have output operators already, then here are some general guidelines to consider, to generate strings that work well with Approvals.
+Here is an example:
 
-The general design rules when writing:
-
-1. Objects print their relevant data
-2. The data is consistent between runs (no times, pointers, random)
-3. The data is easy to read
-
-Note: for the same data, different tests might need different string conversions, to satisfy these rules.
-
-Method | Example | Advantages | Disadvantages
------------- | ------------- | ------------- | -------------
-XML | `<type> xml </type>` | Works with standard tools | Very verbose; hard to scan by eye
-JSON | `{"type":"json"}`  | Works with standard tools; less verbose | &nbsp;
-YAML | `type:yaml` | Works with standard tools; less verbose | Indentation matters
-simple | `(type: simple)` |   &nbsp;  | It's a custom format
-simpler | `(simpler)` | &nbsp; | Does not include meta data
-formatted | `(type)=(formatted)` | Works well for many lines of the same type of data, for example an array of rectangles | &nbsp;
-tab-separated | &nbsp; | Works with Excel and Markdown; works well for many lines of the same data | &nbsp;
-comma-separated | `type, csv` | Works with Excel | Works with Excel
-
-### Composability
-
-TODO Explain things like:
-
-* When are things very non-composable, e.g. hand-coded YAML
-
-### Lists
-
-Some formats will be more readable when you are writing lists of objects.
-Here's an example of verifing a list of rectangles
-
-<!-- snippet: verify_list -->
-<a id='snippet-verify_list'/></a>
+<!-- snippet: customising_to_string_with_string_maker_specialization -->
+<a id='snippet-customising_to_string_with_string_maker_specialization'/></a>
 ```cpp
-Approvals::verifyAll("rectangles", getRectangles());
+template <>
+std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& printable)
+{
+    return "From StringMaker: " + std::to_string(printable.field1_);
+}
 ```
-<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L32-L34' title='File snippet `verify_list` was extracted from'>snippet source</a> | <a href='#snippet-verify_list' title='Navigate to start of snippet `verify_list`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L39-L45' title='File snippet `customising_to_string_with_string_maker_specialization` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_string_maker_specialization' title='Navigate to start of snippet `customising_to_string_with_string_maker_specialization`'>anchor</a></sup>
 <!-- endsnippet -->
 
-Notice how this:
+## Use `TApprovals<YourStringConvertingClass>`
 
-<!-- snippet: ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt -->
-<a id='snippet-ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt'/></a>
-```txt
-rectangles
+If you want to change a broader category of how strings are created, you can create your own string-maker class,
+and tell Approvals to use it, using the template mechanism.
 
+Here is how you create your own string-maker class:
 
-[0] = [x: 4 y: 50 width: 100 height: 61]
-[1] = [x: 50 y: 5200 width: 400 height: 62]
-[2] = [x: 60 y: 3 width: 7 height: 63]
-
+<!-- snippet: customising_to_string_with_custom_to_string_class -->
+<a id='snippet-customising_to_string_with_custom_to_string_class'/></a>
+```cpp
+class CustomToStringClass
+{
+public:
+    template <typename T> static std::string toString(const T& printable)
+    {
+        return "From Template: " + std::to_string(printable.field1_);
+    }
+};
 ```
-<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L7' title='File snippet `ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt' title='Navigate to start of snippet `ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L69-L78' title='File snippet `customising_to_string_with_custom_to_string_class` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class`'>anchor</a></sup>
 <!-- endsnippet -->
 
-compares to this:
+However, this alone will not do anything. You now need to call a variation of Approvals that uses it.
+You can do this directly by:
 
-<!-- snippet: ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt -->
-<a id='snippet-ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt'/></a>
-```txt
-rectangles
-
-
-(x,y,width,height) = (4,50,100,61)
-(x,y,width,height) = (50,5200,400,62)
-(x,y,width,height) = (60,3,7,63)
-
+<!-- snippet: customising_to_string_with_custom_to_string_class_usage1 -->
+<a id='snippet-customising_to_string_with_custom_to_string_class_usage1'/></a>
+```cpp
+ApprovalTests::TApprovals<
+    ApprovalTests::ToStringCompileTimeOptions<CustomToStringClass>>::verify(p);
 ```
-<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L7' title='File snippet `ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt' title='Navigate to start of snippet `ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L83-L86' title='File snippet `customising_to_string_with_custom_to_string_class_usage1` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage1' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage1`'>anchor</a></sup>
 <!-- endsnippet -->
 
-### Tools
+Or you can override the default Approvals template to use your customisation:
 
-TODO Explain things like:
+<!-- snippet: customising_to_string_with_custom_to_string_class_usage2 -->
+<a id='snippet-customising_to_string_with_custom_to_string_class_usage2'/></a>
+```cpp
+using MyApprovals = ApprovalTests::TApprovals<
+    ApprovalTests::ToStringCompileTimeOptions<CustomToStringClass>>;
 
-* Using Excel to create graphs
-* Loading run-time data from captured approval results
-* Querying logs from JSON output
-* IExecutable queries
+MyApprovals::verify(p);
+```
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L92-L97' title='File snippet `customising_to_string_with_custom_to_string_class_usage2` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage2' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage2`'>anchor</a></sup>
+<!-- endsnippet -->
+
 
 ---
 

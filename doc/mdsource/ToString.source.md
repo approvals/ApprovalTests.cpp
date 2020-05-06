@@ -5,10 +5,27 @@
 
 toc
 
+## Introduction
 
-When you use Approval tests, the results of the things you are testing are going to be stored on disk. It is good if you can diff the files, to gain an understanding of what is created and how they change. Mainly this is done by creating strings.
+When you use Approval tests, any object you pass in is going to be converted to a string. This is how Approval Tests does that, and how you can customize that behavior.
 
-## How
+## How Approval Tests converts your objects to strings
+
+The process from your input to the final output looks like:
+
+1. Input
+1. The TApprovals class has a template parameter StringConverter
+1. Approvals uses the default StringMaker
+1. StringMaker converts via std::ostream operator (<<)
+
+You can customize the string at any of these 4 points. 
+
+## Pass in a string
+
+Approval Tests can take a string, so it can be simple to simply create that string before you call `verify()`.
+This has the advantage of being straight-forward, but won't interact well with calls like `verifyAll()` or Combination Approvals.
+
+## Write a custom std::ostream operator (`<<`)
 
 This is often done by providing an output operator (`<<`) for types you wish to test.
 
@@ -28,60 +45,32 @@ snippet: to_string_wrapper_example
 
 **Note** The output operator (`<<`) needs to be declared before Approval Tests. Usually this is handled by putting it in its own header file, and including that at the top of the test source code.
 
-## Design
+## Specialize StringMaker
 
-If your code already has output operators, then go ahead and use them in Approvals.
+If you want to use something other than an output operator (`<<`), one option is to create a specific specialization for StringMaker, for your specific type.
 
-If your code doesn't have output operators already, then here are some general guidelines to consider, to generate strings that work well with Approvals.
+Here is an example:
 
-The general design rules when writing:
+snippet: customising_to_string_with_string_maker_specialization
 
-1. Objects print their relevant data
-2. The data is consistent between runs (no times, pointers, random)
-3. The data is easy to read
+## Use `TApprovals<YourStringConvertingClass>`
 
-Note: for the same data, different tests might need different string conversions, to satisfy these rules.
+If you want to change a broader category of how strings are created, you can create your own string-maker class,
+and tell Approvals to use it, using the template mechanism.
 
-Method | Example | Advantages | Disadvantages
------------- | ------------- | ------------- | -------------
-XML | `<type> xml </type>` | Works with standard tools | Very verbose; hard to scan by eye
-JSON | `{"type":"json"}`  | Works with standard tools; less verbose | &nbsp;
-YAML | `type:yaml` | Works with standard tools; less verbose | Indentation matters
-simple | `(type: simple)` |   &nbsp;  | It's a custom format
-simpler | `(simpler)` | &nbsp; | Does not include meta data
-formatted | `(type)=(formatted)` | Works well for many lines of the same type of data, for example an array of rectangles | &nbsp;
-tab-separated | &nbsp; | Works with Excel and Markdown; works well for many lines of the same data | &nbsp;
-comma-separated | `type, csv` | Works with Excel | Works with Excel
+Here is how you create your own string-maker class:
 
-### Composability
+snippet: customising_to_string_with_custom_to_string_class
 
-TODO Explain things like:
+However, this alone will not do anything. You now need to call a variation of Approvals that uses it.
+You can do this directly by:
 
-* When are things very non-composable, e.g. hand-coded YAML
+snippet: customising_to_string_with_custom_to_string_class_usage1
 
-### Lists
+Or you can override the default Approvals template to use your customisation:
 
-Some formats will be more readable when you are writing lists of objects.
-Here's an example of verifing a list of rectangles
+snippet: customising_to_string_with_custom_to_string_class_usage2
 
-snippet: verify_list
-
-Notice how this:
-
-snippet: ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt
-
-compares to this:
-
-snippet: ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt
-
-### Tools
-
-TODO Explain things like:
-
-* Using Excel to create graphs
-* Loading run-time data from captured approval results
-* Querying logs from JSON output
-* IExecutable queries
 
 ---
 

@@ -36,11 +36,13 @@ struct StringMakerPrintable
     int field1_ = 0;
 };
 
+// begin-snippet: customising_to_string_with_string_maker_specialization
 template <>
 std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& printable)
 {
     return "From StringMaker: " + std::to_string(printable.field1_);
 }
+// end-snippet
 
 TEST_CASE("Test toString from StringMaker")
 {
@@ -64,6 +66,7 @@ struct TemplatePrintable
     int field1_ = 0;
 };
 
+// begin-snippet: customising_to_string_with_custom_to_string_class
 class CustomToStringClass
 {
 public:
@@ -72,19 +75,24 @@ public:
         return "From Template: " + std::to_string(printable.field1_);
     }
 };
+// end-snippet
 
 TEST_CASE("Test toString from Template")
 {
     TemplatePrintable p;
+    // begin-snippet: customising_to_string_with_custom_to_string_class_usage1
     ApprovalTests::TApprovals<
         ApprovalTests::ToStringCompileTimeOptions<CustomToStringClass>>::verify(p);
+    // end-snippet
 }
 
 TEST_CASE("Test toString from Template and using")
 {
+    TemplatePrintable p;
+    // begin-snippet: customising_to_string_with_custom_to_string_class_usage2
     using MyApprovals = ApprovalTests::TApprovals<
         ApprovalTests::ToStringCompileTimeOptions<CustomToStringClass>>;
 
-    TemplatePrintable p;
     MyApprovals::verify(p);
+    // end-snippet
 }
