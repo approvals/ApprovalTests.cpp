@@ -172,49 +172,42 @@ Remove txt
 A wide table
 ------------
 
-+----------+------------+----------+----------+----------+------------+
-| F        | Minimum    | Ease of  | IDE      | Compile  |            |
-| ramework | C++        | setup    | Int      | and link |            |
-|          | Version    |          | egration | time     |            |
-+==========+============+==========+==========+==========+============+
-| Catch2   | C++11      | Very     | Widely   | Not bad  |            |
-|          |            | easy     | s        | - has    |            |
-|          |            | (single- | upported | options  |            |
-|          |            | header). |          | to speed |            |
-|          |            | `S       |          | up       |            |
-|          |            | tarterPr |          |          |            |
-|          |            | oject <h |          |          |            |
-|          |            | ttps://g |          |          |            |
-|          |            | ithub.co |          |          |            |
-|          |            | m/approv |          |          |            |
-|          |            | als/Appr |          |          |            |
-|          |            | ovalTest |          |          |            |
-|          |            | s.Cpp.St |          |          |            |
-|          |            | arterPro |          |          |            |
-|          |            | ject>`__ |          |          |            |
-+----------+------------+----------+----------+----------+------------+
-| doctest  | C++11      | Very     | Unknown  | Fast     |            |
-|          |            | easy     |          |          |            |
-|          |            | (single  |          |          |            |
-|          |            | -header) |          |          |            |
-+----------+------------+----------+----------+----------+------------+
-| Google   | C++11      | D        | Very     | Fast     |            |
-| Test     |            | ifficult | widely   |          |            |
-|          |            |          | s        |          |            |
-|          |            |          | upported |          |            |
-+----------+------------+----------+----------+----------+------------+
-| Bo       | C++11      | Very     | Unknown  | Fast     |            |
-| ost.Test |            | easy (if |          |          |            |
-|          |            | you      |          |          |            |
-|          |            | already  |          |          |            |
-|          |            | have     |          |          |            |
-|          |            | boost)   |          |          |            |
-+----------+------------+----------+----------+----------+------------+
-| [B       | C++20      | Very     | Unknown  | Fast     |            |
-| oost].UT | \          | easy     |          |          |            |
-|          | `1 <#footn | (single  |          |          |            |
-|          | ote1>`__\  | -header) |          |          |            |
-+----------+------------+----------+----------+----------+------------+
++------------+---------------+------------+------------+------------+
+| Framework  | Minimum C++   | Ease of    | IDE        | Compile    |
+|            | Version       | setup      | I          | and link   |
+|            |               |            | ntegration | time       |
++============+===============+============+============+============+
+| Catch2     | C++11         | Very easy  | Widely     | Not bad -  |
+|            |               | (singl     | supported  | has        |
+|            |               | e-header). |            | options to |
+|            |               | `S         |            | speed up   |
+|            |               | tarterProj |            |            |
+|            |               | ect <https |            |            |
+|            |               | ://github. |            |            |
+|            |               | com/approv |            |            |
+|            |               | als/Approv |            |            |
+|            |               | alTests.Cp |            |            |
+|            |               | p.StarterP |            |            |
+|            |               | roject>`__ |            |            |
++------------+---------------+------------+------------+------------+
+| doctest    | C++11         | Very easy  | Unknown    | Fast       |
+|            |               | (sing      |            |            |
+|            |               | le-header) |            |            |
++------------+---------------+------------+------------+------------+
+| Google     | C++11         | Difficult  | Very       | Fast       |
+| Test       |               |            | widely     |            |
+|            |               |            | supported  |            |
++------------+---------------+------------+------------+------------+
+| Boost.Test | C++11         | Very easy  | Unknown    | Fast       |
+|            |               | (if you    |            |            |
+|            |               | already    |            |            |
+|            |               | have       |            |            |
+|            |               | boost)     |            |            |
++------------+---------------+------------+------------+------------+
+| [Boost].UT | C++20         | Very easy  | Unknown    | Fast       |
+|            | \ `1 <#fo     | (sing      |            |            |
+|            | otnote1>`__\  | le-header) |            |            |
++------------+---------------+------------+------------+------------+
 
 1: [Boost].UT works with C++17, but the ApprovalTests interface to that
 library depends on
