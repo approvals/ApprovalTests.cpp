@@ -1,5 +1,6 @@
 import unittest
 from approvaltests.approvals import verify_with_namer, Namer
+from approvaltests.reporters.generic_diff_reporter_factory import GenericDiffReporterFactory
 
 from doc.sphinx import markdown_conversion
 
@@ -12,7 +13,9 @@ class TestWholeConversion(unittest.TestCase):
             '', 'test_markdown_conversion_input', input)
 
         namer = Namer('.md')
-        verify_with_namer(converted, namer, None)
+
+        reporter = GenericDiffReporterFactory().get('AraxisMergeMac')
+        verify_with_namer(converted, namer, reporter)
 
 
 if __name__ == '__main__':
