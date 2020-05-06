@@ -43,6 +43,11 @@ def convert_markdown_to_restructured_text(subdir, file_base_name, input_dir, out
         content = markdown_file.read()
 
         content = fix_up_markdown_content(subdir, file_base_name, content)
+
+        # Temporary code for reviewing changes made, on all input files:
+        with open(file_base_name + '_hacked.md', 'w') as w:
+            w.write(content)
+
     output = pypandoc.convert_text(''.join(content), 'rst', format='md',
                                    outputfile=f'{output_dir}/{file_base_name}.rst')
 
@@ -56,9 +61,6 @@ def fix_up_markdown_content(subdir, file_base_name, content):
     content = fixup_generated_snippets(content)
     content = fixup_code_languages_for_pygments(content)
     content = fixup_markdown_hyperlinks(content, subdir, file_base_name)
-
-    with open(file_base_name + '_hacked.md', 'w') as w:
-        w.write(content)
 
     return content
 
