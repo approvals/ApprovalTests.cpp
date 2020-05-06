@@ -62,6 +62,7 @@ Here's how to set up from:
 * [Testing exceptions](/doc/TestingExceptions.md#top)
 * [Testing combinations](/doc/TestingCombinations.md#top) - containers of containers (of containers...)
 * [To String](/doc/ToString.md#top)
+* [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top)
 * Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
 * [Features](/doc/Features.md#top) - recent additions
 

@@ -18,7 +18,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Pass in a string](#pass-in-a-string)
   * [Write a custom std::ostream operator (`<<`)](#write-a-custom-stdostream-operator-)
   * [Specialize StringMaker](#specialize-stringmaker)
-  * [Use `TApprovals<YourStringConvertingClass>`](#use-tapprovalsyourstringconvertingclass)<!-- endtoc -->
+  * [Use `TApprovals<YourStringConvertingClass>`](#use-tapprovalsyourstringconvertingclass)
+  * [See also](#see-also)<!-- endtoc -->
 
 ## Introduction
 
@@ -178,6 +179,11 @@ MyApprovals::verify(p);
 ```
 <sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L92-L97' title='File snippet `customising_to_string_with_custom_to_string_class_usage2` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage2' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage2`'>anchor</a></sup>
 <!-- endsnippet -->
+
+## See also
+
+* [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top)
+
 
 
 ---

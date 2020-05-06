@@ -71,6 +71,11 @@ Or you can override the default Approvals template to use your customisation:
 
 snippet: customising_to_string_with_custom_to_string_class_usage2
 
+## See also
+
+* [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top)
+
+
 
 ---
 
