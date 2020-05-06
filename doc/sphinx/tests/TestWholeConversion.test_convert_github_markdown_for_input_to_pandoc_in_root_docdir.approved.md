@@ -63,3 +63,29 @@ Tutorial ![New Failure](https://github.com/approvals/ApprovalTests.cpp/blob/mast
 
 [Llewellyn](mailto:llewellyn.falco@gmail.com)
 
+## Test code snippet - linking to lines in a file
+
+<!-- snippet: verify_exception_message_example -->
+<a id='snippet-verify_exception_message_example'/></a>
+```cpp
+Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
+```
+(See [snippet source](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/ApprovalsTests.cpp#L105-L107))
+<!-- endsnippet -->
+
+## Test code snippet - linking to a whole file
+
+<!-- snippet: VectorTests.VerifyAllStartingPoint.approved.txt -->
+<a id='snippet-VectorTests.VerifyAllStartingPoint.approved.txt'/></a>
+```
+TITLE
+
+
+input.value1 => placeholder
+input.value2 => placeholder
+
+```
+(See [snippet source](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/approval_tests/VectorTests.VerifyAllStartingPoint.approved.txt#L1-L6))
+<!-- endsnippet -->
+
+

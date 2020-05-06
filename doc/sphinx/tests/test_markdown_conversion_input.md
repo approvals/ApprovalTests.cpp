@@ -70,6 +70,32 @@ Tutorial ![New Failure](/doc/images/tutorial/01_new_failure.png?raw=true)
 
 [Llewellyn](mailto:llewellyn.falco@gmail.com)
 
+## Test code snippet - linking to lines in a file
+
+<!-- snippet: verify_exception_message_example -->
+<a id='snippet-verify_exception_message_example'/></a>
+```cpp
+Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
+```
+<sup><a href='/tests/DocTest_Tests/ApprovalsTests.cpp#L105-L107' title='File snippet `verify_exception_message_example` was extracted from'>snippet source</a> | <a href='#snippet-verify_exception_message_example' title='Navigate to start of snippet `verify_exception_message_example`'>anchor</a></sup>
+<!-- endsnippet -->
+
+## Test code snippet - linking to a whole file
+
+<!-- snippet: VectorTests.VerifyAllStartingPoint.approved.txt -->
+<a id='snippet-VectorTests.VerifyAllStartingPoint.approved.txt'/></a>
+```txt
+TITLE
+
+
+input.value1 => placeholder
+input.value2 => placeholder
+
+```
+<sup><a href='/tests/DocTest_Tests/approval_tests/VectorTests.VerifyAllStartingPoint.approved.txt#L1-L6' title='File snippet `VectorTests.VerifyAllStartingPoint.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-VectorTests.VerifyAllStartingPoint.approved.txt' title='Navigate to start of snippet `VectorTests.VerifyAllStartingPoint.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
+
+
 ---
 
 [Back to User Guide](/doc/README.md#top)
