@@ -153,6 +153,19 @@ class Wibble
 I am some text
 ```
 
+## A wide table
+
+| Framework | Minimum C++ Version | Ease of setup | IDE Integration | Compile and link time |        |
+| -----     | :----:              | -----         | -----           | -----                 | ------ |
+| Catch2    | C++11 | Very easy (single-header). [StarterProject](https://github.com/approvals/ApprovalTests.Cpp.StarterProject) | Widely supported | Not bad - has options to speed up |
+| doctest | C++11 | Very easy (single-header) | Unknown | Fast |
+| Google Test | C++11 | Difficult | Very widely supported | Fast |
+| Boost.Test | C++11 | Very easy (if you already have boost)          | Unknown               | Fast                              |
+| \[Boost\].UT | C++20 <sup>[1](#footnote1)</sup> | Very easy (single-header)                                    | Unknown               | Fast                              |
+
+<a name="footnote1">1</a>: \[Boost\].UT works with C++17, but the ApprovalTests interface to that library depends on [std::source_location](https://en.cppreference.com/w/cpp/utility/source_location), which is a C++ 20 feature. 
+
+
 ---
 
 [Back to User Guide](/doc/README.md#top)

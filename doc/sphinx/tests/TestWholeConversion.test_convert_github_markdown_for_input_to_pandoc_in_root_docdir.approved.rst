@@ -169,5 +169,57 @@ Remove txt
 
    I am some text
 
+A wide table
+------------
+
++----------+------------+----------+----------+----------+------------+
+| F        | Minimum    | Ease of  | IDE      | Compile  |            |
+| ramework | C++        | setup    | Int      | and link |            |
+|          | Version    |          | egration | time     |            |
++==========+============+==========+==========+==========+============+
+| Catch2   | C++11      | Very     | Widely   | Not bad  |            |
+|          |            | easy     | s        | - has    |            |
+|          |            | (single- | upported | options  |            |
+|          |            | header). |          | to speed |            |
+|          |            | `S       |          | up       |            |
+|          |            | tarterPr |          |          |            |
+|          |            | oject <h |          |          |            |
+|          |            | ttps://g |          |          |            |
+|          |            | ithub.co |          |          |            |
+|          |            | m/approv |          |          |            |
+|          |            | als/Appr |          |          |            |
+|          |            | ovalTest |          |          |            |
+|          |            | s.Cpp.St |          |          |            |
+|          |            | arterPro |          |          |            |
+|          |            | ject>`__ |          |          |            |
++----------+------------+----------+----------+----------+------------+
+| doctest  | C++11      | Very     | Unknown  | Fast     |            |
+|          |            | easy     |          |          |            |
+|          |            | (single  |          |          |            |
+|          |            | -header) |          |          |            |
++----------+------------+----------+----------+----------+------------+
+| Google   | C++11      | D        | Very     | Fast     |            |
+| Test     |            | ifficult | widely   |          |            |
+|          |            |          | s        |          |            |
+|          |            |          | upported |          |            |
++----------+------------+----------+----------+----------+------------+
+| Bo       | C++11      | Very     | Unknown  | Fast     |            |
+| ost.Test |            | easy (if |          |          |            |
+|          |            | you      |          |          |            |
+|          |            | already  |          |          |            |
+|          |            | have     |          |          |            |
+|          |            | boost)   |          |          |            |
++----------+------------+----------+----------+----------+------------+
+| [B       | C++20      | Very     | Unknown  | Fast     |            |
+| oost].UT | \          | easy     |          |          |            |
+|          | `1 <#footn | (single  |          |          |            |
+|          | ote1>`__\  | -header) |          |          |            |
++----------+------------+----------+----------+----------+------------+
+
+1: [Boost].UT works with C++17, but the ApprovalTests interface to that
+library depends on
+`std::source_location <https://en.cppreference.com/w/cpp/utility/source_location>`__,
+which is a C++ 20 feature.
+
 .. |Intro Graphic| image:: https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true
 .. |New Failure| image:: https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/tutorial/01_new_failure.png?raw=true
