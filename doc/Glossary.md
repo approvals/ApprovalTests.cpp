@@ -116,7 +116,7 @@ See [Features](/doc/Features.md#top) - whose sections need to be moved around
 
 ## Stringification
 
-See [ToString](/doc/ToString.md#top).
+See [String conversions](/doc/ToString.md#top).
 
 ## System Under Test
 

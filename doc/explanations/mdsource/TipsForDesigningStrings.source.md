@@ -66,7 +66,7 @@ TODO Explain things like:
 ## How to Implement This
 
 Approvals offers multiple ways to customise the To String. For details,
-see [XXX ToString](/doc/ToString.md#top).
+see [String conversions](/doc/ToString.md#top).
 
 ---
 

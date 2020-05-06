@@ -43,7 +43,7 @@ TEST_CASE("CombinationsStartingPoint")
 <!-- endsnippet -->
 
 2. Modify each input container for your chosen values.
-3. Make sure each input type has an ostream operator<< (See [To String](/doc/ToString.md#how))
+3. Make sure each input type can be converted to a string (See [To String](/doc/ToString.md#how))
 4. Run it, and make sure that you have your inputs wired up correctly.
 
 If they are wired up correctly, you will see a file that looks like this: it is the left hand side of the file that matters at this point: all combinations of your own input values should be listed:
@@ -108,7 +108,7 @@ The format is carefully chosen to show both inputs and outputs, to make the test
 <sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.YouCanVerifyCombinationsOf2.approved.txt#L1-L7' title='File snippet `CombinationTests.YouCanVerifyCombinationsOf2.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt' title='Navigate to start of snippet `CombinationTests.YouCanVerifyCombinationsOf2.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
-For advice on effective formatting, see [To String](/doc/ToString.md#top). As you write out larger volumes of data in your approval files, experience has shown that the choice of layout of text in approval files can make a big difference to maintainability of tests, when failures occur.
+For advice on effective formatting, see [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top). As you write out larger volumes of data in your approval files, experience has shown that the choice of layout of text in approval files can make a big difference to maintainability of tests, when failures occur.
 
 ### Passing in a Reporter
 
