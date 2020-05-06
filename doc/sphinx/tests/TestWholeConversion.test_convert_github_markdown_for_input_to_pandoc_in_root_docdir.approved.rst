@@ -172,47 +172,31 @@ Remove txt
 A wide table
 ------------
 
-+------------+---------------+------------+------------+------------+
-| Framework  | Minimum C++   | Ease of    | IDE        | Compile    |
-|            | Version       | setup      | I          | and link   |
-|            |               |            | ntegration | time       |
-+============+===============+============+============+============+
-| Catch2     | C++11         | Very easy  | Widely     | Not bad -  |
-|            |               | (singl     | supported  | has        |
-|            |               | e-header). |            | options to |
-|            |               | `S         |            | speed up   |
-|            |               | tarterProj |            |            |
-|            |               | ect <https |            |            |
-|            |               | ://github. |            |            |
-|            |               | com/approv |            |            |
-|            |               | als/Approv |            |            |
-|            |               | alTests.Cp |            |            |
-|            |               | p.StarterP |            |            |
-|            |               | roject>`__ |            |            |
-+------------+---------------+------------+------------+------------+
-| doctest    | C++11         | Very easy  | Unknown    | Fast       |
-|            |               | (sing      |            |            |
-|            |               | le-header) |            |            |
-+------------+---------------+------------+------------+------------+
-| Google     | C++11         | Difficult  | Very       | Fast       |
-| Test       |               |            | widely     |            |
-|            |               |            | supported  |            |
-+------------+---------------+------------+------------+------------+
-| Boost.Test | C++11         | Very easy  | Unknown    | Fast       |
-|            |               | (if you    |            |            |
-|            |               | already    |            |            |
-|            |               | have       |            |            |
-|            |               | boost)     |            |            |
-+------------+---------------+------------+------------+------------+
-| [Boost].UT | C++20         | Very easy  | Unknown    | Fast       |
-|            | \ `1 <#fo     | (sing      |            |            |
-|            | otnote1>`__\  | le-header) |            |            |
-+------------+---------------+------------+------------+------------+
++-------------+-----------+--------------------+-----------------------+-------------+
+| Framework   | Min C++   | Ease of setup      | IDE Support           | Build time  |
++=============+===========+====================+=======================+=============+
+| Catch2      | C++11     | Very easy [1], [2] | Widely supported      | Not bad [3] |
++-------------+-----------+--------------------+-----------------------+-------------+
+| doctest     | C++11     | Very easy [1]      | Unknown               | Fast        |
++-------------+-----------+--------------------+-----------------------+-------------+
+| Google Test | C++11     | Difficult          | Very widely supported | Fast        |
++-------------+-----------+--------------------+-----------------------+-------------+
+| Boost.Test  | C++11     | Difficult          | Unknown               | Fast        |
++-------------+-----------+--------------------+-----------------------+-------------+
+| [Boost].UT  | C++20 [4] | Very easy [1]      | Unknown               | Fast        |
++-------------+-----------+--------------------+-----------------------+-------------+
 
-1: [Boost].UT works with C++17, but the ApprovalTests interface to that
-library depends on
-`std::source_location <https://en.cppreference.com/w/cpp/utility/source_location>`__,
-which is a C++ 20 feature.
+1. Approval Tests.cpp is
+   `released <https://github.com/approvals/ApprovalTests.cpp/releases>`__
+   as a single header file
+2. See the `Starter
+   Project <https://github.com/approvals/ApprovalTests.Cpp.StarterProject>`__
+3. Catch2 has `options to speed up its
+   builds <https://github.com/catchorg/Catch2/blob/master/docs/slow-compiles.md>`__
+4. [Boost].UT works with C++17, but the ApprovalTests interface to that
+   library depends on
+   `std::source_location <https://en.cppreference.com/w/cpp/utility/source_location>`__,
+   which is a C++ 20 feature.
 
 .. |Intro Graphic| image:: https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true
 .. |New Failure| image:: https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/tutorial/01_new_failure.png?raw=true
