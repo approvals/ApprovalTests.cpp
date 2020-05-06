@@ -1,4 +1,6 @@
 import unittest
+
+from approvaltests import ApprovalException
 from approvaltests.approvals import verify_with_namer, Namer
 from approvaltests.reporters.generic_diff_reporter_factory import GenericDiffReporterFactory
 
@@ -37,12 +39,21 @@ class TestWholeConversion(unittest.TestCase):
 
         reporter = GenericDiffReporterFactory().get('AraxisMergeMac')
 
-        namer = Namer('.md')
-        verify_with_namer(converted_markdown, namer, reporter)
+        failure_count = 0
 
-        namer = Namer('.rst')
-        verify_with_namer(converted_rst, namer, reporter)
+        try:
+            namer = Namer('.md')
+            verify_with_namer(converted_markdown, namer, reporter)
+        except(ApprovalException):
+            failure_count += 1
 
+        try:
+            namer = Namer('.rst')
+            verify_with_namer(converted_rst, namer, reporter)
+        except(ApprovalException):
+            failure_count += 1
+
+        self.assertEqual(failure_count, 0)
 
 if __name__ == '__main__':
     unittest.main()
