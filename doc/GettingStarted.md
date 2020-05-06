@@ -65,13 +65,13 @@ If you are already using one of the above testing frameworks, that is the one yo
 
 If not, Approval Tests works well with all the above. Here are factors to consider.
 
-| Framework    |  Min C++  | Ease of setup                         | IDE Support           | Build time  |
-| ------------ | :-------: | ------------------------------------- | --------------------- | ----------- |
-| Catch2       |   C++11   | Very easy [1], [2]                    | Widely supported      | Not bad [3] |
-| doctest      |   C++11   | Very easy [1]                         | Unknown               | Fast        |
-| Google Test  |   C++11   | Difficult                             | Very widely supported | Fast        |
-| Boost.Test   |   C++11   | Very easy (if you already have boost) | Unknown               | Fast        |
-| \[Boost\].UT | C++20 [4] | Very easy [1]                         | Unknown               | Fast        |
+| Framework    |  Min C++  | Ease of setup      | IDE Support           | Build time  |
+| ------------ | :-------: | ------------------ | --------------------- | ----------- |
+| Catch2       |   C++11   | Very easy [1], [2] | Widely supported      | Not bad [3] |
+| doctest      |   C++11   | Very easy [1]      | Unknown               | Fast        |
+| Google Test  |   C++11   | Difficult          | Very widely supported | Fast        |
+| Boost.Test   |   C++11   | Difficult          | Unknown               | Fast        |
+| \[Boost\].UT | C++20 [4] | Very easy [1]      | Unknown               | Fast        |
 
 1. Approval Tests.cpp is [released](https://github.com/approvals/ApprovalTests.cpp/releases) as a single header file
 2. See the [Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
