@@ -110,7 +110,7 @@ From Setup.md
 
 Multiple on one line
 
-[`ExternalProject` module](https://cmake.org/cmake/help/latest/module/ExternalProject.html) and [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html).
+[`ExternalProject` module](https://cmake.org/cmake/help/latest/module/ExternalProject.html) and `this should still be fixed width` and [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html).
 
 ## Test code snippet - linking to lines in a file
 

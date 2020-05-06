@@ -66,6 +66,7 @@ def fix_up_markdown_content(subdir, content):
     content = fixup_boilerplate_text(content)
     content = fixup_generated_snippets(content)
     content = fixup_code_languages_for_pygments(content)
+    content = fixup_markdown_hyperlink_text(content)
     content = fixup_markdown_hyperlink_destinations(content, subdir)
 
     return content
@@ -134,13 +135,35 @@ def fixup_code_languages_for_pygments(content):
     return content
 
 
+def fixup_markdown_hyperlink_text(content):
+    hyperlink_regex = re.compile(
+        r"""\[ # the opening that surrounds the link text
+            (  # start capturing the link text
+            [^]]+ # the link text
+            )  # finish capturing the link text
+            \] # the closing that surrounds the link text
+            \( # the escaped ( at the start of the destination""", re.VERBOSE)
+
+    def convert_github_markdown_url_to_sphinx(matched_obj):
+        # This works around rst not displaying hyperlinked text with fixed-width formatting
+        # as described in https://stackoverflow.com/questions/4743845/format-text-in-a-link-in-restructuredtext
+        # For now, we just removed the fixed-width formatting from any hyperlinked text
+        full_link_text = matched_obj.group(1)
+        new_link_text = full_link_text.replace('`', '')
+        return f'[{new_link_text}]('
+
+    content = hyperlink_regex.sub(convert_github_markdown_url_to_sphinx, content)
+
+    return content
+
+
 def fixup_markdown_hyperlink_destinations(content, subdir):
     hyperlink_regex = re.compile(
         r"""\] # the closing ] that surrounds the link text
             \( # the escaped ( at the start of the destination
             (  # start capturing the destination
             [^() ]+ # the destination
-            )  # finish capturing the desintation
+            )  # finish capturing the destination
             \) # the escaped ) at the end of the destination""", re.VERBOSE)
 
     def convert_github_markdown_url_to_sphinx(matched_obj):

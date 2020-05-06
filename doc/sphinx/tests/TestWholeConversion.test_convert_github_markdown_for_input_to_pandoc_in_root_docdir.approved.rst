@@ -102,29 +102,29 @@ Links whose hyperlinked text is in fixed-width font
 From Namers.md:
 
 The interface for this is
-```ApprovalNamer`` <https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/core/ApprovalNamer.h>`__.
+`ApprovalNamer <https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/core/ApprovalNamer.h>`__.
 
 From CMakeIntegration.md:
 
-```ExternalProject``
+`ExternalProject
 module <https://cmake.org/cmake/help/latest/module/ExternalProject.html>`__
 
-```add_subdirectory()`` <https://cmake.org/cmake/help/latest/command/add_subdirectory.html>`__.
+`add_subdirectory() <https://cmake.org/cmake/help/latest/command/add_subdirectory.html>`__.
 
 From UsingUT.md
 
-```std::source_location`` <https://en.cppreference.com/w/cpp/utility/source_location>`__
+`std::source_location <https://en.cppreference.com/w/cpp/utility/source_location>`__
 
 From Setup.md
 
-```tests/NewTest.cpp`` <https://github.com/approvals/ApprovalTests.cpp.StarterProject/blob/master/tests/NewTest.cpp>`__
+`tests/NewTest.cpp <https://github.com/approvals/ApprovalTests.cpp.StarterProject/blob/master/tests/NewTest.cpp>`__
 
 Multiple on one line
 
-```ExternalProject``
+`ExternalProject
 module <https://cmake.org/cmake/help/latest/module/ExternalProject.html>`__
-and
-```add_subdirectory()`` <https://cmake.org/cmake/help/latest/command/add_subdirectory.html>`__.
+and ``this should still be fixed width`` and
+`add_subdirectory() <https://cmake.org/cmake/help/latest/command/add_subdirectory.html>`__.
 
 Test code snippet - linking to lines in a file
 ----------------------------------------------
