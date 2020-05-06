@@ -66,7 +66,7 @@ def fix_up_markdown_content(subdir, content):
     content = fixup_boilerplate_text(content)
     content = fixup_generated_snippets(content)
     content = fixup_code_languages_for_pygments(content)
-    content = fixup_markdown_hyperlinks(content, subdir)
+    content = fixup_markdown_hyperlink_destinations(content, subdir)
 
     return content
 
@@ -134,7 +134,7 @@ def fixup_code_languages_for_pygments(content):
     return content
 
 
-def fixup_markdown_hyperlinks(content, subdir):
+def fixup_markdown_hyperlink_destinations(content, subdir):
     hyperlink_regex = re.compile(
         r"""\] # the closing ] that surrounds the link text
             \( # the escaped ( at the start of the destination
