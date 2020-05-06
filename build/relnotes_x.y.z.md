@@ -1,8 +1,19 @@
 See the [v.x.y.z milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/8?closed=1) for the full list of changes.
 
 * **Breaking changes**
-    * None
+    * If you happen to have specialised StringUtils::toString(), you would now need to specialize StringMaker::toString() instead.
+        * Here is how to update your code:
+```diff
+template <>
+-std::string ApprovalTests::StringUtils::toString(const StringMakerPrintable& printable)
++std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& printable)
+```
+        * Note: this was previously unsupported behavior, so we are not bumping the major version number.
 * **New features**
+    * New mechanics for [String conversions](/doc/ToString.md#top)
+        * The class `Approvals` is now an alias for `TApprovals< ToStringCompileTimeOptions< StringMaker > >`
+        * This is a completely backwards-compatible feature.
+        * It has been done to support a new feature in a future release.
     * Our Conan.io package now supports our Boost.Test integration (#121)
 * **Bug fixes**
     * None
