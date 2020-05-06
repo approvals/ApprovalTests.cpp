@@ -24,7 +24,7 @@ class HyperlinkUpdatingTestCase(unittest.TestCase):
             'subdir2')
 
     def check(self, content, expected, subdir=''):
-        actual = markdown_conversion.fixup_markdown_hyperlinks(content, subdir, 'SomeDocFile')
+        actual = markdown_conversion.fixup_markdown_hyperlinks(content, subdir)
         self.assertEqual(expected, actual)
 
 

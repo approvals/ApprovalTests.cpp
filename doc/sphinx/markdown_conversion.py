@@ -60,7 +60,7 @@ def fix_up_markdown_content(subdir, file_base_name, content):
     content = fixup_boilerplate_text(content)
     content = fixup_generated_snippets(content)
     content = fixup_code_languages_for_pygments(content)
-    content = fixup_markdown_hyperlinks(content, subdir, file_base_name)
+    content = fixup_markdown_hyperlinks(content, subdir)
 
     return content
 
@@ -128,7 +128,7 @@ def fixup_code_languages_for_pygments(content):
     return content
 
 
-def fixup_markdown_hyperlinks(content, subdir, file_base_name):
+def fixup_markdown_hyperlinks(content, subdir):
     hyperlink_regex = re.compile(
         r"""\] # the closing ] that surrounds the link text
             \( # the escaped ( at the start of the destination
@@ -202,12 +202,5 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
     content = content.replace(
         '* [this link will work everywhere](Reporters.html)',
         '* [this link will work everywhere](/doc/Reporters.md#top)')
-
-    # TODO  Print out any remaining lines that contain ](/
-    # TODO  Print out a list of all adjusted URLs so that I can test them
-    lines = content.splitlines()
-    for line in lines:
-        if '](/' in line:
-            print('>>>', subdir, file_base_name, line)
 
     return content
