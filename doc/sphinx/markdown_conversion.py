@@ -113,19 +113,6 @@ def fixup_code_languages_for_pygments(content):
 
 
 def fixup_markdown_hyperlinks(content, subdir, file_base_name):
-    # [MultipleOutputFilesPerTest](/doc/MultipleOutputFilesPerTest.md#top)
-    # [MultipleOutputFilesPerTest](MultipleOutputFilesPerTest.html)
-
-    # content = re.sub(
-    #     r".*\.md#top",
-    #     r"", content)
-    # TODO  Links to non-markdown files should go to the github website, e.g.
-    #       [scripts/check_links.sh](/scripts/check_links.sh)
-    # TODO  Links to .md files outside of the doc directory, or README
-    #       (essentially, thinks that won't be copied in to Sphinx)
-    #       should go to github, e.g.
-    #       [How To Release](/build/HowToRelease.md#top)
-
     hyperlink_regex = re.compile(
         r"""\] # the closing ] that surrounds the link text
             \( # the escaped ( at the start of the destination
