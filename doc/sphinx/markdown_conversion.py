@@ -86,10 +86,9 @@ def fixup_generated_snippets(content):
     """
 
     # Remove 'snippet source' links from all code snippets
-    # TODO Instead of master, use the changeset that this was generated from
     content = re.sub(
         r"<sup><a href='([^']+)' title='File snippet `[^`]+` was extracted from'>snippet source</a> ",
-        r"(See [snippet source](https://github.com/approvals/ApprovalTests.cpp/blob/master\1))", content)
+        r"(See [snippet source](\1))", content)
 
     # Remove 'anchor' links from all code snippets
     content = re.sub(
@@ -137,6 +136,7 @@ def fixup_markdown_hyperlinks(content, subdir, file_base_name):
         if not will_include_in_sphix_docs:
             if full_url.startswith('/'):
                 # It's an internal link, to a file or directory in our github repo
+                # TODO Instead of master, use the changeset that this was generated from
                 if full_url.endswith('/'):
                     new_full_url = 'https://github.com/approvals/ApprovalTests.cpp/tree/master' + full_url[0:-1]
                 else:
