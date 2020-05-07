@@ -23,6 +23,7 @@
 namespace ApprovalTests
 {
 
+    // TCompileTimeOptions must have a type ToStringConverter, which must have a method toString()
     template <typename TCompileTimeOptions> class TApprovals
     {
     private:
@@ -322,11 +323,18 @@ namespace ApprovalTests
 #define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER StringMaker
 #endif
 
+    // Warning: Do not use CompileTimeOptions directly.
+    // This interface is subject to change, as future
+    // compile-time options are added.
     template <typename TToString> struct CompileTimeOptions
     {
         using ToStringConverter = TToString;
+        // more template types may be added to CompileTimeOptions in future, if we add
+        // more flexibility that requires compile-time configuration.
     };
 
+    // Template parameter TToString must have a method toString()
+    // This interface will not change, as future compile-time options are added.
     template <typename TToString>
     struct ToStringCompileTimeOptions : CompileTimeOptions<TToString>
     {
