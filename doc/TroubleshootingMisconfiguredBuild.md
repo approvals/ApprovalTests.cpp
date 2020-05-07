@@ -47,7 +47,7 @@ Compiling tests in Ninja-generated builds gives a compilation failure, with this
 "The filename is: "
 __FILE__
 ```
-<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L20-L25' title='File snippet `compiler_error_for_misconfigured_build` was extracted from'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Navigate to start of snippet `compiler_error_for_misconfigured_build`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L28-L33' title='File snippet `compiler_error_for_misconfigured_build` was extracted from'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Navigate to start of snippet `compiler_error_for_misconfigured_build`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Test Failure
@@ -125,12 +125,12 @@ In the following situations, the above is all you need to do, for all the suppor
 
 If you are using the single-header download of Approval Tests with a Ninja Unity build, you may find that you get a compilation failure, pointing to this page, when in fact the tests would run correctly.
 
-In this case, you will need to disable the compilation check of `__FILE__`, which can be done by defining the `APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK` macro. This can be done line this:
+In this case, you will need to disable the compilation check of `__FILE__`, which can be done by defining the `APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK` macro. This can be done line this:
 
 ```bash
 # CMake 3.16 or above - with other frameworks, including Catch2, doctest, Google Test:
 cmake -G "Ninja" -DCMAKE_UNITY_BUILD=yes \
-    -DCMAKE_CXX_FLAGS_INIT=-DAPPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK \
+    -DCMAKE_CXX_FLAGS_INIT=-DAPPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK \
     <source_location>
 ```
 

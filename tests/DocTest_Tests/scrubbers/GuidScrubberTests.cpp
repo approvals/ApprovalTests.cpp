@@ -1,9 +1,9 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/scrubbers/Scrubbers.h"
 
-// <iostream> is needed to fix linker error on XCode Release builds:
-#include <iostream>
-#include <ApprovalTests/Approvals.h>
+#include <iostream> // needed to fix linker error on XCode Release builds
+#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/reporters/QuietReporter.h"
 
 using namespace ApprovalTests;
 
@@ -28,7 +28,7 @@ TEST_CASE("Input with non-GUID")
     REQUIRE(output == input);
 }
 
-TEST_CASE("Input with non-GUID")
+TEST_CASE("Input with multiple GUIDs")
 {
 
     std::string input = R"(
@@ -48,6 +48,24 @@ TEST_CASE("Input with non-GUID")
     }
 }
 )";
-    auto output = Scrubbers::scrubGuid(input);
-    Approvals::verifyScrubbed(input, Scrubbers::scrubGuid);
+    Approvals::verify(
+        input,
+        Options().withScrubber(Scrubbers::scrubGuid).withReporter(QuietReporter()));
+}
+
+TEST_CASE("Scrubbing in verifyAll")
+{
+    std::vector<std::string> v{"b34b4da8-090e-49d8-bd35-7e79f633a2ea",
+                               "2fd78d4a-ad49-447d-96a8-deda585a9aa5",
+                               "b34b4da8-090e-49d8-bd35-7e79f633a2ea"};
+    Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
+}
+
+TEST_CASE("Scrubbing via Lambda")
+{
+    // begin-snippet: scrubbing_via_lambda
+    Approvals::verify("1 2 3 4 5 6", Options().withScrubber([](auto t) {
+        return StringUtils::replaceAll(t, "3", "Fizz");
+    }));
+    // end-snippet
 }

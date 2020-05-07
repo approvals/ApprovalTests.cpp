@@ -35,7 +35,7 @@ See [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top) for h
 
 See [Writers](/doc/Writers.md#top) for how to customize the serialization of objects.
 
-**Filename Extensions**: If you only want to change a file extension, you might want to consider using the convenience functions `Approvals::verifyWithExtension`: see [Using custom filename extensions](/doc/Writers.md#using-custom-filename-extensions)
+**Filename Extensions**: If you only want to change a file extension, see [Using custom filename extensions](/doc/Writers.md#using-custom-filename-extensions).
 
 ## Comparators - how files are compared
 

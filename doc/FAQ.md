@@ -54,7 +54,9 @@ Things to say:
 * Yes, it's a common problem
 * Readability of the output is important
 * Someone reviewing a test failure needs to understand the purpose and intent of the test
-* **Recommendation**: write your own formatting that's specific to particular tests - see [To String](/doc/ToString.md#top) for examples.
+* **Recommendation**: write your own formatting that's specific to particular tests - see
+    * [How to do String Conversions](/doc/ToString.md#top)
+    * [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top) for examples.
 
 ### I want to test images
 

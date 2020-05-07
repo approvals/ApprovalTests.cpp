@@ -1,9 +1,13 @@
 #pragma once
 
 #include <type_traits>
+#include <utility>
+#include "ApprovalTests/ApprovalsMacroDefaults.h"
 #include "reporters/DefaultReporter.h"
 #include "ApprovalTests/core/Reporter.h"
+#include "ApprovalTests/core/Options.h"
 #include "ApprovalTests/utilities/CartesianProduct.h"
+#include "ApprovalTests/utilities/MoreHelpMessages.h"
 #include "Approvals.h"
 
 namespace ApprovalTests
@@ -19,7 +23,7 @@ namespace ApprovalTests
                 std::ostream& out;
                 template <class T> void operator()(const T& input)
                 {
-                    out << ", " << input;
+                    out << ", " << StringMaker::toString(input);
                 }
             };
 
@@ -32,7 +36,7 @@ namespace ApprovalTests
                 void operator()(T&& input1_, Ts&&... inputs)
                 {
                     // First value is printed without trailing comma
-                    out << "(" << input1_;
+                    out << "(" << StringMaker::toString(input1_);
                     // Remaining values are printed with prefix of a comma
                     CartesianProduct::Detail::for_each(std::forward_as_tuple(inputs...),
                                                        print_input{out});
@@ -42,7 +46,7 @@ namespace ApprovalTests
         } // namespace Detail
 
         template <class Converter, class Container, class... Containers>
-        void verifyAllCombinations(const Reporter& reporter,
+        void verifyAllCombinations(const Options& options,
                                    Converter&& converter,
                                    const Container& input0,
                                    const Containers&... inputs)
@@ -52,15 +56,28 @@ namespace ApprovalTests
                 Detail::serialize<Converter>{s, std::forward<Converter>(converter)},
                 input0,
                 inputs...);
-            Approvals::verify(s.str(), reporter);
+            Approvals::verify(s.str(), options);
         }
 
+#if !APPROVAL_TESTS_HIDE_DEPRECATED_CODE
+        template <class Converter, class Container, class... Containers>
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS void
+        verifyAllCombinations(const Reporter& reporter,
+                              Converter&& converter,
+                              const Container& input0,
+                              const Containers&... inputs)
+        {
+            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
+            verifyAllCombinations(Options(reporter), converter, input0, inputs...);
+        }
+#endif
+
         template <class Converter, class... Containers>
-        ApprovalTests::Detail::EnableIfNotDerivedFromReporter<Converter>
+        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<Converter>
         verifyAllCombinations(Converter&& converter, const Containers&... inputs)
         {
             verifyAllCombinations(
-                DefaultReporter(), std::forward<Converter>(converter), inputs...);
+                Options(), std::forward<Converter>(converter), inputs...);
         }
 
     } // namespace CombinationApprovals

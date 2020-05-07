@@ -24,14 +24,14 @@ class SingleHeaderFile(object):
         output_file = os.path.abspath(release_constants.simulated_single_header_file_path)
 
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
-        output = ('#ifndef APPROVALTESTS_CPP_APPROVALS_HPP\n'
-                  '#define APPROVALTESTS_CPP_APPROVALS_HPP\n'
+        output = ('#ifndef APPROVAL_TESTS_CPP_APPROVALS_HPP\n'
+                  '#define APPROVAL_TESTS_CPP_APPROVALS_HPP\n'
                   '\n'
                   '// This file is machine-generated. Do not edit.\n'
                   '\n'
                   f'{includes}\n'
                   '\n'
-                  '#endif // APPROVALTESTS_CPP_APPROVALS_HPP\n'
+                  '#endif // APPROVAL_TESTS_CPP_APPROVALS_HPP\n'
                   )
         write_file(output_file, output)
         return output_file

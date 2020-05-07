@@ -15,7 +15,7 @@ TEST_CASE("It reads sample_file.txt correctly")
     const std::string inputFile = directory + "sample_file.txt";
 
     Approvals::verify(ApprovalTests::FileUtils::readFileThrowIfMissing(inputFile),
-                      DiffReporter());
+                      Options(DiffReporter()));
 }
 
 TEST_CASE("readFileThrowIfMissing() throws if file is missing")

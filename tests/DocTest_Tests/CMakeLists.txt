@@ -4,11 +4,13 @@ add_executable(${PROJECT_NAME}
         main.cpp
         ApprovalsTests.cpp
         CombinationTests.cpp
+        CustomizingToStringTests.cpp
         DocTestApprovalTestTests.cpp
         VectorTests.cpp
         comparators/ComparatorDisposerTest.cpp
         core/ApprovalExceptionTests.cpp
         core/FileApproverTests.cpp
+        core/OptionsTests.cpp
         docs/CombinationsSampleCode.cpp
         docs/DisposableSamples.cpp
         docs/DocTestDocsSamples.cpp
@@ -40,6 +42,15 @@ add_executable(${PROJECT_NAME}
         )
 target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests doctest::doctest)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
+# begin-snippet: show_deprecation_warnings_cmake
+# Replace ${PROJECT_NAME} with the name of your test executable:
+target_compile_definitions(${PROJECT_NAME} PRIVATE -DAPPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS=1)
+# end-snippet
+
+# begin-snippet: hide_deprecated_code_cmake
+# Replace ${PROJECT_NAME} with the name of your test executable:
+target_compile_definitions(${PROJECT_NAME} PRIVATE -DAPPROVAL_TESTS_HIDE_DEPRECATED_CODE=1)
+# end-snippet
 
 if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
     setup_target_for_coverage_lcov(

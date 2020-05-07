@@ -2,8 +2,8 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/namers/NamerFactory.h"
 #include <vector>
-#include <ApprovalTests/reporters/AutoApproveIfMissingReporter.h>
-#include <ApprovalTests/utilities/ExceptionCollector.h>
+#include "ApprovalTests/reporters/AutoApproveIfMissingReporter.h"
+#include "ApprovalTests/utilities/ExceptionCollector.h"
 
 using namespace ApprovalTests;
 
@@ -130,7 +130,8 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
         exceptions.gather([&]() {
             Approvals::verify(
                 greeting.getGreeting(),
-                AutoApproveIfMissingReporter()); // Automatically approve first time
+                Options(
+                    AutoApproveIfMissingReporter())); // Automatically approve first time
         });
     }
     exceptions.release();

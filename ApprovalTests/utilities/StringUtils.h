@@ -2,6 +2,8 @@
 
 #pragma once
 
+#include "StringMaker.h"
+
 #include <string>
 #include <algorithm>
 #include <sstream>
@@ -51,9 +53,7 @@ namespace ApprovalTests
 
         template <typename T> static std::string toString(const T& contents)
         {
-            std::stringstream s;
-            s << contents;
-            return s.str();
+            return StringMaker::toString(contents);
         }
     };
 }

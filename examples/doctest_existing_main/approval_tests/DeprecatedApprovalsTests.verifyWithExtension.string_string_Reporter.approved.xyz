@@ -1,0 +1,5 @@
+
+        static void verifyWithExtension(std::string contents,
+                                        const std::string& fileExtensionWithDot,
+                                        const Reporter& reporter)
+    

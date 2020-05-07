@@ -1,0 +1,3 @@
+
+        static void verify(std::string contents, const Reporter& reporter)
+    

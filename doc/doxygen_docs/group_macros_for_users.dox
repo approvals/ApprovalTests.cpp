@@ -1,0 +1,36 @@
+/*!
+ * \defgroup macros_for_users Macros that users may wish to define
+ *
+ * These macros may be defined by users, to customise the compilation
+ * of Approval Tests.
+ *
+ * See also the full list of <a href="globals_defs.html">all preprocessor macros</a>.
+ */
+
+#ifdef IN_DOXYGEN
+#define APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK
+#endif
+/*! \def APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK
+ *  \brief If defined, this will disable the compile-time check of the <tt>__FILE__</tt>
+ *         macro.
+ *
+ *  See <a href="https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md#top">Troubleshooting Misconfigured Build</a>
+ *  for more information.
+ *
+ *  \ingroup macros_for_users
+ */
+
+#ifdef IN_DOXYGEN
+#define APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS
+#endif
+/*! \def APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS
+ *  \brief Control whether warnings will be shown, if using deprecated methods
+ *
+ *  If defined, compile-time (C++14 or above) or run-time (C++11) warnings will be shown,
+ *  for any calls to deprecated methods.
+ *
+ *  See <a href="https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/explanations/WhyWeAreConvertingToOptions.md#top">Why We Are Converting To Options</a>
+ *  for more information.
+ *
+ *  \ingroup macros_for_users
+ */

@@ -2,7 +2,7 @@
 #include <map>
 #include <vector>
 #include <string>
-#include <ApprovalTests/reporters/BlockingReporter.h>
+#include "ApprovalTests/reporters/BlockingReporter.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "reporters/FakeReporter.h"
 
@@ -36,7 +36,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports")
     try
     {
         CombinationApprovals::verifyAllCombinations(
-            reporter, [](const std::string& s) { return s + "!"; }, words);
+            Options(reporter), [](const std::string& s) { return s + "!"; }, words);
     }
     catch (const ApprovalException&)
     {
@@ -101,7 +101,7 @@ TEST_CASE("YouCanVerifyCombinationsOf9Reports")
     {
         std::vector<std::string> letters{"a", "b"};
         CombinationApprovals::verifyAllCombinations(
-            reporter,
+            Options(reporter),
             [](const std::string& s1,
                const std::string& s2,
                const std::string& s3,

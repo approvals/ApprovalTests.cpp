@@ -4,7 +4,11 @@
 #include "ApprovalTests.hpp"
 // end-snippet
 
+#include "ApprovalTests/Approvals.h"
+
 int main(int argc, char** argv)
 {
+    auto directoryDisposer =
+        ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");
     return doctest::Context(argc, argv).run();
 }

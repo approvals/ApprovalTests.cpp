@@ -8,6 +8,21 @@ toc
 
 ## v.x.y.z
 
+### Consistent macro names
+
+All our Macros now start with `APPROVAL_TESTS_`.
+
+We have kept the old macros, redirecting to the new ones, for backwards compatibility.
+
+| Old                                        | New                                       |
+| ------------------------------------------ | ----------------------------------------- |
+| `APPROVALTESTS_VERSION`                    | `APPROVAL_TESTS_VERSION`                  |
+| `APPROVALTESTS_VERSION_MAJOR`              | `APPROVAL_TESTS_VERSION_MAJOR`            |
+| `APPROVALTESTS_VERSION_MINOR`              | `APPROVAL_TESTS_VERSION_MINOR`            |
+| `APPROVALTESTS_VERSION_PATCH`              | `APPROVAL_TESTS_VERSION_PATCH`            |
+| `APPROVALTESTS_VERSION_STR`                | `APPROVAL_TESTS_VERSION_STR`              |
+| `APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK` | `APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK` |
+
 ## v.8.6.0
 
 ### Support for Boost.Test framework
@@ -46,11 +61,11 @@ See [Conan Integration](/doc/ConanIntegration.md#top).
 
 ApprovalTests provides the following macros to detect the release version, with a set of example values shown in italics:
 
-* `APPROVALTESTS_VERSION_MAJOR`: *8*
-* `APPROVALTESTS_VERSION_MINOR`: *1*
-* `APPROVALTESTS_VERSION_PATCH`: *2*
-* `APPROVALTESTS_VERSION_STR`: *8.1.2*
-* `APPROVALTESTS_VERSION`: *80102*
+* `APPROVAL_TESTS_VERSION_MAJOR`: *8*
+* `APPROVAL_TESTS_VERSION_MINOR`: *1*
+* `APPROVAL_TESTS_VERSION_PATCH`: *2*
+* `APPROVAL_TESTS_VERSION_STR`: *8.1.2*
+* `APPROVAL_TESTS_VERSION`: *80102*
 
 ## v.8.0.0
 
@@ -135,7 +150,6 @@ See [Front Loaded Reporters](/doc/Reporters.md#front-loaded-reporters)
 ### Using sub-directories for approved files
 
 See [Using sub-directories for approved files](/doc/Configuration.md#using-sub-directories-for-approved-files)
-
 
 ---
 

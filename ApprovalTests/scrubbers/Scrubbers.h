@@ -4,7 +4,7 @@
 #include <functional>
 #include <iostream>
 #include <regex>
-#include <ApprovalTests/utilities/StringUtils.h>
+#include "ApprovalTests/utilities/StringUtils.h"
 
 namespace ApprovalTests
 {
