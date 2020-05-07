@@ -45,7 +45,7 @@ TEST_CASE("YouCanSpecifyAllOptions")
 )",
         // begin-snippet: specify_all_the_options
         Options()
-            //            .withReporter(QuietReporter())
+            .withReporter(QuietReporter())
             .withScrubber(Scrubbers::scrubGuid)
             .fileOptions()
             .withFileExtension(".json")
