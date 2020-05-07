@@ -85,7 +85,8 @@ Now that you are set up to run Approval Tests, this section describes how to tes
   :doc:`Exception messages <generated_docs/TestingExceptions>`
 
 * **Good Practice**:
-  :doc:`generated_docs/ToString`
+  :doc:`generated_docs/ToString` |
+  :doc:`generated_docs/explanations/TipsForDesigningStrings`
 
 .. toctree::
    :maxdepth: 3
@@ -98,6 +99,7 @@ Now that you are set up to run Approval Tests, this section describes how to tes
    generated_docs/TestingExceptions
 
    generated_docs/ToString
+   generated_docs/explanations/TipsForDesigningStrings
 
 Customising Behaviour
 ---------------------
@@ -156,6 +158,10 @@ How-to Guides
    * :doc:`generated_docs/how_tos/UseACustomReporter`
    * :doc:`generated_docs/how_tos/SubmitANewReporterToApprovalTests`
 
+* **Others**:
+
+   * :doc:`generated_docs/how_tos/ToggleDeprecatedCode`
+
 .. toctree::
    :maxdepth: 3
    :hidden:
@@ -166,6 +172,8 @@ How-to Guides
 
    generated_docs/how_tos/UseACustomReporter
    generated_docs/how_tos/SubmitANewReporterToApprovalTests
+
+   generated_docs/how_tos/ToggleDeprecatedCode
 
 Build Systems
 -------------
@@ -192,6 +200,7 @@ Extras
 
 * **Various**:
   :doc:`generated_docs/Features` |
+  :doc:`generated_docs/explanations/WhyWeAreConvertingToOptions` |
   :doc:`FAQs <generated_docs/FAQ>` |
   :doc:`generated_docs/Glossary` |
   :doc:`generated_docs/Utilities` |
@@ -203,6 +212,7 @@ Extras
    :caption: Extras
 
    generated_docs/Features
+   generated_docs/explanations/WhyWeAreConvertingToOptions
    generated_docs/FAQ
    generated_docs/Glossary
    generated_docs/Utilities

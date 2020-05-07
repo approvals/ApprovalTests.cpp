@@ -36,7 +36,7 @@ Here is a simple example of using a custom writer to produce an HTML file.
 HtmlWriter writer("<h1>hello world</h1>", ".html");
 Approvals::verify(writer);
 ```
-<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L10-L13' title='File snippet `use_custom_writer` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_writer' title='Navigate to start of snippet `use_custom_writer`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L11-L14' title='File snippet `use_custom_writer` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_writer' title='Navigate to start of snippet `use_custom_writer`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Using custom filename extensions
@@ -51,7 +51,7 @@ If all you want to do is change the file extension, here is how:
 Approvals::verify("<h1>hello world</h1>",
                   Options().fileOptions().withFileExtension(".html"));
 ```
-<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L18-L21' title='File snippet `use_custom_file_extension` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Navigate to start of snippet `use_custom_file_extension`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L19-L22' title='File snippet `use_custom_file_extension` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Navigate to start of snippet `use_custom_file_extension`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---
