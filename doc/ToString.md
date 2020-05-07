@@ -180,6 +180,16 @@ MyApprovals::verify(p);
 <sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L92-L97' title='File snippet `customising_to_string_with_custom_to_string_class_usage2` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage2' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage2`'>anchor</a></sup>
 <!-- endsnippet -->
 
+Or you can change the default, by defining this macro before including the Approval Tests header.
+
+<!-- snippet: customising_to_string_default_converter -->
+<a id='snippet-customising_to_string_default_converter'/></a>
+```h
+#define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER StringMaker
+```
+<sup><a href='/ApprovalTests/Approvals.h#L323-L325' title='File snippet `customising_to_string_default_converter` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_default_converter' title='Navigate to start of snippet `customising_to_string_default_converter`'>anchor</a></sup>
+<!-- endsnippet -->
+
 ## See also
 
 * [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top)

@@ -71,6 +71,10 @@ Or you can override the default Approvals template to use your customisation:
 
 snippet: customising_to_string_with_custom_to_string_class_usage2
 
+Or you can change the default, by defining this macro before including the Approval Tests header.
+
+snippet: customising_to_string_default_converter
+
 ## See also
 
 * [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top)

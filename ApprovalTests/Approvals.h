@@ -320,7 +320,9 @@ namespace ApprovalTests
     };
 
 #ifndef APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER
+// begin-snippet: customising_to_string_default_converter
 #define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER StringMaker
+// end-snippet
 #endif
 
     // Warning: Do not use CompileTimeOptions directly.
