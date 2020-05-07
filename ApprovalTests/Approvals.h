@@ -153,28 +153,40 @@ namespace ApprovalTests
             FileApprover::verify(namer, writer, options.getReporter());
         }
 
+        /**@name Customising Approval Tests
+
+         These static methods customise various aspects
+         of Approval Tests behaviour.
+         */
+        ///@{
+
+        /// See \userguide{Configuration,using-sub-directories-for-approved-files,Using sub-directories for approved files}
         static SubdirectoryDisposer
         useApprovalsSubdirectory(const std::string& subdirectory = "approval_tests")
         {
             return SubdirectoryDisposer(subdirectory);
         }
 
+        /// See \userguide{Reporters,registering-a-default-reporter,Registering a default reporter}
         static DefaultReporterDisposer
         useAsDefaultReporter(const std::shared_ptr<Reporter>& reporter)
         {
             return DefaultReporterDisposer(reporter);
         }
 
+        /// See \userguide{Reporters,front-loaded-reporters,Front Loaded Reporters}
         static FrontLoadedReporterDisposer
         useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
         {
             return FrontLoadedReporterDisposer(reporter);
         }
 
+        /// See \userguide{Namers,registering-a-custom-namer,Registering a Custom Namer}
         static DefaultNamerDisposer useAsDefaultNamer(NamerCreator namerCreator)
         {
             return DefaultNamerDisposer(std::move(namerCreator));
         }
+        ///@}
 
 #if !APPROVAL_TESTS_HIDE_DEPRECATED_CODE
 
