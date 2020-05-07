@@ -46,6 +46,13 @@ FileApprover
    :members:
    :undoc-members:
 
+Options
+--------
+
+.. doxygenclass:: ApprovalTests::Options
+   :members:
+   :undoc-members:
+
 Reporter
 --------
 
