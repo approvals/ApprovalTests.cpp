@@ -43,7 +43,7 @@ Approvals::verify(writer);
 
 Suppose that you are serializing an object in some text format like `JSON` or `CSV`. By writing to this file extension, different tools will render it appropriately.
 
-If all you want to do is change the file extension, there are many convenience functions to enable this, for example:
+If all you want to do is change the file extension, here is how:
 
 <!-- snippet: use_custom_file_extension -->
 <a id='snippet-use_custom_file_extension'/></a>
