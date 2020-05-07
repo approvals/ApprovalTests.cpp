@@ -1,7 +1,7 @@
 See the [v.x.y.z milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/8?closed=1) for the full list of changes.
 
 * **Breaking changes**
-    * If you happen to have specialised StringUtils::toString(), you would now need to specialize StringMaker::toString() instead.
+    * If you happen to have specialised `StringUtils::toString()`, you would now need to specialize `StringMaker::toString()` instead.
         * Note: this was previously unsupported behavior, so we are not bumping the major version number.
         * Here is how to update your code:
 ```diff
