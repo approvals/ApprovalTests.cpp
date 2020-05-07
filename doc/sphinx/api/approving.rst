@@ -6,7 +6,12 @@ Approving Objects
 Approvals
 ---------
 
-.. doxygenclass:: ApprovalTests::Approvals
+.. doxygentypedef:: ApprovalTests::Approvals
+
+TApprovals
+----------
+
+.. doxygenclass:: ApprovalTests::TApprovals
    :members:
    :undoc-members:
 
