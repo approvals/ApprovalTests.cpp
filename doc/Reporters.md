@@ -120,11 +120,9 @@ Once you have added that, even calling approvals with a specific Reporter will n
 <!-- snippet: basic_approval_with_reporter -->
 <a id='snippet-basic_approval_with_reporter'/></a>
 ```cpp
-ApprovalTests::Approvals::verify(
-    "text to be verified",
-    ApprovalTests::Options(ApprovalTests::Windows::AraxisMergeReporter()));
+Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter()));
 ```
-<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L11-L15' title='File snippet `basic_approval_with_reporter` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Navigate to start of snippet `basic_approval_with_reporter`'>anchor</a></sup>
+<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L13-L15' title='File snippet `basic_approval_with_reporter` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Navigate to start of snippet `basic_approval_with_reporter`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Blocking Reporters

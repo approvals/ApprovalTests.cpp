@@ -105,6 +105,7 @@ Customising Behaviour
 ---------------------
 
 * **Principles**:
+  :doc:`generated_docs/Options` |
   :doc:`generated_docs/DisposableObjects`
 
 * **Customisation points**:
@@ -122,6 +123,7 @@ Customising Behaviour
    :hidden:
    :caption: Customising Behaviour
 
+   generated_docs/Options
    generated_docs/DisposableObjects
 
    generated_docs/Reporters
