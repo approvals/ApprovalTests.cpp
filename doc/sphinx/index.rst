@@ -33,7 +33,7 @@ If you are new to Approval Tests, or to this C++ library, start here:
   :doc:`generated_docs/ApprovingResults`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
    :caption: Getting Started
 
@@ -62,7 +62,7 @@ Approval Tests uses a test framework, in order to find out the names of tests an
   :doc:`generated_docs/SupportingNewTestFramework`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
    :caption: Test Frameworks
 
@@ -88,7 +88,7 @@ Now that you are set up to run Approval Tests, this section describes how to tes
   :doc:`generated_docs/ToString`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
    :caption: Writing Tests
 
@@ -116,7 +116,7 @@ Customising Behaviour
   :doc:`generated_docs/AllCustomizations`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
    :caption: Customising Behaviour
 
@@ -137,7 +137,7 @@ Common Challenges
   :doc:`generated_docs/MultipleOutputFilesPerTest`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
    :caption: Common Challenges
 
@@ -157,7 +157,7 @@ How-to Guides
    * :doc:`generated_docs/how_tos/SubmitANewReporterToApprovalTests`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
    :caption: How-to Guides
 
@@ -178,7 +178,7 @@ Build Systems
   :doc:`Build Machines and CI servers <generated_docs/BuildMachinesAndCI>`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
    :caption: Build Systems
 
@@ -198,7 +198,7 @@ Extras
   :doc:`generated_docs/Videos`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
    :caption: Extras
 
@@ -217,7 +217,7 @@ Troubleshooting
   :doc:`Misconfigured main() <generated_docs/TroubleshootingMisconfiguredMain>`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
    :caption: Troubleshooting
 
@@ -233,7 +233,7 @@ Developing ApprovalTests.cpp
   :doc:`generated_docs/CodingPatterns`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
    :caption: Developing ApprovalTests.cpp
 
@@ -250,7 +250,7 @@ This section contains a growing list of pages documenting the ApprovalTests.cpp 
   :doc:`api/core`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
    :caption: C++ Reference
 
