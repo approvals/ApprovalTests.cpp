@@ -14,11 +14,11 @@ namespace ApprovalTests
      to understand the difference(s) between approved and received files. They
      also typically allow the output to be "approved".
 
-     For an demonstration of this, see the
+     For a demonstration of this, see the
      \userguide{Tutorial,Tutorial}.
 
      \see For more information, see
-     \userguide{Reporters,Reporter}
+     \userguide{Reporters,Reporters}
      */
     class Reporter
     {
