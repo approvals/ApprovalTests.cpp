@@ -9,11 +9,6 @@
 
 namespace ApprovalTests
 {
-    /*! \brief Easy control of various customization points in Approvals::verify() and similar methods
-
-     \see For more information, see
-     \userguide{Options,Options}
-     */
     class Options
     {
     public:

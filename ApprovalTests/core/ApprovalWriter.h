@@ -2,11 +2,6 @@
 
 namespace ApprovalTests
 {
-    /*! \brief Write the object being verified to file.
-
-     \see For more information, see
-     \userguide{Writers,Writers}
-     */
     class ApprovalWriter
     {
     public:

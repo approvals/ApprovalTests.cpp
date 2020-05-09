@@ -8,18 +8,6 @@
 
 namespace ApprovalTests
 {
-    /*! \brief Reporters are called on test failure, typically to show differences.
-
-     Most reporters launch an external diffing tool, allowing programmers
-     to understand the difference(s) between approved and received files. They
-     also typically allow the output to be "approved".
-
-     For a demonstration of this, see the
-     \userguide{Tutorial,Tutorial}.
-
-     \see For more information, see
-     \userguide{Reporters,Reporters}
-     */
     class Reporter
     {
     public:

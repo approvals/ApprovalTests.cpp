@@ -4,11 +4,6 @@
 
 namespace ApprovalTests
 {
-    /*! \brief Determine if received and approved files are equivalent
-
-     \see For more information, see
-     \userguide{CustomComparators,Custom Comparators}
-     */
     class ApprovalComparator
     {
     public:

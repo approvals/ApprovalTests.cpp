@@ -6,7 +6,6 @@
 
 namespace ApprovalTests
 {
-    //! Base class for ApprovalTest-specific exceptions
     class ApprovalException : public std::exception
     {
     private:
@@ -23,7 +22,6 @@ namespace ApprovalTests
         }
     };
 
-    //! Exception that is thrown if received and approved files differ
     class ApprovalMismatchException : public ApprovalException
     {
     private:
@@ -45,7 +43,6 @@ namespace ApprovalTests
         }
     };
 
-    //! Exception that is thrown if the approved file is missing - typically on first run of a new test.
     class ApprovalMissingException : public ApprovalException
     {
     private:

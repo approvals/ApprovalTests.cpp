@@ -4,11 +4,6 @@
 
 namespace ApprovalTests
 {
-    /*! \brief Interface class for controlling how output files are named.
-
-     \see For more information, see
-     \userguide{Namers,Namers}
-     */
     class ApprovalNamer
     {
     public:
