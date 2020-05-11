@@ -111,8 +111,7 @@ TEST_CASE("Test toString from Template and using")
 
 TEST_CASE("Test Combinations inputs from StringMaker - with CustomToStringClass")
 {
-    std::vector<TemplatePrintable> inputs1{TemplatePrintable(),
-                                           TemplatePrintable()};
+    std::vector<TemplatePrintable> inputs1{TemplatePrintable(), TemplatePrintable()};
     std::vector<TemplatePrintable> inputs2{TemplatePrintable()};
 
     using MyCombinationApprovals = ApprovalTests::TCombinationApprovals<
@@ -120,4 +119,3 @@ TEST_CASE("Test Combinations inputs from StringMaker - with CustomToStringClass"
     MyCombinationApprovals::verifyAllCombinations(
         [](auto /*input1*/, auto /*input2*/) { return "placeholder"; }, inputs1, inputs2);
 }
-
