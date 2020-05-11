@@ -15,7 +15,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Test gives "You have forgotten to configure your test framework..."](#test-gives-you-have-forgotten-to-configure-your-test-framework)
   * [Test gives "There seems to be a problem with your build configuration"](#test-gives-there-seems-to-be-a-problem-with-your-build-configuration)
-  * [My custom reporter works in development, but not CI](#my-custom-reporter-works-in-development-but-not-ci)<!-- endtoc -->
+  * [My custom reporter works in development, but not CI](#my-custom-reporter-works-in-development-but-not-ci)
+  * [Running Catch2 tests in CLion gives 'unexpected exception'](#running-catch2-tests-in-clion-gives-unexpected-exception)<!-- endtoc -->
 
 
 ## Test gives "You have forgotten to configure your test framework..."
@@ -119,6 +120,25 @@ See [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild
 Check your test code - especially your main - for any uses of `Approvals::useAsFrontLoadedReporter()` that are specific to running on a Continuous Integration system.
 
 If that's the case, and you do still want to use a custom reporter in an individual test, you can use `Approvals::useAsFrontLoadedReporter()` in the test, passing in your custom reporter, to take precedence over the CI-specific reporter in your main.
+
+## Running Catch2 tests in CLion gives 'unexpected exception'
+
+If there are problems with code that uses Approval Tests, or test failures, the library takes care to issue helpful information via the text in an exception (via `exception.what()`). This text is the displayed by the test framework.
+
+However, some Catch2 users have reported not always seeing these messages, and instead seeing output like:
+
+```
+.../TestFileName.cpp:32: Failure:
+unexpected exception
+```
+
+This turns out to be due to a bug in CLion's Catch2 plugin: [Catch2 unexpected exception instead of detailed message](https://youtrack.jetbrains.com/issue/CPP-11919).
+
+There are various options to work around this:
+
+* Try updating CLion or reviewing the linked ticket above, to see if the CLion problem has been fixed.
+* Run the test executable in a console window, instead of in CLion, to see what the error is, and fix it.
+* Use CLion's "Edit Configurations" to run the test program as a "CMake Application" instead of via the "Catch" test runner.
 
 ---
 
