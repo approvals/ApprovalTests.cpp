@@ -37,10 +37,12 @@ struct StringMakerPrintable
 };
 
 // begin-snippet: customising_to_string_with_string_maker_specialization
-template <>
-std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& printable)
+namespace ApprovalTests
 {
-    return "From StringMaker: " + std::to_string(printable.field1_);
+    template <> std::string StringMaker::toString(const StringMakerPrintable& printable)
+    {
+        return "From StringMaker: " + std::to_string(printable.field1_);
+    }
 }
 // end-snippet
 
