@@ -154,6 +154,7 @@ How-to Guides
 
    * :doc:`generated_docs/how_tos/TestContainerContents`
    * :doc:`generated_docs/how_tos/TestAVarietyOfValues`
+   * :doc:`generated_docs/how_tos/ScrubInconsistentOutput`
 
 * **Reporters**:
 
@@ -171,6 +172,7 @@ How-to Guides
 
    generated_docs/how_tos/TestContainerContents
    generated_docs/how_tos/TestAVarietyOfValues
+   generated_docs/how_tos/ScrubInconsistentOutput
 
    generated_docs/how_tos/UseACustomReporter
    generated_docs/how_tos/SubmitANewReporterToApprovalTests
