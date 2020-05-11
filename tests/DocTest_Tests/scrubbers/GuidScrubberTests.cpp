@@ -30,8 +30,8 @@ TEST_CASE("Input with non-GUID")
 
 TEST_CASE("Input with multiple GUIDs")
 {
-
-    std::string input = R"(
+    // begin-snippet: guid_scrubbing
+    std::string jsonFromRestCall = R"(
 {
     child: {
         id: b34b4da8-090e-49d8-bd35-7e79f633a2ea
@@ -48,9 +48,8 @@ TEST_CASE("Input with multiple GUIDs")
     }
 }
 )";
-    Approvals::verify(
-        input,
-        Options().withScrubber(Scrubbers::scrubGuid).withReporter(QuietReporter()));
+    Approvals::verify(jsonFromRestCall, Options().withScrubber(Scrubbers::scrubGuid));
+    // end-snippet
 }
 
 TEST_CASE("Scrubbing in verifyAll")
