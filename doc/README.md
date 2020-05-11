@@ -77,6 +77,7 @@ Here's how to set up from:
 
 ### Customising behaviour
 
+* [Options](/doc/Options.md#top)
 * [Reporters](/doc/Reporters.md#top)
 * [Custom Comparators](/doc/CustomComparators.md#top)
 * [Writers](/doc/Writers.md#top)
@@ -113,6 +114,7 @@ Here's how to set up from:
 
 ### Extras
 
+* [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top)
 * [Frequently Asked Questions](/doc/FAQ.md#top)
 * [Utilities](/doc/Utilities.md#top)
 * [Videos](/doc/Videos.md#top)
