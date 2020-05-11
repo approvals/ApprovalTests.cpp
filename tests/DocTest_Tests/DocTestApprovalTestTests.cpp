@@ -43,12 +43,13 @@ TEST_CASE("YouCanSpecifyAllOptions")
     id: 05f77de3-3790-4d45-b045-def96c9cd371
 }
 )",
+        // clang-format off
         // begin-snippet: specify_all_the_options
         Options()
             .withReporter(QuietReporter())
             .withScrubber(Scrubbers::scrubGuid)
-            .fileOptions()
-            .withFileExtension(".json")
+            .fileOptions().withFileExtension(".json")
         // end-snippet
+        // clang-format on
     );
 }

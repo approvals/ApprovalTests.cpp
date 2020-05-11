@@ -58,7 +58,19 @@ TEST_CASE("Scrubbing in verifyAll")
     std::vector<std::string> v{"b34b4da8-090e-49d8-bd35-7e79f633a2ea",
                                "2fd78d4a-ad49-447d-96a8-deda585a9aa5",
                                "b34b4da8-090e-49d8-bd35-7e79f633a2ea"};
+    // begin-snippet: basic_approval_with_scrubber
     Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
+    // end-snippet
+}
+
+TEST_CASE("Scrubbing in verifyAll-2")
+{
+    std::vector<std::string> v{"b34b4da8-090e-49d8-bd35-7e79f633a2ea",
+                               "2fd78d4a-ad49-447d-96a8-deda585a9aa5",
+                               "b34b4da8-090e-49d8-bd35-7e79f633a2ea"};
+    // begin-snippet: basic_approval_with_scrubber_2
+    Approvals::verifyAll("IDs", v, Options().withScrubber(Scrubbers::scrubGuid));
+    // end-snippet
 }
 
 TEST_CASE("Scrubbing via Lambda")

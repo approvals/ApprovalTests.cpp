@@ -19,7 +19,7 @@ snippet: specify_all_the_options
 
 ## Reporters
 
-There are two ways to set a Reporter.
+[Reporters](/doc/Reporters.md#top) launch diff tools upon failure. There are two ways to set a Reporter.
 
 1. Pass in a Reporter object to the Options constructor, for example:
 
@@ -31,9 +31,30 @@ snippet: basic_approval_with_reporter_2
 
 ## Scrubbers
 
+[Scrubbers](/doc/Scrubbers.md#top) clean output to help remove inconsistent pieces of text, such as dates.
+There are two ways to set a Scrubber.
+
+1. Pass in a function pointer to the Options constructor, for example:
+
+snippet: basic_approval_with_scrubber
+
+2. Call `.withScrubber()` with a function pointer, for example:
+
+snippet: basic_approval_with_scrubber_2
+
 ## File Options
 
+The `Options::FileOptions` class exists to customise the `.approved` and `.received` files in various ways.
+
+For now, it just controls the file extension. 
+
 ### File Extensions
+
+If you want to change the file extension of both the approved and received files, use `withFileExtension()`.
+
+snippet: basic_approval_with_file_extension
+
+**Note:** `withFileExtension()` returns an `Options` object, so it's possible to keep appending more `with...()` calls.  
 
 ## Defaults
 

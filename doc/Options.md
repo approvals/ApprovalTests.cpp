@@ -38,15 +38,14 @@ Options utilizes a fluent interface, allowing you to chain together commands. Ea
 Options()
     .withReporter(QuietReporter())
     .withScrubber(Scrubbers::scrubGuid)
-    .fileOptions()
-    .withFileExtension(".json")
+    .fileOptions().withFileExtension(".json")
 ```
-<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L46-L52' title='File snippet `specify_all_the_options` was extracted from'>snippet source</a> | <a href='#snippet-specify_all_the_options' title='Navigate to start of snippet `specify_all_the_options`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L47-L52' title='File snippet `specify_all_the_options` was extracted from'>snippet source</a> | <a href='#snippet-specify_all_the_options' title='Navigate to start of snippet `specify_all_the_options`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Reporters
 
-There are two ways to set a Reporter.
+[Reporters](/doc/Reporters.md#top) launch diff tools upon failure. There are two ways to set a Reporter.
 
 1. Pass in a Reporter object to the Options constructor, for example:
 
@@ -71,9 +70,49 @@ Approvals::verify("text to be verified",
 
 ## Scrubbers
 
+[Scrubbers](/doc/Scrubbers.md#top) clean output to help remove inconsistent pieces of text, such as dates.
+There are two ways to set a Scrubber.
+
+1. Pass in a function pointer to the Options constructor, for example:
+
+<!-- snippet: basic_approval_with_scrubber -->
+<a id='snippet-basic_approval_with_scrubber'/></a>
+```cpp
+Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
+```
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L61-L63' title='File snippet `basic_approval_with_scrubber` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber' title='Navigate to start of snippet `basic_approval_with_scrubber`'>anchor</a></sup>
+<!-- endsnippet -->
+
+2. Call `.withScrubber()` with a function pointer, for example:
+
+<!-- snippet: basic_approval_with_scrubber_2 -->
+<a id='snippet-basic_approval_with_scrubber_2'/></a>
+```cpp
+Approvals::verifyAll("IDs", v, Options().withScrubber(Scrubbers::scrubGuid));
+```
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L71-L73' title='File snippet `basic_approval_with_scrubber_2` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber_2' title='Navigate to start of snippet `basic_approval_with_scrubber_2`'>anchor</a></sup>
+<!-- endsnippet -->
+
 ## File Options
 
+The `Options::FileOptions` class exists to customise the `.approved` and `.received` files in various ways.
+
+For now, it just controls the file extension. 
+
 ### File Extensions
+
+If you want to change the file extension of both the approved and received files, use `withFileExtension()`.
+
+<!-- snippet: basic_approval_with_file_extension -->
+<a id='snippet-basic_approval_with_file_extension'/></a>
+```cpp
+Approvals::verify("text to be verified",
+                  Options().fileOptions().withFileExtension(".xyz"));
+```
+<sup><a href='/tests/DocTest_Tests/core/OptionsTests.cpp#L71-L74' title='File snippet `basic_approval_with_file_extension` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_file_extension' title='Navigate to start of snippet `basic_approval_with_file_extension`'>anchor</a></sup>
+<!-- endsnippet -->
+
+**Note:** `withFileExtension()` returns an `Options` object, so it's possible to keep appending more `with...()` calls.  
 
 ## Defaults
 
