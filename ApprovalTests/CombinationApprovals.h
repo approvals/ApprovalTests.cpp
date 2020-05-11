@@ -12,48 +12,53 @@
 
 namespace ApprovalTests
 {
-    namespace CombinationApprovals
+    template <typename TCompileTimeOptions> class TCombinationApprovals
     {
-        namespace Detail
-        {
-
+    public:
+//        class Detail
+//        {
+//        public:
             // Write out second or subsequent input value, with preceding comma and space
             struct print_input
             {
                 std::ostream& out;
                 template <class T> void operator()(const T& input)
                 {
-                    out << ", " << StringMaker::toString(input);
+                    out << ", " << TCompileTimeOptions::ToStringConverter::toString(input);
                 }
             };
 
             // Write out one row of output
             template <class Converter> struct serialize
             {
+                serialize(std::ostream& out_, Converter converter_) : out(out_), converter(converter_)
+                {
+                }
                 std::ostream& out;
                 Converter converter;
                 template <class T, class... Ts>
                 void operator()(T&& input1_, Ts&&... inputs)
                 {
                     // First value is printed without trailing comma
-                    out << "(" << StringMaker::toString(input1_);
+                    out << "(" << TCompileTimeOptions::ToStringConverter::toString(input1_);
                     // Remaining values are printed with prefix of a comma
                     CartesianProduct::Detail::for_each(std::forward_as_tuple(inputs...),
                                                        print_input{out});
                     out << ") => " << converter(input1_, inputs...) << '\n';
                 }
             };
-        } // namespace Detail
+//        };
 
         template <class Converter, class Container, class... Containers>
-        void verifyAllCombinations(const Options& options,
+        static void verifyAllCombinations(const Options& options,
                                    Converter&& converter,
                                    const Container& input0,
                                    const Containers&... inputs)
         {
             std::stringstream s;
+            serialize<Converter> serializer{s, std::forward<Converter>(converter)};
             CartesianProduct::cartesian_product(
-                Detail::serialize<Converter>{s, std::forward<Converter>(converter)},
+                serializer,
                 input0,
                 inputs...);
             Approvals::verify(s.str(), options);
@@ -61,7 +66,7 @@ namespace ApprovalTests
 
 #if !APPROVAL_TESTS_HIDE_DEPRECATED_CODE
         template <class Converter, class Container, class... Containers>
-        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS void
+        static APPROVAL_TESTS_DEPRECATED_USE_OPTIONS void
         verifyAllCombinations(const Reporter& reporter,
                               Converter&& converter,
                               const Container& input0,
@@ -73,12 +78,16 @@ namespace ApprovalTests
 #endif
 
         template <class Converter, class... Containers>
-        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<Converter>
-        verifyAllCombinations(Converter&& converter, const Containers&... inputs)
+        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
+            Converter> static verifyAllCombinations(Converter&& converter,
+                                                    const Containers&... inputs)
         {
             verifyAllCombinations(
                 Options(), std::forward<Converter>(converter), inputs...);
         }
+    };
 
-    } // namespace CombinationApprovals
+    using CombinationApprovals =
+    TCombinationApprovals<ToStringCompileTimeOptions<APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER>>;
+
 } // namespace ApprovalTests
