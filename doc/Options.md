@@ -116,6 +116,12 @@ Approvals::verify("text to be verified",
 
 ## Defaults
 
+The default constructor for Options does:
+
+* no scrubbing
+* uses file extension `.txt`
+* uses whatever is currently set as [the default reporter](#registering-a-default-reporter).
+
 ## Adding to Existing Options object
 
 Because of the fluent options, you can modify a specific option from an existing Options object,
