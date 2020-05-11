@@ -18,6 +18,11 @@ TApprovals
 CombinationApprovals
 --------------------
 
-.. doxygennamespace:: ApprovalTests::CombinationApprovals
+.. doxygentypedef:: ApprovalTests::CombinationApprovals
+
+TCombinationApprovals
+---------------------
+
+.. doxygenclass:: ApprovalTests::TCombinationApprovals
    :members:
    :undoc-members:
