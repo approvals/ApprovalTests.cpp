@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-# How To Use A Custom Reporter
+# How to Use A Custom Reporter
 
 toc
 

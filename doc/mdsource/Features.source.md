@@ -43,7 +43,7 @@ Added support for [Beyond Compare](https://www.scootersoftware.com) on Linux (Se
 
 ### Flexibility for adding custom merge tools
 
-`CustomReporter::create()` adds flexibility for adding custom merge tools: see [How To Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top).
+`CustomReporter::create()` adds flexibility for adding custom merge tools: see [How to Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top).
 
 ### Supporting new merge tools.
 

@@ -7,7 +7,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 <a id="top"></a>
 
-# How To Use A Custom Reporter
+# How to Use A Custom Reporter
 
 
 

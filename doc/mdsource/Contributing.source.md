@@ -181,7 +181,7 @@ The script [fix_markdown.sh](/fix_markdown.sh) can be used to do some checks of 
 ## Releases
 
 * Everything for releases is in [the build directory](/build/)
-* There's more information in [How To Release](/build/HowToRelease.md#top)
+* There's more information in [How to Release](/build/HowToRelease.md#top)
 
 ## Running shell scripts in cygwin
 

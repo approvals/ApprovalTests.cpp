@@ -7,7 +7,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 <a id="top"></a>
 
-# How To Test a Variety of Values for One Input
+# How to Test a Variety of Values for One Input
 
 <!-- toc -->
 ## Contents

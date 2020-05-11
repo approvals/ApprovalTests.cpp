@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-# How To Test a Variety of Values for One Input
+# How to Test a Variety of Values for One Input
 
 toc
 
