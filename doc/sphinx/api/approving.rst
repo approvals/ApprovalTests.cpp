@@ -9,7 +9,7 @@ Approvals
 .. doxygentypedef:: ApprovalTests::Approvals
 
 TApprovals
-----------
+~~~~~~~~~~
 
 .. doxygenclass:: ApprovalTests::TApprovals
    :members:
@@ -21,7 +21,7 @@ CombinationApprovals
 .. doxygentypedef:: ApprovalTests::CombinationApprovals
 
 TCombinationApprovals
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 .. doxygenclass:: ApprovalTests::TCombinationApprovals
    :members:
