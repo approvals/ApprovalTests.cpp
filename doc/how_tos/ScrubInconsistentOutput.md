@@ -43,11 +43,9 @@ person: {
 }
 }
 )";
-Approvals::verify(
-    jsonFromRestCall,
-    Options().withScrubber(Scrubbers::scrubGuid));
+Approvals::verify(jsonFromRestCall, Options().withScrubber(Scrubbers::scrubGuid));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L33-L54' title='File snippet `guid_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-guid_scrubbing' title='Navigate to start of snippet `guid_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L33-L52' title='File snippet `guid_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-guid_scrubbing' title='Navigate to start of snippet `guid_scrubbing`'>anchor</a></sup>
 <!-- endsnippet -->
 
 will produce:
