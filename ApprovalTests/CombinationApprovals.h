@@ -15,9 +15,6 @@ namespace ApprovalTests
     template <typename TCompileTimeOptions> class TCombinationApprovals
     {
     public:
-//        class Detail
-//        {
-//        public:
             // Write out second or subsequent input value, with preceding comma and space
             struct print_input
             {
@@ -31,9 +28,6 @@ namespace ApprovalTests
             // Write out one row of output
             template <class Converter> struct serialize
             {
-                serialize(std::ostream& out_, Converter converter_) : out(out_), converter(converter_)
-                {
-                }
                 std::ostream& out;
                 Converter converter;
                 template <class T, class... Ts>
@@ -47,7 +41,6 @@ namespace ApprovalTests
                     out << ") => " << converter(input1_, inputs...) << '\n';
                 }
             };
-//        };
 
         template <class Converter, class Container, class... Containers>
         static void verifyAllCombinations(const Options& options,
@@ -56,9 +49,8 @@ namespace ApprovalTests
                                    const Containers&... inputs)
         {
             std::stringstream s;
-            serialize<Converter> serializer{s, std::forward<Converter>(converter)};
             CartesianProduct::cartesian_product(
-                serializer,
+                serialize<Converter>{s, std::forward<Converter>(converter)},
                 input0,
                 inputs...);
             Approvals::verify(s.str(), options);
