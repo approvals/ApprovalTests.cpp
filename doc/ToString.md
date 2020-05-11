@@ -28,14 +28,12 @@ When you use Approval tests, any object you pass in is going to be converted to 
 
 ## How Approval Tests converts your objects to strings
 
-The process from your input to the final output looks like:
+The process from your input to the final output looks like this - You can customize the string at any of these 4 points:
 
 1. Input
 1. The TApprovals class has a template parameter StringConverter
 1. Approvals uses the default StringMaker
 1. StringMaker converts via std::ostream operator (<<)
-
-You can customize the string at any of these 4 points. 
 
 ## Pass in a string
 
@@ -63,7 +61,7 @@ friend std::ostream& operator<<(std::ostream& os, const Rectangle1& rectangle)
 
 You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
 
-If including `<iostream>` or similar is problematic, for example because your code needs be compiled for embedded platforms, and you are tempted to surround it with `#ifdef`s so that it only shows up in testing, we recommend that you use the template approach instead:
+If including `<iostream>` or similar is problematic, for example because your code needs to be compiled for embedded platforms, and you are tempted to surround it with `#ifdef`s so that it only shows up in testing, we recommend that you use the template approach instead:
 
 <!-- snippet: to_string_template_example -->
 <a id='snippet-to_string_template_example'/></a>
@@ -186,7 +184,7 @@ ApprovalTests::TApprovals<
 <sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L95-L98' title='File snippet `customising_to_string_with_custom_to_string_class_usage1` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage1' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage1`'>anchor</a></sup>
 <!-- endsnippet -->
 
-Or you can override the default Approvals template to use your customisation:
+Or you can create your own custom alias to use your customisation:
 
 <!-- snippet: customising_to_string_with_custom_to_string_class_usage2 -->
 <a id='snippet-customising_to_string_with_custom_to_string_class_usage2'/></a>
@@ -199,7 +197,9 @@ MyApprovals::verify(p);
 <sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L104-L109' title='File snippet `customising_to_string_with_custom_to_string_class_usage2` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage2' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage2`'>anchor</a></sup>
 <!-- endsnippet -->
 
-Or you can change the default, by defining this macro before including the Approval Tests header.
+With `MyApprovals::verify()`, we have not changed the behavior of `Approvals::verify()`.
+
+If, instead, you want to change the default string formatting, so that all calls to `Approvals::verify()` and related methods will automatically use your new string formatter, you can override the default, by defining this macro **before including the Approval Tests header**.
 
 <!-- snippet: customising_to_string_default_converter -->
 <a id='snippet-customising_to_string_default_converter'/></a>
