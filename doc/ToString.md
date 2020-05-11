@@ -18,6 +18,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Pass in a string](#pass-in-a-string)
   * [Write a custom std::ostream operator (`<<`)](#write-a-custom-stdostream-operator-)
   * [Specialize StringMaker](#specialize-stringmaker)
+    * [gcc 5 & 6](#gcc-5--6)
   * [Use `TApprovals<YourStringConvertingClass>`](#use-tapprovalsyourstringconvertingclass)
   * [See also](#see-also)<!-- endtoc -->
 
@@ -130,7 +131,25 @@ std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& pri
     return "From StringMaker: " + std::to_string(printable.field1_);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L39-L45' title='File snippet `customising_to_string_with_string_maker_specialization` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_string_maker_specialization' title='Navigate to start of snippet `customising_to_string_with_string_maker_specialization`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L50-L56' title='File snippet `customising_to_string_with_string_maker_specialization` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_string_maker_specialization' title='Navigate to start of snippet `customising_to_string_with_string_maker_specialization`'>anchor</a></sup>
+<!-- endsnippet -->
+
+### gcc 5 & 6
+
+With older compilers, you might need to make the namespace explicit, like this:
+
+<!-- snippet: customising_to_string_with_string_maker_specialization_gcc5_and_6 -->
+<a id='snippet-customising_to_string_with_string_maker_specialization_gcc5_and_6'/></a>
+```cpp
+namespace ApprovalTests
+{
+    template <> std::string StringMaker::toString(const StringMakerPrintable& printable)
+    {
+        return "From StringMaker: " + std::to_string(printable.field1_);
+    }
+}
+```
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L40-L48' title='File snippet `customising_to_string_with_string_maker_specialization_gcc5_and_6` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_string_maker_specialization_gcc5_and_6' title='Navigate to start of snippet `customising_to_string_with_string_maker_specialization_gcc5_and_6`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Use `TApprovals<YourStringConvertingClass>`
@@ -152,7 +171,7 @@ public:
     }
 };
 ```
-<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L69-L78' title='File snippet `customising_to_string_with_custom_to_string_class` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L81-L90' title='File snippet `customising_to_string_with_custom_to_string_class` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class`'>anchor</a></sup>
 <!-- endsnippet -->
 
 However, this alone will not do anything. You now need to call a variation of Approvals that uses it.
@@ -164,7 +183,7 @@ You can do this directly by:
 ApprovalTests::TApprovals<
     ApprovalTests::ToStringCompileTimeOptions<CustomToStringClass>>::verify(p);
 ```
-<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L83-L86' title='File snippet `customising_to_string_with_custom_to_string_class_usage1` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage1' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage1`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L95-L98' title='File snippet `customising_to_string_with_custom_to_string_class_usage1` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage1' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage1`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Or you can override the default Approvals template to use your customisation:
@@ -177,7 +196,7 @@ using MyApprovals = ApprovalTests::TApprovals<
 
 MyApprovals::verify(p);
 ```
-<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L92-L97' title='File snippet `customising_to_string_with_custom_to_string_class_usage2` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage2' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage2`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L104-L109' title='File snippet `customising_to_string_with_custom_to_string_class_usage2` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage2' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage2`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Or you can change the default, by defining this macro before including the Approval Tests header.

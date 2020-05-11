@@ -53,6 +53,12 @@ Here is an example:
 
 snippet: customising_to_string_with_string_maker_specialization
 
+### gcc 5 & 6
+
+With older compilers, you might need to make the namespace explicit, like this:
+
+snippet: customising_to_string_with_string_maker_specialization_gcc5_and_6 
+
 ## Use `TApprovals<YourStringConvertingClass>`
 
 If you want to change a broader category of how strings are created, you can create your own string-maker class,
