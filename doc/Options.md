@@ -28,6 +28,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 There are many things you might want to tweak with Approval Tests. `Options` is the entry-point for many of the changes.
 It is on all `verify()` methods, as an optional parameter.
 
+**Note:** If you are interested in why we moved from "optional Reporter arguments" to "optional Options arguments", see [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top).
+
 ## Fluent Interface
 
 Options utilizes a fluent interface, allowing you to chain together commands. Each returned object is a new copy.

@@ -12,6 +12,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [Introduction](#introduction)
   * [Scrubbers](#scrubbers)
   * [API](#api)
   * [The Plan](#the-plan)
@@ -20,6 +21,12 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [How to Update Calls to Deprecated Code](#how-to-update-calls-to-deprecated-code)
     * [Updating verify(..., Reporter)](#updating-verify-reporter)
     * [Updating verifyWithExtension(..., fileExtensionWithDot, Reporter)](#updating-verifywithextension-fileextensionwithdot-reporter)<!-- endtoc -->
+
+## Introduction
+
+We have introduced an optional `Options` parameter, instead of the optional `Reporter` parameter. The following is the history and reasoning for making this change, as well as our plans to roll it out.
+
+For information on using Options itself, see [Options](/doc/Options.md#top).
 
 ## Scrubbers
 

@@ -4,6 +4,12 @@
 
 toc
 
+## Introduction
+
+We have introduced an optional `Options` parameter, instead of the optional `Reporter` parameter. The following is the history and reasoning for making this change, as well as our plans to roll it out.
+
+For information on using Options itself, see [Options](/doc/Options.md#top).
+
 ## Scrubbers
 
 With the addition of Scrubbers, we realised that ApprovalTests has some optional parameters. The only one we had of these before was reporter. Because of that, we decided to group together all of the options in to a single container object. This gives us a few advantages:
