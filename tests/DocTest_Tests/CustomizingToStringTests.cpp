@@ -36,7 +36,8 @@ struct StringMakerPrintable
     int field1_ = 0;
 };
 
-// begin-snippet: customising_to_string_with_string_maker_specialization
+#if defined(__GNUC__) && __GNUC__ < 7
+// begin-snippet: customising_to_string_with_string_maker_specialization_gcc5_and_6
 namespace ApprovalTests
 {
     template <> std::string StringMaker::toString(const StringMakerPrintable& printable)
@@ -45,6 +46,15 @@ namespace ApprovalTests
     }
 }
 // end-snippet
+#else
+// begin-snippet: customising_to_string_with_string_maker_specialization
+template <>
+std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& printable)
+{
+    return "From StringMaker: " + std::to_string(printable.field1_);
+}
+// end-snippet
+#endif
 
 TEST_CASE("Test toString from StringMaker")
 {
