@@ -22,7 +22,6 @@ def convertMarkdownDocsToRst():
 
 
 def convert_all_markdown_files_in_dir(subdir, input_sub_dir, output_sub_dir):
-    base_names_to_skip = ['README', 'TemplatePage']
     md_files = glob.glob(f'{input_sub_dir}/*.md')
     if not md_files:
         return
@@ -32,8 +31,6 @@ def convert_all_markdown_files_in_dir(subdir, input_sub_dir, output_sub_dir):
         file_base_file = os.path.split(file)[1]
         file_base_name = os.path.splitext(file_base_file)[0]
 
-        if file_base_name in base_names_to_skip:
-            continue
         # print(file_base_name, input_sub_dir, output_sub_dir)
         convert_markdown_file_to_restructured_text(subdir, file_base_name, input_sub_dir, output_sub_dir)
 
