@@ -1,3 +1,9 @@
+find_program(mdsnippets_FOUND mdsnippets)
+if (NOT mdsnippets_FOUND)
+    message(STATUS "mdsnippets not found: Will not regenerate markdown files")
+    return()
+endif ()
+
 # If any .source.md files have been changed, rerun mdsnippets
 # TODO Also add dependency on files containing any snippets
 list(GET APPROVAL_TESTS_GEN_DOC_MD_FILES 0 FIRST_GENERATED_MD_FILE)
