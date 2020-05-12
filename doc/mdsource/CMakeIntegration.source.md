@@ -35,6 +35,7 @@ They are:
     * Note that these are always built if this is the top-level project.
     * `APPROVAL_TESTS_BUILD_TESTING` -- When `ON`, the self-tests are run.  Defaults to `OFF`.
     * `APPROVAL_TESTS_BUILD_EXAMPLES` -- When `ON`, the examples are run.  Defaults to `OFF`.
+    * `APPROVAL_TESTS_BUILD_DOCS` -- When `ON`, documentation files are generated, if Doxygen, Sphinx and mdsnippets are installed.  Defaults to `OFF`.
 * Options to control which of our copies of header-only third_party libraries are made available.
     * Note that these are always included if this is the top-level project.
     * `APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2` --  When `ON`, this project's copy of the Catch2 test framework is included.  Defaults to `OFF`.
