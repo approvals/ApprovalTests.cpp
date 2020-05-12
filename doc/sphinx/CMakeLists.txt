@@ -1,3 +1,7 @@
+# APPROVAL_TESTS_GEN_DOC_RST_FILES       will contain .rst files corresponding to the generated *.md
+string(REPLACE "/doc/" "/doc/sphinx/generated_docs/" APPROVAL_TESTS_GEN_DOC_RST_FILES "${APPROVAL_TESTS_GEN_DOC_MD_FILES}")
+string(REPLACE ".md" ".rst" APPROVAL_TESTS_GEN_DOC_RST_FILES "${APPROVAL_TESTS_GEN_DOC_RST_FILES}")
+
 # TODO Only regenerate Sphinx when:
 # - Doxygen has rerun
 # - Our doc files have been updated
@@ -18,6 +22,7 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         ${DOXYGEN_INDEX_FILE}
         ${APPROVAL_TESTS_GEN_DOC_MD_FILES}
         MAIN_DEPENDENCY ${SPHINX_SOURCE}/conf.py
+        BYPRODUCTS ${APPROVAL_TESTS_GEN_DOC_RST_FILES}
         COMMENT "Generating documentation with Sphinx")
 
 # Nice named target so we can run the job easily
