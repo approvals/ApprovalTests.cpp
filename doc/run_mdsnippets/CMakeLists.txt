@@ -15,4 +15,4 @@ add_custom_command(OUTPUT ${FIRST_GENERATED_MD_FILE}
         )
 
 # Nice named target so we can run the job easily
-add_custom_target(RunMdsnippets ALL DEPENDS ${FIRST_GENERATED_MD_FILE})
+add_custom_target(RunMdsnippets DEPENDS ${FIRST_GENERATED_MD_FILE})

@@ -21,7 +21,7 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         COMMENT "Generating documentation with Sphinx")
 
 # Nice named target so we can run the job easily
-add_custom_target(Sphinx ALL DEPENDS ${SPHINX_INDEX_FILE} Doxygen RunMdsnippets)
+add_custom_target(Sphinx DEPENDS ${SPHINX_INDEX_FILE} Doxygen RunMdsnippets)
 
 # Show where to find the generated documentation
 add_custom_command(TARGET Sphinx POST_BUILD
