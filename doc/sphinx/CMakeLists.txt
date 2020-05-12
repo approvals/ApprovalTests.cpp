@@ -21,20 +21,7 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         COMMENT "Generating documentation with Sphinx")
 
 # Nice named target so we can run the job easily
-add_custom_target(Sphinx ALL DEPENDS ${SPHINX_INDEX_FILE} Doxygen)
-
-# If any .source.md files have been changed, rerun mdsnippets
-# TODO Also add dependency on files containing any snippets
-# TODO If I "Rebuild 'Sphinx'", the build fails after running mdsnippets.
-#      I think it is because it removes the generated .md files, and then
-#      tries to convert .md to .rst - and then runs mdsnippets.
-list(GET APPROVAL_TESTS_GEN_DOC_MD_FILES 0 FIRST_GENERATED_MD_FILE)
-add_custom_command(OUTPUT ${FIRST_GENERATED_MD_FILE}
-        COMMAND mdsnippets
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        DEPENDS ${APPROVAL_TESTS_ALL_DOC_SOURCE_MD_FILES}
-        BYPRODUCTS ${APPROVAL_TESTS_GEN_DOC_MD_FILES}
-        )
+add_custom_target(Sphinx ALL DEPENDS ${SPHINX_INDEX_FILE} Doxygen RunMdsnippets)
 
 # Show where to find the generated documentation
 add_custom_command(TARGET Sphinx POST_BUILD
