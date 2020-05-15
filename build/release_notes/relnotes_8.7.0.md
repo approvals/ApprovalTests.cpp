@@ -2,7 +2,7 @@ See the [v.8.7.0 milestone](https://github.com/approvals/ApprovalTests.cpp/miles
 
 * **Breaking changes**
     * **Planned deprecation:** The overloads of `verify()`, `verifyAll()` and `verifyAllCombinations()` which take a `Reporter` have been deprecated.
-        * The `Reporter` argument is `replaced` by Options - see below.
+        * The `Reporter` argument is replaced by `Options` - see below.
         * By default, there is currently no change, but this release marks the start of the [plan to remove them](/doc/explanations/WhyWeAreConvertingToOptions.md#the-plan).
     * If you happen to have specialised `StringUtils::toString()`, you would now need to specialize `StringMaker::toString()` instead.
         * Note: this was previously unsupported behavior, so we are not bumping the major version number.
