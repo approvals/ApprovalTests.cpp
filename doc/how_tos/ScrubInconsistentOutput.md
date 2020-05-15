@@ -15,7 +15,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Introduction](#introduction)
   * [Interface](#interface)
   * [Lambda example](#lambda-example)
-  * [GUID](#guid)<!-- endtoc -->
+  * [Pre-made Scrubbers](#pre-made-scrubbers)
+    * [GUID](#guid)<!-- endtoc -->
 
 ## Introduction
 
@@ -51,8 +52,9 @@ This would produce:
 
 (In the real world, scrubbers are generally used to remove text that is expected to differ between test runs... Here, we use a trivial example for ease of explanation.)
 
+## Pre-made Scrubbers
 
-## GUID
+### GUID
 
 You can scrub GUIDs by using a pointer to the function `Scrubbers::scrubGuid`, for example the following code:
 
