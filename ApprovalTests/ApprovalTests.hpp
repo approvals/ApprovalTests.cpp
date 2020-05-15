@@ -13,6 +13,7 @@
 #include "ApprovalTests/core/ApprovalWriter.h"
 #include "ApprovalTests/writers/StringWriter.h"
 #include "ApprovalTests/utilities/FileUtils.h"
+#include "ApprovalTests/utilities/StringMaker.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 #include "ApprovalTests/utilities/MachineBlocker.h"

@@ -8,6 +8,8 @@ toc
 
 ## v.x.y.z
 
+## v.8.7.0
+
 ### Options
 
 See [Options](/doc/Options.md#top).
