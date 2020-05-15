@@ -1,17 +1,17 @@
 
-{
-    child: {
-        id: guid_1
-        parent1: guid_2
-        parent2: guid_3
-    }
-    person: {
-        name: mom
-        id: guid_2
-    }
-    person: {
-        name: dad
-        id: guid_3
-    }
-}
-
+        {
+            child: {
+                id: guid_1
+                parent1: guid_2
+                parent2: guid_3
+            }
+            person: {
+                name: mom
+                id: guid_2
+            }
+            person: {
+                name: dad
+                id: guid_3
+            }
+        }
+        

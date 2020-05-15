@@ -62,22 +62,22 @@ You can scrub GUIDs by using a pointer to the function `Scrubbers::scrubGuid`, f
 <a id='snippet-guid_scrubbing'/></a>
 ```cpp
 std::string jsonFromRestCall = R"(
-{
-child: {
-    id: b34b4da8-090e-49d8-bd35-7e79f633a2ea
-    parent1: 2fd78d4a-ad49-447d-96a8-deda585a9aa5
-    parent2: 05f77de3-3790-4d45-b045-def96c9cd371
-}
-person: {
-    name: mom
-    id: 2fd78d4a-ad49-447d-96a8-deda585a9aa5
-}
-person: {
-    name: dad
-    id: 05f77de3-3790-4d45-b045-def96c9cd371
-}
-}
-)";
+    {
+        child: {
+            id: b34b4da8-090e-49d8-bd35-7e79f633a2ea
+            parent1: 2fd78d4a-ad49-447d-96a8-deda585a9aa5
+            parent2: 05f77de3-3790-4d45-b045-def96c9cd371
+        }
+        person: {
+            name: mom
+            id: 2fd78d4a-ad49-447d-96a8-deda585a9aa5
+        }
+        person: {
+            name: dad
+            id: 05f77de3-3790-4d45-b045-def96c9cd371
+        }
+    }
+    )";
 Approvals::verify(jsonFromRestCall, Options().withScrubber(Scrubbers::scrubGuid));
 ```
 <sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L33-L52' title='File snippet `guid_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-guid_scrubbing' title='Navigate to start of snippet `guid_scrubbing`'>anchor</a></sup>
@@ -89,22 +89,22 @@ will produce:
 <a id='snippet-GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt'/></a>
 ```txt
 
-{
-    child: {
-        id: guid_1
-        parent1: guid_2
-        parent2: guid_3
-    }
-    person: {
-        name: mom
-        id: guid_2
-    }
-    person: {
-        name: dad
-        id: guid_3
-    }
-}
-
+        {
+            child: {
+                id: guid_1
+                parent1: guid_2
+                parent2: guid_3
+            }
+            person: {
+                name: mom
+                id: guid_2
+            }
+            person: {
+                name: dad
+                id: guid_3
+            }
+        }
+        
 ```
 <sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt#L1-L17' title='File snippet `GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt' title='Navigate to start of snippet `GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
