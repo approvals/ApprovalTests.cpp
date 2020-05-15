@@ -212,6 +212,7 @@ If, instead, you want to change the default string formatting, so that all calls
 ## See also
 
 * [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top)
+* [How to Scrub Inconsistent Output](/doc/how_tos/ScrubInconsistentOutput.md#top)
 
 
 
