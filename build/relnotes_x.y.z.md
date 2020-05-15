@@ -12,7 +12,7 @@ template <>
 * **New features**
     * New [Options](/doc/Options.md#top) class provides consistent interface for customising the following in all `verify()`, `verifyAll()` and `verifyAllCombinations()` calls:
         * Reporter: see [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top)
-        * Scrubber: [How to Scrub Inconsistent Output](/doc/how_tos/ScrubInconsistentOutput.md#top).  (#126, thank you @abdulg, @haraldreingruber, @jawn)
+        * Scrubber: [How to Scrub Non-Deterministic Output](/doc/how_tos/ScrubNonDeterministicOutput.md#top).  (#126, thank you @abdulg, @haraldreingruber, @jawn)
         * File extensions now customizable with `verifyAll()` and `verifyAllCombinations()`: See [File Extensions](/doc/Options.md#file-extensions) (#127)
     * New mechanics for [String conversions](/doc/ToString.md#top)
         * The class `Approvals` is now an alias for `TApprovals< ToStringCompileTimeOptions< StringMaker > >`

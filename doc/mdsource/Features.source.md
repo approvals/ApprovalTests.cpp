@@ -14,7 +14,7 @@ See [Options](/doc/Options.md#top).
 
 ### Scrubbers
 
-See [How to Scrub Inconsistent Output](/doc/how_tos/ScrubInconsistentOutput.md#top).
+See [How to Scrub Non-Deterministic Output](/doc/how_tos/ScrubNonDeterministicOutput.md#top).
 
 ### StringMaker and TApprovals
 

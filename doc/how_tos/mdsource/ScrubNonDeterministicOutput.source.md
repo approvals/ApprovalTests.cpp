@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-# How to Scrub Inconsistent Output
+# How to Scrub Non-Deterministic Output
 
 toc
 
