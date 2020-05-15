@@ -15,6 +15,9 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [Options](#options)
+    * [Scrubbers](#scrubbers)
+    * [StringMaker and TApprovals](#stringmaker-and-tapprovals)
     * [Consistent macro names](#consistent-macro-names)
   * [v.8.6.0](#v860)
     * [Support for Boost.Test framework](#support-for-boosttest-framework)
@@ -53,6 +56,26 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+### Options
+
+See [Options](/doc/Options.md#top).
+
+### Scrubbers
+
+See [How to Scrub Inconsistent Output](/doc/how_tos/ScrubInconsistentOutput.md#top).
+
+### StringMaker and TApprovals
+
+This is in internal change, which will provide future flexibility, and does not change any existing code.
+
+In this release, we:
+ 
+* templatized the Approvals class, renaming it to TApprovals
+* changed the CombinationApprovals namespace to a template class called TCombinationApprovals
+* introduced the StringMaker class as an additional customization point for the above two classes 
+
+To learn about the extra string-formatting options for your objects, see [To String](/doc/ToString.md#top). 
 
 ### Consistent macro names
 

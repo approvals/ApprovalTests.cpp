@@ -10,6 +10,10 @@ template <>
 +std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& printable)
 ```
 * **New features**
+    * New [Options](/doc/Options.md#top) class provides consistent interface for customising the following in all `verify()`, `verifyAll()` and `verifyAllCombinations()` calls:
+        * Reporter: see [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top)
+        * Scrubber: [How to Scrub Inconsistent Output](/doc/how_tos/ScrubInconsistentOutput.md#top).  (#126, thank you @abdulg, @haraldreingruber, @jawn)
+        * File extensions now customizable with `verifyAll()` and `verifyAllCombinations()`: See [File Extensions](/doc/Options.md#file-extensions) (#127)
     * New mechanics for [String conversions](/doc/ToString.md#top)
         * The class `Approvals` is now an alias for `TApprovals< ToStringCompileTimeOptions< StringMaker > >`
         * This is a completely backwards-compatible feature.
@@ -18,6 +22,9 @@ template <>
 * **Bug fixes**
     * None
 * **Other changes**
+    * [User Guide available on Read the Docs](https://approvaltestscpp.readthedocs.io/en/latest/index.html)
+        * This is more easily searchable and better formatted than on GitHub, and a PDF download is available. (#129)
+    * Documented workarounds for when [running Catch2 tests in CLion gives 'unexpected exception'](/doc/Troubleshooting.md#running-catch2-tests-in-clion-gives-unexpected-exception) (#131)
     * Consistent macro names
         * All our Macros now start with `APPROVAL_TESTS_`.
         * We have kept the old macros, redirecting to the new ones, for backwards compatibility.
