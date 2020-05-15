@@ -112,7 +112,7 @@ See [Features](/doc/Features.md#top) - whose sections need to be moved around
 
 ## Scrubber
 
-[ApprovalTests.Net](https://github.com/approvals/ApprovalTests.Net/tree/master/src/ApprovalTests/Scrubber)
+See [How to Scrub Non-Deterministic Output](/doc/how_tos/ScrubNonDeterministicOutput.md#top).
 
 ## Stringification
 
