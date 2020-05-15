@@ -13,11 +13,44 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Introduction](#introduction)
+  * [Interface](#interface)
+  * [Lambda example](#lambda-example)
   * [GUID](#guid)<!-- endtoc -->
 
 ## Introduction
 
 If you are having trouble getting tests running reproducibly, you might need to use a "scrubber" to convert the non-deterministic text to something stable.
+
+## Interface
+
+Fundamentally, a scrubber is function that takes a string and returns a string. You can create ones by passing in a function or a lambda. We also have some pre-made ones for your convenience.
+
+## Lambda example
+
+<!-- snippet: scrubbing_via_lambda -->
+<a id='snippet-scrubbing_via_lambda'/></a>
+```cpp
+Approvals::verify(
+    "1 2 3 4 5 6",
+    Options().withScrubber(
+        [](const std::string& t) {return StringUtils::replaceAll(t, "3", "Fizz");}
+    ));
+```
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L78-L84' title='File snippet `scrubbing_via_lambda` was extracted from'>snippet source</a> | <a href='#snippet-scrubbing_via_lambda' title='Navigate to start of snippet `scrubbing_via_lambda`'>anchor</a></sup>
+<!-- endsnippet -->
+
+This would produce:
+
+<!-- snippet: GuidScrubberTests.Scrubbing_via_Lambda.approved.txt -->
+<a id='snippet-GuidScrubberTests.Scrubbing_via_Lambda.approved.txt'/></a>
+```txt
+1 2 Fizz 4 5 6
+```
+<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/GuidScrubberTests.Scrubbing_via_Lambda.approved.txt#L1-L1' title='File snippet `GuidScrubberTests.Scrubbing_via_Lambda.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-GuidScrubberTests.Scrubbing_via_Lambda.approved.txt' title='Navigate to start of snippet `GuidScrubberTests.Scrubbing_via_Lambda.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
+
+(In the real world, scrubbers are generally used to remove text that is expected to differ between test runs... Here, we use a trivial example for ease of explanation.)
+
 
 ## GUID
 
@@ -75,7 +108,6 @@ will produce:
 <!-- endsnippet -->
 
 Notice that when GUIDs are repeated within the same file, they are replaced with the same text.
-
 
 ---
 

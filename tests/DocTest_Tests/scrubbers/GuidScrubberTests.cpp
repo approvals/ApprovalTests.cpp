@@ -74,9 +74,13 @@ TEST_CASE("Scrubbing in verifyAll-2")
 
 TEST_CASE("Scrubbing via Lambda")
 {
+    // clang-format off
     // begin-snippet: scrubbing_via_lambda
-    Approvals::verify("1 2 3 4 5 6", Options().withScrubber([](auto t) {
-        return StringUtils::replaceAll(t, "3", "Fizz");
-    }));
+    Approvals::verify(
+        "1 2 3 4 5 6",
+        Options().withScrubber(
+            [](const std::string& t) {return StringUtils::replaceAll(t, "3", "Fizz");}
+        ));
     // end-snippet
+    // clang-format on
 }
