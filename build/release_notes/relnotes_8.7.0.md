@@ -20,6 +20,7 @@ template <>
         * File extensions now customizable with `verifyAll()` and `verifyAllCombinations()`: See [File Extensions](/doc/Options.md#file-extensions) (#127)
     * New mechanics for [String conversions](/doc/ToString.md#top) (thank you @alepez)
         * The class `Approvals` is now an alias for `TApprovals< ToStringCompileTimeOptions< StringMaker > >`
+        * `CombinationApprovals` is now an alias for the class `TCombinationApprovals< ToStringCompileTimeOptions<APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER > >`, instead of being a namespace.
         * This is a completely backwards-compatible feature.
         * It has been done to support a new feature in a future release. (#124)
     * Our Conan.io package now supports our Boost.Test integration (#121)
