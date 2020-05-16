@@ -17,10 +17,10 @@ template <>
         * Reporter: see [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top)
         * Scrubber: [How to Scrub Non-Deterministic Output](/doc/how_tos/ScrubNonDeterministicOutput.md#top).  (#126, thank you @abdulg, @haraldreingruber, @jawn)
         * File extensions now customizable with `verifyAll()` and `verifyAllCombinations()`: See [File Extensions](/doc/Options.md#file-extensions) (#127)
-    * New mechanics for [String conversions](/doc/ToString.md#top)
+    * New mechanics for [String conversions](/doc/ToString.md#top) (thank you @alepez)
         * The class `Approvals` is now an alias for `TApprovals< ToStringCompileTimeOptions< StringMaker > >`
         * This is a completely backwards-compatible feature.
-        * It has been done to support a new feature in a future release.
+        * It has been done to support a new feature in a future release. (#124)
     * Our Conan.io package now supports our Boost.Test integration (#121)
 * **Bug fixes**
     * None
