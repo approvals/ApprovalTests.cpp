@@ -27,7 +27,7 @@ We are switching this to have an option `Options` object instead.
 
 This temporarily doubles our API interface, and we are deprecating the Reporter overloads.
 When enabled, these deprecation warnings will show up as:
- 
+
 * compiler C++14 and above, using the `[[deprecated("..."]]` feature
 * messages on std::cout in C++11
 
@@ -43,13 +43,14 @@ Our plan is therefore to do a short series of quick releases:
 1. the deprecated methods are hidden: users can opt-in
 1. the deprecated methods are removed
 
-| Step | Deprecation Warnings<br />See `APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS` | Deprecated Code<br />See `APPROVAL_TESTS_HIDE_DEPRECATED_CODE` |
-| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 1    | Optional: off                                                | Optional: enabled                                            |
-| 2    | Optional: on                                                 | Optional: enabled                                            |
-| 3    | Always on                                                    | Optional: enabled                                            |
-| 4    | Always on                                                    | Optional: hidden                                             |
-| 5    | Not applicable                                               | Removed                                                      |
+| Step | Deprecation Warnings                           | Deprecated Code                           |
+| ---- | ---------------------------------------------- | ----------------------------------------- |
+|      | See `APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS` | See `APPROVAL_TESTS_HIDE_DEPRECATED_CODE` |
+| 1    | Optional: off                                  | Optional: enabled                         |
+| 2    | Optional: on                                   | Optional: enabled                         |
+| 3    | Always on                                      | Optional: enabled                         |
+| 4    | Always on                                      | Optional: hidden                          |
+| 5    | Not applicable                                 | Removed                                   |
 
 ### Suggested strategy
 
