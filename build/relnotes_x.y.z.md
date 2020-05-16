@@ -5,6 +5,6 @@
 * **New features**
     * None
 * **Bug fixes**
-    * None
+    * Fix compilation of `TCombinationApprovals` on C++14 and above, when deprecation warnings are enabled (#132)
 * **Other changes**
     * None
