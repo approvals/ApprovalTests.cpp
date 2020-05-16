@@ -37,6 +37,10 @@ namespace ApprovalTests
             return DefaultNamerFactory::getDefaultNamer()();
         }
 
+        /**@name Verifying single objects
+
+         See \userguide{TestingSingleObjects,Testing Single Objects}
+         */
         static void verify(const std::string& contents,
                            const Options& options = Options())
         {
@@ -73,6 +77,7 @@ namespace ApprovalTests
             converter(contents, s);
             verify(s.str(), options);
         }
+        ///@}
 
         static void
         verifyExceptionMessage(const std::function<void(void)>& functionThatThrows,
@@ -90,6 +95,11 @@ namespace ApprovalTests
             verify(message, options);
         }
 
+        /**@name Verifying containers of objects
+
+         See \userguide{TestingContainers.md,Testing Containers}
+         */
+        ///@{
         template <typename Iterator>
         static void verifyAll(
             const std::string& header,
@@ -144,6 +154,7 @@ namespace ApprovalTests
         {
             verifyAll<T>("", list, options);
         }
+        ///@}
 
         // Note that this method ignores any scrubber in options
         static void verifyExistingFile(const std::string& filePath,
