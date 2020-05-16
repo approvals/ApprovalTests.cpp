@@ -56,6 +56,15 @@ namespace ApprovalTests
             Approvals::verify(s.str(), options);
         }
 
+        template <class Converter, class... Containers>
+        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
+            Converter> static verifyAllCombinations(Converter&& converter,
+                                                    const Containers&... inputs)
+        {
+            verifyAllCombinations(
+                Options(), std::forward<Converter>(converter), inputs...);
+        }
+
 #if !APPROVAL_TESTS_HIDE_DEPRECATED_CODE
         template <class Converter, class Container, class... Containers>
         static APPROVAL_TESTS_DEPRECATED_USE_OPTIONS void
@@ -68,15 +77,6 @@ namespace ApprovalTests
             verifyAllCombinations(Options(reporter), converter, input0, inputs...);
         }
 #endif
-
-        template <class Converter, class... Containers>
-        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
-            Converter> static verifyAllCombinations(Converter&& converter,
-                                                    const Containers&... inputs)
-        {
-            verifyAllCombinations(
-                Options(), std::forward<Converter>(converter), inputs...);
-        }
     };
 
     using CombinationApprovals = TCombinationApprovals<
