@@ -6,18 +6,21 @@ endif ()
 
 file(GLOB_RECURSE
         APPROVAL_TESTS_ALL_APPROVED_FILES
+        CONFIGURE_DEPENDS
         ${PROJECT_SOURCE_DIR}/examples/*.approved.*
         ${PROJECT_SOURCE_DIR}/tests/*.approved.*
         )
 
 file(GLOB_RECURSE
         APPROVAL_TESTS_ALL_TEST_SOURCE_FILES
+        CONFIGURE_DEPENDS
         ${PROJECT_SOURCE_DIR}/tests/*.cpp
         ${PROJECT_SOURCE_DIR}/tests/*.h
         )
 
 file(GLOB_RECURSE
         APPROVAL_TESTS_ALL_EXAMPLE_SOURCE_FILES
+        CONFIGURE_DEPENDS
         ${PROJECT_SOURCE_DIR}/examples/*.cpp
         ${PROJECT_SOURCE_DIR}/examples/*.h
         )
