@@ -82,7 +82,7 @@ namespace ApprovalTests
          */
         ///@{
         template <class Converter, class Container, class... Containers>
-        static APPROVAL_TESTS_DEPRECATED_USE_OPTIONS void
+        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void
         verifyAllCombinations(const Reporter& reporter,
                               Converter&& converter,
                               const Container& input0,
