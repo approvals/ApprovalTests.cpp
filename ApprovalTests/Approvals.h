@@ -190,6 +190,16 @@ namespace ApprovalTests
         ///@}
 
 #if !APPROVAL_TESTS_HIDE_DEPRECATED_CODE
+        /**@name Deprecated methods
+
+         These methods all pre-date the Options class, and will be removed in a future
+         release.
+
+         For help updating your code, see:
+            - \userguide{how_tos/ToggleDeprecatedCode,How to Toggle Enabling or Disabling of Deprecated Code}
+            - \userguide{explanations/WhyWeAreConvertingToOptions,how-to-update-calls-to-deprecated-code,How to Update Calls to Deprecated Code}
+         */
+        ///@{
 
         APPROVAL_TESTS_DEPRECATED_USE_OPTIONS
         static void verify(std::string contents, const Reporter& reporter)
@@ -316,6 +326,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyExistingFile(filePath, Options(reporter));
         }
+        ///@}
 #endif
     };
 
