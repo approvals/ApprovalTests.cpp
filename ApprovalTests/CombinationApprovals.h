@@ -42,6 +42,10 @@ namespace ApprovalTests
         };
 
     public:
+        /**@name Verifying combinations of objects
+
+         See \userguide{TestingCombinations,Testing combinations}
+         */
         template <class Converter, class Container, class... Containers>
         static void verifyAllCombinations(const Options& options,
                                           Converter&& converter,
@@ -64,8 +68,19 @@ namespace ApprovalTests
             verifyAllCombinations(
                 Options(), std::forward<Converter>(converter), inputs...);
         }
+        ///@}
 
 #if !APPROVAL_TESTS_HIDE_DEPRECATED_CODE
+        /**@name Deprecated method
+
+         This method pre-dates the Options class, and will be removed in a future
+         release.
+
+         For help updating your code, see:
+            - \userguide{how_tos/ToggleDeprecatedCode,How to Toggle Enabling or Disabling of Deprecated Code}
+            - \userguide{explanations/WhyWeAreConvertingToOptions,how-to-update-calls-to-deprecated-code,How to Update Calls to Deprecated Code}
+         */
+        ///@{
         template <class Converter, class Container, class... Containers>
         static APPROVAL_TESTS_DEPRECATED_USE_OPTIONS void
         verifyAllCombinations(const Reporter& reporter,
@@ -76,6 +91,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
             verifyAllCombinations(Options(reporter), converter, input0, inputs...);
         }
+        ///@}
 #endif
     };
 
