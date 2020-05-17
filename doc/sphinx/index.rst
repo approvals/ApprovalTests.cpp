@@ -9,7 +9,6 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
 
   * The page URLs may not be stable yet
   * More details needs to be added to the "C++ Reference" section
-  * The "Edit on GitHub" links should be removed, as they mostly give 404 errors (due to the source .rst pages being machine-generated from our master MarkDown pages.)
   * Formatting of the  :doc:`C++ code <api/core>` isn't great: for example, it would benefit from more whitespace, for readability.
 
   Feedback and suggestions for improvement - either of this HTML version or the PDF download - would be much appreciated,
