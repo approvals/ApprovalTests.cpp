@@ -2,6 +2,12 @@
 string(REPLACE "/doc/" "/doc/sphinx/generated_docs/" APPROVAL_TESTS_GEN_DOC_RST_FILES "${APPROVAL_TESTS_GEN_DOC_MD_FILES}")
 string(REPLACE ".md" ".rst" APPROVAL_TESTS_GEN_DOC_RST_FILES "${APPROVAL_TESTS_GEN_DOC_RST_FILES}")
 
+file(GLOB
+        APPROVAL_TESTS_SPHINX_TEMPLATE_FILES
+        CONFIGURE_DEPENDS
+        ${CMAKE_CURRENT_SOURCE_DIR}/_templates/*
+        )
+
 # TODO Only regenerate Sphinx when:
 # - Doxygen has rerun
 # - Our doc files have been updated
@@ -21,6 +27,7 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         markdown_conversion.py
         ${DOXYGEN_INDEX_FILE}
         ${APPROVAL_TESTS_GEN_DOC_MD_FILES}
+        ${APPROVAL_TESTS_SPHINX_TEMPLATE_FILES}
         MAIN_DEPENDENCY ${SPHINX_SOURCE}/conf.py
         BYPRODUCTS ${APPROVAL_TESTS_GEN_DOC_RST_FILES}
         COMMENT "Generating documentation with Sphinx")
