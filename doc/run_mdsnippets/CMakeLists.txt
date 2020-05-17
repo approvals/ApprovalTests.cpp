@@ -5,15 +5,9 @@ if (NOT mdsnippets_FOUND)
 endif ()
 
 file(GLOB_RECURSE
-        APPROVAL_TESTS_ALL_APPROVED_FILES
-        CONFIGURE_DEPENDS
-        ${PROJECT_SOURCE_DIR}/examples/*.approved.*
-        ${PROJECT_SOURCE_DIR}/tests/*.approved.*
-        )
-
-file(GLOB_RECURSE
         APPROVAL_TESTS_ALL_TEST_FILES
         CONFIGURE_DEPENDS
+        ${PROJECT_SOURCE_DIR}/tests/*.approved.*
         ${PROJECT_SOURCE_DIR}/tests/*.cpp
         ${PROJECT_SOURCE_DIR}/tests/*.h
         )
@@ -21,6 +15,7 @@ file(GLOB_RECURSE
 file(GLOB_RECURSE
         APPROVAL_TESTS_ALL_EXAMPLE_FILES
         CONFIGURE_DEPENDS
+        ${PROJECT_SOURCE_DIR}/examples/*.approved.*
         ${PROJECT_SOURCE_DIR}/examples/*.cpp
         ${PROJECT_SOURCE_DIR}/examples/*.h
         )
@@ -34,7 +29,6 @@ add_custom_command(OUTPUT ${FIRST_GENERATED_MD_FILE}
         DEPENDS
         ${APPROVAL_TESTS_ALL_DOC_SOURCE_MD_FILES}
         ${APPROVAL_TESTS_PUBLIC_HEADERS}
-        ${APPROVAL_TESTS_ALL_APPROVED_FILES}
         ${APPROVAL_TESTS_ALL_TEST_FILES}
         ${APPROVAL_TESTS_ALL_EXAMPLE_FILES}
         ${PROJECT_SOURCE_DIR}/mdsnippets.json
