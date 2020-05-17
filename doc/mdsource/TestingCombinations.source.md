@@ -50,9 +50,14 @@ Note: Over releases, the position of the optional Reporter parameter to `verifyA
 
 | Release  | Position of optional Reporter argument |
 |----------|---------------------|
-| Before [v.6.0.0](https://github.com/approvals/ApprovalTests.cpp/releases/tag/v.6.0.0) | The optional Reporter argument goes after all the inputs |
+| Before v.6.0.0 | The optional Reporter argument goes after all the inputs |
 | In v.6.0.0 | The optional Reporter argument should be the **second** argument. |
 | After v.6.0.0 | The optional Reporter argument should be the **first** argument. |
+
+See:
+
+* [v.6.0.0 release notes](https://github.com/approvals/ApprovalTests.cpp/releases/tag/v.6.0.0)
+* [v.7.0.0 release notes](https://github.com/approvals/ApprovalTests.cpp/releases/tag/v.7.0.0)
 
 ## C++ Language Versions
 
