@@ -48,8 +48,8 @@ For advice on effective formatting, see [Tips for Designing Strings](/doc/explan
 
 Note: Over releases, the position of the optional Reporter parameter to `verifyAllCombinations` has changed, as the code has evolved:
 
-| Release  | Position of optional Reporter argument
-|---|--|
+| Release  | Position of optional Reporter argument |
+|----------|---------------------|
 | Before [v.6.0.0](https://github.com/approvals/ApprovalTests.cpp/releases/tag/v.6.0.0) | The optional Reporter argument goes after all the inputs |
 | In v.6.0.0 | The optional Reporter argument should be the **second** argument. |
 | After v.6.0.0 | The optional Reporter argument should be the **first** argument. |
@@ -57,7 +57,7 @@ Note: Over releases, the position of the optional Reporter parameter to `verifyA
 ## C++ Language Versions
 
 If you are using C++11, you will need to supply the exact parameter types to your lambda:
- 
+
 snippet: sample_combinations_of_three
 
 If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
