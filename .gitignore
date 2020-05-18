@@ -2,6 +2,7 @@ cmake-build-*/
 cmake-clang-*/
 cmake-gcc-*/
 build/releases
+build/venv
 *.received.*
 .idea
 doc/html/
