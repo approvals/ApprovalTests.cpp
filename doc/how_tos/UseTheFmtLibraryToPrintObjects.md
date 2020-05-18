@@ -31,7 +31,7 @@ For example, vectors are not `ostream (<<)` printable by default. However, they 
 <!-- snippet: fmt_approvals -->
 <a id='snippet-fmt_approvals'/></a>
 ```cpp
-std::vector<int> numbers = {1,2,3};
+std::vector<int> numbers = {1, 2, 3};
 FmtApprovals::verify(numbers);
 ```
 <sup><a href='/tests/DocTest_Tests/integrations/FmtTests.cpp#L16-L19' title='File snippet `fmt_approvals` was extracted from'>snippet source</a> | <a href='#snippet-fmt_approvals' title='Navigate to start of snippet `fmt_approvals`'>anchor</a></sup>
@@ -54,7 +54,7 @@ This will produce the following output:
 ```cpp
 #include <fmt/ranges.h>
 ```
-<sup><a href='/tests/DocTest_Tests/integrations/FmtTests.cpp#L5-L7' title='File snippet `fmt_includes` was extracted from'>snippet source</a> | <a href='#snippet-fmt_includes' title='Navigate to start of snippet `fmt_includes`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/integrations/FmtTests.cpp#L5-L8' title='File snippet `fmt_includes` was extracted from'>snippet source</a> | <a href='#snippet-fmt_includes' title='Navigate to start of snippet `fmt_includes`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Installation

@@ -3,9 +3,9 @@
 #include "ApprovalTests/ApprovalsMacroDefaults.h"
 
 #define APPROVAL_TESTS_VERSION_MAJOR 8
-#define APPROVAL_TESTS_VERSION_MINOR 7
-#define APPROVAL_TESTS_VERSION_PATCH 1
-#define APPROVAL_TESTS_VERSION_STR "8.7.1"
+#define APPROVAL_TESTS_VERSION_MINOR 8
+#define APPROVAL_TESTS_VERSION_PATCH 0
+#define APPROVAL_TESTS_VERSION_STR "8.8.0"
 
 #define APPROVAL_TESTS_VERSION                                                           \
     (APPROVAL_TESTS_VERSION_MAJOR * 10000 + APPROVAL_TESTS_VERSION_MINOR * 100 +         \

@@ -8,6 +8,8 @@ toc
 
 ## v.x.y.z
 
+## v.8.8.0
+
 ### FmtApprovals
 
 See [How to Use the Fmt Library To Print Objects](/doc/how_tos/UseTheFmtLibraryToPrintObjects.md#top).
