@@ -3,10 +3,10 @@
 * **Breaking changes**
     * None
 * **New features**
-    * FmtApprovals
-      Added integration with the [{fmt}](https://fmt.dev/) library. 
-      See [How to Use the Fmt Library To Print Objects](/doc/how_tos/UseTheFmtLibraryToPrintObjects.md#top).
-
+    * FmtApprovals (#124)
+      Added integration with the [{fmt}](https://fmt.dev/) library.  
+      See [How to Use the Fmt Library To Print Objects](/doc/how_tos/UseTheFmtLibraryToPrintObjects.md#top).  
+      Thanks @alepez
 * **Bug fixes**
     * None
 * **Other changes**
