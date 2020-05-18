@@ -7,7 +7,7 @@ namespace ApprovalTests
     public:
         template <typename T> static std::string toString(const T& printable)
         {
-            (void) printable;
+            (void)printable;
             return fmt::to_string(printable);
         }
     };

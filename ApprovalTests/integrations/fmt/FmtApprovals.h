@@ -4,7 +4,7 @@
 #include "ApprovalTests/Approvals.h"
 namespace ApprovalTests
 {
-     using FmtApprovals = ApprovalTests::TApprovals<
-        ApprovalTests::ToStringCompileTimeOptions<FmtToString>>;
+    using FmtApprovals =
+        ApprovalTests::TApprovals<ApprovalTests::ToStringCompileTimeOptions<FmtToString>>;
 }
 #endif
