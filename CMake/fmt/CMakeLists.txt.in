@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 2.8.2)
+
+project(fmt-download NONE)
+
+include(ExternalProject)
+ExternalProject_Add(fmt
+  GIT_REPOSITORY    https://github.com/fmtlib/fmt.git
+  GIT_TAG           6.2.0
+  SOURCE_DIR        "${CMAKE_CURRENT_BINARY_DIR}/fmt-src"
+  BINARY_DIR        "${CMAKE_CURRENT_BINARY_DIR}/fmt-build"
+  CONFIGURE_COMMAND ""
+  BUILD_COMMAND     ""
+  INSTALL_COMMAND   ""
+  TEST_COMMAND      ""
+)

@@ -48,6 +48,7 @@ if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_TESTING OR APPROVAL_TESTS_BUILD_EXAMP
 endif ()
 
 if (NOT_SUBPROJECT OR APPROVAL_TESTS_BUILD_TESTING)
+    add_subdirectory(CMake/fmt)
     add_subdirectory(tests)
 endif ()
 
