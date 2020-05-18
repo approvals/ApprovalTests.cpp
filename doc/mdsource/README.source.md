@@ -78,6 +78,7 @@ include: include_using_test_frameworks_list
 * [How to Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top)
 * [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top).
 * [How to Toggle Enabling or Disabling of Deprecated Code](/doc/how_tos/ToggleDeprecatedCode.md#top).
+* [How to Use the Fmt Library To Print Objects](/doc/how_tos/UseTheFmtLibraryToPrintObjects.md#top).
 
 ## Miscellaneous
 

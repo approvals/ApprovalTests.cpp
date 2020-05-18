@@ -85,6 +85,7 @@ snippet: customising_to_string_default_converter
 
 * [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top)
 * [How to Scrub Non-Deterministic Output](/doc/how_tos/ScrubNonDeterministicOutput.md#top)
+* [How to Use the Fmt Library To Print Objects](/doc/how_tos/UseTheFmtLibraryToPrintObjects.md#top).
 
 
 

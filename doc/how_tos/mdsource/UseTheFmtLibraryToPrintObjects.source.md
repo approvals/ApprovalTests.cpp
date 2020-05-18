@@ -10,7 +10,7 @@ toc
 
 ## Usage
 
-Simply use `FmtApproval::`
+Simply use `FmtApprovals::`
 
 For example, vectors are not `ostream (<<)` printable by default. However, they are with {fmt}. so :
 
@@ -28,17 +28,21 @@ snippet: fmt_includes
 
 ### Bring your own
 
-ApprovalTests assumes you will add the {fmt} library **before** including `ApprovalTests.hpp`. As such it makes no assumptions about fmt.
+ApprovalTests assumes you will add the {fmt} library **before** including `ApprovalTests.hpp`. As such it makes no assumptions about fmt. We suggest you read [their docs](https://fmt.dev/latest/usage.html).
 
-If you would like to see we added fmt to our build, check out:
+If you would like to see how we added fmt to our build, check out:
 
 snippet: fmt_cmake
 
-[fmt/CmakeList.txt]()  
+[fmt/CmakeList.txt](/CMake/fmt/CMakeLists.txt)  
 
-[fmt/CmakeList.txt.in]()
+[fmt/CmakeList.txt.in](/CMake/fmt/CMakeLists.txt.in)
 
+### Set as default for Approvals
 
+If you wish, you can set FmtApprovals to be the default Approvals with the following line before including `ApprovalTests.hpp`
+
+snippet: fmt_set_as_default
 
 
 ---

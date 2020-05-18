@@ -11,7 +11,6 @@ namespace ApprovalTests
             return fmt::to_string(printable);
         }
     };
-    using FmtApprovals = ApprovalTests::TApprovals<
-        ApprovalTests::ToStringCompileTimeOptions<FmtToString>>;
+
 }
 #endif

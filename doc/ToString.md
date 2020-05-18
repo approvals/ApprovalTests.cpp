@@ -213,6 +213,7 @@ If, instead, you want to change the default string formatting, so that all calls
 
 * [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top)
 * [How to Scrub Non-Deterministic Output](/doc/how_tos/ScrubNonDeterministicOutput.md#top)
+* [How to Use the Fmt Library To Print Objects](/doc/how_tos/UseTheFmtLibraryToPrintObjects.md#top).
 
 
 

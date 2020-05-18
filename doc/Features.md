@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [FmtApprovals](#fmtapprovals)
   * [v.8.7.0](#v870)
     * [Options](#options)
     * [Scrubbers](#scrubbers)
@@ -57,6 +58,11 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+### FmtApprovals
+
+See [How to Use the Fmt Library To Print Objects](/doc/how_tos/UseTheFmtLibraryToPrintObjects.md#top).
+
 
 ## v.8.7.0
 
