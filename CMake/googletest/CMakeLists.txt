@@ -2,9 +2,9 @@ if (NOT TARGET gtest_main)
     # Download and unpack googletest at configure time
     configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
     execute_process(COMMAND "${CMAKE_COMMAND}" -G "${CMAKE_GENERATOR}" .
-            WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download")
+            WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/googletest-download")
     execute_process(COMMAND "${CMAKE_COMMAND}" --build .
-            WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download")
+            WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/googletest-download")
 
     # Prevent GoogleTest from overriding our compiler/linker options
     # when building with Visual Studio
@@ -13,6 +13,6 @@ if (NOT TARGET gtest_main)
     # Add googletest directly to our build. This adds
     # the following targets: gtest, gtest_main, gmock
     # and gmock_main
-    add_subdirectory("${CMAKE_BINARY_DIR}/googletest-src"
-            "${CMAKE_BINARY_DIR}/googletest-build")
+    add_subdirectory("${CMAKE_CURRENT_BINARY_DIR}/googletest-src"
+            "${CMAKE_CURRENT_BINARY_DIR}/googletest-build")
 endif ()
