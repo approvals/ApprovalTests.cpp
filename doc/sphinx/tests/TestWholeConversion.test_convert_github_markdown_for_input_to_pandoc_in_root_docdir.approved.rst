@@ -190,7 +190,7 @@ A wide table
 2. See the `Starter
    Project <https://github.com/approvals/ApprovalTests.Cpp.StarterProject>`__
 3. Catch2 has `options to speed up its
-   builds <https://github.com/catchorg/Catch2/blob/master/docs/slow-compiles.md>`__
+   builds <https://github.com/catchorg/Catch2/blob/master/docs/slow-compiles.md#top>`__
 4. [Boost].UT works with C++17, but the ApprovalTests interface to that
    library depends on
    `std::source_location <https://en.cppreference.com/w/cpp/utility/source_location>`__,
