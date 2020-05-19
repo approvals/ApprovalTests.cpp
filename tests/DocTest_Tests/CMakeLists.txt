@@ -20,7 +20,6 @@ add_executable(${PROJECT_NAME}
         docs/ToStringTemplateExample.cpp
         docs/ToStringWrapperExample.cpp
         docs/Tutorial.cpp
-        integrations/FmtTests.cpp
         namers/DocTestNamerTests.cpp
         namers/NamerTests.cpp
         reporters/BlockingReporterTests.cpp
@@ -44,9 +43,7 @@ add_executable(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
         ApprovalTests::ApprovalTests
         doctest::doctest)
-# begin-snippet: fmt_cmake
-target_link_libraries(${PROJECT_NAME} fmt::fmt)
-# end-snippet
+
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 # begin-snippet: show_deprecation_warnings_cmake
 # Replace ${PROJECT_NAME} with the name of your test executable:
