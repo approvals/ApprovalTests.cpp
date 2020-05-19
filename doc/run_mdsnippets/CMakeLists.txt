@@ -33,6 +33,9 @@ file(GLOB_RECURSE
 # If any .source.md files have been changed, or their inputs,
 # rerun mdsnippets
 list(GET APPROVAL_TESTS_GEN_DOC_MD_FILES 0 FIRST_GENERATED_MD_FILE)
+set(OTHER_GENERATED_MD_FILES ${APPROVAL_TESTS_GEN_DOC_MD_FILES})
+list(REMOVE_AT OTHER_GENERATED_MD_FILES 0)
+
 add_custom_command(OUTPUT ${FIRST_GENERATED_MD_FILE}
         COMMAND mdsnippets
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
@@ -44,7 +47,7 @@ add_custom_command(OUTPUT ${FIRST_GENERATED_MD_FILE}
         ${APPROVAL_TESTS_ALL_TEST_FILES}
         ${APPROVAL_TESTS_ALL_EXAMPLE_FILES}
         ${PROJECT_SOURCE_DIR}/mdsnippets.json
-        BYPRODUCTS ${APPROVAL_TESTS_GEN_DOC_MD_FILES}
+        BYPRODUCTS ${OTHER_GENERATED_MD_FILES}
         )
 
 # Nice named target so we can run the job easily
