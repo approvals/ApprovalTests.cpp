@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-# Setup
+# Setup Options
 
 toc
 
