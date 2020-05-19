@@ -29,7 +29,9 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Dependencies
 
 * See [third_party/](/third_party/) for the test frameworks that are included in this project.
-* Source code for the Google Test framework - version 1.8.1 - is downloaded automatically when CMake is run - see [CMakeLists.txt.in](/CMakeLists.txt.in), and is then built when the project is built.
+* Source code for the **Google Test framework** - version 1.8.1 - is downloaded automatically when CMake is run - see [/CMake/googletest/CMakeLists.txt.in](/CMake/googletest/CMakeLists.txt.in), and is then built when the project is built.
+* Similarly, the **{fmt}** library is downloaded automatically when CMake is run - see [/CMake/fmt/CMakeLists.txt.in](/CMake/fmt/CMakeLists.txt.in), and is then built when the project is built.
+* **Boost** needs to be found by CMake's `find_package()` - see [/tests/Boost_Tests/CMakeLists.txt](/tests/Boost_Tests/CMakeLists.txt).
 
 ## Visual Studio 2017 Community Edition
 
