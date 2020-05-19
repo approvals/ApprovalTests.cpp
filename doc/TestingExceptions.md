@@ -12,7 +12,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [Testing exception messages](#testing-exception-messages)<!-- endtoc -->
+  * [Testing exception messages](#testing-exception-messages)
+  * [Handling multiple exceptions in one test](#handling-multiple-exceptions-in-one-test)<!-- endtoc -->
 
 
 
@@ -29,6 +30,10 @@ Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
 ```
 <sup><a href='/tests/DocTest_Tests/ApprovalsTests.cpp#L105-L107' title='File snippet `verify_exception_message_example` was extracted from'>snippet source</a> | <a href='#snippet-verify_exception_message_example' title='Navigate to start of snippet `verify_exception_message_example`'>anchor</a></sup>
 <!-- endsnippet -->
+
+## Handling multiple exceptions in one test
+
+See [ExceptionCollector](/doc/Utilities.md#exceptioncollector).
 
 ---
 

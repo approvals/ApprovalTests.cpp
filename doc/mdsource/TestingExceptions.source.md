@@ -14,6 +14,10 @@ The exception thrown must inherit `std::exception`.
 
 snippet: verify_exception_message_example
 
+## Handling multiple exceptions in one test
+
+See [ExceptionCollector](/doc/Utilities.md#exceptioncollector).
+
 ---
 
 [Back to User Guide](/doc/README.md#top)
