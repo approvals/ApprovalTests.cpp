@@ -196,5 +196,23 @@ A wide table
    `std::source_location <https://en.cppreference.com/w/cpp/utility/source_location>`__,
    which is a C++ 20 feature.
 
+Snippet pulled in from external CMake file
+------------------------------------------
+
+Sample take from CMakeIntegration.md:
+
+We use this ``dependencies/CMakeLists.txt`` file:
+
+.. code:: cmake
+
+   # Needs CMake 3.14 or above
+   include(FetchContent)
+
+   # ... some content deleted, for brevity of tests...
+
+   FetchContent_MakeAvailable(Catch2)
+
+snippet source
+
 .. |Intro Graphic| image:: https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true
 .. |New Failure| image:: https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/tutorial/01_new_failure.png?raw=true

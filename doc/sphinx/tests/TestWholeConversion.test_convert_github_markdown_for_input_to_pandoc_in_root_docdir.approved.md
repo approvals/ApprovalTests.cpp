@@ -153,4 +153,24 @@ I am some text
 3. Catch2 has [options to speed up its builds](https://github.com/catchorg/Catch2/blob/master/docs/slow-compiles.md#top)
 4. \[Boost\].UT works with C++17, but the ApprovalTests interface to that library depends on [std::source_location](https://en.cppreference.com/w/cpp/utility/source_location), which is a C++ 20 feature. 
 
+## Snippet pulled in from external CMake file
+
+Sample take from CMakeIntegration.md:
+
+We use this `dependencies/CMakeLists.txt` file:
+
+ <!-- include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
+
+```cmake
+# Needs CMake 3.14 or above
+include(FetchContent)
+
+# ... some content deleted, for brevity of tests...
+
+FetchContent_MakeAvailable(Catch2)
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
+
+ 
 
