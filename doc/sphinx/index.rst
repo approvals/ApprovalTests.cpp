@@ -154,6 +154,7 @@ How-to Guides
    * :doc:`generated_docs/how_tos/TestContainerContents`
    * :doc:`generated_docs/how_tos/TestAVarietyOfValues`
    * :doc:`generated_docs/how_tos/ScrubNonDeterministicOutput`
+   * :doc:`generated_docs/how_tos/UseTheFmtLibraryToPrintObjects`
 
 * **Reporters**:
 
@@ -172,6 +173,7 @@ How-to Guides
    generated_docs/how_tos/TestContainerContents
    generated_docs/how_tos/TestAVarietyOfValues
    generated_docs/how_tos/ScrubNonDeterministicOutput
+   generated_docs/how_tos/UseTheFmtLibraryToPrintObjects
 
    generated_docs/how_tos/UseACustomReporter
    generated_docs/how_tos/SubmitANewReporterToApprovalTests
