@@ -81,7 +81,7 @@ Now that you are set up to run Approval Tests, this section describes how to tes
   :doc:`Single Objects<generated_docs/TestingSingleObjects>` |
   :doc:`Containers <generated_docs/TestingContainers>` |
   :doc:`Combinations of containers<generated_docs/TestingCombinations>` |
-  :doc:`Exception messages <generated_docs/TestingExceptions>`
+  :doc:`generated_docs/TestingExceptions`
 
 * **Good Practice**:
   :doc:`generated_docs/ToString` |
