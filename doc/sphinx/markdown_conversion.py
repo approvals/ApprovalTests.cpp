@@ -62,6 +62,7 @@ def fix_up_markdown_content(subdir, content):
 
     content = fixup_boilerplate_text(content)
     content = fixup_generated_snippets(content)
+    content = fixup_included_snippets(content)
     content = fixup_code_languages_for_pygments(content)
     content = fixup_markdown_hyperlink_text(content)
     content = fixup_markdown_hyperlink_destinations(content, subdir)
@@ -113,6 +114,31 @@ def fixup_generated_snippets(content):
         '', content)
 
     content = content.replace('<!-- endsnippet -->\n', '')
+
+    return content
+
+
+def fixup_included_snippets(content):
+    """
+    Adjust the expanded code snippets that were included
+    by mdsnippets, to improve rendering by Sphinx
+    """
+
+    #  Remove '<!-- include:' lines at the start of included snippet
+    content = re.sub(
+        r"\n <!-- include:.*-->\n",
+        '', content)
+
+    # simplify the hyperlink, remove superscript tags
+    content = re.sub(
+        # r"<sup><a href='([^']+)' title='File snippet `[^`]+` was extracted from'>snippet source</a> ",
+        r"<sup><a href='([^']+)' title='File snippet was copied from'>snippet source</a></sup>",
+        r"(See [snippet source](\1))", content)
+
+    #  Remove '<!-- end include:' lines at the end of included snippet
+    content = re.sub(
+        r"\n <!-- end include:.*-->",
+        '', content)
 
     return content
 

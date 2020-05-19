@@ -168,8 +168,6 @@ Sample take from CMakeIntegration.md:
 
 We use this `dependencies/CMakeLists.txt` file:
 
- <!-- include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
-
 ```cmake
 # Needs CMake 3.14 or above
 include(FetchContent)
@@ -178,8 +176,7 @@ include(FetchContent)
 
 FetchContent_MakeAvailable(Catch2)
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
+(See [snippet source](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt))
 
  
 

@@ -221,7 +221,8 @@ We use this ``dependencies/CMakeLists.txt`` file:
 
    FetchContent_MakeAvailable(Catch2)
 
-snippet source
+(See `snippet
+source <https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt>`__)
 
 .. |Intro Graphic| image:: https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true
 .. |New Failure| image:: https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/tutorial/01_new_failure.png?raw=true
