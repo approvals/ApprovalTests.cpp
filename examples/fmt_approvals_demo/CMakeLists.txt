@@ -3,7 +3,7 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}
         main.cpp
         FmtTests.cpp
-        # TODO Add FmtAsDefaultTests.cpp
+        FmtAsDefaultTests.cpp
         )
 target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests doctest::doctest)
 # begin-snippet: fmt_cmake
