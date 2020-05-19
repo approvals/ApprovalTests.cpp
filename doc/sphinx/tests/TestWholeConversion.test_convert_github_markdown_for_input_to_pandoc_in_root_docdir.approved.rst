@@ -196,6 +196,15 @@ A wide table
    `std::source_location <https://en.cppreference.com/w/cpp/utility/source_location>`__,
    which is a C++ 20 feature.
 
+Included file
+-------------
+
+-  `Using Approval Tests With Catch <UsingCatch.html>`__
+-  `Using Approval Tests With Google Tests <UsingGoogleTests.html>`__
+-  `Using Approval Tests With Doctest <UsingDoctest.html>`__
+-  `Using Approval Tests With Boost.Test <UsingBoostTest.html>`__
+-  `Using Approval Tests With [Boost].UT <UsingUT.html>`__
+
 Snippet pulled in from external CMake file
 ------------------------------------------
 
