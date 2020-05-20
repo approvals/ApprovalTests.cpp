@@ -199,6 +199,8 @@ before_script: |
   fi
   which $CXX
   which $CC
+  which ccache
+  echo $PATH
   $CXX --version
   cmake --version
 
