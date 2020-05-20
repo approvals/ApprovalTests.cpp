@@ -3,7 +3,9 @@
 
 sudo: required
 language: cpp
-cache: ccache
+cache:
+  ccache: true
+  apt: true
 
 #branches:
 #  except:
