@@ -10,9 +10,9 @@ environment:
       GENERATOR: '"MinGW Makefiles" -DCMAKE_IGNORE_PATH="C:/Program Files/Git/usr/bin" -DBoost_INCLUDE_DIR=C:\Libraries\boost_1_69_0'
       MINGWPATH: 'C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin'
 
-#branches:
-#  except:
-#    - more_travis_builds
+branches:
+  except:
+    - travis_ccache
 
 before_build:
 - cmd: |
