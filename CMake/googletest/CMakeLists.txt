@@ -26,5 +26,7 @@ if (NOT TARGET gtest_main)
     # the following targets: gtest, gtest_main, gmock
     # and gmock_main
     add_subdirectory("${CMAKE_CURRENT_BINARY_DIR}/googletest-src"
-            "${CMAKE_CURRENT_BINARY_DIR}/googletest-build")
+            "${CMAKE_CURRENT_BINARY_DIR}/googletest-build"
+            EXCLUDE_FROM_ALL
+            )
 endif ()
