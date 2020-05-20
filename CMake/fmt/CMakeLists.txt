@@ -19,10 +19,7 @@ if (result)
     message(FATAL_ERROR "Build step for fmt failed: ${result}")
 endif ()
 
-# Prevent overriding the parent project's compiler/linker settings on Windows
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-# Add fmt directly to our build. This defines the gtest and gtest_main targets.
+# Add fmt directly to our build. This defines the fmt target.
 add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/fmt-src
         ${CMAKE_CURRENT_BINARY_DIR}/fmt-build
         EXCLUDE_FROM_ALL
