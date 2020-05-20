@@ -3,7 +3,7 @@
 
 sudo: required
 language: cpp
-cache: ccache
+#cache: ccache
 
 #branches:
 #  except:
@@ -116,22 +116,27 @@ matrix:
     - env: GCC_VERSION=5
       os: linux
       addons: *gcc5
+      cache: ccache
 
     - env: GCC_VERSION=6
       os: linux
       addons: *gcc6
+      cache: ccache
 
     - env: GCC_VERSION=7
       os: linux
       addons: *gcc7
+      cache: ccache
 
     - env: GCC_VERSION=8
       os: linux
       addons: *gcc8
+      cache: ccache
 
     - env: GCC_VERSION=9
       os: linux
       addons: *gcc9
+      cache: ccache
 
     # -------------------------------------------------------------------------
     # Linux clang
@@ -187,8 +192,8 @@ before_script: |
   fi
   if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     export CXX="clang++" CC="clang"
-    brew install ccache
-    export PATH="/usr/local/opt/ccache/libexec:$PATH"
+#    brew install ccache
+#    export PATH="/usr/local/opt/ccache/libexec:$PATH"
   fi
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     travis_retry wget --quiet -O - ${BOOST_URL} | tar -xj || exit 1
