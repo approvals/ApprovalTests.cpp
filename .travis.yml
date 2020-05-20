@@ -3,6 +3,7 @@
 
 sudo: required
 language: cpp
+cache: ccache
 
 #branches:
 #  except:
@@ -186,6 +187,8 @@ before_script: |
   fi
   if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     export CXX="clang++" CC="clang"
+    brew install ccache
+    export PATH="/usr/local/opt/ccache/libexec:$PATH"
   fi
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     travis_retry wget --quiet -O - ${BOOST_URL} | tar -xj || exit 1
