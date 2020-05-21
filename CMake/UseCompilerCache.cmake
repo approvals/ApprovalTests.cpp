@@ -1,13 +1,17 @@
 # From Craig Scott's "Professional CMake: A Practical Guide", 6th Edition
 function(useCompilerCache)
     if(NOT CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+        message(INFO " useCompilerCache() disabled, as not called at root of project")
         return()
     endif()
 
     find_program(CCACHE_PROGRAM ccache)
     if(NOT CCACHE_PROGRAM)
+        message(INFO " useCompilerCache() disabled, as ccache program not found")
         return()
     endif()
+
+    message(INFO " useCompilerCache() enabled")
 
     set(ccacheEnv
             CCACHE_BASEDIR=${CMAKE_BINARY_DIR}
