@@ -45,6 +45,6 @@ You may find that your tests fail, even though equivalent Approved and Received 
 
 If you can use the Qt framework, then we have provided a way to verify the contents of PNG images: please see `ApprovalTestsQt::verifyQImage()` in [ApprovalTests.cpp.Qt](https://github.com/approvals/ApprovalTests.cpp.Qt).
 
---
+---
 
 [Back to User Guide](/doc/README.md#top)
