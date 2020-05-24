@@ -178,5 +178,27 @@ FetchContent_MakeAvailable(Catch2)
 ```
 (See [snippet source](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt))
 
- 
+## Hyperlink and URL
+
+### Does not render correctly on Read the Docs
+
+Where a run of formatted text (here, italic) contains a hyperlink. I have not been able to get it to display correctly in Read the Docs.
+
+Example Markdown input, where the whole line is italic:
+
+*If you would like us to add any more questions here, please contact us via [the Contributing page](Contributing.html).*
+
+On the production site, it displays like this (after our conversion process here):
+
+```
+If you would like us to add any more questions here, please contact us via `the Contributing page <Contributing.html>`__.
+```
+
+*If you would like us to add any more questions here, please contact us via [the Contributing page](Contributing.html).*
+
+### Does render correctly on Read the Docs
+
+The fix is to end the italic formatting before the hyperlink. It looks a bit worse on GitHub but a lot better in Read the Docs:
+
+*If you would like us to add any more questions here, please contact us via* [the Contributing page](Contributing.html).
 

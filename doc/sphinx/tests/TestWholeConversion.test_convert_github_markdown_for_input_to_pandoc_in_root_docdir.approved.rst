@@ -224,5 +224,38 @@ We use this ``dependencies/CMakeLists.txt`` file:
 (See `snippet
 source <https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt>`__)
 
+Hyperlink and URL
+-----------------
+
+Does not render correctly on Read the Docs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Where a run of formatted text (here, italic) contains a hyperlink. I
+have not been able to get it to display correctly in Read the Docs.
+
+Example Markdown input, where the whole line is italic:
+
+*If you would like us to add any more questions here, please contact us
+via*\ `the Contributing page <Contributing.html>`__\ *.*
+
+On the production site, it displays like this (after our conversion
+process here):
+
+::
+
+   If you would like us to add any more questions here, please contact us via `the Contributing page <Contributing.html>`__.
+
+*If you would like us to add any more questions here, please contact us
+via*\ `the Contributing page <Contributing.html>`__\ *.*
+
+Does render correctly on Read the Docs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The fix is to end the italic formatting before the hyperlink. It looks a
+bit worse on GitHub but a lot better in Read the Docs:
+
+*If you would like us to add any more questions here, please contact us
+via* `the Contributing page <Contributing.html>`__.
+
 .. |Intro Graphic| image:: https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true
 .. |New Failure| image:: https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/tutorial/01_new_failure.png?raw=true
