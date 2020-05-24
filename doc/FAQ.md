@@ -23,7 +23,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [I wrote a test, but the output file has loads of stuff I'm not interested in](#i-wrote-a-test-but-the-output-file-has-loads-of-stuff-im-not-interested-in)
     * [I want to test images](#i-want-to-test-images)<!-- endtoc -->
 
-*If you would like us to add any more questions here, please contact us via [the Contributing page](/doc/Contributing.md#top).*
+*If you would like us to add any more questions here, please contact us via* [the Contributing page](/doc/Contributing.md#top).
 
 ## Overview
 

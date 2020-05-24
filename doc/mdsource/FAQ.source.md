@@ -4,7 +4,7 @@
 
 toc
 
-*If you would like us to add any more questions here, please contact us via [the Contributing page](/doc/Contributing.md#top).*
+*If you would like us to add any more questions here, please contact us via* [the Contributing page](/doc/Contributing.md#top).
 
 ## Overview
 
