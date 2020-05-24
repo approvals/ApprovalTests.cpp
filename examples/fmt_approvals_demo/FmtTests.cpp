@@ -1,9 +1,7 @@
 #include "doctest/doctest.h"
-#include <string>
 #include <vector>
 
 // begin-snippet: fmt_includes
-
 #include <fmt/ranges.h>
 // end-snippet
 
