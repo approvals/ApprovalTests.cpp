@@ -34,7 +34,7 @@ For example, vectors are not `ostream (<<)` printable by default. However, they 
 std::vector<int> numbers = {1, 2, 3};
 FmtApprovals::verify(numbers);
 ```
-<sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L16-L19' title='File snippet `fmt_approvals` was extracted from'>snippet source</a> | <a href='#snippet-fmt_approvals' title='Navigate to start of snippet `fmt_approvals`'>anchor</a></sup>
+<sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L14-L17' title='File snippet `fmt_approvals` was extracted from'>snippet source</a> | <a href='#snippet-fmt_approvals' title='Navigate to start of snippet `fmt_approvals`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This will produce the following output:
@@ -54,7 +54,7 @@ This will produce the following output:
 ```cpp
 #include <fmt/ranges.h>
 ```
-<sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L5-L8' title='File snippet `fmt_includes` was extracted from'>snippet source</a> | <a href='#snippet-fmt_includes' title='Navigate to start of snippet `fmt_includes`'>anchor</a></sup>
+<sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L4-L6' title='File snippet `fmt_includes` was extracted from'>snippet source</a> | <a href='#snippet-fmt_includes' title='Navigate to start of snippet `fmt_includes`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Installation
