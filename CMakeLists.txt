@@ -9,6 +9,8 @@ project(ApprovalTests.cpp)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/CMake/")
 include(ApprovalTestsOptions)
+include(UseCompilerCache)
+useCompilerCache()
 
 add_subdirectory(ApprovalTests)
 

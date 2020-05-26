@@ -13,7 +13,6 @@ NEW FEATURES
 . scrubbers
 . make SystemLauncher on Windows use the 'where' command
 . more linux diff programs (https://www.tecmint.com/best-linux-file-diff-tools-comparison/)
-. support visual studio's in-built diff
 
 TESTS
 

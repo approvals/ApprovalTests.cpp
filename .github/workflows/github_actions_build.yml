@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - '*'
-#      - '!compile_time_ninja_check_74'
+      - '!travis_ccache'
   pull_request:
     branches:
       - '*'
-#      - '!compile_time_ninja_check_74'
+      - '!travis_ccache'
 
 jobs:
   clang-format:
