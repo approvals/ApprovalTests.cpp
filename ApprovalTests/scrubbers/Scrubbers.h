@@ -33,5 +33,28 @@ namespace ApprovalTests
             }
             return result;
         }
+
+        using Match = std::sub_match<std::string::const_iterator>;
+        using RegexReplacer = std::function<std::string(const Match)>;
+        inline std::string scrubRegex(const std::string& input,
+                                      const std::regex& regex,
+                                      const RegexReplacer& replaceFunction)
+        {
+            auto result = input;
+            std::smatch m;
+            if (std::regex_search(result, m, regex))
+            {
+                for (size_t i = 0; i < m.size(); ++i)
+                {
+                    auto match = m[i];
+                    auto original_matched_text = match.str();
+                    auto replacement = replaceFunction(match);
+                    result = StringUtils::replaceAll(
+                        result, original_matched_text, replacement);
+                }
+            }
+            return result;
+        }
+
     }
 }
