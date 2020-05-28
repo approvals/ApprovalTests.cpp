@@ -7,4 +7,4 @@
 * **Bug fixes**
     * None
 * **Other changes**
-    * None
+    * Add support for doctest 2.3.8 (#135, thank you @YarikTH)
