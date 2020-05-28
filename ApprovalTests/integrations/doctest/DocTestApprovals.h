@@ -95,20 +95,20 @@ namespace ApprovalTests
             {
             }
 
-            std::string getFileName(const doctest::TestCaseData& testInfo) const
+            std::string doctestToString(const doctest::String& string) const
             {
-#if DOCTEST_VERSION >= 20308
-                return testInfo.m_file.c_str();
-#else
-                return testInfo.m_file;
-#endif
+                return string.c_str();
+            }
+
+            std::string doctestToString(const char* string) const
+            {
+                return string;
             }
 
             void test_case_start(const doctest::TestCaseData& testInfo) override
             {
-
                 currentTest.sections.emplace_back(testInfo.m_name);
-                currentTest.setFileName(getFileName(testInfo));
+                currentTest.setFileName(doctestToString(testInfo.m_file));
                 ApprovalTestNamer::currentTest(&currentTest);
             }
 
@@ -123,12 +123,7 @@ namespace ApprovalTests
 
             void subcase_start(const doctest::SubcaseSignature& signature) override
             {
-
-#if DOCTEST_VERSION >= 20307
-                currentTest.sections.emplace_back(signature.m_name.c_str());
-#else
-                currentTest.sections.emplace_back(signature.m_name);
-#endif
+                currentTest.sections.emplace_back(doctestToString(signature.m_name));
             }
 
             void subcase_end() override
