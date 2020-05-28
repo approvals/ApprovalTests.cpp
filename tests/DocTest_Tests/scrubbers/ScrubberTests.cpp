@@ -21,8 +21,11 @@ using namespace ApprovalTests;
 
 TEST_CASE("regex scrubber")
 {
-    auto input = "Hello 1234 World";
-    auto scrubbed = Scrubbers::scrubRegex(
-        input, std::regex("1234"), [](const auto& /*match*/) { return "number()"; });
-    REQUIRE(scrubbed == "Hello number() World");
+    auto input = "9012 Hello 1234 World 1234 5678";
+    auto scrubbed =
+        Scrubbers::scrubRegex(input, std::regex(R"(\d\d\d\d)"), [](const auto& match) {
+            std::cout << match.str() << '\n';
+            return "number(" + match.str() + ")\n";
+        });
+    Approvals::verify(scrubbed);
 }

@@ -40,21 +40,19 @@ namespace ApprovalTests
                                       const std::regex& regex,
                                       const RegexReplacer& replaceFunction)
         {
-            auto result = input;
+            std::string result;
+            std::string remainder = input;
             std::smatch m;
-            if (std::regex_search(result, m, regex))
+            while (std::regex_search(remainder, m, regex))
             {
-                for (size_t i = 0; i < m.size(); ++i)
-                {
-                    auto match = m[i];
-                    auto original_matched_text = match.str();
-                    auto replacement = replaceFunction(match);
-                    result = StringUtils::replaceAll(
-                        result, original_matched_text, replacement);
-                }
+                auto match = m[0];
+                auto original_matched_text = match.str();
+                auto replacement = replaceFunction(match);
+                result += std::string(m.prefix()) + replacement;
+                remainder = m.suffix();
             }
+            result += remainder;
             return result;
         }
-
     }
 }
