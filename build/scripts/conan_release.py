@@ -11,8 +11,8 @@ from scripts.version import Version
 
 class ConanReleaseDetails:
     def __init__(self) -> None:
-        self.conan_repo_dir = '../../conan-center-index-claremacrae' # llewellyn
-        # self.conan_repo_dir = '../../../conan/conan-center-index-claremacrae' # clare
+        # self.conan_repo_dir = '../../conan-center-index-claremacrae' # llewellyn
+        self.conan_repo_dir = '../../../conan/conan-center-index-claremacrae' # clare
         self.conan_approvaltests_dir = os.path.join(self.conan_repo_dir, 'recipes', 'approvaltests.cpp')
 
 
