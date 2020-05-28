@@ -99,7 +99,11 @@ namespace ApprovalTests
             {
 
                 currentTest.sections.emplace_back(testInfo.m_name);
+#if DOCTEST_VERSION >= 20308
+                currentTest.setFileName(testInfo.m_file.c_str());
+#else
                 currentTest.setFileName(testInfo.m_file);
+#endif
                 ApprovalTestNamer::currentTest(&currentTest);
             }
 
