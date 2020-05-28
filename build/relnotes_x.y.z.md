@@ -7,5 +7,4 @@
 * **Bug fixes**
     * None
 * **Other changes**
-    * Add support for doctest 2.3.8 (#135, thank you @YarikTH)
-    * This project can now be built using a {fmt} source tree (#136) 
+    * None
