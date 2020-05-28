@@ -95,15 +95,20 @@ namespace ApprovalTests
             {
             }
 
+            std::string getFileName(const doctest::TestCaseData& testInfo) const
+            {
+#if DOCTEST_VERSION >= 20308
+                return testInfo.m_file.c_str();
+#else
+                return testInfo.m_file;
+#endif
+            }
+
             void test_case_start(const doctest::TestCaseData& testInfo) override
             {
 
                 currentTest.sections.emplace_back(testInfo.m_name);
-#if DOCTEST_VERSION >= 20308
-                currentTest.setFileName(testInfo.m_file.c_str());
-#else
-                currentTest.setFileName(testInfo.m_file);
-#endif
+                currentTest.setFileName(getFileName(testInfo));
                 ApprovalTestNamer::currentTest(&currentTest);
             }
 
