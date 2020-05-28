@@ -86,6 +86,16 @@ namespace ApprovalTests
             }
         };
 
+        // Note that this will be found on Linux too.
+        // See https://github.com/approvals/ApprovalTests.cpp/issues/138 for limitations
+        class CLionDiffReporter : public GenericDiffReporter
+        {
+        public:
+            CLionDiffReporter() : GenericDiffReporter(DiffPrograms::Mac::CLION())
+            {
+            }
+        };
+
         class MacDiffReporter : public FirstWorkingReporter
         {
         public:
@@ -100,7 +110,8 @@ namespace ApprovalTests
                       new SublimeMergeReporter(),
                       new KDiff3Reporter(),
                       new TkDiffReporter(),
-                      new VisualStudioCodeReporter()
+                      new VisualStudioCodeReporter(),
+                      new CLionDiffReporter()
                       // end-snippet
                   })
             {

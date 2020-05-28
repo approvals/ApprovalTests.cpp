@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * Add support for CLion diff tool on Mac and Linux. See #138 for limitations.
 * **Bug fixes**
     * None
 * **Other changes**

@@ -68,6 +68,11 @@ namespace ApprovalTests
                          "Code.app/Contents/Resources/app/bin/code",
                          "-d {Received} {Approved}",
                          Type::TEXT))
+
+            APPROVAL_TESTS_MACROS_ENTRY(CLION,
+                                        DiffInfo("clion",
+                                                 "nosplash diff {Received} {Approved}",
+                                                 Type::TEXT))
         }
 
         namespace Linux
