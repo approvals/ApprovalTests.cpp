@@ -7,133 +7,118 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 <a id="top"></a>
 
-# ApprovalTests.cpp User Guide
+# ApprovalTests for C++
 
-To get the most out of ApprovalTests, start with the  [Tutorial](/doc/Tutorial.md#top).
-Once you're up and running, consider the following reference material. 
+**ApprovalTests.cpp** is a C++ implementation of Approval Tests.
 
-<!-- toc -->
-## Contents
+Also known as Golden Master Tests or Snapshot Testing, Approval Tests
+are an alternative to asserts. They are great for testing objects with
+lots of fields, or lists of objects.
 
-  * [Preparation](#preparation)
-    * [Introduction](#introduction)
-    * [Setup](#setup)
-  * [Use](#use)
-    * [Writing Tests](#writing-tests)
-    * [Test Frameworks](#test-frameworks)
-    * [Customising behaviour](#customising-behaviour)
-    * [Common Challenges](#common-challenges)
-    * [Common Scenarios](#common-scenarios)
-  * [How-to Guides](#how-to-guides)
-  * [Miscellaneous](#miscellaneous)
-    * [Build Systems](#build-systems)
-    * [Extras](#extras)
-    * [Advanced Topics](#advanced-topics)
-    * [Suggested Examples](#suggested-examples)<!-- endtoc -->
+## Getting Started
 
-## Preparation
+If you are new to Approval Tests, or to this C++ library, start here:
 
-### Introduction
+  - **Concepts**:
+    [Overview](/doc/Overview.md#top) |
+    [ApprovalTesting (the concept)](/doc/ApprovalTestingConcept.md#top) |
+    [The Path to Approval Testing](/doc/PathToApprovalTesting.md#top)
+  - **Start coding**:
+    [Tutorial](/doc/Tutorial.md#top) |
+    [Setup Options](/doc/Setup.md#top) |
+    [Choosing a test framework](/doc/GettingStarted.md#top) |
+    [Approving Results](/doc/ApprovingResults.md#top)
 
-* [Overview](/doc/Overview.md#top)
-* [Approval Testing (the concept)](/doc/ApprovalTestingConcept.md#top)
-* What is Approval Testing?
-* Why Approval Tests?
-* [The Path to Approval Testing](/doc/PathToApprovalTesting.md#top)
-* [Glossary](/doc/Glossary.md#top)
+## Test Frameworks
 
-### Setup
+Approval Tests uses a test framework, in order to find out the names of
+tests and of source files. The test framework will also report errors
+for any failed Approval Tests.
 
-There are three different places you might be starting your setup from.
+  - **Using Approval Tests with**:
+    [Boost.Test](/doc/UsingBoostTest.md#top) |
+    [Catch2](/doc/UsingCatch.md#top) |
+    [doctest](/doc/UsingDoctest.md#top) |
+    [Google Tests](/doc/UsingGoogleTests.md#top) |
+    [\[Boost\].ut](/doc/UsingUT.md#top)
+  - **Extending test framework support**:
+    [Supporting a new test framework](/doc/SupportingNewTestFramework.md#top)
 
-Here's how to set up from:
+## Writing Tests
 
-* [I have nothing](/doc/Setup.md#i-have-nothing)
-* [I have code but no tests](/doc/Setup.md#i-have-code-but-no-tests)
-* [I have tests and code and want to add Approval Tests](/doc/Setup.md#i-have-tests-and-code-and-want-to-add-approval-tests)
+Now that you are set up to run Approval Tests, this section describes
+how to test various types of complex objects, and how to do so
+effectively.
 
-## Use
+  - **How to Test**: [Single
+    Objects](/doc/TestingSingleObjects.md#top) |
+    [Containers](/doc/TestingContainers.md#top) |
+    [Combinations of containers](/doc/TestingCombinations.md#top) |
+    [Testing Exceptions](/doc/TestingExceptions.md#top)
+  - **Good Practice**:
+    [String conversions](/doc/ToString.md#top) |
+    [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top)
 
-### Writing Tests
+## Customising Behaviour
 
-* [Tutorial](/doc/Tutorial.md#top)
-* [Testing single objects](/doc/TestingSingleObjects.md#top)
-* [Testing containers](/doc/TestingContainers.md#top)
-* [Testing exceptions](/doc/TestingExceptions.md#top)
-* [Testing combinations](/doc/TestingCombinations.md#top) - containers of containers (of containers...)
-* [To String](/doc/ToString.md#top)
-* [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top)
-* Worked example of getting to 'make the thing; verify the thing' - 'do; verify'
-* [Features](/doc/Features.md#top) - recent additions
+  - **Principles**:
+    [Options](/doc/Options.md#top) |
+    [Disposable Objects](/doc/DisposableObjects.md#top)
+  - **Customisation points**:
+    [Reporters](/doc/Reporters.md#top) |
+    [Comparators](/doc/CustomComparators.md#top) |
+    [Writers](/doc/Writers.md#top) |
+    [Namers](/doc/Namers.md#top) |
+    [Configuring Approval Tests](/doc/Configuration.md#top)
+  - **Summary**:
+    [All Customizations of Approval Tests](/doc/AllCustomizations.md#top)
 
-### Test Frameworks
+## Common Challenges
 
-* [Using Approval Tests With Catch](/doc/UsingCatch.md#top) <!-- include: include_using_test_frameworks_list. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
-* [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
-* [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
-* [Using Approval Tests With Boost.Test](/doc/UsingBoostTest.md#top)
-* [Using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#top) <!-- end include: include_using_test_frameworks_list. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
-* [Supporting a new test framework](/doc/SupportingNewTestFramework.md#top)
-
-### Customising behaviour
-
-* [Options](/doc/Options.md#top)
-* [Reporters](/doc/Reporters.md#top)
-* [Custom Comparators](/doc/CustomComparators.md#top)
-* [Writers](/doc/Writers.md#top)
-* [Namers](/doc/Namers.md#top)
-* [Configuration](/doc/Configuration.md#top)
-* [All Customizations of Approval Tests](/doc/AllCustomizations.md#top)
-
-### Common Challenges
-
-* Unstable output, e.g. with Dates and Times
-* Non-deterministic code
-* [Multiple output files per test](/doc/MultipleOutputFilesPerTest.md#top)
-* Testing images
-* Embedded development
-
-### Common Scenarios
-
-* Non-graphical environments
-* [Build Machines and Continuous Integration servers](/doc/BuildMachinesAndCI.md#top)
+  - **Challenges**:
+    [Multiple output files per test](/doc/MultipleOutputFilesPerTest.md#top)
 
 ## How-to Guides
 
-* [How to Test the Contents of a Container](/doc/how_tos/TestContainerContents.md#top).
-* [How to Test a Variety of Values for One Input](/doc/how_tos/TestAVarietyOfValues.md#top).
-* [How to Scrub Non-Deterministic Output](/doc/how_tos/ScrubNonDeterministicOutput.md#top).
-* [How to Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top)
-* [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top).
-* [How to Toggle Enabling or Disabling of Deprecated Code](/doc/how_tos/ToggleDeprecatedCode.md#top).
-* [How to Use the Fmt Library To Print Objects](/doc/how_tos/UseTheFmtLibraryToPrintObjects.md#top).
+- **Writing Tests**:
+    - [How to Test the Contents of a Container](/doc/how_tos/TestContainerContents.md#top)        
+    - [How to Test a Variety of Values for One Input](/doc/how_tos/TestAVarietyOfValues.md#top)
+    - [How to Scrub Non-Deterministic Output](/doc/how_tos/ScrubNonDeterministicOutput.md#top)
+    - [How to Use the Fmt Library To Print Objects](/doc/how_tos/UseTheFmtLibraryToPrintObjects.md#top)
+ - **Reporters**:
+   - [How to Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top)
+   - [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top)
+ - **Others**:
+   - [How to Toggle Enabling or Disabling of Deprecated Code](/doc/how_tos/ToggleDeprecatedCode.md#top)
+ 
 
-## Miscellaneous
+## Build Systems
 
-### Build Systems
+  - **Integrations**:
+    [CMake](/doc/CMakeIntegration.md#top) |
+    [Conan](/doc/ConanIntegration.md#top)
+  - **Your builds**:
+    [Build Machines and CI servers](/doc/BuildMachinesAndCI.md#top)
 
-* [CMake Integration](/doc/CMakeIntegration.md#top)
-* [Conan Integration](/doc/ConanIntegration.md#top)
+## Extras
 
-### Extras
+  - **Various**:
+    [Features](/doc/Features.md#top) |
+    [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top) |
+    [FAQs](/doc/FAQ.md#top) |
+    [Glossary](/doc/Glossary.md#top) |
+    [Utilities](/doc/Utilities.md#top) |
+    [Videos](/doc/Videos.md#top)
 
-* [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top)
-* [Frequently Asked Questions](/doc/FAQ.md#top)
-* [Utilities](/doc/Utilities.md#top)
-* [Videos](/doc/Videos.md#top)
-* [Troubleshooting](/doc/Troubleshooting.md#top)
-    * [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top)
-    * [Troubleshooting Misconfigured Main](/doc/TroubleshootingMisconfiguredMain.md#top)
-* 4 benefits of testing
-    * Spec
-    * Feedback
-    * Regression
-    * Granularity
+## Troubleshooting
 
-### Advanced Topics
+  - **Topics**:
+    [Troubleshooting](/doc/Troubleshooting.md#top) |
+    [Misconfigured Builds](/doc/TroubleshootingMisconfiguredBuild.md#top) |
+    [Misconfigured main()](/doc/TroubleshootingMisconfiguredMain.md#top)
 
-* [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top)
+## Developing ApprovalTests.cpp
 
-### Suggested Examples
-* [ApprovalTests](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/ApprovalsTests.cpp)
-
+  - **Topics**:
+    [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top) |
+    [Coding Patterns](/doc/CodingPatterns.md#top)
