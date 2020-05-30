@@ -43,9 +43,10 @@ new P4MergeReporter(),
 new SublimeMergeReporter(),
 new KDiff3Reporter(),
 new TkDiffReporter(),
-new VisualStudioCodeReporter()
+new VisualStudioCodeReporter(),
+new CLionDiffReporter()
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.h#L94-L104' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.h#L104-L115' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Linux
