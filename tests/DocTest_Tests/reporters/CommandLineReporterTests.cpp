@@ -34,6 +34,7 @@ TEST_CASE("Test Command Lines")
         std::make_shared<Mac::KDiff3Reporter>(),
         std::make_shared<Mac::TkDiffReporter>(),
         std::make_shared<Mac::VisualStudioCodeReporter>(),
+        std::make_shared<Mac::CLionDiffReporter>(),
         // end-snippet
 
         // Windows

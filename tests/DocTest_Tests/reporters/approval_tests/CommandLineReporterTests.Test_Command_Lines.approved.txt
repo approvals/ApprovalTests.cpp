@@ -34,6 +34,10 @@ windows: start "" "/Applications/Visual Studio Code.app/Contents/Resources/app/b
 unix   : "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" -d "a.txt" "b.txt" &
 cygwin : "$(cygpath '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code')" -d "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
 
+windows: start "" "clion" nosplash diff "a.txt" "b.txt"
+unix   : "clion" nosplash diff "a.txt" "b.txt" &
+cygwin : "$(cygpath 'clion')" nosplash diff "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
+
 windows: start "" "{ProgramFiles}TortoiseSVN\bin\TortoiseMerge.exe" "a.txt" "b.txt"
 unix   : "{ProgramFiles}TortoiseSVN\bin\TortoiseMerge.exe" "a.txt" "b.txt" &
 cygwin : "$(cygpath '{ProgramFiles}TortoiseSVN\bin\TortoiseMerge.exe')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
