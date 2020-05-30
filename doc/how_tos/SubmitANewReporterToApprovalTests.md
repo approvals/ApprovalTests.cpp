@@ -99,8 +99,9 @@ std::make_shared<Mac::SublimeMergeReporter>(),
 std::make_shared<Mac::KDiff3Reporter>(),
 std::make_shared<Mac::TkDiffReporter>(),
 std::make_shared<Mac::VisualStudioCodeReporter>(),
+std::make_shared<Mac::CLionDiffReporter>(),
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp#L26-L37' title='File snippet `add_reporter_command_test` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_command_test' title='Navigate to start of snippet `add_reporter_command_test`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp#L26-L38' title='File snippet `add_reporter_command_test` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_command_test' title='Navigate to start of snippet `add_reporter_command_test`'>anchor</a></sup>
 <!-- endsnippet -->
 
 * Run this test, review and accept the changes.

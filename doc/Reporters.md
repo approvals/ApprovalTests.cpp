@@ -58,8 +58,9 @@ new BeyondCompareReporter(),
 new MeldReporter(),
 new SublimeMergeReporter(),
 new KDiff3Reporter()
+// Note: ApprovalTests::Mac::CLionDiffReporter also works on Linux
 ```
-<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L95-L100' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L95-L101' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Windows

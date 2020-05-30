@@ -97,6 +97,7 @@ namespace ApprovalTests
                       new MeldReporter(),
                       new SublimeMergeReporter(),
                       new KDiff3Reporter()
+                      // Note: ApprovalTests::Mac::CLionDiffReporter also works on Linux
                       // end-snippet
                   })
             {
