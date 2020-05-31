@@ -36,8 +36,5 @@ You will need to:
     * Clone that fork to your machine
     * Edit [build/scripts/conan_release.py](/build/scripts/conan_release.py)'s `get_conan_repo_directory()()` to add the relative path to your cloned fork
     * Install Conan
-* Before each release
-    * Syncronise your Conan fork with the main repo
-    * Create a branch for the patch
 * Run the release process as normal - this appends lines for your new release to your copy of `conandata.yml`
 * The 'deploy' step will test the changes, and prompt you to submit a pull request
