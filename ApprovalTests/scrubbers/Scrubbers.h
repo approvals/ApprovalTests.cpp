@@ -18,7 +18,7 @@ namespace ApprovalTests
         }
 
         using RegexMatch = std::sub_match<std::string::const_iterator>;
-        using RegexReplacer = std::function<std::string(const RegexMatch)>;
+        using RegexReplacer = std::function<std::string(const RegexMatch&)>;
         inline std::string scrubRegex(const std::string& input,
                                       const std::regex& regex,
                                       const RegexReplacer& replaceFunction)
@@ -45,7 +45,7 @@ namespace ApprovalTests
 
             int matchNumber = 1;
             std::map<std::string, int> matchIndices;
-            return scrubRegex(input, regex, [&](RegexMatch m) {
+            return scrubRegex(input, regex, [&](const RegexMatch& m) {
                 auto guid_match = m.str();
 
                 if (matchIndices[guid_match] == 0)
