@@ -53,7 +53,7 @@ This would produce:
 
 ### Regular Expressions (regex)
 
-Approval Tests provides lots of convenience methods to scrub text based on regular expressions.
+Approval Tests provides lots of [convenience methods](https://approvaltestscpp.readthedocs.io/en/latest/api/scrubbers.html) to scrub text based on regular expressions.
 
 For example, here is an example where random numbers are scrubbed:
 
@@ -118,7 +118,7 @@ This will produce:
 
 #### See also
 
-* [API Reference for Scrubbers - coming soon...]()
+* [API Reference for Scrubbers](https://approvaltestscpp.readthedocs.io/en/latest/api/scrubbers.html)
 * [Regex Tutorial](https://regexone.com/)
 * [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
 * [Regex Testing Tool](https://regex101.com)
