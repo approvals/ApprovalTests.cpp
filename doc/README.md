@@ -69,6 +69,7 @@ effectively.
     [Comparators](/doc/CustomComparators.md#top) |
     [Writers](/doc/Writers.md#top) |
     [Namers](/doc/Namers.md#top) |
+    [Scrubbers](/doc/how_tos/ScrubNonDeterministicOutput.md#top) |
     [Configuring Approval Tests](/doc/Configuration.md#top)
   - **Summary**:
     [All Customizations of Approval Tests](/doc/AllCustomizations.md#top)
