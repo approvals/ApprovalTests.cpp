@@ -45,6 +45,10 @@ See [Custom Comparators](/doc/CustomComparators.md#top) for controlling how Appr
 
 See [Reporters](/doc/Reporters.md#top) to control how test failures are shown. This is typically done by showing a diff tool.
 
+## Scrubbers - non-deterministic output
+
+See [Scrubbers](/doc/explanations/Scrubbers.md#top) for various ways to deal with non-deterministic output.
+
 ---
 
 [Back to User Guide](/doc/README.md#top)

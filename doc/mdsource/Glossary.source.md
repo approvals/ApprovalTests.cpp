@@ -74,7 +74,7 @@ See [Features](/doc/Features.md#top) - whose sections need to be moved around
 
 ## Scrubber
 
-See [How to Scrub Non-Deterministic Output](/doc/how_tos/ScrubNonDeterministicOutput.md#top).
+See [Scrubbers](/doc/explanations/Scrubbers.md#top).
 
 ## Stringification
 

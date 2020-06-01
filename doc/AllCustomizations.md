@@ -19,7 +19,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Output File Names](#output-file-names)
   * [Writers - how things being verified are written to file](#writers---how-things-being-verified-are-written-to-file)
   * [Comparators - how files are compared](#comparators---how-files-are-compared)
-  * [Reporters - how test failures are shown](#reporters---how-test-failures-are-shown)<!-- endtoc -->
+  * [Reporters - how test failures are shown](#reporters---how-test-failures-are-shown)
+  * [Scrubbers - non-deterministic output](#scrubbers---non-deterministic-output)<!-- endtoc -->
 
 ## Introduction
 
@@ -61,6 +62,10 @@ See [Custom Comparators](/doc/CustomComparators.md#top) for controlling how Appr
 ## Reporters - how test failures are shown
 
 See [Reporters](/doc/Reporters.md#top) to control how test failures are shown. This is typically done by showing a diff tool.
+
+## Scrubbers - non-deterministic output
+
+See [Scrubbers](/doc/explanations/Scrubbers.md#top) for various ways to deal with non-deterministic output.
 
 ---
 
