@@ -33,7 +33,7 @@ snippet: basic_approval_with_reporter_2
 
 ## Scrubbers
 
-[Scrubbers](/doc/Scrubbers.md#top) clean output to help remove inconsistent pieces of text, such as dates.
+[Scrubbers](/doc/explanations/Scrubbers.md#top) clean output to help remove inconsistent pieces of text, such as dates.
 There are two ways to set a Scrubber.
 
 1. Pass in a function pointer to the Options constructor, for example:

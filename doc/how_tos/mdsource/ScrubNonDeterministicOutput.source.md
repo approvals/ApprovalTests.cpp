@@ -6,7 +6,7 @@ toc
 
 ## Scrubbers
 
-This page assumes that you understand the concept of [Scrubbers](/doc/Scrubbers.md#top).
+This page assumes that you understand the concept of [Scrubbers](/doc/explanations/Scrubbers.md#top).
 
 ## Lambda example
 
