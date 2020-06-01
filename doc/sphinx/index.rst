@@ -264,7 +264,8 @@ This section contains a growing list of pages documenting the ApprovalTests.cpp 
 
 * **Fundamentals**:
   :doc:`api/approving` |
-  :doc:`api/core`
+  :doc:`api/core` |
+  :doc:`api/scrubbers`
 
 .. toctree::
    :maxdepth: 3
@@ -273,6 +274,7 @@ This section contains a growing list of pages documenting the ApprovalTests.cpp 
 
    api/approving
    api/core
+   api/scrubbers
 
 Code Index
 ----------
