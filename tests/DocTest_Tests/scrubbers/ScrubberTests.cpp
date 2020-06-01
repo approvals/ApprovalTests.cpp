@@ -22,6 +22,12 @@ TEST_CASE("test createRegexScrubber with fixed result")
     Approvals::verify(input, Options(output));
 }
 
+TEST_CASE("test createRegexScrubber with string input and fixed result")
+{
+    auto input = "Hello 1234 World";
+    Approvals::verify(input, Options(Scrubbers::createRegexScrubber(R"(\d+)", "number")));
+}
+
 //TEST_CASE("regex scrubber with Options")
 //{
 //    auto input = "Hello 1234 World";
