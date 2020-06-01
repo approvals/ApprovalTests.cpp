@@ -15,6 +15,13 @@ TEST_CASE("test createRegexScrubber")
     Approvals::verify(input, Options(output));
 }
 
+TEST_CASE("test createRegexScrubber with fixed result")
+{
+    auto input = "Hello 1234 World";
+    auto output = Scrubbers::createRegexScrubber(std::regex(R"(\d+)"), "number");
+    Approvals::verify(input, Options(output));
+}
+
 //TEST_CASE("regex scrubber with Options")
 //{
 //    auto input = "Hello 1234 World";

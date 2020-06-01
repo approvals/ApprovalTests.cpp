@@ -46,6 +46,13 @@ namespace ApprovalTests
             };
         }
 
+        inline Scrubber createRegexScrubber(const std::regex& regexPattern,
+                                            const std::string& replacementText)
+        {
+            return createRegexScrubber(
+                regexPattern, [=](const RegexMatch&) { return replacementText; });
+        }
+
         inline std::string scrubGuid(const std::string& input)
         {
             static const std::regex regex("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-["
