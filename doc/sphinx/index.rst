@@ -112,6 +112,7 @@ Customising Behaviour
   :doc:`Comparators <generated_docs/CustomComparators>` |
   :doc:`generated_docs/Writers` |
   :doc:`generated_docs/Namers` |
+  :doc:`generated_docs/explanations/Scrubbers` |
   :doc:`generated_docs/Configuration`
 
 * **Summary**:
@@ -129,6 +130,7 @@ Customising Behaviour
    generated_docs/CustomComparators
    generated_docs/Writers
    generated_docs/Namers
+   generated_docs/explanations/Scrubbers
    generated_docs/Configuration
 
    generated_docs/AllCustomizations
