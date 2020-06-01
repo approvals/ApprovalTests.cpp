@@ -74,5 +74,7 @@ TEST_CASE("regex scrubber with full customisation")
                 return "number(" + match.str() + ")\n";
             });
     };
-    Approvals::verify(input, Options(scrubber));
+    // begin-snippet: scrubber_in_options_object
+    Approvals::verify(input, Options().withScrubber(scrubber));
+    // end-snippet
 }

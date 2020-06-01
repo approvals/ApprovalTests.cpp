@@ -12,20 +12,16 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [Introduction](#introduction)
-  * [Interface](#interface)
+  * [Scrubbers](#scrubbers)
   * [Lambda example](#lambda-example)
   * [Pre-made Scrubbers](#pre-made-scrubbers)
     * [Regular Expressions (regex)](#regular-expressions-regex)
+      * [See also](#see-also)
     * [GUID](#guid)<!-- endtoc -->
 
-## Introduction
+## Scrubbers
 
-If you are having trouble getting tests running reproducibly, you might need to use a "scrubber" to convert the non-deterministic text to something stable.
-
-## Interface
-
-Fundamentally, a scrubber is function that takes a string and returns a string. You can create ones by passing in a function or a lambda. We also have some pre-made ones for your convenience.
+This page assumes that you understand the concept of [Scrubbers](/doc/Scrubbers.md#top).
 
 ## Lambda example
 
@@ -119,6 +115,14 @@ This will produce:
 ```
 <sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.test_createRegexScrubber.approved.txt#L1-L1' title='File snippet `ScrubberTests.test_createRegexScrubber.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ScrubberTests.test_createRegexScrubber.approved.txt' title='Navigate to start of snippet `ScrubberTests.test_createRegexScrubber.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
+
+#### See also
+
+* [API Reference for Scrubbers - coming soon...]()
+* [Regex Tutorial](https://regexone.com/)
+* [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+* [Regex Testing Tool](https://regex101.com)
+* [C++ Regex Reference](https://en.cppreference.com/w/cpp/regex)
 
 ### GUID
 

@@ -4,13 +4,9 @@
 
 toc
 
-## Introduction
+## Scrubbers
 
-If you are having trouble getting tests running reproducibly, you might need to use a "scrubber" to convert the non-deterministic text to something stable.
-
-## Interface
-
-Fundamentally, a scrubber is function that takes a string and returns a string. You can create ones by passing in a function or a lambda. We also have some pre-made ones for your convenience.
+This page assumes that you understand the concept of [Scrubbers](/doc/Scrubbers.md#top).
 
 ## Lambda example
 
@@ -48,6 +44,14 @@ snippet: complex_regex_scrubbing
 This will produce:
 
 snippet: ScrubberTests.test_createRegexScrubber.approved.txt
+
+#### See also
+
+* [API Reference for Scrubbers - coming soon...]()
+* [Regex Tutorial](https://regexone.com/)
+* [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+* [Regex Testing Tool](https://regex101.com)
+* [C++ Regex Reference](https://en.cppreference.com/w/cpp/regex)
 
 ### GUID
 
