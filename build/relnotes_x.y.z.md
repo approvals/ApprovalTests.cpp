@@ -3,6 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
+    * Added [Scrubbing using Regular Expressions (regex)](/doc/how_tos/ScrubNonDeterministicOutput.md#regular-expressions-regex).
     * Add support for CLion diff tool on Mac and Linux. See #138 for limitations.
 * **Bug fixes**
     * None

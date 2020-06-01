@@ -8,6 +8,10 @@ toc
 
 ## v.x.y.z
 
+### Regex-based Scrubbing 
+
+See [Scrubbing using Regular Expressions (regex)](/doc/how_tos/ScrubNonDeterministicOutput.md#regular-expressions-regex).
+
 ## v.8.8.0
 
 ### FmtApprovals
