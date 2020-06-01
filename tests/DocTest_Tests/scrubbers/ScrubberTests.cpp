@@ -7,7 +7,15 @@
 
 using namespace ApprovalTests;
 
-//TEST_CASE("regex scrubber")
+TEST_CASE("test createRegexScrubber")
+{
+    auto input = "Hello 1234 World";
+    auto output = Scrubbers::createRegexScrubber(
+        std::regex("1234"), [](const auto& /*match*/) { return "number"; });
+    Approvals::verify(input, Options(output));
+}
+
+//TEST_CASE("regex scrubber with Options")
 //{
 //    auto input = "Hello 1234 World";
 //    auto output = Scrubbers::createRegexScrubber("1234", "number");
