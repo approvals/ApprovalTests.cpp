@@ -68,9 +68,9 @@ TEST_CASE("regex scrubber")
 TEST_CASE("regex scrubber with full customisation")
 {
     auto input = "9012 Hello 1234 World 1234 5678";
-    Scrubber scrubber = [](const std::string& input) {
+    Scrubber scrubber = [](const std::string& text) {
         return Scrubbers::scrubRegex(
-            input, std::regex(R"(\d\d\d\d)"), [](const auto& match) {
+            text, std::regex(R"(\d\d\d\d)"), [](const auto& match) {
                 return "number(" + match.str() + ")\n";
             });
     };
