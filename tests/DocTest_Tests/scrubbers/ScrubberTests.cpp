@@ -27,7 +27,8 @@ TEST_CASE("test createRegexScrubber with fixed result")
 TEST_CASE("test createRegexScrubber with string input and fixed result")
 {
     auto input = std::string("Hello ") + std::to_string(std::rand() % 1000) + " World";
-    Approvals::verify(input, Options(Scrubbers::createRegexScrubber(R"(\d+)", "number")));
+    Approvals::verify(input,
+                      Options(Scrubbers::createRegexScrubber(R"(\d+)", "[number]")));
 }
 
 TEST_CASE("regex scrubber")
