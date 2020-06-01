@@ -8,6 +8,8 @@ toc
 
 ## v.x.y.z
 
+## v.8.9.0
+
 ### Regex-based Scrubbing 
 
 See [Scrubbing using Regular Expressions (regex)](/doc/how_tos/ScrubNonDeterministicOutput.md#regular-expressions-regex).

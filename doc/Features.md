@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.8.9.0](#v890)
     * [Regex-based Scrubbing](#regex-based-scrubbing)
   * [v.8.8.0](#v880)
     * [FmtApprovals](#fmtapprovals)
@@ -60,6 +61,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+## v.8.9.0
 
 ### Regex-based Scrubbing 
 
