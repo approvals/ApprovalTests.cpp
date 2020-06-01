@@ -34,8 +34,8 @@ namespace ApprovalTests
             return result;
         }
 
-        using Match = std::sub_match<std::string::const_iterator>;
-        using RegexReplacer = std::function<std::string(const Match)>;
+        using RegexMatch = std::sub_match<std::string::const_iterator>;
+        using RegexReplacer = std::function<std::string(const RegexMatch)>;
         inline std::string scrubRegex(const std::string& input,
                                       const std::regex& regex,
                                       const RegexReplacer& replaceFunction)
