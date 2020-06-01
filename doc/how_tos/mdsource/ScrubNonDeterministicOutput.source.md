@@ -24,9 +24,36 @@ snippet: GuidScrubberTests.Scrubbing_via_Lambda.approved.txt
 
 ## Pre-made Scrubbers
 
+### Regular Expressions (regex)
+
+Approval Tests provides lots of convenience methods to scrub text based on regular expressions.
+
+For example, here is an example where random numbers are scrubbed:
+
+snippet: simple_regex_scrubbing
+
+This will produce:
+
+snippet: ScrubberTests.test_createRegexScrubber_with_string_input_and_fixed_result.approved.txt
+
+**Note**: In the above example, the caller passes in a `std::string`, and for convenience of the calling code, Approval Tests
+converts that to a `std::regex`. The calling code is responsible for making sure that the string contains a valid
+regular expression.
+
+There are many combinations of these parameters, that allow for customization at whatever level you
+need, the most complex being:
+
+snippet: complex_regex_scrubbing
+
+This will produce:
+
+snippet: ScrubberTests.test_createRegexScrubber.approved.txt
+
 ### GUID
 
-You can scrub GUIDs by using a pointer to the function `Scrubbers::scrubGuid`, for example the following code:
+You can scrub GUIDs by using a pointer to the function `Scrubbers::scrubGuid`.
+ 
+For example the following code:
 
 snippet: guid_scrubbing
 

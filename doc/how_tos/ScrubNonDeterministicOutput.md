@@ -16,6 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Interface](#interface)
   * [Lambda example](#lambda-example)
   * [Pre-made Scrubbers](#pre-made-scrubbers)
+    * [Regular Expressions (regex)](#regular-expressions-regex)
     * [GUID](#guid)<!-- endtoc -->
 
 ## Introduction
@@ -54,9 +55,76 @@ This would produce:
 
 ## Pre-made Scrubbers
 
+### Regular Expressions (regex)
+
+Approval Tests provides lots of convenience methods to scrub text based on regular expressions.
+
+For example, here is an example where random numbers are scrubbed:
+
+<!-- snippet: simple_regex_scrubbing -->
+<a id='snippet-simple_regex_scrubbing'/></a>
+```cpp
+std::stringstream os;
+os << "Hello " << random(1000) << " World";
+Approvals::verify(os.str(),
+                  Options(Scrubbers::createRegexScrubber(R"(\d+)", "[number]")));
+```
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L50-L55' title='File snippet `simple_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Navigate to start of snippet `simple_regex_scrubbing`'>anchor</a></sup>
+<!-- endsnippet -->
+
+This will produce:
+
+<!-- snippet: ScrubberTests.test_createRegexScrubber_with_string_input_and_fixed_result.approved.txt -->
+<a id='snippet-ScrubberTests.test_createRegexScrubber_with_string_input_and_fixed_result.approved.txt'/></a>
+```txt
+Hello [number] World
+```
+<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.test_createRegexScrubber_with_string_input_and_fixed_result.approved.txt#L1-L1' title='File snippet `ScrubberTests.test_createRegexScrubber_with_string_input_and_fixed_result.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ScrubberTests.test_createRegexScrubber_with_string_input_and_fixed_result.approved.txt' title='Navigate to start of snippet `ScrubberTests.test_createRegexScrubber_with_string_input_and_fixed_result.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
+
+**Note**: In the above example, the caller passes in a `std::string`, and for convenience of the calling code, Approval Tests
+converts that to a `std::regex`. The calling code is responsible for making sure that the string contains a valid
+regular expression.
+
+There are many combinations of these parameters, that allow for customization at whatever level you
+need, the most complex being:
+
+<!-- snippet: complex_regex_scrubbing -->
+<a id='snippet-complex_regex_scrubbing'/></a>
+```cpp
+auto input = "1) Hello 1234 World";
+auto scrubber =
+    Scrubbers::createRegexScrubber(std::regex(R"(\d+)"), [](const auto& match) {
+        auto match_text = match.str();
+        auto match_integer = std::stoi(match_text);
+        if (match_integer < 10)
+        {
+            return match_text;
+        }
+        else
+        {
+            return std::string("[number]");
+        }
+    });
+```
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L22-L37' title='File snippet `complex_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Navigate to start of snippet `complex_regex_scrubbing`'>anchor</a></sup>
+<!-- endsnippet -->
+
+This will produce:
+
+<!-- snippet: ScrubberTests.test_createRegexScrubber.approved.txt -->
+<a id='snippet-ScrubberTests.test_createRegexScrubber.approved.txt'/></a>
+```txt
+1) Hello [number] World
+```
+<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.test_createRegexScrubber.approved.txt#L1-L1' title='File snippet `ScrubberTests.test_createRegexScrubber.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ScrubberTests.test_createRegexScrubber.approved.txt' title='Navigate to start of snippet `ScrubberTests.test_createRegexScrubber.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
+
 ### GUID
 
-You can scrub GUIDs by using a pointer to the function `Scrubbers::scrubGuid`, for example the following code:
+You can scrub GUIDs by using a pointer to the function `Scrubbers::scrubGuid`.
+ 
+For example the following code:
 
 <!-- snippet: guid_scrubbing -->
 <a id='snippet-guid_scrubbing'/></a>
