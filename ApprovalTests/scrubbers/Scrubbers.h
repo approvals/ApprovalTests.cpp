@@ -43,14 +43,14 @@ namespace ApprovalTests
             static const std::regex regex("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-["
                                           "0-9a-fA-F]{4}-[0-9a-fA-F]{12}");
 
-            int matchNumber = 1;
+            int matchNumber = 0;
             std::map<std::string, int> matchIndices;
             return scrubRegex(input, regex, [&](const RegexMatch& m) {
                 auto guid_match = m.str();
 
                 if (matchIndices[guid_match] == 0)
                 {
-                    matchIndices[guid_match] = matchNumber++;
+                    matchIndices[guid_match] = ++matchNumber;
                 }
                 return "guid_" + std::to_string(matchIndices[guid_match]);
             });
