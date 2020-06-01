@@ -4,6 +4,7 @@
 #include <functional>
 #include <iostream>
 #include <regex>
+#include <map>
 #include "ApprovalTests/utilities/StringUtils.h"
 
 namespace ApprovalTests
@@ -43,16 +44,16 @@ namespace ApprovalTests
                                           "0-9a-fA-F]{4}-[0-9a-fA-F]{12}");
 
             int matchNumber = 1;
-            auto result = input;
-            std::smatch m;
-            while (std::regex_search(result, m, regex))
-            {
+            std::map<std::string, int> matchIndices;
+            return scrubRegex(input, regex, [&](RegexMatch m) {
                 auto guid_match = m.str();
-                auto replacement = "guid_" + std::to_string(matchNumber);
-                result = StringUtils::replaceAll(result, guid_match, replacement);
-                matchNumber += 1;
-            }
-            return result;
+
+                if (matchIndices[guid_match] == 0)
+                {
+                    matchIndices[guid_match] = matchNumber++;
+                }
+                return "guid_" + std::to_string(matchIndices[guid_match]);
+            });
         }
     }
 }
