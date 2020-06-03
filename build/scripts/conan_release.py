@@ -1,11 +1,13 @@
 import os
+from typing import List
 
 import pyperclip
+import yaml
 from git import Repo
 
 from scripts.git_utilities import GitUtilities
 from scripts.release_details import ReleaseDetails
-from scripts.utilities import check_step, read_file, write_file, calculate_sha256, run, use_directory
+from scripts.utilities import check_step, read_file, write_file, calculate_sha256, run, use_directory, read_url
 from scripts.version import Version
 
 
@@ -120,6 +122,12 @@ class PrepareConanRelease:
     @staticmethod
     def update_conan_to_latest() -> None:
         run(["pip3", "install", "--upgrade", "conan"])
+
+    @staticmethod
+    def get_accepted_approval_releases() -> List[str]:
+        conan_url = 'https://raw.githubusercontent.com/conan-io/conan-center-index/master/recipes/approvaltests.cpp/config.yml'
+        text = read_url(conan_url)
+        return yaml.safe_load(text)['versions'].keys()
 
 
 class DeployConanRelease:

@@ -31,3 +31,6 @@ class TestConanRelease(unittest.TestCase):
         # Will fail if person running test has not cloned conan-center-index
         directory = ConanReleaseDetails.get_conan_repo_directory()
         print(directory)
+
+    def test_conan_version_number(self) -> None:
+        self.assertIn('8.9.0', PrepareConanRelease.get_accepted_approval_releases())

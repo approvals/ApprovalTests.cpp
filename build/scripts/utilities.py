@@ -1,7 +1,7 @@
 import os
 import subprocess
 import hashlib
-
+import urllib.request
 
 from typing import Callable, List, Any
 
@@ -20,6 +20,16 @@ def read_file(file_name: str) -> str:
     with open(file_name) as input:
         text = input.read()
     return text
+
+
+def read_url(url: str) -> str:
+    file = urllib.request.urlopen(url)
+    text = ''
+    for line in file:
+        decoded_line = line.decode("utf-8")
+        text += decoded_line
+    return text
+
 
 def get_file_name(path: str) -> str:
     return os.path.split(path)[1]
