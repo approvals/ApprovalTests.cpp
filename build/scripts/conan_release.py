@@ -140,8 +140,7 @@ class DeployConanRelease:
             new_version_without_v = details.new_version.get_version_text_without_v()
             run(['conan', 'create', '.', F'{new_version_without_v}@'])
 
-            GitUtilities.add_and_commit_everything(conan_directory, F'Add approvaltests.cpp {new_version_without_v}')
-
+        GitUtilities.add_and_commit_everything(ConanReleaseDetails().conan_repo_dir, F'Add approvaltests.cpp {new_version_without_v}')
         GitUtilities.push_active_branch_origin(ConanReleaseDetails().conan_repo_dir)
 
         new_branch = PrepareConanRelease.get_new_branch_name(details.new_version)
