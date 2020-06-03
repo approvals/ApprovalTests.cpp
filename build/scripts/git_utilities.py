@@ -40,3 +40,9 @@ class GitUtilities:
     def add_and_commit_everything(directory: str, message: str) -> None:
         GitUtilities.add_everything(directory)
         GitUtilities.commit_everything(directory, message)
+
+    @staticmethod
+    def push_active_branch_origin(directory: str) -> None:
+        repo = Repo(directory)
+        branch = repo.active_branch.name
+        repo.remote('origin').push(branch)

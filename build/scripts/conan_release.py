@@ -133,7 +133,8 @@ class DeployConanRelease:
             run(['conan', 'create', '.', F'{new_version_without_v}@'])
 
             GitUtilities.add_and_commit_everything(conan_directory, F'Add approvaltests.cpp {new_version_without_v}')
-            check_step('Push the changes - NB on the feature branch for the release')
+
+        GitUtilities.push_active_branch_origin(ConanReleaseDetails().conan_repo_dir)
 
         new_branch = PrepareConanRelease.get_new_branch_name(details.new_version)
         run(["open", F'https://github.com/conan-io/conan-center-index/compare/master...claremacrae:{new_branch}?expand=1'])
