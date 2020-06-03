@@ -73,7 +73,7 @@ You should make the following additions to your own source file that contains `m
 #define APPROVALS_DOCTEST_EXISTING_MAIN
 #include "ApprovalTests.hpp"
 ```
-<sup><a href='/examples/doctest_existing_main/main.cpp#L1-L5' title='File snippet `doctest_existing_main` was extracted from'>snippet source</a> | <a href='#snippet-doctest_existing_main' title='Navigate to start of snippet `doctest_existing_main`'>anchor</a></sup>
+<sup><a href='/examples/doctest_existing_main/main.cpp#L3-L7' title='File snippet `doctest_existing_main` was extracted from'>snippet source</a> | <a href='#snippet-doctest_existing_main' title='Navigate to start of snippet `doctest_existing_main`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---
