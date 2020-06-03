@@ -25,3 +25,18 @@ class GitUtilities:
             run(["git", "clean", "-f"])
 
             run(["git", "reset", "--hard"])
+
+    @staticmethod
+    def add_everything(directory: str) -> None:
+        with use_directory(directory):
+            run(["git", "add", "."])
+
+    @staticmethod
+    def commit_everything(directory: str, message: str) -> None:
+        with use_directory(directory):
+            run(["git", "commit", "-m", F"'{message}'"])
+
+    @staticmethod
+    def add_and_commit_everything(directory: str, message: str) -> None:
+        GitUtilities.add_everything(directory)
+        GitUtilities.commit_everything(directory, message)

@@ -1,6 +1,7 @@
 import pyperclip
 
 from scripts.conan_release import DeployConanRelease
+from scripts.git_utilities import GitUtilities
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
 from scripts.utilities import read_file, check_step, run, use_directory
@@ -12,8 +13,8 @@ class DeployRelease:
 
     # Starter Project
     def commit_starter_project(self) -> None:
-        with use_directory(release_constants.starter_project_dir):
-            run(["git", "commit", "-m", F"'Update to Approvals {self.details.new_version_as_text()}'"])
+        message = F"Update to Approvals {self.details.new_version_as_text()}"
+        GitUtilities.commit_everything(release_constants.starter_project_dir, message)
 
     def push_starter_project(self) -> None:
         with use_directory(release_constants.starter_project_dir):
@@ -27,8 +28,8 @@ class DeployRelease:
 
     # Main Project
     def commit_main_project(self) -> None:
-        with use_directory(release_constants.main_project_dir):
-            run(["git", "commit", "-m", F"'{self.details.new_version_as_text()} release'"])
+        message = F"{self.details.new_version_as_text()} release"
+        GitUtilities.commit_everything(release_constants.main_project_dir, message)
 
     def push_main_project(self) -> None:
         with use_directory(release_constants.main_project_dir):
