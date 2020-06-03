@@ -1,6 +1,8 @@
 <!-- See the [v.x.y.z milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/__MILESTONE_NUMBER__?closed=1) for the full list of changes. -->
 
-**DON'T PANIC!** We expect most of our users to have no problem with this upgrade. Source code is totally backwards-compatible, as long as you don't treat compiler warnings as errors. Even if you do, it only applies when:
+## DON'T PANIC!
+
+We expect most of our users to have no problem with this upgrade. Source code is totally backwards-compatible, as long as you don't treat compiler warnings as errors. Even if you do, it only applies when:
 
  1. you are passing in a specific reporter, which is usually an infrequent and temporary coding state,
  2. you call `verifyWithExtension()`. 
