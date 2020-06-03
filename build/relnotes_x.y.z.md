@@ -1,4 +1,4 @@
-<!-- See the [v.8.9.1 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/__MILESTONE_NUMBER__?closed=1) for the full list of changes. -->
+<!-- See the [v.8.9.2 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/__MILESTONE_NUMBER__?closed=1) for the full list of changes. -->
 
 ## DON'T PANIC!
 
@@ -9,7 +9,7 @@ We expect most of our users to have no problem with this upgrade. Source code is
 
 ## Deprecating verify(..., Reporter)
 
-This is the first of a series of rapid releases, to make small steps in deprecating passing in a Reporter object, in favor of an Options object, to the `verify*()` methods. See [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top) for easy ways to update your code.
+This is the second of a series of rapid releases, to make small steps in deprecating passing in a Reporter object, in favor of an Options object, to the `verify*()` methods. See [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top) for easy ways to update your code.
 
 1. deprecation warnings are off: users can opt-in (v.8.7.0)
 1. deprecation warnings are on: users can opt-out (v.8.9.1)
@@ -24,4 +24,4 @@ This is the first of a series of rapid releases, to make small steps in deprecat
 * **Bug fixes**
     * None
 * **Other changes**
-    * `APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS` is now enabled by default.
+    * `APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS` is now ignored. Warnings are always shown when using the `verify*()` methods that took a Reporter.
