@@ -26,6 +26,9 @@ was not accepted"
 
 * [ ] Automate the creation of release on GitHub (uploading the header, pasting in text)
 
+  * See https://pygithub.readthedocs.io/en/latest/github_objects/GitRelease.html
+  * https://developer.github.com/v3/repos/releases/
+
 * [ ] Automate the check_steps
 
 * [ ] Create screenshot image of release notes, and include in Tweet
