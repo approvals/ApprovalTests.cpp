@@ -1,5 +1,12 @@
 <!-- See the [v.x.y.z milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/__MILESTONE_NUMBER__?closed=1) for the full list of changes. -->
 
+**DON'T PANIC!** We expect most of our users to have no problem with this upgrade. Source code is totally backwards-compatible, as long as you don't treat compiler warnings as errors. Even if you do, it only applies when:
+
+ 1. you are passing in a specific reporter, which is usually an infrequent and temporary coding state,
+ 2. you call `verifyWithExtension()`. 
+
+## Deprecating verify(..., Reporter)
+
 This is the first of a series of rapid releases, to make small steps in deprecating passing in a Reporter object, in favor of an Options object, to the `verify*()` methods. See [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top) for easy ways to update your code.
 
 1. deprecation warnings are off: users can opt-in (v.8.7.0)
@@ -7,11 +14,6 @@ This is the first of a series of rapid releases, to make small steps in deprecat
 1. deprecation warnings are forced, code still exists 
 1. the deprecated methods are hidden: users can opt-in
 1. the deprecated methods are removed
-
-We expect most of our users to have no problem with this upgrade. Source code is totally backwards-compatible, as long as you don't treat compiler warnings as errors. Even if you do, it only applies when:
- 
- 1. you are passing in a specific reporter, which is usually an infrequent and temporary coding state,
- 2. you call `verifyWithExtension()`. 
 
 * **Breaking changes**
     * None
