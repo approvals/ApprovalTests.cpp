@@ -55,9 +55,6 @@ class PrepareConanRelease:
             repo.remote('upstream').pull('master')
             repo.remote('origin').push('master')
 
-            # TODO If we had previously created the branch for this release version, and then
-            #      changes were pushed to conan master, we will get an error about the
-            #      branch already existing, but pointing to a different change
             new_branch = PrepareConanRelease.get_new_branch_name(new_version)
             current = repo.create_head(new_branch)
             current.checkout()

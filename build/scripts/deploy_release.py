@@ -10,9 +10,6 @@ class DeployRelease:
     def __init__(self, details: ReleaseDetails):
         self.details = details
 
-    # TODO copy in checks from https://github.com/pages-themes/minimal/blob/master/script/release
-    # TODO try out https://pypi.org/project/GitPython/
-
     # Starter Project
     def commit_starter_project(self) -> None:
         with use_directory(release_constants.starter_project_dir):
