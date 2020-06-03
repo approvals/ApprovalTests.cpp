@@ -1,11 +1,9 @@
 import os
 
-# TODO list
-# Add CI step to check this prepare process works on every push
-# Automate the check_steps
-# Improve the chdir to start at the top-level directory - and check that we are the top-level
-# Review folder structure for Python scripts
-# Add a reminder to close any release milestone
+# TODO Add CI step to check this prepare process works on every push
+# TODO Automate the check_steps
+# TODO Improve the chdir to start at the top-level directory - and check that we are the top-level
+# TODO Add a reminder to close any release milestone
 from scripts.release_constants import release_constants
 from scripts.version import Version
 
