@@ -6,9 +6,9 @@
 
 * [x] Conan - fix whitespace in text for pasting in to PR
 
-* [ ] Don't open Conan PR page if previous PR not accepted
+* [x] Don't open Conan PR page if previous PR not accepted
 
-* [ ] Check that the starter project is published
+* [x] Check that the starter project is published
 
   -----
 

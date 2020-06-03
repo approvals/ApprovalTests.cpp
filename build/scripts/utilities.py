@@ -1,7 +1,7 @@
 import os
 import subprocess
 import hashlib
-import urllib.request
+import urllib.request, urllib.error
 
 from typing import Callable, List, Any
 
@@ -29,6 +29,20 @@ def read_url(url: str) -> str:
         decoded_line = line.decode("utf-8")
         text += decoded_line
     return text
+
+
+def check_url_exists(url: str) -> bool:
+    try:
+        conn = urllib.request.urlopen(url)
+    except urllib.error.HTTPError as e:
+        # Return code error (e.g. 404, 501, ...)
+        return False
+    except urllib.error.URLError as e:
+        # Not an HTTP-specific error (e.g. connection refused)
+        return False
+    else:
+        # 200
+        return True
 
 
 def get_file_name(path: str) -> str:

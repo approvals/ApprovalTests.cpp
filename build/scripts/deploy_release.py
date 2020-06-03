@@ -4,7 +4,7 @@ from scripts.conan_release import DeployConanRelease
 from scripts.git_utilities import GitUtilities
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
-from scripts.utilities import read_file, check_step, run, use_directory
+from scripts.utilities import read_file, check_step, run, use_directory, check_url_exists
 
 
 class DeployRelease:
@@ -23,8 +23,7 @@ class DeployRelease:
     def publish_starter_project(self) -> None:
         self.commit_starter_project()
         self.push_starter_project()
-        run(["open", "https://github.com/approvals/ApprovalTests.cpp.StarterProject/commits/master"])
-        check_step("that the starter project is published")
+        assert_step(self.check_starter_project_published(), "the starter project is published")
 
     # Main Project
     def commit_main_project(self) -> None:
@@ -69,3 +68,13 @@ class DeployRelease:
         DeployConanRelease.test_conan_and_create_pr(self.details)
         self.publish_tweet()
         self.publish_on_reddit_optionally()
+
+    def check_starter_project_published(self) -> bool:
+        version = self.details.new_version.get_version_text_without_v()
+        url = DeployRelease.get_url_for_starter_project_single_header_for_version(version)
+        published = check_url_exists(url)
+        return published
+
+    @staticmethod
+    def get_url_for_starter_project_single_header_for_version(version_without_v: str) -> str:
+        return F'https://raw.githubusercontent.com/approvals/ApprovalTests.cpp.StarterProject/master/lib/ApprovalTests.v.{version_without_v}.hpp'
