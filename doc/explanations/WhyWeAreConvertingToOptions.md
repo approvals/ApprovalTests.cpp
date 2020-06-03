@@ -56,7 +56,7 @@ Historically, we have found that it is easier for users to update code for break
 Our plan is therefore to do a short series of quick releases:
 
 1. deprecation warnings are off: users can opt-in (v.8.7.0)
-1. deprecation warnings are on: users can opt-out
+1. deprecation warnings are on: users can opt-out (v.8.9.1)
 1. deprecation warnings are forced, code still exists 
 1. the deprecated methods are hidden: users can opt-in
 1. the deprecated methods are removed
