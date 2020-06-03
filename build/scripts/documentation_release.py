@@ -21,7 +21,7 @@ class PrepareDocumentationRelease:
         missing_features = ('\n'
                             '## v.x.y.z\n'
                             '\n'
-                            f'## {old_version}\n'
+                            f'## v.'
                             )
         if missing_features in content:
             def check(features_file: str, action:Callable = check_step) -> Callable:
