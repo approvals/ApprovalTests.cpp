@@ -37,8 +37,8 @@ class PrepareConanRelease:
     def prepare_release(details: ReleaseDetails) -> None:
         GitUtilities.reset_and_clean_working_directory(ConanReleaseDetails().conan_repo_dir)
 
-        response = input("  Conan: Has the previous pull request been accepted? [Y/y] ")
-        if response in ['Y', 'y']:
+        accepted = details.old_version.get_version_text_without_v() in PrepareConanRelease.get_accepted_approval_releases()
+        if accepted:
             PrepareConanRelease.sync_conan_repo(details.new_version)
         else:
             # Do nothing - we are adding to our previous Pull Request
