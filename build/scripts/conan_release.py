@@ -143,8 +143,18 @@ class DeployConanRelease:
         GitUtilities.add_and_commit_everything(ConanReleaseDetails().conan_repo_dir, F'Add approvaltests.cpp {new_version_without_v}')
         GitUtilities.push_active_branch_origin(ConanReleaseDetails().conan_repo_dir)
 
+        DeployConanRelease.create_pull_request(details)
+
+    @staticmethod
+    def create_pull_request(details: ReleaseDetails) -> None:
+        accepted = details.old_version.get_version_text_without_v() in PrepareConanRelease.get_accepted_approval_releases()
+        if not accepted:
+            return
+
+        new_version_without_v = details.new_version.get_version_text_without_v()
         new_branch = PrepareConanRelease.get_new_branch_name(details.new_version)
-        run(["open", F'https://github.com/conan-io/conan-center-index/compare/master...claremacrae:{new_branch}?expand=1'])
+        run(["open",
+             F'https://github.com/conan-io/conan-center-index/compare/master...claremacrae:{new_branch}?expand=1'])
         description = F'**approvaltests.cpp/{new_version_without_v}**'
         pyperclip.copy(description)
         print(
