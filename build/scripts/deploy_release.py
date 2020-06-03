@@ -4,7 +4,7 @@ from scripts.conan_release import DeployConanRelease
 from scripts.git_utilities import GitUtilities
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
-from scripts.utilities import read_file, check_step, run, use_directory, check_url_exists
+from scripts.utilities import read_file, check_step, run, use_directory, check_url_exists, assert_step
 
 
 class DeployRelease:
