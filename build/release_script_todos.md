@@ -1,9 +1,8 @@
 # Approvals Release Scripts
 
-* [ ] Conan - commit changes
-* [ ] Conan - push changes
-* [ ] Conan - open the PR page
-* [ ] Conan - fix whitespace in text for pasting in to PR
+* [x] Conan - commit changes
+* [x] Conan - push changes
+* [x] Conan - fix whitespace in text for pasting in to PR
 * [ ] Upgrade DeployRelease to use GitPython instead of the git command line
 * [ ] Clean up experimental Conan release that's not pushed
   * If we had previously created the branch for this release version, and then
