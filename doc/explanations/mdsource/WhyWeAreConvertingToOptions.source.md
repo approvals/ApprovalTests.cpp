@@ -60,9 +60,9 @@ We suggest that any time you want to remove the deprecations, you jump ahead and
 
 ## Opting in
 
-Currently (2020-04-21), deprecation warnings are turned off by default.
+Currently (2020-06-04), all deprecated code is removed.
 
-To change that, see [How to Toggle Enabling or Disabling of Deprecated Code](/doc/how_tos/ToggleDeprecatedCode.md#top).
+If you are are using an earlier version, see [How to Toggle Enabling or Disabling of Deprecated Code](/doc/how_tos/ToggleDeprecatedCode.md#top).
 
 ## How to Update Calls to Deprecated Code
 
