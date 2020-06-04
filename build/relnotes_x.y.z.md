@@ -18,7 +18,22 @@ This is the fourth and final of a series of rapid releases, to make small steps 
 1. the deprecated methods are removed (v.10.0.0)  <== you are here
 
 * **Breaking changes**
-    * If you were getting warnings about deprecated functions before, these deprecated methods are now removed.
+
+    * Removed methods:
+        * `Approvals::verify(..., Reporter)`
+        * `Approvals::verifyAll(..., Reporter)`
+        * `Approvals::verifyExistingFile(..., Reporter)`
+        * `Approvals::verifyExceptionMessage(..., Reporter)`
+        * `Approvals::verifyWithExtension(...)`
+        * `CombinationApprovals::verifyAllCombinations(Reporter, ...)`
+    * Removed macros:
+        * `APPROVAL_TESTS_HIDE_DEPRECATED_CODE`
+        * `APPROVALTESTS_VERSION`
+        * `APPROVALTESTS_VERSION_MAJOR`
+        * `APPROVALTESTS_VERSION_MINOR`
+        * `APPROVALTESTS_VERSION_PATCH`
+        * `APPROVALTESTS_VERSION_STR`
+        * `APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK`
     * The following macros have been changed.
 
 | Old (removed)                              | New                                       |

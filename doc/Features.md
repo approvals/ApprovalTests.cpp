@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [Removed Deprecated Code](#removed-deprecated-code)
   * [v.8.9.0](#v890)
     * [Regex-based Scrubbing](#regex-based-scrubbing)
   * [v.8.8.0](#v880)
@@ -61,6 +62,28 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+### Removed Deprecated Code
+
+See [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top) for easy ways to update your code.
+
+Specifically, the following have been removed:
+
+* Methods
+    * `Approvals::verify(..., Reporter)`
+    * `Approvals::verifyAll(..., Reporter)`
+    * `Approvals::verifyExistingFile(..., Reporter)`
+    * `Approvals::verifyExceptionMessage(..., Reporter)`
+    * `Approvals::verifyWithExtension(...)`
+    * `CombinationApprovals::verifyAllCombinations(Reporter, ...)`
+* Macros
+    * `APPROVAL_TESTS_HIDE_DEPRECATED_CODE`
+    * `APPROVALTESTS_VERSION`
+    * `APPROVALTESTS_VERSION_MAJOR`
+    * `APPROVALTESTS_VERSION_MINOR`
+    * `APPROVALTESTS_VERSION_PATCH`
+    * `APPROVALTESTS_VERSION_STR`
+    * `APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK`
 
 ## v.8.9.0
 

@@ -8,6 +8,28 @@ toc
 
 ## v.x.y.z
 
+### Removed Deprecated Code
+
+See [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top) for easy ways to update your code.
+
+Specifically, the following have been removed:
+
+* Methods
+    * `Approvals::verify(..., Reporter)`
+    * `Approvals::verifyAll(..., Reporter)`
+    * `Approvals::verifyExistingFile(..., Reporter)`
+    * `Approvals::verifyExceptionMessage(..., Reporter)`
+    * `Approvals::verifyWithExtension(...)`
+    * `CombinationApprovals::verifyAllCombinations(Reporter, ...)`
+* Macros
+    * `APPROVAL_TESTS_HIDE_DEPRECATED_CODE`
+    * `APPROVALTESTS_VERSION`
+    * `APPROVALTESTS_VERSION_MAJOR`
+    * `APPROVALTESTS_VERSION_MINOR`
+    * `APPROVALTESTS_VERSION_PATCH`
+    * `APPROVALTESTS_VERSION_STR`
+    * `APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK`
+
 ## v.8.9.0
 
 ### Regex-based Scrubbing 

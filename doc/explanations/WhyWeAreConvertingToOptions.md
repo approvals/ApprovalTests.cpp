@@ -39,6 +39,8 @@ It is effectively preparing to use the "Introduce Parameter Object" refactoring 
 
 ## API
 
+**Note**: The following series of releases was completed with the release of v.10.0.0. We are retaining this documentation to help out anyone who has yet to update from one of the earlier release.
+
 Our current pattern is to have an optional Reporter at the end of any verify() method.
 
 We are switching this to have an option `Options` object instead.
@@ -53,13 +55,13 @@ When enabled, these deprecation warnings will show up as:
 
 Historically, we have found that it is easier for users to update code for breaking changes if these changes are rolled out in a graduated way. This allows users to select which version of the library to use, to have the ability to update code incrementally.
 
-Our plan is therefore to do a short series of quick releases:
+We how now finished our short series of quick releases to release this:
 
 1. deprecation warnings are off: users can opt-in (v.8.7.0)
 1. deprecation warnings are on: users can opt-out (v.8.9.1)
 1. deprecation warnings are forced, code still exists  (v.8.9.2)
 1. the deprecated methods are hidden: users can opt-in (v.9.0.0)
-1. the deprecated methods are removed
+1. the deprecated methods are removed (v.10.0.0)
 
 | Step | Deprecation Warnings                           | Deprecated Code                           |
 | ---- | ---------------------------------------------- | ----------------------------------------- |
