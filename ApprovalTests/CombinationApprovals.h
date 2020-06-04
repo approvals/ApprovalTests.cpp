@@ -2,7 +2,6 @@
 
 #include <type_traits>
 #include <utility>
-#include "ApprovalTests/ApprovalsMacroDefaults.h"
 #include "reporters/DefaultReporter.h"
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/core/Options.h"

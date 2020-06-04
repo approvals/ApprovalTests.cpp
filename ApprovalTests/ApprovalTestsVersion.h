@@ -1,7 +1,5 @@
 #pragma once
 
-#include "ApprovalTests/ApprovalsMacroDefaults.h"
-
 #define APPROVAL_TESTS_VERSION_MAJOR 9
 #define APPROVAL_TESTS_VERSION_MINOR 0
 #define APPROVAL_TESTS_VERSION_PATCH 0

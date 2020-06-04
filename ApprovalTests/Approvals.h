@@ -4,7 +4,6 @@
 #include <exception>
 #include <utility>
 
-#include "ApprovalTests/ApprovalsMacroDefaults.h"
 #include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/core/FileApprover.h"
 #include "reporters/DefaultReporter.h"
