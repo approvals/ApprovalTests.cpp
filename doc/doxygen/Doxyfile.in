@@ -2112,7 +2112,6 @@ INCLUDE_FILE_PATTERNS  =
 
 PREDEFINED             = APPROVAL_TESTS_NO_DISCARD \
                          APPROVAL_TESTS_DEPRECATED_USE_OPTIONS \
-                         APPROVAL_TESTS_HIDE_DEPRECATED_CODE=0 \
                          IN_DOXYGEN
 
 # If the MACRO_EXPANSION and EXPAND_ONLY_PREDEF tags are set to YES then this
