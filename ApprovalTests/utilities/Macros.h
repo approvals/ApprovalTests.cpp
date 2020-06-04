@@ -25,15 +25,3 @@
 #define APPROVAL_TESTS_DEPRECATED_CPP11(text)                                            \
     MoreHelpMessages::deprecatedFunctionCalled(text, __FILE__, __LINE__);
 #endif
-
-#define APPROVAL_TESTS_DEPRECATED_USE_OPTIONS                                            \
-    APPROVAL_TESTS_DEPRECATED(                                                           \
-        "use Options(reporter) instead. More information at "                            \
-        "https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/explanations/"   \
-        "WhyWeAreConvertingToOptions.md#how-to-update-calls-to-deprecated-code")
-
-#define APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11                                      \
-    APPROVAL_TESTS_DEPRECATED_CPP11(                                                     \
-        "use Options(reporter) instead. More information at "                            \
-        "https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/explanations/"   \
-        "WhyWeAreConvertingToOptions.md#how-to-update-calls-to-deprecated-code")
