@@ -176,4 +176,3 @@ TEST_CASE("Unregistering Front Loaded Reporter restores previous")
     REQUIRE(front_loader1->called == true);
     REQUIRE(our_reporter1.called == false);
 }
-

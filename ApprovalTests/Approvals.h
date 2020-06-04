@@ -66,8 +66,7 @@ namespace ApprovalTests
             verify(TCompileTimeOptions::ToStringConverter::toString(contents), options);
         }
 
-        template <typename T,
-                  typename Function>
+        template <typename T, typename Function>
         static void
         verify(const T& contents, Function converter, const Options& options = Options())
         {
