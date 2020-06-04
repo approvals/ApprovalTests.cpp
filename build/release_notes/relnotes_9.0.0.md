@@ -1,9 +1,11 @@
 ## DON'T PANIC!
 
-We expect most of our users to have no problem with this upgrade. Source code is totally backwards-compatible, as long as you don't treat compiler warnings as errors. Even if you do, it only applies when:
+We expect most of our users to have no problem with this upgrade. Changes are only needed when:
 
  1. you are passing in a specific reporter, which is usually an infrequent and temporary coding state,
- 2. you call `verifyWithExtension()`. 
+ 2. you call `verifyWithExtension(object, ".json")` is now  
+    `Approvals::verify(object, Options().fileOptions().withFileExtension(".json"))`
+
 
 ## Deprecating verify(..., Reporter)
 
@@ -16,10 +18,24 @@ This is the third of a series of rapid releases, to make small steps in deprecat
 1. the deprecated methods are removed
 
 * **Breaking changes**
-    * If you were getting warnings about deprecated functions before, these deprecated methods are hidden by default.
+    * Hidden methods:
+        * `Approvals::verify(..., Reporter)`
+        * `Approvals::verifyAll(..., Reporter)`
+        * `Approvals::verifyExistingFile(..., Reporter)`
+        * `Approvals::verifyExceptionMessage(..., Reporter)`
+        * `Approvals::verifyWithExtension(...)`
+        * `CombinationApprovals::verifyAllCombinations(Reporter, ...)`
+    * Hidden macros:
+        * `APPROVAL_TESTS_HIDE_DEPRECATED_CODE`
+        * `APPROVALTESTS_VERSION`
+        * `APPROVALTESTS_VERSION_MAJOR`
+        * `APPROVALTESTS_VERSION_MINOR`
+        * `APPROVALTESTS_VERSION_PATCH`
+        * `APPROVALTESTS_VERSION_STR`
+        * `APPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK`
     * The following macros have been changed.
 
-| Old                                        | New                                       |
+| Old (hidden)                               | New                                       |
 | ------------------------------------------ | ----------------------------------------- |
 | `APPROVALTESTS_VERSION`                    | `APPROVAL_TESTS_VERSION`                  |
 | `APPROVALTESTS_VERSION_MAJOR`              | `APPROVAL_TESTS_VERSION_MAJOR`            |
