@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.0.0](#v1000)
     * [Removed Deprecated Code](#removed-deprecated-code)
   * [v.8.9.0](#v890)
     * [Regex-based Scrubbing](#regex-based-scrubbing)
@@ -62,6 +63,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+## v.10.0.0
 
 ### Removed Deprecated Code
 

@@ -3,12 +3,12 @@
 
 // This file is machine-generated. Do not edit.
 
-#include "ApprovalTests/ApprovalsMacroDefaults.h"
 #include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/reporters/QuietReporter.h"
 #include "ApprovalTests/utilities/Blocker.h"
 #include "ApprovalTests/utilities/WinMinGWUtils.h"
+#include "ApprovalTests/ApprovalsMacroDefaults.h"
 #include "ApprovalTests/utilities/Macros.h"
 #include "ApprovalTests/core/ApprovalWriter.h"
 #include "ApprovalTests/writers/StringWriter.h"

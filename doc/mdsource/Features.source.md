@@ -8,6 +8,8 @@ toc
 
 ## v.x.y.z
 
+## v.10.0.0
+
 ### Removed Deprecated Code
 
 See [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top) for easy ways to update your code.
