@@ -133,17 +133,21 @@ class PrepareConanRelease:
 class DeployConanRelease:
     @staticmethod
     def test_conan_and_create_pr(details: ReleaseDetails) -> None:
-        conan_directory = os.path.join(ConanReleaseDetails().conan_approvaltests_dir, 'all')
-        with use_directory(conan_directory):
-            # We cannot test the new Conan recipe until the new release has been
-            # published on github
-            new_version_without_v = details.new_version.get_version_text_without_v()
-            run(['conan', 'create', '.', F'{new_version_without_v}@'])
+        new_version_without_v = details.new_version.get_version_text_without_v()
+        # See test_conan_release.py's disabled_test_all_conan_versions_build() if you want to test
+        # that conan builds against all supported ApprovalTests.cpp versions.
+        DeployConanRelease.test_conan_build_passes(new_version_without_v)
 
         GitUtilities.add_and_commit_everything(ConanReleaseDetails().conan_repo_dir, F'Add approvaltests.cpp {new_version_without_v}')
         GitUtilities.push_active_branch_origin(ConanReleaseDetails().conan_repo_dir)
 
         DeployConanRelease.create_pull_request(details)
+
+    @staticmethod
+    def test_conan_build_passes(version_without_v: str) -> None:
+        conan_directory = os.path.join(ConanReleaseDetails().conan_approvaltests_dir, 'all')
+        with use_directory(conan_directory):
+            run(['conan', 'create', '.', F'{version_without_v}@'])
 
     @staticmethod
     def create_pull_request(details: ReleaseDetails) -> None:

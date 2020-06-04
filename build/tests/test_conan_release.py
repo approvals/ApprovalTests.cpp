@@ -2,7 +2,7 @@ import unittest
 
 from approvaltests.approvals import verify
 
-from scripts.conan_release import PrepareConanRelease, ConanReleaseDetails
+from scripts.conan_release import PrepareConanRelease, ConanReleaseDetails, DeployConanRelease
 from scripts.version import Version
 from tests.helpers import set_home_directory
 
@@ -34,3 +34,9 @@ class TestConanRelease(unittest.TestCase):
 
     def test_conan_version_number(self) -> None:
         self.assertIn('8.9.0', PrepareConanRelease.get_accepted_approval_releases())
+
+    def disable_test_all_conan_versions_build(self) -> None:
+        set_home_directory()
+        releases = PrepareConanRelease.get_accepted_approval_releases()
+        for release in releases:
+            DeployConanRelease.test_conan_build_passes(release)
