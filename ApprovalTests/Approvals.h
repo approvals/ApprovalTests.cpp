@@ -198,7 +198,6 @@ namespace ApprovalTests
             return DefaultNamerDisposer(std::move(namerCreator));
         }
         ///@}
-
     };
 
 #ifndef APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER

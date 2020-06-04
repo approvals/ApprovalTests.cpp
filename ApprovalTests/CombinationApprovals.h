@@ -60,14 +60,13 @@ namespace ApprovalTests
         }
 
         template <class Converter, class... Containers>
-        ApprovalTests::Detail::EnableIfNotOptions<Converter> static verifyAllCombinations(Converter&& converter,
-                                                    const Containers&... inputs)
+        ApprovalTests::Detail::EnableIfNotOptions<Converter> static verifyAllCombinations(
+            Converter&& converter, const Containers&... inputs)
         {
             verifyAllCombinations(
                 Options(), std::forward<Converter>(converter), inputs...);
         }
         ///@}
-
     };
 
     using CombinationApprovals = TCombinationApprovals<
