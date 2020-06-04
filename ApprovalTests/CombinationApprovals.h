@@ -70,29 +70,6 @@ namespace ApprovalTests
         }
         ///@}
 
-#if !APPROVAL_TESTS_HIDE_DEPRECATED_CODE
-        /**@name Deprecated method
-
-         This method pre-dates the Options class, and will be removed in a future
-         release.
-
-         For help updating your code, see:
-            - \userguide{how_tos/ToggleDeprecatedCode,How to Toggle Enabling or Disabling of Deprecated Code}
-            - \userguide{explanations/WhyWeAreConvertingToOptions,how-to-update-calls-to-deprecated-code,How to Update Calls to Deprecated Code}
-         */
-        ///@{
-        template <class Converter, class Container, class... Containers>
-        APPROVAL_TESTS_DEPRECATED_USE_OPTIONS static void
-        verifyAllCombinations(const Reporter& reporter,
-                              Converter&& converter,
-                              const Container& input0,
-                              const Containers&... inputs)
-        {
-            APPROVAL_TESTS_DEPRECATED_USE_OPTIONS_CPP11
-            verifyAllCombinations(Options(reporter), converter, input0, inputs...);
-        }
-        ///@}
-#endif
     };
 
     using CombinationApprovals = TCombinationApprovals<
