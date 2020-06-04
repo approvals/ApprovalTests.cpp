@@ -67,8 +67,7 @@ namespace ApprovalTests
         }
 
         template <typename T,
-                  typename Function,
-                  typename = Detail::EnableIfNotDerivedFromReporter<Function>>
+                  typename Function>
         static void
         verify(const T& contents, Function converter, const Options& options = Options())
         {

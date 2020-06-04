@@ -177,33 +177,3 @@ TEST_CASE("Unregistering Front Loaded Reporter restores previous")
     REQUIRE(our_reporter1.called == false);
 }
 
-namespace
-{
-    template <typename Type,
-              typename = Detail::EnableIfNotDerivedFromReporter<Type, bool>>
-    bool test_reporter_enabled()
-    {
-        return true;
-    }
-}
-
-class PossibleReporter
-#if false
-        : public Reporter
-#endif
-{
-};
-
-TEST_CASE("EnableIfNotDerivedFromReporter")
-{
-    test_reporter_enabled<int>();
-    test_reporter_enabled<FileApprover>();
-
-    //    test_reporter_enabled<Reporter>();
-    //    test_reporter_enabled<Reporter&>();
-    //    test_reporter_enabled<const Reporter&>();
-    // Must only compile if PossibleReporter's #if is edited:
-    test_reporter_enabled<PossibleReporter>();
-    test_reporter_enabled<PossibleReporter&>();
-    test_reporter_enabled<const PossibleReporter&>();
-}
