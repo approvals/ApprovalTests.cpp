@@ -37,7 +37,7 @@ They are great for testing objects with lots of fields, or lists of objects.
 
 * C++11 (or above) compiler
 * Mac/Linux/Windows
-* One of:  [GoogleTest](https://github.com/google/googletest), [Catch2](https://github.com/catchorg/Catch2), [doctest](https://github.com/onqtam/doctest), [\[Boost\].UT](https://github.com/boost-experimental/ut)
+* One of:  [GoogleTest](https://github.com/google/googletest), [Catch2](https://github.com/catchorg/Catch2), [doctest](https://github.com/onqtam/doctest), [Boost.Test](https://www.boost.org/doc/libs/1_72_0/libs/test/doc/html/index.html), [\[Boost\].UT](https://github.com/boost-experimental/ut)
 
 ## Getting Started
 

@@ -37,6 +37,7 @@ This is perhaps best understood by reviewing the implementations for frameworks 
 1. Add a new file about the customisation, such as [UsingCatch.source.md](/doc/mdsource/UsingCatch.source.md#top)
 2. Record the new framework support in:
     * The `getMisconfiguredMainHelp()` help message in [HelpMessages.h](/ApprovalTests/namers/HelpMessages.h)
+    * [README.source.md](/mdsource/README.source.md#top) - see the links to supported test frameworks in the "Requirements" section
     * [include_using_test_frameworks_list.include.md](/doc/mdsource/include_using_test_frameworks_list.include.md#top)
     * [GettingStarted.source.md](/doc/mdsource/GettingStarted.source.md#top) - see "Choosing a testing framework"
     * [Setup.source.md](/doc/mdsource/Setup.source.md#top) - see the bullet list starting "Set up your `main()`"
