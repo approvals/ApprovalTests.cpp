@@ -101,7 +101,7 @@ Suppose you are writing some tests that use ApprovalTests.cpp with the Catch2 te
 
 Your top-level `CMakeLists.txt` file might look something like this:
 
-include: inc_fetch_content_approvaltests_cmakelists
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/master/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_cmakelists.include.md
 
 The important thing to note, for following the examples below, is the `add_subdirectory(dependencies)` line. It makes CMake load a file `dependencies/CMakeLists.txt`.
 
@@ -113,7 +113,7 @@ Here is [this example project](https://github.com/claremacrae/ApprovalTests.cpp.
 
 Your `tests/CMakeLists.txt` file might look something like this:
 
-include: inc_fetch_content_approvaltests_tests_cmakelists
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/master/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_tests_cmakelists.include.md
 
 This says that the libraries `ApprovalTests::ApprovalTests` and `Catch2::Catch2` are required by the `tests` executable.
 
@@ -135,7 +135,7 @@ It also needs CMake 3.14 or above.
 
 We use this `dependencies/CMakeLists.txt` file:
 
-include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/master/fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md
 
 Note the `GIT_TAG` values: This tells CMake which revision of dependencies to use. The value can be a tag or a git commit ID. Here we use `master`, to always test our integrations with the latest Approval Tests code. However, it is generally recommended to pin your dependencies to specific versions, and test behaviour before updating to newer versions. 
 
@@ -168,7 +168,7 @@ The only difference between the previous example and this one is that here we us
 
 We use this `dependencies/CMakeLists.txt` file:
 
-include: inc_fetch_content_approvaltests_dependencies_cmakelists
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/master/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md
 
 We have set `APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2` to `ON`, so that CMake will use the copy of Catch2 that is included in the ApprovalTests.cpp repository.
 
@@ -205,7 +205,7 @@ add_subdirectory_approvaltests_catch2/
 
 We use this `dependencies/CMakeLists.txt` file:
 
-include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/master/add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md
 
 Here we use `add_subdirectory()`. This works with older versions of CMake, unlike the `FetchContent` examples above.
 
@@ -261,7 +261,7 @@ develop_approvaltests/
 
 The file `develop_approvaltests/CMakeLists.txt` creates a kind of "super build": one project for developing ApprovalTests.cpp and all the projects it depends on:
 
-include: inc_develop_approvaltests_cmakelists
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/master/develop_approvaltests/mdsource/inc_develop_approvaltests_cmakelists.include.md
 
 ---
 
