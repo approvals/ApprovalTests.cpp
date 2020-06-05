@@ -7,7 +7,7 @@ We expect most of our users to have no problem with this upgrade. Changes are on
     `Approvals::verify(object, Options().fileOptions().withFileExtension(".json"))`
 
 
-## Deprecating verify(..., Reporter)
+## Removing verify(..., Reporter)
 
 This is the fourth and final of a series of rapid releases, to make small steps in deprecating passing in a Reporter object, in favor of an Options object, to the `verify*()` methods. See [Why We Are Converting To Options](/doc/explanations/WhyWeAreConvertingToOptions.md#top) for easy ways to update your code.
 
