@@ -33,6 +33,12 @@ TEST_CASE("ItVerifiesExistingFiles")
     Approvals::verifyExistingFile(namer.getDirectory() + "../../sample.txt");
 }
 
+TEST_CASE("ItVerifiesExistingFiles with Options")
+{
+    ApprovalTestNamer namer;
+    Approvals::verifyExistingFile(namer.getDirectory() + "../../sample.txt", Options());
+}
+
 TEST_CASE("ItIgnoresLineEndingDifferences")
 {
     FileUtils::writeToFile("a.txt", "1\r\n2\n3\r\n4\r\n5");
