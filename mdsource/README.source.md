@@ -29,7 +29,8 @@ They are great for testing objects with lots of fields, or lists of objects.
 * Download [The Approval.cpp Starter Project](https://github.com/approvals/ApprovalTests.Cpp.StarterProject)
 * Read the [Getting Started](/doc/GettingStarted.md#top) page
 * [Set up your main file.](/doc/GettingStarted.md#main-file)
-* Read the [**User Guide**](/doc/README.md#top).
+* Read the [**User Guide on Read the Docs**](https://approvaltestscpp.readthedocs.io/en/latest/) or
+[**on GitHub**](/doc/README.md#top).
 * Watch the [Videos](/doc/Videos.md#top)
 
 ## ToString (ostream insertion)
