@@ -10,7 +10,7 @@
 
 * [x] Check that the starter project is published
 
-* [ ] Why was Features page changed in the 8.9.2 release?
+* [x] Why was Features page changed in the 8.9.2 release?
 
   -----
 
