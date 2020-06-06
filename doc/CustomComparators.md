@@ -62,7 +62,7 @@ public:
     }
 };
 ```
-<sup><a href='/tests/DocTest_Tests/core/FileApproverTests.cpp#L50-L60' title='File snippet `create_custom_comparator` was extracted from'>snippet source</a> | <a href='#snippet-create_custom_comparator' title='Navigate to start of snippet `create_custom_comparator`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/core/FileApproverTests.cpp#L56-L66' title='File snippet `create_custom_comparator` was extracted from'>snippet source</a> | <a href='#snippet-create_custom_comparator' title='Navigate to start of snippet `create_custom_comparator`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Then we call `FileApprover::registerComparatorForExtension()` to tell Approval Tests to use `LengthComparator` to compare all files with extension `.length`. This customisation will last for the rest of the test run, and we would typically put this in our `main.cpp`.
@@ -73,7 +73,7 @@ Then we call `FileApprover::registerComparatorForExtension()` to tell Approval T
 auto disposer = FileApprover::registerComparatorForExtension(
     ".length", std::make_shared<LengthComparator>());
 ```
-<sup><a href='/tests/DocTest_Tests/core/FileApproverTests.cpp#L67-L70' title='File snippet `use_custom_comparator` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_comparator' title='Navigate to start of snippet `use_custom_comparator`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/core/FileApproverTests.cpp#L73-L76' title='File snippet `use_custom_comparator` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_comparator' title='Navigate to start of snippet `use_custom_comparator`'>anchor</a></sup>
 <!-- endsnippet -->
 
 The return value is ["Disposable"](/doc/DisposableObjects.md#top), meaning it will restore the original comparator when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
