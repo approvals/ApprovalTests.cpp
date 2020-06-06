@@ -106,3 +106,13 @@ TEST_CASE("VerifyingNoException")
     Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
     // end-snippet
 }
+
+TEST_CASE("VerifyingException with Options")
+{
+    Approvals::verifyExceptionMessage(
+        []() {
+            throw std::runtime_error(
+                "Here is my exception message - called with Options");
+        },
+        Options());
+}
