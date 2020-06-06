@@ -5,6 +5,6 @@
 * **New features**
     * None
 * **Bug fixes**
-    * Fixed compilation error with Approvals::verify(writer, Options) (#139)
+    * None
 * **Other changes**
     * None
