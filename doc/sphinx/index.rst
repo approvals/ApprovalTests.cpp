@@ -5,6 +5,8 @@ ApprovalTests for C++
 
 Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alternative to asserts. They are great for testing objects with lots of fields, or lists of objects.
 
+For releases and source code, see `GitHub <https://github.com/approvals/ApprovalTests.cpp>`__.
+
 .. note:: This documentation on Read the Docs is a work in progress:
 
   * The page URLs may not be stable yet
