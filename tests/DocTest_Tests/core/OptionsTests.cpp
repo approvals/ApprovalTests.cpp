@@ -4,6 +4,8 @@
 #include "ApprovalTests/reporters/QuietReporter.h"
 #include "ApprovalTests/Approvals.h"
 
+#include <list>
+
 using namespace ApprovalTests;
 
 namespace
@@ -72,4 +74,47 @@ TEST_CASE("Options - FileExtension Example")
     Approvals::verify("text to be verified",
                       Options().fileOptions().withFileExtension(".xyz"));
     // end-snippet
+}
+
+TEST_CASE("verify with optional args")
+{
+    const Options options;
+    const std::string contents("Hello World");
+    StringWriter writer(contents);
+
+    // Normally having multiple verify calls in the same scope is an error,
+    // if they have different expected output.
+    // In this case it's fine, as all these overloads give the same output.
+    Approvals::verify(contents, options);
+    // does not compile - see    Approvals::verify(writer, options);
+    Approvals::verify<std::string>(contents, options);
+    Approvals::verify(
+        contents, [](const auto& p, auto& os) { os << p; }, options);
+}
+
+TEST_CASE("verifyAll with optional args")
+{
+    const Options options;
+    const std::vector<int> valuesVector{1, 2, 3, 4, 5};
+    const std::list<int> valuesList{1, 2, 3, 4, 5};
+    const std::string header("header");
+    auto converter = [](auto input, auto& stream) { stream << input; };
+
+    {
+        SUBCASE("with converter")
+        Approvals::verifyAll(
+            header, valuesList.cbegin(), valuesList.cend(), converter, options);
+        Approvals::verifyAll(header, valuesList, converter, options);
+        Approvals::verifyAll(header, valuesVector, converter, options);
+    }
+
+    {
+        SUBCASE("vector and header")
+        Approvals::verifyAll(header, valuesVector, options);
+    }
+
+    {
+        SUBCASE("vector")
+        Approvals::verifyAll(valuesVector, options);
+    }
 }
