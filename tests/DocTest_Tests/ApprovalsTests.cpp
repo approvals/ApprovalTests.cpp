@@ -8,11 +8,13 @@ using namespace ApprovalTests;
 TEST_CASE("YouCanVerifyText")
 {
     Approvals::verify("My objects!");
+    Approvals::verify("My objects!", Options());
 }
 
 TEST_CASE("TestStreamableObject")
 {
     Approvals::verify(42);
+    Approvals::verify(42,Options());
 }
 
 class NonCopyable
@@ -31,6 +33,7 @@ TEST_CASE("TestNonCopyableStreamableObject")
 {
     NonCopyable object;
     Approvals::verify(object);
+    Approvals::verify(object,Options());
 }
 
 // ==============================================================
@@ -52,6 +55,9 @@ TEST_CASE("YouCanVerifyWithConverterLambda")
     Approvals::verify(getPoint(), [](const auto& p, auto& os) {
         os << "[x: " << p.x << " y: " << p.y << "]";
     });
+    Approvals::verify(getPoint(), [](const auto& p, auto& os) {
+      os << "[x: " << p.x << " y: " << p.y << "]";
+    }, Options());
 }
 
 // ==============================================================
@@ -74,8 +80,11 @@ struct FormatNonStreamablePoint
 
 TEST_CASE("YouCanVerifyWithConverterWrapperClass")
 {
-    Approvals::verify(getPoint(),
-                      [](auto r, auto& os) { os << FormatNonStreamablePoint(r); });
+    auto converter = [](auto r, auto& os) {
+        os << FormatNonStreamablePoint(r);
+    };
+    Approvals::verify(getPoint(), converter);
+    Approvals::verify(getPoint(), converter, Options());
 }
 
 // ==============================================================
@@ -88,16 +97,20 @@ std::ostream& customToStreamFunction(std::ostream& os, const NonStreamablePoint&
 
 TEST_CASE("YouCanVerifyWithConverterWrapperFunction")
 {
-    Approvals::verify(getPoint(),
-                      [](auto r, auto& os) { customToStreamFunction(os, r); });
+    auto converter = [](auto r, auto& os) {
+        customToStreamFunction(os, r);
+    };
+    Approvals::verify(getPoint(), converter);
+    Approvals::verify(getPoint(), converter, Options());
 }
 
 // ==============================================================
 
 TEST_CASE("VerifyingException")
 {
-    Approvals::verifyExceptionMessage(
-        []() { throw std::runtime_error("Here is my exception message"); });
+    auto throws = []() { throw std::runtime_error("Here is my exception message"); };
+    Approvals::verifyExceptionMessage(throws);
+    Approvals::verifyExceptionMessage(throws, Options());
 }
 
 TEST_CASE("VerifyingNoException")
