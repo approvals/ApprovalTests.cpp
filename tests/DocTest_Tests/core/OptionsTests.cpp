@@ -86,7 +86,7 @@ TEST_CASE("verify with optional args")
     // if they have different expected output.
     // In this case it's fine, as all these overloads give the same output.
     Approvals::verify(contents, options);
-    // does not compile - see    Approvals::verify(writer, options);
+    Approvals::verify(writer, options);
     Approvals::verify<std::string>(contents, options);
     Approvals::verify(
         contents, [](const auto& p, auto& os) { os << p; }, options);
