@@ -134,7 +134,7 @@ Check whether:
 
 
 def build(update_version: Callable[[Version], Version], deploy: bool,
-          project_details: ProjectDetails = ProjectDetails()) -> None:
+          project_details: ProjectDetails) -> None:
     old_version = load_current_version()
     new_version = update_version(old_version)
 
