@@ -14,7 +14,7 @@ TEST_CASE("YouCanVerifyText")
 TEST_CASE("TestStreamableObject")
 {
     Approvals::verify(42);
-    Approvals::verify(42,Options());
+    Approvals::verify(42, Options());
 }
 
 class NonCopyable
@@ -33,7 +33,7 @@ TEST_CASE("TestNonCopyableStreamableObject")
 {
     NonCopyable object;
     Approvals::verify(object);
-    Approvals::verify(object,Options());
+    Approvals::verify(object, Options());
 }
 
 // ==============================================================
@@ -55,9 +55,10 @@ TEST_CASE("YouCanVerifyWithConverterLambda")
     Approvals::verify(getPoint(), [](const auto& p, auto& os) {
         os << "[x: " << p.x << " y: " << p.y << "]";
     });
-    Approvals::verify(getPoint(), [](const auto& p, auto& os) {
-      os << "[x: " << p.x << " y: " << p.y << "]";
-    }, Options());
+    Approvals::verify(
+        getPoint(),
+        [](const auto& p, auto& os) { os << "[x: " << p.x << " y: " << p.y << "]"; },
+        Options());
 }
 
 // ==============================================================
@@ -80,9 +81,7 @@ struct FormatNonStreamablePoint
 
 TEST_CASE("YouCanVerifyWithConverterWrapperClass")
 {
-    auto converter = [](auto r, auto& os) {
-        os << FormatNonStreamablePoint(r);
-    };
+    auto converter = [](auto r, auto& os) { os << FormatNonStreamablePoint(r); };
     Approvals::verify(getPoint(), converter);
     Approvals::verify(getPoint(), converter, Options());
 }
@@ -97,9 +96,7 @@ std::ostream& customToStreamFunction(std::ostream& os, const NonStreamablePoint&
 
 TEST_CASE("YouCanVerifyWithConverterWrapperFunction")
 {
-    auto converter = [](auto r, auto& os) {
-        customToStreamFunction(os, r);
-    };
+    auto converter = [](auto r, auto& os) { customToStreamFunction(os, r); };
     Approvals::verify(getPoint(), converter);
     Approvals::verify(getPoint(), converter, Options());
 }
