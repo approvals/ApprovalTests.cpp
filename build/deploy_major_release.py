@@ -2,6 +2,7 @@
 
 from scripts import version
 from scripts.prepare_release import build
+from scripts.project_details import ProjectDetails
 
 if __name__ == '__main__':
-    build(lambda v: v.update_major(), deploy = True)
+    build(lambda v: v.update_major(), deploy=True, project_details=ProjectDetails())

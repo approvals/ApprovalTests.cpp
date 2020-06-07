@@ -3,6 +3,7 @@ import unittest
 from approvaltests.approvals import verify_file
 
 from scripts.code_generation import CppGeneration
+from scripts.project_details import ProjectDetails
 from scripts.release_details import ReleaseDetails
 from scripts.version import Version
 from tests.helpers import set_home_directory
@@ -31,5 +32,5 @@ class TestForLocking(unittest.TestCase):
         old_version = Version(8, 4, 0)
         new_version = Version(8, 5, 0)
         deploy = False
-        release_details = ReleaseDetails(old_version, new_version, deploy)
+        release_details = ReleaseDetails(old_version, new_version, deploy, ProjectDetails())
         return CppGeneration(release_details)

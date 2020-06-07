@@ -10,6 +10,7 @@ from scripts.conan_release import PrepareConanRelease
 from scripts.deploy_release import DeployRelease
 from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.git_utilities import GitUtilities
+from scripts.project_details import ProjectDetails
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
 from scripts.utilities import check_step, replace_text_in_file, run, use_directory, \
@@ -131,11 +132,13 @@ Check whether:
 
         self.check_changes()
 
-def build(update_version: Callable[[Version], Version], deploy: bool) -> None:
+
+def build(update_version: Callable[[Version], Version], deploy: bool,
+          project_details: ProjectDetails = ProjectDetails()) -> None:
     old_version = load_current_version()
     new_version = update_version(old_version)
 
-    release_details = ReleaseDetails(old_version, new_version, deploy)
+    release_details = ReleaseDetails(old_version, new_version, deploy, project_details)
     prepare_release = PrepareRelease(release_details)
     prepare_release.prepare_everything()
     if not release_details.push_to_production:
