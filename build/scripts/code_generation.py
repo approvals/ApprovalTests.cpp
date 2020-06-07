@@ -40,7 +40,7 @@ class CppGeneration:
         return text
 
     def create_simulated_single_header_file(self) -> str:
-        return SingleHeaderFile.create('.')
+        return SingleHeaderFile.create('.', self.details.project_details)
 
     def create_single_header_file(self) -> str:
         self.create_simulated_single_header_file()
