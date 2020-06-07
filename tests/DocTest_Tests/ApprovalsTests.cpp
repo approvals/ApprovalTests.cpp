@@ -52,13 +52,11 @@ NonStreamablePoint getPoint()
 
 TEST_CASE("YouCanVerifyWithConverterLambda")
 {
-    Approvals::verify(getPoint(), [](const auto& p, auto& os) {
+    auto converter = [](const auto& p, auto& os) {
         os << "[x: " << p.x << " y: " << p.y << "]";
-    });
-    Approvals::verify(
-        getPoint(),
-        [](const auto& p, auto& os) { os << "[x: " << p.x << " y: " << p.y << "]"; },
-        Options());
+    };
+    Approvals::verify(getPoint(), converter);
+    Approvals::verify(getPoint(), converter, Options());
 }
 
 // ==============================================================
