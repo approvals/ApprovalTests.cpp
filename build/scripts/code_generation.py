@@ -16,7 +16,7 @@ class CppGeneration:
 
     def update_version_number_header(self) -> None:
         with use_directory(self.details.locations.approval_tests_dir):
-            version_header = os.path.join("ApprovalTestsVersion.h")
+            version_header = os.path.join(self.details.project_details.version_header)
 
             text = CppGeneration.get_version_number_hpp_text(self.details.new_version)
             write_file(version_header, text)
