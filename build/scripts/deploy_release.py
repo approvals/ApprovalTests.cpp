@@ -14,10 +14,10 @@ class DeployRelease:
     # Starter Project
     def commit_starter_project(self) -> None:
         message = F"Update to Approvals {self.details.new_version_as_text()}"
-        GitUtilities.commit_everything(release_constants.locations.starter_project_dir, message)
+        GitUtilities.commit_everything(self.details.locations.starter_project_dir, message)
 
     def push_starter_project(self) -> None:
-        with use_directory(release_constants.locations.starter_project_dir):
+        with use_directory(self.details.locations.starter_project_dir):
             run(["git", "push", "origin", "master"])
 
     def publish_starter_project(self) -> None:
@@ -28,10 +28,10 @@ class DeployRelease:
     # Main Project
     def commit_main_project(self) -> None:
         message = F"{self.details.new_version_as_text()} release"
-        GitUtilities.commit_everything(release_constants.locations.main_project_dir, message)
+        GitUtilities.commit_everything(self.details.locations.main_project_dir, message)
 
     def push_main_project(self) -> None:
-        with use_directory(release_constants.locations.main_project_dir):
+        with use_directory(self.details.locations.main_project_dir):
             run(["git", "push", "origin", "master"])
 
     def publish_main_project(self) -> None:
