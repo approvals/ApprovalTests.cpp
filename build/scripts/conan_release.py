@@ -6,6 +6,7 @@ import yaml
 from git import Repo
 
 from scripts.git_utilities import GitUtilities
+from scripts.project_details import ProjectDetails
 from scripts.release_details import ReleaseDetails
 from scripts.utilities import check_step, read_file, write_file, calculate_sha256, run, use_directory, read_url
 from scripts.version import Version
@@ -101,18 +102,19 @@ class PrepareConanRelease:
 
         single_header_sha = calculate_sha256(new_single_header)
         licence_file_sha = calculate_sha256(licence_file)
-        conan_data = PrepareConanRelease.create_conandata_yml_text(version,
-                                                                   single_header_sha, licence_file_sha)
+        conan_data = PrepareConanRelease.create_conandata_yml_text(details.project_details, version, single_header_sha,
+                                                                   licence_file_sha)
         conandata_yml_text += conan_data
 
         write_file(conan_data_file, conandata_yml_text)
 
     @staticmethod
-    def create_conandata_yml_text(new_version: Version, single_header_sha: str, licence_file_sha: str) -> str:
+    def create_conandata_yml_text(project_details: ProjectDetails, new_version: Version, single_header_sha: str,
+                                  licence_file_sha: str) -> str:
         new_version_with_v = new_version.get_version_text()
         conan_data = \
             F'''  {new_version.get_version_text_without_v()}:
-    - url: https://github.com/approvals/ApprovalTests.cpp/releases/download/{new_version_with_v}/ApprovalTests.{new_version_with_v}.hpp
+    - url: {project_details.github_project_url}/releases/download/{new_version_with_v}/ApprovalTests.{new_version_with_v}.hpp
       sha256: {single_header_sha}
     - url: "https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/{new_version_with_v}/LICENSE"
       sha256: {licence_file_sha}
