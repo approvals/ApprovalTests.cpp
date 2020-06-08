@@ -82,9 +82,13 @@ Check whether:
                              self.details.new_version.get_version_text())
 
         # Update the version number in the Visual Studio project:
-        replace_text_in_file(F"{self.details.locations.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj",
-                             self.details.old_single_header,
-                             self.details.new_single_header)
+        visual_studio_2017_sln = F"{self.details.locations.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj"
+        if os.path.isfile(visual_studio_2017_sln):
+            replace_text_in_file(visual_studio_2017_sln,
+                                 self.details.old_single_header,
+                                 self.details.new_single_header)
+        else:
+            print(f"Info: No Visual Studio solution file: {visual_studio_2017_sln}")
 
     def check_starter_project_builds(self) -> None:
         with use_directory(F"{self.details.locations.starter_project_dir}/cmake-build-debug"):
