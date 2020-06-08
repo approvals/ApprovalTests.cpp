@@ -3,6 +3,7 @@ import os
 from scripts import version
 from scripts.embed import create_single_header_file
 from scripts.multiline_string_utilities import remove_indentation
+from scripts.project_details import ProjectDetails
 from scripts.release_details import ReleaseDetails
 from scripts.single_header_file import SingleHeaderFile
 from scripts.utilities import read_file, write_file, use_directory
@@ -18,13 +19,14 @@ class CppGeneration:
         with use_directory(self.details.locations.approval_tests_dir):
             version_header = os.path.join(self.details.project_details.version_header)
 
-            text = CppGeneration.get_version_number_hpp_text(self.details.new_version)
+            text = CppGeneration.get_version_number_hpp_text(self.details.new_version, self.details.project_details)
             write_file(version_header, text)
 
     @staticmethod
-    def get_version_number_hpp_text(version_object: Version) -> str:
+    def get_version_number_hpp_text(version_object: Version, project_details: ProjectDetails) -> str:
         version_string = version_object.get_version_text_without_v()
-        macro_prefix = 'APPROVAL_TESTS'
+        macro_prefix = project_details.macro_prefix
+        # TODO Need to adjust amount of whitespace before trailing '`', depending on length of macro_prefix
         text = remove_indentation << f'''
                 #pragma once
 
