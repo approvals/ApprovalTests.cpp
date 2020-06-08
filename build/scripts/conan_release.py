@@ -36,6 +36,9 @@ class PrepareConanRelease:
 
     @staticmethod
     def prepare_release(details: ReleaseDetails) -> None:
+        if not details.project_details.update_conan:
+            return
+
         GitUtilities.reset_and_clean_working_directory(ConanReleaseDetails().conan_repo_dir)
 
         accepted = details.old_version.get_version_text_without_v() in PrepareConanRelease.get_accepted_approval_releases()
@@ -135,6 +138,9 @@ class PrepareConanRelease:
 class DeployConanRelease:
     @staticmethod
     def test_conan_and_create_pr(details: ReleaseDetails) -> None:
+        if not details.project_details.update_conan:
+            return
+
         new_version_without_v = details.new_version.get_version_text_without_v()
         # See test_conan_release.py's disabled_test_all_conan_versions_build() if you want to test
         # that conan builds against all supported ApprovalTests.cpp versions.
