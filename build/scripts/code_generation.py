@@ -3,7 +3,6 @@ import os
 from scripts import version
 from scripts.embed import create_single_header_file
 from scripts.multiline_string_utilities import remove_indentation
-from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
 from scripts.single_header_file import SingleHeaderFile
 from scripts.utilities import read_file, write_file, use_directory
@@ -16,7 +15,7 @@ class CppGeneration:
         self.details = details
 
     def update_version_number_header(self) -> None:
-        with use_directory(release_constants.locations.approval_tests_dir):
+        with use_directory(self.details.locations.approval_tests_dir):
             version_header = os.path.join("ApprovalTestsVersion.h")
 
             text = CppGeneration.get_version_number_hpp_text(self.details.new_version)
@@ -45,7 +44,7 @@ class CppGeneration:
     def create_single_header_file(self) -> str:
         self.create_simulated_single_header_file()
 
-        simulated_single_header = os.path.abspath(release_constants.locations.simulated_single_header_file_path)
+        simulated_single_header = os.path.abspath(self.details.locations.simulated_single_header_file_path)
         with use_directory("../build"):
             print(os.getcwd())
             self.run_for_approval_tests(simulated_single_header, self.details.release_new_single_header)
