@@ -24,7 +24,7 @@ class PrepareRelease:
 
     def check_pre_conditions_for_publish(self) -> None:
         if self.details.push_to_production:
-            repo = Repo(release_constants.main_project_dir)
+            repo = Repo(release_constants.locations.main_project_dir)
             assert_step(not repo.bare)
 
             assert_step((repo.active_branch.name == 'master'))
@@ -49,11 +49,11 @@ class PrepareRelease:
             check_step("the milestone (if any) is up to date, including actual version number of release")
 
     def update_starter_project(self) -> None:
-        STARTER_PATH_OLD_SINGLE_HEADER = F"{release_constants.starter_project_dir}/lib/{self.details.old_single_header}"
-        STARTER_PATH_NEW_SINGLE_HEADER = F"{release_constants.starter_project_dir}/lib/{self.details.new_single_header}"
+        STARTER_PATH_OLD_SINGLE_HEADER = F"{release_constants.locations.starter_project_dir}/lib/{self.details.old_single_header}"
+        STARTER_PATH_NEW_SINGLE_HEADER = F"{release_constants.locations.starter_project_dir}/lib/{self.details.new_single_header}"
 
         # Make sure starter project folder is clean
-        project_dir = release_constants.starter_project_dir
+        project_dir = release_constants.locations.starter_project_dir
         GitUtilities.reset_and_clean_working_directory(project_dir)
 
         shutil.copyfile(self.details.release_new_single_header, STARTER_PATH_NEW_SINGLE_HEADER)
@@ -76,17 +76,17 @@ Check whether:
 """)
 
         # Update the version in the "redirect" header:
-        replace_text_in_file(F"{release_constants.starter_project_dir}/lib/ApprovalTests.hpp",
+        replace_text_in_file(F"{release_constants.locations.starter_project_dir}/lib/ApprovalTests.hpp",
                              self.details.old_version.get_version_text(),
                              self.details.new_version.get_version_text())
 
         # Update the version number in the Visual Studio project:
-        replace_text_in_file(F"{release_constants.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj",
+        replace_text_in_file(F"{release_constants.locations.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj",
                              self.details.old_single_header,
                              self.details.new_single_header)
 
     def check_starter_project_builds(self) -> None:
-        with use_directory(F"{release_constants.starter_project_dir}/cmake-build-debug"):
+        with use_directory(F"{release_constants.locations.starter_project_dir}/cmake-build-debug"):
             run(["cmake", "--build", "."])
 
     def add_to_git(self) -> None:
@@ -96,9 +96,9 @@ Check whether:
         self.do_things_in_starter_project_and_main(add)
 
     def do_things_in_starter_project_and_main(self, function: Callable) -> None:
-        with use_directory(release_constants.starter_project_dir):
+        with use_directory(release_constants.locations.starter_project_dir):
             function()
-        with use_directory(release_constants.main_project_dir):
+        with use_directory(release_constants.locations.main_project_dir):
             function()
 
     def check_changes(self) -> None:

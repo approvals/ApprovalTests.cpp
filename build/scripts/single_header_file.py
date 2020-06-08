@@ -22,7 +22,7 @@ class SingleHeaderFile(object):
     def create(directory: str, project_details: ProjectDetails) -> str:
         files = SingleHeaderFile.get_all_files(directory)
         files = SingleHeaderFile.sort_by_dependencies(files)
-        output_file = os.path.abspath(release_constants.simulated_single_header_file_path)
+        output_file = os.path.abspath(release_constants.locations.simulated_single_header_file_path)
 
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
         output = (F'#ifndef {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
