@@ -1,0 +1,27 @@
+{
+    "new_release_notes_path": "../build/release_notes/relnotes_1.2.4.md",
+    "new_single_header": "ApprovalTests.v.1.2.4.hpp",
+    "new_version": {
+        "major": 1,
+        "minor": 2,
+        "patch": 4
+    },
+    "old_single_header": "ApprovalTests.v.1.2.3.hpp",
+    "old_version": {
+        "major": 1,
+        "minor": 2,
+        "patch": 3
+    },
+    "project_details": {
+        "conan_directory_name": "approvaltests.cpp",
+        "github_project_name": "ApprovalTests.cpp",
+        "library_folder_name": "ApprovalTests",
+        "macro_prefix": "APPROVAL_TESTS",
+        "simulated_single_header_file": "ApprovalTests.hpp",
+        "update_conan": true,
+        "update_documentation": true,
+        "version_header": "ApprovalTestsVersion.h"
+    },
+    "push_to_production": true,
+    "release_new_single_header": "../build/releases/ApprovalTests.v.1.2.4.hpp"
+}
