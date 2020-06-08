@@ -4,7 +4,6 @@ from typing import Callable
 
 from git import Repo
 
-from scripts import version
 from scripts.code_generation import CppGeneration
 from scripts.conan_release import PrepareConanRelease
 from scripts.deploy_release import DeployRelease
@@ -77,9 +76,10 @@ Check whether:
 """)
 
         # Update the version in the "redirect" header:
-        replace_text_in_file(F"{self.details.locations.starter_project_dir}/lib/ApprovalTests.hpp",
-                             self.details.old_version.get_version_text(),
-                             self.details.new_version.get_version_text())
+        replace_text_in_file(
+            F"{self.details.locations.starter_project_dir}/lib/{self.details.project_details.simulated_single_header_file}",
+            self.details.old_version.get_version_text(),
+            self.details.new_version.get_version_text())
 
         # Update the version number in the Visual Studio project:
         visual_studio_2017_sln = F"{self.details.locations.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj"
