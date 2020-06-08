@@ -43,7 +43,7 @@ class DeployRelease:
         release_notes = read_file(self.details.new_release_notes_path)
         pyperclip.copy(release_notes)
         print('The release notes are on the clipboard')
-        github_url = F"'https://github.com/approvals/ApprovalTests.cpp/releases/new?tag={self.details.new_version_as_text()}&title=Single%20Hpp%20File%20-%20{self.details.new_version_as_text()}'"
+        github_url = F"'{self.details.project_details.github_project_url}/releases/new?tag={self.details.new_version_as_text()}&title=Single%20Hpp%20File%20-%20{self.details.new_version_as_text()}'"
         run(["open", github_url])
         run(["open", release_constants.release_dir])
         check_step("that the release is published")

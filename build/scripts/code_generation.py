@@ -51,7 +51,7 @@ class CppGeneration:
             text = read_file(self.details.release_new_single_header)
             text = (
                 f'// Approval Tests version {self.details.new_version_as_text()}\n'
-                '// More information at: https://github.com/approvals/ApprovalTests.cpp\n'
+                f'// More information at: {self.details.project_details.github_project_url}\n'
                 '\n'
                 f'{text}'
             )
