@@ -63,7 +63,7 @@ class CppGeneration:
             return line.strip().startswith('// begin-snippet:') or line.strip().startswith('// end-snippet')
 
         include_search_path1 = ".."
-        include_search_path2 = "../ApprovalTests/"
+        include_search_path2 = os.path.join("..", self.details.project_details.library_folder_name)
 
         discardables = [mdsnippets_discarder]
 

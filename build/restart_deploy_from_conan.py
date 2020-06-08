@@ -8,8 +8,9 @@ from scripts.project_details import ProjectDetails
 from scripts.release_details import ReleaseDetails
 
 if __name__ == '__main__':
-    old_version = load_current_version()
+    project_details = ProjectDetails()
+    old_version = load_current_version(project_details.library_folder_name)
     new_version = old_version.clone()
-    details = ReleaseDetails(old_version, new_version, True, ProjectDetails())
+    details = ReleaseDetails(old_version, new_version, True, project_details)
     deploy_release = DeployRelease(details)
     deploy_release.push_everything_live(start_at_conan=True)
