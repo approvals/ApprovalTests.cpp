@@ -1,11 +1,13 @@
 {
-    "approval_tests_dir": "../ApprovalTests",
     "build_dir": "../build",
-    "main_project_dir": "../../ApprovalTests.cpp",
+    "locations": {
+        "approval_tests_dir": "../ApprovalTests",
+        "main_project_dir": "../../ApprovalTests.cpp",
+        "simulated_single_header_file_path": "../ApprovalTests/ApprovalTests.hpp",
+        "starter_project_dir": "../../ApprovalTests.cpp.StarterProject"
+    },
     "release_dir": "../build/releases",
     "release_notes_dir": "../build/release_notes",
-    "simulated_single_header_file_path": "../ApprovalTests/ApprovalTests.hpp",
-    "starter_project_dir": "../../ApprovalTests.cpp.StarterProject",
     "template_release_notes_path": "../build/release_notes/relnotes_template.md",
     "xxx_release_notes_path": "../build/relnotes_x.y.z.md"
 }

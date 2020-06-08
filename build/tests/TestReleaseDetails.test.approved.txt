@@ -1,4 +1,10 @@
 {
+    "locations": {
+        "approval_tests_dir": "../ApprovalTests",
+        "main_project_dir": "../../ApprovalTests.cpp",
+        "simulated_single_header_file_path": "../ApprovalTests/ApprovalTests.hpp",
+        "starter_project_dir": "../../ApprovalTests.cpp.StarterProject"
+    },
     "new_release_notes_path": "../build/release_notes/relnotes_1.2.4.md",
     "new_single_header": "ApprovalTests.v.1.2.4.hpp",
     "new_version": {

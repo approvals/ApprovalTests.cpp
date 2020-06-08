@@ -2,6 +2,7 @@ import os
 
 from scripts.project_details import ProjectDetails
 from scripts.release_constants import release_constants
+from scripts.release_locations import ReleaseLocations
 from scripts.version import Version
 
 
@@ -9,6 +10,7 @@ class ReleaseDetails:
     def __init__(self, old_version: Version, new_version: Version, publish_release: bool,
                  project_details: ProjectDetails) -> None:
         self.project_details = project_details
+        self.locations = ReleaseLocations(project_details)
 
         self.old_version = old_version
         self.new_version = new_version
