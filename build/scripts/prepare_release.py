@@ -35,17 +35,18 @@ class PrepareRelease:
             assert_step(len(
                 list(repo.iter_commits('master@{u}..master'))) == 0, "there are un-pushed changes in ApprovalTests.cpp")
 
-            run(["open", "https://github.com/approvals/ApprovalTests.cpp/commits/master"])
+            run(["open", F"{self.details.project_details.github_project_url}/commits/master"])
             check_step("the builds are passing")
 
-            run(["open", "https://github.com/approvals/ApprovalTests.cpp/blob/master/build/relnotes_x.y.z.md"])
-            run(["open", F"https://github.com/approvals/ApprovalTests.cpp/compare/{self.details.old_version.get_version_text()}...master"])
+            run(["open", F"{self.details.project_details.github_project_url}/blob/master/build/relnotes_x.y.z.md"])
+            run(["open",
+                 F"{self.details.project_details.github_project_url}/compare/{self.details.old_version.get_version_text()}...master"])
             check_step("the release notes are ready")
 
-            run(["open", "https://github.com/approvals/ApprovalTests.cpp/issues"])
+            run(["open", F"{self.details.project_details.github_project_url}/issues"])
             check_step("any issues resolved in this release are closed")
 
-            run(["open", "https://github.com/approvals/ApprovalTests.cpp/milestones"])
+            run(["open", F"{self.details.project_details.github_project_url}/milestones"])
             check_step("the milestone (if any) is up to date, including actual version number of release")
 
     def update_starter_project(self) -> None:
