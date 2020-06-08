@@ -11,6 +11,9 @@ from typing import Callable
 class PrepareDocumentationRelease:
     @staticmethod
     def prepare_documentation(details: ReleaseDetails) -> None:
+        if not details.project_details.update_documentation:
+            return
+
         PrepareDocumentationRelease.update_features_page(details)
         PrepareDocumentationRelease.update_readme_and_docs(details)
         PrepareDocumentationRelease.prepare_release_notes(details)
