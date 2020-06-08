@@ -16,8 +16,8 @@ class ReleaseDetails:
         self.new_version = new_version
         self.push_to_production = publish_release
 
-        self.old_single_header = F"ApprovalTests.{old_version.get_version_text()}.hpp"
-        self.new_single_header = F"ApprovalTests.{new_version.get_version_text()}.hpp"
+        self.old_single_header = F"{project_details.library_folder_name}.{old_version.get_version_text()}.hpp"
+        self.new_single_header = F"{project_details.library_folder_name}.{new_version.get_version_text()}.hpp"
 
         self.release_new_single_header = F"{release_constants.release_dir}/{self.new_single_header}"
 
