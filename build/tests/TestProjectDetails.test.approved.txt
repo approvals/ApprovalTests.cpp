@@ -1,8 +1,6 @@
 {
     "conan_directory_name": "approvaltests.cpp",
     "github_project_name": "ApprovalTests.cpp",
-    "github_project_raw_content_url": "https://raw.githubusercontent.com/approvals/ApprovalTests.cpp",
-    "github_project_url": "https://github.com/approvals/ApprovalTests.cpp",
     "library_folder_name": "ApprovalTests",
     "macro_prefix": "APPROVAL_TESTS",
     "simulated_single_header_file": "ApprovalTests.hpp",
