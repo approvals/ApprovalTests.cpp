@@ -24,17 +24,18 @@ class CppGeneration:
     @staticmethod
     def get_version_number_hpp_text(version_object: Version) -> str:
         version_string = version_object.get_version_text_without_v()
+        macro_prefix = 'APPROVAL_TESTS'
         text = remove_indentation << f'''
                 #pragma once
 
-                #define APPROVAL_TESTS_VERSION_MAJOR {version_object.major}
-                #define APPROVAL_TESTS_VERSION_MINOR {version_object.minor}
-                #define APPROVAL_TESTS_VERSION_PATCH {version_object.patch}
-                #define APPROVAL_TESTS_VERSION_STR "{version_string}"
+                #define {macro_prefix}_VERSION_MAJOR {version_object.major}
+                #define {macro_prefix}_VERSION_MINOR {version_object.minor}
+                #define {macro_prefix}_VERSION_PATCH {version_object.patch}
+                #define {macro_prefix}_VERSION_STR "{version_string}"
 
-                #define APPROVAL_TESTS_VERSION                                                           \\
-                    (APPROVAL_TESTS_VERSION_MAJOR * 10000 + APPROVAL_TESTS_VERSION_MINOR * 100 +         \\
-                     APPROVAL_TESTS_VERSION_PATCH)
+                #define {macro_prefix}_VERSION                                                           \\
+                    ({macro_prefix}_VERSION_MAJOR * 10000 + {macro_prefix}_VERSION_MINOR * 100 +         \\
+                     {macro_prefix}_VERSION_PATCH)
                 '''
         return text
 
