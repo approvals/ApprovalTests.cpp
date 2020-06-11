@@ -48,7 +48,7 @@ namespace ApprovalTests
             FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
         }
 
-        // Note that this overload ignores any scrubber in options
+        /// Note that this overload ignores any scrubber in options
         static void verify(const ApprovalWriter& writer,
                            const Options& options = Options())
         {
@@ -155,7 +155,7 @@ namespace ApprovalTests
         }
         ///@}
 
-        // Note that this method ignores any scrubber in options
+        /// Note that this method ignores any scrubber in options
         static void verifyExistingFile(const std::string& filePath,
                                        const Options& options = Options())
         {
