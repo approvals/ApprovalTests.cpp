@@ -30,8 +30,9 @@ You have called a method that returns a collection of objects, and you want a ni
 ```cpp
 std::vector<std::string> objectsToVerify{"hello", "world"};
 Approvals::verifyAll("TITLE", objectsToVerify);
+Approvals::verifyAll("TITLE", objectsToVerify, Options());
 ```
-<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L24-L27' title='File snippet `verifyallstartingpointcontainer` was extracted from'>snippet source</a> | <a href='#snippet-verifyallstartingpointcontainer' title='Navigate to start of snippet `verifyallstartingpointcontainer`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L25-L29' title='File snippet `verifyallstartingpointcontainer` was extracted from'>snippet source</a> | <a href='#snippet-verifyallstartingpointcontainer' title='Navigate to start of snippet `verifyallstartingpointcontainer`'>anchor</a></sup>
 <!-- endsnippet -->
 
 2. Replace the `objectsToVerify` container with your collection of objects.
