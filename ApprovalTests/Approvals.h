@@ -97,7 +97,7 @@ namespace ApprovalTests
 
         /**@name Verifying containers of objects
 
-         See \userguide{TestingContainers.md,Testing Containers}
+         See \userguide{TestingContainers,Testing Containers}
          */
         ///@{
         template <typename Iterator>
