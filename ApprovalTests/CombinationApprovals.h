@@ -45,6 +45,7 @@ namespace ApprovalTests
 
          See \userguide{TestingCombinations,Testing combinations}
          */
+        ///@{
         template <class Converter, class Container, class... Containers>
         static void verifyAllCombinations(const Options& options,
                                           Converter&& converter,

@@ -40,6 +40,7 @@ namespace ApprovalTests
 
          See \userguide{TestingSingleObjects,Testing Single Objects}
          */
+        ///@{
         static void verify(const std::string& contents,
                            const Options& options = Options())
         {
