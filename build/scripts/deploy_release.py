@@ -2,6 +2,7 @@ import pyperclip
 
 from scripts.conan_release import DeployConanRelease
 from scripts.git_utilities import GitUtilities
+from scripts.project_details import ProjectDetails
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
 from scripts.utilities import read_file, check_step, run, use_directory, check_url_exists, assert_step
@@ -85,10 +86,11 @@ class DeployRelease:
 
     def check_starter_project_published(self) -> bool:
         version = self.details.new_version.get_version_text_without_v()
-        url = DeployRelease.get_url_for_starter_project_single_header_for_version(version)
+        url = DeployRelease.get_url_for_starter_project_single_header_for_version(self.details.project_details, version)
         published = check_url_exists(url)
         return published
 
     @staticmethod
-    def get_url_for_starter_project_single_header_for_version(version_without_v: str) -> str:
-        return F'https://raw.githubusercontent.com/approvals/ApprovalTests.cpp.StarterProject/master/lib/ApprovalTests.v.{version_without_v}.hpp'
+    def get_url_for_starter_project_single_header_for_version(project_details: ProjectDetails,
+                                                              version_without_v: str) -> str:
+        return F'https://raw.githubusercontent.com/approvals/{project_details.github_project_name}.StarterProject/master/lib/{project_details.library_folder_name}.v.{version_without_v}.hpp'
