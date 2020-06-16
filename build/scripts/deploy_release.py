@@ -59,7 +59,12 @@ class DeployRelease:
         check_step("that the tweet is published")
 
     def get_tweet_text(self) -> str:
-        return F"'https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+{self.details.new_version_as_text()}+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F{self.details.new_version_as_text()}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21'"
+        return F"'https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+" \
+               F"{self.details.new_version_as_text()}" \
+               F"+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2F" \
+               F"approvals%2FApprovalTests.cpp%2Freleases%2Ftag%2F" \
+               F"{self.details.new_version_as_text()}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com" \
+               F"%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21'"
 
     def publish_on_reddit_optionally(self) -> None:
         # Announce on Reddit - maybe?
