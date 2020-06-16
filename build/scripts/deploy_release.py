@@ -14,7 +14,7 @@ class DeployRelease:
 
     # Starter Project
     def commit_starter_project(self) -> None:
-        message = F"Update to Approvals {self.details.new_version_as_text()}"
+        message = F"Update to {self.details.project_details.github_project_name} {self.details.new_version_as_text()}"
         GitUtilities.commit_everything(self.details.locations.starter_project_dir, message)
 
     def push_starter_project(self) -> None:
