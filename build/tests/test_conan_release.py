@@ -2,7 +2,8 @@ import unittest
 
 from approvaltests.approvals import verify
 
-from scripts.conan_release import PrepareConanRelease, ConanReleaseDetails, DeployConanRelease
+from scripts.conan_release import PrepareConanRelease, DeployConanRelease
+from scripts.conan_release_details import ConanReleaseDetails
 from scripts.project_details import ProjectDetails
 from scripts.version import Version
 from tests.helpers import set_home_directory

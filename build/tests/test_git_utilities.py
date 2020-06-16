@@ -2,7 +2,7 @@ import unittest
 
 from git import Repo
 
-from scripts.conan_release import ConanReleaseDetails
+from scripts.conan_release_details import ConanReleaseDetails
 from scripts.git_utilities import GitUtilities
 from tests.helpers import set_home_directory
 

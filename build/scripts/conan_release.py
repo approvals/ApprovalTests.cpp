@@ -5,28 +5,12 @@ import pyperclip
 import yaml
 from git import Repo
 
+from scripts.conan_release_details import ConanReleaseDetails
 from scripts.git_utilities import GitUtilities
 from scripts.project_details import ProjectDetails
 from scripts.release_details import ReleaseDetails
 from scripts.utilities import check_step, read_file, write_file, calculate_sha256, run, use_directory, read_url
 from scripts.version import Version
-
-
-class ConanReleaseDetails:
-    def __init__(self) -> None:
-        self.conan_repo_dir = ConanReleaseDetails.get_conan_repo_directory()
-        self.conan_approvaltests_dir = os.path.join(self.conan_repo_dir, 'recipes', 'approvaltests.cpp')
-
-    @staticmethod
-    def get_conan_repo_directory() -> str:
-        possibles = [
-            '../../conan-center-index-claremacrae',  # llewellyn
-            '../../../conan/conan-center-index-claremacrae'  # clare
-        ]
-        for dir in possibles:
-            if os.path.isdir(dir):
-                return dir
-        raise RuntimeError("Could not find fork of conan-center-index")
 
 
 class PrepareConanRelease:
