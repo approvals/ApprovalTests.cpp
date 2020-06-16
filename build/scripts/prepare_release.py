@@ -141,7 +141,7 @@ Check whether:
 
 def build(update_version: Callable[[Version], Version], deploy: bool,
           project_details: ProjectDetails) -> None:
-    old_version = load_current_version(project_details.library_folder_name)
+    old_version = set_working_directory_and_load_current_version(project_details.library_folder_name)
     new_version = update_version(old_version)
 
     release_details = ReleaseDetails(old_version, new_version, deploy, project_details)
@@ -154,7 +154,7 @@ def build(update_version: Callable[[Version], Version], deploy: bool,
         deploy_release.push_everything_live()
 
 
-def load_current_version(library_folder_name: str) -> Version:
+def set_working_directory_and_load_current_version(library_folder_name: str) -> Version:
     """
     :param library_folder_name: the sub-folder where headers are, e.g. "ApprovalTests"
     """
