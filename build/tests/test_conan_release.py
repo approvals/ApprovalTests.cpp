@@ -38,7 +38,8 @@ class TestConanRelease(unittest.TestCase):
         self.assertIn('8.9.0', PrepareConanRelease.get_accepted_approval_releases())
 
     def test_get_new_branch_name(self) -> None:
-        self.assertEqual('approvaltests.cpp.1.2.3', PrepareConanRelease.get_new_branch_name(Version(1, 2, 3)))
+        self.assertEqual('approvaltests.cpp.1.2.3',
+                         PrepareConanRelease.get_new_branch_name(ProjectDetails(), Version(1, 2, 3)))
 
     def disable_test_all_conan_versions_build(self) -> None:
         set_home_directory()

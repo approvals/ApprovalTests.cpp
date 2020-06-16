@@ -43,7 +43,7 @@ class PrepareConanRelease:
 
         accepted = details.old_version.get_version_text_without_v() in PrepareConanRelease.get_accepted_approval_releases()
         if accepted:
-            PrepareConanRelease.sync_conan_repo(details.new_version)
+            PrepareConanRelease.sync_conan_repo(details.project_details, details.new_version)
         else:
             # Do nothing - we are adding to our previous Pull Request
             # This does assume the same user is doing the previous and current release.
@@ -51,7 +51,7 @@ class PrepareConanRelease:
         PrepareConanRelease.update_conan_recipe(details)
 
     @staticmethod
-    def sync_conan_repo(new_version: Version) -> None:
+    def sync_conan_repo(project_details: ProjectDetails, new_version: Version) -> None:
         print('Updating conan repo and creating branch')
         with use_directory(ConanReleaseDetails().conan_repo_dir):
             print(os.getcwd())
@@ -61,13 +61,13 @@ class PrepareConanRelease:
             repo.remote('upstream').pull('master')
             repo.remote('origin').push('master')
 
-            new_branch = PrepareConanRelease.get_new_branch_name(new_version)
+            new_branch = PrepareConanRelease.get_new_branch_name(project_details, new_version)
             current = repo.create_head(new_branch)
             current.checkout()
 
     @staticmethod
-    def get_new_branch_name(new_version: Version) -> str:
-        new_branch = f'approvaltests.cpp.{new_version.get_version_text_without_v()}'
+    def get_new_branch_name(project_details: ProjectDetails, new_version: Version) -> str:
+        new_branch = f'{project_details.conan_directory_name}.{new_version.get_version_text_without_v()}'
         return new_branch
 
     @staticmethod
@@ -164,7 +164,7 @@ class DeployConanRelease:
             return
 
         new_version_without_v = details.new_version.get_version_text_without_v()
-        new_branch = PrepareConanRelease.get_new_branch_name(details.new_version)
+        new_branch = PrepareConanRelease.get_new_branch_name(details.project_details, details.new_version)
         run(["open",
              F'https://github.com/conan-io/conan-center-index/compare/master...claremacrae:{new_branch}?expand=1'])
         description = F'**approvaltests.cpp/{new_version_without_v}**'
