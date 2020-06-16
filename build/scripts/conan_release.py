@@ -23,7 +23,7 @@ class PrepareConanRelease:
         if not details.project_details.update_conan:
             return
 
-        GitUtilities.reset_and_clean_working_directory(ConanReleaseDetails().conan_repo_dir)
+        GitUtilities.reset_and_clean_working_directory(details.conan_details.conan_repo_dir)
 
         accepted = details.old_version.get_version_text_without_v() in PrepareConanRelease.get_accepted_approval_releases()
         if accepted:
