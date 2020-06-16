@@ -130,8 +130,8 @@ class DeployConanRelease:
         # that conan builds against all supported ApprovalTests.cpp versions.
         DeployConanRelease.test_conan_build_passes(details.conan_details, new_version_without_v)
 
-        GitUtilities.add_and_commit_everything(ConanReleaseDetails().conan_repo_dir, F'Add approvaltests.cpp {new_version_without_v}')
-        GitUtilities.push_active_branch_origin(ConanReleaseDetails().conan_repo_dir)
+        GitUtilities.add_and_commit_everything(details.conan_details.conan_repo_dir, F'Add approvaltests.cpp {new_version_without_v}')
+        GitUtilities.push_active_branch_origin(details.conan_details.conan_repo_dir)
 
         DeployConanRelease.create_pull_request(details)
 
