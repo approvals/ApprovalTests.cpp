@@ -128,7 +128,7 @@ class DeployConanRelease:
 
         new_version_without_v = details.new_version.get_version_text_without_v()
         # See test_conan_release.py's disabled_test_all_conan_versions_build() if you want to test
-        # that conan builds against all supported ApprovalTests.cpp versions.
+        # that conan builds against all supported library versions.
         DeployConanRelease.test_conan_build_passes(details.conan_details, new_version_without_v)
 
         GitUtilities.add_and_commit_everything(details.conan_details.conan_repo_dir,
