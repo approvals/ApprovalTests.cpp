@@ -49,5 +49,6 @@ class TestConanRelease(unittest.TestCase):
     def disable_test_all_conan_versions_build(self) -> None:
         set_home_directory()
         releases = PrepareConanRelease.get_accepted_approval_releases()
+        conan_details = ConanReleaseDetails()
         for release in releases:
-            DeployConanRelease.test_conan_build_passes(release)
+            DeployConanRelease.test_conan_build_passes(conan_details, release)
