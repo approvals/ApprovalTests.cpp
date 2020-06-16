@@ -35,11 +35,13 @@ class CppGeneration:
                 #define {macro_prefix}_VERSION_PATCH {version_object.patch}
                 #define {macro_prefix}_VERSION_STR "{version_string}"
 
-                #define {macro_prefix}_VERSION                                                           \\
-                    ({macro_prefix}_VERSION_MAJOR * 10000 + {macro_prefix}_VERSION_MINOR * 100 +         \\
+                '''
+        second_part = remove_indentation << f'''
+                {f'#define {macro_prefix}_VERSION'.ljust(89, ' ')}\\
+                {f'    ({macro_prefix}_VERSION_MAJOR * 10000 + {macro_prefix}_VERSION_MINOR * 100 +'.ljust(89, ' ')}\\
                      {macro_prefix}_VERSION_PATCH)
                 '''
-        return text
+        return text + second_part
 
     def create_simulated_single_header_file(self) -> str:
         return SingleHeaderFile.create('.', self.details.project_details)
