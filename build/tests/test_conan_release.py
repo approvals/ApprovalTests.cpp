@@ -27,6 +27,10 @@ class TestConanRelease(unittest.TestCase):
                                                                   "licence_sha")
         verify(text)
 
+    def test_conan_approvaltests_dir(self) -> None:
+        conan_release_details = ConanReleaseDetails()
+        self.assertTrue(conan_release_details.conan_approvaltests_dir.endswith('approvaltests.cpp'))
+
     def test_can_find_conan_repo(self) -> None:
         set_home_directory()
         # Validate that function does not throw exception.
