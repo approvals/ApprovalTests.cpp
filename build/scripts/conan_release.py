@@ -102,7 +102,7 @@ class PrepareConanRelease:
         new_version_with_v = new_version.get_version_text()
         conan_data = \
             F'''  {new_version.get_version_text_without_v()}:
-    - url: {project_details.github_project_url}/releases/download/{new_version_with_v}/ApprovalTests.{new_version_with_v}.hpp
+    - url: {project_details.github_project_url}/releases/download/{new_version_with_v}/{project_details.library_folder_name}.{new_version_with_v}.hpp
       sha256: {single_header_sha}
     - url: "https://raw.githubusercontent.com/approvals/{project_details.github_project_name}/{new_version_with_v}/LICENSE"
       sha256: {licence_file_sha}
