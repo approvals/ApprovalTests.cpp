@@ -32,7 +32,8 @@ class PrepareRelease:
 
             # From https://stackoverflow.com/questions/15849640/how-to-get-count-of-unpublished-commit-with-gitpython
             assert_step(len(
-                list(repo.iter_commits('master@{u}..master'))) == 0, "there are un-pushed changes in ApprovalTests.cpp")
+                list(repo.iter_commits('master@{u}..master'))) == 0,
+                        f"there are un-pushed changes in {self.details.project_details.github_project_name}")
 
             run(["open", F"{self.details.project_details.github_project_url}/commits/master"])
             check_step("the builds are passing")
