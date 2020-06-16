@@ -49,7 +49,9 @@ class DeployRelease:
         check_step("that the release is published")
 
     def get_github_release_url(self) -> str:
-        return F"'{self.details.project_details.github_project_url}/releases/new?tag={self.details.new_version_as_text()}&title=Single%20Hpp%20File%20-%20{self.details.new_version_as_text()}'"
+        return F"'{self.details.project_details.github_project_url}/releases/new?" \
+               F"tag={self.details.new_version_as_text()}&" \
+               F"title=Single%20Hpp%20File%20-%20{self.details.new_version_as_text()}'"
 
     def publish_tweet(self) -> None:
         # Draft the tweet
