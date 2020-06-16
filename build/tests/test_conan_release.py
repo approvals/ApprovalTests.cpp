@@ -29,7 +29,7 @@ class TestConanRelease(unittest.TestCase):
         verify(text)
 
     def test_conan_approvaltests_dir(self) -> None:
-        conan_release_details = ConanReleaseDetails()
+        conan_release_details = ConanReleaseDetails(ProjectDetails())
         self.assertTrue(conan_release_details.conan_approvaltests_dir.endswith('approvaltests.cpp'))
 
     def test_can_find_conan_repo(self) -> None:
@@ -49,6 +49,6 @@ class TestConanRelease(unittest.TestCase):
     def disable_test_all_conan_versions_build(self) -> None:
         set_home_directory()
         releases = PrepareConanRelease.get_accepted_approval_releases()
-        conan_details = ConanReleaseDetails()
+        conan_details = ConanReleaseDetails(ProjectDetails())
         for release in releases:
             DeployConanRelease.test_conan_build_passes(conan_details, release)
