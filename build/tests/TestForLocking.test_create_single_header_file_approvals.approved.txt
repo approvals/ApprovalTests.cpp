@@ -1,4 +1,4 @@
-// Approval Tests version v.8.5.0
+// ApprovalTests.cpp version v.8.5.0
 // More information at: https://github.com/approvals/ApprovalTests.cpp
 
 

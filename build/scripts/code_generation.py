@@ -53,7 +53,7 @@ class CppGeneration:
             self.run_for_approval_tests(simulated_single_header, self.details.release_new_single_header)
             text = read_file(self.details.release_new_single_header)
             text = (
-                f'// Approval Tests version {self.details.new_version_as_text()}\n'
+                f'// {self.details.project_details.github_project_name} version {self.details.new_version_as_text()}\n'
                 f'// More information at: {self.details.project_details.github_project_url}\n'
                 '\n'
                 f'{text}'
