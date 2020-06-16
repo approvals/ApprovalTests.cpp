@@ -27,7 +27,7 @@ class PrepareConanRelease:
 
         accepted = details.old_version.get_version_text_without_v() in PrepareConanRelease.get_accepted_approval_releases()
         if accepted:
-            PrepareConanRelease.sync_conan_repo(details.project_details, details.new_version)
+            PrepareConanRelease.sync_conan_repo(details.conan_details, details.project_details, details.new_version)
         else:
             # Do nothing - we are adding to our previous Pull Request
             # This does assume the same user is doing the previous and current release.
@@ -35,9 +35,9 @@ class PrepareConanRelease:
         PrepareConanRelease.update_conan_recipe(details)
 
     @staticmethod
-    def sync_conan_repo(project_details: ProjectDetails, new_version: Version) -> None:
+    def sync_conan_repo(conan_details: ConanReleaseDetails, project_details: ProjectDetails, new_version: Version) -> None:
         print('Updating conan repo and creating branch')
-        with use_directory(ConanReleaseDetails().conan_repo_dir):
+        with use_directory(conan_details.conan_repo_dir):
             print(os.getcwd())
             repo = Repo('.')
             repo.git.checkout('master')
