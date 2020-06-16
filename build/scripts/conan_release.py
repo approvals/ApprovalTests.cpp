@@ -154,7 +154,7 @@ class DeployConanRelease:
         new_branch = PrepareConanRelease.get_new_branch_name(details.project_details, details.new_version)
         run(["open",
              F'https://github.com/conan-io/conan-center-index/compare/master...claremacrae:{new_branch}?expand=1'])
-        description = F'**approvaltests.cpp/{new_version_without_v}**'
+        description = F'**{details.project_details.conan_directory_name}/{new_version_without_v}**'
         pyperclip.copy(description)
         print(
             F"Create a pull request, including this at the start of the description (which is on your clipboard): {description}")
