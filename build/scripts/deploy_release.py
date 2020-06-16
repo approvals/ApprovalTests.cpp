@@ -93,4 +93,6 @@ class DeployRelease:
     @staticmethod
     def get_url_for_starter_project_single_header_for_version(project_details: ProjectDetails,
                                                               version_without_v: str) -> str:
-        return F'https://raw.githubusercontent.com/approvals/{project_details.github_project_name}.StarterProject/master/lib/{project_details.library_folder_name}.v.{version_without_v}.hpp'
+        return F'https://raw.githubusercontent.com/approvals/' \
+               F'{project_details.github_project_name}.StarterProject/master/lib/' \
+               F'{project_details.library_folder_name}.v.{version_without_v}.hpp'
