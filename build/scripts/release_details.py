@@ -1,5 +1,6 @@
 import os
 
+from scripts.conan_release_details import ConanReleaseDetails
 from scripts.project_details import ProjectDetails
 from scripts.release_constants import release_constants
 from scripts.release_locations import ReleaseLocations
@@ -11,6 +12,7 @@ class ReleaseDetails:
                  project_details: ProjectDetails) -> None:
         self.project_details = project_details
         self.locations = ReleaseLocations(project_details)
+        self.conan_details = ConanReleaseDetails()
 
         self.old_version = old_version
         self.new_version = new_version
