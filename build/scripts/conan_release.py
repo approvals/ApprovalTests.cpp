@@ -25,7 +25,8 @@ class PrepareConanRelease:
 
         GitUtilities.reset_and_clean_working_directory(details.conan_details.conan_repo_dir)
 
-        accepted = details.old_version.get_version_text_without_v() in PrepareConanRelease.get_accepted_approval_releases()
+        accepted = details.old_version.get_version_text_without_v() in PrepareConanRelease.get_accepted_approval_releases(
+            details.project_details)
         if accepted:
             PrepareConanRelease.sync_conan_repo(details.conan_details, details.project_details, details.new_version)
         else:
@@ -113,8 +114,8 @@ class PrepareConanRelease:
         run(["pip3", "install", "--upgrade", "conan"])
 
     @staticmethod
-    def get_accepted_approval_releases() -> List[str]:
-        conan_url = 'https://raw.githubusercontent.com/conan-io/conan-center-index/master/recipes/approvaltests.cpp/config.yml'
+    def get_accepted_approval_releases(project_details: ProjectDetails) -> List[str]:
+        conan_url = f'https://raw.githubusercontent.com/conan-io/conan-center-index/master/recipes/{project_details.conan_directory_name}/config.yml'
         text = read_url(conan_url)
         return yaml.safe_load(text)['versions'].keys()
 
@@ -143,7 +144,8 @@ class DeployConanRelease:
 
     @staticmethod
     def create_pull_request(details: ReleaseDetails) -> None:
-        accepted = details.old_version.get_version_text_without_v() in PrepareConanRelease.get_accepted_approval_releases()
+        accepted = details.old_version.get_version_text_without_v() in PrepareConanRelease.get_accepted_approval_releases(
+            details.project_details)
         if not accepted:
             return
 
