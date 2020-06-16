@@ -49,8 +49,7 @@ class DeployRelease:
         check_step("that the release is published")
 
     def get_github_release_url(self) -> str:
-        github_url = F"'{self.details.project_details.github_project_url}/releases/new?tag={self.details.new_version_as_text()}&title=Single%20Hpp%20File%20-%20{self.details.new_version_as_text()}'"
-        return github_url
+        return F"'{self.details.project_details.github_project_url}/releases/new?tag={self.details.new_version_as_text()}&title=Single%20Hpp%20File%20-%20{self.details.new_version_as_text()}'"
 
     def publish_tweet(self) -> None:
         # Draft the tweet
@@ -60,8 +59,7 @@ class DeployRelease:
         check_step("that the tweet is published")
 
     def get_tweet_text(self) -> str:
-        tweet_text = F"'https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+{self.details.new_version_as_text()}+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F{self.details.new_version_as_text()}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21'"
-        return tweet_text
+        return F"'https://twitter.com/intent/tweet?text=%23ApprovalTests.cpp+{self.details.new_version_as_text()}+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp%2Freleases%2Ftag%2F{self.details.new_version_as_text()}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com%2Fapprovals%2FApprovalTests.cpp.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21'"
 
     def publish_on_reddit_optionally(self) -> None:
         # Announce on Reddit - maybe?
