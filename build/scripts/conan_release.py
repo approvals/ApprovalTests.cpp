@@ -56,9 +56,9 @@ class PrepareConanRelease:
 
     @staticmethod
     def update_conan_recipe(details: ReleaseDetails) -> None:
-        conan_approvaltests_dir = ConanReleaseDetails().conan_approvaltests_dir
+        conan_approvaltests_dir = details.conan_details.conan_approvaltests_dir
 
-        PrepareConanRelease.update_conandata_yml(details, ConanReleaseDetails().conan_approvaltests_dir)
+        PrepareConanRelease.update_conandata_yml(details, conan_approvaltests_dir)
         PrepareConanRelease.update_conan_config_yml(conan_approvaltests_dir, details.new_version)
 
     @staticmethod
