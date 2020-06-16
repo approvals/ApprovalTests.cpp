@@ -1,7 +1,5 @@
 #! /usr/bin/env python3
 
-from scripts import version
-from scripts.conan_release import DeployConanRelease
 from scripts.deploy_release import DeployRelease
 from scripts.prepare_release import set_working_directory_and_load_current_version
 from scripts.project_details import ProjectDetails
