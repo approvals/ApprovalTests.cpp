@@ -1,18 +1,25 @@
 import os
 
-
+from scripts.conan_release_details import ConanReleaseDetails
+from scripts.project_details import ProjectDetails
 from scripts.release_constants import release_constants
+from scripts.release_locations import ReleaseLocations
 from scripts.version import Version
 
 
 class ReleaseDetails:
-    def __init__(self, old_version: Version, new_version: Version, publish_release: bool) -> None:
+    def __init__(self, old_version: Version, new_version: Version, publish_release: bool,
+                 project_details: ProjectDetails) -> None:
+        self.project_details = project_details
+        self.locations = ReleaseLocations(project_details)
+        self.conan_details = ConanReleaseDetails(project_details)
+
         self.old_version = old_version
         self.new_version = new_version
         self.push_to_production = publish_release
 
-        self.old_single_header = F"ApprovalTests.{old_version.get_version_text()}.hpp"
-        self.new_single_header = F"ApprovalTests.{new_version.get_version_text()}.hpp"
+        self.old_single_header = F"{project_details.library_folder_name}.{old_version.get_version_text()}.hpp"
+        self.new_single_header = F"{project_details.library_folder_name}.{new_version.get_version_text()}.hpp"
 
         self.release_new_single_header = F"{release_constants.release_dir}/{self.new_single_header}"
 

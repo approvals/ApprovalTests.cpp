@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/approvals/ApprovalTests.cpp.StarterProject/master/lib/ApprovalTests.v.0.0.1.hpp

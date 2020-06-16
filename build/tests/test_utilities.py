@@ -2,6 +2,7 @@ import os
 import unittest
 
 from scripts.deploy_release import DeployRelease
+from scripts.project_details import ProjectDetails
 from scripts.utilities import pushdir, popdir, use_directory, write_file, replace_text_in_file, read_file, get_file_name, check_url_exists
 
 
@@ -33,7 +34,8 @@ class TestUtilities(unittest.TestCase):
         self.assertEqual('file.txt', get_file_name('file.txt'))
 
     def test_check_url_exists(self) -> None:
-        self.assertFalse(check_url_exists(DeployRelease.get_url_for_starter_project_single_header_for_version('1.1.1')))
+        self.assertFalse(check_url_exists(
+            DeployRelease.get_url_for_starter_project_single_header_for_version(ProjectDetails(), '1.1.1')))
 
 
 if __name__ == '__main__':

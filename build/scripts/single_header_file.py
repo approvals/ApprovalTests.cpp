@@ -1,6 +1,7 @@
 import os
 
-from scripts.release_constants import release_constants
+from scripts.project_details import ProjectDetails
+from scripts.release_locations import ReleaseLocations
 from scripts.utilities import write_file, read_file, get_file_name
 
 
@@ -18,20 +19,21 @@ class Parts:
 
 class SingleHeaderFile(object):
     @staticmethod
-    def create(directory: str) -> str:
+    def create(directory: str, project_details: ProjectDetails) -> str:
+        locations = ReleaseLocations(project_details)
         files = SingleHeaderFile.get_all_files(directory)
         files = SingleHeaderFile.sort_by_dependencies(files)
-        output_file = os.path.abspath(release_constants.simulated_single_header_file_path)
+        output_file = os.path.abspath(locations.simulated_single_header_file_path)
 
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
-        output = ('#ifndef APPROVAL_TESTS_CPP_APPROVALS_HPP\n'
-                  '#define APPROVAL_TESTS_CPP_APPROVALS_HPP\n'
+        output = (F'#ifndef {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
+                  F'#define {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   '\n'
                   '// This file is machine-generated. Do not edit.\n'
                   '\n'
                   f'{includes}\n'
                   '\n'
-                  '#endif // APPROVAL_TESTS_CPP_APPROVALS_HPP\n'
+                  F'#endif // {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   )
         write_file(output_file, output)
         return output_file
