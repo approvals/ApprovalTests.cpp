@@ -11,7 +11,7 @@ from tests.helpers import set_home_directory
 
 class TestForLocking(unittest.TestCase):
 
-    def test_create_single_header_file_approvals(self) -> None:
+    def disabled_test_create_single_header_file_approvals(self) -> None:
         prepare_release = self.get_prepare_release()
         output = prepare_release.create_single_header_file()
 
@@ -19,7 +19,7 @@ class TestForLocking(unittest.TestCase):
         # over time. It is here to help when refactoring the release process.
         verify_file(output)
 
-    def test_create_simulated_single_header_file(self) -> None:
+    def disabled_test_create_simulated_single_header_file(self) -> None:
         prepare_release = self.get_prepare_release()
         output = prepare_release.create_simulated_single_header_file()
 
