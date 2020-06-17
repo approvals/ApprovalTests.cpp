@@ -23,6 +23,10 @@ class CppGeneration:
             write_file(version_header, text)
 
     @staticmethod
+    def append_continuation_character(line: str) -> str:
+        return line.ljust(89, ' ') + '\\'
+
+    @staticmethod
     def get_version_number_hpp_text(version_object: Version, project_details: ProjectDetails) -> str:
         version_string = version_object.get_version_text_without_v()
         macro_prefix = project_details.macro_prefix
@@ -36,9 +40,12 @@ class CppGeneration:
                 #define {macro_prefix}_VERSION_STR "{version_string}"
 
                 '''
+
+        line1 = f'#define {macro_prefix}_VERSION'
+        line2 = f'    ({macro_prefix}_VERSION_MAJOR * 10000 + {macro_prefix}_VERSION_MINOR * 100 +'
         second_part = remove_indentation << f'''
-                {f'#define {macro_prefix}_VERSION'.ljust(89, ' ')}\\
-                {f'    ({macro_prefix}_VERSION_MAJOR * 10000 + {macro_prefix}_VERSION_MINOR * 100 +'.ljust(89, ' ')}\\
+                {CppGeneration.append_continuation_character(line1)}
+                {CppGeneration.append_continuation_character(line2)}
                      {macro_prefix}_VERSION_PATCH)
                 '''
         return text + second_part
