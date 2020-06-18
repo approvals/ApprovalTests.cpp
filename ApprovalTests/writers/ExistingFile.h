@@ -2,6 +2,7 @@
 
 #include <string>
 #include <utility>
+#include <fstream>
 #include "ApprovalTests/core/Options.h"
 #include "ApprovalTests/namers/ExistingFileNamer.h"
 #include "ApprovalTests/core/ApprovalWriter.h"
@@ -12,17 +13,27 @@ namespace ApprovalTests
     class ExistingFile : public ApprovalWriter
     {
         std::string filePath;
+        bool deleteScrubbedFile = false;
 
         std::string scrub(std::string fileName, const Options& options)
         {
             auto content = FileUtils::readFileThrowIfMissing(fileName);
-            if (content == options.scrub(content))
+            const auto scrubbedContent = options.scrub(content);
+            if (content == scrubbedContent)
             {
+                deleteScrubbedFile = false;
                 return fileName;
             }
             else
             {
-                throw std::runtime_error("Scrubbers not handled yet");
+                std::size_t found = fileName.find_last_of('.');
+                auto fileExtension = fileName.substr(found);
+                std::string baseName = fileName.substr(0, found);
+
+                auto newFileName = baseName + ".scrubbed.received" + fileExtension;
+                FileUtils::writeToFile(newFileName, scrubbedContent);
+                deleteScrubbedFile = true;
+                return newFileName;
             }
         }
 
@@ -39,9 +50,12 @@ namespace ApprovalTests
         {
             // do nothing
         }
-        virtual void cleanUpReceived(std::string /*receivedPath*/) const override
+        virtual void cleanUpReceived(std::string receivedPath) const override
         {
-            // do nothing
+            if (deleteScrubbedFile && (receivedPath == filePath))
+            {
+                remove(receivedPath.c_str());
+            }
         }
         ExistingFileNamer getNamer()
         {

@@ -156,7 +156,6 @@ namespace ApprovalTests
         }
         ///@}
 
-        /// Note that this method ignores any scrubber in options
         static void verifyExistingFile(const std::string& filePath,
                                        const Options& options = Options())
         {

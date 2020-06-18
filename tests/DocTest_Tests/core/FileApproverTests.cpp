@@ -34,6 +34,14 @@ TEST_CASE("ItVerifiesExistingFiles")
     Approvals::verifyExistingFile(namer.getDirectory() + "../../sample.txt", Options());
 }
 
+TEST_CASE("ItScrubsExistingFiles")
+{
+    ApprovalTestNamer namer;
+    Approvals::verifyExistingFile(
+        namer.getDirectory() + "../../sample.txt",
+        Options(Scrubbers::createRegexScrubber("hired", "FIRED")));
+}
+
 TEST_CASE("ItIgnoresLineEndingDifferences")
 {
     FileUtils::writeToFile("a.txt", "1\r\n2\n3\r\n4\r\n5");
