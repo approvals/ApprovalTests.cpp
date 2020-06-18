@@ -51,11 +51,16 @@ namespace ApprovalTests
         FileOptions fileOptions_;
         Scrubber scrubber_ = Scrubbers::doNothing;
         const Reporter& reporter_ = defaultReporter();
+        bool usingDefaultScrubber_ = true;
 
-        Options(FileOptions fileOptions, Scrubber scrubber, const Reporter& reporter)
+        Options(FileOptions fileOptions,
+                Scrubber scrubber,
+                const Reporter& reporter,
+                bool usingDefaultScrubber)
             : fileOptions_(std::move(fileOptions))
             , scrubber_(std::move(scrubber))
             , reporter_(reporter)
+            , usingDefaultScrubber_(usingDefaultScrubber)
         {
         }
 
@@ -63,7 +68,7 @@ namespace ApprovalTests
         Options clone(const FileOptions& fileOptions) const
         {
             // TODO error this can retain a previous Options* ???
-            return Options(fileOptions, scrubber_, reporter_);
+            return Options(fileOptions, scrubber_, reporter_, usingDefaultScrubber_);
         }
 
         static const Reporter& defaultReporter()
@@ -77,6 +82,7 @@ namespace ApprovalTests
 
         explicit Options(Scrubber scrubber) : scrubber_(std::move(scrubber))
         {
+            usingDefaultScrubber_ = false;
         }
 
         explicit Options(const Reporter& reporter) : reporter_(reporter)
@@ -105,12 +111,7 @@ namespace ApprovalTests
         APPROVAL_TESTS_NO_DISCARD
         bool isUsingDefaultScrubber() const
         {
-            //            return scrubber_.target<Scrubbers::doNothing>();
-            //            auto same = (size_t)*scrubber_.target<std::string(const std::string&)>() ==
-            //                (size_t)*Options().getScrubber().target<std::string(const std::string&)>();
-            //            std::cout << "Same = " << same << '\n';
-            //            return same;
-            return false;
+            return usingDefaultScrubber_;
         }
 
         APPROVAL_TESTS_NO_DISCARD
@@ -128,13 +129,13 @@ namespace ApprovalTests
         APPROVAL_TESTS_NO_DISCARD
         Options withReporter(const Reporter& reporter) const
         {
-            return Options(fileOptions_, scrubber_, reporter);
+            return Options(fileOptions_, scrubber_, reporter, usingDefaultScrubber_);
         }
 
         APPROVAL_TESTS_NO_DISCARD
         Options withScrubber(Scrubber scrubber) const
         {
-            return Options(fileOptions_, std::move(scrubber), reporter_);
+            return Options(fileOptions_, std::move(scrubber), reporter_, false);
         }
     };
 

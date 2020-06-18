@@ -76,10 +76,26 @@ TEST_CASE("Options - FileExtension Example")
 
 TEST_CASE("isUsingDefaultScrubber")
 {
-    //    CHECK(Options().isUsingDefaultScrubber());
-    //    CHECK(Options(DiffReporter()).isUsingDefaultScrubber());
-    //    CHECK(Options().withReporter(DiffReporter()).isUsingDefaultScrubber());
-    //    CHECK(Options().fileOptions().withFileExtension(".wibble").isUsingDefaultScrubber());
+    CHECK(Options().isUsingDefaultScrubber());
 
+    // Custom Reporter:
+    CHECK(Options(DiffReporter()).isUsingDefaultScrubber());
+    CHECK(Options().withReporter(DiffReporter()).isUsingDefaultScrubber());
+
+    // Custom File Options:
+    CHECK(Options().fileOptions().withFileExtension(".wibble").isUsingDefaultScrubber());
+
+    // Custom Scrubber:
     CHECK(Options(Scrubbers::scrubGuid).isUsingDefaultScrubber() == false);
+    CHECK(Options().withScrubber(Scrubbers::scrubGuid).isUsingDefaultScrubber() == false);
+
+    // Test that custom-scrubber info is preserved when chaining:
+    CHECK(Options(Scrubbers::scrubGuid)
+              .withReporter(DiffReporter())
+              .isUsingDefaultScrubber() == false);
+
+    CHECK(Options(Scrubbers::scrubGuid)
+              .fileOptions()
+              .withFileExtension(".xyz")
+              .isUsingDefaultScrubber() == false);
 }
