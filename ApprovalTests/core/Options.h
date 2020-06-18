@@ -103,6 +103,17 @@ namespace ApprovalTests
         }
 
         APPROVAL_TESTS_NO_DISCARD
+        bool isUsingDefaultScrubber() const
+        {
+            //            return scrubber_.target<Scrubbers::doNothing>();
+            //            auto same = (size_t)*scrubber_.target<std::string(const std::string&)>() ==
+            //                (size_t)*Options().getScrubber().target<std::string(const std::string&)>();
+            //            std::cout << "Same = " << same << '\n';
+            //            return same;
+            return false;
+        }
+
+        APPROVAL_TESTS_NO_DISCARD
         std::string scrub(const std::string& input) const
         {
             return scrubber_(input);

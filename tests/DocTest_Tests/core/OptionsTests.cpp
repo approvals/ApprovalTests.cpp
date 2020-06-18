@@ -73,3 +73,13 @@ TEST_CASE("Options - FileExtension Example")
                       Options().fileOptions().withFileExtension(".xyz"));
     // end-snippet
 }
+
+TEST_CASE("isUsingDefaultScrubber")
+{
+    //    CHECK(Options().isUsingDefaultScrubber());
+    //    CHECK(Options(DiffReporter()).isUsingDefaultScrubber());
+    //    CHECK(Options().withReporter(DiffReporter()).isUsingDefaultScrubber());
+    //    CHECK(Options().fileOptions().withFileExtension(".wibble").isUsingDefaultScrubber());
+
+    CHECK(Options(Scrubbers::scrubGuid).isUsingDefaultScrubber() == false);
+}

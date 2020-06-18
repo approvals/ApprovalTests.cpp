@@ -17,6 +17,10 @@ namespace ApprovalTests
 
         std::string scrub(std::string fileName, const Options& options)
         {
+            if (options.isUsingDefaultScrubber())
+            {
+                return fileName;
+            }
             auto content = FileUtils::readFileThrowIfMissing(fileName);
             const auto scrubbedContent = options.scrub(content);
             if (content == scrubbedContent)
