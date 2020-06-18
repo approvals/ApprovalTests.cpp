@@ -2,6 +2,7 @@
 
 #include <string>
 #include <utility>
+#include "ApprovalTests/namers/ExistingFileNamer.h"
 #include "ApprovalTests/core/ApprovalWriter.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 
@@ -26,6 +27,10 @@ namespace ApprovalTests
         virtual void cleanUpReceived(std::string /*receivedPath*/) const override
         {
             // do nothing
+        }
+        ExistingFileNamer getNamer()
+        {
+            return ExistingFileNamer(filePath);
         }
     };
 }

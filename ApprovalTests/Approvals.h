@@ -161,8 +161,7 @@ namespace ApprovalTests
                                        const Options& options = Options())
         {
             ExistingFile writer(filePath);
-            ExistingFileNamer namer(filePath);
-            FileApprover::verify(namer, writer, options.getReporter());
+            FileApprover::verify(writer.getNamer(), writer, options.getReporter());
         }
 
         /**@name Customising Approval Tests
