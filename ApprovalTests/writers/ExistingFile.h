@@ -13,10 +13,23 @@ namespace ApprovalTests
     {
         std::string filePath;
 
-    public:
-        explicit ExistingFile(std::string filePath_, const Options& /*options*/)
+        std::string scrub(std::string fileName, const Options& options)
         {
-            filePath = std::move(filePath_);
+            auto content = FileUtils::readFileThrowIfMissing(fileName);
+            if (content == options.scrub(content))
+            {
+                return fileName;
+            }
+            else
+            {
+                throw std::runtime_error("Scrubbers not handled yet");
+            }
+        }
+
+    public:
+        explicit ExistingFile(std::string filePath_, const Options& options)
+        {
+            filePath = scrub(filePath_, options);
         }
         virtual std::string getFileExtensionWithDot() const override
         {
