@@ -160,7 +160,7 @@ namespace ApprovalTests
         static void verifyExistingFile(const std::string& filePath,
                                        const Options& options = Options())
         {
-            ExistingFile writer(filePath);
+            ExistingFile writer(filePath, options);
             FileApprover::verify(writer.getNamer(), writer, options.getReporter());
         }
 

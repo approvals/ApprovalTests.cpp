@@ -2,6 +2,7 @@
 
 #include <string>
 #include <utility>
+#include "ApprovalTests/core/Options.h"
 #include "ApprovalTests/namers/ExistingFileNamer.h"
 #include "ApprovalTests/core/ApprovalWriter.h"
 #include "ApprovalTests/utilities/FileUtils.h"
@@ -13,8 +14,9 @@ namespace ApprovalTests
         std::string filePath;
 
     public:
-        explicit ExistingFile(std::string filePath_) : filePath(std::move(filePath_))
+        explicit ExistingFile(std::string filePath_, const Options& /*options*/)
         {
+            filePath = std::move(filePath_);
         }
         virtual std::string getFileExtensionWithDot() const override
         {
