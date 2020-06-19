@@ -79,22 +79,6 @@ namespace ApprovalTests
         }
         ///@}
 
-        static void
-        verifyExceptionMessage(const std::function<void(void)>& functionThatThrows,
-                               const Options& options = Options())
-        {
-            std::string message = "*** no exception thrown ***";
-            try
-            {
-                functionThatThrows();
-            }
-            catch (const std::exception& e)
-            {
-                message = e.what();
-            }
-            verify(message, options);
-        }
-
         /**@name Verifying containers of objects
 
          See \userguide{TestingContainers,Testing Containers}
@@ -156,12 +140,32 @@ namespace ApprovalTests
         }
         ///@}
 
+        /**@name Other verify methods
+         */
+        ///@{
+        static void
+        verifyExceptionMessage(const std::function<void(void)>& functionThatThrows,
+                               const Options& options = Options())
+        {
+            std::string message = "*** no exception thrown ***";
+            try
+            {
+                functionThatThrows();
+            }
+            catch (const std::exception& e)
+            {
+                message = e.what();
+            }
+            verify(message, options);
+        }
+
         static void verifyExistingFile(const std::string& filePath,
                                        const Options& options = Options())
         {
             ExistingFile writer(filePath, options);
             FileApprover::verify(writer.getNamer(), writer, options.getReporter());
         }
+        ///@}
 
         /**@name Customising Approval Tests
 
