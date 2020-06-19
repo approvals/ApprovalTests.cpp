@@ -143,6 +143,11 @@ namespace ApprovalTests
         /**@name Other verify methods
          */
         ///@{
+
+        /*! \brief Verify the text of an exception
+
+            See \userguide{TestingExceptions,testing-exception-messages,Testing exception messages}
+         */
         static void
         verifyExceptionMessage(const std::function<void(void)>& functionThatThrows,
                                const Options& options = Options())
@@ -159,6 +164,7 @@ namespace ApprovalTests
             verify(message, options);
         }
 
+        /// Verify an existing file, that has already been written out
         static void verifyExistingFile(const std::string& filePath,
                                        const Options& options = Options())
         {
