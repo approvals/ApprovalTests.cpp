@@ -36,6 +36,11 @@ namespace ApprovalTests
             return DefaultNamerFactory::getDefaultNamer()();
         }
 
+        template <typename T>
+        using IsNotDerivedFromWriter =
+            typename std::enable_if<!std::is_base_of<ApprovalWriter, T>::value,
+                                    int>::type;
+
         /**@name Verifying single objects
 
          See \userguide{TestingSingleObjects,Testing Single Objects}
@@ -55,11 +60,6 @@ namespace ApprovalTests
         {
             FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
         }
-
-        template <typename T>
-        using IsNotDerivedFromWriter =
-            typename std::enable_if<!std::is_base_of<ApprovalWriter, T>::value,
-                                    int>::type;
 
         template <typename T, typename = IsNotDerivedFromWriter<T>>
         static void verify(const T& contents, const Options& options = Options())
