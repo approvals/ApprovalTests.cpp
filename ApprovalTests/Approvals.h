@@ -54,13 +54,6 @@ namespace ApprovalTests
             FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
         }
 
-        /// Note that this overload ignores any scrubber in options
-        static void verify(const ApprovalWriter& writer,
-                           const Options& options = Options())
-        {
-            FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
-        }
-
         template <typename T, typename = IsNotDerivedFromWriter<T>>
         static void verify(const T& contents, const Options& options = Options())
         {
@@ -76,6 +69,13 @@ namespace ApprovalTests
             std::stringstream s;
             converter(contents, s);
             verify(s.str(), options);
+        }
+
+        /// Note that this overload ignores any scrubber in options
+        static void verify(const ApprovalWriter& writer,
+                           const Options& options = Options())
+        {
+            FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
         }
         ///@}
 
