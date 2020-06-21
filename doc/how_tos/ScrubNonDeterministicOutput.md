@@ -16,6 +16,9 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Lambda example](#lambda-example)
   * [Pre-made Scrubbers](#pre-made-scrubbers)
     * [Regular Expressions (regex)](#regular-expressions-regex)
+      * [API for scrubbing with regex](#api-for-scrubbing-with-regex)
+      * [Using a regex search term](#using-a-regex-search-term)
+      * [Using a lambda for greater control of replacement text](#using-a-lambda-for-greater-control-of-replacement-text)
       * [See also](#see-also)
     * [GUID](#guid)<!-- endtoc -->
 
@@ -53,7 +56,11 @@ This would produce:
 
 ### Regular Expressions (regex)
 
+#### API for scrubbing with regex
+
 Approval Tests provides lots of [convenience methods](https://approvaltestscpp.readthedocs.io/en/latest/api/scrubbers.html) to scrub text based on regular expressions.
+
+#### Using a regex search term
 
 For example, here is an example where random numbers are scrubbed:
 
@@ -65,7 +72,7 @@ os << "Hello " << random(1000) << " World";
 Approvals::verify(os.str(),
                   Options(Scrubbers::createRegexScrubber(R"(\d+)", "[number]")));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L50-L55' title='File snippet `simple_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Navigate to start of snippet `simple_regex_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L51-L56' title='File snippet `simple_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Navigate to start of snippet `simple_regex_scrubbing`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This will produce:
@@ -81,6 +88,8 @@ Hello [number] World
 **Note**: In the above example, the caller passes in a `std::string`, and for convenience of the calling code, Approval Tests
 converts that to a `std::regex`. The calling code is responsible for making sure that the string contains a valid
 regular expression.
+
+#### Using a lambda for greater control of replacement text
 
 There are many combinations of these parameters, that allow for customization at whatever level you
 need, the most complex being:
@@ -103,7 +112,7 @@ auto scrubber =
         }
     });
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L22-L37' title='File snippet `complex_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Navigate to start of snippet `complex_regex_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L23-L38' title='File snippet `complex_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Navigate to start of snippet `complex_regex_scrubbing`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This will produce:

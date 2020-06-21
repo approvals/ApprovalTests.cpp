@@ -22,7 +22,11 @@ snippet: GuidScrubberTests.Scrubbing_via_Lambda.approved.txt
 
 ### Regular Expressions (regex)
 
+#### API for scrubbing with regex
+
 Approval Tests provides lots of [convenience methods](https://approvaltestscpp.readthedocs.io/en/latest/api/scrubbers.html) to scrub text based on regular expressions.
+
+#### Using a regex search term
 
 For example, here is an example where random numbers are scrubbed:
 
@@ -35,6 +39,8 @@ snippet: ScrubberTests.test_createRegexScrubber_with_string_input_and_fixed_resu
 **Note**: In the above example, the caller passes in a `std::string`, and for convenience of the calling code, Approval Tests
 converts that to a `std::regex`. The calling code is responsible for making sure that the string contains a valid
 regular expression.
+
+#### Using a lambda for greater control of replacement text
 
 There are many combinations of these parameters, that allow for customization at whatever level you
 need, the most complex being:
