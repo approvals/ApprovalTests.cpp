@@ -19,7 +19,6 @@ To change this file edit the source file and then execute ./run_markdown_templat
       * [API for scrubbing with regex](#api-for-scrubbing-with-regex)
       * [Using a regex search term](#using-a-regex-search-term)
       * [Using a lambda for greater control of replacement text](#using-a-lambda-for-greater-control-of-replacement-text)
-      * [Scrubbing date-and-time values](#scrubbing-date-and-time-values)
       * [See also](#see-also)
     * [GUID](#guid)<!-- endtoc -->
 
@@ -73,7 +72,7 @@ os << "Hello " << random(1000) << " World";
 Approvals::verify(os.str(),
                   Options(Scrubbers::createRegexScrubber(R"(\d+)", "[number]")));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L51-L56' title='File snippet `simple_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Navigate to start of snippet `simple_regex_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L50-L55' title='File snippet `simple_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Navigate to start of snippet `simple_regex_scrubbing`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This will produce:
@@ -113,7 +112,7 @@ auto scrubber =
         }
     });
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L23-L38' title='File snippet `complex_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Navigate to start of snippet `complex_regex_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L22-L37' title='File snippet `complex_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Navigate to start of snippet `complex_regex_scrubbing`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This will produce:
@@ -124,35 +123,6 @@ This will produce:
 1) Hello [number] World
 ```
 <sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.test_createRegexScrubber.approved.txt#L1-L1' title='File snippet `ScrubberTests.test_createRegexScrubber.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ScrubberTests.test_createRegexScrubber.approved.txt' title='Navigate to start of snippet `ScrubberTests.test_createRegexScrubber.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
-
-#### Scrubbing date-and-time values
-
-A common scenario is wanting to remove dates and times from output files. Here is an example of how to hand this, until we provide a built-in capability.
-
-<!-- snippet: scrubbing_date_and_time -->
-<a id='snippet-scrubbing_date_and_time'/></a>
-```cpp
-// Example of format that this matches:
-//  Tue Sep  3 16:58:52 2019
-const auto dateRegex = R"([A-Za-z]{3} [A-Za-z]{3} [\d ]\d \d\d:\d\d:\d\d \d\d\d\d)";
-
-Approvals::verify(
-    output.str(),
-    Options(Scrubbers::createRegexScrubber(dateRegex, "[date_and_time]")));
-```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L91-L99' title='File snippet `scrubbing_date_and_time` was extracted from'>snippet source</a> | <a href='#snippet-scrubbing_date_and_time' title='Navigate to start of snippet `scrubbing_date_and_time`'>anchor</a></sup>
-<!-- endsnippet -->
-
-This will produce:
-
-<!-- snippet: ScrubberTests.test_createRegexScrubber_with_date_and_time.approved.txt -->
-<a id='snippet-ScrubberTests.test_createRegexScrubber_with_date_and_time.approved.txt'/></a>
-```txt
-Today's date and time is [date_and_time]
-
-```
-<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.test_createRegexScrubber_with_date_and_time.approved.txt#L1-L2' title='File snippet `ScrubberTests.test_createRegexScrubber_with_date_and_time.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ScrubberTests.test_createRegexScrubber_with_date_and_time.approved.txt' title='Navigate to start of snippet `ScrubberTests.test_createRegexScrubber_with_date_and_time.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 #### See also

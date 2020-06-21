@@ -1,2 +1,0 @@
-Today's date and time is [date_and_time]
-

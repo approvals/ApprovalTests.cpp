@@ -51,16 +51,6 @@ This will produce:
 
 snippet: ScrubberTests.test_createRegexScrubber.approved.txt
 
-#### Scrubbing date-and-time values
-
-A common scenario is wanting to remove dates and times from output files. Here is an example of how to hand this, until we provide a built-in capability.
-
-snippet: scrubbing_date_and_time
-
-This will produce:
-
-snippet: ScrubberTests.test_createRegexScrubber_with_date_and_time.approved.txt
-
 #### See also
 
 * [API Reference for Scrubbers](https://approvaltestscpp.readthedocs.io/en/latest/api/scrubbers.html)

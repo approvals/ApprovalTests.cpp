@@ -6,7 +6,6 @@
 #include "ApprovalTests/reporters/QuietReporter.h"
 
 #include <cstdlib>
-#include <chrono>
 
 using namespace ApprovalTests;
 
@@ -77,29 +76,5 @@ TEST_CASE("regex scrubber with full customisation")
     };
     // begin-snippet: scrubber_in_options_object
     Approvals::verify(input, Options().withScrubber(scrubber));
-    // end-snippet
-}
-
-TEST_CASE("test createRegexScrubber with date and time")
-{
-    std::time_t now = std::time(nullptr);
-
-    char mbstr[100];
-    if (!std::strftime(mbstr, sizeof(mbstr), "%c", std::localtime(&now)))
-    {
-        throw std::runtime_error("Error converting date and time to string");
-    }
-
-    std::stringstream output;
-    output << "Today's date and time is " << mbstr << '\n';
-
-    // begin-snippet: scrubbing_date_and_time
-    // Example of format that this matches:
-    //  Tue Sep  3 16:58:52 2019
-    const auto dateRegex = R"([A-Za-z]{3} [A-Za-z]{3} [\d ]\d \d\d:\d\d:\d\d \d\d\d\d)";
-
-    Approvals::verify(
-        output.str(),
-        Options(Scrubbers::createRegexScrubber(dateRegex, "[date_and_time]")));
     // end-snippet
 }
