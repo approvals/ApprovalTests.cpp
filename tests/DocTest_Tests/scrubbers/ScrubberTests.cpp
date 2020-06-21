@@ -82,23 +82,16 @@ TEST_CASE("regex scrubber with full customisation")
 
 TEST_CASE("test createRegexScrubber with date and time")
 {
-    auto end = std::chrono::system_clock::now();
-    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+    std::time_t now = std::time(nullptr);
+
+    char mbstr[100];
+    if (!std::strftime(mbstr, sizeof(mbstr), "%c", std::localtime(&now)))
+    {
+        throw std::runtime_error("Error converting date and time to string");
+    }
 
     std::stringstream output;
-
-#if defined(_MSC_VER)
-#pragma warning(push)
-// Suppress: warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead.
-//                          To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-#pragma warning(disable : 4996)
-#endif
-
-    output << "Today's date and time is " << std::ctime(&end_time);
-
-#if defined(_MSC_VER)
-#pragma warning(pop)
-#endif
+    output << "Today's date and time is " << mbstr << '\n';
 
     // begin-snippet: scrubbing_date_and_time
     // Example of format that this matches:
