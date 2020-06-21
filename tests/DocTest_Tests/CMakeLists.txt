@@ -63,4 +63,18 @@ if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
             DEPENDENCIES ${PROJECT_NAME})
 endif ()
 
-include(WarningsAsErrors)
+if (UNIX)
+    # Temporarily don't treat warnings as errors on Windows until I can find a reliable
+    # way to fix this and a whole host of other C4996 messages for various date-and-time functions
+    # on Windows with the VC compiler and with clang-cl:
+    #
+    # C:\Code\ApprovalTests.cpp\tests\DocTest_Tests\scrubbers\ScrubberTests.cpp(90,57):
+    # error C2220: the following warning is treated as an error
+    #
+    # C:\Code\ApprovalTests.cpp\tests\DocTest_Tests\scrubbers\ScrubberTests.cpp(90,57):
+    # warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead.
+    #
+    # To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+
+    include(WarningsAsErrors)
+endif (UNIX)
