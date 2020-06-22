@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * ApprovalTests::verifyExistingFile() now supports scrubbers (#141)
+    * None
 * **Bug fixes**
     * None
 * **Other changes**
