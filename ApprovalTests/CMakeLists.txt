@@ -22,25 +22,17 @@ add_library(${PROJECT_NAME}
         core/Options.cpp
         core/Reporter.h
         integrations/CheckFileMacroIsAbsolute.h
-        integrations/CheckFileMacroIsAbsolute.cpp
         integrations/boost_test/BoostTestApprovals.h
-        integrations/boost_test/BoostTestApprovals.cpp
         integrations/catch/Catch2Approvals.h
-        integrations/catch/Catch2Approvals.cpp
         integrations/doctest/DocTestApprovals.h
-        integrations/doctest/DocTestApprovals.cpp
         integrations/fmt/FmtApprovals.h
-        integrations/fmt/FmtApprovals.cpp
         integrations/fmt/FmtToString.h
-        integrations/fmt/FmtToString.cpp
         integrations/google/GoogleConfiguration.h
         integrations/google/GoogleConfiguration.cpp
         integrations/google/GoogleCustomizationsFactory.h
         integrations/google/GoogleCustomizationsFactory.cpp
         integrations/google/GoogleTestApprovals.h
-        integrations/google/GoogleTestApprovals.cpp
         integrations/ut/UTApprovals.h
-        integrations/ut/UTApprovals.cpp
         launchers/CommandLauncher.h
         launchers/SystemLauncher.h
         launchers/SystemLauncher.cpp
