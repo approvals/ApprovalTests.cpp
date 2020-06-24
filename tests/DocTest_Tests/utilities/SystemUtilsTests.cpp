@@ -1,5 +1,6 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 
