@@ -23,7 +23,9 @@ snippet: add_reporter_macro
 
 * In the most common case, you will add a new implementation of `GenericDiffReporter`, that uses the `APPROVAL_TESTS_MACROS_ENTRY` you added in the first step.
 
-snippet: add_reporter_class
+snippet: add_reporter_class_header
+
+snippet: add_reporter_class_implementation
 
 * Scroll to the end of this file, and add an instance of the new reporter class to the `MacDiffReporter`
     * The reporters are searched in order, so more commonly-used or highly-featured ones should go nearer the start.
