@@ -4,6 +4,7 @@
 #include "ApprovalTestNamer.h"
 
 #include <memory>
+#include <functional>
 #include <utility>
 
 namespace ApprovalTests
