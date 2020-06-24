@@ -12,41 +12,17 @@ namespace ApprovalTests
     class ComparatorFactory
     {
     private:
-        static ComparatorContainer& comparators()
-        {
-            static ComparatorContainer allComparators;
-            return allComparators;
-        }
+        static ComparatorContainer& comparators();
 
     public:
         static ComparatorDisposer
         registerComparator(const std::string& extensionWithDot,
-                           std::shared_ptr<ApprovalComparator> comparator)
-        {
-            return ComparatorDisposer(
-                comparators(),
-                extensionWithDot,
-                getComparatorForFileExtensionWithDot(extensionWithDot),
-                comparator);
-        }
+                           std::shared_ptr<ApprovalComparator> comparator);
 
         static std::shared_ptr<ApprovalComparator>
-        getComparatorForFile(const std::string& receivedPath)
-        {
-            const std::string fileExtension =
-                FileUtils::getExtensionWithDot(receivedPath);
-            return getComparatorForFileExtensionWithDot(fileExtension);
-        }
+        getComparatorForFile(const std::string& receivedPath);
 
         static std::shared_ptr<ApprovalComparator>
-        getComparatorForFileExtensionWithDot(const std::string& fileExtensionWithDot)
-        {
-            auto iterator = comparators().find(fileExtensionWithDot);
-            if (iterator != comparators().end())
-            {
-                return iterator->second;
-            }
-            return std::make_shared<TextFileComparator>();
-        }
+        getComparatorForFileExtensionWithDot(const std::string& fileExtensionWithDot);
     };
 }
