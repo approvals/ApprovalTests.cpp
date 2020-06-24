@@ -121,9 +121,7 @@ add_library(${PROJECT_NAME}
         scrubbers/Scrubbers.h
         scrubbers/Scrubbers.cpp
         utilities/Blocker.h
-        utilities/Blocker.cpp
         utilities/CartesianProduct.h
-        utilities/CartesianProduct.cpp
         utilities/ExceptionCollector.h
         utilities/ExceptionCollector.cpp
         utilities/FileUtils.h
@@ -133,17 +131,14 @@ add_library(${PROJECT_NAME}
         utilities/MachineBlocker.h
         utilities/MachineBlocker.cpp
         utilities/Macros.h
-        utilities/Macros.cpp
         utilities/MoreHelpMessages.h
         utilities/MoreHelpMessages.cpp
         utilities/StringMaker.h
-        utilities/StringMaker.cpp
         utilities/StringUtils.h
         utilities/StringUtils.cpp
         utilities/SystemUtils.h
         utilities/SystemUtils.cpp
         utilities/WinMinGWUtils.h
-        utilities/WinMinGWUtils.cpp
         writers/ExistingFile.h
         writers/ExistingFile.cpp
         writers/StringWriter.h
