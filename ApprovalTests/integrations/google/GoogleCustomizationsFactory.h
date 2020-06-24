@@ -16,32 +16,12 @@ namespace ApprovalTests
 
     private:
         using ComparatorContainer = std::vector<Comparator>;
-        static ComparatorContainer& comparatorContainer()
-        {
-            static ComparatorContainer container;
-            if (container.empty())
-            {
-                auto exactNameMatching = [](const std::string& testFileNameWithExtension,
-                                            const std::string& testCaseName) {
-                    return StringUtils::contains(testFileNameWithExtension,
-                                                 testCaseName + ".");
-                };
-                container.push_back(exactNameMatching);
-            }
-            return container;
-        }
+        static ComparatorContainer& comparatorContainer();
 
     public:
-        static ComparatorContainer getEquivalencyChecks()
-        {
-            return comparatorContainer();
-        }
+        static ComparatorContainer getEquivalencyChecks();
 
         APPROVAL_TESTS_NO_DISCARD static bool
-        addTestCaseNameRedundancyCheck(const Comparator& comparator)
-        {
-            comparatorContainer().push_back(comparator);
-            return true;
-        }
+        addTestCaseNameRedundancyCheck(const Comparator& comparator);
     };
 }
