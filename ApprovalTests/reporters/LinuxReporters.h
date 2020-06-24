@@ -11,97 +11,55 @@ namespace ApprovalTests
         class SublimeMergeSnapReporter : public GenericDiffReporter
         {
         public:
-            SublimeMergeSnapReporter()
-                : GenericDiffReporter(DiffPrograms::Linux::SUBLIME_MERGE_SNAP())
-            {
-                launcher.setForeground(true);
-            }
+            SublimeMergeSnapReporter();
         };
 
         class SublimeMergeFlatpakReporter : public GenericDiffReporter
         {
         public:
-            SublimeMergeFlatpakReporter()
-                : GenericDiffReporter(DiffPrograms::Linux::SUBLIME_MERGE_FLATPAK())
-            {
-                launcher.setForeground(true);
-            }
+            SublimeMergeFlatpakReporter();
         };
 
         class SublimeMergeRepositoryPackageReporter : public GenericDiffReporter
         {
         public:
-            SublimeMergeRepositoryPackageReporter()
-                : GenericDiffReporter(
-                      DiffPrograms::Linux::SUBLIME_MERGE_REPOSITORY_PACKAGE())
-            {
-                launcher.setForeground(true);
-            }
+            SublimeMergeRepositoryPackageReporter();
         };
 
         class SublimeMergeDirectDownloadReporter : public GenericDiffReporter
         {
         public:
-            SublimeMergeDirectDownloadReporter()
-                : GenericDiffReporter(
-                      DiffPrograms::Linux::SUBLIME_MERGE_DIRECT_DOWNLOAD())
-            {
-                launcher.setForeground(true);
-            }
+            SublimeMergeDirectDownloadReporter();
         };
 
         class SublimeMergeReporter : public FirstWorkingReporter
         {
         public:
-            SublimeMergeReporter()
-                : FirstWorkingReporter({new SublimeMergeSnapReporter(),
-                                        new SublimeMergeFlatpakReporter(),
-                                        new SublimeMergeRepositoryPackageReporter(),
-                                        new SublimeMergeDirectDownloadReporter()})
-            {
-            }
+            SublimeMergeReporter();
         };
 
         class KDiff3Reporter : public GenericDiffReporter
         {
         public:
-            KDiff3Reporter() : GenericDiffReporter(DiffPrograms::Linux::KDIFF3())
-            {
-            }
+            KDiff3Reporter();
         };
 
         class MeldReporter : public GenericDiffReporter
         {
         public:
-            MeldReporter() : GenericDiffReporter(DiffPrograms::Linux::MELD())
-            {
-            }
+            MeldReporter();
         };
 
         class BeyondCompareReporter : public GenericDiffReporter
         {
         public:
-            BeyondCompareReporter()
-                : GenericDiffReporter(DiffPrograms::Linux::BEYOND_COMPARE())
-            {
-            }
+            BeyondCompareReporter();
         };
 
         class LinuxDiffReporter : public FirstWorkingReporter
         {
         public:
-            LinuxDiffReporter()
-                : FirstWorkingReporter({
-                      // begin-snippet: linux_diff_reporters
-                      new BeyondCompareReporter(),
-                      new MeldReporter(),
-                      new SublimeMergeReporter(),
-                      new KDiff3Reporter()
-                      // Note: ApprovalTests::Mac::CLionDiffReporter also works on Linux
-                      // end-snippet
-                  })
-            {
-            }
+            LinuxDiffReporter();
         };
     }
 }

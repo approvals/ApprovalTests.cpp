@@ -9,14 +9,6 @@ namespace ApprovalTests
     class AutoApproveIfMissingReporter : public Reporter
     {
     public:
-        bool report(std::string received, std::string approved) const override
-        {
-            if (FileUtils::fileExists(approved))
-            {
-                return false;
-            }
-
-            return AutoApproveReporter().report(received, approved);
-        }
+        bool report(std::string received, std::string approved) const override;
     };
 }

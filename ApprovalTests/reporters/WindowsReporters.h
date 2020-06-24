@@ -12,164 +12,101 @@ namespace ApprovalTests
         class VisualStudioCodeReporter : public GenericDiffReporter
         {
         public:
-            VisualStudioCodeReporter()
-                : GenericDiffReporter(DiffPrograms::Windows::VS_CODE())
-            {
-            }
+            VisualStudioCodeReporter();
         };
 
         // ----------------------- Beyond Compare ----------------------------------
         class BeyondCompare3Reporter : public GenericDiffReporter
         {
         public:
-            BeyondCompare3Reporter()
-                : GenericDiffReporter(DiffPrograms::Windows::BEYOND_COMPARE_3())
-            {
-            }
+            BeyondCompare3Reporter();
         };
 
         class BeyondCompare4Reporter : public GenericDiffReporter
         {
         public:
-            BeyondCompare4Reporter()
-                : GenericDiffReporter(DiffPrograms::Windows::BEYOND_COMPARE_4())
-            {
-            }
+            BeyondCompare4Reporter();
         };
 
         class BeyondCompareReporter : public FirstWorkingReporter
         {
         public:
-            BeyondCompareReporter()
-                : FirstWorkingReporter(
-                      {new BeyondCompare4Reporter(), new BeyondCompare3Reporter()})
-            {
-            }
+            BeyondCompareReporter();
         };
 
         // ----------------------- Tortoise SVN ------------------------------------
         class TortoiseImageDiffReporter : public GenericDiffReporter
         {
         public:
-            TortoiseImageDiffReporter()
-                : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_IMAGE_DIFF())
-            {
-            }
+            TortoiseImageDiffReporter();
         };
 
         class TortoiseTextDiffReporter : public GenericDiffReporter
         {
         public:
-            TortoiseTextDiffReporter()
-                : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_TEXT_DIFF())
-            {
-            }
+            TortoiseTextDiffReporter();
         };
 
         class TortoiseDiffReporter : public FirstWorkingReporter
         {
         public:
-            TortoiseDiffReporter()
-                : FirstWorkingReporter(
-                      {new TortoiseTextDiffReporter(), new TortoiseImageDiffReporter()})
-            {
-            }
+            TortoiseDiffReporter();
         };
 
         // ----------------------- Tortoise Git ------------------------------------
         class TortoiseGitTextDiffReporter : public GenericDiffReporter
         {
         public:
-            TortoiseGitTextDiffReporter()
-                : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_GIT_TEXT_DIFF())
-            {
-            }
+            TortoiseGitTextDiffReporter();
         };
 
         class TortoiseGitImageDiffReporter : public GenericDiffReporter
         {
         public:
-            TortoiseGitImageDiffReporter()
-                : GenericDiffReporter(DiffPrograms::Windows::TORTOISE_GIT_IMAGE_DIFF())
-            {
-            }
+            TortoiseGitImageDiffReporter();
         };
 
         class TortoiseGitDiffReporter : public FirstWorkingReporter
         {
         public:
-            TortoiseGitDiffReporter()
-                : FirstWorkingReporter({new TortoiseGitTextDiffReporter(),
-                                        new TortoiseGitImageDiffReporter()})
-            {
-            }
+            TortoiseGitDiffReporter();
         };
 
         // -------------------------------------------------------------------------
         class WinMergeReporter : public GenericDiffReporter
         {
         public:
-            WinMergeReporter()
-                : GenericDiffReporter(DiffPrograms::Windows::WIN_MERGE_REPORTER())
-            {
-            }
+            WinMergeReporter();
         };
 
         class AraxisMergeReporter : public GenericDiffReporter
         {
         public:
-            AraxisMergeReporter()
-                : GenericDiffReporter(DiffPrograms::Windows::ARAXIS_MERGE())
-            {
-            }
+            AraxisMergeReporter();
         };
 
         class CodeCompareReporter : public GenericDiffReporter
         {
         public:
-            CodeCompareReporter()
-                : GenericDiffReporter(DiffPrograms::Windows::CODE_COMPARE())
-            {
-            }
+            CodeCompareReporter();
         };
 
         class SublimeMergeReporter : public GenericDiffReporter
         {
         public:
-            SublimeMergeReporter()
-                : GenericDiffReporter(DiffPrograms::Windows::SUBLIME_MERGE())
-            {
-                launcher.setForeground(true);
-            }
+            SublimeMergeReporter();
         };
 
         class KDiff3Reporter : public GenericDiffReporter
         {
         public:
-            KDiff3Reporter() : GenericDiffReporter(DiffPrograms::Windows::KDIFF3())
-            {
-            }
+            KDiff3Reporter();
         };
 
         class WindowsDiffReporter : public FirstWorkingReporter
         {
         public:
-            WindowsDiffReporter()
-                : FirstWorkingReporter({
-                      // begin-snippet: windows_diff_reporters
-                      new TortoiseDiffReporter(), // Note that this uses Tortoise SVN Diff
-                      new TortoiseGitDiffReporter(),
-                      new BeyondCompareReporter(),
-                      new WinMergeReporter(),
-                      new AraxisMergeReporter(),
-                      new CodeCompareReporter(),
-                      new SublimeMergeReporter(),
-                      new KDiff3Reporter(),
-                      new VisualStudioCodeReporter(),
-                      // end-snippet
-                  })
-            {
-            }
+            WindowsDiffReporter();
         };
     }
 }

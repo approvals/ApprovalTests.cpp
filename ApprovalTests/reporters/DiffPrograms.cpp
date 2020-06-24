@@ -2,5 +2,5 @@
 
 namespace ApprovalTests
 {
-
+    // TODO Move these implementations from .h to .cpp, without repetition
 }

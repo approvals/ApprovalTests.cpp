@@ -2,5 +2,8 @@
 
 namespace ApprovalTests
 {
-
+    DefaultFrontLoadedReporter::DefaultFrontLoadedReporter()
+        : FirstWorkingReporter({new CIBuildOnlyReporter()})
+    {
+    }
 }

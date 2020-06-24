@@ -11,15 +11,8 @@ namespace ApprovalTests
         std::shared_ptr<Reporter> previous_result;
 
     public:
-        explicit FrontLoadedReporterDisposer(const std::shared_ptr<Reporter>& reporter)
-        {
-            previous_result = FrontLoadedReporterFactory::getFrontLoadedReporter();
-            FrontLoadedReporterFactory::setFrontLoadedReporter(reporter);
-        }
+        explicit FrontLoadedReporterDisposer(const std::shared_ptr<Reporter>& reporter);
 
-        ~FrontLoadedReporterDisposer()
-        {
-            FrontLoadedReporterFactory::setFrontLoadedReporter(previous_result);
-        }
+        ~FrontLoadedReporterDisposer();
     };
 }

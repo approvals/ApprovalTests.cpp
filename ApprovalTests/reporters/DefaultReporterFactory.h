@@ -12,22 +12,12 @@ namespace ApprovalTests
     {
         // begin-snippet: static_variable_sample
     private:
-        static std::shared_ptr<Reporter>& defaultReporter()
-        {
-            static std::shared_ptr<Reporter> reporter = std::make_shared<DiffReporter>();
-            return reporter;
-        }
+        static std::shared_ptr<Reporter>& defaultReporter();
 
     public:
-        static std::shared_ptr<Reporter> getDefaultReporter()
-        {
-            return defaultReporter();
-        }
+        static std::shared_ptr<Reporter> getDefaultReporter();
 
-        static void setDefaultReporter(const std::shared_ptr<Reporter>& reporter)
-        {
-            defaultReporter() = reporter;
-        }
+        static void setDefaultReporter(const std::shared_ptr<Reporter>& reporter);
         // end-snippet
     };
 }

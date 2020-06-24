@@ -10,10 +10,6 @@ namespace ApprovalTests
     class DefaultReporter : public Reporter
     {
     public:
-        virtual bool report(std::string received, std::string approved) const override
-        {
-            return DefaultReporterFactory::getDefaultReporter()->report(received,
-                                                                        approved);
-        }
+        virtual bool report(std::string received, std::string approved) const override;
     };
 }

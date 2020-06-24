@@ -8,11 +8,7 @@ namespace ApprovalTests
 {
     namespace CIBuildOnlyReporterUtils
     {
-        inline FrontLoadedReporterDisposer
-        useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
-        {
-            return Approvals::useAsFrontLoadedReporter(
-                std::make_shared<ApprovalTests::CIBuildOnlyReporter>(reporter));
-        }
+        FrontLoadedReporterDisposer
+        useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter);
     }
 } // namespace ApprovalTests

@@ -10,11 +10,6 @@ namespace ApprovalTests
     class DiffReporter : public FirstWorkingReporter
     {
     public:
-        DiffReporter()
-            : FirstWorkingReporter({new Mac::MacDiffReporter(),
-                                    new Linux::LinuxDiffReporter(),
-                                    new Windows::WindowsDiffReporter()})
-        {
-        }
+        DiffReporter();
     };
 }
