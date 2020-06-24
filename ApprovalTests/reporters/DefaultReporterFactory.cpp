@@ -1,6 +1,7 @@
 #include "ApprovalTests/reporters/DefaultReporterFactory.h"
 #include "ApprovalTests/reporters/DiffReporter.h"
 
+// begin-snippet: static_variable_sample_implementation
 namespace ApprovalTests
 {
     std::shared_ptr<Reporter>& DefaultReporterFactory::defaultReporter()
@@ -20,3 +21,4 @@ namespace ApprovalTests
         defaultReporter() = reporter;
     }
 }
+// end-snippet

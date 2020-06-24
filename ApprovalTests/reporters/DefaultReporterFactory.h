@@ -9,7 +9,7 @@ namespace ApprovalTests
     //! Implementation detail of Approvals::useAsDefaultReporter()
     class DefaultReporterFactory
     {
-        // begin-snippet: static_variable_sample
+        // begin-snippet: static_variable_sample_header
     private:
         static std::shared_ptr<Reporter>& defaultReporter();
 
