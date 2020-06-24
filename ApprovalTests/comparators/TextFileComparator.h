@@ -2,6 +2,9 @@
 
 #include "ApprovalTests/core/ApprovalComparator.h"
 
+#include <iostream>
+#include <fstream>
+
 namespace ApprovalTests
 {
     class TextFileComparator : public ApprovalComparator

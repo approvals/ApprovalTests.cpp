@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ApprovalTests/utilities/StringUtils.h"
+#include "ApprovalTests/utilities/Macros.h"
 
 #include <vector>
 #include <functional>
