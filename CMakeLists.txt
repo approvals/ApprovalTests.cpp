@@ -10,13 +10,12 @@ project(ApprovalTests.cpp)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/CMake/")
 include(ApprovalTestsOptions)
 include(UseCompilerCache)
+useCompilerCache()
 
 if (CMAKE_CXX_COMPILER_ID MATCHES ".*Clang" AND
         CMAKE_CXX_COMPILER_VERSION GREATER_EQUAL 9.0)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ftime-trace")
 endif ()
-
-useCompilerCache()
 
 add_subdirectory(ApprovalTests)
 
