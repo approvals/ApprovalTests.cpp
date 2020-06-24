@@ -2,13 +2,9 @@ project(ApprovalTests CXX)
 set(CMAKE_CXX_STANDARD 11)
 add_library(${PROJECT_NAME}
         ApprovalTestsVersion.h
-        ApprovalTestsVersion.cpp
         Approvals.h
-        Approvals.cpp
         ApprovalsMacroDefaults.h
-        ApprovalsMacroDefaults.cpp
         CombinationApprovals.h
-        CombinationApprovals.cpp
         comparators/ComparatorDisposer.h
         comparators/ComparatorDisposer.cpp
         comparators/ComparatorFactory.h
