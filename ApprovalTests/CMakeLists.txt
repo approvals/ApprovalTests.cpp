@@ -46,7 +46,6 @@ add_library(${PROJECT_NAME}
         integrations/ut/UTApprovals.h
         integrations/ut/UTApprovals.cpp
         launchers/CommandLauncher.h
-        launchers/CommandLauncher.cpp
         launchers/SystemLauncher.h
         launchers/SystemLauncher.cpp
         namers/ApprovalTestNamer.h
