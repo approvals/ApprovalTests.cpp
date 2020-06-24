@@ -81,7 +81,12 @@
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 
 #ifdef APPROVAL_TESTS_INCLUDE_CPPS
-#include "ApprovalTests/scrubbers/Scrubbers.cpp"
+// Commented out to fix duplicate-symbol linker errors during Unity builds
+// #include "ApprovalTests/scrubbers/Scrubbers.cpp"
+//
+// TODO Embed all .cpp files in here, in a consistent order, during releases
+//      or make inclusion of the .cpp files conditionally compiled
+//      during developer builds.
 #endif
 
 #endif // APPROVAL_TESTS_CPP_APPROVALS_HPP
