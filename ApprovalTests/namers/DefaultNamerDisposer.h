@@ -13,15 +13,8 @@ namespace ApprovalTests
         NamerCreator previous_result;
 
     public:
-        explicit DefaultNamerDisposer(NamerCreator namerCreator)
-        {
-            previous_result = DefaultNamerFactory::getDefaultNamer();
-            DefaultNamerFactory::setDefaultNamer(std::move(namerCreator));
-        }
+        explicit DefaultNamerDisposer(NamerCreator namerCreator);
 
-        ~DefaultNamerDisposer()
-        {
-            DefaultNamerFactory::setDefaultNamer(previous_result);
-        }
+        ~DefaultNamerDisposer();
     };
 }
