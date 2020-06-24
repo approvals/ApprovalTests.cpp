@@ -3,7 +3,6 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
-#include <stdio.h>
 
 // Can't move this to DocTests tests as it gives this compilation error:
 // In file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h:90,

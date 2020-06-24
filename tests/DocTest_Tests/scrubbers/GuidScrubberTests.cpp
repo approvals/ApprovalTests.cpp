@@ -3,7 +3,6 @@
 
 #include <iostream> // needed to fix linker error on XCode Release builds
 #include "ApprovalTests/Approvals.h"
-#include "ApprovalTests/reporters/QuietReporter.h"
 
 using namespace ApprovalTests;
 

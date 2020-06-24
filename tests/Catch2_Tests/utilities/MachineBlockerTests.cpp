@@ -1,7 +1,6 @@
 #include "catch2/catch.hpp"
 
 #include "ApprovalTests/utilities/SystemUtils.h"
-#include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/utilities/MachineBlocker.h"
 
 // Can't move this to DocTests tests as it gives this compilation error:

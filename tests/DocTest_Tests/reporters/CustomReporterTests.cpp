@@ -1,6 +1,5 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/Approvals.h"
-#include "ApprovalTests/writers/StringWriter.h"
 #include "ApprovalTests/reporters/CustomReporter.h"
 
 using namespace ApprovalTests;

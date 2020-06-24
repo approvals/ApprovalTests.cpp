@@ -4,8 +4,6 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/CombinationApprovals.h"
 
-#include <ostream>
-
 using namespace ApprovalTests;
 
 //----------------------------------------------------------------------------------------
