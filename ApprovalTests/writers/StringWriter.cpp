@@ -1,5 +1,6 @@
 #include "ApprovalTests/writers/StringWriter.h"
 
+#include <utility>
 #include <fstream>
 
 namespace ApprovalTests

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <utility>
 #include "ApprovalTests/core/ApprovalWriter.h"
 
 namespace ApprovalTests
