@@ -34,31 +34,45 @@ By way of an example, for supporting a new Reporter on macOS, the steps are:
 
 <!-- snippet: add_reporter_macro -->
 <a id='snippet-add_reporter_macro'/></a>
-```h
+```cpp
 APPROVAL_TESTS_MACROS_ENTRY(
     ARAXIS_MERGE,
     DiffInfo("/Applications/Araxis Merge.app/Contents/Utilities/compare",
              Type::TEXT_AND_IMAGE))
 ```
-<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L26-L31' title='File snippet `add_reporter_macro` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro' title='Navigate to start of snippet `add_reporter_macro`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DiffPrograms.cpp#L24-L29' title='File snippet `add_reporter_macro` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro' title='Navigate to start of snippet `add_reporter_macro`'>anchor</a></sup>
+<a id='snippet-add_reporter_macro-1'/></a>
+```h
+DiffInfo ARAXIS_MERGE();
+```
+<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L13-L15' title='File snippet `add_reporter_macro` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro-1' title='Navigate to start of snippet `add_reporter_macro`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Edit [ApprovalTests/reporters/MacReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/MacReporters.h)
 
 * In the most common case, you will add a new implementation of `GenericDiffReporter`, that uses the `APPROVAL_TESTS_MACROS_ENTRY` you added in the first step.
 
-<!-- snippet: add_reporter_class -->
-<a id='snippet-add_reporter_class'/></a>
+<!-- snippet: add_reporter_class_header -->
+<a id='snippet-add_reporter_class_header'/></a>
 ```h
 class AraxisMergeReporter : public GenericDiffReporter
 {
 public:
-    AraxisMergeReporter() : GenericDiffReporter(DiffPrograms::Mac::ARAXIS_MERGE())
-    {
-    }
+    AraxisMergeReporter();
 };
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.h#L19-L27' title='File snippet `add_reporter_class` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class' title='Navigate to start of snippet `add_reporter_class`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.h#L16-L22' title='File snippet `add_reporter_class_header` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class_header' title='Navigate to start of snippet `add_reporter_class_header`'>anchor</a></sup>
+<!-- endsnippet -->
+
+<!-- snippet: add_reporter_class_implementation -->
+<a id='snippet-add_reporter_class_implementation'/></a>
+```cpp
+Mac::AraxisMergeReporter::AraxisMergeReporter()
+    : GenericDiffReporter(DiffPrograms::Mac::ARAXIS_MERGE())
+{
+}
+```
+<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L12-L17' title='File snippet `add_reporter_class_implementation` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class_implementation' title='Navigate to start of snippet `add_reporter_class_implementation`'>anchor</a></sup>
 <!-- endsnippet -->
 
 * Scroll to the end of this file, and add an instance of the new reporter class to the `MacDiffReporter`
@@ -67,7 +81,7 @@ public:
 
 <!-- snippet: mac_diff_reporters -->
 <a id='snippet-mac_diff_reporters'/></a>
-```h
+```cpp
 new AraxisMergeReporter(),
 new BeyondCompareReporter(),
 new DiffMergeReporter(),
@@ -79,7 +93,7 @@ new TkDiffReporter(),
 new VisualStudioCodeReporter(),
 new CLionDiffReporter()
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.h#L104-L115' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L61-L72' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Edit [tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp)

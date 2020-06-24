@@ -37,7 +37,7 @@ Approvals::verify(
         [](const std::string& t) {return StringUtils::replaceAll(t, "3", "Fizz");}
     ));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L78-L84' title='File snippet `scrubbing_via_lambda` was extracted from'>snippet source</a> | <a href='#snippet-scrubbing_via_lambda' title='Navigate to start of snippet `scrubbing_via_lambda`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L77-L83' title='File snippet `scrubbing_via_lambda` was extracted from'>snippet source</a> | <a href='#snippet-scrubbing_via_lambda' title='Navigate to start of snippet `scrubbing_via_lambda`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This would produce:
@@ -72,7 +72,7 @@ os << "Hello " << random(1000) << " World";
 Approvals::verify(os.str(),
                   Options(Scrubbers::createRegexScrubber(R"(\d+)", "[number]")));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L50-L55' title='File snippet `simple_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Navigate to start of snippet `simple_regex_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L49-L54' title='File snippet `simple_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Navigate to start of snippet `simple_regex_scrubbing`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This will produce:
@@ -112,7 +112,7 @@ auto scrubber =
         }
     });
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L22-L37' title='File snippet `complex_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Navigate to start of snippet `complex_regex_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L21-L36' title='File snippet `complex_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Navigate to start of snippet `complex_regex_scrubbing`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This will produce:
@@ -161,7 +161,7 @@ std::string jsonFromRestCall = R"(
     )";
 Approvals::verify(jsonFromRestCall, Options().withScrubber(Scrubbers::scrubGuid));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L33-L52' title='File snippet `guid_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-guid_scrubbing' title='Navigate to start of snippet `guid_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L32-L51' title='File snippet `guid_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-guid_scrubbing' title='Navigate to start of snippet `guid_scrubbing`'>anchor</a></sup>
 <!-- endsnippet -->
 
 will produce:

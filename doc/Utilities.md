@@ -28,7 +28,7 @@ for (int i = 1; i <= 4; ++i)
 }
 exceptions.release(); // All errors actually thrown together here
 ```
-<sup><a href='/tests/DocTest_Tests/utilities/ExceptionCollectorTests.cpp#L25-L32' title='File snippet `exception_collector_template` was extracted from'>snippet source</a> | <a href='#snippet-exception_collector_template' title='Navigate to start of snippet `exception_collector_template`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/utilities/ExceptionCollectorTests.cpp#L24-L31' title='File snippet `exception_collector_template` was extracted from'>snippet source</a> | <a href='#snippet-exception_collector_template' title='Navigate to start of snippet `exception_collector_template`'>anchor</a></sup>
 <!-- endsnippet -->
 
 **Use with Approval Tests**: See [Approving multiple files in one test](/doc/MultipleOutputFilesPerTest.md#approving-multiple-files-in-one-test).
