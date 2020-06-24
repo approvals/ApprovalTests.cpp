@@ -1,4 +1,5 @@
 #include "ApprovalTests/reporters/DefaultReporterFactory.h"
+#include "ApprovalTests/reporters/DiffReporter.h"
 
 namespace ApprovalTests
 {

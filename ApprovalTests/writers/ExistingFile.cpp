@@ -1,4 +1,5 @@
 #include "ApprovalTests/writers/ExistingFile.h"
+#include "ApprovalTests/utilities/FileUtils.h"
 
 namespace ApprovalTests
 {

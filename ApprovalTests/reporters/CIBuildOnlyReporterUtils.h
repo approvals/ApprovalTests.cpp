@@ -2,7 +2,6 @@
 
 #include "ApprovalTests/reporters/QuietReporter.h"
 #include "ApprovalTests/reporters/FrontLoadedReporterDisposer.h"
-#include "ApprovalTests/Approvals.h"
 
 namespace ApprovalTests
 {

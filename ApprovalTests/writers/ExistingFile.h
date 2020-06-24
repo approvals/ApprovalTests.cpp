@@ -1,12 +1,9 @@
 #pragma once
 
-#include <string>
 #include <utility>
-#include <fstream>
 #include "ApprovalTests/core/Options.h"
 #include "ApprovalTests/namers/ExistingFileNamer.h"
 #include "ApprovalTests/core/ApprovalWriter.h"
-#include "ApprovalTests/utilities/FileUtils.h"
 
 namespace ApprovalTests
 {

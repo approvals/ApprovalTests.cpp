@@ -3,7 +3,6 @@
 #include "ApprovalTests/utilities/Macros.h"
 
 #include <string>
-#include <utility>
 
 namespace ApprovalTests
 {

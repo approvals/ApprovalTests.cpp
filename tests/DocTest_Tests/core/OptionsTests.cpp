@@ -1,6 +1,7 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/core/Options.h"
 
+#include "ApprovalTests/reporters/DiffReporter.h"
 #include "ApprovalTests/reporters/QuietReporter.h"
 #include "ApprovalTests/Approvals.h"
 

@@ -1,4 +1,6 @@
 #include "ApprovalTests/reporters/CIBuildOnlyReporterUtils.h"
+#include "ApprovalTests/reporters/CIBuildOnlyReporter.h"
+#include "ApprovalTests/Approvals.h"
 
 namespace ApprovalTests
 {

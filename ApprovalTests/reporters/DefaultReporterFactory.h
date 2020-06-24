@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ApprovalTests/core/Reporter.h"
-#include "DiffReporter.h"
 
 #include <memory>
 
