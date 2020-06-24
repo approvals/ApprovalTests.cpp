@@ -14,7 +14,9 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Adding a new Mac reporter](#adding-a-new-mac-reporter)
     * [Edit ApprovalTests/reporters/DiffPrograms.h](#edit-approvaltestsreportersdiffprogramsh)
+    * [Edit ApprovalTests/reporters/DiffPrograms.cpp](#edit-approvaltestsreportersdiffprogramscpp)
     * [Edit ApprovalTests/reporters/MacReporters.h](#edit-approvaltestsreportersmacreportersh)
+    * [Edit ApprovalTests/reporters/MacReporters.cpp](#edit-approvaltestsreportersmacreporterscpp)
     * [Edit tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](#edit-testsdoctest_testsreporterscommandlinereportertestscpp)
   * [Adding a new Windows reporter](#adding-a-new-windows-reporter)
   * [Adding a new Linux reporter](#adding-a-new-linux-reporter)<!-- endtoc -->
@@ -29,28 +31,36 @@ By way of an example, for supporting a new Reporter on macOS, the steps are:
 
 ### Edit [ApprovalTests/reporters/DiffPrograms.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/DiffPrograms.h)
 
-* Add a new `APPROVAL_TESTS_MACROS_ENTRY` value to the `Mac` namespace.
+* Add a declaration for the new function to the `Mac` namespace.
 * If you are adding a tool that is already supported on an existing platform, please try to be consistent with naming.
 
-<!-- snippet: add_reporter_macro -->
-<a id='snippet-add_reporter_macro'/></a>
+<!-- snippet: add_reporter_macro_header -->
+<a id='snippet-add_reporter_macro_header'/></a>
+```h
+DiffInfo ARAXIS_MERGE();
+```
+<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L13-L15' title='File snippet `add_reporter_macro_header` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro_header' title='Navigate to start of snippet `add_reporter_macro_header`'>anchor</a></sup>
+<!-- endsnippet -->
+
+### Edit [ApprovalTests/reporters/DiffPrograms.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/DiffPrograms.cpp)
+
+* Add a new `APPROVAL_TESTS_MACROS_ENTRY` value to the `Mac` namespace, to create the definition for the new function.
+
+<!-- snippet: add_reporter_macro_implementation -->
+<a id='snippet-add_reporter_macro_implementation'/></a>
 ```cpp
 APPROVAL_TESTS_MACROS_ENTRY(
     ARAXIS_MERGE,
     DiffInfo("/Applications/Araxis Merge.app/Contents/Utilities/compare",
              Type::TEXT_AND_IMAGE))
 ```
-<sup><a href='/ApprovalTests/reporters/DiffPrograms.cpp#L24-L29' title='File snippet `add_reporter_macro` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro' title='Navigate to start of snippet `add_reporter_macro`'>anchor</a></sup>
-<a id='snippet-add_reporter_macro-1'/></a>
-```h
-DiffInfo ARAXIS_MERGE();
-```
-<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L13-L15' title='File snippet `add_reporter_macro` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro-1' title='Navigate to start of snippet `add_reporter_macro`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DiffPrograms.cpp#L24-L29' title='File snippet `add_reporter_macro_implementation` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro_implementation' title='Navigate to start of snippet `add_reporter_macro_implementation`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Edit [ApprovalTests/reporters/MacReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/MacReporters.h)
 
-* In the most common case, you will add a new implementation of `GenericDiffReporter`, that uses the `APPROVAL_TESTS_MACROS_ENTRY` you added in the first step.
+* Add a declaration for the new reporter.
+* In the most common case, this will be a new implementation of `GenericDiffReporter`
 
 <!-- snippet: add_reporter_class_header -->
 <a id='snippet-add_reporter_class_header'/></a>
@@ -63,6 +73,11 @@ public:
 ```
 <sup><a href='/ApprovalTests/reporters/MacReporters.h#L16-L22' title='File snippet `add_reporter_class_header` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class_header' title='Navigate to start of snippet `add_reporter_class_header`'>anchor</a></sup>
 <!-- endsnippet -->
+
+### Edit [ApprovalTests/reporters/MacReporters.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/MacReporters.cpp)
+
+* Add a definition for the new reporter.
+* This will use the `APPROVAL_TESTS_MACROS_ENTRY` you added in the first step.
 
 <!-- snippet: add_reporter_class_implementation -->
 <a id='snippet-add_reporter_class_implementation'/></a>
@@ -122,11 +137,17 @@ std::make_shared<Mac::CLionDiffReporter>(),
 
 ## Adding a new Windows reporter
 
-The steps are the same as above, except that in the second step, you will edit [ApprovalTests/reporters/WindowsReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/WindowsReporters.h).
+The steps are the same as above, except that in the second step, you will edit:
+ 
+* [ApprovalTests/reporters/WindowsReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/WindowsReporters.h)
+* [ApprovalTests/reporters/WindowsReporters.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/WindowsReporters.cpp)
 
 ## Adding a new Linux reporter
 
-The steps are the same as above, except that in the second step, you will edit [ApprovalTests/reporters/LinuxReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/LinuxReporters.h).
+The steps are the same as above, except that in the second step, you will edit:
+
+* [ApprovalTests/reporters/LinuxReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/LinuxReporters.h)
+* [ApprovalTests/reporters/LinuxReporters.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/LinuxReporters.cpp)
 
 
 ---

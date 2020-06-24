@@ -21,7 +21,7 @@ namespace ApprovalTests
                          "{Received} {Approved} -nosplash",
                          Type::TEXT))
 
-            // begin-snippet: add_reporter_macro
+            // begin-snippet: add_reporter_macro_implementation
             APPROVAL_TESTS_MACROS_ENTRY(
                 ARAXIS_MERGE,
                 DiffInfo("/Applications/Araxis Merge.app/Contents/Utilities/compare",

@@ -10,7 +10,7 @@ namespace ApprovalTests
         {
             DiffInfo DIFF_MERGE();
 
-            // begin-snippet: add_reporter_macro
+            // begin-snippet: add_reporter_macro_header
             DiffInfo ARAXIS_MERGE();
             // end-snippet
 
