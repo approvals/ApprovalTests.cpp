@@ -3,6 +3,7 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 
 #ifdef APPROVALS_UT
+#define APPROVAL_TESTS_INCLUDE_CPPS
 
 #if !(__GNUC__ >= 9 or __clang_major__ >= 9)
 #error                                                                                   \

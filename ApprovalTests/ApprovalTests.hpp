@@ -80,4 +80,8 @@
 #include "ApprovalTests/reporters/CombinationReporter.h"
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 
+#ifdef APPROVAL_TESTS_INCLUDE_CPPS
+#include "ApprovalTests/scrubbers/Scrubbers.cpp"
+#endif
+
 #endif // APPROVAL_TESTS_CPP_APPROVALS_HPP
