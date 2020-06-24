@@ -1,6 +1,9 @@
 #include "ApprovalTests/utilities/FileUtils.h"
+#include "ApprovalTests/writers/StringWriter.h"
 
 #include <fstream>
+#include <sys/stat.h>
+#include <sstream>
 
 namespace ApprovalTests
 {

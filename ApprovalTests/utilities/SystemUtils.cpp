@@ -1,5 +1,7 @@
 #include "ApprovalTests/utilities/SystemUtils.h"
 
+#include <sys/stat.h>
+
 namespace ApprovalTests
 {
     bool SystemUtils::isWindowsOs()
