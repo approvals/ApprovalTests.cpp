@@ -34,15 +34,15 @@ namespace ApprovalTests
                                             const Scrubbers::RegexReplacer& replacer)
     {
         return [=](const std::string& input) {
-          return scrubRegex(input, regexPattern, replacer);
+            return scrubRegex(input, regexPattern, replacer);
         };
     }
 
     Scrubber Scrubbers::createRegexScrubber(const std::regex& regexPattern,
                                             const std::string& replacementText)
     {
-        return createRegexScrubber(
-            regexPattern, [=](const RegexMatch&) { return replacementText; });
+        return createRegexScrubber(regexPattern,
+                                   [=](const RegexMatch&) { return replacementText; });
     }
 
     Scrubber Scrubbers::createRegexScrubber(const std::string& regexString,
@@ -59,13 +59,13 @@ namespace ApprovalTests
         int matchNumber = 0;
         std::map<std::string, int> matchIndices;
         return scrubRegex(input, regex, [&](const RegexMatch& m) {
-          auto guid_match = m.str();
+            auto guid_match = m.str();
 
-          if (matchIndices[guid_match] == 0)
-          {
-              matchIndices[guid_match] = ++matchNumber;
-          }
-          return "guid_" + std::to_string(matchIndices[guid_match]);
+            if (matchIndices[guid_match] == 0)
+            {
+                matchIndices[guid_match] = ++matchNumber;
+            }
+            return "guid_" + std::to_string(matchIndices[guid_match]);
         });
     }
 }
