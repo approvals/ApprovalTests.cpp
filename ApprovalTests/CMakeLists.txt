@@ -16,19 +16,15 @@ add_library(${PROJECT_NAME}
         comparators/TextFileComparator.h
         comparators/TextFileComparator.cpp
         core/ApprovalComparator.h
-        core/ApprovalComparator.cpp
         core/ApprovalException.h
         core/ApprovalException.cpp
         core/ApprovalNamer.h
-        core/ApprovalNamer.cpp
         core/ApprovalWriter.h
-        core/ApprovalWriter.cpp
         core/FileApprover.h
         core/FileApprover.cpp
         core/Options.h
         core/Options.cpp
         core/Reporter.h
-        core/Reporter.cpp
         integrations/CheckFileMacroIsAbsolute.h
         integrations/CheckFileMacroIsAbsolute.cpp
         integrations/boost_test/BoostTestApprovals.h

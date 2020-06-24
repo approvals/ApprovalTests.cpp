@@ -34,67 +34,21 @@ namespace ApprovalTests
          */
         static ComparatorDisposer
         registerComparatorForExtension(const std::string& extensionWithDot,
-                                       std::shared_ptr<ApprovalComparator> comparator)
-        {
-            return ComparatorFactory::registerComparator(extensionWithDot, comparator);
-        }
+                                       std::shared_ptr<ApprovalComparator> comparator);
 
         //! This overload is an implementation detail. To add a new comparator, use registerComparatorForExtension().
         static void verify(const std::string& receivedPath,
                            const std::string& approvedPath,
-                           const ApprovalComparator& comparator)
-        {
-            if (!FileUtils::fileExists(approvedPath))
-            {
-                throw ApprovalMissingException(receivedPath, approvedPath);
-            }
-
-            if (!FileUtils::fileExists(receivedPath))
-            {
-                throw ApprovalMissingException(approvedPath, receivedPath);
-            }
-
-            if (!comparator.contentsAreEquivalent(receivedPath, approvedPath))
-            {
-                throw ApprovalMismatchException(receivedPath, approvedPath);
-            }
-        }
+                           const ApprovalComparator& comparator);
 
         static void verify(const std::string& receivedPath,
-                           const std::string& approvedPath)
-        {
-            verify(receivedPath,
-                   approvedPath,
-                   *ComparatorFactory::getComparatorForFile(receivedPath));
-        }
+                           const std::string& approvedPath);
 
         static void
-        verify(const ApprovalNamer& n, const ApprovalWriter& s, const Reporter& r)
-        {
-            std::string approvedPath = n.getApprovedFile(s.getFileExtensionWithDot());
-            std::string receivedPath = n.getReceivedFile(s.getFileExtensionWithDot());
-            s.write(receivedPath);
-            try
-            {
-                verify(receivedPath, approvedPath);
-                s.cleanUpReceived(receivedPath);
-            }
-            catch (const ApprovalException&)
-            {
-                reportAfterTryingFrontLoadedReporter(receivedPath, approvedPath, r);
-                throw;
-            }
-        }
+        verify(const ApprovalNamer& n, const ApprovalWriter& s, const Reporter& r);
 
         static void reportAfterTryingFrontLoadedReporter(const std::string& receivedPath,
                                                          const std::string& approvedPath,
-                                                         const Reporter& r)
-        {
-            auto tryFirst = FrontLoadedReporterFactory::getFrontLoadedReporter();
-            if (!tryFirst->report(receivedPath, approvedPath))
-            {
-                r.report(receivedPath, approvedPath);
-            }
-        }
+                                                         const Reporter& r);
     };
 }
