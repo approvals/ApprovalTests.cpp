@@ -1,4 +1,5 @@
 #include "ApprovalTests/namers/SubdirectoryDisposer.h"
+#include "ApprovalTestNamer.h"
 
 namespace ApprovalTests
 {

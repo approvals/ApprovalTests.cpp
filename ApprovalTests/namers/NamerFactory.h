@@ -1,6 +1,5 @@
 #pragma once
 
-#include "ApprovalTestNamer.h"
 #include "SectionNameDisposer.h"
 
 #include <string>

@@ -4,7 +4,6 @@
 #include "CommandReporter.h"
 #include "ApprovalTests/launchers/SystemLauncher.h"
 #include <string>
-#include <vector>
 
 namespace ApprovalTests
 {

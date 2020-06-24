@@ -5,7 +5,7 @@
 
 #include "scrubbers/Scrubbers.h"
 #include "core/Reporter.h"
-#include "reporters/DefaultReporter.h"
+#include "utilities/Macros.h"
 
 namespace ApprovalTests
 {

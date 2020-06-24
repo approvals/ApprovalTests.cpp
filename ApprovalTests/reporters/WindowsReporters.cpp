@@ -1,5 +1,7 @@
 #include "ApprovalTests/reporters/WindowsReporters.h"
 
+#include "DiffPrograms.h"
+
 namespace ApprovalTests
 {
 

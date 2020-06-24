@@ -1,11 +1,9 @@
 #pragma once
 
 #include "ApprovalTests/core/ApprovalNamer.h"
-#include "ApprovalTestNamer.h"
 
 #include <memory>
 #include <functional>
-#include <utility>
 
 namespace ApprovalTests
 {

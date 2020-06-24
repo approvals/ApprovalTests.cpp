@@ -1,5 +1,7 @@
 #include "ApprovalTests/reporters/MacReporters.h"
 
+#include "DiffPrograms.h"
+
 namespace ApprovalTests
 {
     Mac::DiffMergeReporter::DiffMergeReporter()

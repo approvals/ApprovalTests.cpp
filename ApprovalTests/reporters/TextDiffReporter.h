@@ -1,11 +1,8 @@
 #pragma once
 
 #include "core/Reporter.h"
-#include "reporters/CustomReporter.h"
-#include "reporters/FirstWorkingReporter.h"
 
 #include <memory>
-#include <iostream>
 
 namespace ApprovalTests
 {

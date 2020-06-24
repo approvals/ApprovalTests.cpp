@@ -1,10 +1,8 @@
 #pragma once
 
 #include "ApprovalTests/core/Reporter.h"
-#include "ApprovalTests/utilities/SystemUtils.h"
 #include "ApprovalTests/reporters/TextDiffReporter.h"
 
-#include <vector>
 #include <memory>
 
 namespace ApprovalTests

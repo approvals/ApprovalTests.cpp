@@ -1,4 +1,6 @@
 #include "ApprovalTests/comparators/ComparatorFactory.h"
+#include "ApprovalTests/utilities/FileUtils.h"
+#include "TextFileComparator.h"
 
 namespace ApprovalTests
 {

@@ -1,4 +1,5 @@
 #include "ApprovalTests/reporters/ClipboardReporter.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 
 namespace ApprovalTests
 {

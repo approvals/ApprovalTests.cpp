@@ -1,4 +1,8 @@
 #include "ApprovalTests/reporters/TextDiffReporter.h"
+#include "ApprovalTests/reporters/CustomReporter.h"
+#include "ApprovalTests/reporters/FirstWorkingReporter.h"
+
+#include <iostream>
 
 namespace ApprovalTests
 {

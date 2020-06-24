@@ -1,4 +1,5 @@
 #include "ApprovalTests/namers/HelpMessages.h"
+#include "ApprovalTests/utilities/StringUtils.h"
 
 namespace ApprovalTests
 {

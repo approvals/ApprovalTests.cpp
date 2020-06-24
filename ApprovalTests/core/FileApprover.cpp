@@ -1,4 +1,7 @@
 #include "ApprovalTests/core/FileApprover.h"
+#include "ApprovalTests/utilities/FileUtils.h"
+#include "ApprovalTests/reporters/FrontLoadedReporterFactory.h"
+#include "ApprovalException.h"
 
 namespace ApprovalTests
 {

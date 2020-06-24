@@ -1,5 +1,7 @@
 #include "ApprovalTests/utilities/FileUtils.h"
 
+#include <fstream>
+
 namespace ApprovalTests
 {
     bool FileUtils::fileExists(const std::string& path)

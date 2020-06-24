@@ -4,6 +4,7 @@
 #include <exception>
 #include <utility>
 
+#include "ApprovalTests/reporters/FrontLoadedReporterDisposer.h"
 #include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/core/FileApprover.h"
 #include "reporters/DefaultReporter.h"

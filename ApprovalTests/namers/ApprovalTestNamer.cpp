@@ -1,4 +1,9 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "ApprovalTests/namers/HelpMessages.h"
+#include "ApprovalTests/utilities/FileUtils.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
+
+#include <iostream>
 
 namespace ApprovalTests
 {

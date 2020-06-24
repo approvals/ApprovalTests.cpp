@@ -1,11 +1,8 @@
 
 #pragma once
 
-#include <cstdlib>
 #include <string>
 #include "ApprovalTests/utilities/SystemUtils.h"
-#include "ApprovalTests/utilities/FileUtils.h"
-#include <vector>
 #include "CommandLauncher.h"
 
 namespace ApprovalTests

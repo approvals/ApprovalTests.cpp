@@ -2,9 +2,7 @@
 
 #include <memory>
 #include "ApprovalTests/core/ApprovalComparator.h"
-#include "ApprovalTests/comparators/TextFileComparator.h"
 #include "ApprovalTests/comparators/ComparatorDisposer.h"
-#include "ApprovalTests/utilities/FileUtils.h"
 
 namespace ApprovalTests
 {

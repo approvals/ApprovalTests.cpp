@@ -2,7 +2,6 @@
 
 #include <utility>
 #include "ApprovalTests/core/ApprovalNamer.h"
-#include "DefaultNamerFactory.h"
 
 namespace ApprovalTests
 {

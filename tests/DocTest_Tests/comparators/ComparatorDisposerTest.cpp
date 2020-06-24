@@ -1,5 +1,7 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/comparators/ComparatorDisposer.h"
+#include "ApprovalTests/core/ApprovalException.h"
+
 #include "Approvals.h"
 #include <fstream>
 #include <iterator>

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "DiffPrograms.h"
 #include "FirstWorkingReporter.h"
 #include "GenericDiffReporter.h"
 

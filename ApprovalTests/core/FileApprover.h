@@ -1,14 +1,11 @@
 #pragma once
 
 #include <memory>
-#include "ApprovalException.h"
 #include "ApprovalTests/writers/StringWriter.h"
 #include "Reporter.h"
-#include "ApprovalTests/reporters/FrontLoadedReporterDisposer.h"
 #include "ApprovalTests/core/ApprovalNamer.h"
 #include "ApprovalComparator.h"
 #include "ApprovalTests/comparators/ComparatorFactory.h"
-#include "ApprovalTests/utilities/FileUtils.h"
 
 namespace ApprovalTests
 {

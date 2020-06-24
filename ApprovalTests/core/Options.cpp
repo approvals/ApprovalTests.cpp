@@ -1,4 +1,5 @@
 #include "ApprovalTests/core/Options.h"
+#include "ApprovalTests/reporters/DefaultReporter.h"
 
 namespace ApprovalTests
 {

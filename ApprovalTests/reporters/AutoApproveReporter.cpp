@@ -1,4 +1,7 @@
 #include "ApprovalTests/reporters/AutoApproveReporter.h"
+#include "ApprovalTests/utilities/FileUtilsSystemSpecific.h"
+
+#include <iostream>
 
 namespace ApprovalTests
 {

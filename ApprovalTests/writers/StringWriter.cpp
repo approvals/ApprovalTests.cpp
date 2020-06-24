@@ -1,5 +1,7 @@
 #include "ApprovalTests/writers/StringWriter.h"
 
+#include <fstream>
+
 namespace ApprovalTests
 {
     StringWriter::StringWriter(std::string contents, std::string fileExtensionWithDot)

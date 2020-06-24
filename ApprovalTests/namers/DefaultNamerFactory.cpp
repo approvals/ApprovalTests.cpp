@@ -1,4 +1,5 @@
 #include "ApprovalTests/namers/DefaultNamerFactory.h"
+#include "ApprovalTestNamer.h"
 
 namespace ApprovalTests
 {

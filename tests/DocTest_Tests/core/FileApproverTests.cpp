@@ -2,6 +2,7 @@
 #include "ApprovalTests/writers/StringWriter.h"
 #include "../../DocTest_Tests/reporters/TestReporter.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "ApprovalTests/core/ApprovalException.h"
 #include "ApprovalTests/core/FileApprover.h"
 #include "ApprovalTests/Approvals.h"
 

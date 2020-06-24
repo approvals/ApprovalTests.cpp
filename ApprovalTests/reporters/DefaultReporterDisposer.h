@@ -1,6 +1,7 @@
 #pragma once
 
 #include "DefaultReporterFactory.h"
+#include "ApprovalTests/utilities/Macros.h"
 
 namespace ApprovalTests
 {

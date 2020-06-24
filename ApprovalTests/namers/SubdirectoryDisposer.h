@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ApprovalTestNamer.h"
+#include "ApprovalTests/utilities/Macros.h"
 
 #include <string>
 #include <utility>

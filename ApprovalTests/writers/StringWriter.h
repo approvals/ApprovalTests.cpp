@@ -1,8 +1,5 @@
 #pragma once
 
-#include <string>
-#include <fstream>
-#include <stdexcept>
 #include <utility>
 #include "ApprovalTests/core/ApprovalWriter.h"
 

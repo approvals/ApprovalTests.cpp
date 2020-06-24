@@ -2,9 +2,7 @@
 
 #include <utility>
 #include <memory>
-#include <numeric>
 #include "ApprovalTests/launchers/CommandLauncher.h"
-#include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/core/Reporter.h"
 #include "ConvertForCygwin.h"
 #include "DiffInfo.h"

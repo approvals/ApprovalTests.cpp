@@ -1,6 +1,5 @@
 #pragma once
 
-#include <utility>
 #include "DefaultNamerFactory.h"
 #include "ApprovalTests/utilities/Macros.h"
 

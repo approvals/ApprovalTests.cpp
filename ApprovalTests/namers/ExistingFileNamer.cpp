@@ -1,4 +1,5 @@
 #include "ApprovalTests/namers/ExistingFileNamer.h"
+#include "DefaultNamerFactory.h"
 
 namespace ApprovalTests
 {

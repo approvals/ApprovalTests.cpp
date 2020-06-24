@@ -1,5 +1,9 @@
 #include "ApprovalTests/reporters/DiffReporter.h"
 
+#include "WindowsReporters.h"
+#include "MacReporters.h"
+#include "LinuxReporters.h"
+
 namespace ApprovalTests
 {
     DiffReporter::DiffReporter()

@@ -1,4 +1,5 @@
 #include "ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 
 namespace ApprovalTests
 {

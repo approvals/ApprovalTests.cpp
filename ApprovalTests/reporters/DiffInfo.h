@@ -3,9 +3,6 @@
 #include <string>
 #include <utility>
 #include <vector>
-#include "ApprovalTests/utilities/FileUtils.h"
-#include "ApprovalTests/utilities/StringUtils.h"
-#include "ApprovalTests/utilities/SystemUtils.h"
 
 namespace ApprovalTests
 {

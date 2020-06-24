@@ -1,5 +1,7 @@
 #include "ApprovalTests/core/ApprovalException.h"
 
+#include <sstream>
+
 namespace ApprovalTests
 {
     ApprovalException::ApprovalException(const std::string& msg) : message(msg)
