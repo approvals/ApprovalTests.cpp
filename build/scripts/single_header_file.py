@@ -28,7 +28,7 @@ class SingleHeaderFile(object):
         return output_file
 
     @staticmethod
-    def create_content(directory: str, project_details: ProjectDetails, include_cpps: bool):
+    def create_content(directory: str, project_details: ProjectDetails, include_cpps: bool) -> str:
         files = SingleHeaderFile.get_all_files(directory, '.h')
         files = SingleHeaderFile.sort_by_dependencies(files)
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
