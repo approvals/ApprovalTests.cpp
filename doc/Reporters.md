@@ -46,7 +46,7 @@ new TkDiffReporter(),
 new VisualStudioCodeReporter(),
 new CLionDiffReporter()
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L61-L72' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L63-L74' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Linux
@@ -60,7 +60,7 @@ new SublimeMergeReporter(),
 new KDiff3Reporter()
 // Note: ApprovalTests::Mac::CLionDiffReporter also works on Linux
 ```
-<sup><a href='/ApprovalTests/reporters/LinuxReporters.cpp#L53-L59' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/LinuxReporters.cpp#L55-L61' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Windows
@@ -78,7 +78,7 @@ new SublimeMergeReporter(),
 new KDiff3Reporter(),
 new VisualStudioCodeReporter(),
 ```
-<sup><a href='/ApprovalTests/reporters/WindowsReporters.cpp#L93-L103' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/WindowsReporters.cpp#L94-L104' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Registering a default reporter

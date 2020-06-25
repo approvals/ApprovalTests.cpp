@@ -82,12 +82,12 @@ public:
 <!-- snippet: add_reporter_class_implementation -->
 <a id='snippet-add_reporter_class_implementation'/></a>
 ```cpp
-Mac::AraxisMergeReporter::AraxisMergeReporter()
+AraxisMergeReporter::AraxisMergeReporter()
     : GenericDiffReporter(DiffPrograms::Mac::ARAXIS_MERGE())
 {
 }
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L12-L17' title='File snippet `add_reporter_class_implementation` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class_implementation' title='Navigate to start of snippet `add_reporter_class_implementation`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L14-L19' title='File snippet `add_reporter_class_implementation` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class_implementation' title='Navigate to start of snippet `add_reporter_class_implementation`'>anchor</a></sup>
 <!-- endsnippet -->
 
 * Scroll to the end of this file, and add an instance of the new reporter class to the `MacDiffReporter`
@@ -108,7 +108,7 @@ new TkDiffReporter(),
 new VisualStudioCodeReporter(),
 new CLionDiffReporter()
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L61-L72' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L63-L74' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Edit [tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp)
