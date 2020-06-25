@@ -7,6 +7,6 @@
 * **Bug fixes**
     * None
 * **Other changes**
-    * Improved Compilation Speeds
+    * Improved Compilation Speeds (#142)
 
 <img src="/doc/images/ApprovalTests_v.10.1.1_compilation_times.png" alt="ApprovalTests_v.10.1.1_compilation_times" />
