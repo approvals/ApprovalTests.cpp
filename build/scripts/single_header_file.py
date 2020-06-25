@@ -20,7 +20,7 @@ class Parts:
 class SingleHeaderFile(object):
     @staticmethod
     def create(directory: str, project_details: ProjectDetails, include_cpps: bool) -> str:
-        files = SingleHeaderFile.get_all_files(directory)
+        files = SingleHeaderFile.get_all_files(directory, '.h')
         files = SingleHeaderFile.sort_by_dependencies(files)
 
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
@@ -45,14 +45,14 @@ class SingleHeaderFile(object):
         return output_file
 
     @staticmethod
-    def get_all_files(directory: str) -> List[str]:
+    def get_all_files(directory: str, extension_with_dot: str) -> List[str]:
         all_files = []
         abs = os.path.abspath(directory)
         relative = get_file_name(abs)
 
         for root, directories, files in os.walk(directory):
             for file in files:
-                if file.endswith('.h'):
+                if file.endswith(extension_with_dot):
                     file_text = os.path.join(root, file)
                     file_text = file_text.replace('./', relative + '/')
                     all_files.append(file_text)
