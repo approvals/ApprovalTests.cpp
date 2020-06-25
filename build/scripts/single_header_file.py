@@ -20,10 +20,8 @@ class Parts:
 class SingleHeaderFile(object):
     @staticmethod
     def create(directory: str, project_details: ProjectDetails, include_cpps: bool) -> str:
-        locations = ReleaseLocations(project_details)
         files = SingleHeaderFile.get_all_files(directory)
         files = SingleHeaderFile.sort_by_dependencies(files)
-        output_file = os.path.abspath(locations.simulated_single_header_file_path)
 
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
         output = (F'#ifndef {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
@@ -40,7 +38,9 @@ class SingleHeaderFile(object):
                   '\n'
                   F'#endif // {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   )
-        # DO NOT MERGE - writing disabled until scrip is updated to add .cpp files
+
+        locations = ReleaseLocations(project_details)
+        output_file = os.path.abspath(locations.simulated_single_header_file_path)
         write_file(output_file, output)
         return output_file
 
