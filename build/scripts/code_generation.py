@@ -50,17 +50,19 @@ class CppGeneration:
                 '''
         return text + second_part
 
-    def create_simulated_single_header_file(self) -> str:
-        return SingleHeaderFile.create('.', self.details.project_details)
+    def create_simulated_single_header_file(self, include_cpps: bool) -> str:
+        return SingleHeaderFile.create('.', self.details.project_details, include_cpps=include_cpps)
 
-    def create_single_header_file(self) -> str:
-        self.create_simulated_single_header_file()
+    def create_single_header_file(self, include_cpps: bool) -> str:
+        self.create_simulated_single_header_file(include_cpps=include_cpps)
 
         simulated_single_header = os.path.abspath(self.details.locations.simulated_single_header_file_path)
         with use_directory("../build"):
             print(os.getcwd())
             self.run_for_approval_tests(simulated_single_header, self.details.release_new_single_header)
             text = read_file(self.details.release_new_single_header)
+
+            text = self.insert_cpp_files(text)
             text = (
                 f'// {self.details.project_details.github_project_name} version {self.details.new_version_as_text()}\n'
                 f'// More information at: {self.details.project_details.github_project_url}\n'
@@ -82,10 +84,19 @@ class CppGeneration:
         create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2,
                                   discardables)
 
+    def insert_cpp_files(self, text: str) -> str:
+        marker = '~*~* APPROVALS_IMPLEMENTATION_STITCH_PLACE *~*~'
+        # Get sorted list of all .cpp files
+
+        # Generate #include line
+
+        # Insert #include lines in to text
+        return text
+
     @staticmethod
     def prepare_release(details: ReleaseDetails) -> None:
         code = CppGeneration(details)
         code.update_version_number_header()
-        code.create_single_header_file()
+        code.create_single_header_file(include_cpps = True)
 
 

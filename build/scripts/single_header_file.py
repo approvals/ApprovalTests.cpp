@@ -19,7 +19,7 @@ class Parts:
 
 class SingleHeaderFile(object):
     @staticmethod
-    def create(directory: str, project_details: ProjectDetails) -> str:
+    def create(directory: str, project_details: ProjectDetails, include_cpps: bool) -> str:
         locations = ReleaseLocations(project_details)
         files = SingleHeaderFile.get_all_files(directory)
         files = SingleHeaderFile.sort_by_dependencies(files)
