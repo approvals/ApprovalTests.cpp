@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [Improved Compilation Speeds](#improved-compilation-speeds)
   * [v.10.0.0](#v1000)
     * [Removed Deprecated Code](#removed-deprecated-code)
   * [v.8.9.0](#v890)
@@ -63,6 +64,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+### Improved Compilation Speeds
+
+<img src="/doc/images/ApprovalTests_v.10.1.1_compilation_times.png" alt="ApprovalTests_v.10.1.1_compilation_times" style="zoom:43%;" />
 
 ## v.10.0.0
 
@@ -116,7 +121,7 @@ See [How to Scrub Non-Deterministic Output](/doc/how_tos/ScrubNonDeterministicOu
 This is in internal change, which will provide future flexibility, and does not change any existing code.
 
 In this release, we:
- 
+
 * templatized the Approvals class, renaming it to TApprovals
 * changed the CombinationApprovals namespace to a template class called TCombinationApprovals
 * introduced the StringMaker class as an additional customization point for the above two classes 

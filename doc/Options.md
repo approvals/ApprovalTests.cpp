@@ -82,7 +82,7 @@ There are two ways to set a Scrubber.
 ```cpp
 Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L59-L61' title='File snippet `basic_approval_with_scrubber` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber' title='Navigate to start of snippet `basic_approval_with_scrubber`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L60-L62' title='File snippet `basic_approval_with_scrubber` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber' title='Navigate to start of snippet `basic_approval_with_scrubber`'>anchor</a></sup>
 <!-- endsnippet -->
 
 2. Call `.withScrubber()` with a function pointer, for example:
@@ -92,7 +92,7 @@ Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
 ```cpp
 Approvals::verifyAll("IDs", v, Options().withScrubber(Scrubbers::scrubGuid));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L69-L71' title='File snippet `basic_approval_with_scrubber_2` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber_2' title='Navigate to start of snippet `basic_approval_with_scrubber_2`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L70-L72' title='File snippet `basic_approval_with_scrubber_2` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber_2' title='Navigate to start of snippet `basic_approval_with_scrubber_2`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## File Options

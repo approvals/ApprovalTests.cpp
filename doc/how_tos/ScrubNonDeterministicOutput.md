@@ -37,7 +37,7 @@ Approvals::verify(
         [](const std::string& t) {return StringUtils::replaceAll(t, "3", "Fizz");}
     ));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L77-L83' title='File snippet `scrubbing_via_lambda` was extracted from'>snippet source</a> | <a href='#snippet-scrubbing_via_lambda' title='Navigate to start of snippet `scrubbing_via_lambda`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L78-L84' title='File snippet `scrubbing_via_lambda` was extracted from'>snippet source</a> | <a href='#snippet-scrubbing_via_lambda' title='Navigate to start of snippet `scrubbing_via_lambda`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This would produce:
@@ -161,7 +161,7 @@ std::string jsonFromRestCall = R"(
     )";
 Approvals::verify(jsonFromRestCall, Options().withScrubber(Scrubbers::scrubGuid));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L32-L51' title='File snippet `guid_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-guid_scrubbing' title='Navigate to start of snippet `guid_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L33-L52' title='File snippet `guid_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-guid_scrubbing' title='Navigate to start of snippet `guid_scrubbing`'>anchor</a></sup>
 <!-- endsnippet -->
 
 will produce:
