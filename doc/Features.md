@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.1.1](#v1011)
     * [Improved Compilation Speeds](#improved-compilation-speeds)
   * [v.10.0.0](#v1000)
     * [Removed Deprecated Code](#removed-deprecated-code)
@@ -64,6 +65,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+## v.10.1.1
 
 ### Improved Compilation Speeds
 
