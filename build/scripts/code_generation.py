@@ -62,7 +62,6 @@ class CppGeneration:
             self.run_for_approval_tests(simulated_single_header, self.details.release_new_single_header)
             text = read_file(self.details.release_new_single_header)
 
-            text = self.insert_cpp_files(text)
             text = (
                 f'// {self.details.project_details.github_project_name} version {self.details.new_version_as_text()}\n'
                 f'// More information at: {self.details.project_details.github_project_url}\n'
@@ -83,15 +82,6 @@ class CppGeneration:
 
         create_single_header_file(initial_file, output_file, include_search_path1, include_search_path2,
                                   discardables)
-
-    def insert_cpp_files(self, text: str) -> str:
-        marker = '~*~* APPROVALS_IMPLEMENTATION_STITCH_PLACE *~*~'
-        # Get sorted list of all .cpp files
-
-        # Generate #include line
-
-        # Insert #include lines in to text
-        return text
 
     @staticmethod
     def prepare_release(details: ReleaseDetails) -> None:
