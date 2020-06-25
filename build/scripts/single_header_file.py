@@ -32,11 +32,11 @@ class SingleHeaderFile(object):
         files = SingleHeaderFile.get_all_files(directory, '.h')
         files = SingleHeaderFile.sort_by_dependencies(files)
         files = SingleHeaderFile.sort_version_include_to_front(files)
-        includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
+        includes = SingleHeaderFile.generate_include_text(files)
 
         if include_cpps:
             cpp_files = SingleHeaderFile.get_all_files(directory, '.cpp')
-            cpps = '\n'.join(map(lambda f: f'#include "{f}"', cpp_files))
+            cpps = SingleHeaderFile.generate_include_text(cpp_files)
         else:
             cpps = '// Cpp files will be included in the single-header file here'
 
@@ -54,6 +54,10 @@ class SingleHeaderFile(object):
                   F'#endif // {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   )
         return output
+
+    @staticmethod
+    def generate_include_text(files: List[str]) -> str:
+        return '\n'.join(map(lambda f: f'#include "{f}"', files))
 
     @staticmethod
     def get_all_files(directory: str, extension_with_dot: str) -> List[str]:
