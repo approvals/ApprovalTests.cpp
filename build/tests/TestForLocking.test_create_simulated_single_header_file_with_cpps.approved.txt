@@ -136,6 +136,6 @@
 #include "ApprovalTests/utilities/SystemUtils.cpp"
 #include "ApprovalTests/writers/ExistingFile.cpp"
 #include "ApprovalTests/writers/StringWriter.cpp"
-#endif
+#endif // APPROVAL_TESTS_INCLUDE_CPPS
 
 #endif // APPROVAL_TESTS_CPP_APPROVALS_HPP

@@ -49,7 +49,7 @@ class SingleHeaderFile(object):
                   '#ifdef APPROVAL_TESTS_INCLUDE_CPPS\n'
                   '// Cpp files will be included in the single-header file here\n'
                   f'{cpps}\n'
-                  '#endif\n'
+                  '#endif // APPROVAL_TESTS_INCLUDE_CPPS\n'
                   '\n'
                   F'#endif // {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   )

@@ -83,6 +83,6 @@
 #ifdef APPROVAL_TESTS_INCLUDE_CPPS
 // Cpp files will be included in the single-header file here
 // ~*~* APPROVALS_IMPLEMENTATION_STITCH_PLACE *~*~
-#endif
+#endif // APPROVAL_TESTS_INCLUDE_CPPS
 
 #endif // APPROVAL_TESTS_CPP_APPROVALS_HPP
