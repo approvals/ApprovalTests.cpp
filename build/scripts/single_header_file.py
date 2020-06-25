@@ -33,6 +33,11 @@ class SingleHeaderFile(object):
                   '\n'
                   f'{includes}\n'
                   '\n'
+                  '#ifdef APPROVAL_TESTS_INCLUDE_CPPS\n'
+                  '// Cpp files will be included in the single-header file here\n'
+                  '// ~*~* APPROVALS_IMPLEMENTATION_STITCH_PLACE *~*~\n'
+                  '#endif\n'
+                  '\n'
                   F'#endif // {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   )
         # DO NOT MERGE - writing disabled until scrip is updated to add .cpp files
