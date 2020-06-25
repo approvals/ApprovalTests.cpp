@@ -22,8 +22,14 @@ class SingleHeaderFile(object):
     def create(directory: str, project_details: ProjectDetails, include_cpps: bool) -> str:
         files = SingleHeaderFile.get_all_files(directory, '.h')
         files = SingleHeaderFile.sort_by_dependencies(files)
-
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
+
+        if include_cpps:
+            cpp_files = SingleHeaderFile.get_all_files(directory, '.cpp')
+            cpps = '\n'.join(map(lambda f: f'#include "{f}"', cpp_files))
+        else:
+            cpps = '// ~*~* APPROVALS_IMPLEMENTATION_STITCH_PLACE *~*~'
+
         output = (F'#ifndef {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   F'#define {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   '\n'
@@ -33,7 +39,7 @@ class SingleHeaderFile(object):
                   '\n'
                   '#ifdef APPROVAL_TESTS_INCLUDE_CPPS\n'
                   '// Cpp files will be included in the single-header file here\n'
-                  '// ~*~* APPROVALS_IMPLEMENTATION_STITCH_PLACE *~*~\n'
+                  f'{cpps}\n'
                   '#endif\n'
                   '\n'
                   F'#endif // {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
