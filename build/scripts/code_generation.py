@@ -1,6 +1,5 @@
 import os
 
-from scripts import version
 from scripts.embed import create_single_header_file
 from scripts.multiline_string_utilities import remove_indentation
 from scripts.project_details import ProjectDetails
@@ -10,7 +9,6 @@ from scripts.utilities import read_file, write_file, use_directory
 from scripts.version import Version
 
 
-from typing import Dict
 class CppGeneration:
     def __init__(self, details: ReleaseDetails) -> None:
         self.details = details
@@ -53,7 +51,8 @@ class CppGeneration:
     def create_simulated_single_header_file(self, include_cpps: bool) -> str:
         return SingleHeaderFile.create('.', self.details.project_details, include_cpps=include_cpps)
 
-    def create_single_header_file(self, include_cpps: bool) -> str:
+    def create_single_header_file(self) -> str:
+        include_cpps = True
         self.create_simulated_single_header_file(include_cpps=include_cpps)
 
         simulated_single_header = os.path.abspath(self.details.locations.simulated_single_header_file_path)
@@ -87,6 +86,6 @@ class CppGeneration:
     def prepare_release(details: ReleaseDetails) -> None:
         code = CppGeneration(details)
         code.update_version_number_header()
-        code.create_single_header_file(include_cpps = True)
+        code.create_single_header_file()
 
 

@@ -15,7 +15,7 @@ class TestForLocking(unittest.TestCase):
     # DO NOT MERGE - disable and delete approved file before merge
     def test_create_single_header_file_approvals(self) -> None:
         prepare_release = self.get_prepare_release()
-        output = prepare_release.create_single_header_file(include_cpps = True)
+        output = prepare_release.create_single_header_file()
 
         # The output of this depends on the current C++ code, so changes
         # over time. It is here to help when refactoring the release process.
