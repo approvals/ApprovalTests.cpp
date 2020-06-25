@@ -1,6 +1,7 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/utilities/ExceptionCollector.h"
+#include "ApprovalTests/utilities/StringUtils.h"
 
 using namespace ApprovalTests;
 

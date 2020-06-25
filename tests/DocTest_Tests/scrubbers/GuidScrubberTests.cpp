@@ -1,5 +1,6 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/scrubbers/Scrubbers.h"
+#include "ApprovalTests/utilities/StringUtils.h"
 
 #include <iostream> // needed to fix linker error on XCode Release builds
 #include "ApprovalTests/Approvals.h"

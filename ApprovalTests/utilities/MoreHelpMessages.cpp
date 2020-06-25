@@ -1,5 +1,7 @@
 #include "ApprovalTests/utilities/MoreHelpMessages.h"
 
+#include <iostream>
+
 namespace ApprovalTests
 {
     void MoreHelpMessages::deprecatedFunctionCalled(const std::string& message,

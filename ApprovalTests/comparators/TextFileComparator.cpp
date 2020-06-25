@@ -1,5 +1,7 @@
 #include "ApprovalTests/comparators/TextFileComparator.h"
 
+#include <fstream>
+
 namespace ApprovalTests
 {
     std::ifstream::int_type
