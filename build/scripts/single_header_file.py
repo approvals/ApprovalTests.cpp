@@ -36,7 +36,7 @@ class SingleHeaderFile(object):
                   F'#endif // {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   )
         # DO NOT MERGE - writing disabled until scrip is updated to add .cpp files
-        # write_file(output_file, output)
+        write_file(output_file, output)
         return output_file
 
     @staticmethod
