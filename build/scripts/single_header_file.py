@@ -37,7 +37,7 @@ class SingleHeaderFile(object):
             cpp_files = SingleHeaderFile.get_all_files(directory, '.cpp')
             cpps = '\n'.join(map(lambda f: f'#include "{f}"', cpp_files))
         else:
-            cpps = '// ~*~* APPROVALS_IMPLEMENTATION_STITCH_PLACE *~*~'
+            cpps = '// Cpp files will be included in the single-header file here'
 
         output = (F'#ifndef {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   F'#define {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
@@ -47,7 +47,6 @@ class SingleHeaderFile(object):
                   f'{includes}\n'
                   '\n'
                   '#ifdef APPROVAL_TESTS_INCLUDE_CPPS\n'
-                  '// Cpp files will be included in the single-header file here\n'
                   f'{cpps}\n'
                   '#endif // APPROVAL_TESTS_INCLUDE_CPPS\n'
                   '\n'
