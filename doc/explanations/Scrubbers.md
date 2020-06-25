@@ -38,7 +38,7 @@ Scrubber as an option.
 ```cpp
 Approvals::verify(input, Options().withScrubber(scrubber));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L77-L79' title='File snippet `scrubber_in_options_object` was extracted from'>snippet source</a> | <a href='#snippet-scrubber_in_options_object' title='Navigate to start of snippet `scrubber_in_options_object`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L76-L78' title='File snippet `scrubber_in_options_object` was extracted from'>snippet source</a> | <a href='#snippet-scrubber_in_options_object' title='Navigate to start of snippet `scrubber_in_options_object`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Scrubber concepts

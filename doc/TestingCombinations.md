@@ -39,7 +39,7 @@ TEST_CASE("CombinationsStartingPoint")
         [](auto /*input1*/, auto /*input2*/) { return "placeholder"; }, inputs1, inputs2);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L62-L70' title='File snippet `combinationsstartingpoint` was extracted from'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Navigate to start of snippet `combinationsstartingpoint`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L63-L71' title='File snippet `combinationsstartingpoint` was extracted from'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Navigate to start of snippet `combinationsstartingpoint`'>anchor</a></sup>
 <!-- endsnippet -->
 
 2. Modify each input container for your chosen values.
@@ -89,7 +89,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2")
         numbers);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L48-L60' title='File snippet `youcanverifycombinationsof2` was extracted from'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Navigate to start of snippet `youcanverifycombinationsof2`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L49-L61' title='File snippet `youcanverifycombinationsof2` was extracted from'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Navigate to start of snippet `youcanverifycombinationsof2`'>anchor</a></sup>
 <!-- endsnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:

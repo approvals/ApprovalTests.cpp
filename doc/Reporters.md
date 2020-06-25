@@ -34,7 +34,7 @@ Currently the search goes in this order:
 
 <!-- snippet: mac_diff_reporters -->
 <a id='snippet-mac_diff_reporters'/></a>
-```h
+```cpp
 new AraxisMergeReporter(),
 new BeyondCompareReporter(),
 new DiffMergeReporter(),
@@ -46,28 +46,28 @@ new TkDiffReporter(),
 new VisualStudioCodeReporter(),
 new CLionDiffReporter()
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.h#L104-L115' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L63-L74' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Linux
 
 <!-- snippet: linux_diff_reporters -->
 <a id='snippet-linux_diff_reporters'/></a>
-```h
+```cpp
 new BeyondCompareReporter(),
 new MeldReporter(),
 new SublimeMergeReporter(),
 new KDiff3Reporter()
 // Note: ApprovalTests::Mac::CLionDiffReporter also works on Linux
 ```
-<sup><a href='/ApprovalTests/reporters/LinuxReporters.h#L95-L101' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/LinuxReporters.cpp#L55-L61' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Windows
 
 <!-- snippet: windows_diff_reporters -->
 <a id='snippet-windows_diff_reporters'/></a>
-```h
+```cpp
 new TortoiseDiffReporter(), // Note that this uses Tortoise SVN Diff
 new TortoiseGitDiffReporter(),
 new BeyondCompareReporter(),
@@ -78,7 +78,7 @@ new SublimeMergeReporter(),
 new KDiff3Reporter(),
 new VisualStudioCodeReporter(),
 ```
-<sup><a href='/ApprovalTests/reporters/WindowsReporters.h#L159-L169' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/WindowsReporters.cpp#L94-L104' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ## Registering a default reporter
@@ -125,7 +125,7 @@ Once you have added that, even calling approvals with a specific Reporter will n
 ```cpp
 Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter()));
 ```
-<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L13-L15' title='File snippet `basic_approval_with_reporter` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Navigate to start of snippet `basic_approval_with_reporter`'>anchor</a></sup>
+<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L15-L17' title='File snippet `basic_approval_with_reporter` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Navigate to start of snippet `basic_approval_with_reporter`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Blocking Reporters

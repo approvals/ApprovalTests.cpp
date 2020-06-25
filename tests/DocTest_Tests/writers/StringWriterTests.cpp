@@ -2,6 +2,8 @@
 #include "ApprovalTests/writers/StringWriter.h"
 #include "ApprovalTests/Approvals.h"
 
+#include <fstream>
+
 using namespace ApprovalTests;
 
 std::string readFileAndDelete(const char* fileName)

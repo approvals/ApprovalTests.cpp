@@ -1,10 +1,9 @@
 #pragma once
 
 #include "ApprovalTests/core/ApprovalNamer.h"
-#include "ApprovalTestNamer.h"
 
 #include <memory>
-#include <utility>
+#include <functional>
 
 namespace ApprovalTests
 {
@@ -15,23 +14,11 @@ namespace ApprovalTests
     class DefaultNamerFactory
     {
     private:
-        static NamerCreator& defaultNamer()
-        {
-            static NamerCreator namer = []() {
-                return std::make_shared<ApprovalTestNamer>();
-            };
-            return namer;
-        }
+        static NamerCreator& defaultNamer();
 
     public:
-        static NamerCreator getDefaultNamer()
-        {
-            return defaultNamer();
-        }
+        static NamerCreator getDefaultNamer();
 
-        static void setDefaultNamer(NamerCreator namer)
-        {
-            defaultNamer() = std::move(namer);
-        }
+        static void setDefaultNamer(NamerCreator namer);
     };
 }

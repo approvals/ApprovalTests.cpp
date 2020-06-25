@@ -11,6 +11,7 @@
 #endif
 
 #ifdef APPROVALS_DOCTEST
+#define APPROVAL_TESTS_INCLUDE_CPPS
 
 // begin-snippet: required_header_for_doctest
 #include <doctest/doctest.h>

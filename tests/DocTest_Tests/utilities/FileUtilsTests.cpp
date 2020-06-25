@@ -4,8 +4,6 @@
 #include "Approvals.h"
 #include "reporters/DiffReporter.h"
 
-#include <iostream>
-
 using namespace ApprovalTests;
 
 TEST_CASE("It reads sample_file.txt correctly")

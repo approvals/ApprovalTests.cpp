@@ -4,19 +4,14 @@
 #include <exception>
 #include <utility>
 
-#include "ApprovalTests/ApprovalTestsVersion.h"
+#include "ApprovalTests/reporters/FrontLoadedReporterDisposer.h"
 #include "ApprovalTests/core/FileApprover.h"
-#include "reporters/DefaultReporter.h"
 #include "reporters/DefaultReporterDisposer.h"
 #include "ApprovalTests/core/Reporter.h"
-#include "namers/ApprovalTestNamer.h"
 #include "writers/ExistingFile.h"
-#include "namers/ExistingFileNamer.h"
 #include "namers/SubdirectoryDisposer.h"
 #include "namers/DefaultNamerDisposer.h"
-#include "scrubbers/Scrubbers.h"
 #include "core/Options.h"
-#include "utilities/MoreHelpMessages.h"
 #include "utilities/StringMaker.h"
 
 namespace ApprovalTests

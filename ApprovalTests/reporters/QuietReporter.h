@@ -8,9 +8,6 @@ namespace ApprovalTests
     class QuietReporter : public Reporter
     {
     public:
-        bool report(std::string /*received*/, std::string /*approved*/) const override
-        {
-            return true;
-        }
+        bool report(std::string /*received*/, std::string /*approved*/) const override;
     };
 }

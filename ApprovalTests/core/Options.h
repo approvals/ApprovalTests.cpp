@@ -5,7 +5,7 @@
 
 #include "scrubbers/Scrubbers.h"
 #include "core/Reporter.h"
-#include "reporters/DefaultReporter.h"
+#include "utilities/Macros.h"
 
 namespace ApprovalTests
 {
@@ -20,31 +20,17 @@ namespace ApprovalTests
 
             FileOptions() = default;
 
-            explicit FileOptions(std::string fileExtensionWithDot)
-                : fileExtensionWithDot_(std::move(fileExtensionWithDot))
-            {
-            }
+            explicit FileOptions(std::string fileExtensionWithDot);
 
             APPROVAL_TESTS_NO_DISCARD
-            FileOptions clone() const
-            {
-                // the returned options_ must be null
-                return FileOptions(fileExtensionWithDot_);
-            }
+            FileOptions clone() const;
 
         public:
             APPROVAL_TESTS_NO_DISCARD
-            const std::string& getFileExtension() const
-            {
-                return fileExtensionWithDot_;
-            }
+            const std::string& getFileExtension() const;
 
             APPROVAL_TESTS_NO_DISCARD
-            Options withFileExtension(const std::string& fileExtensionWithDot) const
-            {
-                FileOptions newSelf(fileExtensionWithDot);
-                return options_->clone(newSelf);
-            }
+            Options withFileExtension(const std::string& fileExtensionWithDot) const;
         };
 
     private:
@@ -56,87 +42,40 @@ namespace ApprovalTests
         Options(FileOptions fileOptions,
                 Scrubber scrubber,
                 const Reporter& reporter,
-                bool usingDefaultScrubber)
-            : fileOptions_(std::move(fileOptions))
-            , scrubber_(std::move(scrubber))
-            , reporter_(reporter)
-            , usingDefaultScrubber_(usingDefaultScrubber)
-        {
-        }
+                bool usingDefaultScrubber);
 
         APPROVAL_TESTS_NO_DISCARD
-        Options clone(const FileOptions& fileOptions) const
-        {
-            // TODO error this can retain a previous Options* ???
-            return Options(fileOptions, scrubber_, reporter_, usingDefaultScrubber_);
-        }
+        Options clone(const FileOptions& fileOptions) const;
 
-        static const Reporter& defaultReporter()
-        {
-            static DefaultReporter defaultReporter;
-            return defaultReporter;
-        }
+        static const Reporter& defaultReporter();
 
     public:
         Options() = default;
 
-        explicit Options(Scrubber scrubber) : scrubber_(std::move(scrubber))
-        {
-            usingDefaultScrubber_ = false;
-        }
+        explicit Options(Scrubber scrubber);
 
-        explicit Options(const Reporter& reporter) : reporter_(reporter)
-        {
-        }
+        explicit Options(const Reporter& reporter);
 
         APPROVAL_TESTS_NO_DISCARD
-        FileOptions fileOptions() const
-        {
-            if (fileOptions_.options_ != nullptr)
-            {
-                throw std::logic_error(
-                    "Incorrect assumption: A FileOptions has been re-used");
-            }
-            FileOptions copy = fileOptions_.clone();
-            copy.options_ = this;
-            return copy;
-        }
+        FileOptions fileOptions() const;
 
         APPROVAL_TESTS_NO_DISCARD
-        Scrubber getScrubber() const
-        {
-            return scrubber_;
-        }
+        Scrubber getScrubber() const;
 
         APPROVAL_TESTS_NO_DISCARD
-        bool isUsingDefaultScrubber() const
-        {
-            return usingDefaultScrubber_;
-        }
+        bool isUsingDefaultScrubber() const;
 
         APPROVAL_TESTS_NO_DISCARD
-        std::string scrub(const std::string& input) const
-        {
-            return scrubber_(input);
-        }
+        std::string scrub(const std::string& input) const;
 
         APPROVAL_TESTS_NO_DISCARD
-        const Reporter& getReporter() const
-        {
-            return reporter_;
-        }
+        const Reporter& getReporter() const;
 
         APPROVAL_TESTS_NO_DISCARD
-        Options withReporter(const Reporter& reporter) const
-        {
-            return Options(fileOptions_, scrubber_, reporter, usingDefaultScrubber_);
-        }
+        Options withReporter(const Reporter& reporter) const;
 
         APPROVAL_TESTS_NO_DISCARD
-        Options withScrubber(Scrubber scrubber) const
-        {
-            return Options(fileOptions_, std::move(scrubber), reporter_, false);
-        }
+        Options withScrubber(Scrubber scrubber) const;
     };
 
     namespace Detail

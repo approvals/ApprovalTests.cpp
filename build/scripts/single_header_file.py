@@ -19,13 +19,27 @@ class Parts:
 
 class SingleHeaderFile(object):
     @staticmethod
-    def create(directory: str, project_details: ProjectDetails) -> str:
-        locations = ReleaseLocations(project_details)
-        files = SingleHeaderFile.get_all_files(directory)
-        files = SingleHeaderFile.sort_by_dependencies(files)
-        output_file = os.path.abspath(locations.simulated_single_header_file_path)
+    def create(directory: str, project_details: ProjectDetails, include_cpps: bool) -> str:
+        output = SingleHeaderFile.create_content(directory, project_details, include_cpps)
 
-        includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
+        locations = ReleaseLocations(project_details)
+        output_file = os.path.abspath(locations.simulated_single_header_file_path)
+        write_file(output_file, output)
+        return output_file
+
+    @staticmethod
+    def create_content(directory: str, project_details: ProjectDetails, include_cpps: bool) -> str:
+        files = SingleHeaderFile.get_all_files(directory, '.h')
+        files = SingleHeaderFile.sort_by_dependencies(files)
+        files = SingleHeaderFile.sort_version_include_to_front(files)
+        includes = SingleHeaderFile.generate_include_text(files)
+
+        if include_cpps:
+            cpp_files = SingleHeaderFile.get_all_files(directory, '.cpp')
+            cpps = SingleHeaderFile.generate_include_text(cpp_files)
+        else:
+            cpps = '// Cpp files will be included in the single-header file here'
+
         output = (F'#ifndef {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   F'#define {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   '\n'
@@ -33,20 +47,27 @@ class SingleHeaderFile(object):
                   '\n'
                   f'{includes}\n'
                   '\n'
+                  '#ifdef APPROVAL_TESTS_INCLUDE_CPPS\n'
+                  f'{cpps}\n'
+                  '#endif // APPROVAL_TESTS_INCLUDE_CPPS\n'
+                  '\n'
                   F'#endif // {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   )
-        write_file(output_file, output)
-        return output_file
+        return output
 
     @staticmethod
-    def get_all_files(directory: str) -> List[str]:
+    def generate_include_text(files: List[str]) -> str:
+        return '\n'.join(map(lambda f: f'#include "{f}"', files))
+
+    @staticmethod
+    def get_all_files(directory: str, extension_with_dot: str) -> List[str]:
         all_files = []
         abs = os.path.abspath(directory)
         relative = get_file_name(abs)
 
         for root, directories, files in os.walk(directory):
             for file in files:
-                if file.endswith('.h'):
+                if file.endswith(extension_with_dot):
                     file_text = os.path.join(root, file)
                     file_text = file_text.replace('./', relative + '/')
                     all_files.append(file_text)
@@ -57,6 +78,20 @@ class SingleHeaderFile(object):
     def sort_by_dependencies(files: List[str]) -> List[str]:
         parts = list(map(SingleHeaderFile.get_parts, files))
         return list(map(lambda p: p.file, SingleHeaderFile.sort_parts_by_dependencies(parts)))
+
+    @staticmethod
+    def sort_version_include_to_front(files: List[str]) -> List[str]:
+        result = list(files)
+        version_include = "ApprovalTests/ApprovalTestsVersion.h"
+
+        # This intentionally throws ValueError if the version header is not in our list
+        # in case the file name changes in future
+        original_position = result.index(version_include)
+
+        # Move the version include to the front:
+        result.insert(0, result.pop(original_position))
+
+        return result
 
     @staticmethod
     def get_parts(file: str) -> Parts:

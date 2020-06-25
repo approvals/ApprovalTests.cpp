@@ -2,6 +2,7 @@
 #include "doctest/doctest.h"
 #include "TestReporter.h"
 #include "FakeReporter.h"
+#include "ApprovalTests/reporters/DefaultReporter.h"
 #include "ApprovalTests/reporters/FirstWorkingReporter.h"
 #include "ApprovalTests/reporters/ClipboardReporter.h"
 #include "ApprovalTests/reporters/CombinationReporter.h"

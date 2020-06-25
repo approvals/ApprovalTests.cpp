@@ -1,6 +1,7 @@
 #pragma once
 
 #include "FrontLoadedReporterFactory.h"
+#include "ApprovalTests/utilities/Macros.h"
 
 namespace ApprovalTests
 {
@@ -11,15 +12,8 @@ namespace ApprovalTests
         std::shared_ptr<Reporter> previous_result;
 
     public:
-        explicit FrontLoadedReporterDisposer(const std::shared_ptr<Reporter>& reporter)
-        {
-            previous_result = FrontLoadedReporterFactory::getFrontLoadedReporter();
-            FrontLoadedReporterFactory::setFrontLoadedReporter(reporter);
-        }
+        explicit FrontLoadedReporterDisposer(const std::shared_ptr<Reporter>& reporter);
 
-        ~FrontLoadedReporterDisposer()
-        {
-            FrontLoadedReporterFactory::setFrontLoadedReporter(previous_result);
-        }
+        ~FrontLoadedReporterDisposer();
     };
 }

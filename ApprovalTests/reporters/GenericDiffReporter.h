@@ -4,7 +4,6 @@
 #include "CommandReporter.h"
 #include "ApprovalTests/launchers/SystemLauncher.h"
 #include <string>
-#include <vector>
 
 namespace ApprovalTests
 {
@@ -14,14 +13,8 @@ namespace ApprovalTests
         SystemLauncher launcher;
 
     public:
-        explicit GenericDiffReporter(const std::string& program)
-            : CommandReporter(program, &launcher)
-        {
-        }
+        explicit GenericDiffReporter(const std::string& program);
 
-        explicit GenericDiffReporter(const DiffInfo& info)
-            : CommandReporter(info.getProgramForOs(), info.arguments, &launcher)
-        {
-        }
+        explicit GenericDiffReporter(const DiffInfo& info);
     };
 }

@@ -10,6 +10,7 @@
 #endif
 
 #ifdef APPROVALS_GOOGLETEST
+#define APPROVAL_TESTS_INCLUDE_CPPS
 
 #include <gtest/gtest.h>
 

@@ -1,4 +1,5 @@
 #include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/namers/HelpMessages.h"
 #include "doctest/doctest.h"
 
 using namespace ApprovalTests;

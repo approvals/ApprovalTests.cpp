@@ -15,25 +15,12 @@ namespace ApprovalTests
         MachineBlocker() = delete;
 
     public:
-        MachineBlocker(std::string machineName_, bool block_)
-            : machineName(std::move(machineName_)), block(block_)
-        {
-        }
+        MachineBlocker(std::string machineName_, bool block_);
 
-        static MachineBlocker onMachineNamed(const std::string& machineName)
-        {
-            return MachineBlocker(machineName, true);
-        }
+        static MachineBlocker onMachineNamed(const std::string& machineName);
 
-        static MachineBlocker onMachinesNotNamed(const std::string& machineName)
-        {
-            return MachineBlocker(machineName, false);
-        }
+        static MachineBlocker onMachinesNotNamed(const std::string& machineName);
 
-        virtual bool isBlockingOnThisMachine() const override
-        {
-            const auto isMachine = (SystemUtils::getMachineName() == machineName);
-            return isMachine == block;
-        }
+        virtual bool isBlockingOnThisMachine() const override;
     };
 }

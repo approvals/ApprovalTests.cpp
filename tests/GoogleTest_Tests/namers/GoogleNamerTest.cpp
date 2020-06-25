@@ -3,7 +3,6 @@
 #include "ApprovalTests/CombinationApprovals.h"
 #include "ApprovalTests/integrations/google/GoogleConfiguration.h"
 
-#include <ostream>
 #include <string>
 
 using namespace ApprovalTests;
