@@ -52,8 +52,7 @@ class CppGeneration:
         return SingleHeaderFile.create('.', self.details.project_details, include_cpps=include_cpps)
 
     def create_single_header_file(self) -> str:
-        include_cpps = True
-        self.create_simulated_single_header_file(include_cpps=include_cpps)
+        self.create_simulated_single_header_file(include_cpps=True)
 
         simulated_single_header = os.path.abspath(self.details.locations.simulated_single_header_file_path)
         with use_directory("../build"):
@@ -68,7 +67,14 @@ class CppGeneration:
                 f'{text}'
             )
             write_file(self.details.release_new_single_header, text)
-            return os.path.abspath(self.details.release_new_single_header)
+
+        # HACK! A side-effect of this method is that it overwrites
+        # the version-controlled simulated single-header, including .cpp
+        # files.
+        # Revert that change:
+        self.create_simulated_single_header_file(include_cpps=False)
+
+        return os.path.abspath(self.details.release_new_single_header)
 
     def run_for_approval_tests(self, initial_file: str, output_file: str) -> None:
         def mdsnippets_discarder(line: str) -> bool:
