@@ -9,6 +9,17 @@
 // This file is machine-generated. Do not edit.
 
 
+// ******************** From: ApprovalTestsVersion.h
+
+#define APPROVAL_TESTS_VERSION_MAJOR 10
+#define APPROVAL_TESTS_VERSION_MINOR 1
+#define APPROVAL_TESTS_VERSION_PATCH 0
+#define APPROVAL_TESTS_VERSION_STR "10.1.0"
+
+#define APPROVAL_TESTS_VERSION                                                           \
+    (APPROVAL_TESTS_VERSION_MAJOR * 10000 + APPROVAL_TESTS_VERSION_MINOR * 100 +         \
+     APPROVAL_TESTS_VERSION_PATCH)
+
 // ******************** From: DiffInfo.h
 
 #include <string>
@@ -1429,17 +1440,6 @@ namespace ApprovalTests
                                                          const Reporter& r);
     };
 }
-
-// ******************** From: ApprovalTestsVersion.h
-
-#define APPROVAL_TESTS_VERSION_MAJOR 10
-#define APPROVAL_TESTS_VERSION_MINOR 1
-#define APPROVAL_TESTS_VERSION_PATCH 0
-#define APPROVAL_TESTS_VERSION_STR "10.1.0"
-
-#define APPROVAL_TESTS_VERSION                                                           \
-    (APPROVAL_TESTS_VERSION_MAJOR * 10000 + APPROVAL_TESTS_VERSION_MINOR * 100 +         \
-     APPROVAL_TESTS_VERSION_PATCH)
 
 // ******************** From: Approvals.h
 #include <string>

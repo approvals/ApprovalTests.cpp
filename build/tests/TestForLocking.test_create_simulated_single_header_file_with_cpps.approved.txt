@@ -3,6 +3,7 @@
 
 // This file is machine-generated. Do not edit.
 
+#include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/reporters/DiffInfo.h"
 #include "ApprovalTests/reporters/DiffPrograms.h"
 #include "ApprovalTests/core/Reporter.h"
@@ -50,7 +51,6 @@
 #include "ApprovalTests/comparators/ComparatorDisposer.h"
 #include "ApprovalTests/comparators/ComparatorFactory.h"
 #include "ApprovalTests/core/FileApprover.h"
-#include "ApprovalTests/ApprovalTestsVersion.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "ApprovalTests/comparators/TextFileComparator.h"

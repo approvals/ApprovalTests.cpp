@@ -31,6 +31,7 @@ class SingleHeaderFile(object):
     def create_content(directory: str, project_details: ProjectDetails, include_cpps: bool) -> str:
         files = SingleHeaderFile.get_all_files(directory, '.h')
         files = SingleHeaderFile.sort_by_dependencies(files)
+        files = SingleHeaderFile.sort_version_include_to_front(files)
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
 
         if include_cpps:
@@ -73,6 +74,20 @@ class SingleHeaderFile(object):
     def sort_by_dependencies(files: List[str]) -> List[str]:
         parts = list(map(SingleHeaderFile.get_parts, files))
         return list(map(lambda p: p.file, SingleHeaderFile.sort_parts_by_dependencies(parts)))
+
+    @staticmethod
+    def sort_version_include_to_front(files: List[str]) -> List[str]:
+        result = list(files)
+        version_include = "ApprovalTests/ApprovalTestsVersion.h"
+
+        # This intentionally throws ValueError if the version header is not in our list
+        # in case the file name changes in future
+        original_position = result.index(version_include)
+
+        # Move the version include to the front:
+        result.insert(0, result.pop(original_position))
+
+        return result
 
     @staticmethod
     def get_parts(file: str) -> Parts:
