@@ -20,6 +20,15 @@ class Parts:
 class SingleHeaderFile(object):
     @staticmethod
     def create(directory: str, project_details: ProjectDetails, include_cpps: bool) -> str:
+        output = SingleHeaderFile.create_content(directory, project_details, include_cpps)
+
+        locations = ReleaseLocations(project_details)
+        output_file = os.path.abspath(locations.simulated_single_header_file_path)
+        write_file(output_file, output)
+        return output_file
+
+    @staticmethod
+    def create_content(directory: str, project_details: ProjectDetails, include_cpps: bool):
         files = SingleHeaderFile.get_all_files(directory, '.h')
         files = SingleHeaderFile.sort_by_dependencies(files)
         includes = '\n'.join(map(lambda f: f'#include "{f}"', files))
@@ -44,11 +53,7 @@ class SingleHeaderFile(object):
                   '\n'
                   F'#endif // {project_details.macro_prefix}_CPP_APPROVALS_HPP\n'
                   )
-
-        locations = ReleaseLocations(project_details)
-        output_file = os.path.abspath(locations.simulated_single_header_file_path)
-        write_file(output_file, output)
-        return output_file
+        return output
 
     @staticmethod
     def get_all_files(directory: str, extension_with_dot: str) -> List[str]:
