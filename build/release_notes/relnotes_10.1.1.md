@@ -9,4 +9,4 @@
 * **Other changes**
     * Improved Compilation Speeds (#142)
 
-<img src="/doc/images/ApprovalTests_v.10.1.1_compilation_times.png" alt="ApprovalTests_v.10.1.1_compilation_times" />
+![Compilation Times: 2.7 secs in v.10.1.0 decreased to 1.2 secs in v.10.1.1](/doc/images/ApprovalTests_v.10.1.1_compilation_times.png?raw=true)
