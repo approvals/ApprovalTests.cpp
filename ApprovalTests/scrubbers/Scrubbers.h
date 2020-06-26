@@ -11,6 +11,11 @@ namespace ApprovalTests
     {
         std::string doNothing(const std::string& input);
 
+        /**@name Regex-based scrubbers
+
+         See \userguide{how_tos/ScrubNonDeterministicOutput,regular-expressions-regex,Regular Expressions (regex)}
+         */
+        ///@{
         using RegexMatch = std::sub_match<std::string::const_iterator>;
         using RegexReplacer = std::function<std::string(const RegexMatch&)>;
 
@@ -26,6 +31,7 @@ namespace ApprovalTests
 
         Scrubber createRegexScrubber(const std::string& regexString,
                                      const std::string& replacementText);
+        ///@}
 
         std::string scrubGuid(const std::string& input);
     }
