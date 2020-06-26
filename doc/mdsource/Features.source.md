@@ -12,7 +12,7 @@ toc
 
 ### Improved Compilation Speeds
 
-![Compilation Times](/doc/images/ApprovalTests_v.10.1.1_compilation_times.png?raw=true)
+![Compilation Times: 2.7 secs in v.10.1.0 decreased to 1.2 secs in v.10.1.1](/doc/images/ApprovalTests_v.10.1.1_compilation_times.png?raw=true)
 
 ## v.10.0.0
 
