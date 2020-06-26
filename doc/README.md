@@ -15,7 +15,7 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests
 are an alternative to asserts. They are great for testing objects with
 lots of fields, or lists of objects.
 
-**Note:** This User Guide is [**also available on Read the Docs**](https://approvaltestscpp.readthedocs.io/en/latest/), with easier navigation, search, API reference and a PDF download.
+**Note:** This User Guide is [**also available on Read the Docs**](https://approvaltestscpp.readthedocs.io/en/latest/), with easier navigation, search and a PDF download.
 
 ----
 
