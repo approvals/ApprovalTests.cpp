@@ -12,7 +12,7 @@ toc
 
 ### Improved Compilation Speeds
 
-<img src="/doc/images/ApprovalTests_v.10.1.1_compilation_times.png" alt="ApprovalTests_v.10.1.1_compilation_times" style="zoom:43%;" />
+![Compilation Times](/doc/images/ApprovalTests_v.10.1.1_compilation_times.png?raw=true)
 
 ## v.10.0.0
 
