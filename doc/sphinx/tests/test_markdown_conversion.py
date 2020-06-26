@@ -4,6 +4,10 @@ from approvaltests import ApprovalException
 from approvaltests.approvals import verify_with_namer, Namer
 from approvaltests.reporters.generic_diff_reporter_factory import GenericDiffReporterFactory
 
+import sys
+
+sys.path.append('../../..')
+
 from doc.sphinx import markdown_conversion
 
 
