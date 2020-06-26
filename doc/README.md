@@ -29,6 +29,7 @@ Contents:&nbsp;[Getting&nbsp;Started](#getting-started)
 | [Extras](#extras)
 | [Troubleshooting](#troubleshooting)
 | [Developing&nbsp;ApprovalTests.cpp](#developing-approvaltestscpp)
+| [C++ Reference](#c-reference)
 
 ----
 
@@ -140,3 +141,10 @@ effectively.
   - **Topics**:
     [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top) |
     [Coding Patterns](/doc/CodingPatterns.md#top)
+
+## C++ Reference
+
+This section contains a growing list of "Read the Docs" pages documenting the ApprovalTests.cpp API. It may be useful to see what methods, and overloads, are available. It is very short on descriptive text, as we focus our efforts on the documentation above.
+
+  - **Fundamentals**: [Approving Objects](https://approvaltestscpp.readthedocs.io/en/latest/api/approving.html) | [Core Classes](https://approvaltestscpp.readthedocs.io/en/latest/api/core.html) | [Scrubber Functions](https://approvaltestscpp.readthedocs.io/en/latest/api/scrubbers.html)
+
