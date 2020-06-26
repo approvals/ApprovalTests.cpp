@@ -10,6 +10,21 @@ lots of fields, or lists of objects.
 
 **Note:** This User Guide is [**also available on Read the Docs**](https://approvaltestscpp.readthedocs.io/en/latest/), with easier navigation, search, API reference and a PDF download.
 
+----
+
+Contents:&nbsp;[Getting&nbsp;Started](#getting-started)
+| [Test&nbsp;Frameworks](#test-frameworks)
+| [Writing&nbsp;Tests](#writing-tests)
+| [Customising&nbsp;Behaviour](#customising-behaviour)
+| [Common&nbsp;Challenges](#common-challenges)
+| [How-to&nbsp;Guides](#how-to-guides)
+| [Build&nbsp;Systems](#build-systems)
+| [Extras](#extras)
+| [Troubleshooting](#troubleshooting)
+| [Developing&nbsp;ApprovalTests.cpp](#developing-approvaltestscpp)
+
+----
+
 ## Getting Started
 
 If you are new to Approval Tests, or to this C++ library, start here:
