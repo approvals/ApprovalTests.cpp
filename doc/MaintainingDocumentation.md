@@ -100,12 +100,14 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
 
 ### Managing CMake code samples
 
-The repository [claremacrae/ApprovalTests.cpp.CMakeSamples](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples) has some sample CMake projects for various development scenarios.
+The repository [claremacrae/ApprovalTests.cpp.CMakeSamples](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples) has some sample CMake projects for using ApprovalTests.cpp in various development scenarios.
 
-I'm exploring ways of embedding some CMake files from that repo in to [CMake Integration](/doc/CMakeIntegration.md#top) - see [MarkdownSnippets #157](https://github.com/SimonCropp/MarkdownSnippets/issues/157).
+When I improve the files in that repo, I run its script [claremacrae/ApprovalTests.cpp.CMakeSamples/create_markdown.py](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/create_markdown.py) to convert the interesting CMake files to Markdown.
 
-For now, I've used [claremacrae/ApprovalTests.cpp.CMakeSamples/create_markdown.py](
-https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/create_markdown.py) to convert the interesting CMake files to Markdown, and copy them to [doc/mdsource/](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/mdsource) with file names `inc_*.include.md`.
+Some of those Markdown files are then embedded in the documentation for this project.
+
+* See [CMakeIntegration.source.md](/doc/mdsource/CMakeIntegration.source.md) for the `include:` lines that do the inclusion
+* See [CMakeIntegration.md](/doc/CMakeIntegration.md) for the final result.
 
 ## Checking the documentation
 
