@@ -34,7 +34,7 @@ These examples demonstrate a few applications of Conan with ApprovalTests.cpp.
 
 This example use Conan's [cmake Generator](https://docs.conan.io/en/latest/reference/generators/cmake.html).
 
-The conanfile.txt file is:
+The `conanfile.txt` file lists the required libraries, and which generator to use (here, `conan`):
 
  <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_conanfile.include.md. path:  -->
 
@@ -49,7 +49,7 @@ cmake
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_conanfile.include.md. path:  -->
 
-The top-level CMakeLists.txt file is:
+The `conan` generator generates a `conanbuildinfo.cmake` file, which needs to used in the top-level CMakeLists.txt file like this:
 
  <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md. path:  -->
 
@@ -58,6 +58,8 @@ cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 project(conan_cmake)
 
+# Conan's cmake generator creates a conanbuildinfo.cmake file, which we
+# need to include, and then use:
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
 
@@ -68,7 +70,7 @@ add_subdirectory(tests)
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md. path:  -->
 
-And the CMakeLists.txt that builds the tests is:
+And the CMakeLists.txt that builds the tests is as follows (note the Conan-specific library target names):
 
  <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md. path:  -->
 
@@ -96,7 +98,7 @@ add_test(
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md. path:  -->
 
-The build script is:
+Example set of build commands to download dependencies, make the test program and run the tests:
 
  <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_build.include.md. path:  -->
 
