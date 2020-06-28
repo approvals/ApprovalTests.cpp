@@ -16,6 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Example Conan CMake Setups](#example-conan-cmake-setups)
     * [Using Conan's cmake_find_package and cmake_paths generators](#using-conans-cmake_find_package-and-cmake_paths-generators)
     * [Using Conan's cmake generator](#using-conans-cmake-generator)
+    * [Making CMake invoke Conan](#making-cmake-invoke-conan)
   * [Other people's examples](#other-peoples-examples)
   * [Links](#links)<!-- endtoc -->
 
@@ -208,6 +209,129 @@ ctest .
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/build.sh' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_build.include.md. path:  -->
+
+### Making CMake invoke Conan
+
+**Note:** The files in this section can be viewed and downloaded from [cmake_invoking_conan](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/cmake_invoking_conan).
+
+This example use Conan's [cmake-conan](https://github.com/conan-io/cmake-conan) CMake module.
+
+An advantage of this approach is that a project can use Conan to download dependencies, without people building that needing to know to run `conan install`. Anyone who is used to using CMake to generate builds will be able to build projects that use this mechanism. There will still need to be an installation of Conan on the build machine, however.
+
+The `conanfile.txt` file lists the required libraries but does not say which generator to use:
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_conanfile.include.md. path:  -->
+
+```
+# See CMake/Conan.cmake for how 'conan install' is launched from cmake
+
+[requires]
+catch2/2.11.0
+approvaltests.cpp/8.8.0
+
+# Note that we don't say what generator we want.
+# CMake code will take care of that for us.
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_conanfile.include.md. path:  -->
+
+There is a CMake file called `CMake/Conan.cmake` which contains instructions for downloading a specific version of the cmake-conan CMake module:
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_CMake_conan.include.md. path:  -->
+
+```
+macro(run_conan)
+# Download automatically, you can also just copy the conan.cmake file
+if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
+  message(
+    STATUS
+      "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
+  file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.15/conan.cmake"
+       "${CMAKE_BINARY_DIR}/conan.cmake")
+endif()
+
+include(${CMAKE_BINARY_DIR}/conan.cmake)
+
+conan_add_remote(NAME bincrafters URL
+                 https://api.bintray.com/conan/bincrafters/public-conan)
+
+conan_cmake_run(
+  CONANFILE conanfile.txt
+  BASIC_SETUP
+  CMAKE_TARGETS # individual targets to link to
+  BUILD
+    missing
+)
+endmacro()
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/CMake/Conan.cmake' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_CMake_conan.include.md. path:  -->
+
+The top-level CMakeLists.txt file includes the above `CMake/Conan.cmake` file, and runs the macro that it contained:
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_cmakelists.include.md. path:  -->
+
+```cmake
+cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
+
+project(conan_cmake)
+
+# Load CMake/Conan.cmake, which sets up a 'run_conan()' macro to download dependencies.
+include(CMake/Conan.cmake)
+run_conan()
+
+enable_testing()
+
+add_subdirectory(tests)
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_cmakelists.include.md. path:  -->
+
+And the CMakeLists.txt that builds the tests is as follows (note the Conan-specific library target names):
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_tests_cmakelists.include.md. path:  -->
+
+```cmake
+add_executable(tests
+        main.cpp
+        tests.cpp
+)
+
+# Note the Conan-specific library namees, beginning with CONAN_PKG.
+# Conan sets up these names when its cmake generator is used.
+# This ties your project to using Conan.
+target_link_libraries(
+        tests
+        CONAN_PKG::approvaltests.cpp
+        CONAN_PKG::catch2)
+
+target_compile_features(tests PUBLIC cxx_std_11)
+set_target_properties(tests PROPERTIES CXX_EXTENSIONS OFF)
+
+add_test(
+        NAME tests
+        COMMAND tests)
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_tests_cmakelists.include.md. path:  -->
+
+Example set of build commands to download dependencies, make the test program and run the tests - note that there isno line to run conan:
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_build.include.md. path:  -->
+
+```bash
+#!/bin/sh
+
+mkdir -p build
+cd       build
+# Note that we do not need to invoke conan.
+# However, we do need to say what build configuration we want.
+cmake  -DCMAKE_BUILD_TYPE=Debug ..
+cmake --build .
+ctest .
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/build.sh' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_build.include.md. path:  -->
 
 ## Other people's examples
 

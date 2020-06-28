@@ -62,6 +62,34 @@ Example set of build commands to download dependencies, make the test program an
 
 include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_build.include.md
 
+### Making CMake invoke Conan
+
+**Note:** The files in this section can be viewed and downloaded from [cmake_invoking_conan](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/cmake_invoking_conan).
+
+This example use Conan's [cmake-conan](https://github.com/conan-io/cmake-conan) CMake module.
+
+An advantage of this approach is that a project can use Conan to download dependencies, without people building that needing to know to run `conan install`. Anyone who is used to using CMake to generate builds will be able to build projects that use this mechanism. There will still need to be an installation of Conan on the build machine, however.
+
+The `conanfile.txt` file lists the required libraries but does not say which generator to use:
+
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_conanfile.include.md
+
+There is a CMake file called `CMake/Conan.cmake` which contains instructions for downloading a specific version of the cmake-conan CMake module:
+
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_CMake_conan.include.md
+
+The top-level CMakeLists.txt file includes the above `CMake/Conan.cmake` file, and runs the macro that it contained:
+
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_cmakelists.include.md
+
+And the CMakeLists.txt that builds the tests is as follows (note the Conan-specific library target names):
+
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_tests_cmakelists.include.md
+
+Example set of build commands to download dependencies, make the test program and run the tests - note that there isno line to run conan:
+
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_build.include.md
+
 ## Other people's examples
 
 Some examples of using the [Conan package manager](https://conan.io/):
