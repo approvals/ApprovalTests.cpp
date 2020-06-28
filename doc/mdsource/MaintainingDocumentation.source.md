@@ -58,7 +58,7 @@ Note that Sphinx detects a page's title automatically, and will use it for the t
 
 ### In the GitHub User Guide
 
-Each new documentation page needs to be added to [doc/mdsource/README.source.md](/doc/mdsource/README.source.md).
+Each new documentation page needs to be added to [doc/mdsource/README.source.md](/doc/mdsource/README.source.md#top).
 
 The layout here should mimic the layout generated you used in `index.rst`.
 
@@ -108,8 +108,8 @@ When I improve the files in that repo, I run its script [claremacrae/ApprovalTes
 
 Some of those Markdown files are then embedded in the documentation for this project.
 
-* See [CMakeIntegration.source.md](/doc/mdsource/CMakeIntegration.source.md) for the `include:` lines that do the inclusion
-* See [CMakeIntegration.md](/doc/CMakeIntegration.md) for the final result.
+* See [CMakeIntegration.source.md](/doc/mdsource/CMakeIntegration.source.md#top) for the `include:` lines that do the inclusion
+* See [CMakeIntegration.md](/doc/CMakeIntegration.md#top) for the final result.
 
 ## Checking the documentation
 
