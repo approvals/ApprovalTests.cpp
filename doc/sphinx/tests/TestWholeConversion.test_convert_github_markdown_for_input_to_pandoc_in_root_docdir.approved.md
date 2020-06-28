@@ -27,6 +27,12 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 [How To Release](https://github.com/approvals/ApprovalTests.cpp/blob/master/build/HowToRelease.md#top)
 
+## link to .source.md file must point to github site
+
+Because .source.md files are not converted to sphinx .rst files, and so would be broken links on Read the Docs.
+
+1. Add a new file about the customisation, such as [UsingCatch.source.md](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/mdsource/UsingCatch.source.md#top)
+
 ### links to docs in various relative paths are correct
 
 See [Target 1](subdir1/Doc1.html#target1).
