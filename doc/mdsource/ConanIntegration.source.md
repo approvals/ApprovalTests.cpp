@@ -14,6 +14,8 @@ This page assumes basic familiarity with Conan. For more information, see [Conan
 
 These examples demonstrate a few different ways of using Conan with ApprovalTests.cpp. They differ in which [Conan generator](https://docs.conan.io/en/latest/integrations/build_system/cmake.html#cmake) they use.
 
+They all specify their dependencies in a [`conanfile.txt`](https://docs.conan.io/en/latest/reference/conanfile_txt.html) file, but they could just as easily use a [`conanfile.py`](https://docs.conan.io/en/latest/reference/conanfile.html) instead.
+
 ### Using Conan's cmake_find_package and cmake_paths generators
 
 **Note:** The files in this section can be viewed and downloaded from [conan_cmake_find_package](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/conan_cmake_find_package).
