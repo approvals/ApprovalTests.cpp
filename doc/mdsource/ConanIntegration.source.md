@@ -6,6 +6,38 @@ toc
 
 ## Using Conan to obtain ApprovalTests.cpp
 
+The [Conan C++ package manager](https://conan.io) knows how to download released versions of ApprovalTests.cpp, and integrate the downloaded single-header file in to various C++ build systems.
+
+This page assumes basic familiarity with Conan. For more information, see [Conan's extensive documentation](https://docs.conan.io/en/latest/index.html).
+
+## Example Conan CMake Setups
+
+These examples demonstrate a few applications of Conan with ApprovalTests.cpp.
+
+### Using Conan's cmake generator
+
+**Note:** The files in this section can be viewed and downloaded from [conan_cmake](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/conan_cmake).
+
+This example use Conan's [cmake Generator](https://docs.conan.io/en/latest/reference/generators/cmake.html).
+
+The conanfile.txt file is:
+
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_conanfile.include.md
+
+The top-level CMakeLists.txt file is:
+
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md
+
+And the CMakeLists.txt that builds the tests is:
+
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md
+
+The build script is:
+
+include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_build.include.md
+
+## Other people's examples
+
 Some examples of using the [Conan package manager](https://conan.io/):
 
 * Daniel Heater's [ApprovalTests-ConanDemo repo](https://github.com/dheater/ApprovalTests-ConanDemo)

@@ -13,9 +13,107 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Using Conan to obtain ApprovalTests.cpp](#using-conan-to-obtain-approvaltestscpp)
+  * [Example Conan CMake Setups](#example-conan-cmake-setups)
+    * [Using Conan's cmake generator](#using-conans-cmake-generator)
+  * [Other people's examples](#other-peoples-examples)
   * [Links](#links)<!-- endtoc -->
 
 ## Using Conan to obtain ApprovalTests.cpp
+
+The [Conan C++ package manager](https://conan.io) knows how to download released versions of ApprovalTests.cpp, and integrate the downloaded single-header file in to various C++ build systems.
+
+This page assumes basic familiarity with Conan. For more information, see [Conan's extensive documentation](https://docs.conan.io/en/latest/index.html).
+
+## Example Conan CMake Setups
+
+These examples demonstrate a few applications of Conan with ApprovalTests.cpp.
+
+### Using Conan's cmake generator
+
+**Note:** The files in this section can be viewed and downloaded from [conan_cmake](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/conan_cmake).
+
+This example use Conan's [cmake Generator](https://docs.conan.io/en/latest/reference/generators/cmake.html).
+
+The conanfile.txt file is:
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_conanfile.include.md. path:  -->
+
+```
+[requires]
+catch2/2.11.0
+approvaltests.cpp/8.8.0
+
+[generators]
+cmake
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_conanfile.include.md. path:  -->
+
+The top-level CMakeLists.txt file is:
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md. path:  -->
+
+```cmake
+cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
+
+project(conan_cmake)
+
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
+
+enable_testing()
+
+add_subdirectory(tests)
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md. path:  -->
+
+And the CMakeLists.txt that builds the tests is:
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md. path:  -->
+
+```cmake
+add_executable(tests
+        main.cpp
+        tests.cpp
+)
+
+# Note the Conan-specific library namees, beginning with CONAN_PKG.
+# Conan sets up these names when its cmake generator is used.
+# This ties your project to using Conan.
+target_link_libraries(
+        tests
+        CONAN_PKG::approvaltests.cpp
+        CONAN_PKG::catch2)
+
+target_compile_features(tests PUBLIC cxx_std_11)
+set_target_properties(tests PROPERTIES CXX_EXTENSIONS OFF)
+
+add_test(
+        NAME tests
+        COMMAND tests)
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md. path:  -->
+
+The build script is:
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_build.include.md. path:  -->
+
+```bash
+#!/bin/sh
+
+mkdir -p build
+cd       build
+conan install ..
+cmake  ..
+cmake --build .
+ctest .
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/build.sh' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_build.include.md. path:  -->
+
+## Other people's examples
 
 Some examples of using the [Conan package manager](https://conan.io/):
 
