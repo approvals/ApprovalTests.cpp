@@ -239,7 +239,7 @@ There is a CMake file called `CMake/Conan.cmake` which contains instructions for
 
  <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_CMake_conan.include.md. path:  -->
 
-```
+```cmake
 macro(run_conan)
 # Download automatically, you can also just copy the conan.cmake file
 if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
