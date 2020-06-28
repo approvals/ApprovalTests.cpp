@@ -1,8 +1,3 @@
-find_package(Doxygen)
-if (NOT Doxygen_FOUND)
-    message(STATUS "Doxygen not found: Will not generate docs")
-    return()
-endif ()
 find_package(Sphinx)
 if (NOT Sphinx_FOUND)
     message(STATUS "Sphinx not found: Will not generate docs")

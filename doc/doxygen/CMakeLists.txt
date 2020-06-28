@@ -1,3 +1,9 @@
+find_package(Doxygen)
+if (NOT Doxygen_FOUND)
+    message(STATUS "Doxygen not found: Will not generate docs")
+    return()
+endif ()
+
 set(DOXYGEN_INPUT_DIR ${PROJECT_SOURCE_DIR}/ApprovalTests)
 set(DOXYGEN_INPUT_DIR ${DOXYGEN_INPUT_DIR} PARENT_SCOPE)
 
