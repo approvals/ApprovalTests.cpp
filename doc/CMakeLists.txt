@@ -9,8 +9,8 @@ if (NOT Sphinx_FOUND)
     return()
 endif ()
 
-# Find all the public headers
-file(GLOB_RECURSE APPROVAL_TESTS_PUBLIC_HEADERS CONFIGURE_DEPENDS
+# Find all the public source
+file(GLOB_RECURSE APPROVAL_TESTS_PUBLIC_SOURCE CONFIGURE_DEPENDS
         ${PROJECT_SOURCE_DIR}/ApprovalTests/*.h
         ${PROJECT_SOURCE_DIR}/ApprovalTests/*.cpp)
 
