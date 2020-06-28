@@ -1,3 +1,7 @@
+set(SPHINX_SOURCE ${CMAKE_CURRENT_SOURCE_DIR})
+set(SPHINX_BUILD ${CMAKE_CURRENT_BINARY_DIR})
+set(SPHINX_INDEX_FILE ${SPHINX_BUILD}/index.html)
+
 # APPROVAL_TESTS_GEN_DOC_RST_FILES       will contain .rst files corresponding to the generated *.md
 string(REPLACE "/doc/" "/doc/sphinx/generated_docs/" APPROVAL_TESTS_GEN_DOC_RST_FILES "${APPROVAL_TESTS_GEN_DOC_MD_FILES}")
 string(REPLACE ".md" ".rst" APPROVAL_TESTS_GEN_DOC_RST_FILES "${APPROVAL_TESTS_GEN_DOC_RST_FILES}")
