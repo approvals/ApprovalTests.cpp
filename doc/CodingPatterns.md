@@ -16,6 +16,10 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ## Static variables for header-only releases
 
+**Note:** As of v.10.1.1, this pattern is still used, but it is no longer needed. Method implementations are now in .cpp files, so the more conventional mechanism for initialising static variables would work fine.
+
+----
+
 Here is a sample of the pattern that we are using:
 
 <!-- snippet: static_variable_sample_header -->
