@@ -16,6 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Creating new pages](#creating-new-pages)
   * [Internal links need to be absolute](#internal-links-need-to-be-absolute)
   * [Adding code and file samples](#adding-code-and-file-samples)
+    * [How it works](#how-it-works)
     * [Managing CMake code samples](#managing-cmake-code-samples)
   * [Checking the documentation](#checking-the-documentation)
     * [Automated checking of links in documentation](#automated-checking-of-links-in-documentation)
@@ -86,7 +87,7 @@ And not this:
 
 We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSnippets) tool to embed source code and other files in Markdown pages.
 
-**How it works:**
+### How it works
 
 * Call the source file `[something].source.md`.
 * Make sure it is in a `mdsource` directory

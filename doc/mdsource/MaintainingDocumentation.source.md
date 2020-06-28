@@ -69,7 +69,7 @@ And not this:
 
 We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSnippets) tool to embed source code and other files in Markdown pages.
 
-**How it works:**
+### How it works
 
 * Call the source file `[something].source.md`.
 * Make sure it is in a `mdsource` directory
