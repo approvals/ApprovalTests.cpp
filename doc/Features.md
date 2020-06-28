@@ -70,7 +70,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ### Improved Compilation Speeds
 
-![Compilation Times: 2.7 secs in v.10.1.0 decreased to 1.2 secs in v.10.1.1](/doc/images/ApprovalTests_v.10.1.1_compilation_times.png?raw=true)
+![Compilation Times: v.10.1.0: 2.7 secs vs v.10.1.1: 1.2 secs](/doc/images/ApprovalTests_v.10.1.1_compilation_times.png?raw=true)
 
 ## v.10.0.0
 
