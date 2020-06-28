@@ -14,6 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Using Conan to obtain ApprovalTests.cpp](#using-conan-to-obtain-approvaltestscpp)
   * [Example Conan CMake Setups](#example-conan-cmake-setups)
+    * [Using Conan's cmake_find_package and cmake_paths generators](#using-conans-cmake_find_package-and-cmake_paths-generators)
     * [Using Conan's cmake generator](#using-conans-cmake-generator)
   * [Other people's examples](#other-peoples-examples)
   * [Links](#links)<!-- endtoc -->
@@ -26,13 +27,106 @@ This page assumes basic familiarity with Conan. For more information, see [Conan
 
 ## Example Conan CMake Setups
 
-These examples demonstrate a few applications of Conan with ApprovalTests.cpp.
+These examples demonstrate a few different ways of using Conan with ApprovalTests.cpp. They differ in which [Conan generator](https://docs.conan.io/en/latest/integrations/build_system/cmake.html#cmake) they use.
+
+### Using Conan's cmake_find_package and cmake_paths generators
+
+**Note:** The files in this section can be viewed and downloaded from [conan_cmake_find_package](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/conan_cmake_find_package).
+
+This example use Conan's [cmake_find_package](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_find_package_generator.html) generator, and optionally also the [cmake_paths](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_paths_generator.html) generator.
+
+The benefit of these generators is consistency: the target names for dependencies (for example, `ApprovalTests::ApprovalTests`) are generally the same as you would get if building against the library's own CMake files.
+
+This gives more flexibility, as it opens up the possibility of some users obtaining dependencies via Conan, and other users building the dependencies themselves, with CMake)
+
+The `conanfile.txt` file lists the required libraries, and which generator to use (here, `cmake_find_package` and optionally `cmake_paths`):
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_conanfile.include.md. path:  -->
+
+```
+[requires]
+catch2/2.11.0
+approvaltests.cpp/8.8.0
+
+[generators]
+cmake_find_package
+cmake_paths
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_conanfile.include.md. path:  -->
+
+There are two choices for the CMake instructions used in the top-level CMakeLists.txt file with these generators, as explained in the comments here:
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_cmakelists.include.md. path:  -->
+
+```cmake
+cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
+
+project(conan_cmake_find_package)
+
+# EITHER Using the "cmake_find_package" generator
+#set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})
+#set(CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR} ${CMAKE_PREFIX_PATH})
+
+# OR Using the "cmake_find_package" and "cmake_paths" generators
+include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
+
+find_package(Catch2 REQUIRED)
+find_package(ApprovalTests REQUIRED)
+
+enable_testing()
+
+add_subdirectory(tests)
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_cmakelists.include.md. path:  -->
+
+And the CMakeLists.txt that builds the tests is as follows (note the standard library target names):
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_tests_cmakelists.include.md. path:  -->
+
+```cmake
+add_executable(tests
+        main.cpp
+        tests.cpp
+)
+target_link_libraries(
+        tests
+        ApprovalTests::ApprovalTests
+        Catch2::Catch2)
+
+target_compile_features(tests PUBLIC cxx_std_11)
+set_target_properties(tests PROPERTIES CXX_EXTENSIONS OFF)
+
+add_test(
+        NAME tests
+        COMMAND tests)
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_tests_cmakelists.include.md. path:  -->
+
+Example set of build commands to download dependencies, make the test program and run the tests:
+
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_build.include.md. path:  -->
+
+```bash
+#!/bin/sh
+
+mkdir -p build
+cd       build
+conan install ..
+cmake  ..
+cmake --build .
+ctest .
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/build.sh' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_build.include.md. path:  -->
 
 ### Using Conan's cmake generator
 
 **Note:** The files in this section can be viewed and downloaded from [conan_cmake](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/conan_cmake).
 
-This example use Conan's [cmake Generator](https://docs.conan.io/en/latest/reference/generators/cmake.html).
+This example use Conan's [cmake](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_generator.html) Generator.
 
 The `conanfile.txt` file lists the required libraries, and which generator to use (here, `conan`):
 
