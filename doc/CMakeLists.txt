@@ -12,7 +12,5 @@ string(REPLACE "mdsource/" "" APPROVAL_TESTS_GEN_DOC_MD_FILES "${APPROVAL_TESTS_
 string(REPLACE ".source.md" ".md" APPROVAL_TESTS_GEN_DOC_MD_FILES "${APPROVAL_TESTS_GEN_DOC_MD_FILES}")
 
 add_subdirectory(doxygen)
-
 add_subdirectory(run_mdsnippets)
-
 add_subdirectory(sphinx)
