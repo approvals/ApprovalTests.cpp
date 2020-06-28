@@ -6,11 +6,11 @@ toc
 
 We welcome improvements to the documentation! Here's how we manage the documentation files. 
 
-### Future version numbers
+## Future version numbers
 
 To refer to the next release, use 'v.x.y.z', and make sure that there is a step to edit the file to update that text to the actual version number in the release scripts.
 
-### Creating new pages
+## Creating new pages
 
 *Note: All the master Markdown pages in this project are called `mdsource/[something].source.md`*
 
@@ -43,7 +43,7 @@ If the new page will be outside of the [doc](/doc/) folder, delete the following
 [Back to User Guide](/doc/README.md#top)
 ```
 
-### Internal links need to be absolute 
+## Internal links need to be absolute 
 
 All references to other files in this project, such as hyperlinks and images, must specify the full path from the root of the repository. This will allow those links to work correctly in both the source and generated markdown files. Relative paths cannot work for both the source and the target file. 
 
@@ -65,7 +65,7 @@ And not this:
 * [this link is wrong](Reporters.md#top)
 ```
 
-### Adding code and file samples
+## Adding code and file samples
 
 We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSnippets) tool to embed source code and other files in Markdown pages.
 
@@ -81,7 +81,7 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
     * This will update the tables of contents and the machine-generated `[something].md` files.
     * If this does not work, see that script for how to install the tools it uses
 
-#### Managing CMake code samples
+### Managing CMake code samples
 
 The repository [claremacrae/ApprovalTests.cpp.CMakeSamples](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples) has some sample CMake projects for various development scenarios.
 
@@ -90,9 +90,9 @@ I'm exploring ways of embedding some CMake files from that repo in to [CMake Int
 For now, I've used [claremacrae/ApprovalTests.cpp.CMakeSamples/create_markdown.py](
 https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/create_markdown.py) to convert the interesting CMake files to Markdown, and copy them to [doc/mdsource/](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/mdsource) with file names `inc_*.include.md`.
 
-### Checking the documentation
+## Checking the documentation
 
-#### Automated checking of links in documentation
+### Automated checking of links in documentation
 
 There is a "markdown-link-check" github workflow that checks for broken links all in the Markdown files. It checks for missing file names, but will not detect missing anchors.
 
@@ -102,7 +102,7 @@ There is a "markdown-link-check" github workflow that checks for broken links al
 
 If there are any failures, the output is slightly verbose to look through - you have to find lines beginning `[*]`, but I think that these will be sufficiently few and far between that this is good enough.
 
-#### Other checks of documentation
+### Other checks of documentation
 
 The script [fix_markdown.sh](/fix_markdown.sh) can be used to do some checks of the Markdown documentation files.
 
