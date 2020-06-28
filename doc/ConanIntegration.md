@@ -128,7 +128,8 @@ Some examples of using the [Conan package manager](https://conan.io/):
 
 ## Links
 
-* For users: [conan.io/center/approvaltests.cpp](https://conan.io/center/approvaltests.cpp/8.2.0/?user=_&channel=_)
+* For users: [conan.io/center/approvaltests.cpp](https://conan.io/center/approvaltests.cpp/10.1.1/?user=_&channel=_)
+    * Note: There may well be newer versions available than this link points to.
 * For maintainers: [the Conan recipe: approvaltests.cpp](https://github.com/conan-io/conan-center-index/tree/master/recipes/approvaltests.cpp)
 
 ---
