@@ -12,6 +12,8 @@ lots of fields, or lists of objects.
 
 ----
 
+<!-- NOTE: This list needs to be updated by hand if new sections are added -->
+
 *Contents:&nbsp;[Getting&nbsp;Started](#getting-started)
 | [Test&nbsp;Frameworks](#test-frameworks)
 | [Writing&nbsp;Tests](#writing-tests)
@@ -138,6 +140,8 @@ effectively.
 ## C++ Reference
 
 This section contains a growing list of "Read the Docs" pages documenting the ApprovalTests.cpp API. It may be useful to see what methods, and overloads, are available. It is very short on descriptive text, as we focus our efforts on the documentation above.
+
+<!-- NOTE: This list needs to be updated by hand if new pages are added -->
 
   - **Fundamentals**: [Approving Objects](https://approvaltestscpp.readthedocs.io/en/latest/api/approving.html) | [Core Classes](https://approvaltestscpp.readthedocs.io/en/latest/api/core.html) | [Scrubber Functions](https://approvaltestscpp.readthedocs.io/en/latest/api/scrubbers.html)
 
