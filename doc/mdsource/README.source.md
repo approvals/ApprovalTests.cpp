@@ -12,7 +12,7 @@ lots of fields, or lists of objects.
 
 ----
 
-Contents:&nbsp;[Getting&nbsp;Started](#getting-started)
+*Contents:&nbsp;[Getting&nbsp;Started](#getting-started)
 | [Test&nbsp;Frameworks](#test-frameworks)
 | [Writing&nbsp;Tests](#writing-tests)
 | [Customising&nbsp;Behaviour](#customising-behaviour)
@@ -22,7 +22,7 @@ Contents:&nbsp;[Getting&nbsp;Started](#getting-started)
 | [Extras](#extras)
 | [Troubleshooting](#troubleshooting)
 | [Developing&nbsp;ApprovalTests.cpp](#developing-approvaltestscpp)
-| [C++ Reference](#c-reference)
+| [C++ Reference](#c-reference)*
 
 ----
 
