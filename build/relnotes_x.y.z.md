@@ -7,4 +7,6 @@
 * **Bug fixes**
     * None
 * **Other changes**
-    * None
+    * The [User Guide on GitHub](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#top) now has (manually maintained):
+        * table of contents
+        * new "C++ Reference" section, with links to the API documentation on Read the Docs.
