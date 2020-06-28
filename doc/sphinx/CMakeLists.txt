@@ -1,3 +1,9 @@
+find_package(Sphinx)
+if (NOT Sphinx_FOUND)
+    message(STATUS "Sphinx not found: Will not generate docs")
+    return()
+endif ()
+
 set(SPHINX_SOURCE ${CMAKE_CURRENT_SOURCE_DIR})
 set(SPHINX_BUILD ${CMAKE_CURRENT_BINARY_DIR})
 set(SPHINX_INDEX_FILE ${SPHINX_BUILD}/index.html)

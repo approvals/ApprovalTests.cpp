@@ -1,9 +1,3 @@
-find_package(Sphinx)
-if (NOT Sphinx_FOUND)
-    message(STATUS "Sphinx not found: Will not generate docs")
-    return()
-endif ()
-
 # Find all the public source
 file(GLOB_RECURSE APPROVAL_TESTS_PUBLIC_SOURCE CONFIGURE_DEPENDS
         ${PROJECT_SOURCE_DIR}/ApprovalTests/*.h
