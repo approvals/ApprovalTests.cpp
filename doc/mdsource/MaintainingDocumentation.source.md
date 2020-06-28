@@ -43,6 +43,25 @@ If the new page will be outside of the [doc](/doc/) folder, delete the following
 [Back to User Guide](/doc/README.md#top)
 ```
 
+## Linking to new pages
+
+Two files need to be edited when new pages are added, so the new file is visible to users.
+
+### In Sphinx for Read the Docs
+
+Each new documentation page needs to be added twice in [doc/sphinx/index.rst](/doc/sphinx/index.rst).
+
+1. A line beginning `:doc:`, which includes the page in the [Read the Docs front page](https://approvaltestscpp.readthedocs.io/en/latest/).
+2. A link in a `.. toctree::` section, which includes the page in the navigation panel.
+
+Note that Sphinx detects a page's title automatically, and will use it for the text in the hyperlink automatically, so you only need to spell out the link's text if you want it to be different from the page's title.
+
+### In the GitHub User Guide
+
+Each new documentation page needs to be added to [doc/mdsource/README.source.md](/doc/mdsource/README.source.md).
+
+The layout here should mimic the layout generated you used in `index.rst`.
+
 ## Internal links need to be absolute 
 
 All references to other files in this project, such as hyperlinks and images, must specify the full path from the root of the repository. This will allow those links to work correctly in both the source and generated markdown files. Relative paths cannot work for both the source and the target file. 
