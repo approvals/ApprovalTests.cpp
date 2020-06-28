@@ -10,7 +10,9 @@ if (NOT Sphinx_FOUND)
 endif ()
 
 # Find all the public headers
-file(GLOB_RECURSE APPROVAL_TESTS_PUBLIC_HEADERS CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/ApprovalTests/*.h)
+file(GLOB_RECURSE APPROVAL_TESTS_PUBLIC_HEADERS CONFIGURE_DEPENDS
+        ${PROJECT_SOURCE_DIR}/ApprovalTests/*.h
+        ${PROJECT_SOURCE_DIR}/ApprovalTests/*.cpp)
 
 # Find all the .md files in doc/ directory
 # APPROVAL_TESTS_ALL_DOC_SOURCE_MD_FILES will contain all mdsource/*.source.md files
