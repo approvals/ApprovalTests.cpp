@@ -16,7 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Required Tools](#required-tools)
   * [CMake Targets](#cmake-targets)
   * [Implementation Details](#implementation-details)
-    * [Step1: mdsnippets and Markdown Files](#step1-mdsnippets-and-markdown-files)
+    * [Step 1: mdsnippets and Markdown Files](#step-1-mdsnippets-and-markdown-files)
       * [mdsnippets Summary](#mdsnippets-summary)
       * [mdsnippets Details](#mdsnippets-details)
     * [Images](#images)
@@ -78,7 +78,7 @@ On platforms other than macOS, replace the `open` command with whatever opens a 
 
 The rest of this document explains the file conversion processes, in case anyone else needs to maintain them.
 
-### Step1: mdsnippets and Markdown Files
+### Step 1: mdsnippets and Markdown Files
 
 #### mdsnippets Summary
 

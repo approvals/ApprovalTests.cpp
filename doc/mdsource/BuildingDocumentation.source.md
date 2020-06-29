@@ -55,7 +55,7 @@ On platforms other than macOS, replace the `open` command with whatever opens a 
 
 The rest of this document explains the file conversion processes, in case anyone else needs to maintain them.
 
-### Step1: mdsnippets and Markdown Files
+### Step 1: mdsnippets and Markdown Files
 
 #### mdsnippets Summary
 
