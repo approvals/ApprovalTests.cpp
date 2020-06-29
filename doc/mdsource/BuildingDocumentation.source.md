@@ -42,6 +42,15 @@ On developer machines, where the required tools are installed, the following CMa
 
 ![CMake targets for building documentation](/doc/images/cmake_documentation_targets.png?raw=true)
 
+To run all these steps, and open the Sphinx output in a web browser:
+
+```bash
+# in a cmake-created build tree:
+cmake --build . --target Sphinx && open doc/sphinx/index.html
+``` 
+
+On platforms other than macOS, replace the `open` command with whatever opens a file in web browser.
+
 ## Step1: mdsnippets and Markdown Files
 
 ### mdsnippets Summary
