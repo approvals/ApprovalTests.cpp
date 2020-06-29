@@ -1,0 +1,28 @@
+digraph mdsnippets_flow {
+    rankdir = "LR"
+    node [fontsize = 10, shape = box, height = 0.25]
+    edge [fontsize = 10]
+
+    "mdsnippets"
+
+    "docs_mdsource_md" [label = "docs/mdsource/*.(source,include).md"]
+    "docs_mdsource_md" -> "mdsnippets"
+
+    "ApprovalTests" [label = "ApprovalTests/*.(h,cpp)"]
+    "ApprovalTests" -> "mdsnippets"
+
+    "tests_source" [label = "tests/*.(h,cpp)"]
+    "tests_source" -> "mdsnippets"
+
+    "tests_approved" [label = "tests/*.approved.*"]
+    "tests_approved" -> "mdsnippets"
+
+    "examples_source" [label = "examples/*.(h,cpp)"]
+    "examples_source" -> "mdsnippets"
+
+    "examples_approved" [label = "examples/*.approved.*"]
+    "examples_approved" -> "mdsnippets"
+
+    "docs_md" [label = "docs/*..md"]
+    "mdsnippets" -> "docs_md"
+}
