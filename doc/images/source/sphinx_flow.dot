@@ -3,7 +3,7 @@ digraph doxygen_flow {
     node [fontsize = 14, shape = box, height = 0.25]
     edge [fontsize = 14]
 
-    "sphinx"
+    "sphinx" [shape = oval, fillcolor = lightgray, style = filled]
 
     "source_rst" [label = "doc/sphinx/index.rst\ndoc/sphinx/api/*.rst\ndoc/sphinx/_templates/*.html"]
     "source_rst" -> "sphinx"

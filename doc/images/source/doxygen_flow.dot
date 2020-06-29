@@ -10,7 +10,7 @@ digraph doxygen_flow {
     "Doxyfile" [label = "build_tree/doc/doxygen/Doxyfile"]
     "CMake" -> "Doxyfile"
 
-    "doxygen"
+    "doxygen" [shape = oval, fillcolor = lightgray, style = filled]
 
     "doxygen_dox_files" [label = "doc/doxygen_docs/*.dox"]
     "doxygen_dox_files" -> "doxygen"
