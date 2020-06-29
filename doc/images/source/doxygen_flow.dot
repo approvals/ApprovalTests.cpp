@@ -12,6 +12,9 @@ digraph doxygen_flow {
 
     "doxygen"
 
+    "doxygen_dox_files" [label = "doc/doxygen_docs/*.dox"]
+    "doxygen_dox_files" -> "doxygen"
+
     "Doxyfile" -> "doxygen"
     "ApprovalTests" [label = "ApprovalTests/*.(h,cpp)"]
     "ApprovalTests" -> "doxygen"
