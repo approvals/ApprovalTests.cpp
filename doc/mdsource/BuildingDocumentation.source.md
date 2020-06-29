@@ -32,7 +32,9 @@ Other files:
 * `images/tutorial/*`
   * Images for inclusion in docs
 * `images/source/*`
-  * Sources for some of the images. Note that there is no system to update the generated images if the source images change.
+  * Sources for some of the images.
+* `images/source/generate_images.py`
+  * Script that generates images from some source files.
 
 ### Doxygen Files
 
