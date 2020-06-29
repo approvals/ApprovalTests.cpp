@@ -14,7 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Introduction](#introduction)
   * ['doc' Directory Structure](#doc-directory-structure)
-    * [Markdown Files](#markdown-files)
+    * [mdsnippets and Markdown Files](#mdsnippets-and-markdown-files)
     * [Images](#images)
     * [Doxygen Files](#doxygen-files)
     * [ReStructured Text Files](#restructured-text-files)
@@ -28,22 +28,22 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ## 'doc' Directory Structure
 
-### Markdown Files
+### mdsnippets and Markdown Files
 
-| Inputs                              | Outputs             |
-| ----------------------------------- | ------------------- |
-| `mdsource/*.source.md`              | `*.md`              |
-| `explanations/mdsource/*.source.md` | `explanations/*.md` |
-| `how_tos/mdsource/*.source.md`      | `how_tos/.*md`      |
+* Input files:
+    * `mdsource/*.source.md`
+    * `explanations/mdsource/*.source.md`
+    * `how_tos/mdsource/*.source.md`
+    * `mdsource/*.include.md`
+      * Get included in generated *.md files
+    * `https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples)/*.include.md`
+      * Machine-generated files for included in Conan and CMake docs
+* Output Files:
+    * `*.md`
+    * `explanations/*.md`
+    * `how_tos/.*md`
 
-Other files:
-
-* `mdsource/*.include.md`
-  * Get included in generated *.md files
-* `https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples)/*.include.md`
-  * Machine-generated files for included in Conan and CMake docs
-
-![Markdown Files](/doc/images/mdsnippets_flow.png?raw=true)
+![Flow of Markdown files through mdsnippets](/doc/images/mdsnippets_flow.png?raw=true)
 
 ### Images
 
