@@ -42,7 +42,7 @@ On developer machines, where the required tools are installed, the following CMa
 
 ![CMake targets for building documentation](/doc/images/cmake_documentation_targets.png?raw=true)
 
-## mdsnippets and Markdown Files
+## Step1: mdsnippets and Markdown Files
 
 ### mdsnippets Summary
 
@@ -78,7 +78,7 @@ On developer machines, where the required tools are installed, the following CMa
 * `doc/images/source/generate_images.py`
     * Script that generates images from some source files.
 
-## Doxygen Files
+## Step 2: Doxygen conversion
 
 ### Doxygen Summary
 
@@ -109,12 +109,13 @@ On developer machines, where the required tools are installed, the following CMa
     * `doc/ApprovalTests/*.cpp`
     * `doc/ApprovalTests/*.h`
 
-## Sphinx ReStructured Text Files
+## Step3: ReStructured Text and Sphinx
 
 ### Sphinx Summary
 
 * Purpose:
     * Use the Sphinx system to generate a nicely formatted, usable version of our Markdown and C++ documentation, for serving from Read the Docs
+    * This involves processing and converting our Markdown files to [reStructuredText format](https://docutils.sourceforge.io/rst.html)
 * Output Files:
     * `build_tree/doc/sphinx/index.html`
     * [Read the Docs documentation](https://approvaltestscpp.readthedocs.io/en/latest/)
