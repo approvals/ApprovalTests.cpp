@@ -26,21 +26,25 @@ toc
 | Inputs                                    | Outputs               |
 | ----------------------------------------- | --------------------- |
 | **doc/mdsource/\*.source.md**              | doc/\*.md              |
-| **doc/mdsource/\*.include.md** |  |
 | **doc/explanations/mdsource/\*.source.md** | doc/explanations/\*.md |
 | **doc/how_tos/mdsource/\*.source.md**      | doc/how_tos/.*md      |
 
+Other files:
 
+* **doc/mdsource/\*.include.md**
+  * Get included in generated \*.md files
+* **[github.com/claremacrae/ApprovalTests.cpp.CMakeSamples](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples)/*.include.md**
+  * Machine-generated files for included in Conan and CMake docs
 
 ### Images
 
 
-
-| Files                      | Comments                                                     |
-| -------------------------- | ------------------------------------------------------------ |
-| **doc/images/\***          | Images for inclusion in docs                                 |
-| **doc/images/tutorial/\*** | Images for inclusion in docs                                 |
-| **doc/images/source/\***   | Sources for some of the images. Note that there is no system to update the generated images if the source images change. |
+* **doc/images/\***
+  * Images for inclusion in docs
+* **doc/images/tutorial/\***
+  * Images for inclusion in docs
+* **doc/images/source/\***
+  * Sources for some of the images. Note that there is no system to update the generated images if the source images change.
 
 
 
