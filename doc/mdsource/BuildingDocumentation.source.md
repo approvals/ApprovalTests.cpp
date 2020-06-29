@@ -8,6 +8,15 @@ toc
 
 ## mdsnippets and Markdown Files
 
+* Purpose:
+    * Update the machine-generated markdown files, which will be later used as inputs to the sphinx documentation
+* Configuration files:
+    * `doc/run_mdsnippets/CMakeLists.txt`
+        * Creates a CMake target `RunMdsnippets`
+            * Note: this is not included in the target `all`
+        * This target makes it convenient to quickly run `run_markdown_templates.sh` from within CLion, without switching to a console window.
+    * `mdsnippets.json`
+        * Configuration used by mdsnippets
 * Input files:
     * `doc/mdsource/*.source.md`
     * `doc/explanations/mdsource/*.source.md`
@@ -86,9 +95,6 @@ toc
 
 ```text
 doc/requirements.txt
-
-doc/run_mdsnippets/
-doc/run_mdsnippets/CMakeLists.txt
 
 doc/sphinx/
 doc/sphinx/CMakeLists.txt
