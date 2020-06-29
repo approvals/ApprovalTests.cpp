@@ -14,11 +14,11 @@ toc
 
 
 
-| Inputs                                    | Outputs               |
-| ----------------------------------------- | --------------------- |
-| `doc/mdsource/*.source.md`            | `doc/*.md`            |
+| Inputs                                  | Outputs                 |
+| --------------------------------------- | ----------------------- |
+| `doc/mdsource/*.source.md`              | `doc/*.md`              |
 | `doc/explanations/mdsource/*.source.md` | `doc/explanations/*.md` |
-| `doc/how_tos/mdsource/*.source.md`    | `doc/how_tos/.*md`    |
+| `doc/how_tos/mdsource/*.source.md`      | `doc/how_tos/.*md`      |
 
 Other files:
 
@@ -49,13 +49,13 @@ Other files:
 
 ### ReStructured Text Files
 
-| Inputs                   | Outputs                                      |
-| ------------------------ | -------------------------------------------- |
-| `doc/sphinx/index.rst` |                                              |
-| `doc/sphinx/api/*.rst` |                                              |
-| `doc/*.md`               | `doc/sphinx/generated_docs/*.rst`            |
-| `doc/explanations/*.md`  | `doc/sphinx/generated_docs/explanations/*.rst` |
-| `doc/how_tos/*.md`        | `doc/sphinx/generated_docs/how_tos/*.rst`     |
+| Inputs                  | Outputs                                        |
+| ----------------------- | ---------------------------------------------- |
+| `doc/sphinx/index.rst`  |                                                |
+| `doc/sphinx/api/*.rst`  |                                                |
+| `doc/*.md`              | `doc/sphinx/generated_docs/*.rst`              |
+| `doc/explanations/*.md` | `doc/sphinx/generated_docs/explanations/*.rst` |
+| `doc/how_tos/*.md`      | `doc/sphinx/generated_docs/how_tos/*.rst`      |
 
 
 
