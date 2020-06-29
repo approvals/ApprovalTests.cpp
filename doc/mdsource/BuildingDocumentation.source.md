@@ -10,49 +10,40 @@ toc
 
 
 
-### Key
-
-| Format   | Description                        |
-| -------- | ---------------------------------- |
-| **Bold** | Source file, maintained by a human |
-| Non-bold | Machine-generated file             |
-
-
-
 ### Markdown Files
 
 
 
 | Inputs                                    | Outputs               |
 | ----------------------------------------- | --------------------- |
-| **doc/mdsource/\*.source.md**              | doc/\*.md              |
-| **doc/explanations/mdsource/\*.source.md** | doc/explanations/\*.md |
-| **doc/how_tos/mdsource/\*.source.md**      | doc/how_tos/.*md      |
+| `doc/mdsource/*.source.md`            | `doc/*.md`            |
+| `doc/explanations/mdsource/*.source.md` | `doc/explanations/*.md` |
+| `doc/how_tos/mdsource/*.source.md`    | `doc/how_tos/.*md`    |
 
 Other files:
 
-* **doc/mdsource/\*.include.md**
-  * Get included in generated \*.md files
-* **[github.com/claremacrae/ApprovalTests.cpp.CMakeSamples](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples)/\*.include.md**
+* `doc/mdsource/*.include.md`
+  * Get included in generated *.md files
+* `https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples)/*.include.md`
   * Machine-generated files for included in Conan and CMake docs
 
 ### Images
 
 
-* **doc/images/\***
+* `doc/images/*`
   * Images for inclusion in docs
-* **doc/images/tutorial/\***
+* `doc/images/tutorial/*`
   * Images for inclusion in docs
-* **doc/images/source/\***
+* `doc/images/source/*`
   * Sources for some of the images. Note that there is no system to update the generated images if the source images change.
 
 
 
 ### Doxygen Files
 
-| Inputs                                    | Outputs               |
-| ----------------------------------------- | --------------------- |
-| **doc/mdsource/\*.source.md**              | doc/\*.md              |
+| Inputs                     | Outputs    |
+| -------------------------- | ---------- |
+| `doc/mdsource/*.source.md` | `doc/*.md` |
 
 
 
@@ -60,11 +51,11 @@ Other files:
 
 | Inputs                   | Outputs                                      |
 | ------------------------ | -------------------------------------------- |
-| **doc/sphinx/index.rst** |                                              |
-| **doc/sphinx/api/\*.rst** |                                              |
-| doc/\*.md                 | doc/sphinx/generated_docs/\*.rst              |
-| doc/explanations/\*.md    | doc/sphinx/generated_docs/explanations/\*.rst |
-| doc/how_tos/\*.md          | doc/sphinx/generated_docs/how_tos/\*.rst       |
+| `doc/sphinx/index.rst` |                                              |
+| `doc/sphinx/api/*.rst` |                                              |
+| `doc/*.md`               | `doc/sphinx/generated_docs/*.rst`            |
+| `doc/explanations/*.md`  | `doc/sphinx/generated_docs/explanations/*.rst` |
+| `doc/how_tos/*.md`        | `doc/sphinx/generated_docs/how_tos/*.rst`     |
 
 
 
