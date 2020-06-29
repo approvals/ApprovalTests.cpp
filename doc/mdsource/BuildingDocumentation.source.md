@@ -33,7 +33,7 @@ Other files:
 
 * **doc/mdsource/\*.include.md**
   * Get included in generated \*.md files
-* **[github.com/claremacrae/ApprovalTests.cpp.CMakeSamples](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples)/*.include.md**
+* **[github.com/claremacrae/ApprovalTests.cpp.CMakeSamples](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples)/\*.include.md**
   * Machine-generated files for included in Conan and CMake docs
 
 ### Images
