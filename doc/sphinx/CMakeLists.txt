@@ -33,6 +33,7 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         # Other docs files you want to track should go here (or in some variable)
         api/approving.rst
         api/core.rst
+        api/scrubbers.rst
         index.rst
         markdown_conversion.py
         ${DOXYGEN_INDEX_FILE}
