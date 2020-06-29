@@ -52,17 +52,24 @@ toc
 
 ![Flow of files through doxygen](/doc/images/doxygen_flow.png?raw=true)
 
-### ReStructured Text Files
+### Sphinx ReStructured Text Files
 
-| Inputs              | Outputs                                    |
-| ------------------- | ------------------------------------------ |
-| `sphinx/index.rst`  |                                            |
-| `sphinx/api/*.rst`  |                                            |
-| `*.md`              | `sphinx/generated_docs/*.rst`              |
-| `explanations/*.md` | `sphinx/generated_docs/explanations/*.rst` |
-| `how_tos/*.md`      | `sphinx/generated_docs/how_tos/*.rst`      |
+* Input files:
+    * `sphinx/index.rst`
+    * `sphinx/api/*.rst`
+    * Outputs from mdsnippets:
+        * `*.md`
+        * `explanations/*.md`
+        * `how_tos/*.md`
+* Intermediate Files:
+    * `sphinx/generated_docs/*.rst`
+    * `sphinx/generated_docs/explanations/*.rst`
+    * `sphinx/generated_docs/how_tos/*.rst`
+* Output Files:
+    * `build_tree/doc/sphinx/index.html`
+    * [Read the Docs documentation](https://approvaltestscpp.readthedocs.io/en/latest/)
 
-![Sphinx Files](/doc/images/sphinx_flow.png?raw=true)
+![Flow of files through Sphinx](/doc/images/sphinx_flow.png?raw=true)
 
 ### Other Files to Explain
 
