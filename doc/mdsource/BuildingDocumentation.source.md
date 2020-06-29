@@ -6,6 +6,21 @@ toc
 
 ## Introduction
 
+## Required Tools
+
+* mdsnippets
+    * See [Maintaining Documentation](/doc/MaintainingDocumentation.md#top) for details.
+* [Doxygen](https://www.doxygen.nl/index.html)
+* Python3
+    * With extra modules defined in [doc/requirements.txt](/doc/requirements.txt)
+    * That can be installed by running `build/install_python_requirements.sh`
+
+## CMake Targets
+
+On developer machines, where the required tools are installed, the following CMake targets are created: 
+
+![CMake targets for building documentation](/doc/images/cmake_documentation_targets.png?raw=true)
+
 ## mdsnippets and Markdown Files
 
 ### mdsnippets Summary
@@ -125,10 +140,6 @@ toc
     * `doc/sphinx/generated_docs/explanations/*.rst`
     * `doc/sphinx/generated_docs/how_tos/*.rst`
     * These are all ignored by git
-
-## CMake Targets
-
-
 
 
 ---

@@ -13,6 +13,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Introduction](#introduction)
+  * [Required Tools](#required-tools)
+  * [CMake Targets](#cmake-targets)
   * [mdsnippets and Markdown Files](#mdsnippets-and-markdown-files)
     * [mdsnippets Summary](#mdsnippets-summary)
     * [mdsnippets Details](#mdsnippets-details)
@@ -22,10 +24,24 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Doxygen Details](#doxygen-details)
   * [Sphinx ReStructured Text Files](#sphinx-restructured-text-files)
     * [Sphinx Summary](#sphinx-summary)
-    * [Sphinx Details](#sphinx-details)
-  * [CMake Targets](#cmake-targets)<!-- endtoc -->
+    * [Sphinx Details](#sphinx-details)<!-- endtoc -->
 
 ## Introduction
+
+## Required Tools
+
+* mdsnippets
+    * See [Maintaining Documentation](/doc/MaintainingDocumentation.md#top) for details.
+* [Doxygen](https://www.doxygen.nl/index.html)
+* Python3
+    * With extra modules defined in [doc/requirements.txt](/doc/requirements.txt)
+    * That can be installed by running `build/install_python_requirements.sh`
+
+## CMake Targets
+
+On developer machines, where the required tools are installed, the following CMake targets are created: 
+
+![CMake targets for building documentation](/doc/images/cmake_documentation_targets.png?raw=true)
 
 ## mdsnippets and Markdown Files
 
@@ -146,10 +162,6 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * `doc/sphinx/generated_docs/explanations/*.rst`
     * `doc/sphinx/generated_docs/how_tos/*.rst`
     * These are all ignored by git
-
-## CMake Targets
-
-
 
 
 ---
