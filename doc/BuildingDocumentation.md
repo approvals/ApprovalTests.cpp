@@ -43,8 +43,9 @@ Other files:
 * `https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples)/*.include.md`
   * Machine-generated files for included in Conan and CMake docs
 
-### Images
+![Markdown Files](/doc/images/mdsnippets_flow.png?raw=true)
 
+### Images
 
 * `images/*`
   * Images for inclusion in docs
@@ -59,6 +60,9 @@ Other files:
 | ---------------------- | ------- |
 | `mdsource/*.source.md` | `*.md`  |
 
+![Doxygen Files](/doc/images/doxygen_flow.png?raw=true)
+
+
 ### ReStructured Text Files
 
 | Inputs              | Outputs                                    |
@@ -68,6 +72,8 @@ Other files:
 | `*.md`              | `sphinx/generated_docs/*.rst`              |
 | `explanations/*.md` | `sphinx/generated_docs/explanations/*.rst` |
 | `how_tos/*.md`      | `sphinx/generated_docs/how_tos/*.rst`      |
+
+![Sphinx Files](/doc/images/sphinx_flow.png?raw=true)
 
 ### Other Files to Explain
 
