@@ -23,7 +23,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Step 2: Doxygen conversion](#step-2-doxygen-conversion)
       * [Doxygen Summary](#doxygen-summary)
       * [Doxygen Details](#doxygen-details)
-    * [Step3: ReStructured Text and Sphinx](#step3-restructured-text-and-sphinx)
+    * [Step3: reStructuredText and Sphinx](#step3-restructuredtext-and-sphinx)
       * [Sphinx Summary](#sphinx-summary)
       * [Sphinx Details](#sphinx-details)<!-- endtoc -->
 
@@ -145,7 +145,7 @@ The rest of this document explains the file conversion processes, in case anyone
     * `doc/ApprovalTests/*.cpp`
     * `doc/ApprovalTests/*.h`
 
-### Step3: ReStructured Text and Sphinx
+### Step3: reStructuredText and Sphinx
 
 #### Sphinx Summary
 

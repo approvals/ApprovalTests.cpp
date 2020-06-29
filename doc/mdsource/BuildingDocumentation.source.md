@@ -122,7 +122,7 @@ The rest of this document explains the file conversion processes, in case anyone
     * `doc/ApprovalTests/*.cpp`
     * `doc/ApprovalTests/*.h`
 
-### Step3: ReStructured Text and Sphinx
+### Step3: reStructuredText and Sphinx
 
 #### Sphinx Summary
 
