@@ -6,9 +6,7 @@ toc
 
 ## Introduction
 
-## 'doc' Directory Structure
-
-### mdsnippets and Markdown Files
+## mdsnippets and Markdown Files
 
 * Input files:
     * `doc/mdsource/*.source.md`
@@ -25,7 +23,7 @@ toc
 
 ![Flow of Markdown files through mdsnippets](/doc/images/mdsnippets_flow.png?raw=true)
 
-### Images
+## Images
 
 * `doc/images/*`
   * Images for inclusion in docs
@@ -36,7 +34,7 @@ toc
 * `doc/images/source/generate_images.py`
   * Script that generates images from some source files.
 
-### Doxygen Files
+## Doxygen Files
 
 * Input files:
     * `doc/ApprovalTests/*.cpp`
@@ -52,7 +50,7 @@ toc
 
 ![Flow of files through doxygen](/doc/images/doxygen_flow.png?raw=true)
 
-### Sphinx ReStructured Text Files
+## Sphinx ReStructured Text Files
 
 * Input files:
     * `doc/sphinx/index.rst`
@@ -71,7 +69,7 @@ toc
 
 ![Flow of files through Sphinx](/doc/images/sphinx_flow.png?raw=true)
 
-### Other Files to Explain
+## Other Files to Explain
 
 <!-- List created with tree -f -F -i doc | pbcopy -->
 
@@ -110,11 +108,6 @@ doc/sphinx/tests/test_markdown_conversion_input.md
 
 ## CMake Targets
 
-## Doxygen
-
-## RunMdsnippets
-
-## Sphinx
 
 
 
