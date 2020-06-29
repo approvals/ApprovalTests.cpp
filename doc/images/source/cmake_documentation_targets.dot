@@ -1,0 +1,13 @@
+digraph doxygen_flow {
+    rankdir = "TB"
+    node [fontsize = 14, shape = box, height = 0.25]
+    edge [fontsize = 14]
+
+    "mdsnippets" [label = "RunMdsnippets\n(added if 'mdsnippets' command found)", shape = oval, fillcolor = lightgray, style = filled]
+    "doxygen" [label = "Doxygen\n(added if doxygen 'command' found)", shape = oval, fillcolor = lightgray, style = filled]
+    "sphinx" [label = "Sphinx\n(added if 'sphinx-build' command found)", shape = oval, fillcolor = lightgray, style = filled]
+
+    "mdsnippets" -> "sphinx"
+    "doxygen" -> "sphinx"
+
+}
