@@ -15,16 +15,17 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Introduction](#introduction)
   * [Required Tools](#required-tools)
   * [CMake Targets](#cmake-targets)
-  * [Step1: mdsnippets and Markdown Files](#step1-mdsnippets-and-markdown-files)
-    * [mdsnippets Summary](#mdsnippets-summary)
-    * [mdsnippets Details](#mdsnippets-details)
-  * [Images](#images)
-  * [Step 2: Doxygen conversion](#step-2-doxygen-conversion)
-    * [Doxygen Summary](#doxygen-summary)
-    * [Doxygen Details](#doxygen-details)
-  * [Step3: ReStructured Text and Sphinx](#step3-restructured-text-and-sphinx)
-    * [Sphinx Summary](#sphinx-summary)
-    * [Sphinx Details](#sphinx-details)<!-- endtoc -->
+  * [Implementation Details](#implementation-details)
+    * [Step1: mdsnippets and Markdown Files](#step1-mdsnippets-and-markdown-files)
+      * [mdsnippets Summary](#mdsnippets-summary)
+      * [mdsnippets Details](#mdsnippets-details)
+    * [Images](#images)
+    * [Step 2: Doxygen conversion](#step-2-doxygen-conversion)
+      * [Doxygen Summary](#doxygen-summary)
+      * [Doxygen Details](#doxygen-details)
+    * [Step3: ReStructured Text and Sphinx](#step3-restructured-text-and-sphinx)
+      * [Sphinx Summary](#sphinx-summary)
+      * [Sphinx Details](#sphinx-details)<!-- endtoc -->
 
 ## Introduction
 
@@ -73,9 +74,13 @@ cmake --build . --target Sphinx && open doc/sphinx/index.html
 
 On platforms other than macOS, replace the `open` command with whatever opens a file in web browser.
 
-## Step1: mdsnippets and Markdown Files
+## Implementation Details
 
-### mdsnippets Summary
+The rest of this document explains the file conversion processes, in case anyone else needs to maintain them.
+
+### Step1: mdsnippets and Markdown Files
+
+#### mdsnippets Summary
 
 * Purpose:
     * Update the machine-generated markdown files, which will be later used as inputs to the Sphinx documentation
@@ -86,7 +91,7 @@ On platforms other than macOS, replace the `open` command with whatever opens a 
 
 ![Flow of Markdown files through mdsnippets](/doc/images/mdsnippets_flow.png?raw=true)
 
-### mdsnippets Details
+#### mdsnippets Details
 
 * Configuration files:
     * `doc/run_mdsnippets/CMakeLists.txt`
@@ -98,7 +103,7 @@ On platforms other than macOS, replace the `open` command with whatever opens a 
 * Input files:
     * See [Maintaining Documentation](/doc/MaintainingDocumentation.md#top) for details.
 
-## Images
+### Images
 
 * `doc/images/*`
     * Images for inclusion in docs
@@ -109,9 +114,9 @@ On platforms other than macOS, replace the `open` command with whatever opens a 
 * `doc/images/source/generate_images.py`
     * Script that generates images from some source files.
 
-## Step 2: Doxygen conversion
+### Step 2: Doxygen conversion
 
-### Doxygen Summary
+#### Doxygen Summary
 
 * Purpose:
     * Read the library's source code, to generate a set of XML files that describe the API
@@ -124,7 +129,7 @@ On platforms other than macOS, replace the `open` command with whatever opens a 
 
 ![Flow of files through doxygen](/doc/images/doxygen_flow.png?raw=true)
 
-### Doxygen Details
+#### Doxygen Details
 
 * Configuration files:
     * `doc/doxygen/CMakeLists.txt`
@@ -140,9 +145,9 @@ On platforms other than macOS, replace the `open` command with whatever opens a 
     * `doc/ApprovalTests/*.cpp`
     * `doc/ApprovalTests/*.h`
 
-## Step3: ReStructured Text and Sphinx
+### Step3: ReStructured Text and Sphinx
 
-### Sphinx Summary
+#### Sphinx Summary
 
 * Purpose:
     * Use the Sphinx system to generate a nicely formatted, usable version of our Markdown and C++ documentation, for serving from Read the Docs
@@ -153,7 +158,7 @@ On platforms other than macOS, replace the `open` command with whatever opens a 
 
 ![Flow of files through Sphinx](/doc/images/sphinx_flow.png?raw=true)
 
-### Sphinx Details
+#### Sphinx Details
 
 * Configuration files:
     * `doc/requirements.txt`
