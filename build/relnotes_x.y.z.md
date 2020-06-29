@@ -13,5 +13,5 @@
     * Improved documentation pages:
         * [Conan Integration](/doc/ConanIntegration.md#top)
     * New documentation pages:
-        * [Maintaining Documentation](/doc/MaintainingDocumentation.md#top)
-        * [Building Documentation](/doc/BuildingDocumentation.md#top)
+        * [Maintaining the Docs](/doc/MaintainingDocumentation.md#top)
+        * [Building the Docs](/doc/BuildingDocumentation.md#top)

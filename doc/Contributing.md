@@ -94,7 +94,7 @@ See [Static variables for header-only releases](/doc/CodingPatterns.md#static-va
 
 ## Documentation
 
-We welcome improvements to the documentation! The page [Maintaining Documentation](doc/MaintainingDocumentation.md#top) describes how we manage the documentation files. 
+We welcome improvements to the documentation! The page [Maintaining the Docs](doc/MaintainingDocumentation.md#top) describes how we manage the documentation files. 
 
 ## Releases
 

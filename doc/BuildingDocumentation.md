@@ -7,7 +7,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 <a id="top"></a>
 
-# Building Documentation
+# Building the Docs
 
 <!-- toc -->
 ## Contents
@@ -101,7 +101,7 @@ The rest of this document explains the file conversion processes, in case anyone
     * `mdsnippets.json`
         * Configuration used by mdsnippets
 * Input files:
-    * See [Maintaining Documentation](/doc/MaintainingDocumentation.md#top) for details.
+    * See [Maintaining the Docs](/doc/MaintainingDocumentation.md#top) for details.
 
 ### Images
 

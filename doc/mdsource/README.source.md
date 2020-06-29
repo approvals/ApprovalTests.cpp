@@ -135,8 +135,8 @@ effectively.
 
   - **Topics**:
     [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top) |
-    [Maintaining Documentation](/doc/MaintainingDocumentation.md#top) |
-    [Building Documentation](/doc/BuildingDocumentation.md#top) |
+    [Maintaining the Docs](/doc/MaintainingDocumentation.md#top) |
+    [Building the Docs](/doc/BuildingDocumentation.md#top) |
     [Coding Patterns](/doc/CodingPatterns.md#top)
 
 ## C++ Reference

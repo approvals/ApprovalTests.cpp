@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-# Maintaining Documentation
+# Maintaining the Docs
 
 toc
 
