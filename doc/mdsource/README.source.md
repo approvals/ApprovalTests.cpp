@@ -135,9 +135,9 @@ effectively.
 
   - **Topics**:
     [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top) |
+    [Coding Patterns](/doc/CodingPatterns.md#top) |
     [Maintaining the Docs](/doc/MaintainingDocumentation.md#top) |
-    [Building the Docs](/doc/BuildingDocumentation.md#top) |
-    [Coding Patterns](/doc/CodingPatterns.md#top)
+    [Building the Docs](/doc/BuildingDocumentation.md#top)
 
 ## C++ Reference
 

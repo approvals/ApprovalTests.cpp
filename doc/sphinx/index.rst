@@ -249,9 +249,9 @@ Developing ApprovalTests.cpp
 
 * **Topics**:
   :doc:`generated_docs/Contributing` |
+  :doc:`generated_docs/CodingPatterns` |
   :doc:`generated_docs/MaintainingDocumentation` |
-  :doc:`generated_docs/BuildingDocumentation` |
-  :doc:`generated_docs/CodingPatterns`
+  :doc:`generated_docs/BuildingDocumentation`
 
 .. toctree::
    :maxdepth: 3
@@ -259,9 +259,9 @@ Developing ApprovalTests.cpp
    :caption: Developing ApprovalTests.cpp
 
    generated_docs/Contributing
+   generated_docs/CodingPatterns
    generated_docs/MaintainingDocumentation
    generated_docs/BuildingDocumentation
-   generated_docs/CodingPatterns
 
 C++ Reference
 -------------
