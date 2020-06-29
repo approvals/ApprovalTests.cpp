@@ -67,7 +67,6 @@ doc
 doc/doxygen/
 doc/doxygen/CMakeLists.txt
 doc/doxygen/Doxyfile.in
-doc/doxygen/OverviewForDoxygen.cpp
 doc/doxygen_docs/
 doc/doxygen_docs/group_macros_for_users.dox
 
