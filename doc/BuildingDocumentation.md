@@ -14,17 +14,28 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Introduction](#introduction)
   * [mdsnippets and Markdown Files](#mdsnippets-and-markdown-files)
+    * [mdsnippets Summary](#mdsnippets-summary)
+    * [mdsnippets Details](#mdsnippets-details)
   * [Images](#images)
   * [Doxygen Files](#doxygen-files)
+    * [Doxygen Summary](#doxygen-summary)
+    * [Doxygen Details](#doxygen-details)
   * [Sphinx ReStructured Text Files](#sphinx-restructured-text-files)
+    * [Sphinx Summary](#sphinx-summary)
+    * [Sphinx Details](#sphinx-details)
   * [CMake Targets](#cmake-targets)<!-- endtoc -->
 
 ## Introduction
 
 ## mdsnippets and Markdown Files
 
+### mdsnippets Summary
+
 * Purpose:
     * Update the machine-generated markdown files, which will be later used as inputs to the sphinx documentation
+
+### mdsnippets Details
+
 * Configuration files:
     * `doc/run_mdsnippets/CMakeLists.txt`
         * Creates a CMake target `RunMdsnippets`
@@ -60,9 +71,14 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ## Doxygen Files
 
+### Doxygen Summary
+
 * Purpose:
     * Read the library's source code, to generate a set of XML files that describe the API
     * These XML files will later be read by Sphinx to create the API documentation
+
+### Doxygen Details
+
 * Configuration files:
     * `doc/doxygen/CMakeLists.txt`
         * Creates a CMake target `Doxygen`
@@ -86,8 +102,13 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ## Sphinx ReStructured Text Files
 
+### Sphinx Summary
+
 * Purpose:
     * Use the Sphinx system to generate a nicely formatted, usable version of our Markdown and C++ documentation, for serving from Read the Docs
+
+### Sphinx Details
+
 * Configuration files:
     * `doc/requirements.txt`
         * The Python requirements for running all Python scripts in `doc/`
