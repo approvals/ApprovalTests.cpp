@@ -14,15 +14,15 @@ toc
 
 
 
-| Inputs                                  | Outputs                 |
-| --------------------------------------- | ----------------------- |
-| `doc/mdsource/*.source.md`              | `doc/*.md`              |
-| `doc/explanations/mdsource/*.source.md` | `doc/explanations/*.md` |
-| `doc/how_tos/mdsource/*.source.md`      | `doc/how_tos/.*md`      |
+| Inputs                              | Outputs             |
+| ----------------------------------- | ------------------- |
+| `mdsource/*.source.md`              | `*.md`              |
+| `explanations/mdsource/*.source.md` | `explanations/*.md` |
+| `how_tos/mdsource/*.source.md`      | `how_tos/.*md`      |
 
 Other files:
 
-* `doc/mdsource/*.include.md`
+* `mdsource/*.include.md`
   * Get included in generated *.md files
 * `https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples)/*.include.md`
   * Machine-generated files for included in Conan and CMake docs
@@ -30,32 +30,32 @@ Other files:
 ### Images
 
 
-* `doc/images/*`
+* `images/*`
   * Images for inclusion in docs
-* `doc/images/tutorial/*`
+* `images/tutorial/*`
   * Images for inclusion in docs
-* `doc/images/source/*`
+* `images/source/*`
   * Sources for some of the images. Note that there is no system to update the generated images if the source images change.
 
 
 
 ### Doxygen Files
 
-| Inputs                     | Outputs    |
-| -------------------------- | ---------- |
-| `doc/mdsource/*.source.md` | `doc/*.md` |
+| Inputs                 | Outputs |
+| ---------------------- | ------- |
+| `mdsource/*.source.md` | `*.md`  |
 
 
 
 ### ReStructured Text Files
 
-| Inputs                  | Outputs                                        |
-| ----------------------- | ---------------------------------------------- |
-| `doc/sphinx/index.rst`  |                                                |
-| `doc/sphinx/api/*.rst`  |                                                |
-| `doc/*.md`              | `doc/sphinx/generated_docs/*.rst`              |
-| `doc/explanations/*.md` | `doc/sphinx/generated_docs/explanations/*.rst` |
-| `doc/how_tos/*.md`      | `doc/sphinx/generated_docs/how_tos/*.rst`      |
+| Inputs              | Outputs                                    |
+| ------------------- | ------------------------------------------ |
+| `sphinx/index.rst`  |                                            |
+| `sphinx/api/*.rst`  |                                            |
+| `*.md`              | `sphinx/generated_docs/*.rst`              |
+| `explanations/*.md` | `sphinx/generated_docs/explanations/*.rst` |
+| `how_tos/*.md`      | `sphinx/generated_docs/how_tos/*.rst`      |
 
 
 
@@ -64,35 +64,35 @@ Other files:
 
 ```text
 doc
-doc/doxygen/
-doc/doxygen/CMakeLists.txt
-doc/doxygen/Doxyfile.in
-doc/doxygen_docs/
-doc/doxygen_docs/group_macros_for_users.dox
+doxygen/
+doxygen/CMakeLists.txt
+doxygen/Doxyfile.in
+doxygen_docs/
+doxygen_docs/group_macros_for_users.dox
 
-doc/mdsource/create_page.sh*
-doc/mdsource/file_link.sh*
-doc/mdsource/page_link.sh*
-doc/requirements.txt
-doc/run_mdsnippets/
-doc/run_mdsnippets/CMakeLists.txt
-doc/sphinx/
-doc/sphinx/CMakeLists.txt
-doc/sphinx/__init__.py
+mdsource/create_page.sh*
+mdsource/file_link.sh*
+mdsource/page_link.sh*
+requirements.txt
+run_mdsnippets/
+run_mdsnippets/CMakeLists.txt
+sphinx/
+sphinx/CMakeLists.txt
+sphinx/__init__.py
 
-doc/sphinx/_templates/
-doc/sphinx/_templates/breadcrumbs.html
-doc/sphinx/api/
+sphinx/_templates/
+sphinx/_templates/breadcrumbs.html
+sphinx/api/
 
-doc/sphinx/conf.py
+sphinx/conf.py
 
-doc/sphinx/markdown_conversion.py
-doc/sphinx/tests/
-doc/sphinx/tests/TestWholeConversion.test_convert_github_markdown_for_input_to_pandoc_in_root_docdir.approved.md
-doc/sphinx/tests/TestWholeConversion.test_convert_github_markdown_for_input_to_pandoc_in_root_docdir.approved.rst
-doc/sphinx/tests/__init__.py
-doc/sphinx/tests/test_markdown_conversion.py
-doc/sphinx/tests/test_markdown_conversion_input.md
+sphinx/markdown_conversion.py
+sphinx/tests/
+sphinx/tests/TestWholeConversion.test_convert_github_markdown_for_input_to_pandoc_in_root_docdir.approved.md
+sphinx/tests/TestWholeConversion.test_convert_github_markdown_for_input_to_pandoc_in_root_docdir.approved.rst
+sphinx/tests/__init__.py
+sphinx/tests/test_markdown_conversion.py
+sphinx/tests/test_markdown_conversion_input.md
 
 ```
 
