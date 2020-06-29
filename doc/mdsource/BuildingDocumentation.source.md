@@ -6,14 +6,35 @@ toc
 
 ## Introduction
 
+The majority of the documentation in ApprovalTests.cpp is in Markdown format.
+
+However, for a nicer user experience, that documentation is also published on Read the Docs, at 
+[approvaltestscpp.readthedocs.io](https://approvaltestscpp.readthedocs.io/en/latest/).
+
+The mechanism for that publishing is based on Sy Brand's [Clear, Functional C++ Documentation with Sphinx + Breathe + Doxygen + CMake](https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake/).
+
 ## Required Tools
 
-* mdsnippets
-    * See [Maintaining Documentation](/doc/MaintainingDocumentation.md#top) for details.
+Tools:
+
+* [mdsnippets](https://github.com/SimonCropp/MarkdownSnippets)
 * [Doxygen](https://www.doxygen.nl/index.html)
+* [Sphinx](https://www.sphinx-doc.org/en/master/)
+* [pandoc](https://pandoc.org)
+    * "pandoc is your swiss-army knife..." for converting between markup formats
 * Python3
-    * With extra modules defined in [doc/requirements.txt](/doc/requirements.txt)
+
+Python3 modules
+
+* The required modules are defined in [doc/requirements.txt](/doc/requirements.txt)
     * That can be installed by running `build/install_python_requirements.sh`
+* Currently, they are:
+    * [breathe](https://breathe.readthedocs.io/en/latest/)
+        * "Breathe provides a bridge between the Sphinx and Doxygen documentation systems."
+    * [pypandoc](https://pypi.org/project/pypandoc/)
+        * "Pypandoc provides a thin wrapper for pandoc, a universal document converter."
+    * [sphinx_rtd_theme](https://sphinx-rtd-theme.readthedocs.io/en/latest/)
+        * A sphinx theme, used primarily on [Read the Docs](http://www.readthedocs.org/)
 
 ## CMake Targets
 
