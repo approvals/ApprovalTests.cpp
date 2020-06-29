@@ -1,0 +1,31 @@
+digraph doxygen_flow {
+    rankdir = "TB"
+    node [fontsize = 10, shape = box, height = 0.25]
+    edge [fontsize = 10]
+
+    "sphinx"
+
+    "templates" [label = "doc/sphinx/_templates/*.html"]
+    "templates" -> "sphinx"
+
+    "source_rst" [label = "doc/sphinx/index.rst"]
+    "source_rst" -> "sphinx"
+
+    "api_rst" [label = "doc/sphinx/api/*.rst"]
+    "api_rst" -> "sphinx"
+
+    "docs_md" [label = "docs/*.md"]
+    "markdown_conversion_py" [label = "doc/sphinx/markdown_conversion.py"]
+    "generated_rst" [label = "doc/sphinx/generated_docs/*.rst"]
+    "docs_md" -> "markdown_conversion_py" -> "generated_rst"
+    "generated_rst" -> "sphinx"
+
+    "index.xml" [label = "build_tree/doc/doxygen/xml/index.xml"]
+    "index.xml" -> "sphinx"
+
+    "sphinx_output" [label = "build_tree/doc/sphinx/index.html"]
+    "sphinx" -> "sphinx_output"
+
+    "read_the_docs" [label = "Read the Docs"]
+    "sphinx" -> "read_the_docs"
+}
