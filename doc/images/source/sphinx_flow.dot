@@ -10,7 +10,7 @@ digraph doxygen_flow {
     "source_rst" [label = "doc/sphinx/index.rst\ndoc/sphinx/api/*.rst\ndoc/sphinx/_templates/*.html"]
     "source_rst" -> "sphinx"
 
-    "docs_md" [label = "docs/*.md"]
+    "docs_md" [label = "doc/*.md"]
     "mdsnippets" -> "docs_md"
     "markdown_conversion_py" [label = "doc/sphinx/markdown_conversion.py"]
     "generated_rst" [label = "doc/sphinx/generated_docs/*.rst"]
