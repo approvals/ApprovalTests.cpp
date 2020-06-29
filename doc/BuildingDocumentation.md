@@ -54,20 +54,20 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * `doc/explanations/mdsource/*.source.md`
     * `doc/how_tos/mdsource/*.source.md`
     * `doc/mdsource/*.include.md`
-      * Get included in generated *.md files
+        * Get included in generated *.md files
     * `doc/https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples)/*.include.md`
-      * Machine-generated files for included in Conan and CMake docs
+        * Machine-generated files for included in Conan and CMake docs
 
 ## Images
 
 * `doc/images/*`
-  * Images for inclusion in docs
+    * Images for inclusion in docs
 * `doc/images/tutorial/*`
-  * Images for inclusion in docs
+    * Images for inclusion in docs
 * `doc/images/source/*`
-  * Sources for some of the images.
+    * Sources for some of the images.
 * `doc/images/source/generate_images.py`
-  * Script that generates images from some source files.
+    * Script that generates images from some source files.
 
 ## Doxygen Files
 
