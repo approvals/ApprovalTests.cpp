@@ -250,6 +250,7 @@ Developing ApprovalTests.cpp
 * **Topics**:
   :doc:`generated_docs/Contributing` |
   :doc:`generated_docs/MaintainingDocumentation` |
+  :doc:`generated_docs/BuildingDocumentation` |
   :doc:`generated_docs/CodingPatterns`
 
 .. toctree::
@@ -259,6 +260,7 @@ Developing ApprovalTests.cpp
 
    generated_docs/Contributing
    generated_docs/MaintainingDocumentation
+   generated_docs/BuildingDocumentation
    generated_docs/CodingPatterns
 
 C++ Reference
