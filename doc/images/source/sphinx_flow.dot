@@ -12,7 +12,7 @@ digraph doxygen_flow {
 
     "docs_md" [label = "doc/*.md"]
     "mdsnippets" -> "docs_md"
-    "markdown_conversion_py" [label = "doc/sphinx/markdown_conversion.py"]
+    "markdown_conversion_py" [label = "doc/sphinx/markdown_conversion.py", shape = oval, fillcolor = lightgray, style = filled]
     "generated_rst" [label = "doc/sphinx/generated_docs/*.rst"]
     "docs_md" -> "markdown_conversion_py" -> "generated_rst"
     "generated_rst" -> "sphinx"
