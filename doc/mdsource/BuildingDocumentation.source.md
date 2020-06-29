@@ -55,6 +55,17 @@ On platforms other than macOS, replace the `open` command with whatever opens a 
 
 The rest of this document explains the file conversion processes, in case anyone else needs to maintain them.
 
+### Images
+
+* `doc/images/*`
+    * Images for inclusion in docs
+* `doc/images/tutorial/*`
+    * Images for inclusion in docs
+* `doc/images/source/*`
+    * Sources for some of the images.
+* `doc/images/source/generate_images.py`
+    * Script that generates images from some source files.
+
 ### Step 1: mdsnippets and Markdown Files
 
 #### mdsnippets Summary
@@ -79,17 +90,6 @@ The rest of this document explains the file conversion processes, in case anyone
         * Configuration used by mdsnippets
 * Input files:
     * See [Maintaining the Docs](/doc/MaintainingDocumentation.md#top) for details.
-
-### Images
-
-* `doc/images/*`
-    * Images for inclusion in docs
-* `doc/images/tutorial/*`
-    * Images for inclusion in docs
-* `doc/images/source/*`
-    * Sources for some of the images.
-* `doc/images/source/generate_images.py`
-    * Script that generates images from some source files.
 
 ### Step 2: Doxygen conversion
 
