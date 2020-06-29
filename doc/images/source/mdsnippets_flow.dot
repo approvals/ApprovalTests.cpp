@@ -23,6 +23,6 @@ digraph mdsnippets_flow {
     "examples_approved" [label = "examples/*.approved.*"]
     "examples_approved" -> "mdsnippets"
 
-    "docs_md" [label = "docs/*..md"]
+    "docs_md" [label = "docs/*.md"]
     "mdsnippets" -> "docs_md"
 }
