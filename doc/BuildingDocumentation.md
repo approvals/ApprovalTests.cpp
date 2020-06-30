@@ -13,6 +13,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Introduction](#introduction)
+  * [Overview](#overview)
   * [Required Tools](#required-tools)
   * [CMake Targets](#cmake-targets)
   * [About Read the Docs](#about-read-the-docs)
@@ -34,12 +35,20 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ## Introduction
 
-The majority of the documentation in ApprovalTests.cpp is in Markdown format.
+The majority of the documentation in ApprovalTests.cpp is in maintained in Markdown format.
 
-However, for a nicer user experience, that documentation is also published on Read the Docs, at 
+However, for a nicer user experience, that documentation is also generated with Sphinx and then published on Read the Docs, at 
 [approvaltestscpp.readthedocs.io](https://approvaltestscpp.readthedocs.io/en/latest/).
 
+In most cases, it is sufficient to edit the Markdown files, and the Read the Docs site will take care of itself, as soon as changes are pushed to GitHub.
+
+This page describes the machanics of the documentation processes, in case they need to be worked on in future.
+
+## Overview
+
 The mechanism for that publishing is based on Sy Brand's [Clear, Functional C++ Documentation with Sphinx + Breathe + Doxygen + CMake](https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake/).
+
+That article gives an excellent summary of the technologies and techniques involved.
 
 ## Required Tools
 
@@ -52,7 +61,7 @@ Tools:
     * "pandoc is your swiss-army knife..." for converting between markup formats
 * Python3
 
-Python3 modules
+Python3 modules:
 
 * The required modules are defined in [doc/requirements.txt](/doc/requirements.txt)
     * That can be installed by running `build/install_python_requirements.sh`
@@ -232,9 +241,11 @@ The rest of this document explains the file conversion processes, in case anyone
     * `doc/sphinx/tests/test_markdown_conversion_input.md`
         * An input file with a range of different types of Markdown constructs, taken from our own documentation
     * `doc/sphinx/tests/TestWholeConversion.test_convert_markdown_for_pandoc.approved.md`
-        * To see the 1st stage of transformations made to markdown files, compare this with `doc/sphinx/tests/test_markdown_conversion_input.md`
+        * To see the 1st stage of transformations made to markdown files, compare this with:
+            * `doc/sphinx/tests/test_markdown_conversion_input.md`
     * `doc/sphinx/tests/TestWholeConversion.test_convert_markdown_for_pandoc.approved.rst`
-        * To see how converted mardown files appear in `.rst` format, compare this with `doc/sphinx/tests/TestWholeConversion.test_convert_markdown_for_pandoc.approved.md`
+        * To see how converted mardown files appear in `.rst` format, compare this with:
+            * `doc/sphinx/tests/TestWholeConversion.test_convert_markdown_for_pandoc.approved.md`
 * Input files:
     * `doc/sphinx/index.rst`
     * `doc/sphinx/api/*.rst`
@@ -242,7 +253,7 @@ The rest of this document explains the file conversion processes, in case anyone
         * `doc/*.md`
         * `doc/explanations/*.md`
         * `doc/how_tos/*.md`
-* Intermediate Files:
+* Intermediate files:
     * `doc/sphinx/generated_docs/*.rst`
     * `doc/sphinx/generated_docs/explanations/*.rst`
     * `doc/sphinx/generated_docs/how_tos/*.rst`
