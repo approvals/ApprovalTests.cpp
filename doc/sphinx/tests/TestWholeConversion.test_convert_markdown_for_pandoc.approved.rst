@@ -205,6 +205,28 @@ A wide table
    `std::source_location <https://en.cppreference.com/w/cpp/utility/source_location>`__,
    which is a C++ 20 feature.
 
+A table with wide words
+-----------------------
+
+Some of these words end up with spaces in, wrongly.
+
++-----------------------------------+----------------------------------+
+| Old                               | New                              |
++===================================+==================================+
+| ``APPROVALTESTS_VERSION``         | ``APPROVAL_TESTS_VERSION``       |
++-----------------------------------+----------------------------------+
+| ``APPROVALTESTS_VERSION_MAJOR``   | ``APPROVAL_TESTS_VERSION_MAJOR`` |
++-----------------------------------+----------------------------------+
+| ``APPROVALTESTS_VERSION_MINOR``   | ``APPROVAL_TESTS_VERSION_MINOR`` |
++-----------------------------------+----------------------------------+
+| ``APPROVALTESTS_VERSION_PATCH``   | ``APPROVAL_TESTS_VERSION_PATCH`` |
++-----------------------------------+----------------------------------+
+| ``APPROVALTESTS_VERSION_STR``     | ``APPROVAL_TESTS_VERSION_STR``   |
++-----------------------------------+----------------------------------+
+| ``APPROVALS                       | ``APPROVAL_                      |
+| _CATCH_DISABLE_FILE_MACRO_CHECK`` | TESTS_DISABLE_FILE_MACRO_CHECK`` |
++-----------------------------------+----------------------------------+
+
 Included file
 -------------
 
