@@ -6,7 +6,7 @@ edge [fontsize = 14]
 "Release";
     "Release" -> "Main Project";
         "Main Project" -> "docs";
-            "docs" -> "move new release notes file and update milestone text" -> "copy template";
+            "docs" -> "move new release notes file\land update milestone text" -> "copy template";
             "docs" -> "Features page updated, optionally";
             "docs" -> "Main page: download link updated";
             "docs" -> "Docs regenerated";
@@ -18,7 +18,7 @@ edge [fontsize = 14]
     "Release" -> "Starter Project";
         "Starter Project" -> ".hpp copied in";
         "Starter Project" -> "Wrapper file's version updated";
-        "Starter Project" -> "VS .sln file updated for new header file name version";
+        "Starter Project" -> "VS .sln file updated for\lnew header file name version";
     "Release" -> "Conan";
         "Conan" -> "config.yml";
         "Conan" -> "conandata.yml";
