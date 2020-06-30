@@ -230,6 +230,10 @@ The rest of this document explains the file conversion processes, in case anyone
         * Unit and Approval Tests for `doc/sphinx/tests/test_markdown_conversion.py`
     * `doc/sphinx/tests/test_markdown_conversion_input.md`
         * An input file with a range of different types of Markdown constructs, taken from our own documentation
+    * `doc/sphinx/tests/TestWholeConversion.test_convert_markdown_for_pandoc.approved.md`
+        * To see the 1st stage of transformations made to markdown files, compare this with `doc/sphinx/tests/test_markdown_conversion_input.md`
+    * `doc/sphinx/tests/TestWholeConversion.test_convert_markdown_for_pandoc.approved.rst`
+        * To see how converted mardown files appear in `.rst` format, compare this with `doc/sphinx/tests/TestWholeConversion.test_convert_markdown_for_pandoc.approved.md`
 * Input files:
     * `doc/sphinx/index.rst`
     * `doc/sphinx/api/*.rst`
