@@ -13,7 +13,7 @@ edge [fontsize = 14]
         "Main Project":e -> "code";
             "code":e -> "Simulated Single Header":w;
             "code":e -> "Version Header":w;
-            "code":e -> "new .hpp":we -> "Released";
+            "code":e -> "new .hpp" -> "Released";
         "Main Project":e -> "other" -> "version.ini":w;
     "Release":e -> "Starter Project";
         "Starter Project":e -> ".hpp copied in":w;
