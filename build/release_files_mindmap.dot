@@ -1,0 +1,25 @@
+digraph mdsnippets_flow {
+rankdir = "LR"
+node [fontsize = 14, shape = box, height = 0.25]
+edge [fontsize = 14]
+
+"Release";
+    "Release" -> "Main Project";
+        "Main Project" -> "docs";
+            "docs" -> "move new release notes file and update milestone text" -> "copy template";
+            "docs" -> "Features page updated, optionally";
+            "docs" -> "Main page: download link updated";
+            "docs" -> "Docs regenerated";
+        "Main Project" -> "code";
+            "code" -> "Simulated Single Header";
+            "code" -> "Version Header";
+            "code" -> "new .hpp" -> "Released";
+        "Main Project" -> "other" -> "version.ini";
+    "Release" -> "Starter Project";
+        "Starter Project" -> ".hpp copied in";
+        "Starter Project" -> "Wrapper file's version updated";
+        "Starter Project" -> "VS .sln file updated for new header file name version";
+    "Release" -> "Conan";
+        "Conan" -> "config.yml";
+        "Conan" -> "conandata.yml";
+}
