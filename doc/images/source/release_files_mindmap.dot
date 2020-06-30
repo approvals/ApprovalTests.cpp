@@ -4,22 +4,30 @@ node [fontsize = 14, shape = box, height = 0.25]
 edge [fontsize = 14]
 
 "Release";
+    /* 1 */
     "Release":e -> "Main Project":w;
+        /* 1.1 */
         "Main Project":e -> "docs":w;
             "docs":e -> "move new release notes file\land update milestone text" -> "copy template";
             "docs":e -> "Features page updated, optionally":w;
             "docs":e -> "Main page: download link updated":w;
             "docs":e -> "Docs regenerated":w;
+        /* 1.2 */
         "Main Project":e -> "code";
             "code":e -> "Simulated Single Header":w;
             "code":e -> "Version Header":w;
             "code":e -> "new .hpp" -> "Released";
+        /* 1.3 */
         "Main Project":e -> "other" -> "version.ini":w;
+    /* 2 */
     "Release":e -> "Starter Project";
+    /* 2.1 */
         "Starter Project":e -> ".hpp copied in":w;
         "Starter Project":e -> "Wrapper file's version updated":w;
         "Starter Project":e -> "VS .sln file updated for\lnew header file name version":w;
+    /* 3 */
     "Release":e -> "Conan":w;
+        /* 3.1 */
         "Conan":e -> "config.yml":w;
         "Conan":e -> "conandata.yml":w;
 }
