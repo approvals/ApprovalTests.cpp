@@ -26,8 +26,8 @@ digraph mdsnippets_flow {
     "Starter Project": e -> "Wrapper file's version updated": w;
     "Starter Project": e -> "VS .sln file updated for\lnew header file name version": w;
     /* 3 */
-    "Release": e -> "Conan": w;
+    "Release": e -> "conan-center-index": w;
     /* 3.1 */
-    "Conan": e -> "config.yml": w;
-    "Conan": e -> "conandata.yml": w;
+    "conan-center-index": e -> "config.yml": w;
+    "conan-center-index": e -> "conandata.yml": w;
 }
