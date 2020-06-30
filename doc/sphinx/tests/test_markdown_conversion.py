@@ -35,7 +35,7 @@ class HyperlinkUpdatingTestCase(unittest.TestCase):
 
 
 class TestWholeConversion(unittest.TestCase):
-    def test_convert_github_markdown_for_input_to_pandoc_in_root_docdir(self) -> None:
+    def test_convert_markdown_for_pandoc(self) -> None:
         with open('test_markdown_conversion_input.md') as f:
             input = f.read()
 
