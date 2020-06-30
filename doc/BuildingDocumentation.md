@@ -104,6 +104,7 @@ On platforms other than macOS, replace the `open` command with whatever opens a 
 * Images are loaded from github, rather than being copied in to the Sphinx output. This means that when editing the documentation, changes to images need to be pushed to GitHub to see the effect.
 * Formatting
     * pandoc wraps long lines in tables. This results in long words in tables being broken up, for example there are spaces in some macro names in ["Consistent macro names"](https://approvaltestscpp.readthedocs.io/en/latest/generated_docs/Features.html#consistent-macro-names)
+    * Formatting of the [C++ code](https://approvaltestscpp.readthedocs.io/en/latest/api/core.html) isn’t great: for example, it would benefit from more whitespace, for readability.
 * URLs
     * I am unsure about the appearance of `/generated_docs/` in the URLs of pages generated from MarkDown.
         * It avoids having to git-ignore some `.rst` files in a folder that contains a version-controlled `.rst` file
