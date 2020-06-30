@@ -25,7 +25,7 @@ prepare_patch_release.py
 
 ## Overview of steps
 
-![Description](../doc/images/release_files_mindmap.png)
+![Flow of files during release](../doc/images/release_files_mindmap.png?raw=true)
 
 ## How to add a new release to Conan
 
