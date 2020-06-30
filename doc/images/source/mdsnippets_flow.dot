@@ -5,13 +5,13 @@ digraph mdsnippets_flow {
 
     "mdsnippets" [shape = oval, fillcolor = lightgray, style = filled]
 
-    "docs_mdsource_md" [label = "doc/mdsource/*.source.md\ndoc/mdsource/*.include.md"]
+    "docs_mdsource_md" [label = "doc/mdsource/*.source.md\ldoc/mdsource/*.include.md"]
     "docs_mdsource_md" -> "mdsnippets"
 
     "ApprovalTests" [label = "ApprovalTests/*.(h,cpp)"]
     "ApprovalTests" -> "mdsnippets"
 
-    "tests_source" [label = "tests/*.(h,cpp,approved.*)\nexamples/*.(h,cpp,approved.*)"]
+    "tests_source" [label = "tests/*.(h,cpp,approved.*)\rexamples/*.(h,cpp,approved.*)"]
     "tests_source" -> "mdsnippets"
 
     "mdsnippets_json" [label = "mdsnippets.json"]

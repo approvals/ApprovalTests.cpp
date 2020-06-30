@@ -7,7 +7,7 @@ digraph doxygen_flow {
     "doxygen" [shape = oval, fillcolor = lightgray, style = filled]
     "sphinx" [shape = oval, fillcolor = lightgray, style = filled]
 
-    "source_rst" [label = "doc/sphinx/index.rst\ndoc/sphinx/api/*.rst\ndoc/sphinx/_templates/*.html"]
+    "source_rst" [label = "doc/sphinx/index.rst\ldoc/sphinx/api/*.rst\ldoc/sphinx/_templates/*.html"]
     "source_rst" -> "sphinx"
 
     "docs_md" [label = "doc/*.md"]
