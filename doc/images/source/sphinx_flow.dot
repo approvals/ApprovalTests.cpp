@@ -5,7 +5,7 @@ digraph doxygen_flow {
 
     "mdsnippets" [shape = oval, fillcolor = lightgray, style = filled]
     "doxygen" [shape = oval, fillcolor = lightgray, style = filled]
-    "sphinx" [shape = oval, fillcolor = lightgray, style = filled]
+    "sphinx" [label = "sphinx + breathe", shape = oval, fillcolor = lightgray, style = filled]
 
     "source_rst" [label = "doc/sphinx/index.rst\ldoc/sphinx/api/*.rst\ldoc/sphinx/_templates/*.html"]
     "source_rst" -> "sphinx"
