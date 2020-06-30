@@ -4,7 +4,7 @@ digraph doxygen_flow {
     edge [fontsize = 14]
 
     "mdsnippets" [label = "RunMdsnippets\n(added if 'mdsnippets' command found)", fillcolor = lightgray, style = filled]
-    "doxygen" [label = "Doxygen\n(added if doxygen 'command' found)", fillcolor = lightgray, style = filled]
+    "doxygen" [label = "Doxygen\n(added if 'doxygen' command found)", fillcolor = lightgray, style = filled]
     "sphinx" [label = "Sphinx\n(added if 'sphinx-build' command found)", fillcolor = lightgray, style = filled]
 
     "mdsnippets" -> "sphinx"
