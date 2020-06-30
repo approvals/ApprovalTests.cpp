@@ -110,11 +110,11 @@ The rest of this document explains the file conversion processes, in case anyone
 #### mdsnippets Summary
 
 * Purpose:
-    * Update the machine-generated markdown files, which will be later used as inputs to the Sphinx documentation
+    * Update the machine-generated markdown files, which will later be used as inputs to the Sphinx documentation
 * Output Files:
     * `doc/*.md`
     * `doc/explanations/*.md`
-    * `doc/how_tos/.*md`
+    * `doc/how_tos/*.md`
 
 ![Flow of Markdown files through mdsnippets](/doc/images/mdsnippets_flow.png?raw=true)
 
@@ -157,7 +157,7 @@ The rest of this document explains the file conversion processes, in case anyone
         * CMake converts it to `Doxyfile` in the build tree
 * Input files:
     * `doc/doxygen_doc/*.dox`
-        * Files containing descriptive text for including in the Doxygen documentation
+        * Files containing descriptive text for including in the Doxygen documentation, which will then be included in the Sphinx docs.
     * `doc/ApprovalTests/*.cpp`
     * `doc/ApprovalTests/*.h`
 
