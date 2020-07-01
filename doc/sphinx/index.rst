@@ -7,16 +7,6 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests are an alt
 
 For releases and source code, see `GitHub <https://github.com/approvals/ApprovalTests.cpp>`__.
 
-.. note:: This documentation on Read the Docs is a work in progress:
-
-  * The page URLs may not be stable yet
-  * More details needs to be added to the "C++ Reference" section
-  * Formatting of the  :doc:`C++ code <api/core>` isn't great: for example, it would benefit from more whitespace, for readability.
-
-  Feedback and suggestions for improvement - either of this HTML version or the PDF download - would be much appreciated,
-  `via GitHub <https://github.com/approvals/ApprovalTests.cpp/issues/129>`__
-  or `Twitter <https://twitter.com/ClareMacraeUK>`__.
-
 Getting Started
 ---------------
 
