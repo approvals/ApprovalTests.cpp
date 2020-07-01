@@ -56,6 +56,8 @@ Tools:
 
 * [mdsnippets](https://github.com/SimonCropp/MarkdownSnippets)
 * [Doxygen](https://www.doxygen.nl/index.html)
+* [graphviz](https://graphviz.org)
+    * Because Doxygen will complain if it is not found
 * [Sphinx](https://www.sphinx-doc.org/en/master/)
 * [pandoc](https://pandoc.org)
     * "pandoc is your swiss-army knife..." for converting between markup formats
