@@ -14,9 +14,9 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Using Conan to obtain ApprovalTests.cpp](#using-conan-to-obtain-approvaltestscpp)
   * [Example Conan CMake Setups](#example-conan-cmake-setups)
-    * [Using Conan's cmake_find_package and cmake_paths generators](#using-conans-cmake_find_package-and-cmake_paths-generators)
-    * [Using Conan's cmake generator](#using-conans-cmake-generator)
-    * [Making CMake invoke Conan](#making-cmake-invoke-conan)
+    * [Example 1. Using Conan's cmake_find_package and cmake_paths generators](#example-1-using-conans-cmake_find_package-and-cmake_paths-generators)
+    * [Example 2. Using Conan's cmake generator](#example-2-using-conans-cmake-generator)
+    * [Example 3. Making CMake invoke Conan](#example-3-making-cmake-invoke-conan)
   * [Other people's examples](#other-peoples-examples)
   * [Links](#links)<!-- endtoc -->
 
@@ -32,7 +32,9 @@ These examples demonstrate a few different ways of using Conan with ApprovalTest
 
 They all specify their dependencies in a [`conanfile.txt`](https://docs.conan.io/en/latest/reference/conanfile_txt.html) file, but they could just as easily use a [`conanfile.py`](https://docs.conan.io/en/latest/reference/conanfile.html) instead.
 
-### Using Conan's cmake_find_package and cmake_paths generators
+### Example 1. Using Conan's cmake_find_package and cmake_paths generators
+
+> Scenario: I want to use CMake's `find_package()` and have Conan obtain the packages for me. I only want to Conan references to appear at the top of my project.
 
 **Note:** The files in this section can be viewed and downloaded from [conan_cmake_find_package](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/conan_cmake_find_package).
 
@@ -125,7 +127,9 @@ ctest .
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/build.sh' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_build.include.md. path:  -->
 
-### Using Conan's cmake generator
+### Example 2. Using Conan's cmake generator
+
+> Scenario: I'm only going to be building with Conan, so I don't mind Conan-specific libraries appearing in `target_link_libraries()` in CMake - I just want my top-level CMake files to be simple - not cluttered with find_packages().
 
 **Note:** The files in this section can be viewed and downloaded from [conan_cmake](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/conan_cmake).
 
@@ -212,7 +216,10 @@ ctest .
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/build.sh' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_build.include.md. path:  -->
 
-### Making CMake invoke Conan
+### Example 3. Making CMake invoke Conan
+
+> Scenario: I want to use CMake, without having to remember to run a Conan command to make it download my dependencies.
+> This will mean your dependencies are always uptodate (at the cost of a slightly slower build)
 
 **Note:** The files in this section can be viewed and downloaded from [cmake_invoking_conan](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/cmake_invoking_conan).
 
