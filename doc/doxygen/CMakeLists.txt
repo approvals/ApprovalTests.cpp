@@ -25,15 +25,20 @@ set(DOXYFILE_IN ${DOXYFILE_IN} PARENT_SCOPE)
 set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 set(DOXYFILE_OUT ${DOXYFILE_OUT} PARENT_SCOPE)
 
+file(GLOB_RECURSE
+        DOXYGEN_DOCUMENTATION_FILES
+        CONFIGURE_DEPENDS
+        ${DOXYGEN_CONFIG_DIR}/../*.dox)
+
 # Replace variables inside @@ with the current values
 configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 
 # Doxygen won't create this for us
 file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR})
 
-# Only regenerate Doxygen when the Doxyfile or public headers change
+# Only regenerate Doxygen when the Doxyfile, documentation or public headers change
 add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
-        DEPENDS ${APPROVAL_TESTS_PUBLIC_SOURCE}
+        DEPENDS ${APPROVAL_TESTS_PUBLIC_SOURCE} ${DOXYGEN_DOCUMENTATION_FILES}
         COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
         MAIN_DEPENDENCY ${DOXYFILE_OUT} ${DOXYFILE_IN}
         COMMENT "Generating Doxygen docs"
