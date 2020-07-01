@@ -40,7 +40,7 @@ The majority of the documentation in ApprovalTests.cpp is in maintained in Markd
 However, for a nicer user experience, that documentation is also generated with Sphinx and then published on Read the Docs, at 
 [approvaltestscpp.readthedocs.io](https://approvaltestscpp.readthedocs.io/en/latest/).
 
-In most cases, it is sufficient to edit the Markdown files, and the Read the Docs site will take care of itself, as soon as changes are pushed to GitHub.
+> In most cases, it is sufficient to edit the Markdown files, and the Read the Docs site will take care of itself, as soon as changes are pushed to GitHub.
 
 This page describes the machanics of the documentation processes, in case they need to be worked on in future.
 
