@@ -5,8 +5,6 @@ add_executable(${PROJECT_NAME}
         StyleGuide.h
         docs/Catch2DocsSamples.cpp
         namers/Catch2NamerTests.cpp
-        utilities/FileUtilsSystemSpecificTests.cpp
-        utilities/MachineBlockerTests.cpp
         )
 
 set_source_files_properties(main.cpp PROPERTIES SKIP_UNITY_BUILD_INCLUSION YES)
