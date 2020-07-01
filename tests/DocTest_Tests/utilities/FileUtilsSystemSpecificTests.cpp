@@ -17,7 +17,7 @@ TEST_CASE("ItCanCopyAFile")
     {
         ::remove(destination.c_str());
     }
-        CHECK(!FileUtils::fileExists(destination));
+    CHECK(!FileUtils::fileExists(destination));
     FileUtilsSystemSpecific::copyFile(source, destination);
     Approvals::verifyExistingFile(destination);
 }
