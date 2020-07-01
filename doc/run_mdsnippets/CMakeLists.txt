@@ -4,22 +4,6 @@ if (NOT mdsnippets_FOUND)
     return()
 endif ()
 
-file(GLOB_RECURSE
-        APPROVAL_TESTS_ALL_TEST_FILES
-        CONFIGURE_DEPENDS
-        ${PROJECT_SOURCE_DIR}/tests/*.approved.*
-        ${PROJECT_SOURCE_DIR}/tests/*.cpp
-        ${PROJECT_SOURCE_DIR}/tests/*.h
-        )
-
-file(GLOB_RECURSE
-        APPROVAL_TESTS_ALL_EXAMPLE_FILES
-        CONFIGURE_DEPENDS
-        ${PROJECT_SOURCE_DIR}/examples/*.approved.*
-        ${PROJECT_SOURCE_DIR}/examples/*.cpp
-        ${PROJECT_SOURCE_DIR}/examples/*.h
-        )
-
 file(GLOB
         APPROVAL_TESTS_ALL_ROOT_SOURCE_MD_FILES
         CONFIGURE_DEPENDS

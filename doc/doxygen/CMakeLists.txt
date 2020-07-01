@@ -38,7 +38,11 @@ file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR})
 
 # Only regenerate Doxygen when the Doxyfile, documentation or public headers change
 add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
-        DEPENDS ${APPROVAL_TESTS_PUBLIC_SOURCE} ${DOXYGEN_DOCUMENTATION_FILES}
+        DEPENDS
+        ${APPROVAL_TESTS_PUBLIC_SOURCE}
+        ${APPROVAL_TESTS_ALL_EXAMPLE_FILES}
+        ${APPROVAL_TESTS_ALL_TEST_FILES}
+        ${DOXYGEN_DOCUMENTATION_FILES}
         COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
         MAIN_DEPENDENCY ${DOXYFILE_OUT} ${DOXYFILE_IN}
         COMMENT "Generating Doxygen docs"

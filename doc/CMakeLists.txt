@@ -5,6 +5,22 @@ file(GLOB_RECURSE
         ${PROJECT_SOURCE_DIR}/ApprovalTests/*.h
         ${PROJECT_SOURCE_DIR}/ApprovalTests/*.cpp)
 
+file(GLOB_RECURSE
+        APPROVAL_TESTS_ALL_TEST_FILES
+        CONFIGURE_DEPENDS
+        ${PROJECT_SOURCE_DIR}/tests/*.approved.*
+        ${PROJECT_SOURCE_DIR}/tests/*.cpp
+        ${PROJECT_SOURCE_DIR}/tests/*.h
+        )
+
+file(GLOB_RECURSE
+        APPROVAL_TESTS_ALL_EXAMPLE_FILES
+        CONFIGURE_DEPENDS
+        ${PROJECT_SOURCE_DIR}/examples/*.approved.*
+        ${PROJECT_SOURCE_DIR}/examples/*.cpp
+        ${PROJECT_SOURCE_DIR}/examples/*.h
+        )
+
 # Find all the .md files in doc/ directory
 # APPROVAL_TESTS_ALL_DOC_SOURCE_MD_FILES will contain all mdsource/*.source.md files
 file(GLOB_RECURSE
