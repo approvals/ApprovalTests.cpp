@@ -24,6 +24,7 @@ class PrepareRelease:
     def check_pre_conditions_for_publish(self) -> None:
         if self.details.push_to_production:
             self.check_pre_conditions_for_main_repo()
+            self.check_pre_conditions_for_starter_project_repo()
 
             run(["open", F"{self.details.project_details.github_project_url}/commits/master"])
             check_step("the builds are passing")
@@ -49,6 +50,11 @@ class PrepareRelease:
         assert_step(len(
             list(repo.iter_commits('master@{u}..master'))) == 0,
                     f"there are un-pushed changes in {self.details.project_details.github_project_name}")
+
+    def check_pre_conditions_for_starter_project_repo(self) -> None:
+        repo = Repo(self.details.locations.starter_project_dir)
+        assert_step(not repo.bare)
+        GitUtilities.check_branch_name(repo, 'master')
 
     def update_starter_project(self) -> None:
         STARTER_PATH_OLD_SINGLE_HEADER = F"{self.details.locations.starter_project_dir}/lib/{self.details.old_single_header}"
