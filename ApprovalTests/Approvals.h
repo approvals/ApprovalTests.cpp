@@ -57,7 +57,7 @@ namespace ApprovalTests
 
         template <typename T,
                   typename Function,
-                  typename = Detail::EnableIfNotOptions<Function>>
+                  typename = Detail::EnableIfNotOptionsOrReporter<Function>>
         static void
         verify(const T& contents, Function converter, const Options& options = Options())
         {
