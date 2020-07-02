@@ -85,7 +85,7 @@ namespace ApprovalTests
         template <typename T, typename R = void>
         using EnableIfNotOptionsOrReporter = typename std::enable_if<
             (!std::is_same<Options, typename std::decay<T>::type>::value) &&
-            (!std::is_base_of<Reporter, typename std::decay<T>::type>::value),
+                (!std::is_base_of<Reporter, typename std::decay<T>::type>::value),
             R>::type;
     } // namespace Detail
 }
