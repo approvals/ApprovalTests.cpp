@@ -5,7 +5,7 @@
 * **New features**
     * None
 * **Bug fixes**
-    * None
+    * Fix confusing compiler error messages when porting to Options (#140)
 * **Other changes**
     * The [User Guide on GitHub](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#top) now has (manually maintained):
         * table of contents
