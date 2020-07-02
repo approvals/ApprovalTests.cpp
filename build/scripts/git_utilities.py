@@ -17,7 +17,8 @@ class GitUtilities:
 
     @staticmethod
     def check_branch_name(repo: Repo, branch_name: str) -> None:
-        assert_step((repo.active_branch.name == branch_name))
+        repo_name = GitUtilities.get_repo_name(repo)
+        assert_step((repo.active_branch.name == branch_name), f"the {repo_name} repo is not on branch {branch_name}")
 
     @staticmethod
     def get_repo_name(repo: Repo) -> str:
