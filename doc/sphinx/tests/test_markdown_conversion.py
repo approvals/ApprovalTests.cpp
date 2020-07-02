@@ -6,7 +6,9 @@ from approvaltests.reporters.generic_diff_reporter_factory import GenericDiffRep
 
 import sys
 
+sys.path.append('../../')
 sys.path.append('../../..')
+sys.path.append('../../../..')
 
 from doc.sphinx import markdown_conversion
 
