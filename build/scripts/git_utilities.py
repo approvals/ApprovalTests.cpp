@@ -17,6 +17,10 @@ class GitUtilities:
         assert_step(len(repo.index.diff("HEAD")) == 0, f"there are staged changes to {repo_name}")  # Staged
 
     @staticmethod
+    def check_branch_name(repo: Repo, branch_name: str) -> None:
+        assert_step((repo.active_branch.name == branch_name))
+
+    @staticmethod
     def reset_and_clean_working_directory(project_dir: str) -> None:
         with use_directory(project_dir):
             # Delete untracked files:

@@ -26,7 +26,7 @@ class PrepareRelease:
             repo = Repo(self.details.locations.main_project_dir)
             assert_step(not repo.bare)
 
-            assert_step((repo.active_branch.name == 'master'))
+            GitUtilities.check_branch_name(repo, 'master')
 
             GitUtilities.check_no_uncommitted_changes(repo)
 
