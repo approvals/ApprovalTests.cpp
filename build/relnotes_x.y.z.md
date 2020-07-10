@@ -12,8 +12,8 @@
         * table of contents
         * new "C++ Reference" section, with links to the API documentation on Read the Docs.
     * Improved documentation pages:
-        * [Conan Integration](/doc/ConanIntegration.md#top)
+        * [Conan Integration](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/ConanIntegration.md#top)
         * [How to Release](https://github.com/approvals/ApprovalTests.cpp/blob/master/build/HowToRelease.md#top) now has a picture of the steps executed, as we update 3 repos when releasing now
     * New documentation pages:
-        * [Maintaining the Docs](/doc/MaintainingDocumentation.md#top)
-        * [Building the Docs](/doc/BuildingDocumentation.md#top)
+        * [Maintaining the Docs](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/MaintainingDocumentation.md#top)
+        * [Building the Docs](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/BuildingDocumentation.md#top)
