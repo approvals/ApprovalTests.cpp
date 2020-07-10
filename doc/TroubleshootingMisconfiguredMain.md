@@ -13,6 +13,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [Symptoms](#symptoms)
+    * [Linker errors about missing symbols](#linker-errors-about-missing-symbols)
+    * [Error when running tests](#error-when-running-tests)
   * [Solutions](#solutions)
     * [Check the instructions for your test framework](#check-the-instructions-for-your-test-framework)
     * [Check Google Test Framework](#check-google-test-framework)
@@ -20,7 +22,23 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 ## Symptoms
 
-Running tests gives the following output:
+### Linker errors about missing symbols
+
+When you link your test program - using ApprovalTest v.10.1.1 or later - you get linker errors about missing symbols, such as these:
+
+* `ApprovalTests::FileApprover::verify(...)`
+* `ApprovalTests::StringWriter::StringWriter(...)`
+* `ApprovalTests::DefaultNamerFactory::getDefaultNamer()`
+* `ApprovalTests::Options::defaultReporter()`
+* `ApprovalTests::Scrubbers::doNothing(...)`
+* `ApprovalTests::Options::FileOptions::getFileExtension() const`
+* `ApprovalTests::Options::fileOptions() const`
+* `ApprovalTests::Options::getReporter() const`
+* `ApprovalTests::Options::scrub(...) const`
+
+### Error when running tests
+
+Running tests - using ApprovalTest v.10.1.0 or earlier - gives the following output:
 
 <!-- snippet: ForgottenToConfigure.HelpMessage.approved.txt -->
 <a id='snippet-ForgottenToConfigure.HelpMessage.approved.txt'/></a>
