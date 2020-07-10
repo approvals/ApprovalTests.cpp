@@ -6,6 +6,7 @@
     * None
 * **Bug fixes**
     * Fix confusing compiler error messages when porting to Options (#140)
+    * Add help message to top of release header, to help when misconfigured main gives missing symbols (#144)
 * **Other changes**
     * The [User Guide on GitHub](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#top) now has (manually maintained):
         * table of contents
