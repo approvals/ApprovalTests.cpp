@@ -64,6 +64,15 @@ class CppGeneration:
                 f'// {self.details.project_details.github_project_name} version {self.details.new_version_as_text()}\n'
                 f'// More information at: {self.details.project_details.github_project_url}\n'
                 '\n'
+                '//----------------------------------------------------------------------\n'
+                '// Welcome to Approval Tests.\n'
+                '//\n'
+                '// If you experience linker errors about missing symbols, it means\n'
+                '// you have forgotten to configure your test framework for Approval Tests.\n'
+                '//\n'
+                '// For help with this, please see:\n'
+                '//     https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredMain.md\n'
+                '//----------------------------------------------------------------------\n'
                 f'{text}'
             )
             write_file(self.details.release_new_single_header, text)
