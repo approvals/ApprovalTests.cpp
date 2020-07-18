@@ -52,6 +52,10 @@ class PrepareStarterProjectRelease:
 
         # Update the version number in the Visual Studio project:
         visual_studio_2017_sln = F"{details.locations.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj"
+        PrepareStarterProjectRelease.update_solution_file(details, visual_studio_2017_sln)
+
+    @staticmethod
+    def update_solution_file(details: ReleaseDetails, visual_studio_2017_sln: str) -> None:
         if os.path.isfile(visual_studio_2017_sln):
             replace_text_in_file(visual_studio_2017_sln,
                                  details.old_single_header,
