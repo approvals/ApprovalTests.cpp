@@ -50,9 +50,11 @@ class PrepareStarterProjectRelease:
             details.old_version.get_version_text(),
             details.new_version.get_version_text())
 
-        # Update the version number in the Visual Studio project:
+        # Update the version number in the Visual Studio projects:
         PrepareStarterProjectRelease.update_solution_file(details,
                                                           F"{details.locations.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj")
+        PrepareStarterProjectRelease.update_solution_file(details,
+                                                          F"{details.locations.starter_project_dir}/visual-studio-2019/StarterProject2019.vcxproj")
 
     @staticmethod
     def update_solution_file(details: ReleaseDetails, visual_studio_sln: str) -> None:
