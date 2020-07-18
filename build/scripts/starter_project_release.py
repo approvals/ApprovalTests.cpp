@@ -4,6 +4,7 @@ import shutil
 from git import Repo
 
 from scripts.git_utilities import GitUtilities
+from scripts.project_details import ProjectDetails
 from scripts.release_details import ReleaseDetails
 from scripts.utilities import assert_step, replace_text_in_file, use_directory, run
 
@@ -62,3 +63,12 @@ class PrepareStarterProjectRelease:
     def check_starter_project_builds(details: ReleaseDetails) -> None:
         with use_directory(F"{details.locations.starter_project_dir}/cmake-build-debug"):
             run(["cmake", "--build", "."])
+
+
+class DeployStarterProjectRelease:
+    @staticmethod
+    def get_url_for_starter_project_single_header_for_version(project_details: ProjectDetails,
+                                                              version_without_v: str) -> str:
+        return F'https://raw.githubusercontent.com/approvals/' \
+               F'{project_details.github_project_name}.StarterProject/master/lib/' \
+               F'{project_details.library_folder_name}.v.{version_without_v}.hpp'
