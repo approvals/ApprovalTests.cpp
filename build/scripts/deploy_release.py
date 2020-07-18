@@ -4,8 +4,8 @@ from scripts.conan_release import DeployConanRelease
 from scripts.git_utilities import GitUtilities
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
-from scripts.starter_project_release import DeployStarterProjectRelease
-from scripts.utilities import read_file, check_step, run, use_directory, check_url_exists, assert_step
+from scripts.starter_project_release import publish_starter_project
+from scripts.utilities import read_file, check_step, run, use_directory
 
 
 class DeployRelease:
@@ -71,25 +71,3 @@ class DeployRelease:
         self.publish_on_reddit_optionally()
 
 
-def commit_starter_project(details: ReleaseDetails) -> None:
-    message = F"Update to {details.project_details.github_project_name} {details.new_version_as_text()}"
-    GitUtilities.commit_everything(details.locations.starter_project_dir, message)
-
-
-def push_starter_project(details: ReleaseDetails) -> None:
-    with use_directory(details.locations.starter_project_dir):
-        run(["git", "push", "origin", "master"])
-
-
-def publish_starter_project(details: ReleaseDetails) -> None:
-    commit_starter_project(details)
-    push_starter_project(details)
-    assert_step(check_starter_project_published(details), "the starter project is published")
-
-
-def check_starter_project_published(details: ReleaseDetails) -> bool:
-    version = details.new_version.get_version_text_without_v()
-    url = DeployStarterProjectRelease.get_url_for_starter_project_single_header_for_version(
-        details.project_details, version)
-    published = check_url_exists(url)
-    return published
