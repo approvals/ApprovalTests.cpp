@@ -55,13 +55,13 @@ class PrepareStarterProjectRelease:
         PrepareStarterProjectRelease.update_solution_file(details, visual_studio_2017_sln)
 
     @staticmethod
-    def update_solution_file(details: ReleaseDetails, visual_studio_2017_sln: str) -> None:
-        if os.path.isfile(visual_studio_2017_sln):
-            replace_text_in_file(visual_studio_2017_sln,
+    def update_solution_file(details: ReleaseDetails, visual_studio_sln: str) -> None:
+        if os.path.isfile(visual_studio_sln):
+            replace_text_in_file(visual_studio_sln,
                                  details.old_single_header,
                                  details.new_single_header)
         else:
-            print(f"Info: No Visual Studio solution file: {visual_studio_2017_sln}")
+            print(f"Info: No Visual Studio solution file: {visual_studio_sln}")
 
     @staticmethod
     def check_starter_project_builds(details: ReleaseDetails) -> None:
