@@ -73,26 +73,27 @@ class DeployStarterProjectRelease:
                F'{project_details.github_project_name}.StarterProject/master/lib/' \
                F'{project_details.library_folder_name}.v.{version_without_v}.hpp'
 
+    @staticmethod
+    def commit_starter_project(details: ReleaseDetails) -> None:
+        message = F"Update to {details.project_details.github_project_name} {details.new_version_as_text()}"
+        GitUtilities.commit_everything(details.locations.starter_project_dir, message)
 
-def commit_starter_project(details: ReleaseDetails) -> None:
-    message = F"Update to {details.project_details.github_project_name} {details.new_version_as_text()}"
-    GitUtilities.commit_everything(details.locations.starter_project_dir, message)
+    @staticmethod
+    def push_starter_project(details: ReleaseDetails) -> None:
+        with use_directory(details.locations.starter_project_dir):
+            run(["git", "push", "origin", "master"])
 
+    @staticmethod
+    def publish_starter_project(details: ReleaseDetails) -> None:
+        DeployStarterProjectRelease.commit_starter_project(details)
+        DeployStarterProjectRelease.push_starter_project(details)
+        assert_step(DeployStarterProjectRelease.check_starter_project_published(details),
+                    "the starter project is published")
 
-def push_starter_project(details: ReleaseDetails) -> None:
-    with use_directory(details.locations.starter_project_dir):
-        run(["git", "push", "origin", "master"])
-
-
-def publish_starter_project(details: ReleaseDetails) -> None:
-    commit_starter_project(details)
-    push_starter_project(details)
-    assert_step(check_starter_project_published(details), "the starter project is published")
-
-
-def check_starter_project_published(details: ReleaseDetails) -> bool:
-    version = details.new_version.get_version_text_without_v()
-    url = DeployStarterProjectRelease.get_url_for_starter_project_single_header_for_version(
-        details.project_details, version)
-    published = check_url_exists(url)
-    return published
+    @staticmethod
+    def check_starter_project_published(details: ReleaseDetails) -> bool:
+        version = details.new_version.get_version_text_without_v()
+        url = DeployStarterProjectRelease.get_url_for_starter_project_single_header_for_version(
+            details.project_details, version)
+        published = check_url_exists(url)
+        return published

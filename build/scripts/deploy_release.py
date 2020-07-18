@@ -4,7 +4,7 @@ from scripts.conan_release import DeployConanRelease
 from scripts.git_utilities import GitUtilities
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
-from scripts.starter_project_release import publish_starter_project
+from scripts.starter_project_release import DeployStarterProjectRelease
 from scripts.utilities import read_file, check_step, run, use_directory
 
 
@@ -65,7 +65,7 @@ class DeployRelease:
         if not start_at_conan:
             self.publish_main_project()
             self.upload_release_to_github()
-            publish_starter_project(self.details)
+            DeployStarterProjectRelease.publish_starter_project(self.details)
         DeployConanRelease.test_conan_and_create_pr(self.details)
         self.publish_tweet()
         self.publish_on_reddit_optionally()
