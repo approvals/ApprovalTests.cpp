@@ -11,8 +11,7 @@ from scripts.git_utilities import GitUtilities
 from scripts.project_details import ProjectDetails
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
-from scripts.starter_project_release import check_pre_conditions_for_starter_project_repo, update_starter_project, \
-    check_starter_project_builds
+from scripts.starter_project_release import PrepareStarterProjectRelease
 from scripts.utilities import check_step, run, use_directory, \
     check_step_with_revert, assert_step
 from scripts.version import Version
@@ -25,7 +24,7 @@ class PrepareRelease:
     def check_pre_conditions_for_publish(self) -> None:
         if self.details.push_to_production:
             self.check_pre_conditions_for_main_repo()
-            check_pre_conditions_for_starter_project_repo(self.details)
+            PrepareStarterProjectRelease.check_pre_conditions_for_starter_project_repo(self.details)
 
             run(["open", F"{self.details.project_details.github_project_url}/commits/master"])
             check_step("the builds are passing")
@@ -83,8 +82,8 @@ class PrepareRelease:
 
         CppGeneration.prepare_release(self.details)
 
-        update_starter_project(self.details)
-        check_starter_project_builds(self.details)
+        PrepareStarterProjectRelease.update_starter_project(self.details)
+        PrepareStarterProjectRelease.check_starter_project_builds(self.details)
 
         PrepareConanRelease.prepare_release(self.details)
 
