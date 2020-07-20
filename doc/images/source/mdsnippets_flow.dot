@@ -1,0 +1,22 @@
+digraph mdsnippets_flow {
+    rankdir = "TB"
+    node [fontsize = 14, shape = box, style="rounded", height = 0.25]
+    edge [fontsize = 14]
+
+    "mdsnippets" [shape = oval, fillcolor = lightgray, style = filled]
+
+    "docs_mdsource_md" [label = "doc/mdsource/*.source.md\ldoc/mdsource/*.include.md"]
+    "docs_mdsource_md" -> "mdsnippets"
+
+    "ApprovalTests" [label = "ApprovalTests/*.(h,cpp)"]
+    "ApprovalTests" -> "mdsnippets"
+
+    "tests_source" [label = "tests/*.(h,cpp,approved.*)\rexamples/*.(h,cpp,approved.*)"]
+    "tests_source" -> "mdsnippets"
+
+    "mdsnippets_json" [label = "mdsnippets.json"]
+    "mdsnippets_json" -> "mdsnippets"
+
+    "docs_md" [label = "doc/*.md"]
+    "mdsnippets" -> "docs_md"
+}

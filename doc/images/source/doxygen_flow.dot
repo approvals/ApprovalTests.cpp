@@ -1,0 +1,27 @@
+digraph doxygen_flow {
+    rankdir = "TB"
+    node [fontsize = 14, shape = box, style="rounded", height = 0.25]
+    edge [fontsize = 14]
+
+    "cmake" [shape = oval, fillcolor = lightgray, style = filled]
+
+    "Doxyfile.in" [label = "doc/doxygen/Doxyfile.in"]
+    "Doxyfile.in" -> "cmake"
+    "Doxyfile" [label = "build_tree/doc/doxygen/Doxyfile"]
+    "cmake" -> "Doxyfile"
+
+    "doxygen" [shape = oval, fillcolor = lightgray, style = filled]
+
+    "doxygen_dox_files" [label = "doc/doxygen_docs/*.dox"]
+    "doxygen_dox_files" -> "doxygen"
+
+    "Doxyfile" -> "doxygen"
+    "ApprovalTests" [label = "ApprovalTests/*.(h,cpp)"]
+    "ApprovalTests" -> "doxygen"
+
+    "index.xml" [label = "build_tree/doc/doxygen/xml/index.xml"]
+    "doxygen" -> "index.xml"
+
+    "index.html" [label = "build_tree/doc/doxygen/html/index.html"]
+    "doxygen" -> "index.html"
+}

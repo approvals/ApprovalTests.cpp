@@ -23,6 +23,10 @@ prepare_minor_release.py
 prepare_patch_release.py
 ```
 
+## Overview of steps
+
+![Flow of files during release](../doc/images/release_files_mindmap.png?raw=true)
+
 ## How to add a new release to Conan
 
 The release process needs to submit a pull request to add the new release to [https://github.com/conan-io/conan-center-index/blob/master/recipes/approvaltests.cpp/all/conandata.yml](https://github.com/conan-io/conan-center-index/blob/master/recipes/approvaltests.cpp/all/conandata.yml)

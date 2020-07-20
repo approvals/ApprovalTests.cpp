@@ -16,31 +16,15 @@ namespace ApprovalTests
         BlockingReporter() = delete;
 
     public:
-        explicit BlockingReporter(std::shared_ptr<Blocker> blocker_)
-            : blocker(std::move(blocker_))
-        {
-        }
+        explicit BlockingReporter(std::shared_ptr<Blocker> blocker_);
 
         static std::shared_ptr<BlockingReporter>
-        onMachineNamed(const std::string& machineName)
-        {
-            auto machineBlocker = std::make_shared<MachineBlocker>(
-                MachineBlocker::onMachineNamed(machineName));
-            return std::make_shared<BlockingReporter>(machineBlocker);
-        }
+        onMachineNamed(const std::string& machineName);
 
         static std::shared_ptr<BlockingReporter>
-        onMachinesNotNamed(const std::string& machineName)
-        {
-            auto machineBlocker = std::make_shared<MachineBlocker>(
-                MachineBlocker::onMachinesNotNamed(machineName));
-            return std::make_shared<BlockingReporter>(machineBlocker);
-        }
+        onMachinesNotNamed(const std::string& machineName);
 
         virtual bool report(std::string /*received*/,
-                            std::string /*approved*/) const override
-        {
-            return blocker->isBlockingOnThisMachine();
-        }
+                            std::string /*approved*/) const override;
     };
 }

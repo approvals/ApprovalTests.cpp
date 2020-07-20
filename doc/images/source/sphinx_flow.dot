@@ -1,0 +1,29 @@
+digraph doxygen_flow {
+    rankdir = "TB"
+    node [fontsize = 14, shape = box, style="rounded", height = 0.25]
+    edge [fontsize = 14]
+
+    "mdsnippets" [shape = oval, fillcolor = lightgray, style = filled]
+    "doxygen" [shape = oval, fillcolor = lightgray, style = filled]
+    "sphinx" [label = "sphinx + breathe", shape = oval, fillcolor = lightgray, style = filled]
+
+    "source_rst" [label = "doc/sphinx/index.rst\ldoc/sphinx/api/*.rst\ldoc/sphinx/_templates/*.html"]
+    "source_rst" -> "sphinx"
+
+    "docs_md" [label = "doc/*.md"]
+    "mdsnippets" -> "docs_md"
+    "markdown_conversion_py" [label = "doc/sphinx/markdown_conversion.py", shape = oval, fillcolor = lightgray, style = filled]
+    "generated_rst" [label = "doc/sphinx/generated_docs/*.rst"]
+    "docs_md" -> "markdown_conversion_py" -> "generated_rst"
+    "generated_rst" -> "sphinx"
+
+    "index.xml" [label = "build_tree/doc/doxygen/xml/index.xml"]
+    "doxygen" -> "index.xml"
+    "index.xml" -> "sphinx"
+
+    "sphinx_output" [label = "build_tree/doc/sphinx/index.html"]
+    "sphinx" -> "sphinx_output"
+
+    "read_the_docs" [label = "Read the Docs"]
+    "sphinx_output" -> "read_the_docs"
+}

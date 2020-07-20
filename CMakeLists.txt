@@ -12,6 +12,11 @@ include(ApprovalTestsOptions)
 include(UseCompilerCache)
 useCompilerCache()
 
+#if (CMAKE_CXX_COMPILER_ID MATCHES ".*Clang" AND
+#        CMAKE_CXX_COMPILER_VERSION GREATER_EQUAL 9.0)
+#    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ftime-trace")
+#endif ()
+
 add_subdirectory(ApprovalTests)
 
 set(CMAKE_VERBOSE_MAKEFILE off)

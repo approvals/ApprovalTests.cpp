@@ -1,5 +1,4 @@
 import os
-import shutil
 from typing import Callable
 
 from git import Repo
@@ -12,7 +11,8 @@ from scripts.git_utilities import GitUtilities
 from scripts.project_details import ProjectDetails
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
-from scripts.utilities import check_step, replace_text_in_file, run, use_directory, \
+from scripts.starter_project_release import PrepareStarterProjectRelease
+from scripts.utilities import check_step, run, use_directory, \
     check_step_with_revert, assert_step
 from scripts.version import Version
 
@@ -23,17 +23,8 @@ class PrepareRelease:
 
     def check_pre_conditions_for_publish(self) -> None:
         if self.details.push_to_production:
-            repo = Repo(self.details.locations.main_project_dir)
-            assert_step(not repo.bare)
-
-            assert_step((repo.active_branch.name == 'master'))
-
-            GitUtilities.check_no_uncommitted_changes(repo)
-
-            # From https://stackoverflow.com/questions/15849640/how-to-get-count-of-unpublished-commit-with-gitpython
-            assert_step(len(
-                list(repo.iter_commits('master@{u}..master'))) == 0,
-                        f"there are un-pushed changes in {self.details.project_details.github_project_name}")
+            self.check_pre_conditions_for_main_repo()
+            PrepareStarterProjectRelease.check_pre_conditions_for_starter_project_repo(self.details)
 
             run(["open", F"{self.details.project_details.github_project_url}/commits/master"])
             check_step("the builds are passing")
@@ -49,51 +40,16 @@ class PrepareRelease:
             run(["open", F"{self.details.project_details.github_project_url}/milestones"])
             check_step("the milestone (if any) is up to date, including actual version number of release")
 
-    def update_starter_project(self) -> None:
-        STARTER_PATH_OLD_SINGLE_HEADER = F"{self.details.locations.starter_project_dir}/lib/{self.details.old_single_header}"
-        STARTER_PATH_NEW_SINGLE_HEADER = F"{self.details.locations.starter_project_dir}/lib/{self.details.new_single_header}"
+    def check_pre_conditions_for_main_repo(self) -> None:
+        repo = Repo(self.details.locations.main_project_dir)
+        assert_step(not repo.bare)
+        GitUtilities.check_branch_name(repo, 'master')
+        GitUtilities.check_no_uncommitted_changes(repo)
 
-        # Make sure starter project folder is clean
-        project_dir = self.details.locations.starter_project_dir
-        GitUtilities.reset_and_clean_working_directory(project_dir)
-
-        shutil.copyfile(self.details.release_new_single_header, STARTER_PATH_NEW_SINGLE_HEADER)
-
-        # Delete the last release:
-        if os.path.exists(STARTER_PATH_OLD_SINGLE_HEADER):
-            os.remove(STARTER_PATH_OLD_SINGLE_HEADER)
-        else:
-            raise RuntimeError(F"""
-----------------------------------------------------------------
-ERROR: Old header file does not exist:
-{STARTER_PATH_OLD_SINGLE_HEADER}
-Starting state of Starter Project does not match '{self.details.old_version.get_version_text()}'
-Check whether:
-1. There were uncommitted changes to version.ini in main project,
-   from a previous release preparation step.
-2. The Starter Project repo needs pulling.
-----------------------------------------------------------------
-
-""")
-
-        # Update the version in the "redirect" header:
-        replace_text_in_file(
-            F"{self.details.locations.starter_project_dir}/lib/{self.details.project_details.simulated_single_header_file}",
-            self.details.old_version.get_version_text(),
-            self.details.new_version.get_version_text())
-
-        # Update the version number in the Visual Studio project:
-        visual_studio_2017_sln = F"{self.details.locations.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj"
-        if os.path.isfile(visual_studio_2017_sln):
-            replace_text_in_file(visual_studio_2017_sln,
-                                 self.details.old_single_header,
-                                 self.details.new_single_header)
-        else:
-            print(f"Info: No Visual Studio solution file: {visual_studio_2017_sln}")
-
-    def check_starter_project_builds(self) -> None:
-        with use_directory(F"{self.details.locations.starter_project_dir}/cmake-build-debug"):
-            run(["cmake", "--build", "."])
+        # From https://stackoverflow.com/questions/15849640/how-to-get-count-of-unpublished-commit-with-gitpython
+        assert_step(len(
+            list(repo.iter_commits('master@{u}..master'))) == 0,
+                    f"there are un-pushed changes in {self.details.project_details.github_project_name}")
 
     def add_to_git(self) -> None:
         def add() -> None:
@@ -126,8 +82,8 @@ Check whether:
 
         CppGeneration.prepare_release(self.details)
 
-        self.update_starter_project()
-        self.check_starter_project_builds()
+        PrepareStarterProjectRelease.update_starter_project(self.details)
+        PrepareStarterProjectRelease.check_starter_project_builds(self.details)
 
         PrepareConanRelease.prepare_release(self.details)
 

@@ -34,9 +34,11 @@ add_executable(${PROJECT_NAME}
         scrubbers/GuidScrubberTests.cpp
         scrubbers/ScrubberTests.cpp
         utilities/CartesianProductTests.cpp
+        utilities/DateUtilsTests.cpp
         utilities/ExceptionCollectorTests.cpp
         utilities/FileUtilsSystemSpecificTests.cpp
         utilities/FileUtilsTests.cpp
+        utilities/MachineBlockerTests.cpp
         utilities/StringUtilsTests.cpp
         utilities/SystemUtilsTests.cpp
         writers/StringWriterTests.cpp

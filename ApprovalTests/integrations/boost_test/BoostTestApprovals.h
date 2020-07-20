@@ -4,6 +4,7 @@
 #include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
 
 #ifdef APPROVALS_BOOSTTEST
+#define APPROVAL_TESTS_INCLUDE_CPPS
 
 namespace ApprovalTests
 {

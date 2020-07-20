@@ -8,6 +8,24 @@ toc
 
 ## v.x.y.z
 
+### DateUtils
+
+You can now easily create and print C++11 dates and times.
+
+For example:
+
+snippet: date_and_time
+
+will produce:
+
+snippet: DateUtilsTests.createDateTime.approved.txt
+
+## v.10.1.1
+
+### Improved Compilation Speeds
+
+![Compilation Times: v.10.1.0: 2.7 secs vs v.10.1.1: 1.2 secs](/doc/images/ApprovalTests_v.10.1.1_compilation_times.png?raw=true)
+
 ## v.10.0.0
 
 ### Removed Deprecated Code
@@ -60,7 +78,7 @@ See [How to Scrub Non-Deterministic Output](/doc/how_tos/ScrubNonDeterministicOu
 This is in internal change, which will provide future flexibility, and does not change any existing code.
 
 In this release, we:
- 
+
 * templatized the Approvals class, renaming it to TApprovals
 * changed the CombinationApprovals namespace to a template class called TCombinationApprovals
 * introduced the StringMaker class as an additional customization point for the above two classes 

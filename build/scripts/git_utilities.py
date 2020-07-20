@@ -11,10 +11,20 @@ class GitUtilities:
         assert_step(not repo.bare, "There are uncommitted changes in git")
 
         # From https://stackoverflow.com/questions/31959425/how-to-get-staged-files-using-gitpython
-        repo_location = repo.working_dir
-        repo_name = os.path.basename(repo_location)
+        repo_name = GitUtilities.get_repo_name(repo)
         assert_step(len(repo.index.diff(None)) == 0, f"there are un-committed changes to {repo_name}")  # Modified
         assert_step(len(repo.index.diff("HEAD")) == 0, f"there are staged changes to {repo_name}")  # Staged
+
+    @staticmethod
+    def check_branch_name(repo: Repo, branch_name: str) -> None:
+        repo_name = GitUtilities.get_repo_name(repo)
+        assert_step((repo.active_branch.name == branch_name), f"the {repo_name} repo is not on branch {branch_name}")
+
+    @staticmethod
+    def get_repo_name(repo: Repo) -> str:
+        repo_location = repo.working_dir
+        repo_name = os.path.basename(repo_location)
+        return repo_name
 
     @staticmethod
     def reset_and_clean_working_directory(project_dir: str) -> None:

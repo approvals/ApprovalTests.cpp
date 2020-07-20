@@ -3,7 +3,6 @@
 #include "ApprovalTests/launchers/CommandLauncher.h"
 
 #include <string>
-#include <vector>
 #include <numeric>
 
 class DoNothingLauncher : public ApprovalTests::CommandLauncher

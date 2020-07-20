@@ -1,5 +1,7 @@
 #include "gtest/gtest.h"
 #include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/reporters/WindowsReporters.h"
+#include "ApprovalTests/reporters/MacReporters.h"
 
 using namespace ApprovalTests;
 

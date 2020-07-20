@@ -12,32 +12,12 @@ namespace ApprovalTests
 
         std::string
         getFullFileNameWithExtraDirectory(const std::string& approved,
-                                          const std::string& extensionWithDot) const
-        {
-            std::string outputDirectory = getDirectory() + approved;
-            SystemUtils::ensureDirectoryExists(outputDirectory);
+                                          const std::string& extensionWithDot) const;
 
-            std::string outputFile =
-                getFileName() + "." + getTestName() + extensionWithDot;
+        virtual std::string getApprovedFile(std::string extensionWithDot) const override;
 
-            return outputDirectory + SystemUtils::getDirectorySeparator() + outputFile;
-        }
+        virtual std::string getReceivedFile(std::string extensionWithDot) const override;
 
-        virtual std::string getApprovedFile(std::string extensionWithDot) const override
-        {
-            return getFullFileNameWithExtraDirectory("approved", extensionWithDot);
-        }
-
-        virtual std::string getReceivedFile(std::string extensionWithDot) const override
-        {
-            return getFullFileNameWithExtraDirectory("received", extensionWithDot);
-        }
-
-        static DefaultNamerDisposer useAsDefaultNamer()
-        {
-            return Approvals::useAsDefaultNamer([]() {
-                return std::make_shared<SeparateApprovedAndReceivedDirectoriesNamer>();
-            });
-        }
+        static DefaultNamerDisposer useAsDefaultNamer();
     };
 }

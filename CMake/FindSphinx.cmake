@@ -1,6 +1,7 @@
 #Look for an executable called sphinx-build
 find_program(SPHINX_EXECUTABLE
         NAMES sphinx-build
+        HINTS ${CMAKE_CURRENT_SOURCE_DIR}/../../build/venv/bin
         DOC "Path to sphinx-build executable")
 
 include(FindPackageHandleStandardArgs)

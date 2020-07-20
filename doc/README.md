@@ -15,7 +15,25 @@ Also known as Golden Master Tests or Snapshot Testing, Approval Tests
 are an alternative to asserts. They are great for testing objects with
 lots of fields, or lists of objects.
 
-**Note:** This User Guide is [**also available on Read the Docs**](https://approvaltestscpp.readthedocs.io/en/latest/), with easier navigation, search, API reference and a PDF download.
+**Note:** This User Guide is [**also available on Read the Docs**](https://approvaltestscpp.readthedocs.io/en/latest/), with easier navigation, search and a [PDF download](https://approvaltestscpp.readthedocs.io/_/downloads/en/latest/pdf/).
+
+----
+
+<!-- NOTE: This list needs to be updated by hand if new sections are added -->
+
+*Contents:&nbsp;[Getting&nbsp;Started](#getting-started)
+| [Test&nbsp;Frameworks](#test-frameworks)
+| [Writing&nbsp;Tests](#writing-tests)
+| [Customising&nbsp;Behaviour](#customising-behaviour)
+| [Common&nbsp;Challenges](#common-challenges)
+| [How-to&nbsp;Guides](#how-to-guides)
+| [Build&nbsp;Systems](#build-systems)
+| [Extras](#extras)
+| [Troubleshooting](#troubleshooting)
+| [Developing&nbsp;ApprovalTests.cpp](#developing-approvaltestscpp)
+| [C++ Reference](#c-reference)*
+
+----
 
 ## Getting Started
 
@@ -124,4 +142,15 @@ effectively.
 
   - **Topics**:
     [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top) |
-    [Coding Patterns](/doc/CodingPatterns.md#top)
+    [Coding Patterns](/doc/CodingPatterns.md#top) |
+    [Maintaining the Docs](/doc/MaintainingDocumentation.md#top) |
+    [Building the Docs](/doc/BuildingDocumentation.md#top)
+
+## C++ Reference
+
+This section contains a growing list of "Read the Docs" pages documenting the ApprovalTests.cpp API. It may be useful to see what methods, and overloads, are available. It is very short on descriptive text, as we focus our efforts on the documentation above.
+
+<!-- NOTE: This list needs to be updated by hand if new pages are added -->
+
+  - **Fundamentals**: [Approving Objects](https://approvaltestscpp.readthedocs.io/en/latest/api/approving.html) | [Core Classes](https://approvaltestscpp.readthedocs.io/en/latest/api/core.html) | [Scrubber Functions](https://approvaltestscpp.readthedocs.io/en/latest/api/scrubbers.html)
+

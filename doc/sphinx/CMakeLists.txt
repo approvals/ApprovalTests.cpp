@@ -1,3 +1,13 @@
+find_package(Sphinx)
+if (NOT Sphinx_FOUND)
+    message(STATUS "Sphinx not found: Will not generate docs")
+    return()
+endif ()
+
+set(SPHINX_SOURCE ${CMAKE_CURRENT_SOURCE_DIR})
+set(SPHINX_BUILD ${CMAKE_CURRENT_BINARY_DIR})
+set(SPHINX_INDEX_FILE ${SPHINX_BUILD}/index.html)
+
 # APPROVAL_TESTS_GEN_DOC_RST_FILES       will contain .rst files corresponding to the generated *.md
 string(REPLACE "/doc/" "/doc/sphinx/generated_docs/" APPROVAL_TESTS_GEN_DOC_RST_FILES "${APPROVAL_TESTS_GEN_DOC_MD_FILES}")
 string(REPLACE ".md" ".rst" APPROVAL_TESTS_GEN_DOC_RST_FILES "${APPROVAL_TESTS_GEN_DOC_RST_FILES}")
@@ -23,6 +33,7 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         # Other docs files you want to track should go here (or in some variable)
         api/approving.rst
         api/core.rst
+        api/scrubbers.rst
         index.rst
         markdown_conversion.py
         ${DOXYGEN_INDEX_FILE}

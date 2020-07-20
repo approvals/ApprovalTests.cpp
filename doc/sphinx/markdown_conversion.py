@@ -197,6 +197,8 @@ def fixup_markdown_hyperlink_destinations(content, subdir):
         will_include_in_sphix_docs = True
         if not full_url.startswith('/doc'):
             will_include_in_sphix_docs = False
+        if 'mdsource/' in full_url:
+            will_include_in_sphix_docs = False
         if '.md' not in full_url:
             will_include_in_sphix_docs = False
 

@@ -2,29 +2,15 @@ import pyperclip
 
 from scripts.conan_release import DeployConanRelease
 from scripts.git_utilities import GitUtilities
-from scripts.project_details import ProjectDetails
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
-from scripts.utilities import read_file, check_step, run, use_directory, check_url_exists, assert_step
+from scripts.starter_project_release import DeployStarterProjectRelease
+from scripts.utilities import read_file, check_step, run, use_directory
 
 
 class DeployRelease:
     def __init__(self, details: ReleaseDetails):
         self.details = details
-
-    # Starter Project
-    def commit_starter_project(self) -> None:
-        message = F"Update to {self.details.project_details.github_project_name} {self.details.new_version_as_text()}"
-        GitUtilities.commit_everything(self.details.locations.starter_project_dir, message)
-
-    def push_starter_project(self) -> None:
-        with use_directory(self.details.locations.starter_project_dir):
-            run(["git", "push", "origin", "master"])
-
-    def publish_starter_project(self) -> None:
-        self.commit_starter_project()
-        self.push_starter_project()
-        assert_step(self.check_starter_project_published(), "the starter project is published")
 
     # Main Project
     def commit_main_project(self) -> None:
@@ -79,20 +65,9 @@ class DeployRelease:
         if not start_at_conan:
             self.publish_main_project()
             self.upload_release_to_github()
-            self.publish_starter_project()
+            DeployStarterProjectRelease.publish_starter_project(self.details)
         DeployConanRelease.test_conan_and_create_pr(self.details)
         self.publish_tweet()
         self.publish_on_reddit_optionally()
 
-    def check_starter_project_published(self) -> bool:
-        version = self.details.new_version.get_version_text_without_v()
-        url = DeployRelease.get_url_for_starter_project_single_header_for_version(self.details.project_details, version)
-        published = check_url_exists(url)
-        return published
 
-    @staticmethod
-    def get_url_for_starter_project_single_header_for_version(project_details: ProjectDetails,
-                                                              version_without_v: str) -> str:
-        return F'https://raw.githubusercontent.com/approvals/' \
-               F'{project_details.github_project_name}.StarterProject/master/lib/' \
-               F'{project_details.library_folder_name}.v.{version_without_v}.hpp'

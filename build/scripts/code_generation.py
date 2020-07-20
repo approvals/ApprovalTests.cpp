@@ -1,6 +1,5 @@
 import os
 
-from scripts import version
 from scripts.embed import create_single_header_file
 from scripts.multiline_string_utilities import remove_indentation
 from scripts.project_details import ProjectDetails
@@ -10,7 +9,6 @@ from scripts.utilities import read_file, write_file, use_directory
 from scripts.version import Version
 
 
-from typing import Dict
 class CppGeneration:
     def __init__(self, details: ReleaseDetails) -> None:
         self.details = details
@@ -50,25 +48,42 @@ class CppGeneration:
                 '''
         return text + second_part
 
-    def create_simulated_single_header_file(self) -> str:
-        return SingleHeaderFile.create('.', self.details.project_details)
+    def create_simulated_single_header_file(self, include_cpps: bool) -> str:
+        return SingleHeaderFile.create('.', self.details.project_details, include_cpps=include_cpps)
 
     def create_single_header_file(self) -> str:
-        self.create_simulated_single_header_file()
+        self.create_simulated_single_header_file(include_cpps=True)
 
         simulated_single_header = os.path.abspath(self.details.locations.simulated_single_header_file_path)
         with use_directory("../build"):
             print(os.getcwd())
             self.run_for_approval_tests(simulated_single_header, self.details.release_new_single_header)
             text = read_file(self.details.release_new_single_header)
+
             text = (
                 f'// {self.details.project_details.github_project_name} version {self.details.new_version_as_text()}\n'
                 f'// More information at: {self.details.project_details.github_project_url}\n'
                 '\n'
+                '//----------------------------------------------------------------------\n'
+                '// Welcome to Approval Tests.\n'
+                '//\n'
+                '// If you experience linker errors about missing symbols, it means\n'
+                '// you have forgotten to configure your test framework for Approval Tests.\n'
+                '//\n'
+                '// For help with this, please see:\n'
+                '//     https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredMain.md\n'
+                '//----------------------------------------------------------------------\n'
                 f'{text}'
             )
             write_file(self.details.release_new_single_header, text)
-            return os.path.abspath(self.details.release_new_single_header)
+
+        # HACK! A side-effect of this method is that it overwrites
+        # the version-controlled simulated single-header, including .cpp
+        # files.
+        # Revert that change:
+        self.create_simulated_single_header_file(include_cpps=False)
+
+        return os.path.abspath(self.details.release_new_single_header)
 
     def run_for_approval_tests(self, initial_file: str, output_file: str) -> None:
         def mdsnippets_discarder(line: str) -> bool:

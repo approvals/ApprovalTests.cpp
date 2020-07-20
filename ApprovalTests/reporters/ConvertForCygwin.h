@@ -9,28 +9,16 @@ namespace ApprovalTests
     public:
         virtual ~ConvertForCygwin() = default;
 
-        virtual std::string convertProgramForCygwin(const std::string& filePath)
-        {
-            return "$(cygpath '" + filePath + "')";
-        }
+        virtual std::string convertProgramForCygwin(const std::string& filePath);
 
-        virtual std::string convertFileArgumentForCygwin(const std::string& filePath)
-        {
-            return "$(cygpath -aw '" + filePath + "')";
-        }
+        virtual std::string convertFileArgumentForCygwin(const std::string& filePath);
     };
 
     class DoNothing : public ConvertForCygwin
     {
     public:
-        std::string convertProgramForCygwin(const std::string& filePath) override
-        {
-            return filePath;
-        }
+        std::string convertProgramForCygwin(const std::string& filePath) override;
 
-        std::string convertFileArgumentForCygwin(const std::string& filePath) override
-        {
-            return filePath;
-        }
+        std::string convertFileArgumentForCygwin(const std::string& filePath) override;
     };
 }

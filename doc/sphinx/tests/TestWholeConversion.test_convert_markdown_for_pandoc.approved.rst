@@ -35,6 +35,15 @@ link to markdown file outside doc/ is unchanged
 `How To
 Release <https://github.com/approvals/ApprovalTests.cpp/blob/master/build/HowToRelease.md#top>`__
 
+link to .source.md file must point to github site
+-------------------------------------------------
+
+Because .source.md files are not converted to sphinx .rst files, and so
+would be broken links on Read the Docs.
+
+1. Add a new file about the customisation, such as
+   `UsingCatch.source.md <https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/mdsource/UsingCatch.source.md#top>`__
+
 links to docs in various relative paths are correct
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -195,6 +204,28 @@ A wide table
    library depends on
    `std::source_location <https://en.cppreference.com/w/cpp/utility/source_location>`__,
    which is a C++ 20 feature.
+
+A table with wide words
+-----------------------
+
+Some of these words end up with spaces in, wrongly.
+
++-----------------------------------+----------------------------------+
+| Old                               | New                              |
++===================================+==================================+
+| ``APPROVALTESTS_VERSION``         | ``APPROVAL_TESTS_VERSION``       |
++-----------------------------------+----------------------------------+
+| ``APPROVALTESTS_VERSION_MAJOR``   | ``APPROVAL_TESTS_VERSION_MAJOR`` |
++-----------------------------------+----------------------------------+
+| ``APPROVALTESTS_VERSION_MINOR``   | ``APPROVAL_TESTS_VERSION_MINOR`` |
++-----------------------------------+----------------------------------+
+| ``APPROVALTESTS_VERSION_PATCH``   | ``APPROVAL_TESTS_VERSION_PATCH`` |
++-----------------------------------+----------------------------------+
+| ``APPROVALTESTS_VERSION_STR``     | ``APPROVAL_TESTS_VERSION_STR``   |
++-----------------------------------+----------------------------------+
+| ``APPROVALS                       | ``APPROVAL_                      |
+| _CATCH_DISABLE_FILE_MACRO_CHECK`` | TESTS_DISABLE_FILE_MACRO_CHECK`` |
++-----------------------------------+----------------------------------+
 
 Included file
 -------------
