@@ -16,5 +16,7 @@ namespace ApprovalTests
 
         static std::string
         toString(const std::chrono::system_clock::time_point& dateTime);
+        static tm
+        createTm(int year, int month, int day, int hour, int minute, int second);
     };
 }

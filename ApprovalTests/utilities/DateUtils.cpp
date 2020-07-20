@@ -5,16 +5,21 @@
 
 namespace ApprovalTests
 {
-    std::chrono::system_clock::time_point DateUtils::createDateTime(
-        int year, int month, int day, int hour, int minute, int second)
+    std::tm DateUtils::createTm(int year, int month, int day, int hour, int minute, int second)
     {
-        std::tm timeinfo = std::tm();
+        std::tm timeinfo = tm();
         timeinfo.tm_year = year - 1900;
         timeinfo.tm_mon = month - 1;
         timeinfo.tm_mday = day;
         timeinfo.tm_hour = hour - 1;
         timeinfo.tm_min = minute;
         timeinfo.tm_sec = second;
+        return timeinfo;
+    }
+    std::chrono::system_clock::time_point DateUtils::createDateTime(
+        int year, int month, int day, int hour, int minute, int second)
+    {
+        tm timeinfo = createTm(year, month, day, hour, minute, second);
         std::time_t tt = std::mktime(&timeinfo);
         return std::chrono::system_clock::from_time_t(tt);
     }
