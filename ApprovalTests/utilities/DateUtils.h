@@ -15,6 +15,8 @@ namespace ApprovalTests
         static std::chrono::system_clock::time_point
         createDateTime(int year, int month, int day, int hour, int minute, int second);
 
+        static time_t toUTC(std::tm& timeinfo);
+
         static std::string toString(const std::chrono::system_clock::time_point& dateTime,
                                     const std::string& format);
 

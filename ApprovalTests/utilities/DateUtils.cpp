@@ -27,12 +27,18 @@ namespace ApprovalTests
                               int second) // these are UTC values
     {
         tm timeinfo = createTm(year, month, day, hour, minute, second);
+        time_t tt = toUTC(timeinfo);
+        return std::chrono::system_clock::from_time_t(tt);
+    }
+
+    time_t DateUtils::toUTC(std::tm& timeinfo)
+    {
 #ifdef _WIN32
         std::time_t tt = _mkgmtime(&timeinfo);
 #else
-        std::time_t tt = timegm(&timeinfo);
+        time_t tt = timegm(&timeinfo);
 #endif
-        return std::chrono::system_clock::from_time_t(tt);
+        return tt;
     }
 
     std::string DateUtils::toString(const std::chrono::system_clock::time_point& dateTime)
