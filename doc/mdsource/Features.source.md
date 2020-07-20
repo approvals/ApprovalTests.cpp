@@ -8,6 +8,18 @@ toc
 
 ## v.x.y.z
 
+### DateUtils
+
+You can now easily create and print C++11 dates and times.
+
+For example:
+
+snippet: date_and_time
+
+will produce:
+
+snippet: DateUtilsTests.createDateTime.approved.txt
+
 ## v.10.1.1
 
 ### Improved Compilation Speeds

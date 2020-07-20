@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [DateUtils](#dateutils)
   * [v.10.1.1](#v1011)
     * [Improved Compilation Speeds](#improved-compilation-speeds)
   * [v.10.0.0](#v1000)
@@ -65,6 +66,32 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+### DateUtils
+
+You can now easily create and print C++11 dates and times.
+
+For example:
+
+<!-- snippet: date_and_time -->
+<a id='snippet-date_and_time'/></a>
+```cpp
+std::chrono::time_point dateTime =
+    DateUtils::createDateTime(2000, 1, 13, 3, 34, 45);
+std::string dateTimeString = DateUtils::toString(dateTime);
+```
+<sup><a href='/tests/DocTest_Tests/utilities/DateUtilsTests.cpp#L9-L13' title='File snippet `date_and_time` was extracted from'>snippet source</a> | <a href='#snippet-date_and_time' title='Navigate to start of snippet `date_and_time`'>anchor</a></sup>
+<!-- endsnippet -->
+
+will produce:
+
+<!-- snippet: DateUtilsTests.createDateTime.approved.txt -->
+<a id='snippet-DateUtilsTests.createDateTime.approved.txt'/></a>
+```txt
+Thu 2000-01-13 02:34:45
+```
+<sup><a href='/tests/DocTest_Tests/utilities/approval_tests/DateUtilsTests.createDateTime.approved.txt#L1-L1' title='File snippet `DateUtilsTests.createDateTime.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-DateUtilsTests.createDateTime.approved.txt' title='Navigate to start of snippet `DateUtilsTests.createDateTime.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
 
 ## v.10.1.1
 

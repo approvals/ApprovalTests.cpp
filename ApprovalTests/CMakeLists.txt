@@ -110,6 +110,8 @@ add_library(${PROJECT_NAME}
         scrubbers/Scrubbers.cpp
         utilities/Blocker.h
         utilities/CartesianProduct.h
+        utilities/DateUtils.cpp
+        utilities/DateUtils.h
         utilities/ExceptionCollector.h
         utilities/ExceptionCollector.cpp
         utilities/FileUtils.h
