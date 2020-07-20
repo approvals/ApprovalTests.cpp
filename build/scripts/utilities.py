@@ -90,7 +90,7 @@ def calculate_sha256(file_name: str) -> str:
 
 
 # condition should be an Expression
-def assert_step(condition: Any, message:str = "") -> None:
+def assert_step(condition: bool, message:str = "") -> None:
     assert condition, message
 
 

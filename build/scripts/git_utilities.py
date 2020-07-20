@@ -8,7 +8,7 @@ from scripts.utilities import assert_step, use_directory, run
 class GitUtilities:
     @staticmethod
     def check_no_uncommitted_changes(repo: Repo) -> None:
-        assert_step(not repo.bare)
+        assert_step(not repo.bare, "There are uncommitted changes in git")
 
         # From https://stackoverflow.com/questions/31959425/how-to-get-staged-files-using-gitpython
         repo_location = repo.working_dir
@@ -46,3 +46,11 @@ class GitUtilities:
         repo = Repo(directory)
         branch = repo.active_branch.name
         repo.remote('origin').push(branch)
+
+    @staticmethod
+    def pull_active_branch_origin(directory: str) -> None:
+        repo = Repo(directory)
+        branch = repo.active_branch.name
+        repo.remote('origin').pull(branch)
+
+
