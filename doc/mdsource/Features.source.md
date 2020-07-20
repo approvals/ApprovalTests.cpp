@@ -20,6 +20,8 @@ will produce:
 
 snippet: DateUtilsTests.createDateTime.approved.txt
 
+There is an overload of `DateUtils::toString()` that takes a format string.
+
 ## v.10.1.1
 
 ### Improved Compilation Speeds

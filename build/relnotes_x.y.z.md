@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * Add `DateUtils` to easily create and print dates. See [DateUtils](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Features.md#dateutils)
 * **Bug fixes**
     * None
 * **Other changes**

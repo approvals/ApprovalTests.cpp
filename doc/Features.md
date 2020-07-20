@@ -93,6 +93,8 @@ Thu 2000-01-13 03:34:45 UTC
 <sup><a href='/tests/DocTest_Tests/utilities/approval_tests/DateUtilsTests.createDateTime.approved.txt#L1-L1' title='File snippet `DateUtilsTests.createDateTime.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-DateUtilsTests.createDateTime.approved.txt' title='Navigate to start of snippet `DateUtilsTests.createDateTime.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
+There is an overload of `DateUtils::toString()` that takes a format string.
+
 ## v.10.1.1
 
 ### Improved Compilation Speeds
