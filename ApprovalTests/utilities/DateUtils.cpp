@@ -5,7 +5,8 @@
 
 namespace ApprovalTests
 {
-    std::tm DateUtils::createTm(int year, int month, int day, int hour, int minute, int second)
+    std::tm
+    DateUtils::createTm(int year, int month, int day, int hour, int minute, int second)
     {
         std::tm timeinfo = tm();
         timeinfo.tm_year = year - 1900;
@@ -17,16 +18,20 @@ namespace ApprovalTests
         return timeinfo;
     }
 
-    std::chrono::system_clock::time_point DateUtils::createDateTime(
-        int year, int month, int day, int hour, int minute, int second) // these are UTC values
+    std::chrono::system_clock::time_point
+    DateUtils::createDateTime(int year,
+                              int month,
+                              int day,
+                              int hour,
+                              int minute,
+                              int second) // these are UTC values
     {
         tm timeinfo = createTm(year, month, day, hour, minute, second);
         std::time_t tt = timegm(&timeinfo);
         return std::chrono::system_clock::from_time_t(tt);
     }
 
-    std::string
-    DateUtils::toString(const std::chrono::system_clock::time_point& dateTime)
+    std::string DateUtils::toString(const std::chrono::system_clock::time_point& dateTime)
     {
         return toString(dateTime, "%a %Y-%m-%d %H:%M:%S UTC");
     }
