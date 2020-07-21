@@ -50,6 +50,10 @@ namespace ApprovalTests
         Scrubber createRegexScrubber(const std::string& regexString,
                                      const std::string& replacementText)
         {
+            if (regexString.empty())
+            {
+                return doNothing;
+            }
             return createRegexScrubber(std::regex(regexString), replacementText);
         }
 
