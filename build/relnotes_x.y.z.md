@@ -5,7 +5,7 @@
 * **New features**
     * Add `DateUtils` to easily create and print dates. See [DateUtils](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Features.md#dateutils)
 * **Bug fixes**
-    * None
+    * Fix infinite loop with empty regex (#147)
 * **Other changes**
     * Visual Studio improvements in [ApprovalTests.cpp.StarterProject](https://github.com/approvals/ApprovalTests.cpp.StarterProject):
         * Visual Studio 2017: Fix build failures in several configurations ([#12](https://github.com/approvals/ApprovalTests.cpp.StarterProject/issues/12))
