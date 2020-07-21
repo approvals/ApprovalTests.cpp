@@ -77,3 +77,16 @@ TEST_CASE("regex scrubber with full customisation")
     Approvals::verify(input, Options().withScrubber(scrubber));
     // end-snippet
 }
+
+TEST_CASE("regex scrubber with empty input does not loop endlessly")
+{
+    const char* input = "hello";
+    {
+        auto scrubber = Scrubbers::createRegexScrubber("", "[replacement]");
+        CHECK(scrubber(input) == input);
+    }
+    {
+        auto scrubber = Scrubbers::createRegexScrubber("R()", "[replacement]");
+        CHECK(scrubber(input) == input);
+    }
+}
