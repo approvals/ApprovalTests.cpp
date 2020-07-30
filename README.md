@@ -20,7 +20,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 :book: [**Read the Docs**](https://approvaltestscpp.readthedocs.io/en/latest/)
 
-:calendar: We are running an ApprovalTests.cpp [**online course in September 2020**](https://bit.ly/LegacyCppSept2020).
+:calendar: We are running an ApprovalTests.cpp [**online course in September 2020**](https://claremacrae.co.uk/blog/2020/07/approvaltests-training-course).
 
 <!-- toc -->
 ## Contents
