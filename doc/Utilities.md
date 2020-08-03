@@ -12,7 +12,37 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
+  * [DateUtils](#dateutils)
   * [ExceptionCollector](#exceptioncollector)<!-- endtoc -->
+
+## DateUtils
+
+You can easily create and print C++11 dates and times.
+
+For example:
+
+<!-- snippet: date_and_time -->
+<a id='snippet-date_and_time'/></a>
+```cpp
+std::chrono::system_clock::time_point dateTime =
+    DateUtils::createDateTime(2000, 1, 13, 3, 34, 45);
+std::string dateTimeString = DateUtils::toString(dateTime);
+```
+<sup><a href='/tests/DocTest_Tests/utilities/DateUtilsTests.cpp#L9-L13' title='File snippet `date_and_time` was extracted from'>snippet source</a> | <a href='#snippet-date_and_time' title='Navigate to start of snippet `date_and_time`'>anchor</a></sup>
+<!-- endsnippet -->
+
+will produce:
+
+<!-- snippet: DateUtilsTests.createDateTime.approved.txt -->
+<a id='snippet-DateUtilsTests.createDateTime.approved.txt'/></a>
+```txt
+Thu 2000-01-13 03:34:45 UTC
+```
+<sup><a href='/tests/DocTest_Tests/utilities/approval_tests/DateUtilsTests.createDateTime.approved.txt#L1-L1' title='File snippet `DateUtilsTests.createDateTime.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-DateUtilsTests.createDateTime.approved.txt' title='Navigate to start of snippet `DateUtilsTests.createDateTime.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
+
+There is an overload of `DateUtils::toString()` that takes a format string.
+
 
 ## ExceptionCollector
 

@@ -4,6 +4,21 @@
 
 toc
 
+## DateUtils
+
+You can easily create and print C++11 dates and times.
+
+For example:
+
+snippet: date_and_time
+
+will produce:
+
+snippet: DateUtilsTests.createDateTime.approved.txt
+
+There is an overload of `DateUtils::toString()` that takes a format string.
+
+
 ## ExceptionCollector
 
 ExceptionCollector is a utility that allows you to have multiple exceptions thrown, without stopping the execution of the program, and then throw them all later.

@@ -10,17 +10,7 @@ toc
 
 ### DateUtils
 
-You can now easily create and print C++11 dates and times.
-
-For example:
-
-snippet: date_and_time
-
-will produce:
-
-snippet: DateUtilsTests.createDateTime.approved.txt
-
-There is an overload of `DateUtils::toString()` that takes a format string.
+See [DateUtils](/doc/Utilities.md#dateutils)
 
 ## v.10.1.1
 
