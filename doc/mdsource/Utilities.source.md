@@ -16,7 +16,9 @@ will produce:
 
 snippet: DateUtilsTests.createDateTime.approved.txt
 
-There is an overload of `DateUtils::toString()` that takes a format string.
+Times are printed in UTC, as this is a testing utility and consistency across machines is desirable.
+
+There is an overload of `DateUtils::toString()` that takes a format string, should you wish to print it differently.
 
 
 ## ExceptionCollector

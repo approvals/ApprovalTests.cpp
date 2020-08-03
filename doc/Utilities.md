@@ -25,7 +25,7 @@ For example:
 <a id='snippet-date_and_time'/></a>
 ```cpp
 std::chrono::system_clock::time_point dateTime =
-    DateUtils::createDateTime(2000, 1, 13, 3, 34, 45);
+    DateUtils::createUtcDateTime(2000, 1, 13, 3, 34, 45);
 std::string dateTimeString = DateUtils::toString(dateTime);
 ```
 <sup><a href='/tests/DocTest_Tests/utilities/DateUtilsTests.cpp#L9-L13' title='File snippet `date_and_time` was extracted from'>snippet source</a> | <a href='#snippet-date_and_time' title='Navigate to start of snippet `date_and_time`'>anchor</a></sup>
@@ -41,7 +41,9 @@ Thu 2000-01-13 03:34:45 UTC
 <sup><a href='/tests/DocTest_Tests/utilities/approval_tests/DateUtilsTests.createDateTime.approved.txt#L1-L1' title='File snippet `DateUtilsTests.createDateTime.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-DateUtilsTests.createDateTime.approved.txt' title='Navigate to start of snippet `DateUtilsTests.createDateTime.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
-There is an overload of `DateUtils::toString()` that takes a format string.
+Times are printed in UTC, as this is a testing utility and consistency across machines is desirable.
+
+There is an overload of `DateUtils::toString()` that takes a format string, should you wish to print it differently.
 
 
 ## ExceptionCollector
