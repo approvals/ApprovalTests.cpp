@@ -13,7 +13,7 @@ namespace ApprovalTests
         createTm(int year, int month, int day, int hour, int minute, int second);
 
         static std::chrono::system_clock::time_point
-        createDateTime(int year, int month, int day, int hour, int minute, int second);
+        createUtcDateTime(int year, int month, int day, int hour, int minute, int second);
 
         static time_t toUTC(std::tm& timeinfo);
 

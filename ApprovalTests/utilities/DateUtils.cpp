@@ -19,12 +19,12 @@ namespace ApprovalTests
     }
 
     std::chrono::system_clock::time_point
-    DateUtils::createDateTime(int year,
-                              int month,
-                              int day,
-                              int hour,
-                              int minute,
-                              int second) // these are UTC values
+    DateUtils::createUtcDateTime(int year,
+                                 int month,
+                                 int day,
+                                 int hour,
+                                 int minute,
+                                 int second) // these are UTC values
     {
         tm timeinfo = createTm(year, month, day, hour, minute, second);
         time_t tt = toUTC(timeinfo);
