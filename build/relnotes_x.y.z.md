@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * Add `DateUtils` to easily create and print dates. See [DateUtils](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Features.md#dateutils)
+    * Add `DateUtils` to easily create and print dates. See [DateUtils](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Utilities.md#dateutils)
 * **Bug fixes**
     * Fix infinite loop with empty regex (#147)
 * **Other changes**
