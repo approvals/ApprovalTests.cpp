@@ -77,6 +77,7 @@
 #include "ApprovalTests/reporters/LinuxReporters.h"
 #include "ApprovalTests/reporters/MacReporters.h"
 #include "ApprovalTests/reporters/WindowsReporters.h"
+#include "ApprovalTests/utilities/DateUtils.h"
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 #include "ApprovalTests/utilities/FileUtilsSystemSpecific.h"
 

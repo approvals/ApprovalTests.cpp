@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.2.0](#v1020)
     * [DateUtils](#dateutils)
   * [v.10.1.1](#v1011)
     * [Improved Compilation Speeds](#improved-compilation-speeds)
@@ -66,6 +67,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+## v.10.2.0
 
 ### DateUtils
 
