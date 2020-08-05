@@ -51,7 +51,14 @@ namespace ApprovalTests
     {
         std::string result;
         time_t tt = std::chrono::system_clock::to_time_t(dateTime);
+
+#ifdef _MSC_VER
+        std::tm tm_value = {};
+        gmtime_s(&tm_value, &tt);
+#else
         tm tm_value = *gmtime(&tt); // GMT (UTC)
+#endif
+
         std::stringstream ss;
         ss << std::put_time(&tm_value, format.c_str());
         result = ss.str();
