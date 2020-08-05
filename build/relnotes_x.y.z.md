@@ -5,6 +5,7 @@
 * **New features**
     * None
 * **Bug fixes**
-    * None
+    * Fix Visual Studio compiler warning C4996 due to use of `gmtime()` (#150)
+        * This also fixes the Visual Studio builds of the Starter Project, which failed to compile due to the C4996 warning being treated as an error
 * **Other changes**
     * None
