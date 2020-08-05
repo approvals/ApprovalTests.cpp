@@ -149,3 +149,5 @@ if (("${CMAKE_GENERATOR}" MATCHES "Ninja") AND (${CMAKE_UNITY_BUILD}))
     message(NOTICE "Ninja with Unity build detected: disabling unnecessary ApprovalTests compile-time check of __FILE__")
     target_compile_definitions(${PROJECT_NAME} PUBLIC APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK)
 endif ()
+
+include(WarningsAsErrors)
