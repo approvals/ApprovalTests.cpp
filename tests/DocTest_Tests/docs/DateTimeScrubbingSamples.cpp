@@ -33,7 +33,7 @@ TEST_CASE("Test DateTime scrubbing - with specific format")
     // %a  %b  %e %H:%M:%S %G
     std::string textWithDate =
         "date: " +
-        DateUtils::toString(std::chrono::system_clock::now(), "%a %b %e %H:%M:%S %G");
+        DateUtils::toString(std::chrono::system_clock::now(), "%a %b %e %T %G");
 
     std::string day = R"([A-Za-z]{3})";
     std::string month = R"([A-Za-z]{3})";
