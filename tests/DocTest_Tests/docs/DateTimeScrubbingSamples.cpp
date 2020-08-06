@@ -7,15 +7,21 @@ using namespace ApprovalTests;
 
 namespace
 {
+    void verifyDateAndTimeString(const std::string& dateRegex,
+                                 const std::string& textWithDate)
+    {
+        auto scrubber = Scrubbers::createRegexScrubber(dateRegex, "[date_and_time]");
+        CHECK("date: [date_and_time]" == scrubber(textWithDate));
+
+        Approvals::verify(textWithDate, Options().withScrubber(scrubber));
+    }
+
     void verifyDateAndTime(const std::chrono::system_clock::time_point& dateTime,
                            const char* format,
                            const std::string& dateRegex)
     {
         std::string textWithDate = "date: " + DateUtils::toString(dateTime, format);
-        auto scrubber = Scrubbers::createRegexScrubber(dateRegex, "[date_and_time]");
-        CHECK("date: [date_and_time]" == scrubber(textWithDate));
-
-        Approvals::verify(textWithDate, Options().withScrubber(scrubber));
+        verifyDateAndTimeString(dateRegex, textWithDate);
     }
 }
 
