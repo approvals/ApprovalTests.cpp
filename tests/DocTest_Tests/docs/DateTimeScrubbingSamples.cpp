@@ -16,9 +16,10 @@ namespace
         Approvals::verify(textWithDate, Options().withScrubber(scrubber));
     }
 
-    void verifyDateAndTime(const std::chrono::system_clock::time_point& dateTime,
-                           const char* format,
-                           const std::string& dateRegex)
+    void
+    verifyDateAndTimeWithFormat(const std::chrono::system_clock::time_point& dateTime,
+                                const char* format,
+                                const std::string& dateRegex)
     {
         std::string textWithDate = "date: " + DateUtils::toString(dateTime, format);
         verifyDateAndTimeString(dateRegex, textWithDate);
@@ -58,5 +59,5 @@ TEST_CASE("Test DateTime scrubbing - with specific format")
     std::string year = R"(\d\d\d\d)";
     const auto dateRegex = weekDay + " " + month + " " + date + " " + time + " " + year;
 
-    verifyDateAndTime(dateTime, format, dateRegex);
+    verifyDateAndTimeWithFormat(dateTime, format, dateRegex);
 }
