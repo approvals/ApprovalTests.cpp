@@ -28,7 +28,7 @@ TEST_CASE("Test DateTime scrubbing - with specific format")
 {
     // Mon Jun 22 14:07:34 2020
     // %a  %b  %e %H:%M:%S %G
-    const std::chrono::time_point dateTime = std::chrono::system_clock::now();
+    const auto dateTime = std::chrono::system_clock::now();
     const char* format = "%a %b %e %T %G";
 
     std::string weekDay = R"([A-Za-z]{3})";
