@@ -30,7 +30,6 @@ TEST_CASE("Test DateTime scrubbing - with specific format")
     // %a  %b  %e %H:%M:%S %G
     const std::chrono::time_point dateTime = std::chrono::system_clock::now();
     const char* format = "%a %b %e %T %G";
-    std::string textWithDate = "date: " + DateUtils::toString(dateTime, format);
 
     std::string weekDay = R"([A-Za-z]{3})";
     std::string month = R"([A-Za-z]{3})";
@@ -39,6 +38,7 @@ TEST_CASE("Test DateTime scrubbing - with specific format")
     std::string year = R"(\d\d\d\d)";
     const auto dateRegex = weekDay + " " + month + " " + date + " " + time + " " + year;
 
+    std::string textWithDate = "date: " + DateUtils::toString(dateTime, format);
     auto scrubber = Scrubbers::createRegexScrubber(dateRegex, "[date_and_time]");
     CHECK("date: [date_and_time]" == scrubber(textWithDate));
 
