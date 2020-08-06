@@ -10,6 +10,9 @@ namespace
     void verifyDateAndTimeString(const std::string& dateRegex,
                                  const std::string& textWithDate)
     {
+        INFO("textWithDate " << textWithDate);
+        INFO("dateRegex " << dateRegex);
+
         auto scrubber = Scrubbers::createRegexScrubber(dateRegex, "[date_and_time]");
         CHECK("date: [date_and_time]" == scrubber(textWithDate));
 
