@@ -43,7 +43,7 @@ Thu 2000-01-13 03:34:45 UTC
 
 Times are printed in UTC, as this is a testing utility and consistency across machines is desirable.
 
-There is an overload of `DateUtils::toString()` that takes a format string, should you wish to print it differently.
+There is an overload of `DateUtils::toString()` that takes a [format string](https://en.cppreference.com/w/cpp/io/manip/put_time), should you wish to print it differently.
 
 
 ## ExceptionCollector
