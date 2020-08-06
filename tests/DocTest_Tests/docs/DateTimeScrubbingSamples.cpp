@@ -5,6 +5,10 @@
 #include "utilities/WinMinGWUtils.h"
 #include "Approvals.h"
 
+#ifdef APPROVAL_TESTS_MINGW
+#include <iostream>
+#endif
+
 using namespace ApprovalTests;
 
 namespace
@@ -29,6 +33,7 @@ namespace
         verifyDateAndTimeString(dateRegex, textWithDate);
     }
 
+#ifndef APPROVAL_TESTS_MINGW
     void
     verifyDateAndTimeWithFormat(const std::chrono::system_clock::time_point& dateTime,
                                 const char* format,
@@ -37,6 +42,7 @@ namespace
         std::string textWithDate = "date: " + DateUtils::toString(dateTime, format);
         verifyDateAndTimeString(dateRegex, textWithDate);
     }
+#endif
 }
 
 TEST_CASE("Test DateTime scrubbing - with default format")
