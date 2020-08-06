@@ -12,14 +12,11 @@ TEST_CASE("Test DateTime scrubbing - with default format")
         "date: " + DateUtils::toString(std::chrono::system_clock::now());
     std::string weekDay = R"([A-Za-z]{3})";
 
-    std::string year = R"(\d\d\d\d)";
-    std::string month = R"(\d\d)";
-    std::string date = R"(\d\d)";
+    std::string date = R"(\d\d\d\d-\d\d-\d\d)";
     std::string time = R"(\d\d:\d\d:\d\d)";
     std::string time_zone = "UTC";
 
-    const auto dateRegex =
-        weekDay + " " + year + "-" + month + "-" + date + " " + time + " " + time_zone;
+    const auto dateRegex = weekDay + " " + date + " " + time + " " + time_zone;
 
     auto scrubber = Scrubbers::createRegexScrubber(dateRegex, "[date_and_time]");
     CHECK("date: [date_and_time]" == scrubber(textWithDate));
