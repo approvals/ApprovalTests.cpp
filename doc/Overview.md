@@ -29,7 +29,7 @@ Traditional tests spend equal time focusing on creating the inputs and verifying
 When the objects being tested are non-trivial, either the tests become quite verbose (as shown in this example), or it's tempting to only test a small part of the behaviour.
 
 <!-- snippet: sandwich_example_with_requires -->
-<a id='snippet-sandwich_example_with_requires'/></a>
+<a id='snippet-sandwich_example_with_requires'></a>
 ```cpp
 // Arrange, Act
 Sandwich s = createSandwichForTest();
@@ -52,7 +52,7 @@ Approval Tests simplify the verification of outputs. They do this by writing the
 You still supply the inputs, but Approval Tests gives you [powerful ways of viewing complex outputs](/doc/Reporters.md#top), meaning you can move on to the next feature or next test more quickly.
 
 <!-- snippet: sandwich_example_with_approvals -->
-<a id='snippet-sandwich_example_with_approvals'/></a>
+<a id='snippet-sandwich_example_with_approvals'></a>
 ```cpp
 // Arrange, Act
 Sandwich s = createSandwichForTest();
@@ -65,7 +65,7 @@ Approvals::verify(s);
 This generates the approval file - which is generated **for** you, but [approved **by** you](/doc/ApprovingResults.md#top).
 
 <!-- snippet: OverviewExamples.SandwichExampleWithApprovals.approved.txt -->
-<a id='snippet-OverviewExamples.SandwichExampleWithApprovals.approved.txt'/></a>
+<a id='snippet-OverviewExamples.SandwichExampleWithApprovals.approved.txt'></a>
 ```txt
 sandwich {
     bread: "Sourdough",

@@ -79,7 +79,7 @@ You can have a file-per-subsection.
 You can either do these dynamically, e.g. in a for-loop:
 
 <!-- snippet: catch2_multiple_output_files_dynamic -->
-<a id='snippet-catch2_multiple_output_files_dynamic'/></a>
+<a id='snippet-catch2_multiple_output_files_dynamic'></a>
 ```cpp
 TEST_CASE("MultipleOutputFiles-DataDriven")
 {
@@ -104,7 +104,7 @@ TEST_CASE("MultipleOutputFiles-DataDriven")
 Or hard-coded, with multiple sections:
 
 <!-- snippet: catch2_multiple_output_files_hard_coded -->
-<a id='snippet-catch2_multiple_output_files_hard_coded'/></a>
+<a id='snippet-catch2_multiple_output_files_hard_coded'></a>
 ```cpp
 TEST_CASE("MultipleOutputFiles-ForOneObject")
 {
@@ -137,7 +137,7 @@ Note: unlike Catch, doctest sub-cases must have static strings for names, so if 
 You can have hard-coded, with multiple sections:
 
 <!-- snippet: doctest_multiple_output_files_hard_coded -->
-<a id='snippet-doctest_multiple_output_files_hard_coded'/></a>
+<a id='snippet-doctest_multiple_output_files_hard_coded'></a>
 ```cpp
 TEST_CASE("MultipleOutputFiles-ForOneObject")
 {
@@ -166,7 +166,7 @@ Approval Tests also allows for multiple files per test, via the `NamerFactory`. 
 You can either do these dynamically, e.g. in a for-loop:
 
 <!-- snippet: approvals_multiple_output_files_dynamic -->
-<a id='snippet-approvals_multiple_output_files_dynamic'/></a>
+<a id='snippet-approvals_multiple_output_files_dynamic'></a>
 ```cpp
 TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
 {
@@ -189,7 +189,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
 Or hard-coded, with multiple sections:
 
 <!-- snippet: approvals_multiple_output_files_hard_coded -->
-<a id='snippet-approvals_multiple_output_files_hard_coded'/></a>
+<a id='snippet-approvals_multiple_output_files_hard_coded'></a>
 ```cpp
 TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
 {
@@ -224,7 +224,7 @@ Second, you can use [AutoApproveIfMissingReporter](https://github.com/approvals/
 For example:
 
 <!-- snippet: approvals_multiple_output_files_auto_approving -->
-<a id='snippet-approvals_multiple_output_files_auto_approving'/></a>
+<a id='snippet-approvals_multiple_output_files_auto_approving'></a>
 ```cpp
 TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
 {

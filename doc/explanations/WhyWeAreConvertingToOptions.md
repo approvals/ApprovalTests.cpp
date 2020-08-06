@@ -99,7 +99,7 @@ Instead of passing in a `Reporter` instance, you are now going to pass in an `Op
 This is an example what the new code would look like:
 
 <!-- snippet: basic_approval_with_reporter -->
-<a id='snippet-basic_approval_with_reporter'/></a>
+<a id='snippet-basic_approval_with_reporter'></a>
 ```cpp
 Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter()));
 ```
@@ -117,7 +117,7 @@ As such, this specialised method is redundant, and is being removed.
 This is an example what the new code would look like:
 
 <!-- snippet: use_custom_file_extension -->
-<a id='snippet-use_custom_file_extension'/></a>
+<a id='snippet-use_custom_file_extension'></a>
 ```cpp
 Approvals::verify("<h1>hello world</h1>",
                   Options().fileOptions().withFileExtension(".html"));

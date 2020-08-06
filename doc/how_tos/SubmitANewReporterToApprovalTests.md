@@ -35,7 +35,7 @@ By way of an example, for supporting a new Reporter on macOS, the steps are:
 * If you are adding a tool that is already supported on an existing platform, please try to be consistent with naming.
 
 <!-- snippet: add_reporter_macro_header -->
-<a id='snippet-add_reporter_macro_header'/></a>
+<a id='snippet-add_reporter_macro_header'></a>
 ```h
 DiffInfo ARAXIS_MERGE();
 ```
@@ -47,7 +47,7 @@ DiffInfo ARAXIS_MERGE();
 * Add a new `APPROVAL_TESTS_MACROS_ENTRY` value to the `Mac` namespace, to create the definition for the new function.
 
 <!-- snippet: add_reporter_macro_implementation -->
-<a id='snippet-add_reporter_macro_implementation'/></a>
+<a id='snippet-add_reporter_macro_implementation'></a>
 ```cpp
 APPROVAL_TESTS_MACROS_ENTRY(
     ARAXIS_MERGE,
@@ -63,7 +63,7 @@ APPROVAL_TESTS_MACROS_ENTRY(
 * In the most common case, this will be a new implementation of `GenericDiffReporter`
 
 <!-- snippet: add_reporter_class_header -->
-<a id='snippet-add_reporter_class_header'/></a>
+<a id='snippet-add_reporter_class_header'></a>
 ```h
 class AraxisMergeReporter : public GenericDiffReporter
 {
@@ -80,7 +80,7 @@ public:
 * This will use the `APPROVAL_TESTS_MACROS_ENTRY` you added in the first step.
 
 <!-- snippet: add_reporter_class_implementation -->
-<a id='snippet-add_reporter_class_implementation'/></a>
+<a id='snippet-add_reporter_class_implementation'></a>
 ```cpp
 AraxisMergeReporter::AraxisMergeReporter()
     : GenericDiffReporter(DiffPrograms::Mac::ARAXIS_MERGE())
@@ -95,7 +95,7 @@ AraxisMergeReporter::AraxisMergeReporter()
     * Paid-for ones should go before free ones.
 
 <!-- snippet: mac_diff_reporters -->
-<a id='snippet-mac_diff_reporters'/></a>
+<a id='snippet-mac_diff_reporters'></a>
 ```cpp
 new AraxisMergeReporter(),
 new BeyondCompareReporter(),
@@ -116,7 +116,7 @@ new CLionDiffReporter()
 * Add an instance of the new Reporter class
 
 <!-- snippet: add_reporter_command_test -->
-<a id='snippet-add_reporter_command_test'/></a>
+<a id='snippet-add_reporter_command_test'></a>
 ```cpp
 // Mac
 std::make_shared<Mac::AraxisMergeReporter>(),

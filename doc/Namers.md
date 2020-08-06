@@ -53,7 +53,7 @@ If you ever want to create a custom namer, Approval Tests has a mechanism to cha
 
 
 <!-- snippet: register_default_namer -->
-<a id='snippet-register_default_namer'/></a>
+<a id='snippet-register_default_namer'></a>
 ```cpp
 auto default_namer_disposer =
     Approvals::useAsDefaultNamer([]() { return std::make_shared<FakeNamer>(); });
@@ -76,7 +76,7 @@ The `approved/` and `received/` directories are created automatically.
 To register this as your default namer, use:
 
 <!-- snippet: register_separate_directories_namer -->
-<a id='snippet-register_separate_directories_namer'/></a>
+<a id='snippet-register_separate_directories_namer'></a>
 ```cpp
 auto default_namer_disposer =
     SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();

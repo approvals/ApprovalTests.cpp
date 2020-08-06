@@ -35,7 +35,7 @@ It is on all `verify()` methods, as an optional parameter.
 Options utilizes a fluent interface, allowing you to chain together commands. Each returned object is a new copy.
 
 <!-- snippet: specify_all_the_options -->
-<a id='snippet-specify_all_the_options'/></a>
+<a id='snippet-specify_all_the_options'></a>
 ```cpp
 Options()
     .withReporter(QuietReporter())
@@ -52,7 +52,7 @@ Options()
 1. Pass in a Reporter object to the Options constructor, for example:
 
 <!-- snippet: basic_approval_with_reporter -->
-<a id='snippet-basic_approval_with_reporter'/></a>
+<a id='snippet-basic_approval_with_reporter'></a>
 ```cpp
 Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter()));
 ```
@@ -62,7 +62,7 @@ Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter())
 2. Call `.withReporter()` on an existing Options object, for example:
 
 <!-- snippet: basic_approval_with_reporter_2 -->
-<a id='snippet-basic_approval_with_reporter_2'/></a>
+<a id='snippet-basic_approval_with_reporter_2'></a>
 ```cpp
 Approvals::verify("text to be verified",
                   Options().withReporter(Mac::AraxisMergeReporter()));
@@ -78,7 +78,7 @@ There are two ways to set a Scrubber.
 1. Pass in a function pointer to the Options constructor, for example:
 
 <!-- snippet: basic_approval_with_scrubber -->
-<a id='snippet-basic_approval_with_scrubber'/></a>
+<a id='snippet-basic_approval_with_scrubber'></a>
 ```cpp
 Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
 ```
@@ -88,7 +88,7 @@ Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
 2. Call `.withScrubber()` with a function pointer, for example:
 
 <!-- snippet: basic_approval_with_scrubber_2 -->
-<a id='snippet-basic_approval_with_scrubber_2'/></a>
+<a id='snippet-basic_approval_with_scrubber_2'></a>
 ```cpp
 Approvals::verifyAll("IDs", v, Options().withScrubber(Scrubbers::scrubGuid));
 ```
@@ -106,7 +106,7 @@ For now, it just controls the file extension.
 If you want to change the file extension of both the approved and received files, use `withFileExtension()`.
 
 <!-- snippet: basic_approval_with_file_extension -->
-<a id='snippet-basic_approval_with_file_extension'/></a>
+<a id='snippet-basic_approval_with_file_extension'></a>
 ```cpp
 Approvals::verify("text to be verified",
                   Options().fileOptions().withFileExtension(".xyz"));

@@ -37,7 +37,7 @@ You need to include 2 lines for your main file to work.
 For Catch2, it's these two lines:
 
 <!-- snippet: catch_2_main -->
-<a id='snippet-catch_2_main'/></a>
+<a id='snippet-catch_2_main'></a>
 ```cpp
 // main.cpp:
 #define APPROVALS_CATCH // This tells Approval Tests to provide a main() - only do this in one cpp file

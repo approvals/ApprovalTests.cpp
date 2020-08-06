@@ -29,7 +29,7 @@ If you have only one parameter that you want to vary, check out [How to Test a V
 1. Copy this starter text, and adjust for the number of inputs that you have.
 
 <!-- snippet: CombinationsStartingPoint -->
-<a id='snippet-combinationsstartingpoint'/></a>
+<a id='snippet-combinationsstartingpoint'></a>
 ```cpp
 TEST_CASE("CombinationsStartingPoint")
 {
@@ -49,7 +49,7 @@ TEST_CASE("CombinationsStartingPoint")
 If they are wired up correctly, you will see a file that looks like this: it is the left hand side of the file that matters at this point: all combinations of your own input values should be listed:
 
 <!-- snippet: CombinationTests.CombinationsStartingPoint.approved.txt -->
-<a id='snippet-CombinationTests.CombinationsStartingPoint.approved.txt'/></a>
+<a id='snippet-CombinationTests.CombinationsStartingPoint.approved.txt'></a>
 ```txt
 (input1.value1, input2.value1) => placeholder
 (input1.value1, input2.value2) => placeholder
@@ -75,7 +75,7 @@ This makes a kind of approval test matrix, automatically testing all combination
 In this small example, all combinations of `{"hello", "world"}` and `{1, 2, 3}` are being used:
 
 <!-- snippet: YouCanVerifyCombinationsOf2 -->
-<a id='snippet-youcanverifycombinationsof2'/></a>
+<a id='snippet-youcanverifycombinationsof2'></a>
 ```cpp
 TEST_CASE("YouCanVerifyCombinationsOf2")
 {
@@ -95,7 +95,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2")
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
 
 <!-- snippet: CombinationTests.YouCanVerifyCombinationsOf2.approved.txt -->
-<a id='snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt'/></a>
+<a id='snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt'></a>
 ```txt
 (hello, 1) => (hello, 1)
 (hello, 2) => (hello, 2)
@@ -130,7 +130,7 @@ See:
 If you are using C++11, you will need to supply the exact parameter types to your lambda:
 
 <!-- snippet: sample_combinations_of_three -->
-<a id='snippet-sample_combinations_of_three'/></a>
+<a id='snippet-sample_combinations_of_three'></a>
 ```cpp
 CombinationApprovals::verifyAllCombinations(
     [](const std::string& input1, const int input2, const double input3) {
@@ -146,7 +146,7 @@ CombinationApprovals::verifyAllCombinations(
 If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
 
 <!-- snippet: sample_combinations_of_three_with_auto -->
-<a id='snippet-sample_combinations_of_three_with_auto'/></a>
+<a id='snippet-sample_combinations_of_three_with_auto'></a>
 ```cpp
 CombinationApprovals::verifyAllCombinations(
     [](auto& input1, auto& input2, auto& input3) {

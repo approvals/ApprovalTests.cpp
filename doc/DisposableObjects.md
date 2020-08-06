@@ -16,7 +16,7 @@ This means it is important to store the result in a variable, to pay attention t
 All of our disposable objects take advantage of the C++17 language feature `[[nodiscard]]`. If you are on C++17, this means that the following line will either give a compiler warning or a compiler error, depending on your setup.
 
 <!-- snippet: disposable_incorrect -->
-<a id='snippet-disposable_incorrect'/></a>
+<a id='snippet-disposable_incorrect'></a>
 ```cpp
 Approvals::useApprovalsSubdirectory("directory");
 ```
@@ -28,7 +28,7 @@ If you are on C++14 or below, the compiler will not detect this, but the code is
 The code should look like this:
 
 <!-- snippet: disposable_correct -->
-<a id='snippet-disposable_correct'/></a>
+<a id='snippet-disposable_correct'></a>
 ```cpp
 auto disposer = Approvals::useApprovalsSubdirectory("directory");
 ```

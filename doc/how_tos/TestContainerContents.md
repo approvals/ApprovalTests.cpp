@@ -26,7 +26,7 @@ You have called a method that returns a collection of objects, and you want a ni
 1. Copy this starter text.
 
 <!-- snippet: VerifyAllStartingPointContainer -->
-<a id='snippet-verifyallstartingpointcontainer'/></a>
+<a id='snippet-verifyallstartingpointcontainer'></a>
 ```cpp
 std::vector<std::string> objectsToVerify{"hello", "world"};
 Approvals::verifyAll("TITLE", objectsToVerify);

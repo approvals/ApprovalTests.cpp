@@ -39,7 +39,7 @@ Let's open the Starter Project in your development environment, and open [Tutori
 Let's add our first test:
 
 <!-- snippet: hello_approvals -->
-<a id='snippet-hello_approvals'/></a>
+<a id='snippet-hello_approvals'></a>
 ```cpp
 TEST_CASE("HelloApprovals")
 {
@@ -102,7 +102,7 @@ It will be located in the same directory as your tests. (This is [configurable](
 In all other code examples in this site, have already included the code:
 
 <!-- snippet: using_namespace_approvaltests -->
-<a id='snippet-using_namespace_approvaltests'/></a>
+<a id='snippet-using_namespace_approvaltests'></a>
 ```cpp
 using namespace ApprovalTests;
 ```
@@ -116,7 +116,7 @@ using namespace ApprovalTests;
 The above example is a bit simplistic. Normally, you will want to test actual objects from your code base. To explore this, let's create an object called `LibraryBook`:
 
 <!-- snippet: library_book -->
-<a id='snippet-library_book'/></a>
+<a id='snippet-library_book'></a>
 ```cpp
 class LibraryBook
 {
@@ -151,7 +151,7 @@ public:
 What we would like to be able to write is:
 
 <!-- snippet: non_printable_object -->
-<a id='snippet-non_printable_object'/></a>
+<a id='snippet-non_printable_object'></a>
 ```cpp
 LibraryBook harry_potter(
     "Harry Potter and the Goblet of Fire", "J.K. Rowling",
@@ -169,7 +169,7 @@ So we are going to add a lambda to handle the printing.
 Let's start by just printing the title:
 
 <!-- snippet: printable_object_simple -->
-<a id='snippet-printable_object_simple'/></a>
+<a id='snippet-printable_object_simple'></a>
 ```cpp
 Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os) {
     os << "title: " << b.title;
@@ -186,7 +186,7 @@ There's a lot going on here, so let's break it down:
 This works, but of course, there is a lot more that we want to look at than the title. So let's expand the `toString`:
 
 <!-- snippet: printable_object -->
-<a id='snippet-printable_object'/></a>
+<a id='snippet-printable_object'></a>
 ```cpp
 Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os) {
     os << "title: " << b.title << "\n"
@@ -203,7 +203,7 @@ Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os) {
 When you run and approve this, you will end up with the approval file:
 
 <!-- snippet: Tutorial.WritableBooks2.approved.txt -->
-<a id='snippet-Tutorial.WritableBooks2.approved.txt'/></a>
+<a id='snippet-Tutorial.WritableBooks2.approved.txt'></a>
 ```txt
 title: Harry Potter and the Goblet of Fire
 author: J.K. Rowling

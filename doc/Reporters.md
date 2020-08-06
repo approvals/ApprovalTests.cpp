@@ -33,7 +33,7 @@ Currently the search goes in this order:
 ### Mac
 
 <!-- snippet: mac_diff_reporters -->
-<a id='snippet-mac_diff_reporters'/></a>
+<a id='snippet-mac_diff_reporters'></a>
 ```cpp
 new AraxisMergeReporter(),
 new BeyondCompareReporter(),
@@ -52,7 +52,7 @@ new CLionDiffReporter()
 ### Linux
 
 <!-- snippet: linux_diff_reporters -->
-<a id='snippet-linux_diff_reporters'/></a>
+<a id='snippet-linux_diff_reporters'></a>
 ```cpp
 new BeyondCompareReporter(),
 new MeldReporter(),
@@ -66,7 +66,7 @@ new KDiff3Reporter()
 ### Windows
 
 <!-- snippet: windows_diff_reporters -->
-<a id='snippet-windows_diff_reporters'/></a>
+<a id='snippet-windows_diff_reporters'></a>
 ```cpp
 new TortoiseDiffReporter(), // Note that this uses Tortoise SVN Diff
 new TortoiseGitDiffReporter(),
@@ -86,7 +86,7 @@ new VisualStudioCodeReporter(),
 At present, the default Reporter is the DiffReporter. Whenever you call Approvals, you have the chance to pass in your own Reporter. However, if you would like to change what the default reporter is when you don't pass in a specific Reporter, you can do this at a global or per-test level, by adding the line:
 
 <!-- snippet: use_as_default_reporter_in_main -->
-<a id='snippet-use_as_default_reporter_in_main'/></a>
+<a id='snippet-use_as_default_reporter_in_main'></a>
 ```cpp
 // main.cpp:
 #include <memory>
@@ -109,7 +109,7 @@ For more information, see [Build Machines and Continuous Integration servers](/d
 Here is an example of not launching any reporters if you are on a machine with a particular name, by using [BlockingReporter](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/BlockingReporter.h).
 
 <!-- snippet: do_not_report_on_named_machine -->
-<a id='snippet-do_not_report_on_named_machine'/></a>
+<a id='snippet-do_not_report_on_named_machine'></a>
 ```cpp
 // main.cpp
 auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(
@@ -121,7 +121,7 @@ auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedRepor
 Once you have added that, even calling approvals with a specific Reporter will not launch it on the CI system (but will for all other systems). For example:
 
 <!-- snippet: basic_approval_with_reporter -->
-<a id='snippet-basic_approval_with_reporter'/></a>
+<a id='snippet-basic_approval_with_reporter'></a>
 ```cpp
 Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter()));
 ```
@@ -133,7 +133,7 @@ Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter())
 Blocking reporters are a simple class, designed for use with FrontLoadedReporters, to prevent launching of reporters in certain environments.
 
 <!-- snippet: do_not_report_on_named_machine -->
-<a id='snippet-do_not_report_on_named_machine'/></a>
+<a id='snippet-do_not_report_on_named_machine'></a>
 ```cpp
 // main.cpp
 auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedReporter(

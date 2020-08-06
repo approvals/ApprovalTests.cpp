@@ -41,7 +41,7 @@ When you link your test program - using ApprovalTest v.10.1.1 or later - you get
 Running tests - using ApprovalTest v.10.1.0 or earlier - gives the following output:
 
 <!-- snippet: ForgottenToConfigure.HelpMessage.approved.txt -->
-<a id='snippet-ForgottenToConfigure.HelpMessage.approved.txt'/></a>
+<a id='snippet-ForgottenToConfigure.HelpMessage.approved.txt'></a>
 ```txt
 *****************************************************************************
 *                                                                           *

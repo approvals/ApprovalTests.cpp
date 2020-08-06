@@ -22,7 +22,7 @@ You can easily create and print C++11 dates and times.
 For example:
 
 <!-- snippet: date_and_time -->
-<a id='snippet-date_and_time'/></a>
+<a id='snippet-date_and_time'></a>
 ```cpp
 std::chrono::system_clock::time_point dateTime =
     DateUtils::createUtcDateTime(2000, 1, 13, 3, 34, 45);
@@ -34,7 +34,7 @@ std::string dateTimeString = DateUtils::toString(dateTime);
 will produce:
 
 <!-- snippet: DateUtilsTests.createDateTime.approved.txt -->
-<a id='snippet-DateUtilsTests.createDateTime.approved.txt'/></a>
+<a id='snippet-DateUtilsTests.createDateTime.approved.txt'></a>
 ```txt
 Thu 2000-01-13 03:34:45 UTC
 ```
@@ -51,7 +51,7 @@ There is an overload of `DateUtils::toString()` that takes a format string, shou
 ExceptionCollector is a utility that allows you to have multiple exceptions thrown, without stopping the execution of the program, and then throw them all later.
 
 <!-- snippet: exception_collector_template -->
-<a id='snippet-exception_collector_template'/></a>
+<a id='snippet-exception_collector_template'></a>
 ```cpp
 ExceptionCollector exceptions;
 for (int i = 1; i <= 4; ++i)

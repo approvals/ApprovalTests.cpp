@@ -42,7 +42,7 @@ add the following lines of code to your [Test module's entry point](https://www.
 after the boost headers:
 
 <!-- snippet: boost_test_main -->
-<a id='snippet-boost_test_main'/></a>
+<a id='snippet-boost_test_main'></a>
 ```cpp
 // test_entry_point.cpp file[s] (after #including boost.test)
 #define APPROVALS_BOOSTTEST
@@ -57,7 +57,7 @@ A directory of Boost.Test source files can either have multiple or a single entr
 The entry point is any file that will contain the line:
 
 <!-- snippet: boost_test_entry_point -->
-<a id='snippet-boost_test_entry_point'/></a>
+<a id='snippet-boost_test_entry_point'></a>
 ```cpp
 #define BOOST_TEST_MODULE ModuleName
 ```

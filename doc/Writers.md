@@ -31,7 +31,7 @@ Suppose that you are serialising an object that cannot easily be represented in 
 Here is a simple example of using a custom writer to produce an HTML file.
 
 <!-- snippet: use_custom_writer -->
-<a id='snippet-use_custom_writer'/></a>
+<a id='snippet-use_custom_writer'></a>
 ```cpp
 HtmlWriter writer("<h1>hello world</h1>", ".html");
 Approvals::verify(writer);
@@ -46,7 +46,7 @@ Suppose that you are serializing an object in some text format like `JSON` or `C
 If all you want to do is change the file extension, here is how:
 
 <!-- snippet: use_custom_file_extension -->
-<a id='snippet-use_custom_file_extension'/></a>
+<a id='snippet-use_custom_file_extension'></a>
 ```cpp
 Approvals::verify("<h1>hello world</h1>",
                   Options().fileOptions().withFileExtension(".html"));

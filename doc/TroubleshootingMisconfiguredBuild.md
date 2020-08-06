@@ -40,7 +40,7 @@ This is living documentation. If you discover extra scenarios or better solution
 Compiling tests in Ninja-generated builds gives a compilation failure, with this message:
 
 <!-- snippet: compiler_error_for_misconfigured_build -->
-<a id='snippet-compiler_error_for_misconfigured_build'/></a>
+<a id='snippet-compiler_error_for_misconfigured_build'></a>
 ```h
 "There seems to be a problem with your build configuration, probably with Ninja. "
 "Please visit https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md "
@@ -55,7 +55,7 @@ __FILE__
 Running tests gives output such as the following:
 
 <!-- snippet: ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt -->
-<a id='snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt'/></a>
+<a id='snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt'></a>
 ```txt
 *****************************************************************************
 *                                                                           *
@@ -153,7 +153,7 @@ The \[Boost\].UT framework uses very recent features of C++, and is changing som
 If the ApprovalTests.cpp integration with \[Boost\].UT is not working in your build, you will see probably the following output at run-time, where the filename is `unknown`:
 
 <!-- snippet: ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt -->
-<a id='snippet-ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt'/></a>
+<a id='snippet-ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt'></a>
 ```txt
 *****************************************************************************
 *                                                                           *

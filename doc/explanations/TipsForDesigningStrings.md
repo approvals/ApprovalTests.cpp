@@ -59,7 +59,7 @@ Some formats will be more readable when you are writing lists of objects.
 Here's an example of verifing a list of rectangles
 
 <!-- snippet: verify_list -->
-<a id='snippet-verify_list'/></a>
+<a id='snippet-verify_list'></a>
 ```cpp
 Approvals::verifyAll("rectangles", getRectangles());
 ```
@@ -69,7 +69,7 @@ Approvals::verifyAll("rectangles", getRectangles());
 Notice how this:
 
 <!-- snippet: ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt -->
-<a id='snippet-ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt'/></a>
+<a id='snippet-ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt'></a>
 ```txt
 rectangles
 
@@ -85,7 +85,7 @@ rectangles
 compares to this:
 
 <!-- snippet: ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt -->
-<a id='snippet-ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt'/></a>
+<a id='snippet-ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt'></a>
 ```txt
 rectangles
 

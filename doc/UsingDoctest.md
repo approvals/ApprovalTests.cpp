@@ -33,7 +33,7 @@ Doctest is similar to Catch, but claims to give faster compilation times.
 Approval Tests for doctest requires that a file called the following is found:
 
 <!-- snippet: required_header_for_doctest -->
-<a id='snippet-required_header_for_doctest'/></a>
+<a id='snippet-required_header_for_doctest'></a>
 ```h
 #include <doctest/doctest.h>
 ```
@@ -49,7 +49,7 @@ Approval Tests needs doctest version 2.3.4 or above.
 Create a file `main.cpp` and add just the following two lines:
 
 <!-- snippet: doctest_main -->
-<a id='snippet-doctest_main'/></a>
+<a id='snippet-doctest_main'></a>
 ```cpp
 // main.cpp:
 #define APPROVALS_DOCTEST // This tells Approval Tests to provide a main() - only do this in one cpp file
@@ -67,7 +67,7 @@ If you have [supplied your own `main()` for doctest](https://github.com/onqtam/d
 You should make the following additions to your own source file that contains `main()`.  
 
 <!-- snippet: doctest_existing_main -->
-<a id='snippet-doctest_existing_main'/></a>
+<a id='snippet-doctest_existing_main'></a>
 ```cpp
 // Add these two lines to the top of your main.cpp file:
 #define APPROVALS_DOCTEST_EXISTING_MAIN

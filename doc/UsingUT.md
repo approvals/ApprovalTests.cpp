@@ -31,7 +31,7 @@ The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework work
 Approval Tests for \[Boost\].UT requires that a file called the following is found:
 
 <!-- snippet: required_header_for_ut -->
-<a id='snippet-required_header_for_ut'/></a>
+<a id='snippet-required_header_for_ut'></a>
 ```h
 #include <boost/ut.hpp>
 ```
@@ -50,7 +50,7 @@ It also requires:
 Add the following two lines to your source code:
 
 <!-- snippet: ut_main -->
-<a id='snippet-ut_main'/></a>
+<a id='snippet-ut_main'></a>
 ```cpp
 #define APPROVALS_UT
 #include "ApprovalTests.hpp"
@@ -61,7 +61,7 @@ Add the following two lines to your source code:
 Below is an example of a call to an approval test inside a \[Boost\].UT test:
 
 <!-- snippet: ut_main_usage -->
-<a id='snippet-ut_main_usage'/></a>
+<a id='snippet-ut_main_usage'></a>
 ```cpp
 "ItCanVerifyAFile"_test = []() {
     Approvals::verify("Approval Tests can verify text via the golden master method");
@@ -73,7 +73,7 @@ Below is an example of a call to an approval test inside a \[Boost\].UT test:
 In the following example, two instances of ApprovalTests are called inside the same test. We need to use sections with different names, to prevent Approval Tests from using the same output file for both tests:
 
 <!-- snippet: ut_main_multiple -->
-<a id='snippet-ut_main_multiple'/></a>
+<a id='snippet-ut_main_multiple'></a>
 ```cpp
 "ItCanUseMultipleVerify"_test = []() {
     {

@@ -19,7 +19,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 If you have a lot of approval files, you might want to put them in a subdirectory, to prevent them cluttering up your source files. You can do this at a global or per-test level, by adding the line:
 
 <!-- snippet: use_subdirectory_in_main -->
-<a id='snippet-use_subdirectory_in_main'/></a>
+<a id='snippet-use_subdirectory_in_main'></a>
 ```cpp
 auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
 ```

@@ -20,7 +20,7 @@ Let's say that you really enjoy using Sublime Merge, and on your system it's loc
 If you were to run this the command line, the full command would look this this:
 
 <!-- snippet: CustomReporterTests.Creating_Custom_Reporters.approved.txt -->
-<a id='snippet-CustomReporterTests.Creating_Custom_Reporters.approved.txt'/></a>
+<a id='snippet-CustomReporterTests.Creating_Custom_Reporters.approved.txt'></a>
 ```txt
 "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" mergetool --no-wait "test.received.txt" "test.approved.txt" -o "test.approved.txt" &
 ```
@@ -30,7 +30,7 @@ If you were to run this the command line, the full command would look this this:
 You can do this simply by creating a Reporter using:
 
 <!-- snippet: use_custom_reporter -->
-<a id='snippet-use_custom_reporter'/></a>
+<a id='snippet-use_custom_reporter'></a>
 ```cpp
 auto path = "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
 auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
@@ -44,7 +44,7 @@ By default, this will run in the background. Most of the time this is what you w
 However, you can force it to run in the foreground with:
 
 <!-- snippet: use_custom_foreground_reporter -->
-<a id='snippet-use_custom_foreground_reporter'/></a>
+<a id='snippet-use_custom_foreground_reporter'></a>
 ```cpp
 auto reporter = CustomReporter::createForegroundReporter(path, arguments);
 ```
@@ -54,7 +54,7 @@ auto reporter = CustomReporter::createForegroundReporter(path, arguments);
 On Windows, you can specify a search path for the installed location of a program with `{ProgramFiles}`.
 
 <!-- snippet: use_custom_windows_reporter -->
-<a id='snippet-use_custom_windows_reporter'/></a>
+<a id='snippet-use_custom_windows_reporter'></a>
 ```cpp
 auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";
 auto reporter = CustomReporter::create(path);

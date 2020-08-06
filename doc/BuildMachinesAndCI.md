@@ -16,7 +16,7 @@ So by default, Approval tests will never launch any graphical reporters on suppo
 Supported CI systems:
 
 <!-- snippet: supported_ci_systems -->
-<a id='snippet-supported_ci_systems'/></a>
+<a id='snippet-supported_ci_systems'></a>
 ```cpp
 AppVeyor,
 AzurePipelines,
@@ -32,7 +32,7 @@ Travis,
 The CI detection is based on environment variables, so it may also just work on other systems that we are unaware of:
 
 <!-- snippet: supported_ci_env_vars -->
-<a id='snippet-supported_ci_env_vars'/></a>
+<a id='snippet-supported_ci_env_vars'></a>
 ```cpp
 "CI",
 "CONTINUOUS_INTEGRATION",

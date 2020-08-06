@@ -27,7 +27,7 @@ If you have more than parameter that you want to vary, check out [Testing Combin
 1. Copy this starter text.
 
 <!-- snippet: VerifyAllStartingPoint -->
-<a id='snippet-verifyallstartingpoint'/></a>
+<a id='snippet-verifyallstartingpoint'></a>
 ```cpp
 TEST_CASE("VerifyAllStartingPoint")
 {
@@ -47,7 +47,7 @@ TEST_CASE("VerifyAllStartingPoint")
 If they are wired up correctly, you will see a file that looks like this: it is the left hand side of the file that matters at this point: all combinations of your own input values should be listed:
 
 <!-- snippet: VectorTests.VerifyAllStartingPoint.approved.txt -->
-<a id='snippet-VectorTests.VerifyAllStartingPoint.approved.txt'/></a>
+<a id='snippet-VectorTests.VerifyAllStartingPoint.approved.txt'></a>
 ```txt
 TITLE
 

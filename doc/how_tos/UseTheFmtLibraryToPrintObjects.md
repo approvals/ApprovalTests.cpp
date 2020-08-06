@@ -29,7 +29,7 @@ Simply use `FmtApprovals::`
 For example, vectors are not `ostream (<<)` printable by default. However, they are with {fmt}. so :
 
 <!-- snippet: fmt_approvals -->
-<a id='snippet-fmt_approvals'/></a>
+<a id='snippet-fmt_approvals'></a>
 ```cpp
 std::vector<int> numbers = {1, 2, 3};
 FmtApprovals::verify(numbers);
@@ -40,7 +40,7 @@ FmtApprovals::verify(numbers);
 This will produce the following output:
 
 <!-- snippet: FmtTests.FmtContainers.approved.txt -->
-<a id='snippet-FmtTests.FmtContainers.approved.txt'/></a>
+<a id='snippet-FmtTests.FmtContainers.approved.txt'></a>
 ```txt
 {1, 2, 3}
 ```
@@ -50,7 +50,7 @@ This will produce the following output:
 **note:** it is important that we included fmt before approvaltests.
 
 <!-- snippet: fmt_includes -->
-<a id='snippet-fmt_includes'/></a>
+<a id='snippet-fmt_includes'></a>
 ```cpp
 #include <fmt/ranges.h>
 ```
@@ -66,7 +66,7 @@ ApprovalTests assumes you will add the {fmt} library **before** including `Appro
 If you would like to see how we added fmt to our build, check out:
 
 <!-- snippet: fmt_cmake -->
-<a id='snippet-fmt_cmake'/></a>
+<a id='snippet-fmt_cmake'></a>
 ```txt
 target_link_libraries(${PROJECT_NAME} fmt::fmt)
 ```
@@ -82,7 +82,7 @@ target_link_libraries(${PROJECT_NAME} fmt::fmt)
 If you wish, you can set FmtApprovals to be the default Approvals with the following line before including `ApprovalTests.hpp`
 
 <!-- snippet: fmt_set_as_default -->
-<a id='snippet-fmt_set_as_default'/></a>
+<a id='snippet-fmt_set_as_default'></a>
 ```h
 #define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER FmtToString
 ```

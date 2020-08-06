@@ -47,7 +47,7 @@ This is often done by providing an output operator (`<<`) for types you wish to 
 For example:
 
 <!-- snippet: to_string_standard_example -->
-<a id='snippet-to_string_standard_example'/></a>
+<a id='snippet-to_string_standard_example'></a>
 ```cpp
 friend std::ostream& operator<<(std::ostream& os, const Rectangle1& rectangle)
 {
@@ -64,7 +64,7 @@ You should put this function in the same namespace as your type, or the global n
 If including `<iostream>` or similar is problematic, for example because your code needs to be compiled for embedded platforms, and you are tempted to surround it with `#ifdef`s so that it only shows up in testing, we recommend that you use the template approach instead:
 
 <!-- snippet: to_string_template_example -->
-<a id='snippet-to_string_template_example'/></a>
+<a id='snippet-to_string_template_example'></a>
 ```cpp
 template <class STREAM>
 friend STREAM& operator<<(STREAM& os, const Rectangle2& rectangle)
@@ -80,7 +80,7 @@ friend STREAM& operator<<(STREAM& os, const Rectangle2& rectangle)
 Wrapper classes or functions can be used to provide additional output formats for types of data:
 
 <!-- snippet: to_string_wrapper_example -->
-<a id='snippet-to_string_wrapper_example'/></a>
+<a id='snippet-to_string_wrapper_example'></a>
 ```cpp
 struct FormatRectangleForMultipleLines
 {
@@ -121,7 +121,7 @@ If you want to use something other than an output operator (`<<`), one option is
 Here is an example:
 
 <!-- snippet: customising_to_string_with_string_maker_specialization -->
-<a id='snippet-customising_to_string_with_string_maker_specialization'/></a>
+<a id='snippet-customising_to_string_with_string_maker_specialization'></a>
 ```cpp
 template <>
 std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& printable)
@@ -137,7 +137,7 @@ std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& pri
 With older compilers, you might need to make the namespace explicit, like this:
 
 <!-- snippet: customising_to_string_with_string_maker_specialization_gcc5_and_6 -->
-<a id='snippet-customising_to_string_with_string_maker_specialization_gcc5_and_6'/></a>
+<a id='snippet-customising_to_string_with_string_maker_specialization_gcc5_and_6'></a>
 ```cpp
 namespace ApprovalTests
 {
@@ -158,7 +158,7 @@ and tell Approvals to use it, using the template mechanism.
 Here is how you create your own string-maker class:
 
 <!-- snippet: customising_to_string_with_custom_to_string_class -->
-<a id='snippet-customising_to_string_with_custom_to_string_class'/></a>
+<a id='snippet-customising_to_string_with_custom_to_string_class'></a>
 ```cpp
 class CustomToStringClass
 {
@@ -176,7 +176,7 @@ However, this alone will not do anything. You now need to call a variation of Ap
 You can do this directly by:
 
 <!-- snippet: customising_to_string_with_custom_to_string_class_usage1 -->
-<a id='snippet-customising_to_string_with_custom_to_string_class_usage1'/></a>
+<a id='snippet-customising_to_string_with_custom_to_string_class_usage1'></a>
 ```cpp
 ApprovalTests::TApprovals<
     ApprovalTests::ToStringCompileTimeOptions<CustomToStringClass>>::verify(p);
@@ -187,7 +187,7 @@ ApprovalTests::TApprovals<
 Or you can create your own custom alias to use your customisation:
 
 <!-- snippet: customising_to_string_with_custom_to_string_class_usage2 -->
-<a id='snippet-customising_to_string_with_custom_to_string_class_usage2'/></a>
+<a id='snippet-customising_to_string_with_custom_to_string_class_usage2'></a>
 ```cpp
 using MyApprovals = ApprovalTests::TApprovals<
     ApprovalTests::ToStringCompileTimeOptions<CustomToStringClass>>;
@@ -202,7 +202,7 @@ With `MyApprovals::verify()`, we have not changed the behavior of `Approvals::ve
 If, instead, you want to change the default string formatting, so that all calls to `Approvals::verify()` and related methods will automatically use your new string formatter, you can override the default, by defining this macro **before including the Approval Tests header**.
 
 <!-- snippet: customising_to_string_default_converter -->
-<a id='snippet-customising_to_string_default_converter'/></a>
+<a id='snippet-customising_to_string_default_converter'></a>
 ```h
 #define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER StringMaker
 ```

@@ -23,7 +23,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 Here is a sample of the pattern that we are using:
 
 <!-- snippet: static_variable_sample_header -->
-<a id='snippet-static_variable_sample_header'/></a>
+<a id='snippet-static_variable_sample_header'></a>
 ```h
 private:
     static std::shared_ptr<Reporter>& defaultReporter();
@@ -37,7 +37,7 @@ public:
 <!-- endsnippet -->
 
 <!-- snippet: static_variable_sample_implementation -->
-<a id='snippet-static_variable_sample_implementation'/></a>
+<a id='snippet-static_variable_sample_implementation'></a>
 ```cpp
 namespace ApprovalTests
 {

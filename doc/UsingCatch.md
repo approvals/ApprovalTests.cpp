@@ -34,7 +34,7 @@ This section describes the various ways of using Approval Tests with Catch2.
 Approval Tests requires that a file called the following is found:
 
 <!-- snippet: required_header_for_catch -->
-<a id='snippet-required_header_for_catch'/></a>
+<a id='snippet-required_header_for_catch'></a>
 ```h
 #include <catch2/catch.hpp>
 ```
@@ -59,7 +59,7 @@ Each time we release a new version of Approval Tests, we update this project, so
 Create a file `main.cpp` and add just the following two lines:
 
 <!-- snippet: catch_2_main -->
-<a id='snippet-catch_2_main'/></a>
+<a id='snippet-catch_2_main'></a>
 ```cpp
 // main.cpp:
 #define APPROVALS_CATCH // This tells Approval Tests to provide a main() - only do this in one cpp file
@@ -86,7 +86,7 @@ If you have [supplied your own `main()` for Catch](https://github.com/catchorg/C
 You should make the following additions to your own source file that contains `main()`.  
 
 <!-- snippet: catch_existing_main -->
-<a id='snippet-catch_existing_main'/></a>
+<a id='snippet-catch_existing_main'></a>
 ```cpp
 // Add these two lines to the top of your main.cpp file:
 #define APPROVALS_CATCH_EXISTING_MAIN

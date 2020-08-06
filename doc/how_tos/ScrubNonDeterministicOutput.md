@@ -29,7 +29,7 @@ This page assumes that you understand the concept of [Scrubbers](/doc/explanatio
 ## Lambda example
 
 <!-- snippet: scrubbing_via_lambda -->
-<a id='snippet-scrubbing_via_lambda'/></a>
+<a id='snippet-scrubbing_via_lambda'></a>
 ```cpp
 Approvals::verify(
     "1 2 3 4 5 6",
@@ -43,7 +43,7 @@ Approvals::verify(
 This would produce:
 
 <!-- snippet: GuidScrubberTests.Scrubbing_via_Lambda.approved.txt -->
-<a id='snippet-GuidScrubberTests.Scrubbing_via_Lambda.approved.txt'/></a>
+<a id='snippet-GuidScrubberTests.Scrubbing_via_Lambda.approved.txt'></a>
 ```txt
 1 2 Fizz 4 5 6
 ```
@@ -65,7 +65,7 @@ Approval Tests provides lots of [convenience methods](https://approvaltestscpp.r
 For example, here is an example where random numbers are scrubbed:
 
 <!-- snippet: simple_regex_scrubbing -->
-<a id='snippet-simple_regex_scrubbing'/></a>
+<a id='snippet-simple_regex_scrubbing'></a>
 ```cpp
 std::stringstream os;
 os << "Hello " << random(1000) << " World";
@@ -78,7 +78,7 @@ Approvals::verify(os.str(),
 This will produce:
 
 <!-- snippet: ScrubberTests.test_createRegexScrubber_with_string_input_and_fixed_result.approved.txt -->
-<a id='snippet-ScrubberTests.test_createRegexScrubber_with_string_input_and_fixed_result.approved.txt'/></a>
+<a id='snippet-ScrubberTests.test_createRegexScrubber_with_string_input_and_fixed_result.approved.txt'></a>
 ```txt
 Hello [number] World
 ```
@@ -95,7 +95,7 @@ There are many combinations of these parameters, that allow for customization at
 need, the most complex being:
 
 <!-- snippet: complex_regex_scrubbing -->
-<a id='snippet-complex_regex_scrubbing'/></a>
+<a id='snippet-complex_regex_scrubbing'></a>
 ```cpp
 auto input = "1) Hello 1234 World";
 auto scrubber =
@@ -118,7 +118,7 @@ auto scrubber =
 This will produce:
 
 <!-- snippet: ScrubberTests.test_createRegexScrubber.approved.txt -->
-<a id='snippet-ScrubberTests.test_createRegexScrubber.approved.txt'/></a>
+<a id='snippet-ScrubberTests.test_createRegexScrubber.approved.txt'></a>
 ```txt
 1) Hello [number] World
 ```
@@ -140,7 +140,7 @@ You can scrub GUIDs by using a pointer to the function `Scrubbers::scrubGuid`.
 For example the following code:
 
 <!-- snippet: guid_scrubbing -->
-<a id='snippet-guid_scrubbing'/></a>
+<a id='snippet-guid_scrubbing'></a>
 ```cpp
 std::string jsonFromRestCall = R"(
     {
@@ -167,7 +167,7 @@ Approvals::verify(jsonFromRestCall, Options().withScrubber(Scrubbers::scrubGuid)
 will produce:
 
 <!-- snippet: GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt -->
-<a id='snippet-GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt'/></a>
+<a id='snippet-GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt'></a>
 ```txt
 
         {

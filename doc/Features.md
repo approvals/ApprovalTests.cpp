@@ -273,7 +273,7 @@ See [Blocking Reporters](/doc/Reporters.md#blocking-reporters)
 Sometimes you will want tests to only run on certain machines. Machine blockers are a great way to do this.
 
 <!-- snippet: machine_specific_test_runner -->
-<a id='snippet-machine_specific_test_runner'/></a>
+<a id='snippet-machine_specific_test_runner'></a>
 ```cpp
 TEST_CASE("Only run this test on John's machine")
 {

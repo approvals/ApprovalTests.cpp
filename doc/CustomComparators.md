@@ -50,7 +50,7 @@ In this trivial example, we want to treat two files as matching if their content
 First, we write our custom `ApprovalComparator` implementation:
 
 <!-- snippet: create_custom_comparator -->
-<a id='snippet-create_custom_comparator'/></a>
+<a id='snippet-create_custom_comparator'></a>
 ```cpp
 class LengthComparator : public ApprovalComparator
 {
@@ -68,7 +68,7 @@ public:
 Then we call `FileApprover::registerComparatorForExtension()` to tell Approval Tests to use `LengthComparator` to compare all files with extension `.length`. This customisation will last for the rest of the test run, and we would typically put this in our `main.cpp`.
 
 <!-- snippet: use_custom_comparator -->
-<a id='snippet-use_custom_comparator'/></a>
+<a id='snippet-use_custom_comparator'></a>
 ```cpp
 auto disposer = FileApprover::registerComparatorForExtension(
     ".length", std::make_shared<LengthComparator>());

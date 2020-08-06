@@ -34,7 +34,7 @@ You can scrub text manually, before passing it in to Approvals::verify(), but th
 Scrubber as an option.
 
 <!-- snippet: scrubber_in_options_object -->
-<a id='snippet-scrubber_in_options_object'/></a>
+<a id='snippet-scrubber_in_options_object'></a>
 ```cpp
 Approvals::verify(input, Options().withScrubber(scrubber));
 ```
