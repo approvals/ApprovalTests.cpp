@@ -39,15 +39,13 @@ namespace ApprovalTests
     std::string DateUtils::toString(const std::chrono::system_clock::time_point& dateTime,
                                     const std::string& format)
     {
-        std::string result;
         time_t tt = std::chrono::system_clock::to_time_t(dateTime);
 
         tm tm_value = safeGmTime(tt);
 
         std::stringstream ss;
         ss << std::put_time(&tm_value, format.c_str());
-        result = ss.str();
-        return result;
+        return ss.str();
     }
 
     time_t DateUtils::toUTC(std::tm& timeinfo)
