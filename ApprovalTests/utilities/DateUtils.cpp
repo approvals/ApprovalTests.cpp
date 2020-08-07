@@ -52,16 +52,22 @@ namespace ApprovalTests
         std::string result;
         time_t tt = std::chrono::system_clock::to_time_t(dateTime);
 
+        tm tm_value = safeGmTime(tt);
+
+        std::stringstream ss;
+        ss << std::put_time(&tm_value, format.c_str());
+        result = ss.str();
+        return result;
+    }
+
+    tm DateUtils::safeGmTime(time_t& tt)
+    {
 #ifdef _MSC_VER
         std::tm tm_value = {};
         gmtime_s(&tm_value, &tt);
 #else
         tm tm_value = *gmtime(&tt); // GMT (UTC)
 #endif
-
-        std::stringstream ss;
-        ss << std::put_time(&tm_value, format.c_str());
-        result = ss.str();
-        return result;
+        return tm_value;
     }
 }
