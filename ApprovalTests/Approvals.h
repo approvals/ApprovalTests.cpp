@@ -134,10 +134,12 @@ namespace ApprovalTests
         }
 
         template <typename T>
-        static void verifyAll(const std::string& header,
-                              const std::initializer_list<T>& list,
-                              std::function<void(typename std::initializer_list<T>::value_type, std::ostream&)> converter,
-                              const Options& options = Options())
+        static void
+        verifyAll(const std::string& header,
+                  const std::initializer_list<T>& list,
+                  std::function<void(typename std::initializer_list<T>::value_type,
+                                     std::ostream&)> converter,
+                  const Options& options = Options())
         {
             verifyAll<std::initializer_list<T>>(header, list, converter, options);
         }
