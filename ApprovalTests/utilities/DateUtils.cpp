@@ -62,11 +62,11 @@ namespace ApprovalTests
 
     tm DateUtils::safeGmTime(time_t& tt)
     {
-#ifdef _MSC_VER
+#ifdef _MSC_VER // Visual Studio compiler
         std::tm tm_value = {};
         gmtime_s(&tm_value, &tt);
 #else
-        tm tm_value = *gmtime(&tt); // GMT (UTC)
+        tm tm_value = *gmtime(&tt);
 #endif
         return tm_value;
     }
