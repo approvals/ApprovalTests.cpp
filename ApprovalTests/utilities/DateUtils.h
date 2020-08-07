@@ -21,8 +21,8 @@ namespace ApprovalTests
         static std::string
         toString(const std::chrono::system_clock::time_point& dateTime);
 
-        static time_t toUTC(std::tm& timeinfo);
+        static time_t toUtc(std::tm& timeinfo);
 
-        static tm toUTC(time_t& tt);
+        static tm toUtc(time_t& tt);
     };
 }
