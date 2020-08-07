@@ -1,4 +1,5 @@
 #include "DateUtils.h"
+#include "StringUtils.h"
 
 #include <sstream>
 #include <iomanip>
@@ -40,12 +41,9 @@ namespace ApprovalTests
                                     const std::string& format)
     {
         time_t tt = std::chrono::system_clock::to_time_t(dateTime);
-
         tm tm_value = safeGmTime(tt);
 
-        std::stringstream ss;
-        ss << std::put_time(&tm_value, format.c_str());
-        return ss.str();
+        return StringUtils::toString(std::put_time(&tm_value, format.c_str()));
     }
 
     time_t DateUtils::toUTC(std::tm& timeinfo)
