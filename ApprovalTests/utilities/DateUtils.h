@@ -23,6 +23,6 @@ namespace ApprovalTests
 
         static time_t toUTC(std::tm& timeinfo);
 
-        static tm safeGmTime(time_t& tt);
+        static tm toUTC(time_t& tt);
     };
 }

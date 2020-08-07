@@ -41,7 +41,7 @@ namespace ApprovalTests
                                     const std::string& format)
     {
         time_t tt = std::chrono::system_clock::to_time_t(dateTime);
-        tm tm_value = safeGmTime(tt);
+        tm tm_value = toUTC(tt);
 
         return StringUtils::toString(std::put_time(&tm_value, format.c_str()));
     }
@@ -56,7 +56,7 @@ namespace ApprovalTests
         return tt;
     }
 
-    tm DateUtils::safeGmTime(time_t& tt)
+    tm DateUtils::toUTC(time_t& tt)
     {
 #ifdef _MSC_VER // Visual Studio compiler
         std::tm tm_value = {};
