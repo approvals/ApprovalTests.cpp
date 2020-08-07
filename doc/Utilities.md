@@ -26,9 +26,10 @@ For example:
 ```cpp
 std::chrono::system_clock::time_point dateTime =
     DateUtils::createUtcDateTime(2000, 1, 13, 3, 34, 45);
+
 std::string dateTimeString = DateUtils::toString(dateTime);
 ```
-<sup><a href='/tests/DocTest_Tests/utilities/DateUtilsTests.cpp#L9-L13' title='File snippet `date_and_time` was extracted from'>snippet source</a> | <a href='#snippet-date_and_time' title='Navigate to start of snippet `date_and_time`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/utilities/DateUtilsTests.cpp#L9-L14' title='File snippet `date_and_time` was extracted from'>snippet source</a> | <a href='#snippet-date_and_time' title='Navigate to start of snippet `date_and_time`'>anchor</a></sup>
 <!-- endsnippet -->
 
 will produce:
