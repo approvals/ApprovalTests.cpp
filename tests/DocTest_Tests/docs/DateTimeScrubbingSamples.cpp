@@ -5,14 +5,6 @@
 #include "utilities/WinMinGWUtils.h"
 #include "Approvals.h"
 
-#ifdef APPROVAL_TESTS_MINGW
-#define BUILD_FAILING_MINGW_TEST
-#endif
-
-#ifdef BUILD_FAILING_MINGW_TEST
-#include <iostream>
-#endif
-
 using namespace ApprovalTests;
 
 namespace
@@ -37,7 +29,6 @@ namespace
         verifyDateAndTimeString(dateRegex, textWithDate);
     }
 
-#ifndef BUILD_FAILING_MINGW_TEST
     void
     verifyDateAndTimeWithFormat(const std::chrono::system_clock::time_point& dateTime,
                                 const char* format,
@@ -46,7 +37,6 @@ namespace
         std::string textWithDate = "date: " + DateUtils::toString(dateTime, format);
         verifyDateAndTimeString(dateRegex, textWithDate);
     }
-#endif
 }
 
 TEST_CASE("Test DateTime scrubbing - with default format")
@@ -67,15 +57,10 @@ TEST_CASE("Test DateTime scrubbing - with default format")
 
 TEST_CASE("Test DateTime scrubbing - with specific format")
 {
-#ifdef BUILD_FAILING_MINGW_TEST
-    // On Appveyor mingw builds, the date string is 'Thu Aug'
-    // and tests fail.
-    std::cout << "Skipping test which currently fails on mingw";
-#else
     // Mon Jun 22 14:07:34 2020
-    // %a  %b  %e %H:%M:%S %G
     const auto dateTime = std::chrono::system_clock::now();
-    const char* format = "%a %b %e %T %G";
+    const char* format =
+        "%a %b %d %H:%M:%S %Y"; // g++ on mingw does not properly format "%a %b %e %T %G"
 
     std::string weekDay = R"([A-Za-z]{3})";
     std::string month = R"([A-Za-z]{3})";
@@ -85,5 +70,4 @@ TEST_CASE("Test DateTime scrubbing - with specific format")
     const auto dateRegex = weekDay + " " + month + " " + date + " " + time + " " + year;
 
     verifyDateAndTimeWithFormat(dateTime, format, dateRegex);
-#endif
 }
