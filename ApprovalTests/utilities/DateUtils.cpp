@@ -31,16 +31,6 @@ namespace ApprovalTests
         return std::chrono::system_clock::from_time_t(tt);
     }
 
-    time_t DateUtils::toUTC(std::tm& timeinfo)
-    {
-#ifdef _WIN32
-        std::time_t tt = _mkgmtime(&timeinfo);
-#else
-        time_t tt = timegm(&timeinfo);
-#endif
-        return tt;
-    }
-
     std::string DateUtils::toString(const std::chrono::system_clock::time_point& dateTime)
     {
         return toString(dateTime, "%a %Y-%m-%d %H:%M:%S UTC");
@@ -58,6 +48,16 @@ namespace ApprovalTests
         ss << std::put_time(&tm_value, format.c_str());
         result = ss.str();
         return result;
+    }
+
+    time_t DateUtils::toUTC(std::tm& timeinfo)
+    {
+#ifdef _WIN32
+        std::time_t tt = _mkgmtime(&timeinfo);
+#else
+        time_t tt = timegm(&timeinfo);
+#endif
+        return tt;
     }
 
     tm DateUtils::safeGmTime(time_t& tt)
