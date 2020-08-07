@@ -1,8 +1,6 @@
-#include <ApprovalTests/utilities/SystemUtils.h>
 #include "doctest/doctest.h"
 
 #include "utilities/DateUtils.h"
-#include "utilities/WinMinGWUtils.h"
 #include "Approvals.h"
 
 using namespace ApprovalTests;
