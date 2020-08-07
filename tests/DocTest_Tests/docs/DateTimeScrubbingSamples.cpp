@@ -6,6 +6,10 @@
 #include "Approvals.h"
 
 #ifdef APPROVAL_TESTS_MINGW
+#define BUILD_FAILING_MINGW_TEST
+#endif
+
+#ifdef BUILD_FAILING_MINGW_TEST
 #include <iostream>
 #endif
 
@@ -33,7 +37,7 @@ namespace
         verifyDateAndTimeString(dateRegex, textWithDate);
     }
 
-#ifndef APPROVAL_TESTS_MINGW
+#ifndef BUILD_FAILING_MINGW_TEST
     void
     verifyDateAndTimeWithFormat(const std::chrono::system_clock::time_point& dateTime,
                                 const char* format,
@@ -63,7 +67,7 @@ TEST_CASE("Test DateTime scrubbing - with default format")
 
 TEST_CASE("Test DateTime scrubbing - with specific format")
 {
-#ifdef APPROVAL_TESTS_MINGW
+#ifdef BUILD_FAILING_MINGW_TEST
     // On Appveyor mingw builds, the date string is 'Thu Aug'
     // and tests fail.
     std::cout << "Skipping test which currently fails on mingw";
