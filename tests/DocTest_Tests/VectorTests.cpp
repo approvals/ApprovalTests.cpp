@@ -46,3 +46,26 @@ TEST_CASE("VerifyAllStartingPoint")
     });
 }
 // end-snippet
+
+TEST_CASE("YouCanVerifyInitializerLists")
+{
+    Approvals::verifyAll("", {10, 20, 30});
+    Approvals::verifyAll("", {10, 20, 30}, Options());
+
+    Approvals::verifyAll(std::initializer_list<int>{10, 20, 30});
+    Approvals::verifyAll(std::initializer_list<int>{10, 20, 30}, Options());
+
+    Approvals::verifyAll({10, 20, 30});
+    Approvals::verifyAll({10, 20, 30}, Options());
+
+    int i = 0;
+    Approvals::verifyAll("", {10, 20, 30}, [&](int e, std::ostream& s) {
+        s << "[" << i++ << "] = " << e;
+    });
+    i = 0;
+    Approvals::verifyAll(
+        "",
+        {10, 20, 30},
+        [&](int e, std::ostream& s) { s << "[" << i++ << "] = " << e; },
+        Options());
+}
