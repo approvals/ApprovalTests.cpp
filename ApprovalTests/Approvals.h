@@ -140,7 +140,7 @@ namespace ApprovalTests
         }
         ///@}
 
-        /**@name Verifying containers of objects - supplying an an initializer list
+        /**@name Verifying containers of objects - supplying an initializer list
 
          See \userguide{TestingContainers,Testing Containers}
          */
