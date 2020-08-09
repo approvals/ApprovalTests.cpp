@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * Add `initializer_list` support to Approvals::verifyAll (#152, thanks @alepez)
 * **Bug fixes**
     * None
 * **Other changes**
