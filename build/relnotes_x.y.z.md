@@ -7,4 +7,4 @@
 * **Bug fixes**
     * None
 * **Other changes**
-    * None
+    * Better readability of the groups of member methods on Read the Docs, for example in [Approving Objects](https://approvaltestscpp.readthedocs.io/en/latest/api/approving.html) (#153)
