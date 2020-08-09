@@ -16,6 +16,7 @@ file(GLOB
         APPROVAL_TESTS_SPHINX_TEMPLATE_FILES
         CONFIGURE_DEPENDS
         ${CMAKE_CURRENT_SOURCE_DIR}/_templates/*
+        ${CMAKE_CURRENT_SOURCE_DIR}/_static/*
         )
 
 # TODO Only regenerate Sphinx when:
