@@ -10,3 +10,8 @@
     display: inline;
 }
 
+/* So Doxygen Member Groups are out-dented, to stand out from their content */
+.breathe-sectiondef-title.rubric {
+    width: inherit;
+    margin-left: -20px;
+}
