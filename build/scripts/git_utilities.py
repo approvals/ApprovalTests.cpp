@@ -1,5 +1,4 @@
 import os
-from typing import Any
 
 from git import Repo
 from scripts.utilities import assert_step, use_directory, run
