@@ -74,7 +74,7 @@ namespace ApprovalTests
         }
         ///@}
 
-        /**@name Verifying containers of objects
+        /**@name Verifying containers of objects - supplying an iterator range
 
          See \userguide{TestingContainers,Testing Containers}
          */
@@ -99,7 +99,13 @@ namespace ApprovalTests
             }
             verify(s.str(), options);
         }
+        ///@}
 
+        /**@name Verifying containers of objects - supplying a container
+
+         See \userguide{TestingContainers,Testing Containers}
+         */
+        ///@{
         template <typename Container>
         static void verifyAll(
             const std::string& header,
@@ -132,7 +138,13 @@ namespace ApprovalTests
         {
             verifyAll<Container>("", list, options);
         }
+        ///@}
 
+        /**@name Verifying containers of objects - supplying an an initializer list
+
+         See \userguide{TestingContainers,Testing Containers}
+         */
+        ///@{
         template <typename T>
         static void
         verifyAll(const std::string& header,
