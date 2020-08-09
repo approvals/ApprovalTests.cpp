@@ -25,8 +25,8 @@ TEST_CASE("YouCanVerifyVectorsWithStandardText")
     // begin-snippet: VerifyAllStartingPointContainer
     std::vector<std::string> objectsToVerify{"hello", "world"};
     Approvals::verifyAll("TITLE", objectsToVerify);
-    Approvals::verifyAll("TITLE", objectsToVerify, Options());
     // end-snippet
+    Approvals::verifyAll("TITLE", objectsToVerify, Options());
 }
 
 TEST_CASE("YouCanVerifyVectorsWithStandardTextNoHeader")
