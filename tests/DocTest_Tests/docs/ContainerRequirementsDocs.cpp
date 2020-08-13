@@ -72,6 +72,21 @@ namespace VerifyAllOnIterators
     }
 }
 
+namespace VerifyAllOnArray
+{
+    TEST_CASE("Required interface for verifyAll on C-style array")
+    {
+        // If using C-style arrays, we can use the iterator overload of
+        // Approvals::verifyAll in conjunction with std::begin() and std::end():
+        using ContainerType = int[3];
+        ContainerType container = {10, 20, 30};
+        Approvals::verifyAll("TITLE",
+                             std::begin(container),
+                             std::end(container),
+                             [](auto value, auto& stream) { stream << value; });
+    }
+}
+
 namespace VerifyAllCombinationsOnContainer
 {
     using ContainerType = std::deque<int>;
