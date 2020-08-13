@@ -3,8 +3,9 @@
 * **Breaking changes**
     * None
 * **New features**
-    * Add `initializer_list` support to Approvals::verifyAll (#152, thanks @alepez)
+    * Add `initializer_list` support to `Approvals::verifyAll()` (#152, thanks @alepez)
 * **Bug fixes**
     * None
 * **Other changes**
+    * Overloads of `Approvals::verifyAll()` that previously only accepted `std::vector` now accept all container types (#152, thanks @alepez)
     * Better readability of the groups of member methods on Read the Docs, for example in [Approving Objects](https://approvaltestscpp.readthedocs.io/en/latest/api/approving.html) (#153)
