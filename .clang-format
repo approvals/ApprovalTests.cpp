@@ -17,7 +17,7 @@ NamespaceIndentation: All
 PointerAlignment: Left
 ReflowComments: false
 SortIncludes: false
-SortUsingDeclarations: true
+SortUsingDeclarations: false
 SpaceAfterTemplateKeyword: true
 TabWidth: 4
 UseTab: Never
