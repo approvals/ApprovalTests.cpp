@@ -8,6 +8,8 @@ toc
 
 ## v.x.y.z
 
+## v.10.3.0
+
 ## Approvals::verifyAll and std::initializer_list
 
 Added `std::initializer_list` support to `Approvals::verifyAll()`.

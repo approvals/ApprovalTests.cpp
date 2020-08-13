@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.3.0](#v1030)
   * [Approvals::verifyAll and std::initializer_list](#approvalsverifyall-and-stdinitializer_list)
   * [v.10.2.0](#v1020)
     * [DateUtils](#dateutils)
@@ -68,6 +69,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+## v.10.3.0
 
 ## Approvals::verifyAll and std::initializer_list
 
