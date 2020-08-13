@@ -3,7 +3,12 @@
 * **Breaking changes**
     * None
 * **New features**
-    * Add `initializer_list` support to `Approvals::verifyAll()` (#152, thanks @alepez)
+    * Add `initializer_list` support to `Approvals::verifyAll()` (#152, thanks @alepez)  
+    For example:
+  ```cpp
+        Approvals::verifyAll({10, 20, 30});
+  ```
+
 * **Bug fixes**
     * None
 * **Other changes**
