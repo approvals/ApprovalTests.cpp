@@ -12,6 +12,7 @@ add_executable(${PROJECT_NAME}
         core/FileApproverTests.cpp
         core/OptionsTests.cpp
         docs/CombinationsSampleCode.cpp
+        docs/ContainerRequirementsDocs.cpp
         docs/DateTimeScrubbingSamples.cpp
         docs/DisposableSamples.cpp
         docs/DocTestDocsSamples.cpp
