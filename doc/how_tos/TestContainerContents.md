@@ -34,6 +34,21 @@ Approvals::verifyAll("TITLE", objectsToVerify);
 <sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L25-L28' title='File snippet `verifyallstartingpointcontainer` was extracted from'>snippet source</a> | <a href='#snippet-verifyallstartingpointcontainer' title='Navigate to start of snippet `verifyallstartingpointcontainer`'>anchor</a></sup>
 <!-- endsnippet -->
 
+which would produce:
+
+<!-- snippet: VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt -->
+<a id='snippet-VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt'></a>
+```txt
+TITLE
+
+
+[0] = hello
+[1] = world
+
+```
+<sup><a href='/tests/DocTest_Tests/approval_tests/VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt#L1-L6' title='File snippet `VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt' title='Navigate to start of snippet `VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
+
 2. Replace the `objectsToVerify` container with your collection of objects.
 3. Change the TITLE to something meaningful
 4. Run it, and approve the output.

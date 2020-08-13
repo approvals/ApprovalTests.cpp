@@ -14,6 +14,10 @@ You have called a method that returns a collection of objects, and you want a ni
 
 snippet: VerifyAllStartingPointContainer
 
+which would produce:
+
+snippet: VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt
+
 2. Replace the `objectsToVerify` container with your collection of objects.
 3. Change the TITLE to something meaningful
 4. Run it, and approve the output.
