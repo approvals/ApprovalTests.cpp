@@ -55,7 +55,9 @@ TEST_CASE("YouCanVerifyInitializerLists")
     Approvals::verifyAll(std::initializer_list<int>{10, 20, 30});
     Approvals::verifyAll(std::initializer_list<int>{10, 20, 30}, Options());
 
+    // begin-snippet: initializer_list
     Approvals::verifyAll({10, 20, 30});
+    // end-snippet
     Approvals::verifyAll({10, 20, 30}, Options());
 
     int i = 0;

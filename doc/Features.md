@@ -15,6 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [Approvals::verifyAll and std::initializer_list](#approvalsverifyall-and-stdinitializer_list)
   * [v.10.2.0](#v1020)
     * [DateUtils](#dateutils)
   * [v.10.1.1](#v1011)
@@ -67,6 +68,20 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
 
 ## v.x.y.z
+
+## Approvals::verifyAll and std::initializer_list
+
+Added `std::initializer_list` support to `Approvals::verifyAll()`.
+
+For example:
+
+<!-- snippet: initializer_list -->
+<a id='snippet-initializer_list'></a>
+```cpp
+Approvals::verifyAll({10, 20, 30});
+```
+<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L58-L60' title='File snippet `initializer_list` was extracted from'>snippet source</a> | <a href='#snippet-initializer_list' title='Navigate to start of snippet `initializer_list`'>anchor</a></sup>
+<!-- endsnippet -->
 
 ## v.10.2.0
 
