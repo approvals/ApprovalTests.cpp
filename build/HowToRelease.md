@@ -36,9 +36,14 @@ This is only partially automated at the moment.
 You will need to:
 
 * Once-off Preparation
-    * Fork the [conan-center-index](https://github.com/conan-io/conan-center-index/) repo.
-    * Clone that fork to your machine
+    * Either:
+    * Either:
+        * Fork the [conan-center-index](https://github.com/conan-io/conan-center-index/) repo.
+    * Or:
+        * Request write-permission to [claremacrae/conan-center-index](https://github.com/claremacrae/conan-center-index)
+    * Clone chosen conan-center-index fork to your machine
     * Edit [build/scripts/conan_release.py](/build/scripts/conan_release.py)'s `get_conan_repo_directory()()` to add the relative path to your cloned fork
     * Install Conan
+    * Install the [conan-center hook](https://github.com/conan-io/conan-center-index/blob/master/docs/how_to_add_packages.md#test-the-recipe-locally)
 * Run the release process as normal - this appends lines for your new release to your copy of `conandata.yml`
 * The 'deploy' step will test the changes, and prompt you to submit a pull request
