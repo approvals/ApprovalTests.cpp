@@ -13,6 +13,11 @@ from scripts.utilities import check_step, read_file, write_file, calculate_sha25
 from scripts.version import Version
 
 
+# TODO Check conan installed
+# TODO Check conan uptodate
+# TODO Check conan-hooks installed: https://github.com/conan-io/hooks.git
+# TODO Check conan-hooks uptodate
+
 class PrepareConanRelease:
     @staticmethod
     def check_preconditions(details: ReleaseDetails) -> None:
