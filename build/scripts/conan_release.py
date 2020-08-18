@@ -52,8 +52,7 @@ class PrepareConanRelease:
 
     @staticmethod
     def get_new_branch_name(project_details: ProjectDetails, new_version: Version) -> str:
-        new_branch = f'{project_details.conan_directory_name}.{new_version.get_version_text_without_v()}'
-        return new_branch
+        return f'{project_details.conan_directory_name}.{new_version.get_version_text_without_v()}'
 
     @staticmethod
     def update_conan_recipe(details: ReleaseDetails) -> None:
