@@ -4,6 +4,12 @@
 #include "ApprovalTests.hpp"
 // end-snippet
 
+#include <memory>
+#include "ApprovalTests/reporters/EnvironmentVariableReporter.h"
+
 using namespace ApprovalTests;
 
 auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
+
+auto defaultReporterDisposer =
+    Approvals::useAsDefaultReporter(std::make_shared<EnvironmentVariableReporter>());

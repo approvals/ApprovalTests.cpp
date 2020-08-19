@@ -88,6 +88,8 @@ add_library(${PROJECT_NAME}
         reporters/DiffPrograms.cpp
         reporters/DiffReporter.h
         reporters/DiffReporter.cpp
+        reporters/EnvironmentVariableReporter.cpp
+        reporters/EnvironmentVariableReporter.h
         reporters/FirstWorkingReporter.h
         reporters/FirstWorkingReporter.cpp
         reporters/FrontLoadedReporterDisposer.h
