@@ -106,6 +106,8 @@ namespace ApprovalTests
         {
         public:
             WindowsDiffReporter();
+
+            bool report(std::string received, std::string approved) const override;
         };
     }
 }

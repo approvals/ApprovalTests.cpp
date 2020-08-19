@@ -105,5 +105,14 @@ namespace ApprovalTests
               })
         {
         }
+
+        bool WindowsDiffReporter::report(std::string received, std::string approved) const
+        {
+            if (!SystemUtils::isWindowsOs())
+            {
+                return false;
+            }
+            return FirstWorkingReporter::report(received, approved);
+        }
     }
 }

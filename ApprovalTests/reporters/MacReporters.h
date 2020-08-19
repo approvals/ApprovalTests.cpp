@@ -75,6 +75,8 @@ namespace ApprovalTests
         {
         public:
             MacDiffReporter();
+
+            bool report(std::string received, std::string approved) const override;
         };
     }
 }

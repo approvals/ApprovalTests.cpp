@@ -75,5 +75,14 @@ namespace ApprovalTests
               })
         {
         }
+
+        bool MacDiffReporter::report(std::string received, std::string approved) const
+        {
+            if (!SystemUtils::isMacOs())
+            {
+                return false;
+            }
+            return FirstWorkingReporter::report(received, approved);
+        }
     }
 }
