@@ -104,6 +104,8 @@ add_library(${PROJECT_NAME}
         reporters/MacReporters.cpp
         reporters/QuietReporter.h
         reporters/QuietReporter.cpp
+        reporters/ReporterFactory.cpp
+        reporters/ReporterFactory.h
         reporters/TextDiffReporter.h
         reporters/TextDiffReporter.cpp
         reporters/WindowsReporters.h
