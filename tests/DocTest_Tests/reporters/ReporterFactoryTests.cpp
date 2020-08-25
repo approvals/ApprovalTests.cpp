@@ -12,3 +12,10 @@ TEST_CASE("ReporterFactory creates a Reporter given a string")
     CHECK(reporter);
     CHECK(dynamic_cast<ClipboardReporter*>(reporter.get()));
 }
+
+TEST_CASE("ReporterFactory returns null if reporter is unknown")
+{
+    ReporterFactory factory;
+    std::unique_ptr<Reporter> reporter = factory.createReporter("IDoNotExist");
+    CHECK(!reporter);
+}
