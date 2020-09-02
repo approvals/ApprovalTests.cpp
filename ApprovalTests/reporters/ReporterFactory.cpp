@@ -21,7 +21,6 @@
 #include "ApprovalTests/reporters/TextDiffReporter.h"
 #include "ApprovalTests/reporters/WindowsReporters.h"
 
-
 #include <map>
 #include <functional>
 
@@ -55,7 +54,6 @@ namespace ApprovalTests
         APPROVAL_TESTS_REGISTER_REPORTER(QuietReporter);
         APPROVAL_TESTS_REGISTER_REPORTER(TextDiffReporter);
         // APPROVAL_TESTS_REGISTER_REPORTER(WindowsReporters);
-
 
         auto iter = map.find(reporterName);
         if (iter != map.end())
