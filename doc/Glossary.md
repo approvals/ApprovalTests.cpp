@@ -40,7 +40,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [test && commit || revert (TCR)](#test--commit--revert-tcr)
   * [Writer](#writer)
   * [Yak Shaving](#yak-shaving)
-  * [Sayings](#sayings)<!-- endtoc -->
+  * [Sayings](#sayings)<!-- endToc -->
 
 ## Approving Results
 

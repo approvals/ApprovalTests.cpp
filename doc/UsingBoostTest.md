@@ -17,7 +17,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Requirements](#requirements)
   * [Getting Started With Boost.Test](#getting-started-with-boosttest)
     * [Adding ApprovalTests to your Boost.Test](#adding-approvaltests-to-your-boosttest)
-      * [Understanding Boost.Test Entry points](#understanding-boosttest-entry-points)<!-- endtoc -->
+      * [Understanding Boost.Test Entry points](#understanding-boosttest-entry-points)<!-- endToc -->
 
 ## Introduction
 
@@ -49,7 +49,7 @@ after the boost headers:
 #include "ApprovalTests.hpp"
 ```
 <sup><a href='/tests/Boost_Tests/main.cpp#L8-L12' title='File snippet `boost_test_main` was extracted from'>snippet source</a> | <a href='#snippet-boost_test_main' title='Navigate to start of snippet `boost_test_main`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 #### Understanding Boost.Test Entry points
 
@@ -62,7 +62,7 @@ The entry point is any file that will contain the line:
 #define BOOST_TEST_MODULE ModuleName
 ```
 <sup><a href='/tests/Boost_Tests/main.cpp#L1-L3' title='File snippet `boost_test_entry_point` was extracted from'>snippet source</a> | <a href='#snippet-boost_test_entry_point' title='Navigate to start of snippet `boost_test_entry_point`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ---

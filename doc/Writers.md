@@ -14,7 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Default Behaviour](#default-behaviour)
   * [Using custom writers](#using-custom-writers)
-  * [Using custom filename extensions](#using-custom-filename-extensions)<!-- endtoc -->
+  * [Using custom filename extensions](#using-custom-filename-extensions)<!-- endToc -->
 
 ## Default Behaviour
 
@@ -37,7 +37,7 @@ HtmlWriter writer("<h1>hello world</h1>", ".html");
 Approvals::verify(writer);
 ```
 <sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L11-L14' title='File snippet `use_custom_writer` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_writer' title='Navigate to start of snippet `use_custom_writer`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## Using custom filename extensions
 
@@ -52,7 +52,7 @@ Approvals::verify("<h1>hello world</h1>",
                   Options().fileOptions().withFileExtension(".html"));
 ```
 <sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L19-L22' title='File snippet `use_custom_file_extension` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Navigate to start of snippet `use_custom_file_extension`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ---
 

@@ -16,7 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Steps](#steps)
   * [The Basics](#the-basics)
     * [Passing in a Reporter](#passing-in-a-reporter)
-  * [C++ Language Versions](#c-language-versions)<!-- endtoc -->
+  * [C++ Language Versions](#c-language-versions)<!-- endToc -->
 
 ## When to use Combinations
 
@@ -40,7 +40,7 @@ TEST_CASE("CombinationsStartingPoint")
 }
 ```
 <sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L63-L71' title='File snippet `combinationsstartingpoint` was extracted from'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Navigate to start of snippet `combinationsstartingpoint`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 2. Modify each input container for your chosen values.
 3. Make sure each input type can be converted to a string (See [To String](/doc/ToString.md#how))
@@ -60,7 +60,7 @@ If they are wired up correctly, you will see a file that looks like this: it is 
 
 ```
 <sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.CombinationsStartingPoint.approved.txt#L1-L7' title='File snippet `CombinationTests.CombinationsStartingPoint.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-CombinationTests.CombinationsStartingPoint.approved.txt' title='Navigate to start of snippet `CombinationTests.CombinationsStartingPoint.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 5. Implement the body of your lambda
 6. Make sure that your lambda's return value also has an ostream operator<<
@@ -90,7 +90,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2")
 }
 ```
 <sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L49-L61' title='File snippet `youcanverifycombinationsof2` was extracted from'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Navigate to start of snippet `youcanverifycombinationsof2`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
 
@@ -106,7 +106,7 @@ The format is carefully chosen to show both inputs and outputs, to make the test
 
 ```
 <sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.YouCanVerifyCombinationsOf2.approved.txt#L1-L7' title='File snippet `CombinationTests.YouCanVerifyCombinationsOf2.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt' title='Navigate to start of snippet `CombinationTests.YouCanVerifyCombinationsOf2.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 For advice on effective formatting, see [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top). As you write out larger volumes of data in your approval files, experience has shown that the choice of layout of text in approval files can make a big difference to maintainability of tests, when failures occur.
 
@@ -141,7 +141,7 @@ CombinationApprovals::verifyAllCombinations(
     listOfInput3s);
 ```
 <sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L24-L32' title='File snippet `sample_combinations_of_three` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Navigate to start of snippet `sample_combinations_of_three`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
 
@@ -157,7 +157,7 @@ CombinationApprovals::verifyAllCombinations(
     listOfInput3s);
 ```
 <sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L41-L49' title='File snippet `sample_combinations_of_three_with_auto` was extracted from'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Navigate to start of snippet `sample_combinations_of_three_with_auto`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ---
 

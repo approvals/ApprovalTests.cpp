@@ -30,7 +30,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Getting Started](#getting-started)
   * [ToString (ostream insertion)](#tostring-ostream-insertion)
   * [What's new?](#whats-new)
-  * [Feedback](#feedback)<!-- endtoc -->
+  * [Feedback](#feedback)<!-- endToc -->
 
 ## What are Approval Tests?
 

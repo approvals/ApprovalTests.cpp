@@ -9,7 +9,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 # Testing Single Objects
 
-
+<!-- toc -->
+<!-- endToc -->
 
 The [Tutorial](/doc/Tutorial.md#top) has a work-through of testing a single object.
 

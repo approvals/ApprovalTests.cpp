@@ -18,7 +18,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Use CMake to generate Visual Studio 2017 configuration](#use-cmake-to-generate-visual-studio-2017-configuration)
   * [CLion](#clion)
     * [Use CLion with Visual Studio installed](#use-clion-with-visual-studio-installed)
-    * [Run CLion with cygwin as toolset](#run-clion-with-cygwin-as-toolset)<!-- endtoc -->
+    * [Run CLion with cygwin as toolset](#run-clion-with-cygwin-as-toolset)<!-- endToc -->
 
 ## Prerequisites
 

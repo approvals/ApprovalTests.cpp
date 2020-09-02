@@ -16,7 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Usage](#usage)
   * [Installation](#installation)
     * [Bring your own](#bring-your-own)
-    * [Set as default for Approvals](#set-as-default-for-approvals)<!-- endtoc -->
+    * [Set as default for Approvals](#set-as-default-for-approvals)<!-- endToc -->
 
 ## Introduction
 
@@ -35,7 +35,7 @@ std::vector<int> numbers = {1, 2, 3};
 FmtApprovals::verify(numbers);
 ```
 <sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L14-L17' title='File snippet `fmt_approvals` was extracted from'>snippet source</a> | <a href='#snippet-fmt_approvals' title='Navigate to start of snippet `fmt_approvals`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 This will produce the following output:
 
@@ -45,7 +45,7 @@ This will produce the following output:
 {1, 2, 3}
 ```
 <sup><a href='/examples/fmt_approvals_demo/approval_tests/FmtTests.FmtContainers.approved.txt#L1-L1' title='File snippet `FmtTests.FmtContainers.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-FmtTests.FmtContainers.approved.txt' title='Navigate to start of snippet `FmtTests.FmtContainers.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 **note:** it is important that we included fmt before approvaltests.
 
@@ -55,7 +55,7 @@ This will produce the following output:
 #include <fmt/ranges.h>
 ```
 <sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L4-L6' title='File snippet `fmt_includes` was extracted from'>snippet source</a> | <a href='#snippet-fmt_includes' title='Navigate to start of snippet `fmt_includes`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## Installation
 
@@ -71,7 +71,7 @@ If you would like to see how we added fmt to our build, check out:
 target_link_libraries(${PROJECT_NAME} fmt::fmt)
 ```
 <sup><a href='/examples/fmt_approvals_demo/CMakeLists.txt#L9-L11' title='File snippet `fmt_cmake` was extracted from'>snippet source</a> | <a href='#snippet-fmt_cmake' title='Navigate to start of snippet `fmt_cmake`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 [fmt/CmakeList.txt](/CMake/fmt/CMakeLists.txt)  
 
@@ -87,7 +87,7 @@ If you wish, you can set FmtApprovals to be the default Approvals with the follo
 #define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER FmtToString
 ```
 <sup><a href='/examples/fmt_approvals_demo/FmtAsDefault.h#L3-L5' title='File snippet `fmt_set_as_default` was extracted from'>snippet source</a> | <a href='#snippet-fmt_set_as_default' title='Navigate to start of snippet `fmt_set_as_default`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ---

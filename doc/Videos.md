@@ -17,7 +17,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [C++ on Sea, February 2019](#c-on-sea-february-2019)
     * [CPPP, June 2019](#cppp-june-2019)
   * [Quickly Testing Legacy C++ Code with Approval Tests - by Clare Macrae](#quickly-testing-legacy-c-code-with-approval-tests---by-clare-macrae)
-    * [CppCon, September 2019](#cppcon-september-2019)<!-- endtoc -->
+    * [CppCon, September 2019](#cppcon-september-2019)<!-- endToc -->
 
 
 ## Quickly Testing Legacy Code - by Clare Macrae

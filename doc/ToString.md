@@ -20,7 +20,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Specialize StringMaker](#specialize-stringmaker)
     * [gcc 5 & 6](#gcc-5--6)
   * [Use `TApprovals<YourStringConvertingClass>`](#use-tapprovalsyourstringconvertingclass)
-  * [See also](#see-also)<!-- endtoc -->
+  * [See also](#see-also)<!-- endToc -->
 
 ## Introduction
 
@@ -57,7 +57,7 @@ friend std::ostream& operator<<(std::ostream& os, const Rectangle1& rectangle)
 }
 ```
 <sup><a href='/tests/DocTest_Tests/docs/ToStringExample.cpp#L13-L20' title='File snippet `to_string_standard_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_standard_example' title='Navigate to start of snippet `to_string_standard_example`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
 
@@ -75,7 +75,7 @@ friend STREAM& operator<<(STREAM& os, const Rectangle2& rectangle)
 }
 ```
 <sup><a href='/tests/DocTest_Tests/docs/ToStringTemplateExample.cpp#L15-L23' title='File snippet `to_string_template_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_template_example' title='Navigate to start of snippet `to_string_template_example`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Wrapper classes or functions can be used to provide additional output formats for types of data:
 
@@ -110,7 +110,7 @@ TEST_CASE("AlternativeFormattingCanBeEasyToRead")
 }
 ```
 <sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L37-L64' title='File snippet `to_string_wrapper_example` was extracted from'>snippet source</a> | <a href='#snippet-to_string_wrapper_example' title='Navigate to start of snippet `to_string_wrapper_example`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 **Note** The output operator (`<<`) needs to be declared before Approval Tests. Usually this is handled by putting it in its own header file, and including that at the top of the test source code.
 
@@ -130,7 +130,7 @@ std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& pri
 }
 ```
 <sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L48-L54' title='File snippet `customising_to_string_with_string_maker_specialization` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_string_maker_specialization' title='Navigate to start of snippet `customising_to_string_with_string_maker_specialization`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ### gcc 5 & 6
 
@@ -148,7 +148,7 @@ namespace ApprovalTests
 }
 ```
 <sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L38-L46' title='File snippet `customising_to_string_with_string_maker_specialization_gcc5_and_6` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_string_maker_specialization_gcc5_and_6' title='Navigate to start of snippet `customising_to_string_with_string_maker_specialization_gcc5_and_6`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## Use `TApprovals<YourStringConvertingClass>`
 
@@ -170,7 +170,7 @@ public:
 };
 ```
 <sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L79-L88' title='File snippet `customising_to_string_with_custom_to_string_class` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 However, this alone will not do anything. You now need to call a variation of Approvals that uses it.
 You can do this directly by:
@@ -182,7 +182,7 @@ ApprovalTests::TApprovals<
     ApprovalTests::ToStringCompileTimeOptions<CustomToStringClass>>::verify(p);
 ```
 <sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L93-L96' title='File snippet `customising_to_string_with_custom_to_string_class_usage1` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage1' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage1`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Or you can create your own custom alias to use your customisation:
 
@@ -195,7 +195,7 @@ using MyApprovals = ApprovalTests::TApprovals<
 MyApprovals::verify(p);
 ```
 <sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L102-L107' title='File snippet `customising_to_string_with_custom_to_string_class_usage2` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage2' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage2`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 With `MyApprovals::verify()`, we have not changed the behavior of `Approvals::verify()`.
 
@@ -207,7 +207,7 @@ If, instead, you want to change the default string formatting, so that all calls
 #define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER StringMaker
 ```
 <sup><a href='/ApprovalTests/Approvals.h#L245-L247' title='File snippet `customising_to_string_default_converter` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_default_converter' title='Navigate to start of snippet `customising_to_string_default_converter`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## See also
 

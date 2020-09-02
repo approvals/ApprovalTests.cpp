@@ -18,7 +18,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Solutions](#solutions)
     * [Check the instructions for your test framework](#check-the-instructions-for-your-test-framework)
     * [Check Google Test Framework](#check-google-test-framework)
-    * [Other Issues](#other-issues)<!-- endtoc -->
+    * [Other Issues](#other-issues)<!-- endToc -->
 
 ## Symptoms
 
@@ -80,7 +80,7 @@ Running tests - using ApprovalTest v.10.1.0 or earlier - gives the following out
 *****************************************************************************
 ```
 <sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessage.approved.txt#L1-L35' title='File snippet `ForgottenToConfigure.HelpMessage.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessage.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessage.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## Solutions
 

@@ -18,7 +18,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Example 2. Using Conan's cmake generator](#example-2-using-conans-cmake-generator)
     * [Example 3. Making CMake invoke Conan](#example-3-making-cmake-invoke-conan)
   * [Other people's examples](#other-peoples-examples)
-  * [Links](#links)<!-- endtoc -->
+  * [Links](#links)<!-- endToc -->
 
 ## Using Conan to obtain ApprovalTests.cpp
 
@@ -58,7 +58,7 @@ cmake_find_package
 cmake_paths
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_conanfile.include.md. path:  -->
+ <!-- endInclude -->
 
 There are two choices for the CMake instructions used in the top-level CMakeLists.txt file with these generators, as explained in the comments here:
 
@@ -84,7 +84,7 @@ enable_testing()
 add_subdirectory(tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_cmakelists.include.md. path:  -->
+ <!-- endInclude -->
 
 And the CMakeLists.txt that builds the tests is as follows (note the standard library target names):
 
@@ -108,7 +108,7 @@ add_test(
         COMMAND tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_tests_cmakelists.include.md. path:  -->
+ <!-- endInclude -->
 
 Example set of build commands to download dependencies, make the test program and run the tests:
 
@@ -125,7 +125,7 @@ cmake --build .
 ctest .
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/build.sh' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_build.include.md. path:  -->
+ <!-- endInclude -->
 
 ### Example 2. Using Conan's cmake generator
 
@@ -148,7 +148,7 @@ approvaltests.cpp/8.8.0
 cmake
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_conanfile.include.md. path:  -->
+ <!-- endInclude -->
 
 The `conan` generator generates a `conanbuildinfo.cmake` file, which needs to used in the top-level CMakeLists.txt file like this:
 
@@ -169,7 +169,7 @@ enable_testing()
 add_subdirectory(tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md. path:  -->
+ <!-- endInclude -->
 
 And the CMakeLists.txt that builds the tests is as follows (note the Conan-specific library target names):
 
@@ -197,7 +197,7 @@ add_test(
         COMMAND tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md. path:  -->
+ <!-- endInclude -->
 
 Example set of build commands to download dependencies, make the test program and run the tests:
 
@@ -214,7 +214,7 @@ cmake --build .
 ctest .
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/build.sh' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_build.include.md. path:  -->
+ <!-- endInclude -->
 
 ### Example 3. Making CMake invoke Conan
 
@@ -243,7 +243,7 @@ approvaltests.cpp/8.8.0
 # CMake code will take care of that for us.
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_conanfile.include.md. path:  -->
+ <!-- endInclude -->
 
 There is a CMake file called `CMake/Conan.cmake` which contains instructions for downloading a specific version of the cmake-conan CMake module:
 
@@ -275,7 +275,7 @@ conan_cmake_run(
 endmacro()
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/CMake/Conan.cmake' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_CMake_conan.include.md. path:  -->
+ <!-- endInclude -->
 
 The top-level CMakeLists.txt file includes the above `CMake/Conan.cmake` file, and runs the macro that it contained:
 
@@ -295,7 +295,7 @@ enable_testing()
 add_subdirectory(tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_cmakelists.include.md. path:  -->
+ <!-- endInclude -->
 
 And the CMakeLists.txt that builds the tests is as follows (note the Conan-specific library target names):
 
@@ -323,7 +323,7 @@ add_test(
         COMMAND tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_tests_cmakelists.include.md. path:  -->
+ <!-- endInclude -->
 
 Example set of build commands to download dependencies, make the test program and run the tests - note that there isno line to run conan:
 
@@ -341,7 +341,7 @@ cmake --build .
 ctest .
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/build.sh' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_build.include.md. path:  -->
+ <!-- endInclude -->
 
 ## Other people's examples
 

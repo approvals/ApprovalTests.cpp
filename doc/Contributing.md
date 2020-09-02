@@ -21,7 +21,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Coding Patterns](#coding-patterns)
   * [Documentation](#documentation)
   * [Releases](#releases)
-  * [Running shell scripts in cygwin](#running-shell-scripts-in-cygwin)<!-- endtoc -->
+  * [Running shell scripts in cygwin](#running-shell-scripts-in-cygwin)<!-- endToc -->
 
 
 

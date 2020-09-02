@@ -14,7 +14,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [When to use Approvals::verifyAll()](#when-to-use-approvalsverifyall)
   * [Steps](#steps)
-  * [Further Advice](#further-advice)<!-- endtoc -->
+  * [Further Advice](#further-advice)<!-- endToc -->
 
 ## When to use Approvals::verifyAll()
 
@@ -39,7 +39,7 @@ TEST_CASE("VerifyAllStartingPoint")
 }
 ```
 <sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L39-L48' title='File snippet `verifyallstartingpoint` was extracted from'>snippet source</a> | <a href='#snippet-verifyallstartingpoint' title='Navigate to start of snippet `verifyallstartingpoint`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 2. Modify the input container for your chosen values.
 3. Run it, and make sure that you have your inputs wired up correctly.
@@ -57,7 +57,7 @@ input.value2 => placeholder
 
 ```
 <sup><a href='/tests/DocTest_Tests/approval_tests/VectorTests.VerifyAllStartingPoint.approved.txt#L1-L6' title='File snippet `VectorTests.VerifyAllStartingPoint.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-VectorTests.VerifyAllStartingPoint.approved.txt' title='Navigate to start of snippet `VectorTests.VerifyAllStartingPoint.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 4. Replace the "placeholder" with a call to the functionality that you want to test.
 5. Change the TITLE to something meaningful

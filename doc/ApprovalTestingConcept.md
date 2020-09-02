@@ -19,7 +19,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
       * [The problem](#the-problem)
     * [2 ToString verification](#2-tostring-verification)
       * [The technique](#the-technique-1)
-      * [The problem](#the-problem-1)<!-- endtoc -->
+      * [The problem](#the-problem-1)<!-- endToc -->
 
 
 This is also referred to as snapshot testing, or golden master testing.

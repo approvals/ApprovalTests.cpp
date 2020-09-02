@@ -15,7 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Concept](#concept)
     * [Via Diff Tool](#via-diff-tool)
     * [Via command line](#via-command-line)
-    * [Via file rename](#via-file-rename)<!-- endtoc -->
+    * [Via file rename](#via-file-rename)<!-- endToc -->
 
 ## Concept
 

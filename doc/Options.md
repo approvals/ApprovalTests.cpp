@@ -21,7 +21,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [File Options](#file-options)
     * [File Extensions](#file-extensions)
   * [Defaults](#defaults)
-  * [Adding to Existing Options object](#adding-to-existing-options-object)<!-- endtoc -->
+  * [Adding to Existing Options object](#adding-to-existing-options-object)<!-- endToc -->
 
 ## Introduction
 
@@ -43,7 +43,7 @@ Options()
     .fileOptions().withFileExtension(".json")
 ```
 <sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L47-L52' title='File snippet `specify_all_the_options` was extracted from'>snippet source</a> | <a href='#snippet-specify_all_the_options' title='Navigate to start of snippet `specify_all_the_options`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## Reporters
 
@@ -57,7 +57,7 @@ Options()
 Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter()));
 ```
 <sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L15-L17' title='File snippet `basic_approval_with_reporter` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Navigate to start of snippet `basic_approval_with_reporter`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 2. Call `.withReporter()` on an existing Options object, for example:
 
@@ -68,7 +68,7 @@ Approvals::verify("text to be verified",
                   Options().withReporter(Mac::AraxisMergeReporter()));
 ```
 <sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L22-L25' title='File snippet `basic_approval_with_reporter_2` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter_2' title='Navigate to start of snippet `basic_approval_with_reporter_2`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## Scrubbers
 
@@ -83,7 +83,7 @@ There are two ways to set a Scrubber.
 Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
 ```
 <sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L60-L62' title='File snippet `basic_approval_with_scrubber` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber' title='Navigate to start of snippet `basic_approval_with_scrubber`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 2. Call `.withScrubber()` with a function pointer, for example:
 
@@ -93,7 +93,7 @@ Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
 Approvals::verifyAll("IDs", v, Options().withScrubber(Scrubbers::scrubGuid));
 ```
 <sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L70-L72' title='File snippet `basic_approval_with_scrubber_2` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber_2' title='Navigate to start of snippet `basic_approval_with_scrubber_2`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## File Options
 
@@ -112,7 +112,7 @@ Approvals::verify("text to be verified",
                   Options().fileOptions().withFileExtension(".xyz"));
 ```
 <sup><a href='/tests/DocTest_Tests/core/OptionsTests.cpp#L73-L76' title='File snippet `basic_approval_with_file_extension` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_file_extension' title='Navigate to start of snippet `basic_approval_with_file_extension`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 **Note:** `withFileExtension()` returns an `Options` object, so it's possible to keep appending more `with...()` calls.  
 

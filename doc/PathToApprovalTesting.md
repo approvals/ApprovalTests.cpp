@@ -9,7 +9,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 # The Path to Approval Testing
 
-
+<!-- toc -->
+<!-- endToc -->
 
 You are undoubtedly doing some form of Approval testing already. The most basic form would be writing `REQUIRE(42 == 6 * 9)`, then running it, getting the result `42 != 54` and then changing the code to say `REQUIRE(54 == 6 * 9)`.
 

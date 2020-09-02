@@ -66,7 +66,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Blocking Reporter](#blocking-reporter)
     * [Machine Blockers](#machine-blockers)
     * [Front Loaded Reporters](#front-loaded-reporters)
-    * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
+    * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
 
@@ -84,7 +84,7 @@ For example:
 Approvals::verifyAll({10, 20, 30});
 ```
 <sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L58-L60' title='File snippet `initializer_list` was extracted from'>snippet source</a> | <a href='#snippet-initializer_list' title='Navigate to start of snippet `initializer_list`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## v.10.2.0
 
@@ -305,7 +305,7 @@ TEST_CASE("Only run this test on John's machine")
 }
 ```
 <sup><a href='/tests/DocTest_Tests/utilities/MachineBlockerTests.cpp#L22-L33' title='File snippet `machine_specific_test_runner` was extracted from'>snippet source</a> | <a href='#snippet-machine_specific_test_runner' title='Navigate to start of snippet `machine_specific_test_runner`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ### Front Loaded Reporters
 

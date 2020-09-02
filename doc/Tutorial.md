@@ -20,7 +20,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [The ApprovalTests namespace](#the-approvaltests-namespace)
   * [Approving Objects](#approving-objects)
   * [Dealing with test failures](#dealing-with-test-failures)
-  * [Demo](#demo)<!-- endtoc -->
+  * [Demo](#demo)<!-- endToc -->
 
 The tutorial is written for someone with a decent understanding of C++, a passing understanding of traditional unit testing and of diff tools, and no experience with Approval Tests at all.
 
@@ -47,7 +47,7 @@ TEST_CASE("HelloApprovals")
 }
 ```
 <sup><a href='/tests/DocTest_Tests/docs/Tutorial.cpp#L16-L21' title='File snippet `hello_approvals` was extracted from'>snippet source</a> | <a href='#snippet-hello_approvals' title='Navigate to start of snippet `hello_approvals`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ### Approving the Test
 
@@ -107,7 +107,7 @@ In all other code examples in this site, have already included the code:
 using namespace ApprovalTests;
 ```
 <sup><a href='/tests/DocTest_Tests/docs/Tutorial.cpp#L8-L10' title='File snippet `using_namespace_approvaltests` was extracted from'>snippet source</a> | <a href='#snippet-using_namespace_approvaltests' title='Navigate to start of snippet `using_namespace_approvaltests`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ... So that code samples are simpler and easier to read. This is a recommended practice in your tests.
 
@@ -146,7 +146,7 @@ public:
 };
 ```
 <sup><a href='/tests/DocTest_Tests/docs/Tutorial.cpp#L23-L50' title='File snippet `library_book` was extracted from'>snippet source</a> | <a href='#snippet-library_book' title='Navigate to start of snippet `library_book`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 What we would like to be able to write is:
 
@@ -160,7 +160,7 @@ LibraryBook harry_potter(
 Approvals::verify(harry_potter); // This does not compile
 ```
 <sup><a href='/tests/DocTest_Tests/docs/Tutorial.cpp#L56-L62' title='File snippet `non_printable_object` was extracted from'>snippet source</a> | <a href='#snippet-non_printable_object' title='Navigate to start of snippet `non_printable_object`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 The problem is that this will not compile, because at present there is no way to turn the LibraryBook in to a string representation.
 
@@ -176,7 +176,7 @@ Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os) {
 });
 ```
 <sup><a href='/tests/DocTest_Tests/docs/Tutorial.cpp#L75-L79' title='File snippet `printable_object_simple` was extracted from'>snippet source</a> | <a href='#snippet-printable_object_simple' title='Navigate to start of snippet `printable_object_simple`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 There's a lot going on here, so let's break it down:
 
@@ -198,7 +198,7 @@ Approvals::verify(harry_potter, [](const LibraryBook& b, std::ostream& os) {
 });
 ```
 <sup><a href='/tests/DocTest_Tests/docs/Tutorial.cpp#L91-L100' title='File snippet `printable_object` was extracted from'>snippet source</a> | <a href='#snippet-printable_object' title='Navigate to start of snippet `printable_object`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 When you run and approve this, you will end up with the approval file:
 
@@ -214,7 +214,7 @@ isbn: 978-0439139595
 
 ```
 <sup><a href='/tests/DocTest_Tests/docs/approval_tests/Tutorial.WritableBooks2.approved.txt#L1-L7' title='File snippet `Tutorial.WritableBooks2.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-Tutorial.WritableBooks2.approved.txt' title='Navigate to start of snippet `Tutorial.WritableBooks2.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 If you would like to know how to do this more robustly, check out [To String](/doc/ToString.md#top).
 

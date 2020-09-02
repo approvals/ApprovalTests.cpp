@@ -12,7 +12,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endtoc -->
+  * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## Using sub-directories for approved files
 
@@ -24,7 +24,7 @@ If you have a lot of approval files, you might want to put them in a subdirector
 auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
 ```
 <sup><a href='/tests/Catch2_Tests/main.cpp#L14-L16' title='File snippet `use_subdirectory_in_main` was extracted from'>snippet source</a> | <a href='#snippet-use_subdirectory_in_main' title='Navigate to start of snippet `use_subdirectory_in_main`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Note that the sub-directory is created automatically, and that it will be inside the directory containing the source code of the test, not the current working directory of the test process.
 

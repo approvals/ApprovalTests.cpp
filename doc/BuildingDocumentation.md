@@ -31,7 +31,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
       * [Doxygen Details](#doxygen-details)
     * [Step3: reStructuredText and Sphinx](#step3-restructuredtext-and-sphinx)
       * [Sphinx Summary](#sphinx-summary)
-      * [Sphinx Details](#sphinx-details)<!-- endtoc -->
+      * [Sphinx Details](#sphinx-details)<!-- endToc -->
 
 ## Introduction
 

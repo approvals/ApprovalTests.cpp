@@ -12,7 +12,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [Static variables for header-only releases](#static-variables-for-header-only-releases)<!-- endtoc -->
+  * [Static variables for header-only releases](#static-variables-for-header-only-releases)<!-- endToc -->
 
 ## Static variables for header-only releases
 
@@ -34,7 +34,7 @@ public:
     static void setDefaultReporter(const std::shared_ptr<Reporter>& reporter);
 ```
 <sup><a href='/ApprovalTests/reporters/DefaultReporterFactory.h#L12-L20' title='File snippet `static_variable_sample_header` was extracted from'>snippet source</a> | <a href='#snippet-static_variable_sample_header' title='Navigate to start of snippet `static_variable_sample_header`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 <!-- snippet: static_variable_sample_implementation -->
 <a id='snippet-static_variable_sample_implementation'></a>
@@ -60,7 +60,7 @@ namespace ApprovalTests
 }
 ```
 <sup><a href='/ApprovalTests/reporters/DefaultReporterFactory.cpp#L4-L24' title='File snippet `static_variable_sample_implementation` was extracted from'>snippet source</a> | <a href='#snippet-static_variable_sample_implementation' title='Navigate to start of snippet `static_variable_sample_implementation`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Note the use of the reference (&) on the return type of the private method, and the addition of a getter and setter method.
 

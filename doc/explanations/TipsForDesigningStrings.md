@@ -17,7 +17,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Composability](#composability)
   * [Lists](#lists)
   * [Tools](#tools)
-  * [How to Implement This](#how-to-implement-this)<!-- endtoc -->
+  * [How to Implement This](#how-to-implement-this)<!-- endToc -->
 
 
 When you use Approval tests, the results of the things you are testing are going to be stored on disk. It is good if you can diff the files, to gain an understanding of what is created and how they change. Mainly this is done by creating strings.
@@ -64,7 +64,7 @@ Here's an example of verifing a list of rectangles
 Approvals::verifyAll("rectangles", getRectangles());
 ```
 <sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L32-L34' title='File snippet `verify_list` was extracted from'>snippet source</a> | <a href='#snippet-verify_list' title='Navigate to start of snippet `verify_list`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Notice how this:
 
@@ -80,7 +80,7 @@ rectangles
 
 ```
 <sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L7' title='File snippet `ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt' title='Navigate to start of snippet `ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 compares to this:
 
@@ -96,7 +96,7 @@ rectangles
 
 ```
 <sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L7' title='File snippet `ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt' title='Navigate to start of snippet `ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## Tools
 

@@ -15,7 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [When to test a container](#when-to-test-a-container)
   * [Steps](#steps)
   * [More Examples](#more-examples)
-  * [Further Advice](#further-advice)<!-- endtoc -->
+  * [Further Advice](#further-advice)<!-- endToc -->
 
 ## When to test a container
 
@@ -32,7 +32,7 @@ std::vector<std::string> objectsToVerify{"hello", "world"};
 Approvals::verifyAll("TITLE", objectsToVerify);
 ```
 <sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L25-L28' title='File snippet `verifyallstartingpointcontainer` was extracted from'>snippet source</a> | <a href='#snippet-verifyallstartingpointcontainer' title='Navigate to start of snippet `verifyallstartingpointcontainer`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 which would produce:
 
@@ -47,7 +47,7 @@ TITLE
 
 ```
 <sup><a href='/tests/DocTest_Tests/approval_tests/VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt#L1-L6' title='File snippet `VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt' title='Navigate to start of snippet `VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 2. Replace the `objectsToVerify` container with your collection of objects.
 3. Change the TITLE to something meaningful

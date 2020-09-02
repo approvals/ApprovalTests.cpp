@@ -17,7 +17,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Opting in](#opting-in)
     * [Show warnings](#show-warnings)
     * [Hide deprecated code](#hide-deprecated-code)
-  * [How to Update Calls to Deprecated Code](#how-to-update-calls-to-deprecated-code)<!-- endtoc -->
+  * [How to Update Calls to Deprecated Code](#how-to-update-calls-to-deprecated-code)<!-- endToc -->
 
 ## Introduction
 
@@ -49,7 +49,7 @@ To opt in to warnings, add this line to your C++ code:
 #define APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS 1
 ```
 <sup><a href='/examples/doctest_existing_main/DoctestApprovalsTests.cpp#L1-L3' title='File snippet `show_deprecation_warnings` was extracted from'>snippet source</a> | <a href='#snippet-show_deprecation_warnings' title='Navigate to start of snippet `show_deprecation_warnings`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Or this to your CMakeLists.txt:
 
@@ -59,8 +59,8 @@ Or this to your CMakeLists.txt:
 # Replace ${PROJECT_NAME} with the name of your test executable:
 target_compile_definitions(${PROJECT_NAME} PRIVATE -DAPPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS=1)
 ```
-<sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L52-L55' title='File snippet `show_deprecation_warnings_cmake` was extracted from'>snippet source</a> | <a href='#snippet-show_deprecation_warnings_cmake' title='Navigate to start of snippet `show_deprecation_warnings_cmake`'>anchor</a></sup>
-<!-- endsnippet -->
+<sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L54-L57' title='File snippet `show_deprecation_warnings_cmake` was extracted from'>snippet source</a> | <a href='#snippet-show_deprecation_warnings_cmake' title='Navigate to start of snippet `show_deprecation_warnings_cmake`'>anchor</a></sup>
+<!-- endSnippet -->
 
 ### Hide deprecated code
 
@@ -72,7 +72,7 @@ A more extreme version of this is to not even compile the deprecated code. You c
 #define APPROVAL_TESTS_HIDE_DEPRECATED_CODE 1
 ```
 <sup><a href='/examples/doctest_existing_main/DoctestApprovalsTests.cpp#L5-L7' title='File snippet `hide_deprecated_code` was extracted from'>snippet source</a> | <a href='#snippet-hide_deprecated_code' title='Navigate to start of snippet `hide_deprecated_code`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Or this to your CMakeLists.txt:
 
@@ -82,8 +82,8 @@ Or this to your CMakeLists.txt:
 # Replace ${PROJECT_NAME} with the name of your test executable:
 target_compile_definitions(${PROJECT_NAME} PRIVATE -DAPPROVAL_TESTS_HIDE_DEPRECATED_CODE=1)
 ```
-<sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L57-L60' title='File snippet `hide_deprecated_code_cmake` was extracted from'>snippet source</a> | <a href='#snippet-hide_deprecated_code_cmake' title='Navigate to start of snippet `hide_deprecated_code_cmake`'>anchor</a></sup>
-<!-- endsnippet -->
+<sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L59-L62' title='File snippet `hide_deprecated_code_cmake` was extracted from'>snippet source</a> | <a href='#snippet-hide_deprecated_code_cmake' title='Navigate to start of snippet `hide_deprecated_code_cmake`'>anchor</a></sup>
+<!-- endSnippet -->
 
 ## How to Update Calls to Deprecated Code
 
@@ -93,7 +93,7 @@ As such, you can always open up the method to see how to convert your code.
 
 If you IDE supports inlining, you can also select your old function call, and inline just that one line, and your IDE will update the code for you.
 
-**Note** If you are reading this after we have removed the deprecated methods, please download a slightly earlier release, and then follow one of the steps above. <!-- end include: updating_deprecated_code. path: /doc/how_tos/mdsource/updating_deprecated_code.include.md -->
+**Note** If you are reading this after we have removed the deprecated methods, please download a slightly earlier release, and then follow one of the steps above. <!-- endInclude -->
 
 ---
 

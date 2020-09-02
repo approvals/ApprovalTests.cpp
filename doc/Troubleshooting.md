@@ -16,7 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Test gives "You have forgotten to configure your test framework..."](#test-gives-you-have-forgotten-to-configure-your-test-framework)
   * [Test gives "There seems to be a problem with your build configuration"](#test-gives-there-seems-to-be-a-problem-with-your-build-configuration)
   * [My custom reporter works in development, but not CI](#my-custom-reporter-works-in-development-but-not-ci)
-  * [Running Catch2 tests in CLion gives 'unexpected exception'](#running-catch2-tests-in-clion-gives-unexpected-exception)<!-- endtoc -->
+  * [Running Catch2 tests in CLion gives 'unexpected exception'](#running-catch2-tests-in-clion-gives-unexpected-exception)<!-- endToc -->
 
 
 ## Test gives "You have forgotten to configure your test framework..."
@@ -65,7 +65,7 @@ Running tests gives the following output:
 *****************************************************************************
 ```
 <sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessage.approved.txt#L1-L35' title='File snippet `ForgottenToConfigure.HelpMessage.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessage.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessage.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 **Things to check:**
 
@@ -86,7 +86,7 @@ Compiling tests in Ninja-generated builds gives a compilation failure, with this
 __FILE__
 ```
 <sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L21-L26' title='File snippet `compiler_error_for_misconfigured_build` was extracted from'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Navigate to start of snippet `compiler_error_for_misconfigured_build`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 **Symptom 2: Test Failure**
 
@@ -109,7 +109,7 @@ Running tests in Ninja-generated builds gives output such as the following:
 *****************************************************************************
 ```
 <sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt#L1-L12' title='File snippet `ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 **Things to check:**
 

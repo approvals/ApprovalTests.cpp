@@ -20,7 +20,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Opting in](#opting-in)
   * [How to Update Calls to Deprecated Code](#how-to-update-calls-to-deprecated-code)
     * [Updating verify(..., Reporter)](#updating-verify-reporter)
-    * [Updating verifyWithExtension(..., fileExtensionWithDot, Reporter)](#updating-verifywithextension-fileextensionwithdot-reporter)<!-- endtoc -->
+    * [Updating verifyWithExtension(..., fileExtensionWithDot, Reporter)](#updating-verifywithextension-fileextensionwithdot-reporter)<!-- endToc -->
 
 ## Introduction
 
@@ -90,7 +90,7 @@ As such, you can always open up the method to see how to convert your code.
 
 If you IDE supports inlining, you can also select your old function call, and inline just that one line, and your IDE will update the code for you.
 
-**Note** If you are reading this after we have removed the deprecated methods, please download a slightly earlier release, and then follow one of the steps above. <!-- end include: updating_deprecated_code. path: /doc/how_tos/mdsource/updating_deprecated_code.include.md -->
+**Note** If you are reading this after we have removed the deprecated methods, please download a slightly earlier release, and then follow one of the steps above. <!-- endInclude -->
 
 ### Updating verify(..., Reporter)
 
@@ -104,7 +104,7 @@ This is an example what the new code would look like:
 Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter()));
 ```
 <sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L15-L17' title='File snippet `basic_approval_with_reporter` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Navigate to start of snippet `basic_approval_with_reporter`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ### Updating verifyWithExtension(..., fileExtensionWithDot, Reporter)
 
@@ -123,7 +123,7 @@ Approvals::verify("<h1>hello world</h1>",
                   Options().fileOptions().withFileExtension(".html"));
 ```
 <sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L19-L22' title='File snippet `use_custom_file_extension` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Navigate to start of snippet `use_custom_file_extension`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ---
 

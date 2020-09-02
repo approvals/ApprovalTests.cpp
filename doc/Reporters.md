@@ -22,7 +22,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Blocking Reporters](#blocking-reporters)
   * [Miscellaneous Helper Reporters](#miscellaneous-helper-reporters)
     * [Auto-approving](#auto-approving)
-  * [Related Pages](#related-pages)<!-- endtoc -->
+  * [Related Pages](#related-pages)<!-- endToc -->
 
 
 ## Supported Diff Tools
@@ -47,7 +47,7 @@ new VisualStudioCodeReporter(),
 new CLionDiffReporter()
 ```
 <sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L63-L74' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ### Linux
 
@@ -61,7 +61,7 @@ new KDiff3Reporter()
 // Note: ApprovalTests::Mac::CLionDiffReporter also works on Linux
 ```
 <sup><a href='/ApprovalTests/reporters/LinuxReporters.cpp#L55-L61' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ### Windows
 
@@ -79,7 +79,7 @@ new KDiff3Reporter(),
 new VisualStudioCodeReporter(),
 ```
 <sup><a href='/ApprovalTests/reporters/WindowsReporters.cpp#L94-L104' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## Registering a default reporter
 
@@ -94,7 +94,7 @@ auto defaultReporterDisposer =
     Approvals::useAsDefaultReporter(std::make_shared<DiffReporter>());
 ```
 <sup><a href='/tests/Catch2_Tests/main.cpp#L18-L23' title='File snippet `use_as_default_reporter_in_main` was extracted from'>snippet source</a> | <a href='#snippet-use_as_default_reporter_in_main' title='Navigate to start of snippet `use_as_default_reporter_in_main`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 The return value is ["Disposable"](/doc/DisposableObjects.md#top), meaning it will restore the original reporter when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
 
@@ -116,7 +116,7 @@ auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedRepor
     ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName"));
 ```
 <sup><a href='/examples/googletest_existing_main/main.cpp#L19-L23' title='File snippet `do_not_report_on_named_machine` was extracted from'>snippet source</a> | <a href='#snippet-do_not_report_on_named_machine' title='Navigate to start of snippet `do_not_report_on_named_machine`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Once you have added that, even calling approvals with a specific Reporter will not launch it on the CI system (but will for all other systems). For example:
 
@@ -126,7 +126,7 @@ Once you have added that, even calling approvals with a specific Reporter will n
 Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter()));
 ```
 <sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L15-L17' title='File snippet `basic_approval_with_reporter` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Navigate to start of snippet `basic_approval_with_reporter`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ### Blocking Reporters
 
@@ -140,7 +140,7 @@ auto frontLoadedReportDisposer = ApprovalTests::Approvals::useAsFrontLoadedRepor
     ApprovalTests::BlockingReporter::onMachineNamed("MyCIMachineName"));
 ```
 <sup><a href='/examples/googletest_existing_main/main.cpp#L19-L23' title='File snippet `do_not_report_on_named_machine` was extracted from'>snippet source</a> | <a href='#snippet-do_not_report_on_named_machine' title='Navigate to start of snippet `do_not_report_on_named_machine`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## Miscellaneous Helper Reporters
 

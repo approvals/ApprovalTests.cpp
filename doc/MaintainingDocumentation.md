@@ -23,7 +23,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Managing CMake code samples](#managing-cmake-code-samples)
   * [Checking the documentation](#checking-the-documentation)
     * [Automated checking of links in documentation](#automated-checking-of-links-in-documentation)
-    * [Other checks of documentation](#other-checks-of-documentation)<!-- endtoc -->
+    * [Other checks of documentation](#other-checks-of-documentation)<!-- endToc -->
 
 We welcome improvements to the documentation! Here's how we manage the documentation files. 
 

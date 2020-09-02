@@ -27,7 +27,7 @@ TeamCity,
 Travis,
 ```
 <sup><a href='/ApprovalTests/reporters/CIBuildOnlyReporter.cpp#L34-L42' title='File snippet `supported_ci_systems` was extracted from'>snippet source</a> | <a href='#snippet-supported_ci_systems' title='Navigate to start of snippet `supported_ci_systems`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 The CI detection is based on environment variables, so it may also just work on other systems that we are unaware of:
 
@@ -43,7 +43,7 @@ The CI detection is based on environment variables, so it may also just work on 
 "TF_BUILD"
 ```
 <sup><a href='/ApprovalTests/reporters/CIBuildOnlyReporter.cpp#L46-L54' title='File snippet `supported_ci_env_vars` was extracted from'>snippet source</a> | <a href='#snippet-supported_ci_env_vars' title='Navigate to start of snippet `supported_ci_env_vars`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Or you may be able to set one of these environment variables in the configuration of your CI system, to tell Approval Tests it's running under CI. 
 

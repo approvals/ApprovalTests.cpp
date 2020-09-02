@@ -16,7 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Interface](#interface)
   * [How to use Scrubbers](#how-to-use-scrubbers)
   * [Scrubber concepts](#scrubber-concepts)
-  * [See also](#see-also)<!-- endtoc -->
+  * [See also](#see-also)<!-- endToc -->
 
 ## Introduction
 
@@ -39,7 +39,7 @@ Scrubber as an option.
 Approvals::verify(input, Options().withScrubber(scrubber));
 ```
 <sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L76-L78' title='File snippet `scrubber_in_options_object` was extracted from'>snippet source</a> | <a href='#snippet-scrubber_in_options_object' title='Navigate to start of snippet `scrubber_in_options_object`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## Scrubber concepts
 

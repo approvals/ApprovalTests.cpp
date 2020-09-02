@@ -19,7 +19,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [Edit ApprovalTests/reporters/MacReporters.cpp](#edit-approvaltestsreportersmacreporterscpp)
     * [Edit tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](#edit-testsdoctest_testsreporterscommandlinereportertestscpp)
   * [Adding a new Windows reporter](#adding-a-new-windows-reporter)
-  * [Adding a new Linux reporter](#adding-a-new-linux-reporter)<!-- endtoc -->
+  * [Adding a new Linux reporter](#adding-a-new-linux-reporter)<!-- endToc -->
 
 This guide is for figuring out how to make a more robust custom reporter, that you might want to submit back to us as a Pull Request.
 
@@ -40,7 +40,7 @@ By way of an example, for supporting a new Reporter on macOS, the steps are:
 DiffInfo ARAXIS_MERGE();
 ```
 <sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L13-L15' title='File snippet `add_reporter_macro_header` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro_header' title='Navigate to start of snippet `add_reporter_macro_header`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ### Edit [ApprovalTests/reporters/DiffPrograms.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/DiffPrograms.cpp)
 
@@ -55,7 +55,7 @@ APPROVAL_TESTS_MACROS_ENTRY(
              Type::TEXT_AND_IMAGE))
 ```
 <sup><a href='/ApprovalTests/reporters/DiffPrograms.cpp#L24-L29' title='File snippet `add_reporter_macro_implementation` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro_implementation' title='Navigate to start of snippet `add_reporter_macro_implementation`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ### Edit [ApprovalTests/reporters/MacReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/MacReporters.h)
 
@@ -72,7 +72,7 @@ public:
 };
 ```
 <sup><a href='/ApprovalTests/reporters/MacReporters.h#L16-L22' title='File snippet `add_reporter_class_header` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class_header' title='Navigate to start of snippet `add_reporter_class_header`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ### Edit [ApprovalTests/reporters/MacReporters.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/MacReporters.cpp)
 
@@ -88,7 +88,7 @@ AraxisMergeReporter::AraxisMergeReporter()
 }
 ```
 <sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L14-L19' title='File snippet `add_reporter_class_implementation` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class_implementation' title='Navigate to start of snippet `add_reporter_class_implementation`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 * Scroll to the end of this file, and add an instance of the new reporter class to the `MacDiffReporter`
     * The reporters are searched in order, so more commonly-used or highly-featured ones should go nearer the start.
@@ -109,7 +109,7 @@ new VisualStudioCodeReporter(),
 new CLionDiffReporter()
 ```
 <sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L63-L74' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ### Edit [tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp)
 
@@ -131,7 +131,7 @@ std::make_shared<Mac::VisualStudioCodeReporter>(),
 std::make_shared<Mac::CLionDiffReporter>(),
 ```
 <sup><a href='/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp#L26-L38' title='File snippet `add_reporter_command_test` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_command_test' title='Navigate to start of snippet `add_reporter_command_test`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 * Run this test, review and accept the changes.
 

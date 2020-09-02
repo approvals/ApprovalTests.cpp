@@ -16,7 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Test Framework Requirements](#test-framework-requirements)
   * [Steps to add support](#steps-to-add-support)
   * [Examples](#examples)
-  * [Adding new framework to documentation](#adding-new-framework-to-documentation)<!-- endtoc -->
+  * [Adding new framework to documentation](#adding-new-framework-to-documentation)<!-- endToc -->
 
 
 ## Introduction

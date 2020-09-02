@@ -15,7 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
   * [Introduction](#introduction)
   * [Requirements](#requirements)
-  * [Usage examples](#usage-examples)<!-- endtoc -->
+  * [Usage examples](#usage-examples)<!-- endToc -->
 
 
 ## Introduction
@@ -24,7 +24,7 @@ The [\[Boost\].UT](https://github.com/boost-experimental/ut) test framework work
 
 \[Boost\].UT is a single header/single module, macro-free μ(micro)/Unit Testing Framework that requires C++17 / C++20
 
-**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- include: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
+**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- singleLineInclude: include_ninja_warning_note. path: /doc/mdsource/include_ninja_warning_note.include.md -->
 
 ## Requirements
 
@@ -36,7 +36,7 @@ Approval Tests for \[Boost\].UT requires that a file called the following is fou
 #include <boost/ut.hpp>
 ```
 <sup><a href='/ApprovalTests/integrations/ut/UTApprovals.h#L13-L15' title='File snippet `required_header_for_ut` was extracted from'>snippet source</a> | <a href='#snippet-required_header_for_ut' title='Navigate to start of snippet `required_header_for_ut`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 It also requires:
 
@@ -56,7 +56,7 @@ Add the following two lines to your source code:
 #include "ApprovalTests.hpp"
 ```
 <sup><a href='/tests/UT_Tests/UTApprovalTestTests.cpp#L1-L4' title='File snippet `ut_main` was extracted from'>snippet source</a> | <a href='#snippet-ut_main' title='Navigate to start of snippet `ut_main`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Below is an example of a call to an approval test inside a \[Boost\].UT test:
 
@@ -68,7 +68,7 @@ Below is an example of a call to an approval test inside a \[Boost\].UT test:
 };
 ```
 <sup><a href='/tests/UT_Tests/UTApprovalTestTests.cpp#L48-L52' title='File snippet `ut_main_usage` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_usage' title='Navigate to start of snippet `ut_main_usage`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 In the following example, two instances of ApprovalTests are called inside the same test. We need to use sections with different names, to prevent Approval Tests from using the same output file for both tests:
 
@@ -91,7 +91,7 @@ In the following example, two instances of ApprovalTests are called inside the s
 };
 ```
 <sup><a href='/tests/UT_Tests/UTApprovalTestTests.cpp#L58-L73' title='File snippet `ut_main_multiple` was extracted from'>snippet source</a> | <a href='#snippet-ut_main_multiple' title='Navigate to start of snippet `ut_main_multiple`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ---
 
