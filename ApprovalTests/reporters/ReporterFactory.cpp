@@ -71,17 +71,18 @@ namespace ApprovalTests
         APPROVAL_TESTS_REGISTER_REPORTER(Windows::KDiff3Reporter);
         APPROVAL_TESTS_REGISTER_REPORTER(Windows::VisualStudioCodeReporter);
 
-        auto iter = map.find(reporterName);
-        if (iter != map.end())
-        {
-            return iter->second();
-        }
+        std::vector<std::string> candidateNames = {
+            reporterName,
+            // Allow program names to be specified without Reporter suffix
+            reporterName + "Reporter"};
 
-        // Allow program names to be specified without Reporter suffix
-        iter = map.find(reporterName + "Reporter");
-        if (iter != map.end())
+        for (auto& candidateName : candidateNames)
         {
-            return iter->second();
+            auto iter = map.find(candidateName);
+            if (iter != map.end())
+            {
+                return iter->second();
+            }
         }
 
         return std::unique_ptr<Reporter>();
