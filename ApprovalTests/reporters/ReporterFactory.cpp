@@ -77,6 +77,13 @@ namespace ApprovalTests
             return iter->second();
         }
 
+        // Allow program names to be specified without Reporter suffix
+        iter = map.find(reporterName + "Reporter");
+        if (iter != map.end())
+        {
+            return iter->second();
+        }
+
         return std::unique_ptr<Reporter>();
     }
 }

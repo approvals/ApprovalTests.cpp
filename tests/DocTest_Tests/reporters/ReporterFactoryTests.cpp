@@ -38,3 +38,11 @@ TEST_CASE("ReporterFactory creates a Reporter given Windows::WinMergeReporter")
     CHECK(reporter);
     CHECK(dynamic_cast<Windows::WinMergeReporter*>(reporter.get()));
 }
+
+TEST_CASE("ReporterFactory creates a Reporter given Windows::WinMerge")
+{
+    ReporterFactory factory;
+    std::unique_ptr<Reporter> reporter = factory.createReporter("Windows::WinMerge");
+    CHECK(reporter);
+    CHECK(dynamic_cast<Windows::WinMergeReporter*>(reporter.get()));
+}
