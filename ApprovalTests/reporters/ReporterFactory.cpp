@@ -25,7 +25,7 @@
 #include <functional>
 
 #define APPROVAL_TESTS_REGISTER_REPORTER(name)                                           \
-    map[#name] = []() { return std::unique_ptr<Reporter>(new name); };
+    map[#name] = []() { return std::unique_ptr<Reporter>(new name); }
 
 namespace ApprovalTests
 {
