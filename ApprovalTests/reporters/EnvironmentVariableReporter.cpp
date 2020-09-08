@@ -2,6 +2,7 @@
 #include "EnvironmentVariableReporter.h"
 #include "DiffReporter.h"
 #include "ClipboardReporter.h"
+#include "ReporterFactory.h"
 
 namespace ApprovalTests
 {
@@ -23,12 +24,13 @@ namespace ApprovalTests
         const auto envVar = SystemUtils::safeGetEnv("APPROVAL_TESTS_USE_REPORTER");
         if (!envVar.empty())
         {
-            if (envVar == "ClipboardReporter")
+            ReporterFactory factory;
+            auto reporter = factory.createReporter(envVar);
+
+            if (reporter)
             {
-                return ClipboardReporter().report(received, approved);
+                return reporter->report(received, approved);
             }
-            // Switch on env var names
-            // Create reporter and call it - then return
         }
         // Or return false
         return defaultIfNotFound_->report(received, approved);
