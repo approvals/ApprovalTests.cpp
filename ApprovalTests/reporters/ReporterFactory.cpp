@@ -46,7 +46,7 @@ namespace ApprovalTests
     }
 
     std::unique_ptr<Reporter>
-    ReporterFactory::createReporter(const std::string& reporterName)
+    ReporterFactory::createReporter(const std::string& reporterName) const
     {
         std::map<std::string, std::function<std::unique_ptr<Reporter>()>> map;
 
