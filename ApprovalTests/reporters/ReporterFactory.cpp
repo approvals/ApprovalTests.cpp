@@ -29,6 +29,22 @@
 
 namespace ApprovalTests
 {
+
+    std::string getOsPrefix()
+    {
+        if (SystemUtils::isMacOs())
+        {
+            return "Mac::";
+        }
+
+        if (SystemUtils::isWindowsOs())
+        {
+            return "Windows::";
+        }
+
+        return "Linux::";
+    }
+
     std::unique_ptr<Reporter>
     ReporterFactory::createReporter(const std::string& reporterName)
     {
@@ -71,10 +87,16 @@ namespace ApprovalTests
         APPROVAL_TESTS_REGISTER_REPORTER(Windows::KDiff3Reporter);
         APPROVAL_TESTS_REGISTER_REPORTER(Windows::VisualStudioCodeReporter);
 
+        auto osPrefix = getOsPrefix();
+
         std::vector<std::string> candidateNames = {
             reporterName,
             // Allow program names to be specified without Reporter suffix
-            reporterName + "Reporter"};
+            reporterName + "Reporter",
+            // Allow names without os namespace
+            osPrefix + reporterName,
+            osPrefix + reporterName + "Reporter",
+        };
 
         for (auto& candidateName : candidateNames)
         {

@@ -25,7 +25,21 @@ TEST_CASE("ReporterFactory creates a Reporter given Linux::MeldReporter")
 {
     ReporterFactory factory;
     auto reporter = factory.createReporter("Linux::MeldReporter");
-    CHECK(dynamic_cast<Linux::MeldReporter*>(reporter.get()));
+        CHECK(dynamic_cast<Linux::MeldReporter*>(reporter.get()));
+}
+
+TEST_CASE("ReporterFactory creates a Reporter given MeldReporter")
+{
+    ReporterFactory factory;
+    auto reporter = factory.createReporter("MeldReporter");
+        CHECK(dynamic_cast<Linux::MeldReporter*>(reporter.get()));
+}
+
+TEST_CASE("ReporterFactory creates a Reporter given Meld")
+{
+    ReporterFactory factory;
+    auto reporter = factory.createReporter("Meld");
+        CHECK(dynamic_cast<Linux::MeldReporter*>(reporter.get()));
 }
 
 TEST_CASE("ReporterFactory creates a Reporter given Windows::WinMergeReporter")
