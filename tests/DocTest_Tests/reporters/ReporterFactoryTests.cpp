@@ -1,6 +1,7 @@
 #include "ApprovalTests/reporters/ReporterFactory.h"
 #include "ApprovalTests/reporters/ClipboardReporter.h"
 #include "ApprovalTests/reporters/LinuxReporters.h"
+#include "ApprovalTests/reporters/MacReporters.h"
 #include "ApprovalTests/reporters/WindowsReporters.h"
 
 #include "doctest/doctest.h"
@@ -25,21 +26,29 @@ TEST_CASE("ReporterFactory creates a Reporter given Linux::MeldReporter")
 {
     ReporterFactory factory;
     auto reporter = factory.createReporter("Linux::MeldReporter");
-        CHECK(dynamic_cast<Linux::MeldReporter*>(reporter.get()));
+    CHECK(dynamic_cast<Linux::MeldReporter*>(reporter.get()));
 }
 
-TEST_CASE("ReporterFactory creates a Reporter given MeldReporter")
+TEST_CASE("ReporterFactory creates a Reporter given KDiff3")
 {
     ReporterFactory factory;
-    auto reporter = factory.createReporter("MeldReporter");
-        CHECK(dynamic_cast<Linux::MeldReporter*>(reporter.get()));
-}
-
-TEST_CASE("ReporterFactory creates a Reporter given Meld")
-{
-    ReporterFactory factory;
-    auto reporter = factory.createReporter("Meld");
-        CHECK(dynamic_cast<Linux::MeldReporter*>(reporter.get()));
+    for (const auto& reporterName : {"KDiff3", "KDiff3Reporter"})
+    {
+        INFO(std::string("Reporter name = ") + reporterName);
+        auto reporter = factory.createReporter(reporterName);
+        if (SystemUtils::isWindowsOs())
+        {
+            CHECK(dynamic_cast<Windows::KDiff3Reporter*>(reporter.get()));
+        }
+        else if (SystemUtils::isMacOs())
+        {
+            CHECK(dynamic_cast<Mac::KDiff3Reporter*>(reporter.get()));
+        }
+        else
+        {
+            CHECK(dynamic_cast<Linux::KDiff3Reporter*>(reporter.get()));
+        }
+    }
 }
 
 TEST_CASE("ReporterFactory creates a Reporter given Windows::WinMergeReporter")
