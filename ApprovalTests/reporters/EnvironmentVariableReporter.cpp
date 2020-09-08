@@ -1,7 +1,6 @@
 #include "ApprovalTests/utilities/SystemUtils.h"
 #include "EnvironmentVariableReporter.h"
 #include "DiffReporter.h"
-#include "ClipboardReporter.h"
 #include "ReporterFactory.h"
 
 namespace ApprovalTests
