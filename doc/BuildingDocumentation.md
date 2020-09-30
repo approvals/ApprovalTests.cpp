@@ -20,7 +20,6 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * ["Read the Docs" builds](#read-the-docs-builds)
   * [Known Issues](#known-issues)
     * [Issues with Sphinx Output](#issues-with-sphinx-output)
-    * [Issues with CMake Targets](#issues-with-cmake-targets)
   * [Implementation Details](#implementation-details)
     * [Images](#images)
     * [Step 1: mdsnippets and Markdown Files](#step-1-mdsnippets-and-markdown-files)
@@ -124,12 +123,6 @@ On platforms other than macOS, replace the `open` command with whatever command 
     * In the PDF version, there are some broken links
     * Links in the API docs - that were generated from Doxygen - go to the docs on GitHub. It would be much nicer if they jumped to the relevant Sphinx page.
 
-### Issues with CMake Targets
-
-* I've taken the view that it's better to generate the docs unnecessarily, rather than wrongly failing to regenerate. This means that several of the dependencies are too general. For example, mdsnippets is rerun if any source or approved file is changed, regardless of whether the source file contains any snippets, or the approved file is included in the docs
-* Editing `index.rst` or `api/*.rst` should not cause all the generated `.rst` files to be regenerated.
-* Doing a `clean` build should not remove all the generated `.md` files.
-
 ## Implementation Details
 
 The rest of this document explains the file conversion processes, in case anyone else needs to maintain them.
@@ -191,7 +184,6 @@ The rest of this document explains the file conversion processes, in case anyone
     * `doc/doxygen/CMakeLists.txt`
         * Creates a CMake target `Doxygen`
             * Note: this is not included in the target `all`
-        * Manages the dependencies shown in the image above
     * `doc/doxygen/Doxyfile.in`
         * Template file containing the Doxygen configuration
         * CMake converts it to `Doxyfile` in the build tree
@@ -223,7 +215,6 @@ The rest of this document explains the file conversion processes, in case anyone
     * `doc/sphinx/CMakeLists.txt`
         * Creates a CMake target `Sphinx`
             * Note: this is not included in the target `all`
-        * Manages the dependencies shown in the image above
     * `doc/sphinx/_templates/breadcrumbs.html`
         * Prevents a broken "Edit on GitHub" from being added to each page on Read the Docs
         * This is because most of our Sphinx Documentation pages are machine-generated, so the "Edit on GitHub" would take users to a non-existent page
