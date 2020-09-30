@@ -12,8 +12,6 @@ set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR})
 # Add to parent scope, as this is used by the Sphinx target
 set(DOXYGEN_OUTPUT_DIR ${DOXYGEN_OUTPUT_DIR} PARENT_SCOPE)
 
-set(DOXYGEN_INDEX_HTML ${DOXYGEN_OUTPUT_DIR}/html/index.html)
-
 set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
 set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 
@@ -34,5 +32,5 @@ add_custom_target(Doxygen DEPENDS ${DOCS_FAKE_OUTPUT_FILE_TO_FORCE_BUILD})
 # Show where to find the generated documentation
 add_custom_command(TARGET Doxygen POST_BUILD
         COMMAND ;
-        COMMENT "For Doxygen output, open ${DOXYGEN_INDEX_HTML}"
+        COMMENT "For Doxygen output, open ${DOXYGEN_OUTPUT_DIR}/html/index.html"
         )
