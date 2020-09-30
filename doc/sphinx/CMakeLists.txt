@@ -7,6 +7,9 @@ endif ()
 set(SPHINX_SOURCE ${CMAKE_CURRENT_SOURCE_DIR})
 set(SPHINX_BUILD ${CMAKE_CURRENT_BINARY_DIR})
 set(SPHINX_INDEX_FILE ${SPHINX_BUILD}/index.html)
+
+# Create a fake target, to force the Sphinx target to always be built.
+# Taken from https://stackoverflow.com/a/31518137/104370
 set(SPHINX_FAKE_INDEX_FILE ${SPHINX_BUILD}/__fake_index.html)
 
 add_custom_command(OUTPUT ${SPHINX_INDEX_FILE} ${SPHINX_FAKE_INDEX_FILE}
