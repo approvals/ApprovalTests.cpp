@@ -69,7 +69,7 @@ The pattern used by this class for file names is:
 - `./approved/[test file name].[test name].[extension]`
 - `./received/[test file name].[test name].[extension]`
 
-This layout enables Beyond Compare 4 (or any other directory comparison tool) to compare the `approved/` and `received/` directories, and approve one or more files by copying them (without renaming) from `received/` to `approved/`.
+This layout enables you to use Beyond Compare 4 (or any other directory comparison tool) to do a folder/directory comparison, in order to compare pairs of files in the `approved/` and `received/` directories, and approve one or more files by copying them (without renaming) from `received/` to `approved/`.
 
 The `approved/` and `received/` directories are created automatically.
 
