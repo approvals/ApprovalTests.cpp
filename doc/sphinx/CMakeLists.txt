@@ -7,6 +7,7 @@ endif ()
 set(SPHINX_SOURCE ${CMAKE_CURRENT_SOURCE_DIR})
 set(SPHINX_BUILD ${CMAKE_CURRENT_BINARY_DIR})
 set(SPHINX_INDEX_FILE ${SPHINX_BUILD}/index.html)
+set(SPHINX_FAKE_INDEX_FILE ${SPHINX_BUILD}/__fake_index.html)
 
 # APPROVAL_TESTS_GEN_DOC_RST_FILES       will contain .rst files corresponding to the generated *.md
 string(REPLACE "/doc/" "/doc/sphinx/generated_docs/" APPROVAL_TESTS_GEN_DOC_RST_FILES "${APPROVAL_TESTS_GEN_DOC_MD_FILES}")
@@ -23,7 +24,7 @@ file(GLOB
 # - Doxygen has rerun
 # - Our doc files have been updated
 # - The Sphinx config has been updated
-add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
+add_custom_command(OUTPUT ${SPHINX_INDEX_FILE} ${SPHINX_FAKE_INDEX_FILE}
         COMMAND
         ${SPHINX_EXECUTABLE} -b html
         # Tell Breathe where to find the Doxygen output
@@ -45,7 +46,7 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         COMMENT "Generating documentation with Sphinx")
 
 # Nice named target so we can run the job easily
-add_custom_target(Sphinx DEPENDS ${SPHINX_INDEX_FILE} Doxygen RunMdsnippets)
+add_custom_target(Sphinx DEPENDS Doxygen RunMdsnippets ${SPHINX_FAKE_INDEX_FILE})
 
 # Show where to find the generated documentation
 add_custom_command(TARGET Sphinx POST_BUILD
