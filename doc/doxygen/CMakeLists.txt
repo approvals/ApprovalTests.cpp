@@ -14,10 +14,7 @@ set(DOXYGEN_OUTPUT_DIR ${DOXYGEN_OUTPUT_DIR} PARENT_SCOPE)
 
 set(DOXYGEN_INDEX_HTML ${DOXYGEN_OUTPUT_DIR}/html/index.html)
 
-set(DOXYGEN_CONFIG_DIR ${CMAKE_CURRENT_SOURCE_DIR})
-
-set(DOXYFILE_IN ${DOXYGEN_CONFIG_DIR}/Doxyfile.in)
-
+set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
 set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 
 # Replace variables inside @@ with the current values
