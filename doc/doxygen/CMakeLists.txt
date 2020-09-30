@@ -4,9 +4,12 @@ if (NOT Doxygen_FOUND)
     return()
 endif ()
 
+# Note that DOXYGEN_INPUT_DIR appears to be unused,
+# but is actually referenced inside Doxyfile.in.
 set(DOXYGEN_INPUT_DIR ${PROJECT_SOURCE_DIR}/ApprovalTests)
 
 set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR})
+# Add to parent scope, as this is used by the Sphinx target
 set(DOXYGEN_OUTPUT_DIR ${DOXYGEN_OUTPUT_DIR} PARENT_SCOPE)
 
 set(DOXYGEN_INDEX_HTML ${DOXYGEN_OUTPUT_DIR}/html/index.html)
