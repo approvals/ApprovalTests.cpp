@@ -26,7 +26,6 @@ configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 # Doxygen won't create this for us
 file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR})
 
-# Only regenerate Doxygen when the Doxyfile, documentation or public headers change
 add_custom_command(OUTPUT ${DOCS_FAKE_OUTPUT_FILE_TO_FORCE_BUILD}
         COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
         COMMENT "Generating Doxygen docs"
