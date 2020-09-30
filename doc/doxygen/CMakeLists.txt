@@ -37,7 +37,7 @@ configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR})
 
 # Only regenerate Doxygen when the Doxyfile, documentation or public headers change
-add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
+add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE} ${DOCS_FAKE_OUTPUT_FILE_TO_FORCE_BUILD}
         DEPENDS
         ${APPROVAL_TESTS_PUBLIC_SOURCE}
         ${APPROVAL_TESTS_ALL_EXAMPLE_FILES}
@@ -49,7 +49,7 @@ add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
         VERBATIM)
 
 # Nice named target so we can run the job easily
-add_custom_target(Doxygen DEPENDS ${DOXYGEN_INDEX_FILE})
+add_custom_target(Doxygen DEPENDS ${DOXYGEN_INDEX_FILE} ${DOCS_FAKE_OUTPUT_FILE_TO_FORCE_BUILD})
 
 # Show where to find the generated documentation
 add_custom_command(TARGET Doxygen POST_BUILD
