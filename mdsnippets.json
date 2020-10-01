@@ -10,5 +10,6 @@
     "Exclude Heading1",
     "Exclude Heading2"
   ],
-  "WriteHeader": false
+  "WriteHeader": false,
+  "Convention": "InPlaceOverwrite"
 }
