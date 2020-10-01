@@ -1,6 +1,57 @@
 Test cases
 ==========
 
+.. raw:: html
+
+   <!-- toc -->
+
+Contents
+--------
+
+-  `anchor called top is removed <#anchor-called-top-is-removed>`__
+-  `other anchors are retained <#other-anchors-are-retained>`__
+-  `anchor with unusal characters in is updated
+   correctly <#anchor-with-unusal-characters-in-is-updated-correctly>`__
+-  `link to markdown file outside doc/ is
+   unchanged <#link-to-markdown-file-outside-doc-is-unchanged>`__
+-  `link to .source.md file must point to github
+   site <#link-to-sourcemd-file-must-point-to-github-site>`__
+
+   -  `links to docs in various relative paths are
+      correct <#links-to-docs-in-various-relative-paths-are-correct>`__
+
+-  `Multiple links on one line <#multiple-links-on-one-line>`__
+
+   -  `Links to directories <#links-to-directories>`__
+
+-  `Links to source files <#links-to-source-files>`__
+-  `Links to images <#links-to-images>`__
+-  `Non-HTML links - should be
+   unchanged <#non-html-links---should-be-unchanged>`__
+-  `Do not change specific links that are in code
+   blocks <#do-not-change-specific-links-that-are-in-code-blocks>`__
+-  `Test code snippet - linking to lines in a
+   file <#test-code-snippet---linking-to-lines-in-a-file>`__
+-  `Test code snippet - linking to a whole
+   file <#test-code-snippet---linking-to-a-whole-file>`__
+-  `Test changes made to satisfy
+   Pygments <#test-changes-made-to-satisfy-pygments>`__
+
+   -  `Convert h to cpp <#convert-h-to-cpp>`__
+   -  `Remove txt <#remove-txt>`__
+
+-  `A wide table <#a-wide-table>`__
+-  `A table with wide words <#a-table-with-wide-words>`__
+-  `Included file <#included-file>`__
+-  `Snippet pulled in from external CMake
+   file <#snippet-pulled-in-from-external-cmake-file>`__
+-  `Hyperlink and URL <#hyperlink-and-url>`__
+
+   -  `Does not render correctly on Read the
+      Docs <#does-not-render-correctly-on-read-the-docs>`__
+   -  `Does render correctly on Read the
+      Docs <#does-render-correctly-on-read-the-docs>`__\ 
+
 anchor called top is removed
 ----------------------------
 
@@ -134,7 +185,7 @@ Test code snippet - linking to lines in a file
    Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
 
 (See `snippet
-source <https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/ApprovalsTests.cpp#L105-L107>`__)
+source <https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/ApprovalsTests.cpp#L113-L115>`__)
 
 Test code snippet - linking to a whole file
 -------------------------------------------
@@ -239,12 +290,24 @@ We use this ``dependencies/CMakeLists.txt`` file:
    # Needs CMake 3.14 or above
    include(FetchContent)
 
-   # ... some content deleted, for brevity of tests...
+   # -------------------------------------------------------------------
+   # ApprovalTests.cpp
+   FetchContent_Declare(ApprovalTests
+           GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
+           GIT_TAG master)
+
+   FetchContent_MakeAvailable(ApprovalTests)
+
+   # -------------------------------------------------------------------
+   # Catch2
+   FetchContent_Declare(Catch2
+           GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+           GIT_TAG v2.11.1)
 
    FetchContent_MakeAvailable(Catch2)
 
 (See `snippet
-source <https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt>`__)
+source <https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt>`__)
 
 Hyperlink and URL
 -----------------

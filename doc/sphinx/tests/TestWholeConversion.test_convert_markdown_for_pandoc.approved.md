@@ -1,6 +1,32 @@
 # Test cases
 
+<!-- toc -->
+## Contents
 
+  * [anchor called top is removed](#anchor-called-top-is-removed)
+  * [other anchors are retained](#other-anchors-are-retained)
+  * [anchor with unusal characters in is updated correctly](#anchor-with-unusal-characters-in-is-updated-correctly)
+  * [link to markdown file outside doc/ is unchanged](#link-to-markdown-file-outside-doc-is-unchanged)
+  * [link to .source.md file must point to github site](#link-to-sourcemd-file-must-point-to-github-site)
+    * [links to docs in various relative paths are correct](#links-to-docs-in-various-relative-paths-are-correct)
+  * [Multiple links on one line](#multiple-links-on-one-line)
+    * [Links to directories](#links-to-directories)
+  * [Links to source files](#links-to-source-files)
+  * [Links to images](#links-to-images)
+  * [Non-HTML links - should be unchanged](#non-html-links---should-be-unchanged)
+  * [Do not change specific links that are in code blocks](#do-not-change-specific-links-that-are-in-code-blocks)
+  * [Test code snippet - linking to lines in a file](#test-code-snippet---linking-to-lines-in-a-file)
+  * [Test code snippet - linking to a whole file](#test-code-snippet---linking-to-a-whole-file)
+  * [Test changes made to satisfy Pygments](#test-changes-made-to-satisfy-pygments)
+    * [Convert h to cpp](#convert-h-to-cpp)
+    * [Remove txt](#remove-txt)
+  * [A wide table](#a-wide-table)
+  * [A table with wide words](#a-table-with-wide-words)
+  * [Included file](#included-file)
+  * [Snippet pulled in from external CMake file](#snippet-pulled-in-from-external-cmake-file)
+  * [Hyperlink and URL](#hyperlink-and-url)
+    * [Does not render correctly on Read the Docs](#does-not-render-correctly-on-read-the-docs)
+    * [Does render correctly on Read the Docs](#does-render-correctly-on-read-the-docs)<!-- endToc -->
 
 ## anchor called top is removed
 
@@ -104,13 +130,16 @@ Multiple on one line
 
 ## Test code snippet - linking to lines in a file
 
+<a id='snippet-verify_exception_message_example'></a>
 ```cpp
 Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
 ```
-(See [snippet source](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/ApprovalsTests.cpp#L105-L107))
+(See [snippet source](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/ApprovalsTests.cpp#L113-L115))
+<!-- endSnippet -->
 
 ## Test code snippet - linking to a whole file
 
+<a id='snippet-VectorTests.VerifyAllStartingPoint.approved.txt'></a>
 ```
 TITLE
 
@@ -120,6 +149,7 @@ input.value2 => placeholder
 
 ```
 (See [snippet source](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/approval_tests/VectorTests.VerifyAllStartingPoint.approved.txt#L1-L6))
+<!-- endSnippet -->
 
 ## Test changes made to satisfy Pygments
 
@@ -167,12 +197,11 @@ Some of these words end up with spaces in, wrongly.
 
 ## Included file
 
-* [Using Approval Tests With Catch](UsingCatch.html) <!-- include: include_using_test_frameworks_list. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
+* [Using Approval Tests With Catch](UsingCatch.html) <!-- include: include_using_test_frameworks_list.include.md. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
 * [Using Approval Tests With Google Tests](UsingGoogleTests.html)
 * [Using Approval Tests With Doctest](UsingDoctest.html)
 * [Using Approval Tests With Boost.Test](UsingBoostTest.html)
-* [Using Approval Tests With \[Boost\].UT](UsingUT.html) <!-- end include: include_using_test_frameworks_list. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
-
+* [Using Approval Tests With \[Boost\].UT](UsingUT.html) <!-- endInclude -->
 
 ## Snippet pulled in from external CMake file
 
@@ -184,11 +213,24 @@ We use this `dependencies/CMakeLists.txt` file:
 # Needs CMake 3.14 or above
 include(FetchContent)
 
-# ... some content deleted, for brevity of tests...
+# -------------------------------------------------------------------
+# ApprovalTests.cpp
+FetchContent_Declare(ApprovalTests
+        GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
+        GIT_TAG master)
+
+FetchContent_MakeAvailable(ApprovalTests)
+
+# -------------------------------------------------------------------
+# Catch2
+FetchContent_Declare(Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG v2.11.1)
 
 FetchContent_MakeAvailable(Catch2)
 ```
-(See [snippet source](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt))
+(See [snippet source](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt))
+ <!-- endInclude -->
 
 ## Hyperlink and URL
 

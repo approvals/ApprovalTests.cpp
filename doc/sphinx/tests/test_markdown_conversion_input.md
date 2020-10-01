@@ -5,11 +5,30 @@
 <!-- toc -->
 ## Contents
 
-  * [Hello Approval Tests](#hello-approval-tests)
-    * [Writing the Test](#writing-the-test)
-    * [Approving the Test](#approving-the-test)
-  * [Dealing with test failures](#dealing-with-test-failures)
-  * [Demo](#demo)<!-- endtoc -->
+  * [anchor called top is removed](#anchor-called-top-is-removed)
+  * [other anchors are retained](#other-anchors-are-retained)
+  * [anchor with unusal characters in is updated correctly](#anchor-with-unusal-characters-in-is-updated-correctly)
+  * [link to markdown file outside doc/ is unchanged](#link-to-markdown-file-outside-doc-is-unchanged)
+  * [link to .source.md file must point to github site](#link-to-sourcemd-file-must-point-to-github-site)
+    * [links to docs in various relative paths are correct](#links-to-docs-in-various-relative-paths-are-correct)
+  * [Multiple links on one line](#multiple-links-on-one-line)
+    * [Links to directories](#links-to-directories)
+  * [Links to source files](#links-to-source-files)
+  * [Links to images](#links-to-images)
+  * [Non-HTML links - should be unchanged](#non-html-links---should-be-unchanged)
+  * [Do not change specific links that are in code blocks](#do-not-change-specific-links-that-are-in-code-blocks)
+  * [Test code snippet - linking to lines in a file](#test-code-snippet---linking-to-lines-in-a-file)
+  * [Test code snippet - linking to a whole file](#test-code-snippet---linking-to-a-whole-file)
+  * [Test changes made to satisfy Pygments](#test-changes-made-to-satisfy-pygments)
+    * [Convert h to cpp](#convert-h-to-cpp)
+    * [Remove txt](#remove-txt)
+  * [A wide table](#a-wide-table)
+  * [A table with wide words](#a-table-with-wide-words)
+  * [Included file](#included-file)
+  * [Snippet pulled in from external CMake file](#snippet-pulled-in-from-external-cmake-file)
+  * [Hyperlink and URL](#hyperlink-and-url)
+    * [Does not render correctly on Read the Docs](#does-not-render-correctly-on-read-the-docs)
+    * [Does render correctly on Read the Docs](#does-render-correctly-on-read-the-docs)<!-- endToc -->
 
 ## anchor called top is removed
 
@@ -114,17 +133,17 @@ Multiple on one line
 ## Test code snippet - linking to lines in a file
 
 <!-- snippet: verify_exception_message_example -->
-<a id='snippet-verify_exception_message_example'/></a>
+<a id='snippet-verify_exception_message_example'></a>
 ```cpp
 Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
 ```
-<sup><a href='/tests/DocTest_Tests/ApprovalsTests.cpp#L105-L107' title='File snippet `verify_exception_message_example` was extracted from'>snippet source</a> | <a href='#snippet-verify_exception_message_example' title='Navigate to start of snippet `verify_exception_message_example`'>anchor</a></sup>
-<!-- endsnippet -->
+<sup><a href='/tests/DocTest_Tests/ApprovalsTests.cpp#L113-L115' title='File snippet `verify_exception_message_example` was extracted from'>snippet source</a> | <a href='#snippet-verify_exception_message_example' title='Navigate to start of snippet `verify_exception_message_example`'>anchor</a></sup>
+<!-- endSnippet -->
 
 ## Test code snippet - linking to a whole file
 
 <!-- snippet: VectorTests.VerifyAllStartingPoint.approved.txt -->
-<a id='snippet-VectorTests.VerifyAllStartingPoint.approved.txt'/></a>
+<a id='snippet-VectorTests.VerifyAllStartingPoint.approved.txt'></a>
 ```txt
 TITLE
 
@@ -134,7 +153,7 @@ input.value2 => placeholder
 
 ```
 <sup><a href='/tests/DocTest_Tests/approval_tests/VectorTests.VerifyAllStartingPoint.approved.txt#L1-L6' title='File snippet `VectorTests.VerifyAllStartingPoint.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-VectorTests.VerifyAllStartingPoint.approved.txt' title='Navigate to start of snippet `VectorTests.VerifyAllStartingPoint.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ## Test changes made to satisfy Pygments
 
@@ -182,12 +201,11 @@ Some of these words end up with spaces in, wrongly.
 
 ## Included file
 
-* [Using Approval Tests With Catch](/doc/UsingCatch.md#top) <!-- include: include_using_test_frameworks_list. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
+* [Using Approval Tests With Catch](/doc/UsingCatch.md#top) <!-- include: include_using_test_frameworks_list.include.md. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
 * [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
 * [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
 * [Using Approval Tests With Boost.Test](/doc/UsingBoostTest.md#top)
-* [Using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#top) <!-- end include: include_using_test_frameworks_list. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
-
+* [Using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#top) <!-- endInclude -->
 
 ## Snippet pulled in from external CMake file
 
@@ -195,18 +213,30 @@ Sample take from CMakeIntegration.md:
 
 We use this `dependencies/CMakeLists.txt` file:
 
- <!-- include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md. path:  -->
 
 ```cmake
 # Needs CMake 3.14 or above
 include(FetchContent)
 
-# ... some content deleted, for brevity of tests...
+# -------------------------------------------------------------------
+# ApprovalTests.cpp
+FetchContent_Declare(ApprovalTests
+        GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
+        GIT_TAG master)
+
+FetchContent_MakeAvailable(ApprovalTests)
+
+# -------------------------------------------------------------------
+# Catch2
+FetchContent_Declare(Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG v2.11.1)
 
 FetchContent_MakeAvailable(Catch2)
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /doc/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- endInclude -->
 
 ## Hyperlink and URL
 
