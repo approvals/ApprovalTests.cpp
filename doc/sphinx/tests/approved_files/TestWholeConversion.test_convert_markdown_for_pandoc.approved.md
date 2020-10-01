@@ -1,32 +1,6 @@
 # Test cases
 
-<!-- toc -->
-## Contents
 
-  * [anchor called top is removed](#anchor-called-top-is-removed)
-  * [other anchors are retained](#other-anchors-are-retained)
-  * [anchor with unusal characters in is updated correctly](#anchor-with-unusal-characters-in-is-updated-correctly)
-  * [link to markdown file outside doc/ is unchanged](#link-to-markdown-file-outside-doc-is-unchanged)
-  * [link to .source.md file must point to github site](#link-to-sourcemd-file-must-point-to-github-site)
-    * [links to docs in various relative paths are correct](#links-to-docs-in-various-relative-paths-are-correct)
-  * [Multiple links on one line](#multiple-links-on-one-line)
-    * [Links to directories](#links-to-directories)
-  * [Links to source files](#links-to-source-files)
-  * [Links to images](#links-to-images)
-  * [Non-HTML links - should be unchanged](#non-html-links---should-be-unchanged)
-  * [Do not change specific links that are in code blocks](#do-not-change-specific-links-that-are-in-code-blocks)
-  * [Test code snippet - linking to lines in a file](#test-code-snippet---linking-to-lines-in-a-file)
-  * [Test code snippet - linking to a whole file](#test-code-snippet---linking-to-a-whole-file)
-  * [Test changes made to satisfy Pygments](#test-changes-made-to-satisfy-pygments)
-    * [Convert h to cpp](#convert-h-to-cpp)
-    * [Remove txt](#remove-txt)
-  * [A wide table](#a-wide-table)
-  * [A table with wide words](#a-table-with-wide-words)
-  * [Included file](#included-file)
-  * [Snippet pulled in from external CMake file](#snippet-pulled-in-from-external-cmake-file)
-  * [Hyperlink and URL](#hyperlink-and-url)
-    * [Does not render correctly on Read the Docs](#does-not-render-correctly-on-read-the-docs)
-    * [Does render correctly on Read the Docs](#does-render-correctly-on-read-the-docs)<!-- endToc -->
 
 ## anchor called top is removed
 

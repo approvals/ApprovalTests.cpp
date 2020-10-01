@@ -75,7 +75,7 @@ def fixup_boilerplate_text(content):
     content = content.replace('<a id="top"></a>\n\n', '')
 
     # Remove table of contents
-    content = re.sub(r'<!-- toc -->.*<!-- endtoc -->', '', content, count=1, flags=re.DOTALL)
+    content = re.sub(r'<!-- toc -->.*<!-- endToc -->', '', content, count=1, flags=re.DOTALL)
 
     # Remove 'Back to User Guide'
     back_to_user_guide = (
