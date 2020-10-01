@@ -3,7 +3,8 @@
   "TocLevel": 5,
   "Exclude": [
     "cmake-build",
-    "build"
+    "build",
+    "sphinx/tests/approved_files"
   ],
   "UrlsAsSnippets": [],
   "TocExcludes": [
