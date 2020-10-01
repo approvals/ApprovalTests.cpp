@@ -26,11 +26,11 @@ To refer to the next release, use 'v.x.y.z', and make sure that there is a step 
 
 ## Creating new pages
 
-*Note: All the master Markdown pages in this project are called `mdsource/[something].source.md`*
+*Note: All the master Markdown pages in this project are called `[something].md`*
 
 **Using the template page**
 
-If creating a new Markdown page, please make a copy of [doc/mdsource/TemplatePage.source.md](https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/master/doc/mdsource/TemplatePage.source.md#top).
+If creating a new Markdown page, please make a copy of [doc/TemplatePage.md](https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/master/doc/TemplatePage.md#top).
 This contains some boilerplate text which is tedious to create by hand.
 
 The new file needs to be in a `mdsource` sub-directory.
@@ -72,7 +72,7 @@ Note that Sphinx detects a page's title automatically, and will use it for the t
 
 ### In the GitHub User Guide
 
-Each new documentation page needs to be added to [doc/mdsource/README.source.md](/doc/mdsource/README.source.md#top).
+Each new documentation page needs to be added to [doc/README.md](/doc/README.md#top).
 
 The layout here should mimic the layout generated you used in `index.rst`.
 
@@ -122,7 +122,7 @@ When I improve the files in that repo, I run its script [claremacrae/ApprovalTes
 
 Some of those Markdown files are then embedded in the documentation for this project.
 
-* See [CMakeIntegration.source.md](/doc/mdsource/CMakeIntegration.source.md#top) for the `include:` lines that do the inclusion
+* See [CMakeIntegration.source.md](/doc/CMakeIntegration.md#top) for the `include:` lines that do the inclusion
 * See [CMakeIntegration.md](/doc/CMakeIntegration.md#top) for the final result.
 
 ## Checking the documentation
