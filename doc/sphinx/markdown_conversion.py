@@ -218,8 +218,6 @@ def fixup_markdown_hyperlink_destinations(content, subdir):
                 # so return it unchanged
                 return full_match
 
-        assert 'TemplatePage.source.md' not in full_url
-
         # Split the url and the anchor
         if '#' in full_url:
             original_url, original_anchor = full_url.split('#')
