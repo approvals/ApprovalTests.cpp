@@ -120,7 +120,6 @@ When I improve the files in that repo, I run its script [claremacrae/ApprovalTes
 
 Some of those Markdown files are then embedded in the documentation for this project.
 
-* See [CMakeIntegration.source.md](/doc/CMakeIntegration.md#top) for the `include:` lines that do the inclusion
 * See [CMakeIntegration.md](/doc/CMakeIntegration.md#top) for the final result.
 
 ## Checking the documentation
