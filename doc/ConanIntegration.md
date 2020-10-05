@@ -39,7 +39,7 @@ This gives more flexibility, as it opens up the possibility of some users obtain
 
 The `conanfile.txt` file lists the required libraries, and which generator to use (here, `cmake_find_package` and optionally `cmake_paths`):
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_conanfile.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_conanfile.include.md -->
 
 ```
 [requires]
@@ -55,7 +55,7 @@ cmake_paths
 
 There are two choices for the CMake instructions used in the top-level CMakeLists.txt file with these generators, as explained in the comments here:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_cmakelists.include.md -->
 
 ```cmake
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
@@ -81,7 +81,7 @@ add_subdirectory(tests)
 
 And the CMakeLists.txt that builds the tests is as follows (note the standard library target names):
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_tests_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_tests_cmakelists.include.md -->
 
 ```cmake
 add_executable(tests
@@ -105,7 +105,7 @@ add_test(
 
 Example set of build commands to download dependencies, make the test program and run the tests:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_build.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_build.include.md -->
 
 ```bash
 #!/bin/sh
@@ -130,7 +130,7 @@ This example use Conan's [cmake](https://docs.conan.io/en/latest/integrations/bu
 
 The `conanfile.txt` file lists the required libraries, and which generator to use (here, `conan`):
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_conanfile.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_conanfile.include.md -->
 
 ```
 [requires]
@@ -145,7 +145,7 @@ cmake
 
 The `conan` generator generates a `conanbuildinfo.cmake` file, which needs to used in the top-level CMakeLists.txt file like this:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md -->
 
 ```cmake
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
@@ -166,7 +166,7 @@ add_subdirectory(tests)
 
 And the CMakeLists.txt that builds the tests is as follows (note the Conan-specific library target names):
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md -->
 
 ```cmake
 add_executable(tests
@@ -194,7 +194,7 @@ add_test(
 
 Example set of build commands to download dependencies, make the test program and run the tests:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_build.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_build.include.md -->
 
 ```bash
 #!/bin/sh
@@ -223,7 +223,7 @@ An advantage of this approach is that a project can use Conan to download depend
 
 The `conanfile.txt` file lists the required libraries but does not say which generator to use:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_conanfile.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_conanfile.include.md -->
 
 ```
 # See CMake/Conan.cmake for how 'conan install' is launched from cmake
@@ -240,7 +240,7 @@ approvaltests.cpp/8.8.0
 
 There is a CMake file called `CMake/Conan.cmake` which contains instructions for downloading a specific version of the cmake-conan CMake module:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_CMake_conan.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_CMake_conan.include.md -->
 
 ```cmake
 macro(run_conan)
@@ -272,7 +272,7 @@ endmacro()
 
 The top-level CMakeLists.txt file includes the above `CMake/Conan.cmake` file, and runs the macro that it contained:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_cmakelists.include.md -->
 
 ```cmake
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
@@ -292,7 +292,7 @@ add_subdirectory(tests)
 
 And the CMakeLists.txt that builds the tests is as follows (note the Conan-specific library target names):
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_tests_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_tests_cmakelists.include.md -->
 
 ```cmake
 add_executable(tests
@@ -320,7 +320,7 @@ add_test(
 
 Example set of build commands to download dependencies, make the test program and run the tests - note that there isno line to run conan:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_build.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_build.include.md -->
 
 ```bash
 #!/bin/sh

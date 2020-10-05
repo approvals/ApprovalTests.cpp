@@ -201,7 +201,7 @@ Some of these words end up with spaces in, wrongly.
 
 ## Included file
 
-* [Using Approval Tests With Catch](/doc/UsingCatch.md#top) <!-- include: include_using_test_frameworks_list.include.md. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
+* [Using Approval Tests With Catch](/doc/UsingCatch.md#top) <!-- include: include_using_test_frameworks_list.include.md -->
 * [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
 * [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
 * [Using Approval Tests With Boost.Test](/doc/UsingBoostTest.md#top)
@@ -213,7 +213,7 @@ Sample take from CMakeIntegration.md:
 
 We use this `dependencies/CMakeLists.txt` file:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 ```cmake
 # Needs CMake 3.14 or above

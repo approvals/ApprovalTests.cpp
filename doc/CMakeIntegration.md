@@ -119,7 +119,7 @@ Suppose you are writing some tests that use ApprovalTests.cpp with the Catch2 te
 
 Your top-level `CMakeLists.txt` file might look something like this:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_cmakelists.include.md -->
 
 ```cmake
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
@@ -145,7 +145,7 @@ Here is [this example project](https://github.com/claremacrae/ApprovalTests.cpp.
 
 Your `tests/CMakeLists.txt` file might look something like this:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_tests_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_tests_cmakelists.include.md -->
 
 ```cmake
 add_executable(tests
@@ -184,7 +184,7 @@ It also needs CMake 3.14 or above.
 
 We use this `dependencies/CMakeLists.txt` file:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 ```cmake
 # Needs CMake 3.14 or above
@@ -240,7 +240,7 @@ The only difference between the previous example and this one is that here we us
 
 We use this `dependencies/CMakeLists.txt` file:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
 
 ```cmake
 # Needs CMake 3.14 or above
@@ -295,7 +295,7 @@ add_subdirectory_approvaltests_catch2/
 
 We use this `dependencies/CMakeLists.txt` file:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 ```cmake
 # -------------------------------------------------------------------
@@ -370,7 +370,7 @@ develop_approvaltests/
 
 The file `develop_approvaltests/CMakeLists.txt` creates a kind of "super build": one project for developing ApprovalTests.cpp and all the projects it depends on:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/develop_approvaltests/mdsource/inc_develop_approvaltests_cmakelists.include.md. path:  -->
+ <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/develop_approvaltests/mdsource/inc_develop_approvaltests_cmakelists.include.md -->
 
 ```cmake
 cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
