@@ -9,7 +9,6 @@
   * [other anchors are retained](#other-anchors-are-retained)
   * [anchor with unusal characters in is updated correctly](#anchor-with-unusal-characters-in-is-updated-correctly)
   * [link to markdown file outside doc/ is unchanged](#link-to-markdown-file-outside-doc-is-unchanged)
-  * [link to .source.md file must point to github site](#link-to-sourcemd-file-must-point-to-github-site)
     * [links to docs in various relative paths are correct](#links-to-docs-in-various-relative-paths-are-correct)
   * [Multiple links on one line](#multiple-links-on-one-line)
     * [Links to directories](#links-to-directories)
@@ -48,12 +47,6 @@
 ## link to markdown file outside doc/ is unchanged
 
 [How To Release](/build/HowToRelease.md#top)
-
-## link to .source.md file must point to github site
-
-Because .source.md files are not converted to sphinx .rst files, and so would be broken links on Read the Docs.
-
-1. Add a new file about the customisation, such as [UsingCatch.source.md](/doc/mdsource/UsingCatch.source.md#top)
 
 ### links to docs in various relative paths are correct
 

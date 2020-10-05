@@ -26,15 +26,6 @@ link to markdown file outside doc/ is unchanged
 `How To
 Release <https://github.com/approvals/ApprovalTests.cpp/blob/master/build/HowToRelease.md#top>`__
 
-link to .source.md file must point to github site
--------------------------------------------------
-
-Because .source.md files are not converted to sphinx .rst files, and so
-would be broken links on Read the Docs.
-
-1. Add a new file about the customisation, such as
-   `UsingCatch.source.md <https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/mdsource/UsingCatch.source.md#top>`__
-
 links to docs in various relative paths are correct
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
