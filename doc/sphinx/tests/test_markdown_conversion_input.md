@@ -15,6 +15,7 @@
     * [Links to directories](#links-to-directories)
   * [Links to source files](#links-to-source-files)
   * [Links to images](#links-to-images)
+  * [Link to README.md should go to GitHub](#link-to-readmemd-should-go-to-github)
   * [Non-HTML links - should be unchanged](#non-html-links---should-be-unchanged)
   * [Do not change specific links that are in code blocks](#do-not-change-specific-links-that-are-in-code-blocks)
   * [Test code snippet - linking to lines in a file](#test-code-snippet---linking-to-lines-in-a-file)
@@ -83,6 +84,12 @@ See [Target 1](/doc/Doc1.md#target1) join1 [Target 2](/doc/Doc2.md#target3) join
 Tutorial ![Intro Graphic](/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)
 
 Tutorial ![New Failure](/doc/images/tutorial/01_new_failure.png?raw=true)
+
+## Link to README.md should go to GitHub
+
+Link to README.md should go to GitHub, because README.md is not intended to be displayed on Read the Docs.
+
+Each new documentation page needs to be added to [doc/README.md](/doc/README.md#top).
 
 ## Non-HTML links - should be unchanged
 

@@ -72,6 +72,15 @@ Tutorial |Intro Graphic|
 
 Tutorial |New Failure|
 
+Link to README.md should go to GitHub
+-------------------------------------
+
+Link to README.md should go to GitHub, because README.md is not intended
+to be displayed on Read the Docs.
+
+Each new documentation page needs to be added to
+`doc/README.md <https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#top>`__.
+
 Non-HTML links - should be unchanged
 ------------------------------------
 

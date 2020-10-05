@@ -56,6 +56,12 @@ Tutorial ![Intro Graphic](https://github.com/approvals/ApprovalTests.cpp/blob/ma
 
 Tutorial ![New Failure](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/tutorial/01_new_failure.png?raw=true)
 
+## Link to README.md should go to GitHub
+
+Link to README.md should go to GitHub, because README.md is not intended to be displayed on Read the Docs.
+
+Each new documentation page needs to be added to [doc/README.md](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#top).
+
 ## Non-HTML links - should be unchanged
 
 [Llewellyn](mailto:llewellyn.falco@gmail.com)

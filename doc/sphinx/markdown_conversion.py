@@ -201,6 +201,8 @@ def fixup_markdown_hyperlink_destinations(content, subdir):
             will_include_in_sphix_docs = False
         if '.md' not in full_url:
             will_include_in_sphix_docs = False
+        if 'README.md' in full_url:
+            will_include_in_sphix_docs = False
 
         if not will_include_in_sphix_docs:
             if full_url.startswith('/'):
