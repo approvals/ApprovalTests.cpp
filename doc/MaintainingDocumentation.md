@@ -26,8 +26,6 @@ To refer to the next release, use 'v.x.y.z', and make sure that there is a step 
 
 ## Creating new pages
 
-*Note: All the master Markdown pages in this project are called `[something].md`*
-
 **Using the template page**
 
 If creating a new Markdown page, please make a copy of [doc/TemplatePage.md](https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/master/doc/TemplatePage.md#top).
@@ -36,6 +34,8 @@ This contains some boilerplate text which is tedious to create by hand.
 The new file needs to be in a `mdsource` sub-directory.
 
 **Creating multiple pages**
+
+**TODO These scripts need updating for the removal of .source.md files**
 
 If creating multiple files, on Unix, you can use the script `doc/mdsource/create_page.sh`
 
@@ -78,7 +78,7 @@ The layout here should mimic the layout generated you used in `index.rst`.
 
 ## Internal links need to be absolute 
 
-All references to other files in this project, such as hyperlinks and images, must specify the full path from the root of the repository. This will allow those links to work correctly in both the source and generated markdown files. Relative paths cannot work for both the source and the target file. 
+All references to other files in this project, such as hyperlinks and images, must specify the full path from the root of the repository. This is needed for links to work correctly on the Read the Docs.
 
 For example, use this:
 
@@ -104,14 +104,12 @@ We use Simon Cropp's [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSn
 
 ### How it works
 
-* Call the source file `[something].source.md`.
-* Make sure it is in a `mdsource` directory
 * See the [MarkdownSnippets](https://github.com/SimonCropp/MarkdownSnippets) documentation for how to:
     * annotate snippets of source code, 
     * reference the snippets in documentation.
-* Run  `run_markdown_templates.sh` **before commit**, every time a `.source.md` file is updated
+* Run  `run_markdown_templates.sh` **before commit**, every time a `.md` file or any of the source code with snippets is updated
     * See [run_markdown_templates.sh](/run_markdown_templates.sh).
-    * This will update the tables of contents and the machine-generated `[something].md` files.
+    * This will update the tables of contents and and any snippets in all .md files in the project.
     * If this does not work, see that script for how to install the tools it uses
 
 ### Managing CMake code samples
