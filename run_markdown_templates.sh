@@ -11,7 +11,7 @@
 # To update:
 #   dotnet tool update  -g MarkdownSnippets.Tool
 
-dotnet tool update  -g MarkdownSnippets.Tool
+dotnet tool update  -g MarkdownSnippets.Tool --version 21.1.3 || exit
 mdsnippets || exit 1
 
 echo "------------------------------------------"
