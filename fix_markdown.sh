@@ -8,7 +8,7 @@ find . -name \*.md | grep -v .include.md | grep -v .approved.md | grep -v google
 
 echo
 echo "The following files in doc, if any, are missing the 'Back to User Guide' line at the end:"
-find ./doc -name \*.md | grep -v .include.md | grep -v googletest-src | grep -v README.md | xargs grep -L 'Back to User Guide'
+find ./doc -name \*.md | grep -v .include.md | grep -v .approved.md | grep -v googletest-src | grep -v README.md | xargs grep -L 'Back to User Guide'
 
 echo
 echo "The following files, if any, are not in the User Guide (doc/README.md)"
