@@ -41,12 +41,12 @@ This is perhaps best understood by reviewing the implementations for frameworks 
 
 ## Adding new framework to documentation
 
-1. Add a new file about the customisation, such as [UsingCatch.source.md](/doc/UsingCatch.md#top)
+1. Add a new file about the customisation, such as [UsingCatch.md](/doc/UsingCatch.md#top)
 2. Record the new framework support in:
     * The `getMisconfiguredMainHelp()` help message in [HelpMessages.cpp](/ApprovalTests/namers/HelpMessages.cpp)
-    * [README.source.md](/README.md#top) - see the links to supported test frameworks in the "Requirements" section
+    * [README.md](/README.md#top) - see the links to supported test frameworks in the "Requirements" section
     * [include_using_test_frameworks_list.include.md](/doc/include_using_test_frameworks_list.include.md#top)
-    * [GettingStarted.md](/doc/GettingStarted.source.md#top) - see "Choosing a testing framework"
+    * [GettingStarted.md](/doc/GettingStarted.md#top) - see "Choosing a testing framework"
     * [Setup.md](/doc/Setup.md#top) - see the bullet list starting "Set up your `main()`"
     * Other documentation links: see [Definition of Done](/doc/Contributing.md#definition-of-done)
 
