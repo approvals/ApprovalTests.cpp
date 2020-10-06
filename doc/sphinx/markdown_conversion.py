@@ -28,6 +28,9 @@ def convert_all_markdown_files_in_dir(subdir, input_sub_dir, output_sub_dir):
     if not os.path.isdir(output_sub_dir):
         os.makedirs(output_sub_dir)
     for file in md_files:
+        # Prevent Sphinx warnings about include files not being in the table of contents
+        if file.endswith('.include.md'):
+            continue
         file_base_file = os.path.split(file)[1]
         file_base_name = os.path.splitext(file_base_file)[0]
 
