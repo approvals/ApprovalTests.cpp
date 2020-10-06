@@ -10,7 +10,7 @@ set -o pipefail
 
 for page in "$@"
 do
-    new_source_file="${page}.source.md"
+    new_source_file="${page}.md"
 
     # Don't overwrite existing files
     if test -f "$new_source_file"; then
@@ -19,8 +19,10 @@ do
     fi
 
     # Create the file
-    cp TemplatePage.source.md "$new_source_file"
+    cp TemplatePage.md "$new_source_file"
     sed -i -e "s/Put Title Here/${page}/" "$new_source_file"
+    # Remove temporary file created by sed on mac
+    rm -f "${new_source_file}-e"
 done
 
 echo "Now run run_markdown_templates.sh, then use page_link.sh to create links to the new file "
