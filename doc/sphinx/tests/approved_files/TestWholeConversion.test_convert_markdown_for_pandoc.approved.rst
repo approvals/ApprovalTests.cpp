@@ -56,6 +56,11 @@ Links to source files
 
 `tests/GoogleTest_Tests/main.cpp <https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/GoogleTest_Tests/main.cpp>`__
 
+Links to .include.md files
+--------------------------
+
+`include_using_test_frameworks_list.include.md <https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/include_using_test_frameworks_list.include.md#top>`__
+
 Links to images
 ---------------
 

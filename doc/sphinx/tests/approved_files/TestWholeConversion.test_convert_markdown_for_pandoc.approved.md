@@ -44,6 +44,10 @@ See [Target 1](Doc1.html#target1) join1 [Target 2](Doc2.html#target3) join2 [Tar
 
 [tests/GoogleTest_Tests/main.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/GoogleTest_Tests/main.cpp)
 
+## Links to .include.md files
+
+[include_using_test_frameworks_list.include.md](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/include_using_test_frameworks_list.include.md#top)
+
 ## Links to images
 
 Tutorial ![Intro Graphic](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/images/ApprovalTests.cpp.IntroGraphic.gif?raw=true)

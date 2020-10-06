@@ -13,6 +13,7 @@
   * [Multiple links on one line](#multiple-links-on-one-line)
     * [Links to directories](#links-to-directories)
   * [Links to source files](#links-to-source-files)
+  * [Links to .include.md files](#links-to-includemd-files)
   * [Links to images](#links-to-images)
   * [Link to README.md should go to GitHub](#link-to-readmemd-should-go-to-github)
   * [Non-HTML links - should be unchanged](#non-html-links---should-be-unchanged)
@@ -71,6 +72,10 @@ See [Target 1](/doc/Doc1.md#target1) join1 [Target 2](/doc/Doc2.md#target3) join
 ## Links to source files
 
 [tests/GoogleTest_Tests/main.cpp](/tests/GoogleTest_Tests/main.cpp)
+
+## Links to .include.md files
+
+[include_using_test_frameworks_list.include.md](/doc/include_using_test_frameworks_list.include.md#top)
 
 ## Links to images
 
