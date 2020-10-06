@@ -9,7 +9,7 @@
 
   * [v.x.y.z](#vxyz)
   * [v.10.3.0](#v1030)
-  * [Approvals::verifyAll and std::initializer_list](#approvalsverifyall-and-stdinitializer_list)
+    * [Approvals::verifyAll and std::initializer_list](#approvalsverifyall-and-stdinitializer_list)
   * [v.10.2.0](#v1020)
     * [DateUtils](#dateutils)
   * [v.10.1.1](#v1011)
@@ -65,7 +65,7 @@
 
 ## v.10.3.0
 
-## Approvals::verifyAll and std::initializer_list
+### Approvals::verifyAll and std::initializer_list
 
 Added `std::initializer_list` support to `Approvals::verifyAll()`.
 
