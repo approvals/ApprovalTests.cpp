@@ -10,6 +10,8 @@
 #   dotnet tool install -g MarkdownSnippets.Tool
 # To update:
 #   dotnet tool update  -g MarkdownSnippets.Tool
+# To uninstall (e.g. to downgrade to a lower version)
+# dotnet tool uninstall -g MarkdownSnippets.Tool
 
 dotnet tool update  -g MarkdownSnippets.Tool --version 21.2.0 || exit
 mdsnippets || exit 1
