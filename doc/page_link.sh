@@ -14,6 +14,8 @@
 set -e
 set -o pipefail
 
+current_endtoc_text="<!-- endToc -->"
+
 echo
 for source_file in "$@"
 do
@@ -26,7 +28,7 @@ do
     echo "[$doc_title]($doc_abs_path#top)"
 
     # Write out links to all the entries in the table of contents
-    sed -e '/-- endToc --/q' "$doc_rel_path" | grep '* \[' | sed -e "s/^ *\* //" | sed -e "s|#|$doc_abs_path#|"
+    sed -e "/$current_endtoc_text/q" "$doc_rel_path" | grep '* \[' | sed -e "s/^ *\* //" | sed -e "s|#|$doc_abs_path#|" | sed -e "s|$current_endtoc_text||"
 
     # Add blank line, for readability if we are linking to multiple files
     echo
