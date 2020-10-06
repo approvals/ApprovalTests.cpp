@@ -20,7 +20,7 @@ do
 
     # Create the file
     cp TemplatePage.md "$new_source_file"
-    sed -i -e "s/Put Title Here/${page}/" "$new_source_file"
+    sed -i -e "s|Put Title Here|${page}|" "$new_source_file"
     # Remove temporary file created by sed on mac
     rm -f "${new_source_file}-e"
 done
