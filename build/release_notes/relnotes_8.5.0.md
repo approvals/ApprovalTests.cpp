@@ -5,7 +5,7 @@ See the [v.8.5.0 milestone](https://github.com/approvals/ApprovalTests.cpp/miles
 * **New features**
     * Added support for [Sublime Merge](https://www.sublimemerge.com/) on Linux, macOS, and Windows (#103, thank you @jwillikers)
     * Added support for [Beyond Compare](https://www.scootersoftware.com) on Linux (#114)
-    * Added support for custom main() function with doctest: see [Existing Project - with your main()](/doc/mdsource/UsingDoctest.source.md#existing-project---with-your-main) (#110, thank you @p-podsiadly)
+    * Added support for custom main() function with doctest: see [Existing Project - with your main()](/doc/UsingDoctest.md#existing-project---with-your-main) (#110, thank you @p-podsiadly)
     * Added support for Azure Pipelines, Azure DevOps Server and TFS CI systems (#117)
 * **Bug fixes**
     * Code now compiles in clang and gcc with `-Wshadow` enabled (#111)

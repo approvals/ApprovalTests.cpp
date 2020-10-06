@@ -28,6 +28,9 @@ def convert_all_markdown_files_in_dir(subdir, input_sub_dir, output_sub_dir):
     if not os.path.isdir(output_sub_dir):
         os.makedirs(output_sub_dir)
     for file in md_files:
+        # Prevent Sphinx warnings about include files not being in the table of contents
+        if file.endswith('.include.md'):
+            continue
         file_base_file = os.path.split(file)[1]
         file_base_name = os.path.splitext(file_base_file)[0]
 
@@ -75,7 +78,7 @@ def fixup_boilerplate_text(content):
     content = content.replace('<a id="top"></a>\n\n', '')
 
     # Remove table of contents
-    content = re.sub(r'<!-- toc -->.*<!-- endtoc -->', '', content, count=1, flags=re.DOTALL)
+    content = re.sub(r'<!-- toc -->.*<!-- endToc -->', '', content, count=1, flags=re.DOTALL)
 
     # Remove 'Back to User Guide'
     back_to_user_guide = (
@@ -197,9 +200,11 @@ def fixup_markdown_hyperlink_destinations(content, subdir):
         will_include_in_sphix_docs = True
         if not full_url.startswith('/doc'):
             will_include_in_sphix_docs = False
-        if 'mdsource/' in full_url:
+        if '.include.md' in full_url:
             will_include_in_sphix_docs = False
         if '.md' not in full_url:
+            will_include_in_sphix_docs = False
+        if 'README.md' in full_url:
             will_include_in_sphix_docs = False
 
         if not will_include_in_sphix_docs:
@@ -215,8 +220,6 @@ def fixup_markdown_hyperlink_destinations(content, subdir):
                 # It's a link to somewhere else, e.g. http, mailto, or anchor ('#') in current document,
                 # so return it unchanged
                 return full_match
-
-        assert 'TemplatePage.source.md' not in full_url
 
         # Split the url and the anchor
         if '#' in full_url:

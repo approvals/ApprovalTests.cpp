@@ -12,7 +12,6 @@ doc/html/
 *.runsettings
 CMakeLists.txt.user
 *.bak
-*.source.md-e
 .DS_Store
 [Oo]ut/build
 *.swp
