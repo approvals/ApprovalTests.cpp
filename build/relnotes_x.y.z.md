@@ -7,4 +7,4 @@
 * **Bug fixes**
     * None
 * **Other changes**
-    * None
+    * **Easier maintenance of documentation**: Files in the User Guide can now be edited directly, instead of needing to find the matching `mdsource/Blah.source.md` file (#158) 
