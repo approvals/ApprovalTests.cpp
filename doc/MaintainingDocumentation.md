@@ -26,21 +26,17 @@ To refer to the next release, use 'v.x.y.z', and make sure that there is a step 
 
 ## Creating new pages
 
-**Using the template page**
+**Using the template page manually**
 
 If creating a new Markdown page, please make a copy of [doc/TemplatePage.md](https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/master/doc/TemplatePage.md#top).
 This contains some boilerplate text which is tedious to create by hand.
 
-The new file needs to be in a `mdsource` sub-directory.
+**Creating one or more pages by script**
 
-**Creating multiple pages**
-
-**TODO These scripts need updating for the removal of .source.md files**
-
-If creating multiple files, on Unix, you can use the script `doc/mdsource/create_page.sh`
+If creating multiple files, on Unix, you can use the script `doc/create_page.sh`
 
 ```bash
-cd doc/mdsource/
+cd doc/
 ./create_page.sh TestingSingleObjects TestingContainers TestingCombinations
 ```
 
