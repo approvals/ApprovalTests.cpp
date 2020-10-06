@@ -46,7 +46,7 @@ For all other test files, you need:
 
 ### Details 
 
-* [Using Approval Tests With Catch](/doc/UsingCatch.md#top) <!-- include: include_using_test_frameworks_list. path: /doc/mdsource/include_using_test_frameworks_list.include.md -->
+* [Using Approval Tests With Catch](/doc/UsingCatch.md#top) <!-- include: include_using_test_frameworks_list. path: /doc/include_using_test_frameworks_list.include.md -->
 * [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
 * [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
 * [Using Approval Tests With Boost.Test](/doc/UsingBoostTest.md#top)
