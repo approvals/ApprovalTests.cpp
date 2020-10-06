@@ -13,9 +13,9 @@ find ./doc -name \*.md | grep -v .include.md | grep -v .approved.md | grep -v go
 echo
 echo "The following files, if any, are not in the User Guide (doc/README.md)"
 pushd doc > /dev/null
-for file in *.md
+for file in `find . -name sphinx -prune -o  ! -name \*.include.md -name \*.md -print`
 do
-    if [ $file = "README.md" ] || [ $file = "TemplatePage.md" ]
+    if [ $file = "./README.md" ] || [ $file = "./TemplatePage.md" ]
     then
        continue
     fi
