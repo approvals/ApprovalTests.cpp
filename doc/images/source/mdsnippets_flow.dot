@@ -5,7 +5,7 @@ digraph mdsnippets_flow {
 
     "mdsnippets" [shape = oval, fillcolor = lightgray, style = filled]
 
-    "docs_mdsource_md" [label = "doc/*.md\ldoc/mdsource/*.include.md"]
+    "docs_mdsource_md" [label = "doc/*.md\ldoc/*.include.md"]
     "docs_mdsource_md" -> "mdsnippets"
 
     "ApprovalTests" [label = "ApprovalTests/*.(h,cpp)"]
