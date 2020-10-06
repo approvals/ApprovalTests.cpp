@@ -9,7 +9,8 @@ from scripts.conan_release_details import ConanReleaseDetails
 from scripts.git_utilities import GitUtilities
 from scripts.project_details import ProjectDetails
 from scripts.release_details import ReleaseDetails
-from scripts.utilities import check_step, read_file, write_file, calculate_sha256, run, use_directory, read_url
+from scripts.utilities import check_step, read_file, write_file, calculate_sha256, run, use_directory, read_url, \
+    optional_action
 from scripts.version import Version
 
 
@@ -52,6 +53,12 @@ class PrepareConanRelease:
             repo.remote('origin').push('master')
 
             new_branch = PrepareConanRelease.get_new_branch_name(project_details, new_version)
+            print(repo.heads)
+            if new_branch in repo.heads:
+                def delete_branch() -> None:
+                    print(f"Deleting previously-created branch {new_branch}")
+                    repo.delete_head(new_branch)  # only works if not checked out
+                optional_action(f'Branch {new_branch} already exists in conan repo: Do you want to delete it?', delete_branch)
             current = repo.create_head(new_branch)
             current.checkout()
 

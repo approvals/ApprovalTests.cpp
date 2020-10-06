@@ -107,3 +107,11 @@ def check_step_with_revert(step: str, revert_function: Callable) -> None:
         revert_function()
         exit(0)
     print('---------------------------------------------------------------')
+
+
+def optional_action(step: str, action_function: Callable) -> None:
+    print("\nOPTIONAL: ", step)
+    response = input("  Press Y OR y to do this; Anything else to Skip this step: ")
+    if response in ['Y', 'y']:
+        action_function()
+    print('---------------------------------------------------------------')
