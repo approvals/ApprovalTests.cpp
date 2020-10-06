@@ -30,7 +30,7 @@ do
     # Write out links to all the entries in the table of contents
     cat "$doc_rel_path" | \
       sed -e "/$current_endtoc_text/q"  | \
-      grep '* \[' | \
+      grep '^ *\* \[' | \
       sed -e "s/^ *\* //" | \
       sed -e "s|#|$doc_abs_path#|" | \
       sed -e "s|$current_endtoc_text||"
