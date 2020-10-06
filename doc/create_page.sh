@@ -23,6 +23,8 @@ do
     sed -i -e "s|Put Title Here|${page}|" "$new_source_file"
     # Remove temporary file created by sed on mac
     rm -f "${new_source_file}-e"
+
+    ./page_link.sh ${new_source_file} | grep -v "First Section Here"
+
 done
 
-echo "Now run run_markdown_templates.sh, then use page_link.sh to create links to the new file "
