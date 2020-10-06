@@ -80,7 +80,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE -DAPPROVAL_TESTS_HIDE_DEPRECA
 
 ## How to Update Calls to Deprecated Code
 
-Whenever we deprecate a method, the implementation of the deprecated method will always contain a single line, which is how we want the code to be called in the future. <!-- include: updating_deprecated_code. path: /doc/how_tos/mdsource/updating_deprecated_code.include.md -->
+Whenever we deprecate a method, the implementation of the deprecated method will always contain a single line, which is how we want the code to be called in the future. <!-- include: updating_deprecated_code. path: /doc/how_tos/updating_deprecated_code.include.md -->
 
 As such, you can always open up the method to see how to convert your code.
 
