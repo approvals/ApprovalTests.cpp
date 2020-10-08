@@ -31,7 +31,7 @@ int main()
         }
         catch (const std::exception& e)
         {
-            expect(approvalMissingExceptionReceived == true_b)
+            expect(approvalMissingExceptionReceived == true)
                 << "Unexpected exception received: " << e.what();
         }
 
@@ -41,8 +41,8 @@ int main()
         // name of the source file.
         // For ways to fix this, see:
         // https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
-        expect(approvalMissingExceptionReceived == true_b);
-        expect(front_loader->called == true_b);
+        expect(approvalMissingExceptionReceived == true);
+        expect(front_loader->called == true);
     };
 
     // begin-snippet: ut_main_usage
