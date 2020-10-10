@@ -15,4 +15,4 @@ if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
             DEPENDENCIES ${PROJECT_NAME})
 endif ()
 
-include(WarningsAsErrors)
+#include(WarningsAsErrors)
