@@ -1,5 +1,5 @@
 #pragma once
- 
+
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/Macros.h"
 
@@ -18,6 +18,7 @@ namespace ApprovalTests
     {
     private:
         ApprovalTests::TestName currentTest;
+
     public:
         ApprovalTestsCppUTestPlugin() : TestPlugin("ApprovalTestsCppUTestPlugin")
         {
@@ -34,7 +35,8 @@ namespace ApprovalTests
             MemoryLeakWarningPlugin::turnOffNewDeleteOverloads();
         }
 
-        APPROVAL_TESTS_NO_DISCARD static std::string cppUTestToString(const SimpleString& string)
+        APPROVAL_TESTS_NO_DISCARD static std::string
+        cppUTestToString(const SimpleString& string)
         {
             return std::string{string.asCharString()};
         }
