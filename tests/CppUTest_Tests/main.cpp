@@ -35,11 +35,8 @@ public:
     {
         currentTest.setFileName(cppUTestToString(shell.getFile()));
 
-        std::string group{cppUTestToString(shell.getGroup())};
-        currentTest.sections.emplace_back(group);
-
-        std::string name{cppUTestToString(shell.getName())};
-        currentTest.sections.emplace_back(name);
+        currentTest.sections.emplace_back(cppUTestToString(shell.getGroup()));
+        currentTest.sections.emplace_back(cppUTestToString(shell.getName()));
 
         ApprovalTests::ApprovalTestNamer::currentTest(&currentTest);
 
