@@ -6,7 +6,7 @@
 #ifdef APPROVALS_CPPUTEST
 #define APPROVAL_TESTS_INCLUDE_CPPS
 
-// begin-snippet: required_header_for_cpputest
+// begin-snippet: required_headers_for_cpputest
 #include <CppUTest/CommandLineTestRunner.h>
 #include <CppUTest/TestPlugin.h>
 #include <CppUTest/TestRegistry.h>
