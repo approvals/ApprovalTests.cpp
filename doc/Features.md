@@ -8,6 +8,7 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [Support for CppUTest framework](#support-for-cpputest-framework)
   * [v.10.3.0](#v1030)
     * [Approvals::verifyAll and std::initializer_list](#approvalsverifyall-and-stdinitializer_list)
   * [v.10.2.0](#v1020)
@@ -62,6 +63,10 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+### Support for CppUTest framework
+
+See [Using Approval Tests With CppUTest](/doc/UsingCppUTest.md#top).
 
 ## v.10.3.0
 

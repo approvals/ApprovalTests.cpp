@@ -3,7 +3,8 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * Add support for [CppUTest](http://cpputest.github.io/).
+      See [Using Approval Tests With CppUTest](/doc/UsingCppUTest.md#top) (#159)
 * **Bug fixes**
     * None
 * **Other changes**
