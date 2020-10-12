@@ -17,6 +17,8 @@ The [CppUTest](http://cpputest.github.io/) test framework works well with Approv
 
 This section describes the various ways of using Approval Tests with CppUTest.
 
+**Note:** Approval Tests's use of STL objects triggers test failures from CppUTest's memory-leak checking, and so our integration with CppUTest currently **turns of its memory leak checks**.
+
 **Note:** Approval Tests has some specific build requirements if it is built with
 the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed
 when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please
