@@ -37,6 +37,7 @@ namespace ApprovalTests
             // by implementing setup() and teardown() - but got compiler errors - logged in
             // https://github.com/cpputest/cpputest/issues/1428
             MemoryLeakWarningPlugin::turnOffNewDeleteOverloads();
+            currentTest.sections.reserve(2);
         }
 
         APPROVAL_TESTS_NO_DISCARD static std::string
