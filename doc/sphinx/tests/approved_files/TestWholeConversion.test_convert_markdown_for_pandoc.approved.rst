@@ -227,6 +227,7 @@ Included file
 -------------
 
 -  `Using Approval Tests With Catch <UsingCatch.html>`__
+-  `Using Approval Tests With CppUTest <UsingCppUTest.html>`__
 -  `Using Approval Tests With Google Tests <UsingGoogleTests.html>`__
 -  `Using Approval Tests With Doctest <UsingDoctest.html>`__
 -  `Using Approval Tests With Boost.Test <UsingBoostTest.html>`__

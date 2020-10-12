@@ -176,6 +176,7 @@ Some of these words end up with spaces in, wrongly.
 ## Included file
 
 * [Using Approval Tests With Catch](UsingCatch.html) <!-- include: include_using_test_frameworks_list.include.md -->
+* [Using Approval Tests With CppUTest](UsingCppUTest.html)
 * [Using Approval Tests With Google Tests](UsingGoogleTests.html)
 * [Using Approval Tests With Doctest](UsingDoctest.html)
 * [Using Approval Tests With Boost.Test](UsingBoostTest.html)
