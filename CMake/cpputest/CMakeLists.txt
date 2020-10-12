@@ -20,11 +20,14 @@ if (NOT TARGET cpputest)
         message(FATAL_ERROR "Build step for cpputest failed: ${result}")
     endif ()
 
-    # Prevent cpputest creating cluttering up CLion with nearly 30 CTest targets
+    # Prevent CppUTest creating cluttering up CLion with nearly 30 CTest targets
     # (Continuous, ContinuousBuild etc) when it does:
     #   include(CTest)
     # This hack taken from https://stackoverflow.com/a/57240389/104370
     set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1) # hack to prevent CTest added targets
+
+    # Prevent CppUTest's own tests from being built
+    set(TESTS OFF CACHE BOOL "")
 
     # Add cpputest directly to our build. This defines the cpputest target.
     add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/cpputest-src
