@@ -3,11 +3,10 @@
 # Using Approval Tests With CppUTest
 
 <!-- toc -->
-
 ## Contents
 
-* [Introduction](#introduction)
-* [Getting Started With CppUTest](#getting-started-with-cpputest)
+  * [Introduction](#introduction)
+  * [Getting Started With CppUTest](#getting-started-with-cpputest)
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
     * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
@@ -22,7 +21,7 @@ This section describes the various ways of using Approval Tests with CppUTest.
 the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed
 when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please
 see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top)
-. <!-- singleLineInclude: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
+**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- singleLineInclude: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
 
 ## Getting Started With CppUTest
 
@@ -42,14 +41,11 @@ Create a file `main.cpp` and add just the following two lines:
 
 <!-- snippet: cpputest_main -->
 <a id='snippet-cpputest_main'></a>
-
 ```cpp
 #define APPROVALS_CPPUTEST
 #include "ApprovalTests.hpp"
 ```
-
-<sup><a href='/tests/CppUTest_Tests/main.cpp#L1-L4' title='File snippet `cpputest_main` was extracted from'>snippet
-source</a> | <a href='#snippet-cpputest_main' title='Navigate to start of snippet `cpputest_main`'>anchor</a></sup>
+<sup><a href='/tests/CppUTest_Tests/main.cpp#L1-L4' title='File snippet `cpputest_main` was extracted from'>snippet source</a> | <a href='#snippet-cpputest_main' title='Navigate to start of snippet `cpputest_main`'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Existing Project - with your main()
@@ -61,7 +57,6 @@ Instead, you should make the following additions to your own source file that co
 
 <!-- snippet: cpputest_existing_main -->
 <a id='snippet-cpputest_existing_main'></a>
-
 ```cpp
 // main.cpp:
 
@@ -79,11 +74,7 @@ int main(int argc, char** argv)
     return result;
 }
 ```
-
-<sup><a href='/examples/cpputest_existing_main/main.cpp#L1-L17' title='File snippet `cpputest_existing_main` was extracted from'>
-snippet source</a>
-| <a href='#snippet-cpputest_existing_main' title='Navigate to start of snippet `cpputest_existing_main`'>
-anchor</a></sup>
+<sup><a href='/examples/cpputest_existing_main/main.cpp#L1-L17' title='File snippet `cpputest_existing_main` was extracted from'>snippet source</a> | <a href='#snippet-cpputest_existing_main' title='Navigate to start of snippet `cpputest_existing_main`'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---
