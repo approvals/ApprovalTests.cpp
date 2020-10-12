@@ -3,6 +3,10 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/Macros.h"
 
+#ifdef APPROVALS_CPPUTEST_EXISTING_MAIN
+#define APPROVALS_CPPUTEST
+#endif
+
 #ifdef APPROVALS_CPPUTEST
 #define APPROVAL_TESTS_INCLUDE_CPPS
 
@@ -59,15 +63,23 @@ namespace ApprovalTests
             TestPlugin::postTestAction(shell, result);
         }
     };
+
+    inline void initializeApprovalTestsForCppUTest()
+    {
+        static ApprovalTests::ApprovalTestsCppUTestPlugin logPlugin;
+        TestRegistry::getCurrentRegistry()->installPlugin(&logPlugin);
+    }
 }
 
+#ifndef APPROVALS_CPPUTEST_EXISTING_MAIN
 int main(int argc, char** argv)
 {
-    ApprovalTests::ApprovalTestsCppUTestPlugin logPlugin;
-    TestRegistry::getCurrentRegistry()->installPlugin(&logPlugin);
+    ApprovalTests::initializeApprovalTestsForCppUTest();
+
     int result = CommandLineTestRunner::RunAllTests(argc, argv);
     TestRegistry::getCurrentRegistry()->resetPlugins();
     return result;
 }
+#endif
 
 #endif // APPROVALS_CPPUTEST
