@@ -51,6 +51,7 @@ for any failed Approval Tests.
   - **Using Approval Tests with**:
     [Boost.Test](/doc/UsingBoostTest.md#top) |
     [Catch2](/doc/UsingCatch.md#top) |
+    [CppUTest](/doc/UsingCppUTest.md#top) |
     [doctest](/doc/UsingDoctest.md#top) |
     [Google Tests](/doc/UsingGoogleTests.md#top) |
     [\[Boost\].ut](/doc/UsingUT.md#top)
