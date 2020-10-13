@@ -29,7 +29,6 @@ namespace ApprovalTests
     public:
         ApprovalTestsCppUTestPlugin() : TestPlugin("ApprovalTestsCppUTestPlugin")
         {
-            currentTest->sections.reserve(2);
         }
 
         APPROVAL_TESTS_NO_DISCARD static std::string
