@@ -50,7 +50,7 @@ TEST(NamerTestGroup, TestProperNameCaseOnWindows)
         auto test = ApprovalTestNamer::currentTest();
         test.setFileName(StringUtils::toLower(test.getFileName()));
         ApprovalTestNamer::currentTest(&test);
-        STRCMP_EQUAL(namer.getFileName().c_str(), "Catch2NamerTests");
+        STRCMP_EQUAL(namer.getFileName().c_str(), "CppUTestNamerTests");
     }
 }
 
