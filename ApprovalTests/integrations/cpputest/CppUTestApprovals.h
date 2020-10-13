@@ -21,23 +21,15 @@ namespace ApprovalTests
     class ApprovalTestsCppUTestPlugin : public TestPlugin
     {
     private:
-        ApprovalTests::TestName currentTest;
+        // We need to be able to delete currentTest at the end of the
+        // test, to prevent CppUTest's leak-checking from triggering,
+        // due to an undeleted std::string - so we use std::unique_ptr.
+        std::unique_ptr<ApprovalTests::TestName> currentTest;
 
     public:
         ApprovalTestsCppUTestPlugin() : TestPlugin("ApprovalTestsCppUTestPlugin")
         {
-            // Turn off memory-leak-checking for now, as it generates errors which
-            // I think are spurious.
-            // The manual says:
-            //      "It is common for the memory leak detection macros to conflict
-            //      with an overloaded operator new or with STL."
-            // http://cpputest.github.io/manual.html#memory_leak_detection
-            //
-            // I tried using the documented code to turn off leak-checking
-            // by implementing setup() and teardown() - but got compiler errors - logged in
-            // https://github.com/cpputest/cpputest/issues/1428
-            MemoryLeakWarningPlugin::turnOffNewDeleteOverloads();
-            currentTest.sections.reserve(2);
+            currentTest->sections.reserve(2);
         }
 
         APPROVAL_TESTS_NO_DISCARD static std::string
@@ -48,19 +40,20 @@ namespace ApprovalTests
 
         void preTestAction(UtestShell& shell, TestResult& result) override
         {
-            currentTest.setFileName(cppUTestToString(shell.getFile()));
+            currentTest.reset(new ApprovalTests::TestName);
+            currentTest->setFileName(cppUTestToString(shell.getFile()));
 
-            currentTest.sections.emplace_back(cppUTestToString(shell.getGroup()));
-            currentTest.sections.emplace_back(cppUTestToString(shell.getName()));
+            currentTest->sections.emplace_back(cppUTestToString(shell.getGroup()));
+            currentTest->sections.emplace_back(cppUTestToString(shell.getName()));
 
-            ApprovalTests::ApprovalTestNamer::currentTest(&currentTest);
+            ApprovalTests::ApprovalTestNamer::currentTest(currentTest.get());
 
             TestPlugin::preTestAction(shell, result);
         }
 
         void postTestAction(UtestShell& shell, TestResult& result) override
         {
-            currentTest.sections.clear();
+            currentTest = nullptr;
             TestPlugin::postTestAction(shell, result);
         }
     };
