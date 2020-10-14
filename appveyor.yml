@@ -20,7 +20,7 @@ before_build:
     IF "%TARGET%" == "mingw" set PATH=%MINGWPATH%;%PATH%
     IF "%TARGET%" == "cygwin" set "PATH=C:\cygwin\bin;C:\cygwin\usr\bin;%PATH%"
     IF "%TARGET%" == "cygwin" "C:/cygwin/setup-x86.exe" --quiet-mode --packages libboost-devel  > cygwin-install.txt || bash -c "cat cygwin-install.txt"
-    cmake -G %GENERATOR% .
+    cmake -G %GENERATOR% . -DCMAKE_BUILD_TYPE=Debug
 
 build_script:
 - cmd: |
