@@ -133,11 +133,9 @@ jobs:
         echo BOOST_INCLUDEDIR="${{ env.BOOST_ROOT }}\boost\include" >> $GITHUB_ENV
         echo BOOST_LIBRARYDIR="${{ env.BOOST_ROOT }}\lib" >> $GITHUB_ENV
 
-    - name: make build space, using cmake script mode to access environment variable in cross-platform way
-      shell: cmake -P {0}
+    - name: make build space
       run: |
-        message("About to create directory $ENV{BUILD_DIR_PATH}")
-        file(MAKE_DIRECTORY $ENV{BUILD_DIR_PATH})
+        mkdir ${{ env.BUILD_DIR_PATH }}
     - name: cmake
       run: |
         cmake --version
