@@ -117,7 +117,9 @@ jobs:
         echo Build space 1: ${{ env.BUILD_DIR_PATH }}
         echo Build space 2: $BUILD_DIR_PATH
         echo Build space 3: %BUILD_DIR_PATH%
-
+        echo GITHUB_ENV 1: ${{ env.GITHUB_ENV }}
+        echo GITHUB_ENV 2: $GITHUB_ENV
+        echo GITHUB_ENV 3: %GITHUB_ENV%
 
     - name: install boost for macOS
       if: matrix.os == 'macOS-latest'
