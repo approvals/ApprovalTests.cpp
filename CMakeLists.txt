@@ -27,7 +27,7 @@ if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
 endif ()
 
 if (NOT_SUBPROJECT)
-    add_subdirectory(CMake/cpputest)
+    #add_subdirectory(CMake/cpputest)
     add_subdirectory(CMake/googletest)
 endif ()
 
