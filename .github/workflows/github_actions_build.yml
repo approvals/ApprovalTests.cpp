@@ -101,7 +101,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@master
-    - uses: seanmiddleditch/gha-setup-ninja@v3
+    - uses: seanmiddleditch/gha-setup-ninja@v1
       if: contains(matrix.generator, 'Ninja')
 
     - name: set env for in-source build tree
