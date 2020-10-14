@@ -4,7 +4,6 @@ IMPROVE USABILITY OF CURRENT FEATURES
 
 NEW FEATURES
 
-. add a non-gui reporter, e.g. for use in CI systems
 . catch reporter
 . maps
 . reports
@@ -33,7 +32,7 @@ RELEASES
 CODE QUALITY
 
 . Clean up CIBuildOnlyReporter
-. run through Qt Creator analysis tools
+. run through static analysis tools
 . memory leaks in our tests
 
 ENVIRONMENT AND BUILDS
