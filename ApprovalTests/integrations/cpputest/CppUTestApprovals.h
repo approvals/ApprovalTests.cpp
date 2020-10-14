@@ -29,6 +29,12 @@ namespace ApprovalTests
     public:
         ApprovalTestsCppUTestPlugin() : TestPlugin("ApprovalTestsCppUTestPlugin")
         {
+            // Turn off CppUTest's leak checks.
+            // On some platforms, CppUTest's leak-checking reports leaks
+            // in this code, because the way the platform's std::string manages life-times
+            // of string storage is not compatible with the requirements of the
+            // CppUTest leak-checks.
+            MemoryLeakWarningPlugin::turnOffNewDeleteOverloads();
         }
 
         APPROVAL_TESTS_NO_DISCARD static std::string
