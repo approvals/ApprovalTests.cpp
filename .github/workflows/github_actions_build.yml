@@ -114,7 +114,9 @@ jobs:
         echo BUILD_DIR_PATH="${{ env.OUT_OF_TREE_BUILD_DIR }}" >> $GITHUB_ENV
     - name: check env
       run: |
-        echo Build space: ${{ env.BUILD_DIR_PATH }}
+        echo Build space 1: ${{ env.BUILD_DIR_PATH }}
+        echo Build space 2: $BUILD_DIR_PATH
+        echo Build space 3: %BUILD_DIR_PATH%
 
 
     - name: install boost for macOS
