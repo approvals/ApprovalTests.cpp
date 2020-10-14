@@ -107,11 +107,11 @@ jobs:
     - name: set env for in-source build tree
       if: matrix.in_source_build == true
       run: |
-        echo BUILD_DIR_PATH="${{ env.IN_TREE_BUILD_DIR }}" >> $GITHUB_ENV
+        echo BUILD_DIR_PATH=${{ env.IN_TREE_BUILD_DIR }}" >> $GITHUB_ENV
     - name: set env out-of-source
       if: matrix.in_source_build == false
       run: |
-        echo BUILD_DIR_PATH="${{ env.OUT_OF_TREE_BUILD_DIR }}" >> $GITHUB_ENV
+        echo BUILD_DIR_PATH=${{ env.OUT_OF_TREE_BUILD_DIR }}" >> $GITHUB_ENV
     - name: check env
       run: |
         echo Build space: ${{ env.BUILD_DIR_PATH }}
@@ -129,9 +129,9 @@ jobs:
     - name: set up boost for windows
       if: matrix.os == 'windows-latest' || matrix.os == 'windows-2016'
       run: |
-        echo BOOST_ROOT="$env:BOOST_ROOT_1_72_0" >> $GITHUB_ENV
-        echo BOOST_INCLUDEDIR="${{ env.BOOST_ROOT }}\boost\include" >> $GITHUB_ENV
-        echo BOOST_LIBRARYDIR="${{ env.BOOST_ROOT }}\lib" >> $GITHUB_ENV
+        echo BOOST_ROOT=$env:BOOST_ROOT_1_72_0" >> $GITHUB_ENV
+        echo BOOST_INCLUDEDIR=${{ env.BOOST_ROOT }}\boost\include" >> $GITHUB_ENV
+        echo BOOST_LIBRARYDIR=${{ env.BOOST_ROOT }}\lib" >> $GITHUB_ENV
 
     - name: make build space
       run: |
