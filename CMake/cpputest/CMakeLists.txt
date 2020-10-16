@@ -1,3 +1,8 @@
+if (CYGWIN)
+    MESSAGE("The CppUTest integration with Approval Tests does not build on this platform, CygWin, therefore it's disabled")
+    return()
+endif()
+
 if (NOT TARGET cpputest)
     cmake_minimum_required(VERSION 3.8)
 
