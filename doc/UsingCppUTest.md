@@ -6,6 +6,7 @@
 ## Contents
 
   * [Introduction](#introduction)
+    * [CppUTest Integration Limitations](#cpputest-integration-limitations)
   * [Getting Started With CppUTest](#getting-started-with-cpputest)
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
@@ -13,17 +14,21 @@
 
 ## Introduction
 
-The [CppUTest](http://cpputest.github.io/) test framework works well with Approval Tests.
+The [CppUTest](http://cpputest.github.io/) test framework works well on most platforms with Approval Tests.
 
 This section describes the various ways of using Approval Tests with CppUTest.
-
-**Note:** Approval Tests's use of STL objects triggers test failures from CppUTest's memory-leak checking, and so our integration with CppUTest currently **turns of its memory leak checks**.
 
 **Note:** Approval Tests has some specific build requirements if it is built with
 the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed
 when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please
 see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top)
 **Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- singleLineInclude: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
+
+### CppUTest Integration Limitations
+
+**Note:** This integration is not tested on CygWin. The CppUTest integration with Approval Tests does not build on this platform, CygWin, therefore our tests of it are disabled.
+
+**Note:** Approval Tests's use of STL objects triggers test failures from CppUTest's memory-leak checking, and so our integration with CppUTest currently **turns of its memory leak checks**.
 
 ## Getting Started With CppUTest
 
