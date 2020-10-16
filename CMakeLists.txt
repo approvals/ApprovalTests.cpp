@@ -19,7 +19,7 @@ useCompilerCache()
 
 add_subdirectory(ApprovalTests)
 
-set(CMAKE_VERBOSE_MAKEFILE on)
+set(CMAKE_VERBOSE_MAKEFILE off)
 
 if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
     include(CodeCoverage)
