@@ -41,6 +41,8 @@ Approval Tests requires that the following are found:
 <sup><a href='/ApprovalTests/integrations/cpputest/CppUTestApprovals.h#L13-L17' title='File snippet `required_headers_for_cpputest` was extracted from'>snippet source</a> | <a href='#snippet-required_headers_for_cpputest' title='Navigate to start of snippet `required_headers_for_cpputest`'>anchor</a></sup>
 <!-- endSnippet -->
 
+Approval Tests is tested with CppUTest v4.0. 
+
 ## Getting Started With CppUTest
 
 ### Starter Project
