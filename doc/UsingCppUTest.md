@@ -7,6 +7,7 @@
 
   * [Introduction](#introduction)
     * [CppUTest Integration Limitations](#cpputest-integration-limitations)
+  * [Requirements](#requirements)
   * [Getting Started With CppUTest](#getting-started-with-cpputest)
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
@@ -25,6 +26,20 @@ This section describes the various ways of using Approval Tests with CppUTest.
 **Note:** This integration is not tested on CygWin. The CppUTest integration with Approval Tests does not build on this platform, CygWin, therefore our tests of it are disabled.
 
 **Note:** Approval Tests's use of STL objects triggers test failures from CppUTest's memory-leak checking, and so our integration with CppUTest currently **turns of its memory leak checks**.
+
+## Requirements
+
+Approval Tests requires that the following are found:
+
+<!-- snippet: required_headers_for_cpputest -->
+<a id='snippet-required_headers_for_cpputest'></a>
+```h
+#include <CppUTest/CommandLineTestRunner.h>
+#include <CppUTest/TestPlugin.h>
+#include <CppUTest/TestRegistry.h>
+```
+<sup><a href='/ApprovalTests/integrations/cpputest/CppUTestApprovals.h#L13-L17' title='File snippet `required_headers_for_cpputest` was extracted from'>snippet source</a> | <a href='#snippet-required_headers_for_cpputest' title='Navigate to start of snippet `required_headers_for_cpputest`'>anchor</a></sup>
+<!-- endSnippet -->
 
 ## Getting Started With CppUTest
 
