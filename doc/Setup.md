@@ -42,6 +42,7 @@ This is when you have an existing code base that has some tests already, and you
     * Rename the header file to `ApprovalTests.hpp` (removing its version number)
 1. Set up your `main()` (this is framework-dependent):
     * [Using Approval Tests With Catch](/doc/UsingCatch.md#top)
+    * [Using Approval Tests With CppUTest](/doc/UsingCppUTest.md#top)
     * [Using Approval Tests With Google Tests](/doc/UsingGoogleTests.md#top)
     * [Using Approval Tests With Doctest](/doc/UsingDoctest.md#top)
     * [Using Approval Tests With Boost.Test](/doc/UsingBoostTest.md#top)

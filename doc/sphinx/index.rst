@@ -45,6 +45,7 @@ Approval Tests uses a test framework, in order to find out the names of tests an
 * **Using Approval Tests with**:
   :doc:`Boost.Test <generated_docs/UsingBoostTest>` |
   :doc:`Catch2 <generated_docs/UsingCatch>` |
+  :doc:`CppUTest <generated_docs/UsingCppUTest>` |
   :doc:`doctest <generated_docs/UsingDoctest>` |
   :doc:`Google Tests <generated_docs/UsingGoogleTests>` |
   :doc:`[Boost].ut <generated_docs/UsingUT>`
@@ -59,6 +60,7 @@ Approval Tests uses a test framework, in order to find out the names of tests an
 
    generated_docs/UsingBoostTest
    generated_docs/UsingCatch
+   generated_docs/UsingCppUTest
    generated_docs/UsingDoctest
    generated_docs/UsingGoogleTests
    generated_docs/UsingUT

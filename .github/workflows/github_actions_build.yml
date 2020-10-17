@@ -139,11 +139,11 @@ jobs:
     - name: cmake
       run: |
         cmake --version
-        cmake -G ${{ matrix.generator }} ${{ github.workspace }}
+        cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
       working-directory: ${{ env.BUILD_DIR_PATH }}
     - name: build
       run: cmake --build .
       working-directory: ${{ env.BUILD_DIR_PATH }}
     - name: test
-      run: ctest --verbose -C Debug
+      run: ctest --verbose --output-on-failure -C Debug
       working-directory: ${{ env.BUILD_DIR_PATH }}

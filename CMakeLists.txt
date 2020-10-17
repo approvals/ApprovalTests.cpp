@@ -19,7 +19,7 @@ useCompilerCache()
 
 add_subdirectory(ApprovalTests)
 
-set(CMAKE_VERBOSE_MAKEFILE on)
+set(CMAKE_VERBOSE_MAKEFILE off)
 
 if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
     include(CodeCoverage)
@@ -27,6 +27,7 @@ if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
 endif ()
 
 if (NOT_SUBPROJECT)
+    add_subdirectory(CMake/cpputest)
     add_subdirectory(CMake/googletest)
 endif ()
 
