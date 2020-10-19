@@ -99,10 +99,9 @@ int main()
     };
 
     "VerifyAFileWithAmpersand&"_test = [&]() {
-      auto namer = Approvals::getDefaultNamer();
-      expect(throws([&] { auto name = namer->getReceivedFile(".txt"); }))
-          << "documenting bug #157, if you see this, the bug has been fixed upstream "
-             "and can be closed, and this test should be updated";
+        auto namer = Approvals::getDefaultNamer();
+        expect(throws([&] { auto name = namer->getReceivedFile(".txt"); }))
+            << "documenting bug #157, if you see this, the bug has been fixed upstream "
+               "and can be closed, and this test should be updated";
     };
-
 }
