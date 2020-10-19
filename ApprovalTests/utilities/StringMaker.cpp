@@ -1,6 +1,7 @@
 #include "StringMaker.h"
 
 #include <codecvt>
+#include <locale>
 
 namespace ApprovalTests
 {
