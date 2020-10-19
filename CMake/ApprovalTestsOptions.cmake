@@ -23,6 +23,10 @@ option(APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION
 option(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION
         "Enable the CppUTest integration and testing"
         ON)
+if (CYGWIN)
+    MESSAGE(WARNING "The CppUTest integration with Approval Tests does not build on this platform, CygWin, therefore it's disabled")
+    set(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION OFF CACHE BOOL "" FORCE)
+endif()
 
 option(APPROVAL_TESTS_ENABLE_DOCTEST_INTEGRATION
         "Enable the doctest integration and testing"
