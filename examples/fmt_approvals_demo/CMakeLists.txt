@@ -1,3 +1,7 @@
+if (NOT APPROVAL_TESTS_ENABLE_DOCTEST_INTEGRATION)
+    return()
+endif ()
+
 project(fmt_approvals_demo)
 set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}

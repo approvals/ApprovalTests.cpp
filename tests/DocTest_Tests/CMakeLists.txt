@@ -1,3 +1,7 @@
+if (NOT APPROVAL_TESTS_ENABLE_DOCTEST_INTEGRATION)
+    return()
+endif ()
+
 project(DocTest_Tests)
 set(CMAKE_CXX_STANDARD 17)
 add_executable(${PROJECT_NAME}

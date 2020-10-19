@@ -1,3 +1,7 @@
+if (NOT APPROVAL_TESTS_ENABLE_DOCTEST_INTEGRATION)
+    return()
+endif ()
+
 if (NOT TARGET doctest)
     project(doctest CXX)
     set(CMAKE_CXX_STANDARD 11)

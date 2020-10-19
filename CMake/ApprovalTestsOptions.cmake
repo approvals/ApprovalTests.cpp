@@ -20,6 +20,10 @@ option(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION
         "Enable the CppUTest integration and testing"
         ON)
 
+option(APPROVAL_TESTS_ENABLE_DOCTEST_INTEGRATION
+        "Enable the doctest integration and testing"
+        ON)
+
 option(APPROVAL_TESTS_ENABLE_GOOGLETEST_INTEGRATION
         "Enable the GoogleTest integration and testing"
         ON)

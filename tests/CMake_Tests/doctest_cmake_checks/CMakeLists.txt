@@ -1,3 +1,7 @@
+if (NOT APPROVAL_TESTS_ENABLE_DOCTEST_INTEGRATION)
+    return()
+endif ()
+
 set(CMAKE_CXX_STANDARD 11)
 
 # This is the one users are recommended to use:
