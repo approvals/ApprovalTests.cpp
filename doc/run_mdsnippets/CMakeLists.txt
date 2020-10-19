@@ -4,6 +4,8 @@ if (NOT mdsnippets_FOUND)
     return()
 endif ()
 
+set(DOCS_FAKE_OUTPUT_FILE_TO_FORCE_BUILD ${CMAKE_CURRENT_BINARY_DIR}/__fake_output_file_to_force_build)
+
 add_custom_command(OUTPUT ${DOCS_FAKE_OUTPUT_FILE_TO_FORCE_BUILD}
         COMMAND mdsnippets
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
