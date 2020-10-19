@@ -15,14 +15,17 @@ option(APPROVAL_TESTS_BUILD_DOCS
 option(APPROVAL_TESTS_ENABLE_BOOST_TEST_INTEGRATION
         "Enable the Boost.Test integration and testing"
         ON)
+mark_as_advanced(APPROVAL_TESTS_ENABLE_BOOST_TEST_INTEGRATION)
 
 option(APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION
         "Enable the Catch2 integration and testing"
         ON)
+mark_as_advanced(APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION)
 
 option(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION
         "Enable the CppUTest integration and testing"
         ON)
+mark_as_advanced(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION)
 if (CYGWIN)
     MESSAGE(WARNING "The CppUTest integration with Approval Tests does not build on this platform, CygWin, therefore it's disabled")
     set(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION OFF CACHE BOOL "" FORCE)
@@ -31,14 +34,17 @@ endif()
 option(APPROVAL_TESTS_ENABLE_DOCTEST_INTEGRATION
         "Enable the doctest integration and testing"
         ON)
+mark_as_advanced(APPROVAL_TESTS_ENABLE_DOCTEST_INTEGRATION)
 
 option(APPROVAL_TESTS_ENABLE_GOOGLETEST_INTEGRATION
         "Enable the GoogleTest integration and testing"
         ON)
+mark_as_advanced(APPROVAL_TESTS_ENABLE_GOOGLETEST_INTEGRATION)
 
 option(APPROVAL_TESTS_ENABLE_UT_INTEGRATION
         "Enable the Boost.UT integration and testing"
         ON)
+mark_as_advanced(APPROVAL_TESTS_ENABLE_UT_INTEGRATION)
 
 # -------------------------------------------------------------------
 # Control which of our copies of header-only third_party libraries are made available.
