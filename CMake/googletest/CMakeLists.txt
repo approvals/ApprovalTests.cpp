@@ -1,3 +1,7 @@
+if (NOT APPROVAL_TESTS_ENABLE_GOOGLETEST_INTEGRATION)
+    return()
+endif ()
+
 if (NOT TARGET gtest_main)
     # Download and unpack googletest at configure time
     configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)

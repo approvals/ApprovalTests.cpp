@@ -1,3 +1,7 @@
+if (NOT APPROVAL_TESTS_ENABLE_GOOGLETEST_INTEGRATION)
+    return()
+endif ()
+
 project(googletest_existing_main)
 set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}
