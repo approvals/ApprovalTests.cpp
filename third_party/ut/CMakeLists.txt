@@ -1,3 +1,7 @@
+if (NOT APPROVAL_TESTS_ENABLE_UT_INTEGRATION)
+    return()
+endif ()
+
 if (NOT TARGET boost.ut)
     project(boost.ut CXX)
     set(CMAKE_CXX_STANDARD 17)
