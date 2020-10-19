@@ -152,7 +152,7 @@ class DeployConanRelease:
     def test_conan_build_passes(conan_details: ConanReleaseDetails, version_without_v: str) -> None:
         conan_directory = os.path.join(conan_details.conan_approvaltests_dir, 'all')
         with use_directory(conan_directory):
-            run(['conan', 'create', '.', F'{version_without_v}@'])
+            run(['conan', 'create', '--build=missing', '.', F'{version_without_v}@'])
 
     @staticmethod
     def create_pull_request(details: ReleaseDetails) -> None:
