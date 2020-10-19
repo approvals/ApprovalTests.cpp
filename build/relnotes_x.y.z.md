@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * Add support for approving std::wstring objects (#154, thanks @OmerYa)
 * **Bug fixes**
     * None
 * **Other changes**
