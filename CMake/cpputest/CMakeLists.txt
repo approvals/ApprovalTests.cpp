@@ -1,3 +1,7 @@
+if (NOT APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION)
+    return()
+endif ()
+
 if (CYGWIN)
     MESSAGE("The CppUTest integration with Approval Tests does not build on this platform, CygWin, therefore it's disabled")
     return()

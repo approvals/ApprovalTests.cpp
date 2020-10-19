@@ -12,6 +12,11 @@ option(APPROVAL_TESTS_BUILD_DOCS
         ${NOT_SUBPROJECT})
 
 # -------------------------------------------------------------------
+option(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION
+        "Enable the CppUTest integration and testing"
+        ON)
+
+# -------------------------------------------------------------------
 # Control which of our copies of header-only third_party libraries are made available.
 # These only affect builds where ApprovalTests.cpp is a sub-project.
 # All the third-party libraries are made available
