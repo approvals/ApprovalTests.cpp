@@ -56,12 +56,12 @@ The options provided are:
 
 ##### Which targets are built
 
+Note that these are always enabled if this is the top-level project.
+
 * `APPROVAL_TESTS_BUILD_TESTING`
   * When `ON`, the self-tests are run.  Defaults to `OFF`.
-  * These are always built and run if this is the top-level project.
 * `APPROVAL_TESTS_BUILD_EXAMPLES`
   * When `ON`, the examples are run.  Defaults to `OFF`.
-  * These are always built and run if this is the top-level project.
 * `APPROVAL_TESTS_BUILD_DOCS`
   * When `ON`, documentation files are generated, if Doxygen, Sphinx and mdsnippets are installed.  Defaults to `OFF`.
   * These are not part of the `ALL` target.
