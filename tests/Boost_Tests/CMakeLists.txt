@@ -1,3 +1,7 @@
+if (NOT APPROVAL_TESTS_ENABLE_BOOST_TEST_INTEGRATION)
+    return()
+endif ()
+
 project(Boost_Tests)
 set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}

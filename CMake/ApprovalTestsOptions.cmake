@@ -12,6 +12,10 @@ option(APPROVAL_TESTS_BUILD_DOCS
         ${NOT_SUBPROJECT})
 
 # -------------------------------------------------------------------
+option(APPROVAL_TESTS_ENABLE_BOOST_TEST_INTEGRATION
+        "Enable the Boost.Test integration and testing"
+        ON)
+
 option(APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION
         "Enable the Catch2 integration and testing"
         ON)
