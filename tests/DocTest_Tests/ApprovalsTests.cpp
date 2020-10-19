@@ -36,6 +36,17 @@ TEST_CASE("TestNonCopyableStreamableObject")
     Approvals::verify(object, Options());
 }
 
+TEST_CASE("Test Unicode")
+{
+    Approvals::verify("I like unicode ☃");
+}
+
+TEST_CASE("Test wstring")
+{
+    std::wstring text = L"I like unicode ☃";
+    Approvals::verify(text);
+}
+
 // ==============================================================
 
 struct NonStreamablePoint

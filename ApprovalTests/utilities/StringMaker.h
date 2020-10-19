@@ -14,5 +14,9 @@ namespace ApprovalTests
             s << contents;
             return s.str();
         }
+
+        static std::string toString(const std::wstring& wstr);
+
+        static std::string toString(const wchar_t* wstr);
     };
 }
