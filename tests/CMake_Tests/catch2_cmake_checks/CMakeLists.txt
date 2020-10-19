@@ -1,3 +1,7 @@
+if (NOT APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION)
+    return()
+endif ()
+
 set(CMAKE_CXX_STANDARD 11)
 
 # Create one library for each of the Catch2 targets and aliases we require to exist
