@@ -63,7 +63,7 @@ If you would like to see how we added fmt to our build, check out:
 ```txt
 target_link_libraries(${PROJECT_NAME} fmt::fmt)
 ```
-<sup><a href='/examples/fmt_approvals_demo/CMakeLists.txt#L9-L11' title='File snippet `fmt_cmake` was extracted from'>snippet source</a> | <a href='#snippet-fmt_cmake' title='Navigate to start of snippet `fmt_cmake`'>anchor</a></sup>
+<sup><a href='/examples/fmt_approvals_demo/CMakeLists.txt#L13-L15' title='File snippet `fmt_cmake` was extracted from'>snippet source</a> | <a href='#snippet-fmt_cmake' title='Navigate to start of snippet `fmt_cmake`'>anchor</a></sup>
 <!-- endSnippet -->
 
 [fmt/CmakeList.txt](/CMake/fmt/CMakeLists.txt)  

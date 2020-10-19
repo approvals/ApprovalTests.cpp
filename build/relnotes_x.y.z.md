@@ -3,9 +3,8 @@
 * **Breaking changes**
     * None
 * **New features**
-    * Add support for [CppUTest](http://cpputest.github.io/).
-      See [Using Approval Tests With CppUTest](/doc/UsingCppUTest.md#top) (#159, thanks to @jwgrenning and @basvodde)
+    * None
 * **Bug fixes**
     * None
 * **Other changes**
-    * **Easier maintenance of documentation**: Files in the User Guide can now be edited directly, instead of needing to find the matching `mdsource/Blah.source.md` file (#158) 
+    * None
