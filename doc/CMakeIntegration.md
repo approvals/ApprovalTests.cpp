@@ -50,7 +50,9 @@ target_link_libraries(tests ApprovalTests::ApprovalTests)
 ApprovalTests.cpp's CMake project also provides some options for other projects
 that consume it.
 
-They are:
+The file [CMake/ApprovalTestsOptions.cmake](https://github.com/approvals/ApprovalTests.cpp/blob/master/CMake/ApprovalTestsOptions.cmake) defines these options.
+
+The options provided are:
 
 ##### Which targets are built
 
@@ -77,8 +79,6 @@ Note that these are always included if this is the top-level project.
 
 * `APPROVAL_TESTS_ENABLE_CODE_COVERAGE`
   * When `ON`, Approval Test's own tests are run with code coverage enabled. This uses [Lars Bilke's CodeCoverage.cmake](https://github.com/bilke/cmake-modules/blob/master/CodeCoverage.cmake).  Defaults to `OFF`.
-
-The file [CMake/ApprovalTestsOptions.cmake](https://github.com/approvals/ApprovalTests.cpp/blob/master/CMake/ApprovalTestsOptions.cmake) defines these options.
 
 #### CMake commands support
 
