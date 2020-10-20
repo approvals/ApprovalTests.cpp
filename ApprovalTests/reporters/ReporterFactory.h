@@ -13,11 +13,17 @@ namespace ApprovalTests
     class ReporterFactory
     {
     public:
+        using Reporters =
+            std::map<std::string, std::function<std::unique_ptr<Reporter>()>>;
+
         std::vector<std::string> allSupportedReporterNames(const std::string& osPrefix);
 
         std::unique_ptr<Reporter> createReporter(const std::string& reporterName) const;
 
-    private:
-        std::map<std::string, std::function<std::unique_ptr<Reporter>()>> createMap() const;
+        std::string findReporterName(const Reporters& map,
+                                     const std::string& osPrefix,
+                                     const std::string& reporterName) const;
+
+        Reporters createMap() const;
     };
 }

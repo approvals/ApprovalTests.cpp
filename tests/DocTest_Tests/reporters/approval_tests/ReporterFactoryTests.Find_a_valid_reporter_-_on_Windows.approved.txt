@@ -1,0 +1,5 @@
+Mac::KaleidoscopeReporter => Mac::KaleidoscopeReporter
+KaleidoscopeReporter => 
+Mac::Kaleidoscope => Mac::KaleidoscopeReporter
+Kaleidoscope => 
+

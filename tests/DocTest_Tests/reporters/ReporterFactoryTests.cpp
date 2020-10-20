@@ -71,3 +71,22 @@ TEST_CASE("Verify all valid env variable values - on Windows")
     ReporterFactory reporterFactory;
     Approvals::verifyAll(reporterFactory.allSupportedReporterNames("Windows"));
 }
+
+TEST_CASE("Find a valid reporter - on Windows")
+{
+    ReporterFactory reporterFactory;
+
+    std::vector<std::string> inputs{
+        "Mac::KaleidoscopeReporter",
+        "KaleidoscopeReporter",
+        "Mac::Kaleidoscope",
+        "Kaleidoscope",
+    };
+
+    auto map = reporterFactory.createMap();
+
+    Approvals::verifyAll("", inputs, [&](auto input, auto& stream) {
+        stream << input << " => "
+               << reporterFactory.findReporterName(map, "Windows::", input);
+    });
+}

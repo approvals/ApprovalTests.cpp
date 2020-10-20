@@ -40,10 +40,9 @@ namespace ApprovalTests
         return "Linux::";
     }
 
-    std::map<std::string, std::function<std::unique_ptr<Reporter>()>>
-    ReporterFactory::createMap() const
+    ReporterFactory::Reporters ReporterFactory::createMap() const
     {
-        std::map<std::string, std::function<std::unique_ptr<Reporter>()>> map;
+        Reporters map;
 
         APPROVAL_TESTS_REGISTER_REPORTER(AutoApproveIfMissingReporter);
         APPROVAL_TESTS_REGISTER_REPORTER(AutoApproveReporter);
@@ -92,25 +91,7 @@ namespace ApprovalTests
 
         auto osPrefix = getOsPrefix();
 
-        std::vector<std::string> candidateNames = {
-            reporterName,
-            // Allow program names to be specified without Reporter suffix
-            reporterName + "Reporter",
-            // Allow names without os namespace
-            osPrefix + reporterName,
-            osPrefix + reporterName + "Reporter",
-        };
-
-        std::string key;
-        for (auto& candidateName : candidateNames)
-        {
-            auto iter = map.find(candidateName);
-            if (iter != map.end())
-            {
-                key = iter->first;
-                break;
-            }
-        }
+        auto key = findReporterName(map, osPrefix, reporterName);
 
         if (!key.empty())
         {
@@ -135,5 +116,30 @@ namespace ApprovalTests
         }
 
         return result;
+    }
+
+    std::string ReporterFactory::findReporterName(const Reporters& map,
+                                                  const std::string& osPrefix,
+                                                  const std::string& reporterName) const
+    {
+        std::vector<std::string> candidateNames = {
+            reporterName,
+            // Allow program names to be specified without Reporter suffix
+            reporterName + "Reporter",
+            // Allow names without os namespace
+            osPrefix + reporterName,
+            osPrefix + reporterName + "Reporter",
+        };
+
+        for (auto& candidateName : candidateNames)
+        {
+            auto iter = map.find(candidateName);
+            if (iter != map.end())
+            {
+                return iter->first;
+            }
+        }
+
+        return std::string{};
     }
 }
