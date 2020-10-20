@@ -40,8 +40,8 @@ namespace ApprovalTests
         return "Linux::";
     }
 
-    std::unique_ptr<Reporter>
-    ReporterFactory::createReporter(const std::string& reporterName) const
+    std::map<std::string, std::function<std::unique_ptr<Reporter>()>>
+    ReporterFactory::createMap() const
     {
         std::map<std::string, std::function<std::unique_ptr<Reporter>()>> map;
 
@@ -82,6 +82,14 @@ namespace ApprovalTests
         APPROVAL_TESTS_REGISTER_REPORTER(Windows::KDiff3Reporter);
         APPROVAL_TESTS_REGISTER_REPORTER(Windows::VisualStudioCodeReporter);
 
+        return map;
+    }
+
+    std::unique_ptr<Reporter>
+    ReporterFactory::createReporter(const std::string& reporterName) const
+    {
+        auto map = createMap();
+
         auto osPrefix = getOsPrefix();
 
         std::vector<std::string> candidateNames = {
@@ -103,5 +111,22 @@ namespace ApprovalTests
         }
 
         return std::unique_ptr<Reporter>();
+    }
+
+    std::vector<std::string>
+    ReporterFactory::allSupportedReporterNames(const std::string& osPrefix)
+    {
+        (void)osPrefix;
+
+        auto map = createMap();
+
+        std::vector<std::string> result;
+
+        for (auto& p : map)
+        {
+            result.push_back(p.first);
+        }
+
+        return result;
     }
 }

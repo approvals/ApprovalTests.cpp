@@ -3,6 +3,7 @@
 #include "ApprovalTests/reporters/LinuxReporters.h"
 #include "ApprovalTests/reporters/MacReporters.h"
 #include "ApprovalTests/reporters/WindowsReporters.h"
+#include "ApprovalTests/Approvals.h"
 
 #include "doctest/doctest.h"
 
@@ -63,4 +64,10 @@ TEST_CASE("ReporterFactory creates a Reporter given Windows::WinMerge")
     ReporterFactory factory;
     auto reporter = factory.createReporter("Windows::WinMerge");
     CHECK(dynamic_cast<Windows::WinMergeReporter*>(reporter.get()));
+}
+
+TEST_CASE("Verify all valid env variable values - on Windows")
+{
+    ReporterFactory reporterFactory;
+    Approvals::verifyAll(reporterFactory.allSupportedReporterNames("Windows"));
 }
