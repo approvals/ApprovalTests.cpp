@@ -159,6 +159,9 @@ class DeployConanRelease:
         accepted = details.old_version.get_version_text_without_v() in PrepareConanRelease.get_accepted_approval_releases(
             details.project_details)
         if not accepted:
+            print(
+                F'Previous version number {details.old_version.get_version_text_without_v()} not found in list of '
+                F'accepted releases. Not prompting to create a Pull Request.')
             return
 
         new_version_without_v = details.new_version.get_version_text_without_v()
