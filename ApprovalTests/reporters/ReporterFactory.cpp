@@ -101,13 +101,20 @@ namespace ApprovalTests
             osPrefix + reporterName + "Reporter",
         };
 
+        std::string key;
         for (auto& candidateName : candidateNames)
         {
             auto iter = map.find(candidateName);
             if (iter != map.end())
             {
-                return iter->second();
+                key = iter->first;
+                break;
             }
+        }
+
+        if (!key.empty())
+        {
+            return map[key]();
         }
 
         return std::unique_ptr<Reporter>();
