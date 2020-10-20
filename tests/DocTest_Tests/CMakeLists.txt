@@ -33,6 +33,7 @@ add_executable(${PROJECT_NAME}
         reporters/CommandLineReporterTests.cpp
         reporters/CustomReporterTests.cpp
         reporters/DoNothingLauncher.h
+        reporters/EnvironmentVariableReporterTests.cpp
         reporters/FakeReporter.h
         reporters/ReporterFactoryTests.cpp
         reporters/ReporterTests.cpp

@@ -11,6 +11,13 @@ namespace ApprovalTests
     {
         // Get the env var
         const auto envVar = SystemUtils::safeGetEnv("APPROVAL_TESTS_USE_REPORTER");
+        return report(envVar, received, approved);
+    }
+    
+    bool EnvironmentVariableReporter::report(const std::string& envVar,
+                                             const std::string& received,
+                                             const std::string& approved) const
+    {
         if (!envVar.empty())
         {
             ReporterFactory factory;
