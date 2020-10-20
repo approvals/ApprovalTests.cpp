@@ -7,11 +7,7 @@ namespace ApprovalTests
 {
     class EnvironmentVariableReporter : public Reporter
     {
-        std::shared_ptr<Reporter> defaultIfNotFound_;
-
     public:
-        EnvironmentVariableReporter();
-        explicit EnvironmentVariableReporter(std::shared_ptr<Reporter> defaultIfNotFound);
         bool report(std::string received, std::string approved) const override;
     };
 }

@@ -5,16 +5,6 @@
 
 namespace ApprovalTests
 {
-    EnvironmentVariableReporter::EnvironmentVariableReporter()
-        : defaultIfNotFound_(std::make_shared<ApprovalTests::DiffReporter>())
-    {
-    }
-
-    EnvironmentVariableReporter::EnvironmentVariableReporter(
-        std::shared_ptr<Reporter> defaultIfNotFound)
-        : defaultIfNotFound_(defaultIfNotFound)
-    {
-    }
 
     bool EnvironmentVariableReporter::report(std::string received,
                                              std::string approved) const
@@ -31,7 +21,6 @@ namespace ApprovalTests
                 return reporter->report(received, approved);
             }
         }
-        // Or return false
-        return defaultIfNotFound_->report(received, approved);
+        return false;
     }
 }
