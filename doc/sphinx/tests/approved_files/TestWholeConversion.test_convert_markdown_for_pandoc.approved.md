@@ -112,7 +112,7 @@ Multiple on one line
 ```cpp
 Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
 ```
-(See [snippet source](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/ApprovalsTests.cpp#L113-L115))
+(See [snippet source](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/ApprovalsTests.cpp#L124-L126))
 <!-- endSnippet -->
 
 ## Test code snippet - linking to a whole file
