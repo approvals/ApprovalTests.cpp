@@ -11,5 +11,11 @@ using namespace ApprovalTests;
 
 auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
 
+// clang-format off
 auto defaultReporterDisposer =
-    Approvals::useAsDefaultReporter(std::make_shared<EnvironmentVariableReporter>());
+    Approvals::useAsDefaultReporter(
+        std::make_shared<FirstWorkingReporter>(
+            std::vector<Reporter*>{
+                new EnvironmentVariableReporter(),
+                new DiffReporter()}));
+// clang-format on
