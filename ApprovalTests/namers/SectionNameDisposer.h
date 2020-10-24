@@ -9,6 +9,7 @@ namespace ApprovalTests
     {
     public:
         SectionNameDisposer(TestName& currentTest_, const std::string& scope_name);
+        SectionNameDisposer(const SectionNameDisposer&) = default;
 
         ~SectionNameDisposer();
 
