@@ -38,10 +38,10 @@ jobs:
         cd ApprovalTests/ApprovalTests.cpp
         sudo apt-get install pandoc
         pandoc --version
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        pip install -r build/requirements.txt
-        pip install -r doc/requirements.txt
+        python3 -m pip install --upgrade pip
+        pip3 install flake8 pytest
+        pip3 install -r build/requirements.txt
+        pip3 install -r doc/requirements.txt
 
     - name: Lint with flake8
       run: |
@@ -55,10 +55,10 @@ jobs:
       run: |
         cd ApprovalTests/ApprovalTests.cpp
         cd build
-        python -m unittest discover -s tests --verbose
+        python3 -m unittest discover -s tests --verbose
 
     - name: Test doc/sphinx with pytest
       run: |
         cd ApprovalTests/ApprovalTests.cpp
         cd doc/sphinx/tests
-        python -m unittest discover -t ../.. --verbose
+        python3 -m unittest discover -t ../.. --verbose
