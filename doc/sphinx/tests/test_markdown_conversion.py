@@ -43,7 +43,8 @@ class TestWholeConversion(unittest.TestCase):
 
         converted_markdown, converted_rst = markdown_conversion.convert_markdown_text_to_restructured_text(input, '')
 
-        reporter = GenericDiffReporterFactory().get('AraxisMergeMac')
+        # reporter = GenericDiffReporterFactory().get('AraxisMergeMac')
+        reporter = None
 
         failure_count = 0
 
