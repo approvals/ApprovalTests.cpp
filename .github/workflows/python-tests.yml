@@ -52,9 +52,6 @@ jobs:
 
     - name: Test build/ with pytest
       run: |
-        pwd
-        ls -ls
-        ls -ls ..
         cd ApprovalTests/ApprovalTests.cpp
         cd build
         python -m unittest discover -s tests --verbose
