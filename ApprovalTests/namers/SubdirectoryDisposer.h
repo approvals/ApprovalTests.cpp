@@ -14,6 +14,7 @@ namespace ApprovalTests
 
     public:
         explicit SubdirectoryDisposer(std::string subdirectory);
+        SubdirectoryDisposer(const SubdirectoryDisposer&) = default;
 
         ~SubdirectoryDisposer();
     };

@@ -13,6 +13,7 @@ namespace ApprovalTests
 
     public:
         explicit FrontLoadedReporterDisposer(const std::shared_ptr<Reporter>& reporter);
+        FrontLoadedReporterDisposer(const FrontLoadedReporterDisposer&) = default;
 
         ~FrontLoadedReporterDisposer();
     };

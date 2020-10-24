@@ -13,6 +13,7 @@ namespace ApprovalTests
 
     public:
         explicit DefaultNamerDisposer(NamerCreator namerCreator);
+        DefaultNamerDisposer(const DefaultNamerDisposer&) = default;
 
         ~DefaultNamerDisposer();
     };
