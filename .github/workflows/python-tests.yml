@@ -37,6 +37,7 @@ jobs:
       run: |
         cd ApprovalTests/ApprovalTests.cpp
         sudo apt-get install pandoc
+        pandoc --version
         python -m pip install --upgrade pip
         pip install flake8 pytest
         pip install -r build/requirements.txt
