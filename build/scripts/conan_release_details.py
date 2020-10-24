@@ -12,6 +12,7 @@ class ConanReleaseDetails:
     @staticmethod
     def get_conan_repo_directory() -> str:
         possibles = [
+            '../conan-center-index-claremacrae',  # github actions
             '../../conan-center-index-claremacrae',  # llewellyn
             '../../../conan/conan-center-index-claremacrae'  # clare
         ]
