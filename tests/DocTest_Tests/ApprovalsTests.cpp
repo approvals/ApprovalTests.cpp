@@ -1,7 +1,9 @@
+#include <iostream>
 #include <ostream>
 #include <stdexcept>
 #include "doctest/doctest.h"
 #include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 
 using namespace ApprovalTests;
 
@@ -43,6 +45,11 @@ TEST_CASE("Test Unicode")
 
 TEST_CASE("Test wstring")
 {
+    if (SystemUtils::isWindowsOs())
+    {
+        std::cout << "INFO: This test is temporarily disabled on windows" << std::endl;
+        return;
+    }
     std::wstring text = L"I like unicode ☃";
     Approvals::verify(text);
 }
