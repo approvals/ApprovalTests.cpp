@@ -12,6 +12,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 [![Build Status](https://api.travis-ci.org/approvals/ApprovalTests.cpp.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp)
 [![Build status](https://ci.appveyor.com/api/projects/status/lf3i76ije89oihi5?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp)
 [![Actions Status](https://github.com/approvals/ApprovalTests.cpp/workflows/build/badge.svg)](https://github.com/approvals/ApprovalTests.cpp/actions)
+[![Python tests](https://github.com/claremacrae/ApprovalTests.cpp/workflows/Python%20tests/badge.svg)](https://github.com/approvals/ApprovalTests.cpp/actions)
 [![Documentation Status](https://readthedocs.org/projects/approvaltestscpp/badge/?version=latest)](https://approvaltestscpp.readthedocs.io/en/latest/?badge=latest)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](/CODE_OF_CONDUCT.md#top)
