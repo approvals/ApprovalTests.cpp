@@ -17,13 +17,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - Check out ApprovalTests.cpp
+      uses: actions/checkout@v2
+      with:
+        path: ApprovalTests/ApprovalTests.cpp
 
     - name: Check out claremacrae fork of conan-center-index
       uses: actions/checkout@v2
       with:
         repository: claremacrae/conan-center-index
-        path: conan-center-index-claremacrae
+        path: conan/conan-center-index-claremacrae
 
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
@@ -32,6 +35,7 @@ jobs:
 
     - name: Install dependencies
       run: |
+        cd ApprovalTests/ApprovalTests.cpp
         python -m pip install --upgrade pip
         pip install flake8 pytest
         pip install -r build/requirements.txt
@@ -39,6 +43,7 @@ jobs:
 
     - name: Lint with flake8
       run: |
+        cd ApprovalTests/ApprovalTests.cpp
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
@@ -49,10 +54,12 @@ jobs:
         pwd
         ls -ls
         ls -ls ..
+        cd ApprovalTests/ApprovalTests.cpp
         cd build
         python -m unittest discover -s tests --verbose
 
     - name: Test doc/sphinx with pytest
       run: |
+        cd ApprovalTests/ApprovalTests.cpp
         cd doc/sphinx/tests
         python -m unittest discover -t ../.. --verbose
