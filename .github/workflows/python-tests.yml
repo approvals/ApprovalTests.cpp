@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - Check out ApprovalTests.cpp
+    - name: Check out ApprovalTests.cpp
       uses: actions/checkout@v2
       with:
         path: ApprovalTests/ApprovalTests.cpp
