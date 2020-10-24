@@ -33,15 +33,15 @@ jobs:
       with:
         python-version: 3.8
 
+    - uses: r-lib/actions/setup-pandoc@v1
+      with:
+        pandoc-version: '2.9.2.1'
+
     - name: Install dependencies
       run: |
         cd ApprovalTests/ApprovalTests.cpp
         cd build
         ./install_python_requirements.sh
-
-    - uses: r-lib/actions/setup-pandoc@v1
-      with:
-        pandoc-version: '2.9.2.1'
 
     - name: Lint with flake8
       run: |
