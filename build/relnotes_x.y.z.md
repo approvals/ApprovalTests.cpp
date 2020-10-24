@@ -7,4 +7,4 @@
 * **Bug fixes**
     * None
 * **Other changes**
-    * None
+    * Fix -Wdeprecated-copy-dtor warnings (#163, thanks @nlohmann)
