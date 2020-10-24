@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
+
 # To update, use:
 #   pip3 install --upgrade --no-cache-dir
 sudo apt-get install pandoc
