@@ -12,9 +12,9 @@ elseif (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
             -Wshadow
             )
 
-    if (CMAKE_CXX_COMPILER_VERSION GREATER_EQUAL 10.0)
+    if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND CMAKE_CXX_COMPILER_VERSION GREATER_EQUAL 10.0)
         target_compile_options(${PROJECT_NAME} PRIVATE
-                -Wdeprecated-copy-dtor # gcc also suports this from at least 9.1 onwards too
+                -Wdeprecated-copy-dtor
                 )
         endif ()
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
