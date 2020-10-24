@@ -43,19 +43,19 @@ class TestWholeConversion(unittest.TestCase):
 
         converted_markdown, converted_rst = markdown_conversion.convert_markdown_text_to_restructured_text(input, '')
 
-        # reporter = GenericDiffReporterFactory().get('AraxisMergeMac')
+        reporter = GenericDiffReporterFactory().get('AraxisMergeMac')
 
         failure_count = 0
 
         try:
             namer = Namer('.md')
-            verify_with_namer(converted_markdown, namer)
+            verify_with_namer(converted_markdown, namer, reporter)
         except(ApprovalException):
             failure_count += 1
 
         try:
             namer = Namer('.rst')
-            verify_with_namer(converted_rst, namer)
+            verify_with_namer(converted_rst, namer, reporter)
         except(ApprovalException):
             failure_count += 1
 
