@@ -6,7 +6,8 @@ set -o pipefail
 
 # To update, use:
 #   pip3 install --upgrade --no-cache-dir
-sudo apt-get install pandoc
+# Exactly pandoc 2.9.2.1 is required
+#sudo apt-get install pandoc
 pandoc --version
 python3 -m pip install --upgrade pip
 pip3 install flake8 pytest
