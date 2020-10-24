@@ -36,7 +36,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test build/ with pytest
       run: |
-        pytest build/tests
+        cd build
+        python -m unittest discover -s tests --verbose
     - name: Test doc/sphinx with pytest
       run: |
-        pytest doc/sphinx/tests
+        cd doc/sphinx/tests
+        python -m unittest discover -t ../.. --verbose
