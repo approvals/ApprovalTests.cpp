@@ -36,12 +36,8 @@ jobs:
     - name: Install dependencies
       run: |
         cd ApprovalTests/ApprovalTests.cpp
-        sudo apt-get install pandoc
-        pandoc --version
-        python3 -m pip install --upgrade pip
-        pip3 install flake8 pytest
-        pip3 install -r build/requirements.txt
-        pip3 install -r doc/requirements.txt
+        cd build
+        ./install_python_requirements.sh
 
     - name: Lint with flake8
       run: |
