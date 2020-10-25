@@ -28,7 +28,7 @@ TEST_CASE("ItCanGiveYouTheSpecName")
 TEST_CASE("ItCanGiveYouTheTestFileName")
 {
     ApprovalTestNamer namer;
-    REQUIRE(namer.getFileName() == "Catch2NamerTests");
+    REQUIRE(namer.getSourceFileName() == "Catch2NamerTests");
 }
 
 TEST_CASE("TestProperNameCaseOnWindows")
@@ -39,7 +39,7 @@ TEST_CASE("TestProperNameCaseOnWindows")
         auto test = namer.currentTest();
         test.setFileName(StringUtils::toLower(test.getFileName()));
         namer.currentTest(&test);
-        REQUIRE(namer.getFileName() == "Catch2NamerTests");
+        REQUIRE(namer.getSourceFileName() == "Catch2NamerTests");
     }
 }
 
