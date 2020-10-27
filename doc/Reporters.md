@@ -150,6 +150,7 @@ There are three reporters that can help with the approving of single or multiple
 ## Related Pages
 
 * [How to Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top)
+* [How to Select a Reporter with an Environment Variable](/doc/how_tos/SelectReporterWithEnvironmentVariable.md#top)
 * [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top)
 
 
