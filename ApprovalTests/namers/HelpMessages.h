@@ -11,6 +11,10 @@ namespace ApprovalTests
 
         static std::string getMisconfiguredMainHelp();
 
+        static std::string
+        getUnknownEnvVarReporterHelp(const std::string& selected,
+                                     const std::vector<std::string>& known);
+
         static std::string topAndTailHelpMessage(const std::string& message);
     };
 }

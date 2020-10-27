@@ -1,0 +1,17 @@
+*****************************************************************************
+*                                                                           *
+* The environment variable APPROVAL_TESTS_USE_REPORTER contains the value
+* FOO
+*
+* This reporter is not recognised.
+*
+* Please unset the environment value, or change it to refer to one of the
+* known reporters:
+*
+* A
+* B
+*
+* For more information, see:
+* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/how_tos/SelectReporterWithEnvironmentVariable.md
+*                                                                           *
+*****************************************************************************

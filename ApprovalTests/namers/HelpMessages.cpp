@@ -1,6 +1,9 @@
 #include "ApprovalTests/namers/HelpMessages.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 
+#include <sstream>
+#include <vector>
+
 namespace ApprovalTests
 {
 
@@ -59,6 +62,33 @@ namespace ApprovalTests
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredMain.md
 )";
         return topAndTailHelpMessage(helpMessage);
+    }
+
+    std::string
+    HelpMessages::getUnknownEnvVarReporterHelp(const std::string& selected,
+                                               const std::vector<std::string>& knowns)
+    {
+        std::string helpMessage =
+            R"(* The environment variable APPROVAL_TESTS_USE_REPORTER contains the value
+* [selected]
+*
+* This reporter is not recognised.
+*
+* Please unset the environment value, or change it to refer to one of the
+* known reporters:
+*
+[known]*
+* For more information, see:
+* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/how_tos/SelectReporterWithEnvironmentVariable.md
+)";
+
+        std::stringstream ss;
+        for (auto& known : knowns)
+        {
+            ss << "* " << known << '\n';
+        }
+        auto msg = StringUtils::replaceAll(helpMessage, "[selected]", selected);
+        return topAndTailHelpMessage(StringUtils::replaceAll(msg, "[known]", ss.str()));
     }
 
     std::string HelpMessages::topAndTailHelpMessage(const std::string& message)
