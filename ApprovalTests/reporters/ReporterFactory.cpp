@@ -40,7 +40,11 @@ namespace ApprovalTests
         return "Linux::";
     }
 
-    ReporterFactory::Reporters ReporterFactory::createMap() const
+    ReporterFactory::ReporterFactory() : map(createMap())
+    {
+    }
+
+    ReporterFactory::Reporters ReporterFactory::createMap()
     {
         Reporters map;
 
@@ -89,26 +93,23 @@ namespace ApprovalTests
     std::unique_ptr<Reporter>
     ReporterFactory::createReporter(const std::string& reporterName) const
     {
-        auto map = createMap();
-
         auto osPrefix = getOsPrefix();
 
-        auto key = findReporterName(map, osPrefix, reporterName);
+        auto key = findReporterName(osPrefix, reporterName);
 
         if (!key.empty())
         {
-            return map[key]();
+            return map.at(key)();
         }
 
         return std::unique_ptr<Reporter>();
     }
 
+    // TODO Delete unused arg
     std::vector<std::string>
     ReporterFactory::allSupportedReporterNames(const std::string& osPrefix) const
     {
         (void)osPrefix;
-
-        auto map = createMap();
 
         std::vector<std::string> result;
 
@@ -120,8 +121,7 @@ namespace ApprovalTests
         return result;
     }
 
-    std::string ReporterFactory::findReporterName(const Reporters& map,
-                                                  const std::string& osPrefix,
+    std::string ReporterFactory::findReporterName(const std::string& osPrefix,
                                                   const std::string& reporterName) const
     {
         std::vector<std::string> candidateNames = {

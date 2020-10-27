@@ -85,10 +85,8 @@ TEST_CASE("Find a valid reporter - on Windows")
         "Kaleidoscope",
     };
 
-    auto map = reporterFactory.createMap();
-
     Approvals::verifyAll("", inputs, [&](auto input, auto& stream) {
         stream << input << " => "
-               << reporterFactory.findReporterName(map, "Windows::", input);
+               << reporterFactory.findReporterName("Windows::", input);
     });
 }
