@@ -2,7 +2,6 @@
 #include "ApprovalTests/utilities/StringUtils.h"
 
 #include <sstream>
-#include <vector>
 
 namespace ApprovalTests
 {
