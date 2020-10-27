@@ -86,7 +86,6 @@ TEST_CASE("Find a valid reporter - on Windows")
     };
 
     Approvals::verifyAll("", inputs, [&](auto input, auto& stream) {
-        stream << input << " => "
-               << reporterFactory.findReporterName("Windows::", input);
+        stream << input << " => " << reporterFactory.findReporterName("Windows::", input);
     });
 }
