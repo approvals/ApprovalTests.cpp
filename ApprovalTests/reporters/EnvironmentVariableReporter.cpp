@@ -18,15 +18,17 @@ namespace ApprovalTests
                                              const std::string& received,
                                              const std::string& approved) const
     {
-        if (!envVar.empty())
+        if (envVar.empty())
         {
-            ReporterFactory factory;
-            auto reporter = factory.createReporter(envVar);
+            return false;
+        }
 
-            if (reporter)
-            {
-                return reporter->report(received, approved);
-            }
+        ReporterFactory factory;
+        auto reporter = factory.createReporter(envVar);
+
+        if (reporter)
+        {
+            return reporter->report(received, approved);
         }
         return false;
     }
