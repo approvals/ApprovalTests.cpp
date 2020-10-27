@@ -69,7 +69,9 @@ TEST_CASE("ReporterFactory creates a Reporter given Windows::WinMerge")
 TEST_CASE("Verify all valid env variable values - on Windows")
 {
     ReporterFactory reporterFactory;
-    Approvals::verifyAll(reporterFactory.allSupportedReporterNames("Windows"));
+    Approvals::verifyAll("",
+                         reporterFactory.allSupportedReporterNames("Windows"),
+                         [](auto input, auto& stream) { stream << input; });
 }
 
 TEST_CASE("Find a valid reporter - on Windows")
