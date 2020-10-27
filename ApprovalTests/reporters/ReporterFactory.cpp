@@ -105,12 +105,8 @@ namespace ApprovalTests
         return std::unique_ptr<Reporter>();
     }
 
-    // TODO Delete unused arg
-    std::vector<std::string>
-    ReporterFactory::allSupportedReporterNames(const std::string& osPrefix) const
+    std::vector<std::string> ReporterFactory::allSupportedReporterNames() const
     {
-        (void)osPrefix;
-
         std::vector<std::string> result;
 
         for (auto& p : map)

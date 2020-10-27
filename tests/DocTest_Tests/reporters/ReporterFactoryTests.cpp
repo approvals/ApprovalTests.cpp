@@ -70,7 +70,7 @@ TEST_CASE("Verify all valid env variable values - on Windows")
 {
     ReporterFactory reporterFactory;
     Approvals::verifyAll("",
-                         reporterFactory.allSupportedReporterNames("Windows"),
+                         reporterFactory.allSupportedReporterNames(),
                          [](auto input, auto& stream) { stream << input; });
 }
 

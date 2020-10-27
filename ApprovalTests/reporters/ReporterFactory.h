@@ -18,8 +18,7 @@ namespace ApprovalTests
 
         ReporterFactory();
 
-        std::vector<std::string>
-        allSupportedReporterNames(const std::string& osPrefix) const;
+        std::vector<std::string> allSupportedReporterNames() const;
 
         std::unique_ptr<Reporter> createReporter(const std::string& reporterName) const;
 
