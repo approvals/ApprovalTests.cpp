@@ -5,12 +5,12 @@
 
 namespace ApprovalTests
 {
-
     bool EnvironmentVariableReporter::report(std::string received,
                                              std::string approved) const
     {
         // Get the env var
-        const auto envVar = SystemUtils::safeGetEnv("APPROVAL_TESTS_USE_REPORTER");
+        const auto envVarName = environmentVariableName();
+        const auto envVar = SystemUtils::safeGetEnv(envVarName.c_str());
         return report(envVar, received, approved);
     }
 
@@ -32,5 +32,10 @@ namespace ApprovalTests
         }
 
         return reporter->report(received, approved);
+    }
+
+    std::string EnvironmentVariableReporter::environmentVariableName()
+    {
+        return "APPROVAL_TESTS_USE_REPORTER";
     }
 }
