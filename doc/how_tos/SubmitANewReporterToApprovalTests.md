@@ -10,6 +10,7 @@
     * [Edit ApprovalTests/reporters/DiffPrograms.cpp](#edit-approvaltestsreportersdiffprogramscpp)
     * [Edit ApprovalTests/reporters/MacReporters.h](#edit-approvaltestsreportersmacreportersh)
     * [Edit ApprovalTests/reporters/MacReporters.cpp](#edit-approvaltestsreportersmacreporterscpp)
+    * [Edit ApprovalTests/reporters/ReporterFactory.cpp](#edit-approvaltestsreportersreporterfactorycpp)
     * [Edit tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](#edit-testsdoctest_testsreporterscommandlinereportertestscpp)
   * [Adding a new Windows reporter](#adding-a-new-windows-reporter)
   * [Adding a new Linux reporter](#adding-a-new-linux-reporter)<!-- endToc -->
@@ -102,6 +103,27 @@ new VisualStudioCodeReporter(),
 new CLionDiffReporter()
 ```
 <sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L63-L74' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<!-- endSnippet -->
+
+### Edit [ApprovalTests/reporters/ReporterFactory.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/ReporterFactory.cpp)
+
+* Add a new `APPROVAL_TESTS_REGISTER_REPORTER` line, for your reporter class.
+
+<!-- snippet: register_reporter_with_factory -->
+<a id='snippet-register_reporter_with_factory'></a>
+```cpp
+APPROVAL_TESTS_REGISTER_REPORTER(Mac::AraxisMergeReporter);
+APPROVAL_TESTS_REGISTER_REPORTER(Mac::BeyondCompareReporter);
+APPROVAL_TESTS_REGISTER_REPORTER(Mac::DiffMergeReporter);
+APPROVAL_TESTS_REGISTER_REPORTER(Mac::KaleidoscopeReporter);
+APPROVAL_TESTS_REGISTER_REPORTER(Mac::P4MergeReporter);
+APPROVAL_TESTS_REGISTER_REPORTER(Mac::SublimeMergeReporter);
+APPROVAL_TESTS_REGISTER_REPORTER(Mac::KDiff3Reporter);
+APPROVAL_TESTS_REGISTER_REPORTER(Mac::TkDiffReporter);
+APPROVAL_TESTS_REGISTER_REPORTER(Mac::VisualStudioCodeReporter);
+APPROVAL_TESTS_REGISTER_REPORTER(Mac::CLionDiffReporter);
+```
+<sup><a href='/ApprovalTests/reporters/ReporterFactory.cpp#L63-L74' title='File snippet `register_reporter_with_factory` was extracted from'>snippet source</a> | <a href='#snippet-register_reporter_with_factory' title='Navigate to start of snippet `register_reporter_with_factory`'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Edit [tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp)

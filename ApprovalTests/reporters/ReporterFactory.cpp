@@ -60,6 +60,7 @@ namespace ApprovalTests
         APPROVAL_TESTS_REGISTER_REPORTER(Linux::SublimeMergeReporter);
         APPROVAL_TESTS_REGISTER_REPORTER(Linux::KDiff3Reporter);
 
+        // begin-snippet: register_reporter_with_factory
         APPROVAL_TESTS_REGISTER_REPORTER(Mac::AraxisMergeReporter);
         APPROVAL_TESTS_REGISTER_REPORTER(Mac::BeyondCompareReporter);
         APPROVAL_TESTS_REGISTER_REPORTER(Mac::DiffMergeReporter);
@@ -70,6 +71,7 @@ namespace ApprovalTests
         APPROVAL_TESTS_REGISTER_REPORTER(Mac::TkDiffReporter);
         APPROVAL_TESTS_REGISTER_REPORTER(Mac::VisualStudioCodeReporter);
         APPROVAL_TESTS_REGISTER_REPORTER(Mac::CLionDiffReporter);
+        // end-snippet
 
         APPROVAL_TESTS_REGISTER_REPORTER(Windows::TortoiseDiffReporter);
         APPROVAL_TESTS_REGISTER_REPORTER(Windows::TortoiseGitDiffReporter);
