@@ -10,7 +10,8 @@
     * [Warning!](#warning)
   * [Setting the Environment Variable](#setting-the-environment-variable)
   * [Available Values](#available-values)
-  * [Acceptable Variations](#acceptable-variations)<!-- endToc -->
+  * [Acceptable Variations](#acceptable-variations)
+  * [Other Information](#other-information)<!-- endToc -->
 
 ## Introduction
 
@@ -107,6 +108,10 @@ So, for example, on Windows, you can select `Windows::AraxisMergerReporter` by s
 * `Windows::AraxisMerge`
 * `AraxisMergerReporter`
 * `AraxisMerge`
+
+## Other Information
+
+This environment value is ignored on [Continuous Integration builds](/doc/BuildMachinesAndCI.md#top).
 
 ---
 
