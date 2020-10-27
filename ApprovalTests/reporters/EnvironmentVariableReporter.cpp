@@ -26,10 +26,11 @@ namespace ApprovalTests
         ReporterFactory factory;
         auto reporter = factory.createReporter(envVar);
 
-        if (reporter)
+        if (!reporter)
         {
-            return reporter->report(received, approved);
+            return false;
         }
-        return false;
+
+        return reporter->report(received, approved);
     }
 }
