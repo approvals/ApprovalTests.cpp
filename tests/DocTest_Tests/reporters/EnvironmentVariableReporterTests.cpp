@@ -21,5 +21,6 @@ TEST_CASE("When environment variable is invalid, EnvironmentVariableReporter::re
 
 TEST_CASE("HelpMessage for unknown reporter")
 {
-    Approvals::verify(HelpMessages::getUnknownEnvVarReporterHelp("FOO", {"A", "B"}));
+    Approvals::verify(HelpMessages::getUnknownEnvVarReporterHelp(
+        EnvironmentVariableReporter::environmentVariableName(), "FOO", {"A", "B"}));
 }

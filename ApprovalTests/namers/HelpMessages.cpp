@@ -65,11 +65,12 @@ namespace ApprovalTests
     }
 
     std::string
-    HelpMessages::getUnknownEnvVarReporterHelp(const std::string& selected,
+    HelpMessages::getUnknownEnvVarReporterHelp(const std::string& envVarName,
+                                               const std::string& selected,
                                                const std::vector<std::string>& knowns)
     {
         std::string helpMessage =
-            R"(* The environment variable APPROVAL_TESTS_USE_REPORTER contains the value
+            R"(* The environment variable [envVarName] contains the value
 * [selected]
 *
 * This reporter is not recognised.
@@ -87,8 +88,10 @@ namespace ApprovalTests
         {
             ss << "* " << known << '\n';
         }
-        auto msg = StringUtils::replaceAll(helpMessage, "[selected]", selected);
-        return topAndTailHelpMessage(StringUtils::replaceAll(msg, "[known]", ss.str()));
+        helpMessage = StringUtils::replaceAll(helpMessage, "[selected]", selected);
+        helpMessage = StringUtils::replaceAll(helpMessage, "[envVarName]", envVarName);
+        return topAndTailHelpMessage(
+            StringUtils::replaceAll(helpMessage, "[known]", ss.str()));
     }
 
     std::string HelpMessages::topAndTailHelpMessage(const std::string& message)
