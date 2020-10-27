@@ -155,6 +155,7 @@ How-to Guides
 * **Reporters**:
 
    * :doc:`generated_docs/how_tos/UseACustomReporter`
+   * :doc:`generated_docs/how_tos/SelectReporterWithEnvironmentVariable`
    * :doc:`generated_docs/how_tos/SubmitANewReporterToApprovalTests`
 
 * **Others**:
@@ -172,6 +173,7 @@ How-to Guides
    generated_docs/how_tos/UseTheFmtLibraryToPrintObjects
 
    generated_docs/how_tos/UseACustomReporter
+   generated_docs/how_tos/SelectReporterWithEnvironmentVariable
    generated_docs/how_tos/SubmitANewReporterToApprovalTests
 
    generated_docs/how_tos/ToggleDeprecatedCode

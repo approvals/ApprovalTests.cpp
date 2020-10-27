@@ -102,6 +102,8 @@ effectively.
     - [How to Use the Fmt Library To Print Objects](/doc/how_tos/UseTheFmtLibraryToPrintObjects.md#top)
  - **Reporters**:
    - [How to Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top)
+   - [How to Select a Reporter with an Environment Variable](/doc/how_tos/SelectReporterWithEnvironmentVariable.md#top)
+
    - [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top)
  - **Others**:
    - [How to Toggle Enabling or Disabling of Deprecated Code](/doc/how_tos/ToggleDeprecatedCode.md#top)
