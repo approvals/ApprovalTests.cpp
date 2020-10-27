@@ -9,8 +9,8 @@
     * [Why](#why)
     * [Warning!](#warning)
   * [Setting the Environment Variable](#setting-the-environment-variable)
-    * [Available Values](#available-values)
-    * [Acceptable Variations](#acceptable-variations)<!-- endToc -->
+  * [Available Values](#available-values)
+  * [Acceptable Variations](#acceptable-variations)<!-- endToc -->
 
 ## Introduction
 
@@ -34,7 +34,7 @@ The environment value `APPROVAL_TESTS_USE_REPORTER` can be set, to select the di
 
 For example, to set Araxis Merge as your reporter, set the `APPROVAL_TESTS_USE_REPORTER` environment value to `AraxisMerge`.
 
-### Available Values
+## Available Values
 
 The following values of `APPROVAL_TESTS_USE_REPORTER` are currently recognised. See the next section for alternative variations on these names.
 
@@ -79,7 +79,7 @@ The following values of `APPROVAL_TESTS_USE_REPORTER` are currently recognised. 
 <sup><a href='/tests/DocTest_Tests/reporters/approval_tests/ReporterFactoryTests.Verify_all_valid_env_variable_values_-_on_Windows.approved.txt#L1-L34' title='File snippet `ReporterFactoryTests.Verify_all_valid_env_variable_values_-_on_Windows.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ReporterFactoryTests.Verify_all_valid_env_variable_values_-_on_Windows.approved.txt' title='Navigate to start of snippet `ReporterFactoryTests.Verify_all_valid_env_variable_values_-_on_Windows.approved.txt`'>anchor</a></sup>
 <!-- endSnippet -->
 
-### Acceptable Variations
+## Acceptable Variations
 
 A fully qualified name is:
 
