@@ -1,3 +1,4 @@
+#include "ApprovalTests/namers/HelpMessages.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 #include "EnvironmentVariableReporter.h"
 #include "DiffReporter.h"
@@ -28,7 +29,10 @@ namespace ApprovalTests
 
         if (!reporter)
         {
-            return false;
+            auto known = factory.allSupportedReporterNames();
+            auto message = HelpMessages::getUnknownEnvVarReporterHelp(
+                EnvironmentVariableReporter::environmentVariableName(), envVar, known);
+            throw std::runtime_error(message);
         }
 
         return reporter->report(received, approved);

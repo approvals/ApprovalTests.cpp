@@ -16,7 +16,8 @@ TEST_CASE("When environment variable is invalid, EnvironmentVariableReporter::re
           "returns false")
 {
     EnvironmentVariableReporter reporter;
-    CHECK_FALSE(reporter.report("INVALID_REPORTER", "r.txt", "a.txt"));
+    CHECK_THROWS_AS(reporter.report("INVALID_REPORTER", "r.txt", "a.txt"),
+                    std::runtime_error);
 }
 
 TEST_CASE("HelpMessage for unknown reporter")
