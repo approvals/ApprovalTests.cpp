@@ -104,7 +104,7 @@ namespace ApprovalTests
     }
 
     std::vector<std::string>
-    ReporterFactory::allSupportedReporterNames(const std::string& osPrefix)
+    ReporterFactory::allSupportedReporterNames(const std::string& osPrefix) const
     {
         (void)osPrefix;
 

@@ -16,7 +16,8 @@ namespace ApprovalTests
         using Reporters =
             std::map<std::string, std::function<std::unique_ptr<Reporter>()>>;
 
-        std::vector<std::string> allSupportedReporterNames(const std::string& osPrefix);
+        std::vector<std::string>
+        allSupportedReporterNames(const std::string& osPrefix) const;
 
         std::unique_ptr<Reporter> createReporter(const std::string& reporterName) const;
 
