@@ -38,4 +38,30 @@ namespace ApprovalTests
         }
         return std::equal(ending.rbegin(), ending.rend(), value.rbegin());
     }
+
+    std::string StringUtils::leftTrim(std::string s)
+    {
+
+        s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](unsigned char ch) {
+                    return !std::isspace(ch);
+                }));
+        return s;
+    }
+
+    std::string StringUtils::rightTrim(std::string s)
+    {
+        s.erase(std::find_if(s.rbegin(),
+                             s.rend(),
+                             [](unsigned char ch) { return !std::isspace(ch); })
+                    .base(),
+                s.end());
+        return s;
+    }
+
+    std::string StringUtils::trim(std::string s)
+    {
+        s = leftTrim(s);
+        s = rightTrim(s);
+        return s;
+    }
 }

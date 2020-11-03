@@ -27,5 +27,11 @@ namespace ApprovalTests
         {
             return StringMaker::toString(contents);
         }
+
+        static std::string leftTrim(std::string s);
+
+        static std::string rightTrim(std::string s);
+
+        static std::string trim(std::string s);
     };
 }

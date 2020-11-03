@@ -120,13 +120,15 @@ namespace ApprovalTests
     std::string ReporterFactory::findReporterName(const std::string& osPrefix,
                                                   const std::string& reporterName) const
     {
+        auto trimmedReporterName = StringUtils::trim(reporterName);
+
         std::vector<std::string> candidateNames = {
-            reporterName,
+            trimmedReporterName,
             // Allow program names to be specified without Reporter suffix
-            reporterName + "Reporter",
+            trimmedReporterName + "Reporter",
             // Allow names without os namespace
-            osPrefix + reporterName,
-            osPrefix + reporterName + "Reporter",
+            osPrefix + trimmedReporterName,
+            osPrefix + trimmedReporterName + "Reporter",
         };
 
         for (auto& candidateName : candidateNames)
