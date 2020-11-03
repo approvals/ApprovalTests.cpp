@@ -130,7 +130,10 @@ APPROVAL_TESTS_REGISTER_REPORTER(Mac::TkDiffReporter);
 APPROVAL_TESTS_REGISTER_REPORTER(Mac::VisualStudioCodeReporter);
 APPROVAL_TESTS_REGISTER_REPORTER(Mac::CLionDiffReporter);
 ```
-<sup><a href='/ApprovalTests/reporters/ReporterFactory.cpp#L63-L74' title='File snippet `register_reporter_with_factory` was extracted from'>snippet source</a> | <a href='#snippet-register_reporter_with_factory' title='Navigate to start of snippet `register_reporter_with_factory`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/ReporterFactory.cpp#L67-L78' title='File snippet `register_reporter_with_factory` was extracted from'>
+snippet source</a>
+| <a href='#snippet-register_reporter_with_factory' title='Navigate to start of snippet `register_reporter_with_factory`'>
+anchor</a></sup>
 <!-- endSnippet -->
 
 #### Edit [tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp)

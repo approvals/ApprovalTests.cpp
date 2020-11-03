@@ -3,8 +3,9 @@
 * **Breaking changes**
     * None
 * **New features**
-    * Add support for approving std::wstring objects. (#154, thanks @OmerYa)  
-      (Note that is not yet fully working on Windows, and we have a test disabled as a result.)
+    * Support for selecting Reporter at run-time.  
+      See [How to Select a Reporter with an Environment Variable](/doc/how_tos/SelectReporterWithEnvironmentVariable.md#top)
+      . (#99, thanks @alepez)
 * **Bug fixes**
     * None
 * **Other changes**
