@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ApprovalTests/core/Reporter.h"
+#include "ReporterFactory.h"
 #include <memory>
 
 namespace ApprovalTests
@@ -15,5 +16,8 @@ namespace ApprovalTests
                     const std::string& approved) const;
 
         static std::string environmentVariableName();
+
+    private:
+        ReporterFactory factory;
     };
 }

@@ -24,7 +24,6 @@ namespace ApprovalTests
             return false;
         }
 
-        ReporterFactory factory;
         auto reporter = factory.createReporter(envVar);
 
         if (!reporter)
