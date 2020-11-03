@@ -106,3 +106,19 @@ TEST_CASE("Find a valid reporter, with leading and trailing space")
         stream << input << " => " << reporterFactory.findReporterName("Mac::", input);
     });
 }
+
+TEST_CASE("Find a valid reporter, with wrong case")
+{
+    ReporterFactory reporterFactory;
+
+    std::vector<std::string> inputs{
+        "KalEIDoscope",
+        "kaleidoscope",
+        "KALEIDOSCOPE",
+        "MAC::KALEIDOSCOPE",
+    };
+
+    Approvals::verifyAll("", inputs, [&](auto input, auto& stream) {
+        stream << input << " => " << reporterFactory.findReporterName("Mac::", input);
+    });
+}

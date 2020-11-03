@@ -133,7 +133,12 @@ namespace ApprovalTests
 
         for (auto& candidateName : candidateNames)
         {
-            auto iter = map.find(candidateName);
+            auto iter = std::find_if(
+                map.begin(), map.end(), [&](const Reporters::value_type pair) {
+                    return StringUtils::toLower(pair.first) ==
+                           StringUtils::toLower(candidateName);
+                });
+
             if (iter != map.end())
             {
                 return iter->first;
