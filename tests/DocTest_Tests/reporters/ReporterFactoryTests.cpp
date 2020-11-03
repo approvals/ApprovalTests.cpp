@@ -74,51 +74,49 @@ TEST_CASE("Verify all valid env variable values - on Windows")
                          [](auto input, auto& stream) { stream << input; });
 }
 
-TEST_CASE("Find a valid reporter - on Windows")
+void verifyFindingReportersByName(const std::vector<std::string>& inputs,
+                                  const std::string& osPrefix)
 {
     ReporterFactory reporterFactory;
 
-    std::vector<std::string> inputs{
-        "Mac::KaleidoscopeReporter",
-        "KaleidoscopeReporter",
-        "Mac::Kaleidoscope",
-        "Kaleidoscope",
-    };
-
     Approvals::verifyAll("", inputs, [&](auto input, auto& stream) {
-        stream << input << " => " << reporterFactory.findReporterName("Windows::", input);
+        stream << input << " => " << reporterFactory.findReporterName(osPrefix, input);
     });
+}
+
+TEST_CASE("Find a valid reporter - on Windows")
+{
+    verifyFindingReportersByName(
+        {
+            "Mac::KaleidoscopeReporter",
+            "KaleidoscopeReporter",
+            "Mac::Kaleidoscope",
+            "Kaleidoscope",
+        },
+        "Windows::");
 }
 
 TEST_CASE("Find a valid reporter, with leading and trailing space")
 {
-    ReporterFactory reporterFactory;
-
-    std::vector<std::string> inputs{
-        "Kaleidoscope",
-        " Kaleidoscope",
-        "Kaleidoscope ",
-        " Kaleidoscope ",
-        " Mac::Kaleidoscope ",
-    };
-
-    Approvals::verifyAll("", inputs, [&](auto input, auto& stream) {
-        stream << input << " => " << reporterFactory.findReporterName("Mac::", input);
-    });
+    verifyFindingReportersByName(
+        {
+            "Kaleidoscope",
+            " Kaleidoscope",
+            "Kaleidoscope ",
+            " Kaleidoscope ",
+            " Mac::Kaleidoscope ",
+        },
+        "Mac::");
 }
 
 TEST_CASE("Find a valid reporter, with wrong case")
 {
-    ReporterFactory reporterFactory;
-
-    std::vector<std::string> inputs{
-        "KalEIDoscope",
-        "kaleidoscope",
-        "KALEIDOSCOPE",
-        "MAC::KALEIDOSCOPE",
-    };
-
-    Approvals::verifyAll("", inputs, [&](auto input, auto& stream) {
-        stream << input << " => " << reporterFactory.findReporterName("Mac::", input);
-    });
+    verifyFindingReportersByName(
+        {
+            "KalEIDoscope",
+            "kaleidoscope",
+            "KALEIDOSCOPE",
+            "MAC::KALEIDOSCOPE",
+        },
+        "Mac::");
 }
