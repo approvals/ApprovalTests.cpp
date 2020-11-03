@@ -3,10 +3,8 @@
 * **Breaking changes**
     * None
 * **New features**
-    * Support for selecting Reporter at run-time.  
-      See [How to Select a Reporter with an Environment Variable](/doc/how_tos/SelectReporterWithEnvironmentVariable.md#top)
-      . (#99, thanks @alepez)
+    * None
 * **Bug fixes**
     * None
 * **Other changes**
-    * Fix -Wdeprecated-copy-dtor warnings (#163, thanks @nlohmann)
+    * None

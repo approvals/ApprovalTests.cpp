@@ -8,6 +8,7 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.5.0](#v1050)
     * [Support for selecting Reporter at run-time](#support-for-selecting-reporter-at-run-time)
   * [v.10.4.0](#v1040)
     * [Support for CppUTest framework](#support-for-cpputest-framework)
@@ -58,13 +59,15 @@
     * [SeparateApprovedAndReceivedDirectoriesNamer](#separateapprovedandreceiveddirectoriesnamer)
     * [Registering a Custom Namer](#registering-a-custom-namer)
   * [Before v.5.0.0](#before-v500)
-      * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
-      * [Blocking Reporter](#blocking-reporter)
-      * [Machine Blockers](#machine-blockers)
-      * [Front Loaded Reporters](#front-loaded-reporters)
-      * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
+    * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
+    * [Blocking Reporter](#blocking-reporter)
+    * [Machine Blockers](#machine-blockers)
+    * [Front Loaded Reporters](#front-loaded-reporters)
+    * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+## v.10.5.0
 
 ### Support for selecting Reporter at run-time
 

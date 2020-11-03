@@ -4,9 +4,10 @@
 // This file is machine-generated. Do not edit.
 
 #include "ApprovalTests/ApprovalTestsVersion.h"
+#include "ApprovalTests/core/Reporter.h"
+#include "ApprovalTests/reporters/ReporterFactory.h"
 #include "ApprovalTests/reporters/DiffInfo.h"
 #include "ApprovalTests/reporters/DiffPrograms.h"
-#include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/reporters/ConvertForCygwin.h"
 #include "ApprovalTests/launchers/CommandLauncher.h"
 #include "ApprovalTests/reporters/CommandReporter.h"
@@ -78,7 +79,6 @@
 #include "ApprovalTests/reporters/EnvironmentVariableReporter.h"
 #include "ApprovalTests/reporters/LinuxReporters.h"
 #include "ApprovalTests/reporters/MacReporters.h"
-#include "ApprovalTests/reporters/ReporterFactory.h"
 #include "ApprovalTests/reporters/WindowsReporters.h"
 #include "ApprovalTests/utilities/DateUtils.h"
 #include "ApprovalTests/utilities/ExceptionCollector.h"
