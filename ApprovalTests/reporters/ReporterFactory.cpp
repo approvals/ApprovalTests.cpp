@@ -121,22 +121,22 @@ namespace ApprovalTests
                                                   const std::string& reporterName) const
     {
         auto trimmedReporterName = StringUtils::trim(reporterName);
+        trimmedReporterName = StringUtils::toLower(trimmedReporterName);
 
         std::vector<std::string> candidateNames = {
             trimmedReporterName,
             // Allow program names to be specified without Reporter suffix
-            trimmedReporterName + "Reporter",
+            trimmedReporterName + "reporter",
             // Allow names without os namespace
-            osPrefix + trimmedReporterName,
-            osPrefix + trimmedReporterName + "Reporter",
+            StringUtils::toLower(osPrefix) + trimmedReporterName,
+            StringUtils::toLower(osPrefix) + trimmedReporterName + "reporter",
         };
 
         for (auto& candidateName : candidateNames)
         {
             auto iter = std::find_if(
                 map.begin(), map.end(), [&](const Reporters::value_type pair) {
-                    return StringUtils::toLower(pair.first) ==
-                           StringUtils::toLower(candidateName);
+                    return StringUtils::toLower(pair.first) == candidateName;
                 });
 
             if (iter != map.end())
