@@ -25,16 +25,25 @@ namespace ApprovalTests
         }
 
         auto reporter = factory.createReporter(envVar);
+        auto known = factory.allSupportedReporterNames();
 
         if (!reporter)
         {
-            auto known = factory.allSupportedReporterNames();
             auto message = HelpMessages::getUnknownEnvVarReporterHelp(
                 EnvironmentVariableReporter::environmentVariableName(), envVar, known);
             throw std::runtime_error(message);
         }
 
-        return reporter->report(received, approved);
+        auto reporter_worked = reporter->report(received, approved);
+
+        if (!reporter_worked)
+        {
+            auto message = HelpMessages::getInvalidEnvVarReporterHelp(
+                EnvironmentVariableReporter::environmentVariableName(), envVar, known);
+            throw std::runtime_error(message);
+        }
+
+        return reporter_worked;
     }
 
     std::string EnvironmentVariableReporter::environmentVariableName()

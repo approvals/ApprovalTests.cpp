@@ -16,6 +16,10 @@ namespace ApprovalTests
         getUnknownEnvVarReporterHelp(const std::string& envVarName,
                                      const std::string& selected,
                                      const std::vector<std::string>& knowns);
+        static std::string
+        getInvalidEnvVarReporterHelp(const std::string& envVarName,
+                                     const std::string& selected,
+                                     const std::vector<std::string>& knowns);
 
         static std::string topAndTailHelpMessage(const std::string& message);
     };

@@ -93,6 +93,36 @@ namespace ApprovalTests
             StringUtils::replaceAll(helpMessage, "[known]", ss.str()));
     }
 
+    std::string
+    HelpMessages::getInvalidEnvVarReporterHelp(const std::string& envVarName,
+                                               const std::string& selected,
+                                               const std::vector<std::string>& knowns)
+    {
+        std::string helpMessage =
+            R"(* The environment variable [envVarName] contains the value
+* [selected]
+*
+* This reporter is recognised, but cannot be found on this machine.
+*
+* Please unset the environment value, or change it to refer to a working
+* reporter:
+*
+[known]*
+* For more information, see:
+* https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/how_tos/SelectReporterWithEnvironmentVariable.md
+)";
+
+        std::stringstream ss;
+        for (auto& known : knowns)
+        {
+            ss << "* " << known << '\n';
+        }
+        helpMessage = StringUtils::replaceAll(helpMessage, "[selected]", selected);
+        helpMessage = StringUtils::replaceAll(helpMessage, "[envVarName]", envVarName);
+        return topAndTailHelpMessage(
+            StringUtils::replaceAll(helpMessage, "[known]", ss.str()));
+    }
+
     std::string HelpMessages::topAndTailHelpMessage(const std::string& message)
     {
         const std::string lineBreak =

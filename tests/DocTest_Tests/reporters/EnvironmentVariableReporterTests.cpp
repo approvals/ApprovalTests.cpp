@@ -25,3 +25,9 @@ TEST_CASE("HelpMessage for unknown reporter")
     Approvals::verify(HelpMessages::getUnknownEnvVarReporterHelp(
         EnvironmentVariableReporter::environmentVariableName(), "FOO", {"A", "B"}));
 }
+
+TEST_CASE("HelpMessage for invalid reporter")
+{
+    Approvals::verify(HelpMessages::getInvalidEnvVarReporterHelp(
+        EnvironmentVariableReporter::environmentVariableName(), "FOO", {"A", "B"}));
+}
