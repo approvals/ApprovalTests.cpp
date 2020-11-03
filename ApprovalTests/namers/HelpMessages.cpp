@@ -82,15 +82,7 @@ namespace ApprovalTests
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/how_tos/SelectReporterWithEnvironmentVariable.md
 )";
 
-        std::stringstream ss;
-        for (auto& known : knowns)
-        {
-            ss << "* " << known << '\n';
-        }
-        helpMessage = StringUtils::replaceAll(helpMessage, "[selected]", selected);
-        helpMessage = StringUtils::replaceAll(helpMessage, "[envVarName]", envVarName);
-        return topAndTailHelpMessage(
-            StringUtils::replaceAll(helpMessage, "[known]", ss.str()));
+        return envVarErrorMessage(envVarName, selected, knowns, helpMessage);
     }
 
     std::string
@@ -112,6 +104,14 @@ namespace ApprovalTests
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/how_tos/SelectReporterWithEnvironmentVariable.md
 )";
 
+        return envVarErrorMessage(envVarName, selected, knowns, helpMessage);
+    }
+
+    std::string HelpMessages::envVarErrorMessage(const std::string& envVarName,
+                                                 const std::string& selected,
+                                                 const std::vector<std::string>& knowns,
+                                                 std::string& helpMessage)
+    {
         std::stringstream ss;
         for (auto& known : knowns)
         {
