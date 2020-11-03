@@ -1,5 +1,7 @@
 #include "ApprovalTests/utilities/StringUtils.h"
 
+#include <cctype>
+
 namespace ApprovalTests
 {
     std::string StringUtils::replaceAll(std::string inText,
