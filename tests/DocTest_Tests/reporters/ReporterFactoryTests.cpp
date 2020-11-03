@@ -99,6 +99,7 @@ TEST_CASE("Find a valid reporter, with leading and trailing space")
         " Kaleidoscope",
         "Kaleidoscope ",
         " Kaleidoscope ",
+        " Mac::Kaleidoscope ",
     };
 
     Approvals::verifyAll("", inputs, [&](auto input, auto& stream) {
