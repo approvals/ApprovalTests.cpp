@@ -26,7 +26,7 @@ namespace ApprovalTests
         public:
             auto on(boost::ut::events::test_begin test_begin) -> void
             {
-                std::string name = test_begin.name;
+                std::string name = std::string(test_begin.name);
                 currentTest.sections.emplace_back(name);
                 currentTest.setFileName(test_begin.location.file_name());
 
