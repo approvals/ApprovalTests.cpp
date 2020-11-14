@@ -113,9 +113,9 @@ Example set of build commands to download dependencies, make the test program an
 mkdir -p build
 cd       build
 conan install ..
-cmake  ..
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest .
+ctest ctest --output-on-failure . -C Debug
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/build.sh' title='File snippet was copied from'>snippet source</a></sup>
  <!-- endInclude -->
@@ -202,9 +202,9 @@ Example set of build commands to download dependencies, make the test program an
 mkdir -p build
 cd       build
 conan install ..
-cmake  ..
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest .
+ctest ctest --output-on-failure . -C Debug
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/build.sh' title='File snippet was copied from'>snippet source</a></sup>
  <!-- endInclude -->
@@ -329,9 +329,9 @@ mkdir -p build
 cd       build
 # Note that we do not need to invoke conan.
 # However, we do need to say what build configuration we want.
-cmake  -DCMAKE_BUILD_TYPE=Debug ..
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest .
+ctest ctest --output-on-failure .
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/build.sh' title='File snippet was copied from'>snippet source</a></sup>
  <!-- endInclude -->
