@@ -1,8 +1,7 @@
 import unittest
 
-from approvaltests import ApprovalException
-from approvaltests.approvals import verify_with_namer, Namer
-from approvaltests.reporters.generic_diff_reporter_factory import GenericDiffReporterFactory
+from approvaltests import ApprovalException, StackFrameNamer
+from approvaltests.approvals import verify_with_namer
 
 import sys
 
@@ -47,13 +46,13 @@ class TestWholeConversion(unittest.TestCase):
         failure_count = 0
 
         try:
-            namer = Namer('.md')
+            namer = StackFrameNamer('.md')
             verify_with_namer(converted_markdown, namer, reporter)
         except(ApprovalException):
             failure_count += 1
 
         try:
-            namer = Namer('.rst')
+            namer = StackFrameNamer('.rst')
             verify_with_namer(converted_rst, namer, reporter)
         except(ApprovalException):
             failure_count += 1
