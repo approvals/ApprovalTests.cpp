@@ -107,14 +107,14 @@ jobs:
     - name: set env for in-source build tree
       if: matrix.in_source_build == true
       run: |
-        ${BUILD_DIR_PATH} = "${{ env.IN_TREE_BUILD_DIR }}"
+        echo "BUILD_DIR_PATH=${{ env.IN_TREE_BUILD_DIR }}" >> ${env:GITHUB_ENV}
     - name: set env out-of-source
       if: matrix.in_source_build == false
       run: |
-        ${BUILD_DIR_PATH} = "${{ env.OUT_OF_TREE_BUILD_DIR }}"
+        echo "BUILD_DIR_PATH=${{ env.OUT_OF_TREE_BUILD_DIR }}" >> ${env:GITHUB_ENV}
     - name: check env
       run: |
-        echo Build space: ${BUILD_DIR_PATH}
+        echo Build space: ${{ env.BUILD_DIR_PATH }}
 
 
     - name: install boost for macOS
@@ -129,21 +129,21 @@ jobs:
     - name: set up boost for windows
       if: matrix.os == 'windows-latest' || matrix.os == 'windows-2016'
       run: |
-        ${boostroot} = "${env:BOOST_ROOT_1_72_0}"
+        echo "BOOST_ROOT=$env:BOOST_ROOT_1_72_0" >> ${env:GITHUB_ENV}
         echo "BOOST_INCLUDEDIR=${boostroot}\include" >> ${env:GITHUB_ENV}
         echo "BOOST_LIBRARYDIR=${boostroot}\lib" >> ${env:GITHUB_ENV}
 
     - name: make build space
       run: |
-        mkdir ${BUILD_DIR_PATH}
+        mkdir ${{ env.BUILD_DIR_PATH }}
     - name: cmake
       run: |
         cmake --version
         cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
-      working-directory: ${BUILD_DIR_PATH}
+      working-directory: ${{ env.BUILD_DIR_PATH }}
     - name: build
       run: cmake --build .
-      working-directory: ${BUILD_DIR_PATH}
+      working-directory: ${{ env.BUILD_DIR_PATH }}
     - name: test
       run: ctest --verbose --output-on-failure -C Debug
-      working-directory: ${BUILD_DIR_PATH}
+      working-directory: ${{ env.BUILD_DIR_PATH }}
