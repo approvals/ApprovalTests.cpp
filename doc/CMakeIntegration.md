@@ -469,7 +469,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
             -Wno-weak-vtables
             -Wno-comma # See https://github.com/boost-ext/ut/issues/398
             )
-endif ()
+endif()
 
 # -------------------------------------------------------------------
 # ApprovalTests.cpp
