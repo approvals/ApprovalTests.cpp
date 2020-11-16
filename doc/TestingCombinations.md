@@ -24,19 +24,15 @@ If you have only one parameter that you want to vary, check out [How to Test a V
 <!-- snippet: CombinationsStartingPoint -->
 <a id='snippet-combinationsstartingpoint'></a>
 ```cpp
-
-
-
-
-
-
-
+TEST_CASE("CombinationsStartingPoint")
+{
+    std::vector<std::string> inputs1{"input1.value1", "input1.value2"};
+    std::vector<std::string> inputs2{"input2.value1", "input2.value2", "input2.value3"};
+    CombinationApprovals::verifyAllCombinations(
+        [](auto /*input1*/, auto /*input2*/) { return "placeholder"; }, inputs1, inputs2);
+}
 ```
-
-<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L63-L71' title='File snippet `combinationsstartingpoint` was extracted from'>
-snippet source</a>
-| <a href='#snippet-combinationsstartingpoint' title='Navigate to start of snippet `combinationsstartingpoint`'>
-anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L63-L71' title='File snippet `combinationsstartingpoint` was extracted from'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Navigate to start of snippet `combinationsstartingpoint`'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Modify each input container for your chosen values.
@@ -51,7 +47,6 @@ matters at this point: all combinations of your own input values should be liste
 
 <!-- snippet: CombinationTests.CombinationsStartingPoint.approved.txt -->
 <a id='snippet-CombinationTests.CombinationsStartingPoint.approved.txt'></a>
-
 ```txt
 (input1.value1, input2.value1) => placeholder
 (input1.value1, input2.value2) => placeholder
