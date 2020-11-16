@@ -1,5 +1,5 @@
 pyperclip
 GitPython
-approvaltests==0.2.6
+approvaltests
 mypy
 pyyaml
