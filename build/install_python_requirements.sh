@@ -11,5 +11,5 @@ set -o pipefail
 pandoc --version
 python3 -m pip install --upgrade pip
 pip3 install flake8 pytest
-pip3 install -r requirements.txt
-pip3 install -r ../doc/requirements.txt
+pip3 install --upgrade --no-cache-dir -r requirements.txt
+pip3 install --upgrade --no-cache-dir -r ../doc/requirements.txt
