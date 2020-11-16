@@ -29,10 +29,12 @@ TEST_CASE("CombinationsStartingPoint")
     std::vector<std::string> inputs1{"input1.value1", "input1.value2"};
     std::vector<std::string> inputs2{"input2.value1", "input2.value2", "input2.value3"};
     CombinationApprovals::verifyAllCombinations(
-        [&](auto /*input1*/, auto /*input2*/) { return "placeholder"; }, inputs1, inputs2);
+        [&](auto /*input1*/, auto /*input2*/) { return "placeholder"; },
+        inputs1,
+        inputs2);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L63-L71' title='File snippet `combinationsstartingpoint` was extracted from'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Navigate to start of snippet `combinationsstartingpoint`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L63-L73' title='File snippet `combinationsstartingpoint` was extracted from'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Navigate to start of snippet `combinationsstartingpoint`'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Modify each input container for your chosen values.
