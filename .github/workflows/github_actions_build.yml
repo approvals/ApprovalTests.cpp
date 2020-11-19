@@ -39,6 +39,7 @@ jobs:
     env:
       IN_TREE_BUILD_DIR: ${{ github.workspace }}/build_space
       OUT_OF_TREE_BUILD_DIR: ${{ github.workspace }}/../build_space
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     strategy:
       fail-fast: false
       matrix:
