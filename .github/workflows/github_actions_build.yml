@@ -115,7 +115,7 @@ jobs:
       - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
-      - name: install boost for linux
+      - name: install boost
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y libboost-all-dev
@@ -185,7 +185,7 @@ jobs:
       - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
-      - name: install boost for macOS
+      - name: install boost
         run: |
           brew install boost
 
@@ -228,7 +228,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: set up boost for windows
+      - name: install boost
         run: |
           ${boostroot} = "${env:BOOST_ROOT_1_72_0}"
           echo "BOOST_ROOT=${boostroot}" >> ${env:GITHUB_ENV}
