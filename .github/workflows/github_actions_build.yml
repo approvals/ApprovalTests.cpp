@@ -79,10 +79,7 @@ jobs:
 
   Mac:
     env:
-      IN_TREE_BUILD_DIR: ${{ github.workspace }}/build_space
-      OUT_OF_TREE_BUILD_DIR: ${{ github.workspace }}/../build_space
-      # TODO Remove allowance of unsecure commands
-      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
     strategy:
       fail-fast: false
       matrix:
@@ -90,60 +87,46 @@ jobs:
           - job-name:  macOS-latest
             os: macOS-latest
             generator: '"Unix Makefiles"'
-            in_source_build: true
+            relative_build_dir_path: ''
 
           - job-name:  macOS-latest-unity
             os: macOS-latest
             generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
-            in_source_build: true
+            relative_build_dir_path: ''
 
           - job-name:  macOS-latest-ninja
             os: macOS-latest
             generator: '"Ninja"'
-            in_source_build: false
+            relative_build_dir_path: '../'
 
           - job-name:  macOS-latest-ninja-unity
             os: macOS-latest
             generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
-            in_source_build: true
+            relative_build_dir_path: ''
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@master
-      - uses: seanmiddleditch/gha-setup-ninja@v1
+      - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
-
-      # TODO Remove these uses of ::set-env - they cause a security warning
-      - name: set env for in-source build tree
-        if: matrix.in_source_build == true
-        run: |
-          echo "::set-env name=BUILD_DIR_PATH::${{ env.IN_TREE_BUILD_DIR }}"
-      - name: set env out-of-source
-        if: matrix.in_source_build == false
-        run: |
-          echo "::set-env name=BUILD_DIR_PATH::${{ env.OUT_OF_TREE_BUILD_DIR }}"
-      - name: check env
-        run: |
-          echo Build space: ${{ env.BUILD_DIR_PATH }}
-
 
       - name: install boost for macOS
         run: |
           brew install boost
 
-      - name: make build space
+      - name: configure
         run: |
-          mkdir ${{ env.BUILD_DIR_PATH }}
-      - name: cmake
-        run: |
+          mkdir $BUILD_DIR_PATH
+          cd $BUILD_DIR_PATH
           cmake --version
           cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
-        working-directory: ${{ env.BUILD_DIR_PATH }}
       - name: build
-        run: cmake --build .
-        working-directory: ${{ env.BUILD_DIR_PATH }}
+        run: |
+          cd $BUILD_DIR_PATH
+          cmake --build .
       - name: test
-        run: ctest --verbose --output-on-failure -C Debug
-        working-directory: ${{ env.BUILD_DIR_PATH }}
+        run: |
+          cd $BUILD_DIR_PATH
+          ctest --verbose --output-on-failure -C Debug
 
   Windows:
     env:
