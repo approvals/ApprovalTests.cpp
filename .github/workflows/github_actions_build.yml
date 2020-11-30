@@ -107,7 +107,7 @@ jobs:
             cxx-compiler: 'g++-7'
             generator: '"Ninja"'
             relative_build_dir_path: '../'
-    runs-on: ubuntu-${{ matrix.os }}
+    runs-on: ubuntu-${{ matrix.os-version }}
     steps:
       - uses: actions/checkout@master
       - uses: seanmiddleditch/gha-setup-ninja@v3
@@ -171,7 +171,7 @@ jobs:
             os-version: '10.15'
             generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
             relative_build_dir_path: ''
-    runs-on: macos-${{ matrix.os }}
+    runs-on: macos-${{ matrix.os-version }}
     steps:
       - uses: actions/checkout@master
       - uses: seanmiddleditch/gha-setup-ninja@v3
