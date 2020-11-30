@@ -160,15 +160,15 @@ jobs:
 
       - name: configure
         run: |
-          mkdir $BUILD_DIR_PATH
-          cd $BUILD_DIR_PATH
+          mkdir %BUILD_DIR_PATH%
+          cd %BUILD_DIR_PATH%
           cmake --version
           cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
       - name: build
         run: |
-          cd $BUILD_DIR_PATH
+          cd %BUILD_DIR_PATH%
           cmake --build .
       - name: test
         run: |
-          cd $BUILD_DIR_PATH
+          cd %BUILD_DIR_PATH%
           ctest --verbose --output-on-failure -C Debug
