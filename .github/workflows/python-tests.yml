@@ -10,6 +10,8 @@ on:
   pull_request:
     branches:
       - '*'
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight
 
 jobs:
   build:

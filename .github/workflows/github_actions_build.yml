@@ -9,6 +9,8 @@ on:
     branches:
       - '*'
       - '!travis_ccache'
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight
 
 jobs:
   clang-format:
