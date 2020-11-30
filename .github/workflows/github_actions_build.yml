@@ -161,25 +161,31 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - job-name:  macOS-latest
+          - job-name: xcode-10.3
+            os: macOS-10.15
+            xcode-version: '10.3'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: xcode-11.7
             os: macOS-latest
             xcode-version: '11.7'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name:  macOS-latest-unity
+          - job-name: xcode-11.7-unity
             os: macOS-latest
             xcode-version: '11.7'
             generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
             relative_build_dir_path: ''
 
-          - job-name:  macOS-latest-ninja
+          - job-name: xcode-11.7-ninja
             xcode-version: '11.7'
             os: macOS-latest
             generator: '"Ninja"'
             relative_build_dir_path: '../'
 
-          - job-name:  macOS-latest-ninja-unity
+          - job-name: xcode-11.7-ninja-unity
             xcode-version: '11.7'
             os: macOS-latest
             generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
