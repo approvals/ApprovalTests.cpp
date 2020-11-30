@@ -53,7 +53,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@master
-      - uses: seanmiddleditch/gha-setup-ninja@v1
+      - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
       # TODO Remove these uses of ::set-env - they cause a security warning
