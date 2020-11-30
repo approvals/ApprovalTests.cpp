@@ -149,26 +149,26 @@ jobs:
             relative_build_dir_path: ''
 
           - job-name: xcode-11.7
-            os: macOS-latest
+            os: macos-10.15
             xcode-version: '11.7'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
           - job-name: xcode-11.7-unity
-            os: macOS-latest
+            os: macos-10.15
             xcode-version: '11.7'
             generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
             relative_build_dir_path: ''
 
           - job-name: xcode-11.7-ninja
             xcode-version: '11.7'
-            os: macOS-latest
+            os: macos-10.15
             generator: '"Ninja"'
             relative_build_dir_path: '../'
 
           - job-name: xcode-11.7-ninja-unity
             xcode-version: '11.7'
-            os: macOS-latest
+            os: macos-10.15
             generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
             relative_build_dir_path: ''
     runs-on: ${{ matrix.os }}
