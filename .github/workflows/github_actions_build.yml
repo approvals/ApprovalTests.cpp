@@ -12,6 +12,7 @@ on:
 
 jobs:
   clang-format:
+    # TODO specify exact version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -39,10 +40,12 @@ jobs:
     env:
       IN_TREE_BUILD_DIR: ${{ github.workspace }}/build_space
       OUT_OF_TREE_BUILD_DIR: ${{ github.workspace }}/../build_space
+      # TODO Remove allowance of unsecure commands
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     strategy:
       fail-fast: false
       matrix:
+        # TODO Remove buildtype list - it duplicates info below
         buildtype: [
           windows-latest,
           windows-latest (clangcl),
@@ -105,6 +108,7 @@ jobs:
     - uses: seanmiddleditch/gha-setup-ninja@v1
       if: contains(matrix.generator, 'Ninja')
 
+    # TODO Remove these uses of ::set-env - they cause a security warning
     - name: set env for in-source build tree
       if: matrix.in_source_build == true
       run: |
