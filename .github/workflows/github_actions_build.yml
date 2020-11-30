@@ -57,11 +57,6 @@ jobs:
       - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
-      - name: check env
-        run: |
-          echo Build space: ${{ env.BUILD_DIR_PATH }}
-
-
       - name: install boost for linux
         run: |
           sudo apt-get update -qq
@@ -69,18 +64,20 @@ jobs:
 
       - name: make build space
         run: |
-          mkdir ${{ env.BUILD_DIR_PATH }}
+          mkdir $BUILD_DIR_PATH
       - name: cmake
         run: |
+          cd $BUILD_DIR_PATH
           cmake --version
           cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
-        working-directory: ${{ env.BUILD_DIR_PATH }}
       - name: build
-        run: cmake --build .
-        working-directory: ${{ env.BUILD_DIR_PATH }}
+        run: |
+          cd $BUILD_DIR_PATH
+          cmake --build .
       - name: test
-        run: ctest --verbose --output-on-failure -C Debug
-        working-directory: ${{ env.BUILD_DIR_PATH }}
+        run: |
+          cd $BUILD_DIR_PATH
+          ctest --verbose --output-on-failure -C Debug
 
   Mac:
     env:
