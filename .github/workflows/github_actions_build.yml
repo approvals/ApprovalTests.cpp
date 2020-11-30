@@ -44,19 +44,19 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - job-name: 'gcc5'
-            os: ubuntu-18.04
-            c-compiler: 'gcc-5'
-            cxx-compiler: 'g++-5'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
-          - job-name: 'gcc6'
-            os: ubuntu-18.04
-            c-compiler: 'gcc-6'
-            cxx-compiler: 'g++-6'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
+#          - job-name: 'gcc5'
+#            os: ubuntu-18.04
+#            c-compiler: 'gcc-5'
+#            cxx-compiler: 'g++-5'
+#            generator: '"Unix Makefiles"'
+#            relative_build_dir_path: ''
+#
+#          - job-name: 'gcc6'
+#            os: ubuntu-18.04
+#            c-compiler: 'gcc-6'
+#            cxx-compiler: 'g++-6'
+#            generator: '"Unix Makefiles"'
+#            relative_build_dir_path: ''
 
           - job-name: 'gcc7'
             os: ubuntu-18.04
