@@ -44,6 +44,41 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - job-name: 'clang6.0'
+            os: ubuntu-18.04
+            c-compiler: 'clang-6.0'
+            cxx-compiler: 'clang++-6.0'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'clang7'
+            os: ubuntu-18.04
+            c-compiler: 'clang-7'
+            cxx-compiler: 'clang++-7'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'clang8'
+            os: ubuntu-18.04
+            c-compiler: 'clang-8'
+            cxx-compiler: 'clang++-8'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'clang9'
+            os: ubuntu-18.04
+            c-compiler: 'clang-9'
+            cxx-compiler: 'clang++-9'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'clang10'
+            os: ubuntu-20.04
+            c-compiler: 'clang-10'
+            cxx-compiler: 'clang++-10'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
 #          - job-name: 'gcc5'
 #            os: ubuntu-18.04
 #            c-compiler: 'gcc-5'
