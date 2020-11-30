@@ -38,17 +38,23 @@ jobs:
   Linux:
     env:
       BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
+      CC: ${{ matrix.c-compiler }}
+      CXX: ${{ matrix.cxx-compiler }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          - job-name: ubuntu-18.04
+          - job-name: 'linux gcc7'
             os: ubuntu-18.04
+            c-compiler: 'gcc-7'
+            cxx-compiler: 'g++-7'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: ubuntu-18.04-ninja
+          - job-name: 'linux gcc7 ninja'
             os: ubuntu-18.04
+            c-compiler: 'gcc-7'
+            cxx-compiler: 'g++-7'
             generator: '"Ninja"'
             relative_build_dir_path: '../'
     runs-on: ${{ matrix.os }}
