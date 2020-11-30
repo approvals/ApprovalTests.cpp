@@ -37,10 +37,8 @@ jobs:
 
   Linux:
     env:
-      IN_TREE_BUILD_DIR: ${{ github.workspace }}/build_space
+      BUILD_DIR_PATH: ${{ github.workspace }}/build_space
       OUT_OF_TREE_BUILD_DIR: ${{ github.workspace }}/../build_space
-      # TODO Remove allowance of unsecure commands
-      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     strategy:
       fail-fast: false
       matrix:
@@ -48,12 +46,11 @@ jobs:
           - job-name: ubuntu-18.04
             os: ubuntu-18.04
             generator: '"Unix Makefiles"'
-            in_source_build: true
 
           - job-name: ubuntu-18.04-ninja
             os: ubuntu-18.04
             generator: '"Ninja"'
-            in_source_build: false
+            BUILD_DIR_PATH: ${{ env.OUT_OF_TREE_BUILD_DIR }}
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@master
@@ -61,14 +58,14 @@ jobs:
         if: contains(matrix.generator, 'Ninja')
 
       # TODO Remove these uses of ::set-env - they cause a security warning
-      - name: set env for in-source build tree
-        if: matrix.in_source_build == true
-        run: |
-          echo "::set-env name=BUILD_DIR_PATH::${{ env.IN_TREE_BUILD_DIR }}"
-      - name: set env out-of-source
-        if: matrix.in_source_build == false
-        run: |
-          echo "::set-env name=BUILD_DIR_PATH::${{ env.OUT_OF_TREE_BUILD_DIR }}"
+#      - name: set env for in-source build tree
+#        if: matrix.in_source_build == true
+#        run: |
+#          echo "::set-env name=BUILD_DIR_PATH::${{ env.IN_TREE_BUILD_DIR }}"
+#      - name: set env out-of-source
+#        if: matrix.in_source_build == false
+#        run: |
+#          echo "::set-env name=BUILD_DIR_PATH::${{ env.OUT_OF_TREE_BUILD_DIR }}"
       - name: check env
         run: |
           echo Build space: ${{ env.BUILD_DIR_PATH }}
