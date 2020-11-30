@@ -35,123 +35,123 @@ jobs:
   #      - name: Run markdown-link-check on *.md files
   #        run: ./scripts/check_links.sh
 
-#  Linux:
-#    env:
-#      BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
-#      CC: ${{ matrix.c-compiler }}
-#      CXX: ${{ matrix.cxx-compiler }}
-#    strategy:
-#      fail-fast: false
-#      matrix:
-#        include:
-#          - job-name: 'clang6.0'
+  Linux:
+    env:
+      BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
+      CC: ${{ matrix.c-compiler }}
+      CXX: ${{ matrix.cxx-compiler }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - job-name: 'clang6.0'
+            os: ubuntu-18.04
+            c-compiler: 'clang-6.0'
+            cxx-compiler: 'clang++-6.0'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+#          - job-name: 'clang7'
 #            os: ubuntu-18.04
-#            c-compiler: 'clang-6.0'
-#            cxx-compiler: 'clang++-6.0'
+#            c-compiler: 'clang-7'
+#            cxx-compiler: 'clang++-7'
+#            generator: '"Unix Makefiles"'
+#            relative_build_dir_path: ''
+
+          - job-name: 'clang8'
+            os: ubuntu-18.04
+            c-compiler: 'clang-8'
+            cxx-compiler: 'clang++-8'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'clang9'
+            os: ubuntu-18.04
+            c-compiler: 'clang-9'
+            cxx-compiler: 'clang++-9'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'clang10'
+            os: ubuntu-20.04
+            c-compiler: 'clang-10'
+            cxx-compiler: 'clang++-10'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+#          - job-name: 'gcc5'
+#            os: ubuntu-18.04
+#            c-compiler: 'gcc-5'
+#            cxx-compiler: 'g++-5'
 #            generator: '"Unix Makefiles"'
 #            relative_build_dir_path: ''
 #
-##          - job-name: 'clang7'
-##            os: ubuntu-18.04
-##            c-compiler: 'clang-7'
-##            cxx-compiler: 'clang++-7'
-##            generator: '"Unix Makefiles"'
-##            relative_build_dir_path: ''
-#
-#          - job-name: 'clang8'
+#          - job-name: 'gcc6'
 #            os: ubuntu-18.04
-#            c-compiler: 'clang-8'
-#            cxx-compiler: 'clang++-8'
+#            c-compiler: 'gcc-6'
+#            cxx-compiler: 'g++-6'
 #            generator: '"Unix Makefiles"'
 #            relative_build_dir_path: ''
-#
-#          - job-name: 'clang9'
-#            os: ubuntu-18.04
-#            c-compiler: 'clang-9'
-#            cxx-compiler: 'clang++-9'
-#            generator: '"Unix Makefiles"'
-#            relative_build_dir_path: ''
-#
-#          - job-name: 'clang10'
-#            os: ubuntu-20.04
-#            c-compiler: 'clang-10'
-#            cxx-compiler: 'clang++-10'
-#            generator: '"Unix Makefiles"'
-#            relative_build_dir_path: ''
-#
-##          - job-name: 'gcc5'
-##            os: ubuntu-18.04
-##            c-compiler: 'gcc-5'
-##            cxx-compiler: 'g++-5'
-##            generator: '"Unix Makefiles"'
-##            relative_build_dir_path: ''
-##
-##          - job-name: 'gcc6'
-##            os: ubuntu-18.04
-##            c-compiler: 'gcc-6'
-##            cxx-compiler: 'g++-6'
-##            generator: '"Unix Makefiles"'
-##            relative_build_dir_path: ''
-#
-#          - job-name: 'gcc7'
-#            os: ubuntu-18.04
-#            c-compiler: 'gcc-7'
-#            cxx-compiler: 'g++-7'
-#            generator: '"Unix Makefiles"'
-#            relative_build_dir_path: ''
-#
-#          - job-name: 'gcc8'
-#            os: ubuntu-18.04
-#            c-compiler: 'gcc-8'
-#            cxx-compiler: 'g++-8'
-#            generator: '"Unix Makefiles"'
-#            relative_build_dir_path: ''
-#
-#          - job-name: 'gcc9'
-#            os: ubuntu-18.04
-#            c-compiler: 'gcc-9'
-#            cxx-compiler: 'g++-9'
-#            generator: '"Unix Makefiles"'
-#            relative_build_dir_path: ''
-#
-#          - job-name: 'gcc10'
-#            os: ubuntu-18.04
-#            c-compiler: 'gcc-10'
-#            cxx-compiler: 'g++-10'
-#            generator: '"Unix Makefiles"'
-#            relative_build_dir_path: ''
-#
-#          - job-name: 'gcc7 ninja'
-#            os: ubuntu-18.04
-#            c-compiler: 'gcc-7'
-#            cxx-compiler: 'g++-7'
-#            generator: '"Ninja"'
-#            relative_build_dir_path: '../'
-#    runs-on: ${{ matrix.os }}
-#    steps:
-#      - uses: actions/checkout@master
-#      - uses: seanmiddleditch/gha-setup-ninja@v3
-#        if: contains(matrix.generator, 'Ninja')
-#
-#      - name: install boost for linux
-#        run: |
-#          sudo apt-get update -qq
-#          sudo apt-get install -y libboost-all-dev
-#
-#      - name: configure
-#        run: |
-#          mkdir $BUILD_DIR_PATH
-#          cd $BUILD_DIR_PATH
-#          cmake --version
-#          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
-#      - name: build
-#        run: |
-#          cd $BUILD_DIR_PATH
-#          cmake --build . --parallel 4
-#      - name: test
-#        run: |
-#          cd $BUILD_DIR_PATH
-#          ctest --verbose --output-on-failure -C Debug
+
+          - job-name: 'gcc7'
+            os: ubuntu-18.04
+            c-compiler: 'gcc-7'
+            cxx-compiler: 'g++-7'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'gcc8'
+            os: ubuntu-18.04
+            c-compiler: 'gcc-8'
+            cxx-compiler: 'g++-8'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'gcc9'
+            os: ubuntu-18.04
+            c-compiler: 'gcc-9'
+            cxx-compiler: 'g++-9'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'gcc10'
+            os: ubuntu-18.04
+            c-compiler: 'gcc-10'
+            cxx-compiler: 'g++-10'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'gcc7 ninja'
+            os: ubuntu-18.04
+            c-compiler: 'gcc-7'
+            cxx-compiler: 'g++-7'
+            generator: '"Ninja"'
+            relative_build_dir_path: '../'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@master
+      - uses: seanmiddleditch/gha-setup-ninja@v3
+        if: contains(matrix.generator, 'Ninja')
+
+      - name: install boost for linux
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y libboost-all-dev
+
+      - name: configure
+        run: |
+          mkdir $BUILD_DIR_PATH
+          cd $BUILD_DIR_PATH
+          cmake --version
+          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
+      - name: build
+        run: |
+          cd $BUILD_DIR_PATH
+          cmake --build . --parallel 4
+      - name: test
+        run: |
+          cd $BUILD_DIR_PATH
+          ctest --verbose --output-on-failure -C Debug
 
   macOS:
     env:
