@@ -81,17 +81,7 @@ jobs:
           echo Build space: ${{ env.BUILD_DIR_PATH }}
 
 
-      - name: install boost for macOS
-        if: matrix.os == 'macOS-latest'
-        run: |
-          brew install boost
-      - name: install boost for linux
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y libboost-all-dev
       - name: set up boost for windows
-        if: matrix.os == 'windows-latest' || matrix.os == 'windows-2016'
         run: |
           echo "::set-env name=BOOST_ROOT::$env:BOOST_ROOT_1_72_0"
           echo "::set-env name=BOOST_INCLUDEDIR::${{ env.BOOST_ROOT }}\boost\include"
@@ -151,21 +141,10 @@ jobs:
           echo Build space: ${{ env.BUILD_DIR_PATH }}
 
 
-      - name: install boost for macOS
-        if: matrix.os == 'macOS-latest'
-        run: |
-          brew install boost
       - name: install boost for linux
-        if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y libboost-all-dev
-      - name: set up boost for windows
-        if: matrix.os == 'windows-latest' || matrix.os == 'windows-2016'
-        run: |
-          echo "::set-env name=BOOST_ROOT::$env:BOOST_ROOT_1_72_0"
-          echo "::set-env name=BOOST_INCLUDEDIR::${{ env.BOOST_ROOT }}\boost\include"
-          echo "::set-env name=BOOST_LIBRARYDIR::${{ env.BOOST_ROOT }}\lib"
 
       - name: make build space
         run: |
@@ -232,20 +211,8 @@ jobs:
 
 
       - name: install boost for macOS
-        if: matrix.os == 'macOS-latest'
         run: |
           brew install boost
-      - name: install boost for linux
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y libboost-all-dev
-      - name: set up boost for windows
-        if: matrix.os == 'windows-latest' || matrix.os == 'windows-2016'
-        run: |
-          echo "::set-env name=BOOST_ROOT::$env:BOOST_ROOT_1_72_0"
-          echo "::set-env name=BOOST_INCLUDEDIR::${{ env.BOOST_ROOT }}\boost\include"
-          echo "::set-env name=BOOST_LIBRARYDIR::${{ env.BOOST_ROOT }}\lib"
 
       - name: make build space
         run: |
