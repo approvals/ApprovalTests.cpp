@@ -62,11 +62,9 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y libboost-all-dev
 
-      - name: make build space
+      - name: configure
         run: |
           mkdir $BUILD_DIR_PATH
-      - name: cmake
-        run: |
           cd $BUILD_DIR_PATH
           cmake --version
           cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
