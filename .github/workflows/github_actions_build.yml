@@ -36,7 +36,7 @@ jobs:
   #      - name: Run markdown-link-check on *.md files
   #        run: ./scripts/check_links.sh
 
-  build:
+  Windows:
     env:
       IN_TREE_BUILD_DIR: ${{ github.workspace }}/build_space
       OUT_OF_TREE_BUILD_DIR: ${{ github.workspace }}/../build_space
@@ -61,6 +61,67 @@ jobs:
             generator: '"Visual Studio 15 2017"'
             in_source_build: true
 
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@master
+      - uses: seanmiddleditch/gha-setup-ninja@v1
+        if: contains(matrix.generator, 'Ninja')
+
+      # TODO Remove these uses of ::set-env - they cause a security warning
+      - name: set env for in-source build tree
+        if: matrix.in_source_build == true
+        run: |
+          echo "::set-env name=BUILD_DIR_PATH::${{ env.IN_TREE_BUILD_DIR }}"
+      - name: set env out-of-source
+        if: matrix.in_source_build == false
+        run: |
+          echo "::set-env name=BUILD_DIR_PATH::${{ env.OUT_OF_TREE_BUILD_DIR }}"
+      - name: check env
+        run: |
+          echo Build space: ${{ env.BUILD_DIR_PATH }}
+
+
+      - name: install boost for macOS
+        if: matrix.os == 'macOS-latest'
+        run: |
+          brew install boost
+      - name: install boost for linux
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y libboost-all-dev
+      - name: set up boost for windows
+        if: matrix.os == 'windows-latest' || matrix.os == 'windows-2016'
+        run: |
+          echo "::set-env name=BOOST_ROOT::$env:BOOST_ROOT_1_72_0"
+          echo "::set-env name=BOOST_INCLUDEDIR::${{ env.BOOST_ROOT }}\boost\include"
+          echo "::set-env name=BOOST_LIBRARYDIR::${{ env.BOOST_ROOT }}\lib"
+
+      - name: make build space
+        run: |
+          mkdir ${{ env.BUILD_DIR_PATH }}
+      - name: cmake
+        run: |
+          cmake --version
+          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
+        working-directory: ${{ env.BUILD_DIR_PATH }}
+      - name: build
+        run: cmake --build .
+        working-directory: ${{ env.BUILD_DIR_PATH }}
+      - name: test
+        run: ctest --verbose --output-on-failure -C Debug
+        working-directory: ${{ env.BUILD_DIR_PATH }}
+
+  Linux:
+    env:
+      IN_TREE_BUILD_DIR: ${{ github.workspace }}/build_space
+      OUT_OF_TREE_BUILD_DIR: ${{ github.workspace }}/../build_space
+      # TODO Remove allowance of unsecure commands
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
           - job-name: ubuntu-latest
             os: ubuntu-latest
             generator: '"Unix Makefiles"'
@@ -70,7 +131,67 @@ jobs:
             os: ubuntu-latest
             generator: '"Ninja"'
             in_source_build: false
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@master
+      - uses: seanmiddleditch/gha-setup-ninja@v1
+        if: contains(matrix.generator, 'Ninja')
 
+      # TODO Remove these uses of ::set-env - they cause a security warning
+      - name: set env for in-source build tree
+        if: matrix.in_source_build == true
+        run: |
+          echo "::set-env name=BUILD_DIR_PATH::${{ env.IN_TREE_BUILD_DIR }}"
+      - name: set env out-of-source
+        if: matrix.in_source_build == false
+        run: |
+          echo "::set-env name=BUILD_DIR_PATH::${{ env.OUT_OF_TREE_BUILD_DIR }}"
+      - name: check env
+        run: |
+          echo Build space: ${{ env.BUILD_DIR_PATH }}
+
+
+      - name: install boost for macOS
+        if: matrix.os == 'macOS-latest'
+        run: |
+          brew install boost
+      - name: install boost for linux
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y libboost-all-dev
+      - name: set up boost for windows
+        if: matrix.os == 'windows-latest' || matrix.os == 'windows-2016'
+        run: |
+          echo "::set-env name=BOOST_ROOT::$env:BOOST_ROOT_1_72_0"
+          echo "::set-env name=BOOST_INCLUDEDIR::${{ env.BOOST_ROOT }}\boost\include"
+          echo "::set-env name=BOOST_LIBRARYDIR::${{ env.BOOST_ROOT }}\lib"
+
+      - name: make build space
+        run: |
+          mkdir ${{ env.BUILD_DIR_PATH }}
+      - name: cmake
+        run: |
+          cmake --version
+          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
+        working-directory: ${{ env.BUILD_DIR_PATH }}
+      - name: build
+        run: cmake --build .
+        working-directory: ${{ env.BUILD_DIR_PATH }}
+      - name: test
+        run: ctest --verbose --output-on-failure -C Debug
+        working-directory: ${{ env.BUILD_DIR_PATH }}
+
+  Mac:
+    env:
+      IN_TREE_BUILD_DIR: ${{ github.workspace }}/build_space
+      OUT_OF_TREE_BUILD_DIR: ${{ github.workspace }}/../build_space
+      # TODO Remove allowance of unsecure commands
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
           - job-name:  macOS-latest
             os: macOS-latest
             generator: '"Unix Makefiles"'
