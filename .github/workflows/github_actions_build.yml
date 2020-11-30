@@ -130,10 +130,7 @@ jobs:
 
   Windows:
     env:
-      IN_TREE_BUILD_DIR: ${{ github.workspace }}/build_space
-      OUT_OF_TREE_BUILD_DIR: ${{ github.workspace }}/../build_space
-      # TODO Remove allowance of unsecure commands
-      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
     strategy:
       fail-fast: false
       matrix:
@@ -141,37 +138,18 @@ jobs:
           - job-name: windows-latest
             os: windows-latest
             generator: '"Visual Studio 16 2019"'
-            in_source_build: true
 
           - job-name: windows-latest (clangcl)
             os: windows-latest
             generator: '"Visual Studio 16 2019" -T "clangcl"'
-            in_source_build: true
 
           - job-name: windows-2016
             os: windows-2016
             generator: '"Visual Studio 15 2017"'
-            in_source_build: true
 
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@master
-      - uses: seanmiddleditch/gha-setup-ninja@v1
-        if: contains(matrix.generator, 'Ninja')
-
-      # TODO Remove these uses of ::set-env - they cause a security warning
-      - name: set env for in-source build tree
-        if: matrix.in_source_build == true
-        run: |
-          echo "::set-env name=BUILD_DIR_PATH::${{ env.IN_TREE_BUILD_DIR }}"
-      - name: set env out-of-source
-        if: matrix.in_source_build == false
-        run: |
-          echo "::set-env name=BUILD_DIR_PATH::${{ env.OUT_OF_TREE_BUILD_DIR }}"
-      - name: check env
-        run: |
-          echo Build space: ${{ env.BUILD_DIR_PATH }}
-
 
       - name: set up boost for windows
         run: |
@@ -179,17 +157,17 @@ jobs:
           echo "::set-env name=BOOST_INCLUDEDIR::${{ env.BOOST_ROOT }}\boost\include"
           echo "::set-env name=BOOST_LIBRARYDIR::${{ env.BOOST_ROOT }}\lib"
 
-      - name: make build space
+      - name: configure
         run: |
-          mkdir ${{ env.BUILD_DIR_PATH }}
-      - name: cmake
-        run: |
+          mkdir $BUILD_DIR_PATH
+          cd $BUILD_DIR_PATH
           cmake --version
           cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
-        working-directory: ${{ env.BUILD_DIR_PATH }}
       - name: build
-        run: cmake --build .
-        working-directory: ${{ env.BUILD_DIR_PATH }}
+        run: |
+          cd $BUILD_DIR_PATH
+          cmake --build .
       - name: test
-        run: ctest --verbose --output-on-failure -C Debug
-        working-directory: ${{ env.BUILD_DIR_PATH }}
+        run: |
+          cd $BUILD_DIR_PATH
+          ctest --verbose --output-on-failure -C Debug
