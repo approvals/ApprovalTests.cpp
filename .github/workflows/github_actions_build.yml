@@ -44,14 +44,42 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - job-name: 'linux gcc7'
+          - job-name: 'gcc5'
+            os: ubuntu-18.04
+            c-compiler: 'gcc-5'
+            cxx-compiler: 'g++-5'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'gcc6'
+            os: ubuntu-18.04
+            c-compiler: 'gcc-6'
+            cxx-compiler: 'g++-6'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'gcc7'
             os: ubuntu-18.04
             c-compiler: 'gcc-7'
             cxx-compiler: 'g++-7'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: 'linux gcc7 ninja'
+          - job-name: 'gcc8'
+            os: ubuntu-18.04
+            c-compiler: 'gcc-8'
+            cxx-compiler: 'g++-8'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'gcc9'
+            os: ubuntu-18.04
+            c-compiler: 'gcc-9'
+            cxx-compiler: 'g++-9'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+          - job-name: 'gcc7 ninja'
             os: ubuntu-18.04
             c-compiler: 'gcc-7'
             cxx-compiler: 'g++-7'
