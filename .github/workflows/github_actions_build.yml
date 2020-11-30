@@ -57,15 +57,6 @@ jobs:
       - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
-      # TODO Remove these uses of ::set-env - they cause a security warning
-#      - name: set env for in-source build tree
-#        if: matrix.in_source_build == true
-#        run: |
-#          echo "::set-env name=BUILD_DIR_PATH::${{ env.IN_TREE_BUILD_DIR }}"
-#      - name: set env out-of-source
-#        if: matrix.in_source_build == false
-#        run: |
-#          echo "::set-env name=BUILD_DIR_PATH::${{ env.OUT_OF_TREE_BUILD_DIR }}"
       - name: check env
         run: |
           echo Build space: ${{ env.BUILD_DIR_PATH }}
