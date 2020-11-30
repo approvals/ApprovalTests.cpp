@@ -34,27 +34,6 @@ env:
     packages:
       - g++-6
 
-#.addons-gcc7: &gcc7
-#  apt:
-#    sources:
-#      - ubuntu-toolchain-r-test
-#    packages:
-#      - g++-7
-#
-#.addons-gcc8: &gcc8
-#  apt:
-#    sources:
-#      - ubuntu-toolchain-r-test
-#    packages:
-#      - g++-8
-#
-#.addons-gcc9: &gcc9
-#  apt:
-#    sources:
-#      - ubuntu-toolchain-r-test
-#    packages:
-#      - g++-9
-
 # -------------------------------------------------------------------------
 # Linux clang
 # -------------------------------------------------------------------------
@@ -68,15 +47,6 @@ env:
       - clang-5.0
       - libstdc++-8-dev
 
-.addons-clang6: &clang6
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-6.0
-    packages:
-      - clang-6.0
-      - libstdc++-8-dev
-
 .addons-clang7: &clang7
   apt:
     sources:
@@ -85,28 +55,6 @@ env:
     packages:
       - clang-7
       - libstdc++-8-dev
-
-.addons-clang8: &clang8
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-8
-    packages:
-      - clang-8
-      - libstdc++-8-dev
-
-#.addons-clang9: &clang9
-#  apt:
-#    sources:
-#      - ubuntu-toolchain-r-test
-#      - sourceline: 'deb https://apt.llvm.org/xenial/ llvm-toolchain-xenial-9 main'
-#        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
-#    packages:
-#      - clang-9
-#      - libclang-cpp9
-#      - libllvm9
-#      - libclang-common-9-dev
-#      - libstdc++-9-dev
 
 matrix:
   include:
@@ -123,18 +71,6 @@ matrix:
       os: linux
       addons: *gcc6
 
-#    - env: GCC_VERSION=7
-#      os: linux
-#      addons: *gcc7
-#
-#    - env: GCC_VERSION=8
-#      os: linux
-#      addons: *gcc8
-#
-#    - env: GCC_VERSION=9
-#      os: linux
-#      addons: *gcc9
-
     # -------------------------------------------------------------------------
     # Linux clang
     # -------------------------------------------------------------------------
@@ -144,25 +80,10 @@ matrix:
       dist: trusty
       addons: *clang5
 
-    - env: CLANG_VERSION=6.0
-      os: linux
-      dist: trusty
-      addons: *clang6
-
     - env: CLANG_VERSION=7
       os: linux
       dist: trusty
       addons: *clang7
-
-    - env: CLANG_VERSION=8
-      os: linux
-      dist: trusty
-      addons: *clang8
-
-#    - env: CLANG_VERSION=9
-#      os: linux
-#      dist: trusty
-#      addons: *clang9
 
     # -------------------------------------------------------------------------
     # Mac clang
