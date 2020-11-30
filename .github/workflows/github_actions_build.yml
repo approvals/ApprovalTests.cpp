@@ -38,7 +38,6 @@ jobs:
   Linux:
     env:
       BUILD_DIR_PATH: ${{ github.workspace }}/build_space
-      OUT_OF_TREE_BUILD_DIR: ${{ github.workspace }}/../build_space
     strategy:
       fail-fast: false
       matrix:
@@ -50,7 +49,7 @@ jobs:
           - job-name: ubuntu-18.04-ninja
             os: ubuntu-18.04
             generator: '"Ninja"'
-            BUILD_DIR_PATH: ${{ env.OUT_OF_TREE_BUILD_DIR }}
+            BUILD_DIR_PATH: ${{ github.workspace }}/../build_space
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@master
