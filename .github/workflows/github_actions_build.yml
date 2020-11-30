@@ -51,12 +51,12 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: 'clang7'
-            os: ubuntu-18.04
-            c-compiler: 'clang-7'
-            cxx-compiler: 'clang++-7'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
+#          - job-name: 'clang7'
+#            os: ubuntu-18.04
+#            c-compiler: 'clang-7'
+#            cxx-compiler: 'clang++-7'
+#            generator: '"Unix Makefiles"'
+#            relative_build_dir_path: ''
 
           - job-name: 'clang8'
             os: ubuntu-18.04
