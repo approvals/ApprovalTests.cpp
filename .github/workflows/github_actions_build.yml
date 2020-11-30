@@ -37,7 +37,7 @@ jobs:
 
   Linux:
     env:
-      BUILD_DIR_PATH: ${{ github.workspace }}/build_space
+      BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
     strategy:
       fail-fast: false
       matrix:
@@ -45,11 +45,12 @@ jobs:
           - job-name: ubuntu-18.04
             os: ubuntu-18.04
             generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
 
           - job-name: ubuntu-18.04-ninja
             os: ubuntu-18.04
             generator: '"Ninja"'
-            BUILD_DIR_PATH: ${{ github.workspace }}/../build_space
+            relative_build_dir_path: '../'
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@master
