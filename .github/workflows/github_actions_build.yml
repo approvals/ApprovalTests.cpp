@@ -130,7 +130,7 @@ jobs:
 
   Windows:
     env:
-      BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
+      BUILD_DIR_PATH: ${{ github.workspace }}/build_space
     strategy:
       fail-fast: false
       matrix:
