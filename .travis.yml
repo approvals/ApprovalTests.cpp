@@ -34,26 +34,26 @@ env:
     packages:
       - g++-6
 
-.addons-gcc7: &gcc7
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-7
-
-.addons-gcc8: &gcc8
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-8
-
-.addons-gcc9: &gcc9
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-9
+#.addons-gcc7: &gcc7
+#  apt:
+#    sources:
+#      - ubuntu-toolchain-r-test
+#    packages:
+#      - g++-7
+#
+#.addons-gcc8: &gcc8
+#  apt:
+#    sources:
+#      - ubuntu-toolchain-r-test
+#    packages:
+#      - g++-8
+#
+#.addons-gcc9: &gcc9
+#  apt:
+#    sources:
+#      - ubuntu-toolchain-r-test
+#    packages:
+#      - g++-9
 
 # -------------------------------------------------------------------------
 # Linux clang
@@ -123,17 +123,17 @@ matrix:
       os: linux
       addons: *gcc6
 
-    - env: GCC_VERSION=7
-      os: linux
-      addons: *gcc7
-
-    - env: GCC_VERSION=8
-      os: linux
-      addons: *gcc8
-
-    - env: GCC_VERSION=9
-      os: linux
-      addons: *gcc9
+#    - env: GCC_VERSION=7
+#      os: linux
+#      addons: *gcc7
+#
+#    - env: GCC_VERSION=8
+#      os: linux
+#      addons: *gcc8
+#
+#    - env: GCC_VERSION=9
+#      os: linux
+#      addons: *gcc9
 
     # -------------------------------------------------------------------------
     # Linux clang
