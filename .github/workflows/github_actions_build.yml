@@ -46,68 +46,68 @@ jobs:
       matrix:
         include:
           - job-name: 'clang6.0'
-            os: ubuntu-18.04
+            os-version: '18.04'
             c-compiler: 'clang-6.0'
             cxx-compiler: 'clang++-6.0'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
           - job-name: 'clang8'
-            os: ubuntu-18.04
+            os-version: '18.04'
             c-compiler: 'clang-8'
             cxx-compiler: 'clang++-8'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
           - job-name: 'clang9'
-            os: ubuntu-18.04
+            os-version: '18.04'
             c-compiler: 'clang-9'
             cxx-compiler: 'clang++-9'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
           - job-name: 'clang10'
-            os: ubuntu-20.04
+            os-version: '20.04'
             c-compiler: 'clang-10'
             cxx-compiler: 'clang++-10'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
           - job-name: 'gcc7'
-            os: ubuntu-18.04
+            os-version: '18.04'
             c-compiler: 'gcc-7'
             cxx-compiler: 'g++-7'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
           - job-name: 'gcc8'
-            os: ubuntu-18.04
+            os-version: '18.04'
             c-compiler: 'gcc-8'
             cxx-compiler: 'g++-8'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
           - job-name: 'gcc9'
-            os: ubuntu-18.04
+            os-version: '18.04'
             c-compiler: 'gcc-9'
             cxx-compiler: 'g++-9'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
           - job-name: 'gcc10'
-            os: ubuntu-18.04
+            os-version: '18.04'
             c-compiler: 'gcc-10'
             cxx-compiler: 'g++-10'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
           - job-name: 'gcc7 ninja'
-            os: ubuntu-18.04
+            os-version: '18.04'
             c-compiler: 'gcc-7'
             cxx-compiler: 'g++-7'
             generator: '"Ninja"'
             relative_build_dir_path: '../'
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-${{ matrix.os }}
     steps:
       - uses: actions/checkout@master
       - uses: seanmiddleditch/gha-setup-ninja@v3
@@ -143,35 +143,35 @@ jobs:
       matrix:
         include:
           - job-name: xcode-10.3
-            os: macOS-10.15
+            os-version: '10.15'
             xcode-version: '10.3'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
           - job-name: xcode-11.7
-            os: macos-10.15
+            os-version: '10.15'
             xcode-version: '11.7'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
           - job-name: xcode-11.7-unity
-            os: macos-10.15
+            os-version: '10.15'
             xcode-version: '11.7'
             generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
             relative_build_dir_path: ''
 
           - job-name: xcode-11.7-ninja
             xcode-version: '11.7'
-            os: macos-10.15
+            os-version: '10.15'
             generator: '"Ninja"'
             relative_build_dir_path: '../'
 
           - job-name: xcode-11.7-ninja-unity
             xcode-version: '11.7'
-            os: macos-10.15
+            os-version: '10.15'
             generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
             relative_build_dir_path: ''
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-${{ matrix.os }}
     steps:
       - uses: actions/checkout@master
       - uses: seanmiddleditch/gha-setup-ninja@v3
