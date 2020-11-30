@@ -204,12 +204,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - job-name: windows-latest
-            os: windows-latest
+          - job-name: windows-2019
+            os: windows-2019
             generator: '"Visual Studio 16 2019"'
 
-          - job-name: windows-latest (clangcl)
-            os: windows-latest
+          - job-name: windows-2019 (clangcl)
+            os: windows-2019
             generator: '"Visual Studio 16 2019" -T "clangcl"'
 
           - job-name: windows-2016
