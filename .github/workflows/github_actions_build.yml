@@ -12,7 +12,7 @@ on:
 
 jobs:
   clang-format:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
       - uses: DoozyX/clang-format-lint-action@v0.5
@@ -24,7 +24,7 @@ jobs:
   # Commented-out, as it keeps failing with http 429 error - too many requests
   # e.g. https://github.com/approvals/ApprovalTests.cpp/runs/541867195
   #  markdown-link-check:
-  #    runs-on: ubuntu-latest
+  #    runs-on: ubuntu-18.04
   #    steps:
   #      - uses: actions/checkout@master
   #      - uses: actions/setup-node@v1
@@ -35,115 +35,140 @@ jobs:
   #      - name: Run markdown-link-check on *.md files
   #        run: ./scripts/check_links.sh
 
-  build:
+  Linux:
     env:
-      IN_TREE_BUILD_DIR: ${{ github.workspace }}/build_space
-      OUT_OF_TREE_BUILD_DIR: ${{ github.workspace }}/../build_space
+      BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
     strategy:
       fail-fast: false
       matrix:
-        buildtype: [
-          windows-latest,
-          windows-latest (clangcl),
-          windows-2016,
-          ubuntu-latest,
-          ubuntu-latest-ninja,
-          macOS-latest,
-          macOS-latest-unity,
-          macOS-latest-ninja,
-          macOS-latest-ninja-unity,
-        ]
         include:
-        - buildtype: windows-latest
-          os: windows-latest
-          generator: '"Visual Studio 16 2019"'
-          in_source_build: true
+          - job-name: ubuntu-18.04
+            os: ubuntu-18.04
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
 
-        - buildtype: windows-latest (clangcl)
-          os: windows-latest
-          generator: '"Visual Studio 16 2019" -T "clangcl"'
-          in_source_build: true
-
-        - buildtype: windows-2016
-          os: windows-2016
-          generator: '"Visual Studio 15 2017"'
-          in_source_build: true
-
-        - buildtype: ubuntu-latest
-          os: ubuntu-latest
-          generator: '"Unix Makefiles"'
-          in_source_build: true
-
-        - buildtype: ubuntu-latest-ninja
-          os: ubuntu-latest
-          generator: '"Ninja"'
-          in_source_build: false
-
-        - buildtype:  macOS-latest
-          os: macOS-latest
-          generator: '"Unix Makefiles"'
-          in_source_build: true
-
-        - buildtype:  macOS-latest-unity
-          os: macOS-latest
-          generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
-          in_source_build: true
-
-        - buildtype:  macOS-latest-ninja
-          os: macOS-latest
-          generator: '"Ninja"'
-          in_source_build: false
-
-        - buildtype:  macOS-latest-ninja-unity
-          os: macOS-latest
-          generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
-          in_source_build: true
+          - job-name: ubuntu-18.04-ninja
+            os: ubuntu-18.04
+            generator: '"Ninja"'
+            relative_build_dir_path: '../'
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@master
-    - uses: seanmiddleditch/gha-setup-ninja@v1
-      if: contains(matrix.generator, 'Ninja')
+      - uses: actions/checkout@master
+      - uses: seanmiddleditch/gha-setup-ninja@v3
+        if: contains(matrix.generator, 'Ninja')
 
-    - name: set env for in-source build tree
-      if: matrix.in_source_build == true
-      run: |
-        echo "BUILD_DIR_PATH=${{ env.IN_TREE_BUILD_DIR }}" >> ${env:GITHUB_ENV}
-    - name: set env out-of-source
-      if: matrix.in_source_build == false
-      run: |
-        echo "BUILD_DIR_PATH=${{ env.OUT_OF_TREE_BUILD_DIR }}" >> ${env:GITHUB_ENV}
-    - name: check env
-      run: |
-        echo Build space: ${{ env.BUILD_DIR_PATH }}
+      - name: install boost for linux
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y libboost-all-dev
 
+      - name: configure
+        run: |
+          mkdir $BUILD_DIR_PATH
+          cd $BUILD_DIR_PATH
+          cmake --version
+          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
+      - name: build
+        run: |
+          cd $BUILD_DIR_PATH
+          cmake --build .
+      - name: test
+        run: |
+          cd $BUILD_DIR_PATH
+          ctest --verbose --output-on-failure -C Debug
 
-    - name: install boost for macOS
-      if: matrix.os == 'macOS-latest'
-      run: |
-        brew install boost
-    - name: install boost for linux
-      if: matrix.os == 'ubuntu-latest'
-      run: |
-        sudo apt-get update -qq
-        sudo apt-get install -y libboost-all-dev
-    - name: set up boost for windows
-      if: matrix.os == 'windows-latest' || matrix.os == 'windows-2016'
-      run: |
-        echo "BOOST_ROOT=$env:BOOST_ROOT_1_72_0" >> ${env:GITHUB_ENV}
-        echo "BOOST_INCLUDEDIR=${boostroot}\include" >> ${env:GITHUB_ENV}
-        echo "BOOST_LIBRARYDIR=${boostroot}\lib" >> ${env:GITHUB_ENV}
+  macOS:
+    env:
+      BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - job-name:  macOS-latest
+            os: macOS-latest
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
 
-    - name: make build space
-      run: |
-        mkdir ${{ env.BUILD_DIR_PATH }}
-    - name: cmake
-      run: |
-        cmake --version
-        cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
-      working-directory: ${{ env.BUILD_DIR_PATH }}
-    - name: build
-      run: cmake --build .
-      working-directory: ${{ env.BUILD_DIR_PATH }}
-    - name: test
-      run: ctest --verbose --output-on-failure -C Debug
-      working-directory: ${{ env.BUILD_DIR_PATH }}
+          - job-name:  macOS-latest-unity
+            os: macOS-latest
+            generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
+            relative_build_dir_path: ''
+
+          - job-name:  macOS-latest-ninja
+            os: macOS-latest
+            generator: '"Ninja"'
+            relative_build_dir_path: '../'
+
+          - job-name:  macOS-latest-ninja-unity
+            os: macOS-latest
+            generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
+            relative_build_dir_path: ''
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@master
+      - uses: seanmiddleditch/gha-setup-ninja@v3
+        if: contains(matrix.generator, 'Ninja')
+
+      - name: install boost for macOS
+        run: |
+          brew install boost
+
+      - name: configure
+        run: |
+          mkdir $BUILD_DIR_PATH
+          cd $BUILD_DIR_PATH
+          cmake --version
+          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
+      - name: build
+        run: |
+          cd $BUILD_DIR_PATH
+          cmake --build .
+      - name: test
+        run: |
+          cd $BUILD_DIR_PATH
+          ctest --verbose --output-on-failure -C Debug
+
+  Windows:
+    env:
+      BUILD_DIR_PATH: ${{ github.workspace }}/build_space
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - job-name: windows-latest
+            os: windows-latest
+            generator: '"Visual Studio 16 2019"'
+
+          - job-name: windows-latest (clangcl)
+            os: windows-latest
+            generator: '"Visual Studio 16 2019" -T "clangcl"'
+
+          - job-name: windows-2016
+            os: windows-2016
+            generator: '"Visual Studio 15 2017"'
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@master
+
+      - name: set up boost for windows
+        run: |
+          ${boostroot} = "${env:BOOST_ROOT_1_72_0}"
+          echo "BOOST_ROOT=${boostroot}" >> ${env:GITHUB_ENV}
+          echo "BOOST_INCLUDEDIR=${boostroot}\include" >> ${env:GITHUB_ENV}
+          echo "BOOST_LIBRARYDIR=${boostroot}\lib" >> ${env:GITHUB_ENV}
+
+      - name: configure
+        run: |
+          mkdir ${{ env.BUILD_DIR_PATH }}
+          cd ${{ env.BUILD_DIR_PATH }}
+          cmake --version
+          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
+      - name: build
+        run: |
+          cd ${{ env.BUILD_DIR_PATH }}
+          cmake --build .
+      - name: test
+        run: |
+          cd ${{ env.BUILD_DIR_PATH }}
+          ctest --verbose --output-on-failure -C Debug
