@@ -77,7 +77,7 @@ jobs:
           cd $BUILD_DIR_PATH
           ctest --verbose --output-on-failure -C Debug
 
-  Mac:
+  macOS:
     env:
       BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
     strategy:
