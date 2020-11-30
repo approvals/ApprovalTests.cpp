@@ -147,7 +147,7 @@ jobs:
 #      - name: build
 #        run: |
 #          cd $BUILD_DIR_PATH
-#          cmake --build .
+#          cmake --build . --parallel 4
 #      - name: test
 #        run: |
 #          cd $BUILD_DIR_PATH
@@ -209,7 +209,7 @@ jobs:
       - name: build
         run: |
           cd $BUILD_DIR_PATH
-          cmake --build .
+          cmake --build . --parallel 4
       - name: test
         run: |
           cd $BUILD_DIR_PATH
@@ -254,7 +254,7 @@ jobs:
       - name: build
         run: |
           cd ${{ env.BUILD_DIR_PATH }}
-          cmake --build .
+          cmake --build . --parallel 4
       - name: test
         run: |
           cd ${{ env.BUILD_DIR_PATH }}
