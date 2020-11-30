@@ -153,9 +153,10 @@ jobs:
 
       - name: set up boost for windows
         run: |
-          echo "::set-env name=BOOST_ROOT::$env:BOOST_ROOT_1_72_0"
-          echo "::set-env name=BOOST_INCLUDEDIR::${{ env.BOOST_ROOT }}\boost\include"
-          echo "::set-env name=BOOST_LIBRARYDIR::${{ env.BOOST_ROOT }}\lib"
+          ${boostroot} = "${env:BOOST_ROOT_1_72_0}"
+          echo "BOOST_ROOT=${boostroot}" >> $GITHUB_ENV
+          echo "BOOST_INCLUDEDIR=${boostroot}\include" >> ${env:GITHUB_ENV}
+          echo "BOOST_LIBRARYDIR=${boostroot}\lib" >> ${env:GITHUB_ENV}
 
       - name: configure
         run: |
