@@ -45,60 +45,48 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # TODO Remove buildtype list - it duplicates info below
-        buildtype: [
-          windows-latest,
-          windows-latest (clangcl),
-          windows-2016,
-          ubuntu-latest,
-          ubuntu-latest-ninja,
-          macOS-latest,
-          macOS-latest-unity,
-          macOS-latest-ninja,
-          macOS-latest-ninja-unity,
-        ]
         include:
-        - buildtype: windows-latest
+        - job-name: windows-latest
           os: windows-latest
           generator: '"Visual Studio 16 2019"'
           in_source_build: true
 
-        - buildtype: windows-latest (clangcl)
+        - job-name: windows-latest (clangcl)
           os: windows-latest
           generator: '"Visual Studio 16 2019" -T "clangcl"'
           in_source_build: true
 
-        - buildtype: windows-2016
+        - job-name: windows-2016
           os: windows-2016
           generator: '"Visual Studio 15 2017"'
           in_source_build: true
 
-        - buildtype: ubuntu-latest
+        - job-name: ubuntu-latest
           os: ubuntu-latest
           generator: '"Unix Makefiles"'
           in_source_build: true
 
-        - buildtype: ubuntu-latest-ninja
+        - job-name: ubuntu-latest-ninja
           os: ubuntu-latest
           generator: '"Ninja"'
           in_source_build: false
 
-        - buildtype:  macOS-latest
+        - job-name:  macOS-latest
           os: macOS-latest
           generator: '"Unix Makefiles"'
           in_source_build: true
 
-        - buildtype:  macOS-latest-unity
+        - job-name:  macOS-latest-unity
           os: macOS-latest
           generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
           in_source_build: true
 
-        - buildtype:  macOS-latest-ninja
+        - job-name:  macOS-latest-ninja
           os: macOS-latest
           generator: '"Ninja"'
           in_source_build: false
 
-        - buildtype:  macOS-latest-ninja-unity
+        - job-name:  macOS-latest-ninja-unity
           os: macOS-latest
           generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
           in_source_build: true
