@@ -11,7 +11,7 @@ on:
     branches:
       - '*'
   schedule:
-    - cron: '0 0 * * *'  # every day at midnight
+    - cron: '14 0 * * 3,6'  # https://crontab.guru/#14_0_*_*_3,6 - "At 00:14 on Wednesday and Saturday."
 
 jobs:
   build:
