@@ -6,6 +6,8 @@
     * None
 * **Bug fixes**
 * **Other changes**
+  * Update Boost.ut integration to work with latest version of that library.  
+    (A change after Boost.ut v1.1.8 resulted in a build error - this is now fixed)
   * GitHub Actions CI build added for our Python code (#165)
   * VS2017 Debug x64 build of ApprovalTests.cpp.StarterProject gave "C1128: number of sections exceeded object file
     format limit: compile with
