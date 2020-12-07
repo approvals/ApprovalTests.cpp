@@ -129,7 +129,6 @@ add_library(${PROJECT_NAME}
         utilities/MoreHelpMessages.h
         utilities/MoreHelpMessages.cpp
         utilities/StringMaker.h
-        utilities/StringMaker.cpp
         utilities/StringUtils.h
         utilities/StringUtils.cpp
         utilities/SystemUtils.h

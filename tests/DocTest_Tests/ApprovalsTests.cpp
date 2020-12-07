@@ -42,18 +42,6 @@ TEST_CASE("Test Unicode")
 {
     Approvals::verify("I like unicode ☃");
 }
-
-TEST_CASE("Test wstring")
-{
-    if (SystemUtils::isWindowsOs())
-    {
-        std::cout << "INFO: This test is temporarily disabled on windows" << std::endl;
-        return;
-    }
-    std::wstring text = L"I like unicode ☃";
-    Approvals::verify(text);
-}
-
 // ==============================================================
 
 struct NonStreamablePoint
