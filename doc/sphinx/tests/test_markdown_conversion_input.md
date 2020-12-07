@@ -142,7 +142,7 @@ Multiple on one line
 ```cpp
 Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
 ```
-<sup><a href='/tests/DocTest_Tests/ApprovalsTests.cpp#L131-L133' title='File snippet `verify_exception_message_example` was extracted from'>snippet source</a> | <a href='#snippet-verify_exception_message_example' title='Navigate to start of snippet `verify_exception_message_example`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/ApprovalsTests.cpp#L119-L121' title='File snippet `verify_exception_message_example` was extracted from'>snippet source</a> | <a href='#snippet-verify_exception_message_example' title='Navigate to start of snippet `verify_exception_message_example`'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Test code snippet - linking to a whole file
