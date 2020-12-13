@@ -185,6 +185,9 @@ jobs:
     name: macOS ${{ matrix.job-name }}
     env:
       BUILD_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
+      HOMEBREW_NO_ANALYTICS: 1
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_INSTALL_CLEANUP: 1
       DEVELOPER_DIR: '/Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer'
     steps:
       - uses: actions/checkout@master
