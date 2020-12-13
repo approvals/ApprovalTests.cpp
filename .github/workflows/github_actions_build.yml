@@ -121,6 +121,7 @@ jobs:
             generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
             relative_build_dir_path: ''
 
+    name: Linux ${{ matrix.job-name }}
     env:
       BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
       CC: ${{ matrix.c-compiler }}
@@ -181,6 +182,7 @@ jobs:
             generator: '"Ninja"'
             relative_build_dir_path: '../'
 
+    name: macOS ${{ matrix.job-name }}
     env:
       BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
       DEVELOPER_DIR: '/Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer'
@@ -227,6 +229,7 @@ jobs:
             os-version: '2019'
             generator: '"Visual Studio 16 2019" -T "clangcl"'
 
+    name: Windows ${{ matrix.job-name }}
     env:
       BUILD_DIR_PATH: ${{ github.workspace }}/build_space
     steps:
