@@ -39,6 +39,7 @@ jobs:
 
   Linux:
     needs: clang-format
+    runs-on: ubuntu-${{ matrix.os-version }}
     env:
       BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
       CC: ${{ matrix.c-compiler }}
@@ -123,7 +124,6 @@ jobs:
             cxx-compiler: 'g++-10'
             generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
             relative_build_dir_path: ''
-    runs-on: ubuntu-${{ matrix.os-version }}
     steps:
       - uses: actions/checkout@master
       - uses: seanmiddleditch/gha-setup-ninja@v3
@@ -151,6 +151,7 @@ jobs:
 
   macOS:
     needs: clang-format
+    runs-on: macos-${{ matrix.os-version }}
     env:
       BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
       DEVELOPER_DIR: '/Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer'
@@ -181,7 +182,6 @@ jobs:
             os-version: '10.15'
             generator: '"Ninja"'
             relative_build_dir_path: '../'
-    runs-on: macos-${{ matrix.os-version }}
     steps:
       - uses: actions/checkout@master
       - uses: seanmiddleditch/gha-setup-ninja@v3
@@ -208,6 +208,7 @@ jobs:
 
   Windows:
     needs: clang-format
+    runs-on: windows-${{ matrix.os-version }}
     env:
       BUILD_DIR_PATH: ${{ github.workspace }}/build_space
     strategy:
@@ -226,7 +227,6 @@ jobs:
             os-version: '2019'
             generator: '"Visual Studio 16 2019" -T "clangcl"'
 
-    runs-on: windows-${{ matrix.os-version }}
     steps:
       - uses: actions/checkout@master
 
