@@ -123,7 +123,7 @@ jobs:
 
     name: Linux ${{ matrix.job-name }}
     env:
-      BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
+      BUILD_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
       CC: ${{ matrix.c-compiler }}
       CXX: ${{ matrix.cxx-compiler }}
     steps:
@@ -138,17 +138,17 @@ jobs:
 
       - name: configure
         run: |
-          mkdir $BUILD_DIR_PATH
-          cd $BUILD_DIR_PATH
+          mkdir $BUILD_PATH
+          cd $BUILD_PATH
           cmake --version
           cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
       - name: build
         run: |
-          cd $BUILD_DIR_PATH
+          cd $BUILD_PATH
           cmake --build . --parallel 4
       - name: test
         run: |
-          cd $BUILD_DIR_PATH
+          cd $BUILD_PATH
           ctest --verbose --output-on-failure -C Debug
 
   macOS:
@@ -184,7 +184,7 @@ jobs:
 
     name: macOS ${{ matrix.job-name }}
     env:
-      BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
+      BUILD_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
       DEVELOPER_DIR: '/Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer'
     steps:
       - uses: actions/checkout@master
@@ -197,17 +197,17 @@ jobs:
 
       - name: configure
         run: |
-          mkdir $BUILD_DIR_PATH
-          cd $BUILD_DIR_PATH
+          mkdir $BUILD_PATH
+          cd $BUILD_PATH
           cmake --version
           cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
       - name: build
         run: |
-          cd $BUILD_DIR_PATH
+          cd $BUILD_PATH
           cmake --build . --parallel 4
       - name: test
         run: |
-          cd $BUILD_DIR_PATH
+          cd $BUILD_PATH
           ctest --verbose --output-on-failure -C Debug
 
   Windows:
@@ -231,7 +231,7 @@ jobs:
 
     name: Windows ${{ matrix.job-name }}
     env:
-      BUILD_DIR_PATH: ${{ github.workspace }}/build_space
+      BUILD_PATH: ${{ github.workspace }}/build_space
     steps:
       - uses: actions/checkout@master
 
@@ -244,15 +244,15 @@ jobs:
 
       - name: configure
         run: |
-          mkdir ${{ env.BUILD_DIR_PATH }}
-          cd ${{ env.BUILD_DIR_PATH }}
+          mkdir ${{ env.BUILD_PATH }}
+          cd ${{ env.BUILD_PATH }}
           cmake --version
           cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
       - name: build
         run: |
-          cd ${{ env.BUILD_DIR_PATH }}
+          cd ${{ env.BUILD_PATH }}
           cmake --build . --parallel 4
       - name: test
         run: |
-          cd ${{ env.BUILD_DIR_PATH }}
+          cd ${{ env.BUILD_PATH }}
           ctest --verbose --output-on-failure -C Debug
