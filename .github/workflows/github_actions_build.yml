@@ -202,7 +202,7 @@ jobs:
         id: cache-homebrew
         with:
           path: ~/Library/Caches/Homebrew/downloads
-          key: ${{ runner.os }}-${{ matrix.os-version }}-${{ matrix.xcode-version }}-${{ matrix.use-syslibs }}-${{ matrix.shared-libscsynth }}-${{ matrix.qt-version }}-homebrew-${{ steps.current-month.outputs.stamp }}
+          key: ${{ runner.os }}-${{ matrix.os-version }}-${{ matrix.xcode-version }}-homebrew-${{ steps.current-month.outputs.stamp }}
       - name: cleanup homebrew downloads # make sure we store only relevant downloads in cache
         if: '!steps.cache-homebrew.outputs.cache-hit'
         run: rm -rf $(brew --cache)
