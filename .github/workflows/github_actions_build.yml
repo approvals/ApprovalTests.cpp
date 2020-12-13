@@ -39,6 +39,7 @@ jobs:
 
   Linux:
     needs: clang-format
+    # if: false # Disable this platform temporarily
     runs-on: ubuntu-${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -153,6 +154,7 @@ jobs:
 
   macOS:
     needs: clang-format
+    # if: false # Disable this platform temporarily
     runs-on: macos-${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -228,6 +230,7 @@ jobs:
 
   Windows:
     needs: clang-format
+    # if: false # Disable this platform temporarily
     runs-on: windows-${{ matrix.os-version }}
     strategy:
       fail-fast: false
