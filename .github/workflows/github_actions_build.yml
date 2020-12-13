@@ -137,6 +137,7 @@ jobs:
 
   macOS:
     needs: clang-format
+    if: false # Disable this platform whilst working on linux builds
     env:
       BUILD_DIR_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
       DEVELOPER_DIR: '/Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer'
@@ -206,6 +207,7 @@ jobs:
 
   Windows:
     needs: clang-format
+    if: false # Disable this platform whilst working on linux builds
     env:
       BUILD_DIR_PATH: ${{ github.workspace }}/build_space
     strategy:
