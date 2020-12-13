@@ -194,6 +194,19 @@ jobs:
       - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
+      - name: prepare monthly timestamp for cache
+        id: current-month
+        run: echo "::set-output name=stamp::$(date '+%Y-%m')"
+      - name: cache homebrew downloads
+        uses: actions/cache@v2
+        id: cache-homebrew
+        with:
+          path: ~/Library/Caches/Homebrew/downloads
+          key: ${{ runner.os }}-${{ matrix.os-version }}-${{ matrix.xcode-version }}-${{ matrix.use-syslibs }}-${{ matrix.shared-libscsynth }}-${{ matrix.qt-version }}-homebrew-${{ steps.current-month.outputs.stamp }}
+      - name: cleanup homebrew downloads # make sure we store only relevant downloads in cache
+        if: '!steps.cache-homebrew.outputs.cache-hit'
+        run: rm -rf $(brew --cache)
+
       - name: install boost
         run: |
           brew install boost
