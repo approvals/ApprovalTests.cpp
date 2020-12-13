@@ -103,10 +103,10 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: 'gcc7 ninja'
+          - job-name: 'gcc10 ninja'
             os-version: '18.04'
-            c-compiler: 'gcc-7'
-            cxx-compiler: 'g++-7'
+            c-compiler: 'gcc-10'
+            cxx-compiler: 'g++-10'
             generator: '"Ninja"'
             relative_build_dir_path: '../'
     runs-on: ubuntu-${{ matrix.os-version }}
