@@ -46,7 +46,9 @@ namespace ApprovalTests
                 currentTest.sections.emplace_back(testInfo.name());
             }
 
-            ApprovalTestNamer::currentTest(&currentTest);
+            ApprovalTests::FrameworkIntegrations::setCurrentTest(&currentTest);
+            ApprovalTests::FrameworkIntegrations::setTestPassedNotification(
+                []() { EXPECT_TRUE(true); });
         }
     };
 
