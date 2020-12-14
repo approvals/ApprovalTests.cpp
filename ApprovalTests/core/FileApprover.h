@@ -1,11 +1,13 @@
 #pragma once
 
-#include <memory>
 #include "ApprovalTests/writers/StringWriter.h"
 #include "Reporter.h"
 #include "ApprovalTests/core/ApprovalNamer.h"
 #include "ApprovalComparator.h"
 #include "ApprovalTests/comparators/ComparatorFactory.h"
+
+#include <memory>
+#include <functional>
 
 namespace ApprovalTests
 {
