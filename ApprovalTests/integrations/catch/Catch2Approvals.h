@@ -29,7 +29,7 @@ struct Catch2ApprovalListener : Catch::TestEventListenerBase
     {
 
         currentTest.setFileName(testInfo.lineInfo.file);
-        ApprovalTests::ApprovalTestNamer::currentTest(&currentTest);
+        ApprovalTests::FrameworkIntegrations::setCurrentTest(&currentTest);
         ApprovalTests::FrameworkIntegrations::setTestPassedNotification(
             []() { REQUIRE(true); });
     }

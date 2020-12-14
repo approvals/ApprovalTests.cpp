@@ -7,4 +7,9 @@ namespace ApprovalTests
     {
         FileApprover::setTestPassedNotification(notification);
     }
+
+    void FrameworkIntegrations::setCurrentTest(ApprovalTests::TestName* currentTest)
+    {
+        ApprovalTestNamer::currentTest(currentTest);
+    }
 }
