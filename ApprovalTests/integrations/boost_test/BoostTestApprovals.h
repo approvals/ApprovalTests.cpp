@@ -2,6 +2,7 @@
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
+#include "ApprovalTests/integrations/FrameworkIntegrations.h"
 
 #ifdef APPROVALS_BOOSTTEST
 #define APPROVAL_TESTS_INCLUDE_CPPS
@@ -19,7 +20,9 @@ namespace ApprovalTests
             currentTest.setFileName(path);
 
             currentTest.sections.push_back(test.p_name);
-            ApprovalTests::ApprovalTestNamer::currentTest(&currentTest);
+            ApprovalTests::FrameworkIntegrations::setCurrentTest(&currentTest);
+            ApprovalTests::FrameworkIntegrations::setTestPassedNotification(
+                []() { BOOST_CHECK(true); });
         }
 
         void test_unit_finish(boost::unit_test::test_unit const& /*test*/,
