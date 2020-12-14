@@ -110,7 +110,9 @@ namespace ApprovalTests
             {
                 currentTest.sections.emplace_back(testInfo.m_name);
                 currentTest.setFileName(doctestToString(testInfo.m_file));
-                ApprovalTestNamer::currentTest(&currentTest);
+                ApprovalTests::FrameworkIntegrations::setCurrentTest(&currentTest);
+                ApprovalTests::FrameworkIntegrations::setTestPassedNotification(
+                    []() { REQUIRE(true); });
             }
 
             void test_case_end(const doctest::CurrentTestCaseStats& /*in*/) override
