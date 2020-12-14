@@ -3,6 +3,7 @@
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
+#include "ApprovalTests/integrations/FrameworkIntegrations.h"
 
 #if defined(APPROVALS_CATCH_EXISTING_MAIN)
 #define APPROVALS_CATCH
@@ -29,6 +30,8 @@ struct Catch2ApprovalListener : Catch::TestEventListenerBase
 
         currentTest.setFileName(testInfo.lineInfo.file);
         ApprovalTests::ApprovalTestNamer::currentTest(&currentTest);
+        ApprovalTests::FrameworkIntegrations::setTestPassedNotification(
+            []() { REQUIRE(true); });
     }
 
     virtual void testCaseEnded(Catch::TestCaseStats const& /*testCaseStats*/) override
