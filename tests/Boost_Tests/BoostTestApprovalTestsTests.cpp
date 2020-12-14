@@ -12,14 +12,12 @@ using namespace ApprovalTests;
 BOOST_AUTO_TEST_SUITE(SuiteName)
 BOOST_AUTO_TEST_CASE(TestCaseName)
 {
-    BOOST_CHECK(true);
     Approvals::verify("hello");
 }
 
 BOOST_AUTO_TEST_SUITE(NestedSuiteName)
 BOOST_AUTO_TEST_CASE(TestCaseName)
 {
-    BOOST_CHECK(true);
     Approvals::verify("hello");
 }
 BOOST_AUTO_TEST_SUITE_END()
