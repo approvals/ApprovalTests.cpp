@@ -47,5 +47,12 @@ namespace ApprovalTests
         static void reportAfterTryingFrontLoadedReporter(const std::string& receivedPath,
                                                          const std::string& approvedPath,
                                                          const Reporter& r);
+
+        using TestPassedNotification = std::function<void()>;
+        static void setTestPassedNotification(TestPassedNotification notification);
+        static void notifyTestPassed();
+
+    private:
+        static TestPassedNotification testPassedNotification_;
     };
 }

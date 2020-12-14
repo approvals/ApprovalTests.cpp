@@ -22,6 +22,8 @@ add_library(${PROJECT_NAME}
         core/Options.cpp
         core/Reporter.h
         integrations/CheckFileMacroIsAbsolute.h
+        integrations/FrameworkIntegrations.cpp
+        integrations/FrameworkIntegrations.h
         integrations/boost_test/BoostTestApprovals.h
         integrations/catch/Catch2Approvals.h
         integrations/cpputest/CppUTestApprovals.h

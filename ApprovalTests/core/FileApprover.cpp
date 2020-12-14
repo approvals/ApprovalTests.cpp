@@ -13,6 +13,8 @@ namespace ApprovalTests
         return ComparatorFactory::registerComparator(extensionWithDot, comparator);
     }
 
+    FileApprover::TestPassedNotification FileApprover::testPassedNotification_ = []() {};
+
     void FileApprover::verify(const std::string& receivedPath,
                               const std::string& approvedPath,
                               const ApprovalComparator& comparator)
@@ -52,6 +54,7 @@ namespace ApprovalTests
         {
             verify(receivedPath, approvedPath);
             s.cleanUpReceived(receivedPath);
+            notifyTestPassed();
         }
         catch (const ApprovalException&)
         {
@@ -70,5 +73,16 @@ namespace ApprovalTests
         {
             r.report(receivedPath, approvedPath);
         }
+    }
+
+    void FileApprover::setTestPassedNotification(
+        FileApprover::TestPassedNotification notification)
+    {
+        testPassedNotification_ = notification;
+    }
+
+    void FileApprover::notifyTestPassed()
+    {
+        testPassedNotification_();
     }
 }
