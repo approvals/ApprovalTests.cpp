@@ -51,8 +51,9 @@ namespace ApprovalTests
             currentTest->sections.emplace_back(cppUTestToString(shell.getGroup()));
             currentTest->sections.emplace_back(cppUTestToString(shell.getName()));
 
-            ApprovalTests::ApprovalTestNamer::currentTest(currentTest.get());
-
+            ApprovalTests::FrameworkIntegrations::setCurrentTest(currentTest.get());
+            ApprovalTests::FrameworkIntegrations::setTestPassedNotification(
+                []() { CHECK_TRUE(true); });
             TestPlugin::preTestAction(shell, result);
         }
 
