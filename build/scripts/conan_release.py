@@ -23,6 +23,7 @@ class PrepareConanRelease:
     @staticmethod
     def check_preconditions(details: ReleaseDetails) -> None:
         PrepareConanRelease.update_conan_to_latest()
+        PrepareConanRelease.confirm_previous_release_still_works(details)
 
     @staticmethod
     def prepare_release(details: ReleaseDetails) -> None:
@@ -123,6 +124,12 @@ class PrepareConanRelease:
     @staticmethod
     def update_conan_to_latest() -> None:
         run(["pip3", "install", "--upgrade", "conan"])
+
+    @staticmethod
+    def confirm_previous_release_still_works(details: ReleaseDetails) -> None:
+        last_approved = max(PrepareConanRelease.get_accepted_approval_releases(details.project_details), key=lambda x: Version.from_string_without_v(x))
+
+        DeployConanRelease.test_conan_build_passes(details.conan_details, last_approved)
 
     @staticmethod
     def get_accepted_approval_releases(project_details: ProjectDetails) -> List[str]:

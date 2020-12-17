@@ -77,8 +77,8 @@ class PrepareRelease:
         check_step_with_revert("you are happy with the changes?", do_nothing)
 
     def prepare_everything(self) -> None:
-        self.check_pre_conditions_for_publish()
         PrepareConanRelease.check_preconditions(self.details)
+        self.check_pre_conditions_for_publish()
 
         CppGeneration.prepare_release(self.details)
 

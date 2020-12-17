@@ -51,8 +51,29 @@ class Version:
             int(version['minor']),
             int(version['patch']))
 
+    @staticmethod
+    def from_string_without_v(version: str) -> Version:
+        values = version.split('.')
+        assert len(values) == 3
+        return Version(
+            int(values[0]),
+            int(values[1]),
+            int(values[2]))
+
     def get_version_text(self, prefix:str = 'v.') -> str:
         return F"{prefix}{self.major}.{self.minor}.{self.patch}"
 
     def get_version_text_without_v(self) -> str:
         return self.get_version_text('')
+
+    def __lt__(self, other: Version):
+        if self.major != other.major:
+            return (self.major < other.major)
+
+        if self.minor != other.minor:
+            return (self.minor < other.minor)
+
+        if self.patch != other.patch:
+            return (self.patch < other.patch)
+
+        return False

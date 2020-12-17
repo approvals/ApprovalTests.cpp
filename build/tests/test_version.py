@@ -21,6 +21,11 @@ class TestVersion(unittest.TestCase):
         self.assert_version('v.1.2.0', (lambda v: v.update_minor()))
         self.assert_version('v.2.0.0', (lambda v: v.update_major()))
 
+    def test_sorting(self) -> None:
+        versions = ['10.2.3', '10.10.4', '9.1.1', '10.2.4']
+        m = max(versions, key=lambda x: Version.from_string_without_v(x))
+        self.assertEqual(m, '10.10.4')
+
     @staticmethod
     def load_test_version_ini() -> Version:
         source_dir = os.path.split(__file__)[0]
