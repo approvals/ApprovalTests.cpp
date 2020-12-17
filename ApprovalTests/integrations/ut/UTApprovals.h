@@ -102,7 +102,7 @@ namespace ApprovalTests
     {
         void notify_success()
         {
-            // This needs to be after the registring of our custom listener,
+            // This needs to be after the registering of our custom listener,
             // for compilation to succeed.
             boost::ut::expect(true);
         }
