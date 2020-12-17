@@ -18,6 +18,8 @@ namespace ApprovalTests
 {
     namespace cfg
     {
+        void notify_success();
+
         class reporter : public boost::ut::reporter<boost::ut::printer>
         {
         private:
@@ -30,8 +32,9 @@ namespace ApprovalTests
                 currentTest.sections.emplace_back(name);
                 currentTest.setFileName(test_begin.location.file_name());
 
-                ApprovalTestNamer::currentTest(&currentTest);
-
+                ApprovalTests::FrameworkIntegrations::setCurrentTest(&currentTest);
+                ApprovalTests::FrameworkIntegrations::setTestPassedNotification(
+                    []() { notify_success(); });
                 boost::ut::reporter<boost::ut::printer>::on(test_begin);
             }
 
@@ -92,5 +95,18 @@ namespace ApprovalTests
 template <>
 auto boost::ut::cfg<boost::ut::override> =
     boost::ut::runner<ApprovalTests::cfg::reporter>{};
+
+namespace ApprovalTests
+{
+    namespace cfg
+    {
+        void notify_success()
+        {
+            // This needs to be after the registring of our custom listener,
+            // for compilation to succeed.
+            boost::ut::expect(true);
+        }
+    }
+}
 
 #endif // APPROVALS_UT
