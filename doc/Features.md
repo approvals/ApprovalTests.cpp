@@ -58,7 +58,7 @@
     * [Multiple output files per test](#multiple-output-files-per-test)
     * [SeparateApprovedAndReceivedDirectoriesNamer](#separateapprovedandreceiveddirectoriesnamer)
     * [Registering a Custom Namer](#registering-a-custom-namer)
-  * [Before v.5.0.0](#before-v500)
+* [Before v.5.0.0](#before-v500)
     * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
     * [Blocking Reporter](#blocking-reporter)
     * [Machine Blockers](#machine-blockers)
@@ -66,6 +66,16 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+### FrameworkIntegrations class
+
+We now have a centralised portal, `FrameworkIntegrations`, to all the places that you need to use, in order
+to [add support for a new test framework](/doc/SupportingNewTestFramework.md#top).
+
+### Approvals::verify() counts as an assertion in test frameworks
+
+Previously, Approvals wouldn't register as an assertion, giving misleading messages and reporting, and sometimes causing
+a test framework to complain that there were no assertions.
 
 ## v.10.5.0
 

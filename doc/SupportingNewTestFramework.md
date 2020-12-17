@@ -32,6 +32,8 @@ ApprovalTests.cpp can be made to work with any test framework that supplies the 
 * Provide some code to add to the test's `main()` function, to listen out for the running of test cases
 * Give that code a `TestName` instance, that will store information about the test being executed
 * As each test case starts, update the `TestName` instance with details of the source file name, and test case name
+* Add a call to `ApprovalTests::FrameworkIntegrations::setTestPassedNotification()` so that the test framework is aware
+  that a check has been executed
 * Ideally, provide a mechanism (such as a macro) that makes it easy for users to use this code in their own tests
 
 ## Examples
