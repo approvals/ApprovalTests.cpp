@@ -8,6 +8,9 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.6.0](#v1060)
+    * [FrameworkIntegrations class](#frameworkintegrations-class)
+    * [Approvals::verify() counts as an assertion in test frameworks](#approvalsverify-counts-as-an-assertion-in-test-frameworks)
   * [v.10.5.0](#v1050)
     * [Support for selecting Reporter at run-time](#support-for-selecting-reporter-at-run-time)
   * [v.10.4.0](#v1040)
@@ -58,7 +61,7 @@
     * [Multiple output files per test](#multiple-output-files-per-test)
     * [SeparateApprovedAndReceivedDirectoriesNamer](#separateapprovedandreceiveddirectoriesnamer)
     * [Registering a Custom Namer](#registering-a-custom-namer)
-* [Before v.5.0.0](#before-v500)
+  * [Before v.5.0.0](#before-v500)
     * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
     * [Blocking Reporter](#blocking-reporter)
     * [Machine Blockers](#machine-blockers)
@@ -66,6 +69,8 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+## v.10.6.0
 
 ### FrameworkIntegrations class
 
