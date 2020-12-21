@@ -45,6 +45,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # maybe add clang5 - which was tested in Travis
+
           - job-name: 'clang6.0'
             os-version: '18.04'
             c-compiler: 'clang-6.0'
@@ -72,6 +74,9 @@ jobs:
             cxx-compiler: 'clang++-10'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
+
+          # maybe add gcc5 - which was tested in Travis
+          # maybe add gcc5 - which was tested in Travis
 
           - job-name: 'gcc7'
             os-version: '18.04'
@@ -160,6 +165,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # probably don't add xcode9.4 - which was tested in Travis
+
           - job-name: xcode-10.3
             os-version: '10.15'
             xcode-version: '10.3'
