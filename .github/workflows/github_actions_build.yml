@@ -218,7 +218,7 @@ jobs:
 
     name: Windows ${{ matrix.job-name }}
     env:
-      BUILD_PATH: ${{ github.workspace }}/build_space
+      BUILD_PATH: build_space
     steps:
       - uses: actions/checkout@master
 
