@@ -218,7 +218,7 @@ jobs:
 
     name: Windows ${{ matrix.job-name }}
     env:
-      BUILD_PATH: build_space
+      BUILD_PATH: ${{ github.workspace }}/build_space
     steps:
       - uses: actions/checkout@master
 
@@ -229,4 +229,21 @@ jobs:
           echo "BOOST_INCLUDEDIR=${boostroot}\include" >> ${env:GITHUB_ENV}
           echo "BOOST_LIBRARYDIR=${boostroot}\lib" >> ${env:GITHUB_ENV}
 
-      - uses: ./.github/actions/build-and-test
+      # DOS paths - with backslashes - are not compatible with the github bash
+      # shell that is invoked in build-and-test/actions.yml - so sadly the code
+      # in that file is pasted in here
+      # - uses: ./.github/actions/build-and-test
+      - name: configure
+        run: |
+          mkdir ${{ env.BUILD_PATH }}
+          cd ${{ env.BUILD_PATH }}
+          cmake --version
+          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
+      - name: build
+        run: |
+          cd ${{ env.BUILD_PATH }}
+          cmake --build . --parallel 4
+      - name: test
+        run: |
+          cd ${{ env.BUILD_PATH }}
+          ctest --verbose --output-on-failure -C Debug
