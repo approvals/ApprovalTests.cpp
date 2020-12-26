@@ -142,20 +142,7 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y libboost-all-dev
 
-      - name: configure
-        run: |
-          mkdir $BUILD_PATH
-          cd $BUILD_PATH
-          cmake --version
-          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
-      - name: build
-        run: |
-          cd $BUILD_PATH
-          cmake --build . --parallel 4
-      - name: test
-        run: |
-          cd $BUILD_PATH
-          ctest --verbose --output-on-failure -C Debug
+      - uses: ./.github/actions/build-and-test
 
   macOS:
     needs: clang-format
@@ -207,20 +194,7 @@ jobs:
         run: |
           brew install boost
 
-      - name: configure
-        run: |
-          mkdir $BUILD_PATH
-          cd $BUILD_PATH
-          cmake --version
-          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
-      - name: build
-        run: |
-          cd $BUILD_PATH
-          cmake --build . --parallel 4
-      - name: test
-        run: |
-          cd $BUILD_PATH
-          ctest --verbose --output-on-failure -C Debug
+      - uses: ./.github/actions/build-and-test
 
   Windows:
     needs: clang-format
@@ -255,17 +229,4 @@ jobs:
           echo "BOOST_INCLUDEDIR=${boostroot}\include" >> ${env:GITHUB_ENV}
           echo "BOOST_LIBRARYDIR=${boostroot}\lib" >> ${env:GITHUB_ENV}
 
-      - name: configure
-        run: |
-          mkdir ${{ env.BUILD_PATH }}
-          cd ${{ env.BUILD_PATH }}
-          cmake --version
-          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
-      - name: build
-        run: |
-          cd ${{ env.BUILD_PATH }}
-          cmake --build . --parallel 4
-      - name: test
-        run: |
-          cd ${{ env.BUILD_PATH }}
-          ctest --verbose --output-on-failure -C Debug
+      - uses: ./.github/actions/build-and-test

@@ -1,0 +1,25 @@
+name: "Build and test one configuration"
+description: "Generate the build files, build the code and run the tests"
+runs:
+  using: "composite"
+  steps:
+
+    - name: configure
+      run: |
+        mkdir ${{ env.BUILD_PATH }}
+        cd ${{ env.BUILD_PATH }}
+        cmake --version
+        cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
+      shell: bash
+
+    - name: build
+      run: |
+        cd ${{ env.BUILD_PATH }}
+        cmake --build . --parallel 4
+      shell: bash
+
+    - name: test
+      run: |
+        cd ${{ env.BUILD_PATH }}
+        ctest --verbose --output-on-failure -C Debug
+      shell: bash
