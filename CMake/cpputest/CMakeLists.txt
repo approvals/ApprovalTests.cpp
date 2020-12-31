@@ -33,6 +33,10 @@ if (NOT TARGET cpputest)
     # Prevent CppUTest's own tests from being built
     set(TESTS OFF CACHE BOOL "")
 
+    # Prevent build of CppUTest from generating thousands of lines of
+    # -Wc++98-compat and -Wc++98-compat-pedantic warnings:
+    set(C++11 ON CACHE BOOL "Compile with C++11 support")
+
     # Add cpputest directly to our build. This defines the cpputest target.
     add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/cpputest-src
             ${CMAKE_CURRENT_BINARY_DIR}/cpputest-build
