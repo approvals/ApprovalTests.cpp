@@ -35,7 +35,9 @@ TEST_CASE("ReporterFactory creates a Reporter given KDiff3")
     ReporterFactory factory;
     for (const auto& reporterName : {"KDiff3", "KDiff3Reporter"})
     {
-        INFO(std::string("Reporter name = ") + reporterName);
+        auto testName = std::string("Reporter name = ") +
+                        reporterName; // do not inline - see issue #168
+        INFO(testName);
         auto reporter = factory.createReporter(reporterName);
         if (SystemUtils::isWindowsOs())
         {
