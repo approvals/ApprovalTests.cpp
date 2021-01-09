@@ -98,7 +98,7 @@ TEST_CASE("Find a valid reporter - on Windows")
         "Windows::");
 }
 
-TEST_CASE("Find valid reporter with leading + trailing space")
+TEST_CASE("Find valid reporter with leading+trailing space")
 {
     verifyFindingReportersByName(
         {
