@@ -31,16 +31,20 @@ It's generally considered [poor practice](https://peterlyons.com/problog/2010/02
 
 ## Setting the Environment Variable
 
-The environment value `APPROVAL_TESTS_USE_REPORTER` can be set, to select the diff tool to use to show differences, if an Approval Test fails.
+The environment value `APPROVAL_TESTS_USE_REPORTER` can be set, to select the diff tool to use to show differences, if
+an Approval Test fails.
 
-For example, to set Araxis Merge as your reporter, set the `APPROVAL_TESTS_USE_REPORTER` environment value to `AraxisMerge`.
+For example, to set Araxis Merge as your reporter, set the `APPROVAL_TESTS_USE_REPORTER` environment value
+to `AraxisMerge`.
 
 ## Available Values
 
-The following values of `APPROVAL_TESTS_USE_REPORTER` are currently recognised. See the next section for alternative variations on these names.
+The following values of `APPROVAL_TESTS_USE_REPORTER` are currently recognised. See the next section for alternative
+variations on these names.
 
-<!-- snippet: ReporterFactoryTests.Verify_all_valid_env_variable_values_-_on_Windows.approved.txt -->
-<a id='snippet-ReporterFactoryTests.Verify_all_valid_env_variable_values_-_on_Windows.approved.txt'></a>
+<!-- snippet: ReporterFactoryTests.Verify_all_valid_env_var_values.approved.txt -->
+<a id='snippet-ReporterFactoryTests.Verify_all_valid_env_var_values.approved.txt'></a>
+
 ```txt
 AutoApproveIfMissingReporter
 AutoApproveReporter
@@ -77,7 +81,11 @@ Windows::VisualStudioCodeReporter
 Windows::WinMergeReporter
 
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/approval_tests/ReporterFactoryTests.Verify_all_valid_env_variable_values_-_on_Windows.approved.txt#L1-L34' title='File snippet `ReporterFactoryTests.Verify_all_valid_env_variable_values_-_on_Windows.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ReporterFactoryTests.Verify_all_valid_env_variable_values_-_on_Windows.approved.txt' title='Navigate to start of snippet `ReporterFactoryTests.Verify_all_valid_env_variable_values_-_on_Windows.approved.txt`'>anchor</a></sup>
+
+<sup><a href='/tests/DocTest_Tests/reporters/approval_tests/ReporterFactoryTests.Verify_all_valid_env_var_values.approved.txt#L1-L34' title='File snippet `ReporterFactoryTests.Verify_all_valid_env_var_values.approved.txt` was extracted from'>
+snippet source</a>
+| <a href='#snippet-ReporterFactoryTests.Verify_all_valid_env_var_values.approved.txt' title='Navigate to start of snippet `ReporterFactoryTests.Verify_all_valid_env_var_values.approved.txt`'>
+anchor</a></sup>
 <!-- endSnippet -->
 
 ## Acceptable Variations
