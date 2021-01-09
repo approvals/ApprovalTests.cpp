@@ -16,7 +16,7 @@ namespace
     }
 }
 
-TEST_CASE("test createRegexScrubber")
+TEST_CASE("createRegexScrubber")
 {
     // begin-snippet: complex_regex_scrubbing
     auto input = "1) Hello 1234 World";
@@ -37,14 +37,14 @@ TEST_CASE("test createRegexScrubber")
     Approvals::verify(input, Options(scrubber));
 }
 
-TEST_CASE("test createRegexScrubber with fixed result")
+TEST_CASE("createRegexScrubber with fixed result")
 {
     auto input = "Hello 1234 World";
     auto scrubber = Scrubbers::createRegexScrubber(std::regex(R"(\d+)"), "number");
     Approvals::verify(input, Options(scrubber));
 }
 
-TEST_CASE("test createRegexScrubber with string input and fixed result")
+TEST_CASE("createRegexScrubber with string input and fixed result")
 {
     // begin-snippet: simple_regex_scrubbing
     std::stringstream os;
