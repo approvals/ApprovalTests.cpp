@@ -8,14 +8,14 @@ set(CMAKE_CXX_STANDARD 11)
 
 # This is the one users are recommended to use:
 add_library(
-        catch2_checks_Catch2Catch2 catch2_cmake_checks.cpp)
+        Catch2Catch2 catch2_cmake_checks.cpp)
 target_link_libraries(
-        catch2_checks_Catch2Catch2 Catch2::Catch2)
+        Catch2Catch2 Catch2::Catch2)
 
 add_library(
-        catch2_checks_capital_Catch2 catch2_cmake_checks.cpp)
+        capital_Catch2 catch2_cmake_checks.cpp)
 target_link_libraries(
-        catch2_checks_capital_Catch2 Catch2)
+        capital_Catch2 Catch2)
 
 if (NOT_SUBPROJECT)
     # Don't build this if we are in a sub-project, in case the user has pulled in
@@ -24,9 +24,9 @@ if (NOT_SUBPROJECT)
     # This one is historical, left over from when ApprovalTests.cpp was first created.
     # We could encourage users to move away from it.
     add_library(
-            catch2_checks_lower_case_catch2 catch2_cmake_checks.cpp)
+            lower_case_catch2 catch2_cmake_checks.cpp)
     target_link_libraries(
-            catch2_checks_lower_case_catch2 catch2)
+            lower_case_catch2 catch2)
 endif ()
 
 # Check that our real target name for Catch2 matches that used in the Catch2 project
