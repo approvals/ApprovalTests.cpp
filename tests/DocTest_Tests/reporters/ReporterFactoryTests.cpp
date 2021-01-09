@@ -68,7 +68,7 @@ TEST_CASE("ReporterFactory creates a Reporter given Windows::WinMerge")
     CHECK(dynamic_cast<Windows::WinMergeReporter*>(reporter.get()));
 }
 
-TEST_CASE("Verify all valid env variable values - on Windows")
+TEST_CASE("Verify all valid env var values")
 {
     ReporterFactory reporterFactory;
     Approvals::verifyAll("",
@@ -98,7 +98,7 @@ TEST_CASE("Find a valid reporter - on Windows")
         "Windows::");
 }
 
-TEST_CASE("Find a valid reporter, with leading and trailing space")
+TEST_CASE("Find valid reporter with leading + trailing space")
 {
     verifyFindingReportersByName(
         {
@@ -111,7 +111,7 @@ TEST_CASE("Find a valid reporter, with leading and trailing space")
         "Mac::");
 }
 
-TEST_CASE("Find a valid reporter, with wrong case")
+TEST_CASE("Find valid reporter with wrong case")
 {
     verifyFindingReportersByName(
         {
