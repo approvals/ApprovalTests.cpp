@@ -108,14 +108,18 @@ Example set of build commands to download dependencies, make the test program an
  <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_build.include.md -->
 
 ```bash
-#!/bin/sh
+#!/bin/bash
+
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
 
 mkdir -p build
 cd       build
 conan install ..
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest ctest --output-on-failure . -C Debug
+ctest --output-on-failure . -C Debug
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/build.sh' title='File snippet was copied from'>snippet source</a></sup>
  <!-- endInclude -->
@@ -197,14 +201,18 @@ Example set of build commands to download dependencies, make the test program an
  <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/conan_cmake/mdsource/inc_conan_cmake_build.include.md -->
 
 ```bash
-#!/bin/sh
+#!/bin/bash
+
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
 
 mkdir -p build
 cd       build
 conan install ..
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest ctest --output-on-failure . -C Debug
+ctest --output-on-failure . -C Debug
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/build.sh' title='File snippet was copied from'>snippet source</a></sup>
  <!-- endInclude -->
@@ -323,7 +331,11 @@ Example set of build commands to download dependencies, make the test program an
  <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_build.include.md -->
 
 ```bash
-#!/bin/sh
+#!/bin/bash
+
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
 
 mkdir -p build
 cd       build
@@ -331,7 +343,7 @@ cd       build
 # However, we do need to say what build configuration we want.
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest ctest --output-on-failure .
+ctest --output-on-failure . -C Debug
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/build.sh' title='File snippet was copied from'>snippet source</a></sup>
  <!-- endInclude -->

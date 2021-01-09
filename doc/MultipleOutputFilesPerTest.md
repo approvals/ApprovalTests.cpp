@@ -219,7 +219,7 @@ For example:
 <!-- snippet: approvals_multiple_output_files_auto_approving -->
 <a id='snippet-approvals_multiple_output_files_auto_approving'></a>
 ```cpp
-TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
+TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApprove")
 {
     using namespace ApprovalTests;
 

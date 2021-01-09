@@ -122,7 +122,10 @@ std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& pri
     return "From StringMaker: " + std::to_string(printable.field1_);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L48-L54' title='File snippet `customising_to_string_with_string_maker_specialization` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_string_maker_specialization' title='Navigate to start of snippet `customising_to_string_with_string_maker_specialization`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L49-L55' title='File snippet `customising_to_string_with_string_maker_specialization` was extracted from'>
+snippet source</a>
+| <a href='#snippet-customising_to_string_with_string_maker_specialization' title='Navigate to start of snippet `customising_to_string_with_string_maker_specialization`'>
+anchor</a></sup>
 <!-- endSnippet -->
 
 ### gcc 5 & 6
@@ -140,7 +143,11 @@ namespace ApprovalTests
     }
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L38-L46' title='File snippet `customising_to_string_with_string_maker_specialization_gcc5_and_6` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_string_maker_specialization_gcc5_and_6' title='Navigate to start of snippet `customising_to_string_with_string_maker_specialization_gcc5_and_6`'>anchor</a></sup>
+
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L39-L47' title='File snippet `customising_to_string_with_string_maker_specialization_gcc5_and_6` was extracted from'>
+snippet source</a>
+| <a href='#snippet-customising_to_string_with_string_maker_specialization_gcc5_and_6' title='Navigate to start of snippet `customising_to_string_with_string_maker_specialization_gcc5_and_6`'>
+anchor</a></sup>
 <!-- endSnippet -->
 
 ## Use `TApprovals<YourStringConvertingClass>`
@@ -162,7 +169,11 @@ public:
     }
 };
 ```
-<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L79-L88' title='File snippet `customising_to_string_with_custom_to_string_class` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class`'>anchor</a></sup>
+
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L81-L90' title='File snippet `customising_to_string_with_custom_to_string_class` was extracted from'>
+snippet source</a>
+| <a href='#snippet-customising_to_string_with_custom_to_string_class' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class`'>
+anchor</a></sup>
 <!-- endSnippet -->
 
 However, this alone will not do anything. You now need to call a variation of Approvals that uses it.
@@ -174,7 +185,11 @@ You can do this directly by:
 ApprovalTests::TApprovals<
     ApprovalTests::ToStringCompileTimeOptions<CustomToStringClass>>::verify(p);
 ```
-<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L93-L96' title='File snippet `customising_to_string_with_custom_to_string_class_usage1` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage1' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage1`'>anchor</a></sup>
+
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L97-L100' title='File snippet `customising_to_string_with_custom_to_string_class_usage1` was extracted from'>
+snippet source</a>
+| <a href='#snippet-customising_to_string_with_custom_to_string_class_usage1' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage1`'>
+anchor</a></sup>
 <!-- endSnippet -->
 
 Or you can create your own custom alias to use your customisation:
@@ -187,7 +202,11 @@ using MyApprovals = ApprovalTests::TApprovals<
 
 MyApprovals::verify(p);
 ```
-<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L102-L107' title='File snippet `customising_to_string_with_custom_to_string_class_usage2` was extracted from'>snippet source</a> | <a href='#snippet-customising_to_string_with_custom_to_string_class_usage2' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage2`'>anchor</a></sup>
+
+<sup><a href='/tests/DocTest_Tests/CustomizingToStringTests.cpp#L109-L114' title='File snippet `customising_to_string_with_custom_to_string_class_usage2` was extracted from'>
+snippet source</a>
+| <a href='#snippet-customising_to_string_with_custom_to_string_class_usage2' title='Navigate to start of snippet `customising_to_string_with_custom_to_string_class_usage2`'>
+anchor</a></sup>
 <!-- endSnippet -->
 
 With `MyApprovals::verify()`, we have not changed the behavior of `Approvals::verify()`.
