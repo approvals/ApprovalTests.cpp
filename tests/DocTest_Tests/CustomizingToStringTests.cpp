@@ -23,6 +23,7 @@ struct OStreamPrintable
 
 TEST_CASE("Test toString from ostream operator")
 {
+    // This tests verifying an object with its own operator<<
     OStreamPrintable p;
     Approvals::verify(p);
 }
@@ -56,6 +57,7 @@ std::string ApprovalTests::StringMaker::toString(const StringMakerPrintable& pri
 
 TEST_CASE("Test toString from StringMaker")
 {
+    // This tests verifying an object that has a matching ApprovalTests::StringMaker::toString
     StringMakerPrintable p;
     Approvals::verify(p);
 }
@@ -89,6 +91,8 @@ public:
 
 TEST_CASE("Test toString from Template")
 {
+    // This tests verifying an object by supplying a custom template type to ApprovalTests::TApprovals<>
+
     TemplatePrintable p;
     // begin-snippet: customising_to_string_with_custom_to_string_class_usage1
     ApprovalTests::TApprovals<
@@ -98,6 +102,9 @@ TEST_CASE("Test toString from Template")
 
 TEST_CASE("Test toString from Template and using")
 {
+    // This tests verifying an object by supplying a custom template type to ApprovalTests::TApprovals<>,
+    // and demos use of 'using' to make the verify call more readable
+
     TemplatePrintable p;
     // begin-snippet: customising_to_string_with_custom_to_string_class_usage2
     using MyApprovals = ApprovalTests::TApprovals<
@@ -107,7 +114,7 @@ TEST_CASE("Test toString from Template and using")
     // end-snippet
 }
 
-TEST_CASE("Test Combinations inputs from StringMaker - with CustomToStringClass")
+TEST_CASE("Combinations with CustomToStringClass")
 {
     std::vector<TemplatePrintable> inputs1{TemplatePrintable(), TemplatePrintable()};
     std::vector<TemplatePrintable> inputs2{TemplatePrintable()};
