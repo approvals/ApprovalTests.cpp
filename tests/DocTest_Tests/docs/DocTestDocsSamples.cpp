@@ -117,7 +117,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
 // end-snippet
 
 // begin-snippet: approvals_multiple_output_files_auto_approving
-TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApproving")
+TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApprove")
 {
     using namespace ApprovalTests;
 
