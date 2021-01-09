@@ -419,7 +419,7 @@ set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1) # hack to prevent CTest adde
 # Otherwise, require the user to have installed boost (as is done in CI builds)
 if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../boost)
     set(BOOST_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../boost)
-endif ()
+endif()
 
 # -------------------------------------------------------------------
 # Catch2
@@ -501,9 +501,7 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/approvaltests.cpp_build
 )
 ```
-
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./dev_approvals/CMakeLists.txt' title='File snippet was copied from'>
-snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./dev_approvals/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- endInclude -->
 
 ---

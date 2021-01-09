@@ -60,31 +60,22 @@ For example, here is an example where random numbers are scrubbed:
 <!-- snippet: simple_regex_scrubbing -->
 <a id='snippet-simple_regex_scrubbing'></a>
 ```cpp
-
-
-
-
+std::stringstream os;
+os << "Hello " << random(1000) << " World";
+Approvals::verify(os.str(),
+                  Options(Scrubbers::createRegexScrubber(R"(\d+)", "[number]")));
 ```
-
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L49-L54' title='File snippet `simple_regex_scrubbing` was extracted from'>
-snippet source</a>
-| <a href='#snippet-simple_regex_scrubbing' title='Navigate to start of snippet `simple_regex_scrubbing`'>
-anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L49-L54' title='File snippet `simple_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Navigate to start of snippet `simple_regex_scrubbing`'>anchor</a></sup>
 <!-- endSnippet -->
 
 This will produce:
 
 <!-- snippet: ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt -->
 <a id='snippet-ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt'></a>
-
 ```txt
 Hello number World
 ```
-
-<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt#L1-L1' title='File snippet `ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt` was extracted from'>
-snippet source</a>
-| <a href='#snippet-ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt' title='Navigate to start of snippet `ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt`'>
-anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt#L1-L1' title='File snippet `ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt' title='Navigate to start of snippet `ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt`'>anchor</a></sup>
 <!-- endSnippet -->
 
 **Note**: In the above example, the caller passes in a `std::string`, and for convenience of the calling code, Approval
@@ -99,41 +90,32 @@ need, the most complex being:
 <!-- snippet: complex_regex_scrubbing -->
 <a id='snippet-complex_regex_scrubbing'></a>
 ```cpp
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+auto input = "1) Hello 1234 World";
+auto scrubber =
+    Scrubbers::createRegexScrubber(std::regex(R"(\d+)"), [](const auto& match) {
+        auto match_text = match.str();
+        auto match_integer = std::stoi(match_text);
+        if (match_integer < 10)
+        {
+            return match_text;
+        }
+        else
+        {
+            return std::string("[number]");
+        }
+    });
 ```
-
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L21-L36' title='File snippet `complex_regex_scrubbing` was extracted from'>
-snippet source</a>
-| <a href='#snippet-complex_regex_scrubbing' title='Navigate to start of snippet `complex_regex_scrubbing`'>
-anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L21-L36' title='File snippet `complex_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Navigate to start of snippet `complex_regex_scrubbing`'>anchor</a></sup>
 <!-- endSnippet -->
 
 This will produce:
 
 <!-- snippet: ScrubberTests.createRegexScrubber.approved.txt -->
 <a id='snippet-ScrubberTests.createRegexScrubber.approved.txt'></a>
-
 ```txt
 1) Hello [number] World
 ```
-
-<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.createRegexScrubber.approved.txt#L1-L1' title='File snippet `ScrubberTests.createRegexScrubber.approved.txt` was extracted from'>
-snippet source</a>
-| <a href='#snippet-ScrubberTests.createRegexScrubber.approved.txt' title='Navigate to start of snippet `ScrubberTests.createRegexScrubber.approved.txt`'>
-anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.createRegexScrubber.approved.txt#L1-L1' title='File snippet `ScrubberTests.createRegexScrubber.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ScrubberTests.createRegexScrubber.approved.txt' title='Navigate to start of snippet `ScrubberTests.createRegexScrubber.approved.txt`'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### See also
