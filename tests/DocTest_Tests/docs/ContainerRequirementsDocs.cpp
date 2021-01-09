@@ -74,7 +74,7 @@ namespace VerifyAllOnIterators
 
 namespace VerifyAllOnArray
 {
-    TEST_CASE("Required interface for verifyAll on C-style array")
+    TEST_CASE("Required interface for verifyAll on C array")
     {
         // If using C-style arrays, we can use the iterator overload of
         // Approvals::verifyAll in conjunction with std::begin() and std::end():
