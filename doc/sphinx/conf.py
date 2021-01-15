@@ -16,6 +16,9 @@ import sys
 sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
+# For explanations of this script, see:
+# https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/BuildingDocumentation.md#top
+
 from markdown_conversion import convertMarkdownDocsToRst
 
 project = 'ApprovalTests.cpp'
@@ -58,7 +61,7 @@ html_static_path = ['_static']
 import subprocess, os
 
 
-def configureDoxyfile(doxygen_dir, input_dir, output_dir):
+def add_folder_paths_to_doxygen_config_file(doxygen_dir, input_dir, output_dir):
     with open(doxygen_dir + '/Doxyfile.in', 'r') as file:
         filedata = file.read()
 
@@ -82,7 +85,7 @@ if read_the_docs_build:
     doxygen_dir = os.path.abspath('../doxygen')
     sphinx_dir = os.path.abspath('../sphinx')
 
-    configureDoxyfile(doxygen_dir, input_dir, output_dir)
+    add_folder_paths_to_doxygen_config_file(doxygen_dir, input_dir, output_dir)
 
     os.chdir(doxygen_dir)
     subprocess.call('doxygen', shell=True)
