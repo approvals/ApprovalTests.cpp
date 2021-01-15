@@ -5,6 +5,7 @@
 <!-- toc -->
 ## Contents
 
+  * [Purpose of this page](#purpose-of-this-page)
   * [Introduction](#introduction)
   * [Overview](#overview)
   * [Required Tools](#required-tools)
@@ -24,6 +25,12 @@
     * [Step3: reStructuredText and Sphinx](#step3-restructuredtext-and-sphinx)
       * [Sphinx Summary](#sphinx-summary)
       * [Sphinx Details](#sphinx-details)<!-- endToc -->
+
+## Purpose of this page
+
+This page explains how this project's documentation is built and published.
+
+For information on maintaining the _content_ of documentation, see [Maintaining the Docs](/doc/MaintainingDocumentation.md#top).
 
 ## Introduction
 

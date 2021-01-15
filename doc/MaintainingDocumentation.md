@@ -5,6 +5,7 @@
 <!-- toc -->
 ## Contents
 
+  * [Purpose of this page](#purpose-of-this-page)
   * [Future version numbers](#future-version-numbers)
   * [Creating new pages](#creating-new-pages)
   * [Linking to new pages](#linking-to-new-pages)
@@ -19,6 +20,12 @@
     * [Other checks of documentation](#other-checks-of-documentation)<!-- endToc -->
 
 We welcome improvements to the documentation! Here's how we manage the documentation files. 
+
+## Purpose of this page
+
+This page provides information for those maintaining the _content_ of the project's documentation.
+
+For information on how that content is built and published, see [Building the Docs](/doc/BuildingDocumentation.md#top).
 
 ## Future version numbers
 
