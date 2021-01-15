@@ -19,11 +19,9 @@
     * [Automated checking of links in documentation](#automated-checking-of-links-in-documentation)
     * [Other checks of documentation](#other-checks-of-documentation)<!-- endToc -->
 
-We welcome improvements to the documentation! Here's how we manage the documentation files. 
-
 ## Purpose of this page
 
-This page provides information for those maintaining the _content_ of the project's documentation.
+We welcome improvements to the documentation! Here's how we manage the _content_ of the documentation files. 
 
 For information on how that content is built and published, see [Building the Docs](/doc/BuildingDocumentation.md#top).
 
