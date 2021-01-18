@@ -40,7 +40,7 @@ Compiling tests in Ninja-generated builds gives a compilation failure, with this
 "The filename is: "
 __FILE__
 ```
-<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L21-L26' title='File snippet `compiler_error_for_misconfigured_build` was extracted from'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Navigate to start of snippet `compiler_error_for_misconfigured_build`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L21-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Test Failure
@@ -63,7 +63,7 @@ Running tests gives output such as the following:
 *                                                                           *
 *****************************************************************************
 ```
-<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt#L1-L12' title='File snippet `ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## The problem
@@ -161,7 +161,7 @@ If the ApprovalTests.cpp integration with \[Boost\].UT is not working in your bu
 *                                                                           *
 *****************************************************************************
 ```
-<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt#L1-L12' title='File snippet `ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt' title='Navigate to start of snippet `ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 These are possible causes:

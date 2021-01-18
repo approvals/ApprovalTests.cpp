@@ -31,7 +31,7 @@ TEST_CASE("VerifyAllStartingPoint")
     });
 }
 ```
-<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L39-L48' title='File snippet `verifyallstartingpoint` was extracted from'>snippet source</a> | <a href='#snippet-verifyallstartingpoint' title='Navigate to start of snippet `verifyallstartingpoint`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L39-L48' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyallstartingpoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Modify the input container for your chosen values.
@@ -49,7 +49,7 @@ input.value1 => placeholder
 input.value2 => placeholder
 
 ```
-<sup><a href='/tests/DocTest_Tests/approval_tests/VectorTests.VerifyAllStartingPoint.approved.txt#L1-L6' title='File snippet `VectorTests.VerifyAllStartingPoint.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-VectorTests.VerifyAllStartingPoint.approved.txt' title='Navigate to start of snippet `VectorTests.VerifyAllStartingPoint.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/approval_tests/VectorTests.VerifyAllStartingPoint.approved.txt#L1-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-VectorTests.VerifyAllStartingPoint.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 4. Replace the "placeholder" with a call to the functionality that you want to test.

@@ -22,7 +22,7 @@ std::chrono::system_clock::time_point dateTime =
 
 std::string dateTimeString = DateUtils::toString(dateTime);
 ```
-<sup><a href='/tests/DocTest_Tests/utilities/DateUtilsTests.cpp#L9-L14' title='File snippet `date_and_time` was extracted from'>snippet source</a> | <a href='#snippet-date_and_time' title='Navigate to start of snippet `date_and_time`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/utilities/DateUtilsTests.cpp#L9-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-date_and_time' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 will produce:
@@ -32,7 +32,7 @@ will produce:
 ```txt
 Thu 2000-01-13 03:34:45 UTC
 ```
-<sup><a href='/tests/DocTest_Tests/utilities/approval_tests/DateUtilsTests.createDateTime.approved.txt#L1-L1' title='File snippet `DateUtilsTests.createDateTime.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-DateUtilsTests.createDateTime.approved.txt' title='Navigate to start of snippet `DateUtilsTests.createDateTime.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/utilities/approval_tests/DateUtilsTests.createDateTime.approved.txt#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-DateUtilsTests.createDateTime.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Times are printed in UTC, as this is a testing utility and consistency across machines is desirable.
@@ -54,7 +54,7 @@ for (int i = 1; i <= 4; ++i)
 }
 exceptions.release(); // All errors actually thrown together here
 ```
-<sup><a href='/tests/DocTest_Tests/utilities/ExceptionCollectorTests.cpp#L25-L32' title='File snippet `exception_collector_template` was extracted from'>snippet source</a> | <a href='#snippet-exception_collector_template' title='Navigate to start of snippet `exception_collector_template`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/utilities/ExceptionCollectorTests.cpp#L25-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-exception_collector_template' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 **Use with Approval Tests**: See [Approving multiple files in one test](/doc/MultipleOutputFilesPerTest.md#approving-multiple-files-in-one-test).

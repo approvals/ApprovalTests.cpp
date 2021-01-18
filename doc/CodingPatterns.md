@@ -26,7 +26,7 @@ public:
 
     static void setDefaultReporter(const std::shared_ptr<Reporter>& reporter);
 ```
-<sup><a href='/ApprovalTests/reporters/DefaultReporterFactory.h#L12-L20' title='File snippet `static_variable_sample_header` was extracted from'>snippet source</a> | <a href='#snippet-static_variable_sample_header' title='Navigate to start of snippet `static_variable_sample_header`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DefaultReporterFactory.h#L12-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-static_variable_sample_header' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 <!-- snippet: static_variable_sample_implementation -->
@@ -52,7 +52,7 @@ namespace ApprovalTests
     }
 }
 ```
-<sup><a href='/ApprovalTests/reporters/DefaultReporterFactory.cpp#L4-L24' title='File snippet `static_variable_sample_implementation` was extracted from'>snippet source</a> | <a href='#snippet-static_variable_sample_implementation' title='Navigate to start of snippet `static_variable_sample_implementation`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DefaultReporterFactory.cpp#L4-L24' title='Snippet source file'>snippet source</a> | <a href='#snippet-static_variable_sample_implementation' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Note the use of the reference (&) on the return type of the private method, and the addition of a getter and setter method.

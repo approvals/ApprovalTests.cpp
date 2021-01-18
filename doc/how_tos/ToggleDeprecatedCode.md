@@ -41,7 +41,7 @@ To opt in to warnings, add this line to your C++ code:
 ```cpp
 #define APPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS 1
 ```
-<sup><a href='/examples/doctest_existing_main/DoctestApprovalsTests.cpp#L1-L3' title='File snippet `show_deprecation_warnings` was extracted from'>snippet source</a> | <a href='#snippet-show_deprecation_warnings' title='Navigate to start of snippet `show_deprecation_warnings`'>anchor</a></sup>
+<sup><a href='/examples/doctest_existing_main/DoctestApprovalsTests.cpp#L1-L3' title='Snippet source file'>snippet source</a> | <a href='#snippet-show_deprecation_warnings' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Or this to your CMakeLists.txt:
@@ -52,7 +52,7 @@ Or this to your CMakeLists.txt:
 # Replace ${PROJECT_NAME} with the name of your test executable:
 target_compile_definitions(${PROJECT_NAME} PRIVATE -DAPPROVAL_TESTS_SHOW_DEPRECATION_WARNINGS=1)
 ```
-<sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L59-L62' title='File snippet `show_deprecation_warnings_cmake` was extracted from'>snippet source</a> | <a href='#snippet-show_deprecation_warnings_cmake' title='Navigate to start of snippet `show_deprecation_warnings_cmake`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L59-L62' title='Snippet source file'>snippet source</a> | <a href='#snippet-show_deprecation_warnings_cmake' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Hide deprecated code
@@ -64,7 +64,7 @@ A more extreme version of this is to not even compile the deprecated code. You c
 ```cpp
 #define APPROVAL_TESTS_HIDE_DEPRECATED_CODE 1
 ```
-<sup><a href='/examples/doctest_existing_main/DoctestApprovalsTests.cpp#L5-L7' title='File snippet `hide_deprecated_code` was extracted from'>snippet source</a> | <a href='#snippet-hide_deprecated_code' title='Navigate to start of snippet `hide_deprecated_code`'>anchor</a></sup>
+<sup><a href='/examples/doctest_existing_main/DoctestApprovalsTests.cpp#L5-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-hide_deprecated_code' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Or this to your CMakeLists.txt:
@@ -75,7 +75,7 @@ Or this to your CMakeLists.txt:
 # Replace ${PROJECT_NAME} with the name of your test executable:
 target_compile_definitions(${PROJECT_NAME} PRIVATE -DAPPROVAL_TESTS_HIDE_DEPRECATED_CODE=1)
 ```
-<sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L64-L67' title='File snippet `hide_deprecated_code_cmake` was extracted from'>snippet source</a> | <a href='#snippet-hide_deprecated_code_cmake' title='Navigate to start of snippet `hide_deprecated_code_cmake`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CMakeLists.txt#L64-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-hide_deprecated_code_cmake' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## How to Update Calls to Deprecated Code

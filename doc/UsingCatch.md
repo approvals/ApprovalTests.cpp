@@ -31,7 +31,7 @@ Approval Tests requires that a file called the following is found:
 ```h
 #include <catch2/catch.hpp>
 ```
-<sup><a href='/ApprovalTests/integrations/catch/Catch2Approvals.h#L18-L20' title='File snippet `required_header_for_catch` was extracted from'>snippet source</a> | <a href='#snippet-required_header_for_catch' title='Navigate to start of snippet `required_header_for_catch`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/catch/Catch2Approvals.h#L18-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_catch' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 (Before v7.0.0, it required `Catch.hpp`)
@@ -58,7 +58,7 @@ Create a file `main.cpp` and add just the following two lines:
 #define APPROVALS_CATCH // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 ```
-<sup><a href='/tests/Catch2_Tests/main.cpp#L6-L10' title='File snippet `catch_2_main` was extracted from'>snippet source</a> | <a href='#snippet-catch_2_main' title='Navigate to start of snippet `catch_2_main`'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/main.cpp#L6-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch_2_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Existing Project - with CATCH_CONFIG_MAIN
@@ -85,7 +85,7 @@ You should make the following additions to your own source file that contains `m
 #define APPROVALS_CATCH_EXISTING_MAIN
 #include "ApprovalTests.hpp"
 ```
-<sup><a href='/examples/catch2_existing_main/main.cpp#L1-L5' title='File snippet `catch_existing_main` was extracted from'>snippet source</a> | <a href='#snippet-catch_existing_main' title='Navigate to start of snippet `catch_existing_main`'>anchor</a></sup>
+<sup><a href='/examples/catch2_existing_main/main.cpp#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch_existing_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

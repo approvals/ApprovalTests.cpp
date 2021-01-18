@@ -30,7 +30,7 @@ Approvals::verify(
         [](const std::string& t) {return StringUtils::replaceAll(t, "3", "Fizz");}
     ));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L78-L84' title='File snippet `scrubbing_via_lambda` was extracted from'>snippet source</a> | <a href='#snippet-scrubbing_via_lambda' title='Navigate to start of snippet `scrubbing_via_lambda`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L78-L84' title='Snippet source file'>snippet source</a> | <a href='#snippet-scrubbing_via_lambda' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This would produce:
@@ -40,7 +40,7 @@ This would produce:
 ```txt
 1 2 Fizz 4 5 6
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/GuidScrubberTests.Scrubbing_via_Lambda.approved.txt#L1-L1' title='File snippet `GuidScrubberTests.Scrubbing_via_Lambda.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-GuidScrubberTests.Scrubbing_via_Lambda.approved.txt' title='Navigate to start of snippet `GuidScrubberTests.Scrubbing_via_Lambda.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/GuidScrubberTests.Scrubbing_via_Lambda.approved.txt#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-GuidScrubberTests.Scrubbing_via_Lambda.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 (In the real world, scrubbers are generally used to remove text that is expected to differ between test runs... Here, we use a trivial example for ease of explanation.)
@@ -65,7 +65,7 @@ os << "Hello " << random(1000) << " World";
 Approvals::verify(os.str(),
                   Options(Scrubbers::createRegexScrubber(R"(\d+)", "[number]")));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L49-L54' title='File snippet `simple_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Navigate to start of snippet `simple_regex_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L49-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This will produce:
@@ -75,7 +75,7 @@ This will produce:
 ```txt
 Hello number World
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt#L1-L1' title='File snippet `ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt' title='Navigate to start of snippet `ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-ScrubberTests.createRegexScrubber_with_fixed_result.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 **Note**: In the above example, the caller passes in a `std::string`, and for convenience of the calling code, Approval
@@ -105,7 +105,7 @@ auto scrubber =
         }
     });
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L21-L36' title='File snippet `complex_regex_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Navigate to start of snippet `complex_regex_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L21-L36' title='Snippet source file'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This will produce:
@@ -115,7 +115,7 @@ This will produce:
 ```txt
 1) Hello [number] World
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.createRegexScrubber.approved.txt#L1-L1' title='File snippet `ScrubberTests.createRegexScrubber.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ScrubberTests.createRegexScrubber.approved.txt' title='Navigate to start of snippet `ScrubberTests.createRegexScrubber.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/ScrubberTests.createRegexScrubber.approved.txt#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-ScrubberTests.createRegexScrubber.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### See also
@@ -154,7 +154,7 @@ std::string jsonFromRestCall = R"(
     )";
 Approvals::verify(jsonFromRestCall, Options().withScrubber(Scrubbers::scrubGuid));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L33-L52' title='File snippet `guid_scrubbing` was extracted from'>snippet source</a> | <a href='#snippet-guid_scrubbing' title='Navigate to start of snippet `guid_scrubbing`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L33-L52' title='Snippet source file'>snippet source</a> | <a href='#snippet-guid_scrubbing' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 will produce:
@@ -180,7 +180,7 @@ will produce:
         }
         
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt#L1-L17' title='File snippet `GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt' title='Navigate to start of snippet `GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt#L1-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Notice that when GUIDs are repeated within the same file, they are replaced with the same text.

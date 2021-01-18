@@ -24,7 +24,7 @@ You have called a method that returns a collection of objects, and you want a ni
 std::vector<std::string> objectsToVerify{"hello", "world"};
 Approvals::verifyAll("TITLE", objectsToVerify);
 ```
-<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L25-L28' title='File snippet `verifyallstartingpointcontainer` was extracted from'>snippet source</a> | <a href='#snippet-verifyallstartingpointcontainer' title='Navigate to start of snippet `verifyallstartingpointcontainer`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L25-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyallstartingpointcontainer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 which would produce:
@@ -39,7 +39,7 @@ TITLE
 [1] = world
 
 ```
-<sup><a href='/tests/DocTest_Tests/approval_tests/VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt#L1-L6' title='File snippet `VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt' title='Navigate to start of snippet `VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/approval_tests/VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt#L1-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Replace the `objectsToVerify` container with your collection of objects.

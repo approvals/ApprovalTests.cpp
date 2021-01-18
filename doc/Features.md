@@ -107,7 +107,7 @@ For example:
 ```cpp
 Approvals::verifyAll({10, 20, 30});
 ```
-<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L58-L60' title='File snippet `initializer_list` was extracted from'>snippet source</a> | <a href='#snippet-initializer_list' title='Navigate to start of snippet `initializer_list`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L58-L60' title='Snippet source file'>snippet source</a> | <a href='#snippet-initializer_list' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## v.10.2.0
@@ -328,7 +328,7 @@ TEST_CASE("Only run this test on John's machine")
     REQUIRE(SystemUtils::getMachineName() == "JOHNS_MACHINE");
 }
 ```
-<sup><a href='/tests/DocTest_Tests/utilities/MachineBlockerTests.cpp#L22-L33' title='File snippet `machine_specific_test_runner` was extracted from'>snippet source</a> | <a href='#snippet-machine_specific_test_runner' title='Navigate to start of snippet `machine_specific_test_runner`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/utilities/MachineBlockerTests.cpp#L22-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-machine_specific_test_runner' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Front Loaded Reporters

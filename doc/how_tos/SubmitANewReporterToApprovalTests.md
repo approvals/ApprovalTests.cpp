@@ -37,7 +37,7 @@ By way of an example, for supporting a new Reporter on macOS, the steps are:
 ```h
 DiffInfo ARAXIS_MERGE();
 ```
-<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L13-L15' title='File snippet `add_reporter_macro_header` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro_header' title='Navigate to start of snippet `add_reporter_macro_header`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L13-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_macro_header' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### Edit [ApprovalTests/reporters/DiffPrograms.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/DiffPrograms.cpp)
@@ -52,7 +52,7 @@ APPROVAL_TESTS_MACROS_ENTRY(
     DiffInfo("/Applications/Araxis Merge.app/Contents/Utilities/compare",
              Type::TEXT_AND_IMAGE))
 ```
-<sup><a href='/ApprovalTests/reporters/DiffPrograms.cpp#L24-L29' title='File snippet `add_reporter_macro_implementation` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_macro_implementation' title='Navigate to start of snippet `add_reporter_macro_implementation`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DiffPrograms.cpp#L24-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_macro_implementation' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### Edit [ApprovalTests/reporters/MacReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/MacReporters.h)
@@ -69,7 +69,7 @@ public:
     AraxisMergeReporter();
 };
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.h#L16-L22' title='File snippet `add_reporter_class_header` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class_header' title='Navigate to start of snippet `add_reporter_class_header`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.h#L16-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_class_header' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### Edit [ApprovalTests/reporters/MacReporters.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/MacReporters.cpp)
@@ -85,7 +85,7 @@ AraxisMergeReporter::AraxisMergeReporter()
 {
 }
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L14-L19' title='File snippet `add_reporter_class_implementation` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_class_implementation' title='Navigate to start of snippet `add_reporter_class_implementation`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L14-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_class_implementation' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 * Scroll to the end of this file, and add an instance of the new reporter class to the `MacDiffReporter`
@@ -106,7 +106,7 @@ new TkDiffReporter(),
 new VisualStudioCodeReporter(),
 new CLionDiffReporter()
 ```
-<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L63-L74' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L63-L74' title='Snippet source file'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -130,7 +130,7 @@ APPROVAL_TESTS_REGISTER_REPORTER(Mac::TkDiffReporter);
 APPROVAL_TESTS_REGISTER_REPORTER(Mac::VisualStudioCodeReporter);
 APPROVAL_TESTS_REGISTER_REPORTER(Mac::CLionDiffReporter);
 ```
-<sup><a href='/ApprovalTests/reporters/ReporterFactory.cpp#L67-L78' title='File snippet `register_reporter_with_factory` was extracted from'>snippet source</a> | <a href='#snippet-register_reporter_with_factory' title='Navigate to start of snippet `register_reporter_with_factory`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/ReporterFactory.cpp#L67-L78' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_reporter_with_factory' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### Edit [tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp)
@@ -152,7 +152,7 @@ std::make_shared<Mac::TkDiffReporter>(),
 std::make_shared<Mac::VisualStudioCodeReporter>(),
 std::make_shared<Mac::CLionDiffReporter>(),
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp#L26-L38' title='File snippet `add_reporter_command_test` was extracted from'>snippet source</a> | <a href='#snippet-add_reporter_command_test' title='Navigate to start of snippet `add_reporter_command_test`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp#L26-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_command_test' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 * Run this test, review and accept the changes.

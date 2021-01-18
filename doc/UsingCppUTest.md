@@ -38,7 +38,7 @@ Approval Tests requires that the following are found:
 #include <CppUTest/TestPlugin.h>
 #include <CppUTest/TestRegistry.h>
 ```
-<sup><a href='/ApprovalTests/integrations/cpputest/CppUTestApprovals.h#L13-L17' title='File snippet `required_headers_for_cpputest` was extracted from'>snippet source</a> | <a href='#snippet-required_headers_for_cpputest' title='Navigate to start of snippet `required_headers_for_cpputest`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/cpputest/CppUTestApprovals.h#L13-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_headers_for_cpputest' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Approval Tests is tested with CppUTest v4.0. 
@@ -65,7 +65,7 @@ Create a file `main.cpp` and add just the following two lines:
 #define APPROVALS_CPPUTEST
 #include "ApprovalTests.hpp"
 ```
-<sup><a href='/tests/CppUTest_Tests/main.cpp#L1-L4' title='File snippet `cpputest_main` was extracted from'>snippet source</a> | <a href='#snippet-cpputest_main' title='Navigate to start of snippet `cpputest_main`'>anchor</a></sup>
+<sup><a href='/tests/CppUTest_Tests/main.cpp#L1-L4' title='Snippet source file'>snippet source</a> | <a href='#snippet-cpputest_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Existing Project - with your main()
@@ -94,7 +94,7 @@ int main(int argc, char** argv)
     return result;
 }
 ```
-<sup><a href='/examples/cpputest_existing_main/main.cpp#L1-L17' title='File snippet `cpputest_existing_main` was extracted from'>snippet source</a> | <a href='#snippet-cpputest_existing_main' title='Navigate to start of snippet `cpputest_existing_main`'>anchor</a></sup>
+<sup><a href='/examples/cpputest_existing_main/main.cpp#L1-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-cpputest_existing_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---

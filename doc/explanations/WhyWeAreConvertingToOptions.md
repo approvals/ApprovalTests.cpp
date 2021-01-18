@@ -96,7 +96,7 @@ This is an example what the new code would look like:
 ```cpp
 Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter()));
 ```
-<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L15-L17' title='File snippet `basic_approval_with_reporter` was extracted from'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Navigate to start of snippet `basic_approval_with_reporter`'>anchor</a></sup>
+<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L15-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Updating verifyWithExtension(..., fileExtensionWithDot, Reporter)
@@ -115,7 +115,7 @@ This is an example what the new code would look like:
 Approvals::verify("<h1>hello world</h1>",
                   Options().fileOptions().withFileExtension(".html"));
 ```
-<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L19-L22' title='File snippet `use_custom_file_extension` was extracted from'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Navigate to start of snippet `use_custom_file_extension`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L19-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---

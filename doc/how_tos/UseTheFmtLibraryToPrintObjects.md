@@ -27,7 +27,7 @@ For example, vectors are not `ostream (<<)` printable by default. However, they 
 std::vector<int> numbers = {1, 2, 3};
 FmtApprovals::verify(numbers);
 ```
-<sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L14-L17' title='File snippet `fmt_approvals` was extracted from'>snippet source</a> | <a href='#snippet-fmt_approvals' title='Navigate to start of snippet `fmt_approvals`'>anchor</a></sup>
+<sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L14-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-fmt_approvals' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This will produce the following output:
@@ -37,7 +37,7 @@ This will produce the following output:
 ```txt
 {1, 2, 3}
 ```
-<sup><a href='/examples/fmt_approvals_demo/approval_tests/FmtTests.FmtContainers.approved.txt#L1-L1' title='File snippet `FmtTests.FmtContainers.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-FmtTests.FmtContainers.approved.txt' title='Navigate to start of snippet `FmtTests.FmtContainers.approved.txt`'>anchor</a></sup>
+<sup><a href='/examples/fmt_approvals_demo/approval_tests/FmtTests.FmtContainers.approved.txt#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-FmtTests.FmtContainers.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 **note:** it is important that we included fmt before approvaltests.
@@ -47,7 +47,7 @@ This will produce the following output:
 ```cpp
 #include <fmt/ranges.h>
 ```
-<sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L4-L6' title='File snippet `fmt_includes` was extracted from'>snippet source</a> | <a href='#snippet-fmt_includes' title='Navigate to start of snippet `fmt_includes`'>anchor</a></sup>
+<sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L4-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-fmt_includes' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Installation
@@ -63,7 +63,7 @@ If you would like to see how we added fmt to our build, check out:
 ```txt
 target_link_libraries(${PROJECT_NAME} fmt::fmt)
 ```
-<sup><a href='/examples/fmt_approvals_demo/CMakeLists.txt#L13-L15' title='File snippet `fmt_cmake` was extracted from'>snippet source</a> | <a href='#snippet-fmt_cmake' title='Navigate to start of snippet `fmt_cmake`'>anchor</a></sup>
+<sup><a href='/examples/fmt_approvals_demo/CMakeLists.txt#L13-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-fmt_cmake' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [fmt/CmakeList.txt](/CMake/fmt/CMakeLists.txt)  
@@ -79,7 +79,7 @@ If you wish, you can set FmtApprovals to be the default Approvals with the follo
 ```h
 #define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER FmtToString
 ```
-<sup><a href='/examples/fmt_approvals_demo/FmtAsDefault.h#L3-L5' title='File snippet `fmt_set_as_default` was extracted from'>snippet source</a> | <a href='#snippet-fmt_set_as_default' title='Navigate to start of snippet `fmt_set_as_default`'>anchor</a></sup>
+<sup><a href='/examples/fmt_approvals_demo/FmtAsDefault.h#L3-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-fmt_set_as_default' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

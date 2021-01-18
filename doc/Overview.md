@@ -35,7 +35,7 @@ REQUIRE(s.getFillings().contains("Tomato"));
 REQUIRE(s.getFillings().contains("Lettuce"));
 REQUIRE(s.getFillings().contains("Cheddar"));
 ```
-<sup><a href='/tests/DocTest_Tests/docs/OverviewExamples.cpp#L89-L100' title='File snippet `sandwich_example_with_requires` was extracted from'>snippet source</a> | <a href='#snippet-sandwich_example_with_requires' title='Navigate to start of snippet `sandwich_example_with_requires`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/OverviewExamples.cpp#L89-L100' title='Snippet source file'>snippet source</a> | <a href='#snippet-sandwich_example_with_requires' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Approval Tests
@@ -52,7 +52,7 @@ Sandwich s = createSandwichForTest();
 // Assert
 Approvals::verify(s);
 ```
-<sup><a href='/tests/DocTest_Tests/docs/OverviewExamples.cpp#L105-L110' title='File snippet `sandwich_example_with_approvals` was extracted from'>snippet source</a> | <a href='#snippet-sandwich_example_with_approvals' title='Navigate to start of snippet `sandwich_example_with_approvals`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/OverviewExamples.cpp#L105-L110' title='Snippet source file'>snippet source</a> | <a href='#snippet-sandwich_example_with_approvals' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This generates the approval file - which is generated **for** you, but [approved **by** you](/doc/ApprovingResults.md#top).
@@ -66,7 +66,7 @@ sandwich {
     fillings: ["Tomato", "Lettuce", "Cheddar"]
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/approval_tests/OverviewExamples.SandwichExampleWithApprovals.approved.txt#L1-L5' title='File snippet `OverviewExamples.SandwichExampleWithApprovals.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-OverviewExamples.SandwichExampleWithApprovals.approved.txt' title='Navigate to start of snippet `OverviewExamples.SandwichExampleWithApprovals.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/approval_tests/OverviewExamples.SandwichExampleWithApprovals.approved.txt#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-OverviewExamples.SandwichExampleWithApprovals.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---

@@ -30,7 +30,7 @@ Approval Tests for doctest requires that a file called the following is found:
 ```h
 #include <doctest/doctest.h>
 ```
-<sup><a href='/ApprovalTests/integrations/doctest/DocTestApprovals.h#L16-L18' title='File snippet `required_header_for_doctest` was extracted from'>snippet source</a> | <a href='#snippet-required_header_for_doctest' title='Navigate to start of snippet `required_header_for_doctest`'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/doctest/DocTestApprovals.h#L16-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_doctest' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Approval Tests needs doctest version 2.3.4 or above.
@@ -48,7 +48,7 @@ Create a file `main.cpp` and add just the following two lines:
 #define APPROVALS_DOCTEST // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 ```
-<sup><a href='/tests/DocTest_Tests/main.cpp#L1-L5' title='File snippet `doctest_main` was extracted from'>snippet source</a> | <a href='#snippet-doctest_main' title='Navigate to start of snippet `doctest_main`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/main.cpp#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-doctest_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 <!-- todo: document use of sections -->
@@ -66,7 +66,7 @@ You should make the following additions to your own source file that contains `m
 #define APPROVALS_DOCTEST_EXISTING_MAIN
 #include "ApprovalTests.hpp"
 ```
-<sup><a href='/examples/doctest_existing_main/main.cpp#L1-L5' title='File snippet `doctest_existing_main` was extracted from'>snippet source</a> | <a href='#snippet-doctest_existing_main' title='Navigate to start of snippet `doctest_existing_main`'>anchor</a></sup>
+<sup><a href='/examples/doctest_existing_main/main.cpp#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-doctest_existing_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---

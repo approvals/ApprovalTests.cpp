@@ -56,7 +56,7 @@ Here's an example of verifing a list of rectangles
 ```cpp
 Approvals::verifyAll("rectangles", getRectangles());
 ```
-<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L32-L34' title='File snippet `verify_list` was extracted from'>snippet source</a> | <a href='#snippet-verify_list' title='Navigate to start of snippet `verify_list`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L32-L34' title='Snippet source file'>snippet source</a> | <a href='#snippet-verify_list' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Notice how this:
@@ -72,7 +72,7 @@ rectangles
 [2] = [x: 60 y: 3 width: 7 height: 63]
 
 ```
-<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L7' title='File snippet `ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt' title='Navigate to start of snippet `ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 compares to this:
@@ -88,7 +88,7 @@ rectangles
 (x,y,width,height) = (60,3,7,63)
 
 ```
-<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L7' title='File snippet `ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt' title='Navigate to start of snippet `ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt`'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Tools
