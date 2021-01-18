@@ -59,10 +59,6 @@ def convert_markdown_text_to_restructured_text(content, subdir):
 
 
 def fix_up_markdown_content(subdir, content):
-    # Note: We intentionally do not remove the 'GENERATED FILE' comment,
-    # as if anyone edits the derived .rst file, it nicely
-    # points to the master file.
-
     content = fixup_boilerplate_text(content)
     content = fixup_generated_snippets(content)
     content = fixup_included_snippets(content)
