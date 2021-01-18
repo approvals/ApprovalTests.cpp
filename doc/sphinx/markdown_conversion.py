@@ -104,12 +104,12 @@ def fixup_generated_snippets(content):
 
     # Remove 'snippet source' links from all code snippets
     content = re.sub(
-        r"<sup><a href='([^']+)' title='File snippet `[^`]+` was extracted from'>snippet source</a> ",
+        r"<sup><a href='([^']+)' title='Snippet source file'>snippet source</a> ",
         r"(See [snippet source](\1))", content)
 
     # Remove 'anchor' links from all code snippets
     content = re.sub(
-        r"\| <a href='#snippet-[^']+' title='Navigate to start of snippet `[^']+`'>anchor</a></sup>",
+        r"\| <a href='#snippet-[^']+' title='Start of snippet'>anchor</a></sup>",
         '', content)
 
     content = content.replace('<!-- endsnippet -->\n', '')
