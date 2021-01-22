@@ -1,0 +1,12 @@
+TITLE
+
+
+(a, a, a) => aaa
+(a, a, b) => aab
+(a, b, a) => aba
+(a, b, b) => abb
+(b, a, a) => baa
+(b, a, b) => bab
+(b, b, a) => bba
+(b, b, b) => bbb
+
