@@ -186,9 +186,7 @@ TEST_CASE("CombinationsApiWithHeadersAndOptions")
 
     SUBCASE("With Header")
     {
-        // TODO Get these working without needing to pass in std::string
-
-        std::string header{"TITLE"};
+        auto header = "TITLE";
 
         // With lambda
         CombinationApprovals::verifyAllCombinations(
