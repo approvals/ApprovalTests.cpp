@@ -157,8 +157,8 @@ TEST_CASE("YouCanVerifyCombinationsOf10")
 namespace
 {
     std::string concatenate3Strings(const std::string& s1,
-                                      const std::string& s2,
-                                      const std::string& s3)
+                                    const std::string& s2,
+                                    const std::string& s3)
     {
         return s1 + s2 + s3;
     }
@@ -178,7 +178,8 @@ TEST_CASE("CombinationsApiWithHeadersAndOptions")
             Options(), converter, letters, letters, letters);
 
         // With function
-        CombinationApprovals::verifyAllCombinations(concatenate3Strings, letters, letters, letters);
+        CombinationApprovals::verifyAllCombinations(
+            concatenate3Strings, letters, letters, letters);
         CombinationApprovals::verifyAllCombinations(
             Options(), concatenate3Strings, letters, letters, letters);
     }
@@ -196,7 +197,11 @@ TEST_CASE("CombinationsApiWithHeadersAndOptions")
         // With function
         CombinationApprovals::verifyAllCombinations(
             std::string("TITLE"), concatenate3Strings, letters, letters, letters);
-        CombinationApprovals::verifyAllCombinations(
-            Options(), std::string("TITLE"), concatenate3Strings, letters, letters, letters);
+        CombinationApprovals::verifyAllCombinations(Options(),
+                                                    std::string("TITLE"),
+                                                    concatenate3Strings,
+                                                    letters,
+                                                    letters,
+                                                    letters);
     }
 }
