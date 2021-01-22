@@ -153,3 +153,27 @@ TEST_CASE("YouCanVerifyCombinationsOf10")
         letters,
         letters);
 }
+
+TEST_CASE("CombinationsApiWithHeadersAndOptions")
+{
+    std::vector<std::string> letters{"a", "b"};
+    auto converter = [](const std::string& s1,
+           const std::string& s2,
+           const std::string& s3) {
+            return s1 + s2 + s3;
+        };
+    SUBCASE("Without Header")
+    {
+        CombinationApprovals::verifyAllCombinations(
+            converter,
+            letters,
+            letters,
+            letters);
+        CombinationApprovals::verifyAllCombinations(
+            Options(),
+            converter,
+            letters,
+            letters,
+            letters);
+    }
+}
