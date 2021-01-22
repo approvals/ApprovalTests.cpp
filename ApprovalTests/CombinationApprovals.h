@@ -66,37 +66,24 @@ namespace ApprovalTests
             Approvals::verify(s.str(), options);
         }
 
-        template <class Converter, class Container, class... Containers>
+        template <class Converter, class... Containers>
         ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
             Converter> static verifyAllCombinations(const std::string& header,
                                                     Converter&& converter,
-                                                    const Container& input0,
                                                     const Containers&... inputs)
         {
-            std::stringstream s;
-            if (!header.empty())
-            {
-                s << header << "\n\n\n";
-            }
-            CartesianProduct::cartesian_product(
-                serialize<Converter>{s, std::forward<Converter>(converter)},
-                input0,
-                inputs...);
-            Approvals::verify(s.str(), Options());
+            verifyAllCombinations(
+                header, Options(), std::forward<Converter>(converter), inputs...);
         }
 
-        template <class Converter, class Container, class... Containers>
-        static void verifyAllCombinations(const Options& options,
-                                          Converter&& converter,
-                                          const Container& input0,
-                                          const Containers&... inputs)
+        template <class Converter, class... Containers>
+        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
+            Converter> static verifyAllCombinations(const Options& options,
+                                                    Converter&& converter,
+                                                    const Containers&... inputs)
         {
-            std::stringstream s;
-            CartesianProduct::cartesian_product(
-                serialize<Converter>{s, std::forward<Converter>(converter)},
-                input0,
-                inputs...);
-            Approvals::verify(s.str(), options);
+            verifyAllCombinations(
+                std::string(), options, std::forward<Converter>(converter), inputs...);
         }
 
         template <class Converter, class... Containers>
@@ -105,7 +92,7 @@ namespace ApprovalTests
                                                     const Containers&... inputs)
         {
             verifyAllCombinations(
-                Options(), std::forward<Converter>(converter), inputs...);
+                std::string(), Options(), std::forward<Converter>(converter), inputs...);
         }
         ///@}
     };
