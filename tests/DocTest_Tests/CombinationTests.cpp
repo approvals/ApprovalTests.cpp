@@ -188,20 +188,18 @@ TEST_CASE("CombinationsApiWithHeadersAndOptions")
     {
         // TODO Get these working without needing to pass in std::string
 
+        std::string header{"TITLE"};
+
         // With lambda
         CombinationApprovals::verifyAllCombinations(
-            std::string("TITLE"), converter, letters, letters, letters);
+            header, converter, letters, letters, letters);
         CombinationApprovals::verifyAllCombinations(
-            Options(), std::string("TITLE"), converter, letters, letters, letters);
+            Options(), header, converter, letters, letters, letters);
 
         // With function
         CombinationApprovals::verifyAllCombinations(
-            std::string("TITLE"), concatenate3Strings, letters, letters, letters);
-        CombinationApprovals::verifyAllCombinations(Options(),
-                                                    std::string("TITLE"),
-                                                    concatenate3Strings,
-                                                    letters,
-                                                    letters,
-                                                    letters);
+            header, concatenate3Strings, letters, letters, letters);
+        CombinationApprovals::verifyAllCombinations(
+            Options(), header, concatenate3Strings, letters, letters, letters);
     }
 }
