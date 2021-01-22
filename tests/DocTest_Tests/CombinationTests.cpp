@@ -169,12 +169,9 @@ TEST_CASE("CombinationsApiWithHeadersAndOptions")
 
     SUBCASE("With Header")
     {
-        auto header = "TITLE";
-
         CombinationApprovals::verifyAllCombinations(
-            header, converter, letters, letters, letters);
+            "TITLE", converter, letters, letters, letters);
         CombinationApprovals::verifyAllCombinations(
-            Options(), header, converter, letters, letters, letters);
-
+            Options(), "TITLE", converter, letters, letters, letters);
     }
 }
