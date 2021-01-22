@@ -169,6 +169,7 @@ TEST_CASE("CombinationsApiWithHeadersAndOptions")
 
     SUBCASE("With Header")
     {
+        // TODO Get these working without needing to pass in std::string
         CombinationApprovals::verifyAllCombinations(
             std::string("TITLE"), converter, letters, letters, letters);
         CombinationApprovals::verifyAllCombinations(
