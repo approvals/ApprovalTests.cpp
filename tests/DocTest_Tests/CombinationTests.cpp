@@ -154,6 +154,16 @@ TEST_CASE("YouCanVerifyCombinationsOf10")
         letters);
 }
 
+namespace
+{
+    std::string concatenate3Strings(const std::string& s1,
+                                      const std::string& s2,
+                                      const std::string& s3)
+    {
+        return s1 + s2 + s3;
+    }
+}
+
 TEST_CASE("CombinationsApiWithHeadersAndOptions")
 {
     std::vector<std::string> letters{"a", "b"};
@@ -162,17 +172,31 @@ TEST_CASE("CombinationsApiWithHeadersAndOptions")
                         const std::string& s3) { return s1 + s2 + s3; };
     SUBCASE("Without Header")
     {
+        // With lambda
         CombinationApprovals::verifyAllCombinations(converter, letters, letters, letters);
         CombinationApprovals::verifyAllCombinations(
             Options(), converter, letters, letters, letters);
+
+        // With function
+        CombinationApprovals::verifyAllCombinations(concatenate3Strings, letters, letters, letters);
+        CombinationApprovals::verifyAllCombinations(
+            Options(), concatenate3Strings, letters, letters, letters);
     }
 
     SUBCASE("With Header")
     {
         // TODO Get these working without needing to pass in std::string
+
+        // With lambda
         CombinationApprovals::verifyAllCombinations(
             std::string("TITLE"), converter, letters, letters, letters);
         CombinationApprovals::verifyAllCombinations(
             Options(), std::string("TITLE"), converter, letters, letters, letters);
+
+        // With function
+        CombinationApprovals::verifyAllCombinations(
+            std::string("TITLE"), concatenate3Strings, letters, letters, letters);
+        CombinationApprovals::verifyAllCombinations(
+            Options(), std::string("TITLE"), concatenate3Strings, letters, letters, letters);
     }
 }
