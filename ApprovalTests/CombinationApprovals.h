@@ -47,7 +47,7 @@ namespace ApprovalTests
          */
         ///@{
         template <class Converter, class Container, class... Containers>
-        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
+        ApprovalTests::Detail::EnableIfNotOptionsOrReporterOrString<
             Converter> static verifyAllCombinations(const Options& options,
                                                     const std::string& header,
                                                     Converter&& converter,
@@ -67,7 +67,7 @@ namespace ApprovalTests
         }
 
         template <class Converter, class... Containers>
-        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
+        ApprovalTests::Detail::EnableIfNotOptionsOrReporterOrString<
             Converter> static verifyAllCombinations(const std::string& header,
                                                     Converter&& converter,
                                                     const Containers&... inputs)
@@ -77,7 +77,7 @@ namespace ApprovalTests
         }
 
         template <class Converter, class... Containers>
-        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
+        ApprovalTests::Detail::EnableIfNotOptionsOrReporterOrString<
             Converter> static verifyAllCombinations(const Options& options,
                                                     Converter&& converter,
                                                     const Containers&... inputs)
@@ -87,7 +87,7 @@ namespace ApprovalTests
         }
 
         template <class Converter, class... Containers>
-        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
+        ApprovalTests::Detail::EnableIfNotOptionsOrReporterOrString<
             Converter> static verifyAllCombinations(Converter&& converter,
                                                     const Containers&... inputs)
         {
