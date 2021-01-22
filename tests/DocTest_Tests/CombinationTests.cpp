@@ -172,6 +172,6 @@ TEST_CASE("CombinationsApiWithHeadersAndOptions")
         CombinationApprovals::verifyAllCombinations(
             std::string("TITLE"), converter, letters, letters, letters);
         CombinationApprovals::verifyAllCombinations(
-            std::string("TITLE"), Options(), converter, letters, letters, letters);
+            Options(), std::string("TITLE"), converter, letters, letters, letters);
     }
 }

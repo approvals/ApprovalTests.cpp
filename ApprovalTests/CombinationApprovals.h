@@ -48,8 +48,8 @@ namespace ApprovalTests
         ///@{
         template <class Converter, class Container, class... Containers>
         ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
-            Converter> static verifyAllCombinations(const std::string& header,
-                                                    const Options& options,
+            Converter> static verifyAllCombinations(const Options& options,
+                                                    const std::string& header,
                                                     Converter&& converter,
                                                     const Container& input0,
                                                     const Containers&... inputs)
@@ -73,7 +73,7 @@ namespace ApprovalTests
                                                     const Containers&... inputs)
         {
             verifyAllCombinations(
-                header, Options(), std::forward<Converter>(converter), inputs...);
+                Options(), header, std::forward<Converter>(converter), inputs...);
         }
 
         template <class Converter, class... Containers>
@@ -83,7 +83,7 @@ namespace ApprovalTests
                                                     const Containers&... inputs)
         {
             verifyAllCombinations(
-                std::string(), options, std::forward<Converter>(converter), inputs...);
+                options, std::string(), std::forward<Converter>(converter), inputs...);
         }
 
         template <class Converter, class... Containers>
@@ -92,7 +92,7 @@ namespace ApprovalTests
                                                     const Containers&... inputs)
         {
             verifyAllCombinations(
-                std::string(), Options(), std::forward<Converter>(converter), inputs...);
+                Options(), std::string(), std::forward<Converter>(converter), inputs...);
         }
         ///@}
     };
