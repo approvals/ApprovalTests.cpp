@@ -67,6 +67,25 @@ namespace ApprovalTests
         }
 
         template <class Converter, class Container, class... Containers>
+        ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
+            Converter> static verifyAllCombinations(const std::string& header,
+                                                    Converter&& converter,
+                                                    const Container& input0,
+                                                    const Containers&... inputs)
+        {
+            std::stringstream s;
+            if (!header.empty())
+            {
+                s << header << "\n\n\n";
+            }
+            CartesianProduct::cartesian_product(
+                serialize<Converter>{s, std::forward<Converter>(converter)},
+                input0,
+                inputs...);
+            Approvals::verify(s.str(), Options());
+        }
+
+        template <class Converter, class Container, class... Containers>
         static void verifyAllCombinations(const Options& options,
                                           Converter&& converter,
                                           const Container& input0,

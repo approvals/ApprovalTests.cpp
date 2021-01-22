@@ -169,12 +169,8 @@ TEST_CASE("CombinationsApiWithHeadersAndOptions")
 
     SUBCASE("With Header")
     {
-        //        CombinationApprovals::verifyAllCombinations(
-        //            "TITLE",
-        //            converter,
-        //            letters,
-        //            letters,
-        //            letters);
+        CombinationApprovals::verifyAllCombinations(
+            std::string("TITLE"), converter, letters, letters, letters);
         CombinationApprovals::verifyAllCombinations(
             std::string("TITLE"), Options(), converter, letters, letters, letters);
     }
