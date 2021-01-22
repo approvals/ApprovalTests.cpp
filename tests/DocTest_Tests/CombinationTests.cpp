@@ -158,39 +158,24 @@ TEST_CASE("CombinationsApiWithHeadersAndOptions")
 {
     std::vector<std::string> letters{"a", "b"};
     auto converter = [](const std::string& s1,
-           const std::string& s2,
-           const std::string& s3) {
-            return s1 + s2 + s3;
-        };
+                        const std::string& s2,
+                        const std::string& s3) { return s1 + s2 + s3; };
     SUBCASE("Without Header")
     {
+        CombinationApprovals::verifyAllCombinations(converter, letters, letters, letters);
         CombinationApprovals::verifyAllCombinations(
-            converter,
-            letters,
-            letters,
-            letters);
-        CombinationApprovals::verifyAllCombinations(
-            Options(),
-            converter,
-            letters,
-            letters,
-            letters);
+            Options(), converter, letters, letters, letters);
     }
 
     SUBCASE("With Header")
     {
-//        CombinationApprovals::verifyAllCombinations(
-//            "TITLE",
-//            converter,
-//            letters,
-//            letters,
-//            letters);
+        //        CombinationApprovals::verifyAllCombinations(
+        //            "TITLE",
+        //            converter,
+        //            letters,
+        //            letters,
+        //            letters);
         CombinationApprovals::verifyAllCombinations(
-            std::string("TITLE"),
-            Options(),
-            converter,
-            letters,
-            letters,
-            letters);
+            std::string("TITLE"), Options(), converter, letters, letters, letters);
     }
 }

@@ -48,13 +48,11 @@ namespace ApprovalTests
         ///@{
         template <class Converter, class Container, class... Containers>
         ApprovalTests::Detail::EnableIfNotOptionsOrReporter<
-            Converter> static verifyAllCombinations(
-            const std::string& header,
-            const Options& options,
-
-                                          Converter&& converter,
-                                          const Container& input0,
-                                          const Containers&... inputs)
+            Converter> static verifyAllCombinations(const std::string& header,
+                                                    const Options& options,
+                                                    Converter&& converter,
+                                                    const Container& input0,
+                                                    const Containers&... inputs)
         {
             std::stringstream s;
             if (!header.empty())
