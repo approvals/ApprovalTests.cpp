@@ -16,13 +16,6 @@ TEST_CASE("YouCanVerifyCombinationsOf1")
         [](const std::string& s) { return s + "!"; }, words);
 }
 
-TEST_CASE("YouCanVerifyCombinationsOf1WithTemplateParameters")
-{
-    std::vector<std::string> words{"hello", "world"};
-    CombinationApprovals::verifyAllCombinations(
-        [](const std::string& s) { return s + "!"; }, words);
-}
-
 FrontLoadedReporterDisposer clearFrontLoadedReporter()
 {
     return Approvals::useAsFrontLoadedReporter(
