@@ -5,11 +5,12 @@
 <!-- toc -->
 ## Contents
 
-  * [Introduction](#introduction)
-  * [Test Framework Requirements](#test-framework-requirements)
-  * [Steps to add support](#steps-to-add-support)
-  * [Examples](#examples)
-  * [Adding new framework to documentation](#adding-new-framework-to-documentation)<!-- endToc -->
+* [Introduction](#introduction)
+* [Test Framework Requirements](#test-framework-requirements)
+* [Steps to add support](#steps-to-add-support)
+* [Examples](#examples)
+* [Adding new framework to documentation](#adding-new-framework-to-documentation)
+* [Update Package Managers](#update-package-managers)<!-- endToc -->
 
 
 ## Introduction
@@ -45,13 +46,18 @@ This is perhaps best understood by reviewing the implementations for frameworks 
 
 1. Add a new file about the customisation, such as [UsingCatch.md](/doc/UsingCatch.md#top)
 2. Record the new framework support in:
-    * The `getMisconfiguredMainHelp()` help message in [HelpMessages.cpp](/ApprovalTests/namers/HelpMessages.cpp)
-    * [README.md](/README.md#top) - see the links to supported test frameworks in the "Requirements" section
-    * [include_using_test_frameworks_list.include.md](/doc/include_using_test_frameworks_list.include.md#top)
-    * [GettingStarted.md](/doc/GettingStarted.md#top) - see "Choosing a testing framework"
-    * [Setup.md](/doc/Setup.md#top) - see the bullet list starting "Set up your `main()`"
-    * Other documentation links: see [Definition of Done](/doc/Contributing.md#definition-of-done)
+   * The `getMisconfiguredMainHelp()` help message in [HelpMessages.cpp](/ApprovalTests/namers/HelpMessages.cpp)
+   * [README.md](/README.md#top) - see the links to supported test frameworks in the "Requirements" section
+   * [include_using_test_frameworks_list.include.md](/doc/include_using_test_frameworks_list.include.md#top)
+   * [GettingStarted.md](/doc/GettingStarted.md#top) - see "Choosing a testing framework"
+   * [Setup.md](/doc/Setup.md#top) - see the bullet list starting "Set up your `main()`"
+   * Other documentation links: see [Definition of Done](/doc/Contributing.md#definition-of-done)
 
+## Update Package Managers
+
+* Optionally, if the new library is supported by Conan, then update
+  the  [ApprovalTests.cpp conan-center-index](https://github.com/conan-io/conan-center-index/commits/master/recipes/approvaltests.cpp)
+  to add support for the new integration.
 
 ---
 
