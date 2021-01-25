@@ -52,6 +52,7 @@
 #include "ApprovalTests/comparators/ComparatorDisposer.h"
 #include "ApprovalTests/comparators/ComparatorFactory.h"
 #include "ApprovalTests/core/FileApprover.h"
+#include "ApprovalTests/ApprovalUtils.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/CombinationApprovals.h"
 #include "ApprovalTests/comparators/TextFileComparator.h"

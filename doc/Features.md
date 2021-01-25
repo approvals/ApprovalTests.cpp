@@ -8,6 +8,8 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.7.0](#v1070)
+    * [CombinationApprovals header](#combinationapprovals-header)
   * [v.10.6.0](#v1060)
     * [FrameworkIntegrations class](#frameworkintegrations-class)
     * [Approvals::verify() counts as an assertion in test frameworks](#approvalsverify-counts-as-an-assertion-in-test-frameworks)
@@ -69,6 +71,8 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+## v.10.7.0
 
 ### CombinationApprovals header
 
