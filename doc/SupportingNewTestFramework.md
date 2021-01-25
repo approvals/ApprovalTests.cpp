@@ -5,12 +5,12 @@
 <!-- toc -->
 ## Contents
 
-* [Introduction](#introduction)
-* [Test Framework Requirements](#test-framework-requirements)
-* [Steps to add support](#steps-to-add-support)
-* [Examples](#examples)
-* [Adding new framework to documentation](#adding-new-framework-to-documentation)
-* [Update Package Managers](#update-package-managers)<!-- endToc -->
+  * [Introduction](#introduction)
+  * [Test Framework Requirements](#test-framework-requirements)
+  * [Steps to add support](#steps-to-add-support)
+  * [Examples](#examples)
+  * [Adding new framework to documentation](#adding-new-framework-to-documentation)
+  * [Update Package Managers](#update-package-managers)<!-- endToc -->
 
 
 ## Introduction

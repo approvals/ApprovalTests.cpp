@@ -24,20 +24,18 @@ If you have only one parameter that you want to vary, check out [How to Test a V
 <!-- snippet: CombinationsStartingPoint -->
 <a id='snippet-combinationsstartingpoint'></a>
 ```cpp
-
-
-
-
-
-
-
-
-
-
+TEST_CASE("CombinationsStartingPoint")
+{
+    std::vector<std::string> inputs1{"input1.value1", "input1.value2"};
+    std::vector<std::string> inputs2{"input2.value1", "input2.value2", "input2.value3"};
+    CombinationApprovals::verifyAllCombinations(
+        "TITLE",
+        [&](auto /*input1*/, auto /*input2*/) { return "placeholder"; },
+        inputs1,
+        inputs2);
+}
 ```
-
-<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L56-L67' title='Snippet source file'>snippet source</a>
-| <a href='#snippet-combinationsstartingpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L56-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Modify each input container for your chosen values.
@@ -49,7 +47,6 @@ matters at this point: all combinations of your own input values should be liste
 
 <!-- snippet: CombinationTests.CombinationsStartingPoint.approved.txt -->
 <a id='snippet-CombinationTests.CombinationsStartingPoint.approved.txt'></a>
-
 ```txt
 TITLE
 
@@ -62,10 +59,7 @@ TITLE
 (input1.value2, input2.value3) => placeholder
 
 ```
-
-<sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.CombinationsStartingPoint.approved.txt#L1-L10' title='Snippet source file'>
-snippet source</a>
-| <a href='#snippet-CombinationTests.CombinationsStartingPoint.approved.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.CombinationsStartingPoint.approved.txt#L1-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-CombinationTests.CombinationsStartingPoint.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 5. Implement the body of your lambda
@@ -96,9 +90,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2")
         numbers);
 }
 ```
-
-<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L42-L54' title='Snippet source file'>snippet source</a>
-| <a href='#snippet-youcanverifycombinationsof2' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L42-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
