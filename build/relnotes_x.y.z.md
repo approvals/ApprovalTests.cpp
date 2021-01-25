@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * Optional header argument added to [CombinationApprovals](/doc/TestingCombinations.md#top)
 * **Bug fixes**
     * None
 * **Other changes**
