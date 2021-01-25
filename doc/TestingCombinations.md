@@ -24,17 +24,19 @@ If you have only one parameter that you want to vary, check out [How to Test a V
 <!-- snippet: CombinationsStartingPoint -->
 <a id='snippet-combinationsstartingpoint'></a>
 ```cpp
-TEST_CASE("CombinationsStartingPoint")
-{
-    std::vector<std::string> inputs1{"input1.value1", "input1.value2"};
-    std::vector<std::string> inputs2{"input2.value1", "input2.value2", "input2.value3"};
-    CombinationApprovals::verifyAllCombinations(
-        [&](auto /*input1*/, auto /*input2*/) { return "placeholder"; },
-        inputs1,
-        inputs2);
-}
+
+
+
+
+
+
+
+
+
+
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L56-L66' title='Snippet source file'>snippet source</a>
+
+<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L56-L67' title='Snippet source file'>snippet source</a>
 | <a href='#snippet-combinationsstartingpoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
@@ -47,7 +49,11 @@ matters at this point: all combinations of your own input values should be liste
 
 <!-- snippet: CombinationTests.CombinationsStartingPoint.approved.txt -->
 <a id='snippet-CombinationTests.CombinationsStartingPoint.approved.txt'></a>
+
 ```txt
+TITLE
+
+
 (input1.value1, input2.value1) => placeholder
 (input1.value1, input2.value2) => placeholder
 (input1.value1, input2.value3) => placeholder
@@ -56,12 +62,16 @@ matters at this point: all combinations of your own input values should be liste
 (input1.value2, input2.value3) => placeholder
 
 ```
-<sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.CombinationsStartingPoint.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-CombinationTests.CombinationsStartingPoint.approved.txt' title='Start of snippet'>anchor</a></sup>
+
+<sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.CombinationsStartingPoint.approved.txt#L1-L10' title='Snippet source file'>
+snippet source</a>
+| <a href='#snippet-CombinationTests.CombinationsStartingPoint.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 5. Implement the body of your lambda
 6. Make sure that your lambda's return value also has an ostream operator<<
-7. Run it, and approve the output.
+7. Change the TITLE to something meaningful
+8. Run it, and approve the output.
 
 ## The Basics
 
