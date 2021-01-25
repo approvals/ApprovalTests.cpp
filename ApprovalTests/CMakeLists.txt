@@ -2,6 +2,8 @@ project(ApprovalTests CXX)
 set(CMAKE_CXX_STANDARD 11)
 add_library(${PROJECT_NAME}
         ApprovalTestsVersion.h
+        ApprovalUtils.cpp
+        ApprovalUtils.h
         Approvals.h
         ApprovalsMacroDefaults.h
         CombinationApprovals.h

@@ -13,6 +13,7 @@
 #include "namers/DefaultNamerDisposer.h"
 #include "core/Options.h"
 #include "utilities/StringMaker.h"
+#include "ApprovalUtils.h"
 
 namespace ApprovalTests
 {
@@ -88,10 +89,7 @@ namespace ApprovalTests
                   const Options& options = Options())
         {
             std::stringstream s;
-            if (!header.empty())
-            {
-                s << header << "\n\n\n";
-            }
+            ApprovalUtils::writeHeader(s, header);
             for (auto it = start; it != finish; ++it)
             {
                 converter(*it, s);

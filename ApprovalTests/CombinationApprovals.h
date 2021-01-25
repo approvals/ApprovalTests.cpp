@@ -8,6 +8,7 @@
 #include "ApprovalTests/utilities/CartesianProduct.h"
 #include "ApprovalTests/utilities/MoreHelpMessages.h"
 #include "Approvals.h"
+#include "ApprovalUtils.h"
 
 namespace ApprovalTests
 {
@@ -54,10 +55,7 @@ namespace ApprovalTests
                                           const Containers&... inputs)
         {
             std::stringstream s;
-            if (!header.empty())
-            {
-                s << header << "\n\n\n";
-            }
+            ApprovalUtils::writeHeader(s, header);
             CartesianProduct::cartesian_product(
                 serialize<Converter>{s, std::forward<Converter>(converter)},
                 input0,
