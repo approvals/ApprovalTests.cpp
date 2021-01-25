@@ -70,6 +70,10 @@
 
 ## v.x.y.z
 
+### CombinationApprovals header
+
+Optional header argument added to [CombinationApprovals](/doc/TestingCombinations.md#top).
+
 ## v.10.6.0
 
 ### FrameworkIntegrations class
