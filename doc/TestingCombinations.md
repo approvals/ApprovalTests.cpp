@@ -120,6 +120,7 @@ Note: Over releases, the position of the optional Reporter parameter to `verifyA
 | Before v.6.0.0 | The optional Reporter argument goes after all the inputs |
 | In v.6.0.0 | The optional Reporter argument should be the **second** argument. |
 | After v.6.0.0 | The optional Reporter argument should be the **first** argument. |
+| After v.8.7.0 | Reporter is now stored in [Options](/doc/Options.md#top), which should be the **first** argument. |
 
 See:
 
