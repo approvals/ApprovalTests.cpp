@@ -14,8 +14,6 @@ Download the latest version (v.10.7.0) of the **single header file** here.</a>
 
 :book: [**Read the Docs**](https://approvaltestscpp.readthedocs.io/en/latest/)
 
-:calendar: We are running an ApprovalTests.cpp [**online course in November 2020**](https://bit.ly/LegacyCppNov2020).
-
 <!-- toc -->
 ## Contents
 
