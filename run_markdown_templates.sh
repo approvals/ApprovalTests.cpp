@@ -13,7 +13,7 @@
 # To uninstall (e.g. to downgrade to a lower version)
 # dotnet tool uninstall -g MarkdownSnippets.Tool
 
-dotnet tool update  -g MarkdownSnippets.Tool --version 22.0.3 || exit
+dotnet tool update  -g MarkdownSnippets.Tool || exit
 mdsnippets || exit 1
 
 echo "------------------------------------------"
