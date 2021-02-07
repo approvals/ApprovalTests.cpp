@@ -13,6 +13,17 @@
 # To uninstall (e.g. to downgrade to a lower version)
 # dotnet tool uninstall -g MarkdownSnippets.Tool
 
+# Maintenance Note:
+#   Before updating the pinned version of MarkdownSnippets.Tool to a new
+#   pinned version, the new version needs to be installed and run via this
+#   this script, and then the python tests in doc/sphinx/tests need to be run.
+#
+#   This is because, occasionally, updates to MarkdownSnippets.Tool change
+#   the hidden comments that it adds to .md files, and this can
+#   break doc/sphinx/markdown_conversion.py and therefore result in
+#   broken formatting or hyperlinks in ReadTheDocs.
+#
+#   See https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/BuildingDocumentation.md#top
 dotnet tool update  -g MarkdownSnippets.Tool --version 22.0.3 || exit
 mdsnippets || exit 1
 
