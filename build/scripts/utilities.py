@@ -115,3 +115,8 @@ def optional_action(step: str, action_function: Callable) -> None:
     if response in ['Y', 'y']:
         action_function()
     print('---------------------------------------------------------------')
+
+
+def ensure_directory_exists(directory):
+    if not os.path.isdir(directory):
+        os.mkdir(directory)
