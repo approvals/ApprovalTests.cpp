@@ -24,6 +24,11 @@ jobs:
       with:
         path: ApprovalTests/ApprovalTests.cpp
 
+    - name: Check type hints
+      run: |
+        cd ApprovalTests/ApprovalTests.cpp/build
+        ./check_type_hints.sh
+
     - name: Check out ApprovalTests.cpp.StarterProject
       uses: actions/checkout@v2
       with:
