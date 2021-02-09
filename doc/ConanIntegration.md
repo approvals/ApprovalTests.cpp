@@ -43,8 +43,8 @@ The `conanfile.txt` file lists the required libraries, and which generator to us
 
 ```
 [requires]
-catch2/2.11.0
-approvaltests.cpp/8.8.0
+catch2/2.13.4
+approvaltests.cpp/10.7.0
 
 [generators]
 cmake_find_package
@@ -138,8 +138,8 @@ The `conanfile.txt` file lists the required libraries, and which generator to us
 
 ```
 [requires]
-catch2/2.11.0
-approvaltests.cpp/8.8.0
+catch2/2.13.4
+approvaltests.cpp/10.7.0
 
 [generators]
 cmake
@@ -237,8 +237,8 @@ The `conanfile.txt` file lists the required libraries but does not say which gen
 # See CMake/Conan.cmake for how 'conan install' is launched from cmake
 
 [requires]
-catch2/2.11.0
-approvaltests.cpp/8.8.0
+catch2/2.13.4
+approvaltests.cpp/10.7.0
 
 # Note that we don't say what generator we want.
 # CMake code will take care of that for us.
