@@ -39,8 +39,11 @@ class PrepareStarterProjectRelease:
     Starting state of Starter Project does not match '{details.old_version.get_version_text()}'
     Check whether:
     1. There were uncommitted changes to version.ini in main project,
-    from a previous release preparation step.
+       from a previous release preparation step.
     2. The Starter Project repo needs pulling.
+    3. This is a CI build of a release tag - in which case the
+       updated Starter Project has not yet been pushed, and this 
+       failure can be ignored.
     ----------------------------------------------------------------
     
     """)
