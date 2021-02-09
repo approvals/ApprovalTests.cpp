@@ -24,6 +24,11 @@ jobs:
       with:
         path: ApprovalTests/ApprovalTests.cpp
 
+    - name: Check out ApprovalTests.cpp.StarterProject
+      uses: actions/checkout@v2
+      with:
+        path: ApprovalTests/ApprovalTests.cpp.StarterProject
+
     - name: Check out claremacrae fork of conan-center-index
       uses: actions/checkout@v2
       with:
@@ -64,3 +69,8 @@ jobs:
         cd ApprovalTests/ApprovalTests.cpp
         cd doc/sphinx/tests
         python3 -m unittest discover -t ../.. --verbose
+
+    - name: Check preparing a release works
+      run: |
+        cd ApprovalTests/ApprovalTests.cpp/build
+        ./prepare_minor_release.py
