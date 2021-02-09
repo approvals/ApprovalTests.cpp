@@ -58,7 +58,7 @@ class PrepareConanRelease:
                 # If we are only preparing a release, not deploying, a failure
                 # to push here (e.g. if being from GitHub Actions, to test release
                 # preparation) is harmless, so just continue.
-                print("INFO: No permission to push to remove repo")
+                print(f"INFO: No permission to push to remote repo in {conan_details.conan_repo_dir}")
 
             new_branch = PrepareConanRelease.get_new_branch_name(project_details, new_version)
             print(repo.heads)
