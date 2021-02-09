@@ -4,6 +4,7 @@ from typing import List
 import pyperclip
 import yaml
 from git import Repo
+from git.exc import GitCommandError
 
 from scripts.conan_release_details import ConanReleaseDetails
 from scripts.git_utilities import GitUtilities
@@ -51,7 +52,13 @@ class PrepareConanRelease:
             repo.git.checkout('master')
 
             repo.remote('upstream').pull('master')
-            repo.remote('origin').push('master')
+            try:
+                repo.remote('origin').push('master')
+            except GitCommandError:
+                # If we are only preparing a release, not deploying, a failure
+                # to push here (e.g. if being from GitHub Actions, to test release
+                # preparation) is harmless, so just continue.
+                print("INFO: No permission to push to remove repo")
 
             new_branch = PrepareConanRelease.get_new_branch_name(project_details, new_version)
             print(repo.heads)
