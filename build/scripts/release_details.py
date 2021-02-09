@@ -4,6 +4,7 @@ from scripts.conan_release_details import ConanReleaseDetails
 from scripts.project_details import ProjectDetails
 from scripts.release_constants import release_constants
 from scripts.release_locations import ReleaseLocations
+from scripts.utilities import ensure_directory_exists
 from scripts.version import Version
 
 
@@ -21,6 +22,7 @@ class ReleaseDetails:
         self.old_single_header = F"{project_details.library_folder_name}.{old_version.get_version_text()}.hpp"
         self.new_single_header = F"{project_details.library_folder_name}.{new_version.get_version_text()}.hpp"
 
+        ensure_directory_exists(release_constants.release_dir)
         self.release_new_single_header = F"{release_constants.release_dir}/{self.new_single_header}"
 
         self.new_release_notes_path = os.path.join(release_constants.release_notes_dir,
