@@ -74,4 +74,4 @@ jobs:
     - name: Check preparing a release works
       run: |
         cd ApprovalTests/ApprovalTests.cpp/build
-        ./prepare_minor_release.py
+        cat automation_hack_all_yesses.txt | ./prepare_minor_release.py
