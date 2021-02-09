@@ -1,0 +1,42 @@
+Testing validation of #include lines, with these header files: ['A.h', 'B.h'] and ['C.hpp']
+
+===============================
+Source snippet:
+# Source code is fine: there should be no error message
+#include <iostream>
+#include "A.h"
+#include "B.h"
+
+=>
+Error message (if any):
+
+===============================
+Source snippet:
+# A.h is incorrectly included
+#include <A.h>
+#include "B.h"
+
+=>
+Error message (if any):
+
+ERROR: There is an incorrect #include line somewhere in the library source.
+The file A.h is incorrectly include via <>.
+Search for "A.h>" in all the library source, and convert to double-quotes instead.
+
+===============================
+Source snippet:
+# B.h and C.hpp are incorrectly included: there should ve error messages for both
+#include <B.h>
+#include <C.hpp>
+
+=>
+Error message (if any):
+
+ERROR: There is an incorrect #include line somewhere in the library source.
+The file B.h is incorrectly include via <>.
+Search for "B.h>" in all the library source, and convert to double-quotes instead.
+
+ERROR: There is an incorrect #include line somewhere in the library source.
+The file C.hpp is incorrectly include via <>.
+Search for "C.hpp>" in all the library source, and convert to double-quotes instead.
+

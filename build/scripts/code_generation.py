@@ -1,4 +1,5 @@
 import os
+from typing import List
 
 from scripts.embed import create_single_header_file
 from scripts.multiline_string_utilities import remove_indentation
@@ -85,22 +86,28 @@ class CppGeneration:
 
         # Check for broken headers in the generated text
         # (but only after we have reverted any modified source code)
-        CppGeneration.validate_single_header_file_content(text)
+        header_files_h = SingleHeaderFile.get_all_files('.', '.h')
+        header_files_hpp = SingleHeaderFile.get_all_files('.', '.hpp')
+        errors = CppGeneration.validate_single_header_file_content(header_files_h, header_files_hpp, text)
+        if errors != "":
+            raise RuntimeError(errors)
 
         return os.path.abspath(self.details.release_new_single_header)
 
     @staticmethod
-    def validate_single_header_file_content(text: str) -> None:
-        files = SingleHeaderFile.get_all_files('.', '.h')
-        files.append("ApprovalTests.hpp")
-        for file in ['ApprovalTests.hpp']:
+    def validate_single_header_file_content(header_files_h: List[str], header_files_hpp: List[str], text: str) -> str:
+        all_header_files = header_files_h + header_files_hpp
+
+        errors = ""
+        for file in all_header_files:
             filename = os.path.split(file)[1]
             if filename + '>' in text:
                 message = f"""
 ERROR: There is an incorrect #include line somewhere in the library source.
 The file {filename} is incorrectly include via <>.
-Search for "{filename}>" in all the library source, and convert to double-quotes instead."""
-                raise RuntimeError(message)
+Search for "{filename}>" in all the library source, and convert to double-quotes instead.\n"""
+                errors += message
+        return errors
 
     def run_for_approval_tests(self, initial_file: str, output_file: str) -> None:
         def mdsnippets_discarder(line: str) -> bool:
