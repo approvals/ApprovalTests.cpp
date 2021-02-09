@@ -6,7 +6,8 @@ from git import Repo
 from scripts.git_utilities import GitUtilities
 from scripts.project_details import ProjectDetails
 from scripts.release_details import ReleaseDetails
-from scripts.utilities import assert_step, replace_text_in_file, use_directory, run, check_url_exists
+from scripts.utilities import assert_step, replace_text_in_file, use_directory, run, check_url_exists, \
+    ensure_directory_exists
 
 
 class PrepareStarterProjectRelease:
@@ -67,7 +68,10 @@ class PrepareStarterProjectRelease:
 
     @staticmethod
     def check_starter_project_builds(details: ReleaseDetails) -> None:
-        with use_directory(F"{details.locations.starter_project_dir}/cmake-build-debug"):
+        build_dir = F"{details.locations.starter_project_dir}/cmake-build-validate-release"
+        ensure_directory_exists(build_dir)
+        with use_directory(build_dir):
+            run(["cmake", ".."])
             run(["cmake", "--build", "."])
 
 
