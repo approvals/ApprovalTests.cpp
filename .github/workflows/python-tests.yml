@@ -36,6 +36,11 @@ jobs:
         repository: claremacrae/conan-center-index
         path: conan/conan-center-index-claremacrae
 
+    - name: Add upstream remote to conan-center-index-claremacrae, for testing dummy release
+      run: |
+        cd conan/conan-center-index-claremacrae
+        git remote add upstream https://github.com/conan-io/conan-center-index.git
+
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
