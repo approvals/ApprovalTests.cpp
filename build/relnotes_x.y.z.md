@@ -5,6 +5,6 @@
 * **New features**
     * None
 * **Bug fixes**
-    * None
+    * Fix incorrect line '#include <ApprovalTests.hpp>' in single header, that was present in v.10.6.0 and v.10.7.0 (#170)
 * **Other changes**
     * None
