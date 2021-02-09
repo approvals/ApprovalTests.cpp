@@ -27,6 +27,7 @@ jobs:
     - name: Check out ApprovalTests.cpp.StarterProject
       uses: actions/checkout@v2
       with:
+        repository: approvals/ApprovalTests.cpp.StarterProject
         path: ApprovalTests/ApprovalTests.cpp.StarterProject
 
     - name: Check out claremacrae fork of conan-center-index
