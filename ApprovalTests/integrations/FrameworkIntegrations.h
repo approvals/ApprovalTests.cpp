@@ -1,6 +1,6 @@
 #pragma once
 
-#include <ApprovalTests.hpp>
+#include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/core/FileApprover.h"
 
 namespace ApprovalTests
