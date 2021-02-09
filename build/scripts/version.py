@@ -66,7 +66,7 @@ class Version:
     def get_version_text_without_v(self) -> str:
         return self.get_version_text('')
 
-    def __lt__(self, other: Version):
+    def __lt__(self, other: Version) -> bool:
         if self.major != other.major:
             return (self.major < other.major)
 

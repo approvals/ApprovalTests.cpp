@@ -117,6 +117,6 @@ def optional_action(step: str, action_function: Callable) -> None:
     print('---------------------------------------------------------------')
 
 
-def ensure_directory_exists(directory):
+def ensure_directory_exists(directory: str) -> None:
     if not os.path.isdir(directory):
         os.mkdir(directory)
