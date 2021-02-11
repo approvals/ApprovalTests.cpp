@@ -12,7 +12,8 @@
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
     * [Existing Project - with CATCH_CONFIG_MAIN](#existing-project---with-catch_config_main)
-    * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
+    * [Existing Project - with your main()](#existing-project---with-your-main)
+  * [Code to copy for your first Catch2 Approvals test](#code-to-copy-for-your-first-catch2-approvals-test)<!-- endToc -->
 
 ## Introduction
 
@@ -88,6 +89,62 @@ You should make the following additions to your own source file that contains `m
 <sup><a href='/examples/catch2_existing_main/main.cpp#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch_existing_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
+## Code to copy for your first Catch2 Approvals test
+
+Here is sample code to create your `main()` function, to set up Approval Tests' Catch2 integration.
+
+We called this file `catch2_starter_main.cpp`:
+
+<!-- snippet: catch2_starter_main.cpp -->
+<a id='snippet-catch2_starter_main.cpp'></a>
+```cpp
+#define APPROVALS_CATCH
+#include "ApprovalTests.hpp"
+
+using namespace ApprovalTests;
+
+// This puts "received" and "approved" files in approval_tests/ sub-directory,
+// keeping the test source directory tidy:
+auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
+```
+<sup><a href='/examples/catch2_starter/catch2_starter_main.cpp#L1-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_starter_main.cpp' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Here is sample code to create your first test. We called this file `catch2_starter_test.cpp`:
+
+<!-- snippet: catch2_starter_test.cpp -->
+<a id='snippet-catch2_starter_test.cpp'></a>
+```cpp
+#include "catch2/catch.hpp"
+#include "ApprovalTests/Approvals.h"
+
+using namespace ApprovalTests;
+
+TEST_CASE("catch2_starter sample")
+{
+    Approvals::verify(42);
+}
+```
+<sup><a href='/examples/catch2_starter/catch2_starter_test.cpp#L1-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+And finally, here is sample code to put in your `CMakeLists.txt` file:
+
+<!-- snippet: catch2_starter_cmake -->
+<a id='snippet-catch2_starter_cmake'></a>
+```txt
+set(EXE_NAME catch2_starter)
+set(CMAKE_CXX_STANDARD 11)
+add_executable(${EXE_NAME}
+        catch2_starter_main.cpp
+        catch2_starter_test.cpp
+        )
+target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests Catch2::Catch2)
+
+add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
+```
+<sup><a href='/examples/catch2_starter/CMakeLists.txt#L5-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_starter_cmake' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 ---
 
