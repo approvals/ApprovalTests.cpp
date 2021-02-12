@@ -1,5 +1,5 @@
 #include "catch2/catch.hpp"
-#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests.hpp"
 
 using namespace ApprovalTests;
 

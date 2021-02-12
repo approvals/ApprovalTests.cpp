@@ -116,7 +116,7 @@ Here is sample code to create your first test. We called this file `catch2_start
 <a id='snippet-catch2_starter_test.cpp'></a>
 ```cpp
 #include "catch2/catch.hpp"
-#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests.hpp"
 
 using namespace ApprovalTests;
 
