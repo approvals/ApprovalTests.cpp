@@ -13,6 +13,7 @@
 // at run-time instead, for test frameworks that use it to
 // detect the source file name.
 
+/*
 #ifndef APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK
 // clang-format off
 static_assert(
@@ -27,3 +28,4 @@ __FILE__
     // clang-format on
 );
 #endif // APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK
+*/
