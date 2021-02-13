@@ -92,9 +92,10 @@ TEST_CASE("Find from parent")
 {
     TestNameResetter resetter;
     TestName name;
-    std::string junkDir  = "/non/existing/directory";
+    std::string junkDir = "/non/existing/directory";
     TestName::directoryPrefix = junkDir;
-    auto file = name.checkParentDirectoriesForFile("tests/DocTest_Tests/namers/NamerTests.cpp");
+    auto file =
+        name.checkParentDirectoriesForFile("tests/DocTest_Tests/namers/NamerTests.cpp");
     std::cout << "File name = " << file << std::endl;
     CHECK(FileUtils::fileExists(file));
     CHECK(TestName::directoryPrefix != junkDir);

@@ -18,8 +18,7 @@ namespace ApprovalTests
 
     public:
         static std::string getMisconfiguredBuildHelp(const std::string& fileName);
-        std::string checkParentDirectoriesForFile(
-            const std::string& file);
+        std::string checkParentDirectoriesForFile(const std::string& file);
 
         std::vector<std::string> sections;
         static std::string directoryPrefix;

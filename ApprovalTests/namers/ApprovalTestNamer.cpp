@@ -26,8 +26,7 @@ namespace ApprovalTests
         return SystemUtils::checkFilenameCase(newFileName);
     }
 
-    std::string TestName::checkParentDirectoriesForFile(
-        const std::string& file)
+    std::string TestName::checkParentDirectoriesForFile(const std::string& file)
     {
         auto newFileName = directoryPrefix + file;
 
