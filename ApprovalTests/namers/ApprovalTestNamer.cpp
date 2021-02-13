@@ -17,6 +17,12 @@ namespace ApprovalTests
 
     void TestName::setFileName(const std::string& file)
     {
+        if (file.empty())
+        {
+            // Needed for Boost - don't search for a file, if the name is empty
+            fileName = file;
+            return;
+        }
         fileName = directoryPrefix + file;
         if (!FileUtils::fileExists(fileName))
         {
