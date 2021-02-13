@@ -17,38 +17,42 @@ namespace ApprovalTests
 
     void TestName::setFileName(const std::string& file)
     {
-        if (file.empty())
-        {
-            // Needed for Boost - don't search for a file, if the name is empty
-            fileName = file;
-            return;
-        }
-        fileName = directoryPrefix + file;
-        if (!FileUtils::fileExists(fileName))
+        fileName = file.empty() ? handleBoostQuirks() : findFileName(file);
+    }
+
+    std::string TestName::findFileName(const std::string& file)
+    {
+        auto newFileName = checkParentDirectoriesForFile(file);
+        return SystemUtils::checkFilenameCase(newFileName);
+    }
+
+    std::string TestName::checkParentDirectoriesForFile(
+        const std::string& file)
+    {
+        auto newFileName = directoryPrefix + file;
+
+        if (!FileUtils::fileExists(newFileName))
         {
             // If the build system is Ninja, try looking several levels higher...
-
-            // clang-format off
-            std::vector<std::string> alternativePrefixes{
-                "../",
-                "../../",
-                "../../../",
-                "../../../../",
-                "../../../../../",
-            };
-            // clang-format on
-            for (const auto& prefix : alternativePrefixes)
+            std::string backOne = ".." + SystemUtils::getDirectorySeparator();
+            std::string prefix;
+            for (int i = 0; i != 10; i++)
             {
-                const auto candidateName = prefix + file;
+                prefix += backOne;
+                auto candidateName = prefix + file;
                 if (FileUtils::fileExists(candidateName))
                 {
-                    fileName = candidateName;
                     directoryPrefix = prefix;
-                    break;
+                    return candidateName;
                 }
             }
         }
-        fileName = SystemUtils::checkFilenameCase(fileName);
+        return newFileName;
+    }
+
+    std::string TestName::handleBoostQuirks() const
+    {
+        return "";
     }
 
     void TestName::checkBuildConfiguration(const std::string& fileName)

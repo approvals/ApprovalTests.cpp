@@ -4,6 +4,7 @@
 #include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 
+#include <iostream>
 #include <memory>
 
 using namespace ApprovalTests;
@@ -73,4 +74,28 @@ TEST_CASE("AdditionalSections")
     }
     require_ends_with(namer->getApprovedFile(".txt"),
                       "NamerTests.AdditionalSections.approved.txt");
+}
+
+struct TestNameResetter
+{
+    TestNameResetter() : oldPrefix_(TestName::directoryPrefix)
+    {
+    }
+    ~TestNameResetter()
+    {
+        TestName::directoryPrefix = oldPrefix_;
+    }
+    std::string oldPrefix_;
+};
+
+TEST_CASE("Find from parent")
+{
+    TestNameResetter resetter;
+    TestName name;
+    std::string junkDir  = "/non/existing/directory";
+    TestName::directoryPrefix = junkDir;
+    auto file = name.checkParentDirectoriesForFile("tests/DocTest_Tests/namers/NamerTests.cpp");
+    std::cout << "File name = " << file << std::endl;
+    CHECK(FileUtils::fileExists(file));
+    CHECK(TestName::directoryPrefix != junkDir);
 }
