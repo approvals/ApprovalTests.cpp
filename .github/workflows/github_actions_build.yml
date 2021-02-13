@@ -115,7 +115,14 @@ jobs:
             generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
             relative_build_dir_path: ''
 
-          - job-name: 'gcc10 ninja'
+          - job-name: 'gcc10 ninja in-source'
+            os-version: '18.04'
+            c-compiler: 'gcc-10'
+            cxx-compiler: 'g++-10'
+            generator: '"Ninja"'
+            relative_build_dir_path: ''
+
+          - job-name: 'gcc10 ninja out-of-source'
             os-version: '18.04'
             c-compiler: 'gcc-10'
             cxx-compiler: 'g++-10'
@@ -174,7 +181,13 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: xcode-11.7-ninja
+          - job-name: 'xcode-11.7-ninja in-source'
+            xcode-version: '11.7'
+            os-version: '10.15'
+            generator: '"Ninja"'
+            relative_build_dir_path: ''
+
+          - job-name: 'xcode-11.7-ninja out-of-source'
             xcode-version: '11.7'
             os-version: '10.15'
             generator: '"Ninja"'
