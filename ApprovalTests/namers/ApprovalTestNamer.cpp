@@ -7,6 +7,8 @@
 
 namespace ApprovalTests
 {
+    std::string TestName::directoryPrefix;
+
     const std::string& TestName::getFileName() const
     {
         checkBuildConfiguration(fileName);
@@ -15,7 +17,32 @@ namespace ApprovalTests
 
     void TestName::setFileName(const std::string& file)
     {
-        fileName = SystemUtils::checkFilenameCase(file);
+        fileName = directoryPrefix + file;
+        if (!FileUtils::fileExists(fileName))
+        {
+            // If the build system is Ninja, try looking several levels higher...
+
+            // clang-format off
+            std::vector<std::string> alternativePrefixes{
+                "../",
+                "../../",
+                "../../../",
+                "../../../../",
+                "../../../../../",
+            };
+            // clang-format on
+            for (const auto& prefix : alternativePrefixes)
+            {
+                const auto candidateName = prefix + file;
+                if (FileUtils::fileExists(candidateName))
+                {
+                    fileName = candidateName;
+                    directoryPrefix = prefix;
+                    break;
+                }
+            }
+        }
+        fileName = SystemUtils::checkFilenameCase(fileName);
     }
 
     void TestName::checkBuildConfiguration(const std::string& fileName)

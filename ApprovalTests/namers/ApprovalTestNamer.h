@@ -23,6 +23,7 @@ namespace ApprovalTests
 
     private:
         std::string fileName;
+        static std::string directoryPrefix;
     };
 
     class TestConfiguration
