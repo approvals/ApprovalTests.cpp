@@ -4,6 +4,7 @@
 #include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 
+#include <filesystem>
 #include <iostream>
 #include <memory>
 
@@ -92,10 +93,11 @@ TEST_CASE("Find from parent")
 {
     TestNameResetter resetter;
     TestName name;
-    std::string junkDir = "/non/existing/directory";
+    std::string junkDir = "/non/existing/directory/";
     TestName::directoryPrefix = junkDir;
     auto file =
         name.checkParentDirectoriesForFile("tests/DocTest_Tests/namers/NamerTests.cpp");
+    std::cout << "Working directory = " << std::filesystem::absolute(".") << std::endl;
     std::cout << "File name = " << file << std::endl;
     CHECK(FileUtils::fileExists(file));
     CHECK(TestName::directoryPrefix != junkDir);
