@@ -122,10 +122,13 @@ using namespace ApprovalTests;
 
 TEST_CASE("catch2_starter sample")
 {
+    // TODO Replace 42 with the value or object whose contents you are verifying.
+    // For help, see:
+    // https://approvaltestscpp.readthedocs.io/en/latest/generated_docs/ToString.html
     Approvals::verify(42);
 }
 ```
-<sup><a href='/examples/catch2_starter/catch2_starter_test.cpp#L1-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/catch2_starter/catch2_starter_test.cpp#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 And finally, here is sample code to put in your `CMakeLists.txt` file:
