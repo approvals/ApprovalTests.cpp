@@ -102,3 +102,27 @@ TEST_CASE("Find from parent")
     CHECK(FileUtils::fileExists(file));
     CHECK(TestName::directoryPrefix != junkDir);
 }
+
+TEST_CASE("Check non-existent file reports misconfigured build")
+{
+
+    TestNameResetter resetter;
+    TestName name;
+    TestName::directoryPrefix = "";
+    std::string nonExistentPath = "/I/Do/Not/Exist.cpp";
+    name.setFileName(nonExistentPath);
+    try
+    {
+        auto file = name.getFileName(); // Simulate no tests having yet been run
+        std::cout << "File name = " << file << std::endl;
+        FAIL("TestName::getFileName() on non-existent file should have thrown");
+    }
+    catch (const std::runtime_error& e)
+    {
+        std::string exceptionText = e.what();
+        std::cout << "Exception text was:\n" << exceptionText << std::endl;
+        CHECK(StringUtils::contains(exceptionText, nonExistentPath));
+        CHECK(StringUtils::contains(
+            exceptionText, "There seems to be a problem with your build configuration."));
+    }
+}
