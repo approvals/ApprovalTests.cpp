@@ -51,7 +51,7 @@ If you ever want to create a custom namer, Approval Tests has a mechanism to cha
 auto default_namer_disposer =
     Approvals::useAsDefaultNamer([]() { return std::make_shared<FakeNamer>(); });
 ```
-<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L26-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_default_namer' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L28-L31' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_default_namer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Alternative Namers
@@ -74,7 +74,7 @@ To register this as your default namer, use:
 auto default_namer_disposer =
     SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
 ```
-<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L46-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_separate_directories_namer' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L48-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_separate_directories_namer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 When using this namer, you will want to add the following line to your `.gitignore` file:

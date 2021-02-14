@@ -40,7 +40,7 @@ Compiling tests in Ninja-generated builds gives a compilation failure, with this
 "The filename is: "
 __FILE__
 ```
-<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L21-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L22-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Test Failure
