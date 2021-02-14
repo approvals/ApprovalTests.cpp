@@ -120,7 +120,6 @@ TEST_CASE("Check non-existent file reports misconfigured build")
     catch (const std::runtime_error& e)
     {
         std::string exceptionText = e.what();
-        std::cout << "Exception text was:\n" << exceptionText << std::endl;
         CHECK(StringUtils::contains(exceptionText, nonExistentPath));
         CHECK(StringUtils::contains(
             exceptionText, "There seems to be a problem with your build configuration."));
