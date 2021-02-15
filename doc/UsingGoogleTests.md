@@ -13,8 +13,8 @@
     * [Existing Project - with your main()](#existing-project---with-your-main)
   * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
     * [Customizing](#customizing)
-        * [Custom Suffixes](#custom-suffixes)
-        * [Custom Anything](#custom-anything)<!-- endToc -->
+      * [Custom Suffixes](#custom-suffixes)
+      * [Custom Anything](#custom-anything)<!-- endToc -->
 
 ## Introduction
 

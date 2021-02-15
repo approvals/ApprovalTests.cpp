@@ -9,8 +9,8 @@
   * [Introduction](#introduction)
   * [Requirements](#requirements)
   * [Getting Started With doctest](#getting-started-with-doctest)
-      * [New Project](#new-project)
-      * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
+    * [New Project](#new-project)
+    * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
 
 ## Introduction
 

@@ -9,9 +9,9 @@
     * [CppUTest Integration Limitations](#cpputest-integration-limitations)
   * [Requirements](#requirements)
   * [Getting Started With CppUTest](#getting-started-with-cpputest)
-      * [Starter Project](#starter-project)
-      * [New Project](#new-project)
-      * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
+    * [Starter Project](#starter-project)
+    * [New Project](#new-project)
+    * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
 
 ## Introduction
 
