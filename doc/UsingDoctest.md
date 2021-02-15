@@ -29,7 +29,6 @@ Approval Tests for doctest requires that a file called the following is found:
 
 <!-- snippet: required_header_for_doctest -->
 <a id='snippet-required_header_for_doctest'></a>
-
 ```h
 #include <doctest/doctest.h>
 ```

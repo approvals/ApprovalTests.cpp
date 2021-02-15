@@ -27,7 +27,6 @@ Approval Tests for \[Boost\].UT requires that a file called the following is fou
 
 <!-- snippet: required_header_for_ut -->
 <a id='snippet-required_header_for_ut'></a>
-
 ```h
 #include <boost/ut.hpp>
 ```

@@ -32,7 +32,6 @@ Approval Tests requires that a file called the following is found:
 
 <!-- snippet: required_header_for_catch -->
 <a id='snippet-required_header_for_catch'></a>
-
 ```h
 #include <catch2/catch.hpp>
 ```
