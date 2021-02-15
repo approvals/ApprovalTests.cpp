@@ -8,6 +8,7 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [Ninja builds work when inside source tree](#ninja-builds-work-when-inside-source-tree)
   * [v.10.7.0](#v1070)
     * [CombinationApprovals header](#combinationapprovals-header)
   * [v.10.6.0](#v1060)
@@ -71,6 +72,10 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+### Ninja builds work when inside source tree
+
+The entire [Misconfigured Builds](/doc/TroubleshootingMisconfiguredBuild.md#top) page of workarounds is no needed, but is retained for those using older releases.
 
 ## v.10.7.0
 
