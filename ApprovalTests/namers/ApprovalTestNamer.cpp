@@ -7,6 +7,8 @@
 
 namespace ApprovalTests
 {
+    std::string TestName::directoryPrefix;
+
     const std::string& TestName::getFileName() const
     {
         checkBuildConfiguration(fileName);
@@ -15,7 +17,41 @@ namespace ApprovalTests
 
     void TestName::setFileName(const std::string& file)
     {
-        fileName = SystemUtils::checkFilenameCase(file);
+        fileName = file.empty() ? handleBoostQuirks() : findFileName(file);
+    }
+
+    std::string TestName::findFileName(const std::string& file)
+    {
+        auto newFileName = checkParentDirectoriesForFile(file);
+        return SystemUtils::checkFilenameCase(newFileName);
+    }
+
+    std::string TestName::checkParentDirectoriesForFile(const std::string& file)
+    {
+        auto newFileName = directoryPrefix + file;
+
+        if (!FileUtils::fileExists(newFileName))
+        {
+            // If the build system is Ninja, try looking several levels higher...
+            std::string backOne = ".." + SystemUtils::getDirectorySeparator();
+            std::string prefix;
+            for (int i = 0; i != 10; i++)
+            {
+                prefix += backOne;
+                auto candidateName = prefix + file;
+                if (FileUtils::fileExists(candidateName))
+                {
+                    directoryPrefix = prefix;
+                    return candidateName;
+                }
+            }
+        }
+        return newFileName;
+    }
+
+    std::string TestName::handleBoostQuirks() const
+    {
+        return "";
     }
 
     void TestName::checkBuildConfiguration(const std::string& fileName)

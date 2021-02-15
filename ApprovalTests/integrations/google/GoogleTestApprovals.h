@@ -3,7 +3,6 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "GoogleCustomizationsFactory.h"
 #include "ApprovalTests/utilities/StringUtils.h"
-#include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
 
 #ifdef APPROVALS_GOOGLETEST_EXISTING_MAIN
 #define APPROVALS_GOOGLETEST

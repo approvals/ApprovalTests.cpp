@@ -18,10 +18,15 @@ namespace ApprovalTests
 
     public:
         static std::string getMisconfiguredBuildHelp(const std::string& fileName);
+        std::string checkParentDirectoriesForFile(const std::string& file);
 
         std::vector<std::string> sections;
+        static std::string directoryPrefix;
 
     private:
+        std::string handleBoostQuirks() const;
+        std::string findFileName(const std::string& file);
+
         std::string fileName;
     };
 

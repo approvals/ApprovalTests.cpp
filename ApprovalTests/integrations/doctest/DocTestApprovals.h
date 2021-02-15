@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
-#include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
 
 #if defined(APPROVALS_DOCTEST_EXISTING_MAIN)
 #define APPROVALS_DOCTEST

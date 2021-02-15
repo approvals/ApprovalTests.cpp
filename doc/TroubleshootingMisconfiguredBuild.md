@@ -5,47 +5,53 @@
 <!-- toc -->
 ## Contents
 
-  * [Feedback Requested](#feedback-requested)
-  * [Symptoms](#symptoms)
-    * [Compilation Error](#compilation-error)
-    * [Test Failure](#test-failure)
-  * [The problem](#the-problem)
-    * [Ninja generator](#ninja-generator)
-  * [Solutions](#solutions)
-    * [Use a Ninja Unity build, if you can](#use-a-ninja-unity-build-if-you-can)
-    * [Move your build outside the source tree](#move-your-build-outside-the-source-tree)
-    * [Force the compiler to use full-paths in `__FILE__`](#force-the-compiler-to-use-full-paths-in-__file__)
-    * [With \[Boost\].UT, check compiler and build options](#with-boostut-check-compiler-and-build-options)
-    * [Use a non-Ninja generator](#use-a-non-ninja-generator)
-  * [Specific Situations](#specific-situations)
-    * [Situation: Visual Studio with Visual C++ compiler (cl.exe)](#situation-visual-studio-with-visual-c-compiler-clexe)
-    * [Situation: Visual Studio with Clang compiler (clang-cl.exe)](#situation-visual-studio-with-clang-compiler-clang-clexe)
-    * [Situation: CMake's Ninja Generator](#situation-cmakes-ninja-generator)<!-- endToc -->
+  * [Version v.10.8.0](#version-v1080)
+  * [Before v.10.8.0](#before-v1080)
+    * [Feedback Requested](#feedback-requested)
+    * [Symptoms](#symptoms)
+      * [Compilation Error](#compilation-error)
+      * [Test Failure](#test-failure)
+    * [The problem](#the-problem)
+      * [Ninja generator](#ninja-generator)
+    * [Solutions](#solutions)
+      * [Use a Ninja Unity build, if you can](#use-a-ninja-unity-build-if-you-can)
+      * [Move your build outside the source tree](#move-your-build-outside-the-source-tree)
+      * [Force the compiler to use full-paths in `__FILE__`](#force-the-compiler-to-use-full-paths-in-__file__)
+      * [With \[Boost\].UT, check compiler and build options](#with-boostut-check-compiler-and-build-options)
+      * [Use a non-Ninja generator](#use-a-non-ninja-generator)
+    * [Specific Situations](#specific-situations)
+      * [Situation: Visual Studio with Visual C++ compiler (cl.exe)](#situation-visual-studio-with-visual-c-compiler-clexe)
+      * [Situation: Visual Studio with Clang compiler (clang-cl.exe)](#situation-visual-studio-with-clang-compiler-clang-clexe)
+      * [Situation: CMake's Ninja Generator](#situation-cmakes-ninja-generator)<!-- endToc -->
 
-## Feedback Requested
+## Version v.10.8.0
 
-This is living documentation. If you discover extra scenarios or better solutions, please contribute back via bug reports or pull requests. Thank you. 
+Significant improvements regarding the Ninja build system were made in Approval Tests v.10.8.0. Our suggestion is that
+if you are using an older version, start by upgrading.
 
-## Symptoms
+## Before v.10.8.0
 
-### Compilation Error
+### Feedback Requested
 
-Compiling tests in Ninja-generated builds gives a compilation failure, with this message:
+This is living documentation. If you discover extra scenarios or better solutions, please contribute back via bug
+reports or pull requests. Thank you.
 
-<!-- snippet: compiler_error_for_misconfigured_build -->
-<a id='snippet-compiler_error_for_misconfigured_build'></a>
+### Symptoms
+
+#### Compilation Error
+
+Prior to v.10.8.0, compiling tests in Ninja-generated builds gives a compilation failure, with this message:
+
 ```h
 "There seems to be a problem with your build configuration, probably with Ninja. "
 "Please visit https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md "
 "The filename is: "
 __FILE__
 ```
-<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L21-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Start of snippet'>anchor</a></sup>
-<!-- endSnippet -->
 
-### Test Failure
+#### Test Failure
 
-Running tests gives output such as the following:
+Prior to v.10.8.0, running tests gives output such as the following:
 
 <!-- snippet: ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt -->
 <a id='snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt'></a>
@@ -66,9 +72,9 @@ Running tests gives output such as the following:
 <sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-## The problem
+### The problem
 
-### Ninja generator
+#### Ninja generator
 
 Approval Tests depends on the test framework to provide access to the full path of the source file of the test being run.
 
@@ -88,11 +94,11 @@ This means that **if Ninja is used to create a build-space that is inside the so
 
 Note that Visual C++ has a way to over-ride this and force absolute paths, if given `/FC`. This is described below, in [Situation: Visual Studio with Visual C++ compiler (cl.exe)](/doc/TroubleshootingMisconfiguredBuild.md#situation-visual-studio-with-visual-c-compiler-clexe).
 
-## Solutions
+### Solutions
 
 This section lists the known types of workaround for the above problems.
 
-### Use a Ninja Unity build, if you can
+#### Use a Ninja Unity build, if you can
 
 When used to generate Unity builds, the Ninja build generator creates executables that run correctly with Approval Tests, finding the source file location correctly. 
 
@@ -127,7 +133,7 @@ cmake -G "Ninja" -DCMAKE_UNITY_BUILD=yes \
     <source_location>
 ```
 
-### Move your build outside the source tree
+#### Move your build outside the source tree
 
 The problem with Ninja builds generating relative paths to source files only occurs if the build is inside the source tree.
 
@@ -135,11 +141,11 @@ If you are able to move your build outside the source tree, Ninja will generate 
 
 If you need help to do this, see the various sections in [Specific Situations](/doc/TroubleshootingMisconfiguredBuild.md#specific-situations) below.
 
-### Force the compiler to use full-paths in `__FILE__`
+#### Force the compiler to use full-paths in `__FILE__`
 
 This can be done with Visual C++: see below.
 
-### With \[Boost\].UT, check compiler and build options
+#### With \[Boost\].UT, check compiler and build options
 
 The \[Boost\].UT framework uses very recent features of C++, and is changing somewhat rapidly.
 
@@ -169,13 +175,13 @@ These are possible causes:
 * Check that your compiler and build options satisfy the [requirements for using Approval Tests With \[Boost\].UT](/doc/UsingUT.md#requirements).
 * If you have downloaded your own copy of the \[Boost\].UT framework, it's possible that it is not compatible with the ApprovalTests.cpp version you are using. It will be worth comparing your version of the \[Boost\].UT header with the one in this project: [third_party/ut/include/boost/ut.hpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/third_party/ut/include/boost/ut.hpp).
 
-### Use a non-Ninja generator
+#### Use a non-Ninja generator
 
 If you can't use any of the above, your only option to work around this Ninja limitation is probably to switch to a [different CMake generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) than Ninja.
 
-## Specific Situations
+### Specific Situations
 
-### Situation: Visual Studio with Visual C++ compiler (cl.exe)
+#### Situation: Visual Studio with Visual C++ compiler (cl.exe)
 
 Use `/FC` to make Visual Studio emit the full path in diagnostics, and `__FILE__` ([documentation](https://docs.microsoft.com/en-us/cpp/build/reference/fc-full-path-of-source-code-file-in-diagnostics?view=vs-2019)).
 
@@ -195,7 +201,7 @@ Or this:
 target_compile_options(my_program_name PUBLIC $<$<CXX_COMPILER_ID:MSVC>:/FC>)
 ```
 
-### Situation: Visual Studio with Clang compiler (clang-cl.exe)
+#### Situation: Visual Studio with Clang compiler (clang-cl.exe)
 
 We have not been able to find a compiler flag that makes clang-cl put full paths in `__FILE__`.
 
@@ -219,7 +225,7 @@ This would put the build outputs in to:
 
 `C:\Users\YourUserName\CMakeBuilds\MyProjectName\build`
 
-### Situation: CMake's Ninja Generator
+#### Situation: CMake's Ninja Generator
 
 The easiest solution is probably to use a [different CMake generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) instead of Ninja.
 

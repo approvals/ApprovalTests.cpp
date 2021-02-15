@@ -36,3 +36,9 @@ TEST_CASE("readFileReturnEmptyIfMissing() returns empty string if file is missin
     REQUIRE("" == ApprovalTests::FileUtils::readFileReturnEmptyIfMissing(
                       "some file name that does not exist 1234567890.txt"));
 }
+
+TEST_CASE("check impossible directories don't explode")
+{
+    CHECK(!FileUtils::fileExists(
+        "../../../../../../../../../../../../../../../../../../../../../a.txt"));
+}

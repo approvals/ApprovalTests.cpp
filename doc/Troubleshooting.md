@@ -75,16 +75,12 @@ See [Troubleshooting Misconfigured Main](/doc/TroubleshootingMisconfiguredMain.m
 
 Compiling tests in Ninja-generated builds gives a compilation failure, with this message:
 
-<!-- snippet: compiler_error_for_misconfigured_build -->
-<a id='snippet-compiler_error_for_misconfigured_build'></a>
 ```h
 "There seems to be a problem with your build configuration, probably with Ninja. "
 "Please visit https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md "
 "The filename is: "
 __FILE__
 ```
-<sup><a href='/ApprovalTests/integrations/CheckFileMacroIsAbsolute.h#L21-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-compiler_error_for_misconfigured_build' title='Start of snippet'>anchor</a></sup>
-<!-- endSnippet -->
 
 **Symptom 2: Test Failure**
 
