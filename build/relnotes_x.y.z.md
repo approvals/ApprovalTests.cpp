@@ -5,7 +5,6 @@
 * **New features**
     * None
 * **Bug fixes**
-    * Ninja builds now work when inside source tree. (#171)
-        * The entire [Misconfigured Builds](/doc/TroubleshootingMisconfiguredBuild.md#top) page of workarounds is no needed, but is retained for those using older releases.
+    * None
 * **Other changes**
     * None

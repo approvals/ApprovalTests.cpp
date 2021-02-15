@@ -8,6 +8,7 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.8.0](#v1080)
     * [Ninja builds work when inside source tree](#ninja-builds-work-when-inside-source-tree)
   * [v.10.7.0](#v1070)
     * [CombinationApprovals header](#combinationapprovals-header)
@@ -72,6 +73,8 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+## v.10.8.0
 
 ### Ninja builds work when inside source tree
 

@@ -10,8 +10,8 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](/CODE_OF_CONDUCT.md#top)
 [![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/approvaltests.cpp.svg)](https://conan.io/center/approvaltests.cpp)
 
-:arrow_down: <a href="https://github.com/approvals/ApprovalTests.cpp/releases/download/v.10.7.1/ApprovalTests.v.10.7.1.hpp">
-Download the latest version (v.10.7.1) of the **single header file** here.</a>
+:arrow_down: <a href="https://github.com/approvals/ApprovalTests.cpp/releases/download/v.10.8.0/ApprovalTests.v.10.8.0.hpp">
+Download the latest version (v.10.8.0) of the **single header file** here.</a>
 
 :book: [**Read the Docs**](https://approvaltestscpp.readthedocs.io/en/latest/)
 
