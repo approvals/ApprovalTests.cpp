@@ -5,26 +5,33 @@
 <!-- toc -->
 ## Contents
 
-  * [Feedback Requested](#feedback-requested)
-  * [Symptoms](#symptoms)
+* [Version v.10.8.0](#version-v1080)
+* [Feedback Requested](#feedback-requested)
+* [Symptoms](#symptoms)
     * [Compilation Error](#compilation-error)
     * [Test Failure](#test-failure)
-  * [The problem](#the-problem)
+* [The problem](#the-problem)
     * [Ninja generator](#ninja-generator)
-  * [Solutions](#solutions)
+* [Solutions](#solutions)
     * [Use a Ninja Unity build, if you can](#use-a-ninja-unity-build-if-you-can)
     * [Move your build outside the source tree](#move-your-build-outside-the-source-tree)
     * [Force the compiler to use full-paths in `__FILE__`](#force-the-compiler-to-use-full-paths-in-__file__)
     * [With \[Boost\].UT, check compiler and build options](#with-boostut-check-compiler-and-build-options)
     * [Use a non-Ninja generator](#use-a-non-ninja-generator)
-  * [Specific Situations](#specific-situations)
+* [Specific Situations](#specific-situations)
     * [Situation: Visual Studio with Visual C++ compiler (cl.exe)](#situation-visual-studio-with-visual-c-compiler-clexe)
     * [Situation: Visual Studio with Clang compiler (clang-cl.exe)](#situation-visual-studio-with-clang-compiler-clang-clexe)
     * [Situation: CMake's Ninja Generator](#situation-cmakes-ninja-generator)<!-- endToc -->
 
+## Version v.10.8.0
+
+Significant improvements regarding the Ninja build system were made in Approval Tests v.10.8.0. Our suggestion is that
+if you are using an older version, start by upgrading.
+
 ## Feedback Requested
 
-This is living documentation. If you discover extra scenarios or better solutions, please contribute back via bug reports or pull requests. Thank you. 
+This is living documentation. If you discover extra scenarios or better solutions, please contribute back via bug
+reports or pull requests. Thank you.
 
 ## Symptoms
 
