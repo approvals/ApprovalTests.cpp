@@ -57,7 +57,6 @@
 #include "ApprovalTests/CombinationApprovals.h"
 #include "ApprovalTests/comparators/TextFileComparator.h"
 #include "ApprovalTests/core/ApprovalException.h"
-#include "ApprovalTests/integrations/CheckFileMacroIsAbsolute.h"
 #include "ApprovalTests/integrations/FrameworkIntegrations.h"
 #include "ApprovalTests/integrations/boost_test/BoostTestApprovals.h"
 #include "ApprovalTests/integrations/catch/Catch2Approvals.h"
