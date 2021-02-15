@@ -89,14 +89,25 @@ struct TestNameResetter
     std::string oldPrefix_;
 };
 
+std::string getFileName()
+{
+    if (!SystemUtils::safeGetEnv("APPVEYOR").empty())
+    {
+        return "approvaltests-cpp/tests/DocTest_Tests/namers/NamerTests.cpp";
+    }
+    else
+    {
+        return "ApprovalTests.cpp/tests/DocTest_Tests/namers/NamerTests.cpp";
+    }
+}
+
 TEST_CASE("Find from parent")
 {
     TestNameResetter resetter;
     TestName name;
     std::string junkDir = "/non/existing/directory/";
     TestName::directoryPrefix = junkDir;
-    auto file = name.checkParentDirectoriesForFile(
-        "ApprovalTests.cpp/tests/DocTest_Tests/namers/NamerTests.cpp");
+    auto file = name.checkParentDirectoriesForFile(getFileName());
     //    std::cout << "Working directory = " << std::filesystem::absolute(".") << std::endl;
     std::cout << "File name = " << file << std::endl;
     CHECK(FileUtils::fileExists(file));
