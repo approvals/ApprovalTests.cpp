@@ -9,15 +9,17 @@
   * [Introduction](#introduction)
   * [Requirements](#requirements)
   * [Getting Started With doctest](#getting-started-with-doctest)
-    * [New Project](#new-project)
-    * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
-
+      * [New Project](#new-project)
+      * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
 
 ## Introduction
 
 The [doctest](https://github.com/onqtam/doctest) test framework works well with Approval Tests.
 
-**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- singleLineInclude: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
+**Notes pre-v.10.8.0:** <!-- include: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
+
+Earlier versions of Approval Tests had issues with Ninja. Read more
+at [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- endInclude -->
 
 Doctest is similar to Catch, but claims to give faster compilation times.
 
@@ -27,6 +29,7 @@ Approval Tests for doctest requires that a file called the following is found:
 
 <!-- snippet: required_header_for_doctest -->
 <a id='snippet-required_header_for_doctest'></a>
+
 ```h
 #include <doctest/doctest.h>
 ```

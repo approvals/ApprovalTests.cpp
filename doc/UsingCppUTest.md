@@ -9,9 +9,9 @@
     * [CppUTest Integration Limitations](#cpputest-integration-limitations)
   * [Requirements](#requirements)
   * [Getting Started With CppUTest](#getting-started-with-cpputest)
-    * [Starter Project](#starter-project)
-    * [New Project](#new-project)
-    * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
+      * [Starter Project](#starter-project)
+      * [New Project](#new-project)
+      * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
 
 ## Introduction
 
@@ -19,13 +19,24 @@ The [CppUTest](http://cpputest.github.io/) test framework works well on most pla
 
 This section describes the various ways of using Approval Tests with CppUTest.
 
-**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- singleLineInclude: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
+
+
+---
+
+
+
+**Notes pre-v.10.8.0:** <!-- include: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
+
+Earlier versions of Approval Tests had issues with Ninja. Read more
+at [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- endInclude -->
 
 ### CppUTest Integration Limitations
 
-**Note:** This integration is not tested on CygWin. The CppUTest integration with Approval Tests does not build on this platform, CygWin, therefore our tests of it are disabled.
+**Note:** This integration is not tested on CygWin. The CppUTest integration with Approval Tests does not build on this
+platform, CygWin, therefore our tests of it are disabled.
 
-**Note:** Approval Tests's use of STL objects triggers test failures from CppUTest's memory-leak checking, and so our integration with CppUTest currently **turns of its memory leak checks**.
+**Note:** Approval Tests's use of STL objects triggers test failures from CppUTest's memory-leak checking, and so our
+integration with CppUTest currently **turns of its memory leak checks**.
 
 ## Requirements
 

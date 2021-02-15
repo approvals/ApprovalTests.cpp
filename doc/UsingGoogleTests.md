@@ -13,9 +13,8 @@
     * [Existing Project - with your main()](#existing-project---with-your-main)
   * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
     * [Customizing](#customizing)
-      * [Custom Suffixes](#custom-suffixes)
-      * [Custom Anything](#custom-anything)<!-- endToc -->
-
+        * [Custom Suffixes](#custom-suffixes)
+        * [Custom Anything](#custom-anything)<!-- endToc -->
 
 ## Introduction
 
@@ -23,7 +22,10 @@ The [Google Test](https://github.com/google/googletest) test framework works wel
 
 This section describes the various ways of using Approval Tests with Google Test.
 
-**Note:** Approval Tests has some specific build requirements if it is built with the [Ninja build generator](https://ninja-build.org/). **If you use Ninja with Approval Tests, special care is needed when setting up builds**, to avoid compilation errors or test failures. If you have any problems with this, please see [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- singleLineInclude: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
+**Notes pre-v.10.8.0:** <!-- include: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
+
+Earlier versions of Approval Tests had issues with Ninja. Read more
+at [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- endInclude -->
 
 ## Getting Started With Google Test
 
@@ -31,10 +33,11 @@ This section describes the various ways of using Approval Tests with Google Test
 
 We haven't yet provided a Starter Project for using Approval Tests with Google Tests.
 
-This is partly based on the assumption that anyone already using Google Tests will have their own project set up, and anyone else would probably use Catch2 instead.
- 
-If it would be helpful for us to such a Starter Project, please let us know, via the contact details in [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top). 
+This is partly based on the assumption that anyone already using Google Tests will have their own project set up, and
+anyone else would probably use Catch2 instead.
 
+If it would be helpful for us to such a Starter Project, please let us know, via the contact details
+in [Contributing to ApprovalTests.cpp](/doc/Contributing.md#top).
 
 ### New Project
 
