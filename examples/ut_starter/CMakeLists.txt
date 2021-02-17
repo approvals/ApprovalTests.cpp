@@ -6,6 +6,7 @@ if ((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION GREATER
     # TODO Work out how to negate this condition
 ELSE()
     MESSAGE("The [Boost].UT integration with Approval Tests requires source_location support by the compiler, therefore it's disabled")
+    return()
 endif ()
 
 # begin-snippet: ut_starter_cmake
