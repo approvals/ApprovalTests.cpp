@@ -114,10 +114,9 @@ int main()
         // https://approvaltestscpp.readthedocs.io/en/latest/generated_docs/ToString.html
         Approvals::verify(42);
     };
-
 }
 ```
-<sup><a href='/examples/ut_starter/ut_starter_test.cpp#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-ut_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/ut_starter/ut_starter_test.cpp#L1-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-ut_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 And finally, here is sample code to put in your `CMakeLists.txt` file:
