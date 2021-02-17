@@ -11,7 +11,8 @@
   * [Getting Started With CppUTest](#getting-started-with-cpputest)
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
-    * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
+    * [Existing Project - with your main()](#existing-project---with-your-main)
+  * [Code to copy for your first CppUTest Approvals test](#code-to-copy-for-your-first-cpputest-approvals-test)<!-- endToc -->
 
 ## Introduction
 
@@ -107,6 +108,69 @@ int main(int argc, char** argv)
 ```
 <sup><a href='/examples/cpputest_existing_main/main.cpp#L1-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-cpputest_existing_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
+
+## Code to copy for your first CppUTest Approvals test
+
+Here is sample code to create your `main()` function, to set up Approval Tests' CppUTest integration.
+
+We called this file `cpputest_starter_main.cpp`:
+
+<!-- snippet: cpputest_starter_main.cpp -->
+<a id='snippet-cpputest_starter_main.cpp'></a>
+```cpp
+#define APPROVALS_CPPUTEST
+#include "ApprovalTests.hpp"
+
+using namespace ApprovalTests;
+
+// This puts "received" and "approved" files in approval_tests/ sub-directory,
+// keeping the test source directory tidy:
+auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
+```
+<sup><a href='/examples/cpputest_starter/cpputest_starter_main.cpp#L1-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-cpputest_starter_main.cpp' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Here is sample code to create your first test. We called this file `cpputest_starter_test.cpp`:
+
+<!-- snippet: cpputest_starter_test.cpp -->
+<a id='snippet-cpputest_starter_test.cpp'></a>
+```cpp
+#include "ApprovalTests.hpp"
+#include "CppUTest/TestHarness.h"
+
+using namespace ApprovalTests;
+
+TEST_GROUP(CppUTestStarter){};
+
+TEST(CppUTestStarter, Sample)
+{
+    // TODO Replace 42 with the value or object whose contents you are verifying.
+    // For help, see:
+    // https://approvaltestscpp.readthedocs.io/en/latest/generated_docs/ToString.html
+    Approvals::verify(42);
+}
+```
+<sup><a href='/examples/cpputest_starter/cpputest_starter_test.cpp#L1-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-cpputest_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+And finally, here is sample code to put in your `CMakeLists.txt` file:
+
+<!-- snippet: cpputest_starter_cmake -->
+<a id='snippet-cpputest_starter_cmake'></a>
+```txt
+set(EXE_NAME cpputest_starter)
+set(CMAKE_CXX_STANDARD 11)
+add_executable(${EXE_NAME}
+        cpputest_starter_main.cpp
+        cpputest_starter_test.cpp
+        )
+target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests CppUTest)
+
+add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
+```
+<sup><a href='/examples/cpputest_starter/CMakeLists.txt#L5-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-cpputest_starter_cmake' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
 
 ---
 
