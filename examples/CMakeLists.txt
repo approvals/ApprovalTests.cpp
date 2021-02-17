@@ -5,7 +5,7 @@ add_subdirectory(cpputest_existing_main)
 # TODO add_subdirectory(cpputest_starter)
 
 add_subdirectory(doctest_existing_main)
-# TODO add_subdirectory(doctest_starter)
+add_subdirectory(doctest_starter)
 
 add_subdirectory(fmt_approvals_demo)
 
