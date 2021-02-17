@@ -16,5 +16,4 @@ int main()
         // https://approvaltestscpp.readthedocs.io/en/latest/generated_docs/ToString.html
         Approvals::verify(42);
     };
-
 }
