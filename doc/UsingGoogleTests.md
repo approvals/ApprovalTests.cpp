@@ -14,7 +14,8 @@
   * [Customizing Google Tests Approval File Names](#customizing-google-tests-approval-file-names)
     * [Customizing](#customizing)
       * [Custom Suffixes](#custom-suffixes)
-      * [Custom Anything](#custom-anything)<!-- endToc -->
+      * [Custom Anything](#custom-anything)
+  * [Code to copy for your first Google Test Approvals test](#code-to-copy-for-your-first-google-test-approvals-test)<!-- endToc -->
 
 ## Introduction
 
@@ -202,6 +203,65 @@ auto ignoreNamesLambda = GoogleConfiguration::addTestCaseNameRedundancyCheck(
 <sup><a href='/tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp#L52-L59' title='Snippet source file'>snippet source</a> | <a href='#snippet-googletest_customize_lambda' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
+## Code to copy for your first Google Test Approvals test
+
+Here is sample code to create your `main()` function, to set up Approval Tests' Google Test integration.
+
+We called this file `googletest_starter_main.cpp`:
+
+<!-- snippet: googletest_starter_main.cpp -->
+<a id='snippet-googletest_starter_main.cpp'></a>
+```cpp
+#define APPROVALS_GOOGLETEST
+#include "ApprovalTests.hpp"
+
+using namespace ApprovalTests;
+
+// This puts "received" and "approved" files in approval_tests/ sub-directory,
+// keeping the test source directory tidy:
+auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
+```
+<sup><a href='/examples/googletest_starter/googletest_starter_main.cpp#L1-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-googletest_starter_main.cpp' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Here is sample code to create your first test. We called this file `googletest_starter_test.cpp`:
+
+<!-- snippet: googletest_starter_test.cpp -->
+<a id='snippet-googletest_starter_test.cpp'></a>
+```cpp
+#include "gtest/gtest.h"
+#include "ApprovalTests.hpp"
+
+using namespace ApprovalTests;
+
+TEST(GoogleTestStarter, Sample)
+{
+    // TODO Replace 42 with the value or object whose contents you are verifying.
+    // For help, see:
+    // https://approvaltestscpp.readthedocs.io/en/latest/generated_docs/ToString.html
+    Approvals::verify(42);
+}
+```
+<sup><a href='/examples/googletest_starter/googletest_starter_test.cpp#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-googletest_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+And finally, here is sample code to put in your `CMakeLists.txt` file:
+
+<!-- snippet: googletest_starter_cmake -->
+<a id='snippet-googletest_starter_cmake'></a>
+```txt
+set(EXE_NAME googletest_starter)
+set(CMAKE_CXX_STANDARD 11)
+add_executable(${EXE_NAME}
+        googletest_starter_main.cpp
+        googletest_starter_test.cpp
+        )
+target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests gtest gtest_main)
+
+add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
+```
+<sup><a href='/examples/googletest_starter/CMakeLists.txt#L5-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-googletest_starter_cmake' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 ---
 
