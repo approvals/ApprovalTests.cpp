@@ -8,7 +8,8 @@
 
   * [Introduction](#introduction)
   * [Requirements](#requirements)
-  * [Usage examples](#usage-examples)<!-- endToc -->
+  * [Usage examples](#usage-examples)
+  * [Code to copy for your first \[Boost\].UT Approvals test](#code-to-copy-for-your-first-boostut-approvals-test)<!-- endToc -->
 
 ## Introduction
 
@@ -86,6 +87,55 @@ In the following example, two instances of ApprovalTests are called inside the s
 };
 ```
 <sup><a href='/tests/UT_Tests/UTApprovalTestTests.cpp#L58-L73' title='Snippet source file'>snippet source</a> | <a href='#snippet-ut_main_multiple' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+## Code to copy for your first \[Boost\].UT Approvals test
+
+Here is sample code to create your `main()` function and your first test, to set up Approval Tests' \[Boost\].UT integration. We called this file `ut_starter_test.cpp`:
+
+<!-- snippet: ut_starter_test.cpp -->
+<a id='snippet-ut_starter_test.cpp'></a>
+```cpp
+#define APPROVALS_UT
+#include "ApprovalTests.hpp"
+
+int main()
+{
+    using namespace boost::ut;
+    using namespace ApprovalTests;
+
+    // This puts "received" and "approved" files in approval_tests/ sub-directory,
+    // keeping the test source directory tidy:
+    auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+
+    "Starter"_test = []() {
+        // TODO Replace 42 with the value or object whose contents you are verifying.
+        // For help, see:
+        // https://approvaltestscpp.readthedocs.io/en/latest/generated_docs/ToString.html
+        Approvals::verify(42);
+    };
+
+}
+```
+<sup><a href='/examples/ut_starter/ut_starter_test.cpp#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-ut_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+And finally, here is sample code to put in your `CMakeLists.txt` file:
+
+<!-- snippet: ut_starter_cmake -->
+<a id='snippet-ut_starter_cmake'></a>
+```txt
+set(EXE_NAME ut_starter)
+
+set(CMAKE_CXX_STANDARD 20)
+add_executable(${EXE_NAME}
+        ut_starter_test.cpp
+        )
+target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests boost.ut)
+
+add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
+```
+<sup><a href='/examples/ut_starter/CMakeLists.txt#L11-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-ut_starter_cmake' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---
