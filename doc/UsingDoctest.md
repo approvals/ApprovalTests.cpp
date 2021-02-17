@@ -10,7 +10,8 @@
   * [Requirements](#requirements)
   * [Getting Started With doctest](#getting-started-with-doctest)
     * [New Project](#new-project)
-    * [Existing Project - with your main()](#existing-project---with-your-main)<!-- endToc -->
+    * [Existing Project - with your main()](#existing-project---with-your-main)
+  * [Code to copy for your first doctest Approvals test](#code-to-copy-for-your-first-doctest-approvals-test)<!-- endToc -->
 
 ## Introduction
 
@@ -69,6 +70,66 @@ You should make the following additions to your own source file that contains `m
 #include "ApprovalTests.hpp"
 ```
 <sup><a href='/examples/doctest_existing_main/main.cpp#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-doctest_existing_main' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+## Code to copy for your first doctest Approvals test
+
+Here is sample code to create your `main()` function, to set up Approval Tests' doctest integration.
+
+We called this file `doctest_starter_main.cpp`:
+
+<!-- snippet: doctest_starter_main.cpp -->
+<a id='snippet-doctest_starter_main.cpp'></a>
+```cpp
+#define APPROVALS_DOCTEST
+#include "ApprovalTests.hpp"
+
+using namespace ApprovalTests;
+
+// This puts "received" and "approved" files in approval_tests/ sub-directory,
+// keeping the test source directory tidy:
+auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
+```
+<sup><a href='/examples/doctest_starter/doctest_starter_main.cpp#L1-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-doctest_starter_main.cpp' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Here is sample code to create your first test. We called this file `doctest_starter_test.cpp`:
+
+<!-- snippet: doctest_starter_test.cpp -->
+<a id='snippet-doctest_starter_test.cpp'></a>
+```cpp
+#include "doctest/doctest.h"
+#include "ApprovalTests.hpp"
+
+using namespace ApprovalTests;
+
+TEST_CASE("doctest_starter sample")
+{
+    // TODO Replace 42 with the value or object whose contents you are verifying.
+    // For help, see:
+    // https://approvaltestscpp.readthedocs.io/en/latest/generated_docs/ToString.html
+    Approvals::verify(42);
+}
+```
+<sup><a href='/examples/doctest_starter/doctest_starter_test.cpp#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-doctest_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+And finally, here is sample code to put in your `CMakeLists.txt` file:
+
+<!-- snippet: doctest_starter_cmake -->
+<a id='snippet-doctest_starter_cmake'></a>
+```txt
+set(EXE_NAME doctest_starter)
+set(CMAKE_CXX_STANDARD 11)
+add_executable(${EXE_NAME}
+        doctest_starter_main.cpp
+        doctest_starter_test.cpp
+        )
+target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests doctest::doctest)
+
+add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
+```
+<sup><a href='/examples/doctest_starter/CMakeLists.txt#L5-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-doctest_starter_cmake' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---
