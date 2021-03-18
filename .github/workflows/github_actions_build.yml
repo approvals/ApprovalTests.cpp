@@ -239,10 +239,13 @@ jobs:
 
       - name: install boost
         run: |
-          ${boostroot} = "${env:BOOST_ROOT_1_72_0}"
-          echo "BOOST_ROOT=${boostroot}" >> ${env:GITHUB_ENV}
-          echo "BOOST_INCLUDEDIR=${boostroot}\include" >> ${env:GITHUB_ENV}
-          echo "BOOST_LIBRARYDIR=${boostroot}\lib" >> ${env:GITHUB_ENV}
+          # Use the boost-1.72.0-win32-msvc14.1-x86_64.tar.gz for Windows 2016
+          $url = "https://github.com/actions/boost-versions/releases/download/1.72.0-20200608.4/boost-1.72.0-win32-msvc14.2-x86_64.tar.gz"
+          (New-Object System.Net.WebClient).DownloadFile($url, "$env:TEMP\boost.tar.gz")
+          7z.exe x "$env:TEMP\boost.tar.gz" -o"$env:TEMP\boostArchive" -y | Out-Null
+          7z.exe x "$env:TEMP\boostArchive" -o"$env:TEMP\boost" -y | Out-Null
+          Push-Location -Path "$env:TEMP\boost"
+          Invoke-Expression .\setup.ps1
 
       # DOS paths - with backslashes - are not compatible with the github bash
       # shell that is invoked in build-and-test/actions.yml - so sadly the code
