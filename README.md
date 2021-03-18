@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-# Approval Tests for C++
+# <img src="doc/images/icon.png" height="30px"> Approval Tests for C++
 
 [![Build status](https://ci.appveyor.com/api/projects/status/lf3i76ije89oihi5?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp)
 [![Actions Status](https://github.com/approvals/ApprovalTests.cpp/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Abuild)
