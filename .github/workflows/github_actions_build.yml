@@ -237,6 +237,12 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      - name: set up python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
+      - uses: ./.github/actions/setup-conan
+
       - name: install boost
         run: |
           conan install boost/1.72.0@ -o boost:header_only=True -g deploy --install-folder ${env:GITHUB_WORKSPACE}

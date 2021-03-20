@@ -1,0 +1,22 @@
+name: "Set up conan"
+description: "Set up conan using pip"
+runs:
+  using: "composite"
+  steps:
+# Disabled, because composite run steps don't support "using" yet
+#    - name: set up python
+#      uses: actions/setup-python@v1
+#      with:
+#        python-version: '3.x'
+
+    - name: install conan
+      run: |
+        python -m pip install --upgrade pip
+        pip install --upgrade conan
+      shell: bash
+
+    - name: setup conan profile
+      run: |
+        conan profile new default --detect
+        conan profile show default
+      shell: bash
