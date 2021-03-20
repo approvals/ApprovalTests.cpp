@@ -245,8 +245,8 @@ jobs:
 
       - name: install boost
         run: |
-          conan install boost/1.72.0@ -o boost:header_only=True -g deploy --install-folder ${env:GITHUB_WORKSPACE}
-          ${boostroot} = "${env:GITHUB_WORKSPACE}"
+          ${boostroot} = "${env:GITHUB_WORKSPACE}\boost_install"
+          conan install boost/1.72.0@ -o boost:header_only=True -g deploy --install-folder ${boostroot}
           dir ${boostroot}
           dir ${boostroot}\boost
           echo "BOOST_ROOT=${boostroot}" >> ${env:GITHUB_ENV}
