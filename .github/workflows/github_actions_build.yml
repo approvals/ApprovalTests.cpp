@@ -248,6 +248,7 @@ jobs:
           conan install boost/1.72.0@ -o boost:header_only=True -g deploy --install-folder ${env:GITHUB_WORKSPACE}
           ${boostroot} = "${env:GITHUB_WORKSPACE}"
           echo "BOOST_ROOT=${boostroot}" >> ${env:GITHUB_ENV}
+          echo "BOOST_INCLUDEDIR=${boostroot}\include" >> ${env:GITHUB_ENV}
 
       # DOS paths - with backslashes - are not compatible with the github bash
       # shell that is invoked in build-and-test/actions.yml - so sadly the code
