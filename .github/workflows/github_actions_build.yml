@@ -247,8 +247,6 @@ jobs:
         run: |
           ${boostroot} = "${env:GITHUB_WORKSPACE}\boost_install"
           conan install boost/1.72.0@ -o boost:header_only=True -g deploy --install-folder ${boostroot}
-          dir ${boostroot}
-          dir ${boostroot}\boost
           echo "BOOST_ROOT=${boostroot}\boost" >> ${env:GITHUB_ENV}
 
       # DOS paths - with backslashes - are not compatible with the github bash
