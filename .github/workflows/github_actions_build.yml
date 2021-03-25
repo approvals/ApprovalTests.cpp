@@ -39,7 +39,7 @@ jobs:
 
   Linux:
     needs: clang-format
-    if: false # Disable this platform temporarily
+    # if: false # Disable this platform temporarily
     runs-on: ubuntu-${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -155,7 +155,7 @@ jobs:
 
   macOS:
     needs: clang-format
-    if: false # Disable this platform temporarily
+    # if: false # Disable this platform temporarily
     runs-on: macos-${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -213,7 +213,7 @@ jobs:
 
   Windows:
     needs: clang-format
-    if: false # Disable this platform temporarily
+    # if: false # Disable this platform temporarily
     runs-on: windows-${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -267,22 +267,3 @@ jobs:
         run: |
           cd ${{ env.BUILD_PATH }}
           ctest --verbose --output-on-failure -C Debug
-
-  Cygwin:
-    runs-on: windows-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install Cygwin
-        run: |
-          choco config get cacheLocation
-          choco install --no-progress cygwin
-      - name: Install Cygwin additional packages
-        shell: cmd
-        run: |
-          C:\tools\cygwin\cygwinsetup.exe -qgnNdO -R C:/tools/cygwin -l C:/tools/cygwin/packages -s http://mirrors.kernel.org/sourceware/cygwin/ -P autoconf,automake,libtool,gcc,gcc-g++,binutils,libssl-devel,make,zlib-devel,pkg-config,cmake,xxd
-      - name: Build and test
-        shell: cmd
-        run: |
-          C:\tools\cygwin\bin\bash -lc 'export PATH=/usr/local/bin:/usr/bin:/bin; pwd; mkdir build; cd build; cmake -G 'Unix Makefiles' ..
