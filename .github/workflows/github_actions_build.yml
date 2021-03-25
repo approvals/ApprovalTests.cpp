@@ -273,13 +273,7 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-      - run: git config --global core.autocrlf false
       - uses: actions/checkout@v2
-      # TODO(someday): If we could cache the Cygwin installation we wouldn't have to spend three
-      #     minutes installing it for every build. Unfortuntaley, actions/cache@v1 does not preserve
-      #     DOS file attributes, which corrupts the Cygwin install. In particular, Cygwin marks
-      #     symlinks with the "DOS SYSTEM" attribute. We could cache just the downloaded packages,
-      #     but it turns out that only saves a couple seconds; most of the time is spend unpacking.
       - name: Install Cygwin
         run: |
           choco config get cacheLocation
@@ -291,4 +285,4 @@ jobs:
       - name: Build and test
         shell: cmd
         run: |
-          C:\tools\cygwin\bin\bash -lc 'export PATH=/usr/local/bin:/usr/bin:/bin; cd /cygdrive/d/a/capnproto/capnproto; ./super-test.sh quick'
+          C:\tools\cygwin\bin\bash -lc 'export PATH=/usr/local/bin:/usr/bin:/bin; pwd; mkdir build; cd build; cmake -G 'Unix Makefiles' ..
