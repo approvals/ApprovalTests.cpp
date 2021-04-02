@@ -45,24 +45,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # maybe add clang5 - which was tested in Travis
-
-          - job-name: 'clang6.0'
-            os-version: '18.04'
-            c-compiler: 'clang-6.0'
-            cxx-compiler: 'clang++-6.0'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
-          # maybe add clang7 - which was tested in Travis
-
-          - job-name: 'clang8'
-            os-version: '18.04'
-            c-compiler: 'clang-8'
-            cxx-compiler: 'clang++-8'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
           - job-name: 'clang9'
             os-version: '18.04'
             c-compiler: 'clang-9'
@@ -74,23 +56,6 @@ jobs:
             os-version: '20.04'
             c-compiler: 'clang-10'
             cxx-compiler: 'clang++-10'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
-          # maybe add gcc5 - which was tested in Travis
-          # maybe add gcc6 - which was tested in Travis
-
-          - job-name: 'gcc7'
-            os-version: '18.04'
-            c-compiler: 'gcc-7'
-            cxx-compiler: 'g++-7'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
-          - job-name: 'gcc8'
-            os-version: '18.04'
-            c-compiler: 'gcc-8'
-            cxx-compiler: 'g++-8'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
