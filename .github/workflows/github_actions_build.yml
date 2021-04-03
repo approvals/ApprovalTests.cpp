@@ -84,7 +84,7 @@ jobs:
             os-version: '20.04'
             c-compiler: 'gcc-10'
             cxx-compiler: 'g++-10'
-            generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
+            generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes'
             relative_build_dir_path: ''
 
           - job-name: 'gcc10 ninja in-source'
@@ -105,7 +105,7 @@ jobs:
             os-version: '20.04'
             c-compiler: 'gcc-10'
             cxx-compiler: 'g++-10'
-            generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
+            generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes'
             relative_build_dir_path: ''
 
     name: Linux ${{ matrix.job-name }}
