@@ -140,9 +140,9 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: xcode-12.2
+          - job-name: xcode-12.4
             os-version: '10.15'
-            xcode-version: '12.2'
+            xcode-version: '12.4'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
