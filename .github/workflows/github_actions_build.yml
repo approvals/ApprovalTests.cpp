@@ -146,14 +146,14 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: 'xcode-11.7-ninja in-source'
-            xcode-version: '11.7'
+          - job-name: 'xcode-12.4-ninja in-source'
+            xcode-version: '12.4'
             os-version: '10.15'
             generator: '"Ninja"'
             relative_build_dir_path: ''
 
-          - job-name: 'xcode-11.7-ninja out-of-source'
-            xcode-version: '11.7'
+          - job-name: 'xcode-12.4-ninja out-of-source'
+            xcode-version: '12.4'
             os-version: '10.15'
             generator: '"Ninja"'
             relative_build_dir_path: '../'
