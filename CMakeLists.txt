@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.12)
 # disable testsuite if used via add_subdirectory()
 if (NOT DEFINED PROJECT_NAME)
     set(NOT_SUBPROJECT ON)
+else()
+    set(NOT_SUBPROJECT OFF)
 endif ()
 
 project(ApprovalTests.cpp)
