@@ -24,7 +24,7 @@ digraph mdsnippets_flow {
     /* 2.1 */
     "Starter Project": e -> ".hpp copied in": w;
     "Starter Project": e -> "Wrapper file's version updated": w;
-    "Starter Project": e -> "VS .sln file updated for\lnew header file name version": w;
+    "Starter Project": e -> "VS .sln files updated for\lnew header file name version": w;
     /* 3 */
     "Release": e -> "conan-center-index": w;
     /* 3.1 */
