@@ -2,6 +2,7 @@
 #include "ApprovalTests/core/ApprovalNamer.h"
 #include "ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.h"
 #include "ApprovalTests/namers/NamerFactory.h"
+#include "ApprovalTests/utilities/Path.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 
 //#include <filesystem>
@@ -37,9 +38,11 @@ public:
 
     virtual std::string getApprovedFile(std::string extensionWithDot) const override
     {
-        return getTestFolderForApproved() + "/" +
-               getRelativePathOfSourceDirectoryFromSourceRootForApproved() + "/" +
-               getFileNameAndTestName() + ".approved" + extensionWithDot;
+        return (Path(getTestFolderForApproved()) /
+                    getRelativePathOfSourceDirectoryFromSourceRootForApproved() /
+                    getFileNameAndTestName() +
+                ".approved" + extensionWithDot)
+            .toString();
     }
 
     virtual std::string getReceivedFile(std::string /*extensionWithDot*/) const override
@@ -52,6 +55,5 @@ TEST_CASE("Default Behaviour")
 {
     auto result = Approvals::getDefaultNamer()->getApprovedFile(".txt");
     auto custom = CustomNamer().getApprovedFile(".txt");
-    //Approvals::verify(custom);
     REQUIRE(result == custom);
 }
