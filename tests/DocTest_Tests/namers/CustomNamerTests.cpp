@@ -13,9 +13,12 @@ using namespace ApprovalTests;
 
 class CustomNamer : public ApprovalNamer
 {
+public:
+    using PathFunction = std::function<Path(CustomNamer)>;
+
 private:
     ApprovalTestNamer namer_;
-    std::function<Path(CustomNamer)> testFolder_ = [](CustomNamer namer) {
+    PathFunction testFolder_ = [](CustomNamer namer) {
         return Path(namer.namer_.getTestSourceDirectory());
     };
 
@@ -31,7 +34,7 @@ public:
         return *this;
     }
 
-    CustomNamer withTestFolder(std::function<Path(CustomNamer)> newMethod)
+    CustomNamer withTestFolder(PathFunction newMethod)
     {
         testFolder_ = newMethod;
         return *this;
