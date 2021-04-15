@@ -59,6 +59,8 @@ namespace ApprovalTests
 
         std::string getTestSourceDirectory() const;
 
+        std::string getRelativePathOfSourceDirectoryFromSourceRootForApproved() const;
+
         std::string getDirectory() const;
 
         static TestName& currentTest(TestName* value = nullptr);

@@ -146,15 +146,25 @@ namespace ApprovalTests
         return directory;
     }
 
+    std::string
+    ApprovalTestNamer::getRelativePathOfSourceDirectoryFromSourceRootForApproved() const
+    {
+        std::string sub_directory;
+        if (!testConfiguration().subdirectory.empty())
+        {
+            sub_directory =
+                testConfiguration().subdirectory + SystemUtils::getDirectorySeparator();
+        }
+        return sub_directory;
+    }
+
     std::string ApprovalTestNamer::getDirectory() const
     {
         std::string directory = getTestSourceDirectory();
-        if (!testConfiguration().subdirectory.empty())
-        {
-            directory +=
-                testConfiguration().subdirectory + SystemUtils::getDirectorySeparator();
-            SystemUtils::ensureDirectoryExists(directory);
-        }
+        std::string sub_directory =
+            getRelativePathOfSourceDirectoryFromSourceRootForApproved();
+        directory += sub_directory;
+        SystemUtils::ensureDirectoryExists(directory);
         return directory;
     }
 
