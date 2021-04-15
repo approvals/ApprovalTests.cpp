@@ -25,6 +25,18 @@ public:
         return testFolder_();
     }
 
+    CustomNamer withTestFolder(std::string value)
+    {
+        testFolder_ = [value]() { return value; };
+        return *this;
+    }
+
+    CustomNamer withTestFolder(std::function<std::string(void)> newMethod)
+    {
+        testFolder_ = newMethod;
+        return *this;
+    }
+
     std::string getTestFolderForApproved() const
     {
         return getTestFolder();
@@ -62,8 +74,14 @@ TEST_CASE("Default Behaviour")
     REQUIRE(result == custom);
 }
 
-//TEST_CASE("Behaviour with custom directory")
-//{
-//    auto custom = CustomNamer().withTestFolder([](){return ".";}).getApprovedFile(".txt");
-//    REQUIRE("" == custom);
-//}
+TEST_CASE("Behaviour with custom directory")
+{
+    auto custom = CustomNamer()
+                      .withTestFolder([]() { return "custom/location"; })
+                      .getApprovedFile(".txt");
+    auto custom2 =
+        CustomNamer().withTestFolder("custom/location").getApprovedFile(".txt");
+    REQUIRE("custom/location/approval_tests/"
+            "CustomNamerTests.Behaviour_with_custom_directory.approved.txt" == custom);
+    REQUIRE(custom == custom2);
+}
