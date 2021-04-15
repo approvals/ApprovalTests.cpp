@@ -50,6 +50,18 @@ public:
         return testFolderForApproved_(*this);
     }
 
+    CustomNamer withTestFolderForApproved(std::string value)
+    {
+        testFolderForApproved_ = [value](CustomNamer /*namer*/) { return Path(value); };
+        return *this;
+    }
+
+    CustomNamer withTestFolderForApproved(PathFunction newMethod)
+    {
+        testFolderForApproved_ = newMethod;
+        return *this;
+    }
+
     Path getRelativePathOfSourceDirectoryFromSourceRootForApproved() const
     {
         return Path(namer_.getRelativePathOfSourceDirectoryFromSourceRootForApproved());
@@ -105,14 +117,15 @@ TEST_CASE("Behaviour with custom directory")
     REQUIRE(custom == custom2);
 }
 
-//TEST_CASE("Test Every Customization")
-//{
-//    auto custom = CustomNamer()
-//                       .withTestFolder("custom/location")
-//                       .withTestFolderForApproved([](auto that) {
-//                           return that.getTestFolder() / "approved_files";
-//                       })
-//                       .getApprovedFile(".txt");
-//    REQUIRE("custom/location/approved_files/approval_tests/"
-//            "CustomNamerTests.Behaviour_with_custom_directory.approved.txt" == normalize(custom));
-//}
+TEST_CASE("Test Every Customization")
+{
+    auto custom = CustomNamer()
+                      .withTestFolder("custom/location")
+                      .withTestFolderForApproved([](auto that) {
+                          return that.getTestFolder() / "approved_files";
+                      })
+                      .getApprovedFile(".txt");
+    REQUIRE("custom/location/approved_files/approval_tests/"
+            "CustomNamerTests.Test_Every_Customization.approved.txt" ==
+            normalize(custom));
+}
