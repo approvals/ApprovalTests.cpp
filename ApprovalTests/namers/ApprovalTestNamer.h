@@ -57,6 +57,8 @@ namespace ApprovalTests
 
         std::string getSourceFileName() const;
 
+        std::string getTestSourceDirectory() const;
+
         std::string getDirectory() const;
 
         static TestName& currentTest(TestName* value = nullptr);

@@ -138,11 +138,17 @@ namespace ApprovalTests
         return convertToFileName(fileName);
     }
 
-    std::string ApprovalTestNamer::getDirectory() const
+    std::string ApprovalTestNamer::getTestSourceDirectory() const
     {
         auto file = getCurrentTest().getFileName();
         auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
         auto directory = file.substr(0, end);
+        return directory;
+    }
+
+    std::string ApprovalTestNamer::getDirectory() const
+    {
+        std::string directory = getTestSourceDirectory();
         if (!testConfiguration().subdirectory.empty())
         {
             directory +=
