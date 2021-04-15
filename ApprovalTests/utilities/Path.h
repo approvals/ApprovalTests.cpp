@@ -52,5 +52,10 @@ namespace ApprovalTests
 
             return Path(first + separator_ + second);
         }
+
+        Path operator/(const Path addition) const
+        {
+            return *this / addition.path_;
+        }
     };
 }

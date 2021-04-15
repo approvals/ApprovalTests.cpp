@@ -16,6 +16,13 @@ TEST_CASE("Should append to paths")
     CHECK("./file.txt.v1" == path.toString("/"));
 }
 
+TEST_CASE("Can append two Paths")
+{
+    Path path1("hello");
+    Path path2("world");
+    CHECK("hello/world" == (path1 / path2).toString("/"));
+}
+
 TEST_CASE("Should handle multiple separators")
 {
     auto location = "tmp" + SystemUtils::getDirectorySeparator();
