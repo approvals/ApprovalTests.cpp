@@ -32,9 +32,18 @@ namespace ApprovalTests
         return copy;
     }
 
+    bool StringUtils::startsWith(std::string value, std::string beginning)
+    {
+        if (value.size() < beginning.size())
+        {
+            return false;
+        }
+        return std::equal(beginning.begin(), beginning.end(), value.begin());
+    }
+
     bool StringUtils::endsWith(std::string value, std::string ending)
     {
-        if (ending.size() > value.size())
+        if (value.size() < ending.size())
         {
             return false;
         }
