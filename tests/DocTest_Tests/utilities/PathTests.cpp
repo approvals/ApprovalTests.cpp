@@ -11,6 +11,9 @@ TEST_CASE("Should append to paths")
     path = path / "file.txt";
     CHECK("./file.txt" == path.toString("/"));
     CHECK(".\\file.txt" == path.toString("\\"));
+
+    path = path + ".v1";
+    CHECK("./file.txt.v1" == path.toString("/"));
 }
 
 TEST_CASE("Should handle multiple separators")

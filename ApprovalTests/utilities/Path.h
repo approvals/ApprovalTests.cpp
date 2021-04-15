@@ -31,6 +31,11 @@ namespace ApprovalTests
             return StringUtils::replaceAll(path_, separator_, directoryPathSeparator);
         }
 
+        Path operator+(const std::string& addition) const
+        {
+            return Path(path_ + addition);
+        }
+
         Path operator/(const std::string& addition) const
         {
             auto first = path_;
