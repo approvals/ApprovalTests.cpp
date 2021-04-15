@@ -50,7 +50,7 @@ add_executable(${PROJECT_NAME}
         utilities/StringUtilsTests.cpp
         utilities/SystemUtilsTests.cpp
         writers/StringWriterTests.cpp
-        )
+        namers/CustomNamerTests.cpp)
 target_link_libraries(${PROJECT_NAME}
         ApprovalTests::ApprovalTests
         doctest::doctest)
