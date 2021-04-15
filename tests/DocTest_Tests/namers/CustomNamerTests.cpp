@@ -18,8 +18,13 @@ public:
 
 private:
     ApprovalTestNamer namer_;
+
     PathFunction testFolder_ = [](CustomNamer namer) {
         return Path(namer.namer_.getTestSourceDirectory());
+    };
+
+    PathFunction testFolderForApproved_ = [](CustomNamer namer) {
+        return namer.getTestFolder();
     };
 
 public:
@@ -42,7 +47,7 @@ public:
 
     Path getTestFolderForApproved() const
     {
-        return getTestFolder();
+        return testFolderForApproved_(*this);
     }
 
     Path getRelativePathOfSourceDirectoryFromSourceRootForApproved() const
