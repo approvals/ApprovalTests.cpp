@@ -15,11 +15,14 @@ class CustomNamer : public ApprovalNamer
 {
 private:
     ApprovalTestNamer namer_;
+    std::function<std::string(void)> testFolder_ = [&]() {
+        return namer_.getTestSourceDirectory();
+    };
 
 public:
     std::string getTestFolder() const
     {
-        return namer_.getTestSourceDirectory();
+        return testFolder_();
     }
 
     std::string getTestFolderForApproved() const
