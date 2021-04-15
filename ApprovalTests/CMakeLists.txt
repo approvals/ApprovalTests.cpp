@@ -131,6 +131,8 @@ add_library(${PROJECT_NAME}
         utilities/Macros.h
         utilities/MoreHelpMessages.h
         utilities/MoreHelpMessages.cpp
+        utilities/Path.cpp
+        utilities/Path.h
         utilities/StringMaker.h
         utilities/StringUtils.h
         utilities/StringUtils.cpp

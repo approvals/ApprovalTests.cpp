@@ -47,10 +47,12 @@ add_executable(${PROJECT_NAME}
         utilities/FileUtilsSystemSpecificTests.cpp
         utilities/FileUtilsTests.cpp
         utilities/MachineBlockerTests.cpp
+        utilities/PathTests.cpp
         utilities/StringUtilsTests.cpp
         utilities/SystemUtilsTests.cpp
         writers/StringWriterTests.cpp
-        namers/CustomNamerTests.cpp)
+        namers/CustomNamerTests.cpp
+        )
 target_link_libraries(${PROJECT_NAME}
         ApprovalTests::ApprovalTests
         doctest::doctest)
