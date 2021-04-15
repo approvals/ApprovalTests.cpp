@@ -67,6 +67,14 @@ public:
     }
 };
 
+namespace
+{
+    static std::string normalize(const std::string& custom)
+    {
+        return StringUtils::replaceAll(custom, "\\", "/");
+    }
+}
+
 TEST_CASE("Default Behaviour")
 {
     auto result = Approvals::getDefaultNamer()->getApprovedFile(".txt");
@@ -80,31 +88,23 @@ TEST_CASE("Behaviour with custom directory")
         CustomNamer()
             .withTestFolder([](auto /*namer*/) { return Path("custom/location"); })
             .getApprovedFile(".txt");
-    auto custom2 =
-        CustomNamer().withTestFolder("custom/location").getApprovedFile(".txt");
     REQUIRE("custom/location/approval_tests/"
             "CustomNamerTests.Behaviour_with_custom_directory.approved.txt" ==
-            StringUtils::replaceAll(custom, "\\", "/"));
+            normalize(custom));
+
+    auto custom2 =
+        CustomNamer().withTestFolder("custom/location").getApprovedFile(".txt");
     REQUIRE(custom == custom2);
 }
 
-TEST_CASE("Test Every Customization")
-{
-    //            return (Path(getTestFolderForApproved()) /
-    //                    getRelativePathOfSourceDirectoryFromSourceRootForApproved() /
-    //                    getFileNameAndTestName() +
-    //                ".approved" + extensionWithDot)
-    //            .toString();
-    //
-    //    auto custom = CustomNamer()
-    //                      .withTestFolder([]() { return "custom/location"; })
-    //                      .getApprovedFile(".txt");
-    //auto custom2 = CustomNamer()
-    //                   .withTestFolder("custom/location")
-    //                   .withTestFolderForApproved(
-    //                       [](auto that) { return that.getTestFolder() / "approved_files"; })
-    //                   .getApprovedFile(".txt");
-    //REQUIRE("custom/location/approval_tests/"
-    //            "CustomNamerTests.Behaviour_with_custom_directory.approved.txt" == custom);
-    //    REQUIRE(custom == custom2);
-}
+//TEST_CASE("Test Every Customization")
+//{
+//    auto custom = CustomNamer()
+//                       .withTestFolder("custom/location")
+//                       .withTestFolderForApproved([](auto that) {
+//                           return that.getTestFolder() / "approved_files";
+//                       })
+//                       .getApprovedFile(".txt");
+//    REQUIRE("custom/location/approved_files/approval_tests/"
+//            "CustomNamerTests.Behaviour_with_custom_directory.approved.txt" == normalize(custom));
+//}
