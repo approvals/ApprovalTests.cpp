@@ -26,6 +26,7 @@ add_executable(${PROJECT_NAME}
         docs/ToStringTemplateExample.cpp
         docs/ToStringWrapperExample.cpp
         docs/Tutorial.cpp
+        namers/CustomNamerTests.cpp
         namers/DocTestNamerTests.cpp
         namers/NamerTests.cpp
         reporters/BlockingReporterTests.cpp
@@ -51,7 +52,6 @@ add_executable(${PROJECT_NAME}
         utilities/StringUtilsTests.cpp
         utilities/SystemUtilsTests.cpp
         writers/StringWriterTests.cpp
-        namers/CustomNamerTests.cpp
         )
 target_link_libraries(${PROJECT_NAME}
         ApprovalTests::ApprovalTests
