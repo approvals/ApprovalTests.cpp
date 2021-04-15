@@ -11,13 +11,15 @@
 
 using namespace ApprovalTests;
 
-class CustomNamer : public ApprovalTestNamer
+class CustomNamer : public ApprovalNamer
 {
+private:
+    ApprovalTestNamer namer_;
 
 public:
     std::string getTestFolder() const
     {
-        return getTestSourceDirectory();
+        return namer_.getTestSourceDirectory();
     }
 
     std::string getTestFolderForApproved() const
@@ -27,13 +29,12 @@ public:
 
     std::string getRelativePathOfSourceDirectoryFromSourceRootForApproved() const
     {
-        return ApprovalTestNamer::
-            getRelativePathOfSourceDirectoryFromSourceRootForApproved();
+        return namer_.getRelativePathOfSourceDirectoryFromSourceRootForApproved();
     }
 
     std::string getFileNameAndTestName() const
     {
-        return getFileName() + "." + getTestName();
+        return namer_.getFileName() + "." + namer_.getTestName();
     }
 
     virtual std::string getApprovedFile(std::string extensionWithDot) const override
@@ -57,3 +58,9 @@ TEST_CASE("Default Behaviour")
     auto custom = CustomNamer().getApprovedFile(".txt");
     REQUIRE(result == custom);
 }
+
+//TEST_CASE("Behaviour with custom directory")
+//{
+//    auto custom = CustomNamer().withTestFolder([](){return ".";}).getApprovedFile(".txt");
+//    REQUIRE("" == custom);
+//}
