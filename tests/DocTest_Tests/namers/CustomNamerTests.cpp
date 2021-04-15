@@ -15,23 +15,23 @@ class CustomNamer : public ApprovalNamer
 {
 private:
     ApprovalTestNamer namer_;
-    std::function<Path(void)> testFolder_ = [&]() {
-        return Path(namer_.getTestSourceDirectory());
+    std::function<Path(CustomNamer)> testFolder_ = [](CustomNamer namer) {
+        return Path(namer.namer_.getTestSourceDirectory());
     };
 
 public:
     Path getTestFolder() const
     {
-        return testFolder_();
+        return testFolder_(*this);
     }
 
     CustomNamer withTestFolder(std::string value)
     {
-        testFolder_ = [value]() { return Path(value); };
+        testFolder_ = [value](CustomNamer /*namer*/) { return Path(value); };
         return *this;
     }
 
-    CustomNamer withTestFolder(std::function<Path(void)> newMethod)
+    CustomNamer withTestFolder(std::function<Path(CustomNamer)> newMethod)
     {
         testFolder_ = newMethod;
         return *this;
@@ -76,9 +76,10 @@ TEST_CASE("Default Behaviour")
 
 TEST_CASE("Behaviour with custom directory")
 {
-    auto custom = CustomNamer()
-                      .withTestFolder([]() { return Path("custom/location"); })
-                      .getApprovedFile(".txt");
+    auto custom =
+        CustomNamer()
+            .withTestFolder([](auto /*namer*/) { return Path("custom/location"); })
+            .getApprovedFile(".txt");
     auto custom2 =
         CustomNamer().withTestFolder("custom/location").getApprovedFile(".txt");
     REQUIRE("custom/location/approval_tests/"
