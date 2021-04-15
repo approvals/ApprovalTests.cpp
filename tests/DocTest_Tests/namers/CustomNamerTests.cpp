@@ -15,36 +15,36 @@ class CustomNamer : public ApprovalNamer
 {
 private:
     ApprovalTestNamer namer_;
-    std::function<std::string(void)> testFolder_ = [&]() {
-        return namer_.getTestSourceDirectory();
+    std::function<Path(void)> testFolder_ = [&]() {
+        return Path(namer_.getTestSourceDirectory());
     };
 
 public:
-    std::string getTestFolder() const
+    Path getTestFolder() const
     {
         return testFolder_();
     }
 
     CustomNamer withTestFolder(std::string value)
     {
-        testFolder_ = [value]() { return value; };
+        testFolder_ = [value]() { return Path(value); };
         return *this;
     }
 
-    CustomNamer withTestFolder(std::function<std::string(void)> newMethod)
+    CustomNamer withTestFolder(std::function<Path(void)> newMethod)
     {
         testFolder_ = newMethod;
         return *this;
     }
 
-    std::string getTestFolderForApproved() const
+    Path getTestFolderForApproved() const
     {
         return getTestFolder();
     }
 
-    std::string getRelativePathOfSourceDirectoryFromSourceRootForApproved() const
+    Path getRelativePathOfSourceDirectoryFromSourceRootForApproved() const
     {
-        return namer_.getRelativePathOfSourceDirectoryFromSourceRootForApproved();
+        return Path(namer_.getRelativePathOfSourceDirectoryFromSourceRootForApproved());
     }
 
     std::string getFileNameAndTestName() const
@@ -54,7 +54,7 @@ public:
 
     virtual std::string getApprovedFile(std::string extensionWithDot) const override
     {
-        return (Path(getTestFolderForApproved()) /
+        return (getTestFolderForApproved() /
                     getRelativePathOfSourceDirectoryFromSourceRootForApproved() /
                     getFileNameAndTestName() +
                 ".approved" + extensionWithDot)
@@ -77,7 +77,7 @@ TEST_CASE("Default Behaviour")
 TEST_CASE("Behaviour with custom directory")
 {
     auto custom = CustomNamer()
-                      .withTestFolder([]() { return "custom/location"; })
+                      .withTestFolder([]() { return Path("custom/location"); })
                       .getApprovedFile(".txt");
     auto custom2 =
         CustomNamer().withTestFolder("custom/location").getApprovedFile(".txt");
