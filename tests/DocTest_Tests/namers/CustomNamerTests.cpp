@@ -82,6 +82,28 @@ TEST_CASE("Behaviour with custom directory")
     auto custom2 =
         CustomNamer().withTestFolder("custom/location").getApprovedFile(".txt");
     REQUIRE("custom/location/approval_tests/"
-            "CustomNamerTests.Behaviour_with_custom_directory.approved.txt" == custom);
+            "CustomNamerTests.Behaviour_with_custom_directory.approved.txt" ==
+            StringUtils::replaceAll(custom, "\\", "/"));
     REQUIRE(custom == custom2);
+}
+
+TEST_CASE("Test Every Customization")
+{
+    //            return (Path(getTestFolderForApproved()) /
+    //                    getRelativePathOfSourceDirectoryFromSourceRootForApproved() /
+    //                    getFileNameAndTestName() +
+    //                ".approved" + extensionWithDot)
+    //            .toString();
+    //
+    //    auto custom = CustomNamer()
+    //                      .withTestFolder([]() { return "custom/location"; })
+    //                      .getApprovedFile(".txt");
+    //auto custom2 = CustomNamer()
+    //                   .withTestFolder("custom/location")
+    //                   .withTestFolderForApproved(
+    //                       [](auto that) { return that.getTestFolder() / "approved_files"; })
+    //                   .getApprovedFile(".txt");
+    //REQUIRE("custom/location/approval_tests/"
+    //            "CustomNamerTests.Behaviour_with_custom_directory.approved.txt" == custom);
+    //    REQUIRE(custom == custom2);
 }
