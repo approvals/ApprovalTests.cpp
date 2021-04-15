@@ -21,7 +21,7 @@ namespace ApprovalTests
 
         static std::string toLower(std::string inText);
 
-        static bool startsWith(std::string value, std::string beginning);
+        static bool beginsWith(std::string value, std::string beginning);
         static bool endsWith(std::string value, std::string ending);
 
         template <typename T> static std::string toString(const T& contents)

@@ -6,16 +6,16 @@ using namespace ApprovalTests;
 TEST_CASE("BeginsWith")
 {
     std::string text("The Quick Brown Fox");
-    CHECK(StringUtils::startsWith(text, "T") == true);
-    CHECK(StringUtils::startsWith(text, "The") == true);
-    CHECK(StringUtils::startsWith(text, "The Q") == true);
-    CHECK(StringUtils::startsWith(text, text) == true);
+    CHECK(StringUtils::beginsWith(text, "T") == true);
+    CHECK(StringUtils::beginsWith(text, "The") == true);
+    CHECK(StringUtils::beginsWith(text, "The Q") == true);
+    CHECK(StringUtils::beginsWith(text, text) == true);
 
-    CHECK(StringUtils::startsWith(text, "F") == false);
-    CHECK(StringUtils::startsWith(text, "Quick Brown") == false);
-    CHECK(StringUtils::startsWith(text, "That") == false);
+    CHECK(StringUtils::beginsWith(text, "F") == false);
+    CHECK(StringUtils::beginsWith(text, "Quick Brown") == false);
+    CHECK(StringUtils::beginsWith(text, "That") == false);
 
-    CHECK(StringUtils::startsWith("", "That") == false);
+    CHECK(StringUtils::beginsWith("", "That") == false);
 }
 
 TEST_CASE("EndsWith")

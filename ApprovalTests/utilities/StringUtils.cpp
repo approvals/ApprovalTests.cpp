@@ -32,7 +32,7 @@ namespace ApprovalTests
         return copy;
     }
 
-    bool StringUtils::startsWith(std::string value, std::string beginning)
+    bool StringUtils::beginsWith(std::string value, std::string beginning)
     {
         if (value.size() < beginning.size())
         {
