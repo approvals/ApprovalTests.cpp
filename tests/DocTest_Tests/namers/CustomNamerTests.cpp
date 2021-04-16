@@ -75,7 +75,7 @@ public:
 
     Path getTestFolderForApproved() const
     {
-        return testFolderForApproved_(*this);
+        return testFolderForApprovedOption_.getPath(*this);
     }
 
     CustomNamer withTestFolderForApproved(std::string value)
