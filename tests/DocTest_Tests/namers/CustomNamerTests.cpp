@@ -63,15 +63,10 @@ public:
         return testFolderOption_.getPath(*this);
     }
 
-    CustomNamer withTestFolder(std::string value)
+    template <typename ValueOrMethod>
+    CustomNamer withTestFolder(const ValueOrMethod& valueOrMethod)
     {
-        testFolderOption_(value);
-        return *this;
-    }
-
-    CustomNamer withTestFolder(PathFunction newMethod)
-    {
-        testFolderOption_(newMethod);
+        testFolderOption_(valueOrMethod);
         return *this;
     }
 
