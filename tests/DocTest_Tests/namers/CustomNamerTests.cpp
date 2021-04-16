@@ -49,35 +49,35 @@ public:
 private:
     ApprovalTestNamer namer_;
 
-    PathBasedOption testFolderOption_ = PathBasedOption([](const CustomNamer& namer) {
+    PathBasedOption testFolder_ = PathBasedOption([](const CustomNamer& namer) {
         return Path(namer.namer_.getTestSourceDirectory());
     });
 
-    PathBasedOption testFolderForApprovedOption_ =
+    PathBasedOption testFolderForApproved_ =
         PathBasedOption([](const CustomNamer& namer) { return namer.getTestFolder(); });
 
 public:
     Path getTestFolder() const
     {
-        return testFolderOption_.getPath(*this);
+        return testFolder_.getPath(*this);
     }
 
     template <typename ValueOrMethod>
     CustomNamer withTestFolder(const ValueOrMethod& valueOrMethod)
     {
-        testFolderOption_(valueOrMethod);
+        testFolder_(valueOrMethod);
         return *this;
     }
 
     Path getTestFolderForApproved() const
     {
-        return testFolderForApprovedOption_.getPath(*this);
+        return testFolderForApproved_.getPath(*this);
     }
 
     template <typename ValueOrMethod>
     CustomNamer withTestFolderForApproved(const ValueOrMethod& valueOrMethod)
     {
-        testFolderForApprovedOption_(valueOrMethod);
+        testFolderForApproved_(valueOrMethod);
         return *this;
     }
 
