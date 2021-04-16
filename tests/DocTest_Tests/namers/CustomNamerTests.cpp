@@ -17,6 +17,9 @@ class PathBasedOption
 {
 public:
     using PathFunction = std::function<Path(CustomNamer)>;
+
+private:
+    PathFunction function_;
 };
 
 class CustomNamer : public ApprovalNamer
