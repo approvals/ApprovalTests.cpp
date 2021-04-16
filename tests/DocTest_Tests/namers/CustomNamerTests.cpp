@@ -6,8 +6,6 @@
 #include "ApprovalTests/utilities/SystemUtils.h"
 
 //#include <filesystem>
-#include <iostream>
-#include <memory>
 #include <utility>
 
 using namespace ApprovalTests;
