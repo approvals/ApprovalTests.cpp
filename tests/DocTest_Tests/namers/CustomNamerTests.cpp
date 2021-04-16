@@ -58,7 +58,7 @@ private:
     };
 
     PathBasedOption testFolderForApprovedOption_ =
-        PathBasedOption(testFolderForApproved_);
+        PathBasedOption([](const CustomNamer& namer) { return namer.getTestFolder(); });
 
 public:
     Path getTestFolder() const
