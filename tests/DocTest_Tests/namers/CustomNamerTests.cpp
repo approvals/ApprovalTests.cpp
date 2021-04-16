@@ -22,6 +22,11 @@ public:
     {
     }
 
+    void operator()(std::string value)
+    {
+        function_ = [value](const CustomNamer& /*namer*/) { return Path(value); };
+    }
+
     void operator()(PathFunction newMethod)
     {
         function_ = newMethod;
@@ -57,6 +62,7 @@ public:
     CustomNamer withTestFolder(std::string value)
     {
         testFolder_ = [value](const CustomNamer& /*namer*/) { return Path(value); };
+        testFolderOption_(value);
         return *this;
     }
 
