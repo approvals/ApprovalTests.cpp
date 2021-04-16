@@ -8,6 +8,7 @@
 //#include <filesystem>
 #include <iostream>
 #include <memory>
+#include <utility>
 
 using namespace ApprovalTests;
 
@@ -18,7 +19,7 @@ class PathBasedOption
 public:
     using PathFunction = std::function<Path(const CustomNamer&)>;
 
-    PathBasedOption(PathFunction function) : function_(function)
+    PathBasedOption(PathFunction function) : function_(std::move(function))
     {
     }
 
@@ -27,14 +28,14 @@ public:
         return function_(that);
     }
 
-    void operator()(std::string value)
+    void operator()(const std::string& value)
     {
         function_ = [value](const CustomNamer& /*namer*/) { return Path(value); };
     }
 
     void operator()(PathFunction newMethod)
     {
-        function_ = newMethod;
+        function_ = std::move(newMethod);
     }
 
 private:
