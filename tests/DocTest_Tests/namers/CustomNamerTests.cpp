@@ -92,7 +92,8 @@ public:
         return namer_.getFileName() + "." + namer_.getTestName();
     }
 
-    virtual std::string getApprovedFile(std::string extensionWithDot) const override
+    APPROVAL_TESTS_NO_DISCARD virtual std::string
+    getApprovedFile(std::string extensionWithDot) const override
     {
         return (getTestFolderForApproved() /
                     getRelativePathOfSourceDirectoryFromSourceRootForApproved() /
@@ -101,7 +102,8 @@ public:
             .toString();
     }
 
-    virtual std::string getReceivedFile(std::string /*extensionWithDot*/) const override
+    APPROVAL_TESTS_NO_DISCARD virtual std::string
+        getReceivedFile(std::string /*extensionWithDot*/) const override
     {
         return "my.received";
     }
