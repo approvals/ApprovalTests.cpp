@@ -18,6 +18,10 @@ class PathBasedOption
 public:
     using PathFunction = std::function<Path(CustomNamer)>;
 
+    PathBasedOption(PathFunction function) : function_(function)
+    {
+    }
+
 private:
     PathFunction function_;
 };
@@ -30,10 +34,10 @@ public:
 private:
     ApprovalTestNamer namer_;
 
-    PathBasedOption testFolderOption_;
     PathFunction testFolder_ = [](CustomNamer namer) {
         return Path(namer.namer_.getTestSourceDirectory());
     };
+    PathBasedOption testFolderOption_ = PathBasedOption(testFolder_);
 
     PathFunction testFolderForApproved_ = [](CustomNamer namer) {
         return namer.getTestFolder();
