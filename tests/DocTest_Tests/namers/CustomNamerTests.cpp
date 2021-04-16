@@ -74,15 +74,10 @@ public:
         return testFolderForApprovedOption_.getPath(*this);
     }
 
-    CustomNamer withTestFolderForApproved(std::string value)
+    template <typename ValueOrMethod>
+    CustomNamer withTestFolderForApproved(const ValueOrMethod& valueOrMethod)
     {
-        testFolderForApprovedOption_(value);
-        return *this;
-    }
-
-    CustomNamer withTestFolderForApproved(PathFunction newMethod)
-    {
-        testFolderForApprovedOption_(newMethod);
+        testFolderForApprovedOption_(valueOrMethod);
         return *this;
     }
 
