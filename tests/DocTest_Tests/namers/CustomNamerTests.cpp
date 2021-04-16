@@ -83,12 +83,14 @@ public:
         testFolderForApproved_ = [value](const CustomNamer& /*namer*/) {
             return Path(value);
         };
+        testFolderForApprovedOption_(value);
         return *this;
     }
 
     CustomNamer withTestFolderForApproved(PathFunction newMethod)
     {
         testFolderForApproved_ = newMethod;
+        testFolderForApprovedOption_(newMethod);
         return *this;
     }
 
