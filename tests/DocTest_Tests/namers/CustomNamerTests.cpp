@@ -57,6 +57,9 @@ private:
         return namer.getTestFolder();
     };
 
+    PathBasedOption testFolderForApprovedOption_ =
+        PathBasedOption(testFolderForApproved_);
+
 public:
     Path getTestFolder() const
     {
