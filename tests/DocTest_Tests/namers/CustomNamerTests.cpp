@@ -11,14 +11,18 @@
 
 using namespace ApprovalTests;
 
+class CustomNamer;
+
 class PathBasedOption
 {
+public:
+    using PathFunction = std::function<Path(CustomNamer)>;
 };
 
 class CustomNamer : public ApprovalNamer
 {
 public:
-    using PathFunction = std::function<Path(CustomNamer)>;
+    using PathFunction = PathBasedOption::PathFunction;
 
 private:
     ApprovalTestNamer namer_;
