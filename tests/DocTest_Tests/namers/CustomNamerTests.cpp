@@ -22,6 +22,11 @@ public:
     {
     }
 
+    Path getPath(const CustomNamer& that) const
+    {
+        return function_(that);
+    }
+
     void operator()(std::string value)
     {
         function_ = [value](const CustomNamer& /*namer*/) { return Path(value); };
@@ -56,7 +61,7 @@ private:
 public:
     Path getTestFolder() const
     {
-        return testFolder_(*this);
+        return testFolderOption_.getPath(*this);
     }
 
     CustomNamer withTestFolder(std::string value)
