@@ -23,7 +23,7 @@ public:
     {
     }
 
-    Path getPath(const CustomNamer& that) const
+    APPROVAL_TESTS_NO_DISCARD Path getPath(const CustomNamer& that) const
     {
         return function_(that);
     }
@@ -58,7 +58,7 @@ private:
         PathBasedOption([](const CustomNamer& namer) { return namer.getTestFolder(); });
 
 public:
-    Path getTestFolder() const
+    APPROVAL_TESTS_NO_DISCARD Path getTestFolder() const
     {
         return testFolder_.getPath(*this);
     }
@@ -70,7 +70,7 @@ public:
         return *this;
     }
 
-    Path getTestFolderForApproved() const
+    APPROVAL_TESTS_NO_DISCARD Path getTestFolderForApproved() const
     {
         return testFolderForApproved_.getPath(*this);
     }
@@ -87,7 +87,7 @@ public:
         return Path(namer_.getRelativePathOfSourceDirectoryFromSourceRootForApproved());
     }
 
-    std::string getFileNameAndTestName() const
+    APPROVAL_TESTS_NO_DISCARD std::string getFileNameAndTestName() const
     {
         return namer_.getFileName() + "." + namer_.getTestName();
     }
@@ -109,7 +109,7 @@ public:
 
 namespace
 {
-    static std::string normalize(const std::string& custom)
+    APPROVAL_TESTS_NO_DISCARD static std::string normalize(const std::string& custom)
     {
         return StringUtils::replaceAll(custom, "\\", "/");
     }
