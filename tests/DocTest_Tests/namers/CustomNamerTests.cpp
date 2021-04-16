@@ -11,6 +11,10 @@
 
 using namespace ApprovalTests;
 
+class PathBasedOption
+{
+};
+
 class CustomNamer : public ApprovalNamer
 {
 public:
@@ -19,6 +23,7 @@ public:
 private:
     ApprovalTestNamer namer_;
 
+    PathBasedOption testFolderOption_;
     PathFunction testFolder_ = [](CustomNamer namer) {
         return Path(namer.namer_.getTestSourceDirectory());
     };
