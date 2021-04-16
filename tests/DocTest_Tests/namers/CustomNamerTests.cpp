@@ -77,7 +77,8 @@ public:
         return *this;
     }
 
-    Path getRelativePathOfSourceDirectoryFromSourceRootForApproved() const
+    APPROVAL_TESTS_NO_DISCARD Path
+    getRelativePathOfSourceDirectoryFromSourceRootForApproved() const
     {
         return Path(namer_.getRelativePathOfSourceDirectoryFromSourceRootForApproved());
     }
@@ -106,7 +107,7 @@ public:
 
 namespace
 {
-    APPROVAL_TESTS_NO_DISCARD static std::string normalize(const std::string& custom)
+    APPROVAL_TESTS_NO_DISCARD std::string normalize(const std::string& custom)
     {
         return StringUtils::replaceAll(custom, "\\", "/");
     }
