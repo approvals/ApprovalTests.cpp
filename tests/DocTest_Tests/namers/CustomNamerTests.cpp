@@ -49,10 +49,9 @@ public:
 private:
     ApprovalTestNamer namer_;
 
-    PathFunction testFolder_ = [](const CustomNamer& namer) {
+    PathBasedOption testFolderOption_ = PathBasedOption([](const CustomNamer& namer) {
         return Path(namer.namer_.getTestSourceDirectory());
-    };
-    PathBasedOption testFolderOption_ = PathBasedOption(testFolder_);
+    });
 
     PathFunction testFolderForApproved_ = [](const CustomNamer& namer) {
         return namer.getTestFolder();
