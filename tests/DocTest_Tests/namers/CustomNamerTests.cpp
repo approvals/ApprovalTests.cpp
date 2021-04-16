@@ -66,14 +66,12 @@ public:
 
     CustomNamer withTestFolder(std::string value)
     {
-        testFolder_ = [value](const CustomNamer& /*namer*/) { return Path(value); };
         testFolderOption_(value);
         return *this;
     }
 
     CustomNamer withTestFolder(PathFunction newMethod)
     {
-        testFolder_ = newMethod;
         testFolderOption_(newMethod);
         return *this;
     }
