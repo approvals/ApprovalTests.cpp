@@ -42,9 +42,6 @@ private:
 
 class CustomNamer : public ApprovalNamer
 {
-public:
-    using PathFunction = PathBasedOption::PathFunction;
-
 private:
     ApprovalTestNamer namer_;
 
