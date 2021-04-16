@@ -53,10 +53,6 @@ private:
         return Path(namer.namer_.getTestSourceDirectory());
     });
 
-    PathFunction testFolderForApproved_ = [](const CustomNamer& namer) {
-        return namer.getTestFolder();
-    };
-
     PathBasedOption testFolderForApprovedOption_ =
         PathBasedOption([](const CustomNamer& namer) { return namer.getTestFolder(); });
 
@@ -80,16 +76,12 @@ public:
 
     CustomNamer withTestFolderForApproved(std::string value)
     {
-        testFolderForApproved_ = [value](const CustomNamer& /*namer*/) {
-            return Path(value);
-        };
         testFolderForApprovedOption_(value);
         return *this;
     }
 
     CustomNamer withTestFolderForApproved(PathFunction newMethod)
     {
-        testFolderForApproved_ = newMethod;
         testFolderForApprovedOption_(newMethod);
         return *this;
     }
