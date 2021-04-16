@@ -22,6 +22,11 @@ public:
     {
     }
 
+    void operator()(PathFunction newMethod)
+    {
+        function_ = newMethod;
+    }
+
 private:
     PathFunction function_;
 };
@@ -58,6 +63,7 @@ public:
     CustomNamer withTestFolder(PathFunction newMethod)
     {
         testFolder_ = newMethod;
+        testFolderOption_(newMethod);
         return *this;
     }
 
