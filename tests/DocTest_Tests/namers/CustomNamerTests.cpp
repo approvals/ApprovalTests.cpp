@@ -19,7 +19,7 @@ class PathBasedOption
 public:
     using PathFunction = std::function<Path(const CustomNamer&)>;
 
-    PathBasedOption(PathFunction function) : function_(std::move(function))
+    explicit PathBasedOption(PathFunction function) : function_(std::move(function))
     {
     }
 
