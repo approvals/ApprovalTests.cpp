@@ -129,3 +129,15 @@ TEST_CASE("Test Every Customization")
             "CustomNamerTests.Test_Every_Customization.approved.txt" ==
             normalize(custom));
 }
+
+// TODO Better names for methods
+// TODO Finish up all the rest of the seams
+// TODO Get this to work with received file
+// TODO Make CustomNamer with... non-mutating
+// TODO Use Doxygen grouping to group related methods together for docs
+// TODO Move CustomNamer to .h and .cpp
+// TODO Move Path impl to .cpp
+// TODO Review usability
+// TODO Consider user scenarios
+// TODO Try it on an embedded device - or ask someone else to!
+// TODO Revisit our documentation
