@@ -19,6 +19,7 @@ TEST_CASE("Test StringTemplates")
 
 TEST_CASE("Test Namer Injection")
 {
+    // clang-format off
     // begin-snippet: templated_custom_namer_injection
     auto default_namer_disposer = Approvals::useAsDefaultNamer(
         []()
@@ -27,6 +28,7 @@ TEST_CASE("Test Namer Injection")
                 "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
         });
     // end-snippet
+    // clang-format on
 
     Approvals::verify("Hello");
 }
