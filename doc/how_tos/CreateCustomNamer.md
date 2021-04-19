@@ -1,30 +1,22 @@
 <a id="top"></a>
 
-# How to Create a Custom Namer - NOT IMPLEMENTED YET!
+# How to Create a Custom Namer
 
 toc
 
 ## Overview
 
-Warning - this is NOT IMPLEMENTED YET!
+The easiest way to create a custom namer is to use a `TemplatedCustomNamer`.
 
-The easiest way to create a custom namer is by modifying the parts of CustomizableNamer.
+Here is an example:
 
-CustomizableNamer has two main methods:
+snippet: templated_custom_namer_example
 
-* `getApprovedFile(std::string extensionWithDot)`
-This works by composing:
-`{TestFolderForApproved}`/`{RelativePathOfSourceDirectoryFromSourceRootForApproved}`/`{FileNameAndTestName}`.approved.`{FileExtension}`
+## Supported tags
 
-* `getReceivedFile(std::string extensionWithDot)`
-This works by composing:
-`{TestFolderForReceived}`/`{RelativePathOfSourceDirectoryFromSourceRootForReceived}`/`{FileNameAndTestName}`.received.`{FileExtension}`
+snippet: custom_namer_tags
 
-## Overriding Parts
-
-Both the getApprovedFile and getReceivedFile methods can be overridden, as well as any of the composable parts. By default, anything with a for received/apprroved simply calls the base.
-
-For example:
+##  
 
 ```cpp
 auto myNamer = CustomizableNamer()
@@ -34,9 +26,6 @@ auto myNamer = CustomizableNamer()
 Approvals::verify("Hello World", Options().withNamer(myNamer));
 ```
 
-{TestFolder}/{RelativePathOfSourceDirectoryFromSourceRoot}/{FileNameAndTestName}.approved.{FileExtension}
-
-{TestFolder}/{ReceivedOrApproved}/{RelativePathOfSourceDirectoryFromSourceRoot}/{SourceFileName}-{SectionNames}.{FileExtension}
 
 ---
 
