@@ -30,6 +30,7 @@ namespace ApprovalTests
     }
 
     ExistingFile::ExistingFile(std::string filePath_, const Options& options)
+        : options_(options)
     {
         filePath = scrub(filePath_, options);
     }
@@ -54,6 +55,6 @@ namespace ApprovalTests
 
     ExistingFileNamer ExistingFile::getNamer()
     {
-        return ExistingFileNamer(filePath);
+        return ExistingFileNamer(filePath, options_);
     }
 }

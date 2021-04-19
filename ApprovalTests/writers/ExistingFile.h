@@ -11,6 +11,7 @@ namespace ApprovalTests
     {
         std::string filePath;
         bool deleteScrubbedFile = false;
+        const Options& options_;
 
         std::string scrub(std::string fileName, const Options& options);
 

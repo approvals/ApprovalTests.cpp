@@ -47,7 +47,7 @@ namespace ApprovalTests
         {
             StringWriter writer(options.scrub(contents),
                                 options.fileOptions().getFileExtension());
-            FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
+            FileApprover::verify(*options.getNamer(), writer, options.getReporter());
         }
 
         template <typename T, typename = IsNotDerivedFromWriter<T>>
@@ -71,7 +71,7 @@ namespace ApprovalTests
         static void verify(const ApprovalWriter& writer,
                            const Options& options = Options())
         {
-            FileApprover::verify(*getDefaultNamer(), writer, options.getReporter());
+            FileApprover::verify(*options.getNamer(), writer, options.getReporter());
         }
         ///@}
 
