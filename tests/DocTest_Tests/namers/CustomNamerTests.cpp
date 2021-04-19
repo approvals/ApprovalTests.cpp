@@ -2,6 +2,7 @@
 #include "ApprovalTests/core/ApprovalNamer.h"
 #include "ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.h"
 #include "ApprovalTests/namers/NamerFactory.h"
+#include "ApprovalTests/namers/TemplatedCustomNamer.h"
 #include "ApprovalTests/utilities/Path.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 
@@ -138,14 +139,30 @@ TEST_CASE("Behaviour with custom directory")
 TEST_CASE("Test Every Customization")
 {
     auto custom = CustomNamer()
-                      .withTestFolder("custom/location")
-                      .withTestFolderForApproved([](auto that) {
-                          return that.getTestFolder() / "approved_files";
-                      })
-                      .getApprovedFile(".txt");
+            .withTestFolder("custom/location")
+            .withTestFolderForApproved(
+                [](auto that) { return that.getTestFolder() / "approved_files"; })
+            .getApprovedFile(".txt");
     REQUIRE("custom/location/approved_files/approval_tests/"
             "CustomNamerTests.Test_Every_Customization.approved.txt" ==
             normalize(custom));
+}
+
+TEST_CASE("Test StringTemplates")
+{
+    // {TestFileName}
+    // {TestCaseName}
+    // {TestSourceDirectory}
+    // {ApprovedOrReceived}
+    // {FileExtension}
+    // {BaseName} = {TestFileName}.{TestCaseName}
+    //
+    TemplatedCustomNamer namer("TestSourceDirectory/{ApprovedOrReceived}/"
+                               "{TestFileName}.{TestCaseName}.{FileExtension}");
+    CHECK(namer.getApprovedFile(".txt") ==
+          "TestSourceDirectory/approved/CustomNamerTests.Test_StringTemplates.txt");
+    CHECK(namer.getReceivedFile(".txt") ==
+          "TestSourceDirectory/received/CustomNamerTests.Test_StringTemplates.txt");
 }
 
 // TODO Better names for methods

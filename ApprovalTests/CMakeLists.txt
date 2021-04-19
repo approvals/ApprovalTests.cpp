@@ -58,6 +58,8 @@ add_library(${PROJECT_NAME}
         namers/SeparateApprovedAndReceivedDirectoriesNamer.cpp
         namers/SubdirectoryDisposer.h
         namers/SubdirectoryDisposer.cpp
+        namers/TemplatedCustomNamer.h
+        namers/TemplatedCustomNamer.cpp
         reporters/AutoApproveIfMissingReporter.h
         reporters/AutoApproveIfMissingReporter.cpp
         reporters/AutoApproveReporter.h
