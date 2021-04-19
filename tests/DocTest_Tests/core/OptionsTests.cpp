@@ -6,6 +6,8 @@
 #include "ApprovalTests/reporters/QuietReporter.h"
 #include "ApprovalTests/Approvals.h"
 
+#include <iostream>
+
 using namespace ApprovalTests;
 
 namespace
@@ -100,4 +102,12 @@ TEST_CASE("isUsingDefaultScrubber")
               .fileOptions()
               .withFileExtension(".xyz")
               .isUsingDefaultScrubber() == false);
+}
+
+TEST_CASE("Options - Test Default Namer")
+{
+    auto namer = Approvals::getDefaultNamer();
+    auto namer2 = Options().getNamer();
+    checkSameType(
+        typeid(namer.get()), typeid(namer2.get()), "Namers are not the same type");
 }

@@ -1,5 +1,6 @@
 #include "ApprovalTests/core/Options.h"
 #include "ApprovalTests/reporters/DefaultReporter.h"
+#include "ApprovalNamer.h"
 
 namespace ApprovalTests
 {
@@ -99,5 +100,10 @@ namespace ApprovalTests
     Options Options::withScrubber(Scrubber scrubber) const
     {
         return Options(fileOptions_, std::move(scrubber), reporter_, false);
+    }
+
+    std::shared_ptr<ApprovalNamer> Options::getNamer() const
+    {
+        return namer_;
     }
 }

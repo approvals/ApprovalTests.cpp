@@ -2,6 +2,7 @@
 
 #include <utility>
 #include <exception>
+#include <namers/DefaultNamerFactory.h>
 
 #include "scrubbers/Scrubbers.h"
 #include "core/Reporter.h"
@@ -37,6 +38,8 @@ namespace ApprovalTests
         FileOptions fileOptions_;
         Scrubber scrubber_ = Scrubbers::doNothing;
         const Reporter& reporter_ = defaultReporter();
+        std::shared_ptr<ApprovalNamer> namer_ = DefaultNamerFactory::getDefaultNamer()();
+
         bool usingDefaultScrubber_ = true;
 
         Options(FileOptions fileOptions,
@@ -76,6 +79,9 @@ namespace ApprovalTests
 
         APPROVAL_TESTS_NO_DISCARD
         Options withScrubber(Scrubber scrubber) const;
+
+        APPROVAL_TESTS_NO_DISCARD
+        std::shared_ptr<ApprovalNamer> getNamer() const;
     };
 
     namespace Detail
