@@ -1,9 +1,11 @@
 #include "ApprovalTests/utilities/StringUtils.h"
+#include "ApprovalTests/utilities/Macros.h"
 
 #include <cctype>
 
 namespace ApprovalTests
 {
+    APPROVAL_TESTS_NO_DISCARD
     std::string StringUtils::replaceAll(std::string inText,
                                         const std::string& find,
                                         const std::string& replaceWith)
@@ -18,11 +20,13 @@ namespace ApprovalTests
         return inText;
     }
 
+    APPROVAL_TESTS_NO_DISCARD
     bool StringUtils::contains(const std::string& inText, const std::string& find)
     {
         return inText.find(find, 0) != std::string::npos;
     }
 
+    APPROVAL_TESTS_NO_DISCARD
     std::string StringUtils::toLower(std::string inText)
     {
         std::string copy(inText);
@@ -32,6 +36,7 @@ namespace ApprovalTests
         return copy;
     }
 
+    APPROVAL_TESTS_NO_DISCARD
     bool StringUtils::beginsWith(std::string value, std::string beginning)
     {
         if (value.size() < beginning.size())
@@ -41,6 +46,7 @@ namespace ApprovalTests
         return std::equal(beginning.begin(), beginning.end(), value.begin());
     }
 
+    APPROVAL_TESTS_NO_DISCARD
     bool StringUtils::endsWith(std::string value, std::string ending)
     {
         if (value.size() < ending.size())
@@ -50,6 +56,7 @@ namespace ApprovalTests
         return std::equal(ending.rbegin(), ending.rend(), value.rbegin());
     }
 
+    APPROVAL_TESTS_NO_DISCARD
     std::string StringUtils::leftTrim(std::string s)
     {
 
@@ -59,6 +66,7 @@ namespace ApprovalTests
         return s;
     }
 
+    APPROVAL_TESTS_NO_DISCARD
     std::string StringUtils::rightTrim(std::string s)
     {
         s.erase(std::find_if(s.rbegin(),
@@ -69,6 +77,7 @@ namespace ApprovalTests
         return s;
     }
 
+    APPROVAL_TESTS_NO_DISCARD
     std::string StringUtils::trim(std::string s)
     {
         s = leftTrim(s);
