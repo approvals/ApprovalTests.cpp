@@ -12,11 +12,13 @@ namespace ApprovalTests
         const std::string& approvedOrReceivedReplacement) const
     {
         std::string result = template_;
-        auto fileExtension = "{FileExtension}";
+        // begin-snippet: custom_namer_tags
+        auto testSourceDirectory = "{TestSourceDirectory}";
         auto testFileName = "{TestFileName}";
         auto testCaseName = "{TestCaseName}";
-        auto testSourceDirectory = "{TestSourceDirectory}";
         auto approvedOrReceived = "{ApprovedOrReceived}";
+        auto fileExtension = "{FileExtension}";
+        // end-snippet
 
         result = ApprovalTests::StringUtils::replaceAll(
             result, fileExtension, extensionWithDot.substr(1));
