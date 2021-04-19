@@ -1,7 +1,5 @@
 #pragma once
 
-#include <utility>
-#include "ApprovalTests/utilities/SystemUtils.h"
 #include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/core/ApprovalNamer.h"
 
