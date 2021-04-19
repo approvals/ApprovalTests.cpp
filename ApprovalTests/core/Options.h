@@ -2,8 +2,8 @@
 
 #include <utility>
 #include <exception>
-#include <namers/DefaultNamerFactory.h>
 
+#include "namers/DefaultNamerFactory.h"
 #include "scrubbers/Scrubbers.h"
 #include "core/Reporter.h"
 #include "utilities/Macros.h"
