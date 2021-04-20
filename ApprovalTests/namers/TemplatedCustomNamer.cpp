@@ -9,6 +9,7 @@ namespace ApprovalTests
         : template_(std::move(templateString))
     {
     }
+
     std::string TemplatedCustomNamer::constructFromTemplate(
         const std::string& extensionWithDot,
         const std::string& approvedOrReceivedReplacement) const
