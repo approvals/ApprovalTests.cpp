@@ -33,10 +33,11 @@
 #include "ApprovalTests/utilities/MoreHelpMessages.h"
 #include "ApprovalTests/utilities/CartesianProduct.h"
 #include "ApprovalTests/reporters/DefaultReporter.h"
-#include "ApprovalTests/namers/ExistingFileNamer.h"
-#include "ApprovalTests/core/ApprovalWriter.h"
+#include "ApprovalTests/namers/DefaultNamerFactory.h"
 #include "ApprovalTests/scrubbers/Scrubbers.h"
 #include "ApprovalTests/core/Options.h"
+#include "ApprovalTests/namers/ExistingFileNamer.h"
+#include "ApprovalTests/core/ApprovalWriter.h"
 #include "ApprovalTests/writers/ExistingFile.h"
 #include "ApprovalTests/reporters/FirstWorkingReporter.h"
 #include "ApprovalTests/reporters/DefaultFrontLoadedReporter.h"
@@ -45,7 +46,6 @@
 #include "ApprovalTests/reporters/DefaultReporterFactory.h"
 #include "ApprovalTests/reporters/DefaultReporterDisposer.h"
 #include "ApprovalTests/namers/SubdirectoryDisposer.h"
-#include "ApprovalTests/namers/DefaultNamerFactory.h"
 #include "ApprovalTests/namers/DefaultNamerDisposer.h"
 #include "ApprovalTests/writers/StringWriter.h"
 #include "ApprovalTests/core/ApprovalComparator.h"
@@ -69,6 +69,7 @@
 #include "ApprovalTests/namers/HelpMessages.h"
 #include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.h"
+#include "ApprovalTests/namers/TemplatedCustomNamer.h"
 #include "ApprovalTests/reporters/AutoApproveIfMissingReporter.h"
 #include "ApprovalTests/reporters/BlockingReporter.h"
 #include "ApprovalTests/reporters/CIBuildOnlyReporter.h"
@@ -84,6 +85,7 @@
 #include "ApprovalTests/utilities/DateUtils.h"
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 #include "ApprovalTests/utilities/FileUtilsSystemSpecific.h"
+#include "ApprovalTests/utilities/Path.h"
 
 #ifdef APPROVAL_TESTS_INCLUDE_CPPS
 // Cpp files will be included in the single-header file here
