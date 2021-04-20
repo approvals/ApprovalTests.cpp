@@ -15,24 +15,21 @@ using namespace ApprovalTests;
 
 auto configChange = ApprovalTestNamer::setCheckBuildConfig(false);
 
-auto default_namer_disposer = Approvals::useAsDefaultNamer(
-    []()
-    {
-        std::string args =
-            "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
-        ApprovalTestNamer namer;
-        auto path1 = std::filesystem::canonical(std::filesystem::path(".")).string();
-        std::cout << namer.getDirectory() << '\n' << path1 << '\n';
+auto default_namer_disposer = Approvals::useAsDefaultNamer([]() {
+    std::string args =
+        "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
+    ApprovalTestNamer namer;
+    auto path1 = std::filesystem::canonical(std::filesystem::path(".")).string();
+    std::cout << namer.getDirectory() << '\n' << path1 << '\n';
 
-        bool is_build_environment =
-            StringUtils::endsWith(path1, "examples/out_of_source");
-        if (is_build_environment)
-        {
-            args = "{TestSourceDirectory}/" + args;
-        }
-        else if (!SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR").empty())
-        {
-            args = SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR") + "/" + args;
-        }
-        return std::make_shared<TemplatedCustomNamer>(args);
-    });
+    bool is_build_environment = StringUtils::endsWith(path1, "examples/out_of_source");
+    if (is_build_environment)
+    {
+        args = "{TestSourceDirectory}/" + args;
+    }
+    else if (!SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR").empty())
+    {
+        args = SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR") + "/" + args;
+    }
+    return std::make_shared<TemplatedCustomNamer>(args);
+});
