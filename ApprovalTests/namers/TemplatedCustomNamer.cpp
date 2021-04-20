@@ -3,6 +3,20 @@
 
 #include <utility>
 
+namespace
+{
+    std::string replaceIfContains(std::string input,
+                                  std::string pattern,
+                                  std::function<std::string(void)> replacer)
+    {
+        if (!ApprovalTests::StringUtils::contains(input, pattern))
+        {
+            return input;
+        }
+        return ApprovalTests::StringUtils::replaceAll(input, pattern, replacer());
+    }
+}
+
 namespace ApprovalTests
 {
     TemplatedCustomNamer::TemplatedCustomNamer(std::string templateString)
@@ -26,11 +40,11 @@ namespace ApprovalTests
         using namespace ApprovalTests;
 
         // clang-format off
-        result = StringUtils::replaceAll(result, fileExtension, extensionWithDot.substr(1));
-        result = StringUtils::replaceAll(result, testFileName, namer_.getSourceFileName());
-        result = StringUtils::replaceAll(result, testCaseName, namer_.getTestName());
-        result = StringUtils::replaceAll(result, testSourceDirectory, namer_.getDirectory());
-        result = StringUtils::replaceAll(result, approvedOrReceived, approvedOrReceivedReplacement);
+        result = replaceIfContains(result, fileExtension, [&](){return extensionWithDot.substr(1);});
+        result = replaceIfContains(result, testFileName, [&](){return namer_.getSourceFileName();});
+        result = replaceIfContains(result, testCaseName, [&](){return namer_.getTestName();});
+        result = replaceIfContains(result, testSourceDirectory, [&](){return namer_.getDirectory();});
+        result = replaceIfContains(result, approvedOrReceived, [&](){return approvedOrReceivedReplacement;});
         // clang-format on
 
         return result;
