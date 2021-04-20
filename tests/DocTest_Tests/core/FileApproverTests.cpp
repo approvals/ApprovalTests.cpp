@@ -81,3 +81,35 @@ TEST_CASE("ItUsesCustomComparator")
 
     FileApprover::verify("a.length", "b.length");
 }
+
+namespace
+{
+    class IdenticalFilenamesNamer : public ApprovalNamer
+    {
+    public:
+        APPROVAL_TESTS_NO_DISCARD
+        std::string getApprovedFile(std::string extensionWithDot) const override
+        {
+            ApprovalTestNamer namer;
+            return namer.getApprovedFile(extensionWithDot);
+        }
+
+        APPROVAL_TESTS_NO_DISCARD
+        std::string getReceivedFile(std::string extensionWithDot) const override
+        {
+            // Intentionally return same name as approved:
+            return getApprovedFile(extensionWithDot);
+        }
+    };
+}
+
+TEST_CASE("ItRejectsMatchingReceivedAndApprovedNames")
+{
+    auto default_namer_disposer = Approvals::useAsDefaultNamer(
+        []() { return std::make_shared<IdenticalFilenamesNamer>(); });
+
+    REQUIRE_THROWS_AS(
+        Approvals::verify(
+            "This should fail, as approved and verified filenames are identical"),
+        std::runtime_error);
+}

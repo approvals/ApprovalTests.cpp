@@ -3,6 +3,8 @@
 #include "ApprovalTests/reporters/FrontLoadedReporterFactory.h"
 #include "ApprovalException.h"
 
+#include <sstream>
+
 namespace ApprovalTests
 {
 
@@ -19,6 +21,19 @@ namespace ApprovalTests
                               const std::string& approvedPath,
                               const ApprovalComparator& comparator)
     {
+        if (receivedPath == approvedPath)
+        {
+            std::stringstream s;
+            s << "Identical filenames for received and approved.\n"
+              << "Tests would spuriously pass. \n"
+              << "Please check your custom namer. \n"
+              << "Received : \"" << receivedPath << "\" \n"
+              << "Approved : \"" << approvedPath << "\"";
+            // Do not throw ApprovalException, as we don't want reporters to trigger.
+            // They would show two seemingly identical files, due to matching file name.
+            throw std::runtime_error(s.str());
+        }
+
         if (!FileUtils::fileExists(approvedPath))
         {
             throw ApprovalMissingException(receivedPath, approvedPath);
