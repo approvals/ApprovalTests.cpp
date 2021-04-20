@@ -1,6 +1,7 @@
 #include "TemplatedCustomNamer.h"
 #include "ApprovalTests//utilities/StringUtils.h"
 
+#include <functional>
 #include <utility>
 
 namespace
