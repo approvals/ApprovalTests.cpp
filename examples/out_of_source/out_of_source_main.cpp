@@ -11,9 +11,10 @@ using namespace ApprovalTests;
 //auto defaultReporterDisposer =
 //    Approvals::useAsDefaultReporter(std::make_shared<DocTestReporter>());
 
-//auto default_namer_disposer = Approvals::useAsDefaultNamer(
-//    []()
-//    {
-//        return std::make_shared<TemplatedCustomNamer>(
-//            "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}");
-//    });
+auto default_namer_disposer = Approvals::useAsDefaultNamer(
+    []()
+    {
+        return std::make_shared<TemplatedCustomNamer>(
+            "{TestSourceDirectory}/"
+            "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}");
+    });
