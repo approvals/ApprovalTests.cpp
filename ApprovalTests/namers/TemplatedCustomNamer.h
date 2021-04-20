@@ -12,7 +12,7 @@ namespace ApprovalTests
         std::string template_;
 
     public:
-        explicit TemplatedCustomNamer(const std::string& templateString);
+        explicit TemplatedCustomNamer(std::string templateString);
 
         APPROVAL_TESTS_NO_DISCARD
         std::string constructFromTemplate(const std::string& extensionWithDot,

@@ -1,10 +1,12 @@
 #include "TemplatedCustomNamer.h"
 #include "ApprovalTests//utilities/StringUtils.h"
 
+#include <utility>
+
 namespace ApprovalTests
 {
-    TemplatedCustomNamer::TemplatedCustomNamer(const std::string& templateString)
-        : template_(templateString)
+    TemplatedCustomNamer::TemplatedCustomNamer(std::string templateString)
+        : template_(std::move(templateString))
     {
     }
     std::string TemplatedCustomNamer::constructFromTemplate(
