@@ -15,3 +15,8 @@ target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests doctest::doctest)
 
 add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
 # end-snippet
+
+install(TARGETS ${EXE_NAME} DESTINATION ${EXE_NAME})
+# Copy all approved files
+file(GLOB_RECURSE APPROVED_FILES_TO_INSTALL ${CMAKE_CURRENT_SOURCE_DIR} "*.approved.*")
+install(FILES ${APPROVED_FILES_TO_INSTALL} DESTINATION ${EXE_NAME})
