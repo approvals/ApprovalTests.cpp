@@ -48,6 +48,7 @@ TEST_CASE("Test Namer Injection")
 // TODO Rename this file to TemplatedCustomNamerTests.cpp
 
 // ---- Features
+// TODO Make it easier to register TemplatedCustomNamer as custom namer
 // TODO Convert / or \ to native line endings
 // TODO {TestSourceDirectory} is misleading - it does not always match the source directory - it should call ApprovalTestNamer::getTestSourceDirectory()
 // TODO Review the template strings, for any missing cases
