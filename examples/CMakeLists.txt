@@ -14,4 +14,6 @@ add_subdirectory(fmt_approvals_demo)
 add_subdirectory(googletest_existing_main)
 add_subdirectory(googletest_starter)
 
+add_subdirectory(out_of_source)
+
 add_subdirectory(ut_starter)
