@@ -2,7 +2,8 @@
 
 namespace ApprovalTests
 {
-    SystemLauncher::SystemLauncher(bool isForeground) : isForeground_(isForeground)
+    SystemLauncher::SystemLauncher(bool isForeground, bool allowNonZeroExitCodes)
+        : isForeground_(isForeground), allowNonZeroExitCodes_(allowNonZeroExitCodes)
     {
     }
 
@@ -10,7 +11,7 @@ namespace ApprovalTests
     {
         std::string launch = getCommandLine(commandLine);
 
-        SystemUtils::runSystemCommandOrThrow(launch);
+        SystemUtils::runSystemCommandOrThrow(launch, allowNonZeroExitCodes_);
         return true;
     }
 
@@ -22,6 +23,11 @@ namespace ApprovalTests
     void SystemLauncher::setForeground(bool foreground)
     {
         isForeground_ = foreground;
+    }
+
+    void SystemLauncher::setAllowNonZeroExitCodes(bool allow)
+    {
+        allowNonZeroExitCodes_ = allow;
     }
 
     bool SystemLauncher::isForeground() const

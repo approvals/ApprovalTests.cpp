@@ -12,9 +12,11 @@ namespace ApprovalTests
     private:
         bool useWindows_ = SystemUtils::isWindowsOs();
         bool isForeground_ = false;
+        bool allowNonZeroExitCodes_ = false;
 
     public:
-        explicit SystemLauncher(bool isForeground = false);
+        explicit SystemLauncher(bool isForeground = false,
+                                bool allowNonZeroExitCodes = false);
 
         bool launch(const std::string& commandLine) override;
 
@@ -22,6 +24,8 @@ namespace ApprovalTests
         void invokeForWindows(bool useWindows);
 
         void setForeground(bool foreground);
+
+        void setAllowNonZeroExitCodes(bool allow);
 
         bool isForeground() const;
 

@@ -1,0 +1,4 @@
+Comparing files:
+received: <Directory>/_r.txt
+approved: <Directory>/_a.txt
+

@@ -15,19 +15,22 @@ namespace ApprovalTests
         return std::make_shared<GenericDiffReporter>(info);
     }
 
-    std::shared_ptr<GenericDiffReporter>
-    CustomReporter::createForegroundReporter(std::string path, Type type)
+    std::shared_ptr<GenericDiffReporter> CustomReporter::createForegroundReporter(
+        std::string path, Type type, bool allowNonZeroExitCodes)
     {
-        return createForegroundReporter(
-            std::move(path), DiffInfo::getDefaultArguments(), type);
+        return createForegroundReporter(std::move(path),
+                                        DiffInfo::getDefaultArguments(),
+                                        type,
+                                        allowNonZeroExitCodes);
     }
 
     std::shared_ptr<GenericDiffReporter> CustomReporter::createForegroundReporter(
-        std::string path, std::string arguments, Type type)
+        std::string path, std::string arguments, Type type, bool allowNonZeroExitCodes)
     {
         DiffInfo info(std::move(path), std::move(arguments), type);
         auto reporter = std::make_shared<GenericDiffReporter>(info);
         reporter->launcher.setForeground(true);
+        reporter->launcher.setAllowNonZeroExitCodes(allowNonZeroExitCodes);
         return reporter;
     }
 }

@@ -49,6 +49,7 @@ namespace ApprovalTests
 
         static void ensureDirectoryExists(const std::string& fullFilePath);
 
-        static void runSystemCommandOrThrow(const std::string& command);
+        static void runSystemCommandOrThrow(const std::string& command,
+                                            bool allowNonZeroExitCodes = false);
     };
 }

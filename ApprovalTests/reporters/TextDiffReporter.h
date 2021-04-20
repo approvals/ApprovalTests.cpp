@@ -3,6 +3,7 @@
 #include "core/Reporter.h"
 
 #include <memory>
+#include <iosfwd>
 
 namespace ApprovalTests
 {
@@ -14,9 +15,11 @@ namespace ApprovalTests
     {
     private:
         std::unique_ptr<Reporter> m_reporter;
+        std::ostream& stream_;
 
     public:
         TextDiffReporter();
+        explicit TextDiffReporter(std::ostream& stream);
 
         bool report(std::string received, std::string approved) const override;
     };

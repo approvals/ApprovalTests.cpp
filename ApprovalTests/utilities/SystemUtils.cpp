@@ -157,11 +157,12 @@ namespace ApprovalTests
         }
     }
 
-    void SystemUtils::runSystemCommandOrThrow(const std::string& command)
+    void SystemUtils::runSystemCommandOrThrow(const std::string& command,
+                                              bool allowNonZeroExitCodes)
     {
         int exitCode = system(command.c_str());
 
-        if (exitCode != 0)
+        if (!allowNonZeroExitCodes && exitCode != 0)
         {
             throw std::runtime_error(command + ": failed with exit code " +
                                      std::to_string(exitCode));
