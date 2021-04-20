@@ -8,6 +8,8 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(${EXE_NAME}
         out_of_source_main.cpp
         out_of_source_test.cpp
+        DocTestReporter.cpp
+        DocTestReporter.h
         )
 target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests doctest::doctest)
 
