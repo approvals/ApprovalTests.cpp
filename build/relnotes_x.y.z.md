@@ -6,5 +6,6 @@
     * None
 * **Bug fixes**
   * Approval tests no longer spuriously pass if the received and approved filenames are identical (#178)
+  * TextDiffReporter no longer throws if files differ (#106)
 * **Other changes**
     * None
