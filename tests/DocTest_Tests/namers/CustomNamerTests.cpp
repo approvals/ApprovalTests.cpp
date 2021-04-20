@@ -43,6 +43,7 @@ TEST_CASE("Test Namer Injection")
 // TODO Document scenarios where this might be useful (when run outside of build dir, e.g. embedded)
 // TODO Reporters.md should link to the new How To file
 // TODO New "How To" file should link to Reporters.md
+// TODO Make documentation example use different filenames for approved and received, for safety
 
 // ---- Tests
 // TODO Rename this file to TemplatedCustomNamerTests.cpp
