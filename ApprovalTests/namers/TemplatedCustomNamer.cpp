@@ -20,16 +20,16 @@ namespace ApprovalTests
         auto fileExtension = "{FileExtension}";
         // end-snippet
 
-        result = ApprovalTests::StringUtils::replaceAll(
-            result, fileExtension, extensionWithDot.substr(1));
-        result = ApprovalTests::StringUtils::replaceAll(
-            result, testFileName, namer_.getSourceFileName());
-        result = ApprovalTests::StringUtils::replaceAll(
-            result, testCaseName, namer_.getTestName());
-        result = ApprovalTests::StringUtils::replaceAll(
-            result, testSourceDirectory, namer_.getDirectory());
-        result = ApprovalTests::StringUtils::replaceAll(
-            result, approvedOrReceived, approvedOrReceivedReplacement);
+        using namespace ApprovalTests;
+
+        // clang-format off
+        result = StringUtils::replaceAll(result, fileExtension, extensionWithDot.substr(1));
+        result = StringUtils::replaceAll(result, testFileName, namer_.getSourceFileName());
+        result = StringUtils::replaceAll(result, testCaseName, namer_.getTestName());
+        result = StringUtils::replaceAll(result, testSourceDirectory, namer_.getDirectory());
+        result = StringUtils::replaceAll(result, approvedOrReceived, approvedOrReceivedReplacement);
+        // clang-format on
+
         return result;
     }
 
