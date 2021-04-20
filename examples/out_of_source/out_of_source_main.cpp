@@ -16,5 +16,5 @@ auto default_namer_disposer = Approvals::useAsDefaultNamer(
     {
         return std::make_shared<TemplatedCustomNamer>(
             "{TestSourceDirectory}/"
-            "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}");
+            "{TestCaseName}.{ApprovedOrReceived}.{FileExtension}");
     });
