@@ -5,6 +5,6 @@
 * **New features**
     * None
 * **Bug fixes**
-    * None
+  * Approval tests no longer spuriously pass if the recieved and approved filenames are identical (#178)
 * **Other changes**
     * None
