@@ -3,6 +3,8 @@
 
 #include "DocTestReporter.h"
 
+#include <filesystem>
+
 using namespace ApprovalTests;
 
 //auto defaultReporterDisposer =
@@ -14,7 +16,16 @@ using namespace ApprovalTests;
 auto default_namer_disposer = Approvals::useAsDefaultNamer(
     []()
     {
-        return std::make_shared<TemplatedCustomNamer>(
-            "{TestSourceDirectory}/"
-            "{TestCaseName}.{ApprovedOrReceived}.{FileExtension}");
+        std::string args = "{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
+        ApprovalTestNamer namer;
+        auto path1 = std::filesystem::canonical(std::filesystem::path(".")).string();
+        std::cout << namer.getDirectory() << '\n' << path1 << '\n';
+
+        bool is_build_environment =
+            StringUtils::endsWith(path1, "examples/out_of_source");
+        if (is_build_environment)
+        {
+            args = "{TestSourceDirectory}/" + args;
+        }
+        return std::make_shared<TemplatedCustomNamer>(args);
     });
