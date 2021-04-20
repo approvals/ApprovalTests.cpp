@@ -30,5 +30,9 @@ auto default_namer_disposer = Approvals::useAsDefaultNamer(
         {
             args = "{TestSourceDirectory}/" + args;
         }
+        else if (!SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR").empty())
+        {
+            args = SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR") + "/" + args;
+        }
         return std::make_shared<TemplatedCustomNamer>(args);
     });
