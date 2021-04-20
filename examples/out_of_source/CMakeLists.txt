@@ -4,7 +4,7 @@ endif ()
 
 # begin-snippet: out_of_source_cmake
 set(EXE_NAME out_of_source)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 add_executable(${EXE_NAME}
         out_of_source_main.cpp
         out_of_source_test.cpp
