@@ -16,6 +16,10 @@ namespace ApprovalTests
 *
 * For details on how to fix this, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
+*
+* For advanced users only:
+* If you believe you have reached this message in error, you can bypass
+* the check by calling ApprovalTestNamer::setCheckBuildConfig(false);
 )";
         return StringUtils::replaceAll(
             topAndTailHelpMessage(helpMessage), "[fileName]", fileName);

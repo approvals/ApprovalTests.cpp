@@ -22,6 +22,7 @@ namespace ApprovalTests
 
         std::vector<std::string> sections;
         static std::string directoryPrefix;
+        static bool checkBuildConfig_;
 
     private:
         std::string handleBoostQuirks() const;
@@ -75,5 +76,7 @@ namespace ApprovalTests
 
         std::string getFullFileName(const std::string& approved,
                                     const std::string& extensionWithDot) const;
+
+        static bool setCheckBuildConfig(bool enabled);
     };
 }

@@ -13,10 +13,13 @@ using namespace ApprovalTests;
 //auto defaultReporterDisposer =
 //    Approvals::useAsDefaultReporter(std::make_shared<DocTestReporter>());
 
+auto configChange = ApprovalTestNamer::setCheckBuildConfig(false);
+
 auto default_namer_disposer = Approvals::useAsDefaultNamer(
     []()
     {
-        std::string args = "{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
+        std::string args =
+            "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
         ApprovalTestNamer namer;
         auto path1 = std::filesystem::canonical(std::filesystem::path(".")).string();
         std::cout << namer.getDirectory() << '\n' << path1 << '\n';

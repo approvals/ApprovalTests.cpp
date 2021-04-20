@@ -8,6 +8,7 @@
 namespace ApprovalTests
 {
     std::string TestName::directoryPrefix;
+    bool TestName::checkBuildConfig_ = true;
 
     const std::string& TestName::getFileName() const
     {
@@ -56,7 +57,7 @@ namespace ApprovalTests
 
     void TestName::checkBuildConfiguration(const std::string& fileName)
     {
-        if (!FileUtils::fileExists(fileName))
+        if (checkBuildConfig_ && !FileUtils::fileExists(fileName))
         {
             throw std::runtime_error(getMisconfiguredBuildHelp(fileName));
         }
@@ -212,5 +213,12 @@ namespace ApprovalTests
         std::stringstream ext;
         ext << getDirectory() << getOutputFileBaseName() << approved << extensionWithDot;
         return ext.str();
+    }
+
+    bool ApprovalTestNamer::setCheckBuildConfig(bool enabled)
+    {
+        auto previous = TestName::checkBuildConfig_;
+        TestName::checkBuildConfig_ = enabled;
+        return previous;
     }
 }
