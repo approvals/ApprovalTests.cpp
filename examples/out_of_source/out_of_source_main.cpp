@@ -18,14 +18,7 @@ auto configChange = ApprovalTestNamer::setCheckBuildConfig(false);
 
 bool isRunningInBuildEnvironment()
 {
-    ApprovalTestNamer namer;
     auto workingDirectory = fs::canonical(fs::path(".")).string();
-    std::cout << "--- ApprovalTestNamer::getTestSourceDirectory(): "
-              << namer.getTestSourceDirectory() << '\n';
-    std::cout << "--- ApprovalTestNamer::getDirectory(): " << namer.getDirectory()
-              << '\n';
-    std::cout << "--- Current working directory: " << workingDirectory << '\n';
-
     std::string ending = "examples/out_of_source";
     ending = StringUtils::replaceAll(ending, "/", SystemUtils::getDirectorySeparator());
     return StringUtils::endsWith(workingDirectory, ending);
