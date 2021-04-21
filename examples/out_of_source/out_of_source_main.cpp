@@ -19,16 +19,16 @@ auto configChange = ApprovalTestNamer::setCheckBuildConfig(false);
 bool isRunningInBuildEnvironment()
 {
     ApprovalTestNamer namer;
-    auto path1 = fs::canonical(fs::path(".")).string();
+    auto workingDirectory = fs::canonical(fs::path(".")).string();
     std::cout << "--- ApprovalTestNamer::getTestSourceDirectory(): "
               << namer.getTestSourceDirectory() << '\n';
     std::cout << "--- ApprovalTestNamer::getDirectory(): " << namer.getDirectory()
               << '\n';
-    std::cout << "--- Current working directory: " << path1 << '\n';
+    std::cout << "--- Current working directory: " << workingDirectory << '\n';
 
     std::string ending = "examples/out_of_source";
     ending = StringUtils::replaceAll(ending, "/", SystemUtils::getDirectorySeparator());
-    return StringUtils::endsWith(path1, ending);
+    return StringUtils::endsWith(workingDirectory, ending);
 }
 
 auto default_namer_disposer = Approvals::useAsDefaultNamer([]() {
