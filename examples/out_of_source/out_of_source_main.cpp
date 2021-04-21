@@ -4,6 +4,7 @@
 #include "DocTestReporter.h"
 
 #include <filesystem>
+namespace fs = std::filesystem;
 
 using namespace ApprovalTests;
 
@@ -18,7 +19,7 @@ auto configChange = ApprovalTestNamer::setCheckBuildConfig(false);
 bool isRunningInBuildEnvironment()
 {
     ApprovalTestNamer namer;
-    auto path1 = std::filesystem::canonical(std::filesystem::path(".")).string();
+    auto path1 = fs::canonical(fs::path(".")).string();
     std::cout << "--- ApprovalTestNamer::getTestSourceDirectory(): "
               << namer.getTestSourceDirectory() << '\n';
     std::cout << "--- ApprovalTestNamer::getDirectory(): " << namer.getDirectory()
