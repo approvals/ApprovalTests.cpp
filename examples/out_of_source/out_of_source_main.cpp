@@ -34,15 +34,16 @@ bool isRunningInBuildEnvironment()
 auto default_namer_disposer = Approvals::useAsDefaultNamer([]() {
     std::string args =
         "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
-    bool is_build_environment = isRunningInBuildEnvironment();
 
+    std::string rootDir;
+    bool is_build_environment = isRunningInBuildEnvironment();
     if (is_build_environment)
     {
-        args = "{TestSourceDirectory}/" + args;
+        rootDir = "{TestSourceDirectory}/";
     }
     else if (!SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR").empty())
     {
-        args = SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR") + "/" + args;
+        rootDir = SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR") + "/";
     }
-    return std::make_shared<TemplatedCustomNamer>(args);
+    return std::make_shared<TemplatedCustomNamer>(rootDir + args);
 });
