@@ -20,7 +20,11 @@ auto default_namer_disposer = Approvals::useAsDefaultNamer([]() {
         "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
     ApprovalTestNamer namer;
     auto path1 = std::filesystem::canonical(std::filesystem::path(".")).string();
-    std::cout << namer.getDirectory() << '\n' << path1 << '\n';
+    std::cout << "--- ApprovalTestNamer::getTestSourceDirectory(): "
+              << namer.getTestSourceDirectory() << '\n';
+    std::cout << "--- ApprovalTestNamer::getDirectory(): " << namer.getDirectory()
+              << '\n';
+    std::cout << "--- Current working directory: " << path1 << '\n';
 
     bool is_build_environment = StringUtils::endsWith(path1, "examples/out_of_source");
     if (is_build_environment)
