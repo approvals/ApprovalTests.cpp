@@ -25,13 +25,15 @@ bool isRunningInBuildEnvironment()
               << '\n';
     std::cout << "--- Current working directory: " << path1 << '\n';
 
-    return StringUtils::endsWith(path1, "examples/out_of_source");
+    std::string ending = "examples/out_of_source";
+    ending = StringUtils::replaceAll(ending, "/", SystemUtils::getDirectorySeparator());
+    return StringUtils::endsWith(path1, ending);
 }
 
 auto default_namer_disposer = Approvals::useAsDefaultNamer([]() {
     std::string args =
         "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
-        bool is_build_environment = isRunningInBuildEnvironment();
+    bool is_build_environment = isRunningInBuildEnvironment();
 
     if (is_build_environment)
     {
