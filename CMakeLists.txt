@@ -31,6 +31,7 @@ endif ()
 if (NOT_SUBPROJECT)
     add_subdirectory(CMake/cpputest)
     add_subdirectory(CMake/googletest)
+    add_subdirectory(CMake/filesystem)
 endif ()
 
 # This will optionally add the other third-party sub-directories
