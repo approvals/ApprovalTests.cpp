@@ -15,9 +15,8 @@ using namespace ApprovalTests;
 
 auto configChange = ApprovalTestNamer::setCheckBuildConfig(false);
 
-auto default_namer_disposer = Approvals::useAsDefaultNamer([]() {
-    std::string args =
-        "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
+bool isRunningInBuildEnvironment()
+{
     ApprovalTestNamer namer;
     auto path1 = std::filesystem::canonical(std::filesystem::path(".")).string();
     std::cout << "--- ApprovalTestNamer::getTestSourceDirectory(): "
@@ -27,6 +26,14 @@ auto default_namer_disposer = Approvals::useAsDefaultNamer([]() {
     std::cout << "--- Current working directory: " << path1 << '\n';
 
     bool is_build_environment = StringUtils::endsWith(path1, "examples/out_of_source");
+    return is_build_environment;
+}
+
+auto default_namer_disposer = Approvals::useAsDefaultNamer([]() {
+    std::string args =
+        "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
+        bool is_build_environment = isRunningInBuildEnvironment();
+
     if (is_build_environment)
     {
         args = "{TestSourceDirectory}/" + args;
