@@ -39,9 +39,14 @@ std::string getApprovedFilesLocation()
     {
         return "{TestSourceDirectory}/";
     }
-    else if (!SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR").empty())
+    else
     {
-        rootDir = SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR") + "/";
+        std::string locationFromEnvVar =
+            SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR");
+        if (!locationFromEnvVar.empty())
+        {
+            rootDir = locationFromEnvVar + "/";
+        }
     }
     return rootDir;
 }
