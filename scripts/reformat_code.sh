@@ -9,6 +9,6 @@ set -o pipefail
 for source_dir in ApprovalTests examples tests ; do
   cd $source_dir
   pwd
-  find . -name \*.h -o -name \*.hpp -o -name \*.cpp | xargs clang-format -i
+  find . -name \*.h -o -name \*.hpp -o -name \*.cpp | xargs clang-format-mp-9.0 -i
   cd ..
 done
