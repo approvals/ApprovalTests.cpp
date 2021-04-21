@@ -44,7 +44,7 @@ std::string getApprovedFilesLocation()
         SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR");
     if (!locationFromEnvVar.empty())
     {
-        rootDir = locationFromEnvVar + "/";
+        return locationFromEnvVar + "/";
     }
     return rootDir;
 }
