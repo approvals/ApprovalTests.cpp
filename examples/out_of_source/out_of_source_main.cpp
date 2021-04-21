@@ -33,8 +33,7 @@ bool isRunningInBuildEnvironment()
 
 std::string getApprovedFilesLocation()
 {
-    bool is_build_environment = isRunningInBuildEnvironment();
-    if (is_build_environment)
+    if (isRunningInBuildEnvironment())
     {
         return "{TestSourceDirectory}/";
     }
