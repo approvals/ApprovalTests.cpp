@@ -15,7 +15,7 @@ namespace ApprovalTests
         std::vector<std::shared_ptr<Reporter>> reporters = {
             CustomReporter::createForegroundReporter("diff", Type::TEXT, true),
             CustomReporter::createForegroundReporter(
-                "C:/Windows/System32/fc.exe", Type::TEXT_AND_IMAGE, false)};
+                "C:/Windows/System32/fc.exe", Type::TEXT_AND_IMAGE, true)};
         m_reporter = std::unique_ptr<Reporter>(new FirstWorkingReporter(reporters));
     }
 
