@@ -35,7 +35,6 @@ TEST_CASE("Test Namer Injection")
 
 // ---- Miscellaneous
 // TODO Move Path impl to .cpp
-// TODO Try it on an embedded device - or ask someone else to!
 // TODO Merge branch to master
 
 // ---- Docs
@@ -50,7 +49,7 @@ TEST_CASE("Test Namer Injection")
 
 // ---- Features
 // TODO Make it easier to register TemplatedCustomNamer as custom namer
-// TODO Convert / or \ to native line endings
+// TODO Convert / or \ to native directory separators
 // TODO {TestSourceDirectory} is misleading - it does not always match the source directory - it should call ApprovalTestNamer::getTestSourceDirectory()
 // TODO Review the template strings, for any missing cases
-// TODO How to access ApprovalTestNamer::getRelativePathOfSourceDirectoryFromSourceRootForApproved()
+// TODO How to access ApprovalTestNamer::getRelativePathOfSourceDirectoryFromSourceRootForApproved() via {}
