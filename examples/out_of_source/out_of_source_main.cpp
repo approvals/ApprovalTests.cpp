@@ -37,7 +37,7 @@ std::string getApprovedFilesLocation()
     bool is_build_environment = isRunningInBuildEnvironment();
     if (is_build_environment)
     {
-        rootDir = "{TestSourceDirectory}/";
+        return "{TestSourceDirectory}/";
     }
     else if (!SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR").empty())
     {
