@@ -4,7 +4,6 @@ endif ()
 
 # begin-snippet: out_of_source_cmake
 set(EXE_NAME out_of_source)
-set(CMAKE_CXX_STANDARD 17)
 add_executable(${EXE_NAME}
         out_of_source_main.cpp
         out_of_source_test.cpp
@@ -12,6 +11,9 @@ add_executable(${EXE_NAME}
         DocTestReporter.h
         )
 target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests doctest::doctest)
+set_target_properties(${EXE_NAME} PROPERTIES
+        CXX_STANDARD 17
+        CXX_STANDARD_REQUIRED ON)
 
 add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
 # end-snippet
