@@ -25,8 +25,7 @@ bool isRunningInBuildEnvironment()
               << '\n';
     std::cout << "--- Current working directory: " << path1 << '\n';
 
-    bool is_build_environment = StringUtils::endsWith(path1, "examples/out_of_source");
-    return is_build_environment;
+    return StringUtils::endsWith(path1, "examples/out_of_source");
 }
 
 auto default_namer_disposer = Approvals::useAsDefaultNamer([]() {
