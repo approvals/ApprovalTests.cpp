@@ -33,7 +33,6 @@ bool isRunningInBuildEnvironment()
 
 std::string getApprovedFilesLocation()
 {
-    std::string rootDir;
     bool is_build_environment = isRunningInBuildEnvironment();
     if (is_build_environment)
     {
@@ -46,7 +45,8 @@ std::string getApprovedFilesLocation()
     {
         return locationFromEnvVar + "/";
     }
-    return rootDir;
+
+    return ""; // Use current working directory
 }
 
 auto default_namer_disposer = Approvals::useAsDefaultNamer([]() {
