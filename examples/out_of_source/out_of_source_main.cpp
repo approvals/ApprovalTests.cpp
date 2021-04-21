@@ -3,8 +3,8 @@
 
 #include "DocTestReporter.h"
 
-#include <filesystem>
-namespace fs = std::filesystem;
+#include "ghc/filesystem.hpp"
+namespace fs = ghc::filesystem;
 
 using namespace ApprovalTests;
 

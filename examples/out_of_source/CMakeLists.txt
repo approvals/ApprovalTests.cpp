@@ -10,9 +10,9 @@ add_executable(${EXE_NAME}
         DocTestReporter.cpp
         DocTestReporter.h
         )
-target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests doctest::doctest)
+target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests doctest::doctest ghc_filesystem)
 set_target_properties(${EXE_NAME} PROPERTIES
-        CXX_STANDARD 17
+        CXX_STANDARD 11
         CXX_STANDARD_REQUIRED ON)
 
 add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
