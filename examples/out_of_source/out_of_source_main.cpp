@@ -33,16 +33,16 @@ bool isRunningInBuildEnvironment()
 
 std::string getApprovedFilesLocation()
 {
-    if (isRunningInBuildEnvironment())
-    {
-        return "{TestSourceDirectory}/";
-    }
-
     std::string locationFromEnvVar =
         SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR");
     if (!locationFromEnvVar.empty())
     {
         return locationFromEnvVar + "/";
+    }
+
+    if (isRunningInBuildEnvironment())
+    {
+        return "{TestSourceDirectory}/";
     }
 
     return ""; // Use current working directory
