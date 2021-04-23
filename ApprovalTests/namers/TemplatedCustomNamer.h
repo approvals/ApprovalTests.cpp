@@ -1,7 +1,9 @@
 #pragma once
 
+#include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/core/ApprovalNamer.h"
+#include "DefaultNamerDisposer.h"
 
 namespace ApprovalTests
 {
@@ -23,5 +25,11 @@ namespace ApprovalTests
 
         APPROVAL_TESTS_NO_DISCARD
         std::string getReceivedFile(std::string extensionWithDot) const override;
+
+        APPROVAL_TESTS_NO_DISCARD
+        static std::shared_ptr<TemplatedCustomNamer> create(std::string templateString);
+
+        APPROVAL_TESTS_NO_DISCARD
+        static DefaultNamerDisposer useAsDefaultNamer(std::string templateString);
     };
 }

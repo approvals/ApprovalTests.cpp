@@ -60,4 +60,16 @@ namespace ApprovalTests
     {
         return constructFromTemplate(extensionWithDot, "received");
     }
+
+    std::shared_ptr<TemplatedCustomNamer>
+    TemplatedCustomNamer::create(std::string templateString)
+    {
+        return std::make_shared<TemplatedCustomNamer>(templateString);
+    }
+
+    DefaultNamerDisposer
+    TemplatedCustomNamer::useAsDefaultNamer(std::string templateString)
+    {
+        return Approvals::useAsDefaultNamer([=]() { return create(templateString); });
+    }
 }
