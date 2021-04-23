@@ -39,7 +39,6 @@ namespace ApprovalTests
         Scrubber scrubber_ = Scrubbers::doNothing;
         const Reporter& reporter_ = defaultReporter();
         std::shared_ptr<ApprovalNamer> namer_ = DefaultNamerFactory::getDefaultNamer()();
-
         bool usingDefaultScrubber_ = true;
 
         Options(FileOptions fileOptions,
