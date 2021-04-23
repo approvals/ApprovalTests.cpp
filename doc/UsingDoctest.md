@@ -2,7 +2,6 @@
 
 # Using Approval Tests With doctest
 
-
 <!-- toc -->
 ## Contents
 

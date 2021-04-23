@@ -2,7 +2,6 @@
 
 # Videos
 
-
 <!-- toc -->
 ## Contents
 
@@ -11,7 +10,6 @@
     * [CPPP, June 2019](#cppp-june-2019)
   * [Quickly Testing Legacy C++ Code with Approval Tests - by Clare Macrae](#quickly-testing-legacy-c-code-with-approval-tests---by-clare-macrae)
     * [CppCon, September 2019](#cppcon-september-2019)<!-- endToc -->
-
 
 ## Quickly Testing Legacy Code - by Clare Macrae
 
@@ -32,7 +30,6 @@
 **Sample code**: on [GitHub](https://github.com/claremacrae/cppp2019).
 
 ## Quickly Testing Legacy C++ Code with Approval Tests - by Clare Macrae
-
 
 ### CppCon, September 2019
 

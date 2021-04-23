@@ -2,7 +2,6 @@
 
 # Troubleshooting
 
-
 <!-- toc -->
 ## Contents
 
@@ -10,7 +9,6 @@
   * [Test gives "There seems to be a problem with your build configuration"](#test-gives-there-seems-to-be-a-problem-with-your-build-configuration)
   * [My custom reporter works in development, but not CI](#my-custom-reporter-works-in-development-but-not-ci)
   * [Running Catch2 tests in CLion gives 'unexpected exception'](#running-catch2-tests-in-clion-gives-unexpected-exception)<!-- endToc -->
-
 
 ## Test gives "You have forgotten to configure your test framework..."
 

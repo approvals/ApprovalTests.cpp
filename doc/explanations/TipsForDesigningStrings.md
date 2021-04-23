@@ -2,7 +2,6 @@
 
 # Tips for Designing Strings
 
-
 <!-- toc -->
 ## Contents
 
@@ -11,7 +10,6 @@
   * [Lists](#lists)
   * [Tools](#tools)
   * [How to Implement This](#how-to-implement-this)<!-- endToc -->
-
 
 When you use Approval tests, the results of the things you are testing are going to be stored on disk. It is good if you can diff the files, to gain an understanding of what is created and how they change. Mainly this is done by creating strings.
 

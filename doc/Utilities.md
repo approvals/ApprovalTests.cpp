@@ -39,7 +39,6 @@ Times are printed in UTC, as this is a testing utility and consistency across ma
 
 There is an overload of `DateUtils::toString()` that takes a [format string](https://en.cppreference.com/w/cpp/io/manip/put_time), should you wish to print it differently.
 
-
 ## ExceptionCollector
 
 ExceptionCollector is a utility that allows you to have multiple exceptions thrown, without stopping the execution of the program, and then throw them all later.

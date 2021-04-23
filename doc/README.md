@@ -106,7 +106,6 @@ effectively.
    - [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top)
  - **Others**:
    - [How to Toggle Enabling or Disabling of Deprecated Code](/doc/how_tos/ToggleDeprecatedCode.md#top)
- 
 
 ## Build Systems
 

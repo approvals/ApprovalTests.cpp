@@ -109,7 +109,6 @@ new CLionDiffReporter()
 <sup><a href='/ApprovalTests/reporters/MacReporters.cpp#L63-L74' title='Snippet source file'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-
 ### Other files to edit
 
 #### Edit [ApprovalTests/reporters/ReporterFactory.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/ReporterFactory.cpp)
@@ -170,7 +169,6 @@ The steps are the same as above, except that in the second step, you will edit:
 
 * [ApprovalTests/reporters/LinuxReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/LinuxReporters.h)
 * [ApprovalTests/reporters/LinuxReporters.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/LinuxReporters.cpp)
-
 
 ---
 

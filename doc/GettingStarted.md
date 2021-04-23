@@ -2,7 +2,6 @@
 
 # Getting Started - Creating your main()
 
-
 <!-- toc -->
 ## Contents
 
@@ -11,7 +10,6 @@
     * [The Basics](#the-basics)
     * [Details](#details)
   * [Choosing a testing framework](#choosing-a-testing-framework)<!-- endToc -->
-
 
 ## Introduction
 

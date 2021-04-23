@@ -20,11 +20,7 @@ The [CppUTest](http://cpputest.github.io/) test framework works well on most pla
 
 This section describes the various ways of using Approval Tests with CppUTest.
 
-
-
 ---
-
-
 
 **Notes pre-v.10.8.0:** <!-- include: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
 
@@ -170,7 +166,6 @@ add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
 ```
 <sup><a href='/examples/cpputest_starter/CMakeLists.txt#L5-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-cpputest_starter_cmake' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
-
 
 ---
 

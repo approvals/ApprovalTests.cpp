@@ -2,7 +2,6 @@
 
 # Contributing to ApprovalTests.cpp
 
-
 <!-- toc -->
 ## Contents
 
@@ -15,8 +14,6 @@
   * [Documentation](#documentation)
   * [Releases](#releases)
   * [Running shell scripts in cygwin](#running-shell-scripts-in-cygwin)<!-- endToc -->
-
-
 
 ## Contributing - pairing and pull requests
 

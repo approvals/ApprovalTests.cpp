@@ -62,7 +62,6 @@ If your existing Google Test application uses the `gtest_main` library, Approval
 
 To fix this, please add a new `main.cpp`, as shown in the previous section.
 
-
 ### Existing Project - with your main()
 
 If you have an existing Google Test-based test program that provides its own `main()`, you won't be able to use the approach above.

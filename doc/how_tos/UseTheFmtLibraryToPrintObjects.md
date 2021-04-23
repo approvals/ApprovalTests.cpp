@@ -82,7 +82,6 @@ If you wish, you can set FmtApprovals to be the default Approvals with the follo
 <sup><a href='/examples/fmt_approvals_demo/FmtAsDefault.h#L3-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-fmt_set_as_default' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-
 ---
 
 [Back to User Guide](/doc/README.md#top)

@@ -2,8 +2,6 @@
 
 # Features
 
-
-
 <!-- toc -->
 ## Contents
 
@@ -173,7 +171,6 @@ See [Scrubbing using Regular Expressions (regex)](/doc/how_tos/ScrubNonDetermini
 ### FmtApprovals
 
 See [How to Use the Fmt Library To Print Objects](/doc/how_tos/UseTheFmtLibraryToPrintObjects.md#top).
-
 
 ## v.8.7.0
 

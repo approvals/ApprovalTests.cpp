@@ -89,7 +89,6 @@ So in this case, it will be:
 
 It will be located in the same directory as your tests. (This is [configurable](/doc/Configuration.md#using-sub-directories-for-approved-files)).
 
-
 ## The ApprovalTests namespace
 
 In all other code examples in this site, have already included the code:

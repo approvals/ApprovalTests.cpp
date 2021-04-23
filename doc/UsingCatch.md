@@ -2,7 +2,6 @@
 
 # Using Approval Tests With Catch
 
-
 <!-- toc -->
 ## Contents
 

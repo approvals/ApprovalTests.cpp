@@ -2,7 +2,6 @@
 
 # Using Approval Tests With Boost.Test
 
-
 <!-- toc -->
 ## Contents
 

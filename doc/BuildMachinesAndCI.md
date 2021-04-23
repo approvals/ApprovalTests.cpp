@@ -42,7 +42,6 @@ Or you may be able to set one of these environment variables in the configuratio
 
 However, if your CI system is not supported, and you want to create a custom CI reporter, we suggest you start by looking at [CIBuildOnlyReporter](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/CIBuildOnlyReporter.h).
 
-
 ---
 
 [Back to User Guide](/doc/README.md#top)

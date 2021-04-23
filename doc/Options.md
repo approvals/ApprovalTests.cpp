@@ -129,7 +129,6 @@ verifyWithQuietReporter(std::string text, const Options& o)
 }
 ```
 
-
 ---
 
 [Back to User Guide](/doc/README.md#top)

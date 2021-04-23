@@ -14,7 +14,6 @@
       * [The technique](#the-technique-1)
       * [The problem](#the-problem-1)<!-- endToc -->
 
-
 This is also referred to as snapshot testing, or golden master testing.
 
 ## The Idea
@@ -25,8 +24,6 @@ to ensure it remains consistent for the future.
 
 ApprovalTesting also harnesses the power of other tools to make
 the results, and the differences in results, easier to understand and act on.
-
-
 
 ## The Path
 
@@ -63,7 +60,6 @@ REQUIRE( "[Clare,Llewellyn,Simon,James,Emily]" == toString(names));
 
 #### The problem
 This works well, until you start to get large multi-line strings.
-
 
 ---
 

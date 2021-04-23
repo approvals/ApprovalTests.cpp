@@ -108,7 +108,6 @@ On platforms other than macOS, replace the `open` command with whatever command 
 
 ## Known Issues
 
-
 ### Issues with Sphinx Output
 
 * Images are loaded from github, rather than being copied in to the Sphinx output. This means that when editing the documentation, changes to images need to be pushed to GitHub to see the effect.
@@ -251,7 +250,6 @@ The rest of this document explains the file conversion processes, in case anyone
     * `doc/sphinx/generated_docs/explanations/*.rst`
     * `doc/sphinx/generated_docs/how_tos/*.rst`
     * These are all ignored by git
-
 
 ---
 

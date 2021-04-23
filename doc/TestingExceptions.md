@@ -8,8 +8,6 @@
   * [Testing exception messages](#testing-exception-messages)
   * [Handling multiple exceptions in one test](#handling-multiple-exceptions-in-one-test)<!-- endToc -->
 
-
-
 ## Testing exception messages
 
 Testing exceptions with Approval Tests is very easy. Simply pass in a call to the function (usually wrapped in a lambda). Approval tests will execute the code, catch the exception, and verify the exception's message, i.e. `exception.what()`.

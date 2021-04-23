@@ -39,11 +39,9 @@ The Approval Namer is responsible for creating these two names.
 
 The interface for this is [`ApprovalNamer`](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/core/ApprovalNamer.h).
 
-
 ## Registering a Custom Namer
 
 If you ever want to create a custom namer, Approval Tests has a mechanism to change which namer it uses by default. Please note that you need to create a function that creates new namers.
-
 
 <!-- snippet: register_default_namer -->
 <a id='snippet-register_default_namer'></a>

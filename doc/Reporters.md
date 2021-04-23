@@ -2,7 +2,6 @@
 
 # Reporters
 
-
 <!-- toc -->
 ## Contents
 
@@ -16,7 +15,6 @@
   * [Miscellaneous Helper Reporters](#miscellaneous-helper-reporters)
     * [Auto-approving](#auto-approving)
   * [Related Pages](#related-pages)<!-- endToc -->
-
 
 ## Supported Diff Tools
 
@@ -146,13 +144,11 @@ There are three reporters that can help with the approving of single or multiple
 * `ClipboardReporter`: this puts the command-line to moved the approve file on to your computer's clipboard. You then review this, and paste it in to a terminal window. This only works with one test at a time.
 * `AutoApproveReporter`: be careful, this will overwrite every existing ".approved" file, with no confirmation. This is best used when you are expecting large numbers of files that are already version-controlled to be updated, and you would rather review the changes in your version control system. 
 
-
 ## Related Pages
 
 * [How to Use A Custom Reporter](/doc/how_tos/UseACustomReporter.md#top)
 * [How to Select a Reporter with an Environment Variable](/doc/how_tos/SelectReporterWithEnvironmentVariable.md#top)
 * [How to Submit a New Reporter to ApprovalTests](/doc/how_tos/SubmitANewReporterToApprovalTests.md#top)
-
 
 ---
 

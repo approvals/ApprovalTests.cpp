@@ -48,7 +48,6 @@ auto myNamer = CustomizableNamer()
 Approvals::verify("Hello World", Options().withNamer(myNamer));
 ```
 
-
 ---
 
 [Back to User Guide](/doc/README.md#top)

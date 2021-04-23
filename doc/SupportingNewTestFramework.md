@@ -12,7 +12,6 @@
   * [Adding new framework to documentation](#adding-new-framework-to-documentation)
   * [Update Package Managers](#update-package-managers)<!-- endToc -->
 
-
 ## Introduction
 
 ApprovalTests.cpp is designed to work with multiple C++ test frameworks.
@@ -40,7 +39,6 @@ ApprovalTests.cpp can be made to work with any test framework that supplies the 
 ## Examples
 
 This is perhaps best understood by reviewing the implementations for frameworks that are already supported - see [/ApprovalTests/integrations/](/ApprovalTests/integrations/).
- 
 
 ## Adding new framework to documentation
 

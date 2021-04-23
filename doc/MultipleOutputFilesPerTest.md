@@ -241,8 +241,6 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApprove")
 ```
 <sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L119-L139' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
- 
-
 
 ---
 
