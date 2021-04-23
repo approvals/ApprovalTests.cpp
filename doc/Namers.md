@@ -53,12 +53,11 @@ If you want to use a specific namer for a specific test, the easiest way is via 
 <!-- snippet: templated_custom_namer_injection_via_options -->
 <a id='snippet-templated_custom_namer_injection_via_options'></a>
 ```cpp
-Approvals::verify(
-    "Hello",
-    Options().withNamer(TemplatedCustomNamer::create(
-        "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}")));
+auto namer = TemplatedCustomNamer::create(
+    "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
+Approvals::verify("Hello", Options().withNamer(namer));
 ```
-<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp#L24-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_injection_via_options' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp#L24-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_injection_via_options' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Globally
@@ -113,8 +112,18 @@ auto fileExtension = "{FileExtension}";
 
 The pattern used by this class for file names is:
 
-- `./approved/[test file name].[test name].[extension]`
-- `./received/[test file name].[test name].[extension]`
+<!-- snippet: separate_approved_and_received_directory_names -->
+<a id='snippet-separate_approved_and_received_directory_names'></a>
+```cpp
+auto path = "{TestSourceDirectory}/{ApprovedOrReceived}/{TestFileName}.{TestCaseName}.{FileExtension}";
+```
+<sup><a href='/ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.cpp#L7-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-separate_approved_and_received_directory_names' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Which results in these file names:
+
+- `./approved/{TestFileName}.{TestCaseName}.{FileExtension}`
+- `./received/{TestFileName}.{TestCaseName}.{FileExtension}`
 
 This layout enables you to use Beyond Compare 4 (or any other directory comparison tool) to do a folder/directory comparison, in order to compare pairs of files in the `approved/` and `received/` directories, and approve one or more files by copying them (without renaming) from `received/` to `approved/`.
 
