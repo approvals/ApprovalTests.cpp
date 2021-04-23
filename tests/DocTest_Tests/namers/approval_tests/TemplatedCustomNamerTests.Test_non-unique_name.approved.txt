@@ -1,0 +1,2 @@
+Template must contain `{ApprovedOrReceived}` or the received and approved files will not be unique.
+Template: hello.txt

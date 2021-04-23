@@ -24,6 +24,14 @@ namespace ApprovalTests
     TemplatedCustomNamer::TemplatedCustomNamer(std::string templateString)
         : template_(std::move(templateString))
     {
+        if(! StringUtils::contains(template_, "{ApprovedOrReceived}"))
+        {
+            throw std::runtime_error(
+                "Template must contain `{ApprovedOrReceived}` or the received and "
+                "approved files will not be unique.\n"
+                "Template: " +
+                template_);
+        }
     }
 
     std::string TemplatedCustomNamer::constructFromTemplate(

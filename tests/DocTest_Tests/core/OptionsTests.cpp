@@ -115,7 +115,7 @@ TEST_CASE("Options - Test Default Namer")
 
 TEST_CASE("Options - Test withNamer")
 {
-    auto namer = TemplatedCustomNamer::create("hello.txt");
+    auto namer = TemplatedCustomNamer::create("hello.{ApprovedOrReceived}.txt");
     auto namer2 = Options().withNamer(namer).getNamer();
     CHECK(namer->getReceivedFile(".png") == namer2->getReceivedFile(".png"));
 }

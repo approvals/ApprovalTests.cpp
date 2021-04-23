@@ -35,6 +35,11 @@ TEST_CASE("Test Namer Injection")
     Approvals::verify("Hello");
 }
 
+TEST_CASE("Test non-unique name")
+{
+    Approvals::verifyExceptionMessage([](){TemplatedCustomNamer("hello.txt");});
+}
+
 // ---- Docs
 // TODO Revisit our documentation
 // TODO Document ApprovalTestNamer::setCheckBuildConfig(false)
