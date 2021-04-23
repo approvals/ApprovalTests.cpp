@@ -26,7 +26,7 @@ add_executable(${PROJECT_NAME}
         docs/ToStringTemplateExample.cpp
         docs/ToStringWrapperExample.cpp
         docs/Tutorial.cpp
-        namers/CustomNamerTests.cpp
+        namers/TemplatedCustomNamerTests.cpp
         namers/DocTestNamerTests.cpp
         namers/NamerTests.cpp
         reporters/BlockingReporterTests.cpp
