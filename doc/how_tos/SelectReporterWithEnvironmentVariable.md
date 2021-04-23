@@ -97,12 +97,12 @@ or:
 
 `{OS::}{Program}{Reporter}`
 
-1.  `{OS::}`
+1. `{OS::}`
     * This is optional: it is one of `Mac::`, `Linux::` and `Windows::` and will be inferred if left out
     * Some reporters, such as `AutoApproveReporter`, don't have this component.
-1.  `{Program}`
+1. `{Program}`
     * This is **required**.
-1.  `{Reporter}`
+1. `{Reporter}`
     * This is optional, and is added if missing.
 
 So, for example, on Windows, you can select `Windows::AraxisMergerReporter` by setting `APPROVAL_TESTS_USE_REPORTER` to any of the following values:

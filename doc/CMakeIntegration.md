@@ -71,11 +71,11 @@ Note that these are always enabled if this is the top-level project.
 Note that these are always included if this is the top-level project.
 
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2`
-  *  When `ON`, this project's copy of the Catch2 test framework is included.  Defaults to `OFF`.
+  * When `ON`, this project's copy of the Catch2 test framework is included.  Defaults to `OFF`.
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST`
-  *  When `ON`, this project's copy of the doctest test framework is included.  Defaults to `OFF`.
+  * When `ON`, this project's copy of the doctest test framework is included.  Defaults to `OFF`.
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_UT`
-  *  When `ON`, this project's copy of the Boost.UT test framework is included.  Defaults to `OFF`.
+  * When `ON`, this project's copy of the Boost.UT test framework is included.  Defaults to `OFF`.
 
 ##### Control the behaviour of our builds
 

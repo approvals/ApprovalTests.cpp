@@ -19,7 +19,7 @@ This is when you are interested in how Approval Tests work and want to see Appro
 
 If you just want to start doing some TDD with Approval Tests, the [Tutorial will walk you through the following broad steps](/doc/Tutorial.md#top):
 
-1.  download the [ApprovalTests.cpp.StarterProject](https://github.com/approvals/ApprovalTests.cpp.StarterProject)
+1. download the [ApprovalTests.cpp.StarterProject](https://github.com/approvals/ApprovalTests.cpp.StarterProject)
 1. download a [Supported Diff Tool](/doc/Reporters.md#supported-diff-tools)
 1. Run the existing tests from the project (they should pass).
 1. Then open the file [`tests/NewTest.cpp`](https://github.com/approvals/ApprovalTests.cpp.StarterProject/blob/master/tests/NewTest.cpp), choose which of the three starting points you want, and Go!
