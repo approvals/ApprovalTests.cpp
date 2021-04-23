@@ -35,6 +35,7 @@ TEST_CASE("Test Namer Injection")
 
 // ---- Docs
 // TODO Revisit our documentation
+// TODO Document ApprovalTestNamer::setCheckBuildConfig(false)
 // TODO Document the details and limitations of each template string
 // TODO Document scenarios where this might be useful (when run outside of build dir, e.g. embedded)
 // TODO Reporters.md should link to the new How To file
