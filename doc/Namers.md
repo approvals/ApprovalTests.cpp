@@ -109,6 +109,9 @@ auto fileExtension = "{FileExtension}";
 <sup><a href='/ApprovalTests/namers/TemplatedCustomNamer.cpp#L34-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-custom_namer_tags' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
+#### Examples
+
+If you would like to see an example of this running for scenarios where the execution is in a separate environment from the compilation, check out [our out_of_source example](https://github.com/approvals/ApprovalTests.cpp/blob/master/examples/out_of_source/out_of_source_main.cpp).
 
 ### SeparateApprovedAndReceivedDirectoriesNamer
 
