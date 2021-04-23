@@ -121,7 +121,7 @@ If that's the case, and you do still want to use a custom reporter in an individ
 
 **Note: Updating to CLion 2020.2 EAP or later fixes this bug.**
 
-----
+---
 
 If there are problems with code that uses Approval Tests, or test failures, the library takes care to issue helpful information via the text in an exception (via `exception.what()`). This text is then displayed by the test framework.
 
