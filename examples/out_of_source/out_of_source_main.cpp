@@ -47,3 +47,6 @@ auto default_namer_disposer = Approvals::useAsDefaultNamer([]() {
     std::string rootDir = getApprovedFilesLocation();
     return std::make_shared<TemplatedCustomNamer>(rootDir + args);
 });
+
+// TODO Remove the need to calculate root dir on every call to the the namer
+// TODO Test this out with some approved files in sub-directories - to confirm that the structure is retained
