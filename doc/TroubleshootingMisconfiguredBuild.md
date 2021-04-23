@@ -66,10 +66,14 @@ Prior to v.10.8.0, running tests gives output such as the following:
 *
 * For details on how to fix this, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
+*
+* For advanced users only:
+* If you believe you have reached this message in error, you can bypass
+* the check by calling ApprovalTestNamer::setCheckBuildConfig(false);
 *                                                                           *
 *****************************************************************************
 ```
-<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt#L1-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBuildConfig.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### The problem
@@ -164,10 +168,14 @@ If the ApprovalTests.cpp integration with \[Boost\].UT is not working in your bu
 *
 * For details on how to fix this, please visit:
 * https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/TroubleshootingMisconfiguredBuild.md
+*
+* For advanced users only:
+* If you believe you have reached this message in error, you can bypass
+* the check by calling ApprovalTestNamer::setCheckBuildConfig(false);
 *                                                                           *
 *****************************************************************************
 ```
-<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/approval_tests/ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt#L1-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-ForgottenToConfigure.HelpMessageForIncorrectBoostUTConfig.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 These are possible causes:

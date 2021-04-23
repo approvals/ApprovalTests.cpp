@@ -134,7 +134,7 @@ target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests boost.ut)
 
 add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
 ```
-<sup><a href='/examples/ut_starter/CMakeLists.txt#L11-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-ut_starter_cmake' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/ut_starter/CMakeLists.txt#L12-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-ut_starter_cmake' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---
