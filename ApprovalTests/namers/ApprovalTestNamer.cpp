@@ -154,7 +154,7 @@ namespace ApprovalTests
     std::string ApprovalTestNamer::getRelativeTestSourceDirectory() const
     {
         auto dir = getTestSourceDirectory();
-        if (! TestName::rootDirectory_.empty())
+        if (!TestName::rootDirectory_.empty())
         {
             dir = StringUtils::replaceAll(dir, TestName::rootDirectory_, "");
         }

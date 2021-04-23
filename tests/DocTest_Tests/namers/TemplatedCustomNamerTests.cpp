@@ -47,7 +47,7 @@ TEST_CASE("Test Namer Injection")
 
 TEST_CASE("Test non-unique name")
 {
-    Approvals::verifyExceptionMessage([](){TemplatedCustomNamer("hello.txt");});
+    Approvals::verifyExceptionMessage([]() { TemplatedCustomNamer("hello.txt"); });
 }
 
 // ---- Docs
