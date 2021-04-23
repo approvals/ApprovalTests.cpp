@@ -35,7 +35,6 @@ TEST_CASE("Test Namer Injection")
 
 // ---- Miscellaneous
 // TODO Move Path impl to .cpp
-// TODO Merge branch to master
 
 // ---- Docs
 // TODO Revisit our documentation
