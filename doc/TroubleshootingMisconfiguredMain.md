@@ -111,6 +111,7 @@ The following resources should help:
 
 * Is your code calling `Approvals::verify()` or any other methods in this library from outside a Google Test?
     * This is much less likely to be the cause, but the file-naming code in Approval Tests (`ApprovalTestNamer`) does require that approvals are used from inside a test method in a supported test framework. 
+
 ---
 
 [Back to User Guide](/doc/README.md#top)

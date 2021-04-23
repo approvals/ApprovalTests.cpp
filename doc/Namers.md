@@ -59,6 +59,7 @@ auto default_namer_disposer =
 ### SeparateApprovedAndReceivedDirectoriesNamer
 
 The pattern used by this class for file names is:
+
 - `./approved/[test file name].[test name].[extension]`
 - `./received/[test file name].[test name].[extension]`
 
