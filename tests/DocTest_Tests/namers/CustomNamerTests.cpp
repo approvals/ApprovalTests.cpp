@@ -39,10 +39,13 @@ TEST_CASE("Test Namer Injection")
 
 // ---- Docs
 // TODO Revisit our documentation
+// TODO Document the details and limitations of each template string
 // TODO Document scenarios where this might be useful (when run outside of build dir, e.g. embedded)
 // TODO Reporters.md should link to the new How To file
 // TODO New "How To" file should link to Reporters.md
 // TODO Make documentation example use different filenames for approved and received, for safety
+// TODO Add CreateCustomNamer page to doc/README.md
+// TODO Add CreateCustomNamer page to doc/sphinx/index.rst
 
 // ---- Tests
 // TODO Rename this file to TemplatedCustomNamerTests.cpp
