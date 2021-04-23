@@ -41,6 +41,7 @@ namespace ApprovalTests
         std::string result = template_;
         // begin-snippet: custom_namer_tags
         auto testSourceDirectory = "{TestSourceDirectory}";
+        auto approvalsSubdirectory = "{ApprovalsSubdirectory}";
         auto testFileName = "{TestFileName}";
         auto testCaseName = "{TestCaseName}";
         auto approvedOrReceived = "{ApprovedOrReceived}";
@@ -51,6 +52,7 @@ namespace ApprovalTests
 
         // clang-format off
         result = replaceIfContains(result, fileExtension, [&](){return extensionWithDot.substr(1);});
+        result = replaceIfContains(result, approvalsSubdirectory, [&](){return namer_.getRelativePathOfSourceDirectoryFromSourceRootForApproved();});
         result = replaceIfContains(result, testFileName, [&](){return namer_.getSourceFileName();});
         result = replaceIfContains(result, testCaseName, [&](){return namer_.getTestName();});
         result = replaceIfContains(result, testSourceDirectory, [&](){return namer_.getDirectory();});

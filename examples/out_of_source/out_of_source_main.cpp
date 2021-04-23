@@ -29,7 +29,7 @@ std::string getApprovedFilesLocation()
     std::string locationFromEnvVar = SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR");
     if (!locationFromEnvVar.empty())
     {
-        return locationFromEnvVar + "/";
+        return locationFromEnvVar + "/{ApprovalsSubdirectory}/";
     }
 
     if (isRunningInBuildEnvironment())
@@ -37,7 +37,7 @@ std::string getApprovedFilesLocation()
         return "{TestSourceDirectory}/";
     }
 
-    return ""; // Use current working directory
+    return "{ApprovalsSubdirectory}/"; // Use current working directory
 }
 
 std::string getTemplateString()
