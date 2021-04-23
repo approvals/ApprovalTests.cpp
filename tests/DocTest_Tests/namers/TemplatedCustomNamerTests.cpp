@@ -22,10 +22,9 @@ TEST_CASE("Test StringTemplates")
 TEST_CASE("Test Namer Injection")
 {
     // begin-snippet: templated_custom_namer_injection_via_options
-    Approvals::verify(
-        "Hello",
-        Options().withNamer(TemplatedCustomNamer::create(
-            "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}")));
+    auto namer = TemplatedCustomNamer::create(
+        "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
+    Approvals::verify("Hello", Options().withNamer(namer));
     // end-snippet
 
     // begin-snippet: templated_custom_namer_injection
