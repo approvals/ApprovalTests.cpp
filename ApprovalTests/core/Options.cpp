@@ -111,6 +111,7 @@ namespace ApprovalTests
 
     Options Options::withNamer(std::shared_ptr<ApprovalNamer> namer)
     {
-        return Options(fileOptions_, scrubber_, reporter_, usingDefaultScrubber_, std::move(namer));
+        return Options(
+            fileOptions_, scrubber_, reporter_, usingDefaultScrubber_, std::move(namer));
     }
 }

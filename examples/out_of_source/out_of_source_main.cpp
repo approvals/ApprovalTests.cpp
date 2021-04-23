@@ -50,6 +50,7 @@ std::string getTemplateString()
     return templateString;
 }
 
-auto default_namer_disposer = TemplatedCustomNamer::useAsDefaultNamer(getTemplateString());
+auto default_namer_disposer =
+    TemplatedCustomNamer::useAsDefaultNamer(getTemplateString());
 
 // TODO Test this out with some approved files in sub-directories - to confirm that the structure is retained

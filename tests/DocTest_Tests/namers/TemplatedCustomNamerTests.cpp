@@ -12,9 +12,11 @@ TEST_CASE("Test StringTemplates")
     // end-snippet
 
     CHECK(namer.getApprovedFile(".txt") ==
-          "/my/source/directory/approved/TemplatedCustomNamerTests.Test_StringTemplates.txt");
+          "/my/source/directory/approved/"
+          "TemplatedCustomNamerTests.Test_StringTemplates.txt");
     CHECK(namer.getReceivedFile(".txt") ==
-          "/my/source/directory/received/TemplatedCustomNamerTests.Test_StringTemplates.txt");
+          "/my/source/directory/received/"
+          "TemplatedCustomNamerTests.Test_StringTemplates.txt");
 }
 
 TEST_CASE("Test Namer Injection")
@@ -45,4 +47,3 @@ TEST_CASE("Test Namer Injection")
 // TODO New "How To" file should link to Reporters.md
 // TODO Add CreateCustomNamer page to doc/README.md
 // TODO Add CreateCustomNamer page to doc/sphinx/index.rst
-
