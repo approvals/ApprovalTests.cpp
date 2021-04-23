@@ -46,6 +46,3 @@ TEST_CASE("Test Namer Injection")
 // TODO Add CreateCustomNamer page to doc/README.md
 // TODO Add CreateCustomNamer page to doc/sphinx/index.rst
 
-// ---- Tests
-// TODO Rename this file to TemplatedTemplatedCustomNamerTests.cpp
-
