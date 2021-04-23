@@ -8,6 +8,8 @@ using namespace ApprovalTests;
 
 auto configChange = ApprovalTestNamer::setCheckBuildConfig(false);
 
+// TODO Fix this so that it works with source files in sub-directories
+
 bool isRunningInBuildEnvironment()
 {
     auto workingDirectory = fs::canonical(fs::path(".")).string();
@@ -44,5 +46,3 @@ std::string getTemplateString()
 
 auto default_namer_disposer =
     TemplatedCustomNamer::useAsDefaultNamer(getTemplateString());
-
-// TODO Test this out with some approved files in sub-directories - to confirm that the structure is retained
