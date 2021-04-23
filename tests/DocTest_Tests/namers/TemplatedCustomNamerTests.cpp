@@ -21,16 +21,17 @@ TEST_CASE("Test StringTemplates")
 
 TEST_CASE("Test Namer Injection")
 {
-    // clang-format off
-    // begin-snippet: templated_custom_namer_injection
-    auto default_namer_disposer = Approvals::useAsDefaultNamer(
-        []()
-        {
-            return std::make_shared<TemplatedCustomNamer>(
-                "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
-        });
+    // begin-snippet: templated_custom_namer_injection_via_options
+    Approvals::verify(
+        "Hello",
+        Options().withNamer(TemplatedCustomNamer::create(
+            "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}")));
     // end-snippet
-    // clang-format on
+
+    // begin-snippet: templated_custom_namer_injection
+    auto default_namer_disposer = TemplatedCustomNamer::useAsDefaultNamer(
+        "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
+    // end-snippet
 
     Approvals::verify("Hello");
 }
