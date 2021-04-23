@@ -18,4 +18,5 @@
         * [Code to copy for your first doctest Approvals test](/doc/UsingDoctest.md#code-to-copy-for-your-first-doctest-approvals-test)
         * [Code to copy for your first Google Test Approvals test](/doc/UsingGoogleTests.md#code-to-copy-for-your-first-google-test-approvals-test)
         * [Code to copy for your first \[Boost\].UT Approvals test](/doc/UsingUT.md#code-to-copy-for-your-first-boostut-approvals-test)
-    * Removed CI builds for clang and gcc < v9 
+    * Removed CI builds for clang and gcc < v9
+    * Some of our internal tests now use [gulrak's filesystem](https://github.com/gulrak/filesystem). Thanks @gulrak!
