@@ -12,9 +12,9 @@ TEST_CASE("Test StringTemplates")
     // end-snippet
 
     CHECK(namer.getApprovedFile(".txt") ==
-          "/my/source/directory/approved/CustomNamerTests.Test_StringTemplates.txt");
+          "/my/source/directory/approved/TemplatedCustomNamerTests.Test_StringTemplates.txt");
     CHECK(namer.getReceivedFile(".txt") ==
-          "/my/source/directory/received/CustomNamerTests.Test_StringTemplates.txt");
+          "/my/source/directory/received/TemplatedCustomNamerTests.Test_StringTemplates.txt");
 }
 
 TEST_CASE("Test Namer Injection")
@@ -47,5 +47,5 @@ TEST_CASE("Test Namer Injection")
 // TODO Add CreateCustomNamer page to doc/sphinx/index.rst
 
 // ---- Tests
-// TODO Rename this file to TemplatedCustomNamerTests.cpp
+// TODO Rename this file to TemplatedTemplatedCustomNamerTests.cpp
 
