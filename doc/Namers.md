@@ -8,8 +8,10 @@
   * [The Purpose of Namers](#the-purpose-of-namers)
   * [The Parts of Namers](#the-parts-of-namers)
   * [Registering a Custom Namer](#registering-a-custom-namer)
+      * [Locally](#locally)
+      * [Globally](#globally)
   * [Alternative Namers](#alternative-namers)
-    * [SeparateApprovedAndReceivedDirectoriesNamer](#separateapprovedandreceiveddirectoriesnamer)
+      * [SeparateApprovedAndReceivedDirectoriesNamer](#separateapprovedandreceiveddirectoriesnamer)
   * [Approving multiple files from one test](#approving-multiple-files-from-one-test)<!-- endToc -->
 
 ## The Purpose of Namers
@@ -37,20 +39,47 @@ The conventional layout for files saved with `Approvals::verify()` and related f
 
 The Approval Namer is responsible for creating these two names.
 
-The interface for this is [`ApprovalNamer`](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/core/ApprovalNamer.h).
+The interface for this
+is [`ApprovalNamer`](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/core/ApprovalNamer.h).
 
 ## Registering a Custom Namer
 
-If you ever want to create a custom namer, Approval Tests has a mechanism to change which namer it uses by default. Please note that you need to create a function that creates new namers.
+### Locally
+
+If you want to use a specific namer for a specific test, the easiest way is via Options:
+
+<!-- snippet: templated_custom_namer_injection_via_options -->
+<a id='snippet-templated_custom_namer_injection_via_options'></a>
+
+```cpp
+Approvals::verify(
+    "Hello",
+    Options().withNamer(TemplatedCustomNamer::create(
+        "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}")));
+```
+
+<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp#L24-L29' title='Snippet source file'>snippet
+source</a> | <a href='#snippet-templated_custom_namer_injection_via_options' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+### Globally
+
+If you ever want to create a custom namer, that's used in multiple places, Approval Tests has a mechanism to change
+which namer it uses by default. Please note that you need to create a function that creates new namers.
 
 <!-- snippet: register_default_namer -->
 <a id='snippet-register_default_namer'></a>
+
 ```cpp
 auto default_namer_disposer =
     Approvals::useAsDefaultNamer([]() { return std::make_shared<FakeNamer>(); });
 ```
-<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L28-L31' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_default_namer' title='Start of snippet'>anchor</a></sup>
+
+<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L28-L31' title='Snippet source file'>snippet source</a>
+| <a href='#snippet-register_default_namer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
+
+**Hint:** Many namer classes have a `useAsDefaultNamer()` convenience method to do this for you.
 
 ## Alternative Namers
 

@@ -104,7 +104,8 @@ If you want to change the file extension of both the approved and received files
 Approvals::verify("text to be verified",
                   Options().fileOptions().withFileExtension(".xyz"));
 ```
-<sup><a href='/tests/DocTest_Tests/core/OptionsTests.cpp#L75-L78' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_file_extension' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/core/OptionsTests.cpp#L76-L79' title='Snippet source file'>snippet source</a>
+| <a href='#snippet-basic_approval_with_file_extension' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 **Note:** `withFileExtension()` returns an `Options` object, so it's possible to keep appending more `with...()` calls.  
