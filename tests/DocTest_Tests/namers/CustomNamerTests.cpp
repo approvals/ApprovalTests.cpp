@@ -33,9 +33,6 @@ TEST_CASE("Test Namer Injection")
     Approvals::verify("Hello");
 }
 
-// ---- Miscellaneous
-// TODO Move Path impl to .cpp
-
 // ---- Docs
 // TODO Revisit our documentation
 // TODO Document the details and limitations of each template string
