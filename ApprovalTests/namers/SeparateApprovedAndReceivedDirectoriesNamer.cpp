@@ -3,34 +3,21 @@
 
 namespace ApprovalTests
 {
-    std::string
-    SeparateApprovedAndReceivedDirectoriesNamer::getFullFileNameWithExtraDirectory(
-        const std::string& approved, const std::string& extensionWithDot) const
+    // clang-format off
+    // begin-snippet: separate_approved_and_received_directory_names
+    auto path = "{TestSourceDirectory}/{ApprovedOrReceived}/{TestFileName}.{TestCaseName}.{FileExtension}";
+    // end-snippet
+    // clang-format on
+    SeparateApprovedAndReceivedDirectoriesNamer::
+        SeparateApprovedAndReceivedDirectoriesNamer()
+        : TemplatedCustomNamer(path)
     {
-        std::string outputDirectory = getDirectory() + approved;
-        SystemUtils::ensureDirectoryExists(outputDirectory);
-
-        std::string outputFile = getFileName() + "." + getTestName() + extensionWithDot;
-
-        return outputDirectory + SystemUtils::getDirectorySeparator() + outputFile;
-    }
-
-    std::string SeparateApprovedAndReceivedDirectoriesNamer::getApprovedFile(
-        std::string extensionWithDot) const
-    {
-        return getFullFileNameWithExtraDirectory("approved", extensionWithDot);
-    }
-
-    std::string SeparateApprovedAndReceivedDirectoriesNamer::getReceivedFile(
-        std::string extensionWithDot) const
-    {
-        return getFullFileNameWithExtraDirectory("received", extensionWithDot);
     }
 
     DefaultNamerDisposer SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer()
     {
-        return Approvals::useAsDefaultNamer([]() {
-            return std::make_shared<SeparateApprovedAndReceivedDirectoriesNamer>();
-        });
+        return Approvals::useAsDefaultNamer(
+            []()
+            { return std::make_shared<SeparateApprovedAndReceivedDirectoriesNamer>(); });
     }
 }

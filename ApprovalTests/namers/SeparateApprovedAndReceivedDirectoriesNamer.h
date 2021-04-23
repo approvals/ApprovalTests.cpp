@@ -2,21 +2,16 @@
 
 #include "ApprovalTestNamer.h"
 #include "../Approvals.h"
+#include "TemplatedCustomNamer.h"
 
 namespace ApprovalTests
 {
-    class SeparateApprovedAndReceivedDirectoriesNamer : public ApprovalTestNamer
+    class SeparateApprovedAndReceivedDirectoriesNamer : public TemplatedCustomNamer
     {
     public:
+        SeparateApprovedAndReceivedDirectoriesNamer();
+
         virtual ~SeparateApprovedAndReceivedDirectoriesNamer() override = default;
-
-        std::string
-        getFullFileNameWithExtraDirectory(const std::string& approved,
-                                          const std::string& extensionWithDot) const;
-
-        virtual std::string getApprovedFile(std::string extensionWithDot) const override;
-
-        virtual std::string getReceivedFile(std::string extensionWithDot) const override;
 
         static DefaultNamerDisposer useAsDefaultNamer();
     };
