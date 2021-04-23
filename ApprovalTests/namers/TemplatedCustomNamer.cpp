@@ -1,4 +1,5 @@
 #include "TemplatedCustomNamer.h"
+#include "ApprovalTests//utilities/Path.h"
 #include "ApprovalTests//utilities/StringUtils.h"
 
 #include <functional>
@@ -48,7 +49,8 @@ namespace ApprovalTests
         result = replaceIfContains(result, approvedOrReceived, [&](){return approvedOrReceivedReplacement;});
         // clang-format on
 
-        return result;
+        // Convert to native directory separators:
+        return Path(result).toString();
     }
 
     std::string TemplatedCustomNamer::getApprovedFile(std::string extensionWithDot) const

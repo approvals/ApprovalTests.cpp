@@ -93,6 +93,8 @@ TemplatedCustomNamer namer("/my/source/directory/{ApprovedOrReceived}/"
 <sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp#L9-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_example' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
+**Note:** The character `/` will be converted to - '\\` - '\' - '\ `' - on Windows machines, at run-time. 
+
 #### Supported tags
 
 <!-- snippet: custom_namer_tags -->
@@ -104,7 +106,7 @@ auto testCaseName = "{TestCaseName}";
 auto approvedOrReceived = "{ApprovedOrReceived}";
 auto fileExtension = "{FileExtension}";
 ```
-<sup><a href='/ApprovalTests/namers/TemplatedCustomNamer.cpp#L33-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-custom_namer_tags' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/namers/TemplatedCustomNamer.cpp#L34-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-custom_namer_tags' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
