@@ -16,8 +16,8 @@ namespace ApprovalTests
 
     DefaultNamerDisposer SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer()
     {
-        return Approvals::useAsDefaultNamer(
-            []()
-            { return std::make_shared<SeparateApprovedAndReceivedDirectoriesNamer>(); });
+        return Approvals::useAsDefaultNamer([]() {
+            return std::make_shared<SeparateApprovedAndReceivedDirectoriesNamer>();
+        });
     }
 }
