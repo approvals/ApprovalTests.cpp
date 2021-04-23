@@ -45,7 +45,8 @@ namespace ApprovalTests
         Options(FileOptions fileOptions,
                 Scrubber scrubber,
                 const Reporter& reporter,
-                bool usingDefaultScrubber);
+                bool usingDefaultScrubber,
+                std::shared_ptr<ApprovalNamer> namer);
 
         APPROVAL_TESTS_NO_DISCARD
         Options clone(const FileOptions& fileOptions) const;
@@ -82,6 +83,9 @@ namespace ApprovalTests
 
         APPROVAL_TESTS_NO_DISCARD
         std::shared_ptr<ApprovalNamer> getNamer() const;
+
+        APPROVAL_TESTS_NO_DISCARD
+        Options withNamer(std::shared_ptr<ApprovalNamer> namer);
     };
 
     namespace Detail

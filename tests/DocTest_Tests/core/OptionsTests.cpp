@@ -1,6 +1,7 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/core/Options.h"
 
+#include "ApprovalTests/namers/TemplatedCustomNamer.h"
 #include "ApprovalTests/reporters/DefaultReporter.h"
 #include "ApprovalTests/reporters/DiffReporter.h"
 #include "ApprovalTests/reporters/QuietReporter.h"
@@ -110,4 +111,11 @@ TEST_CASE("Options - Test Default Namer")
     auto namer2 = Options().getNamer();
     checkSameType(
         typeid(namer.get()), typeid(namer2.get()), "Namers are not the same type");
+}
+
+TEST_CASE("Options - Test withNamer")
+{
+    auto namer = TemplatedCustomNamer::create("hello.txt");
+    auto namer2 = Options().withNamer(namer).getNamer();
+    CHECK(namer->getReceivedFile(".png") == namer2->getReceivedFile(".png"));
 }

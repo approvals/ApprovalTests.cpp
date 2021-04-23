@@ -32,10 +32,12 @@ namespace ApprovalTests
     Options::Options(Options::FileOptions fileOptions,
                      Scrubber scrubber,
                      const Reporter& reporter,
-                     bool usingDefaultScrubber)
+                     bool usingDefaultScrubber,
+                     std::shared_ptr<ApprovalNamer> namer)
         : fileOptions_(std::move(fileOptions))
         , scrubber_(std::move(scrubber))
         , reporter_(reporter)
+        , namer_(namer)
         , usingDefaultScrubber_(usingDefaultScrubber)
     {
     }
@@ -43,7 +45,7 @@ namespace ApprovalTests
     Options Options::clone(const Options::FileOptions& fileOptions) const
     {
         // TODO error this can retain a previous Options* ???
-        return Options(fileOptions, scrubber_, reporter_, usingDefaultScrubber_);
+        return Options(fileOptions, scrubber_, reporter_, usingDefaultScrubber_, namer_);
     }
 
     const Reporter& Options::defaultReporter()
@@ -94,16 +96,21 @@ namespace ApprovalTests
 
     Options Options::withReporter(const Reporter& reporter) const
     {
-        return Options(fileOptions_, scrubber_, reporter, usingDefaultScrubber_);
+        return Options(fileOptions_, scrubber_, reporter, usingDefaultScrubber_, namer_);
     }
 
     Options Options::withScrubber(Scrubber scrubber) const
     {
-        return Options(fileOptions_, std::move(scrubber), reporter_, false);
+        return Options(fileOptions_, std::move(scrubber), reporter_, false, namer_);
     }
 
     std::shared_ptr<ApprovalNamer> Options::getNamer() const
     {
         return namer_;
+    }
+
+    Options Options::withNamer(std::shared_ptr<ApprovalNamer> namer)
+    {
+        return Options(fileOptions_, scrubber_, reporter_, usingDefaultScrubber_, std::move(namer));
     }
 }
