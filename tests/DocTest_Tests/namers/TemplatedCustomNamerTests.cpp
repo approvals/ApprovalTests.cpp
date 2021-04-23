@@ -19,6 +19,16 @@ TEST_CASE("Test StringTemplates")
           "TemplatedCustomNamerTests.Test_StringTemplates.txt");
 }
 
+TEST_CASE("Test relative directory")
+{
+    TemplatedCustomNamer namer("{RelativeTestSourceDirectory}/{ApprovedOrReceived}/"
+                               "{TestFileName}.{TestCaseName}.{FileExtension}");
+
+    CHECK(namer.getApprovedFile(".txt") ==
+          "namers/approved/"
+          "TemplatedCustomNamerTests.Test_relative_directory.txt");
+}
+
 TEST_CASE("Test Namer Injection")
 {
     // begin-snippet: templated_custom_namer_injection_via_options

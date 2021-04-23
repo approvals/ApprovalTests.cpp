@@ -14,11 +14,14 @@ namespace ApprovalTests
 
     std::string Path::toString(const std::string& directoryPathSeparator) const
     {
+        auto path = path_;
+        path = StringUtils::replaceAll(path, "//", "/");
+        path = StringUtils::replaceAll(path, "\\\\", "\\");
         if (separator_ == directoryPathSeparator)
         {
-            return path_;
+            return path;
         }
-        return StringUtils::replaceAll(path_, separator_, directoryPathSeparator);
+        return StringUtils::replaceAll(path, separator_, directoryPathSeparator);
     }
 
     Path Path::operator+(const std::string& addition) const

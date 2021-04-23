@@ -9,6 +9,7 @@ namespace ApprovalTests
 {
     std::string TestName::directoryPrefix;
     bool TestName::checkBuildConfig_ = true;
+    std::string TestName::rootDirectory_;
 
     const std::string& TestName::getFileName() const
     {
@@ -48,6 +49,11 @@ namespace ApprovalTests
             }
         }
         return newFileName;
+    }
+
+    void TestName::registerRootDirectoryFromMainFile(const std::string& file)
+    {
+        rootDirectory_ = FileUtils::getDirectory(file);
     }
 
     std::string TestName::handleBoostQuirks() const
@@ -142,9 +148,17 @@ namespace ApprovalTests
     std::string ApprovalTestNamer::getTestSourceDirectory() const
     {
         auto file = getCurrentTest().getFileName();
-        auto end = file.rfind(SystemUtils::getDirectorySeparator()) + 1;
-        auto directory = file.substr(0, end);
-        return directory;
+        return FileUtils::getDirectory(file);
+    }
+
+    std::string ApprovalTestNamer::getRelativeTestSourceDirectory() const
+    {
+        auto dir = getTestSourceDirectory();
+        if (! TestName::rootDirectory_.empty())
+        {
+            dir = StringUtils::replaceAll(dir, TestName::rootDirectory_, "");
+        }
+        return dir;
     }
 
     std::string
