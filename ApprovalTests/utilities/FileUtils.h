@@ -13,6 +13,8 @@ namespace ApprovalTests
 
         static void ensureFileExists(const std::string& fullFilePath);
 
+        static std::string getDirectory(const std::string& filePath);
+
         static std::string getExtensionWithDot(const std::string& filePath);
 
         static std::string readFileThrowIfMissing(const std::string& fileName);

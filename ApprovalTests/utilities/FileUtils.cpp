@@ -1,5 +1,6 @@
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/writers/StringWriter.h"
+#include "SystemUtils.h"
 
 #include <fstream>
 #include <sys/stat.h>
@@ -37,6 +38,13 @@ namespace ApprovalTests
             StringWriter s("", "");
             s.write(fullFilePath);
         }
+    }
+
+    std::string FileUtils::getDirectory(const std::string& filePath)
+    {
+        auto end = filePath.rfind(SystemUtils::getDirectorySeparator()) + 1;
+        auto directory = filePath.substr(0, end);
+        return directory;
     }
 
     std::string FileUtils::getExtensionWithDot(const std::string& filePath)
