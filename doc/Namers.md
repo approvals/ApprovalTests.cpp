@@ -94,7 +94,7 @@ TemplatedCustomNamer namer("/my/source/directory/{ApprovedOrReceived}/"
 <sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp#L9-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_example' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-**Note:** The character `/` will be converted to - `\` - on Windows machines, at run-time. 
+**Note:** The character `/` will be converted to `\` on Windows machines, at run-time. 
 
 #### Supported tags
 
