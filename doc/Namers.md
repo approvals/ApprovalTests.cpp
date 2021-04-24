@@ -13,6 +13,7 @@
   * [Alternative Namers](#alternative-namers)
     * [TemplatedCustomNamer](#templatedcustomnamer)
       * [Supported tags](#supported-tags)
+      * [Examples](#examples)
     * [SeparateApprovedAndReceivedDirectoriesNamer](#separateapprovedandreceiveddirectoriesnamer)
   * [Approving multiple files from one test](#approving-multiple-files-from-one-test)<!-- endToc -->
 
@@ -57,7 +58,7 @@ auto namer = TemplatedCustomNamer::create(
     "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
 Approvals::verify("Hello", Options().withNamer(namer));
 ```
-<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp#L24-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_injection_via_options' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp#L34-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_injection_via_options' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Globally
@@ -101,12 +102,14 @@ TemplatedCustomNamer namer("/my/source/directory/{ApprovedOrReceived}/"
 <a id='snippet-custom_namer_tags'></a>
 ```cpp
 auto testSourceDirectory = "{TestSourceDirectory}";
+auto relativeTestSourceDirectory = "{RelativeTestSourceDirectory}";
+auto approvalsSubdirectory = "{ApprovalsSubdirectory}";
 auto testFileName = "{TestFileName}";
 auto testCaseName = "{TestCaseName}";
 auto approvedOrReceived = "{ApprovedOrReceived}";
 auto fileExtension = "{FileExtension}";
 ```
-<sup><a href='/ApprovalTests/namers/TemplatedCustomNamer.cpp#L34-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-custom_namer_tags' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/namers/TemplatedCustomNamer.cpp#L42-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-custom_namer_tags' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### Examples
