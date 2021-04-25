@@ -29,6 +29,7 @@ if (APPROVAL_TESTS_ENABLE_CODE_COVERAGE)
 endif ()
 
 if (NOT_SUBPROJECT)
+    # If adding new dependencies here, update scripts/clone_dependencies.sh
     add_subdirectory(CMake/cpputest)
     add_subdirectory(CMake/googletest)
     add_subdirectory(CMake/filesystem)
