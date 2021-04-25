@@ -31,7 +31,8 @@ endif ()
 if (NOT_SUBPROJECT)
     # If adding new dependencies here, update:
     #   scripts/clone_dependencies.sh
-    #   github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/dev_approvals_fetch_content
+    #   github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/dev_approvals/
+    #   github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/dev_approvals_fetch_content/
     add_subdirectory(CMake/cpputest)
     add_subdirectory(CMake/googletest)
     add_subdirectory(CMake/filesystem)
