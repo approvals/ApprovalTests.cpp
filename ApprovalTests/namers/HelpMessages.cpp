@@ -69,7 +69,7 @@ namespace ApprovalTests
 
     std::string HelpMessages::getUnconfiguredRootDirectory()
     {
-        std::string helpMessage = R"(* Hello frmo Approval Tests.
+        std::string helpMessage = R"(* Hello from Approval Tests.
 *
 * It looks like your compiler does not define __BASE_FILE__.
 * The workaround for this is to add the following to
