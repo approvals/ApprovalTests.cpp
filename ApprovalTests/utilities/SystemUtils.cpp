@@ -149,11 +149,20 @@ namespace ApprovalTests
         makeDirectoryForNonWindows(directory);
     }
 
-    void SystemUtils::ensureDirectoryExists(const std::string& fullFilePath)
+    void SystemUtils::ensureDirectoryExists(const std::string& fullDirectoryPath)
     {
-        if (!FileUtils::fileExists(fullFilePath))
+        if (!FileUtils::fileExists(fullDirectoryPath))
         {
-            makeDirectory(fullFilePath);
+            makeDirectory(fullDirectoryPath);
+        }
+    }
+
+    void SystemUtils::ensureParentDirectoryExists(const std::string& fullFilePath)
+    {
+        const std::string parentDirectory = FileUtils::getDirectory(fullFilePath);
+        if (!parentDirectory.empty())
+        {
+            SystemUtils::ensureDirectoryExists(parentDirectory);
         }
     }
 

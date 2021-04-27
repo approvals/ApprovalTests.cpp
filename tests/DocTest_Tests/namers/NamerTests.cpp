@@ -57,6 +57,8 @@ TEST_CASE("SeparateApprovedAndReceivedDirectoriesNamer")
     require_ends_with(namer->getReceivedFile(".txt"),
                       "received" + SystemUtils::getDirectorySeparator() +
                           "NamerTests.SeparateApprovedAndReceivedDirectoriesNamer.txt");
+
+    Approvals::verify("Verify that approved/ and received/ are created automatically");
 }
 
 TEST_CASE("AdditionalSections")

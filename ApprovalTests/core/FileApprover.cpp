@@ -1,5 +1,6 @@
 #include "ApprovalTests/core/FileApprover.h"
 #include "ApprovalTests/utilities/FileUtils.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 #include "ApprovalTests/reporters/FrontLoadedReporterFactory.h"
 #include "ApprovalException.h"
 
@@ -64,6 +65,8 @@ namespace ApprovalTests
     {
         std::string approvedPath = n.getApprovedFile(s.getFileExtensionWithDot());
         std::string receivedPath = n.getReceivedFile(s.getFileExtensionWithDot());
+        SystemUtils::ensureParentDirectoryExists(approvedPath);
+        SystemUtils::ensureParentDirectoryExists(receivedPath);
         s.write(receivedPath);
         try
         {

@@ -47,7 +47,9 @@ namespace ApprovalTests
 
         static void makeDirectory(const std::string& directory);
 
-        static void ensureDirectoryExists(const std::string& fullFilePath);
+        static void ensureDirectoryExists(const std::string& fullDirectoryPath);
+
+        static void ensureParentDirectoryExists(const std::string& fullFilePath);
 
         static void runSystemCommandOrThrow(const std::string& command,
                                             bool allowNonZeroExitCodes = false);
