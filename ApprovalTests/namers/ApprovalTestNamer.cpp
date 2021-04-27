@@ -51,9 +51,10 @@ namespace ApprovalTests
         return newFileName;
     }
 
-    void TestName::registerRootDirectoryFromMainFile(const std::string& file)
+    bool TestName::registerRootDirectoryFromMainFile(const std::string& file)
     {
         rootDirectory_ = FileUtils::getDirectory(file);
+        return true;
     }
 
     std::string TestName::handleBoostQuirks() const

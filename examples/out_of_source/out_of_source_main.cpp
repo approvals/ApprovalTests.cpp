@@ -46,3 +46,5 @@ std::string getTemplateString()
 
 auto default_namer_disposer =
     TemplatedCustomNamer::useAsDefaultNamer(getTemplateString());
+
+auto registered = TestName::registerRootDirectoryFromMainFile(__FILE__);
