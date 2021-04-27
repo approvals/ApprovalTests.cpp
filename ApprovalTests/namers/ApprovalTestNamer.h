@@ -25,12 +25,12 @@ namespace ApprovalTests
         std::vector<std::string> sections;
         static std::string directoryPrefix;
         static bool checkBuildConfig_;
-        static std::string rootDirectory_;
 
     private:
         std::string handleBoostQuirks() const;
         std::string findFileName(const std::string& file);
 
+        static std::string rootDirectory_;
         std::string fileName;
     };
 
