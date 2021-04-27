@@ -25,3 +25,7 @@
 #define APPROVAL_TESTS_DEPRECATED_CPP11(text)                                            \
     MoreHelpMessages::deprecatedFunctionCalled(text, __FILE__, __LINE__);
 #endif
+
+#define APPROVAL_TESTS_REGISTER_MAIN_DIRECTORY                                           \
+    auto approval_tests_registered_main_directory =                                      \
+        ApprovalTests::TestName::registerRootDirectoryFromMainFile(__FILE__);
