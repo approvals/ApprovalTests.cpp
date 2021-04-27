@@ -30,7 +30,7 @@ APPROVED_FILES_ROOT_DIR=. APPROVAL_TESTS_USE_REPORTER=TextDiffReporter ./out_of_
 
 echo 'Should fail: ----------------------------------------------------------------------------'
 # Test run that should fail
-echo "hello" >>out_of_source_test.out_of_source_sample.approved.txt
-APPROVED_FILES_ROOT_DIR=. APPROVAL_TESTS_USE_REPORTER=TextDiffReporter ./out_of_source
+#echo "hello" >>out_of_source_test.out_of_source_sample.approved.txt
+#APPROVED_FILES_ROOT_DIR=. APPROVAL_TESTS_USE_REPORTER=TextDiffReporter ./out_of_source
 
 popd
