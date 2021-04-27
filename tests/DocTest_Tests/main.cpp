@@ -7,3 +7,5 @@
 using namespace ApprovalTests;
 
 auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
+
+APPROVAL_TESTS_REGISTER_MAIN_DIRECTORY
