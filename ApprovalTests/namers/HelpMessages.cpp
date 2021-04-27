@@ -67,6 +67,22 @@ namespace ApprovalTests
         return topAndTailHelpMessage(helpMessage);
     }
 
+    std::string HelpMessages::getUnconfiguredRootDirectory()
+    {
+        std::string helpMessage = R"(* Hello frmo Approval Tests.
+*
+* It looks like your compiler does not define __BASE_FILE__.
+* The workaround for this is to add the following to
+* your main.cpp file:
+*
+*     APPROVAL_TESTS_REGISTER_MAIN_DIRECTORY
+*
+* This is only required if you are using TemplatedCustomNamer's
+* {RelativeTestSourceDirectory}.
+)";
+        return topAndTailHelpMessage(helpMessage);
+    }
+
     std::string
     HelpMessages::getUnknownEnvVarReporterHelp(const std::string& envVarName,
                                                const std::string& selected,

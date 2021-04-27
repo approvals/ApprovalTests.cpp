@@ -1,5 +1,6 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/core/ApprovalNamer.h"
+#include "ApprovalTests/namers/HelpMessages.h"
 #include "ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.h"
 #include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
@@ -137,4 +138,9 @@ TEST_CASE("Check non-existent file reports misconfigured build")
         CHECK(StringUtils::contains(
             exceptionText, "There seems to be a problem with your build configuration."));
     }
+}
+
+TEST_CASE("Test Root Directory Help Message")
+{
+    Approvals::verify(HelpMessages::getUnconfiguredRootDirectory());
 }

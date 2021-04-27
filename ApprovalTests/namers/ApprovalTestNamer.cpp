@@ -57,6 +57,18 @@ namespace ApprovalTests
         return true;
     }
 
+    std::string TestName::getRootDirectory()
+    {
+        if (!rootDirectory_.empty())
+        {
+            return rootDirectory_;
+        }
+        else
+        {
+            throw std::runtime_error(HelpMessages::getUnconfiguredRootDirectory());
+        }
+    }
+
     std::string TestName::handleBoostQuirks() const
     {
         return "";
@@ -155,10 +167,7 @@ namespace ApprovalTests
     std::string ApprovalTestNamer::getRelativeTestSourceDirectory() const
     {
         auto dir = getTestSourceDirectory();
-        if (!TestName::rootDirectory_.empty())
-        {
-            dir = StringUtils::replaceAll(dir, TestName::rootDirectory_, "");
-        }
+        dir = StringUtils::replaceAll(dir, TestName::getRootDirectory(), "");
         return dir;
     }
 

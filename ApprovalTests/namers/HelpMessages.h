@@ -12,6 +12,8 @@ namespace ApprovalTests
 
         static std::string getMisconfiguredMainHelp();
 
+        static std::string getUnconfiguredRootDirectory();
+
         static std::string
         getUnknownEnvVarReporterHelp(const std::string& envVarName,
                                      const std::string& selected,

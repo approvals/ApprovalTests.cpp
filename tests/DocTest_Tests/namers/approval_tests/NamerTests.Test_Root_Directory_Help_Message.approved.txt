@@ -1,0 +1,14 @@
+*****************************************************************************
+*                                                                           *
+* Hello frmo Approval Tests.
+*
+* It looks like your compiler does not define __BASE_FILE__.
+* The workaround for this is to add the following to
+* your main.cpp file:
+*
+*     APPROVAL_TESTS_REGISTER_MAIN_DIRECTORY
+*
+* This is only required if you are using TemplatedCustomNamer's
+* {RelativeTestSourceDirectory}.
+*                                                                           *
+*****************************************************************************
