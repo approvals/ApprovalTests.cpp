@@ -2,6 +2,8 @@
 #include "ApprovalTests/namers/TemplatedCustomNamer.h"
 #include "ApprovalTests/Approvals.h"
 
+#include <iostream>
+
 using namespace ApprovalTests;
 
 TEST_CASE("Test StringTemplates")
@@ -24,6 +26,8 @@ TEST_CASE("Test relative directory")
     TemplatedCustomNamer namer("{RelativeTestSourceDirectory}/{ApprovedOrReceived}/"
                                "{TestFileName}.{TestCaseName}.{FileExtension}");
 
+    std::cout << "Root Directory: " << TestName::getRootDirectory() << '\n';
+    std::cout << "__FILE__      : " << __FILE__ << '\n';
     CHECK(namer.getApprovedFile(".txt") ==
           "namers/approved/"
           "TemplatedCustomNamerTests.Test_relative_directory.txt");
