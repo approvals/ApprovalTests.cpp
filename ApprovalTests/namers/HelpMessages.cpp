@@ -71,12 +71,10 @@ namespace ApprovalTests
     {
         std::string helpMessage = R"(* Hello from Approval Tests.
 *
-* It looks like your compiler does not define __BASE_FILE__, and
-* your program is calling some code that requires knowledge of
+* It looks like your program is calling some code that requires knowledge of
 * the location of the main() in your source tree.
 *
-* The workaround for this is to add the following to
-* your main.cpp file:
+* To do this, add the following to your main.cpp file:
 *
 *     APPROVAL_TESTS_REGISTER_MAIN_DIRECTORY
 *
