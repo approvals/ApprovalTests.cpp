@@ -59,6 +59,10 @@ namespace ApprovalTests
 
     bool TestName::registerRootDirectoryFromMainFile(const std::string& file)
     {
+        if (file.empty())
+        {
+            throw std::runtime_error("Cannot register an empty path as root directory");
+        }
         rootDirectoryStorage() = FileUtils::getDirectory(file);
         return true;
     }
