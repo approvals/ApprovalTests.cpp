@@ -9,7 +9,6 @@ namespace ApprovalTests
 {
     std::string TestName::directoryPrefix;
     bool TestName::checkBuildConfig_ = true;
-    std::string TestName::rootDirectory_;
 
     const std::string& TestName::getFileName() const
     {
@@ -26,6 +25,13 @@ namespace ApprovalTests
     {
         auto newFileName = checkParentDirectoriesForFile(file);
         return SystemUtils::checkFilenameCase(newFileName);
+    }
+
+    std::string& TestName::rootDirectoryStorage()
+    {
+        // This method is needed to fix static initialisation order
+        static std::string rootDirectory;
+        return rootDirectory;
     }
 
     std::string TestName::checkParentDirectoriesForFile(const std::string& file)
@@ -53,15 +59,15 @@ namespace ApprovalTests
 
     bool TestName::registerRootDirectoryFromMainFile(const std::string& file)
     {
-        rootDirectory_ = FileUtils::getDirectory(file);
+        rootDirectoryStorage() = FileUtils::getDirectory(file);
         return true;
     }
 
     std::string TestName::getRootDirectory()
     {
-        if (!rootDirectory_.empty())
+        if (!rootDirectoryStorage().empty())
         {
-            return rootDirectory_;
+            return rootDirectoryStorage();
         }
         else
         {

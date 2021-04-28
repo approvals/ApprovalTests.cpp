@@ -29,8 +29,8 @@ namespace ApprovalTests
     private:
         std::string handleBoostQuirks() const;
         std::string findFileName(const std::string& file);
+        static std::string& rootDirectoryStorage();
 
-        static std::string rootDirectory_;
         std::string fileName;
     };
 
