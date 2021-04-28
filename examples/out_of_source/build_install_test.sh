@@ -11,12 +11,12 @@ pushd examples/out_of_source
 ctest .
 popd
 
-mkdir -p clare_install
+mkdir -p clare_install/usr/local/out_of_source
 echo 'Before install: ----------------------------------------------------------------------------'
-ls -lsR clare_install/usr/local/out_of_source
+ls -lsR  clare_install/usr/local/out_of_source
 
-rm -rf  clare_install/usr/local/out_of_source/*
-ls -lsR clare_install/usr/local/out_of_source
+rm -rf   clare_install/usr/local/out_of_source/*
+ls -lsR  clare_install/usr/local/out_of_source
 DESTDIR=clare_install make install
 
 echo 'After install: ----------------------------------------------------------------------------'
