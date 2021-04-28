@@ -12,12 +12,5 @@ namespace ApprovalTests
         setTestPassedNotification(FileApprover::TestPassedNotification notification);
 
         static void setCurrentTest(ApprovalTests::TestName* currentTest);
-
-        static void registerRootDirectoryFromMainFile()
-        {
-#ifdef __BASE_FILE__
-            TestName::registerRootDirectoryFromMainFile(__BASE_FILE__);
-#endif
-        }
     };
 }

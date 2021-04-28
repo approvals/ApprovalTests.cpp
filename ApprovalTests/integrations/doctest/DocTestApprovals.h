@@ -93,7 +93,6 @@ namespace ApprovalTests
             // constructor has to accept the ContextOptions by ref as a single argument
             explicit DocTestApprovalListener(const doctest::ContextOptions& /*in*/)
             {
-                FrameworkIntegrations::registerRootDirectoryFromMainFile();
             }
 
             std::string doctestToString(const doctest::String& string) const
