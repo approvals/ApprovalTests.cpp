@@ -59,7 +59,8 @@ namespace ApprovalTests
 
     bool TestName::registerRootDirectoryFromMainFile(const std::string& file)
     {
-        std::cout << "TestName::registerRootDirectoryFromMainFile from __FILE__ " << file << '\n';
+        std::cout << "TestName::registerRootDirectoryFromMainFile from __FILE__ " << file
+                  << '\n';
 
         if (file.empty())
         {
@@ -67,10 +68,12 @@ namespace ApprovalTests
         }
 
         std::string adjustedPath = TestName::checkParentDirectoriesForFile(file);
-        std::cout << "TestName::registerRootDirectoryFromMainFile found parent  " << adjustedPath << '\n';
+        std::cout << "TestName::registerRootDirectoryFromMainFile found parent  "
+                  << adjustedPath << '\n';
 
         rootDirectoryStorage() = FileUtils::getDirectory(adjustedPath);
-        std::cout << "TestName::registerRootDirectoryFromMainFile result        " << rootDirectoryStorage() << '\n';
+        std::cout << "TestName::registerRootDirectoryFromMainFile result        "
+                  << rootDirectoryStorage() << '\n';
 
         return true;
     }
