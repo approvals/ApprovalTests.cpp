@@ -4,7 +4,7 @@
 set -e
 set -o pipefail
 
-pushd ../../cmake-build-spaces/cmake-build-debug-clang-mp-90
+pushd ../../cmake-build-spaces/cmake-build-debug-clang-11.0.0
 cmake --build . --target out_of_source
 
 pushd examples/out_of_source
