@@ -40,7 +40,7 @@ TEST_CASE("Registering default Namer")
 
 void require_ends_with(const std::string& text, const std::string& endsWith)
 {
-    INFO(text << "\ndidn't end with\n" << endsWith);
+    INFO("\n'" << text << "'\ndidn't end with\n'" << endsWith << "'" << "\n");
     REQUIRE(StringUtils::endsWith(text, endsWith));
 }
 
