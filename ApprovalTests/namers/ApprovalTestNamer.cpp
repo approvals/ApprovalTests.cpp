@@ -196,8 +196,10 @@ namespace ApprovalTests
         // We are using the original directory - as obtained from __FILE__,
         // as this seems to be consistent for relative paths, regardless of
         // Ninja __FILE__ quirks
-        auto originalDir = FileUtils::getDirectory(getCurrentTest().getOriginalFileName());
-        originalDir = StringUtils::replaceAll(originalDir, TestName::getRootDirectory(), "");
+        auto originalDir =
+            FileUtils::getDirectory(getCurrentTest().getOriginalFileName());
+        originalDir =
+            StringUtils::replaceAll(originalDir, TestName::getRootDirectory(), "");
         return originalDir;
     }
 
