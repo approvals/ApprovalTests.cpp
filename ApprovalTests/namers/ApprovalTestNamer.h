@@ -10,6 +10,7 @@ namespace ApprovalTests
     {
     public:
         const std::string& getFileName() const;
+        std::string getOriginalFileName();
 
         void setFileName(const std::string& file);
 
@@ -32,6 +33,7 @@ namespace ApprovalTests
         static std::string& rootDirectoryStorage();
 
         std::string fileName;
+        std::string originalFileName;
     };
 
     class TestConfiguration

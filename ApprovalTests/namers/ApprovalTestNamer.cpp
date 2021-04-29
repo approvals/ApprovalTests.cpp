@@ -16,8 +16,14 @@ namespace ApprovalTests
         return fileName;
     }
 
+    std::string TestName::getOriginalFileName()
+    {
+        return originalFileName;
+    }
+
     void TestName::setFileName(const std::string& file)
     {
+        originalFileName = file;
         fileName = file.empty() ? handleBoostQuirks() : findFileName(file);
     }
 
@@ -67,7 +73,7 @@ namespace ApprovalTests
             throw std::runtime_error("Cannot register an empty path as root directory");
         }
 
-        std::string adjustedPath = TestName::checkParentDirectoriesForFile(file);
+        std::string adjustedPath = file;
         std::cout << "TestName::registerRootDirectoryFromMainFile found parent  "
                   << adjustedPath << '\n';
 
@@ -187,9 +193,12 @@ namespace ApprovalTests
 
     std::string ApprovalTestNamer::getRelativeTestSourceDirectory() const
     {
-        auto dir = getTestSourceDirectory();
-        dir = StringUtils::replaceAll(dir, TestName::getRootDirectory(), "");
-        return dir;
+        // We are using the original directory - as obtained from __FILE__,
+        // as this seems to be consistent for relative paths, regardless of
+        // Ninja __FILE__ quirks
+        auto originalDir = FileUtils::getDirectory(getCurrentTest().getOriginalFileName());
+        originalDir = StringUtils::replaceAll(originalDir, TestName::getRootDirectory(), "");
+        return originalDir;
     }
 
     std::string
