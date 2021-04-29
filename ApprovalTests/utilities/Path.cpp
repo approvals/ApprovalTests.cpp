@@ -3,7 +3,7 @@
 namespace ApprovalTests
 {
 
-    Path::Path(const std::string& start) : path_(start)
+    Path::Path(const std::string& start) : path_(normalizeSeparators(start))
     {
     }
 
@@ -49,5 +49,12 @@ namespace ApprovalTests
     Path Path::operator/(const Path addition) const
     {
         return *this / addition.path_;
+    }
+
+    std::string Path::normalizeSeparators(const std::string& path)
+    {
+        auto separator = SystemUtils::getDirectorySeparator();
+        auto otherSeparator = (separator == "/" ? "\\" : "/");
+        return StringUtils::replaceAll(path, otherSeparator, separator);
     }
 }

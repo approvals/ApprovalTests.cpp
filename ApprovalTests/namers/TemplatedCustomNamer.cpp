@@ -34,7 +34,7 @@ namespace ApprovalTests
         }
     }
 
-    std::string TemplatedCustomNamer::constructFromTemplate(
+    Path TemplatedCustomNamer::constructFromTemplate(
         const std::string& extensionWithDot,
         const std::string& approvedOrReceivedReplacement) const
     {
@@ -62,15 +62,25 @@ namespace ApprovalTests
         // clang-format on
 
         // Convert to native directory separators:
-        return Path(result).toString();
+        return Path(result);
     }
 
     std::string TemplatedCustomNamer::getApprovedFile(std::string extensionWithDot) const
     {
-        return constructFromTemplate(extensionWithDot, "approved");
+        return getApprovedFileAsPath(extensionWithDot).toString();
     }
 
     std::string TemplatedCustomNamer::getReceivedFile(std::string extensionWithDot) const
+    {
+        return getReceivedFileAsPath(extensionWithDot).toString();
+    }
+
+    Path TemplatedCustomNamer::getApprovedFileAsPath(std::string extensionWithDot) const
+    {
+        return constructFromTemplate(extensionWithDot, "approved");
+    }
+
+    Path TemplatedCustomNamer::getReceivedFileAsPath(std::string extensionWithDot) const
     {
         return constructFromTemplate(extensionWithDot, "received");
     }

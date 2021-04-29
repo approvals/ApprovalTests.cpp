@@ -21,5 +21,7 @@ namespace ApprovalTests
         Path operator+(const std::string& addition) const;
         Path operator/(const std::string& addition) const;
         Path operator/(const Path addition) const;
+
+        static std::string normalizeSeparators(const std::string& path);
     };
 }

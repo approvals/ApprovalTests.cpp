@@ -31,3 +31,12 @@ TEST_CASE("Should handle multiple separators")
     CHECK("tmp/subdirectory" == path.toString("/"));
     CHECK("tmp\\subdirectory" == path.toString("\\"));
 }
+
+TEST_CASE("Path normalises separators in stored string")
+{
+    Path path = Path("C:\\temp\\/a/b/c");
+    CHECK("C:/temp/a/b/c" == path.toString("/"));
+
+    Path path2 = Path("C:\\temp\\") / Path("/a/b/c");
+    CHECK("C:/temp/a/b/c" == path2.toString("/"));
+}

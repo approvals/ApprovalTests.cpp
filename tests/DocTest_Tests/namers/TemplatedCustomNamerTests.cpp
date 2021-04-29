@@ -13,10 +13,10 @@ TEST_CASE("Test StringTemplates")
                                "{TestFileName}.{TestCaseName}.{FileExtension}");
     // end-snippet
 
-    CHECK(namer.getApprovedFile(".txt") ==
+    CHECK(namer.getApprovedFileAsPath(".txt").toString("/") ==
           "/my/source/directory/approved/"
           "TemplatedCustomNamerTests.Test_StringTemplates.txt");
-    CHECK(namer.getReceivedFile(".txt") ==
+    CHECK(namer.getReceivedFileAsPath(".txt").toString("/") ==
           "/my/source/directory/received/"
           "TemplatedCustomNamerTests.Test_StringTemplates.txt");
 }
@@ -28,7 +28,7 @@ TEST_CASE("Test relative directory")
 
     std::cout << "Root Directory: " << TestName::getRootDirectory() << '\n';
     std::cout << "__FILE__      : " << __FILE__ << '\n';
-    CHECK(namer.getApprovedFile(".txt") ==
+    CHECK(namer.getApprovedFileAsPath(".txt").toString("/") ==
           "namers/approved/"
           "TemplatedCustomNamerTests.Test_relative_directory.txt");
 }
