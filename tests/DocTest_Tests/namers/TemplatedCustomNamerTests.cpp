@@ -76,10 +76,12 @@ Also available:
 TestSourceDirectory = {TestSourceDirectory}
 )";
     TemplatedCustomNamer namer(templateText);
+    std::regex pattern = std::regex(R"(TestSourceDirectory = .*DocTest_Tests/)",
+                                    std::regex_constants::icase);
     Approvals::verify("For template: " + fullText + "\n\n" +
                           namer.getApprovedFileAsPath(".txt").toString("/"),
                       Options().withScrubber(Scrubbers::createRegexScrubber(
-                          R"(TestSourceDirectory = .*DocTest_Tests/)",
+                          pattern,
                           "{TestSourceDirectory} = <full path to "
                           "sources>ApprovalTests.cpp/tests/DocTest_Tests/")));
 }
