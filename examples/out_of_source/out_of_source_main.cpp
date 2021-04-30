@@ -28,7 +28,7 @@ std::string getApprovedFilesLocation()
 
     if (isRunningInBuildEnvironment())
     {
-        return "{TestSourceDirectory}/";
+        return "{TestSourceDirectory}/{ApprovalsSubdirectory}/";
     }
 
     return "./{RelativeTestSourceDirectory}/{ApprovalsSubdirectory}/"; // Use current working directory
