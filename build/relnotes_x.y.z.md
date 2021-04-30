@@ -4,6 +4,8 @@
     * None
 * **New features**
     * Custom template namer: see [TemplatedCustomNamer](/doc/Namers.md#templatedcustomnamer). (#149)
+      * This gives great flexibility 
+      * It also introduces the ability to run Approval Tests on machines that do not have the source code, such as when doing cross-compilation.
     * `Options.withNamer()`: [Options](/doc/Options.md#top) now has the ability to specify a custom namer.
     * New `Path` utility class: see [Path.h](/ApprovalTests/utilities/Path.h) and [Path.cpp](/ApprovalTests/utilities/Path.cpp)
 * **Bug fixes**

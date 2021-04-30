@@ -83,8 +83,8 @@ auto default_namer_disposer =
 
 The easiest way to create a custom namer is to use a `TemplatedCustomNamer`.
 
-As well as giving great flexibility, it introduces that ability to run Approval Tests
-on machines that do not have the source code.
+As well as giving great flexibility, this introduces the ability to run Approval Tests
+on machines that do not have the source code, such as when doing cross-compilation
 
 Here is an example:
 
