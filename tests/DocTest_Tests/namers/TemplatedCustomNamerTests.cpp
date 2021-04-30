@@ -35,16 +35,18 @@ TEST_CASE("Test relative directory")
 
 TEST_CASE("Test Namer Injection")
 {
+    // clang-format off
     // begin-snippet: templated_custom_namer_injection_via_options
     auto namer = TemplatedCustomNamer::create(
-        "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
+        "{TestSourceDirectory}/{ApprovalsSubdirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
     Approvals::verify("Hello", Options().withNamer(namer));
     // end-snippet
 
     // begin-snippet: templated_custom_namer_injection
     auto default_namer_disposer = TemplatedCustomNamer::useAsDefaultNamer(
-        "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
+        "{TestSourceDirectory}/{ApprovalsSubdirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
     // end-snippet
+    // clang-format on
 
     Approvals::verify("Hello");
 }

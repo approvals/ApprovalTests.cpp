@@ -5,7 +5,7 @@ namespace ApprovalTests
 {
     // clang-format off
     // begin-snippet: separate_approved_and_received_directory_names
-    auto path = "{TestSourceDirectory}/{ApprovedOrReceived}/{TestFileName}.{TestCaseName}.{FileExtension}";
+    auto path = "{TestSourceDirectory}/{ApprovalsSubdirectory}/{ApprovedOrReceived}/{TestFileName}.{TestCaseName}.{FileExtension}";
     // end-snippet
     // clang-format on
     SeparateApprovedAndReceivedDirectoriesNamer::

@@ -57,7 +57,7 @@ namespace ApprovalTests
         result = replaceIfContains(result, relativeTestSourceDirectory, [&](){return namer_.getRelativeTestSourceDirectory();});
         result = replaceIfContains(result, testFileName, [&](){return namer_.getSourceFileName();});
         result = replaceIfContains(result, testCaseName, [&](){return namer_.getTestName();});
-        result = replaceIfContains(result, testSourceDirectory, [&](){return namer_.getDirectory();});
+        result = replaceIfContains(result, testSourceDirectory, [&](){return namer_.getTestSourceDirectory();});
         result = replaceIfContains(result, approvedOrReceived, [&](){return approvedOrReceivedReplacement;});
         // clang-format on
 
