@@ -80,8 +80,8 @@ TestSourceDirectory = {TestSourceDirectory}
         "For template: " + fullText + "\n\n" +
             namer.getApprovedFileAsPath(".txt").toString("/"),
         Options().withScrubber(Scrubbers::createRegexScrubber(
-            R"(TestSourceDirectory = .*tests/)",
-            "{TestSourceDirectory} = <full path to sources>ApprovalTests.cpp/tests/")));
+            R"(TestSourceDirectory = .*DocTest_Tests/)",
+            "{TestSourceDirectory} = <full path to sources>ApprovalTests.cpp/tests/DocTest_Tests/")));
 }
 
 // ---- Docs
