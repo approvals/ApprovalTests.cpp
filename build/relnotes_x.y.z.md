@@ -3,7 +3,9 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * Custom template namer: see [TemplatedCustomNamer](/doc/Namers.md#templatedcustomnamer). (#149)
+    * `Options.withNamer()`: [Options](/doc/Options.md#top) now has the ability to specify a custom namer.
+    * New `Path` utility class: see [Path.h](/ApprovalTests/utilities/Path.h) and [Path.cpp](/ApprovalTests/utilities/Path.cpp)
 * **Bug fixes**
     * Calls to `Approvals::verify()` and related methods no longer spuriously pass if the received and approved
       filenames are identical (#178)
