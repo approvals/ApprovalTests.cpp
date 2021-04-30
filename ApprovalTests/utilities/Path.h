@@ -23,5 +23,6 @@ namespace ApprovalTests
         Path operator/(const Path addition) const;
 
         static std::string normalizeSeparators(const std::string& path);
+        std::string removeRedundantDirectorySeparators(std::string path) const;
     };
 }

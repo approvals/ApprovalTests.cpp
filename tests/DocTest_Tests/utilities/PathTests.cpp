@@ -40,3 +40,9 @@ TEST_CASE("Path normalises separators in stored string")
     Path path2 = Path("C:\\temp\\") / Path("/a/b/c");
     CHECK("C:/temp/a/b/c" == path2.toString("/"));
 }
+
+TEST_CASE("Path condenses slashes")
+{
+    Path path = Path("a///b.txt");
+    CHECK("a/b.txt" == path.toString("/"));
+}
