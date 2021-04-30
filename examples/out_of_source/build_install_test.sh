@@ -36,6 +36,10 @@ pushd ./clare_install/usr/local/out_of_source
 
 # Test run that should pass
 echo 'Should pass: ----------------------------------------------------------------------------'
+APPROVAL_TESTS_USE_REPORTER=TextDiffReporter ./out_of_source
+
+# Test run that should pass - with environment variable
+echo 'Should pass - with env var: -------------------------------------------------------------'
 APPROVED_FILES_ROOT_DIR=. APPROVAL_TESTS_USE_REPORTER=TextDiffReporter ./out_of_source
 
 # Test run that should fail
