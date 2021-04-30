@@ -76,12 +76,12 @@ Also available:
 TestSourceDirectory = {TestSourceDirectory}
 )";
     TemplatedCustomNamer namer(templateText);
-    Approvals::verify(
-        "For template: " + fullText + "\n\n" +
-            namer.getApprovedFileAsPath(".txt").toString("/"),
-        Options().withScrubber(Scrubbers::createRegexScrubber(
-            R"(TestSourceDirectory = .*DocTest_Tests/)",
-            "{TestSourceDirectory} = <full path to sources>ApprovalTests.cpp/tests/DocTest_Tests/")));
+    Approvals::verify("For template: " + fullText + "\n\n" +
+                          namer.getApprovedFileAsPath(".txt").toString("/"),
+                      Options().withScrubber(Scrubbers::createRegexScrubber(
+                          R"(TestSourceDirectory = .*DocTest_Tests/)",
+                          "{TestSourceDirectory} = <full path to "
+                          "sources>ApprovalTests.cpp/tests/DocTest_Tests/")));
 }
 
 // ---- Docs
