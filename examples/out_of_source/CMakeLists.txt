@@ -9,6 +9,7 @@ add_executable(${EXE_NAME}
         out_of_source_test.cpp
         DocTestReporter.cpp
         DocTestReporter.h
+        source_subdir/source_sub_dir_tests.cpp
         )
 target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests doctest::doctest ghc_filesystem)
 set_target_properties(${EXE_NAME} PROPERTIES
