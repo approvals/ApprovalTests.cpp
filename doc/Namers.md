@@ -112,6 +112,30 @@ auto fileExtension = "{FileExtension}";
 <sup><a href='/ApprovalTests/namers/TemplatedCustomNamer.cpp#L42-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-custom_namer_tags' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
+Here is some output showing examples with these tags expanded:
+
+<!-- snippet: TemplatedCustomNamerTests.Demo_all_namer_templates.approved.txt -->
+<a id='snippet-TemplatedCustomNamerTests.Demo_all_namer_templates.approved.txt'></a>
+```txt
+For template: {RelativeTestSourceDirectory}/{ApprovalsSubdirectory}/{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}
+
+Everything = namers/approval_tests/TemplatedCustomNamerTests.Demo_all_namer_templates.approved.txt
+
+With breakdown:
+RelativeTestSourceDirectory = namers/
+ApprovalsSubdirectory = approval_tests/
+TestFileName = TemplatedCustomNamerTests
+TestCaseName = Demo_all_namer_templates
+ApprovedOrReceived = approved
+FileExtension = txt
+
+Also available:
+{TestSourceDirectory} = <full path to sources>ApprovalTests.cpp/tests/DocTest_Tests/namers/
+
+```
+<sup><a href='/tests/DocTest_Tests/namers/approval_tests/TemplatedCustomNamerTests.Demo_all_namer_templates.approved.txt#L1-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-TemplatedCustomNamerTests.Demo_all_namer_templates.approved.txt' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
 #### Examples
 
 If you would like to see an example of this running for scenarios where the execution is in a separate environment from the compilation, check out [our out_of_source example](https://github.com/approvals/ApprovalTests.cpp/blob/master/examples/out_of_source/out_of_source_main.cpp).
