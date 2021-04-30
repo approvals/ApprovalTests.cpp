@@ -6,6 +6,7 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.9.0](#v1090)
     * [Custom template namer](#custom-template-namer)
     * [Options.withNamer()](#optionswithnamer)
     * [Path](#path)
@@ -74,6 +75,8 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+## v.10.9.0
 
 ### Custom template namer
 
