@@ -10,6 +10,6 @@ TestCaseName = Demo_all_namer_templates
 ApprovedOrReceived = approved
 FileExtension = txt
 
-Also:
-TestSourceDirectory = <full path to sources>ApprovalTests.cpp/tests/DocTest_Tests/namers/
+Also available:
+{TestSourceDirectory} = <full path to sources>ApprovalTests.cpp/tests/DocTest_Tests/namers/
 

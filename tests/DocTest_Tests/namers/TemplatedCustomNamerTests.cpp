@@ -72,7 +72,7 @@ TestCaseName = {TestCaseName}
 ApprovedOrReceived = {ApprovedOrReceived}
 FileExtension = {FileExtension}
 
-Also:
+Also available:
 TestSourceDirectory = {TestSourceDirectory}
 )";
     TemplatedCustomNamer namer(templateText);
@@ -80,7 +80,7 @@ TestSourceDirectory = {TestSourceDirectory}
         "For template: " + fullText + "\n\n" + namer.getApprovedFile(".txt"),
         Options().withScrubber(Scrubbers::createRegexScrubber(
             R"(TestSourceDirectory = .*ApprovalTests.cpp)",
-            "TestSourceDirectory = <full path to sources>ApprovalTests.cpp")));
+            "{TestSourceDirectory} = <full path to sources>ApprovalTests.cpp")));
 }
 
 // ---- Docs
