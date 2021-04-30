@@ -6,6 +6,9 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [Custom template namer](#custom-template-namer)
+    * [Options.withNamer()](#optionswithnamer)
+    * [Path](#path)
   * [v.10.8.0](#v1080)
     * [Ninja builds work when inside source tree](#ninja-builds-work-when-inside-source-tree)
   * [v.10.7.0](#v1070)
@@ -71,6 +74,18 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+### Custom template namer
+
+See [TemplatedCustomNamer](/doc/Namers.md#templatedcustomnamer)
+
+### Options.withNamer()
+
+[Options](/doc/Options.md#top) now has the ability to specify a custom namer.
+
+### Path
+
+See [Path.h](/ApprovalTests/utilities/Path.h) and [Path.cpp](/ApprovalTests/utilities/Path.cpp)
 
 ## v.10.8.0
 
