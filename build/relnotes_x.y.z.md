@@ -5,6 +5,6 @@
 * **New features**
     * None
 * **Bug fixes**
-    * Fix compilation error with [fmt library integration](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/how_tos/UseTheFmtLibraryToPrintObjects.md) that was introduced in the v.10.9.0 release (#180)
+    * None
 * **Other changes**
     * None

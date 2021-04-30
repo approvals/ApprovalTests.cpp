@@ -32,7 +32,7 @@ Approval Tests for doctest requires that a file called the following is found:
 ```h
 #include <doctest/doctest.h>
 ```
-<sup><a href='/ApprovalTests/integrations/doctest/DocTestApprovals.h#L15-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_doctest' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/doctest/DocTestApprovals.h#L16-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_doctest' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Approval Tests needs doctest version 2.3.4 or above.

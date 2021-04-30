@@ -46,7 +46,7 @@ Approval Tests requires that the following are found:
 #include <CppUTest/TestPlugin.h>
 #include <CppUTest/TestRegistry.h>
 ```
-<sup><a href='/ApprovalTests/integrations/cpputest/CppUTestApprovals.h#L13-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_headers_for_cpputest' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/cpputest/CppUTestApprovals.h#L14-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_headers_for_cpputest' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Approval Tests is tested with CppUTest v4.0. 
