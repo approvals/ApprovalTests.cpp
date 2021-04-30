@@ -55,10 +55,10 @@ If you want to use a specific namer for a specific test, the easiest way is via 
 <a id='snippet-templated_custom_namer_injection_via_options'></a>
 ```cpp
 auto namer = TemplatedCustomNamer::create(
-    "{TestSourceDirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
+    "{TestSourceDirectory}/{ApprovalsSubdirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
 Approvals::verify("Hello", Options().withNamer(namer));
 ```
-<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp#L34-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_injection_via_options' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp#L39-L43' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_injection_via_options' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Globally
@@ -72,7 +72,7 @@ which namer it uses by default. Please note that you need to create a function t
 auto default_namer_disposer =
     Approvals::useAsDefaultNamer([]() { return std::make_shared<FakeNamer>(); });
 ```
-<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L28-L31' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_default_namer' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L29-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_default_namer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 **Hint:** Many namer classes have a `useAsDefaultNamer()` convenience method to do this for you.
@@ -91,7 +91,7 @@ Here is an example:
 TemplatedCustomNamer namer("/my/source/directory/{ApprovedOrReceived}/"
                            "{TestFileName}.{TestCaseName}.{FileExtension}");
 ```
-<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp#L9-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_example' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp#L11-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_example' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 **Note:** The character `/` will be converted to `\` on Windows machines, at run-time. 
@@ -123,7 +123,7 @@ The pattern used by this class for file names is:
 <!-- snippet: separate_approved_and_received_directory_names -->
 <a id='snippet-separate_approved_and_received_directory_names'></a>
 ```cpp
-auto path = "{TestSourceDirectory}/{ApprovedOrReceived}/{TestFileName}.{TestCaseName}.{FileExtension}";
+auto path = "{TestSourceDirectory}/{ApprovalsSubdirectory}/{ApprovedOrReceived}/{TestFileName}.{TestCaseName}.{FileExtension}";
 ```
 <sup><a href='/ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.cpp#L7-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-separate_approved_and_received_directory_names' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -145,7 +145,7 @@ To register this as your default namer, use:
 auto default_namer_disposer =
     SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
 ```
-<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L48-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_separate_directories_namer' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L50-L53' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_separate_directories_namer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 When using this namer, you will want to add the following line to your `.gitignore` file:
