@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "ApprovalTests/integrations/FrameworkIntegrations.h"
 #include "ApprovalTests/utilities/Macros.h"
 
 #ifdef APPROVALS_CPPUTEST_EXISTING_MAIN

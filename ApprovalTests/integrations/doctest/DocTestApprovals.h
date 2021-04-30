@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "ApprovalTests/integrations/FrameworkIntegrations.h"
 
 #if defined(APPROVALS_DOCTEST_EXISTING_MAIN)
 #define APPROVALS_DOCTEST

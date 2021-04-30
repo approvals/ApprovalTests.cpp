@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "ApprovalTests/integrations/FrameworkIntegrations.h"
 
 #ifdef APPROVALS_UT
 #define APPROVAL_TESTS_INCLUDE_CPPS
