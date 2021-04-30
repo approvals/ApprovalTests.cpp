@@ -37,7 +37,8 @@ std::string getApprovedFilesLocation()
 std::string getTemplateString()
 {
     std::string args =
-        "{ApprovalsSubdirectory}/{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
+        "{ApprovalsSubdirectory}/"
+        "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
 
     std::string rootDir = getApprovedFilesLocation();
     std::string templateString = rootDir + args;

@@ -203,8 +203,7 @@ namespace ApprovalTests
         return originalDir;
     }
 
-    std::string
-    ApprovalTestNamer::getApprovalsSubdirectory() const
+    std::string ApprovalTestNamer::getApprovalsSubdirectory() const
     {
         std::string sub_directory;
         if (!testConfiguration().subdirectory.empty())

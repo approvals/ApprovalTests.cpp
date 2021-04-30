@@ -77,7 +77,8 @@ TestSourceDirectory = {TestSourceDirectory}
 )";
     TemplatedCustomNamer namer(templateText);
     Approvals::verify(
-        "For template: " + fullText + "\n\n" + namer.getApprovedFileAsPath(".txt").toString("/"),
+        "For template: " + fullText + "\n\n" +
+            namer.getApprovedFileAsPath(".txt").toString("/"),
         Options().withScrubber(Scrubbers::createRegexScrubber(
             R"(TestSourceDirectory = .*ApprovalTests.cpp)",
             "{TestSourceDirectory} = <full path to sources>ApprovalTests.cpp")));

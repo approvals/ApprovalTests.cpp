@@ -26,7 +26,7 @@ namespace ApprovalTests
     std::string Path::removeRedundantDirectorySeparators(std::string path) const
     {
         bool changed = true;
-        while(changed)
+        while (changed)
         {
             std::string reducePath = path;
             reducePath = StringUtils::replaceAll(reducePath, "//", "/");
