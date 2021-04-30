@@ -23,21 +23,21 @@ std::string getApprovedFilesLocation()
     std::string locationFromEnvVar = SystemUtils::safeGetEnv("APPROVED_FILES_ROOT_DIR");
     if (!locationFromEnvVar.empty())
     {
-        return locationFromEnvVar + "/{RelativeTestSourceDirectory}/{ApprovalsSubdirectory}/";
+        return locationFromEnvVar + "/{RelativeTestSourceDirectory}/";
     }
 
     if (isRunningInBuildEnvironment())
     {
-        return "{TestSourceDirectory}/{ApprovalsSubdirectory}/";
+        return "{TestSourceDirectory}/";
     }
 
-    return "./{RelativeTestSourceDirectory}/{ApprovalsSubdirectory}/"; // Use current working directory
+    return "./{RelativeTestSourceDirectory}/"; // Use current working directory
 }
 
 std::string getTemplateString()
 {
     std::string args =
-        "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
+        "{ApprovalsSubdirectory}/{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
 
     std::string rootDir = getApprovedFilesLocation();
     std::string templateString = rootDir + args;
