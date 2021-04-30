@@ -4,6 +4,10 @@
 set -e
 set -o pipefail
 
+cwd=`pwd`
+cpp_files=`ls *.cpp`
+#echo $cpp_files
+
 pushd ../../cmake-build-spaces/cmake-build-debug-clang-11.0.0
 cmake --build . --target out_of_source
 
@@ -17,10 +21,16 @@ ls -lsR  clare_install/usr/local/out_of_source
 
 rm -rf   clare_install/usr/local/out_of_source/*
 ls -lsR  clare_install/usr/local/out_of_source
-DESTDIR=clare_install make install
+DESTDIR=clare_install cmake --build . --target install
 
 echo 'After install: ----------------------------------------------------------------------------'
 ls -lsR clare_install/usr/local/out_of_source
+
+# Remove source files
+#echo ">>>>>>>>>>>>>>>>>>>> "
+#pwd
+#ls -ls ${cwd}
+rm -f ${cwd}/*.cpp
 
 pushd ./clare_install/usr/local/out_of_source
 
@@ -34,3 +44,8 @@ APPROVED_FILES_ROOT_DIR=. APPROVAL_TESTS_USE_REPORTER=TextDiffReporter ./out_of_
 #APPROVED_FILES_ROOT_DIR=. APPROVAL_TESTS_USE_REPORTER=TextDiffReporter ./out_of_source
 
 popd
+
+popd
+
+#pwd
+git checkout master -- $cpp_files
