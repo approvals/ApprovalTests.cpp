@@ -56,6 +56,33 @@ TEST_CASE("Test non-unique name")
     Approvals::verifyExceptionMessage([]() { TemplatedCustomNamer("hello.txt"); });
 }
 
+TEST_CASE("Demo all namer templates")
+{
+    std::string fullText =
+        "{RelativeTestSourceDirectory}/{ApprovalsSubdirectory}/"
+        "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
+
+    std::string templateText = "Everything = " + fullText + R"(
+
+With breakdown:
+RelativeTestSourceDirectory = {RelativeTestSourceDirectory}
+ApprovalsSubdirectory = {ApprovalsSubdirectory}
+TestFileName = {TestFileName}
+TestCaseName = {TestCaseName}
+ApprovedOrReceived = {ApprovedOrReceived}
+FileExtension = {FileExtension}
+
+Also:
+TestSourceDirectory = {TestSourceDirectory}
+)";
+    TemplatedCustomNamer namer(templateText);
+    Approvals::verify(
+        "For template: " + fullText + "\n\n" + namer.getApprovedFile(".txt"),
+        Options().withScrubber(Scrubbers::createRegexScrubber(
+            R"(TestSourceDirectory = .*ApprovalTests.cpp)",
+            "TestSourceDirectory = <full path to sources>ApprovalTests.cpp")));
+}
+
 // ---- Docs
 // TODO Revisit our documentation
 // TODO Document ApprovalTestNamer::setCheckBuildConfig(false)
