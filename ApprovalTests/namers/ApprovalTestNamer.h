@@ -67,7 +67,7 @@ namespace ApprovalTests
 
         std::string getRelativeTestSourceDirectory() const;
 
-        std::string getRelativePathOfSourceDirectoryFromSourceRootForApproved() const;
+        std::string getApprovalsSubdirectory() const;
 
         std::string getDirectory() const;
 

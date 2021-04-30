@@ -204,7 +204,7 @@ namespace ApprovalTests
     }
 
     std::string
-    ApprovalTestNamer::getRelativePathOfSourceDirectoryFromSourceRootForApproved() const
+    ApprovalTestNamer::getApprovalsSubdirectory() const
     {
         std::string sub_directory;
         if (!testConfiguration().subdirectory.empty())
@@ -218,8 +218,7 @@ namespace ApprovalTests
     std::string ApprovalTestNamer::getDirectory() const
     {
         std::string directory = getTestSourceDirectory();
-        std::string sub_directory =
-            getRelativePathOfSourceDirectoryFromSourceRootForApproved();
+        std::string sub_directory = getApprovalsSubdirectory();
         directory += sub_directory;
         SystemUtils::ensureDirectoryExists(directory);
         return directory;

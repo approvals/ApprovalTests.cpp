@@ -53,7 +53,7 @@ namespace ApprovalTests
 
         // clang-format off
         result = replaceIfContains(result, fileExtension, [&](){return extensionWithDot.substr(1);});
-        result = replaceIfContains(result, approvalsSubdirectory, [&](){return namer_.getRelativePathOfSourceDirectoryFromSourceRootForApproved();});
+        result = replaceIfContains(result, approvalsSubdirectory, [&](){return namer_.getApprovalsSubdirectory();});
         result = replaceIfContains(result, relativeTestSourceDirectory, [&](){return namer_.getRelativeTestSourceDirectory();});
         result = replaceIfContains(result, testFileName, [&](){return namer_.getSourceFileName();});
         result = replaceIfContains(result, testCaseName, [&](){return namer_.getTestName();});
