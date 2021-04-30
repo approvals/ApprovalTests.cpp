@@ -6,6 +6,7 @@
 
 #include "ApprovalTests/reporters/FrontLoadedReporterDisposer.h"
 #include "ApprovalTests/core/FileApprover.h"
+#include "ApprovalTests/integrations/fmt/FmtToString.h"
 #include "reporters/DefaultReporterDisposer.h"
 #include "ApprovalTests/core/Reporter.h"
 #include "writers/ExistingFile.h"
