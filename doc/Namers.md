@@ -122,7 +122,7 @@ Here is some output showing examples with these tags expanded:
 ```txt
 For template: {RelativeTestSourceDirectory}/{ApprovalsSubdirectory}/{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}
 
-Everything = namers/approval_tests/TemplatedCustomNamerTests.Demo_all_namer_templates.approved.txt
+Result: namers/approval_tests/TemplatedCustomNamerTests.Demo_all_namer_templates.approved.txt
 
 With breakdown:
 RelativeTestSourceDirectory = namers/
@@ -133,7 +133,7 @@ ApprovedOrReceived          = approved
 FileExtension               = txt
 
 Also available:
-{TestSourceDirectory} = <full path to sources>ApprovalTests.cpp/tests/DocTest_Tests/namers/
+{TestSourceDirectory} = <full path to sources>/ApprovalTests.cpp/tests/DocTest_Tests/namers/
 
 ```
 <sup><a href='/tests/DocTest_Tests/namers/approval_tests/TemplatedCustomNamerTests.Demo_all_namer_templates.approved.txt#L1-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-TemplatedCustomNamerTests.Demo_all_namer_templates.approved.txt' title='Start of snippet'>anchor</a></sup>

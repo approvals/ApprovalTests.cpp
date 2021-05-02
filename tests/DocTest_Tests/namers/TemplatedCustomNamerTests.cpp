@@ -62,7 +62,7 @@ TEST_CASE("Demo all namer templates")
         "{RelativeTestSourceDirectory}/{ApprovalsSubdirectory}/"
         "{TestFileName}.{TestCaseName}.{ApprovedOrReceived}.{FileExtension}";
 
-    std::string templateText = "Everything = " + fullText + R"(
+    std::string templateText = "Result: " + fullText + R"(
 
 With breakdown:
 RelativeTestSourceDirectory = {RelativeTestSourceDirectory}
@@ -83,7 +83,7 @@ TestSourceDirectory = {TestSourceDirectory}
                       Options().withScrubber(Scrubbers::createRegexScrubber(
                           pattern,
                           "{TestSourceDirectory} = <full path to "
-                          "sources>ApprovalTests.cpp/tests/DocTest_Tests/")));
+                          "sources>/ApprovalTests.cpp/tests/DocTest_Tests/")));
 }
 
 // ---- Docs
