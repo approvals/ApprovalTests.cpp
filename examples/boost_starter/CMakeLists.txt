@@ -4,7 +4,7 @@ endif ()
 
 if (CYGWIN)
     # When ${Boost_INCLUDE_DIRS} is added as a SYSTEM location,
-    # the cygwin Appveyor builds fail to find <stdlib.h>.
+    # the cygwin builds fail to find <stdlib.h>.
     # In tests/Boost_Tests/CMakeLists.txt, we work around that.
     # But here, this small example is for documentation purposes,
     # and we don't want to clutter up the documentation with a special

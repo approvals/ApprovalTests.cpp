@@ -22,7 +22,7 @@ if (Boost_FOUND)
 
     if (CYGWIN)
         # When ${Boost_INCLUDE_DIRS} is added as a SYSTEM location,
-        # the cygwin Appveyor builds fail to find <stdlib.h>.
+        # the cygwin builds fail to find <stdlib.h>.
         # So for just this platform, don't use SYSTEM.
         include_directories(${Boost_INCLUDE_DIRS})
     else ()
