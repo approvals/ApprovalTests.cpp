@@ -1,0 +1,40 @@
+name: build-cygwin
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+  schedule:
+    - cron: '16 0 * * 3,6'  # <https://crontab.guru/#16_0_*_*_3,6> - "At 00:16 on Wednesday and Saturday."
+
+jobs:
+  Cygwin:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Cygwin
+        uses: egor-tensin/setup-cygwin@v3 # https://github.com/marketplace/actions/install-cygwin
+        with:
+          platform: x64
+          packages: cmake libboost-devel libtool gcc gcc-g++ binutils make
+
+      - name: Build and test
+        run: |
+          basic() {
+            pwd
+            cd /cygdrive/d/a/ApprovalTests.cpp/ApprovalTests.cpp
+            mkdir cmake-build
+            cd cmake-build
+            # Debug gives Assembler messages: ... CMakeFiles/Catch2_Tests.dir/main.cpp.o: 'file too big'
+            cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release
+            cmake --build . --parallel 4
+            ctest --verbose --output-on-failure -C Release
+          }
+          basic
+        shell: C:\tools\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
