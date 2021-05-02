@@ -265,3 +265,42 @@ jobs:
           }
           basic
         shell: C:\tools\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+
+  MinGW:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+    env:
+      BUILD_PATH: build_space
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: set up python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
+      - uses: ./.github/actions/setup-conan
+
+      - name: install boost
+        run: |
+          ${boostroot} = "${env:GITHUB_WORKSPACE}\boost_install"
+          conan install boost/1.72.0@ -o boost:header_only=True -g deploy --install-folder ${boostroot}
+          echo "BOOST_ROOT=${boostroot}\boost" >> ${env:GITHUB_ENV}
+
+      # See uses: https://github.com/search?q=egor-tensin+setup-mingw+path%3A%2F.github%2Fworkflows%2F+extension%3Ayml&type=code
+      - name: Set up MinGW
+        uses: egor-tensin/setup-mingw@v2 # https://github.com/marketplace/actions/install-mingw
+        with:
+          platform: x64
+
+      - name: Build and test
+        shell: cmd
+        run: |
+          pwd
+          mkdir cmake-build
+          cd cmake-build
+          cmake --version
+          REM Release gives 'File too big' errors
+          cmake -G "MinGW Makefiles" .. -DCMAKE_BUILD_TYPE=Release
+          cmake --build . --parallel 4
+          ctest --verbose --output-on-failure -C Release
