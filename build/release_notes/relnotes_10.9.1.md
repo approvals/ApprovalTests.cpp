@@ -1,4 +1,4 @@
-<!-- See the [v.10.9.1 milestone](https://github.com/approvals/ApprovalTests.cpp/milestone/__MILESTONE_NUMBER__?closed=1) for the full list of changes. -->
+See also the  [v.10.9.0 changelog](https://github.com/approvals/ApprovalTests.cpp/releases/tag/v.10.9.0) for the full list of major new features, bug fixes and other improvements.
 
 * **Breaking changes**
     * None
