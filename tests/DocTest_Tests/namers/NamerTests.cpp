@@ -95,14 +95,7 @@ struct TestNameResetter
 
 std::string getFileName()
 {
-    if (!SystemUtils::safeGetEnv("APPVEYOR").empty())
-    {
-        return "approvaltests-cpp/tests/DocTest_Tests/namers/NamerTests.cpp";
-    }
-    else
-    {
-        return "ApprovalTests.cpp/tests/DocTest_Tests/namers/NamerTests.cpp";
-    }
+    return "ApprovalTests.cpp/tests/DocTest_Tests/namers/NamerTests.cpp";
 }
 
 TEST_CASE("Find from parent")
