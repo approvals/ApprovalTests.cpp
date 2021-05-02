@@ -1,4 +1,4 @@
-name: build-mingw
+name: mingw
 
 on:
   push:
