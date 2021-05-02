@@ -7,4 +7,4 @@
 * **Bug fixes**
     * None
 * **Other changes**
-    * None
+    * CygWin and MinGW CI builds moved to GitHub Actions (#181)
