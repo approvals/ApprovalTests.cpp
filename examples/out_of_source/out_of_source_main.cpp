@@ -8,8 +8,6 @@ using namespace ApprovalTests;
 
 auto configChange = ApprovalTestNamer::setCheckBuildConfig(false);
 
-// TODO Fix this so that it works with source files in sub-directories
-
 bool isRunningInBuildEnvironment()
 {
     auto workingDirectory = fs::canonical(fs::path(".")).string();
