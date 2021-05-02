@@ -66,11 +66,11 @@ TEST_CASE("Demo all namer templates")
 
 With breakdown:
 RelativeTestSourceDirectory = {RelativeTestSourceDirectory}
-ApprovalsSubdirectory = {ApprovalsSubdirectory}
-TestFileName = {TestFileName}
-TestCaseName = {TestCaseName}
-ApprovedOrReceived = {ApprovedOrReceived}
-FileExtension = {FileExtension}
+ApprovalsSubdirectory       = {ApprovalsSubdirectory}
+TestFileName                = {TestFileName}
+TestCaseName                = {TestCaseName}
+ApprovedOrReceived          = {ApprovedOrReceived}
+FileExtension               = {FileExtension}
 
 Also available:
 TestSourceDirectory = {TestSourceDirectory}

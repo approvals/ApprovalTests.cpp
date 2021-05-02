@@ -126,11 +126,11 @@ Everything = namers/approval_tests/TemplatedCustomNamerTests.Demo_all_namer_temp
 
 With breakdown:
 RelativeTestSourceDirectory = namers/
-ApprovalsSubdirectory = approval_tests/
-TestFileName = TemplatedCustomNamerTests
-TestCaseName = Demo_all_namer_templates
-ApprovedOrReceived = approved
-FileExtension = txt
+ApprovalsSubdirectory       = approval_tests/
+TestFileName                = TemplatedCustomNamerTests
+TestCaseName                = Demo_all_namer_templates
+ApprovedOrReceived          = approved
+FileExtension               = txt
 
 Also available:
 {TestSourceDirectory} = <full path to sources>ApprovalTests.cpp/tests/DocTest_Tests/namers/
