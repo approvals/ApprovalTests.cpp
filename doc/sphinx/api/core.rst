@@ -83,8 +83,8 @@ For more information, see :doc:`../generated_docs/Options`.
    :members:
    :undoc-members:
 
-Reporter
---------
+Reporter and subclasses
+-----------------------
 
 Reporters are called on test failure, typically to show differences.
 
@@ -99,3 +99,18 @@ For more information, see :doc:`../generated_docs/Reporters`.
 .. doxygenclass:: ApprovalTests::Reporter
    :members:
    :undoc-members:
+
+Linux Reporters
+^^^^^^^^^^^^^^^
+
+.. doxygennamespace:: ApprovalTests::Linux
+
+macOS Reporters
+^^^^^^^^^^^^^^^
+
+.. doxygennamespace:: ApprovalTests::Mac
+
+Windows Reporters
+^^^^^^^^^^^^^^^^^
+
+.. doxygennamespace:: ApprovalTests::Windows
