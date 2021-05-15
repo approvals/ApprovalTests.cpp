@@ -43,13 +43,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - job-name: 'clang9'
-            os-version: '20.04'
-            c-compiler: 'clang-9'
-            cxx-compiler: 'clang++-9'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
           - job-name: 'clang10'
             os-version: '20.04'
             c-compiler: 'clang-10'
