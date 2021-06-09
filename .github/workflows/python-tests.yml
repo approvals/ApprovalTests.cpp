@@ -58,6 +58,7 @@ jobs:
 
     - name: Check type hints
       run: |
+        python3 -m pip install types-PyYAML
         cd ApprovalTests/ApprovalTests.cpp/build
         ./check_type_hints.sh
 
