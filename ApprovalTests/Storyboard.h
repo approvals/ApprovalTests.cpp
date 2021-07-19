@@ -1,5 +1,8 @@
+#pragma once
+
 #include <iosfwd>
 #include <sstream>
+#include <functional>
 
 namespace ApprovalTests
 {
