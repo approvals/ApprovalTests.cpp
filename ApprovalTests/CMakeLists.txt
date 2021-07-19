@@ -7,6 +7,8 @@ add_library(${PROJECT_NAME}
         Approvals.h
         ApprovalsMacroDefaults.h
         CombinationApprovals.h
+        Storyboard.cpp
+        Storyboard.h
         comparators/ComparatorDisposer.h
         comparators/ComparatorDisposer.cpp
         comparators/ComparatorFactory.h

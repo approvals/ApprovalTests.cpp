@@ -11,8 +11,6 @@ add_executable(${PROJECT_NAME}
         CustomizingToStringTests.cpp
         DocTestApprovalTestTests.cpp
         GameOfLifeTests.cpp
-        Storyboard.h
-        Storyboard.cpp
         StoryboardTests.cpp
         VectorTests.cpp
         comparators/ComparatorDisposerTest.cpp
