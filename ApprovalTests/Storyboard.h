@@ -2,67 +2,28 @@
 #include <ostream>
 #include <sstream>
 
-class StoryBoard
+namespace ApprovalTests
 {
-private:
-    std::stringstream output_;
-    int frameCount_ = 0;
-    bool addNewLineBeforeNextFrame_ = false;
-
-public:
-    StoryBoard& addDescription(const std::string& description)
+    class StoryBoard
     {
-        output_ << description << "\n";
-        addNewLineBeforeNextFrame_ = true;
-        return *this;
-    }
+    private:
+        std::stringstream output_;
+        int frameCount_ = 0;
+        bool addNewLineBeforeNextFrame_ = false;
 
-    StoryBoard& addDescriptionWithData(const std::string& description,
-                                       const std::string& data)
-    {
-        output_ << description << ": " << data << "\n";
-        addNewLineBeforeNextFrame_ = true;
-        return *this;
-    }
+    public:
+        StoryBoard& addDescription(const std::string& description);
 
-    StoryBoard& addFrame(const std::string& frame)
-    {
-        if (frameCount_ == 0)
-        {
-            return addFrame("Initial Frame", frame);
-        }
-        else
-        {
-            return addFrame("Frame #" + std::to_string(frameCount_), frame);
-        }
-    }
+        StoryBoard& addDescriptionWithData(const std::string& description,
+                                           const std::string& data);
 
-    StoryBoard& addFrame(const std::string& title, const std::string& frame)
-    {
-        if (addNewLineBeforeNextFrame_)
-        {
-            output_ << '\n';
-            addNewLineBeforeNextFrame_ = false;
-        }
-        output_ << title << ":\n";
-        output_ << frame << "\n\n";
-        frameCount_ += 1;
-        return *this;
-    }
+        StoryBoard& addFrame(const std::string& frame);
 
-    StoryBoard& addFrames(int numberOfFrames,
-                          const std::function<std::string(int)>& function)
-    {
-        for (int frame = 1; frame <= numberOfFrames; ++frame)
-        {
-            addFrame(function(frame));
-        }
-        return *this;
-    }
+        StoryBoard& addFrame(const std::string& title, const std::string& frame);
 
-    friend std::ostream& operator<<(std::ostream& os, const StoryBoard& board)
-    {
-        os << board.output_.str();
-        return os;
-    }
-};
+        StoryBoard& addFrames(int numberOfFrames,
+                              const std::function<std::string(int)>& function);
+
+        friend std::ostream& operator<<(std::ostream& os, const StoryBoard& board);
+    };
+}
