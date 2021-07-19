@@ -50,6 +50,7 @@ add_executable(${PROJECT_NAME}
         utilities/ExceptionCollectorTests.cpp
         utilities/FileUtilsSystemSpecificTests.cpp
         utilities/FileUtilsTests.cpp
+        utilities/GridTests.cpp
         utilities/MachineBlockerTests.cpp
         utilities/PathTests.cpp
         utilities/StringUtilsTests.cpp
