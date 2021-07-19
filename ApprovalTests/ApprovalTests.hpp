@@ -58,6 +58,7 @@
 #include "ApprovalTests/utilities/CartesianProduct.h"
 #include "ApprovalTests/reporters/DefaultReporter.h"
 #include "ApprovalTests/CombinationApprovals.h"
+#include "ApprovalTests/Storyboard.h"
 #include "ApprovalTests/comparators/TextFileComparator.h"
 #include "ApprovalTests/core/ApprovalException.h"
 #include "ApprovalTests/integrations/FrameworkIntegrations.h"
