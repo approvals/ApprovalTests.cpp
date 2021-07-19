@@ -10,6 +10,10 @@ add_executable(${PROJECT_NAME}
         CombinationTests.cpp
         CustomizingToStringTests.cpp
         DocTestApprovalTestTests.cpp
+        GameOfLifeTests.cpp
+        Storyboard.h
+        Storyboard.cpp
+        StoryboardTests.cpp
         VectorTests.cpp
         comparators/ComparatorDisposerTest.cpp
         core/ApprovalExceptionTests.cpp
