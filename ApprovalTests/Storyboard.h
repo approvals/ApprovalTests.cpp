@@ -1,5 +1,4 @@
-#include <vector>
-#include <ostream>
+#include <iosfwd>
 #include <sstream>
 
 namespace ApprovalTests

@@ -1,5 +1,5 @@
-
 #include "Storyboard.h"
+
 namespace ApprovalTests
 {
     StoryBoard& StoryBoard::addDescription(const std::string& description)
@@ -8,7 +8,7 @@ namespace ApprovalTests
         addNewLineBeforeNextFrame_ = true;
         return *this;
     }
-    
+
     StoryBoard& StoryBoard::addDescriptionWithData(const std::string& description,
                                                    const std::string& data)
     {
