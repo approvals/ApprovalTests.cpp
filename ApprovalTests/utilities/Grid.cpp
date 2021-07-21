@@ -1,8 +1,9 @@
 #include "Grid.h"
 namespace ApprovalTests
 {
-    std::string Grid::print(
-        int width, int height, std::function<void(int, int, std::ostream&)> printCell)
+    std::string Grid::print(int width,
+                            int height,
+                            std::function<void(int, int, std::ostream&)> printCell)
     {
         std::stringstream s;
         for (int y = 0; y < height; ++y)
