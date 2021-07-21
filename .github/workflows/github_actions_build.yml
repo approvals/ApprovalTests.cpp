@@ -19,8 +19,15 @@ jobs:
         with:
           source: '.'
           exclude: './third_party'
+          inplace: True
           clangFormatVersion: 9
-
+      - uses: EndBug/add-and-commit@v4
+        with:
+          author_name: Clang GitHub Action
+          author_email: actions@github.com
+          message: 'r Reformat with clang-format'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # Commented-out, as it keeps failing with http 429 error - too many requests
   # e.g. https://github.com/approvals/ApprovalTests.cpp/runs/541867195
   #  markdown-link-check:
