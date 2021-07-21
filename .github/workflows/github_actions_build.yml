@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
-      - uses: DoozyX/clang-format-lint-action@v0.5
+      - uses: DoozyX/clang-format-lint-action@v0.12
         with:
           source: '.'
           exclude: './third_party'
