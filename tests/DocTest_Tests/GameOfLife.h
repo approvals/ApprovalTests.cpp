@@ -73,7 +73,9 @@ class GameOfLife
     std::string deadCharacter = ".";
 
 public:
-    explicit GameOfLife(int width, int height, const std::function<int(int, int)>& function)
+    explicit GameOfLife(int width,
+                        int height,
+                        const std::function<int(int, int)>& function)
     {
         std::vector<Point> points;
         for (int x = 0; x <= width; ++x)
@@ -87,8 +89,7 @@ public:
         *this = GameOfLife(function, points);
     }
 
-    GameOfLife(const std::function<int(int, int)>& function,
-               std::vector<Point>& points)
+    GameOfLife(const std::function<int(int, int)>& function, std::vector<Point>& points)
     {
         for (const auto& point : points)
         {
@@ -109,20 +110,20 @@ public:
         int y = 0;
         for (const auto& item : cells)
         {
-            if ( item == ' ')
+            if (item == ' ')
             {
                 continue;
             }
-            if ( item == '\n')
+            if (item == '\n')
             {
-                if(!(x == 0 && y == 0))
+                if (!(x == 0 && y == 0))
                 {
                     x = 0;
                     y += 1;
                 }
                 continue;
             }
-            if ( item == 'X')
+            if (item == 'X')
             {
                 aliveCells.push_back(Point(x, y));
             }
@@ -132,9 +133,8 @@ public:
 
     bool isAlive(int x, int y) const
     {
-        return (std::find(aliveCells.begin(),
-                          aliveCells.end(),
-                          Point(x, y)) != aliveCells.end());
+        return (std::find(aliveCells.begin(), aliveCells.end(), Point(x, y)) !=
+                aliveCells.end());
     }
 
     std::string printCell(int x, int y) const
@@ -144,10 +144,9 @@ public:
 
     std::string print(int width, int height) const
     {
-        return Grid::print(width, height, [&](int x, int y, std::ostream& s){
-                               s << printCell(x, y) << " ";
+        return Grid::print(width, height, [&](int x, int y, std::ostream& s) {
+            s << printCell(x, y) << " ";
         });
-
     }
 
     std::vector<Point> getRelevantPoints() const
@@ -170,8 +169,7 @@ public:
 
     GameOfLife advance() const
     {
-        std::function<int(int, int)> function2 = [this](int x, int y)
-        {
+        std::function<int(int, int)> function2 = [this](int x, int y) {
             // clang-format off
             int count =
                 this->isAlive(x - 1, y - 1) +
