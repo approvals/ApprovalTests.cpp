@@ -28,6 +28,7 @@ jobs:
           message: 'r Reformat with clang-format'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   # Commented-out, as it keeps failing with http 429 error - too many requests
   # e.g. https://github.com/approvals/ApprovalTests.cpp/runs/541867195
   #  markdown-link-check:
@@ -43,7 +44,7 @@ jobs:
   #        run: ./scripts/check_links.sh
 
   Linux:
-    # needs: clang-format
+    needs: clang-format
     # if: false # Disable this platform temporarily
     runs-on: ubuntu-${{ matrix.os-version }}
     strategy:
@@ -124,7 +125,7 @@ jobs:
       - uses: ./.github/actions/build-and-test
 
   macOS:
-    # needs: clang-format
+    needs: clang-format
     # if: false # Disable this platform temporarily
     runs-on: macos-${{ matrix.os-version }}
     strategy:
@@ -182,7 +183,7 @@ jobs:
       - uses: ./.github/actions/build-and-test
 
   Windows:
-    # needs: clang-format
+    needs: clang-format
     # if: false # Disable this platform temporarily
     runs-on: windows-${{ matrix.os-version }}
     strategy:
