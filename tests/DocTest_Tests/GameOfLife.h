@@ -125,9 +125,10 @@ public:
 
     std::string print(int width, int height) const
     {
-        return ApprovalTests::Grid::print(width, height, [&](int x, int y, std::ostream& s) {
-            s << printCell(x, y) << " ";
-        });
+        return ApprovalTests::Grid::print(
+            width, height, [&](int x, int y, std::ostream& s) {
+                s << printCell(x, y) << " ";
+            });
     }
 
     std::vector<Point> getRelevantPoints() const
