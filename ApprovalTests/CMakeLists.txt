@@ -130,6 +130,8 @@ add_library(${PROJECT_NAME}
         utilities/FileUtils.cpp
         utilities/FileUtilsSystemSpecific.h
         utilities/FileUtilsSystemSpecific.cpp
+        utilities/Grid.h
+        utilities/Grid.cpp
         utilities/MachineBlocker.h
         utilities/MachineBlocker.cpp
         utilities/Macros.h

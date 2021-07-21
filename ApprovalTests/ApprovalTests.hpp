@@ -87,6 +87,7 @@
 #include "ApprovalTests/utilities/DateUtils.h"
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 #include "ApprovalTests/utilities/FileUtilsSystemSpecific.h"
+#include "ApprovalTests/utilities/Grid.h"
 
 #ifdef APPROVAL_TESTS_INCLUDE_CPPS
 // Cpp files will be included in the single-header file here
