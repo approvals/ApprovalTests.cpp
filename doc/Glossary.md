@@ -17,6 +17,7 @@
   * [Diff Tool](#diff-tool)
   * [Disposable Objects](#disposable-objects)
   * [Edge Case](#edge-case)
+  * [Fake It Till You Make It](#fake-it-till-you-make-it)
   * [Happy Path](#happy-path)
   * [Kata](#kata)
   * [Koans](#koans)

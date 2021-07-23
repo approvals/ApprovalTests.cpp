@@ -16,4 +16,10 @@ namespace ApprovalTests
         }
         return s.str();
     }
+    std::string Grid::print(int width,
+                            int height,
+                            std::string text)
+    {
+        return print(width, height, [&](int /*x*/, int /*y*/, std::ostream& os){ os << text;});
+    }
 }
