@@ -162,8 +162,7 @@ will produce:
 <!-- snippet: GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt -->
 <a id='snippet-GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt'></a>
 ```txt
-
-        {
+{
             child: {
                 id: guid_1
                 parent1: guid_2
@@ -178,7 +177,6 @@ will produce:
                 id: guid_3
             }
         }
-        
 ```
 <sup><a href='/tests/DocTest_Tests/scrubbers/approval_tests/GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt#L1-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-GuidScrubberTests.Input_with_multiple_GUIDs.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->

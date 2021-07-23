@@ -203,7 +203,6 @@ available_copies: 30
 language: English
 pages: 752
 isbn: 978-0439139595
-
 ```
 <sup><a href='/tests/DocTest_Tests/docs/approval_tests/Tutorial.WritableBooks2.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tutorial.WritableBooks2.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->

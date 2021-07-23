@@ -5,8 +5,8 @@
 <!-- toc -->
 ## Contents
 
-  * [DateUtils](#dateutils)
-  * [ExceptionCollector](#exceptioncollector)<!-- endToc -->
+  * [What is this?](#what-is-this)
+  * [List of Utilities](#list-of-utilities)<!-- endToc -->
 
 ## What is this?
 
@@ -19,13 +19,13 @@ All of them are shared here, in no particular order, in the hope you might also 
 
 ## List of Utilities
 
-* [**DateUtils:**](/doc/reference/DateUtils.md)   
+* [**DateUtils:**](/doc/reference/DateUtils.md#top)   
    Create and print C++11 dates and times.
-* [**ExceptionCollector:**](/doc/reference/ExceptionCollector.md)   
+* [**ExceptionCollector:**](/doc/reference/ExceptionCollector.md#top)   
    Collect multiple exceptions and throw a combined exception.
-* [**Grid:**](/doc/reference/Grid.md)   
+* [**Grid:**](/doc/reference/Grid.md#top)   
   Create 2D text in a grid format
-* [**Storyboard:**](/doc/reference/Storyboard.md)   
+* [**Storyboard:**](/doc/reference/Storyboard.md#top)   
   Print the changes to an object over time
 
 ---
