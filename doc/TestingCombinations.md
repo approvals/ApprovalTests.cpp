@@ -57,6 +57,7 @@ TITLE
 (input1.value2, input2.value1) => placeholder
 (input1.value2, input2.value2) => placeholder
 (input1.value2, input2.value3) => placeholder
+
 ```
 <sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.CombinationsStartingPoint.approved.txt#L1-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-CombinationTests.CombinationsStartingPoint.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -103,6 +104,7 @@ The format is carefully chosen to show both inputs and outputs, to make the test
 (world, 1) => (world, 1)
 (world, 2) => (world, 2)
 (world, 3) => (world, 3)
+
 ```
 <sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.YouCanVerifyCombinationsOf2.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->

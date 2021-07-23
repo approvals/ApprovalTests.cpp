@@ -45,7 +45,8 @@ which produces:
 ```txt
 (0,0) (1,0) (2,0) (3,0) 
 (0,1) (1,1) (2,1) (3,1) 
-(0,2) (1,2) (2,2) (3,2)
+(0,2) (1,2) (2,2) (3,2) 
+
 ```
 <sup><a href='/tests/DocTest_Tests/utilities/approval_tests/GridTests.Print_Coordinates.approved.txt#L1-L4' title='Snippet source file'>snippet source</a> | <a href='#snippet-GridTests.Print_Coordinates.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -71,6 +72,7 @@ which produces:
 ```txt
 ....
 ....
+
 ```
 <sup><a href='/tests/DocTest_Tests/utilities/approval_tests/GridTests.Print_Simple.approved.txt#L1-L3' title='Snippet source file'>snippet source</a> | <a href='#snippet-GridTests.Print_Simple.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
