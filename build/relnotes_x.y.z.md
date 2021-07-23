@@ -8,3 +8,7 @@
     * None
 * **Other changes**
     * CygWin and MinGW CI builds moved to GitHub Actions (#181)
+  
+* Storyboard
+* Grid
+* Vcpkg - support
