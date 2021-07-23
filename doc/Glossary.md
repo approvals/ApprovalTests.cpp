@@ -73,6 +73,10 @@ See [Disposable Objects](/doc/DisposableObjects.md#top).
 
 ## Edge Case
 
+## Fake It Till You Make It
+
+[A development technique for building in small steps](https://stackoverflow.com/a/4169657/1303587)
+
 ## Happy Path
 
 ## Kata
