@@ -59,7 +59,7 @@ When developing with [Fake it till you make it](/docs/Glossary.md#fake-it-till-y
 <!-- snippet: grid_simple -->
 <a id='snippet-grid_simple'></a>
 ```cpp
-auto grid = Grid::print(4, 2,".");
+auto grid = Grid::print(4, 2, ".");
 ```
 <sup><a href='/tests/DocTest_Tests/utilities/GridTests.cpp#L15-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-grid_simple' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
