@@ -19,7 +19,7 @@ Grid abstracts away the printing of the grid, so you can focus on how to represe
 ## Where is this useful?
 
 1. When you want to visualize the contents of 2 dimensional data, (usually for verification purposes).
-
+1. When trying to print/verify Board games, Puzzles & 2D Video games that are based on some kind of grid
 
 ## Usage 
 
