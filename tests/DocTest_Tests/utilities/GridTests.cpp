@@ -13,7 +13,7 @@ TEST_CASE("Print Grid")
 TEST_CASE("Print Simple")
 {
     // begin-snippet: grid_simple
-    auto grid = Grid::print(4, 2,".");
+    auto grid = Grid::print(4, 2, ".");
     // end-snippet
     Approvals::verify(grid);
 }
