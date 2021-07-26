@@ -60,6 +60,8 @@ html_static_path = ['_static']
 
 import subprocess, os
 
+import platform
+print(f"Python Version: {platform.python_version()}")
 
 def add_folder_paths_to_doxygen_config_file(doxygen_dir, input_dir, output_dir):
     with open(doxygen_dir + '/Doxyfile.in', 'r') as file:
@@ -89,6 +91,7 @@ if read_the_docs_build:
 
     os.chdir(doxygen_dir)
     subprocess.call('doxygen', shell=True)
+    subprocess.call('doxygen --version', shell=True)
     os.chdir(sphinx_dir)
 
     breathe_projects['ApprovalTests.cpp'] = output_dir + '/xml'
