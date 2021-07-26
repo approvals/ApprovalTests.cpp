@@ -55,7 +55,7 @@ Notice how `Grid::print()` removes the need for looping over `x` & `y`.
 
 ### Simple Starting Point
 
-When developing with [Fake it till you make it](/docs/Glossary.md#fake-it-till-you-make-it) Grid can be used to start by printing a simple grid of repeating text, such as:
+When developing with [Fake it till you make it](/doc/Glossary.md#fake-it-till-you-make-it) Grid can be used to start by printing a simple grid of repeating text, such as:
 
 <!-- snippet: grid_simple -->
 <a id='snippet-grid_simple'></a>
