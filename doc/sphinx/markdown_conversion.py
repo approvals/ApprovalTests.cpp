@@ -11,7 +11,7 @@ def convertMarkdownDocsToRst():
     print("Converting all .md files to .rst...")
     input_dir = '../../doc'
     output_dir = 'generated_docs'
-    subdirs = ['', 'how_tos', 'explanations']
+    subdirs = ['', 'how_tos', 'explanations', 'reference']
     for subdir in subdirs:
         # print(f'>>>> {subdir}')
         input_sub_dir = f'{input_dir}/{subdir}'
