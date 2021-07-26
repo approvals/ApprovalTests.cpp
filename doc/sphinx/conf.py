@@ -60,8 +60,13 @@ html_static_path = ['_static']
 
 import subprocess, os
 
-import platform
-print(f"Python Version: {platform.python_version()}")
+def print_versions():
+    import platform
+    print(f"Python Version: {platform.python_version()}")
+    print("Doxygen version:")
+    subprocess.call('doxygen --version', shell=True)
+    print("Spinx version:")
+    subprocess.call('sphinx-build --version', shell=True)
 
 def add_folder_paths_to_doxygen_config_file(doxygen_dir, input_dir, output_dir):
     with open(doxygen_dir + '/Doxyfile.in', 'r') as file:
@@ -73,6 +78,7 @@ def add_folder_paths_to_doxygen_config_file(doxygen_dir, input_dir, output_dir):
     with open(doxygen_dir + '/Doxyfile', 'w') as file:
         file.write(filedata)
 
+print_versions()
 
 # Check if we're running on Read the Docs' servers
 read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
@@ -91,7 +97,6 @@ if read_the_docs_build:
 
     os.chdir(doxygen_dir)
     subprocess.call('doxygen', shell=True)
-    subprocess.call('doxygen --version', shell=True)
     os.chdir(sphinx_dir)
 
     breathe_projects['ApprovalTests.cpp'] = output_dir + '/xml'
