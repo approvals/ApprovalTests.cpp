@@ -1,3 +1,4 @@
 breathe
 pypandoc
 sphinx_rtd_theme
+sphinx<4.1.0
