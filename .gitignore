@@ -20,3 +20,4 @@ __pycache__/
 .mypy_cache/
 *.sqlite3
 /doc/_build/
+venv

@@ -9,6 +9,7 @@ class ProjectDetails:
     version_header: str = 'ApprovalTestsVersion.h'
     macro_prefix: str = 'APPROVAL_TESTS'
     conan_directory_name: str = 'approvaltests.cpp'
+    vcpkg_directory_name: str = 'approval-tests-cpp'
     update_documentation: bool = True
     update_conan: bool = True
 
