@@ -79,17 +79,17 @@ class PrepareVcpkgRelease:
     def update_vcpkg_recipe(details: ReleaseDetails) -> None:
         vcpkg_approvaltests_dir = details.vcpkg_details.vcpkg_approvaltests_dir
 
-        PrepareVcpkgRelease.update_vcpkgdata_yml(details, vcpkg_approvaltests_dir)
+        PrepareVcpkgRelease.update_portfile_cmake(details, vcpkg_approvaltests_dir)
         PrepareVcpkgRelease.update_vcpkg_vcpkg_json(vcpkg_approvaltests_dir, details.new_version)
 
     @staticmethod
     def update_vcpkg_vcpkg_json(vcpkg_approvaltests_dir: str, new_version: Version) -> None:
         vcpkg_data_file = os.path.join(vcpkg_approvaltests_dir, 'config.yml')
-        vcpkgdata_yml_text = read_file(vcpkg_data_file)
+        portfile_cmake_text = read_file(vcpkg_data_file)
 
-        vcpkgdata_yml_text += PrepareVcpkgRelease.create_vcpkg_vcpkg_json_text(new_version)
+        portfile_cmake_text += PrepareVcpkgRelease.create_vcpkg_vcpkg_json_text(new_version)
 
-        write_file(vcpkg_data_file, vcpkgdata_yml_text)
+        write_file(vcpkg_data_file, portfile_cmake_text)
 
     @staticmethod
     def create_vcpkg_vcpkg_json_text(new_version: Version) -> str:
@@ -105,33 +105,42 @@ class PrepareVcpkgRelease:
         return vcpkg_data
 
     @staticmethod
-    def update_vcpkgdata_yml(details: ReleaseDetails, vcpkg_approvaltests_dir: str) -> None:
+    def update_portfile_cmake(details: ReleaseDetails, vcpkg_approvaltests_dir: str) -> None:
         version = details.new_version
         vcpkg_data_file = os.path.join(vcpkg_approvaltests_dir, 'all', 'vcpkgdata.yml')
-        vcpkgdata_yml_text = read_file(vcpkg_data_file)
+        portfile_cmake_text = read_file(vcpkg_data_file)
 
         new_single_header = details.release_new_single_header
         licence_file = '../LICENSE'
 
         single_header_sha = calculate_sha256(new_single_header)
         licence_file_sha = calculate_sha256(licence_file)
-        vcpkg_data = PrepareVcpkgRelease.create_vcpkgdata_yml_text(details.project_details, version, single_header_sha,
+        vcpkg_data = PrepareVcpkgRelease.create_portfile_cmake_text(details.project_details, version, single_header_sha,
                                                                    licence_file_sha)
-        vcpkgdata_yml_text += vcpkg_data
+        portfile_cmake_text += vcpkg_data
 
-        write_file(vcpkg_data_file, vcpkgdata_yml_text)
+        write_file(vcpkg_data_file, portfile_cmake_text)
 
     @staticmethod
-    def create_vcpkgdata_yml_text(project_details: ProjectDetails, new_version: Version, single_header_sha: str,
+    def create_portfile_cmake_text(project_details: ProjectDetails, new_version: Version, single_header_sha: str,
                                   licence_file_sha: str) -> str:
         new_version_with_v = new_version.get_version_text()
-        vcpkg_data = \
-            F'''  {new_version.get_version_text_without_v()}:
-    - url: {project_details.github_project_url}/releases/download/{new_version_with_v}/{project_details.library_folder_name}.{new_version_with_v}.hpp
-      sha256: {single_header_sha}
-    - url: "https://raw.githubusercontent.com/approvals/{project_details.github_project_name}/{new_version_with_v}/LICENSE"
-      sha256: {licence_file_sha}
-'''
+        vcpkg_data =   remove_indentation_from(F'''
+                        vcpkg_download_distfile(single_header
+                            URLS https://github.com/approvals/ApprovalTests.cpp/releases/download/{new_version_with_v}/ApprovalTests.{new_version_with_v}.hpp
+                            FILENAME ApprovalTests.{new_version_with_v}.hpp
+                            SHA512 {single_header_sha}
+                        )
+                        
+                        vcpkg_download_distfile(license_file
+                            URLS https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/{new_version_with_v}/LICENSE
+                            FILENAME ApprovalTestsLicense.{new_version_with_v}
+                            SHA512 {licence_file_sha}
+                        )
+                        
+                        file(INSTALL "${{single_header}}" DESTINATION "${{CURRENT_PACKAGES_DIR}}/include" RENAME ApprovalTests.hpp)
+                        file(INSTALL "${{license_file}}" DESTINATION "${{CURRENT_PACKAGES_DIR}}/share/${{PORT}}" RENAME copyright)
+                        ''')
         return vcpkg_data
 
     @staticmethod

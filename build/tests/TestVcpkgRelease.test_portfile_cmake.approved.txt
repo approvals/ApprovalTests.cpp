@@ -1,0 +1,14 @@
+vcpkg_download_distfile(single_header
+    URLS https://github.com/approvals/ApprovalTests.cpp/releases/download/v.1.2.3/ApprovalTests.v.1.2.3.hpp
+    FILENAME ApprovalTests.v.1.2.3.hpp
+    SHA512 single_header_sha
+)
+
+vcpkg_download_distfile(license_file
+    URLS https://raw.githubusercontent.com/approvals/ApprovalTests.cpp/v.1.2.3/LICENSE
+    FILENAME ApprovalTestsLicense.v.1.2.3
+    SHA512 licence_sha
+)
+
+file(INSTALL "${single_header}" DESTINATION "${CURRENT_PACKAGES_DIR}/include" RENAME ApprovalTests.hpp)
+file(INSTALL "${license_file}" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}" RENAME copyright)

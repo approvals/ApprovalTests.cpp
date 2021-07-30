@@ -18,10 +18,8 @@ class TestVcpkgRelease(unittest.TestCase):
         text = PrepareVcpkgRelease.create_vcpkg_vcpkg_json_text(Version(1, 2, 3))
         verify(text)
 
-    def test_vcpkgdata_yml(self) -> None:
-        text = ''
-        for i in range(3):
-            text += PrepareVcpkgRelease.create_vcpkgdata_yml_text(ProjectDetails(), Version(1, 1, i),
+    def test_portfile_cmake(self) -> None:
+        text = PrepareVcpkgRelease.create_portfile_cmake_text(ProjectDetails(), Version(1, 2, 3),
                                                                   "single_header_sha",
                                                                   "licence_sha")
         verify(text)
