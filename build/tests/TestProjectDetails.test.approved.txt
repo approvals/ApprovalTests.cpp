@@ -6,5 +6,6 @@
     "simulated_single_header_file": "ApprovalTests.hpp",
     "update_conan": true,
     "update_documentation": true,
+    "vcpkg_directory_name": "approval-tests-cpp",
     "version_header": "ApprovalTestsVersion.h"
 }

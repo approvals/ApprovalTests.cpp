@@ -14,10 +14,8 @@ class TestVcpkgRelease(unittest.TestCase):
         set_home_directory()
         # PrepareVcpkgRelease.reset_and_clean_vcpkg_repo()
 
-    def test_config_yml(self) -> None:
-        text = ''
-        for i in range(3):
-            text += PrepareVcpkgRelease.create_vcpkg_config_yml_text(Version(1, 1, i))
+    def test_vcpkg_json(self) -> None:
+        text = PrepareVcpkgRelease.create_vcpkg_vcpkg_json_text(Version(1, 2, 3))
         verify(text)
 
     def test_vcpkgdata_yml(self) -> None:

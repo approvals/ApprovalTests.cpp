@@ -79,19 +79,19 @@ class PrepareVcpkgRelease:
         vcpkg_approvaltests_dir = details.vcpkg_details.vcpkg_approvaltests_dir
 
         PrepareVcpkgRelease.update_vcpkgdata_yml(details, vcpkg_approvaltests_dir)
-        PrepareVcpkgRelease.update_vcpkg_config_yml(vcpkg_approvaltests_dir, details.new_version)
+        PrepareVcpkgRelease.update_vcpkg_vcpkg_json(vcpkg_approvaltests_dir, details.new_version)
 
     @staticmethod
-    def update_vcpkg_config_yml(vcpkg_approvaltests_dir: str, new_version: Version) -> None:
+    def update_vcpkg_vcpkg_json(vcpkg_approvaltests_dir: str, new_version: Version) -> None:
         vcpkg_data_file = os.path.join(vcpkg_approvaltests_dir, 'config.yml')
         vcpkgdata_yml_text = read_file(vcpkg_data_file)
 
-        vcpkgdata_yml_text += PrepareVcpkgRelease.create_vcpkg_config_yml_text(new_version)
+        vcpkgdata_yml_text += PrepareVcpkgRelease.create_vcpkg_vcpkg_json_text(new_version)
 
         write_file(vcpkg_data_file, vcpkgdata_yml_text)
 
     @staticmethod
-    def create_vcpkg_config_yml_text(new_version: Version) -> str:
+    def create_vcpkg_vcpkg_json_text(new_version: Version) -> str:
         vcpkg_data = \
             F'''  {new_version.get_version_text_without_v()}:
     folder: all
