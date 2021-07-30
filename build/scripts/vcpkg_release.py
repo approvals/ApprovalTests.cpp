@@ -6,6 +6,7 @@ import yaml
 from git import Repo
 from git.exc import GitCommandError
 
+from scripts.multiline_string_utilities import remove_indentation_from
 from scripts.vcpkg_release_details import VcpkgReleaseDetails
 from scripts.git_utilities import GitUtilities
 from scripts.project_details import ProjectDetails
@@ -93,9 +94,14 @@ class PrepareVcpkgRelease:
     @staticmethod
     def create_vcpkg_vcpkg_json_text(new_version: Version) -> str:
         vcpkg_data = \
-            F'''  {new_version.get_version_text_without_v()}:
-    folder: all
-'''
+            remove_indentation_from(F'''
+                            {{
+                              "name": "approval-tests-cpp",
+                              "version": "{new_version.get_version_text_without_v()}",
+                              "description": "Approval Tests allow you to verify a chunk of output (such as a file) in one operation as opposed to writing test assertions for each element.",
+                              "homepage": "https://github.com/approvals/ApprovalTests.cpp"
+                            }}
+                        ''')
         return vcpkg_data
 
     @staticmethod
