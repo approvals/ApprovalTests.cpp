@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * Vcpkg integration added: See [Vcpkg Integration docs](/doc/VcpkgIntegration.md#top) ([vcpkg #18338](https://github.com/microsoft/vcpkg/pull/18338) - thanks @strega-nil!)
 * **Bug fixes**
     * None
 * **Other changes**

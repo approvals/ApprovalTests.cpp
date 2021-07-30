@@ -195,6 +195,7 @@ Build Systems
 
    generated_docs/CMakeIntegration
    generated_docs/ConanIntegration
+   generated_docs/VcpkgIntegration
 
    generated_docs/BuildMachinesAndCI
 

@@ -111,7 +111,8 @@ effectively.
 
   - **Integrations**:
     [CMake](/doc/CMakeIntegration.md#top) |
-    [Conan](/doc/ConanIntegration.md#top)
+    [Conan](/doc/ConanIntegration.md#top) |
+    [Vcpkg](/doc/VcpkgIntegration.md#top)
   - **Your builds**:
     [Build Machines and CI servers](/doc/BuildMachinesAndCI.md#top)
 
