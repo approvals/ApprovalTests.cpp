@@ -26,7 +26,7 @@ class TestVcpkgRelease(unittest.TestCase):
 
     def test_vcpkg_approvaltests_dir(self) -> None:
         vcpkg_release_details = VcpkgReleaseDetails(ProjectDetails())
-        self.assertTrue(vcpkg_release_details.vcpkg_approvaltests_dir.endswith('approvaltests.cpp'))
+        self.assertTrue(vcpkg_release_details.vcpkg_approvaltests_dir.endswith('approval-tests-cpp'))
 
     def test_can_find_vcpkg_repo(self) -> None:
         set_home_directory()
@@ -39,7 +39,7 @@ class TestVcpkgRelease(unittest.TestCase):
         self.assertIn('8.9.0', PrepareVcpkgRelease.get_accepted_approval_releases(ProjectDetails()))
 
     def test_get_new_branch_name(self) -> None:
-        self.assertEqual('approvaltests.cpp.1.2.3',
+        self.assertEqual('approval-tests-cpp.1.2.3',
                          PrepareVcpkgRelease.get_new_branch_name(ProjectDetails(), Version(1, 2, 3)))
 
     def disable_test_all_vcpkg_versions_build(self) -> None:

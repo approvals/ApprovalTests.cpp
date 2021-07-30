@@ -6,7 +6,7 @@ from scripts.project_details import ProjectDetails
 class VcpkgReleaseDetails:
     def __init__(self, project_details: ProjectDetails) -> None:
         self.vcpkg_repo_dir = VcpkgReleaseDetails.get_vcpkg_repo_directory()
-        self.vcpkg_approvaltests_dir = os.path.join(self.vcpgk_repo_dir, 'ports',
+        self.vcpkg_approvaltests_dir = os.path.join(self.vcpkg_repo_dir, 'ports',
                                                     project_details.vcpkg_directory_name)
 
     @staticmethod
