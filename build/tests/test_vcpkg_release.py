@@ -36,6 +36,7 @@ class TestVcpkgRelease(unittest.TestCase):
         print(directory)
 
     def test_vcpkg_version_number(self) -> None:
+        # TODO: Start here, continue adding Vcpkg to release scripts
         self.assertIn('8.9.0', PrepareVcpkgRelease.get_accepted_approval_releases(ProjectDetails()))
 
     def test_get_new_branch_name(self) -> None:
