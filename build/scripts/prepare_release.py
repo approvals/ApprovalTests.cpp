@@ -14,6 +14,7 @@ from scripts.release_details import ReleaseDetails
 from scripts.starter_project_release import PrepareStarterProjectRelease
 from scripts.utilities import check_step, run, use_directory, \
     check_step_with_revert, assert_step
+from scripts.vcpkg_release import PrepareVcpkgRelease
 from scripts.version import Version
 
 
@@ -78,6 +79,7 @@ class PrepareRelease:
 
     def prepare_everything(self) -> None:
         PrepareConanRelease.check_preconditions(self.details)
+        PrepareVcpkgRelease.check_preconditions(self.details)
         self.check_pre_conditions_for_publish()
 
         CppGeneration.prepare_release(self.details)

@@ -16,15 +16,9 @@ from scripts.utilities import check_step, read_file, write_file, calculate_sha25
 from scripts.version import Version
 
 
-# TODO Check vcpkg installed
-# TODO Check vcpkg uptodate
-# TODO Check vcpkg-hooks installed: https://github.com/vcpkg-io/hooks.git
-# TODO Check vcpkg-hooks uptodate
-
 class PrepareVcpkgRelease:
     @staticmethod
     def check_preconditions(details: ReleaseDetails) -> None:
-        PrepareVcpkgRelease.update_vcpkg_to_latest()
         PrepareVcpkgRelease.confirm_previous_release_still_works(details)
 
     @staticmethod
@@ -143,9 +137,6 @@ class PrepareVcpkgRelease:
                         ''')
         return vcpkg_data
 
-    @staticmethod
-    def update_vcpkg_to_latest() -> None:
-        run(["pip3", "install", "--upgrade", "vcpkg"])
 
     @staticmethod
     def confirm_previous_release_still_works(details: ReleaseDetails) -> None:
