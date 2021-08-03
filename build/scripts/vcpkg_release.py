@@ -155,9 +155,11 @@ class PrepareVcpkgRelease:
 
     @staticmethod
     def get_accepted_approval_releases(project_details: ProjectDetails) -> List[str]:
-        vcpkg_url = f'https://raw.githubusercontent.com/vcpkg-io/vcpkg-center-index/master/recipes/{project_details.vcpkg_directory_name}/config.yml'
-        text = read_url(vcpkg_url)
-        return yaml.safe_load(text)['versions'].keys()
+        vcpkg_url = f'https://raw.githubusercontent.com/microsoft/vcpkg/master/versions/a-/{project_details.vcpkg_directory_name}.json'
+        import urllib.request, json
+        with urllib.request.urlopen(vcpkg_url) as url:
+            data = json.loads(url.read().decode())
+            return list(map(lambda v: v["version"], data['versions']))
 
 
 class DeployVcpkgRelease:
