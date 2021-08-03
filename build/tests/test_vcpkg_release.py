@@ -25,6 +25,7 @@ class TestVcpkgRelease(unittest.TestCase):
         verify(text)
 
     def test_vcpkg_approvaltests_dir(self) -> None:
+        set_home_directory()
         vcpkg_release_details = VcpkgReleaseDetails(ProjectDetails())
         self.assertTrue(vcpkg_release_details.vcpkg_approvaltests_dir.endswith('approval-tests-cpp'))
 
