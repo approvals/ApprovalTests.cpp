@@ -78,10 +78,8 @@ class PrepareVcpkgRelease:
 
     @staticmethod
     def update_vcpkg_vcpkg_json(vcpkg_approvaltests_dir: str, new_version: Version) -> None:
-        vcpkg_data_file = os.path.join(vcpkg_approvaltests_dir, 'config.yml')
-        portfile_cmake_text = read_file(vcpkg_data_file)
-
-        portfile_cmake_text += PrepareVcpkgRelease.create_vcpkg_vcpkg_json_text(new_version)
+        vcpkg_data_file = os.path.join(vcpkg_approvaltests_dir, 'vcpkg.json')
+        portfile_cmake_text = PrepareVcpkgRelease.create_vcpkg_vcpkg_json_text(new_version)
 
         write_file(vcpkg_data_file, portfile_cmake_text)
 
