@@ -19,7 +19,7 @@ from scripts.version import Version
 class PrepareVcpkgRelease:
     @staticmethod
     def check_preconditions(details: ReleaseDetails) -> None:
-        PrepareVcpkgRelease.confirm_previous_release_still_works(details)
+        pass
 
     @staticmethod
     def prepare_release(details: ReleaseDetails) -> None:
@@ -136,13 +136,6 @@ class PrepareVcpkgRelease:
                         file(INSTALL "${{license_file}}" DESTINATION "${{CURRENT_PACKAGES_DIR}}/share/${{PORT}}" RENAME copyright)
                         ''')
         return vcpkg_data
-
-
-    @staticmethod
-    def confirm_previous_release_still_works(details: ReleaseDetails) -> None:
-        last_approved = max(PrepareVcpkgRelease.get_accepted_approval_releases(details.project_details), key=lambda x: Version.from_string_without_v(x))
-
-        DeployVcpkgRelease.test_vcpkg_build_passes(details.vcpkg_details, last_approved)
 
     @staticmethod
     def get_accepted_approval_releases(project_details: ProjectDetails) -> List[str]:

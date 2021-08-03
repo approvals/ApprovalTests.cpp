@@ -88,6 +88,7 @@ class PrepareRelease:
         PrepareStarterProjectRelease.check_starter_project_builds(self.details)
 
         PrepareConanRelease.prepare_release(self.details)
+        PrepareVcpkgRelease.prepare_release(self.details)
 
         PrepareDocumentationRelease.prepare_documentation(self.details)
 
