@@ -49,7 +49,7 @@ jobs:
     - name: print dir
       run: |
         sudo apt-get install tree
-        tree -d -L 4 .
+        tree -d -L 2 .
 
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
