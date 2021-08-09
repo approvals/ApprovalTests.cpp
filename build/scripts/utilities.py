@@ -89,6 +89,14 @@ def calculate_sha256(file_name: str) -> str:
         return readable_hash
 
 
+def calculate_sha512(file_name: str) -> str:
+    with open(file_name, "rb") as f:
+        bytes = f.read()  # read entire file as bytes
+        readable_hash = hashlib.sha512(bytes).hexdigest()
+        # print(readable_hash)
+        return readable_hash
+
+
 # condition should be an Expression
 def assert_step(condition: bool, message:str = "") -> None:
     assert condition, message

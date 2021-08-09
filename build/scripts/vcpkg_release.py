@@ -2,7 +2,6 @@ import os
 from typing import List
 
 import pyperclip
-import yaml
 from git import Repo
 from git.exc import GitCommandError
 
@@ -11,10 +10,9 @@ from scripts.vcpkg_release_details import VcpkgReleaseDetails
 from scripts.git_utilities import GitUtilities
 from scripts.project_details import ProjectDetails
 from scripts.release_details import ReleaseDetails
-from scripts.utilities import check_step, read_file, write_file, calculate_sha256, run, use_directory, read_url, \
-    optional_action
+from scripts.utilities import check_step, write_file, calculate_sha512, run, use_directory, optional_action
 from scripts.version import Version
-
+#todo: do the deploy not just the prepare  + unknow others 
 
 class PrepareVcpkgRelease:
     @staticmethod
@@ -99,17 +97,15 @@ class PrepareVcpkgRelease:
     @staticmethod
     def update_portfile_cmake(details: ReleaseDetails, vcpkg_approvaltests_dir: str) -> None:
         version = details.new_version
-        vcpkg_data_file = os.path.join(vcpkg_approvaltests_dir, 'all', 'vcpkgdata.yml')
-        portfile_cmake_text = read_file(vcpkg_data_file)
+        vcpkg_data_file = os.path.join(vcpkg_approvaltests_dir, 'portfile.cmake')
 
         new_single_header = details.release_new_single_header
         licence_file = '../LICENSE'
 
-        single_header_sha = calculate_sha256(new_single_header)
-        licence_file_sha = calculate_sha256(licence_file)
-        vcpkg_data = PrepareVcpkgRelease.create_portfile_cmake_text(details.project_details, version, single_header_sha,
+        single_header_sha = calculate_sha512(new_single_header)
+        licence_file_sha = calculate_sha512(licence_file)
+        portfile_cmake_text = PrepareVcpkgRelease.create_portfile_cmake_text(details.project_details, version, single_header_sha,
                                                                    licence_file_sha)
-        portfile_cmake_text += vcpkg_data
 
         write_file(vcpkg_data_file, portfile_cmake_text)
 
