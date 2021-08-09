@@ -15,7 +15,7 @@ class TestReleaseDetails(unittest.TestCase):
             Version(1, 2, 4),
             True,
             ProjectDetails())
-        scrubber = Options().with_scrubber(lambda t: t.replace('"../../conan-', '"../../../conan-'))
+        scrubber = Options().with_scrubber(lambda t: t.replace('"../../conan-', '"../../../conan/conan-'))
         verify_as_json(details, options=scrubber)
 
 
