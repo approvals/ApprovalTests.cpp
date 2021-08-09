@@ -40,7 +40,13 @@ jobs:
       run: |
         cd conan/conan-center-index-claremacrae
         git remote add upstream https://github.com/conan-io/conan-center-index.git
-
+   
+    - name: Check out llewellyn's fork of vcpkg
+      uses: actions/checkout@v2
+      with:
+        repository: isidore/vcpkg
+        path: vcpkg
+   
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
