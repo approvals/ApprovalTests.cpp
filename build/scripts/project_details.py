@@ -12,6 +12,7 @@ class ProjectDetails:
     vcpkg_directory_name: str = 'approval-tests-cpp'
     update_documentation: bool = True
     update_conan: bool = True
+    update_vcpkg: bool = True
 
     # The __init__() is generated automatically
 

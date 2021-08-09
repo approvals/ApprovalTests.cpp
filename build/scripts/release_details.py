@@ -5,6 +5,7 @@ from scripts.project_details import ProjectDetails
 from scripts.release_constants import release_constants
 from scripts.release_locations import ReleaseLocations
 from scripts.utilities import ensure_directory_exists
+from scripts.vcpkg_release_details import VcpkgReleaseDetails
 from scripts.version import Version
 
 
@@ -14,6 +15,7 @@ class ReleaseDetails:
         self.project_details = project_details
         self.locations = ReleaseLocations(project_details)
         self.conan_details = ConanReleaseDetails(project_details)
+        self.vcpkg_details = VcpkgReleaseDetails(project_details)
 
         self.old_version = old_version
         self.new_version = new_version
