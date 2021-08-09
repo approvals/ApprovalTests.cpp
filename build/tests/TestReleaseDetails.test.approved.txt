@@ -1,7 +1,7 @@
 {
     "conan_details": {
-        "conan_approvaltests_dir": "../../conan-center-index-claremacrae/recipes/approvaltests.cpp",
-        "conan_repo_dir": "../../conan-center-index-claremacrae"
+        "conan_approvaltests_dir": "../../../conan-center-index-claremacrae/recipes/approvaltests.cpp",
+        "conan_repo_dir": "../../../conan-center-index-claremacrae"
     },
     "locations": {
         "approval_tests_dir": "../ApprovalTests",

@@ -1,5 +1,6 @@
 import unittest
 
+from approvaltests import Options
 from approvaltests.approvals import verify_as_json
 
 from scripts.project_details import ProjectDetails
@@ -14,7 +15,8 @@ class TestReleaseDetails(unittest.TestCase):
             Version(1, 2, 4),
             True,
             ProjectDetails())
-        verify_as_json(details)
+        scrubber = Options().with_scrubber(lambda t: t.replace('"../../conan-', '"../../../conan-'))
+        verify_as_json(details, options=scrubber)
 
 
 if __name__ == '__main__':
