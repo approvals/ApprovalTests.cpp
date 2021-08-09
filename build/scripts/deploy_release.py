@@ -6,6 +6,7 @@ from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
 from scripts.starter_project_release import DeployStarterProjectRelease
 from scripts.utilities import read_file, check_step, run, use_directory
+from scripts.vcpkg_release import DeployVcpkgRelease
 
 
 class DeployRelease:
@@ -67,6 +68,7 @@ class DeployRelease:
             self.upload_release_to_github()
             DeployStarterProjectRelease.publish_starter_project(self.details)
         DeployConanRelease.test_conan_and_create_pr(self.details)
+        DeployVcpkgRelease.test_vcpkg_and_create_pr(self.details)
         self.publish_tweet()
         self.publish_on_reddit_optionally()
 

@@ -147,21 +147,11 @@ class DeployVcpkgRelease:
             return
 
         new_version_without_v = details.new_version.get_version_text_without_v()
-        # See test_vcpkg_release.py's disabled_test_all_vcpkg_versions_build() if you want to test
-        # that vcpkg builds against all supported library versions.
-        DeployVcpkgRelease.test_vcpkg_build_passes(details.vcpkg_details, new_version_without_v)
-
         GitUtilities.add_and_commit_everything(details.vcpkg_details.vcpkg_repo_dir,
-                                               F'Add {details.project_details.vcpkg_directory_name} {new_version_without_v}')
+                                               F'[{details.project_details.vcpkg_directory_name}] Update to {new_version_without_v}')
         GitUtilities.push_active_branch_origin(details.vcpkg_details.vcpkg_repo_dir)
 
         DeployVcpkgRelease.create_pull_request(details)
-
-    @staticmethod
-    def test_vcpkg_build_passes(vcpkg_details: VcpkgReleaseDetails, version_without_v: str) -> None:
-        vcpkg_directory = os.path.join(vcpkg_details.vcpkg_approvaltests_dir, 'all')
-        with use_directory(vcpkg_directory):
-            run(['vcpkg', 'create', '--build=missing', '.', F'{version_without_v}@'])
 
     @staticmethod
     def create_pull_request(details: ReleaseDetails) -> None:
@@ -176,9 +166,10 @@ class DeployVcpkgRelease:
         new_version_without_v = details.new_version.get_version_text_without_v()
         new_branch = PrepareVcpkgRelease.get_new_branch_name(details.project_details, details.new_version)
         run(["open",
-             F'https://github.com/vcpkg-io/vcpkg-center-index/compare/master...claremacrae:{new_branch}?expand=1'])
-        description = F'**{details.project_details.vcpkg_directory_name}/{new_version_without_v}**'
+             F'https://github.com/microsoft/vcpkg/compare/master...isidore:{new_branch}?expand=1'])
+        description = F'[{details.project_details.vcpkg_directory_name}] update to {new_version_without_v}'
+        description = F'Todo: fill this in when we know what it should look like'
         pyperclip.copy(description)
         print(
             F"Create a pull request, including this at the start of the description (which is on your clipboard): {description}")
-        check_step("that you have created a Pull Request for vcpkg-center-index?")
+        check_step("that you have created a Pull Request for vcpkg?")
