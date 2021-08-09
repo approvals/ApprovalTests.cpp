@@ -45,9 +45,5 @@ class TestVcpkgRelease(unittest.TestCase):
         self.assertEqual('approval-tests-cpp.1.2.3',
                          PrepareVcpkgRelease.get_new_branch_name(ProjectDetails(), Version(1, 2, 3)))
 
-    def disable_test_all_vcpkg_versions_build(self) -> None:
-        set_home_directory()
-        releases = PrepareVcpkgRelease.get_accepted_approval_releases(ProjectDetails())
-        vcpkg_details = VcpkgReleaseDetails(ProjectDetails())
-        for release in releases:
-            DeployVcpkgRelease.test_vcpkg_build_passes(vcpkg_details, release)
+
+
