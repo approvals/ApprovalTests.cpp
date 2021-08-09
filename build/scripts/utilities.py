@@ -82,17 +82,17 @@ def replace_text_in_file(file_name: str, old_text: str, new_text: str) -> None:
 
 
 def calculate_sha256(file_name: str) -> str:
-    with open(file_name, "rb") as f:
-        bytes = f.read()  # read entire file as bytes
-        readable_hash = hashlib.sha256(bytes).hexdigest()
-        # print(readable_hash)
-        return readable_hash
+    calculate_sha(file_name, hashlib.sha256)
 
 
 def calculate_sha512(file_name: str) -> str:
+    calculate_sha(file_name, hashlib.sha512)
+
+
+def calculate_sha(file_name: str, hashing_algorithm: Callable) -> str:
     with open(file_name, "rb") as f:
         bytes = f.read()  # read entire file as bytes
-        readable_hash = hashlib.sha512(bytes).hexdigest()
+        readable_hash = hashing_algorithm(bytes).hexdigest()
         # print(readable_hash)
         return readable_hash
 
