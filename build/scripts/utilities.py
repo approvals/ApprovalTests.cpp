@@ -82,11 +82,11 @@ def replace_text_in_file(file_name: str, old_text: str, new_text: str) -> None:
 
 
 def calculate_sha256(file_name: str) -> str:
-    calculate_sha(file_name, hashlib.sha256)
+    return calculate_sha(file_name, hashlib.sha256)
 
 
 def calculate_sha512(file_name: str) -> str:
-    calculate_sha(file_name, hashlib.sha512)
+    return calculate_sha(file_name, hashlib.sha512)
 
 
 def calculate_sha(file_name: str, hashing_algorithm: Callable) -> str:
