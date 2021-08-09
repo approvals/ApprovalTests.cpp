@@ -48,7 +48,7 @@ jobs:
         path: vcpkg
     - name: print dir
       run: |
-        apt-get install tree
+        sudo apt-get install tree
         tree -d -L 4 .
 
     - name: Set up Python 3.8
