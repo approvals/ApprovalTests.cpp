@@ -45,7 +45,8 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: isidore/vcpkg
-        path: vcpkg
+        path: ApprovalTests/vcpkg
+        
     - name: print dir
       run: |
         sudo apt-get install tree
