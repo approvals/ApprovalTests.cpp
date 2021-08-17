@@ -154,7 +154,7 @@ class DeployVcpkgRelease:
         DeployVcpkgRelease.create_pull_request(details)
 
     @staticmethod
-    def update_vcpkg_version_files(details: ReleaseDetails):
+    def update_vcpkg_version_files(details: ReleaseDetails) -> None:
         run(["brew", "install", "vcpkg"])
         run(["vcpkg", "x-add-version", f"--vcpkg-root={details.vcpkg_details.vcpkg_repo_dir}",
              details.project_details.vcpkg_directory_name])
