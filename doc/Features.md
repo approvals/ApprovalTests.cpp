@@ -77,6 +77,14 @@
 
 ## v.x.y.z
 
+### Storyboard
+
+[Storyboard](/doc/reference/Storyboard.md#top) is a utility that allows you to print the changes to an object over time
+
+### Grid
+
+[Grid](/doc/reference/Grid.md#top)  is a utility that creates 2D text in a grid format
+
 ### Vcpkg Integration
 
 See [Vcpkg Integration](/doc/VcpkgIntegration.md#top).
