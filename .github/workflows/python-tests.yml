@@ -46,7 +46,12 @@ jobs:
       with:
         repository: isidore/vcpkg
         path: ApprovalTests/vcpkg
-        
+   
+    - name: Add upstream remote to vcpkg, for testing dummy release
+      run: |
+        cd ApprovalTests/vcpkg
+        git remote add upstream https://github.com/microsoft/vcpkg.git
+         
     - name: print dir
       run: |
         sudo apt-get install tree
