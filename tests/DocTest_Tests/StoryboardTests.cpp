@@ -14,7 +14,8 @@ TEST_CASE("Adding Storyboard Frames")
     {
         GameOfLife game(5, 5, [](int x, int y) { return 1 <= x && x <= 3 && y == 2; });
 
-        Approvals::verify(Storyboard().addFrame(game.print(5, 5)).addFrames(5, [&](int /*frame*/) {
+        Approvals::verify(
+            Storyboard().addFrame(game.print(5, 5)).addFrames(5, [&](int /*frame*/) {
                 game = game.advance();
                 return game.print(5, 5);
             }));
