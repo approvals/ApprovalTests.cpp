@@ -6,6 +6,9 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.10.0](#v10100)
+    * [Storyboard](#storyboard)
+    * [Grid](#grid)
     * [Vcpkg Integration](#vcpkg-integration)
   * [v.10.9.0](#v1090)
     * [Custom template namer](#custom-template-namer)
@@ -76,6 +79,8 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+## v.10.10.0
 
 ### Storyboard
 
