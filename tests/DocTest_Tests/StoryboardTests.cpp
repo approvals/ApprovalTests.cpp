@@ -36,30 +36,36 @@ TEST_CASE("Adding Storyboard Frames")
     }
 }
 
-TEST_CASE("Storyboard customization mechanisms")
+static GameOfLife createBlinker()
 {
     GameOfLife game(5, 5, [](int x, int y) { return 1 <= x && x <= 3 && y == 2; });
+    return game;
+}
+
+TEST_CASE("Storyboard customization mechanisms")
+{
 
     StoryBoard story;
+
+    GameOfLife game = createBlinker();
+    
     story.addDescription("Game of Life");
-    story.addFrame(game.print(5, 5));
+    story.addFrame(game.toString());
 
     game = game.advance();
-    story.addFrame("Start game", game.print(5, 5));
+    story.addFrame("Start game", game.toString());
 
     game = game.advance();
-    story.addFrame(game.print(5, 5));
+    story.addFrame(game.toString());
 
     story.addDescriptionWithData("setting alive", game.setAliveCell("*"));
     story.addDescriptionWithData("setting dead", game.setDeadCell("_"));
-    game = game.advance();
-    story.addFrame(game.print(5, 5));
 
-    game = game.advance();
-    story.addFrame(game.print(5, 5));
-
-    game = game.advance();
-    story.addFrame(game.print(5, 5));
+    for (int i = 0; i < 3; ++i)
+    {
+        game = game.advance();
+        story.addFrame(game.toString());
+    }
 
     Approvals::verify(story);
 }

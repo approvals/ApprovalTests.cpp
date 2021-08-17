@@ -186,4 +186,8 @@ public:
         deadCharacter = std::move(dead);
         return deadCharacter;
     }
+    std::string toString()
+    {
+        return print(5, 5);
+    }
 };
