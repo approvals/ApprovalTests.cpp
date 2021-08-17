@@ -157,7 +157,7 @@ class DeployVcpkgRelease:
     def update_vcpkg_version_files(details: ReleaseDetails):
         run(["brew", "install", "vcpkg"])
         run(["vcpkg", "x-add-version", f"--vcpkg-root={details.vcpkg_details.vcpkg_repo_dir}",
-             details.vcpkg_directory_name])
+             details.project_details.vcpkg_directory_name])
         GitUtilities.add_and_commit_everything(details.vcpkg_details.vcpkg_repo_dir, F'add version files')
 
     @staticmethod
