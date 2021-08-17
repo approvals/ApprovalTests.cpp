@@ -175,11 +175,13 @@ public:
         return newGame;
     }
 
+    // begin-snippet: storyboard_return_values
     std::string setAliveCell(std::string alive)
     {
         aliveCharacter = std::move(alive);
         return aliveCharacter;
     }
+    // end-snippet
 
     std::string setDeadCell(std::string dead)
     {

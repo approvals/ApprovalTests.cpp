@@ -42,30 +42,57 @@ static GameOfLife createBlinker()
     return game;
 }
 
+TEST_CASE("Storyboard friendly examples")
+{
+    StoryBoard story;
+    GameOfLife game = createBlinker();
+
+    // begin-snippet: storyboard_friendly_report
+    story.addDescriptionWithData("setting alive", game.setAliveCell("*"));
+    // end-snippet
+
+    // begin-snippet: storyboard_unfriendly_report
+    std::string newValue = "*";
+    game.setAliveCell(newValue);
+    story.addDescriptionWithData("setting alive", newValue);
+    // end-snippet
+}
+
 TEST_CASE("Storyboard customization mechanisms")
 {
-
+    // begin-snippet: storyboard_complete_example
+    // Create a Storyboard to track a series of changes
     StoryBoard story;
 
+    // Create object to track
     GameOfLife game = createBlinker();
-    
+
+    // Add a title
     story.addDescription("Game of Life");
+
+    // Capture the starting state
     story.addFrame(game.toString());
 
+    // Frame1: with title
     game = game.advance();
     story.addFrame("Start game", game.toString());
 
+    // Frame2: default titling
     game = game.advance();
     story.addFrame(game.toString());
 
+    // Change how it renders and note it in the Storyboard
     story.addDescriptionWithData("setting alive", game.setAliveCell("*"));
     story.addDescriptionWithData("setting dead", game.setDeadCell("_"));
 
+    // 3 more frames
     for (int i = 0; i < 3; ++i)
     {
         game = game.advance();
         story.addFrame(game.toString());
     }
 
+    // verify storyboard
     Approvals::verify(story);
+    // end-snippet
 }
