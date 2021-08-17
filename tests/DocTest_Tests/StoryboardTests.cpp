@@ -14,8 +14,7 @@ TEST_CASE("Adding Storyboard Frames")
     {
         GameOfLife game(5, 5, [](int x, int y) { return 1 <= x && x <= 3 && y == 2; });
 
-        Approvals::verify(
-            StoryBoard().addFrame(game.print(5, 5)).addFrames(5, [&](int /*frame*/) {
+        Approvals::verify(Storyboard().addFrame(game.print(5, 5)).addFrames(5, [&](int /*frame*/) {
                 game = game.advance();
                 return game.print(5, 5);
             }));
@@ -24,7 +23,7 @@ TEST_CASE("Adding Storyboard Frames")
     {
         GameOfLife game(5, 5, [](int x, int y) { return 1 <= x && x <= 3 && y == 2; });
 
-        StoryBoard story;
+        Storyboard story;
 
         story.addFrame(game.print(5, 5));
         for (int i = 0; i < 5; ++i)
@@ -44,7 +43,7 @@ static GameOfLife createBlinker()
 
 TEST_CASE("Storyboard friendly examples")
 {
-    StoryBoard story;
+    Storyboard story;
     GameOfLife game = createBlinker();
 
     // begin-snippet: storyboard_friendly_report
@@ -62,7 +61,7 @@ TEST_CASE("Storyboard customization mechanisms")
 {
     // begin-snippet: storyboard_complete_example
     // Create a Storyboard to track a series of changes
-    StoryBoard story;
+    Storyboard story;
 
     // Create object to track
     GameOfLife game = createBlinker();

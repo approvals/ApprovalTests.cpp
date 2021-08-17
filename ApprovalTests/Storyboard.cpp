@@ -2,14 +2,14 @@
 
 namespace ApprovalTests
 {
-    StoryBoard& StoryBoard::addDescription(const std::string& description)
+    Storyboard& Storyboard::addDescription(const std::string& description)
     {
         output_ << description << "\n";
         addNewLineBeforeNextFrame_ = true;
         return *this;
     }
 
-    StoryBoard& StoryBoard::addDescriptionWithData(const std::string& description,
+    Storyboard& Storyboard::addDescriptionWithData(const std::string& description,
                                                    const std::string& data)
     {
         output_ << description << ": " << data << "\n";
@@ -17,7 +17,7 @@ namespace ApprovalTests
         return *this;
     }
 
-    StoryBoard& StoryBoard::addFrame(const std::string& frame)
+    Storyboard& Storyboard::addFrame(const std::string& frame)
     {
         if (frameCount_ == 0)
         {
@@ -29,7 +29,7 @@ namespace ApprovalTests
         }
     }
 
-    StoryBoard& StoryBoard::addFrame(const std::string& title, const std::string& frame)
+    Storyboard& Storyboard::addFrame(const std::string& title, const std::string& frame)
     {
         if (addNewLineBeforeNextFrame_)
         {
@@ -42,7 +42,7 @@ namespace ApprovalTests
         return *this;
     }
 
-    StoryBoard& StoryBoard::addFrames(int numberOfFrames,
+    Storyboard& Storyboard::addFrames(int numberOfFrames,
                                       const std::function<std::string(int)>& function)
     {
         for (int frame = 1; frame <= numberOfFrames; ++frame)
@@ -52,7 +52,7 @@ namespace ApprovalTests
         return *this;
     }
 
-    std::ostream& operator<<(std::ostream& os, const StoryBoard& board)
+    std::ostream& operator<<(std::ostream& os, const Storyboard& board)
     {
         os << board.output_.str();
         return os;

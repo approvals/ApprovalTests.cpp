@@ -6,7 +6,7 @@
 
 namespace ApprovalTests
 {
-    class StoryBoard
+    class Storyboard
     {
     private:
         std::stringstream output_;
@@ -14,18 +14,18 @@ namespace ApprovalTests
         bool addNewLineBeforeNextFrame_ = false;
 
     public:
-        StoryBoard& addDescription(const std::string& description);
+        Storyboard& addDescription(const std::string& description);
 
-        StoryBoard& addDescriptionWithData(const std::string& description,
+        Storyboard& addDescriptionWithData(const std::string& description,
                                            const std::string& data);
 
-        StoryBoard& addFrame(const std::string& frame);
+        Storyboard& addFrame(const std::string& frame);
 
-        StoryBoard& addFrame(const std::string& title, const std::string& frame);
+        Storyboard& addFrame(const std::string& title, const std::string& frame);
 
-        StoryBoard& addFrames(int numberOfFrames,
+        Storyboard& addFrames(int numberOfFrames,
                               const std::function<std::string(int)>& function);
 
-        friend std::ostream& operator<<(std::ostream& os, const StoryBoard& board);
+        friend std::ostream& operator<<(std::ostream& os, const Storyboard& board);
     };
 }

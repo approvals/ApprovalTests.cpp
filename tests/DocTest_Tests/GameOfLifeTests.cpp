@@ -44,7 +44,7 @@ TEST_CASE("Demo 15-step blinker")
         };
         GameOfLife game(alive);
 
-        Approvals::verify(StoryBoard()
+        Approvals::verify(Storyboard()
                               .addFrame(game.print(width, height))
                               .addFrames(15, [&](int /*frame*/) {
                                   game = game.advance();
@@ -70,7 +70,7 @@ TEST_CASE("Demo 15-step blinker")
 
         GameOfLife game(alive);
 
-        Approvals::verify(StoryBoard()
+        Approvals::verify(Storyboard()
                               .addFrame(game.print(width, height))
                               .addFrames(15, [&](int /*frame*/) {
                                   game = game.advance();
