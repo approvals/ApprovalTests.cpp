@@ -12,7 +12,7 @@ from scripts.project_details import ProjectDetails
 from scripts.release_details import ReleaseDetails
 from scripts.utilities import check_step, write_file, calculate_sha512, run, use_directory, optional_action
 from scripts.version import Version
-#todo: do the deploy not just the prepare  + unknow others 
+
 
 class PrepareVcpkgRelease:
     @staticmethod
@@ -104,14 +104,14 @@ class PrepareVcpkgRelease:
 
         single_header_sha = calculate_sha512(new_single_header)
         licence_file_sha = calculate_sha512(licence_file)
-        portfile_cmake_text = PrepareVcpkgRelease.create_portfile_cmake_text(details.project_details, version, single_header_sha,
-                                                                   licence_file_sha)
+        portfile_cmake_text = PrepareVcpkgRelease.create_portfile_cmake_text(version, single_header_sha,
+                                                                             licence_file_sha)
 
         write_file(vcpkg_data_file, portfile_cmake_text)
 
     @staticmethod
-    def create_portfile_cmake_text(project_details: ProjectDetails, new_version: Version, single_header_sha: str,
-                                  licence_file_sha: str) -> str:
+    def create_portfile_cmake_text(new_version: Version, single_header_sha: str,
+                                   licence_file_sha: str) -> str:
         new_version_with_v = new_version.get_version_text()
         vcpkg_data =   remove_indentation_from(F'''
                         vcpkg_download_distfile(single_header

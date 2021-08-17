@@ -19,7 +19,7 @@ class TestVcpkgRelease(unittest.TestCase):
         verify(text)
 
     def test_portfile_cmake(self) -> None:
-        text = PrepareVcpkgRelease.create_portfile_cmake_text(ProjectDetails(), Version(1, 2, 3),
+        text = PrepareVcpkgRelease.create_portfile_cmake_text(Version(1, 2, 3),
                                                                   "single_header_sha",
                                                                   "licence_sha")
         verify(text)
