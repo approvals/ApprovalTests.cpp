@@ -65,6 +65,13 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
+          - job-name: 'clang12'
+            os-version: '20.04'
+            c-compiler: 'clang-12'
+            cxx-compiler: 'clang++-12'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
           - job-name: 'gcc9'
             os-version: '20.04'
             c-compiler: 'gcc-9'
