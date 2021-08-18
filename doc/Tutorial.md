@@ -21,7 +21,7 @@ In this tutorial, we are going to use Windows, Catch2 and WinMerge. If you are u
 
 By the end of this tutorial, you should be able to use Approval Tests in most basic cases.
 
-To follow along at home, please [download the Starter Project](/doc/Setup.md#i-have-nothing).
+To follow along at home, please [download the Starter Project](/doc/Setup.md#i-have-nothing) unless you already have a working ApprovalTests build / environment in which case you can just start a new test. 
 
 ## Hello Approval Tests
 

@@ -51,6 +51,9 @@ This is when you have an existing code base that has some tests already, and you
 
 If you current test framework is not supported, see [Supporting a new test framework](/doc/SupportingNewTestFramework.md#top)
 
+### Next Steps
+
+*  Try the [Tutorial](/doc/Tutorial.md#top)
 ---
 
 [Back to User Guide](/doc/README.md#top)
