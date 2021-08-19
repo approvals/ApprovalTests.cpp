@@ -50,8 +50,6 @@ namespace ApprovalTests
 
         std::string getTestName() const;
 
-        static bool isForbidden(char c);
-
         static std::string convertToFileName(const std::string& fileName);
 
         static TestName& getCurrentTest();

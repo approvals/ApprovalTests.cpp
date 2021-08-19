@@ -7,6 +7,8 @@ namespace ApprovalTests
 
     class FileNameSanitizerFactory{
     public:
+
+        static bool isForbidden(char c);
         static std::string defaultSanitizer(std::string fileName);
         static FileNameSanitizer currentSanitizer;
     };

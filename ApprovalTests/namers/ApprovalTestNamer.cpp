@@ -131,12 +131,6 @@ namespace ApprovalTests
         return convertToFileName(ext.str());
     }
 
-    bool ApprovalTestNamer::isForbidden(char c)
-    {
-        static std::string forbiddenChars("\\/:?\"<>|' ");
-        return std::string::npos != forbiddenChars.find(c);
-    }
-
     std::string ApprovalTestNamer::convertToFileName(const std::string& fileName)
     {
         return FileNameSanitizerFactory::currentSanitizer(fileName);
