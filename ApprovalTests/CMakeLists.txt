@@ -50,6 +50,8 @@ add_library(${PROJECT_NAME}
         namers/DefaultNamerFactory.cpp
         namers/ExistingFileNamer.h
         namers/ExistingFileNamer.cpp
+        namers/FileNameSanitizerDisposer.h
+        namers/FileNameSanitizerDisposer.cpp
         namers/HelpMessages.h
         namers/HelpMessages.cpp
         namers/NamerFactory.h

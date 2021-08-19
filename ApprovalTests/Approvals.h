@@ -4,6 +4,7 @@
 #include <exception>
 #include <utility>
 
+#include "ApprovalTests/namers/FileNameSanitizerDisposer.h"
 #include "ApprovalTests/reporters/FrontLoadedReporterDisposer.h"
 #include "ApprovalTests/core/FileApprover.h"
 #include "ApprovalTests/integrations/fmt/FmtToString.h"
@@ -236,6 +237,11 @@ namespace ApprovalTests
         static DefaultNamerDisposer useAsDefaultNamer(NamerCreator namerCreator)
         {
             return DefaultNamerDisposer(std::move(namerCreator));
+        }
+
+        static FileNameSanitizerDisposer useFileNameSanitizer(FileNameSanitizer sanitizer)
+        {
+            return FileNameSanitizerDisposer(sanitizer);
         }
         ///@}
     };

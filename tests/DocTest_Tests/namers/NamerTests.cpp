@@ -111,6 +111,20 @@ TEST_CASE("Find from parent")
     CHECK(TestName::directoryPrefix != junkDir);
 }
 
+TEST_CASE("Sanitizer <3 fileNames")
+{
+    {
+        auto useFileNameSanitizer_disposer = Approvals::useFileNameSanitizer(
+            [](std::string incoming) { return StringUtils::replaceAll(incoming," <3 ", "_loves_");});
+        auto namer = Approvals::getDefaultNamer();
+        CHECK(StringUtils::endsWith(namer->getApprovedFile(".txt"), "Sanitizer_loves_fileNames.approved.txt"));
+    }
+    {
+        auto namer = Approvals::getDefaultNamer();
+        CHECK(StringUtils::endsWith(namer->getApprovedFile(".txt"), "Sanitizer__3_fileNames.approved.txt"));
+    }
+}
+
 TEST_CASE("Check non-existent file reports misconfigured build")
 {
 

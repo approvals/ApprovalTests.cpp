@@ -1,5 +1,6 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/namers/HelpMessages.h"
+#include "ApprovalTests/namers/FileNameSanitizerDisposer.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 
@@ -138,19 +139,7 @@ namespace ApprovalTests
 
     std::string ApprovalTestNamer::convertToFileName(const std::string& fileName)
     {
-        std::stringstream result;
-        for (auto ch : fileName)
-        {
-            if (!isForbidden(ch))
-            {
-                result << ch;
-            }
-            else
-            {
-                result << "_";
-            }
-        }
-        return result.str();
+        return FileNameSanitizerDisposer::current(fileName);
     }
 
     TestName& ApprovalTestNamer::getCurrentTest()
