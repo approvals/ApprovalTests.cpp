@@ -7,6 +7,7 @@
 
   * [The Purpose of Namers](#the-purpose-of-namers)
   * [The Parts of Namers](#the-parts-of-namers)
+    * [Converting Test Names to Valid FileNames](#converting-test-names-to-valid-filenames)
   * [Registering a Custom Namer](#registering-a-custom-namer)
     * [Locally](#locally)
     * [Globally](#globally)
@@ -44,6 +45,28 @@ The Approval Namer is responsible for creating these two names.
 
 The interface for this
 is [`ApprovalNamer`](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/core/ApprovalNamer.h).
+
+### Converting Test Names to Valid FileNames
+
+Some C++ test frameworks allow test names to contain characters that are not valid in file or directory names on every operating system.
+
+Therefore, by default,  ApprovalTests will convert any non-valid filename character to an `_` (underscore). This can mean `"test <"` and `"test >"` would produce colliding `test__.approved.txt`.
+
+This behavior is customizable, here's an example:
+
+<!-- snippet: useFileNameSanitizer -->
+<a id='snippet-usefilenamesanitizer'></a>
+```cpp
+TEST_CASE("Sanitizer <3 fileNames")
+{
+    {
+        auto disposer =
+            Approvals::useFileNameSanitizer([](std::string incoming) {
+                return StringUtils::replaceAll(incoming, " <3 ", "_loves_");
+            });
+```
+<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L114-L122' title='Snippet source file'>snippet source</a> | <a href='#snippet-usefilenamesanitizer' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 ## Registering a Custom Namer
 

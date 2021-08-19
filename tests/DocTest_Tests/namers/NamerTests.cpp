@@ -111,13 +111,15 @@ TEST_CASE("Find from parent")
     CHECK(TestName::directoryPrefix != junkDir);
 }
 
+// begin-snippet: useFileNameSanitizer
 TEST_CASE("Sanitizer <3 fileNames")
 {
     {
-        auto useFileNameSanitizer_disposer =
+        auto disposer =
             Approvals::useFileNameSanitizer([](std::string incoming) {
                 return StringUtils::replaceAll(incoming, " <3 ", "_loves_");
             });
+        // end-snippet
         auto namer = Approvals::getDefaultNamer();
         CHECK(StringUtils::endsWith(namer->getApprovedFile(".txt"),
                                     "Sanitizer_loves_fileNames.approved.txt"));
