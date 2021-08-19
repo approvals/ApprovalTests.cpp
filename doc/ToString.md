@@ -198,7 +198,7 @@ If, instead, you want to change the default string formatting, so that all calls
 ```h
 #define APPROVAL_TESTS_DEFAULT_STREAM_CONVERTER StringMaker
 ```
-<sup><a href='/ApprovalTests/Approvals.h#L244-L246' title='Snippet source file'>snippet source</a> | <a href='#snippet-customising_to_string_default_converter' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/Approvals.h#L250-L252' title='Snippet source file'>snippet source</a> | <a href='#snippet-customising_to_string_default_converter' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## See also

@@ -7,7 +7,8 @@
 
   * [I have nothing](#i-have-nothing)
   * [I have code but no tests](#i-have-code-but-no-tests)
-  * [I have tests and code and want to add Approval Tests](#i-have-tests-and-code-and-want-to-add-approval-tests)<!-- endToc -->
+  * [I have tests and code and want to add Approval Tests](#i-have-tests-and-code-and-want-to-add-approval-tests)
+    * [Next Steps](#next-steps)<!-- endToc -->
 
 There are three different places you might be starting your setup from.
 
