@@ -1,6 +1,6 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/namers/HelpMessages.h"
-#include "ApprovalTests/namers/FileNameSanitizerDisposer.h"
+#include "ApprovalTests/namers/FileNameSanitizerFactory.h"
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 
@@ -139,7 +139,7 @@ namespace ApprovalTests
 
     std::string ApprovalTestNamer::convertToFileName(const std::string& fileName)
     {
-        return FileNameSanitizerDisposer::current(fileName);
+        return FileNameSanitizerFactory::currentSanitizer(fileName);
     }
 
     TestName& ApprovalTestNamer::getCurrentTest()
