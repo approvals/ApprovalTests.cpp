@@ -114,14 +114,18 @@ TEST_CASE("Find from parent")
 TEST_CASE("Sanitizer <3 fileNames")
 {
     {
-        auto useFileNameSanitizer_disposer = Approvals::useFileNameSanitizer(
-            [](std::string incoming) { return StringUtils::replaceAll(incoming," <3 ", "_loves_");});
+        auto useFileNameSanitizer_disposer =
+            Approvals::useFileNameSanitizer([](std::string incoming) {
+                return StringUtils::replaceAll(incoming, " <3 ", "_loves_");
+            });
         auto namer = Approvals::getDefaultNamer();
-        CHECK(StringUtils::endsWith(namer->getApprovedFile(".txt"), "Sanitizer_loves_fileNames.approved.txt"));
+        CHECK(StringUtils::endsWith(namer->getApprovedFile(".txt"),
+                                    "Sanitizer_loves_fileNames.approved.txt"));
     }
     {
         auto namer = Approvals::getDefaultNamer();
-        CHECK(StringUtils::endsWith(namer->getApprovedFile(".txt"), "Sanitizer__3_fileNames.approved.txt"));
+        CHECK(StringUtils::endsWith(namer->getApprovedFile(".txt"),
+                                    "Sanitizer__3_fileNames.approved.txt"));
     }
 }
 

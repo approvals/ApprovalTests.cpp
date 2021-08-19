@@ -4,8 +4,6 @@
 namespace ApprovalTests
 {
 
-
-
     FileNameSanitizerDisposer::FileNameSanitizerDisposer(FileNameSanitizer sanitizer)
     {
         previous_result = std::move(FileNameSanitizerFactory::currentSanitizer);
