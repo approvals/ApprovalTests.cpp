@@ -80,6 +80,10 @@
 
 ## v.x.y.z
 
+### useFileNameSanitizer
+
+You can now customize how invalid filename characters are converted. See [Converting Test Names to Valid FileNames](/doc/Namers.md#converting-test-names-to-valid-filenames)
+
 ## v.10.10.0
 
 ### Storyboard

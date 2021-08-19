@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * You can now customize how [Test Names are Converted to Valid FileNames](/doc/Namers.md#converting-test-names-to-valid-filenames) (#97)
 * **Bug fixes**
     * None
 * **Other changes**
