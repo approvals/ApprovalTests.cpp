@@ -23,7 +23,8 @@ namespace ApprovalTests
             }
         }
         return result.str();
-    };
+    }
+    
     FileNameSanitizer FileNameSanitizerFactory::currentSanitizer =
         FileNameSanitizerFactory::defaultSanitizer;
 
