@@ -239,6 +239,7 @@ namespace ApprovalTests
             return DefaultNamerDisposer(std::move(namerCreator));
         }
 
+        /// See \userguide{Namers,converting-test-names-to-valid-filenames,Converting Test Names to Valid FileNames}
         static FileNameSanitizerDisposer useFileNameSanitizer(FileNameSanitizer sanitizer)
         {
             return FileNameSanitizerDisposer(sanitizer);
