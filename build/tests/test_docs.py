@@ -15,15 +15,19 @@ class TestDocs(unittest.TestCase):
 
     def test_snippet_samples_compile(self) -> None:
         set_home_directory()
+
+        def filter(source_file):
+            content = read_file(source_file)
+            snippet = "begin-snippet"
+            namespace = "using namespace ApprovalTests;"
+            return snippet in content and namespace in content
+
         all_files = []
         for root, directories, files in os.walk("../tests"):
             for file in files:
-                if file.endswith(".cpp"):
-                    file_text = os.path.join(root, file)
-                    content = read_file(file_text)
-                    if "begin-snippet" in content:
-                        if "using namespace ApprovalTests;" in content:
-                            all_files.append(file_text)
+                source_file = os.path.join(root, file)
+                if file.endswith(".cpp") and filter(source_file):
+                    all_files.append(source_file)
         all_files.sort()
         verify_all("Files that have both snippets and using namespace ApprovalTests", all_files)
 
