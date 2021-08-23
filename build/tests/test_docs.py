@@ -19,7 +19,7 @@ class TestDocs(unittest.TestCase):
         def with_both(filename):
             content = read_file(filename)
             snippet = "begin-snippet"
-            namespace = "using namespace ApprovalTests;"
+            namespace = "\nusing namespace ApprovalTests;"
             return snippet in content and namespace in content
 
         all_files = self.find_all_files(".cpp", with_both)
