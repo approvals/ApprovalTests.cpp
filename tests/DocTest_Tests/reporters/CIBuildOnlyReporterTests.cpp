@@ -2,13 +2,11 @@
 #include "ApprovalTests/reporters/CIBuildOnlyReporterUtils.h"
 #include "ApprovalTests/reporters/QuietReporter.h"
 
-using namespace ApprovalTests;
-
 TEST_CASE("SampleCIReporter")
 {
     // begin-snippet: report_quietly_on_ci
     // main.cpp
-    auto ciReporterDisposer = CIBuildOnlyReporterUtils::useAsFrontLoadedReporter(
-        std::make_shared<QuietReporter>());
+    auto ciReporterDisposer = ApprovalTests::CIBuildOnlyReporterUtils::useAsFrontLoadedReporter(
+        std::make_shared<ApprovalTests::QuietReporter>());
     // end-snippet
 }

@@ -6,10 +6,9 @@
 
 #include <vector>
 
-using namespace ApprovalTests;
-
 std::string scrubProgramFiles(const std::string& output)
 {
+    using namespace ApprovalTests;
     auto scrubbed = output;
     for (const auto& path : DiffInfo::getProgramFileLocations())
     {
@@ -21,6 +20,7 @@ std::string scrubProgramFiles(const std::string& output)
 
 TEST_CASE("Test Command Lines")
 {
+    using namespace ApprovalTests;
     std::stringstream stream;
     std::vector<std::shared_ptr<GenericDiffReporter>> reporters = {
         // begin-snippet: add_reporter_command_test

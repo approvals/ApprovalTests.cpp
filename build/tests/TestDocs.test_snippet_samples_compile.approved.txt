@@ -19,12 +19,4 @@ Files that have both snippets and using namespace ApprovalTests
 16) ../tests/DocTest_Tests/main.cpp
 17) ../tests/DocTest_Tests/namers/NamerTests.cpp
 18) ../tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp
-19) ../tests/DocTest_Tests/reporters/CIBuildOnlyReporterTests.cpp
-20) ../tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp
-21) ../tests/DocTest_Tests/reporters/CustomReporterTests.cpp
-22) ../tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp
-23) ../tests/DocTest_Tests/scrubbers/ScrubberTests.cpp
-24) ../tests/DocTest_Tests/utilities/DateUtilsTests.cpp
-25) ../tests/DocTest_Tests/utilities/ExceptionCollectorTests.cpp
-26) ../tests/GoogleTest_Tests/namers/GoogleFixtureNamerCustomizationTests.cpp
-27) ../tests/UT_Tests/UTApprovalTestTests.cpp
+19) ../tests/UT_Tests/UTApprovalTestTests.cpp
