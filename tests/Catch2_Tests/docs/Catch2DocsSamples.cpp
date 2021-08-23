@@ -2,6 +2,8 @@
 #include "ApprovalTests/Approvals.h"
 #include <vector>
 
+using namespace ApprovalTests;
+
 enum Nationality
 {
     British,
@@ -69,7 +71,7 @@ TEST_CASE("MultipleOutputFiles-DataDriven")
     {
         SECTION(greeting.getNationality())
         {
-            ApprovalTests::Approvals::verify(greeting.getGreeting());
+            Approvals::verify(greeting.getGreeting());
         }
     }
 }
@@ -81,15 +83,15 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     Greeting object_under_test;
     SECTION("British")
     {
-        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(British));
+        Approvals::verify(object_under_test.getGreetingFor(British));
     }
     SECTION("American")
     {
-        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(American));
+        Approvals::verify(object_under_test.getGreetingFor(American));
     }
     SECTION("French")
     {
-        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(French));
+        Approvals::verify(object_under_test.getGreetingFor(French));
     }
 }
 // end-snippet
