@@ -17,11 +17,11 @@ For example:
 <a id='snippet-date_and_time'></a>
 ```cpp
 std::chrono::system_clock::time_point dateTime =
-    DateUtils::createUtcDateTime(2000, 1, 13, 3, 34, 45);
+    ApprovalTests::DateUtils::createUtcDateTime(2000, 1, 13, 3, 34, 45);
 
-std::string dateTimeString = DateUtils::toString(dateTime);
+std::string dateTimeString = ApprovalTests::DateUtils::toString(dateTime);
 ```
-<sup><a href='/tests/DocTest_Tests/utilities/DateUtilsTests.cpp#L9-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-date_and_time' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/utilities/DateUtilsTests.cpp#L7-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-date_and_time' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 will produce:

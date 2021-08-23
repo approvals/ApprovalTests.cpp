@@ -24,13 +24,14 @@ This page assumes that you understand the concept of [Scrubbers](/doc/explanatio
 <!-- snippet: scrubbing_via_lambda -->
 <a id='snippet-scrubbing_via_lambda'></a>
 ```cpp
+using namespace ApprovalTests;
 Approvals::verify(
     "1 2 3 4 5 6",
     Options().withScrubber(
         [](const std::string& t) {return StringUtils::replaceAll(t, "3", "Fizz");}
     ));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L78-L84' title='Snippet source file'>snippet source</a> | <a href='#snippet-scrubbing_via_lambda' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L79-L86' title='Snippet source file'>snippet source</a> | <a href='#snippet-scrubbing_via_lambda' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This would produce:
@@ -60,12 +61,13 @@ For example, here is an example where random numbers are scrubbed:
 <!-- snippet: simple_regex_scrubbing -->
 <a id='snippet-simple_regex_scrubbing'></a>
 ```cpp
+using namespace ApprovalTests;
 std::stringstream os;
 os << "Hello " << random(1000) << " World";
 Approvals::verify(os.str(),
                   Options(Scrubbers::createRegexScrubber(R"(\d+)", "[number]")));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L49-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L48-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple_regex_scrubbing' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This will produce:
@@ -92,7 +94,7 @@ need, the most complex being:
 ```cpp
 auto input = "1) Hello 1234 World";
 auto scrubber =
-    Scrubbers::createRegexScrubber(std::regex(R"(\d+)"), [](const auto& match) {
+    ApprovalTests::Scrubbers::createRegexScrubber(std::regex(R"(\d+)"), [](const auto& match) {
         auto match_text = match.str();
         auto match_integer = std::stoi(match_text);
         if (match_integer < 10)
@@ -105,7 +107,7 @@ auto scrubber =
         }
     });
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L21-L36' title='Snippet source file'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L19-L34' title='Snippet source file'>snippet source</a> | <a href='#snippet-complex_regex_scrubbing' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This will produce:
@@ -135,6 +137,7 @@ For example the following code:
 <!-- snippet: guid_scrubbing -->
 <a id='snippet-guid_scrubbing'></a>
 ```cpp
+using namespace ApprovalTests;
 std::string jsonFromRestCall = R"(
     {
         child: {
@@ -154,7 +157,7 @@ std::string jsonFromRestCall = R"(
     )";
 Approvals::verify(jsonFromRestCall, Options().withScrubber(Scrubbers::scrubGuid));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L33-L52' title='Snippet source file'>snippet source</a> | <a href='#snippet-guid_scrubbing' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L31-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-guid_scrubbing' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 will produce:

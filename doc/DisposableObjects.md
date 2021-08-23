@@ -11,9 +11,9 @@ All of our disposable objects take advantage of the C++17 language feature `[[no
 <!-- snippet: disposable_incorrect -->
 <a id='snippet-disposable_incorrect'></a>
 ```cpp
-Approvals::useApprovalsSubdirectory("directory");
+ApprovalTests::Approvals::useApprovalsSubdirectory("directory");
 ```
-<sup><a href='/tests/DocTest_Tests/docs/DisposableSamples.cpp#L12-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-disposable_incorrect' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DisposableSamples.cpp#L11-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-disposable_incorrect' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 If you are on C++14 or below, the compiler will not detect this, but the code is still incorrect.
@@ -23,9 +23,9 @@ The code should look like this:
 <!-- snippet: disposable_correct -->
 <a id='snippet-disposable_correct'></a>
 ```cpp
-auto disposer = Approvals::useApprovalsSubdirectory("directory");
+auto disposer = ApprovalTests::Approvals::useApprovalsSubdirectory("directory");
 ```
-<sup><a href='/tests/DocTest_Tests/docs/DisposableSamples.cpp#L7-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-disposable_correct' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DisposableSamples.cpp#L6-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-disposable_correct' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---

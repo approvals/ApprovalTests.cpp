@@ -73,9 +73,10 @@ There are two ways to set a Scrubber.
 <!-- snippet: basic_approval_with_scrubber -->
 <a id='snippet-basic_approval_with_scrubber'></a>
 ```cpp
+using namespace ApprovalTests;
 Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L60-L62' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L59-L62' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Call `.withScrubber()` with a function pointer, for example:
@@ -83,9 +84,10 @@ Approvals::verifyAll("IDs", v, Options(Scrubbers::scrubGuid));
 <!-- snippet: basic_approval_with_scrubber_2 -->
 <a id='snippet-basic_approval_with_scrubber_2'></a>
 ```cpp
+using namespace ApprovalTests;
 Approvals::verifyAll("IDs", v, Options().withScrubber(Scrubbers::scrubGuid));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L70-L72' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber_2' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/GuidScrubberTests.cpp#L70-L73' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_scrubber_2' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## File Options

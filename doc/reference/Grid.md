@@ -32,10 +32,10 @@ For example:
 <!-- snippet: grid_lambda -->
 <a id='snippet-grid_lambda'></a>
 ```cpp
-auto grid = Grid::print(
+auto grid = ApprovalTests::Grid::print(
     4, 3, [](int x, int y, auto& os) { os << "(" << x << "," << y << ") "; });
 ```
-<sup><a href='/tests/DocTest_Tests/utilities/GridTests.cpp#L23-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-grid_lambda' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/utilities/GridTests.cpp#L21-L24' title='Snippet source file'>snippet source</a> | <a href='#snippet-grid_lambda' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 which produces:
@@ -60,9 +60,9 @@ When developing with [Fake it till you make it](/doc/Glossary.md#fake-it-till-yo
 <!-- snippet: grid_simple -->
 <a id='snippet-grid_simple'></a>
 ```cpp
-auto grid = Grid::print(4, 2, ".");
+auto grid = ApprovalTests::Grid::print(4, 2, ".");
 ```
-<sup><a href='/tests/DocTest_Tests/utilities/GridTests.cpp#L15-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-grid_simple' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/utilities/GridTests.cpp#L13-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-grid_simple' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 which produces:

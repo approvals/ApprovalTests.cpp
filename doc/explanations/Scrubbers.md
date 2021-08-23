@@ -29,9 +29,9 @@ Scrubber as an option.
 <!-- snippet: scrubber_in_options_object -->
 <a id='snippet-scrubber_in_options_object'></a>
 ```cpp
-Approvals::verify(input, Options().withScrubber(scrubber));
+ApprovalTests::Approvals::verify(input, ApprovalTests::Options().withScrubber(scrubber));
 ```
-<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L76-L78' title='Snippet source file'>snippet source</a> | <a href='#snippet-scrubber_in_options_object' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/scrubbers/ScrubberTests.cpp#L77-L79' title='Snippet source file'>snippet source</a> | <a href='#snippet-scrubber_in_options_object' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Scrubber concepts

@@ -60,12 +60,11 @@ This behavior is customizable, here's an example:
 TEST_CASE("Sanitizer <3 fileNames")
 {
     {
-        auto disposer =
-            Approvals::useFileNameSanitizer([](std::string incoming) {
-                return StringUtils::replaceAll(incoming, " <3 ", "_loves_");
-            });
+        auto disposer = Approvals::useFileNameSanitizer([](std::string incoming) {
+            return StringUtils::replaceAll(incoming, " <3 ", "_loves_");
+        });
 ```
-<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L114-L122' title='Snippet source file'>snippet source</a> | <a href='#snippet-usefilenamesanitizer' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/NamerTests.cpp#L114-L121' title='Snippet source file'>snippet source</a> | <a href='#snippet-usefilenamesanitizer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Registering a Custom Namer

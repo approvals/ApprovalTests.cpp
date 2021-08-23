@@ -6,6 +6,7 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [useFileNameSanitizer](#usefilenamesanitizer)
   * [v.10.10.0](#v10100)
     * [Storyboard](#storyboard)
     * [Grid](#grid)
@@ -372,16 +373,16 @@ Sometimes you will want tests to only run on certain machines. Machine blockers 
 ```cpp
 TEST_CASE("Only run this test on John's machine")
 {
-    auto blocker = MachineBlocker::onMachinesNotNamed("JOHNS_MACHINE");
+    auto blocker = ApprovalTests::MachineBlocker::onMachinesNotNamed("JOHNS_MACHINE");
     if (blocker.isBlockingOnThisMachine())
     {
         return;
     }
     // Write tests here that depend on John's environment.
-    REQUIRE(SystemUtils::getMachineName() == "JOHNS_MACHINE");
+    REQUIRE(ApprovalTests::SystemUtils::getMachineName() == "JOHNS_MACHINE");
 }
 ```
-<sup><a href='/tests/DocTest_Tests/utilities/MachineBlockerTests.cpp#L22-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-machine_specific_test_runner' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/utilities/MachineBlockerTests.cpp#L20-L31' title='Snippet source file'>snippet source</a> | <a href='#snippet-machine_specific_test_runner' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Front Loaded Reporters

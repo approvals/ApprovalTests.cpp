@@ -86,12 +86,12 @@ TEST_CASE("MultipleOutputFiles-DataDriven")
     {
         SECTION(greeting.getNationality())
         {
-            Approvals::verify(greeting.getGreeting());
+            ApprovalTests::Approvals::verify(greeting.getGreeting());
         }
     }
 }
 ```
-<sup><a href='/tests/Catch2_Tests/docs/Catch2DocsSamples.cpp#L61-L78' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_dynamic' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/docs/Catch2DocsSamples.cpp#L59-L76' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_dynamic' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Or hard-coded, with multiple sections:
@@ -104,19 +104,19 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     Greeting object_under_test;
     SECTION("British")
     {
-        Approvals::verify(object_under_test.getGreetingFor(British));
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(British));
     }
     SECTION("American")
     {
-        Approvals::verify(object_under_test.getGreetingFor(American));
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(American));
     }
     SECTION("French")
     {
-        Approvals::verify(object_under_test.getGreetingFor(French));
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(French));
     }
 }
 ```
-<sup><a href='/tests/Catch2_Tests/docs/Catch2DocsSamples.cpp#L80-L97' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_hard_coded' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/docs/Catch2DocsSamples.cpp#L78-L95' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_hard_coded' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Note: Catch2 sub-sections continue to run even if the previous one failed. This is useful, as it allows you to approve all the files in one test run.

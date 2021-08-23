@@ -28,9 +28,9 @@ You can do this simply by creating a Reporter using:
 ```cpp
 auto path = "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
 auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
-auto reporter = CustomReporter::create(path, arguments);
+auto reporter = ApprovalTests::CustomReporter::create(path, arguments);
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L9-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_reporter' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L8-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_reporter' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 By default, this will run in the background. Most of the time this is what you want.
@@ -40,7 +40,7 @@ However, you can force it to run in the foreground with:
 <!-- snippet: use_custom_foreground_reporter -->
 <a id='snippet-use_custom_foreground_reporter'></a>
 ```cpp
-auto reporter = CustomReporter::createForegroundReporter(path, arguments);
+auto reporter = ApprovalTests::CustomReporter::createForegroundReporter(path, arguments);
 ```
 <sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L39-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_foreground_reporter' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -51,9 +51,9 @@ On Windows, you can specify a search path for the installed location of a progra
 <a id='snippet-use_custom_windows_reporter'></a>
 ```cpp
 auto path = "{ProgramFiles}Beyond Compare 4\\BCompare.exe";
-auto reporter = CustomReporter::create(path);
+auto reporter = ApprovalTests::CustomReporter::create(path);
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L22-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_windows_reporter' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L21-L24' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_windows_reporter' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 See [Registering a default reporter](/doc/Reporters.md#registering-a-default-reporter) for wiring up this reporter as default, or you can dereference it and pass it in to individual `verify("text", *reporter)` method calls...
