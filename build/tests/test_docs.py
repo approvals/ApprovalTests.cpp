@@ -1,5 +1,6 @@
 import os
 import unittest
+from typing import Callable, List
 
 from approvaltests import verify_all
 from approvaltests.approvals import verify
@@ -16,7 +17,7 @@ class TestDocs(unittest.TestCase):
     def test_snippet_samples_compile(self) -> None:
         set_home_directory()
 
-        def with_both(filename):
+        def with_both(filename: str) -> bool:
             content = read_file(filename)
             snippet = "begin-snippet"
             namespace = "\nusing namespace ApprovalTests;"
@@ -25,7 +26,7 @@ class TestDocs(unittest.TestCase):
         all_files = self.find_all_files(".cpp", with_both)
         verify_all("Files that have both snippets and using namespace ApprovalTests", all_files)
 
-    def find_all_files(self, suffix, with_filter):
+    def find_all_files(self, suffix: str, with_filter: Callable) -> List[str]:
         all_files = []
         for root, directories, files in os.walk("../tests"):
             for file in files:
