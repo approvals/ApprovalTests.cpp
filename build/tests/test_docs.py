@@ -22,14 +22,18 @@ class TestDocs(unittest.TestCase):
             namespace = "using namespace ApprovalTests;"
             return snippet in content and namespace in content
 
+        all_files = self.find_all_files(".cpp", with_both)
+        verify_all("Files that have both snippets and using namespace ApprovalTests", all_files)
+
+    def find_all_files(self, suffix, with_filter):
         all_files = []
         for root, directories, files in os.walk("../tests"):
             for file in files:
                 source_file = os.path.join(root, file)
-                if file.endswith(".cpp") and with_both(source_file):
+                if file.endswith(suffix) and with_filter(source_file):
                     all_files.append(source_file)
         all_files.sort()
-        verify_all("Files that have both snippets and using namespace ApprovalTests", all_files)
+        return all_files
 
 
 if __name__ == '__main__':
