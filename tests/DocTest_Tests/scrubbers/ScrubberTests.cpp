@@ -18,8 +18,8 @@ TEST_CASE("createRegexScrubber")
 {
     // begin-snippet: complex_regex_scrubbing
     auto input = "1) Hello 1234 World";
-    auto scrubber =
-        ApprovalTests::Scrubbers::createRegexScrubber(std::regex(R"(\d+)"), [](const auto& match) {
+    auto scrubber = ApprovalTests::Scrubbers::createRegexScrubber(
+        std::regex(R"(\d+)"), [](const auto& match) {
             auto match_text = match.str();
             auto match_integer = std::stoi(match_text);
             if (match_integer < 10)
@@ -75,7 +75,8 @@ TEST_CASE("regex scrubber with full customisation")
             });
     };
     // begin-snippet: scrubber_in_options_object
-    ApprovalTests::Approvals::verify(input, ApprovalTests::Options().withScrubber(scrubber));
+    ApprovalTests::Approvals::verify(input,
+                                     ApprovalTests::Options().withScrubber(scrubber));
     // end-snippet
 }
 
