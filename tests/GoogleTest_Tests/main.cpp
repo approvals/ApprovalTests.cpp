@@ -5,4 +5,5 @@
 #include "ApprovalTests.hpp"
 // end-snippet
 
-auto directoryDisposer = ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");
+auto directoryDisposer =
+    ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");

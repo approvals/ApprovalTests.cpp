@@ -3,7 +3,6 @@
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 
-
 TEST_CASE("ExceptionCollector")
 {
     using namespace ApprovalTests;
