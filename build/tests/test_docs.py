@@ -16,8 +16,8 @@ class TestDocs(unittest.TestCase):
     def test_snippet_samples_compile(self) -> None:
         set_home_directory()
 
-        def filter(source_file):
-            content = read_file(source_file)
+        def with_both(filename):
+            content = read_file(filename)
             snippet = "begin-snippet"
             namespace = "using namespace ApprovalTests;"
             return snippet in content and namespace in content
@@ -26,7 +26,7 @@ class TestDocs(unittest.TestCase):
         for root, directories, files in os.walk("../tests"):
             for file in files:
                 source_file = os.path.join(root, file)
-                if file.endswith(".cpp") and filter(source_file):
+                if file.endswith(".cpp") and with_both(source_file):
                     all_files.append(source_file)
         all_files.sort()
         verify_all("Files that have both snippets and using namespace ApprovalTests", all_files)
