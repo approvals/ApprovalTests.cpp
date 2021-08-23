@@ -30,4 +30,9 @@ digraph mdsnippets_flow {
     /* 3.1 */
     "conan-center-index": e -> "config.yml": w;
     "conan-center-index": e -> "conandata.yml": w;
+    "Release": e -> "vcpkg": w;
+    /* 4.1 */
+    "vcpkg": e -> "portfile.cmake": w;
+    "vcpkg": e -> "vcpkg.json": w;
+    "vcpkg": e -> "versions/ files": w;
 }
