@@ -5,10 +5,10 @@
 
 #include "tests/DocTest_Tests/reporters/FakeReporter.h"
 
+using namespace ApprovalTests;
 int main()
 {
     using namespace boost::ut;
-    using namespace ApprovalTests;
 
     auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
 

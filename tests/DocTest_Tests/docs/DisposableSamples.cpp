@@ -3,13 +3,12 @@
 
 TEST_CASE("DisposableSample")
 {
-    using namespace ApprovalTests;
     // begin-snippet: disposable_correct
-    auto disposer = Approvals::useApprovalsSubdirectory("directory");
+    auto disposer = ApprovalTests::Approvals::useApprovalsSubdirectory("directory");
     // end-snippet
 
     auto disposer2 =
         // begin-snippet: disposable_incorrect
-        Approvals::useApprovalsSubdirectory("directory");
+        ApprovalTests::Approvals::useApprovalsSubdirectory("directory");
     // end-snippet
 }

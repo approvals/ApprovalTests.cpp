@@ -5,6 +5,4 @@
 #include "ApprovalTests.hpp"
 // end-snippet
 
-using namespace ApprovalTests;
-
-auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
+auto directoryDisposer = ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");
