@@ -2,7 +2,6 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/reporters/CustomReporter.h"
 
-
 TEST_CASE("Creating Custom Reporters")
 {
     // begin-snippet: use_custom_reporter
@@ -13,7 +12,8 @@ TEST_CASE("Creating Custom Reporters")
 
     reporter->useCygwinConversions(false);
     reporter->launcher.invokeForWindows(false);
-    ApprovalTests::Approvals::verify(reporter->getCommandLine("test.received.txt", "test.approved.txt"));
+    ApprovalTests::Approvals::verify(
+        reporter->getCommandLine("test.received.txt", "test.approved.txt"));
 }
 
 TEST_CASE("Demo Windows")
@@ -37,7 +37,8 @@ TEST_CASE("Test foreground reporter")
     const auto path = "echo";
     const auto arguments = ApprovalTests::DiffInfo::getDefaultArguments();
     // begin-snippet: use_custom_foreground_reporter
-    auto reporter = ApprovalTests::CustomReporter::createForegroundReporter(path, arguments);
+    auto reporter =
+        ApprovalTests::CustomReporter::createForegroundReporter(path, arguments);
     // end-snippet
     REQUIRE(reporter->launcher.isForeground());
 
