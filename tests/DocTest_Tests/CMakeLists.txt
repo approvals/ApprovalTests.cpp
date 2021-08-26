@@ -31,6 +31,7 @@ add_executable(${PROJECT_NAME}
         namers/TemplatedCustomNamerExamples.cpp
         namers/TemplatedCustomNamerTests.cpp
         namers/DocTestNamerTests.cpp
+        namers/NamerExamples.cpp
         namers/NamerTests.cpp
         reporters/BlockingReporterTests.cpp
         reporters/CIBuildOnlyReporterTests.cpp
