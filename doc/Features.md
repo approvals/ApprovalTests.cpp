@@ -162,7 +162,7 @@ For example:
 ```cpp
 ApprovalTests::Approvals::verifyAll({10, 20, 30});
 ```
-<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L56-L58' title='Snippet source file'>snippet source</a> | <a href='#snippet-initializer_list' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L57-L59' title='Snippet source file'>snippet source</a> | <a href='#snippet-initializer_list' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## v.10.2.0

@@ -112,10 +112,11 @@ This is an example what the new code would look like:
 <!-- snippet: use_custom_file_extension -->
 <a id='snippet-use_custom_file_extension'></a>
 ```cpp
-ApprovalTests::Approvals::verify("<h1>hello world</h1>",
-                  ApprovalTests::Options().fileOptions().withFileExtension(".html"));
+ApprovalTests::Approvals::verify(
+    "<h1>hello world</h1>",
+    ApprovalTests::Options().fileOptions().withFileExtension(".html"));
 ```
-<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L17-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L17-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---
