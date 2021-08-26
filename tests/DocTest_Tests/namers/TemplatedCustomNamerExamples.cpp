@@ -5,8 +5,9 @@
 TEST_CASE("Test StringTemplates")
 {
     // begin-snippet: templated_custom_namer_example
-    ApprovalTests::TemplatedCustomNamer namer("/my/source/directory/{ApprovedOrReceived}/"
-                               "{TestFileName}.{TestCaseName}.{FileExtension}");
+    ApprovalTests::TemplatedCustomNamer namer(
+        "/my/source/directory/{ApprovedOrReceived}/"
+        "{TestFileName}.{TestCaseName}.{FileExtension}");
     // end-snippet
 
     CHECK(namer.getApprovedFileAsPath(".txt").toString("/") ==

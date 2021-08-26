@@ -2,7 +2,6 @@
 #include <vector>
 #include "ApprovalTests/CombinationApprovals.h"
 
-
 namespace
 {
     double functionThatReturnsSomethingOutputStreamable(const std::string& /*input1*/,

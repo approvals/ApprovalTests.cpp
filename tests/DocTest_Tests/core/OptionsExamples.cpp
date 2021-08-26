@@ -2,7 +2,6 @@
 #include "ApprovalTests/core/Options.h"
 #include "ApprovalTests/Approvals.h"
 
-
 TEST_CASE("Options - FileExtension Example")
 {
     // begin-snippet: basic_approval_with_file_extension

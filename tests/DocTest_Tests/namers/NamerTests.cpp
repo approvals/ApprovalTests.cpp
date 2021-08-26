@@ -57,7 +57,6 @@ TEST_CASE("Find from parent")
     CHECK(TestName::directoryPrefix != junkDir);
 }
 
-
 TEST_CASE("Check non-existent file reports misconfigured build")
 {
 
