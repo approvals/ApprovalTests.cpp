@@ -114,9 +114,3 @@ TEST_CASE("VerifyingException")
     Approvals::verifyExceptionMessage(throws, Options());
 }
 
-TEST_CASE("VerifyingNoException")
-{
-    // begin-snippet: verify_exception_message_example
-    Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
-    // end-snippet
-}

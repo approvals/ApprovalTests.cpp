@@ -3,14 +3,13 @@
 #include <string>
 #include "ApprovalTests/CombinationApprovals.h"
 
-using namespace ApprovalTests;
 
 // begin-snippet: YouCanVerifyCombinationsOf2
 TEST_CASE("YouCanVerifyCombinationsOf2")
 {
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
-    CombinationApprovals::verifyAllCombinations(
+    ApprovalTests::CombinationApprovals::verifyAllCombinations(
         [](std::string s, int i) {
             return std::string("(") + s + ", " + std::to_string(i) + ")";
         },
@@ -24,7 +23,7 @@ TEST_CASE("CombinationsStartingPoint")
 {
     std::vector<std::string> inputs1{"input1.value1", "input1.value2"};
     std::vector<std::string> inputs2{"input2.value1", "input2.value2", "input2.value3"};
-    CombinationApprovals::verifyAllCombinations(
+    ApprovalTests::CombinationApprovals::verifyAllCombinations(
         "TITLE",
         [&](auto /*input1*/, auto /*input2*/) { return "placeholder"; },
         inputs1,
