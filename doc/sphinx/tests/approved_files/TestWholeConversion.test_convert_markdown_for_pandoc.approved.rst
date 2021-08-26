@@ -136,10 +136,10 @@ Test code snippet - linking to lines in a file
 
 .. code:: cpp
 
-   Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
+   ApprovalTests::Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
 
 (See `snippet
-source <https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/ApprovalsTests.cpp#L119-L121>`__)
+source <https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/ApprovalsExamples.cpp#L6-L8>`__)
 
 Test code snippet - linking to a whole file
 -------------------------------------------
