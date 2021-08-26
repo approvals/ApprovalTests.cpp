@@ -134,6 +134,8 @@ You can have hard-coded, with multiple sections:
 ```cpp
 TEST_CASE("MultipleOutputFiles-ForOneObject")
 {
+    using namespace ApprovalTests;
+
     Greeting object_under_test;
     SUBCASE("British")
     {
@@ -149,7 +151,7 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L64-L81' title='Snippet source file'>snippet source</a> | <a href='#snippet-doctest_multiple_output_files_hard_coded' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L62-L81' title='Snippet source file'>snippet source</a> | <a href='#snippet-doctest_multiple_output_files_hard_coded' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Approval Tests
@@ -163,6 +165,8 @@ You can either do these dynamically, e.g. in a for-loop:
 ```cpp
 TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
 {
+    using namespace ApprovalTests;
+
     // This is an example of how to write multiple different files in a single test.
     // Note: For data as small as this, in practice we would recommend passing the
     // greetings container in to Approvals::verifyAll(), with a lambda to format the output,
@@ -176,7 +180,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
     }
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L83-L98' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_dynamic' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L83-L100' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_dynamic' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Or hard-coded, with multiple sections:
@@ -186,6 +190,8 @@ Or hard-coded, with multiple sections:
 ```cpp
 TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
 {
+    using namespace ApprovalTests;
+
     Greeting object_under_test;
     {
         auto section = NamerFactory::appendToOutputFilename("British");
@@ -201,7 +207,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
     }
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L100-L117' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_hard_coded' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L102-L121' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_hard_coded' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Approving multiple files in one test
@@ -239,7 +245,7 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-AutoApprove")
     exceptions.release();
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L119-L139' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/DocTestDocsSamples.cpp#L123-L143' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_multiple_output_files_auto_approving' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---

@@ -160,9 +160,9 @@ For example:
 <!-- snippet: initializer_list -->
 <a id='snippet-initializer_list'></a>
 ```cpp
-Approvals::verifyAll({10, 20, 30});
+ApprovalTests::Approvals::verifyAll({10, 20, 30});
 ```
-<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L58-L60' title='Snippet source file'>snippet source</a> | <a href='#snippet-initializer_list' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L56-L58' title='Snippet source file'>snippet source</a> | <a href='#snippet-initializer_list' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## v.10.2.0

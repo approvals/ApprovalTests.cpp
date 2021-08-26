@@ -93,8 +93,8 @@ need, the most complex being:
 <a id='snippet-complex_regex_scrubbing'></a>
 ```cpp
 auto input = "1) Hello 1234 World";
-auto scrubber =
-    ApprovalTests::Scrubbers::createRegexScrubber(std::regex(R"(\d+)"), [](const auto& match) {
+auto scrubber = ApprovalTests::Scrubbers::createRegexScrubber(
+    std::regex(R"(\d+)"), [](const auto& match) {
         auto match_text = match.str();
         auto match_integer = std::stoi(match_text);
         if (match_integer < 10)

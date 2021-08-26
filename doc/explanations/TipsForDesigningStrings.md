@@ -52,9 +52,9 @@ Here's an example of verifing a list of rectangles
 <!-- snippet: verify_list -->
 <a id='snippet-verify_list'></a>
 ```cpp
-Approvals::verifyAll("rectangles", getRectangles());
+ApprovalTests::Approvals::verifyAll("rectangles", getRectangles());
 ```
-<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L32-L34' title='Snippet source file'>snippet source</a> | <a href='#snippet-verify_list' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L30-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-verify_list' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Notice how this:

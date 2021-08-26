@@ -4,8 +4,6 @@
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/CombinationApprovals.h"
 
-using namespace ApprovalTests;
-
 //----------------------------------------------------------------------------------------
 // operator<<(std::ostream&)
 struct OStreamPrintable
@@ -25,7 +23,7 @@ TEST_CASE("Test toString from ostream operator")
 {
     // This tests verifying an object with its own operator<<
     OStreamPrintable p;
-    Approvals::verify(p);
+    ApprovalTests::Approvals::verify(p);
 }
 
 //----------------------------------------------------------------------------------------
@@ -59,7 +57,7 @@ TEST_CASE("Test toString from StringMaker")
 {
     // This tests verifying an object that has a matching ApprovalTests::StringMaker::toString
     StringMakerPrintable p;
-    Approvals::verify(p);
+    ApprovalTests::Approvals::verify(p);
 }
 
 TEST_CASE("Test Combinations inputs from StringMaker")

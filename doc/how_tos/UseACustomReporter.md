@@ -30,7 +30,7 @@ auto path = "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge";
 auto arguments = "mergetool --no-wait {Received} {Approved} -o {Approved}";
 auto reporter = ApprovalTests::CustomReporter::create(path, arguments);
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L8-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_reporter' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L7-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_reporter' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 By default, this will run in the background. Most of the time this is what you want.
@@ -40,9 +40,10 @@ However, you can force it to run in the foreground with:
 <!-- snippet: use_custom_foreground_reporter -->
 <a id='snippet-use_custom_foreground_reporter'></a>
 ```cpp
-auto reporter = ApprovalTests::CustomReporter::createForegroundReporter(path, arguments);
+auto reporter =
+    ApprovalTests::CustomReporter::createForegroundReporter(path, arguments);
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L39-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_foreground_reporter' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/CustomReporterTests.cpp#L39-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_foreground_reporter' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 On Windows, you can specify a search path for the installed location of a program with `{ProgramFiles}`.

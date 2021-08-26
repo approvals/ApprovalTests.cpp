@@ -97,7 +97,7 @@ which is produced from the following code:
 <a id='snippet-storyboard_complete_example'></a>
 ```cpp
 // Create a Storyboard to track a series of changes
-Storyboard story;
+ApprovalTests::Storyboard story;
 
 // Create object to track
 GameOfLife game = createBlinker();
@@ -128,9 +128,9 @@ for (int i = 0; i < 3; ++i)
 }
 
 // verify storyboard
-Approvals::verify(story);
+ApprovalTests::Approvals::verify(story);
 ```
-<sup><a href='/tests/DocTest_Tests/StoryboardTests.cpp#L63-L97' title='Snippet source file'>snippet source</a> | <a href='#snippet-storyboard_complete_example' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/StoryboardTests.cpp#L61-L95' title='Snippet source file'>snippet source</a> | <a href='#snippet-storyboard_complete_example' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Making Objects 'Storyboard Friendly'
@@ -159,7 +159,7 @@ This means we can write:
 ```cpp
 story.addDescriptionWithData("setting alive", game.setAliveCell("*"));
 ```
-<sup><a href='/tests/DocTest_Tests/StoryboardTests.cpp#L50-L52' title='Snippet source file'>snippet source</a> | <a href='#snippet-storyboard_friendly_report' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/StoryboardTests.cpp#L48-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-storyboard_friendly_report' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 instead of
@@ -170,7 +170,7 @@ std::string newValue = "*";
 game.setAliveCell(newValue);
 story.addDescriptionWithData("setting alive", newValue);
 ```
-<sup><a href='/tests/DocTest_Tests/StoryboardTests.cpp#L54-L58' title='Snippet source file'>snippet source</a> | <a href='#snippet-storyboard_unfriendly_report' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/StoryboardTests.cpp#L52-L56' title='Snippet source file'>snippet source</a> | <a href='#snippet-storyboard_unfriendly_report' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---

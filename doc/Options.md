@@ -30,12 +30,12 @@ Options utilizes a fluent interface, allowing you to chain together commands. Ea
 <!-- snippet: specify_all_the_options -->
 <a id='snippet-specify_all_the_options'></a>
 ```cpp
-Options()
-    .withReporter(QuietReporter())
-    .withScrubber(Scrubbers::scrubGuid)
+ApprovalTests::Options()
+    .withReporter(ApprovalTests::QuietReporter())
+    .withScrubber(ApprovalTests::Scrubbers::scrubGuid)
     .fileOptions().withFileExtension(".json")
 ```
-<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L47-L52' title='Snippet source file'>snippet source</a> | <a href='#snippet-specify_all_the_options' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L49-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-specify_all_the_options' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Reporters
@@ -103,10 +103,12 @@ If you want to change the file extension of both the approved and received files
 <!-- snippet: basic_approval_with_file_extension -->
 <a id='snippet-basic_approval_with_file_extension'></a>
 ```cpp
+using namespace ApprovalTests;
+
 Approvals::verify("text to be verified",
                   Options().fileOptions().withFileExtension(".xyz"));
 ```
-<sup><a href='/tests/DocTest_Tests/core/OptionsTests.cpp#L76-L79' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_file_extension' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/core/OptionsExamples.cpp#L8-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_file_extension' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 **Note:** `withFileExtension()` returns an `Options` object, so it's possible to keep appending more `with...()` calls.  

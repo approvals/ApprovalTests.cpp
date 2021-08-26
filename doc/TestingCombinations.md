@@ -35,7 +35,7 @@ TEST_CASE("CombinationsStartingPoint")
         inputs2);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L56-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L22-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Modify each input container for your chosen values.
@@ -45,8 +45,8 @@ TEST_CASE("CombinationsStartingPoint")
 If they are wired up correctly, you will see a file that looks like this: it is the left hand side of the file that
 matters at this point: all combinations of your own input values should be listed:
 
-<!-- snippet: CombinationTests.CombinationsStartingPoint.approved.txt -->
-<a id='snippet-CombinationTests.CombinationsStartingPoint.approved.txt'></a>
+<!-- snippet: CombinationExamples.CombinationsStartingPoint.approved.txt -->
+<a id='snippet-CombinationExamples.CombinationsStartingPoint.approved.txt'></a>
 ```txt
 TITLE
 
@@ -59,7 +59,7 @@ TITLE
 (input1.value2, input2.value3) => placeholder
 
 ```
-<sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.CombinationsStartingPoint.approved.txt#L1-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-CombinationTests.CombinationsStartingPoint.approved.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/approval_tests/CombinationExamples.CombinationsStartingPoint.approved.txt#L1-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-CombinationExamples.CombinationsStartingPoint.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 5. Implement the body of your lambda
@@ -90,13 +90,13 @@ TEST_CASE("YouCanVerifyCombinationsOf2")
         numbers);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationTests.cpp#L42-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L8-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
 
-<!-- snippet: CombinationTests.YouCanVerifyCombinationsOf2.approved.txt -->
-<a id='snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt'></a>
+<!-- snippet: CombinationExamples.YouCanVerifyCombinationsOf2.approved.txt -->
+<a id='snippet-CombinationExamples.YouCanVerifyCombinationsOf2.approved.txt'></a>
 ```txt
 (hello, 1) => (hello, 1)
 (hello, 2) => (hello, 2)
@@ -106,7 +106,7 @@ The format is carefully chosen to show both inputs and outputs, to make the test
 (world, 3) => (world, 3)
 
 ```
-<sup><a href='/tests/DocTest_Tests/approval_tests/CombinationTests.YouCanVerifyCombinationsOf2.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-CombinationTests.YouCanVerifyCombinationsOf2.approved.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/approval_tests/CombinationExamples.YouCanVerifyCombinationsOf2.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-CombinationExamples.YouCanVerifyCombinationsOf2.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 For advice on effective formatting, see [Tips for Designing Strings](/doc/explanations/TipsForDesigningStrings.md#top). As you write out larger volumes of data in your approval files, experience has shown that the choice of layout of text in approval files can make a big difference to maintainability of tests, when failures occur.
@@ -134,7 +134,7 @@ If you are using C++11, you will need to supply the exact parameter types to you
 <!-- snippet: sample_combinations_of_three -->
 <a id='snippet-sample_combinations_of_three'></a>
 ```cpp
-CombinationApprovals::verifyAllCombinations(
+ApprovalTests::CombinationApprovals::verifyAllCombinations(
     [](const std::string& input1, const int input2, const double input3) {
         return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
     }, // This is the converter function
@@ -142,7 +142,7 @@ CombinationApprovals::verifyAllCombinations(
     listOfInput2s,
     listOfInput3s);
 ```
-<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L24-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L22-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
@@ -150,7 +150,7 @@ If you are using C++14 or above, you can simplify this by using `auto` or `auto&
 <!-- snippet: sample_combinations_of_three_with_auto -->
 <a id='snippet-sample_combinations_of_three_with_auto'></a>
 ```cpp
-CombinationApprovals::verifyAllCombinations(
+ApprovalTests::CombinationApprovals::verifyAllCombinations(
     [](auto& input1, auto& input2, auto& input3) {
         return functionThatReturnsSomethingOutputStreamable(input1, input2, input3);
     }, // This is the converter function
@@ -158,7 +158,7 @@ CombinationApprovals::verifyAllCombinations(
     listOfInput2s,
     listOfInput3s);
 ```
-<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L41-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L39-L47' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---

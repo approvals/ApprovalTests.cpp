@@ -25,13 +25,13 @@ If you have more than parameter that you want to vary, check out [Testing Combin
 TEST_CASE("VerifyAllStartingPoint")
 {
     std::vector<std::string> inputs{"input.value1", "input.value2"};
-    Approvals::verifyAll("TITLE", inputs, [](auto input, auto& stream) {
+    ApprovalTests::Approvals::verifyAll("TITLE", inputs, [](auto input, auto& stream) {
         stream << input << " => "
                << "placeholder";
     });
 }
 ```
-<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L39-L48' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyallstartingpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L43-L52' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyallstartingpoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Modify the input container for your chosen values.

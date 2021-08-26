@@ -22,9 +22,9 @@ You have called a method that returns a collection of objects, and you want a ni
 <a id='snippet-verifyallstartingpointcontainer'></a>
 ```cpp
 std::vector<std::string> objectsToVerify{"hello", "world"};
-Approvals::verifyAll("TITLE", objectsToVerify);
+ApprovalTests::Approvals::verifyAll("TITLE", objectsToVerify);
 ```
-<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L25-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyallstartingpointcontainer' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L27-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyallstartingpointcontainer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 which would produce:
