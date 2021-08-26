@@ -15,6 +15,7 @@ add_executable(${PROJECT_NAME}
         VectorTests.cpp
         comparators/ComparatorDisposerTest.cpp
         core/ApprovalExceptionTests.cpp
+        core/FileApproverExamples.cpp
         core/FileApproverTests.cpp
         core/OptionsExamples.cpp
         core/OptionsTests.cpp
