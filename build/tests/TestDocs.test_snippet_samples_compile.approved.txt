@@ -18,5 +18,4 @@ Files that have both snippets and using namespace ApprovalTests
 15) ../tests/DocTest_Tests/docs/Tutorial.cpp
 16) ../tests/DocTest_Tests/main.cpp
 17) ../tests/DocTest_Tests/namers/NamerTests.cpp
-18) ../tests/DocTest_Tests/namers/TemplatedCustomNamerTests.cpp
-19) ../tests/UT_Tests/UTApprovalTestTests.cpp
+18) ../tests/UT_Tests/UTApprovalTestTests.cpp
