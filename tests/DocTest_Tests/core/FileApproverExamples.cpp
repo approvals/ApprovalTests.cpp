@@ -10,7 +10,8 @@ public:
     bool contentsAreEquivalent(std::string receivedPath,
                                std::string approvedPath) const override
     {
-        return ApprovalTests::FileUtils::fileSize(receivedPath) == ApprovalTests::FileUtils::fileSize(approvedPath);
+        return ApprovalTests::FileUtils::fileSize(receivedPath) ==
+               ApprovalTests::FileUtils::fileSize(approvedPath);
     }
 };
 // end-snippet
@@ -29,4 +30,3 @@ TEST_CASE("ItUsesCustomComparator")
 
     FileApprover::verify("a.length", "b.length");
 }
-

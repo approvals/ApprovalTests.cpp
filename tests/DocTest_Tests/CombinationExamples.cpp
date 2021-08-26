@@ -31,4 +31,3 @@ TEST_CASE("CombinationsStartingPoint")
         inputs2);
 }
 // end-snippet
-

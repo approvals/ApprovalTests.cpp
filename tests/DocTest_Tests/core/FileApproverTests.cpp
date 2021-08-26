@@ -57,7 +57,6 @@ TEST_CASE("ItComparesTheEntireFile")
     CHECK_THROWS_AS(FileApprover::verify("a.txt", "b.txt"), ApprovalMismatchException);
 }
 
-
 namespace
 {
     class IdenticalFilenamesNamer : public ApprovalNamer
