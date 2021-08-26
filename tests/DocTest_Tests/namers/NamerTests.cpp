@@ -1,11 +1,9 @@
 #include "doctest/doctest.h"
-#include "ApprovalTests/core/ApprovalNamer.h"
 #include "ApprovalTests/namers/HelpMessages.h"
 #include "ApprovalTests/namers/SeparateApprovedAndReceivedDirectoriesNamer.h"
 #include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 #include "../utilities/TestUtils.h"
-//#include <filesystem>
 #include <iostream>
 #include <memory>
 

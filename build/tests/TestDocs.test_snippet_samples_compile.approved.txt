@@ -14,7 +14,5 @@ Files that have both snippets and using namespace ApprovalTests
 11) ../tests/DocTest_Tests/docs/OverviewExamples.cpp
 12) ../tests/DocTest_Tests/docs/ToStringExample.cpp
 13) ../tests/DocTest_Tests/docs/ToStringTemplateExample.cpp
-14) ../tests/DocTest_Tests/docs/ToStringWrapperExample.cpp
-15) ../tests/DocTest_Tests/docs/Tutorial.cpp
-16) ../tests/DocTest_Tests/main.cpp
-17) ../tests/UT_Tests/UTApprovalTestTests.cpp
+14) ../tests/DocTest_Tests/docs/Tutorial.cpp
+15) ../tests/UT_Tests/UTApprovalTestTests.cpp
