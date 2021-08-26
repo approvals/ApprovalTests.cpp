@@ -3,7 +3,6 @@
 
 #include <ostream>
 
-using namespace ApprovalTests;
 
 struct Rectangle1
 {
@@ -22,5 +21,5 @@ struct Rectangle1
 TEST_CASE("ToStringsAreHelpful")
 {
     Rectangle1 r = {40, 50, 100, 60};
-    Approvals::verify(r);
+    ApprovalTests::Approvals::verify(r);
 }

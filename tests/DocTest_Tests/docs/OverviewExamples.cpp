@@ -2,10 +2,7 @@
 #include "ApprovalTests/Approvals.h"
 
 #include <sstream>
-#include <string>
 #include <vector>
-
-using namespace ApprovalTests;
 
 class StringList
 {
@@ -106,6 +103,6 @@ TEST_CASE("SandwichExampleWithApprovals")
     // Arrange, Act
     Sandwich s = createSandwichForTest();
     // Assert
-    Approvals::verify(s);
+    ApprovalTests::Approvals::verify(s);
     // end-snippet
 }
