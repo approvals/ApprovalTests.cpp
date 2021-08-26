@@ -7,8 +7,6 @@
 #include "ApprovalTests/reporters/QuietReporter.h"
 #include "ApprovalTests/Approvals.h"
 
-#include <iostream>
-
 using namespace ApprovalTests;
 
 namespace
@@ -69,14 +67,6 @@ TEST_CASE("copying")
     Options o2 = o1;
 
     Options::FileOptions fo = Options().fileOptions();
-}
-
-TEST_CASE("Options - FileExtension Example")
-{
-    // begin-snippet: basic_approval_with_file_extension
-    Approvals::verify("text to be verified",
-                      Options().fileOptions().withFileExtension(".xyz"));
-    // end-snippet
 }
 
 TEST_CASE("isUsingDefaultScrubber")

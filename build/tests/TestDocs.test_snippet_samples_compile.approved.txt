@@ -8,8 +8,5 @@ Files that have both snippets and using namespace ApprovalTests
 5) ../tests/DocTest_Tests/StoryboardTests.cpp
 6) ../tests/DocTest_Tests/VectorTests.cpp
 7) ../tests/DocTest_Tests/core/FileApproverTests.cpp
-8) ../tests/DocTest_Tests/core/OptionsTests.cpp
-9) ../tests/DocTest_Tests/docs/CombinationsSampleCode.cpp
-10) ../tests/DocTest_Tests/docs/DocTestDocsSamples.cpp
-11) ../tests/DocTest_Tests/docs/Tutorial.cpp
-12) ../tests/UT_Tests/UTApprovalTestTests.cpp
+8) ../tests/DocTest_Tests/docs/Tutorial.cpp
+9) ../tests/UT_Tests/UTApprovalTestTests.cpp

@@ -5,8 +5,6 @@
 #include "ApprovalTests/reporters/AutoApproveIfMissingReporter.h"
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 
-using namespace ApprovalTests;
-
 enum Nationality
 {
     British,
@@ -64,6 +62,8 @@ struct Greeting
 // begin-snippet: doctest_multiple_output_files_hard_coded
 TEST_CASE("MultipleOutputFiles-ForOneObject")
 {
+    using namespace ApprovalTests;
+
     Greeting object_under_test;
     SUBCASE("British")
     {
@@ -83,6 +83,8 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
 // begin-snippet: approvals_multiple_output_files_dynamic
 TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
 {
+    using namespace ApprovalTests;
+
     // This is an example of how to write multiple different files in a single test.
     // Note: For data as small as this, in practice we would recommend passing the
     // greetings container in to Approvals::verifyAll(), with a lambda to format the output,
@@ -100,6 +102,8 @@ TEST_CASE("ApprovalTests-MultipleOutputFiles-DataDriven")
 // begin-snippet: approvals_multiple_output_files_hard_coded
 TEST_CASE("ApprovalTests-MultipleOutputFiles-ForOneObject")
 {
+    using namespace ApprovalTests;
+
     Greeting object_under_test;
     {
         auto section = NamerFactory::appendToOutputFilename("British");

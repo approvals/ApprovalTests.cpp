@@ -16,6 +16,7 @@ add_executable(${PROJECT_NAME}
         comparators/ComparatorDisposerTest.cpp
         core/ApprovalExceptionTests.cpp
         core/FileApproverTests.cpp
+        core/OptionsExamples.cpp
         core/OptionsTests.cpp
         docs/CombinationsSampleCode.cpp
         docs/ContainerRequirementsDocs.cpp
