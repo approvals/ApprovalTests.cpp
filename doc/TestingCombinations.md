@@ -28,14 +28,14 @@ TEST_CASE("CombinationsStartingPoint")
 {
     std::vector<std::string> inputs1{"input1.value1", "input1.value2"};
     std::vector<std::string> inputs2{"input2.value1", "input2.value2", "input2.value3"};
-    CombinationApprovals::verifyAllCombinations(
+    ApprovalTests::CombinationApprovals::verifyAllCombinations(
         "TITLE",
         [&](auto /*input1*/, auto /*input2*/) { return "placeholder"; },
         inputs1,
         inputs2);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L22-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L21-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Modify each input container for your chosen values.
@@ -82,7 +82,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2")
 {
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
-    CombinationApprovals::verifyAllCombinations(
+    ApprovalTests::CombinationApprovals::verifyAllCombinations(
         [](std::string s, int i) {
             return std::string("(") + s + ", " + std::to_string(i) + ")";
         },
@@ -90,7 +90,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2")
         numbers);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L8-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L7-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
@@ -142,7 +142,7 @@ ApprovalTests::CombinationApprovals::verifyAllCombinations(
     listOfInput2s,
     listOfInput3s);
 ```
-<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L22-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L21-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_combinations_of_three' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 If you are using C++14 or above, you can simplify this by using `auto` or `auto&` for the lambda parameters:
@@ -158,7 +158,7 @@ ApprovalTests::CombinationApprovals::verifyAllCombinations(
     listOfInput2s,
     listOfInput3s);
 ```
-<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L39-L47' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/CombinationsSampleCode.cpp#L38-L46' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_combinations_of_three_with_auto' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---

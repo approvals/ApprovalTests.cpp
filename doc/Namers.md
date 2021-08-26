@@ -60,11 +60,13 @@ This behavior is customizable, here's an example:
 TEST_CASE("Sanitizer <3 fileNames")
 {
     {
-        auto disposer = ApprovalTests::Approvals::useFileNameSanitizer([](std::string incoming) {
-            return ApprovalTests::StringUtils::replaceAll(incoming, " <3 ", "_loves_");
-        });
+        auto disposer =
+            ApprovalTests::Approvals::useFileNameSanitizer([](std::string incoming) {
+                return ApprovalTests::StringUtils::replaceAll(
+                    incoming, " <3 ", "_loves_");
+            });
 ```
-<sup><a href='/tests/DocTest_Tests/namers/NamerExamples.cpp#L56-L63' title='Snippet source file'>snippet source</a> | <a href='#snippet-usefilenamesanitizer' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/NamerExamples.cpp#L59-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-usefilenamesanitizer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Registering a Custom Namer
@@ -80,7 +82,7 @@ auto namer = ApprovalTests::TemplatedCustomNamer::create(
     "{TestSourceDirectory}/{ApprovalsSubdirectory}/CustomName.{ApprovedOrReceived}.{FileExtension}");
 ApprovalTests::Approvals::verify("Hello", ApprovalTests::Options().withNamer(namer));
 ```
-<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerExamples.cpp#L23-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_injection_via_options' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerExamples.cpp#L24-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_injection_via_options' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Globally
@@ -91,8 +93,8 @@ which namer it uses by default. Please note that you need to create a function t
 <!-- snippet: register_default_namer -->
 <a id='snippet-register_default_namer'></a>
 ```cpp
-auto default_namer_disposer =
-    ApprovalTests::Approvals::useAsDefaultNamer([]() { return std::make_shared<FakeNamer>(); });
+auto default_namer_disposer = ApprovalTests::Approvals::useAsDefaultNamer(
+    []() { return std::make_shared<FakeNamer>(); });
 ```
 <sup><a href='/tests/DocTest_Tests/namers/NamerExamples.cpp#L25-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_default_namer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -113,10 +115,11 @@ Here is an example:
 <!-- snippet: templated_custom_namer_example -->
 <a id='snippet-templated_custom_namer_example'></a>
 ```cpp
-ApprovalTests::TemplatedCustomNamer namer("/my/source/directory/{ApprovedOrReceived}/"
-                           "{TestFileName}.{TestCaseName}.{FileExtension}");
+ApprovalTests::TemplatedCustomNamer namer(
+    "/my/source/directory/{ApprovedOrReceived}/"
+    "{TestFileName}.{TestCaseName}.{FileExtension}");
 ```
-<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerExamples.cpp#L7-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_example' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/TemplatedCustomNamerExamples.cpp#L7-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-templated_custom_namer_example' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 **Note:** The character `/` will be converted to `\` on Windows machines, at run-time. 
@@ -194,7 +197,7 @@ To register this as your default namer, use:
 auto default_namer_disposer =
     ApprovalTests::SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
 ```
-<sup><a href='/tests/DocTest_Tests/namers/NamerExamples.cpp#L39-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_separate_directories_namer' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/NamerExamples.cpp#L40-L43' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_separate_directories_namer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 When using this namer, you will want to add the following line to your `.gitignore` file:

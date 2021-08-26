@@ -48,7 +48,7 @@ friend std::ostream& operator<<(std::ostream& os, const Rectangle1& rectangle)
     return os;
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/ToStringExample.cpp#L12-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-to_string_standard_example' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringExample.cpp#L11-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-to_string_standard_example' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 You should put this function in the same namespace as your type, or the global namespace, and have it declared before including Approval's header. (This is particularly important if you are compiling with Clang.)
@@ -66,7 +66,7 @@ friend STREAM& operator<<(STREAM& os, const Rectangle2& rectangle)
     return os;
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/ToStringTemplateExample.cpp#L14-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-to_string_template_example' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringTemplateExample.cpp#L13-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-to_string_template_example' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Wrapper classes or functions can be used to provide additional output formats for types of data:
@@ -96,12 +96,13 @@ struct FormatRectangleForMultipleLines
 
 TEST_CASE("AlternativeFormattingCanBeEasyToRead")
 {
-    ApprovalTests::Approvals::verifyAll("rectangles", getRectangles(), [](auto r, auto& os) {
-        os << FormatRectangleForMultipleLines(r);
-    });
+    ApprovalTests::Approvals::verifyAll(
+        "rectangles", getRectangles(), [](auto r, auto& os) {
+            os << FormatRectangleForMultipleLines(r);
+        });
 }
 ```
-<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L35-L62' title='Snippet source file'>snippet source</a> | <a href='#snippet-to_string_wrapper_example' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/ToStringWrapperExample.cpp#L35-L63' title='Snippet source file'>snippet source</a> | <a href='#snippet-to_string_wrapper_example' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 **Note** The output operator (`<<`) needs to be declared before Approval Tests. Usually this is handled by putting it in its own header file, and including that at the top of the test source code.

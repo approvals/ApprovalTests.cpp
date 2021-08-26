@@ -140,9 +140,9 @@ Multiple on one line
 <!-- snippet: verify_exception_message_example -->
 <a id='snippet-verify_exception_message_example'></a>
 ```cpp
-Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
+ApprovalTests::Approvals::verifyExceptionMessage([]() { /* your code goes here */ });
 ```
-<sup><a href='/tests/DocTest_Tests/ApprovalsTests.cpp#L119-L121' title='Snippet source file'>snippet source</a> | <a href='#snippet-verify_exception_message_example' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/ApprovalsExamples.cpp#L7-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-verify_exception_message_example' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Test code snippet - linking to a whole file

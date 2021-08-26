@@ -108,7 +108,7 @@ using namespace ApprovalTests;
 Approvals::verify("text to be verified",
                   Options().fileOptions().withFileExtension(".xyz"));
 ```
-<sup><a href='/tests/DocTest_Tests/core/OptionsExamples.cpp#L8-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_file_extension' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/core/OptionsExamples.cpp#L7-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_file_extension' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 **Note:** `withFileExtension()` returns an `Options` object, so it's possible to keep appending more `with...()` calls.  

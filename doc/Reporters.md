@@ -81,9 +81,9 @@ At present, the default Reporter is the DiffReporter. Whenever you call Approval
 // main.cpp:
 #include <memory>
 auto defaultReporterDisposer =
-    Approvals::useAsDefaultReporter(std::make_shared<DiffReporter>());
+    ApprovalTests::Approvals::useAsDefaultReporter(std::make_shared<ApprovalTests::DiffReporter>());
 ```
-<sup><a href='/tests/Catch2_Tests/main.cpp#L18-L23' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_as_default_reporter_in_main' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/Catch2_Tests/main.cpp#L16-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_as_default_reporter_in_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The return value is ["Disposable"](/doc/DisposableObjects.md#top), meaning it will restore the original reporter when the object destructs. Because of this, if you do not store the result in a variable, it will immediately undo itself by the end of the line.
