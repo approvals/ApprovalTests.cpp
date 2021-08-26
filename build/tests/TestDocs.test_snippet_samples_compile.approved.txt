@@ -6,6 +6,5 @@ Files that have both snippets and using namespace ApprovalTests
 3) ../tests/DocTest_Tests/CustomizingToStringTests.cpp
 4) ../tests/DocTest_Tests/DocTestApprovalTestTests.cpp
 5) ../tests/DocTest_Tests/StoryboardTests.cpp
-6) ../tests/DocTest_Tests/VectorTests.cpp
-7) ../tests/DocTest_Tests/docs/Tutorial.cpp
-8) ../tests/UT_Tests/UTApprovalTestTests.cpp
+6) ../tests/DocTest_Tests/docs/Tutorial.cpp
+7) ../tests/UT_Tests/UTApprovalTestTests.cpp

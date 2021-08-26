@@ -2,10 +2,10 @@
 #include "ApprovalTests/Approvals.h"
 #include <vector>
 
-using namespace ApprovalTests;
-
 TEST_CASE("YouCanVerifyIteratorRange")
 {
+    using namespace ApprovalTests;
+
     std::vector<std::string> v{"hello", "world"};
     auto converter = [](auto s, auto& os) { os << s << " => " << s[0]; };
     Approvals::verifyAll("FIRST LETTER", v.begin(), v.end(), converter);
@@ -14,6 +14,8 @@ TEST_CASE("YouCanVerifyIteratorRange")
 
 TEST_CASE("YouCanVerifyVectors")
 {
+    using namespace ApprovalTests;
+
     std::vector<std::string> v{"hello", "world"};
     auto converter = [](auto s, auto& os) { os << s << " => " << s[0]; };
     Approvals::verifyAll("FIRST LETTER", v, converter);
@@ -24,13 +26,15 @@ TEST_CASE("YouCanVerifyVectorsWithStandardText")
 {
     // begin-snippet: VerifyAllStartingPointContainer
     std::vector<std::string> objectsToVerify{"hello", "world"};
-    Approvals::verifyAll("TITLE", objectsToVerify);
+    ApprovalTests::Approvals::verifyAll("TITLE", objectsToVerify);
     // end-snippet
-    Approvals::verifyAll("TITLE", objectsToVerify, Options());
+    ApprovalTests::Approvals::verifyAll("TITLE", objectsToVerify, ApprovalTests::Options());
 }
 
 TEST_CASE("YouCanVerifyVectorsWithStandardTextNoHeader")
 {
+    using namespace ApprovalTests;
+
     std::vector<std::string> v{"hello", "world"};
     Approvals::verifyAll(v);
     Approvals::verifyAll(v, Options());
@@ -40,7 +44,7 @@ TEST_CASE("YouCanVerifyVectorsWithStandardTextNoHeader")
 TEST_CASE("VerifyAllStartingPoint")
 {
     std::vector<std::string> inputs{"input.value1", "input.value2"};
-    Approvals::verifyAll("TITLE", inputs, [](auto input, auto& stream) {
+    ApprovalTests::Approvals::verifyAll("TITLE", inputs, [](auto input, auto& stream) {
         stream << input << " => "
                << "placeholder";
     });
@@ -49,15 +53,17 @@ TEST_CASE("VerifyAllStartingPoint")
 
 TEST_CASE("YouCanVerifyInitializerLists")
 {
+    // begin-snippet: initializer_list
+    ApprovalTests::Approvals::verifyAll({10, 20, 30});
+    // end-snippet
+
+    using namespace ApprovalTests;
     Approvals::verifyAll("", {10, 20, 30});
     Approvals::verifyAll("", {10, 20, 30}, Options());
 
     Approvals::verifyAll(std::initializer_list<int>{10, 20, 30});
     Approvals::verifyAll(std::initializer_list<int>{10, 20, 30}, Options());
 
-    // begin-snippet: initializer_list
-    Approvals::verifyAll({10, 20, 30});
-    // end-snippet
     Approvals::verifyAll({10, 20, 30}, Options());
 
     int i = 0;
