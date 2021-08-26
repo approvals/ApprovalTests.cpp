@@ -11,7 +11,8 @@ int main()
 
     auto directory = ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");
 
-    "ItReportsAndThrowsIfVerifyFails"_test = []() {
+    "ItReportsAndThrowsIfVerifyFails"_test = []()
+    {
         auto front_loader = std::make_shared<FakeReporter>(true);
 
         // Use a front-loaded reporter so this is used even we are running
@@ -45,33 +46,42 @@ int main()
     };
 
     // begin-snippet: ut_main_usage
-    "ItCanVerifyAFile"_test = []() {
-        ApprovalTests::Approvals::verify("Approval Tests can verify text via the golden master method");
+    "ItCanVerifyAFile"_test = []()
+    {
+        ApprovalTests::Approvals::verify(
+            "Approval Tests can verify text via the golden master method");
     };
     // end-snippet
 
-    test("AnotherWayItCanVerifyAFile") = []() {
-        ApprovalTests::Approvals::verify("Approval Tests can verify text via the golden master method");
+    test("AnotherWayItCanVerifyAFile") = []()
+    {
+        ApprovalTests::Approvals::verify(
+            "Approval Tests can verify text via the golden master method");
     };
 
     // begin-snippet: ut_main_multiple
-    "ItCanUseMultipleVerify"_test = []() {
+    "ItCanUseMultipleVerify"_test = []()
+    {
         {
             // Here we simulate test sections, so that Approval Tests uses different
             // output file names for the different verify() calls.
-            auto section = ApprovalTests::NamerFactory::appendToOutputFilename("section 1");
+            auto section =
+                ApprovalTests::NamerFactory::appendToOutputFilename("section 1");
             ApprovalTests::Approvals::verify(
                 "Approval Tests can verify text via the golden master method");
         }
         {
-            auto section = ApprovalTests::NamerFactory::appendToOutputFilename("section 2");
-            ApprovalTests::Approvals::verify("Approval Tests can verify different text via "
-                              "the golden master method");
+            auto section =
+                ApprovalTests::NamerFactory::appendToOutputFilename("section 2");
+            ApprovalTests::Approvals::verify(
+                "Approval Tests can verify different text via "
+                "the golden master method");
         }
     };
     // end-snippet
 
-    "YouCanUseAWriter"_test = []() {
+    "YouCanUseAWriter"_test = []()
+    {
         // begin-snippet: ut_use_custom_writer
         using HtmlWriter = ApprovalTests::StringWriter;
         HtmlWriter writer("<h1>hello world</h1>", ".html");
@@ -79,25 +89,31 @@ int main()
         // end-snippet
     };
 
-    "YouCanSpecifyYourFileExtension"_test = []() {
+    "YouCanSpecifyYourFileExtension"_test = []()
+    {
         // begin-snippet: ut_use_custom_file_extension
-        ApprovalTests::Approvals::verify("<h1>hello world</h1>",
-                          ApprovalTests::Options().fileOptions().withFileExtension(".html"));
+        ApprovalTests::Approvals::verify(
+            "<h1>hello world</h1>",
+            ApprovalTests::Options().fileOptions().withFileExtension(".html"));
         // end-snippet
     };
 
-    "YouCanSpecifyYourFileExtensionWithToString"_test = []() {
-        ApprovalTests::Approvals::verify(1337, ApprovalTests::Options().fileOptions().withFileExtension(".csv"));
+    "YouCanSpecifyYourFileExtensionWithToString"_test = []()
+    {
+        ApprovalTests::Approvals::verify(
+            1337, ApprovalTests::Options().fileOptions().withFileExtension(".csv"));
     };
 
-    "YouCanSpecifyYourFileExtensionWithFormatter"_test = []() {
+    "YouCanSpecifyYourFileExtensionWithFormatter"_test = []()
+    {
         ApprovalTests::Approvals::verify(
             1337,
             [](auto value, auto& os) { os << "**value:** " << value; },
             ApprovalTests::Options().fileOptions().withFileExtension(".md"));
     };
 
-    "VerifyAFileWithAmpersand&"_test = [&]() {
+    "VerifyAFileWithAmpersand&"_test = [&]()
+    {
         auto namer = ApprovalTests::Approvals::getDefaultNamer();
         expect(throws([&] { auto name = namer->getReceivedFile(".txt"); }))
             << "documenting bug #157, if you see this, the bug has been fixed upstream "
