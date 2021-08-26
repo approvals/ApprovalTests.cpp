@@ -1,4 +1,3 @@
 Files that have both snippets and using namespace ApprovalTests
 
 ../tests/DocTest_Tests/docs/Tutorial.cpp
-../tests/UT_Tests/UTApprovalTestTests.cpp
