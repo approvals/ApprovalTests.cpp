@@ -113,4 +113,3 @@ TEST_CASE("VerifyingException")
     Approvals::verifyExceptionMessage(throws);
     Approvals::verifyExceptionMessage(throws, Options());
 }
-

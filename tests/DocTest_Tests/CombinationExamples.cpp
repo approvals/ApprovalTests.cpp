@@ -3,7 +3,6 @@
 #include <string>
 #include "ApprovalTests/CombinationApprovals.h"
 
-
 // begin-snippet: YouCanVerifyCombinationsOf2
 TEST_CASE("YouCanVerifyCombinationsOf2")
 {

@@ -1,7 +1,6 @@
 #include "doctest/doctest.h"
 #include "ApprovalTests/Approvals.h"
 
-
 TEST_CASE("VerifyingNoException")
 {
     // begin-snippet: verify_exception_message_example
