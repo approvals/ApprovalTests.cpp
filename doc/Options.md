@@ -35,7 +35,7 @@ ApprovalTests::Options()
     .withScrubber(ApprovalTests::Scrubbers::scrubGuid)
     .fileOptions().withFileExtension(".json")
 ```
-<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L49-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-specify_all_the_options' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L50-L55' title='Snippet source file'>snippet source</a> | <a href='#snippet-specify_all_the_options' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Reporters

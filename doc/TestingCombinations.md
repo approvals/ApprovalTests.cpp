@@ -35,7 +35,7 @@ TEST_CASE("CombinationsStartingPoint")
         inputs2);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L21-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L20-L31' title='Snippet source file'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Modify each input container for your chosen values.
@@ -90,7 +90,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2")
         numbers);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L7-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L6-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
