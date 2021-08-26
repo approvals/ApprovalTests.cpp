@@ -3,14 +3,12 @@
 
 #include "GameOfLife.h"
 #include "Storyboard.h"
-
-#include <ostream>
 #include <vector>
-
-using namespace ApprovalTests;
 
 TEST_CASE("Adding Storyboard Frames")
 {
+    using namespace ApprovalTests;
+
     {
         GameOfLife game(5, 5, [](int x, int y) { return 1 <= x && x <= 3 && y == 2; });
 
@@ -44,7 +42,7 @@ static GameOfLife createBlinker()
 
 TEST_CASE("Storyboard friendly examples")
 {
-    Storyboard story;
+    ApprovalTests::Storyboard story;
     GameOfLife game = createBlinker();
 
     // begin-snippet: storyboard_friendly_report
@@ -62,7 +60,7 @@ TEST_CASE("Storyboard customization mechanisms")
 {
     // begin-snippet: storyboard_complete_example
     // Create a Storyboard to track a series of changes
-    Storyboard story;
+    ApprovalTests::Storyboard story;
 
     // Create object to track
     GameOfLife game = createBlinker();
@@ -93,6 +91,6 @@ TEST_CASE("Storyboard customization mechanisms")
     }
 
     // verify storyboard
-    Approvals::verify(story);
+    ApprovalTests::Approvals::verify(story);
     // end-snippet
 }
