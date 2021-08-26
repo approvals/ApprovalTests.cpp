@@ -24,7 +24,7 @@ class TestDocs(unittest.TestCase):
             return snippet in content and namespace in content
 
         all_files = self.find_all_files(".cpp", with_both)
-        verify_all("Files that have both snippets and using namespace ApprovalTests", all_files)
+        verify_all("Files that have both snippets and using namespace ApprovalTests", all_files, lambda f: str(f))
 
     def find_all_files(self, suffix: str, with_filter: Callable) -> List[str]:
         all_files = []

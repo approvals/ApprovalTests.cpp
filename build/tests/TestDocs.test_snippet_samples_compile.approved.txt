@@ -1,8 +1,8 @@
 Files that have both snippets and using namespace ApprovalTests
 
-0) ../tests/Catch2_Tests/main.cpp
-1) ../tests/DocTest_Tests/ApprovalsTests.cpp
-2) ../tests/DocTest_Tests/CombinationTests.cpp
-3) ../tests/DocTest_Tests/CustomizingToStringTests.cpp
-4) ../tests/DocTest_Tests/docs/Tutorial.cpp
-5) ../tests/UT_Tests/UTApprovalTestTests.cpp
+../tests/Catch2_Tests/main.cpp
+../tests/DocTest_Tests/ApprovalsTests.cpp
+../tests/DocTest_Tests/CombinationTests.cpp
+../tests/DocTest_Tests/CustomizingToStringTests.cpp
+../tests/DocTest_Tests/docs/Tutorial.cpp
+../tests/UT_Tests/UTApprovalTestTests.cpp
