@@ -216,13 +216,12 @@ We called this file `googletest_starter_main.cpp`:
 #define APPROVALS_GOOGLETEST
 #include "ApprovalTests.hpp"
 
-using namespace ApprovalTests;
-
 // This puts "received" and "approved" files in approval_tests/ sub-directory,
 // keeping the test source directory tidy:
-auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
+auto directoryDisposer =
+    ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");
 ```
-<sup><a href='/examples/googletest_starter/googletest_starter_main.cpp#L1-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-googletest_starter_main.cpp' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/googletest_starter/googletest_starter_main.cpp#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-googletest_starter_main.cpp' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Here is sample code to create your first test. We called this file `googletest_starter_test.cpp`:
@@ -233,17 +232,15 @@ Here is sample code to create your first test. We called this file `googletest_s
 #include "gtest/gtest.h"
 #include "ApprovalTests.hpp"
 
-using namespace ApprovalTests;
-
 TEST(GoogleTestStarter, Sample)
 {
     // TODO Replace 42 with the value or object whose contents you are verifying.
     // For help, see:
     // https://approvaltestscpp.readthedocs.io/en/latest/generated_docs/ToString.html
-    Approvals::verify(42);
+    ApprovalTests::Approvals::verify(42);
 }
 ```
-<sup><a href='/examples/googletest_starter/googletest_starter_test.cpp#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-googletest_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/googletest_starter/googletest_starter_test.cpp#L1-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-googletest_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 And finally, here is sample code to put in your `CMakeLists.txt` file:

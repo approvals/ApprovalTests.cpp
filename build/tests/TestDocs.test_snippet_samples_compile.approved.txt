@@ -8,4 +8,3 @@ Files that have both snippets or embedded whole source files and using namespace
 ../doc/UsingCatch.md
 ../doc/UsingCppUTest.md
 ../doc/UsingDoctest.md
-../doc/UsingGoogleTests.md
