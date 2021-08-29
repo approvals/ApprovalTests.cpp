@@ -2,5 +2,4 @@ Files that have both snippets or embedded whole source files and using namespace
 
 ../tests/DocTest_Tests/docs/Tutorial.cpp
 ../examples/doctest_existing_main/DoctestApprovalsTests.cpp
-../examples/fmt_approvals_demo/FmtTests.cpp
 ../examples/googletest_existing_main/GoogleTestApprovalsTests.cpp
