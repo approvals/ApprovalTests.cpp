@@ -25,9 +25,9 @@ For example, vectors are not `ostream (<<)` printable by default. However, they 
 <a id='snippet-fmt_approvals'></a>
 ```cpp
 std::vector<int> numbers = {1, 2, 3};
-FmtApprovals::verify(numbers);
+ApprovalTests::FmtApprovals::verify(numbers);
 ```
-<sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L14-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-fmt_approvals' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/fmt_approvals_demo/FmtTests.cpp#L12-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-fmt_approvals' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This will produce the following output:
