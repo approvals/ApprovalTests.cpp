@@ -74,13 +74,12 @@ We called this file `boost_starter_main.cpp`:
 #define APPROVALS_BOOSTTEST
 #include "ApprovalTests.hpp"
 
-using namespace ApprovalTests;
-
 // This puts "received" and "approved" files in approval_tests/ sub-directory,
 // keeping the test source directory tidy:
-auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
+auto directoryDisposer =
+    ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests");
 ```
-<sup><a href='/examples/boost_starter/boost_starter_main.cpp#L1-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-boost_starter_main.cpp' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/boost_starter/boost_starter_main.cpp#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-boost_starter_main.cpp' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Here is sample code to create your first test. We called this file `boost_starter_test.cpp`:
@@ -93,16 +92,14 @@ Here is sample code to create your first test. We called this file `boost_starte
 
 #include "ApprovalTests.hpp"
 
-using namespace ApprovalTests;
-
 BOOST_AUTO_TEST_SUITE(SuiteName)
 BOOST_AUTO_TEST_CASE(TestCaseName)
 {
-    Approvals::verify(42);
+    ApprovalTests::Approvals::verify(42);
 }
 BOOST_AUTO_TEST_SUITE_END()
 ```
-<sup><a href='/examples/boost_starter/boost_starter_test.cpp#L1-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-boost_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/boost_starter/boost_starter_test.cpp#L1-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-boost_starter_test.cpp' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 And finally, here is sample code to put in your `CMakeLists.txt` file:
