@@ -3,12 +3,8 @@ import unittest
 from typing import Callable, List
 
 from approvaltests import verify_all
-from approvaltests.approvals import verify
 
-from scripts.code_generation import CppGeneration
-from scripts.project_details import ProjectDetails
 from scripts.utilities import read_file
-from scripts.version import Version
 from tests.helpers import set_home_directory
 
 
