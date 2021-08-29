@@ -1,6 +1,11 @@
-Files that have both snippets and using namespace ApprovalTests
+Files that have both snippets or embedded whole source files and using namespace ApprovalTests
 
 ../tests/DocTest_Tests/docs/Tutorial.cpp
 ../examples/doctest_existing_main/DoctestApprovalsTests.cpp
 ../examples/fmt_approvals_demo/FmtTests.cpp
 ../examples/googletest_existing_main/GoogleTestApprovalsTests.cpp
+../doc/UsingBoostTest.md
+../doc/UsingCatch.md
+../doc/UsingCppUTest.md
+../doc/UsingDoctest.md
+../doc/UsingGoogleTests.md

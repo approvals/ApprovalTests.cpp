@@ -19,10 +19,17 @@ class TestDocs(unittest.TestCase):
             namespace = "\nusing namespace ApprovalTests;"
             return snippet in content and namespace in content
 
+        def with_embedded_cpp_file_with_include(filename: str) -> bool:
+            content = read_file(filename)
+            snippet = ".cpp -->"
+            namespace = "\nusing namespace ApprovalTests;"
+            return snippet in content and namespace in content
+
         all_files = self.find_all_files(".cpp", with_both, "../tests")
         all_files += self.find_all_files(".cpp", with_both, "../examples")
+        all_files += self.find_all_files(".md", with_embedded_cpp_file_with_include, "../doc")
 
-        verify_all("Files that have both snippets and using namespace ApprovalTests", all_files, lambda f: str(f))
+        verify_all("Files that have both snippets or embedded whole source files and using namespace ApprovalTests", all_files, lambda f: str(f))
 
     def find_all_files(self, suffix: str, with_filter: Callable, directory: str) -> List[str]:
         all_files = []
