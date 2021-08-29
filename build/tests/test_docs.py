@@ -29,7 +29,8 @@ class TestDocs(unittest.TestCase):
         all_files += self.find_all_files(".cpp", with_both, "../examples")
         all_files += self.find_all_files(".md", with_embedded_cpp_file_with_include, "../doc")
 
-        verify_all("Files that have both snippets or embedded whole source files and using namespace ApprovalTests", all_files, lambda f: str(f))
+        verify_all("Files that have both snippets or embedded whole source files and using namespace ApprovalTests",
+                   all_files, lambda f: str(f))
 
     def find_all_files(self, suffix: str, with_filter: Callable, directory: str) -> List[str]:
         all_files = []
