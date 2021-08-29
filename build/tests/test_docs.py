@@ -22,9 +22,9 @@ class TestDocs(unittest.TestCase):
         all_files = self.find_all_files(".cpp", with_both)
         verify_all("Files that have both snippets and using namespace ApprovalTests", all_files, lambda f: str(f))
 
-    def find_all_files(self, suffix: str, with_filter: Callable) -> List[str]:
+    def find_all_files(self, suffix: str, with_filter: Callable, directory: str = "../tests") -> List[str]:
         all_files = []
-        for root, directories, files in os.walk("../tests"):
+        for root, directories, files in os.walk(directory):
             for file in files:
                 source_file = os.path.join(root, file)
                 if file.endswith(suffix) and with_filter(source_file):
