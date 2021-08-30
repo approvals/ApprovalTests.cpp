@@ -10,6 +10,3 @@
 #define APPROVALS_BOOSTTEST
 #include "ApprovalTests.hpp"
 // end-snippet
-
-// Workaround for boost crash on cygwin: see #120
-#include "CygwinHack.h"

@@ -1,8 +1,7 @@
-#ifndef __CYGWIN__
-// Workaround for boost crash on cygwin: see #120
+#include "main.cpp"
 
-#define BOOST_TEST_INCLUDED
-#include <boost/test/unit_test.hpp>
+//#define BOOST_TEST_INCLUDED
+//#include <boost/test/unit_test.hpp>
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/Approvals.h"
@@ -23,4 +22,3 @@ BOOST_AUTO_TEST_CASE(TestCaseName)
 BOOST_AUTO_TEST_SUITE_END()
 
 BOOST_AUTO_TEST_SUITE_END()
-#endif
