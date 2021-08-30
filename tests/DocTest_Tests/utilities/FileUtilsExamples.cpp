@@ -7,8 +7,7 @@
 TEST_CASE("Empty File Creation Customization")
 {
     // begin-snippet: use_empty_file_creator
-    ApprovalTests::EmptyFileCreator jsonCreator = [](std::string fileName)
-    {
+    ApprovalTests::EmptyFileCreator jsonCreator = [](std::string fileName) {
         std::string contents = "";
         if (ApprovalTests::StringUtils::endsWith(fileName, ".json"))
         {
