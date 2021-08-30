@@ -49,7 +49,7 @@ ApprovalTests::Approvals::verify(
 <!-- endSnippet -->
 
 
-### Creating Empty Files
+## Creating Empty Files
 
 By default, ApprovalTests will create an empty file as a text file with an empty string "".
 
