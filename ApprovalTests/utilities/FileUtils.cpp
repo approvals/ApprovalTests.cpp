@@ -35,7 +35,7 @@ namespace ApprovalTests
 
     EmptyFileCreatorDisposer FileUtils::useEmptyFileCreator(EmptyFileCreator creator)
     {
-       return EmptyFileCreatorDisposer(creator);
+        return EmptyFileCreatorDisposer(creator);
     }
 
     void FileUtils::ensureFileExists(const std::string& fullFilePath)
