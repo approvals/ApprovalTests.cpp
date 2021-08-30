@@ -47,9 +47,10 @@ ApprovalTests::Options()
 <!-- snippet: basic_approval_with_reporter -->
 <a id='snippet-basic_approval_with_reporter'></a>
 ```cpp
+using namespace ApprovalTests;
 Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter()));
 ```
-<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L15-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L13-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Call `.withReporter()` on an existing Options object, for example:
@@ -57,10 +58,11 @@ Approvals::verify("text to be verified", Options(Windows::AraxisMergeReporter())
 <!-- snippet: basic_approval_with_reporter_2 -->
 <a id='snippet-basic_approval_with_reporter_2'></a>
 ```cpp
+using namespace ApprovalTests;
 Approvals::verify("text to be verified",
                   Options().withReporter(Mac::AraxisMergeReporter()));
 ```
-<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L22-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter_2' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/googletest_existing_main/GoogleTestApprovalsTests.cpp#L21-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-basic_approval_with_reporter_2' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Scrubbers

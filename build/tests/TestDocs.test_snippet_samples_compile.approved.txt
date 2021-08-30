@@ -1,4 +1,3 @@
 Files that have both snippets or embedded whole source files and using namespace ApprovalTests
 
 ../tests/DocTest_Tests/docs/Tutorial.cpp
-../examples/googletest_existing_main/GoogleTestApprovalsTests.cpp
