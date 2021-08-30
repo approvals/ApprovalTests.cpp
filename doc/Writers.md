@@ -7,7 +7,8 @@
 
   * [Default Behaviour](#default-behaviour)
   * [Using custom writers](#using-custom-writers)
-  * [Using custom filename extensions](#using-custom-filename-extensions)<!-- endToc -->
+  * [Using custom filename extensions](#using-custom-filename-extensions)
+  * [Creating Empty Files](#creating-empty-files)<!-- endToc -->
 
 ## Default Behaviour
 
@@ -55,7 +56,22 @@ By default, ApprovalTests will create an empty file as a text file with an empty
 
 This behavior can be customized as follows which will create a valid empty json file when running a new ApprovalTest:
 
-snippet: use_empty_file_creator
+<!-- snippet: use_empty_file_creator -->
+<a id='snippet-use_empty_file_creator'></a>
+```cpp
+ApprovalTests::EmptyFileCreator jsonCreator = [](std::string fileName) {
+    std::string contents = "";
+    if (ApprovalTests::StringUtils::endsWith(fileName, ".json"))
+    {
+        contents = "{}";
+    }
+    ApprovalTests::StringWriter s(contents);
+    s.write(fileName);
+};
+auto disposer = ApprovalTests::FileUtils::useEmptyFileCreator(jsonCreator);
+```
+<sup><a href='/tests/DocTest_Tests/utilities/FileUtilsExamples.cpp#L9-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_empty_file_creator' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 ---
 
