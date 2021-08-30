@@ -1,5 +1,6 @@
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/writers/StringWriter.h"
+#include "EmptyFileCreatorFactory.h"
 #include "SystemUtils.h"
 
 #include <fstream>
@@ -35,8 +36,7 @@ namespace ApprovalTests
     {
         if (!fileExists(fullFilePath))
         {
-            StringWriter s("", "");
-            s.write(fullFilePath);
+            EmptyFileCreatorFactory::currentCreator(fullFilePath);
         }
     }
 

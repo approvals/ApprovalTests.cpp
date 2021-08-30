@@ -39,6 +39,14 @@ TEST_CASE("readFileReturnEmptyIfMissing() returns empty string if file is missin
 
 TEST_CASE("check impossible directories don't explode")
 {
-    CHECK(!FileUtils::fileExists(
+        CHECK(!FileUtils::fileExists(
         "../../../../../../../../../../../../../../../../../../../../../a.txt"));
 }
+
+TEST_CASE("Empty File Creation")
+{
+    //auto disposer = ApprovalTests::FileUtils::useEmptyFileCreator([](std::string fileName) {});
+
+}
+
+

@@ -128,6 +128,10 @@ add_library(${PROJECT_NAME}
         utilities/CartesianProduct.h
         utilities/DateUtils.cpp
         utilities/DateUtils.h
+        utilities/EmptyFileCreatorDisposer.cpp
+        utilities/EmptyFileCreatorDisposer.h
+        utilities/EmptyFileCreatorFactory.cpp
+        utilities/EmptyFileCreatorFactory.h
         utilities/ExceptionCollector.h
         utilities/ExceptionCollector.cpp
         utilities/FileUtils.h
