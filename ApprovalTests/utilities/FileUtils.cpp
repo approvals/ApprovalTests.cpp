@@ -1,6 +1,7 @@
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/writers/StringWriter.h"
 #include "EmptyFileCreatorFactory.h"
+#include "EmptyFileCreatorDisposer.h"
 #include "SystemUtils.h"
 
 #include <fstream>
@@ -30,6 +31,11 @@ namespace ApprovalTests
         }
 
         return int(statbuf.st_size);
+    }
+
+    EmptyFileCreatorDisposer FileUtils::useEmptyFileCreator(EmptyFileCreator creator)
+    {
+       return EmptyFileCreatorDisposer(creator);
     }
 
     void FileUtils::ensureFileExists(const std::string& fullFilePath)
@@ -89,4 +95,5 @@ namespace ApprovalTests
         }
         out << content;
     }
+
 }

@@ -1,7 +1,8 @@
 #pragma once
 
 #include <string>
-
+#include "EmptyFileCreatorFactory.h"
+#include "EmptyFileCreatorDisposer.h"
 namespace ApprovalTests
 {
     class FileUtils
@@ -10,6 +11,8 @@ namespace ApprovalTests
         static bool fileExists(const std::string& path);
 
         static int fileSize(const std::string& path);
+
+        static EmptyFileCreatorDisposer useEmptyFileCreator(EmptyFileCreator creator);
 
         static void ensureFileExists(const std::string& fullFilePath);
 

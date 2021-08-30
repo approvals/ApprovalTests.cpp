@@ -45,7 +45,11 @@ TEST_CASE("check impossible directories don't explode")
 
 TEST_CASE("Empty File Creation")
 {
-    //auto disposer = ApprovalTests::FileUtils::useEmptyFileCreator([](std::string fileName) {});
+    std::string called = "";
+    auto disposer = ApprovalTests::FileUtils::useEmptyFileCreator([&](std::string fileName) {called = fileName;});
+    std::string filePath = "/this/file/will/not/exist.txt";
+    FileUtils::ensureFileExists(filePath);
+    REQUIRE(filePath == called);
 
 }
 
