@@ -48,6 +48,15 @@ ApprovalTests::Approvals::verify(
 <sup><a href='/tests/DocTest_Tests/DocTestApprovalTestTests.cpp#L17-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_custom_file_extension' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
+
+### Creating Empty Files
+
+By default, ApprovalTests will create an empty file as a text file with an empty string "".
+
+This behavior can be customized as follows which will create a valid empty json file when running a new ApprovalTest:
+
+snippet: use_empty_file_creator
+
 ---
 
 [Back to User Guide](/doc/README.md#top)

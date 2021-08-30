@@ -55,6 +55,7 @@ add_executable(${PROJECT_NAME}
         utilities/DateUtilsTests.cpp
         utilities/ExceptionCollectorTests.cpp
         utilities/FileUtilsSystemSpecificTests.cpp
+        utilities/FileUtilsExamples.cpp
         utilities/FileUtilsTests.cpp
         utilities/GridTests.cpp
         utilities/MachineBlockerTests.cpp
