@@ -2,3 +2,4 @@ breathe
 pypandoc
 sphinx_rtd_theme
 sphinx<4.1.0
+docutils<0.17
