@@ -8,7 +8,8 @@
   * [Default Behaviour](#default-behaviour)
   * [Using custom writers](#using-custom-writers)
   * [Using custom filename extensions](#using-custom-filename-extensions)
-  * [Creating Empty Files](#creating-empty-files)<!-- endToc -->
+  * [Empty Files](#empty-files)
+    * [Customizing Empty File Creation](#customizing-empty-file-creation)<!-- endToc -->
 
 ## Default Behaviour
 
@@ -50,11 +51,20 @@ ApprovalTests::Approvals::verify(
 <!-- endSnippet -->
 
 
-## Creating Empty Files
+## Empty Files
 
-By default, ApprovalTests will create an empty file as a text file with an empty string "".
+Most reporters will create a `.approved.` file if one does not exist, as most diff tools do not handle a missing file well.
+By default, these empty files are empty text files with an empty string `""`.
 
-This behavior can be customized as follows which will create a valid empty json file when running a new ApprovalTest:
+If the file extension is not a text file (for example, a PNG), you will still get this behaviour, which can result in some diff tools saying 'this is not a valid file'.
+
+ApprovalTests allows for you to customize this behaviour.
+
+For a tool which will help you with this, see [EmptyFiles](https://github.com/VerifyTests/EmptyFiles).
+
+### Customizing Empty File Creation
+
+Here is an example of customising the creation of an empty `.approved.` file, which will create a valid empty json file when running a new ApprovalTest:
 
 <!-- snippet: use_empty_file_creator -->
 <a id='snippet-use_empty_file_creator'></a>
