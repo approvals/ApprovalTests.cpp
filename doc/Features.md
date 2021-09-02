@@ -85,6 +85,10 @@
 
 You can now customize how invalid filename characters are converted. See [Converting Test Names to Valid FileNames](/doc/Namers.md#converting-test-names-to-valid-filenames)
 
+### useEmptyFileCreator
+
+[Empty file](/doc/Writers.md#empty-files) creation is now customizable, for when you are verifying non-text files.
+
 ## v.10.10.0
 
 ### Storyboard
