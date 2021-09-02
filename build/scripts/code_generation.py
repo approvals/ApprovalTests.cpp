@@ -61,10 +61,16 @@ class CppGeneration:
             self.run_for_approval_tests(simulated_single_header, self.details.release_new_single_header)
             text = read_file(self.details.release_new_single_header)
 
+            year = 2021
             text = (
                 f'// {self.details.project_details.github_project_name} version {self.details.new_version_as_text()}\n'
                 f'// More information at: {self.details.project_details.github_project_url}\n'
-                '\n'
+                f'//\n'
+                f'// Copyright (c) {year} Llewellyn Falco and Clare Macrae. All rights reserved.\n'
+                f'//\n'
+                f'// Distributed under the Apache 2.0 License\n'
+                f'// See https://opensource.org/licenses/Apache-2.0\n'
+                f'\n'
                 '//----------------------------------------------------------------------\n'
                 '// Welcome to Approval Tests.\n'
                 '//\n'
