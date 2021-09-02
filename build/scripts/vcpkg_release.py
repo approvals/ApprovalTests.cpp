@@ -147,18 +147,19 @@ class DeployVcpkgRelease:
             return
 
         new_version_without_v = details.new_version.get_version_text_without_v()
+        commit_message = F'[{details.project_details.vcpkg_directory_name}] Update to {new_version_without_v}'
         GitUtilities.add_and_commit_everything(details.vcpkg_details.vcpkg_repo_dir,
-                                               F'[{details.project_details.vcpkg_directory_name}] Update to {new_version_without_v}')
-        DeployVcpkgRelease.update_vcpkg_version_files(details)
+                                               commit_message)
+        DeployVcpkgRelease.update_vcpkg_version_files(details, commit_message)
         GitUtilities.push_active_branch_origin(details.vcpkg_details.vcpkg_repo_dir)
         DeployVcpkgRelease.create_pull_request(details)
 
     @staticmethod
-    def update_vcpkg_version_files(details: ReleaseDetails) -> None:
+    def update_vcpkg_version_files(details: ReleaseDetails, commit_message: str) -> None:
         run(["brew", "install", "vcpkg"])
         run(["vcpkg", "x-add-version", f"--vcpkg-root={details.vcpkg_details.vcpkg_repo_dir}",
              details.project_details.vcpkg_directory_name])
-        GitUtilities.add_and_commit_everything(details.vcpkg_details.vcpkg_repo_dir, F'add version files')
+        GitUtilities.add_and_commit_everything(details.vcpkg_details.vcpkg_repo_dir, commit_message)
 
     @staticmethod
     def create_pull_request(details: ReleaseDetails) -> None:
@@ -174,8 +175,7 @@ class DeployVcpkgRelease:
         new_branch = PrepareVcpkgRelease.get_new_branch_name(details.project_details, details.new_version)
         run(["open",
              F'https://github.com/microsoft/vcpkg/compare/master...isidore:{new_branch}?expand=1'])
-        description = F'[{details.project_details.vcpkg_directory_name}] update to {new_version_without_v}'
-        description = F'Todo: fill this in when we know what it should look like'
+        description = F'[{details.project_details.vcpkg_directory_name}] Update to {new_version_without_v}'
         pyperclip.copy(description)
         print(
             F"Create a pull request, including this at the start of the description (which is on your clipboard): {description}")
