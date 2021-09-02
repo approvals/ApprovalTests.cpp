@@ -6,7 +6,9 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.11.0](#v10110)
     * [useFileNameSanitizer](#usefilenamesanitizer)
+    * [useEmptyFileCreator](#useemptyfilecreator)
   * [v.10.10.0](#v10100)
     * [Storyboard](#storyboard)
     * [Grid](#grid)
@@ -80,6 +82,8 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+## v.10.11.0
 
 ### useFileNameSanitizer
 
