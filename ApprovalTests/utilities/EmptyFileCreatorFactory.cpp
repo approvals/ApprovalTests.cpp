@@ -1,5 +1,6 @@
 #include "ApprovalTests/writers/StringWriter.h"
 #include "EmptyFileCreatorFactory.h"
+#include "EmptyFileCreatorByType.h"
 namespace ApprovalTests
 {
 
@@ -10,6 +11,5 @@ namespace ApprovalTests
     }
 
     EmptyFileCreator EmptyFileCreatorFactory::currentCreator =
-        EmptyFileCreatorFactory::defaultCreator;
-
+        EmptyFileCreatorByType::createFile;
 }
