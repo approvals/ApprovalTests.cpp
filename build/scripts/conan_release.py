@@ -23,6 +23,9 @@ from scripts.version import Version
 class PrepareConanRelease:
     @staticmethod
     def check_preconditions(details: ReleaseDetails) -> None:
+        if not details.project_details.update_conan:
+            return
+
         PrepareConanRelease.update_conan_to_latest()
         PrepareConanRelease.confirm_previous_release_still_works(details)
 

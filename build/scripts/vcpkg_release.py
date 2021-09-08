@@ -17,6 +17,9 @@ from scripts.version import Version
 class PrepareVcpkgRelease:
     @staticmethod
     def check_preconditions(details: ReleaseDetails) -> None:
+        if not details.project_details.update_vcpkg:
+            return
+
         pass
 
     @staticmethod
