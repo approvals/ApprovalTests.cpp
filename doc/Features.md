@@ -6,6 +6,8 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.12.0](#v10120)
+    * [EmptyFileCreatorByType::registerCreator](#emptyfilecreatorbytyperegistercreator)
   * [v.10.11.0](#v10110)
     * [useFileNameSanitizer](#usefilenamesanitizer)
     * [useEmptyFileCreator](#useemptyfilecreator)
@@ -82,6 +84,8 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+## v.10.12.0
 
 ### EmptyFileCreatorByType::registerCreator
 

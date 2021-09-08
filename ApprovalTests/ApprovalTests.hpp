@@ -89,6 +89,7 @@
 #include "ApprovalTests/reporters/MacReporters.h"
 #include "ApprovalTests/reporters/WindowsReporters.h"
 #include "ApprovalTests/utilities/DateUtils.h"
+#include "ApprovalTests/utilities/EmptyFileCreatorByType.h"
 #include "ApprovalTests/utilities/ExceptionCollector.h"
 #include "ApprovalTests/utilities/FileUtilsSystemSpecific.h"
 #include "ApprovalTests/utilities/Grid.h"
