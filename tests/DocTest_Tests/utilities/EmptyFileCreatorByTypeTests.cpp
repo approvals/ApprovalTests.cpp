@@ -21,8 +21,7 @@ namespace
 
 TEST_CASE("Test register customization")
 {
-    EmptyFileCreator wibbleCreator = [](std::string fileName)
-    {
+    EmptyFileCreator wibbleCreator = [](std::string fileName) {
         StringWriter s("Wobble");
         s.write(fileName);
     };

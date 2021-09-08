@@ -4,11 +4,11 @@
 
 namespace
 {
-    std::map<std::string, ApprovalTests::EmptyFileCreator> defaultEmptyFileCreatorByTypeCreators()
+    std::map<std::string, ApprovalTests::EmptyFileCreator>
+    defaultEmptyFileCreatorByTypeCreators()
     {
         std::map<std::string, ApprovalTests::EmptyFileCreator> creators;
-        ApprovalTests::EmptyFileCreator wibbleCreator = [](std::string fileName)
-        {
+        ApprovalTests::EmptyFileCreator wibbleCreator = [](std::string fileName) {
             ApprovalTests::StringWriter s("{}");
             s.write(fileName);
         };
