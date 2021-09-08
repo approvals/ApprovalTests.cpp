@@ -3,7 +3,7 @@
 * **Breaking changes**
     * None
 * **New features**
-    * None
+    * [EmptyFileCreatorByType::registerCreator()](/doc/Writers.md#empty-files) - new approved file creation is now customizable for individual file extensions.
 * **Bug fixes**
     * None
 * **Other changes**

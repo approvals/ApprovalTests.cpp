@@ -83,6 +83,10 @@
 
 ## v.x.y.z
 
+### EmptyFileCreatorByType::registerCreator
+
+[Empty file](/doc/Writers.md#empty-files) creation is now customizable for individual file extensions.
+
 ## v.10.11.0
 
 ### useFileNameSanitizer
