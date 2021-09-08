@@ -2,10 +2,25 @@
 #include "ApprovalTests/writers/StringWriter.h"
 #include "StringUtils.h"
 
+namespace
+{
+    std::map<std::string, ApprovalTests::EmptyFileCreator> defaultEmptyFileCreatorByTypeCreators()
+    {
+        std::map<std::string, ApprovalTests::EmptyFileCreator> creators;
+        ApprovalTests::EmptyFileCreator wibbleCreator = [](std::string fileName)
+        {
+            ApprovalTests::StringWriter s("{}");
+            s.write(fileName);
+        };
+        creators[".json"] = wibbleCreator;
+        return creators;
+    }
+}
+
 namespace ApprovalTests
 {
     std::map<std::string, ApprovalTests::EmptyFileCreator>
-        EmptyFileCreatorByType::creators_;
+        EmptyFileCreatorByType::creators_ = defaultEmptyFileCreatorByTypeCreators();
 
     void EmptyFileCreatorByType::registerCreator(const std::string& extensionWithDot,
                                                  EmptyFileCreator creator)

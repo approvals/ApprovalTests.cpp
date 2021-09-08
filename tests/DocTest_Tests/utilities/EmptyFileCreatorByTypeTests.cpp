@@ -6,6 +6,19 @@
 
 using namespace ApprovalTests;
 
+namespace
+{
+    void assertNewFileContents(const std::string& extensionWithDot,
+                               const std::string& expectedContents)
+    {
+        auto received = Approvals::getDefaultNamer()->getReceivedFile(extensionWithDot);
+        remove(received.c_str());
+
+        FileUtils::ensureFileExists(received);
+        CHECK(expectedContents + "\n" == FileUtils::readFileThrowIfMissing(received));
+    }
+}
+
 TEST_CASE("Test register customization")
 {
     EmptyFileCreator wibbleCreator = [](std::string fileName)
@@ -14,10 +27,10 @@ TEST_CASE("Test register customization")
         s.write(fileName);
     };
     EmptyFileCreatorByType::registerCreator(".wibble", wibbleCreator);
+    assertNewFileContents(".wibble", "Wobble");
+}
 
-    auto received = Approvals::getDefaultNamer()->getReceivedFile(".wibble");
-    remove(received.c_str());
-
-    FileUtils::ensureFileExists(received);
-    REQUIRE("Wobble\n" == FileUtils::readFileThrowIfMissing(received));
+TEST_CASE("Test default contents of new files by type")
+{
+    assertNewFileContents(".json", "{}");
 }
