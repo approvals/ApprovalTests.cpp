@@ -9,7 +9,8 @@
   * [Using custom writers](#using-custom-writers)
   * [Using custom filename extensions](#using-custom-filename-extensions)
   * [Empty Files](#empty-files)
-    * [Customizing Empty File Creation](#customizing-empty-file-creation)<!-- endToc -->
+    * [Customizing by File Extension](#customizing-by-file-extension)
+    * [Full Customization](#full-customization)<!-- endToc -->
 
 ## Default Behaviour
 
@@ -62,25 +63,45 @@ ApprovalTests allows for you to customize this behaviour.
 
 For a tool which will help you with this, see [EmptyFiles](https://github.com/VerifyTests/EmptyFiles).
 
-### Customizing Empty File Creation
+### Customizing by File Extension
 
-Here is an example of customising the creation of an empty `.approved.` file, which will create a valid empty json file when running a new ApprovalTest:
+To add new behaviour for a specific file extension, you can register customizations as follows: 
+
+<!-- snippet: register_html_creator -->
+<a id='snippet-register_html_creator'></a>
+```cpp
+ApprovalTests::EmptyFileCreator htmlCreator = [](std::string fileName) {
+    ApprovalTests::StringWriter s("<!doctype html><title>TITLE</title>");
+    s.write(fileName);
+};
+ApprovalTests::EmptyFileCreatorByType::registerCreator(".html", htmlCreator);
+```
+<sup><a href='/tests/DocTest_Tests/utilities/FileUtilsExamples.cpp#L26-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_html_creator' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+This will leave the creation of files with all other extensions alone, and will last for the remainder of program execution, or until a new creator for this file extension is registered.
+
+### Full Customization
+
+Here is an example of replacing the entire empty file creation code, for the lifetime of the disposer.
+
+New `.approved.` files will be created with minimal, valid HTML content, and everything else will be empty.
 
 <!-- snippet: use_empty_file_creator -->
 <a id='snippet-use_empty_file_creator'></a>
 ```cpp
-ApprovalTests::EmptyFileCreator jsonCreator = [](std::string fileName) {
+ApprovalTests::EmptyFileCreator htmlCreator = [](std::string fileName) {
     std::string contents = "";
-    if (ApprovalTests::StringUtils::endsWith(fileName, ".json"))
+    if (ApprovalTests::StringUtils::endsWith(fileName, ".html"))
     {
-        contents = "{}";
+        contents = "<!doctype html><title>TITLE</title>";
     }
     ApprovalTests::StringWriter s(contents);
     s.write(fileName);
 };
-auto disposer = ApprovalTests::FileUtils::useEmptyFileCreator(jsonCreator);
+auto disposer = ApprovalTests::FileUtils::useEmptyFileCreator(htmlCreator);
 ```
-<sup><a href='/tests/DocTest_Tests/utilities/FileUtilsExamples.cpp#L9-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_empty_file_creator' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/utilities/FileUtilsExamples.cpp#L10-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_empty_file_creator' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---
