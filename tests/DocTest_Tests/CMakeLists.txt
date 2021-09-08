@@ -53,6 +53,7 @@ add_executable(${PROJECT_NAME}
         scrubbers/ScrubberTests.cpp
         utilities/CartesianProductTests.cpp
         utilities/DateUtilsTests.cpp
+        utilities/EmptyFileCreatorByTypeTests.cpp
         utilities/ExceptionCollectorTests.cpp
         utilities/FileUtilsSystemSpecificTests.cpp
         utilities/FileUtilsExamples.cpp
