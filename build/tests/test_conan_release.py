@@ -40,7 +40,7 @@ class TestConanRelease(unittest.TestCase):
         print(directory)
 
     def test_conan_version_number(self) -> None:
-        self.assertIn('8.9.0', PrepareConanRelease.get_accepted_approval_releases(ProjectDetails()))
+        self.assertIn('8.9.2', PrepareConanRelease.get_accepted_approval_releases(ProjectDetails()))
 
     def test_get_new_branch_name(self) -> None:
         self.assertEqual('approvaltests.cpp.1.2.3',
