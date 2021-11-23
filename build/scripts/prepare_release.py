@@ -38,9 +38,6 @@ class PrepareRelease:
             run(["open", F"{self.details.project_details.github_project_url}/issues"])
             check_step("any issues resolved in this release are closed")
 
-            run(["open", F"{self.details.project_details.github_project_url}/milestones"])
-            check_step("the milestone (if any) is up to date, including actual version number of release")
-
     def check_pre_conditions_for_main_repo(self) -> None:
         repo = Repo(self.details.locations.main_project_dir)
         assert_step(not repo.bare)
