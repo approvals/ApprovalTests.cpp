@@ -5,6 +5,6 @@
 * **New features**
     * None
 * **Bug fixes**
-    * Using kdiff3 as diff tool, users no longer have to specify name of output file after merge (#191 - thanks @bjosv) 
+    * None
 * **Other changes**
     * None
