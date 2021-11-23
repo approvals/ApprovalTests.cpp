@@ -48,7 +48,7 @@ namespace ApprovalTests
             APPROVAL_TESTS_MACROS_ENTRY(
                 KDIFF3,
                 DiffInfo("/Applications/kdiff3.app/Contents/MacOS/kdiff3",
-                         "{Received} {Approved} -m",
+                         "{Received} {Approved} -m -o {Approved}",
                          Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
@@ -100,7 +100,10 @@ namespace ApprovalTests
                          Type::TEXT))
 
             // More ideas available from: https://www.tecmint.com/best-linux-file-diff-tools-comparison/
-            APPROVAL_TESTS_MACROS_ENTRY(KDIFF3, DiffInfo("kdiff3", Type::TEXT))
+            APPROVAL_TESTS_MACROS_ENTRY(KDIFF3,
+                                         DiffInfo("kdiff3",
+                                                  "{Received} {Approved} -m -o {Approved}",
+                                                  Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(MELD, DiffInfo("meld", Type::TEXT))
 
@@ -162,8 +165,9 @@ namespace ApprovalTests
                          Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(KDIFF3,
-                                        DiffInfo("{ProgramFiles}KDiff3\\kdiff3.exe",
-                                                 Type::TEXT))
+                                         DiffInfo("{ProgramFiles}KDiff3\\bin\\kdiff3.exe",
+                                                  "{Received} {Approved} -m -o {Approved}",
+                                                  Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 VS_CODE,
