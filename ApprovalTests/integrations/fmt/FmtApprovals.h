@@ -1,6 +1,6 @@
 #pragma once
 #ifdef FMT_VERSION
-#include "FmtToString.h"
+#include "ApprovalTests/integrations/fmt/FmtToString.h"
 #include "ApprovalTests/Approvals.h"
 namespace ApprovalTests
 {

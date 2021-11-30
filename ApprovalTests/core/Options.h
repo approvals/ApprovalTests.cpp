@@ -3,10 +3,10 @@
 #include <utility>
 #include <exception>
 
-#include "namers/DefaultNamerFactory.h"
-#include "scrubbers/Scrubbers.h"
-#include "core/Reporter.h"
-#include "utilities/Macros.h"
+#include "ApprovalTests/namers/DefaultNamerFactory.h"
+#include "ApprovalTests/scrubbers/Scrubbers.h"
+#include "ApprovalTests/core/Reporter.h"
+#include "ApprovalTests/utilities/Macros.h"
 
 namespace ApprovalTests
 {

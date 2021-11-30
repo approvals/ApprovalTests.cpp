@@ -8,14 +8,14 @@
 #include "ApprovalTests/reporters/FrontLoadedReporterDisposer.h"
 #include "ApprovalTests/core/FileApprover.h"
 #include "ApprovalTests/integrations/fmt/FmtToString.h"
-#include "reporters/DefaultReporterDisposer.h"
+#include "ApprovalTests/reporters/DefaultReporterDisposer.h"
 #include "ApprovalTests/core/Reporter.h"
-#include "writers/ExistingFile.h"
-#include "namers/SubdirectoryDisposer.h"
-#include "namers/DefaultNamerDisposer.h"
-#include "core/Options.h"
-#include "utilities/StringMaker.h"
-#include "ApprovalUtils.h"
+#include "ApprovalTests/writers/ExistingFile.h"
+#include "ApprovalTests/namers/SubdirectoryDisposer.h"
+#include "ApprovalTests/namers/DefaultNamerDisposer.h"
+#include "ApprovalTests/core/Options.h"
+#include "ApprovalTests/utilities/StringMaker.h"
+#include "ApprovalTests/ApprovalUtils.h"
 
 namespace ApprovalTests
 {

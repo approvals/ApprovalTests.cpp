@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GoogleCustomizationsFactory.h"
+#include "ApprovalTests/integrations/google/GoogleCustomizationsFactory.h"
 
 namespace ApprovalTests
 {

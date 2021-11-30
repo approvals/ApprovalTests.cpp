@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DefaultNamerFactory.h"
+#include "ApprovalTests/namers/DefaultNamerFactory.h"
 #include "ApprovalTests/utilities/Macros.h"
 
 namespace ApprovalTests

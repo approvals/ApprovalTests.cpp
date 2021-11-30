@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ApprovalTestNamer.h"
-#include "../Approvals.h"
-#include "TemplatedCustomNamer.h"
+#include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/namers/TemplatedCustomNamer.h"
 
 namespace ApprovalTests
 {

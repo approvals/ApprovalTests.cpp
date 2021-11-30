@@ -2,13 +2,13 @@
 
 #include <type_traits>
 #include <utility>
-#include "reporters/DefaultReporter.h"
+#include "ApprovalTests/reporters/DefaultReporter.h"
 #include "ApprovalTests/core/Reporter.h"
 #include "ApprovalTests/core/Options.h"
 #include "ApprovalTests/utilities/CartesianProduct.h"
 #include "ApprovalTests/utilities/MoreHelpMessages.h"
-#include "Approvals.h"
-#include "ApprovalUtils.h"
+#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/ApprovalUtils.h"
 
 namespace ApprovalTests
 {

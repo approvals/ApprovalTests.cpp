@@ -3,7 +3,7 @@
 
 #include <string>
 #include "ApprovalTests/utilities/SystemUtils.h"
-#include "CommandLauncher.h"
+#include "ApprovalTests/launchers/CommandLauncher.h"
 
 namespace ApprovalTests
 {

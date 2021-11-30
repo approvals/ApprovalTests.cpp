@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
-#include "GoogleCustomizationsFactory.h"
+#include "ApprovalTests/integrations/google/GoogleCustomizationsFactory.h"
 #include "ApprovalTests/integrations/FrameworkIntegrations.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 

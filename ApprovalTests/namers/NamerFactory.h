@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SectionNameDisposer.h"
+#include "ApprovalTests/namers/SectionNameDisposer.h"
 
 #include <string>
 
