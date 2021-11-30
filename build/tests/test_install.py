@@ -11,7 +11,7 @@ from tests.helpers import set_home_directory
 
 class TestInstall(unittest.TestCase):
 
-    def test_snippet_samples_compile(self) -> None:
+    def test_includes_are_fully_qualified(self) -> None:
         set_home_directory()
 
         def with_invalid_include(filename: str) -> bool:
