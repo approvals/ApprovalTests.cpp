@@ -2,7 +2,12 @@
 
 # How to Install ApprovalTests Using CMake
 
-toc
+<!-- toc -->
+## Contents
+
+  * [Audience](#audience)
+  * [Why](#why)
+  * [Example](#example)<!-- endToc -->
 
 ## Audience
 
