@@ -45,12 +45,12 @@ if (APPROVAL_TESTS_BUILD_TESTING OR APPROVAL_TESTS_BUILD_EXAMPLES)
 endif ()
 
 if (APPROVAL_TESTS_BUILD_TESTING)
-    add_subdirectory(CMake/fmt)
     add_subdirectory(tests)
 endif ()
 
 if (APPROVAL_TESTS_BUILD_EXAMPLES)
     add_subdirectory(CMake/filesystem)
+    add_subdirectory(CMake/fmt)
     add_subdirectory(examples)
 endif ()
 
