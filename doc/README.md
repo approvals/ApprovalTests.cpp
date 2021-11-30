@@ -113,6 +113,8 @@ effectively.
     [CMake](/doc/CMakeIntegration.md#top) |
     [Conan](/doc/ConanIntegration.md#top) |
     [Vcpkg](/doc/VcpkgIntegration.md#top)
+  - **Installation**:
+    [Installation Via Cmake](/doc/how_tos/InstallApprovalTestsUsingCMake.md#top)
   - **Your builds**:
     [Build Machines and CI servers](/doc/BuildMachinesAndCI.md#top)
 
