@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ApprovalTests/core/Reporter.h"
-#include "ReporterFactory.h"
+#include "ApprovalTests/reporters/ReporterFactory.h"
 #include <memory>
 
 namespace ApprovalTests

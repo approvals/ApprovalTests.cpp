@@ -4,8 +4,8 @@
 #include <memory>
 #include "ApprovalTests/launchers/CommandLauncher.h"
 #include "ApprovalTests/core/Reporter.h"
-#include "ConvertForCygwin.h"
-#include "DiffInfo.h"
+#include "ApprovalTests/reporters/ConvertForCygwin.h"
+#include "ApprovalTests/reporters/DiffInfo.h"
 
 namespace ApprovalTests
 {

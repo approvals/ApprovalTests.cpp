@@ -4,7 +4,7 @@
 #include "ApprovalTests/namers/NamerFactory.h"
 #include "ApprovalTests/core/ApprovalNamer.h"
 #include "ApprovalTests/utilities/Path.h"
-#include "DefaultNamerDisposer.h"
+#include "ApprovalTests/namers/DefaultNamerDisposer.h"
 
 namespace ApprovalTests
 {

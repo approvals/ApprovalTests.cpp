@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ApprovalTests/core/Reporter.h"
-#include "../utilities/MachineBlocker.h"
+#include "ApprovalTests/utilities/MachineBlocker.h"
 
 #include <memory>
 #include <utility>

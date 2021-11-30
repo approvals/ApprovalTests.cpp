@@ -1,6 +1,6 @@
 #pragma once
 
-#include "FirstWorkingReporter.h"
+#include "ApprovalTests/reporters/FirstWorkingReporter.h"
 
 namespace ApprovalTests
 {
