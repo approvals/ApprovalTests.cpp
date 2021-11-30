@@ -35,7 +35,6 @@ if (NOT_SUBPROJECT)
     #   github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/dev_approvals_fetch_content/
     add_subdirectory(CMake/cpputest)
     add_subdirectory(CMake/googletest)
-    add_subdirectory(CMake/filesystem)
 endif ()
 
 # This will optionally add the other third-party sub-directories
@@ -51,6 +50,7 @@ if (APPROVAL_TESTS_BUILD_TESTING)
 endif ()
 
 if (APPROVAL_TESTS_BUILD_EXAMPLES)
+    add_subdirectory(CMake/filesystem)
     add_subdirectory(examples)
 endif ()
 
