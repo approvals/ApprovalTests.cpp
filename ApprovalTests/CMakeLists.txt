@@ -176,4 +176,15 @@ if (("${CMAKE_GENERATOR}" MATCHES "Ninja") AND (${CMAKE_UNITY_BUILD}))
     target_compile_definitions(${PROJECT_NAME} PUBLIC APPROVAL_TESTS_DISABLE_FILE_MACRO_CHECK)
 endif ()
 
+# Install library
+ install(TARGETS ${PROJECT_NAME}
+         ARCHIVE)
+
+ # Install headerfiles
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+         TYPE INCLUDE
+         FILES_MATCHING
+         PATTERN "*.h"
+         PATTERN "*.hpp")
+
 include(WarningsAsErrors)
