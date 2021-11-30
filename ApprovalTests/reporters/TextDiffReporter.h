@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core/Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 
 #include <memory>
 #include <iosfwd>

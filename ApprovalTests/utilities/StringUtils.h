@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "StringMaker.h"
+#include "ApprovalTests/utilities/StringMaker.h"
 
 #include <string>
 #include <algorithm>

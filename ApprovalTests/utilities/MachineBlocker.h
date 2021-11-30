@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Blocker.h"
+#include "ApprovalTests/utilities/Blocker.h"
 #include <utility>
-#include "SystemUtils.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 
 namespace ApprovalTests
 {

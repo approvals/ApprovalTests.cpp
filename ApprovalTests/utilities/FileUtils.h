@@ -1,8 +1,8 @@
 #pragma once
 
 #include <string>
-#include "EmptyFileCreatorFactory.h"
-#include "EmptyFileCreatorDisposer.h"
+#include "ApprovalTests/utilities/EmptyFileCreatorFactory.h"
+#include "ApprovalTests/utilities/EmptyFileCreatorDisposer.h"
 namespace ApprovalTests
 {
     class FileUtils

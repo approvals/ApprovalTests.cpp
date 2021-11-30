@@ -1,7 +1,7 @@
 #pragma once
 
-#include "DiffPrograms.h"
-#include "CommandReporter.h"
+#include "ApprovalTests/reporters/DiffPrograms.h"
+#include "ApprovalTests/reporters/CommandReporter.h"
 #include "ApprovalTests/launchers/SystemLauncher.h"
 #include <string>
 

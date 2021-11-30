@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SystemUtils.h"
+#include "ApprovalTests/utilities/SystemUtils.h"
 
 namespace ApprovalTests
 {

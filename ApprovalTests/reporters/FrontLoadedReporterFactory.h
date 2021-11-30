@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ApprovalTests/core/Reporter.h"
-#include "DefaultFrontLoadedReporter.h"
+#include "ApprovalTests/reporters/DefaultFrontLoadedReporter.h"
 
 #include <memory>
 

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "FirstWorkingReporter.h"
-#include "GenericDiffReporter.h"
+#include "ApprovalTests/reporters/FirstWorkingReporter.h"
+#include "ApprovalTests/reporters/GenericDiffReporter.h"
 
 namespace ApprovalTests
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "EmptyFileCreatorFactory.h"
+#include "ApprovalTests/utilities/EmptyFileCreatorFactory.h"
 
 #include <map>
 #include <string>

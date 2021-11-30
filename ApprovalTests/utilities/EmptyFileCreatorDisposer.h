@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ApprovalTests/utilities/Macros.h"
-#include "EmptyFileCreatorFactory.h"
+#include "ApprovalTests/utilities/EmptyFileCreatorFactory.h"
 
 namespace ApprovalTests
 {
