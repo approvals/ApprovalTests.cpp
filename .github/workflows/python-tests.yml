@@ -17,6 +17,7 @@ jobs:
   build:
 
     runs-on: ubuntu-20.04
+    if: false # Disable this build temporarily
 
     steps:
     - name: Check out ApprovalTests.cpp
