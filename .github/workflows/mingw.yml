@@ -12,6 +12,7 @@ on:
 
 jobs:
   MinGW:
+    if: false # Disable this build temporarily
     runs-on: windows-latest
     strategy:
       fail-fast: false
