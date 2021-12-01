@@ -38,7 +38,7 @@ jobs:
             which timeout
             cmake --version
             echo '------------------------------------------------------------------------------------------------'
-            timeout --kill-after=10 cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=VERBOSE --debug-trycompile
+            timeout 10 cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=VERBOSE --debug-trycompile || echo "Timed out"
             echo '------------------------------------------------------------------------------------------------'
             cat CMakeFiles/CMakeError.log
             echo '------------------------------------------------------------------------------------------------'
