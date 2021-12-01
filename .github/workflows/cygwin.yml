@@ -24,7 +24,7 @@ jobs:
         with:
           platform: x64
           # libboost-devel
-          packages: cmake libtool gcc-g++ binutils make
+          packages: cmake libtool gcc-g++ binutils make timeout
           hardlinks: 1
 
       - name: Build and test
@@ -35,8 +35,15 @@ jobs:
             mkdir cmake-build
             cd cmake-build
             # Debug gives Assembler messages: ... CMakeFiles/Catch2_Tests.dir/main.cpp.o: 'file too big'
+            which timeout
             cmake --version
-            cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=VERBOSE --debug-trycompile
+            echo '------------------------------------------------------------------------------------------------'
+            timeout --kill-after=10 cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=VERBOSE --debug-trycompile
+            echo '------------------------------------------------------------------------------------------------'
+            cat CMakeFiles/CMakeError.log
+            echo '------------------------------------------------------------------------------------------------'
+            cat CMakeFiles/CMakeOutput.log
+            echo '------------------------------------------------------------------------------------------------'
             cmake --build . --parallel 4
             ctest --verbose --output-on-failure -C Release
           }
