@@ -13,6 +13,7 @@ on:
 jobs:
   clang-format:
     runs-on: ubuntu-20.04
+    if: false # Disable this platform temporarily
     steps:
       - uses: actions/checkout@master
       - uses: DoozyX/clang-format-lint-action@v0.12
@@ -45,7 +46,7 @@ jobs:
 
   Linux:
     needs: clang-format
-    # if: false # Disable this platform temporarily
+    if: false # Disable this platform temporarily
     runs-on: ubuntu-${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -133,7 +134,7 @@ jobs:
 
   macOS:
     needs: clang-format
-    # if: false # Disable this platform temporarily
+    if: false # Disable this platform temporarily
     runs-on: macos-${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -191,7 +192,7 @@ jobs:
 
   Windows:
     needs: clang-format
-    # if: false # Disable this platform temporarily
+    if: false # Disable this platform temporarily
     runs-on: windows-${{ matrix.os-version }}
     strategy:
       fail-fast: false
