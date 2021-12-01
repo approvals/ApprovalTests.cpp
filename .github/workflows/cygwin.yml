@@ -53,8 +53,8 @@ jobs:
             echo 'executing: cat CMakeFiles/CMakeFiles/CMakeOutput.log'
             cat CMakeFiles/CMakeOutput.log || echo "Cannot cat CMakeFiles/CMakeOutput.log"
             echo '------------------------------------------------------------------------------------------------'
-            cmake --build . --parallel 4
-            ctest --verbose --output-on-failure -C Release
+            # cmake --build . --parallel 4
+            # ctest --verbose --output-on-failure -C Release
           }
           basic
         shell: C:\tools\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
