@@ -40,9 +40,12 @@ jobs:
             echo '------------------------------------------------------------------------------------------------'
             timeout 10 cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=VERBOSE --debug-trycompile || echo "Timed out"
             echo '------------------------------------------------------------------------------------------------'
-            cat CMakeFiles/CMakeError.log
+            ls -ls
+            ls -ls CMakeFiles/ || echo "Cannot ls CMakeFiles/"
             echo '------------------------------------------------------------------------------------------------'
-            cat CMakeFiles/CMakeOutput.log
+            cat CMakeFiles/CMakeError.log || echo "Cannot cat CMakeFiles/CMakeError.log"
+            echo '------------------------------------------------------------------------------------------------'
+            cat CMakeFiles/CMakeOutput.log || echo "Cannot cat CMakeFiles/CMakeOutput.log"
             echo '------------------------------------------------------------------------------------------------'
             cmake --build . --parallel 4
             ctest --verbose --output-on-failure -C Release
