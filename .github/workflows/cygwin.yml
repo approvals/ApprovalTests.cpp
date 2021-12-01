@@ -38,13 +38,19 @@ jobs:
             which timeout
             cmake --version
             echo '------------------------------------------------------------------------------------------------'
+            echo 'executing: timeout 10 cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=VERBOSE --debug-trycompile'
             timeout 10 cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=VERBOSE --debug-trycompile || echo "Timed out"
             echo '------------------------------------------------------------------------------------------------'
+            echo 'executing: ls -ls'
             ls -ls
+            echo '------------------------------------------------------------------------------------------------'
+            echo 'executing: ls -ls CMakeFiles/'
             ls -ls CMakeFiles/ || echo "Cannot ls CMakeFiles/"
             echo '------------------------------------------------------------------------------------------------'
+            echo 'executing: cat CMakeFiles/CMakeError.log'
             cat CMakeFiles/CMakeError.log || echo "Cannot cat CMakeFiles/CMakeError.log"
             echo '------------------------------------------------------------------------------------------------'
+            echo 'executing: cat CMakeFiles/CMakeFiles/CMakeOutput.log'
             cat CMakeFiles/CMakeOutput.log || echo "Cannot cat CMakeFiles/CMakeOutput.log"
             echo '------------------------------------------------------------------------------------------------'
             cmake --build . --parallel 4
