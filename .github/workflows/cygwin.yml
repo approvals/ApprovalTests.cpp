@@ -24,6 +24,7 @@ jobs:
         with:
           platform: x64
           packages: cmake libboost-devel libtool gcc gcc-g++ binutils make
+          hardlinks: 1
 
       - name: Build and test
         run: |
