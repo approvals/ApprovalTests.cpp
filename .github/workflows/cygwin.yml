@@ -36,7 +36,7 @@ jobs:
             cd cmake-build
             # Debug gives Assembler messages: ... CMakeFiles/Catch2_Tests.dir/main.cpp.o: 'file too big'
             cmake --version
-            cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=VERBOSE
+            cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=VERBOSE --debug-trycompile
             cmake --build . --parallel 4
             ctest --verbose --output-on-failure -C Release
           }
