@@ -38,8 +38,8 @@ jobs:
             which timeout
             cmake --version
             echo '------------------------------------------------------------------------------------------------'
-            echo 'executing: timeout 10 cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=VERBOSE --debug-trycompile'
-            timeout 10 cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=VERBOSE --debug-trycompile || echo "Timed out"
+            echo 'executing: timeout 10 cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=TRACE --debug-trycompile'
+            timeout 10 cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release --log-level=TRACE --debug-trycompile || echo "Timed out"
             echo '------------------------------------------------------------------------------------------------'
             echo 'executing: ls -ls'
             ls -ls
