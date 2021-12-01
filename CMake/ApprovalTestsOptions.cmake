@@ -6,10 +6,10 @@ option(APPROVAL_TESTS_BUILD_TESTING
         ${NOT_SUBPROJECT})
 option(APPROVAL_TESTS_BUILD_EXAMPLES
         "Build documentation examples."
-        ${NOT_SUBPROJECT})
+        OFF)
 option(APPROVAL_TESTS_BUILD_DOCS
         "Build documentation - if Doxygen and Sphinx are found."
-        ${NOT_SUBPROJECT})
+        OFF)
 
 # -------------------------------------------------------------------
 # Control which of our copies of header-only third_party libraries are made available.
@@ -39,7 +39,7 @@ option(APPROVAL_TESTS_ENABLE_CODE_COVERAGE
 # considerably.
 option(APPROVAL_TESTS_ENABLE_BOOST_TEST_INTEGRATION
         "Enable the Boost.Test integration and testing"
-        ON)
+        OFF)
 mark_as_advanced(APPROVAL_TESTS_ENABLE_BOOST_TEST_INTEGRATION)
 
 option(APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION
@@ -49,7 +49,7 @@ mark_as_advanced(APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION)
 
 option(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION
         "Enable the CppUTest integration and testing"
-        ON)
+        OFF)
 mark_as_advanced(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION)
 if (CYGWIN)
     MESSAGE(WARNING "The CppUTest integration with Approval Tests does not build on this platform, CygWin, therefore it's disabled")
@@ -58,15 +58,15 @@ endif()
 
 option(APPROVAL_TESTS_ENABLE_DOCTEST_INTEGRATION
         "Enable the doctest integration and testing"
-        ON)
+        OFF)
 mark_as_advanced(APPROVAL_TESTS_ENABLE_DOCTEST_INTEGRATION)
 
 option(APPROVAL_TESTS_ENABLE_GOOGLETEST_INTEGRATION
         "Enable the GoogleTest integration and testing"
-        ON)
+        OFF)
 mark_as_advanced(APPROVAL_TESTS_ENABLE_GOOGLETEST_INTEGRATION)
 
 option(APPROVAL_TESTS_ENABLE_UT_INTEGRATION
         "Enable the Boost.UT integration and testing"
-        ON)
+        OFF)
 mark_as_advanced(APPROVAL_TESTS_ENABLE_UT_INTEGRATION)
