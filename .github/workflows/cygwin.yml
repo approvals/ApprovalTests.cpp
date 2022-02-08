@@ -27,7 +27,7 @@ jobs:
           packages: cmake libboost-devel libtool gcc gcc-g++ binutils make
           hardlinks: 1
 
-      - name: Build and test
+      - name: Build
         run: |
           basic() {
             pwd
@@ -38,6 +38,17 @@ jobs:
             cmake --version
             cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release
             cmake --build . --parallel 4
+          }
+          basic
+        shell: C:\tools\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+
+      - name: Test
+        run: |
+          basic() {
+            pwd
+            cd /cygdrive/d/a/ApprovalTests.cpp/ApprovalTests.cpp
+            mkdir cmake-build
+            cd cmake-build
             ctest --verbose --output-on-failure -C Release
           }
           basic
