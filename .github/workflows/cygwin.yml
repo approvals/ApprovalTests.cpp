@@ -32,8 +32,8 @@ jobs:
           basic() {
             pwd
             cd /cygdrive/d/a/ApprovalTests.cpp/ApprovalTests.cpp
-            mkdir cmake-build
-            cd cmake-build
+            mkdir -p cmake-build
+            cd       cmake-build
             # Debug gives Assembler messages: ... CMakeFiles/Catch2_Tests.dir/main.cpp.o: 'file too big'
             cmake --version
             cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release
@@ -47,8 +47,8 @@ jobs:
           basic() {
             pwd
             cd /cygdrive/d/a/ApprovalTests.cpp/ApprovalTests.cpp
-            mkdir cmake-build
-            cd cmake-build
+            mkdir -p cmake-build
+            cd       cmake-build
             ctest --verbose --output-on-failure -C Release
           }
           basic
