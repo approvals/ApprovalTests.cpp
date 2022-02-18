@@ -197,10 +197,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - job-name: VS-2017
-            os-version: '2016'
-            generator: '"Visual Studio 15 2017"'
-
           - job-name: VS-2019
             os-version: '2019'
             generator: '"Visual Studio 16 2019"'
@@ -208,6 +204,14 @@ jobs:
           - job-name: VS-2019 (clangcl)
             os-version: '2019'
             generator: '"Visual Studio 16 2019" -T "clangcl"'
+
+          - job-name: VS-latest
+            os-version: 'latest'
+            generator: '"Visual Studio 17 2022"'
+
+          - job-name: VS-latest (clangcl)
+            os-version: 'latest'
+            generator: '"Visual Studio 17 2022" -T "clangcl"'
 
     name: Windows ${{ matrix.job-name }}
     env:
