@@ -13,11 +13,12 @@ namespace ApprovalTests
 
     public:
         explicit ExistingFileNamer(std::string filePath_, const Options& options);
-        ExistingFileNamer(const ExistingFileNamer& x) : filePath(x.filePath), options_(x.options_)
+        ExistingFileNamer(const ExistingFileNamer& x)
+            : filePath(x.filePath), options_(x.options_)
         {
-
         }
-        ExistingFileNamer(ExistingFileNamer&& x) : filePath(x.filePath), options_(x.options_)
+        ExistingFileNamer(ExistingFileNamer&& x)
+            : filePath(x.filePath), options_(x.options_)
         {
         }
 
