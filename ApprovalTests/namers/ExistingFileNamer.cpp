@@ -8,6 +8,16 @@ namespace ApprovalTests
     {
     }
 
+    ExistingFileNamer::ExistingFileNamer(const ExistingFileNamer& x)
+        : filePath(x.filePath), options_(x.options_)
+    {
+    }
+
+    ExistingFileNamer::ExistingFileNamer(ExistingFileNamer&& x) noexcept
+        : filePath(std::move(x.filePath)), options_(x.options_)
+    {
+    }
+
     std::string ExistingFileNamer::getApprovedFile(std::string extensionWithDot) const
     {
         return options_.getNamer()->getApprovedFile(extensionWithDot);
