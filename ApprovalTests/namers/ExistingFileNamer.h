@@ -13,6 +13,8 @@ namespace ApprovalTests
 
     public:
         explicit ExistingFileNamer(std::string filePath_, const Options& options);
+        ExistingFileNamer(const ExistingFileNamer&) = default;
+        ExistingFileNamer(ExistingFileNamer&&) = default;
 
         virtual std::string getApprovedFile(std::string extensionWithDot) const override;
 
