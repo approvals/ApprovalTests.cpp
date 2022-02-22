@@ -6,6 +6,11 @@
 
 namespace ApprovalTests
 {
+    class NamerWithFields : public ApprovalNamer
+    {
+        std::string filePath_;
+    };
+
     class ExistingFileNamer : public ApprovalNamer
     {
         std::string filePath;
