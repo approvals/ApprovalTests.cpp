@@ -8,29 +8,17 @@ on:
 
 jobs:
 
-  Linux:
+  Linux-Clang13:
     # if: false # Disable this platform temporarily
-    runs-on: ubuntu-${{ matrix.os-version }}
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - job-name: 'clang13'
-            os-version: '20.04'
-            c-compiler: 'clang-13'
-            cxx-compiler: 'clang++-13'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
+    runs-on: ubuntu-latest
 
-    name: Linux ${{ matrix.job-name }}
+    name: Linux Clang13
     env:
-      BUILD_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
-      CC: ${{ matrix.c-compiler }}
-      CXX: ${{ matrix.cxx-compiler }}
+      BUILD_PATH: ${{ github.workspace }}/build_space
+      CC: clang-13
+      CXX: clang++-13
     steps:
       - uses: actions/checkout@master
-      - uses: seanmiddleditch/gha-setup-ninja@v3
-        if: contains(matrix.generator, 'Ninja')
 
       - name: Set up Clang
         uses: egor-tensin/setup-clang@v1
