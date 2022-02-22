@@ -1,0 +1,46 @@
+name: clang13-temp
+
+on:
+  push:
+    branches:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+
+  Linux:
+    # if: false # Disable this platform temporarily
+    runs-on: ubuntu-${{ matrix.os-version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - job-name: 'clang13'
+            os-version: '20.04'
+            c-compiler: 'clang-13'
+            cxx-compiler: 'clang++-13'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
+    name: Linux ${{ matrix.job-name }}
+    env:
+      BUILD_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
+      CC: ${{ matrix.c-compiler }}
+      CXX: ${{ matrix.cxx-compiler }}
+    steps:
+      - uses: actions/checkout@master
+      - uses: seanmiddleditch/gha-setup-ninja@v3
+        if: contains(matrix.generator, 'Ninja')
+
+      - name: Set up Clang
+        uses: egor-tensin/setup-clang@v1
+        with:
+          version: 13
+
+      - name: install boost
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y libboost-all-dev
+
+      - uses: ./.github/actions/build-and-test
+
