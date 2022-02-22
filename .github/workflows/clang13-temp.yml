@@ -11,6 +11,10 @@ jobs:
   Linux-Clang13:
     # if: false # Disable this platform temporarily
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - generator: '"Unix Makefiles"'
 
     name: Linux Clang13
     env:
