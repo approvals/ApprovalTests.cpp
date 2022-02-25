@@ -6,6 +6,5 @@
     * None
 * **Bug fixes**
     * None
-* **Fixed compilation warnings**
-    * Fix compiler warning C4459 in MSVC with /W4 (See #193)
-    * Fix compilation failure with clang13 due to -Werror/-Wdeprecated-copy-with-dtor (#194)
+* **Other changes**
+    * None
