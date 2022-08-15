@@ -21,7 +21,7 @@ jobs:
           exclude: './third_party'
           inplace: True
           clangFormatVersion: 9
-      - uses: EndBug/add-and-commit@v4
+      - uses: EndBug/add-and-commit@v9
         with:
           author_name: Clang GitHub Action
           author_email: actions@github.com
