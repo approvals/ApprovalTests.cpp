@@ -12,6 +12,8 @@ on:
 
 jobs:
   MinGW:
+    # Pinned windows version due to:
+    # https://github.com/egor-tensin/setup-mingw/issues/6
     runs-on: windows-2019
     strategy:
       fail-fast: false
