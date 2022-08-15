@@ -58,7 +58,7 @@ jobs:
         tree -d -L 2 .
 
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: 3.8
 
