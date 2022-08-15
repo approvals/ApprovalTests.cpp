@@ -1,7 +1,4 @@
-find_package(
-        Doxygen
-        REQUIRED dot
-)
+find_package(Doxygen)
 if (NOT Doxygen_FOUND)
     message(STATUS "Doxygen not found: Will not generate docs")
     return()
