@@ -62,7 +62,7 @@ jobs:
       with:
         python-version: 3.8
 
-    - uses: r-lib/actions/setup-pandoc@v1
+    - uses: r-lib/actions/setup-pandoc@v2
       with:
         pandoc-version: '2.9.2.1'
 
