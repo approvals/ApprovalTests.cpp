@@ -11,8 +11,13 @@ project(ApprovalTests.cpp)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/CMake/")
 include(ApprovalTestsOptions)
-include(UseCompilerCache)
-useCompilerCache()
+
+if (NOT CYGWIN)
+    # cygwin on GitHub Actions gives the following, as of 2022-09-05
+    # ccache: error: execute_noreturn of /usr/bin/c++.exe failed: No such file or directory
+    include(UseCompilerCache)
+    useCompilerCache()
+endif ()
 
 #if (CMAKE_CXX_COMPILER_ID MATCHES ".*Clang" AND
 #        CMAKE_CXX_COMPILER_VERSION GREATER_EQUAL 9.0)
