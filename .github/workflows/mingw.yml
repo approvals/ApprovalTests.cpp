@@ -20,7 +20,7 @@ jobs:
     env:
       BUILD_PATH: build_space
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: set up python
         uses: actions/setup-python@v4

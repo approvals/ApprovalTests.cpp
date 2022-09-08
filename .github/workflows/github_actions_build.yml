@@ -14,7 +14,7 @@ jobs:
   clang-format:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - uses: DoozyX/clang-format-lint-action@v0.14
         with:
           source: '.'
@@ -34,7 +34,7 @@ jobs:
   #  markdown-link-check:
   #    runs-on: ubuntu-20.04
   #    steps:
-  #      - uses: actions/checkout@master
+  #      - uses: actions/checkout@v3
   #      - uses: actions/setup-node@v1
   #        with:
   #          node-version: '12.x'
@@ -120,7 +120,7 @@ jobs:
       CC: ${{ matrix.c-compiler }}
       CXX: ${{ matrix.cxx-compiler }}
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
@@ -179,7 +179,7 @@ jobs:
       HOMEBREW_NO_INSTALL_CLEANUP: 1
       DEVELOPER_DIR: '/Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer'
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
@@ -217,7 +217,7 @@ jobs:
     env:
       BUILD_PATH: ${{ github.workspace }}/build_space
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
 
       - name: set up python
         uses: actions/setup-python@v4
