@@ -68,7 +68,6 @@ rectangles
 [0] = [x: 4 y: 50 width: 100 height: 61]
 [1] = [x: 50 y: 5200 width: 400 height: 62]
 [2] = [x: 60 y: 3 width: 7 height: 63]
-
 ```
 <sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.MultipleLinesCanBeHardToRead.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -84,7 +83,6 @@ rectangles
 (x,y,width,height) = (4,50,100,61)
 (x,y,width,height) = (50,5200,400,62)
 (x,y,width,height) = (60,3,7,63)
-
 ```
 <sup><a href='/tests/DocTest_Tests/docs/approval_tests/ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-ToStringWrapperExample.AlternativeFormattingCanBeEasyToRead.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->

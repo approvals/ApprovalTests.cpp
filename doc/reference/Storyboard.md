@@ -81,10 +81,7 @@ _ _ _ _ _
 _ _ * _ _ 
 _ _ * _ _ 
 _ _ * _ _ 
-_ _ _ _ _ 
-
-
-
+_ _ _ _ _
 ```
 <sup><a href='/tests/DocTest_Tests/approval_tests/StoryboardTests.Storyboard_customization_mechanisms.approved.txt#L1-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-StoryboardTests.Storyboard_customization_mechanisms.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->

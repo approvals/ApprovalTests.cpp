@@ -49,6 +49,7 @@ AutoApproveIfMissingReporter
 AutoApproveReporter
 CIBuildOnlyReporter
 ClipboardReporter
+CrossPlatform::VisualStudioCodeReporter
 DefaultFrontLoadedReporter
 DefaultReporter
 DiffReporter
@@ -78,9 +79,8 @@ Windows::TortoiseDiffReporter
 Windows::TortoiseGitDiffReporter
 Windows::VisualStudioCodeReporter
 Windows::WinMergeReporter
-
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/approval_tests/ReporterFactoryTests.Verify_all_valid_env_var_values.approved.txt#L1-L34' title='Snippet source file'>snippet source</a> | <a href='#snippet-ReporterFactoryTests.Verify_all_valid_env_var_values.approved.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/approval_tests/ReporterFactoryTests.Verify_all_valid_env_var_values.approved.txt#L1-L35' title='Snippet source file'>snippet source</a> | <a href='#snippet-ReporterFactoryTests.Verify_all_valid_env_var_values.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Acceptable Variations

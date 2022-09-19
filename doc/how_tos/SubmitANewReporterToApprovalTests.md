@@ -15,7 +15,8 @@
       * [Edit ApprovalTests/reporters/ReporterFactory.cpp](#edit-approvaltestsreportersreporterfactorycpp)
       * [Edit tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](#edit-testsdoctest_testsreporterscommandlinereportertestscpp)
   * [Adding a new Windows reporter](#adding-a-new-windows-reporter)
-  * [Adding a new Linux reporter](#adding-a-new-linux-reporter)<!-- endToc -->
+  * [Adding a new Linux reporter](#adding-a-new-linux-reporter)
+  * [Adding a new Cross Platform reporter](#adding-a-new-cross-platform-reporter)<!-- endToc -->
 
 This guide is for figuring out how to make a more robust custom reporter, that you might want to submit back to us as a Pull Request.
 
@@ -37,7 +38,7 @@ By way of an example, for supporting a new Reporter on macOS, the steps are:
 ```h
 DiffInfo ARAXIS_MERGE();
 ```
-<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L13-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_macro_header' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DiffPrograms.h#L18-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_macro_header' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### Edit [ApprovalTests/reporters/DiffPrograms.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/DiffPrograms.cpp)
@@ -52,7 +53,7 @@ APPROVAL_TESTS_MACROS_ENTRY(
     DiffInfo("/Applications/Araxis Merge.app/Contents/Utilities/compare",
              Type::TEXT_AND_IMAGE))
 ```
-<sup><a href='/ApprovalTests/reporters/DiffPrograms.cpp#L24-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_macro_implementation' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DiffPrograms.cpp#L33-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_macro_implementation' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### Edit [ApprovalTests/reporters/MacReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/MacReporters.h)
@@ -129,7 +130,7 @@ APPROVAL_TESTS_REGISTER_REPORTER(Mac::TkDiffReporter);
 APPROVAL_TESTS_REGISTER_REPORTER(Mac::VisualStudioCodeReporter);
 APPROVAL_TESTS_REGISTER_REPORTER(Mac::CLionDiffReporter);
 ```
-<sup><a href='/ApprovalTests/reporters/ReporterFactory.cpp#L67-L78' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_reporter_with_factory' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/ReporterFactory.cpp#L68-L79' title='Snippet source file'>snippet source</a> | <a href='#snippet-register_reporter_with_factory' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### Edit [tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp)
@@ -151,7 +152,7 @@ std::make_shared<Mac::TkDiffReporter>(),
 std::make_shared<Mac::VisualStudioCodeReporter>(),
 std::make_shared<Mac::CLionDiffReporter>(),
 ```
-<sup><a href='/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp#L26-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_command_test' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/reporters/CommandLineReporterTests.cpp#L27-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_command_test' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 * Run this test, review and accept the changes.

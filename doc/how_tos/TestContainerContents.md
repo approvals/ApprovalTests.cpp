@@ -37,7 +37,6 @@ TITLE
 
 [0] = hello
 [1] = world
-
 ```
 <sup><a href='/tests/DocTest_Tests/approval_tests/VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt#L1-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-VectorTests.YouCanVerifyVectorsWithStandardText.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->

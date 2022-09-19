@@ -159,7 +159,6 @@ FileExtension               = txt
 
 Also available:
 {TestSourceDirectory} = <full path to sources>/ApprovalTests.cpp/tests/DocTest_Tests/namers/
-
 ```
 <sup><a href='/tests/DocTest_Tests/namers/approval_tests/TemplatedCustomNamerTests.Demo_all_namer_templates.approved.txt#L1-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-TemplatedCustomNamerTests.Demo_all_namer_templates.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->

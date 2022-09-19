@@ -9,6 +9,7 @@
     * [Mac](#mac)
     * [Linux](#linux)
     * [Windows](#windows)
+  * [Cross-platform](#cross-platform)
   * [Registering a default reporter](#registering-a-default-reporter)
   * [Front Loaded Reporters](#front-loaded-reporters)
     * [Blocking Reporters](#blocking-reporters)
@@ -75,7 +76,13 @@ new VisualStudioCodeReporter(),
 
 These are all based on the diff tool being in the [`PATH`](https://en.wikipedia.org/wiki/PATH_(variable)).
 
-snippet: cross_platform_diff_reporters
+<!-- snippet: cross_platform_diff_reporters -->
+<a id='snippet-cross_platform_diff_reporters'></a>
+```cpp
+new VisualStudioCodeReporter(),
+```
+<sup><a href='/ApprovalTests/reporters/CrossPlatformReporters.cpp#L16-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-cross_platform_diff_reporters' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 ## Registering a default reporter
 
