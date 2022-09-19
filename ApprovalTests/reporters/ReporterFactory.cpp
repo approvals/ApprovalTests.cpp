@@ -6,6 +6,7 @@
 #include "ApprovalTests/reporters/CIBuildOnlyReporter.h"
 #include "ApprovalTests/reporters/ClipboardReporter.h"
 #include "ApprovalTests/reporters/CombinationReporter.h"
+#include "ApprovalTests/reporters/CrossPlatformReporters.h"
 #include "ApprovalTests/reporters/DefaultFrontLoadedReporter.h"
 #include "ApprovalTests/reporters/DefaultReporter.h"
 #include "ApprovalTests/reporters/DiffReporter.h"
@@ -86,6 +87,8 @@ namespace ApprovalTests
         APPROVAL_TESTS_REGISTER_REPORTER(Windows::SublimeMergeReporter);
         APPROVAL_TESTS_REGISTER_REPORTER(Windows::KDiff3Reporter);
         APPROVAL_TESTS_REGISTER_REPORTER(Windows::VisualStudioCodeReporter);
+
+        APPROVAL_TESTS_REGISTER_REPORTER(CrossPlatform::VisualStudioCodeReporter);
 
         return map;
     }

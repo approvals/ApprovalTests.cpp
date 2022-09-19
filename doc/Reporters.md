@@ -71,6 +71,12 @@ new VisualStudioCodeReporter(),
 <sup><a href='/ApprovalTests/reporters/WindowsReporters.cpp#L94-L104' title='Snippet source file'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
+## Cross-platform
+
+These are all based on the diff tool being in the [`PATH`](https://en.wikipedia.org/wiki/PATH_(variable)).
+
+snippet: cross_platform_diff_reporters
+
 ## Registering a default reporter
 
 At present, the default Reporter is the DiffReporter. Whenever you call Approvals, you have the chance to pass in your own Reporter. However, if you would like to change what the default reporter is when you don't pass in a specific Reporter, you can do this at a global or per-test level, by adding the line:

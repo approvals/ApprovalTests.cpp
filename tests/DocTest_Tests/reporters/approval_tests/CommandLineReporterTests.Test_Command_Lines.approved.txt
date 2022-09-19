@@ -114,4 +114,8 @@ windows: start "" "kdiff3" "a.txt" "b.txt" -m -o "b.txt"
 unix   : "kdiff3" "a.txt" "b.txt" -m -o "b.txt" &
 cygwin : "$(cygpath 'kdiff3')" "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" -m -o "$(cygpath -aw 'b.txt')" &
 
+windows: start "" "code" -d "a.txt" "b.txt"
+unix   : "code" -d "a.txt" "b.txt" &
+cygwin : "$(cygpath 'code')" -d "$(cygpath -aw 'a.txt')" "$(cygpath -aw 'b.txt')" &
+
 

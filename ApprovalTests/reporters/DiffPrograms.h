@@ -6,6 +6,11 @@ namespace ApprovalTests
 {
     namespace DiffPrograms
     {
+        namespace CrossPlatform
+        {
+            DiffInfo VS_CODE();
+        }
+
         namespace Mac
         {
             DiffInfo DIFF_MERGE();

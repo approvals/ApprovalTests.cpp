@@ -84,6 +84,8 @@ add_library(${PROJECT_NAME}
         reporters/CommandReporter.cpp
         reporters/ConvertForCygwin.h
         reporters/ConvertForCygwin.cpp
+        reporters/CrossPlatformReporters.h
+        reporters/CrossPlatformReporters.cpp
         reporters/CustomReporter.h
         reporters/CustomReporter.cpp
         reporters/DefaultFrontLoadedReporter.h

@@ -3,6 +3,7 @@
 #include "ApprovalTests/reporters/WindowsReporters.h"
 #include "ApprovalTests/reporters/MacReporters.h"
 #include "ApprovalTests/reporters/LinuxReporters.h"
+#include "ApprovalTests/reporters/CrossPlatformReporters.h"
 
 #include <vector>
 
@@ -58,7 +59,11 @@ TEST_CASE("Test Command Lines")
         std::make_shared<Linux::SublimeMergeFlatpakReporter>(),
         std::make_shared<Linux::SublimeMergeRepositoryPackageReporter>(),
         std::make_shared<Linux::SublimeMergeDirectDownloadReporter>(),
-        std::make_shared<Linux::KDiff3Reporter>()};
+        std::make_shared<Linux::KDiff3Reporter>(),
+
+        // Cross-platform
+        std::make_shared<CrossPlatform::VisualStudioCodeReporter>()};
+
     for (const auto& reporter : reporters)
     {
         reporter->useCygwinConversions(false);

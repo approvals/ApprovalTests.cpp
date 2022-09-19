@@ -170,6 +170,13 @@ The steps are the same as above, except that in the second step, you will edit:
 * [ApprovalTests/reporters/LinuxReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/LinuxReporters.h)
 * [ApprovalTests/reporters/LinuxReporters.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/LinuxReporters.cpp)
 
+## Adding a new Cross Platform reporter
+
+To add a reporter that will run on all 3 platforms, the steps are the same as above, except that in the second step, you will edit:
+
+* [ApprovalTests/reporters/CrossPlatformReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/CrossPlatformReporters.h)
+* [ApprovalTests/reporters/CrossPlatformReporters.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/CrossPlatformReporters.cpp)
+
 ---
 
 [Back to User Guide](/doc/README.md#top)
