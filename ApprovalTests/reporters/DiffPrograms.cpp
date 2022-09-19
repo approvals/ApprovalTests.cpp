@@ -16,10 +16,7 @@ namespace ApprovalTests
         namespace CrossPlatform
         {
             APPROVAL_TESTS_MACROS_ENTRY(
-                VS_CODE,
-                DiffInfo("code",
-                         "-d {Received} {Approved}",
-                         Type::TEXT))
+                VS_CODE, DiffInfo("code", "-d {Received} {Approved}", Type::TEXT))
         }
 
         namespace Mac
