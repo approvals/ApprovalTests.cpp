@@ -205,17 +205,17 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-#      - name: set up python
-#        uses: actions/setup-python@v4
-#        with:
-#          python-version: '3.x'
-#      - uses: ./.github/actions/setup-conan
+      - name: set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - uses: ./.github/actions/setup-conan
 
-#      - name: install boost
-#        run: |
-#          ${boostroot} = "${env:GITHUB_WORKSPACE}\boost_install"
-#          conan install boost/1.72.0@ -o boost:header_only=True -g deploy --install-folder ${boostroot}
-#          echo "BOOST_ROOT=${boostroot}\boost" >> ${env:GITHUB_ENV}
+      - name: install boost
+        run: |
+          ${boostroot} = "${env:GITHUB_WORKSPACE}\boost_install"
+          conan install boost/1.72.0@ -o boost:header_only=True -g deploy --install-folder ${boostroot}
+          echo "BOOST_ROOT=${boostroot}\boost" >> ${env:GITHUB_ENV}
 
       # DOS paths - with backslashes - are not compatible with the github bash
       # shell that is invoked in build-and-test/actions.yml - so sadly the code
