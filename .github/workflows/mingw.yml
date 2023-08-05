@@ -48,7 +48,7 @@ jobs:
           cd cmake-build
           cmake --version
           REM Release gives 'File too big' errors
-          cmake -G "MinGW Makefiles" .. -DCMAKE_BUILD_TYPE=Release -DAPPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION=OFF
+          cmake -G "MinGW Makefiles" .. -DCMAKE_BUILD_TYPE=Release
 
       - name: Build
         shell: cmd
