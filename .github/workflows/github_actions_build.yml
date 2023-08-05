@@ -139,35 +139,21 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # probably don't add xcode9.4 - which was tested in Travis
-
-          - job-name: xcode-10.3
-            os-version: '10.15'
-            xcode-version: '10.3'
+          - job-name: xcode-14.3
+            os-version: '13.4'
+            xcode-version: '14.3'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: xcode-11.7
-            os-version: '10.15'
-            xcode-version: '11.7'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
-          - job-name: xcode-12.4
-            os-version: '10.15'
-            xcode-version: '12.4'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
-          - job-name: 'xcode-12.4-ninja in-source'
-            xcode-version: '12.4'
-            os-version: '10.15'
+          - job-name: 'xcode-14.3-ninja in-source'
+            xcode-version: '14.3'
+            os-version: '13.4'
             generator: '"Ninja"'
             relative_build_dir_path: ''
 
-          - job-name: 'xcode-12.4-ninja out-of-source'
-            xcode-version: '12.4'
-            os-version: '10.15'
+          - job-name: 'xcode-14.3-ninja out-of-source'
+            xcode-version: '14.3'
+            os-version: '13.4'
             generator: '"Ninja"'
             relative_build_dir_path: '../'
 
