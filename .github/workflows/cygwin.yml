@@ -27,7 +27,7 @@ jobs:
           packages: cmake libboost-devel libtool gcc gcc-g++ binutils make
           hardlinks: 1
 
-      - name: Build
+      - name: Configure
         run: |
           basic() {
             pwd
@@ -37,6 +37,16 @@ jobs:
             # Debug gives Assembler messages: ... CMakeFiles/Catch2_Tests.dir/main.cpp.o: 'file too big'
             cmake --version
             cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release -DAPPROVAL_TESTS_BUILD_DOCS=OFF
+          }
+          basic
+        shell: C:\tools\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+
+      - name: Build
+        run: |
+          basic() {
+            pwd
+            cd /cygdrive/d/a/ApprovalTests.cpp/ApprovalTests.cpp
+            cd       cmake-build
             cmake --build . --parallel 4
           }
           basic
@@ -47,7 +57,6 @@ jobs:
           basic() {
             pwd
             cd /cygdrive/d/a/ApprovalTests.cpp/ApprovalTests.cpp
-            mkdir -p cmake-build
             cd       cmake-build
             ctest --verbose --output-on-failure -C Release
           }
