@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Set up Cygwin
-        uses: egor-tensin/setup-cygwin@v3 # https://github.com/marketplace/actions/install-cygwin
+        uses: egor-tensin/setup-cygwin@v4 # https://github.com/marketplace/actions/install-cygwin
         with:
           platform: x64
           packages: cmake libboost-devel libtool gcc gcc-g++ binutils make
