@@ -40,7 +40,7 @@ jobs:
         with:
           platform: x64
 
-      - name: Build and test
+      - name: Configure
         shell: cmd
         run: |
           pwd
@@ -49,5 +49,15 @@ jobs:
           cmake --version
           REM Release gives 'File too big' errors
           cmake -G "MinGW Makefiles" .. -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        shell: cmd
+        run: |
+          cd cmake-build
           cmake --build . --parallel 4
+
+      - name: Test
+        shell: cmd
+        run: |
+          cd cmake-build
           ctest --verbose --output-on-failure -C Release
