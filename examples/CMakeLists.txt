@@ -1,4 +1,4 @@
-add_subdirectory(boost_starter)
+#add_subdirectory(boost_starter)
 
 add_subdirectory(catch2_existing_main)
 add_subdirectory(catch2_starter)
