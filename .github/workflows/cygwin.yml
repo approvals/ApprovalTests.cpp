@@ -47,6 +47,7 @@ jobs:
             pwd
             cd /cygdrive/d/a/ApprovalTests.cpp/ApprovalTests.cpp
             cd       cmake-build
+            cmake --build . --target help
             cmake --build . --parallel 4
           }
           basic
