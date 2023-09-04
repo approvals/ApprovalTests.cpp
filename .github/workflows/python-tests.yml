@@ -20,18 +20,18 @@ jobs:
 
     steps:
     - name: Check out ApprovalTests.cpp
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         path: ApprovalTests/ApprovalTests.cpp
 
     - name: Check out ApprovalTests.cpp.StarterProject
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: approvals/ApprovalTests.cpp.StarterProject
         path: ApprovalTests/ApprovalTests.cpp.StarterProject
 
     - name: Check out claremacrae fork of conan-center-index
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: claremacrae/conan-center-index
         path: conan/conan-center-index-claremacrae
@@ -42,7 +42,7 @@ jobs:
         git remote add upstream https://github.com/conan-io/conan-center-index.git
    
     - name: Check out llewellyn's fork of vcpkg
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: isidore/vcpkg
         path: ApprovalTests/vcpkg
