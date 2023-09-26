@@ -1,5 +1,8 @@
 #pragma once
 #ifdef FMT_VERSION
+
+#include <fmt/format.h> // for fmt::to_string()
+
 namespace ApprovalTests
 {
     class FmtToString
