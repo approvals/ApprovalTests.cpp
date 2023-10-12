@@ -1,0 +1,57 @@
+name: mingw-native
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+  schedule:
+    - cron: '16 0 * * 3,6'  # <https://crontab.guru/#16_0_*_*_3,6> - "At 00:16 on Wednesday and Saturday."
+
+jobs:
+  MinGW:
+    # Pinned windows version due to:
+    # https://github.com/egor-tensin/setup-mingw/issues/6
+    runs-on: windows-2019
+    strategy:
+      fail-fast: false
+    env:
+      BUILD_PATH: build_space
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - uses: ./.github/actions/setup-conan
+
+      - name: install boost
+        run: |
+          ${boostroot} = "${env:GITHUB_WORKSPACE}\boost_install"
+          conan install boost/1.72.0@ -o boost:header_only=True -g deploy --install-folder ${boostroot}
+          echo "BOOST_ROOT=${boostroot}\boost" >> ${env:GITHUB_ENV}
+
+      - name: Configure
+        shell: cmd
+        run: |
+          pwd
+          mkdir cmake-build
+          cd cmake-build
+          cmake --version
+          REM Release gives 'File too big' errors
+          cmake -G "MinGW Makefiles" .. -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        shell: cmd
+        run: |
+          cd cmake-build
+          cmake --build . --parallel 4
+
+      - name: Test
+        shell: cmd
+        run: |
+          cd cmake-build
+          ctest --verbose --output-on-failure -C Release
