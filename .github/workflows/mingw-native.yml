@@ -11,10 +11,10 @@ on:
     - cron: '16 0 * * 3,6'  # <https://crontab.guru/#16_0_*_*_3,6> - "At 00:16 on Wednesday and Saturday."
 
 jobs:
-  MinGW:
+  MinGW-native:
     # Pinned windows version due to:
     # https://github.com/egor-tensin/setup-mingw/issues/6
-    runs-on: windows-2019
+    runs-on: windows-2022
     strategy:
       fail-fast: false
     env:
