@@ -16,11 +16,6 @@ jobs:
     # https://github.com/egor-tensin/setup-mingw/issues/6
     runs-on: windows-2022
 
-    # https://stackoverflow.com/a/75758843
-    defaults:
-      run:
-        shell: bash
-
     env:
       BUILD_PATH: build_space
     steps:
@@ -44,23 +39,22 @@ jobs:
           echo "BOOST_ROOT=${boostroot}\boost" >> ${env:GITHUB_ENV}
 
       - name: Configure
-        shell: cmd
+        shell: bash
         run: |
           pwd
           mkdir cmake-build
           cd cmake-build
           cmake --version
-          REM Release gives 'File too big' errors
           cmake -G "MinGW Makefiles" .. -DCMAKE_BUILD_TYPE=Release
 
       - name: Build
-        shell: cmd
+        shell: bash
         run: |
           cd cmake-build
           cmake --build . --parallel 4
 
       - name: Test
-        shell: cmd
+        shell: bash
         run: |
           cd cmake-build
           ctest --verbose --output-on-failure -C Release
