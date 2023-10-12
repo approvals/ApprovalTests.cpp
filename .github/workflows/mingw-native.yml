@@ -15,11 +15,20 @@ jobs:
     # Pinned windows version due to:
     # https://github.com/egor-tensin/setup-mingw/issues/6
     runs-on: windows-2022
-    strategy:
-      fail-fast: false
+
+    # https://stackoverflow.com/a/75758843
+    defaults:
+      run:
+        shell: bash
+
     env:
       BUILD_PATH: build_space
     steps:
+
+      - name: check gcc version
+        run: |
+          gcc --version
+
       - uses: actions/checkout@v4
 
       - name: set up python
