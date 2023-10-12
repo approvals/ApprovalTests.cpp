@@ -39,7 +39,7 @@ jobs:
         uses: egor-tensin/setup-mingw@v2 # https://github.com/marketplace/actions/install-mingw
         with:
           platform: x64
-
+          version: 12.2.0
       - name: Configure
         shell: cmd
         run: |
