@@ -13,7 +13,7 @@ on:
 jobs:
   Cygwin:
     runs-on: windows-latest
-    if: true # Disable this build temporarily
+    if: false # Disable this build temporarily
     timeout-minutes: 42 # See https://github.com/approvals/ApprovalTests.cpp/issues/192
     strategy:
       fail-fast: false
