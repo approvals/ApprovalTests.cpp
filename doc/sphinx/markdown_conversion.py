@@ -125,7 +125,7 @@ def fixup_included_snippets(content):
 
     #  Remove '<!-- include:' lines at the start of included snippet
     content = re.sub(
-        r"\n <!-- include:.*-->\n",
+        r"\n\s*<!-- include:.*-->\n",
         '', content)
 
     # simplify the hyperlink, remove superscript tags
