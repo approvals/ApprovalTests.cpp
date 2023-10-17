@@ -136,7 +136,7 @@ def fixup_included_snippets(content):
 
     #  Remove '<!-- end include:' lines at the end of included snippet
     content = re.sub(
-        r"\n <!-- end include:.*-->",
+        r"\n\s*<!-- end include:.*-->",
         '', content)
 
     return content

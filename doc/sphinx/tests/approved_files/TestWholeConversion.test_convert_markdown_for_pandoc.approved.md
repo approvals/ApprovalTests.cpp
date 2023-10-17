@@ -179,7 +179,7 @@ Some of these words end up with spaces in, wrongly.
 * [Using Approval Tests With Google Tests](UsingGoogleTests.html)
 * [Using Approval Tests With Doctest](UsingDoctest.html)
 * [Using Approval Tests With Boost.Test](UsingBoostTest.html)
-* [Using Approval Tests With \[Boost\].UT](UsingUT.html) <!-- endInclude -->
+* [Using Approval Tests With \[Boost\].UT](UsingUT.html)<!-- endInclude -->
 
 ## Snippet pulled in from external CMake file
 
