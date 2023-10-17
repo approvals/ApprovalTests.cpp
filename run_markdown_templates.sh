@@ -24,7 +24,7 @@
 #   broken formatting or hyperlinks in ReadTheDocs.
 #
 #   See https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/BuildingDocumentation.md#top
-dotnet tool update  -g MarkdownSnippets.Tool --version 23.0.0 || exit
+dotnet tool update  -g MarkdownSnippets.Tool || exit
 mdsnippets || exit 1
 
 echo "------------------------------------------"
