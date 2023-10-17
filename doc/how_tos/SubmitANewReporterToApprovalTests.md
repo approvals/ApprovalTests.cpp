@@ -53,7 +53,7 @@ APPROVAL_TESTS_MACROS_ENTRY(
     DiffInfo("/Applications/Araxis Merge.app/Contents/Utilities/compare",
              Type::TEXT_AND_IMAGE))
 ```
-<sup><a href='/ApprovalTests/reporters/DiffPrograms.cpp#L33-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_macro_implementation' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/reporters/DiffPrograms.cpp#L30-L35' title='Snippet source file'>snippet source</a> | <a href='#snippet-add_reporter_macro_implementation' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### Edit [ApprovalTests/reporters/MacReporters.h](https://github.com/approvals/ApprovalTests.cpp/blob/master/ApprovalTests/reporters/MacReporters.h)

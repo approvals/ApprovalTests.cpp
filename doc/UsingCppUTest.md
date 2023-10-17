@@ -22,10 +22,10 @@ This section describes the various ways of using Approval Tests with CppUTest.
 
 ---
 
-**Notes pre-v.10.8.0:** <!-- include: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
+**Notes pre-v.10.8.0:**<!-- include: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
 
 Earlier versions of Approval Tests had issues with Ninja. Read more
-at [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- endInclude -->
+at [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top).<!-- endInclude -->
 
 ### CppUTest Integration Limitations
 

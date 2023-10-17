@@ -16,10 +16,10 @@
 
 The [doctest](https://github.com/onqtam/doctest) test framework works well with Approval Tests.
 
-**Notes pre-v.10.8.0:** <!-- include: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
+**Notes pre-v.10.8.0:**<!-- include: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
 
 Earlier versions of Approval Tests had issues with Ninja. Read more
-at [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top). <!-- endInclude -->
+at [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top).<!-- endInclude -->
 
 Doctest is similar to Catch, but claims to give faster compilation times.
 

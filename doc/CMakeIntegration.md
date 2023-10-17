@@ -137,7 +137,7 @@ Suppose you are writing some tests that use ApprovalTests.cpp with the Catch2 te
 
 Your top-level `CMakeLists.txt` file might look something like this:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_cmakelists.include.md -->
+<!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_cmakelists.include.md -->
 
 ```cmake
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
@@ -151,7 +151,7 @@ add_subdirectory(dependencies)
 add_subdirectory(tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- endInclude -->
+<!-- endInclude -->
 
 The important thing to note, for following the examples below, is the `add_subdirectory(dependencies)` line. It makes CMake load a file `dependencies/CMakeLists.txt`.
 
@@ -163,7 +163,7 @@ Here is [this example project](https://github.com/claremacrae/ApprovalTests.cpp.
 
 Your `tests/CMakeLists.txt` file might look something like this:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_tests_cmakelists.include.md -->
+<!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_tests_cmakelists.include.md -->
 
 ```cmake
 add_executable(tests
@@ -180,7 +180,7 @@ add_test(
         COMMAND tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- endInclude -->
+<!-- endInclude -->
 
 This says that the libraries `ApprovalTests::ApprovalTests` and `Catch2::Catch2` are required by the `tests` executable.
 
@@ -202,7 +202,7 @@ It also needs CMake 3.14 or above.
 
 We use this `dependencies/CMakeLists.txt` file:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
+<!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 ```cmake
 # Needs CMake 3.14 or above
@@ -225,7 +225,7 @@ FetchContent_Declare(Catch2
 FetchContent_MakeAvailable(Catch2)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- endInclude -->
+<!-- endInclude -->
 
 Note the `GIT_TAG` values: This tells CMake which revision of dependencies to use. The value can be a tag or a git commit ID. Here we use `master`, to always test our integrations with the latest Approval Tests code. However, it is generally recommended to pin your dependencies to specific versions, and test behaviour before updating to newer versions. 
 
@@ -258,7 +258,7 @@ The only difference between the previous example and this one is that here we us
 
 We use this `dependencies/CMakeLists.txt` file:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
+<!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
 
 ```cmake
 # Needs CMake 3.14 or above
@@ -276,7 +276,7 @@ set(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2 ON CACHE BOOL "")
 FetchContent_MakeAvailable(ApprovalTests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- endInclude -->
+<!-- endInclude -->
 
 We have set `APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2` to `ON`, so that CMake will use the copy of Catch2 that is included in the ApprovalTests.cpp repository.
 
@@ -313,7 +313,7 @@ add_subdirectory_approvaltests_catch2/
 
 We use this `dependencies/CMakeLists.txt` file:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
+<!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 ```cmake
 # -------------------------------------------------------------------
@@ -332,7 +332,7 @@ add_subdirectory(
 )
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./add_subdirectory_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- endInclude -->
+<!-- endInclude -->
 
 Here we use `add_subdirectory()`. This works with older versions of CMake, unlike the `FetchContent` examples above.
 
@@ -395,7 +395,7 @@ dev_approvals/
 The file `dev_approvals/CMakeLists.txt` creates a kind of "super build": one project for developing ApprovalTests.cpp
 and all the projects it depends on:
 
- <!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/dev_approvals/mdsource/inc_dev_approvals_cmakelists.include.md -->
+<!-- include: https://raw.githubusercontent.com/claremacrae/ApprovalTests.cpp.CMakeSamples/main/dev_approvals/mdsource/inc_dev_approvals_cmakelists.include.md -->
 
 ```cmake
 cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
@@ -514,7 +514,7 @@ add_subdirectory(
 )
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./dev_approvals/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- endInclude -->
+<!-- endInclude -->
 
 ---
 
