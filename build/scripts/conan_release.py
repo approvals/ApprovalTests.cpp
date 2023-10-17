@@ -133,7 +133,7 @@ class PrepareConanRelease:
 
     @staticmethod
     def update_conan_to_latest() -> None:
-        run(["pip3", "install", "--upgrade", "conan"])
+        run(["pip3", "install", "--upgrade", "conan==1.60.2"])
 
     @staticmethod
     def confirm_previous_release_still_works(details: ReleaseDetails) -> None:
