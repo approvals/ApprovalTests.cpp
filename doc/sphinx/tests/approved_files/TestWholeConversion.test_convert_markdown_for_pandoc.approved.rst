@@ -226,12 +226,12 @@ Some of these words end up with spaces in, wrongly.
 Included file
 -------------
 
--  `Using Approval Tests With Catch <UsingCatch.html>`__
+-  `Using Approval Tests With Catch <UsingCatch.html>`__\ 
 -  `Using Approval Tests With CppUTest <UsingCppUTest.html>`__
 -  `Using Approval Tests With Google Tests <UsingGoogleTests.html>`__
 -  `Using Approval Tests With Doctest <UsingDoctest.html>`__
 -  `Using Approval Tests With Boost.Test <UsingBoostTest.html>`__
--  `Using Approval Tests With [Boost].UT <UsingUT.html>`__
+-  `Using Approval Tests With [Boost].UT <UsingUT.html>`__\ 
 
 Snippet pulled in from external CMake file
 ------------------------------------------

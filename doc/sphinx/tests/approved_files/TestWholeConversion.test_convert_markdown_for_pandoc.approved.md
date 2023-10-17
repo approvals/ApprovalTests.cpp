@@ -174,7 +174,7 @@ Some of these words end up with spaces in, wrongly.
 
 ## Included file
 
-* [Using Approval Tests With Catch](UsingCatch.html) <!-- include: include_using_test_frameworks_list.include.md -->
+* [Using Approval Tests With Catch](UsingCatch.html)<!-- include: include_using_test_frameworks_list.include.md -->
 * [Using Approval Tests With CppUTest](UsingCppUTest.html)
 * [Using Approval Tests With Google Tests](UsingGoogleTests.html)
 * [Using Approval Tests With Doctest](UsingDoctest.html)
@@ -186,7 +186,6 @@ Some of these words end up with spaces in, wrongly.
 Sample take from CMakeIntegration.md:
 
 We use this `dependencies/CMakeLists.txt` file:
-
 ```cmake
 # Needs CMake 3.14 or above
 include(FetchContent)
@@ -208,7 +207,7 @@ FetchContent_Declare(Catch2
 FetchContent_MakeAvailable(Catch2)
 ```
 (See [snippet source](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt))
- <!-- endInclude -->
+<!-- endInclude -->
 
 ## Hyperlink and URL
 
