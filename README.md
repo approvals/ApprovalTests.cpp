@@ -5,7 +5,8 @@
 [![Actions Status](https://github.com/approvals/ApprovalTests.cpp/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Abuild)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/cygwin/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Acygwin)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/mingw/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Amingw)
-[![Python tests](https://github.com/approvals/ApprovalTests.cpp/workflows/python-tests/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Apython-tests)  
+[![python-tests](https://github.com/approvals/ApprovalTests.cpp/actions/workflows/python-tests.yml/badge.svg)](https://github.com/approvals/ApprovalTests.cpp/actions/workflows/python-tests.yml)
+
 [![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/approvaltests.cpp.svg)](https://conan.io/center/approvaltests.cpp)
 [![vcpkg](https://repology.org/badge/version-for-repo/vcpkg/approval-tests-cpp.svg)](https://vcpkg.io/en/packages.html?query=approval-tests-cpp)  
 [![Documentation Status](https://readthedocs.org/projects/approvaltestscpp/badge/?version=latest)](https://approvaltestscpp.readthedocs.io/en/latest/?badge=latest)  
