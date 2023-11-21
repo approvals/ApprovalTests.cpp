@@ -76,7 +76,7 @@ jobs:
             os-version: '22.04'
             c-compiler: 'clang-13'
             cxx-compiler: 'clang++-13'
-            generator: '"Unix Makefiles"'
+            generator: '"Unix Makefiles" -DCXX_STANDARD=20'
             relative_build_dir_path: ''
 
           - job-name: 'clang14'
