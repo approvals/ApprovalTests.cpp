@@ -73,7 +73,7 @@ jobs:
             relative_build_dir_path: ''
 
           - job-name: 'clang13'
-            os-version: '20.04'
+            os-version: '22.04'
             c-compiler: 'clang-13'
             cxx-compiler: 'clang++-13'
             generator: '"Unix Makefiles"'
