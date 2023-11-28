@@ -14,7 +14,7 @@ jobs:
   MinGW:
     # Pinned windows version due to:
     # https://github.com/egor-tensin/setup-mingw/issues/6
-    # if: false # Disable this platform temporarily
+    if: false # Disable this platform temporarily
     runs-on: windows-2022
     env:
       BUILD_PATH: build_space

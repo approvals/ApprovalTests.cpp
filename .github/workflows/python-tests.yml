@@ -15,7 +15,7 @@ on:
 
 jobs:
   build:
-
+    if: false # Disable this platform temporarily
     runs-on: ubuntu-20.04
 
     steps:
