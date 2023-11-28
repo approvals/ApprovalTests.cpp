@@ -1,0 +1,62 @@
+name: cygwin-by-cygwin
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+  schedule:
+    - cron: '16 0 * * 3,6'  # <https://crontab.guru/#16_0_*_*_3,6> - "At 00:16 on Wednesday and Saturday."
+
+jobs:
+  Cygwin:
+    runs-on: windows-latest
+    if: true # Disable this build temporarily
+    timeout-minutes: 42 # See https://github.com/approvals/ApprovalTests.cpp/issues/192
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Cygwin
+        uses: cygwin/cygwin-install-action@v4
+        with:
+          packages: cmake libboost-devel libtool gcc gcc-g++ binutils make
+
+      - name: Configure
+        run: |
+          basic() {
+            pwd
+            cd /cygdrive/d/a/ApprovalTests.cpp/ApprovalTests.cpp
+            mkdir -p cmake-build
+            cd       cmake-build
+            # Debug gives Assembler messages: ... CMakeFiles/Catch2_Tests.dir/main.cpp.o: 'file too big'
+            cmake --version
+            cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release -DAPPROVAL_TESTS_BUILD_DOCS=OFF -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
+          }
+          basic
+        shell: C:\tools\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+
+      - name: Build
+        run: |
+          basic() {
+            pwd
+            cd /cygdrive/d/a/ApprovalTests.cpp/ApprovalTests.cpp
+            cd       cmake-build
+            cmake --build . --parallel 4
+          }
+          basic
+        shell: C:\tools\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+
+      - name: Test
+        run: |
+          basic() {
+            pwd
+            cd /cygdrive/d/a/ApprovalTests.cpp/ApprovalTests.cpp
+            cd       cmake-build
+            ctest --verbose --output-on-failure -C Release
+          }
+          basic
+        shell: C:\tools\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
