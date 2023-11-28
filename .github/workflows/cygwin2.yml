@@ -28,7 +28,8 @@ jobs:
       - name: Configure
         run: |
           pwd
-          cd /cygdrive/d/a/ApprovalTests.cpp/ApprovalTests.cpp
+          ls -ls
+          cd ApprovalTests.cpp
           mkdir -p cmake-build
           cd       cmake-build
           # Debug gives Assembler messages: ... CMakeFiles/Catch2_Tests.dir/main.cpp.o: 'file too big'
