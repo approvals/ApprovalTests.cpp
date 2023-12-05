@@ -21,7 +21,6 @@ jobs:
     defaults:
       run:
         shell: C:\cygwin\bin\bash.exe --noprofile --norc -o igncr -eo pipefail '{0}'
-        working-directory: /cygdrive/d/a/ApprovalTests.cpp/
 
     steps:
       - uses: actions/checkout@v4
@@ -33,6 +32,7 @@ jobs:
 
       - name: Configure
         run: |
+          echo run1
           pwd
           ls -ls
           cd ApprovalTests.cpp
@@ -41,7 +41,6 @@ jobs:
           # Debug gives Assembler messages: ... CMakeFiles/Catch2_Tests.dir/main.cpp.o: 'file too big'
           cmake --version
           cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release -DAPPROVAL_TESTS_BUILD_DOCS=OFF -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
-#        shell: C:\cygwin\bin\bash.exe '{0}'
 
       - name: Build
         run: |
