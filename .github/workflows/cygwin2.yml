@@ -34,7 +34,7 @@ jobs:
       - name: Build
         run: |
           cd cmake-build
-          cmake --build . --keep-going
+          make -k
 
       - name: Test
         run: |
