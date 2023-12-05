@@ -21,6 +21,7 @@ jobs:
     defaults:
       run:
         shell: C:\cygwin\bin\bash.exe --noprofile --norc -o igncr -eo pipefail '{0}'
+        working-directory: /cygdrive/d/a/ApprovalTests.cpp/
 
     steps:
       - uses: actions/checkout@v4
