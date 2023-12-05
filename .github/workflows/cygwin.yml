@@ -35,7 +35,7 @@ jobs:
         run: |
           cd cmake-build
           # Using make instead of cmake, because cmake --build stopped working in cygwin in 2023
-          make -k
+          make --jobs=4 --keep-going
 
       - name: Test
         run: |
