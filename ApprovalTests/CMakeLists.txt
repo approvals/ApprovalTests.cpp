@@ -29,6 +29,7 @@ add_library(${PROJECT_NAME}
         integrations/FrameworkIntegrations.h
         integrations/boost_test/BoostTestApprovals.h
         integrations/catch/Catch2Approvals.h
+        integrations/catch/catch2_include.h
         integrations/cpputest/CppUTestApprovals.h
         integrations/doctest/DocTestApprovals.h
         integrations/fmt/FmtApprovals.h
@@ -161,12 +162,12 @@ add_library(${PROJECT_NAME}
         writers/ExistingFile.cpp
         writers/StringWriter.h
         writers/StringWriter.cpp
-        )
+)
 add_library(ApprovalTests::ApprovalTests ALIAS ApprovalTests)
 target_include_directories(${PROJECT_NAME}
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
-        )
+)
 target_compile_options(${PROJECT_NAME} PUBLIC $<$<CXX_COMPILER_ID:MSVC>:/FC>)
 
 if (("${CMAKE_GENERATOR}" MATCHES "Ninja") AND (${CMAKE_UNITY_BUILD}))
@@ -179,14 +180,14 @@ if (("${CMAKE_GENERATOR}" MATCHES "Ninja") AND (${CMAKE_UNITY_BUILD}))
 endif ()
 
 # Install library
- install(TARGETS ${PROJECT_NAME}
-         ARCHIVE)
+install(TARGETS ${PROJECT_NAME}
+        ARCHIVE)
 
- # Install headerfiles
- install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-         TYPE INCLUDE
-         FILES_MATCHING
-         PATTERN "*.h"
-         PATTERN "*.hpp")
+# Install headerfiles
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        TYPE INCLUDE
+        FILES_MATCHING
+        PATTERN "*.h"
+        PATTERN "*.hpp")
 
 include(WarningsAsErrors)

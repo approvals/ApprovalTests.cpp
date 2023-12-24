@@ -3,11 +3,17 @@ cmake_minimum_required(VERSION 3.12)
 # disable testsuite if used via add_subdirectory()
 if (NOT DEFINED PROJECT_NAME)
     set(NOT_SUBPROJECT ON)
-else()
+else ()
     set(NOT_SUBPROJECT OFF)
 endif ()
 
 project(ApprovalTests.cpp)
+
+option(APPROVAL_TESTS_USE_CATCH2V3 "Use v3.x.x of catch2 library " OFF)
+
+if (APPROVAL_TESTS_USE_CATCH2V3)
+    add_compile_definitions(APPROVAL_TESTS_USE_CATCH2V3)
+endif ()
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/CMake/")
 include(ApprovalTestsOptions)

@@ -1,4 +1,4 @@
-#include "catch2/catch.hpp"
+#include "integrations/catch/catch2_include.h"
 #include "ApprovalTests/Approvals.h"
 #include <vector>
 

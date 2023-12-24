@@ -4,6 +4,8 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/integrations/FrameworkIntegrations.h"
 
+#include <iostream>
+
 #if defined(APPROVALS_CATCH_EXISTING_MAIN)
 #define APPROVALS_CATCH
 #define CATCH_CONFIG_RUNNER
@@ -15,15 +17,21 @@
 #define APPROVAL_TESTS_INCLUDE_CPPS
 
 // begin-snippet: required_header_for_catch
-#include <catch2/catch.hpp>
+#include "catch2_include.h"
 // end-snippet
 
 //namespace ApprovalTests {
-struct Catch2ApprovalListener : Catch::TestEventListenerBase
+#ifdef APPROVAL_TESTS_USE_CATCH2V3
+using CatchListener = Catch::EventListenerBase;
+#else
+using CatchListener = Catch::TestEventListenerBase;
+#endif
+
+struct Catch2ApprovalListener : CatchListener
 {
     ApprovalTests::TestName currentTest;
-    using TestEventListenerBase::
-        TestEventListenerBase; // This using allows us to use all base-class constructors
+    using CatchListener::
+        CatchListener; // This using allows us to use all base-class constructors
     virtual void testCaseStarting(Catch::TestCaseInfo const& testInfo) override
     {
 
@@ -58,10 +66,10 @@ CATCH_REGISTER_LISTENER(Catch2ApprovalListener)
 #ifdef TEST_COMMIT_REVERT_CATCH
 
 //namespace ApprovalTests {
-struct Catch2TestCommitRevert : Catch::TestEventListenerBase
+struct Catch2TestCommitRevert : CatchListener
 {
-    using TestEventListenerBase::
-        TestEventListenerBase; // This using allows us to use all base-class constructors
+    using CatchListener::
+        CatchListener; // This using allows us to use all base-class constructors
     virtual void testRunEnded(Catch::TestRunStats const& testRunStats) override
     {
         bool commit = testRunStats.totals.testCases.allOk();

@@ -1,4 +1,4 @@
-#include "catch2/catch.hpp"
+#include "integrations/catch/catch2_include.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
@@ -73,10 +73,12 @@ TEST_CASE("ItIncludesFileContextAndSpecNames")
 TEST_CASE("Clean Up Filename Transforms")
 {
     std::vector<std::string> names = {"CleanUpFilenameTransforms", "Spaces In File \\"};
-    Approvals::verifyAll(
-        "File Names", names, [&](const std::string& name, std::ostream& s) {
-            s << name << " => " << ApprovalTestNamer::convertToFileName(name);
-        });
+    Approvals::verifyAll("File Names",
+                         names,
+                         [&](const std::string& name, std::ostream& s) {
+                             s << name << " => "
+                               << ApprovalTestNamer::convertToFileName(name);
+                         });
 }
 
 TEST_CASE("Use sub-directory")
