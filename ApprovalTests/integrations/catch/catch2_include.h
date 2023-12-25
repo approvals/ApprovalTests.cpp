@@ -6,5 +6,4 @@
 #include <catch2/catch_all.hpp>
 #else
 #include <catch2/catch.hpp>
-// using CatchListener = Catch::TestEventListenerBase;
 #endif

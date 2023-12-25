@@ -44,12 +44,13 @@ jobs:
   #        run: ./scripts/check_links.sh
 
   Linux:
-    needs: clang-format
+#    needs: clang-format
     # if: false # Disable this platform temporarily
     runs-on: ubuntu-${{ matrix.os-version }}
     strategy:
       fail-fast: false
       matrix:
+        catch2_cmake_flag: [ "", "-DAPPROVAL_TESTS_USE_CATCH2V3=ON" ]
         include:
           - job-name: 'clang10'
             os-version: '20.04'
@@ -136,7 +137,7 @@ jobs:
             generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes'
             relative_build_dir_path: ''
 
-    name: Linux ${{ matrix.job-name }}
+    name: Linux ${{ matrix.job-name }} ${{ matrix.catch2_cmake_flag }}
     env:
       BUILD_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
       CC: ${{ matrix.c-compiler }}

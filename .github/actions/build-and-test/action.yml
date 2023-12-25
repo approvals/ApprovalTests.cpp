@@ -9,7 +9,7 @@ runs:
         mkdir ${{ env.BUILD_PATH }}
         cd ${{ env.BUILD_PATH }}
         cmake --version
-        cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
+        cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug ${{ matrix.catch2_cmake_flag }}
       shell: bash
 
     - name: build
