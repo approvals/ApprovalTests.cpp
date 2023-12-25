@@ -161,6 +161,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        catch2_cmake_flag: [ "", "-DAPPROVAL_TESTS_USE_CATCH2V3=ON" ]
         include:
           - job-name: xcode-14.2
             os-version: 'latest'
@@ -180,7 +181,7 @@ jobs:
             generator: '"Ninja"'
             relative_build_dir_path: '../'
 
-    name: macOS ${{ matrix.job-name }}
+    name: macOS ${{ matrix.job-name }} ${{ matrix.catch2_cmake_flag }}
     env:
       BUILD_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
       HOMEBREW_NO_ANALYTICS: 1
@@ -205,6 +206,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        catch2_cmake_flag: [ "", "-DAPPROVAL_TESTS_USE_CATCH2V3=ON" ]
         include:
           - job-name: VS-2019
             os-version: '2019'
@@ -222,7 +224,7 @@ jobs:
             os-version: 'latest'
             generator: '"Visual Studio 17 2022" -T "clangcl"'
 
-    name: Windows ${{ matrix.job-name }}
+    name: Windows ${{ matrix.job-name }} ${{ matrix.catch2_cmake_flag }}
     env:
       BUILD_PATH: ${{ github.workspace }}/build_space
     steps:
