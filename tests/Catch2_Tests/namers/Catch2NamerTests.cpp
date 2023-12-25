@@ -39,7 +39,7 @@ namespace
 TEST_CASE("ItCanGiveYouTheSpecName")
 {
 
-    ApprovalTestNamer namer;
+    const ApprovalTestNamer namer;
     REQUIRE(namer.getTestName() == "ItCanGiveYouTheSpecName");
 
     SECTION("andSectionNames")
@@ -55,7 +55,7 @@ TEST_CASE("ItCanGiveYouTheSpecName")
 
 TEST_CASE("ItCanGiveYouTheTestFileName")
 {
-    ApprovalTestNamer namer;
+    const ApprovalTestNamer namer;
     REQUIRE(namer.getSourceFileName() == "Catch2NamerTests");
 }
 
@@ -63,7 +63,7 @@ TEST_CASE("TestProperNameCaseOnWindows")
 {
     if (SystemUtils::isWindowsOs())
     {
-        ApprovalTestNamer namer;
+        const ApprovalTestNamer namer;
         auto test = namer.currentTest();
         test.setFileName(StringUtils::toLower(test.getFileName()));
         namer.currentTest(&test);
@@ -78,7 +78,7 @@ TEST_CASE("ItCanGiveYouTheTestDirectory")
     // We've fixed this for filenames, but not directory names, so this test ignores case.
     // See https://stackoverflow.com/questions/49068785/how-to-find-the-filename-from-a-c11-stat-objects-file-serial-number-on-window
     auto suppress_subdirectory = Approvals::useApprovalsSubdirectory("");
-    ApprovalTestNamer namer;
+    const ApprovalTestNamer namer;
     auto __ = SystemUtils::getDirectorySeparator();
     REQUIRE_THAT(
         namer.getDirectory(),
@@ -87,7 +87,7 @@ TEST_CASE("ItCanGiveYouTheTestDirectory")
 
 TEST_CASE("ItIncludesFileContextAndSpecNames")
 {
-    ApprovalTestNamer namer;
+    const ApprovalTestNamer namer;
     auto __ = SystemUtils::getDirectorySeparator();
 
     REQUIRE_THAT(
@@ -100,7 +100,8 @@ TEST_CASE("ItIncludesFileContextAndSpecNames")
 
 TEST_CASE("Clean Up Filename Transforms")
 {
-    std::vector<std::string> names = {"CleanUpFilenameTransforms", "Spaces In File \\"};
+    const std::vector<std::string> names = {"CleanUpFilenameTransforms",
+                                            "Spaces In File \\"};
     Approvals::verifyAll("File Names",
                          names,
                          [&](const std::string& name, std::ostream& s) {
@@ -112,14 +113,14 @@ TEST_CASE("Clean Up Filename Transforms")
 TEST_CASE("Use sub-directory")
 {
     auto subdirectory = Approvals::useApprovalsSubdirectory("approved_files");
-    auto namer = Approvals::getDefaultNamer();
+    const auto namer = Approvals::getDefaultNamer();
     check_contains(namer->getApprovedFile(".txt"), "approved_files");
 }
 
 TEST_CASE("Use sub-directories clean to previous results")
 {
     auto subdirectory = Approvals::useApprovalsSubdirectory("outer");
-    auto namer = Approvals::getDefaultNamer();
+    const auto namer = Approvals::getDefaultNamer();
 
     {
         auto subdirectory2 = Approvals::useApprovalsSubdirectory("inner");
@@ -131,6 +132,6 @@ TEST_CASE("Use sub-directories clean to previous results")
 
 TEST_CASE("Tags not included in file name", "[tag_name]")
 {
-    auto namer = Approvals::getDefaultNamer();
+    const auto namer = Approvals::getDefaultNamer();
     check_contains_not(namer->getApprovedFile(".txt"), "tag_name");
 }
