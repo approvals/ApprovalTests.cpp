@@ -9,8 +9,13 @@ set(CMAKE_CXX_STANDARD 11)
 # This is the one users are recommended to use:
 add_library(
         Catch2Catch2 catch2_cmake_checks.cpp)
-target_link_libraries(
-        Catch2Catch2 Catch2::Catch2)
+
+
+if (APPROVAL_TESTS_USE_CATCH2V3)
+    target_link_libraries(Catch2Catch2 Catch2::Catch2WithMain)
+else ()
+    target_link_libraries(Catch2Catch2 Catch2::Catch2)
+endif ()
 
 add_library(
         capital_Catch2 catch2_cmake_checks.cpp)

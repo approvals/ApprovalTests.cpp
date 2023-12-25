@@ -2,8 +2,12 @@ if (NOT APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION)
     return()
 endif ()
 
+if(APPROVAL_TESTS_USE_CATCH2V3)
+    return()
+endif()
+
 # begin-snippet: catch2_starter_cmake
-set(EXE_NAME catch2_starter)
+set(EXE_NAME catch2_v2_starter)
 set(CMAKE_CXX_STANDARD 11)
 add_executable(${EXE_NAME}
         catch2_starter_main.cpp

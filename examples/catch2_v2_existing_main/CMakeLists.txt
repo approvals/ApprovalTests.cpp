@@ -2,7 +2,11 @@ if (NOT APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION)
     return()
 endif ()
 
-project(catch2_existing_main)
+if(APPROVAL_TESTS_USE_CATCH2V3)
+    return()
+endif()
+
+project(catch2_v2_existing_main)
 set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}
         main.cpp
