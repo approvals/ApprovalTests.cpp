@@ -8,6 +8,34 @@ using Catch::Matchers::EndsWith;
 
 using namespace ApprovalTests;
 
+namespace
+{
+    // Between catch2 v2 and catch2 v3 the Matcher::Contains has changed.
+    // In v3 Matcher::ContainsSubstring needs to be used for string types.
+    //
+    // The two functions in this anonymous namesace dispatch based on the selected catch2
+    // version.
+
+    void check_contains(std::string const& input, std::string const& expectedSubstring)
+    {
+#ifdef APPROVAL_TESTS_USE_CATCH2V3
+        REQUIRE_THAT(input, Catch::Matchers::ContainsSubstring(expectedSubstring));
+#else
+        REQUIRE_THAT(input, Catch::Matchers::Contains(expectedSubstring));
+#endif
+    }
+
+    void check_contains_not(std::string const& input,
+                            std::string const& expectedSubstring)
+    {
+#ifdef APPROVAL_TESTS_USE_CATCH2V3
+        REQUIRE_THAT(input, !Catch::Matchers::ContainsSubstring(expectedSubstring));
+#else
+        REQUIRE_THAT(input, !Catch::Matchers::Contains(expectedSubstring));
+#endif
+    }
+}
+
 TEST_CASE("ItCanGiveYouTheSpecName")
 {
 
@@ -85,8 +113,7 @@ TEST_CASE("Use sub-directory")
 {
     auto subdirectory = Approvals::useApprovalsSubdirectory("approved_files");
     auto namer = Approvals::getDefaultNamer();
-    REQUIRE_THAT(namer->getApprovedFile(".txt"),
-                 Catch::Matchers::Contains("approved_files"));
+    check_contains(namer->getApprovedFile(".txt"), "approved_files");
 }
 
 TEST_CASE("Use sub-directories clean to previous results")
@@ -96,14 +123,14 @@ TEST_CASE("Use sub-directories clean to previous results")
 
     {
         auto subdirectory2 = Approvals::useApprovalsSubdirectory("inner");
-        REQUIRE_THAT(namer->getApprovedFile(".txt"), Catch::Matchers::Contains("inner"));
+        check_contains(namer->getApprovedFile(".txt"), "inner");
     }
 
-    REQUIRE_THAT(namer->getApprovedFile(".txt"), Catch::Matchers::Contains("outer"));
+    check_contains(namer->getApprovedFile(".txt"), "outer");
 }
 
 TEST_CASE("Tags not included in file name", "[tag_name]")
 {
     auto namer = Approvals::getDefaultNamer();
-    REQUIRE_THAT(namer->getApprovedFile(".txt"), !Catch::Matchers::Contains("tag_name"));
+    check_contains_not(namer->getApprovedFile(".txt"), "tag_name");
 }
