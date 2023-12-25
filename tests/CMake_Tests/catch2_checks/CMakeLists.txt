@@ -10,17 +10,17 @@ set(CMAKE_CXX_STANDARD 11)
 add_library(
         Catch2Catch2 catch2_cmake_checks.cpp)
 
+add_library(
+        capital_Catch2 catch2_cmake_checks.cpp)
 
 if (APPROVAL_TESTS_USE_CATCH2V3)
     target_link_libraries(Catch2Catch2 Catch2::Catch2WithMain)
+    target_link_libraries(capital_Catch2 Catch2::Catch2WithMain)
 else ()
     target_link_libraries(Catch2Catch2 Catch2::Catch2)
+    target_link_libraries(capital_Catch2 Catch2::Catch2)
 endif ()
 
-add_library(
-        capital_Catch2 catch2_cmake_checks.cpp)
-target_link_libraries(
-        capital_Catch2 Catch2)
 
 if (NOT_SUBPROJECT)
     # Don't build this if we are in a sub-project, in case the user has pulled in
@@ -30,8 +30,13 @@ if (NOT_SUBPROJECT)
     # We could encourage users to move away from it.
     add_library(
             lower_case_catch2 catch2_cmake_checks.cpp)
-    target_link_libraries(
-            lower_case_catch2 catch2)
+
+    if (APPROVAL_TESTS_USE_CATCH2V3)
+        target_link_libraries(lower_case_catch2 Catch2::Catch2WithMain)
+    else ()
+        target_link_libraries(
+                lower_case_catch2 catch2)
+    endif ()
 endif ()
 
 # Check that our real target name for Catch2 matches that used in the Catch2 project
