@@ -21,6 +21,8 @@ jobs:
           exclude: './third_party'
           inplace: True
           clangFormatVersion: 9
+      - name: ShowDiff
+        run: git diff
       - uses: EndBug/add-and-commit@v9
         with:
           author_name: Clang GitHub Action

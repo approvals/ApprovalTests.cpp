@@ -102,12 +102,10 @@ TEST_CASE("Clean Up Filename Transforms")
 {
     const std::vector<std::string> names = {"CleanUpFilenameTransforms",
                                             "Spaces In File \\"};
-    Approvals::verifyAll("File Names",
-                         names,
-                         [&](const std::string& name, std::ostream& s) {
-                             s << name << " => "
-                               << ApprovalTestNamer::convertToFileName(name);
-                         });
+    Approvals::verifyAll(
+        "File Names", names, [&](const std::string& name, std::ostream& s) {
+            s << name << " => " << ApprovalTestNamer::convertToFileName(name);
+        });
 }
 
 TEST_CASE("Use sub-directory")
