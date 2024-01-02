@@ -1,4 +1,4 @@
-#include "integrations/catch/catch2_include.h"
+#include "integrations/catch/Catch2Include.h"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"

@@ -17,7 +17,7 @@
 #define APPROVAL_TESTS_INCLUDE_CPPS
 
 // begin-snippet: required_header_for_catch
-#include "catch2_include.h"
+#include "ApprovalTests/integrations/catch/Catch2Include.h"
 // end-snippet
 
 //namespace ApprovalTests {

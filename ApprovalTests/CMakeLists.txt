@@ -29,7 +29,7 @@ add_library(${PROJECT_NAME}
         integrations/FrameworkIntegrations.h
         integrations/boost_test/BoostTestApprovals.h
         integrations/catch/Catch2Approvals.h
-        integrations/catch/catch2_include.h
+        integrations/catch/Catch2Include.h
         integrations/cpputest/CppUTestApprovals.h
         integrations/doctest/DocTestApprovals.h
         integrations/fmt/FmtApprovals.h
