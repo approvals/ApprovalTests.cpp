@@ -44,7 +44,7 @@ jobs:
   #        run: ./scripts/check_links.sh
 
   Linux:
-#    needs: clang-format
+    needs: clang-format
     # if: false # Disable this platform temporarily
     runs-on: ubuntu-${{ matrix.os-version }}
     strategy:
@@ -155,7 +155,7 @@ jobs:
       - uses: ./.github/actions/build-and-test
 
   macOS:
-#    needs: clang-format
+    needs: clang-format
     # if: false # Disable this platform temporarily
     runs-on: macos-${{ matrix.os-version }}
     strategy:
@@ -200,7 +200,7 @@ jobs:
       - uses: ./.github/actions/build-and-test
 
   Windows:
-#    needs: clang-format
+    needs: clang-format
     # if: false # Disable this platform temporarily
     runs-on: windows-${{ matrix.os-version }}
     strategy:
