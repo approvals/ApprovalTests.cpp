@@ -9,7 +9,7 @@ add_executable(${EXE_NAME}
         catch2_starter_main.cpp
         catch2_starter_test.cpp
         )
-target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests Catch2::Catch2)
+target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests Catch2v2::Catch2v2)
 
 add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
 # end-snippet

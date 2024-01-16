@@ -8,6 +8,6 @@ add_executable(${PROJECT_NAME}
         main.cpp
         Catch2ApprovalsTests.cpp
         )
-target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests Catch2::Catch2)
+target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests Catch2v2::Catch2v2)
 
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})

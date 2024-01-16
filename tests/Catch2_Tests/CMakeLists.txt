@@ -13,7 +13,7 @@ add_executable(${PROJECT_NAME}
 
 set_source_files_properties(main.cpp PROPERTIES SKIP_UNITY_BUILD_INCLUSION YES)
 
-target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests Catch2::Catch2)
+target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests Catch2v2::Catch2v2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
