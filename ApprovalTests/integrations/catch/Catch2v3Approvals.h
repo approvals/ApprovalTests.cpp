@@ -1,15 +1,7 @@
-
 #pragma once
 
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/integrations/FrameworkIntegrations.h"
-
-#if defined(APPROVALS_CATCH_EXISTING_MAIN)
-#define APPROVALS_CATCH
-#define CATCH_CONFIG_RUNNER
-#elif defined(APPROVALS_CATCH)
-#define CATCH_CONFIG_MAIN
-#endif
 
 #ifdef APPROVALS_CATCH2_V3
 #define APPROVAL_TESTS_INCLUDE_CPPS
