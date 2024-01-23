@@ -94,14 +94,17 @@ TEST_CASE("Use sub-directories clean to previous results")
 
     {
         auto subdirectory2 = Approvals::useApprovalsSubdirectory("inner");
-        REQUIRE_THAT(namer->getApprovedFile(".txt"), Catch::Matchers::ContainsSubstring("inner"));
+        REQUIRE_THAT(namer->getApprovedFile(".txt"),
+                     Catch::Matchers::ContainsSubstring("inner"));
     }
 
-    REQUIRE_THAT(namer->getApprovedFile(".txt"), Catch::Matchers::ContainsSubstring("outer"));
+    REQUIRE_THAT(namer->getApprovedFile(".txt"),
+                 Catch::Matchers::ContainsSubstring("outer"));
 }
 
 TEST_CASE("Tags not included in file name", "[tag_name]")
 {
     auto namer = Approvals::getDefaultNamer();
-    REQUIRE_THAT(namer->getApprovedFile(".txt"), !Catch::Matchers::ContainsSubstring("tag_name"));
+    REQUIRE_THAT(namer->getApprovedFile(".txt"),
+                 !Catch::Matchers::ContainsSubstring("tag_name"));
 }
