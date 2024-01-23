@@ -2,6 +2,10 @@ if (APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2)
     add_subdirectory(catch2)
 endif ()
 
+if (APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2V3)
+    add_subdirectory(catch2v3)
+endif ()
+
 if (APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST)
     add_subdirectory(doctest)
 endif ()

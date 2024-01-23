@@ -17,7 +17,10 @@ option(APPROVAL_TESTS_BUILD_DOCS
 # All the third-party libraries are made available
 # if this is the top-level project, so that we can run our tests.
 option(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2
-        "Include this project's copy of the Catch2 test framework"
+        "Include this project's copy of the Catch2v2 test framework"
+        ${NOT_SUBPROJECT})
+option(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2V3
+        "Include this project's copy of the Catch2v3 test framework"
         ${NOT_SUBPROJECT})
 option(APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST
         "Include this project's copy of the doctest test framework"
