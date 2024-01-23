@@ -10,7 +10,7 @@ include(${CMAKE_BINARY_DIR}/cmake/CPM.cmake)
 
 message(STATUS "Fetching external libraries started")
 
-message(STATUS "Fetching catch2")
+message(STATUS "Fetching catch2 v3")
 CPMAddPackage(
         NAME catch2
         GITHUB_REPOSITORY catchorg/Catch2

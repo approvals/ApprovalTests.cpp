@@ -1,4 +1,4 @@
-#include "catch2/catch.hpp"
+#include "catch2/catch_all.hpp"
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
@@ -84,7 +84,7 @@ TEST_CASE("Use sub-directory")
     auto subdirectory = Approvals::useApprovalsSubdirectory("approved_files");
     auto namer = Approvals::getDefaultNamer();
     REQUIRE_THAT(namer->getApprovedFile(".txt"),
-                 Catch::Matchers::Contains("approved_files"));
+                 Catch::Matchers::ContainsSubstring("approved_files"));
 }
 
 TEST_CASE("Use sub-directories clean to previous results")
@@ -94,14 +94,14 @@ TEST_CASE("Use sub-directories clean to previous results")
 
     {
         auto subdirectory2 = Approvals::useApprovalsSubdirectory("inner");
-        REQUIRE_THAT(namer->getApprovedFile(".txt"), Catch::Matchers::Contains("inner"));
+        REQUIRE_THAT(namer->getApprovedFile(".txt"), Catch::Matchers::ContainsSubstring("inner"));
     }
 
-    REQUIRE_THAT(namer->getApprovedFile(".txt"), Catch::Matchers::Contains("outer"));
+    REQUIRE_THAT(namer->getApprovedFile(".txt"), Catch::Matchers::ContainsSubstring("outer"));
 }
 
 TEST_CASE("Tags not included in file name", "[tag_name]")
 {
     auto namer = Approvals::getDefaultNamer();
-    REQUIRE_THAT(namer->getApprovedFile(".txt"), !Catch::Matchers::Contains("tag_name"));
+    REQUIRE_THAT(namer->getApprovedFile(".txt"), !Catch::Matchers::ContainsSubstring("tag_name"));
 }

@@ -1,11 +1,9 @@
 //filesystem::
 // ReSharper disable once CppUnusedIncludeDirective
 
-#define TEST_COMMIT_REVERT_CATCH
-
 // begin-snippet: catch_2_main
 // main.cpp:
-#define APPROVALS_CATCH // This tells Approval Tests to provide a main() - only do this in one cpp file
+#define APPROVALS_CATCH2_V3 // This tells Approval Tests to provide a main() - only do this in one cpp file
 #include "ApprovalTests.hpp"
 // end-snippet
 

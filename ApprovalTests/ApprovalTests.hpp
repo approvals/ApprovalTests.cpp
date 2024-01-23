@@ -68,6 +68,7 @@
 #include "ApprovalTests/integrations/FrameworkIntegrations.h"
 #include "ApprovalTests/integrations/boost_test/BoostTestApprovals.h"
 #include "ApprovalTests/integrations/catch/Catch2Approvals.h"
+#include "ApprovalTests/integrations/catch/Catch2v3Approvals.h"
 #include "ApprovalTests/integrations/cpputest/CppUTestApprovals.h"
 #include "ApprovalTests/integrations/doctest/DocTestApprovals.h"
 #include "ApprovalTests/integrations/fmt/FmtApprovals.h"
