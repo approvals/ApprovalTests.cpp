@@ -1,5 +1,6 @@
-#include "catch2/catch_all.hpp"
 #include "ApprovalTests/Approvals.h"
+
+#include <catch2/catch_test_macros.hpp>
 #include <vector>
 
 enum Nationality

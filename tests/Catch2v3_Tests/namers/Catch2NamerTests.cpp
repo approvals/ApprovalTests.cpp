@@ -1,9 +1,10 @@
-#include <catch2/catch_test_macros.hpp>
-#include <catch2/matchers/catch_matchers_all.hpp>
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 #include "ApprovalTests/Approvals.h"
+
+#include <catch2/catch_test_macros.hpp>
+#include <catch2/matchers/catch_matchers_all.hpp>
 
 using Catch::Matchers::EndsWith;
 
