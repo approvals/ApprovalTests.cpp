@@ -1,4 +1,5 @@
-#include "catch2/catch_all.hpp"
+#include <catch2/catch_test_macros.hpp>
+#include <catch2/matchers/catch_matchers_all.hpp>
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/utilities/StringUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
