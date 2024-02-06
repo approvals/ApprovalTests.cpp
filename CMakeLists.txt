@@ -40,10 +40,12 @@ if (NOT_SUBPROJECT)
     #   github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/dev_approvals_fetch_content/
     add_subdirectory(CMake/cpputest)
     add_subdirectory(CMake/googletest)
+    add_subdirectory(CMake/catch2v3)
 endif ()
 
 # This will optionally add the other third-party sub-directories
 add_subdirectory(third_party)
+
 
 if (APPROVAL_TESTS_BUILD_TESTING OR APPROVAL_TESTS_BUILD_EXAMPLES)
     enable_testing()

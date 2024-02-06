@@ -19,9 +19,6 @@ option(APPROVAL_TESTS_BUILD_DOCS
 option(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2
         "Include this project's copy of the Catch2v2 test framework"
         ${NOT_SUBPROJECT})
-option(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2V3
-        "Include this project's copy of the Catch2v3 test framework"
-        ${NOT_SUBPROJECT})
 option(APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST
         "Include this project's copy of the doctest test framework"
         ${NOT_SUBPROJECT})
@@ -49,6 +46,11 @@ option(APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION
         "Enable the Catch2 integration and testing"
         ON)
 mark_as_advanced(APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION)
+
+option(APPROVAL_TESTS_ENABLE_CATCH2V3_INTEGRATION
+        "Enable the Catch2v3 integration and testing"
+        ON)
+mark_as_advanced(APPROVAL_TESTS_ENABLE_CATCH2V3_INTEGRATION)
 
 option(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION
         "Enable the CppUTest integration and testing"
