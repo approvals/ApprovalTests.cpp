@@ -19,9 +19,6 @@ option(APPROVAL_TESTS_BUILD_DOCS
 option(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2
         "Include this project's copy of the Catch2v2 test framework"
         ${NOT_SUBPROJECT})
-option(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2V3
-        "Include this project's copy of the Catch2v3 test framework"
-        ${NOT_SUBPROJECT})
 option(APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST
         "Include this project's copy of the doctest test framework"
         ${NOT_SUBPROJECT})
