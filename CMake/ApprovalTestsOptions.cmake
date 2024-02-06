@@ -50,6 +50,11 @@ option(APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION
         ON)
 mark_as_advanced(APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION)
 
+option(APPROVAL_TESTS_ENABLE_CATCH2V3_INTEGRATION
+        "Enable the Catch2v3 integration and testing"
+        ON)
+mark_as_advanced(APPROVAL_TESTS_ENABLE_CATCH2V3_INTEGRATION)
+
 option(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION
         "Enable the CppUTest integration and testing"
         ON)
