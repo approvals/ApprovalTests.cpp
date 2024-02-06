@@ -2,7 +2,7 @@ if (NOT APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION)
     return()
 endif ()
 
-if (NOT TARGET Catch2)
+if (NOT TARGET Catch2v2)
     project(Catch2v2 CXX)
     set(CMAKE_CXX_STANDARD 11)
     add_library(${PROJECT_NAME} INTERFACE)
