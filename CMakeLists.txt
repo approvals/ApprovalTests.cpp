@@ -44,6 +44,9 @@ endif ()
 
 # This will optionally add the other third-party sub-directories
 add_subdirectory(third_party)
+if (APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2V3)
+    add_subdirectory(CMake/catch2v3)
+endif ()
 
 if (APPROVAL_TESTS_BUILD_TESTING OR APPROVAL_TESTS_BUILD_EXAMPLES)
     enable_testing()
