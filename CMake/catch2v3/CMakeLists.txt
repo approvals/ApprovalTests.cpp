@@ -1,3 +1,7 @@
+if (NOT APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2V3)
+    return()
+endif()
+
 message(STATUS "Add CPM.cmake")
 # download CPM.cmake
 file(
