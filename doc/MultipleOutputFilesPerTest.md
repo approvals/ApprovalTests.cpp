@@ -92,6 +92,26 @@ TEST_CASE("MultipleOutputFiles-DataDriven")
 }
 ```
 <sup><a href='/tests/Catch2_Tests/docs/Catch2DocsSamples.cpp#L59-L76' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_dynamic' title='Start of snippet'>anchor</a></sup>
+<a id='snippet-catch2_multiple_output_files_dynamic-1'></a>
+```cpp
+TEST_CASE("MultipleOutputFiles-DataDriven")
+{
+    // This is an example of how to write multiple different files in a single test.
+    // Note: For data as small as this, in practice we would recommend passing the
+    // greetings container in to Approvals::verifyAll(), with a lambda to format the output,
+    // in order to write all data to a single file.
+    std::vector<Greeting> greetings{
+        Greeting(British), Greeting(American), Greeting(French)};
+    for (auto greeting : greetings)
+    {
+        SECTION(greeting.getNationality())
+        {
+            ApprovalTests::Approvals::verify(greeting.getGreeting());
+        }
+    }
+}
+```
+<sup><a href='/tests/Catch2v3_Tests/docs/Catch2DocsSamples.cpp#L60-L77' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_dynamic-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Or hard-coded, with multiple sections:
@@ -117,6 +137,26 @@ TEST_CASE("MultipleOutputFiles-ForOneObject")
 }
 ```
 <sup><a href='/tests/Catch2_Tests/docs/Catch2DocsSamples.cpp#L78-L95' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_hard_coded' title='Start of snippet'>anchor</a></sup>
+<a id='snippet-catch2_multiple_output_files_hard_coded-1'></a>
+```cpp
+TEST_CASE("MultipleOutputFiles-ForOneObject")
+{
+    Greeting object_under_test;
+    SECTION("British")
+    {
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(British));
+    }
+    SECTION("American")
+    {
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(American));
+    }
+    SECTION("French")
+    {
+        ApprovalTests::Approvals::verify(object_under_test.getGreetingFor(French));
+    }
+}
+```
+<sup><a href='/tests/Catch2v3_Tests/docs/Catch2DocsSamples.cpp#L79-L96' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_multiple_output_files_hard_coded-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Note: Catch2 sub-sections continue to run even if the previous one failed. This is useful, as it allows you to approve all the files in one test run.
