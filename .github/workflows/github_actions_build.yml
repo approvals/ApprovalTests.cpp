@@ -26,7 +26,7 @@ jobs:
         with:
           author_name: Clang GitHub Action
           author_email: actions@github.com
-          message: 'r Reformat with clang-format'
+          message: '. rd Reformat with clang-format and/or update snippets'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
