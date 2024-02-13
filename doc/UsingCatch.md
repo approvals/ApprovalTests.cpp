@@ -30,7 +30,11 @@ at [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.
 Approval Tests requires that a file called the following is found:
 
 <!-- snippet: required_header_for_catch -->
-
+<a id='snippet-required_header_for_catch'></a>
+```h
+#include <catch2/catch.hpp>
+```
+<sup><a href='/ApprovalTests/integrations/catch/Catch2Approvals.h#L17-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_catch' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 (Before v7.0.0, it required `Catch.hpp`)
@@ -137,7 +141,7 @@ add_executable(${EXE_NAME}
         catch2_starter_main.cpp
         catch2_starter_test.cpp
         )
-target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests Catch2::Catch2)
+target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests Catch2v2::Catch2v2)
 
 add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
 ```
