@@ -4,7 +4,6 @@
   "ExcludeDirectories": [
     "cmake-build",
     "build",
-    "doc/sphinx/tests/approved_files",
     "sphinx"
   ],
   "UrlsAsSnippets": [],
