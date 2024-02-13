@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-find ./doc -name \*.md | grep -v googletest-src | xargs sed -i '' -f fix_markdown.sed
+OS="$(uname)"
+
+if [ "$OS" == "Darwin" ]; then
+  find ./doc -name \*.md | grep -v googletest-src | xargs sed -i '' -f fix_markdown.sed
+elif [ "$OS" == "Linux" ]; then
+  find ./doc -name \*.md | grep -v googletest-src | xargs sed -i -f fix_markdown.sed
+fi
 
 echo
 echo "The following files, if any, are missing their 'top' anchor:"
