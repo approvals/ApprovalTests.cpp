@@ -6,10 +6,12 @@
 #ifdef APPROVALS_CATCH2_V3
 #define APPROVAL_TESTS_INCLUDE_CPPS
 
+// begin-snippet: required_header_for_catch_2_v3
 #include <catch2/reporters/catch_reporter_event_listener.hpp>
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/reporters/catch_reporter_registrars.hpp>
 #include <catch2/catch_test_case_info.hpp>
+// end-snippet
 
 //namespace ApprovalTests {
 struct Catch2ApprovalListener : Catch::EventListenerBase
