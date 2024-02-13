@@ -21,6 +21,11 @@ jobs:
           exclude: './third_party'
           inplace: True
           clangFormatVersion: 9
+      - name: Run MarkdownSnippets
+        run: |
+          dotnet tool install --global MarkdownSnippets.Tool
+          ./run_markdown_templates.sh
+        shell: bash
       - uses: EndBug/add-and-commit@v9
         with:
           author_name: Clang GitHub Action
