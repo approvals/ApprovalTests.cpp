@@ -6,8 +6,8 @@ endif ()
 set(EXE_NAME catch2_v3_starter)
 set(CMAKE_CXX_STANDARD 14)
 add_executable(${EXE_NAME}
-        catch2_starter_main.cpp
-        catch2_starter_test.cpp
+        catch2_v3_starter_main.cpp
+        catch2_v3_starter_test.cpp
         )
 target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests Catch2::Catch2WithMain)
 
