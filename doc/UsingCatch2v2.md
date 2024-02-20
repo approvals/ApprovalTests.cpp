@@ -99,9 +99,9 @@ You should make the following additions to your own source file that contains `m
 
 Here is sample code to create your `main()` function, to set up Approval Tests' Catch2 integration.
 
-We called this file `catch2_starter_main.cpp`:
+We called this file `catch2_v2_starter_main.cpp`:
 
-<!-- snippet: catch2_starter_main.cpp -->
+<!-- snippet: catch2_v2_starter_main.cpp -->
 <a id='snippet-catch2_starter_main.cpp'></a>
 ```cpp
 #define APPROVALS_CATCH
@@ -115,9 +115,9 @@ auto directoryDisposer =
 <sup><a href='/examples/catch2_starter/catch2_starter_main.cpp#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_starter_main.cpp' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-Here is sample code to create your first test. We called this file `catch2_starter_test.cpp`:
+Here is sample code to create your first test. We called this file `catch2_v2_starter_test.cpp`:
 
-<!-- snippet: catch2_starter_test.cpp -->
+<!-- snippet: catch2_v2_starter_test.cpp -->
 <a id='snippet-catch2_starter_test.cpp'></a>
 ```cpp
 #include "catch2/catch.hpp"
@@ -136,7 +136,7 @@ TEST_CASE("catch2_starter sample")
 
 And finally, here is sample code to put in your `CMakeLists.txt` file:
 
-<!-- snippet: catch2_starter_cmake -->
+<!-- snippet: catch2_v2_starter_cmake -->
 <a id='snippet-catch2_starter_cmake'></a>
 ```txt
 set(EXE_NAME catch2_starter)
