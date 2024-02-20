@@ -1,6 +1,8 @@
 <a id="top"></a>
 
-# Using Approval Tests With Catch
+# Using Approval Tests With Catch2 v2
+
+*Note*: This is explicitly for Catch2 v2. Click [here for Catch2 v3](/doc/UsingCatch2v3.md#top).
 
 <!-- toc -->
 ## Contents
@@ -39,13 +41,15 @@ Approval Tests requires that a file called the following is found:
 
 (Before v7.0.0, it required `Catch.hpp`)
 
-## Getting Started With Catch2
+## Getting Started With Catch2 v2
 
 ### Starter Project
 
-The quickest way to start experimenting with Approval Tests is to:
+The quickest way to start experimenting with Approval Tests is to do the following:
 
-1. Download the project [ApprovalTests.cpp.StarterProject](https://github.com/approvals/ApprovalTests.cpp.StarterProject) - via the green "Clone or Download" button at the top-right of the project site.
+*Note*: The current version of the starter project uses Catch2_v3. We are linking to a historical branch if you want to use Catch2_v2.
+
+1. Download the project [ApprovalTests.cpp.StarterProject](https://github.com/approvals/ApprovalTests.cpp.StarterProject/tree/Catch2_v2) - via the green "Download" button at the top-right of the project site.
 2. Opening the project in the C++ IDE of your choice.
 
 Each time we release a new version of Approval Tests, we update this project, so it always has the latest features. 

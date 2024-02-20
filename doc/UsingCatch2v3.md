@@ -1,6 +1,7 @@
 <a id="top"></a>
 
-# Using Approval Tests With Catch
+# Using Approval Tests With Catch2 v3
+*Note*: This is explicitly for Catch2 v3. Click [here for Catch2 v2](/doc/UsingCatch2v2.md#top).
 
 <!-- toc -->
 ## Contents
@@ -20,16 +21,11 @@ The [Catch2](https://github.com/catchorg/Catch2) test framework works well with 
 
 This section describes the various ways of using Approval Tests with Catch2.
 
-**Notes pre-v.10.8.0:**<!-- include: include_ninja_warning_note. path: /doc/include_ninja_warning_note.include.md -->
-
-Earlier versions of Approval Tests had issues with Ninja. Read more
-at [Troubleshooting Misconfigured Build](/doc/TroubleshootingMisconfiguredBuild.md#top).<!-- endInclude -->
-
 ## Requirements
 
 Approval Tests requires that a file called the following is found:
 
-<!-- snippet: required_header_for_catch -->
+<!-- snippet: required_header_for_catch_2_v3 -->
 <a id='snippet-required_header_for_catch'></a>
 ```h
 #include <catch2/catch.hpp>
@@ -37,13 +33,11 @@ Approval Tests requires that a file called the following is found:
 <sup><a href='/ApprovalTests/integrations/catch/Catch2Approvals.h#L17-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_catch' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-(Before v7.0.0, it required `Catch.hpp`)
-
-## Getting Started With Catch2
+## Getting Started With Catch2 v3
 
 ### Starter Project
 
-The quickest way to start experimenting with Approval Tests is to:
+The quickest way to start experimenting with Approval Tests will soon be:
 
 1. Download the project [ApprovalTests.cpp.StarterProject](https://github.com/approvals/ApprovalTests.cpp.StarterProject) - via the green "Clone or Download" button at the top-right of the project site.
 2. Opening the project in the C++ IDE of your choice.
@@ -54,7 +48,7 @@ Each time we release a new version of Approval Tests, we update this project, so
 
 Create a file `main.cpp` and add just the following two lines:
 
-<!-- snippet: catch_2_main -->
+<!-- snippet: catch_2_v3_main -->
 <a id='snippet-catch_2_main'></a>
 ```cpp
 // main.cpp:
@@ -64,15 +58,6 @@ Create a file `main.cpp` and add just the following two lines:
 <sup><a href='/tests/Catch2_Tests/main.cpp#L6-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch_2_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-### Existing Project - with CATCH_CONFIG_MAIN
-
-If you have a Catch2 project with your own `main.cpp` that contains the following lines, you will need to replace them with the code in the previous section.
-
-```cpp
-#define CATCH_CONFIG_MAIN // remove these lines, and replace with Approval Tests lines
-#include "catch2/catch.hpp"
-```
-
 <!-- todo: document use of sections -->
 
 ### Existing Project - with your main()
@@ -81,7 +66,7 @@ If you have [supplied your own `main()` for Catch](https://github.com/catchorg/C
 
 You should make the following additions to your own source file that contains `main()`.  
 
-<!-- snippet: catch_existing_main -->
+<!-- snippet: catch2_v3_existing_main -->
 <a id='snippet-catch_existing_main'></a>
 ```cpp
 // Add these two lines to the top of your main.cpp file:
@@ -95,9 +80,9 @@ You should make the following additions to your own source file that contains `m
 
 Here is sample code to create your `main()` function, to set up Approval Tests' Catch2 integration.
 
-We called this file `catch2_starter_main.cpp`:
+We called this file `catch2_v3_starter_main.cpp`:
 
-<!-- snippet: catch2_starter_main.cpp -->
+<!-- snippet: catch2_v3_starter_main.cpp -->
 <a id='snippet-catch2_starter_main.cpp'></a>
 ```cpp
 #define APPROVALS_CATCH
@@ -111,9 +96,9 @@ auto directoryDisposer =
 <sup><a href='/examples/catch2_starter/catch2_starter_main.cpp#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_starter_main.cpp' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-Here is sample code to create your first test. We called this file `catch2_starter_test.cpp`:
+Here is sample code to create your first test. We called this file `catch2_v3_starter_test.cpp`:
 
-<!-- snippet: catch2_starter_test.cpp -->
+<!-- snippet: catch2_v3_starter_test.cpp -->
 <a id='snippet-catch2_starter_test.cpp'></a>
 ```cpp
 #include "catch2/catch.hpp"
@@ -132,7 +117,7 @@ TEST_CASE("catch2_starter sample")
 
 And finally, here is sample code to put in your `CMakeLists.txt` file:
 
-<!-- snippet: catch2_starter_cmake -->
+<!-- snippet: catch2_v3_starter_cmake -->
 <a id='snippet-catch2_starter_cmake'></a>
 ```txt
 set(EXE_NAME catch2_starter)
