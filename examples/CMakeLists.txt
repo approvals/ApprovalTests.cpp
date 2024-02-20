@@ -3,6 +3,8 @@ add_subdirectory(boost_starter)
 add_subdirectory(catch2_existing_main)
 add_subdirectory(catch2_starter)
 
+add_subdirectory(catch2_v3_existing_main)
+
 add_subdirectory(cpputest_existing_main)
 add_subdirectory(cpputest_starter)
 
