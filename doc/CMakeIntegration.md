@@ -71,7 +71,7 @@ Note that these are always enabled if this is the top-level project.
 Note that these are always included if this is the top-level project.
 
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2`
-  * When `ON`, this project's copy of the Catch2 test framework is included.  Defaults to `OFF`.
+  * When `ON`, this project's copy of the Catch2v2 test framework is included.  Defaults to `OFF`.
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST`
   * When `ON`, this project's copy of the doctest test framework is included.  Defaults to `OFF`.
 * `APPROVAL_TESTS_BUILD_THIRD_PARTY_UT`
@@ -98,6 +98,10 @@ Note that these are always included if this is the top-level project.
     * **Use case:** This is typically for when you want CMake to download a specific version of Approval Tests for you, behind the scenes, and you are using an older version of CMake.
 * `find_package()` - not supported
     * There is not yet support for [`find_package()`](https://cmake.org/cmake/help/latest/command/find_package.html).
+* `CPM`
+    * See [Make CMake clone ApprovalTests.cpp using CPM](/doc/CMakeIntegration.md#make-cmake-clone-approvaltestscpp-using-cpm)
+    * [CPM](https://github.com/cpm-cmake/CPM.cmake) is CMake's missing package manager. It is a small script for setup-free, cross-platform, reproducible dependency management.
+    * **Use case:** This is typically for when you want CMake to download a specific version of Approval Tests for you, behind the scenes, and you would like caching, offline builds and version checking.
 
 ### Single header or CMake Integration?
 
@@ -236,9 +240,9 @@ fetch_content_approvaltests_catch2/
   .git/
   cmake-build-debug/
     _deps/
-      approvaltests-build/
-      approvaltests-src/
-      approvaltests-subbuild/
+      approvaltests-build/
+      approvaltests-src/
+      approvaltests-subbuild/
       catch2-build
       catch2-src
       catch2-subbuild
@@ -250,11 +254,41 @@ fetch_content_approvaltests_catch2/
     ...
 ```
 
+#### Make CMake clone ApprovalTests.cpp using CPM
+
+The following is for when you just want ApprovalTests.cpp to be downloaded as part of your project's build. You don't particularly want to see their source code, although you're happy if your debugger steps in to them.
+
+It also needs CMake 3.14 or above.
+
+We use this in our `CMakeLists.txt` file:
+
+snippet: cpm_download
+
+snippet: cpm_add_approvaltests
+
+Note the `GIT_TAG` values: This tells CMake which revision of dependencies to use. The value can be a tag or a git commit ID. Here we use `master`. However, it is generally recommended to pin your dependencies to specific versions, and test behaviour before updating to newer versions.
+
+After CMake has generated the build files, the directory structure would look something like this, where the `cmake-build-debug` directory is the build space, and the `cmake-build-debug/_deps` contains the downloaded and built ApprovalTests.cpp repository:
+
+```
+your_project/
+  .git/
+  cmake-build-debug/
+    _deps/
+      approvaltests-build/
+      approvaltests-src/
+      approvaltests-subbuild/
+    ...
+  CMakeLists.txt
+  tests/
+    ...
+```
+
 #### Make CMake clone ApprovalTests.cpp
 
 **Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/fetch_content_approvaltests).
 
-The only difference between the previous example and this one is that here we use the Catch2 header that is in the ApprovalTests.cpp project.
+The only difference between the previous example and this one is that here we use the Catch2v2 header that is in the ApprovalTests.cpp project.
 
 We use this `dependencies/CMakeLists.txt` file:
 
