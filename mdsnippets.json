@@ -12,5 +12,6 @@
     "Exclude Heading2"
   ],
   "WriteHeader": false,
-  "Convention": "InPlaceOverwrite"
+  "Convention": "InPlaceOverwrite",
+  "UrlAsSnippets": [ "https://raw.githubusercontent.com/Laguna1989/OpenALpp/master/ext/CMakeLists.txt" ]
 }
