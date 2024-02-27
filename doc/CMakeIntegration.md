@@ -271,7 +271,7 @@ Note the `GIT_TAG` values: This tells CMake which revision of dependencies to us
 After CMake has generated the build files, the directory structure would look something like this, where the `cmake-build-debug` directory is the build space, and the `cmake-build-debug/_deps` contains the downloaded and built ApprovalTests.cpp repository:
 
 ```
-fetch_content_approvaltests_catch2/
+your_project/
   .git/
   cmake-build-debug/
     _deps/
@@ -288,7 +288,7 @@ fetch_content_approvaltests_catch2/
 
 **Note:** The files in this section can be viewed and downloaded from [fetch_content_approvaltests](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/tree/main/fetch_content_approvaltests).
 
-The only difference between the previous example and this one is that here we use the Catch2 header that is in the ApprovalTests.cpp project.
+The only difference between the previous example and this one is that here we use the Catch2v2 header that is in the ApprovalTests.cpp project.
 
 We use this `dependencies/CMakeLists.txt` file:
 
