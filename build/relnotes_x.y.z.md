@@ -7,4 +7,4 @@
 * **Bug fixes**
     * None
 * **Other changes**
-    * None
+    * TODO CMake library target changed: Linking against the included catch2v2. (only if people want to use the bundled catch2. If they bring their own, no change is needed)
