@@ -183,7 +183,8 @@ Build Systems
 
 * **Integrations**:
   :doc:`CMake <generated_docs/CMakeIntegration>` |
-  :doc:`Conan <generated_docs/ConanIntegration>`
+  :doc:`Conan <generated_docs/ConanIntegration>` |
+  :doc:`Vcpkg <generated_docs/VcpkgIntegration>`
 
 * **Your builds**:
   :doc:`Build Machines and CI servers <generated_docs/BuildMachinesAndCI>`
