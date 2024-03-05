@@ -19,6 +19,7 @@
     * [Scenarios when using Approval Tests](#scenarios-when-using-approval-tests)
       * [Context](#context)
       * [Make CMake clone ApprovalTests.cpp and Catch2](#make-cmake-clone-approvaltestscpp-and-catch2)
+      * [Make CMake clone ApprovalTests.cpp using CPM](#make-cmake-clone-approvaltestscpp-using-cpm)
       * [Make CMake clone ApprovalTests.cpp](#make-cmake-clone-approvaltestscpp)
       * [Use own ApprovalTests.cpp and Catch2 clones](#use-own-approvaltestscpp-and-catch2-clones)
       * [Using other supported test frameworks](#using-other-supported-test-frameworks)
@@ -262,9 +263,34 @@ It also needs CMake 3.14 or above.
 
 We use this in our `CMakeLists.txt` file:
 
-snippet: cpm_download
+<!-- snippet: cpm_download -->
+<a id='snippet-cpm_download'></a>
+```txt
+message(STATUS "Add CPM.cmake")
+# download CPM.cmake
+file(
+        DOWNLOAD
+        https://github.com/cpm-cmake/CPM.cmake/releases/download/v0.38.6/CPM.cmake
+        ${CMAKE_BINARY_DIR}/cmake/CPM.cmake
+        EXPECTED_HASH SHA256=11c3fa5f1ba14f15d31c2fb63dbc8628ee133d81c8d764caad9a8db9e0bacb07
+)
+include(${CMAKE_BINARY_DIR}/cmake/CPM.cmake)
+```
+<sup><a href='#snippet-cpm_download' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
-snippet: cpm_add_approvaltests
+<!-- snippet: cpm_add_approvaltests -->
+<a id='snippet-cpm_add_approvaltests'></a>
+```txt
+message(STATUS "Fetching approvaltests")
+CPMAddPackage(
+        NAME approvaltests
+        GITHUB_REPOSITORY approvals/ApprovalTests.cpp
+        GIT_TAG master
+)
+```
+<sup><a href='#snippet-cpm_add_approvaltests' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 Note the `GIT_TAG` values: This tells CMake which revision of dependencies to use. The value can be a tag or a git commit ID. Here we use `master`. However, it is generally recommended to pin your dependencies to specific versions, and test behaviour before updating to newer versions.
 
