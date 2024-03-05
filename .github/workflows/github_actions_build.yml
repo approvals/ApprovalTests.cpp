@@ -7,7 +7,7 @@ on:
     - cron: '16 0 * * 3,6'  # <https://crontab.guru/#16_0_*_*_3,6> - "At 00:16 on Wednesday and Saturday."
 
 jobs:
-  clang-format:
+  clang-format-and-update-docs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
@@ -45,7 +45,7 @@ jobs:
   #        run: ./scripts/check_links.sh
 
   Linux:
-    needs: clang-format
+    needs: clang-format-and-update-docs
     # if: false # Disable this platform temporarily
     runs-on: ubuntu-${{ matrix.os-version }}
     strategy:
@@ -155,7 +155,7 @@ jobs:
       - uses: ./.github/actions/build-and-test
 
   macOS:
-    needs: clang-format
+    needs: clang-format-and-update-docs
     # if: false # Disable this platform temporarily
     runs-on: macos-${{ matrix.os-version }}
     strategy:
@@ -199,7 +199,7 @@ jobs:
       - uses: ./.github/actions/build-and-test
 
   Windows:
-    needs: clang-format
+    needs: clang-format-and-update-docs
     # if: false # Disable this platform temporarily
     runs-on: windows-${{ matrix.os-version }}
     strategy:
