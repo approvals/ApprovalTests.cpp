@@ -6,6 +6,7 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.13.0](#v10130)
     * [Catch2 v3 support](#catch2-v3-support)
   * [v.10.12.0](#v10120)
     * [EmptyFileCreatorByType::registerCreator](#emptyfilecreatorbytyperegistercreator)
