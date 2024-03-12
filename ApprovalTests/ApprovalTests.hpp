@@ -83,6 +83,7 @@
 #include "ApprovalTests/reporters/CIBuildOnlyReporterUtils.h"
 #include "ApprovalTests/reporters/ClipboardReporter.h"
 #include "ApprovalTests/reporters/CombinationReporter.h"
+#include "ApprovalTests/reporters/CrossPlatformReporters.h"
 #include "ApprovalTests/reporters/CustomReporter.h"
 #include "ApprovalTests/reporters/DiffReporter.h"
 #include "ApprovalTests/reporters/EnvironmentVariableReporter.h"

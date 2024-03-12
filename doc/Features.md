@@ -86,6 +86,8 @@
 
 ## v.x.y.z
 
+## v.10.13.0
+
 ### Catch2 v3 support
 
 [Catch2v3](/doc/UsingCatch2v3.md#top) is now supported additionally to Catch2v2.
