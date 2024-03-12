@@ -1,8 +1,4 @@
 {
-    "conan_details": {
-        "conan_approvaltests_dir": "../../../conan/conan-center-index-claremacrae/recipes/approvaltests.cpp",
-        "conan_repo_dir": "../../../conan/conan-center-index-claremacrae"
-    },
     "locations": {
         "approval_tests_dir": "../ApprovalTests",
         "main_project_dir": "../../ApprovalTests.cpp",
@@ -35,9 +31,5 @@
         "version_header": "ApprovalTestsVersion.h"
     },
     "push_to_production": true,
-    "release_new_single_header": "../build/releases/ApprovalTests.v.1.2.4.hpp",
-    "vcpkg_details": {
-        "vcpkg_approvaltests_dir": "../../vcpkg/ports/approval-tests-cpp",
-        "vcpkg_repo_dir": "../../vcpkg"
-    }
+    "release_new_single_header": "../build/releases/ApprovalTests.v.1.2.4.hpp"
 }

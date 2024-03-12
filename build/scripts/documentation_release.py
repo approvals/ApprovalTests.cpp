@@ -66,4 +66,5 @@ class PrepareDocumentationRelease:
     @staticmethod
     def regenerate_markdown() -> None:
         with use_directory(".."):
-            run(["./run_markdown_templates.sh"])
+            # run(["./run_markdown_templates.sh"])
+            pass # disabled to enable running on WSL

@@ -27,15 +27,19 @@ class PrepareRelease:
             self.check_pre_conditions_for_main_repo()
             PrepareStarterProjectRelease.check_pre_conditions_for_starter_project_repo(self.details)
 
-            run(["open", F"{self.details.project_details.github_project_url}/commits/master"])
+            open_url_command = "open"
+            if os.name != "Darwin":
+                open_url_command = "xdg-open"
+
+            run([open_url_command, F"{self.details.project_details.github_project_url}/commits/master"])
             check_step("the builds are passing")
 
-            run(["open", F"{self.details.project_details.github_project_url}/blob/master/build/relnotes_x.y.z.md"])
-            run(["open",
+            run([open_url_command, F"{self.details.project_details.github_project_url}/blob/master/build/relnotes_x.y.z.md"])
+            run([open_url_command,
                  F"{self.details.project_details.github_project_url}/compare/{self.details.old_version.get_version_text()}...master"])
             check_step("the release notes are ready")
 
-            run(["open", F"{self.details.project_details.github_project_url}/issues"])
+            run([open_url_command, F"{self.details.project_details.github_project_url}/issues"])
             check_step("any issues resolved in this release are closed")
 
     def check_pre_conditions_for_main_repo(self) -> None:
@@ -75,8 +79,8 @@ class PrepareRelease:
         check_step_with_revert("you are happy with the changes?", do_nothing)
 
     def prepare_everything(self) -> None:
-        PrepareConanRelease.check_preconditions(self.details)
-        PrepareVcpkgRelease.check_preconditions(self.details)
+        # PrepareConanRelease.check_preconditions(self.details)
+        # PrepareVcpkgRelease.check_preconditions(self.details)
         self.check_pre_conditions_for_publish()
 
         CppGeneration.prepare_release(self.details)
@@ -84,8 +88,8 @@ class PrepareRelease:
         PrepareStarterProjectRelease.update_starter_project(self.details)
         PrepareStarterProjectRelease.check_starter_project_builds(self.details)
 
-        PrepareConanRelease.prepare_release(self.details)
-        PrepareVcpkgRelease.prepare_release(self.details)
+        # PrepareConanRelease.prepare_release(self.details)
+        # PrepareVcpkgRelease.prepare_release(self.details)
 
         PrepareDocumentationRelease.prepare_documentation(self.details)
 

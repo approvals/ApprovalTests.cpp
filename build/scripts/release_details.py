@@ -14,8 +14,8 @@ class ReleaseDetails:
                  project_details: ProjectDetails) -> None:
         self.project_details = project_details
         self.locations = ReleaseLocations(project_details)
-        self.conan_details = ConanReleaseDetails(project_details)
-        self.vcpkg_details = VcpkgReleaseDetails(project_details)
+        # self.conan_details = ConanReleaseDetails(project_details)
+        # self.vcpkg_details = VcpkgReleaseDetails(project_details)
 
         self.old_version = old_version
         self.new_version = new_version
