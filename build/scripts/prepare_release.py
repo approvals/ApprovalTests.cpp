@@ -75,8 +75,8 @@ class PrepareRelease:
         check_step_with_revert("you are happy with the changes?", do_nothing)
 
     def prepare_everything(self) -> None:
-        PrepareConanRelease.check_preconditions(self.details)
-        PrepareVcpkgRelease.check_preconditions(self.details)
+        # PrepareConanRelease.check_preconditions(self.details)
+        # PrepareVcpkgRelease.check_preconditions(self.details)
         self.check_pre_conditions_for_publish()
 
         CppGeneration.prepare_release(self.details)
@@ -84,8 +84,8 @@ class PrepareRelease:
         PrepareStarterProjectRelease.update_starter_project(self.details)
         PrepareStarterProjectRelease.check_starter_project_builds(self.details)
 
-        PrepareConanRelease.prepare_release(self.details)
-        PrepareVcpkgRelease.prepare_release(self.details)
+        # PrepareConanRelease.prepare_release(self.details)
+        # PrepareVcpkgRelease.prepare_release(self.details)
 
         PrepareDocumentationRelease.prepare_documentation(self.details)
 
