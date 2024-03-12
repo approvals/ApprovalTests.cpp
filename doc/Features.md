@@ -86,6 +86,10 @@
 
 ## v.x.y.z
 
+### Catch2 v3 support
+
+[Catch2v3](/doc/UsingCatch2v3.md) is now supported additionally to Catch2v2.
+
 ## v.10.12.0
 
 ### EmptyFileCreatorByType::registerCreator
