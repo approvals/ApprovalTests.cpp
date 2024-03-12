@@ -6,6 +6,7 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [Catch2 v3 support](#catch2-v3-support)
   * [v.10.12.0](#v10120)
     * [EmptyFileCreatorByType::registerCreator](#emptyfilecreatorbytyperegistercreator)
   * [v.10.11.0](#v10110)
@@ -87,7 +88,7 @@
 
 ### Catch2 v3 support
 
-[Catch2v3](/doc/UsingCatch2v3.md) is now supported additionally to Catch2v2.
+[Catch2v3](/doc/UsingCatch2v3.md#top) is now supported additionally to Catch2v2.
 
 ## v.10.12.0
 
