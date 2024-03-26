@@ -19,12 +19,12 @@ You have called a method that returns a collection of objects, and you want a ni
 1. Copy this starter text.
 
 <!-- snippet: VerifyAllStartingPointContainer -->
-<a id='snippet-verifyallstartingpointcontainer'></a>
+<a id='snippet-VerifyAllStartingPointContainer'></a>
 ```cpp
 std::vector<std::string> objectsToVerify{"hello", "world"};
 ApprovalTests::Approvals::verifyAll("TITLE", objectsToVerify);
 ```
-<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L27-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyallstartingpointcontainer' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L27-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyAllStartingPointContainer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 which would produce:

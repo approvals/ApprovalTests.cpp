@@ -22,7 +22,7 @@ If you have only one parameter that you want to vary, check out [How to Test a V
 1. Copy this starter text, and adjust for the number of inputs that you have.
 
 <!-- snippet: CombinationsStartingPoint -->
-<a id='snippet-combinationsstartingpoint'></a>
+<a id='snippet-CombinationsStartingPoint'></a>
 ```cpp
 TEST_CASE("CombinationsStartingPoint")
 {
@@ -35,7 +35,7 @@ TEST_CASE("CombinationsStartingPoint")
         inputs2);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L20-L31' title='Snippet source file'>snippet source</a> | <a href='#snippet-combinationsstartingpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L20-L31' title='Snippet source file'>snippet source</a> | <a href='#snippet-CombinationsStartingPoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Modify each input container for your chosen values.
@@ -75,7 +75,7 @@ This makes a kind of approval test matrix, automatically testing all combination
 In this small example, all combinations of `{"hello", "world"}` and `{1, 2, 3}` are being used:
 
 <!-- snippet: YouCanVerifyCombinationsOf2 -->
-<a id='snippet-youcanverifycombinationsof2'></a>
+<a id='snippet-YouCanVerifyCombinationsOf2'></a>
 ```cpp
 TEST_CASE("YouCanVerifyCombinationsOf2")
 {
@@ -89,7 +89,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2")
         numbers);
 }
 ```
-<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L6-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-youcanverifycombinationsof2' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/CombinationExamples.cpp#L6-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-YouCanVerifyCombinationsOf2' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The format is carefully chosen to show both inputs and outputs, to make the test results easy to interpret. The output looks like this:
