@@ -20,7 +20,7 @@ If you have more than parameter that you want to vary, check out [Testing Combin
 1. Copy this starter text.
 
 <!-- snippet: VerifyAllStartingPoint -->
-<a id='snippet-verifyallstartingpoint'></a>
+<a id='snippet-VerifyAllStartingPoint'></a>
 ```cpp
 TEST_CASE("VerifyAllStartingPoint")
 {
@@ -31,7 +31,7 @@ TEST_CASE("VerifyAllStartingPoint")
     });
 }
 ```
-<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L44-L53' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyallstartingpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/VectorTests.cpp#L44-L53' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyAllStartingPoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 2. Modify the input container for your chosen values.

@@ -55,7 +55,7 @@ Therefore, by default,  ApprovalTests will convert any non-valid filename charac
 This behavior is customizable, here's an example:
 
 <!-- snippet: useFileNameSanitizer -->
-<a id='snippet-usefilenamesanitizer'></a>
+<a id='snippet-useFileNameSanitizer'></a>
 ```cpp
 TEST_CASE("Sanitizer <3 fileNames")
 {
@@ -66,7 +66,7 @@ TEST_CASE("Sanitizer <3 fileNames")
                     incoming, " <3 ", "_loves_");
             });
 ```
-<sup><a href='/tests/DocTest_Tests/namers/NamerExamples.cpp#L59-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-usefilenamesanitizer' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/namers/NamerExamples.cpp#L59-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-useFileNameSanitizer' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ## Registering a Custom Namer

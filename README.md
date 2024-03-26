@@ -2,9 +2,9 @@
 
 # <img src="doc/images/icon.png" height="30px"> Approval Tests for C++
 
-[![Actions Status](https://github.com/approvals/ApprovalTests.cpp/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Abuild)
-[![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/cygwin/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Acygwin)
-[![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/mingw/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Amingw)
+[![build](https://github.com/approvals/ApprovalTests.cpp/actions/workflows/github_actions_build.yml/badge.svg)](https://github.com/approvals/ApprovalTests.cpp/actions/workflows/github_actions_build.yml)
+[![cygwin](https://github.com/approvals/ApprovalTests.cpp/actions/workflows/cygwin.yml/badge.svg)](https://github.com/approvals/ApprovalTests.cpp/actions/workflows/cygwin.yml)
+[![mingw](https://github.com/approvals/ApprovalTests.cpp/actions/workflows/mingw.yml/badge.svg)](https://github.com/approvals/ApprovalTests.cpp/actions/workflows/mingw.yml)
 [![python-tests](https://github.com/approvals/ApprovalTests.cpp/actions/workflows/python-tests.yml/badge.svg)](https://github.com/approvals/ApprovalTests.cpp/actions/workflows/python-tests.yml)
 
 [![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/approvaltests.cpp.svg)](https://conan.io/center/approvaltests.cpp)
