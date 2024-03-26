@@ -54,20 +54,6 @@ class PrepareStarterProjectRelease:
             details.old_version.get_version_text(),
             details.new_version.get_version_text())
 
-        # Update the version number in the Visual Studio projects:
-        PrepareStarterProjectRelease.update_solution_file(details,
-                                                          F"{details.locations.starter_project_dir}/visual-studio-2017/StarterProject.vcxproj")
-        PrepareStarterProjectRelease.update_solution_file(details,
-                                                          F"{details.locations.starter_project_dir}/visual-studio-2019/StarterProject2019.vcxproj")
-
-    @staticmethod
-    def update_solution_file(details: ReleaseDetails, visual_studio_sln: str) -> None:
-        if os.path.isfile(visual_studio_sln):
-            replace_text_in_file(visual_studio_sln,
-                                 details.old_single_header,
-                                 details.new_single_header)
-        else:
-            print(f"Info: No Visual Studio solution file: {visual_studio_sln}")
 
     @staticmethod
     def check_starter_project_builds(details: ReleaseDetails) -> None:
