@@ -159,13 +159,16 @@ What we would like to be able to do is write the following code:
 <!-- snippet: non_printable_object -->
 <a id='snippet-non_printable_object'></a>
 ```cpp
-LibraryBook harry_potter(
-    "Harry Potter and the Goblet of Fire", "J.K. Rowling",
-    30, "English", 752, "978-0439139595");
+TEST_CASE("WritableBooks")
+{
+    LibraryBook harry_potter(
+        "Harry Potter and the Goblet of Fire", "J.K. Rowling",
+        30, "English", 752, "978-0439139595");
 
-Approvals::verify(harry_potter); // This does not compile
+    Approvals::verify(harry_potter); // This does not compile
+}
 ```
-<sup><a href='/tests/DocTest_Tests/docs/Tutorial.cpp#L56-L62' title='Snippet source file'>snippet source</a> | <a href='#snippet-non_printable_object' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/tests/DocTest_Tests/docs/Tutorial.cpp#L54-L63' title='Snippet source file'>snippet source</a> | <a href='#snippet-non_printable_object' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The problem is that this will not compile, because at present there is no way to turn the LibraryBook in to a string representation.
