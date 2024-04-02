@@ -51,16 +51,16 @@ public:
 
 #if 0
 // Non-compiling example for documentation
-TEST_CASE("WritableBooks Does Not Compile")
+// begin-snippet: non_printable_object
+TEST_CASE("WritableBooks")
 {
-    // begin-snippet: non_printable_object
     LibraryBook harry_potter(
         "Harry Potter and the Goblet of Fire", "J.K. Rowling",
         30, "English", 752, "978-0439139595");
 
     Approvals::verify(harry_potter); // This does not compile
-    // end-snippet
 }
+// end-snippet
 #endif
 
 TEST_CASE("WritableBooks1")
