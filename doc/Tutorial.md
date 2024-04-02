@@ -77,6 +77,11 @@ Please note that the first time you run an Approval Test, it will always fail an
 
 ### Approval Files
 
+The files we have just seen are the `.approved.txt` and `.received.txt` files, namely: 
+
+- `Tutorial.HelloApprovals.approved.txt`
+- `Tutorial.HelloApprovals.received.txt`
+
 Approvals creates a lot of `.approved.txt` and `.received.txt` files. The `.received.txt` files are automatically deleted on a passing test, and should never be checked in to source control. We suggest adding `*.received.*` line to your `.gitignore` file.
 
 The  `.approved.txt` files, on the other hand, need to be checked in to your source control.
@@ -85,7 +90,7 @@ Approval Tests follows the [Convention over Configuration](/doc/Glossary.md#conv
 
 `FileName.TestName.approved.txt`
 
-So in this case, it will be:
+Which in our example here became:
 
 `Tutorial.HelloApprovals.approved.txt`
 
