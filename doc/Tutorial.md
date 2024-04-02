@@ -18,7 +18,7 @@
 
 The tutorial is written for someone with a decent understanding of C++, a passing understanding of traditional unit testing and of diff tools, and no experience with Approval Tests at all.
 
-In this tutorial, we are going to use Windows, Catch2 and WinMerge. If you are using something else, it will make almost no difference to your experience.
+In this tutorial, we are going to use Windows, Catch2v3, C++14 or above, and WinMerge. If you are using something else, it will make almost no difference to your experience.
 
 By the end of this tutorial, you should be able to use Approval Tests in most basic cases.
 
