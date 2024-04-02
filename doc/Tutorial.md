@@ -23,6 +23,10 @@ By the end of this tutorial, you should be able to use Approval Tests in most ba
 
 To follow along at home, please [download](https://github.com/approvals/ApprovalTests.cpp.StarterProject/archive/refs/heads/master.zip) the [Starter Project](https://github.com/approvals/ApprovalTests.cpp.StarterProject) unless you already have a working ApprovalTests build / environment in which case you can just start a new test. 
 
+## Using this tutorial
+This tutorial uses markdown snippets. What this means is that all code samples have a link under them called `snippet source`.  
+If you get stuck, you can click these to see the code samples in the context of a full source file whenever needed.  
+
 ## Hello Approval Tests
 
 Let's open the Starter Project in your development environment, and open [tests/Tutorial.cpp](https://github.com/approvals/ApprovalTests.cpp.StarterProject/blob/master/tests/Tutorial.cpp).
