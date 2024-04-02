@@ -152,7 +152,9 @@ public:
 <sup><a href='/tests/DocTest_Tests/docs/Tutorial.cpp#L23-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-library_book' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-What we would like to be able to write in the original test is:
+Let's write a new test for this `LibraryBook` class.
+
+What we would like to be able to do is write the following code:
 
 <!-- snippet: non_printable_object -->
 <a id='snippet-non_printable_object'></a>
@@ -170,7 +172,7 @@ The problem is that this will not compile, because at present there is no way to
 
 So we are going to add a lambda to handle the printing.
 
-Let's start by just printing the title:
+Let's change the `Approvals::verify` line. We will start by just printing the title:
 
 <!-- snippet: printable_object_simple -->
 <a id='snippet-printable_object_simple'></a>
