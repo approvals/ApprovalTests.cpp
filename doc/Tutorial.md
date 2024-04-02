@@ -73,6 +73,8 @@ However, if it does not match, another step is invoked, and a "[Reporter](/doc/R
 
 Please note that the first time you run an Approval Test, it will always fail and launch a reporter, as you have never said anything is OK.
 
+**Note**: For more information, see a [diagram of this workflow](https://github.com/approvals/ApprovalTests.Python/blob/main/docs/explanation/approval_testing.md#running-approvals).
+
 ### Approval Files
 
 Approvals creates a lot of `.approved.txt` and `.received.txt` files. The `.received.txt` files are automatically deleted on a passing test, and should never be checked in to source control. We suggest adding `*.received.*` line to your `.gitignore` file.
