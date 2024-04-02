@@ -25,7 +25,7 @@ To follow along at home, please [download](https://github.com/approvals/Approval
 
 ## Hello Approval Tests
 
-Let's open the Starter Project in your development environment, and open [Tutorial.cpp](https://github.com/approvals/ApprovalTests.cpp.StarterProject/blob/master/tests/Tutorial.cpp).
+Let's open the Starter Project in your development environment, and open [tests/Tutorial.cpp](https://github.com/approvals/ApprovalTests.cpp.StarterProject/blob/master/tests/Tutorial.cpp).
 
 ### Writing the Test 
 
