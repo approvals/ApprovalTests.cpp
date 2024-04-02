@@ -5,6 +5,7 @@
 <!-- toc -->
 ## Contents
 
+  * [Using this tutorial](#using-this-tutorial)
   * [Hello Approval Tests](#hello-approval-tests)
     * [Writing the Test](#writing-the-test)
     * [Approving the Test](#approving-the-test)
