@@ -48,7 +48,7 @@ When we run the test, WinMerge will open as such:
 
 ![New Failure](/doc/images/tutorial/01_new_failure.png?raw=true)
 
-On the left hand side, we will see the actual received result, `Hello Approvals`. It is what we want, so we are going to approve it. To do that, click the "All Right" button (or copy and paste the text to the other side)
+On the left hand side, we will see the actual received result, `Hello Approvals`. It is what we want, so we are going to approve it. To do that, click the "All Right" button (or copy and paste the text from the left => right side).
  
 ![Approving](/doc/images/tutorial/02_approving.png?raw=true)
 
