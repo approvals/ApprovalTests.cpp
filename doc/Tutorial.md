@@ -152,7 +152,7 @@ public:
 <sup><a href='/tests/DocTest_Tests/docs/Tutorial.cpp#L23-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-library_book' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-What we would like to be able to write is:
+What we would like to be able to write in the original test is:
 
 <!-- snippet: non_printable_object -->
 <a id='snippet-non_printable_object'></a>
