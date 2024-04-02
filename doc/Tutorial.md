@@ -78,7 +78,7 @@ However, if it does not match, another step is invoked, and a "[Reporter](/doc/R
 
 Please note that the first time you run an Approval Test, it will always fail and launch a reporter, as you have never said anything is OK.
 
-**Note**: For more information, see a [diagram of this workflow](https://github.com/approvals/ApprovalTests.Python/blob/main/docs/explanation/approval_testing.md#running-approvals).
+**Bonus Material:** For more information, see a [diagram of this workflow](https://github.com/approvals/ApprovalTests.Python/blob/main/docs/explanation/approval_testing.md#running-approvals).
 
 ### Approval Files
 
@@ -224,7 +224,7 @@ isbn: 978-0439139595
 <sup><a href='/tests/DocTest_Tests/docs/approval_tests/Tutorial.WritableBooks2.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tutorial.WritableBooks2.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-If you would like to know how to do this more robustly, check out [To String](/doc/ToString.md#top).
+**Bonus Material:** If you would like to know how to do this more robustly, check out [To String](/doc/ToString.md#top).
 
 ## Dealing with test failures
 
