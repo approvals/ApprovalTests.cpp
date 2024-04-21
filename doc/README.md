@@ -37,7 +37,8 @@ If you are new to Approval Tests, or to this C++ library, start here:
     [ApprovalTesting (the concept)](/doc/ApprovalTestingConcept.md#top) |
     [The Path to Approval Testing](/doc/PathToApprovalTesting.md#top) |
     [Approval Testing Concepts](https://github.com/approvals/ApprovalTests.Documentation/blob/main/explanations/approval_testing.md#top) |
-    [Place to modify output](https://github.com/approvals/ApprovalTests.Documentation/blob/main/explanations/creating_output.md#top)
+    [Place to modify output](https://github.com/approvals/ApprovalTests.Documentation/blob/main/explanations/creating_output.md#top) | [What are Approvals](https://github.com/approvals/ApprovalTests.Documentation/blob/main/explanations/what_are_approvals.md)
+
   - **Start coding**:
     [Tutorial](/doc/Tutorial.md#top) |
     [Setup Options](/doc/Setup.md#top) |
