@@ -35,7 +35,8 @@ If you are new to Approval Tests, or to this C++ library, start here:
   - **Concepts**:
     [Overview](/doc/Overview.md#top) |
     [ApprovalTesting (the concept)](/doc/ApprovalTestingConcept.md#top) |
-    [The Path to Approval Testing](/doc/PathToApprovalTesting.md#top)
+    [The Path to Approval Testing](/doc/PathToApprovalTesting.md#top) |
+    [Approval Testing Concepts](https://github.com/approvals/ApprovalTests.Documentation/blob/main/explanations/approval_testing.md)
   - **Start coding**:
     [Tutorial](/doc/Tutorial.md#top) |
     [Setup Options](/doc/Setup.md#top) |
