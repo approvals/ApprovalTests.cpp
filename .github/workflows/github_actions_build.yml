@@ -162,20 +162,20 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - job-name: xcode-14.3
+          - job-name: xcode-15.4
             os-version: 'latest'
-            xcode-version: '14.3'
+            xcode-version: '15.4'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: 'xcode-14.3-ninja in-source'
-            xcode-version: '14.3'
+          - job-name: 'xcode-15.4-ninja in-source'
+            xcode-version: '15.4'
             os-version: 'latest'
             generator: '"Ninja"'
             relative_build_dir_path: ''
 
-          - job-name: 'xcode-14.3-ninja out-of-source'
-            xcode-version: '14.3'
+          - job-name: 'xcode-15.4-ninja out-of-source'
+            xcode-version: '15.4'
             os-version: 'latest'
             generator: '"Ninja"'
             relative_build_dir_path: '../'
