@@ -62,6 +62,43 @@ Create a file `main.cpp` and add just the following two lines:
 
 <!-- todo: document use of sections -->
 
+### Using an amalgamated release
+
+Catch2 distributes amalgamated releases, which need a slight modification in the
+`.hpp` file.
+
+<!-- snippet: catch_2_v3_main -->
+<a id='snippet-catch_2_v3_amalgam_diff></a>
+```diff
+diff --git a/client/thirdparty/ApprovalTests.hpp b/client/thirdparty/ApprovalTests.hpp
+index 35199074..025c94e6 100644
+--- a/client/thirdparty/ApprovalTests.hpp
++++ b/client/thirdparty/ApprovalTests.hpp
+@@ -2235,7 +2235,7 @@ namespace ApprovalTests
+ #ifdef APPROVALS_CATCH
+ #define APPROVAL_TESTS_INCLUDE_CPPS
+ 
+-#include "catch2/catch_amalgamated.hpp"
++#include <catch2/catch.hpp>
+ 
+ //namespace ApprovalTests {
+ struct Catch2ApprovalListener : Catch::TestEventListenerBase
+@@ -2307,7 +2307,10 @@ CATCH_REGISTER_LISTENER(Catch2TestCommitRevert)
+ #ifdef APPROVALS_CATCH2_V3
+ #define APPROVAL_TESTS_INCLUDE_CPPS
+ 
+-#include "catch2/catch_amalgamated.hpp"
++#include <catch2/reporters/catch_reporter_event_listener.hpp>
++#include <catch2/catch_test_macros.hpp>
++#include <catch2/reporters/catch_reporter_registrars.hpp>
++#include <catch2/catch_test_case_info.hpp>
+ 
+ //namespace ApprovalTests {
+ struct Catch2ApprovalListener : Catch::EventListenerBase
+```
+<sup><a href='/tests/Catch2v3_Tests/amalgamated.diff' title='Diff source file'>snippet source</a> | <a href='#snippet-catch_2_v3_difftitle='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
 ### Existing Project - with your main()
 
 If you have [supplied your own `main()` for Catch](https://github.com/catchorg/Catch2/blob/master/docs/own-main.md#top), you will need to teach it how to supply test names to Approval Tests.
