@@ -7,16 +7,16 @@
 #define APPROVAL_TESTS_INCLUDE_CPPS
 
 #ifdef APPROVALS_CATCH2_V3_AMALGAMATED
-    // begin-snippet: required_header_for_catch_2_v3_amalgamated
-    #include "catch_amalgamated.hpp"
-    // end-snippet
+// begin-snippet: required_header_for_catch_2_v3_amalgamated
+#include "catch_amalgamated.hpp"
+// end-snippet
 #else
-    // begin-snippet: required_header_for_catch_2_v3
-    #include <catch2/reporters/catch_reporter_event_listener.hpp>
-    #include <catch2/catch_test_macros.hpp>
-    #include <catch2/reporters/catch_reporter_registrars.hpp>
-    #include <catch2/catch_test_case_info.hpp>
-    // end-snippet
+// begin-snippet: required_header_for_catch_2_v3
+#include <catch2/reporters/catch_reporter_event_listener.hpp>
+#include <catch2/catch_test_macros.hpp>
+#include <catch2/reporters/catch_reporter_registrars.hpp>
+#include <catch2/catch_test_case_info.hpp>
+// end-snippet
 #endif
 
 //namespace ApprovalTests {
