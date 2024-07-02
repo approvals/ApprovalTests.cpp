@@ -8,7 +8,10 @@
 
   * [Introduction](#introduction)
   * [Requirements](#requirements)
+    * [With separate Catch2 v3 headers](#with-separate-catch2-v3-headers)
+    * [With Catch2 amalgamated releases](#with-catch2-amalgamated-releases)
   * [Getting Started With Catch2 v3](#getting-started-with-catch2-v3)
+    * [Note for users of Catch2 amalgamated releases](#note-for-users-of-catch2-amalgamated-releases)
     * [Starter Project](#starter-project)
     * [New Project](#new-project)
     * [Existing Project - with your main()](#existing-project---with-your-main)
@@ -18,11 +21,13 @@
 
 The [Catch2](https://github.com/catchorg/Catch2) test framework works well with Approval Tests.
 
-This section describes the various ways of using Approval Tests with Catch2.
+This section describes the various ways of using Approval Tests with Catch2 v3.
 
 ## Requirements
 
-Approval Tests requires that a file called the following is found:
+### With separate Catch2 v3 headers
+
+If you use the piecewise Catch2 v3 headers described in its [v2 to v3 migration guide](https://github.com/catchorg/Catch2/blob/devel/docs/migrate-v2-to-v3.md#how-to-migrate-projects-from-v2-to-v3), Approval Tests requires that the following files are found:
 
 <!-- snippet: required_header_for_catch_2_v3 -->
 <a id='snippet-required_header_for_catch_2_v3'></a>
@@ -32,10 +37,33 @@ Approval Tests requires that a file called the following is found:
 #include <catch2/reporters/catch_reporter_registrars.hpp>
 #include <catch2/catch_test_case_info.hpp>
 ```
-<sup><a href='/ApprovalTests/integrations/catch/Catch2v3Approvals.h#L9-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_catch_2_v3' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/catch/Catch2v3Approvals.h#L14-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_catch_2_v3' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
+The selection of these headers is enabled by using `APPROVALS_CATCH2_V3` in the examples below.
+
+### With Catch2 amalgamated releases
+
+If you use `catch_amalgamated.hpp` and `catch_amalgamated.cpp`, Approval Tests requires that the following file is found:
+
+<!-- snippet: required_header_for_catch_2_v3_amalgamated -->
+<a id='snippet-required_header_for_catch_2_v3_amalgamated'></a>
+```h
+#include "catch_amalgamated.hpp"
+```
+<sup><a href='/ApprovalTests/integrations/catch/Catch2v3Approvals.h#L10-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_catch_2_v3_amalgamated' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+The selection of this header is enabled by using `APPROVALS_CATCH2_V3_AMALGAMATED` in the examples below.
+
 ## Getting Started With Catch2 v3
+
+### Note for users of Catch2 amalgamated releases
+
+If you are using `catch_amalgamated.hpp`, you will need to make the following changes to all the example code below:
+
+1. In example `main.cpp` files, use `APPROVALS_CATCH2_V3_AMALGAMATED` instead of `APPROVALS_CATCH2_V3` 
+2. In test files, use `catch_amalgamated.hpp` instead of `catch2/catch_*.hpp`. 
 
 ### Starter Project
 
@@ -78,6 +106,8 @@ You should make the following additions to your own source file that contains `m
 ```
 <sup><a href='/examples/catch2_v3_existing_main/main.cpp#L1-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-catch2_v3_existing_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
+
+Note: We think that using your own `main()` like this may not work with Catch2 amalgamated releases.
 
 ## Code to copy for your first Catch2 Approvals test
 
