@@ -1,4 +1,4 @@
-#include "catch2/catch_amalgamated.hpp"
+#include "catch_amalgamated.hpp"
 #include "ApprovalTests.hpp"
 
 TEST_CASE("catch2_starter sample")

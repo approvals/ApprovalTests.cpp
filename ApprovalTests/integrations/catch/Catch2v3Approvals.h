@@ -8,7 +8,7 @@
 
 #ifdef APPROVALS_CATCH2_V3_AMALGAMATED
     // begin-snippet: required_header_for_catch_2_v3_amalgamated
-    #include <catch2/catch_amalgamated.hpp>
+    #include "catch_amalgamated.hpp"
     // end-snippet
 #else
     // begin-snippet: required_header_for_catch_2_v3
