@@ -3,7 +3,7 @@
 #include "ApprovalTests/namers/ApprovalTestNamer.h"
 #include "ApprovalTests/integrations/FrameworkIntegrations.h"
 
-#ifdef APPROVALS_CATCH2_V3
+#if defined(APPROVALS_CATCH2_V3) || defined(APPROVALS_CATCH2_V3_AMALGAMATED)
 #define APPROVAL_TESTS_INCLUDE_CPPS
 
 #ifdef APPROVALS_CATCH2_V3_AMALGAMATED
