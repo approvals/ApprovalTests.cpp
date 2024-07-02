@@ -5,6 +5,6 @@
 * **New features**
     * None
 * **Bug fixes**
-    * None
+    * The [Catch2 v3 integration](/doc/UsingCatch2v3.md) now works with Catch2 amalgamated releases - `catch_amalgamated.hpp` and `catch_amalgamated.cpp`.
 * **Other changes**
     * None
