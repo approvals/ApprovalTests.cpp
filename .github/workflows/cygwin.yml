@@ -22,7 +22,7 @@ jobs:
       - name: Set up Cygwin
         uses: cygwin/cygwin-install-action@v4
         with:
-          packages: cmake libboost-devel libtool gcc gcc-g++ binutils make
+          packages: cmake libboost-devel libtool gcc=11.4.0-1 gcc-g++=11.4.0-1 binutils make
 
       - name: Configure
         run: |
