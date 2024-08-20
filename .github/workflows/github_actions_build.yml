@@ -1,7 +1,7 @@
 name: build
 
 on:
-#  push:
+  push:
   pull_request:
   schedule:
     - cron: '16 0 * * 3,6'  # <https://crontab.guru/#16_0_*_*_3,6> - "At 00:16 on Wednesday and Saturday."

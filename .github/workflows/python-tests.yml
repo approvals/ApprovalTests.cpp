@@ -4,9 +4,9 @@
 name: python-tests
 
 on:
-#  push:
-#    branches:
-#      - '*'
+  push:
+    branches:
+      - '*'
   pull_request:
     branches:
       - '*'
