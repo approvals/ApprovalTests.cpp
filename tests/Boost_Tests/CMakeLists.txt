@@ -36,6 +36,6 @@ endif ()
 target_link_libraries(${PROJECT_NAME} ApprovalTests::ApprovalTests)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
-if (NOT "${CMAKE_SYSTEM_NAME}" MATCHES "CYGWIN")
+if (NOT CYGWIN)
     include(WarningsAsErrors)
 endif ()
