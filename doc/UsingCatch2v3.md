@@ -37,7 +37,7 @@ If you use the piecewise Catch2 v3 headers described in its [v2 to v3 migration 
 #include <catch2/reporters/catch_reporter_registrars.hpp>
 #include <catch2/catch_test_case_info.hpp>
 ```
-<sup><a href='/ApprovalTests/integrations/catch/Catch2v3Approvals.h#L14-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_catch_2_v3' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/catch/Catch2v3Approvals.h#L15-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_catch_2_v3' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The selection of these headers is enabled by using `APPROVALS_CATCH2_V3` in the examples below.
@@ -49,9 +49,9 @@ If you use `catch_amalgamated.hpp` and `catch_amalgamated.cpp`, Approval Tests r
 <!-- snippet: required_header_for_catch_2_v3_amalgamated -->
 <a id='snippet-required_header_for_catch_2_v3_amalgamated'></a>
 ```h
-#include "catch_amalgamated.hpp"
+#include <catch_amalgamated.hpp>
 ```
-<sup><a href='/ApprovalTests/integrations/catch/Catch2v3Approvals.h#L10-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_catch_2_v3_amalgamated' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/ApprovalTests/integrations/catch/Catch2v3Approvals.h#L11-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-required_header_for_catch_2_v3_amalgamated' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The selection of this header is enabled by using `APPROVALS_CATCH2_V3_AMALGAMATED` in the examples below.
