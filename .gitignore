@@ -21,3 +21,4 @@ __pycache__/
 *.sqlite3
 /doc/_build/
 venv
+test-reports/

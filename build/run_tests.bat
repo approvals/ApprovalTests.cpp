@@ -1,0 +1,1 @@
+python -m pytest --junitxml=test-reports/report.xml

@@ -4,3 +4,4 @@ approvaltests==0.8.0
 mypy
 pyyaml
 types-PyYAML
+pytest
