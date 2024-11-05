@@ -57,10 +57,10 @@ jobs:
         sudo apt-get install tree
         tree -d -L 2 .
 
-    - name: Set up Python 3.8
+    - name: Set up Python 3.10
       uses: actions/setup-python@v5
       with:
-        python-version: 3.8
+        python-version: 3.10
 
     - uses: r-lib/actions/setup-pandoc@v2
       with:
