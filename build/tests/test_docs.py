@@ -2,7 +2,7 @@ import os
 import unittest
 from typing import Callable, List
 
-from approvaltests import verify_all
+from approvaltests import verify_all, Options
 
 from scripts.utilities import read_file
 from tests.helpers import set_home_directory
@@ -30,7 +30,7 @@ class TestDocs(unittest.TestCase):
         all_files += find_all_files(".md", with_embedded_cpp_file_with_include, "../doc")
 
         verify_all("Files that have both snippets or embedded whole source files and using namespace ApprovalTests",
-                   all_files, lambda f: str(f))
+                   all_files, lambda f: str(f), options=Options().with_scrubber(lambda f: f.replace("\\", "/")))
 
 
 def find_all_files(suffix: str, with_filter: Callable, directory: str) -> List[str]:

@@ -1,13 +1,13 @@
 import shutil
 import time
-from collections import Callable
+from typing import Callable
 
 from scripts.release_constants import release_constants
 from scripts.utilities import read_file, use_directory, replace_text_in_file, run, check_step
 
 
 from scripts.release_details import ReleaseDetails
-from typing import Callable
+
 class PrepareDocumentationRelease:
     @staticmethod
     def prepare_documentation(details: ReleaseDetails) -> None:
