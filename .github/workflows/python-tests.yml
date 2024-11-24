@@ -74,8 +74,9 @@ jobs:
 
     - name: Check type hints
       run: |
+        cd ApprovalTests/ApprovalTests.cpp
+        cd build      
         python3 -m pip install types-PyYAML
-        cd ApprovalTests/ApprovalTests.cpp/build
         ./check_type_hints.sh
 
     - name: Lint with flake8
