@@ -90,7 +90,6 @@ jobs:
       run: |
         cd ApprovalTests/ApprovalTests.cpp
         cd build
-        chmod +x run_tests.sh
         ./run_tests.sh
 
     - name: Publish Test Report
