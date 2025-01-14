@@ -44,7 +44,6 @@ namespace ApprovalTests
 
     class ApprovalTestNamer : public ApprovalNamer
     {
-    private:
     public:
         ApprovalTestNamer() = default;
 

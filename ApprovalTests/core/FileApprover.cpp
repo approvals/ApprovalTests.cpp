@@ -2,6 +2,7 @@
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 #include "ApprovalTests/reporters/FrontLoadedReporterFactory.h"
+#include <ApprovalTests/logs/ApprovalFileLog.hpp>
 #include "ApprovalException.h"
 
 #include <sstream>
@@ -63,8 +64,10 @@ namespace ApprovalTests
                               const ApprovalWriter& s,
                               const Reporter& r)
     {
-        std::string approvedPath = n.getApprovedFile(s.getFileExtensionWithDot());
-        std::string receivedPath = n.getReceivedFile(s.getFileExtensionWithDot());
+        std::string const approvedPath = n.getApprovedFile(s.getFileExtensionWithDot());
+        std::string const receivedPath = n.getReceivedFile(s.getFileExtensionWithDot());
+
+        ApprovalFileLog::log(approvedPath);
         SystemUtils::ensureParentDirectoryExists(approvedPath);
         SystemUtils::ensureParentDirectoryExists(receivedPath);
         s.write(receivedPath);
@@ -76,6 +79,7 @@ namespace ApprovalTests
         }
         catch (const ApprovalException&)
         {
+            // FailedFileLog::log(receivedPath, approvedPath);
             reportAfterTryingFrontLoadedReporter(receivedPath, approvedPath, r);
             throw;
         }

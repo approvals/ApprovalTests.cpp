@@ -43,6 +43,8 @@ add_library(${PROJECT_NAME}
         launchers/CommandLauncher.h
         launchers/SystemLauncher.h
         launchers/SystemLauncher.cpp
+        logs/ApprovalFileLog.cpp
+        logs/ApprovalFileLog.hpp
         namers/ApprovalTestNamer.h
         namers/ApprovalTestNamer.cpp
         namers/DefaultNamerDisposer.h
