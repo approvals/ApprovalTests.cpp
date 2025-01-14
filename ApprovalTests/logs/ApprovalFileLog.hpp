@@ -4,7 +4,8 @@
 
 auto constexpr APPROVAL_TEMP_DIRECTORY = "/.approval_tests_temp";
 
-class ApprovalFileLog {
+class ApprovalFileLog
+{
 public:
     // Static initializer to ensure an _empty_ log file is created
     static void initialize();
