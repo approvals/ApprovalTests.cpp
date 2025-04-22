@@ -125,7 +125,7 @@ target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests ${Boost_LIBRARIES
 
 add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
 ```
-<sup><a href='/examples/boost_starter/CMakeLists.txt#L16-L34' title='Snippet source file'>snippet source</a> | <a href='#snippet-boost_starter_cmake' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/boost_starter/CMakeLists.txt#L16-L36' title='Snippet source file'>snippet source</a> | <a href='#snippet-boost_starter_cmake' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---
