@@ -1,6 +1,6 @@
 #pragma once
-#include <utilities/FileUtils.h>
-#include <utilities/SystemUtils.h>
+#include "utilities/FileUtils.h"
+#include "utilities/SystemUtils.h"
 
 auto constexpr APPROVAL_TEMP_DIRECTORY = "/.approval_tests_temp";
 

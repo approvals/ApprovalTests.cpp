@@ -2,7 +2,7 @@
 #include "ApprovalTests/utilities/FileUtils.h"
 #include "ApprovalTests/utilities/SystemUtils.h"
 #include "ApprovalTests/reporters/FrontLoadedReporterFactory.h"
-#include <ApprovalTests/logs/ApprovalFileLog.hpp>
+#include "ApprovalTests/logs/ApprovalFileLog.hpp"
 #include "ApprovalException.h"
 
 #include <sstream>
