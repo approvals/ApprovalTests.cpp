@@ -52,34 +52,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - job-name: 'clang10'
-            os-version: '22.04'
-            c-compiler: 'clang-10'
-            cxx-compiler: 'clang++-10'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
-          - job-name: 'clang11'
-            os-version: '22.04'
-            c-compiler: 'clang-11'
-            cxx-compiler: 'clang++-11'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
-          - job-name: 'clang12'
-            os-version: '22.04'
-            c-compiler: 'clang-12'
-            cxx-compiler: 'clang++-12'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
-#           Couldn't figure out how to make it find <limit>
-#          - job-name: 'clang13'
-#            os-version: '22.04'
-#            c-compiler: 'clang-13'
-#            cxx-compiler: 'clang++-13'
-#            generator: '"Unix Makefiles" "-DCMAKE_CXX_FLAGS=-stdlib=libc++ -std=c++20"'
-#            relative_build_dir_path: ''
 
           - job-name: 'clang14'
             os-version: '22.04'
