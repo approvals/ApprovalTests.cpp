@@ -23,7 +23,7 @@ The [Boost.Test](https://www.boost.org/doc/libs/1_72_0/libs/test/doc/html/index.
 Approval Tests for Boost.Test requires that you specify the `#include <.../unit_test.hpp>`  
 This allows ApprovalTests to work with all the different configurations of boost.  
 
-Approval Tests needs Boost.Test version 1.60.0 or above.
+Approval Tests needs Boost.Test version 1.70.0 or above.
 
 ## Getting Started With Boost.Test
 
@@ -110,7 +110,7 @@ And finally, here is sample code to put in your `CMakeLists.txt` file:
 set(EXE_NAME boost_starter)
 set(CMAKE_CXX_STANDARD 11)
 
-find_package(Boost 1.60.0 COMPONENTS REQUIRED)
+find_package(Boost 1.70.0 COMPONENTS REQUIRED)
 if (NOT Boost_FOUND)
     message(FATAL_ERROR "Cannot find Boost libraries")
 endif ()
