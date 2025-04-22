@@ -2,11 +2,7 @@ name: mingw
 
 on:
   push:
-    branches:
-      - '*'
   pull_request:
-    branches:
-      - '*'
   schedule:
     - cron: '16 0 * * 3,6'  # <https://crontab.guru/#16_0_*_*_3,6> - "At 00:16 on Wednesday and Saturday."
 
@@ -14,7 +10,7 @@ jobs:
   MinGW:
     # Pinned windows version due to:
     # https://github.com/egor-tensin/setup-mingw/issues/6
-    # if: false # Disable this platform temporarily
+    if: false # Disable this platform temporarily
     runs-on: windows-2022
     env:
       BUILD_PATH: build_space

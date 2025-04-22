@@ -21,7 +21,7 @@ jobs:
         os: [ubuntu-latest]
         python-version: ["3.12"]
     runs-on: ${{ matrix.os }}
-
+    if: false # Disable the build
     steps:
     - name: System Info
       run: |

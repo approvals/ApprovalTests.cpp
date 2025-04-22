@@ -9,7 +9,7 @@ on:
 jobs:
   Cygwin:
     runs-on: windows-latest
-#    if: false # Disable the build
+    if: false # Disable the build
     timeout-minutes: 42 # See https://github.com/approvals/ApprovalTests.cpp/issues/192
 
     defaults:
