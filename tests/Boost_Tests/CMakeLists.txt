@@ -19,7 +19,7 @@ add_executable(${PROJECT_NAME}
 # 2. In CLion, you can supply this argument in each of your CMake profiles, with:
 #    Preferences -> Build, Execution, Deployment -> CMake -> 'CMake options:'
 if(POLICY CMP0167)
-    cmake_policy(SET CMP0167 NEW)
+    cmake_policy(SET CMP0167 OLD)
 endif()
 find_package(Boost 1.60.0 COMPONENTS REQUIRED)
 if (Boost_FOUND)
