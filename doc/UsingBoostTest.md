@@ -109,7 +109,9 @@ And finally, here is sample code to put in your `CMakeLists.txt` file:
 ```txt
 set(EXE_NAME boost_starter)
 set(CMAKE_CXX_STANDARD 11)
-
+if(POLICY CMP0167)
+    cmake_policy(SET CMP0167 NEW)
+endif()
 find_package(Boost 1.70.0 COMPONENTS REQUIRED)
 if (NOT Boost_FOUND)
     message(FATAL_ERROR "Cannot find Boost libraries")
@@ -125,7 +127,7 @@ target_link_libraries(${EXE_NAME} ApprovalTests::ApprovalTests ${Boost_LIBRARIES
 
 add_test(NAME ${EXE_NAME} COMMAND ${EXE_NAME})
 ```
-<sup><a href='/examples/boost_starter/CMakeLists.txt#L16-L34' title='Snippet source file'>snippet source</a> | <a href='#snippet-boost_starter_cmake' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/examples/boost_starter/CMakeLists.txt#L16-L36' title='Snippet source file'>snippet source</a> | <a href='#snippet-boost_starter_cmake' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---
