@@ -52,13 +52,11 @@ pushstack = list()
 
 
 def pushdir(dirname: str) -> None:
-    global pushstack
     pushstack.append(os.getcwd())
     os.chdir(dirname)
 
 
 def popdir() -> None:
-    global pushstack
     os.chdir(pushstack.pop())
 
 

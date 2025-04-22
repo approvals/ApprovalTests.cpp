@@ -28,20 +28,19 @@ default_includes_path = ['.']
 # pp tokens regexp
 r_escape_line = re.compile(r'^.*\\\n$')
 r_empty_line = re.compile('^[ \t]*\n$')
-r_pp_include = re.compile('^\s*#\s*include\s+["](.*)["]$')
-r_pp_ifndef = re.compile('^\s*#\s*ifndef\s+(.*)\s*$')
-r_pp_if_defined = re.compile('^\s*#\s*if\s+defined\(\s*(.*)\s*\)\s*$')
-r_pp_if = re.compile('^\s*#\s*if.*$')
-r_pp_endif = re.compile('^\s*#\s*endif.*$')
-r_pp_define = re.compile('^\s*#\s*define\s+(.*)\s*$')
-r_pp_pragma_once = re.compile('^\s*#\s*pragma\s+once\s*$')
+r_pp_include = re.compile(r'^\s*#\s*include\s+["](.*)["]$')
+r_pp_ifndef = re.compile(r'^\s*#\s*ifndef\s+(.*)\s*$')
+r_pp_if_defined = re.compile(r'^\s*#\s*if\s+defined\(\s*(.*)\s*\)\s*$')
+r_pp_if = re.compile(r'^\s*#\s*if.*$')
+r_pp_endif = re.compile(r'^\s*#\s*endif.*$')
+r_pp_define = re.compile(r'^\s*#\s*define\s+(.*)\s*$')
+r_pp_pragma_once = re.compile(r'^\s*#\s*pragma\s+once\s*$')
 
 # globals
 will_escape = False
 guard_stack = []
 included_files = []
 keep_guard = True
-in_C_block_comments = False
 
 """
 Parse options. Here is the list of supported options:
@@ -104,7 +103,6 @@ Preprocess a single line
 def pp_line(line: str, output: TextIOWrapper, opts: Namespace) -> None:
     global will_escape
     global keep_guard
-    global in_C_block_comments
 
     is_escaped = will_escape
     will_escape = False
