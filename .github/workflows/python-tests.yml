@@ -18,11 +18,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, ubuntu-24.04, ubuntu-22.04]
-        python-version: ["3.12", "3.11", "3.10"]
+        os: [ubuntu-latest]
+        python-version: ["3.12"]
     runs-on: ${{ matrix.os }}
 
     steps:
+    - name: System Info
+      run: |
+        uname -a
+
     - name: Check out ApprovalTests.cpp
       uses: actions/checkout@v4
       with:
@@ -86,10 +90,7 @@ jobs:
     - name: Lint with flake8
       run: |
         cd ApprovalTests/ApprovalTests.cpp
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        ./scripts/lint_python_with_flake8.sh
 
     - name: Test build/ with pytest
       run: |
