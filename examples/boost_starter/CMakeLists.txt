@@ -16,10 +16,8 @@ endif ()
 # begin-snippet: boost_starter_cmake
 set(EXE_NAME boost_starter)
 set(CMAKE_CXX_STANDARD 11)
-if(POLICY CMP0167)
-    cmake_policy(SET CMP0167 NEW)
-endif()
-find_package(Boost 1.70.0 COMPONENTS REQUIRED)
+
+find_package(Boost 1.60.0 COMPONENTS REQUIRED)
 if (NOT Boost_FOUND)
     message(FATAL_ERROR "Cannot find Boost libraries")
 endif ()
