@@ -81,6 +81,13 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
+          - job-name: 'gcc13'
+            os-version: '24.04'
+            c-compiler: 'gcc-13'
+            cxx-compiler: 'g++-13'
+            generator: '"Unix Makefiles"'
+            relative_build_dir_path: ''
+
           - job-name: 'gcc10 unity'
             os-version: '22.04'
             c-compiler: 'gcc-10'
