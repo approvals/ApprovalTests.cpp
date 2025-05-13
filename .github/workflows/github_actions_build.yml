@@ -74,13 +74,6 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: 'gcc11'
-            os-version: '24.04'
-            c-compiler: 'gcc-11'
-            cxx-compiler: 'g++-11'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
           - job-name: 'gcc12'
             os-version: '24.04'
             c-compiler: 'gcc-12'
@@ -99,13 +92,6 @@ jobs:
             os-version: '24.04'
             c-compiler: 'gcc-14'
             cxx-compiler: 'g++-14'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
-          - job-name: 'gcc15'
-            os-version: '24.04'
-            c-compiler: 'gcc-15'
-            cxx-compiler: 'g++-15'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
