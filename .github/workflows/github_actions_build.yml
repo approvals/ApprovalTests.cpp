@@ -192,19 +192,19 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - job-name: VS-2019
-            os-version: '2019'
+          - job-name: WIN-2025-VS-2019
+            os-version: '2025'
             generator: '"Visual Studio 16 2019"'
 
-          - job-name: VS-2019 (clangcl)
-            os-version: '2019'
+          - job-name: WIN-2025-VS-2019 (clangcl)
+            os-version: '2025'
             generator: '"Visual Studio 16 2019" -T "clangcl"'
 
-          - job-name: VS-latest
+          - job-name: WIN-latest-VS-2022
             os-version: 'latest'
             generator: '"Visual Studio 17 2022"'
 
-          - job-name: VS-latest (clangcl)
+          - job-name: WIN-latest-VS-2022 (clangcl)
             os-version: 'latest'
             generator: '"Visual Studio 17 2022" -T "clangcl"'
 
