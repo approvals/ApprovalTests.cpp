@@ -130,7 +130,7 @@ jobs:
       CXX: ${{ matrix.cxx-compiler }}
     steps:
       - uses: actions/checkout@master
-      - uses: seanmiddleditch/gha-setup-ninja@v4
+      - uses: seanmiddleditch/gha-setup-ninja@v6
         if: contains(matrix.generator, 'Ninja')
 
       - name: install boost
@@ -175,7 +175,7 @@ jobs:
       DEVELOPER_DIR: '/Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer'
     steps:
       - uses: actions/checkout@master
-      - uses: seanmiddleditch/gha-setup-ninja@v4
+      - uses: seanmiddleditch/gha-setup-ninja@v6
         if: contains(matrix.generator, 'Ninja')
 
       - name: install boost
