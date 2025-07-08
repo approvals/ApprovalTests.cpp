@@ -244,3 +244,20 @@ jobs:
         run: |
           cd ${{ env.BUILD_PATH }}
           ctest --verbose --output-on-failure -C Debug
+
+  auto-merge:
+    needs: [Linux, macOS, Windows]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+      - name: auto-merge
+        if: |
+          github.actor == 'dependabot[bot]' &&
+          github.event_name == 'pull_request'
+        run: |
+          gh pr merge --auto --rebase "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          # this secret needs to be in the settings.secrets.dependabot
+          GITHUB_TOKEN: ${{secrets.GH_ACTION_TOKEN}}
