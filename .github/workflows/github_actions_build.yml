@@ -199,12 +199,12 @@ jobs:
             os-version: '2025'
             generator: '"Visual Studio 17 2022" -T "clangcl"'
 
-          - job-name: WIN-latest-VS-2022
-            os-version: 'latest'
+          - job-name: WIN-2022-VS-2022
+            os-version: '2022'
             generator: '"Visual Studio 17 2022"'
 
-          - job-name: WIN-latest-VS-2022 (clangcl)
-            os-version: 'latest'
+          - job-name: WIN-2022-VS-2022 (clangcl)
+            os-version: '2022'
             generator: '"Visual Studio 17 2022" -T "clangcl"'
 
     name: Windows ${{ matrix.job-name }}
