@@ -48,7 +48,10 @@ struct Catch2ApprovalListener : Catch::TestEventListenerBase
 
     virtual void sectionEnded(Catch::SectionStats const& /*sectionStats*/) override
     {
-        currentTest.sections.pop_back();
+        if (!currentTest.sections.empty())
+        {
+            currentTest.sections.pop_back();
+        }
     }
 };
 //}

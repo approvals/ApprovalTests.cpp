@@ -264,7 +264,7 @@ It also needs CMake 3.14 or above.
 We use this in our `CMakeLists.txt` file:
 
 <!-- snippet: cpm_download -->
-<a id='snippet-cpm_download'></a>
+<a id='snippet-https://raw.githubusercontent.com/Laguna1989/OpenALpp/master/ext/CMakeLists.txt%23cpm_download'></a>
 ```txt
 message(STATUS "Add CPM.cmake")
 # download CPM.cmake
@@ -276,11 +276,11 @@ file(
 )
 include(${CMAKE_BINARY_DIR}/cmake/CPM.cmake)
 ```
-<sup><a href='#snippet-cpm_download' title='Start of snippet'>anchor</a></sup>
+<sup><a href='https://raw.githubusercontent.com/Laguna1989/OpenALpp/master/ext/CMakeLists.txt#cpm_download' title='Snippet source file'>anchor</a></sup>
 <!-- endSnippet -->
 
 <!-- snippet: cpm_add_approvaltests -->
-<a id='snippet-cpm_add_approvaltests'></a>
+<a id='snippet-https://raw.githubusercontent.com/Laguna1989/OpenALpp/master/ext/CMakeLists.txt%23cpm_add_approvaltests'></a>
 ```txt
 message(STATUS "Fetching approvaltests")
 CPMAddPackage(
@@ -289,7 +289,7 @@ CPMAddPackage(
         GIT_TAG master
 )
 ```
-<sup><a href='#snippet-cpm_add_approvaltests' title='Start of snippet'>anchor</a></sup>
+<sup><a href='https://raw.githubusercontent.com/Laguna1989/OpenALpp/master/ext/CMakeLists.txt#cpm_add_approvaltests' title='Snippet source file'>anchor</a></sup>
 <!-- endSnippet -->
 
 Note the `GIT_TAG` values: This tells CMake which revision of dependencies to use. The value can be a tag or a git commit ID. Here we use `master`. However, it is generally recommended to pin your dependencies to specific versions, and test behaviour before updating to newer versions.
