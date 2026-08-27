@@ -35,7 +35,7 @@ This will produce the following output:
 <!-- snippet: FmtTests.FmtContainers.approved.txt -->
 <a id='snippet-FmtTests.FmtContainers.approved.txt'></a>
 ```txt
-{1, 2, 3}
+[1, 2, 3]
 ```
 <sup><a href='/examples/fmt_approvals_demo/approval_tests/FmtTests.FmtContainers.approved.txt#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-FmtTests.FmtContainers.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
