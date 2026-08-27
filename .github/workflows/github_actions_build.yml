@@ -53,20 +53,6 @@ jobs:
       matrix:
         include:
 
-          - job-name: 'clang14'
-            os-version: '22.04'
-            c-compiler: 'clang-14'
-            cxx-compiler: 'clang++-14'
-            generator: '"Unix Makefiles" "-DCMAKE_CXX_FLAGS=-stdlib=libc++ -std=c++20"'
-            relative_build_dir_path: ''
-
-          - job-name: 'clang15'
-            os-version: '22.04'
-            c-compiler: 'clang-15'
-            cxx-compiler: 'clang++-15'
-            generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
-
           - job-name: 'clang16'
             os-version: '24.04'
             c-compiler: 'clang-16'
@@ -81,10 +67,10 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: 'gcc13'
+          - job-name: 'clang18'
             os-version: '24.04'
-            c-compiler: 'gcc-13'
-            cxx-compiler: 'g++-13'
+            c-compiler: 'clang-18'
+            cxx-compiler: 'clang++-18'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
@@ -95,31 +81,31 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: 'gcc13 unity'
+          - job-name: 'gcc14 unity'
             os-version: '24.04'
-            c-compiler: 'gcc-13'
-            cxx-compiler: 'g++-13'
+            c-compiler: 'gcc-14'
+            cxx-compiler: 'g++-14'
             generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes'
             relative_build_dir_path: ''
 
-          - job-name: 'gcc13 ninja in-source'
+          - job-name: 'gcc14 ninja in-source'
             os-version: '24.04'
-            c-compiler: 'gcc-13'
-            cxx-compiler: 'g++-13'
+            c-compiler: 'gcc-14'
+            cxx-compiler: 'g++-14'
             generator: '"Ninja"'
             relative_build_dir_path: ''
 
-          - job-name: 'gcc13 ninja out-of-source'
+          - job-name: 'gcc14 ninja out-of-source'
             os-version: '24.04'
-            c-compiler: 'gcc-13'
-            cxx-compiler: 'g++-13'
+            c-compiler: 'gcc-14'
+            cxx-compiler: 'g++-14'
             generator: '"Ninja"'
             relative_build_dir_path: '../'
 
-          - job-name: 'gcc13 ninja-unity'
+          - job-name: 'gcc14 ninja-unity'
             os-version: '24.04'
-            c-compiler: 'gcc-13'
-            cxx-compiler: 'g++-13'
+            c-compiler: 'gcc-14'
+            cxx-compiler: 'g++-14'
             generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes'
             relative_build_dir_path: ''
 
@@ -148,23 +134,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - job-name: xcode-15.4
+          - job-name: xcode-26.6
             os-version: 'latest'
-            xcode-version: '15.4'
+            xcode-version: '26.6'
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
-
-          - job-name: 'xcode-15.4-ninja in-source'
-            xcode-version: '15.4'
-            os-version: 'latest'
-            generator: '"Ninja"'
-            relative_build_dir_path: ''
-
-          - job-name: 'xcode-15.4-ninja out-of-source'
-            xcode-version: '15.4'
-            os-version: 'latest'
-            generator: '"Ninja"'
-            relative_build_dir_path: '../'
 
     name: macOS ${{ matrix.job-name }}
     env:
@@ -174,9 +148,9 @@ jobs:
       HOMEBREW_NO_INSTALL_CLEANUP: 1
     steps:
       - uses: actions/checkout@master
-      - uses: seanmiddleditch/gha-setup-ninja@v6
-        if: contains(matrix.generator, 'Ninja')
-
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ${{ matrix.xcode-version }}
       - name: install boost
         run: |
           brew install boost
@@ -202,10 +176,6 @@ jobs:
           - job-name: WIN-2022-VS-2022
             os-version: '2022'
             generator: '"Visual Studio 17 2022"'
-
-          - job-name: WIN-2022-VS-2022 (clangcl)
-            os-version: '2022'
-            generator: '"Visual Studio 17 2022" -T "clangcl"'
 
     name: Windows ${{ matrix.job-name }}
     env:
