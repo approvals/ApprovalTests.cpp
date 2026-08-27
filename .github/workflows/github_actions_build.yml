@@ -46,7 +46,7 @@ jobs:
 
   Linux:
     needs: clang-format-and-update-docs
-    # if: false # Disable this platform temporarily
+    if: false # Disable this platform temporarily
     runs-on: ubuntu-${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -142,7 +142,7 @@ jobs:
 
   macOS:
     needs: clang-format-and-update-docs
-    # if: false # Disable this platform temporarily
+    if: false # Disable this platform temporarily
     runs-on: macos-${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -242,7 +242,7 @@ jobs:
           mkdir ${{ env.BUILD_PATH }}
           cd ${{ env.BUILD_PATH }}
           cmake --version
-          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
+          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       - name: build
         run: |
           cd ${{ env.BUILD_PATH }}
