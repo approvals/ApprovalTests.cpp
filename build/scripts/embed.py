@@ -38,8 +38,8 @@ r_pp_pragma_once = re.compile(r'^\s*#\s*pragma\s+once\s*$')
 
 # globals
 will_escape = False
-guard_stack = []
-included_files = []
+guard_stack: List[int] = []
+included_files: List[str] = []
 keep_guard = True
 
 """

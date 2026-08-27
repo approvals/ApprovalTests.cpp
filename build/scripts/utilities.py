@@ -48,7 +48,7 @@ def check_url_exists(url: str) -> bool:
 def get_file_name(path: str) -> str:
     return os.path.split(path)[1]
 
-pushstack = list()
+pushstack: List[str] = []
 
 
 def pushdir(dirname: str) -> None:
