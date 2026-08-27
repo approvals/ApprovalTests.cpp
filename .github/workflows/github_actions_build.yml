@@ -242,7 +242,7 @@ jobs:
           mkdir ${{ env.BUILD_PATH }}
           cd ${{ env.BUILD_PATH }}
           cmake --version
-          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
       - name: build
         run: |
           cd ${{ env.BUILD_PATH }}
