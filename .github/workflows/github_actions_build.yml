@@ -46,7 +46,7 @@ jobs:
 
   Linux:
     needs: clang-format-and-update-docs
-    if: false # Disable this platform temporarily
+    # if: false # Disable this platform temporarily
     runs-on: ubuntu-${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -142,7 +142,7 @@ jobs:
 
   macOS:
     needs: clang-format-and-update-docs
-    if: false # Disable this platform temporarily
+    # if: false # Disable this platform temporarily
     runs-on: macos-${{ matrix.os-version }}
     strategy:
       fail-fast: false
