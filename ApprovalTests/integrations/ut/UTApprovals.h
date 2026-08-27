@@ -27,6 +27,8 @@ namespace ApprovalTests
             TestName currentTest;
 
         public:
+            using boost::ut::reporter<boost::ut::printer>::on;
+
             auto on(boost::ut::events::test_begin test_begin) -> void
             {
                 std::string name = std::string(test_begin.name);
