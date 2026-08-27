@@ -219,6 +219,14 @@ jobs:
           python-version: '3.11'
       - uses: ./.github/actions/setup-conan
 
+      - name: configure Conan for Visual Studio 2022
+        run: |
+          conan profile remove settings.compiler.libcxx default
+          conan profile update settings.compiler="Visual Studio" default
+          conan profile update settings.compiler.version=17 default
+          conan profile update settings.compiler.runtime=MD default
+          conan profile show default
+
       - name: install boost
         run: |
           ${boostroot} = "${env:GITHUB_WORKSPACE}\boost_install"
