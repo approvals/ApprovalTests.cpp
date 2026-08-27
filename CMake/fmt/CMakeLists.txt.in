@@ -5,7 +5,7 @@ project(fmt-download NONE)
 include(ExternalProject)
 ExternalProject_Add(fmt
   GIT_REPOSITORY    https://github.com/fmtlib/fmt.git
-  GIT_TAG           6.2.0
+  GIT_TAG           12.2.0
   SOURCE_DIR        "${CMAKE_CURRENT_BINARY_DIR}/fmt-src"
   BINARY_DIR        "${CMAKE_CURRENT_BINARY_DIR}/fmt-build"
   CONFIGURE_COMMAND ""
