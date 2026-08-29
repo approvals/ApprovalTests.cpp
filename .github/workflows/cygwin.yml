@@ -17,7 +17,7 @@ jobs:
         shell: C:\cygwin\bin\bash.exe --noprofile --norc -o igncr -eo pipefail '{0}'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up Cygwin
         uses: cygwin/cygwin-install-action@v6
