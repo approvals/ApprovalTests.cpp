@@ -10,6 +10,7 @@
   * [Getting Started With doctest](#getting-started-with-doctest)
     * [New Project](#new-project)
     * [Existing Project - with your main()](#existing-project---with-your-main)
+    * [Multiple dynamically loaded libraries](#multiple-dynamically-loaded-libraries)
   * [Code to copy for your first doctest Approvals test](#code-to-copy-for-your-first-doctest-approvals-test)<!-- endToc -->
 
 ## Introduction
@@ -70,6 +71,40 @@ You should make the following additions to your own source file that contains `m
 ```
 <sup><a href='/examples/doctest_existing_main/main.cpp#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-doctest_existing_main' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
+
+### Multiple dynamically loaded libraries
+
+Approval Tests supports doctest tests spread across several shared libraries (DLLs, `.so` or `.dylib` files) that a single test runner loads at run time.
+
+The runner owns doctest's implementation, registry and `main()`. Build it, and every library, with `DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL` defined.
+
+In the runner's `main.cpp`, use the existing-main mode:
+
+```cpp
+#define APPROVALS_DOCTEST_EXISTING_MAIN
+#include <ApprovalTests.hpp>
+```
+
+In **exactly one** source file of each library, add the following before including Approval Tests. It emits Approval Tests' definitions and registers the library's listener:
+
+```cpp
+#define DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL
+#define APPROVALS_DOCTEST_EXTERNAL_MAIN
+#define APPROVALS_DOCTEST_EXTERNAL_MAIN_IMPLEMENTATION
+#define APPROVALS_DOCTEST_LISTENER_NAME "TestModuleOne"
+#include <ApprovalTests.hpp>
+```
+
+* `APPROVALS_DOCTEST_EXTERNAL_MAIN` enables the integration without defining doctest's implementation or `main()`.
+* `APPROVALS_DOCTEST_EXTERNAL_MAIN_IMPLEMENTATION` emits the Approval Tests definitions and listener. Use it once per library.
+* `APPROVALS_DOCTEST_LISTENER_NAME` sets the listener name. It defaults to `"approvals"`, so give each library a different name, otherwise the registrations collide.
+
+Other test source files in the library define only `APPROVALS_DOCTEST_EXTERNAL_MAIN`.
+
+Load every library before running doctest, and keep them loaded until the doctest context is destroyed.
+
+A complete working example, including the CMake setup for Windows, macOS and Linux, is in
+[examples/doctest_multiple_shared_libraries](/examples/doctest_multiple_shared_libraries). It is tested with both the checked-in sources and a generated single header.
 
 ## Code to copy for your first doctest Approvals test
 
