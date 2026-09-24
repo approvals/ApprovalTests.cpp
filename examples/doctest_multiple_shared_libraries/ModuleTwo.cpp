@@ -1,4 +1,5 @@
-#define APPROVALS_DOCTEST_EXISTING_MAIN
+#define APPROVALS_DOCTEST_EXTERNAL_MAIN
+#define APPROVALS_DOCTEST_EXTERNAL_MAIN_IMPLEMENTATION
 #include <ApprovalTests.hpp>
 #include "TestTracking.h"
 

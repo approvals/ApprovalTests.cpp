@@ -10,17 +10,25 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #endif
 
-#ifdef APPROVALS_DOCTEST
+// External-main mode uses doctest's implementation from another binary.
+// Define the implementation macro in exactly one source file per test library.
+#if defined(APPROVALS_DOCTEST) || defined(APPROVALS_DOCTEST_EXTERNAL_MAIN)
+
+#if !defined(APPROVALS_DOCTEST_EXTERNAL_MAIN) || \
+    defined(APPROVALS_DOCTEST_EXTERNAL_MAIN_IMPLEMENTATION)
 #define APPROVAL_TESTS_INCLUDE_CPPS
+#define APPROVALS_DOCTEST_REGISTER_LISTENER
+#endif
 
 // begin-snippet: required_header_for_doctest
 #include <doctest/doctest.h>
 // end-snippet
 
+#if defined(APPROVALS_DOCTEST_REGISTER_LISTENER)
 namespace ApprovalTests
 {
     // anonymous namespace to prevent compiler -Wsubobject-linkage warnings
-    // This is OK as this code is only compiled on main()
+    // Compiled once per binary, in its ApprovalTests integration source file.
     namespace
     {
         struct AbstractReporter : doctest::IReporter
@@ -140,4 +148,6 @@ namespace ApprovalTests
 
 REGISTER_LISTENER("approvals", 0, ApprovalTests::DocTestApprovalListener);
 
-#endif // APPROVALS_DOCTEST
+#endif // APPROVALS_DOCTEST_REGISTER_LISTENER
+
+#endif // APPROVALS_DOCTEST || APPROVALS_DOCTEST_EXTERNAL_MAIN
