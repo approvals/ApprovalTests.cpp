@@ -146,7 +146,11 @@ namespace ApprovalTests
     }
 }
 
-REGISTER_LISTENER("approvals", 0, ApprovalTests::DocTestApprovalListener);
+#ifndef APPROVALS_DOCTEST_LISTENER_NAME
+#define APPROVALS_DOCTEST_LISTENER_NAME "approvals"
+#endif
+
+REGISTER_LISTENER(APPROVALS_DOCTEST_LISTENER_NAME, 0, ApprovalTests::DocTestApprovalListener);
 
 #endif // APPROVALS_DOCTEST_REGISTER_LISTENER
 
