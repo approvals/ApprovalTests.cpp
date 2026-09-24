@@ -14,7 +14,7 @@
 // Define the implementation macro in exactly one source file per test library.
 #if defined(APPROVALS_DOCTEST) || defined(APPROVALS_DOCTEST_EXTERNAL_MAIN)
 
-#if !defined(APPROVALS_DOCTEST_EXTERNAL_MAIN) || \
+#if !defined(APPROVALS_DOCTEST_EXTERNAL_MAIN) ||                                         \
     defined(APPROVALS_DOCTEST_EXTERNAL_MAIN_IMPLEMENTATION)
 #define APPROVAL_TESTS_INCLUDE_CPPS
 #define APPROVALS_DOCTEST_REGISTER_LISTENER
@@ -150,7 +150,9 @@ namespace ApprovalTests
 #define APPROVALS_DOCTEST_LISTENER_NAME "approvals"
 #endif
 
-REGISTER_LISTENER(APPROVALS_DOCTEST_LISTENER_NAME, 0, ApprovalTests::DocTestApprovalListener);
+REGISTER_LISTENER(APPROVALS_DOCTEST_LISTENER_NAME,
+                  0,
+                  ApprovalTests::DocTestApprovalListener);
 
 #endif // APPROVALS_DOCTEST_REGISTER_LISTENER
 

@@ -26,15 +26,15 @@ namespace
             handle = LoadLibraryA(path);
             if (!handle)
             {
-                throw std::runtime_error(std::string("Cannot load ") + path +
-                                         ": " + std::to_string(GetLastError()));
+                throw std::runtime_error(std::string("Cannot load ") + path + ": " +
+                                         std::to_string(GetLastError()));
             }
 #else
             handle = dlopen(path, RTLD_NOW | RTLD_GLOBAL);
             if (!handle)
             {
-                throw std::runtime_error(std::string("Cannot load ") + path +
-                                         ": " + dlerror());
+                throw std::runtime_error(std::string("Cannot load ") + path + ": " +
+                                         dlerror());
             }
 #endif
         }
@@ -67,8 +67,8 @@ void recordModuleTest(int module)
 
 TEST_CASE("Approval in runner")
 {
-    ApprovalTests::Approvals::verify("runner", ApprovalTests::Options().withReporter(
-                                                  ApprovalTests::QuietReporter()));
+    ApprovalTests::Approvals::verify(
+        "runner", ApprovalTests::Options().withReporter(ApprovalTests::QuietReporter()));
 }
 
 int main(int argc, char** argv)

@@ -5,7 +5,7 @@
 TEST_CASE("Another approval in module one")
 {
     recordModuleTest(4);
-    ApprovalTests::Approvals::verify("another module one test",
-                                   ApprovalTests::Options().withReporter(
-                                       ApprovalTests::QuietReporter()));
+    ApprovalTests::Approvals::verify(
+        "another module one test",
+        ApprovalTests::Options().withReporter(ApprovalTests::QuietReporter()));
 }
