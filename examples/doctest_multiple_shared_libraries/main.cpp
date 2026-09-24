@@ -1,5 +1,5 @@
-#define DOCTEST_CONFIG_IMPLEMENT
-#include <doctest/doctest.h>
+#define APPROVALS_DOCTEST_EXISTING_MAIN
+#include <ApprovalTests.hpp>
 
 #include "TestTracking.h"
 #include <iostream>
@@ -63,6 +63,12 @@ namespace
 void recordModuleTest(int module)
 {
     modulesRun |= module;
+}
+
+TEST_CASE("Approval in runner")
+{
+    ApprovalTests::Approvals::verify("runner", ApprovalTests::Options().withReporter(
+                                                  ApprovalTests::QuietReporter()));
 }
 
 int main(int argc, char** argv)
