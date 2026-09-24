@@ -55,3 +55,7 @@ endforeach()
 target_link_libraries(doctest_shared_runner PRIVATE ${CMAKE_DL_LIBS})
 add_test(NAME doctest_multiple_shared_libraries COMMAND doctest_shared_runner
         "$<TARGET_FILE:doctest_shared_One>" "$<TARGET_FILE:doctest_shared_Two>")
+add_test(NAME doctest_shared_listeners
+        COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/check_listeners.py"
+                "$<TARGET_FILE:doctest_shared_runner>"
+                "$<TARGET_FILE:doctest_shared_One>" "$<TARGET_FILE:doctest_shared_Two>")
