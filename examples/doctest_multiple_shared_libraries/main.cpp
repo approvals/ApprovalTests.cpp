@@ -85,9 +85,9 @@ int main(int argc, char** argv)
         doctest::Context context;
         context.applyCommandLine(argc - 2, argv + 2);
         const int result = context.run();
-        if (!context.shouldExit() && modulesRun != 3)
+        if (!context.shouldExit() && modulesRun != 7)
         {
-            std::cerr << "Tests from both libraries must run\n";
+            std::cerr << "Tests from both libraries and the additional source must run\n";
             return 1;
         }
         return result;

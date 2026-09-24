@@ -45,6 +45,10 @@ foreach(module IN ITEMS One Two)
     add_dependencies(doctest_shared_runner doctest_shared_${module})
 endforeach()
 
+target_sources(doctest_shared_One PRIVATE ModuleOneExtra.cpp)
+# Keep the implementation and declaration-only includes in separate translation units.
+set_target_properties(doctest_shared_One PROPERTIES UNITY_BUILD OFF)
+
 foreach(target IN ITEMS doctest_shared_runner doctest_shared_One doctest_shared_Two)
     target_compile_features(${target} PRIVATE cxx_std_17)
     target_compile_definitions(${target} PRIVATE DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL)
