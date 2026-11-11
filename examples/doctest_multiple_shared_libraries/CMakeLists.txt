@@ -30,7 +30,10 @@ foreach (provider IN ITEMS single_header static_library)
     add_subdirectory(module_one ${provider}/module_one)
     add_subdirectory(module_two ${provider}/module_two)
 
-    add_dependencies(${variant}_runner ${variant}_module_one ${variant}_module_two)
+    # On Windows the modules link to the runner, so this would be a cycle.
+    if (NOT WIN32)
+        add_dependencies(${variant}_runner ${variant}_module_one ${variant}_module_two)
+    endif ()
 
     add_test(NAME ${variant} COMMAND ${variant}_runner
             "$<TARGET_FILE:${variant}_module_one>"
