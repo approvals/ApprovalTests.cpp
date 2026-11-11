@@ -40,22 +40,23 @@ EOF
 From the repository root:
 
 ```bash
-docker run --rm -v "$PWD":/src approvaltests-linux bash -c '
-cmake -S /src -B /build -DCMAKE_BUILD_TYPE=Debug &&
+docker run --rm -v "$PWD":/ApprovalTests.cpp approvaltests-linux bash -c '
+cmake -S /ApprovalTests.cpp -B /build -DCMAKE_BUILD_TYPE=Debug &&
 cmake --build /build -j8 &&
 cd /build && ctest --output-on-failure'
 ```
 
 1. Build in `/build`, inside the container, so the build doesn't mix with your macOS build directories.
+1. Mount the source at `/ApprovalTests.cpp`. Some tests look for files under a directory with that name.
 1. Mount the source writable. Approval tests write `.received` files next to the source, and fail with "Unable to write file" on a read-only mount.
-1. To build only part of the repo, point `-S` at that directory. For example, `-S /src/examples/doctest_multiple_shared_libraries`.
+1. To build only part of the repo, point `-S` at that directory. For example, `-S /ApprovalTests.cpp/examples/doctest_multiple_shared_libraries`.
 1. To match a compiler from the CI matrix, set `CXX`, for example `CXX=clang++ cmake ...`.
 
 ## Get a backtrace for a crash
 
 ```bash
-docker run --rm -v "$PWD":/src approvaltests-linux bash -c '
-cmake -S /src -B /build -DCMAKE_BUILD_TYPE=Debug && cmake --build /build -j8 &&
+docker run --rm -v "$PWD":/ApprovalTests.cpp approvaltests-linux bash -c '
+cmake -S /ApprovalTests.cpp -B /build -DCMAKE_BUILD_TYPE=Debug && cmake --build /build -j8 &&
 gdb -batch -ex run -ex bt --args /build/<path-to-test-executable> <arguments>'
 ```
 
