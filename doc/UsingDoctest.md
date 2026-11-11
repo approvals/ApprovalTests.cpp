@@ -103,6 +103,8 @@ Other test source files in the library define only `APPROVALS_DOCTEST_EXTERNAL_M
 
 Load every library before running doctest, and keep them loaded until the doctest context is destroyed.
 
+On Linux, link each library with `-Wl,-Bsymbolic`. The runner exports its symbols so the libraries can use doctest, and without this flag each library's Approval Tests globals bind to the runner's copy. Unloading a library then destroys the runner's globals and crashes.
+
 A complete working example, including the CMake setup for Windows, macOS and Linux, is in
 [examples/doctest_multiple_shared_libraries](/examples/doctest_multiple_shared_libraries). It is tested with both the checked-in sources and a generated single header.
 
