@@ -22,14 +22,14 @@ jobs:
       - name: Set up Cygwin
         uses: cygwin/cygwin-install-action@v6
         with:
-          packages: cmake libboost-devel libtool gcc-g++ binutils make
+          packages: cmake libboost-devel libtool gcc-g++ binutils make python3
 
       - name: Configure
         run: |
           mkdir -p cmake-build
           cd       cmake-build
           cmake --version
-          cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release -DAPPROVAL_TESTS_BUILD_DOCS=OFF -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
+          cmake -G 'Unix Makefiles' .. -DCMAKE_BUILD_TYPE=Release -DAPPROVAL_TESTS_BUILD_DOCS=OFF -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DPython3_EXECUTABLE=/usr/bin/python3
 
       - name: Build
         run: |
