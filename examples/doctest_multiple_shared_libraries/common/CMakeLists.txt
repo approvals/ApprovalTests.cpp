@@ -53,6 +53,11 @@ function(add_test_module target runner provider)
         target_link_options(${target} PRIVATE -undefined dynamic_lookup)
     elseif (WIN32)
         target_link_libraries(${target} PRIVATE ${runner})
+    elseif (NOT CYGWIN)
+        # The runner exports its own copy of Approval Tests. Bind this library's
+        # references to its own copy, as on Windows and macOS, or unloading the
+        # library destroys the runner's globals.
+        target_link_options(${target} PRIVATE -Wl,-Bsymbolic)
     endif ()
     configure_doctest_target(${target} ${provider})
 endfunction()
