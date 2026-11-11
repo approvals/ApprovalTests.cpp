@@ -68,7 +68,8 @@ class SingleHeaderFile(object):
         for root, directories, files in os.walk(directory):
             for file in files:
                 if file.endswith(extension_with_dot):
-                    file_text = os.path.join(root, file)
+                    # Use '/' on Windows too, for #include lines and the './' replacement.
+                    file_text = os.path.join(root, file).replace('\\', '/')
                     file_text = file_text.replace('./', relative + '/')
                     all_files.append(file_text)
         all_files.sort()
