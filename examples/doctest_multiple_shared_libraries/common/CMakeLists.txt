@@ -41,7 +41,7 @@ endfunction()
 
 # A dynamically loaded library of tests that the runner opens with dlopen/LoadLibrary.
 function(add_test_module target runner provider)
-    if (WIN32)
+    if (WIN32 OR CYGWIN)
         set(module_type SHARED)
     else ()
         set(module_type MODULE)
@@ -51,9 +51,9 @@ function(add_test_module target runner provider)
     if (APPLE)
         set_target_properties(${target} PROPERTIES SUFFIX ".dylib")
         target_link_options(${target} PRIVATE -undefined dynamic_lookup)
-    elseif (WIN32)
+    elseif (WIN32 OR CYGWIN)
         target_link_libraries(${target} PRIVATE ${runner})
-    elseif (NOT CYGWIN)
+    else ()
         # The runner exports its own copy of Approval Tests. Bind this library's
         # references to its own copy, as on Windows and macOS, or unloading the
         # library destroys the runner's globals.

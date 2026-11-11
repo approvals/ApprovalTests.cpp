@@ -30,8 +30,8 @@ foreach (provider IN ITEMS single_header static_library)
     add_subdirectory(module_one ${provider}/module_one)
     add_subdirectory(module_two ${provider}/module_two)
 
-    # On Windows the modules link to the runner, so this would be a cycle.
-    if (NOT WIN32)
+    # On Windows and Cygwin the modules link to the runner, so this would be a cycle.
+    if (NOT (WIN32 OR CYGWIN))
         add_dependencies(${variant}_runner ${variant}_module_one ${variant}_module_two)
     endif ()
 
