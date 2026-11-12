@@ -8,9 +8,9 @@ namespace ApprovalTests
         FileApprover::setTestPassedNotification(notification);
     }
 
-    void FrameworkIntegrations::clearTestPassedNotification()
+    void FrameworkIntegrations::resetTestPassedNotification()
     {
-        FileApprover::clearTestPassedNotification();
+        FileApprover::resetTestPassedNotification();
     }
 
     void FrameworkIntegrations::setCurrentTest(ApprovalTests::TestName* currentTest)

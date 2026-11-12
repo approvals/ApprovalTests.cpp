@@ -103,7 +103,7 @@ namespace ApprovalTests
         testPassedNotification_ = notification;
     }
 
-    void FileApprover::clearTestPassedNotification()
+    void FileApprover::resetTestPassedNotification()
     {
         testPassedNotification_ = []() {};
     }

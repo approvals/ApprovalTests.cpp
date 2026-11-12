@@ -52,7 +52,7 @@ namespace ApprovalTests
 
         using TestPassedNotification = std::function<void()>;
         static void setTestPassedNotification(TestPassedNotification notification);
-        static void clearTestPassedNotification();
+        static void resetTestPassedNotification();
         static void notifyTestPassed();
 
     private:
