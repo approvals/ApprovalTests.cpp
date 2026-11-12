@@ -1,4 +1,5 @@
 import os
+import platform
 from typing import Callable
 
 from git import Repo
@@ -28,7 +29,7 @@ class PrepareRelease:
             PrepareStarterProjectRelease.check_pre_conditions_for_starter_project_repo(self.details)
 
             open_url_command = "open"
-            if os.name != "Darwin":
+            if platform.system() != "Darwin":
                 open_url_command = "xdg-open"
 
             run([open_url_command, F"{self.details.project_details.github_project_url}/commits/master"])
