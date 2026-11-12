@@ -8,6 +8,6 @@
 * **Bug fixes**
     * The {fmt} integration now includes `<fmt/format.h>` itself, so it no longer fails to compile when that header was not already included. (#213)
     * Fixed undefined behaviour in the Catch2 integration, reported by sanitizers, when a section ended with no sections recorded.
-    * The [Boost.UT integration](/doc/UsingUT.md) now prints test output again, by keeping the default printer turned on.
+    * Fixed the [Boost.UT integration](/doc/UsingUT.md) hiding the default reporter's output.
 * **Other changes**
     * Approval Tests now records every approved file it checks in `.approval_tests_temp/.approved_files.log`, relative to the working directory. You may want to add `.approval_tests_temp/` to your `.gitignore`.
