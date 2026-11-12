@@ -21,5 +21,9 @@ class ProjectDetails:
         return f"https://raw.githubusercontent.com/approvals/{self.github_project_name}"
 
     @property
+    def github_repo(self) -> str:
+        return f"approvals/{self.github_project_name}"
+
+    @property
     def github_project_url(self) -> str:
-        return f"https://github.com/approvals/{self.github_project_name}"
+        return f"https://github.com/{self.github_repo}"

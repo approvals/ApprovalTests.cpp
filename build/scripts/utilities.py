@@ -11,6 +11,11 @@ def run(command: List[str]) -> None:
     subprocess.run(" ".join(command), shell=True, check=True)
 
 
+def run_and_capture(command: List[str]) -> str:
+    print(command)
+    return subprocess.run(command, check=True, capture_output=True, text=True).stdout
+
+
 def write_file(file_name: str, text: str) -> None:
     with open(file_name, 'w') as output:
         output.write(text)

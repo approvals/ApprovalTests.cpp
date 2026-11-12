@@ -1,0 +1,12 @@
+newest is by a person:
+check 'aaa', skipped []
+
+skips bot commits:
+check 'ccc', skipped ['aaa', 'bbb']
+
+only bot commits:
+check '', skipped ['aaa']
+
+no commits:
+check '', skipped []
+

@@ -1,0 +1,17 @@
+all passing:
+
+
+skipped counts as passing:
+
+
+no runs:
+no CI runs found for this commit
+
+still running:
+build is in_progress
+cygwin is queued
+
+failed:
+python-tests finished with failure
+mingw finished with cancelled
+

@@ -9,6 +9,7 @@ from scripts.conan_release import PrepareConanRelease
 from scripts.deploy_release import DeployRelease
 from scripts.documentation_release import PrepareDocumentationRelease
 from scripts.git_utilities import GitUtilities
+from scripts.github_checks import GitHubChecks
 from scripts.project_details import ProjectDetails
 from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
@@ -32,8 +33,9 @@ class PrepareRelease:
             if platform.system() != "Darwin":
                 open_url_command = "xdg-open"
 
-            run([open_url_command, F"{self.details.project_details.github_project_url}/commits/master"])
-            check_step("the builds are passing")
+            recent_commits = [(commit.hexsha, str(commit.author.name)) for commit in
+                              Repo(self.details.locations.main_project_dir).iter_commits('master', max_count=20)]
+            GitHubChecks.check_ci_passing(self.details.project_details.github_repo, recent_commits)
 
             run([open_url_command, F"{self.details.project_details.github_project_url}/blob/master/build/relnotes_x.y.z.md"])
             run([open_url_command,
