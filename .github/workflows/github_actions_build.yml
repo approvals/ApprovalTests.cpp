@@ -81,6 +81,13 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
+          - job-name: 'gcc14 shared'
+            os-version: '24.04'
+            c-compiler: 'gcc-14'
+            cxx-compiler: 'g++-14'
+            generator: '"Unix Makefiles" -DBUILD_SHARED_LIBS=ON'
+            relative_build_dir_path: ''
+
           - job-name: 'gcc14 unity'
             os-version: '24.04'
             c-compiler: 'gcc-14'
