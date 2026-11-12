@@ -8,6 +8,11 @@ namespace ApprovalTests
         FileApprover::setTestPassedNotification(notification);
     }
 
+    void FrameworkIntegrations::clearTestPassedNotification()
+    {
+        FileApprover::clearTestPassedNotification();
+    }
+
     void FrameworkIntegrations::setCurrentTest(ApprovalTests::TestName* currentTest)
     {
         ApprovalTestNamer::currentTest(currentTest);

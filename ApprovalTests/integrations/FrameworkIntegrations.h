@@ -11,6 +11,8 @@ namespace ApprovalTests
         static void
         setTestPassedNotification(FileApprover::TestPassedNotification notification);
 
+        static void clearTestPassedNotification();
+
         static void setCurrentTest(ApprovalTests::TestName* currentTest);
     };
 }

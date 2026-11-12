@@ -125,6 +125,8 @@ namespace ApprovalTests
 
             void test_case_end(const doctest::CurrentTestCaseStats& /*in*/) override
             {
+                // The notification may live in a library that is unloaded before exit.
+                ApprovalTests::FrameworkIntegrations::clearTestPassedNotification();
 
                 while (!currentTest.sections.empty())
                 {
