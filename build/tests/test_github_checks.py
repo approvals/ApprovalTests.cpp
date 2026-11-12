@@ -38,6 +38,23 @@ class TestGitHubChecks(unittest.TestCase):
             text += f"{name}:\ncheck '{sha}', skipped {skipped}\n\n"
         verify(text)
 
+    def test_find_issue_numbers(self) -> None:
+        release_notes = (
+            "* **Bug fixes**\n"
+            "    * Fixed the {fmt} integration (#213)\n"
+            "    * Catch2 amalgamated support ([#231](https://github.com/approvals/ApprovalTests.cpp/issues/231))\n"
+            "    * Same issue mentioned again (#213)\n"
+        )
+        verify(str(GitHubChecks.find_issue_numbers(release_notes)))
+
+    def test_get_open_issue_problems(self) -> None:
+        issues = [
+            {"number": "213", "state": "open", "title": "Bug with {fmt} integration"},
+            {"number": "231", "state": "closed", "title": "Catch2 v3 integration does not work with amalgamated"},
+        ]
+        verify(f"one open:\n{GitHubChecks.get_open_issue_problems(issues)}\n\n"
+               f"all closed:\n{GitHubChecks.get_open_issue_problems(issues[1:])}\n")
+
 
 if __name__ == '__main__':
     unittest.main()

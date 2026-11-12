@@ -15,7 +15,7 @@ from scripts.release_constants import release_constants
 from scripts.release_details import ReleaseDetails
 from scripts.starter_project_release import PrepareStarterProjectRelease
 from scripts.utilities import check_step, run, use_directory, \
-    check_step_with_revert, assert_step
+    check_step_with_revert, assert_step, read_file
 from scripts.vcpkg_release import PrepareVcpkgRelease
 from scripts.version import Version
 
@@ -42,8 +42,8 @@ class PrepareRelease:
                  F"{self.details.project_details.github_project_url}/compare/{self.details.old_version.get_version_text()}...master"])
             check_step("the release notes are ready")
 
-            run([open_url_command, F"{self.details.project_details.github_project_url}/issues"])
-            check_step("any issues resolved in this release are closed")
+            GitHubChecks.check_issues_closed(self.details.project_details.github_repo,
+                                             read_file(release_constants.xxx_release_notes_path))
 
     def check_pre_conditions_for_main_repo(self) -> None:
         repo = Repo(self.details.locations.main_project_dir)

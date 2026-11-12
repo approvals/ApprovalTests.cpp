@@ -1,4 +1,5 @@
 import json
+import re
 from typing import Dict, List, Tuple
 
 from scripts.utilities import assert_step, run_and_capture
@@ -44,3 +45,25 @@ class GitHubChecks:
             ["gh", "run", "list", "--repo", github_repo, "--commit", commit_sha, "--json", "name,status,conclusion"])
         problems = GitHubChecks.get_ci_problems(json.loads(output))
         assert_step(problems == "", f"CI is not passing for {commit_sha}:\n{problems}")
+
+    @staticmethod
+    def find_issue_numbers(release_notes: str) -> List[int]:
+        return sorted(set(int(number) for number in re.findall(r"#(\d+)", release_notes)))
+
+    @staticmethod
+    def get_open_issue_problems(issues: List[Dict[str, str]]) -> str:
+        problems = []
+        for issue in issues:
+            if issue['state'] != 'closed':
+                problems.append(f"#{issue['number']} is {issue['state']}: {issue['title']}")
+        return "\n".join(problems)
+
+    @staticmethod
+    def check_issues_closed(github_repo: str, release_notes: str) -> None:
+        issues = []
+        for number in GitHubChecks.find_issue_numbers(release_notes):
+            # The issues API also covers pull requests, which release notes sometimes mention
+            output = run_and_capture(["gh", "api", f"repos/{github_repo}/issues/{number}"])
+            issues.append(json.loads(output))
+        problems = GitHubChecks.get_open_issue_problems(issues)
+        assert_step(problems == "", f"issues mentioned in the release notes are not closed:\n{problems}")
