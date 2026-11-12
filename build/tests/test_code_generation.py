@@ -5,7 +5,6 @@ from approvaltests.approvals import verify, verify_all
 
 from scripts.code_generation import CppGeneration
 from scripts.multiline_string_utilities import remove_indentation
-from tests.helpers import diff_merge_reporter
 # Convenience variable, so we can paste in code and run test_demo_convert_to_concatenation.
 # This is at global scope to prevent PyCharm reformatting the indentation when we
 # paste code in.
@@ -104,7 +103,7 @@ class TestCodeGeneration(unittest.TestCase):
             '\n'
             )
         output = CodeGeneration.convert_concatenation_to_multiline(input)
-        verify(output, diff_merge_reporter)
+        verify(output)
 
     def test_entry_point_for_convert_to_concatenation(self) -> None:
         if to_concatenated_string != 'your string here':

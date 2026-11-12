@@ -1,8 +1,5 @@
 import os
 
-from approvaltests.reporters import GenericDiffReporterFactory
-
-diff_merge_reporter = GenericDiffReporterFactory().get("DiffMerge")
 
 def set_home_directory() -> None:
     current_dir = os.getcwd().replace('\\', '/')
