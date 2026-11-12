@@ -1,7 +1,7 @@
 import os
 
 from git import Repo
-from scripts.utilities import assert_step, use_directory, run
+from scripts.utilities import assert_step, use_directory, run, run_and_capture
 
 
 class GitUtilities:
@@ -43,7 +43,7 @@ class GitUtilities:
     @staticmethod
     def commit_everything(directory: str, message: str) -> None:
         with use_directory(directory):
-            run(["git", "commit", "-m", F"'{message}'"])
+            run_and_capture(["git", "commit", "-m", message])
 
     @staticmethod
     def add_and_commit_everything(directory: str, message: str) -> None:
