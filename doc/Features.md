@@ -6,6 +6,7 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+  * [v.10.14.0](#v10140)
     * [doctest across multiple dynamically loaded libraries](#doctest-across-multiple-dynamically-loaded-libraries)
   * [v.10.13.0](#v10130)
     * [Catch2 v3 support](#catch2-v3-support)
