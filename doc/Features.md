@@ -6,6 +6,7 @@
 ## Contents
 
   * [v.x.y.z](#vxyz)
+    * [doctest across multiple dynamically loaded libraries](#doctest-across-multiple-dynamically-loaded-libraries)
   * [v.10.13.0](#v10130)
     * [Catch2 v3 support](#catch2-v3-support)
   * [v.10.12.0](#v10120)
@@ -86,6 +87,10 @@
     * [Using sub-directories for approved files](#using-sub-directories-for-approved-files)<!-- endToc -->
 
 ## v.x.y.z
+
+### doctest across multiple dynamically loaded libraries
+
+[doctest](/doc/UsingDoctest.md#multiple-dynamically-loaded-libraries) approvals now work when tests are spread across several shared libraries loaded by one test runner.
 
 ## v.10.13.0
 
