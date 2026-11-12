@@ -67,8 +67,8 @@ class DeployRelease:
             self.publish_main_project()
             self.upload_release_to_github()
             DeployStarterProjectRelease.publish_starter_project(self.details)
-        DeployConanRelease.test_conan_and_create_pr(self.details)
-        DeployVcpkgRelease.test_vcpkg_and_create_pr(self.details)
+        # DeployConanRelease.test_conan_and_create_pr(self.details)
+        # DeployVcpkgRelease.test_vcpkg_and_create_pr(self.details)
         self.publish_tweet()
         self.publish_on_reddit_optionally()
 
