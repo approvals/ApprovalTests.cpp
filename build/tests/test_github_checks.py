@@ -1,5 +1,5 @@
 import unittest
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 from approvaltests.approvals import verify
 
@@ -54,6 +54,21 @@ class TestGitHubChecks(unittest.TestCase):
         ]
         verify(f"one open:\n{GitHubChecks.get_open_issue_problems(issues)}\n\n"
                f"all closed:\n{GitHubChecks.get_open_issue_problems(issues[1:])}\n")
+
+    def test_get_release_problems(self) -> None:
+        def release(is_draft: bool, assets: List[str]) -> Dict[str, Any]:
+            return {"tagName": "v.10.14.0", "isDraft": is_draft, "assets": [{"name": name} for name in assets]}
+
+        expected = "ApprovalTests.v.10.14.0.hpp"
+        scenarios = {
+            "published with header": release(False, [expected]),
+            "draft": release(True, [expected]),
+            "missing header": release(False, []),
+        }
+        text = ""
+        for name, scenario in scenarios.items():
+            text += f"{name}:\n{GitHubChecks.get_release_problems(scenario, expected)}\n\n"
+        verify(text)
 
 
 if __name__ == '__main__':

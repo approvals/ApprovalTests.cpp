@@ -1,11 +1,13 @@
-import pyperclip
+from typing import List
+
+from git import Repo
 
 from scripts.conan_release import DeployConanRelease
 from scripts.git_utilities import GitUtilities
-from scripts.release_constants import release_constants
+from scripts.github_checks import GitHubChecks
 from scripts.release_details import ReleaseDetails
 from scripts.starter_project_release import DeployStarterProjectRelease
-from scripts.utilities import read_file, check_step, run, use_directory
+from scripts.utilities import check_step, run, run_and_capture, use_directory
 from scripts.vcpkg_release import DeployVcpkgRelease
 
 
@@ -27,19 +29,20 @@ class DeployRelease:
         self.push_main_project()
 
     def upload_release_to_github(self) -> None:
-        # Draft the upload to github
-        release_notes = read_file(self.details.new_release_notes_path)
-        pyperclip.copy(release_notes)
-        print('The release notes are on the clipboard')
-        github_url = self.get_github_release_url()
-        run(["open", github_url])
-        run(["open", release_constants.release_dir])
-        check_step("that the release is published")
+        # Tag the exact release commit: the formatting bot may push to master straight after it
+        commit_sha = Repo(self.details.locations.main_project_dir).head.commit.hexsha
+        run_and_capture(self.get_github_release_command(commit_sha))
+        GitHubChecks.check_release_published(self.details.project_details.github_repo,
+                                             self.details.new_version_as_text(),
+                                             self.details.new_single_header)
 
-    def get_github_release_url(self) -> str:
-        return F"'{self.details.project_details.github_project_url}/releases/new?" \
-               F"tag={self.details.new_version_as_text()}&" \
-               F"title=Single%20Hpp%20File%20-%20{self.details.new_version_as_text()}'"
+    def get_github_release_command(self, commit_sha: str) -> List[str]:
+        return ["gh", "release", "create", self.details.new_version_as_text(),
+                "--repo", self.details.project_details.github_repo,
+                "--target", commit_sha,
+                "--title", F"Single Hpp File - {self.details.new_version_as_text()}",
+                "--notes-file", self.details.new_release_notes_path,
+                self.details.release_new_single_header]
 
     def publish_tweet(self) -> None:
         # Draft the tweet

@@ -11,9 +11,9 @@ from tests.helpers import set_home_directory
 
 
 class TestDeployRelease(unittest.TestCase):
-    def test_get_github_release_url(self) -> None:
+    def test_get_github_release_command(self) -> None:
         deploy_release = self.get_deploy_release()
-        verify(deploy_release.get_github_release_url())
+        verify("\n".join(deploy_release.get_github_release_command("0123456789abcdef")))
 
     def test_get_tweet_text(self) -> None:
         deploy_release = self.get_deploy_release()

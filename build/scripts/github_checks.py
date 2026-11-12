@@ -1,6 +1,6 @@
 import json
 import re
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 from scripts.utilities import assert_step, run_and_capture
 
@@ -67,3 +67,20 @@ class GitHubChecks:
             issues.append(json.loads(output))
         problems = GitHubChecks.get_open_issue_problems(issues)
         assert_step(problems == "", f"issues mentioned in the release notes are not closed:\n{problems}")
+
+    @staticmethod
+    def get_release_problems(release: Dict[str, Any], expected_asset: str) -> str:
+        problems = []
+        if release['isDraft']:
+            problems.append(f"{release['tagName']} is still a draft")
+        asset_names = [asset['name'] for asset in release['assets']]
+        if expected_asset not in asset_names:
+            problems.append(f"{release['tagName']} is missing {expected_asset} (has {asset_names})")
+        return "\n".join(problems)
+
+    @staticmethod
+    def check_release_published(github_repo: str, tag: str, expected_asset: str) -> None:
+        output = run_and_capture(
+            ["gh", "release", "view", tag, "--repo", github_repo, "--json", "tagName,isDraft,assets"])
+        problems = GitHubChecks.get_release_problems(json.loads(output), expected_asset)
+        assert_step(problems == "", f"the GitHub release is not complete:\n{problems}")

@@ -1,0 +1,13 @@
+gh
+release
+create
+v.0.1.0
+--repo
+approvals/ApprovalTests.cpp
+--target
+0123456789abcdef
+--title
+Single Hpp File - v.0.1.0
+--notes-file
+../build/release_notes/relnotes_0.1.0.md
+../build/releases/ApprovalTests.v.0.1.0.hpp
