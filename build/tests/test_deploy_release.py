@@ -15,10 +15,6 @@ class TestDeployRelease(unittest.TestCase):
         deploy_release = self.get_deploy_release()
         verify("\n".join(deploy_release.get_github_release_command("0123456789abcdef")))
 
-    def test_get_tweet_text(self) -> None:
-        deploy_release = self.get_deploy_release()
-        verify(deploy_release.get_tweet_text())
-
     def test_get_url_for_starter_project_single_header_for_version(self) -> None:
         deploy_release = self.get_deploy_release()
         verify(DeployStarterProjectRelease.get_url_for_starter_project_single_header_for_version(

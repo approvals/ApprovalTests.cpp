@@ -44,22 +44,6 @@ class DeployRelease:
                 "--notes-file", self.details.new_release_notes_path,
                 self.details.release_new_single_header]
 
-    def publish_tweet(self) -> None:
-        # Draft the tweet
-        check_step("that you have created a screenshot of the release notes, for the Tweet")
-        tweet_text = self.get_tweet_text()
-        run(["open", tweet_text])
-        check_step("that the tweet is published")
-
-    def get_tweet_text(self) -> str:
-        project = self.details.project_details.github_project_name
-        return F"'https://twitter.com/intent/tweet?text=%23{project}+" \
-               F"{self.details.new_version_as_text()}" \
-               F"+released%2C+now+with+___%21%0D%0Ahttps%3A%2F%2Fgithub.com%2F" \
-               F"approvals%2F{project}%2Freleases%2Ftag%2F" \
-               F"{self.details.new_version_as_text()}+%0D%0Aor+try+the+starter+project%3A+https%3A%2F%2Fgithub.com" \
-               F"%2Fapprovals%2F{project}.StarterProject%0D%0AThanks+%40LlewellynFalco+%40ClareMacraeUK+%21'"
-
     def publish_on_reddit_optionally(self) -> None:
         # Announce on Reddit - maybe?
         run(["open", "https://www.reddit.com/r/cpp/"])
@@ -72,7 +56,6 @@ class DeployRelease:
             DeployStarterProjectRelease.publish_starter_project(self.details)
         # DeployConanRelease.test_conan_and_create_pr(self.details)
         # DeployVcpkgRelease.test_vcpkg_and_create_pr(self.details)
-        self.publish_tweet()
         self.publish_on_reddit_optionally()
 
 

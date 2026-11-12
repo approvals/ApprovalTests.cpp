@@ -33,8 +33,6 @@
 
 * [ ] Automate the check_steps
 
-* [ ] Create screenshot image of release notes, and include in Tweet
-
 * [ ] Improve the chdir to start at the top-level directory - and check that we are the top-level
 
 * [ ] Auto-detect if there is a milestone
