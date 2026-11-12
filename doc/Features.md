@@ -88,6 +88,8 @@
 
 ## v.x.y.z
 
+## v.10.14.0
+
 ### doctest across multiple dynamically loaded libraries
 
 [doctest](/doc/UsingDoctest.md#multiple-dynamically-loaded-libraries) approvals now work when tests are spread across several shared libraries loaded by one test runner.
